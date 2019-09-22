@@ -16,7 +16,8 @@ export default {
             globals: {
                 'react': 'React',
                 'react-dom': 'ReactDOM',
-                'prop-types': 'PropTypes'
+                'prop-types': 'PropTypes',
+                'styled-components': 'styled-components'
             },
         },
         {
@@ -26,7 +27,8 @@ export default {
             globals: {
                 'react': 'React',
                 'react-dom': 'ReactDOM',
-                'prop-types': 'PropTypes'
+                'prop-types': 'PropTypes',
+                'styled-components': 'styled-components'
             },
         },
         {
@@ -35,7 +37,8 @@ export default {
             globals: {
                 'react': 'React',
                 'react-dom': 'ReactDOM',
-                'prop-types': 'PropTypes'
+                'prop-types': 'PropTypes',
+                'styled-components': 'styled-components'
             },
         }
     ],
@@ -43,6 +46,7 @@ export default {
     external: [
         'react',
         'react-dom',
+        'styled-components'
     ],
     plugins: [
         babel({
