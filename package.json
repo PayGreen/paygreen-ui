@@ -1,0 +1,37 @@
+{
+    "name": "styled-component-library-poc",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+   "scripts": {
+        "build": "rollup -c",
+        "storybook": "start-storybook"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MattMattC/styled-component-library-poc.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/MattMattC/styled-component-library-poc/issues"
+    },
+    "homepage": "https://github.com/MattMattC/styled-component-library-poc#readme",
+    "devDependencies": {
+        "@babel/cli": "^7.6.0",
+        "@babel/core": "^7.6.0",
+        "@babel/preset-env": "^7.6.0",
+        "@babel/preset-react": "^7.0.0",
+        "@storybook/react": "^5.2.1",
+        "babel-loader": "^8.0.6",
+        "rollup": "^1.21.4",
+        "rollup-plugin-babel": "^4.3.3",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-uglify": "^6.0.3"
+    },
+    "dependencies": {
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0"
+    }
+}
