@@ -3,50 +3,53 @@ import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 // ? 
 import commonjs from 'rollup-plugin-commonjs';
-import { uglify } from 'rollup-plugin-uglify';
-
+// import { uglify } from 'rollup-plugin-uglify';
+import pkg from './package.json';
 export default {
+
     input: './src/lib/index.js',
-    output: {
-        file: './build/bundle.min.js',
-        format: 'iife',
-        name: 'bundle'
-    },
+    output: [
+        {
+            file: pkg.browser,
+            format: 'umd',
+            name: 'Example',
+            globals: {
+                'react': 'React',
+                'react-dom': 'ReactDOM',
+                'prop-types': 'PropTypes'
+            },
+        },
+        {
+            file: pkg.main,
+            format: 'cjs',
+            name: 'Example',
+            globals: {
+                'react': 'React',
+                'react-dom': 'ReactDOM',
+                'prop-types': 'PropTypes'
+            },
+        },
+        {
+            file: pkg.module,
+            format: 'es',
+            globals: {
+                'react': 'React',
+                'react-dom': 'ReactDOM',
+                'prop-types': 'PropTypes'
+            },
+        }
+    ],
+
+    external: [
+        'react',
+        'react-dom',
+    ],
     plugins: [
         babel({
             exclude: 'node_modules/**'
         }),
         resolve(),
-        commonjs({
-            include: [
-                'node_modules/**'
-            ],
-            exclude: [
-                'node_modules/process-es6/**'
-            ],
-            namedExports: {
-                'node_modules/react/index.js': [
-                    'Children',
-                    'Component',
-                    'PureComponent',
-                    'PropTypes',
-                    'createElement',
-                    'Fragment',
-                    'cloneElement',
-                    'StrictMode',
-                    'createFactory',
-                    'createRef',
-                    'createContext',
-                    'isValidElement',
-                    'isValidElementType',
-                ],
-                'node_modules/react-dom/index.js': [
-                    'render',
-                    'hydrate',
-                ],
-            }
-        }),
-        uglify()
-    ],
-
+        commonjs(),
+        // uglify()
+    ]
 }
