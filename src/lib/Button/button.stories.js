@@ -16,7 +16,9 @@ storiesOf('Button2', module)
         <Button disabled={boolean('Disabled', false)} >
             {text('Label', 'Hello Storybook')}
         </Button>
-    ))
+    ), {
+        notes: 'A very simple example of addon notes',
+    })
     .add('disabled', () => (
         <Button disabled>
             {text('Label', 'Hello Storybook')}
