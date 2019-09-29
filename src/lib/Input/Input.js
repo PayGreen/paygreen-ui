@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 
 class Input extends PureComponent {
     render() {
@@ -8,9 +7,5 @@ class Input extends PureComponent {
         );
     }
 }
-
-Input.propTypes = {
-
-};
 
 export default Input;

@@ -25,13 +25,16 @@
         "@babel/core": "^7.6.0",
         "@babel/preset-env": "^7.6.0",
         "@babel/preset-react": "^7.0.0",
+        "@storybook/addon-knobs": "^5.2.1",
+        "@storybook/addon-viewport": "^5.2.1",
         "@storybook/react": "^5.2.1",
         "babel-loader": "^8.0.6",
         "rollup": "^1.21.4",
         "rollup-plugin-babel": "^4.3.3",
         "rollup-plugin-commonjs": "^10.1.0",
         "rollup-plugin-node-resolve": "^5.2.0",
-        "rollup-plugin-uglify": "^6.0.3"
+        "rollup-plugin-uglify": "^6.0.3",
+        "storybook-addon-styled-component-theme": "^1.2.5"
     },
     "dependencies": {
         "react": "^16.9.0",
