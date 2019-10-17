@@ -8,7 +8,8 @@
     "scripts": {
         "build": "rollup -c",
         "storybook": "start-storybook",
-        "prepare": "npm run build"
+        "prepare": "npm run build",
+        "test": "jest"
     },
     "repository": {
         "type": "git",
@@ -31,6 +32,8 @@
         "@storybook/addon-viewport": "^5.2.1",
         "@storybook/react": "^5.2.1",
         "babel-loader": "^8.0.6",
+        "jest": "^24.9.0",
+        "react-test-renderer": "^16.10.1",
         "rollup": "^1.21.4",
         "rollup-plugin-babel": "^4.3.3",
         "rollup-plugin-commonjs": "^10.1.0",

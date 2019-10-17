@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { Button as B } from './style';
 
 class Button extends PureComponent {
@@ -9,9 +8,5 @@ class Button extends PureComponent {
         );
     }
 }
-
-Button.propTypes = {
-    text: PropTypes.text
-};
 
 export default Button;
