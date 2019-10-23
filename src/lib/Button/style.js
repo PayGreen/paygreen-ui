@@ -10,7 +10,7 @@ const rotate = keyframes`
     }
 `;
 
-const StyledButton = styled.div`
+const StyledButton = styled.a`
     background-color: ${props => (props.disabled ? props.theme.color.disabled : props.theme.color.main)};
     display: inline-block;
     padding: 10px;
