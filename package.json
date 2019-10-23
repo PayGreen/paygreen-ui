@@ -9,7 +9,8 @@
         "build": "rollup -c",
         "storybook": "start-storybook",
         "prepare": "npm run build",
-        "test": "jest"
+        "test": "jest",
+        "build-storybook": "build-storybook -c .storybook -o public"
     },
     "repository": {
         "type": "git",
