@@ -10,9 +10,30 @@ export const bodyStyles = css`
 `;
 
 export const GlobalStyle = createGlobalStyle`
-    ${normalize}
+    ${normalize};
+
+    body,
+    main,
+    header,
+    footer,
+    section,
+    article,
+    aside,
+    div,
+    form,
+    ::before,
+    ::after {
+        display: block;
+        box-sizing: border-box;
+    }
 
     body {
-        ${bodyStyles}
+        ${bodyStyles};
+    }
+
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        outline-color: green; /* TODO: to change */
     }
 `;
