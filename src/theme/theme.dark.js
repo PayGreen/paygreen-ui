@@ -1,5 +1,5 @@
 export const ThemeDark = {
-    name:"DarkTheme",
+    name: "Dark",
     color: {
         white: 'blue',
         black: '#000',
@@ -7,14 +7,5 @@ export const ThemeDark = {
         purple: '#744c9d',
         main: 'pink',
         disabled: '#ececec'
-
     },
-    button: {
-        
-    },
-    size: {
-        inner: '1260px',
-        borderRadius: '4px',
-        borderWidth: '2px'
-    }
 };

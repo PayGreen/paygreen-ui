@@ -1,5 +1,5 @@
 export const ThemeDefault = {
-    name:"Default",
+    name: "Default",
     color: {
         white: '#fff',
         black: '#000',
