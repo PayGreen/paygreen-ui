@@ -7,10 +7,15 @@ import { normalize } from 'styled-normalize';
 export const bodyStyles = css`
     @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
     font-family: 'Open Sans', sans-serif;
+    font-size: 1.8rem;
 `;
 
 export const GlobalStyle = createGlobalStyle`
     ${normalize};
+
+    :root {
+        font-size: 62.5%;
+    }
 
     body,
     main,
