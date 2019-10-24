@@ -11,11 +11,14 @@ const rotate = keyframes`
 `;
 
 const StyledButton = styled.a`
-    background-color: ${props => (props.disabled ? props.theme.color.disabled : props.theme.color.main)};
+    background-color: ${props => (props.disabled ? props.theme.color.grey40 : props.theme.color.primary.main)};
     display: inline-block;
     padding: 10px;
-    color: white;
-    /*animation: ${rotate} 2s linear infinite;*/
+    color: ${props => (props.theme.bg)};
+
+    @media (${props => (props.theme.querie.max.sm)}) {
+        animation: ${rotate} 2s linear infinite;
+    }
 `;
 
 const Button = styled(StyledButton)``;
