@@ -6,7 +6,6 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 storiesOf('ButtonOutlet', module)
     .addParameters({
         options: {
-            name: 'Test',
             isFullscreen: false,
             showPanel: true
         },
