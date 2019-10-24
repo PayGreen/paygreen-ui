@@ -9,21 +9,22 @@ import { create } from '@storybook/theming';
 import { GlobalStyle } from '../src/shared/global';
 import React from 'react';
 
-
 addDecorator(withThemesProvider(Object.keys(themes).map((k) => themes[k])));
 addDecorator(withA11y);
 
 addParameters({
-    viewport: {
-        viewports: INITIAL_VIEWPORTS,
-    },
-    // style of the board storyBook
-    options: {
-        // https://storybook.js.org/docs/configurations/theming/
-        theme: create({
-            base: 'light',
-        }),
-    }
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
+  // style of the board storyBook
+  options: {
+    // https://storybook.js.org/docs/configurations/theming/
+    theme: create({
+      base: 'light',
+      brandTitle: 'PayGreen',
+      appBg: '#f9f9f9',
+    }),
+  }
 });
 
 addDecorator(story => (
@@ -32,6 +33,5 @@ addDecorator(story => (
     {story()}
   </>
 ));
-
 
 configure(require.context('../src', true, /\.stories\.js$/), module);
