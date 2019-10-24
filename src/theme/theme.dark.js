@@ -1,11 +1,9 @@
-export const ThemeDark = {
-    name: "Dark",
-    color: {
-        white: 'blue',
-        black: '#000',
-        lightGray: '#ececec',
-        purple: '#744c9d',
-        main: 'pink',
-        disabled: '#ececec'
-    },
-};
+import {ThemeBase} from './theme.base';
+
+let ThemeDark = {...ThemeBase};
+ThemeDark = Object.assign(ThemeDark, {
+    name: 'Dark',
+    bg: '#111111'
+});
+
+export {ThemeDark};

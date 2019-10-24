@@ -1,20 +1,9 @@
-export const ThemeDefault = {
-    name: "Default",
-    color: {
-        white: '#fff',
-        black: '#000',
-        lightGray: '#ececec',
-        purple: '#744c9d',
-        main: '#744c9d',
-        disabled: '#ececec'
+import {ThemeBase} from './theme.base';
 
-    },
-    button: {
-        
-    },
-    size: {
-        inner: '1260px',
-        borderRadius: '4px',
-        borderWidth: '2px'
-    }
-};
+let ThemeDefault = {...ThemeBase};
+ThemeDefault = Object.assign(ThemeDefault, {
+    name: 'Default',
+    bg: '#ffffff'
+});
+
+export {ThemeDefault};
