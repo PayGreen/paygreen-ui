@@ -1,10 +1,24 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 
-const StyledButton = styled.div`
-    background-color: ${props => (props.disabled ? props.theme.color.disabled : props.theme.color.main)};
+const rotate = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+`;
+
+const StyledButton = styled.a`
+    background-color: ${props => (props.disabled ? props.theme.color.grey40 : props.theme.color.primary.main)};
     display: inline-block;
     padding: 10px;
-    color: white;
+    color: ${props => (props.theme.bg)};
+
+    @media (${props => (props.theme.querie.max.sm)}) {
+        animation: ${rotate} 2s linear infinite;
+    }
 `;
 
 const Button = styled(StyledButton)``;

@@ -9,7 +9,6 @@ const styleDecorator = storyFN => <ThemeProvider theme={ThemeDefault}>{storyFN()
 storiesOf('Input', module)
     .addParameters({
         options: {
-            name: 'Test',
             isFullscreen: false,
             showPanel: true
         },

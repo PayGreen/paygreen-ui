@@ -3,10 +3,9 @@ import Button from './Button';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
-storiesOf('Button2', module)
+storiesOf('Button', module)
     .addParameters({
         options: {
-            name: 'Test',
             isFullscreen: false,
             showPanel: true
         },
