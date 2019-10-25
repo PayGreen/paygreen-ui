@@ -96,14 +96,15 @@ export const ThemeBase = {
         xl: '',
     },
     transition: {
-        duration: '0.3s',
-        function: 'ease',
+        xs: '0.2s',
+        sm: '0.3s',
     },
     animation: {
 
     },
     zindex: {
         hidden: -100,
+        button: -5,
         base: 0,
     },
     querie: {
@@ -118,10 +119,31 @@ export const ThemeBase = {
             md: querie(responsive.md, 'max'),
             lg: querie(responsive.lg, 'max'),
             xl: querie(responsive.xl, 'max'),
-        }
+        },
     },
     button: {
-        margin: '',
+        paddingWidth: {
+            sm: '22px',
+            md: '26px',
+            lg: '29px',
+        },
+        paddingHeight: {
+            sm: '13px',
+            md: '16px',
+            lg: '19px',
+        },
+        shift: '-3px',
+        margin: '10px',
+        font: {
+            sm: '1.2rem',
+            md: '1.4rem',
+            lg: '1.5rem',
+        },
+        letterSpacing: {
+            sm: '0.3rem',
+            md: '0.4rem',
+            lg: '0.45rem',
+        },
     },
     form: {
 

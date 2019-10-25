@@ -1,7 +1,26 @@
 import React from 'react';
 import Button from './Button';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, text, radios } from '@storybook/addon-knobs';
+
+const typeOptions = {
+    Original: 'original',
+    Reverse: 'reverse',
+    Disabled: 'disabled'
+};
+
+const colorOptions = {
+    Primary: 'primary',
+    Secondary: 'secondary',
+    Tertiary: 'tertiary',
+    Quaternary: 'quaternary'
+};
+
+const sizeOptions = {
+    Small: 'sm',
+    Medium: 'md',
+    Large: 'lg'
+};
 
 storiesOf('Button', module)
     .addParameters({
@@ -11,15 +30,25 @@ storiesOf('Button', module)
         },
     })
     .addDecorator(withKnobs)
-    .add('with text', () => (
-        <Button disabled={boolean('Disabled', false)} >
-            {text('Label', 'Hello Storybook')}
+    .add('Fill', () => (
+        <Button
+            template='fill'
+            type={radios('Type', typeOptions, 'original')}
+            color={radios('Color', colorOptions, 'primary')}
+            size={radios('Size', sizeOptions, 'md')}
+        >
+            {text('Label', 'CTA button')}
         </Button>
     ), {
         notes: 'A very simple example of addon notes',
     })
-    .add('disabled', () => (
-        <Button disabled>
-            {text('Label', 'Hello Storybook')}
+    .add('Line', () => (
+        <Button
+            template='line'
+            type={radios('Type', typeOptions, 'original')}
+            color={radios('Color', colorOptions, 'primary')}
+            size={radios('Size', sizeOptions, 'md')}
+        >
+            {text('Label', 'CTA button')}
         </Button>
     ));
