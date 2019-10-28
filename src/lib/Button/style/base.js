@@ -7,7 +7,8 @@ const ButtonBase = styled.a.attrs(props => ({
     display: inline-block;
     position: relative;
     outline: none;
-    cursor: ${props => props.type === 'disabled' ? 'not-allowed' : 'pointer'};
+    cursor: ${props => props.type == 'disabled' ? 'not-allowed' : 'pointer'};
+    text-align: center;
     text-transform: uppercase;
     font-weight: ${props => props.theme.font.weight.bold};
     font-size: ${props => props.theme.button.font[props.size]};
