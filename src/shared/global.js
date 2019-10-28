@@ -41,6 +41,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     p {
+        color: ${ThemeDefault.color.grey60};
         line-height: 1.5;
     }
 
