@@ -25,12 +25,6 @@ const buttonSizeOptions = {
 };
 
 storiesOf('ButtonGroup', module)
-    .addParameters({
-        options: {
-            isFullscreen: false,
-            showPanel: true
-        },
-    })
     .addDecorator(withKnobs)
     .add('ButtonGroup', () => (
         <ButtonGroup

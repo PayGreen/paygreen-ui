@@ -4,12 +4,6 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, radios } from '@storybook/addon-knobs';
 
 storiesOf('Link', module)
-    .addParameters({
-        options: {
-            isFullscreen: false,
-            showPanel: true
-        },
-    })
     .addDecorator(withKnobs)
     .add('Link', () => (
         <Link

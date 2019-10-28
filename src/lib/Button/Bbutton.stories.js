@@ -23,12 +23,6 @@ const sizeOptions = {
 };
 
 storiesOf('Button', module)
-    .addParameters({
-        options: {
-            isFullscreen: false,
-            showPanel: true
-        },
-    })
     .addDecorator(withKnobs)
     .add('Fill', () => (
         <Button
