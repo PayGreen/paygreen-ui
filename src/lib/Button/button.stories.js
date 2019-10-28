@@ -40,7 +40,7 @@ storiesOf('Button', module)
             {text('Label', 'CTA button')}
         </Button>
     ), {
-        notes: 'A very simple example of addon notes',
+        notes: 'Change background color to test reverse mode.',
     })
     .add('Line', () => (
         <Button
@@ -51,4 +51,6 @@ storiesOf('Button', module)
         >
             {text('Label', 'CTA button')}
         </Button>
-    ));
+    ), {
+        notes: 'Change background color to test reverse mode.',
+    });
