@@ -9,7 +9,7 @@ import {
     typeDefault
 } from '../../shared/const';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, radios } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text, radios } from '@storybook/addon-knobs';
 
 storiesOf('Button', module)
     .addDecorator(withKnobs)
@@ -19,6 +19,7 @@ storiesOf('Button', module)
             type={radios('Type', typeOptions, typeDefault)}
             color={radios('Color', colorOptions, colorDefault)}
             size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
+            disabled={boolean('Disabled', false)}
         >
             {text('Label', 'CTA button')}
         </Button>

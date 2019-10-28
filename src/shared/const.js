@@ -38,8 +38,7 @@ const alignDefault = 'left';
 // Design types
 const typeOptions = {
     Original: 'original',
-    Reverse: 'reverse',
-    Disabled: 'disabled'
+    Reverse: 'reverse'
 };
 
 const typeDefault = 'original';
