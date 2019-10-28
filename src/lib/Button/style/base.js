@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 
 const ButtonBase = styled.a.attrs(props => ({
-    color: props.color || props.theme.color.primary.main,
+    color: props.color || 'primary',
     size: props.size || 'md'
 }))`
     display: inline-block;
