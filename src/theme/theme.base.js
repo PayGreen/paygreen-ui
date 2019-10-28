@@ -5,7 +5,7 @@ const responsive = {
     xl: 1360,
 };
 
-const querie = (value, operator) => {
+const query = (value, operator) => {
     if (operator == 'max') {
         value -= 1;
     }
@@ -107,18 +107,18 @@ export const ThemeBase = {
         button: -5,
         base: 0,
     },
-    querie: {
+    query: {
         min: {
-            sm: querie(responsive.sm, 'min'),
-            md: querie(responsive.md, 'min'),
-            lg: querie(responsive.lg, 'min'),
-            xl: querie(responsive.xl, 'min'),
+            sm: query(responsive.sm, 'min'),
+            md: query(responsive.md, 'min'),
+            lg: query(responsive.lg, 'min'),
+            xl: query(responsive.xl, 'min'),
         },
         max: {
-            sm: querie(responsive.sm, 'max'),
-            md: querie(responsive.md, 'max'),
-            lg: querie(responsive.lg, 'max'),
-            xl: querie(responsive.xl, 'max'),
+            sm: query(responsive.sm, 'max'),
+            md: query(responsive.md, 'max'),
+            lg: query(responsive.lg, 'max'),
+            xl: query(responsive.xl, 'max'),
         },
     },
     button: {
