@@ -5,9 +5,23 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, radios } from '@storybook/addon-knobs';
 
 const alignOptions = {
-    Center: 'center',
     Left: 'left',
+    Center: 'center',
     Right: 'right'
+};
+
+const marginOptions = {
+    XS: 'xs',
+    SM: 'sm',
+    MD: 'md',
+    LG: 'lg',
+    XL: 'xl'
+};
+
+const buttonSizeOptions = {
+    Small: 'sm',
+    Medium: 'md',
+    Large: 'lg'
 };
 
 storiesOf('ButtonGroup', module)
@@ -20,22 +34,18 @@ storiesOf('ButtonGroup', module)
     .addDecorator(withKnobs)
     .add('ButtonGroup', () => (
         <ButtonGroup
-            align={radios('Align', alignOptions, 'center')}
+            align={radios('Align', alignOptions, 'left')}
+            margin={radios('Margin top', marginOptions, 'xs')}
         >
             <Button
                 template='line'
-                type='original'
-                color='primary'
-                size='md'
+                size={radios('Size', buttonSizeOptions, 'md')}
             >
                 First button
             </Button>
 
             <Button
-                template='fill'
-                type='original'
-                color='primary'
-                size='md'
+                size={radios('Size', buttonSizeOptions, 'md')}
             >
                 Second button
             </Button>
