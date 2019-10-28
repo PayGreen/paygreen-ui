@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<a
+  className="sc-bdVaJa sc-bwzfXH iOZcBl"
+  color="primary"
+  size="md"
+  type="original"
+>
+  CTA button
+</a>
+`;
