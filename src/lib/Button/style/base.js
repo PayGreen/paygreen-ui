@@ -7,7 +7,7 @@ const ButtonBase = styled.a.attrs(props => ({
     display: inline-block;
     position: relative;
     outline: none;
-    cursor: ${props => props.type == 'disabled' ? 'not-allowed' : 'pointer'};
+    cursor: ${props => props.type === 'disabled' ? 'not-allowed' : 'pointer'};
     text-transform: uppercase;
     font-weight: ${props => props.theme.font.weight.bold};
     font-size: ${props => props.theme.button.font[props.size]};
@@ -25,7 +25,7 @@ const ButtonBase = styled.a.attrs(props => ({
         height: 100%;
         width: 100%;
         border-radius: ${props => props.theme.radius.sm};
-        opacity: ${props => props.type == 'reverse' ? 0.6 : 0.5};
+        opacity: ${props => props.type === 'reverse' ? 0.6 : 0.5};
         transition:
             all ${props => props.theme.transition.xs},
             opacity ${props => props.theme.transition.sm} linear ${props => props.theme.transition.xs};
