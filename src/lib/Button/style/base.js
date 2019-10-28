@@ -19,7 +19,6 @@ const ButtonBase = styled.a.attrs(props => ({
     &::before,
     &::after {
         content: '';
-        display: block;
         position: absolute;
         z-index: ${props => props.theme.zindex.button};
         height: 100%;
