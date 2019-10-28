@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import { colorOptions, colorDefault, buttonSizeOptions, buttonSizeDefault } from '../../shared/const';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, radios } from '@storybook/addon-knobs';
 
@@ -9,27 +10,14 @@ const typeOptions = {
     Disabled: 'disabled'
 };
 
-const colorOptions = {
-    Primary: 'primary',
-    Secondary: 'secondary',
-    Tertiary: 'tertiary',
-    Quaternary: 'quaternary'
-};
-
-const sizeOptions = {
-    Small: 'sm',
-    Medium: 'md',
-    Large: 'lg'
-};
-
 storiesOf('Button', module)
     .addDecorator(withKnobs)
     .add('Fill', () => (
         <Button
             template='fill'
             type={radios('Type', typeOptions, 'original')}
-            color={radios('Color', colorOptions, 'primary')}
-            size={radios('Size', sizeOptions, 'md')}
+            color={radios('Color', colorOptions, colorDefault)}
+            size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
         >
             {text('Label', 'CTA button')}
         </Button>
@@ -40,8 +28,8 @@ storiesOf('Button', module)
         <Button
             template='line'
             type={radios('Type', typeOptions, 'original')}
-            color={radios('Color', colorOptions, 'primary')}
-            size={radios('Size', sizeOptions, 'md')}
+            color={radios('Color', colorOptions, colorDefault)}
+            size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
         >
             {text('Label', 'CTA button')}
         </Button>

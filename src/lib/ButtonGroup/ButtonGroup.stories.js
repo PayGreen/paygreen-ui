@@ -1,45 +1,35 @@
 import React from 'react';
 import ButtonGroup from './ButtonGroup';
 import Button from '../Button/Button';
+import {
+    colorDefault,
+    buttonSizeOptions,
+    buttonSizeDefault,
+    spaceOptions,
+    alignOptions,
+    alignDefault
+} from '../../shared/const';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, radios } from '@storybook/addon-knobs';
-
-const alignOptions = {
-    Left: 'left',
-    Center: 'center',
-    Right: 'right'
-};
-
-const marginOptions = {
-    XS: 'xs',
-    SM: 'sm',
-    MD: 'md',
-    LG: 'lg',
-    XL: 'xl'
-};
-
-const buttonSizeOptions = {
-    Small: 'sm',
-    Medium: 'md',
-    Large: 'lg'
-};
 
 storiesOf('ButtonGroup', module)
     .addDecorator(withKnobs)
     .add('ButtonGroup', () => (
         <ButtonGroup
-            align={radios('Align', alignOptions, 'left')}
-            margin={radios('Margin top', marginOptions, 'xs')}
+            align={radios('Align', alignOptions, alignDefault)}
+            margin={radios('Margin top', spaceOptions, 'xs')}
         >
             <Button
                 template='line'
-                size={radios('Size', buttonSizeOptions, 'md')}
+                color={colorDefault}
+                size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
             >
                 First button
             </Button>
 
             <Button
-                size={radios('Size', buttonSizeOptions, 'md')}
+                color={colorDefault}
+                size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
             >
                 Second button
             </Button>
