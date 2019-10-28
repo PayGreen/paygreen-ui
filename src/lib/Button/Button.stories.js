@@ -1,21 +1,22 @@
 import React from 'react';
 import Button from './Button';
-import { colorOptions, colorDefault, buttonSizeOptions, buttonSizeDefault } from '../../shared/const';
+import {
+    colorOptions,
+    colorDefault,
+    buttonSizeOptions,
+    buttonSizeDefault,
+    typeOptions,
+    typeDefault
+} from '../../shared/const';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, radios } from '@storybook/addon-knobs';
-
-const typeOptions = {
-    Original: 'original',
-    Reverse: 'reverse',
-    Disabled: 'disabled'
-};
 
 storiesOf('Button', module)
     .addDecorator(withKnobs)
     .add('Fill', () => (
         <Button
             template='fill'
-            type={radios('Type', typeOptions, 'original')}
+            type={radios('Type', typeOptions, typeDefault)}
             color={radios('Color', colorOptions, colorDefault)}
             size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
         >
@@ -27,7 +28,7 @@ storiesOf('Button', module)
     .add('Line', () => (
         <Button
             template='line'
-            type={radios('Type', typeOptions, 'original')}
+            type={radios('Type', typeOptions, typeDefault)}
             color={radios('Color', colorOptions, colorDefault)}
             size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
         >

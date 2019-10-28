@@ -35,6 +35,15 @@ const alignOptions = {
 
 const alignDefault = 'left';
 
+// Design types
+const typeOptions = {
+    Original: 'original',
+    Reverse: 'reverse',
+    Disabled: 'disabled'
+};
+
+const typeDefault = 'original';
+
 export {
     colorOptions,
     colorDefault,
@@ -43,4 +52,6 @@ export {
     spaceOptions,
     alignOptions,
     alignDefault,
+    typeOptions,
+    typeDefault,
 };

@@ -1,6 +1,11 @@
 import React from 'react';
 import Link from './Link';
-import { colorOptions, colorDefault } from '../../shared/const';
+import {
+    colorOptions,
+    colorDefault,
+    typeOptions,
+    typeDefault
+} from '../../shared/const';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, radios } from '@storybook/addon-knobs';
 
@@ -9,6 +14,7 @@ storiesOf('Link', module)
     .add('Link', () => (
         <p>
             <Link
+                type={radios('Type', typeOptions, typeDefault)}
                 color={radios('Color', colorOptions, colorDefault)}
             >
                 {text('Label', 'Link text')}
