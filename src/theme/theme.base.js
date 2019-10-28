@@ -134,6 +134,7 @@ export const ThemeBase = {
         },
         shift: '-3px',
         margin: '10px',
+        marginBlock: '-7px',
         font: {
             sm: '1.2rem',
             md: '1.4rem',
