@@ -28,6 +28,7 @@
         "@babel/preset-env": "^7.6.0",
         "@babel/preset-react": "^7.0.0",
         "@storybook/addon-a11y": "^5.2.1",
+        "@storybook/addon-backgrounds": "^5.2.5",
         "@storybook/addon-knobs": "^5.2.1",
         "@storybook/addon-notes": "^5.2.1",
         "@storybook/addon-viewport": "^5.2.1",
@@ -43,6 +44,7 @@
         "storybook-addon-styled-component-theme": "^1.2.5"
     },
     "dependencies": {
+        "polished": "^3.4.1",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
         "styled-components": "^4.3.2",
