@@ -40,6 +40,10 @@ export const GlobalStyle = createGlobalStyle`
         outline-color: ${ThemeDefault.color.primary.main};
     }
 
+    p {
+        line-height: 1.5;
+    }
+
     p::selection {
         color: ${ThemeDefault.color.white00};
         background-color: ${ThemeDefault.color.primary.main};
