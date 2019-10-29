@@ -2,7 +2,6 @@ import React from 'react';
 import ButtonGroup from './ButtonGroup';
 import Button from '../Button/Button';
 import {
-    colorDefault,
     buttonSizeOptions,
     buttonSizeDefault,
     spaceOptions,
@@ -21,14 +20,12 @@ storiesOf('ButtonGroup', module)
         >
             <Button
                 template='line'
-                color={colorDefault}
                 size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
             >
                 First button
             </Button>
 
             <Button
-                color={colorDefault}
                 size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
             >
                 Second button
