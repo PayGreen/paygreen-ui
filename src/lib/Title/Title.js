@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { convertJsonToValuesArray } from '../../shared/utils';
 import {
     seoOptions,
     seoDefault
@@ -44,7 +43,7 @@ class Title extends PureComponent {
 }
 
 Title.propTypes = {
-    seo: PropTypes.oneOf(convertJsonToValuesArray(seoOptions)),
+    seo: PropTypes.oneOf(Object.values(seoOptions)),
 };
 
 Title.defaultProps = {

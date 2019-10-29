@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { convertJsonToValuesArray } from '../../shared/utils';
 import {
     typeOptions,
     typeDefault,
@@ -16,8 +15,8 @@ class Link extends PureComponent {
 }
 
 Link.propTypes = {
-    type: PropTypes.oneOf(convertJsonToValuesArray(typeOptions)),
-    color: PropTypes.oneOf(convertJsonToValuesArray(colorOptions)),
+    type: PropTypes.oneOf(Object.values(typeOptions)),
+    color: PropTypes.oneOf(Object.values(colorOptions)),
 };
 
 Link.defaultProps = {

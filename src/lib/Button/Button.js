@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { convertJsonToValuesArray } from '../../shared/utils';
 import {
     colorOptions,
     colorDefault,
@@ -45,9 +44,9 @@ class Button extends PureComponent {
 
 Button.propTypes = {
     template: PropTypes.oneOf(['fill', 'line']),
-    type: PropTypes.oneOf(convertJsonToValuesArray(typeOptions)),
-    color: PropTypes.oneOf(convertJsonToValuesArray(colorOptions)),
-    size: PropTypes.oneOf(convertJsonToValuesArray(buttonSizeOptions)),
+    type: PropTypes.oneOf(Object.values(typeOptions)),
+    color: PropTypes.oneOf(Object.values(colorOptions)),
+    size: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     disabled: PropTypes.bool,
 };
 

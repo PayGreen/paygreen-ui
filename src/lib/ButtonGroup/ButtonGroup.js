@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { convertJsonToValuesArray } from '../../shared/utils';
 import {
     spaceOptions,
     alignOptions,
@@ -15,8 +14,8 @@ class ButtonGroup extends PureComponent {
 }
 
 ButtonGroup.propTypes = {
-    align: PropTypes.oneOf(convertJsonToValuesArray(alignOptions)),
-    margin: PropTypes.oneOf(convertJsonToValuesArray(spaceOptions)),
+    align: PropTypes.oneOf(Object.values(alignOptions)),
+    margin: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 ButtonGroup.defaultProps = {
