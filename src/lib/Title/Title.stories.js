@@ -50,5 +50,5 @@ storiesOf('Title', module)
             Your title with <b>an emphasis</b>
         </Title>
     ), {
-        notes: 'Notes for a bicolour title. There is a <b> tag around "an emphasis" text.',
+        notes: 'Notes for a bicolour title. There is a <code>&lt;b&gt;</code> tag around "an emphasis" text.',
     });

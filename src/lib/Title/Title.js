@@ -17,25 +17,25 @@ import {
 class Title extends PureComponent {
     render() {
         switch (this.props.seo) {
-            case '1':
+            case seoOptions.h1:
                 return <TitleH1 {...this.props}>{this.props.children}</TitleH1>;
 
-            case '2':
+            case seoOptions.h2:
                 return <TitleH2 {...this.props}>{this.props.children}</TitleH2>;
 
-            case '3':
+            case seoOptions.h3:
                 return <TitleH3 {...this.props}>{this.props.children}</TitleH3>;
         
-            case '4':
+            case seoOptions.h4:
                 return <TitleH4 {...this.props}>{this.props.children}</TitleH4>;
     
-            case '5':
+            case seoOptions.h5:
                 return <TitleH5 {...this.props}>{this.props.children}</TitleH5>;
 
-            case '6':
+            case seoOptions.h6:
                 return <TitleH6 {...this.props}>{this.props.children}</TitleH6>;
 
-            case '0':
+            case seoOptions.span:
             default:
                 return <TitleSpan {...this.props}>{this.props.children}</TitleSpan>;
         }

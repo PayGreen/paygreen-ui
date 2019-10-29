@@ -4,7 +4,9 @@ import Button from '../Button/Button';
 import {
     buttonSizeOptions,
     buttonSizeDefault,
+    buttonTemplateOptions,
     spaceOptions,
+    spaceDefault,
     alignOptions,
     alignDefault
 } from '../../shared/const';
@@ -16,17 +18,17 @@ storiesOf('ButtonGroup', module)
     .add('ButtonGroup', () => (
         <ButtonGroup
             align={radios('Align', alignOptions, alignDefault)}
-            margin={radios('Margin top', spaceOptions, 'xs')}
+            margin={radios('Margin top', spaceOptions, spaceDefault)}
         >
             <Button
-                template='line'
-                size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
+                template={buttonTemplateOptions.line}
+                size={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
             >
                 First button
             </Button>
 
             <Button
-                size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
+                size={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
             >
                 Second button
             </Button>

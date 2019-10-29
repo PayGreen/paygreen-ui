@@ -1,11 +1,15 @@
 import styled from 'styled-components';
+import { typeOptions } from '../../../shared/const';
 
 const LinkBase = styled.a`
     display: inline-block;
     position: relative;
     outline: none;
     font-weight: ${props => props.theme.font.weight.bold};
-    color: ${props => props.type === 'reverse' ? props.theme.color.white00 : props.theme.color[props.color]['main']};
+    color: ${props => props.type === typeOptions.reverse ?
+        props.theme.color.white00 :
+        props.theme.color[props.color]['main']
+    };
     transition: all ${props => props.theme.transition.xs};
 
     &::after {
@@ -15,7 +19,10 @@ const LinkBase = styled.a`
         z-index: ${props => props.theme.zindex.button};
         height: ${props => props.theme.line};
         width: 100%;
-        background-color: ${props => props.type === 'reverse' ? props.theme.color.white00 : props.theme.color[props.color]['main']};
+        background-color: ${props => props.type === typeOptions.reverse ?
+            props.theme.color.white00 :
+            props.theme.color[props.color]['main']
+        };
         opacity: .3;
         transition: all ${props => props.theme.transition.xs};
     }
@@ -23,7 +30,10 @@ const LinkBase = styled.a`
     &:hover,
     &:active,
     &:focus {
-        color: ${props => props.type === 'reverse' ? props.theme.color[props.color]['main'] : props.theme.color.white00};
+        color: ${props => props.type === typeOptions.reverse ?
+            props.theme.color[props.color]['main'] :
+            props.theme.color.white00
+        };
 
         &::after {
             height: 100%;

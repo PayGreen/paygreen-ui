@@ -17,6 +17,14 @@ const buttonSizeOptions = {
 
 const buttonSizeDefault = buttonSizeOptions.medium;
 
+// Button sizes
+const buttonTemplateOptions = {
+    fill: 'fill',
+    line: 'line'
+};
+
+const buttonTemplateDefault = buttonTemplateOptions.fill;
+
 // Spaces
 const spaceOptions = {
     none: 'none',
@@ -77,6 +85,8 @@ export {
     colorDefault,
     buttonSizeOptions,
     buttonSizeDefault,
+    buttonTemplateOptions,
+    buttonTemplateDefault,
     spaceOptions,
     spaceDefault,
     alignOptions,

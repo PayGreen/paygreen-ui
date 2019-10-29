@@ -1,10 +1,10 @@
 import styled, {css} from 'styled-components';
+import { typeOptions } from '../../../shared/const';
 
 const ButtonBase = styled.a`
     display: inline-block;
     position: relative;
     outline: none;
-    cursor: ${props => props.type == 'disabled' ? 'not-allowed' : 'pointer'};
     text-align: center;
     text-transform: uppercase;
     font-weight: ${props => props.theme.font.weight.bold};
@@ -22,7 +22,7 @@ const ButtonBase = styled.a`
         height: 100%;
         width: 100%;
         border-radius: ${props => props.theme.radius.sm};
-        opacity: ${props => props.type === 'reverse' ? 0.6 : 0.5};
+        opacity: ${props => props.type === typeOptions.reverse ? 0.6 : 0.5};
         transition:
             all ${props => props.theme.transition.xs},
             opacity ${props => props.theme.transition.sm} linear ${props => props.theme.transition.xs};

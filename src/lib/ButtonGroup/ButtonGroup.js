@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
     spaceOptions,
+    spaceDefault,
     alignOptions,
     alignDefault
 } from '../../shared/const';
@@ -20,7 +21,7 @@ ButtonGroup.propTypes = {
 
 ButtonGroup.defaultProps = {
     align: alignDefault,
-    margin: 'xs'
+    margin: spaceDefault
 };
 
 export default ButtonGroup;
