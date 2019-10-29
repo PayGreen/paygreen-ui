@@ -46,6 +46,32 @@ const typeOptions = {
 
 const typeDefault = typeOptions.original;
 
+// Title tags
+const seoOptions = {
+    H1: '1',
+    H2: '2',
+    H3: '3',
+    H4: '4',
+    H5: '5',
+    H6: '6',
+    Span: '0'
+};
+
+const seoDefault = '0';
+
+// Fond sizes
+const fontSizeOptions = {
+    XXS: 'xxs',
+    XS: 'xs',
+    SM: 'sm',
+    Default: 'base',
+    MD: 'md',
+    LG: 'lg',
+    XL: 'xl'
+};
+
+const fontSizeDefault = 'base';
+
 export {
     colorOptions,
     colorDefault,
@@ -57,4 +83,8 @@ export {
     alignDefault,
     typeOptions,
     typeDefault,
+    seoOptions,
+    seoDefault,
+    fontSizeOptions,
+    fontSizeDefault
 };
