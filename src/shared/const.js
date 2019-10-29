@@ -1,47 +1,50 @@
 // Color themes
 const colorOptions = {
-    Primary: 'primary',
-    Secondary: 'secondary',
-    Tertiary: 'tertiary',
-    Quaternary: 'quaternary'
+    primary: 'primary',
+    secondary: 'secondary',
+    tertiary: 'tertiary',
+    quaternary: 'quaternary'
 };
 
-const colorDefault = 'primary';
+const colorDefault = colorOptions.primary;
 
 // Button sizes
 const buttonSizeOptions = {
-    Small: 'sm',
-    Medium: 'md',
-    Large: 'lg'
+    small: 'sm',
+    medium: 'md',
+    large: 'lg'
 };
 
-const buttonSizeDefault = 'md';
+const buttonSizeDefault = buttonSizeOptions.medium;
 
 // Spaces
 const spaceOptions = {
-    XS: 'xs',
-    SM: 'sm',
-    MD: 'md',
-    LG: 'lg',
-    XL: 'xl'
+    none: 'none',
+    xs: 'xs',
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl'
 };
+
+const spaceDefault = spaceOptions.none;
 
 // Align
 const alignOptions = {
-    Left: 'left',
-    Center: 'center',
-    Right: 'right'
+    left: 'left',
+    center: 'center',
+    right: 'right'
 };
 
-const alignDefault = 'left';
+const alignDefault = alignOptions.left;
 
 // Design types
 const typeOptions = {
-    Original: 'original',
-    Reverse: 'reverse'
+    original: 'original',
+    reverse: 'reverse'
 };
 
-const typeDefault = 'original';
+const typeDefault = typeOptions.original;
 
 export {
     colorOptions,
@@ -49,6 +52,7 @@ export {
     buttonSizeOptions,
     buttonSizeDefault,
     spaceOptions,
+    spaceDefault,
     alignOptions,
     alignDefault,
     typeOptions,
