@@ -73,7 +73,6 @@ export const ThemeBase = {
         weight: {
             normal: 400,
             bold: 700,
-            ultra: 800,
         }
     },
     line: '2px',
