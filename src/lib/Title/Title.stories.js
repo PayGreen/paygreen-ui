@@ -2,31 +2,36 @@ import React from 'react';
 import Title from './Title';
 import {
     seoOptions,
+    seoDefault,
     typeOptions,
     typeDefault,
+    colorNumberDefault,
     colorOptions,
     colorDefault,
+    greyOptions,
+    greyDefault,
     fontSizeOptions,
     fontSizeDefault,
     alignOptions,
     alignDefault,
     spaceOptions,
+    spaceDefault,
 } from '../../shared/const';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text, radios } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text, radios, select } from '@storybook/addon-knobs';
 
 storiesOf('Title', module)
     .addDecorator(withKnobs)
     .add('Solid', () => (
         <Title
-            seo={radios('SEO', seoOptions, '1')}
+            seo={select('SEO', seoOptions, seoDefault)}
             type={radios('Type', typeOptions, typeDefault)}
-            colorStyle='solid'
+            colorNumber={colorNumberDefault}
             color={radios('Main color', colorOptions, colorDefault)}
-            size={radios('Size', fontSizeOptions, fontSizeDefault)}
+            size={select('Size', fontSizeOptions, fontSizeDefault)}
             align={radios('Align', alignOptions, alignDefault)}
-            marginTop={radios('Margin top', spaceOptions, 'xs')}
-            marginBottom={radios('Margin bottom', spaceOptions, 'xs')}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
             border={boolean('Border bottom', true)}
         >
             {text('Label', 'Your simple title')}
@@ -36,15 +41,15 @@ storiesOf('Title', module)
     })
     .add('Bicolour', () => (
         <Title
-            seo={radios('SEO', seoOptions, '1')}
+            seo={select('SEO', seoOptions, seoDefault)}
             type={radios('Type', typeOptions, typeDefault)}
-            colorStyle='bicolour'
+            colorNumber={colorNumberDefault}
             color={radios('Main color', colorOptions, colorDefault)}
-            color2={radios('Second color', {Grey: 'grey40', DarkGrey: 'grey60'}, 'grey40')}
-            size={radios('Size', fontSizeOptions, fontSizeDefault)}
+            color2={radios('Second color', greyOptions, greyDefault)}
+            size={select('Size', fontSizeOptions, fontSizeDefault)}
             align={radios('Align', alignOptions, alignDefault)}
-            marginTop={radios('Margin top', spaceOptions, 'xs')}
-            marginBottom={radios('Margin bottom', spaceOptions, 'xs')}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
             border={boolean('Border bottom', true)}
         >
             Your title with <b>an emphasis</b>

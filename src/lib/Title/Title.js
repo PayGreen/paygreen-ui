@@ -2,7 +2,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
     seoOptions,
-    seoDefault
+    seoDefault,
+    typeOptions,
+    typeDefault,
+    colorNumberOptions,
+    colorNumberDefault,
+    colorOptions,
+    colorDefault,
+    greyOptions,
+    greyDefault,
+    fontSizeOptions,
+    fontSizeDefault,
+    alignOptions,
+    alignDefault,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/const';
 import {
     TitleH1,
@@ -44,10 +58,28 @@ class Title extends PureComponent {
 
 Title.propTypes = {
     seo: PropTypes.oneOf(Object.values(seoOptions)),
+    type: PropTypes.oneOf(Object.values(typeOptions)),
+    colorNumber: PropTypes.oneOf(Object.values(colorNumberOptions)),
+    color: PropTypes.oneOf(Object.values(colorOptions)),
+    color2: PropTypes.oneOf(Object.values(greyOptions)),
+    size: PropTypes.oneOf(Object.values(fontSizeOptions)),
+    align: PropTypes.oneOf(Object.values(alignOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    border: PropTypes.bool,
 };
 
 Title.defaultProps = {
     seo: seoDefault,
+    type: typeDefault,
+    colorNumber: colorNumberDefault,
+    color: colorDefault,
+    color2: greyDefault,
+    size: fontSizeDefault,
+    align: alignDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    border: false,
 };
 
 export default Title;

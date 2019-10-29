@@ -1,3 +1,11 @@
+// Color nomber
+const colorNumberOptions = {
+    one: '1',
+    two: '2',
+};
+
+const colorNumberDefault = colorNumberOptions.one;
+
 // Color themes
 const colorOptions = {
     primary: 'primary',
@@ -7,6 +15,14 @@ const colorOptions = {
 };
 
 const colorDefault = colorOptions.primary;
+
+// Grey shades
+const greyOptions = {
+    grey40: 'grey40',
+    grey60: 'grey60',
+};
+
+const greyDefault = greyOptions.grey40;
 
 // Button sizes
 const buttonSizeOptions = {
@@ -81,8 +97,12 @@ const fontSizeOptions = {
 const fontSizeDefault = fontSizeOptions.default;
 
 export {
+    colorNumberOptions,
+    colorNumberDefault,
     colorOptions,
     colorDefault,
+    greyOptions,
+    greyDefault,
     buttonSizeOptions,
     buttonSizeDefault,
     buttonTemplateOptions,
@@ -96,5 +116,5 @@ export {
     seoOptions,
     seoDefault,
     fontSizeOptions,
-    fontSizeDefault
+    fontSizeDefault,
 };
