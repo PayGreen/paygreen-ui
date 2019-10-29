@@ -48,29 +48,29 @@ const typeDefault = typeOptions.original;
 
 // Title tags
 const seoOptions = {
-    H1: '1',
-    H2: '2',
-    H3: '3',
-    H4: '4',
-    H5: '5',
-    H6: '6',
-    Span: '0'
+    h1: '1',
+    h2: '2',
+    h3: '3',
+    h4: '4',
+    h5: '5',
+    h6: '6',
+    span: '0'
 };
 
-const seoDefault = '0';
+const seoDefault = seoOptions.span;
 
 // Fond sizes
 const fontSizeOptions = {
-    XXS: 'xxs',
-    XS: 'xs',
-    SM: 'sm',
-    Default: 'base',
-    MD: 'md',
-    LG: 'lg',
-    XL: 'xl'
+    xxs: 'xxs',
+    xs: 'xs',
+    sm: 'sm',
+    default: 'base',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl'
 };
 
-const fontSizeDefault = 'base';
+const fontSizeDefault = fontSizeOptions.default;
 
 export {
     colorOptions,
