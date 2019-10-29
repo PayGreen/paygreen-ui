@@ -22,6 +22,8 @@ addParameters({
       base: 'light',
       appBg: '#f9f9f9',
     }),
+    isFullscreen: false,
+    showPanel: true,
   },
   backgrounds: [
     // https://www.npmjs.com/package/@storybook/addon-backgrounds

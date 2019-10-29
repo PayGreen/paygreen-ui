@@ -64,7 +64,7 @@ const hover = css`
 `;
 
 const disabled = css`
-    cursor: 'not-allowed';
+    cursor: not-allowed;
 `;
 
 export {

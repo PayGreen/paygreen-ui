@@ -82,6 +82,7 @@ export const ThemeBase = {
         lg: '12px',
     },
     space: {
+        none: '0',
         xs: '4px',
         sm: '8px',
         md: '16px',

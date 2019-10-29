@@ -10,28 +10,25 @@ import {
 
 class Button extends PureComponent {
     render() {
-        switch (this.props.type) {
-            case 'reverse':
-                if (this.props.template === 'line') {
-                    return <ButtonLineReverse {...this.props}>{this.props.children}</ButtonLineReverse>;
-                } else {
-                    return <ButtonFillReverse {...this.props}>{this.props.children}</ButtonFillReverse>;
-                }
-
-            case 'disabled':
-                if (this.props.template === 'line') {
-                    return <ButtonLineDisabled {...this.props}>{this.props.children}</ButtonLineDisabled>;
-                } else {
-                    return <ButtonFillDisabled {...this.props}>{this.props.children}</ButtonFillDisabled>;
-                }
+        if (this.props.disabled) {
+            if (this.props.template === 'line') {
+                return <ButtonLineDisabled {...this.props}>{this.props.children}</ButtonLineDisabled>;
+            }
             
-            case 'original':
-            default:
-                if (this.props.template === 'line') {
-                    return <ButtonLine {...this.props}>{this.props.children}</ButtonLine>;
-                } else {
-                    return <ButtonFill {...this.props}>{this.props.children}</ButtonFill>;
-                }
+            return <ButtonFillDisabled {...this.props}>{this.props.children}</ButtonFillDisabled>;
+        } else if (this.props.type === 'reverse') {
+            if (this.props.template === 'line') {
+                return <ButtonLineReverse {...this.props}>{this.props.children}</ButtonLineReverse>;
+            }
+            
+            return <ButtonFillReverse {...this.props}>{this.props.children}</ButtonFillReverse>;
+        } else {
+            // Case of this.props.type === 'original'
+            if (this.props.template === 'line') {
+                return <ButtonLine {...this.props}>{this.props.children}</ButtonLine>;
+            }
+            
+            return <ButtonFill {...this.props}>{this.props.children}</ButtonFill>;
         }
     }
 }
