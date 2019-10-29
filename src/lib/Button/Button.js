@@ -1,4 +1,14 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { convertJsonToValuesArray } from '../../shared/utils';
+import {
+    colorOptions,
+    colorDefault,
+    buttonSizeOptions,
+    buttonSizeDefault,
+    typeOptions,
+    typeDefault
+} from '../../shared/const';
 import {
     ButtonFill,
     ButtonLine,
@@ -32,5 +42,21 @@ class Button extends PureComponent {
         }
     }
 }
+
+Button.propTypes = {
+    template: PropTypes.oneOf(['fill', 'line']),
+    type: PropTypes.oneOf(convertJsonToValuesArray(typeOptions)),
+    color: PropTypes.oneOf(convertJsonToValuesArray(colorOptions)),
+    size: PropTypes.oneOf(convertJsonToValuesArray(buttonSizeOptions)),
+    disabled: PropTypes.bool,
+};
+
+Button.defaultProps = {
+    template: 'fill',
+    type: typeDefault,
+    color: colorDefault,
+    size: buttonSizeDefault,
+    disabled: false,
+};
 
 export default Button;

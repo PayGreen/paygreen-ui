@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-const LinkBase = styled.a.attrs(props => ({
-    color: props.color || 'primary',
-}))`
+const LinkBase = styled.a`
     display: inline-block;
     position: relative;
     outline: none;
