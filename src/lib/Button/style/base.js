@@ -1,13 +1,14 @@
 import styled, {css} from 'styled-components';
 
 const ButtonBase = styled.a.attrs(props => ({
-    color: props.color || props.theme.color.primary.main,
+    color: props.color || 'primary',
     size: props.size || 'md'
 }))`
     display: inline-block;
     position: relative;
     outline: none;
-    cursor: ${props => props.type === 'disabled' ? 'not-allowed' : 'pointer'};
+    cursor: ${props => props.type == 'disabled' ? 'not-allowed' : 'pointer'};
+    text-align: center;
     text-transform: uppercase;
     font-weight: ${props => props.theme.font.weight.bold};
     font-size: ${props => props.theme.button.font[props.size]};
@@ -19,7 +20,6 @@ const ButtonBase = styled.a.attrs(props => ({
     &::before,
     &::after {
         content: '';
-        display: block;
         position: absolute;
         z-index: ${props => props.theme.zindex.button};
         height: 100%;
