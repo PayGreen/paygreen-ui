@@ -73,8 +73,37 @@ export const ThemeBase = {
         weight: {
             normal: 400,
             bold: 700,
-            ultra: 800,
-        }
+        },
+        spacing: '0.3em',
+        underline: {
+            space: {
+                xxs: '10px',
+                xs: '10px',
+                sm: '12px',
+                base: '12px',
+                md: '12px',
+                lg: '24px',
+                xl: '24px',
+            },
+            line: {
+                xxs: '2px',
+                xs: '2px',
+                sm: '2px',
+                base: '2px',
+                md: '2px',
+                lg: '3px',
+                xl: '3px',
+            },
+            width: {
+                xxs: '40px',
+                xs: '40px',
+                sm: '50px',
+                base: '50px',
+                md: '65px',
+                lg: '80px',
+                xl: '80px',
+            },
+        },
     },
     line: '2px',
     radius: {

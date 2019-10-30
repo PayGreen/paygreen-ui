@@ -5,6 +5,7 @@ import {
     colorDefault,
     buttonSizeOptions,
     buttonSizeDefault,
+    buttonTemplateOptions,
     typeOptions,
     typeDefault
 } from '../../shared/const';
@@ -15,7 +16,6 @@ storiesOf('Button', module)
     .addDecorator(withKnobs)
     .add('Fill', () => (
         <Button
-            template='fill'
             type={radios('Type', typeOptions, typeDefault)}
             color={radios('Color', colorOptions, colorDefault)}
             size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
@@ -28,7 +28,7 @@ storiesOf('Button', module)
     })
     .add('Line', () => (
         <Button
-            template='line'
+            template={buttonTemplateOptions.line}
             type={radios('Type', typeOptions, typeDefault)}
             color={radios('Color', colorOptions, colorDefault)}
             size={radios('Size', buttonSizeOptions, buttonSizeDefault)}

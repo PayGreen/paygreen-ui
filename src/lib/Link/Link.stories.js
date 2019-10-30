@@ -21,5 +21,5 @@ storiesOf('Link', module)
             </Link> curabitur congue varius ex et posuere. Maecenas tincidunt diam ut nisl porttitor scelerisque. Donec egestas elit dolor, quis eleifend ipsum sagittis ut. Proin molestie lorem et neque tempus tristique. Mauris finibus dui sem, nec suscipit mi porta a.
         </p>
     ), {
-        notes: 'Notes for link.',
+        notes: 'Link should be used inside <code>&lt;p&gt;</code> tags, with text around.',
     });

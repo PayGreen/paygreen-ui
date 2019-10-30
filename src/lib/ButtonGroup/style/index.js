@@ -1,12 +1,16 @@
 import styled from 'styled-components';
+import { alignOptions } from '../../../shared/const';
 
-const ButtonGroupBase = styled.div.attrs(props => ({
-    align: props.align || 'center',
-    margin: props.margin || 'xs'
-}))`
+const ButtonGroupBase = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: ${props => props.align === 'left' ? 'flex-start' : props.align === 'right' ? 'flex-end' : props.align};
+    justify-content: ${props =>
+        props.align === alignOptions.left ? 
+        'flex-start' : 
+            props.align === alignOptions.right ? 
+            'flex-end' :
+            props.align
+    };
     margin: 0 ${props => props.theme.button.marginBlock};
     margin-top: ${props => props.theme.space[props.margin]};
 `;

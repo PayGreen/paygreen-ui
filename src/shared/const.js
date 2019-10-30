@@ -1,3 +1,11 @@
+// Color nomber
+const colorNumberOptions = {
+    one: '1',
+    two: '2',
+};
+
+const colorNumberDefault = colorNumberOptions.one;
+
 // Color themes
 const colorOptions = {
     primary: 'primary',
@@ -8,6 +16,14 @@ const colorOptions = {
 
 const colorDefault = colorOptions.primary;
 
+// Grey shades
+const greyOptions = {
+    grey40: 'grey40',
+    grey60: 'grey60',
+};
+
+const greyDefault = greyOptions.grey40;
+
 // Button sizes
 const buttonSizeOptions = {
     small: 'sm',
@@ -16,6 +32,14 @@ const buttonSizeOptions = {
 };
 
 const buttonSizeDefault = buttonSizeOptions.medium;
+
+// Button sizes
+const buttonTemplateOptions = {
+    fill: 'fill',
+    line: 'line'
+};
+
+const buttonTemplateDefault = buttonTemplateOptions.fill;
 
 // Spaces
 const spaceOptions = {
@@ -46,15 +70,51 @@ const typeOptions = {
 
 const typeDefault = typeOptions.original;
 
+// Title tags
+const seoOptions = {
+    h1: '1',
+    h2: '2',
+    h3: '3',
+    h4: '4',
+    h5: '5',
+    h6: '6',
+    span: '0'
+};
+
+const seoDefault = seoOptions.span;
+
+// Fond sizes
+const fontSizeOptions = {
+    xxs: 'xxs',
+    xs: 'xs',
+    sm: 'sm',
+    default: 'base',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl'
+};
+
+const fontSizeDefault = fontSizeOptions.default;
+
 export {
+    colorNumberOptions,
+    colorNumberDefault,
     colorOptions,
     colorDefault,
+    greyOptions,
+    greyDefault,
     buttonSizeOptions,
     buttonSizeDefault,
+    buttonTemplateOptions,
+    buttonTemplateDefault,
     spaceOptions,
     spaceDefault,
     alignOptions,
     alignDefault,
     typeOptions,
     typeDefault,
+    seoOptions,
+    seoDefault,
+    fontSizeOptions,
+    fontSizeDefault,
 };
