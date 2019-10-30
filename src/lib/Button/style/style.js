@@ -1,81 +1,71 @@
-import styled from 'styled-components';
-import {
-    ButtonBase, 
-    hover,
-    disabled
-} from './base';
+import styled, {css} from 'styled-components';
+import { typeOptions } from '../../../shared/const';
 
-const ButtonFill = styled(ButtonBase)`
-    ${hover};
-
-    color: ${props => props.theme.color.white00};
+const ButtonBase = styled.a`
+    display: inline-block;
+    position: relative;
+    outline: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: ${props => props.theme.font.weight.bold};
+    font-size: ${props => props.theme.button.font[props.size]};
+    letter-spacing: ${props => props.theme.button.letterSpacing[props.size]};
+    padding: ${props => props.theme.button.paddingHeight[props.size]} ${props => props.theme.button.paddingWidth[props.size]};
+    margin: ${props => props.theme.button.margin};
+    transition: all ${props => props.theme.transition.xs};
 
     &::before,
     &::after {
-        background-color: ${props => props.theme.color[props.color]['main']};
+        content: '';
+        position: absolute;
+        z-index: ${props => props.theme.zindex.button};
+        height: 100%;
+        width: 100%;
+        border-radius: ${props => props.theme.radius.sm};
+        opacity: ${props => props.type === typeOptions.reverse ? 0.6 : 0.5};
+        transition:
+            all ${props => props.theme.transition.xs},
+            opacity ${props => props.theme.transition.sm} linear ${props => props.theme.transition.xs};
+    }
+
+    &::before {
+        top: ${props => props.theme.button.shift};
+        left: ${props => props.theme.button.shift};
+    }
+
+    &::after {
+        bottom: ${props => props.theme.button.shift};
+        right: ${props => props.theme.button.shift};
     }
 `;
 
-const ButtonLine = styled(ButtonBase)`
-    ${hover};
+const hover = css`
+    &:hover,
+    &:active,
+    &:focus {
+        &::before,
+        &::after {
+            opacity: 1;
+        }
 
-    color: ${props => props.theme.color[props.color]['main']};
+        &::before {
+            top: 0;
+            left: 0;
+        }
 
-    &::before,
-    &::after {
-        border: solid ${props => props.theme.line} ${props => props.theme.color[props.color]['main']};
+        &::after {
+            bottom: 0;
+            right: 0;
+        }
     }
 `;
 
-const ButtonFillReverse = styled(ButtonBase)`
-    ${hover};
-    
-    color: ${props => props.theme.color[props.color]['main']};
-
-    &::before,
-    &::after {
-        background-color: ${props => props.theme.color.white00};
-    }
-`;
-
-const ButtonLineReverse = styled(ButtonBase)`
-    ${hover};
-
-    color: ${props => props.theme.color.white00};
-
-    &::before,
-    &::after {
-        border: solid ${props => props.theme.line} ${props => props.theme.color.white00};
-    }
-`;
-
-const ButtonFillDisabled = styled(ButtonBase)`
-    ${disabled};
-
-    color: ${props => props.theme.color.white20};
-
-    &::before,
-    &::after {
-        background-color: ${props => props.theme.color.grey30};
-    }
-`;
-
-const ButtonLineDisabled = styled(ButtonBase)`
-    ${disabled};
-
-    color: ${props => props.theme.color.grey30};
-
-    &::before,
-    &::after {
-        border: solid ${props => props.theme.line} ${props => props.theme.color.grey30};
-    }
+const disabled = css`
+    cursor: not-allowed;
 `;
 
 export {
-    ButtonFill,
-    ButtonLine,
-    ButtonFillReverse,
-    ButtonLineReverse,
-    ButtonFillDisabled,
-    ButtonLineDisabled
+    ButtonBase, 
+    hover,
+    disabled
 };
