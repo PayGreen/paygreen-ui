@@ -1,45 +1,72 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
+import {
+    typeOptions,
+    colorNumberOptions
+} from '../../../shared/const';
+import {
+    titleColor,
+    smallSizes,
+    underlineAlign
+} from './base';
 
 const base = css`
-    margin: 0;
+    margin-top: ${props => props.theme.space[props.marginTop]};
+    margin-bottom: ${props => props.theme.space[props.marginTop]};
+    text-align: ${props => props.align};
+    font-size: ${props => props.theme.font.size[props.size]};
     font-weight: ${props => props.theme.font.weight.bold};
 `;
 
-const TitleH1 = styled.h1`
-    ${base};
+const smallText = css`
+    text-transform: uppercase;
+    letter-spacing: ${props => props.theme.font.spacing};
 `;
 
-const TitleH2 = styled.h2`
-    ${base};
+const oneColor = css`
+    color: ${props => props.type === typeOptions.reverse ?
+        titleColor.whiteLight :
+        titleColor.main
+    };
 `;
 
-const TitleH3 = styled.h3`
-    ${base};
+const twoColors = css`
+    color: ${props => props.type === typeOptions.reverse ?
+        titleColor.whiteLight :
+        props.theme.color[props.color2]
+    };
+
+    b {
+        color: ${props => props.type === typeOptions.reverse ?
+            titleColor.whiteSolid :
+            titleColor.main
+        };
+    }
 `;
 
-const TitleH4 = styled.h3`
-    ${base};
+const underline = css`
+    position: relative;
+    padding-bottom: ${props => props.theme.font.underline.space[props.size]};
+    margin-bottom: ${props => props.theme.font.underline.space[props.size]};
+
+    &::after {
+        ${props => underlineAlign[props.align]};
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: ${props => props.theme.font.underline.line[props.size]};
+        width: ${props => props.theme.font.underline.width[props.size]};
+        background-color: ${props => props.type === typeOptions.reverse ?
+            titleColor.whiteTransparent :
+            titleColor.mainLight
+        };
+    }
 `;
 
-const TitleH5 = styled.h5`
+const titleStyle = css`
     ${base};
+    ${props => smallSizes.includes(props.size) ? smallText : ''};
+    ${props => props.colorNumber === colorNumberOptions.one ? oneColor : twoColors};
+    ${props => props.underline ? underline : ''};
 `;
 
-const TitleH6 = styled.h6`
-    ${base};
-`;
-
-const TitleSpan = styled.span`
-    ${base};
-    display: block;
-`;
-
-export {
-    TitleH1,
-    TitleH2,
-    TitleH3,
-    TitleH4,
-    TitleH5,
-    TitleH6,
-    TitleSpan
-};
+export { titleStyle };

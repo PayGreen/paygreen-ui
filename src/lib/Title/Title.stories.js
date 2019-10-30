@@ -5,13 +5,12 @@ import {
     seoDefault,
     typeOptions,
     typeDefault,
-    colorNumberDefault,
+    colorNumberOptions,
     colorOptions,
     colorDefault,
     greyOptions,
     greyDefault,
     fontSizeOptions,
-    fontSizeDefault,
     alignOptions,
     alignDefault,
     spaceOptions,
@@ -22,38 +21,35 @@ import { withKnobs, boolean, text, radios, select } from '@storybook/addon-knobs
 
 storiesOf('Title', module)
     .addDecorator(withKnobs)
-    .add('Solid', () => (
+    .add('With only one color', () => (
         <Title
             seo={select('SEO', seoOptions, seoDefault)}
             type={radios('Type', typeOptions, typeDefault)}
-            colorNumber={colorNumberDefault}
-            color={radios('Main color', colorOptions, colorDefault)}
-            size={select('Size', fontSizeOptions, fontSizeDefault)}
+            color={radios('Color', colorOptions, colorDefault)}
+            size={select('Size', fontSizeOptions, 'lg')}
             align={radios('Align', alignOptions, alignDefault)}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
-            border={boolean('Border bottom', true)}
+            underline={boolean('Underline', true)}
         >
             {text('Label', 'Your simple title')}
         </Title>
     ), {
-        notes: 'Notes for solid title.',
+        notes: 'BTW, you can choose margin-bottom size and your tag (for seo).',
     })
-    .add('Bicolour', () => (
+    .add('With two colors', () => (
         <Title
             seo={select('SEO', seoOptions, seoDefault)}
             type={radios('Type', typeOptions, typeDefault)}
-            colorNumber={colorNumberDefault}
+            colorNumber={colorNumberOptions.two}
             color={radios('Main color', colorOptions, colorDefault)}
             color2={radios('Second color', greyOptions, greyDefault)}
-            size={select('Size', fontSizeOptions, fontSizeDefault)}
+            size={select('Size', fontSizeOptions, 'lg')}
             align={radios('Align', alignOptions, alignDefault)}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
-            border={boolean('Border bottom', true)}
+            underline={boolean('Underline', true)}
         >
             Your title with <b>an emphasis</b>
         </Title>
     ), {
-        notes: 'Notes for a bicolour title. There is a <code>&lt;b&gt;</code> tag around "an emphasis" text.',
+        notes: 'You can change colors number with colorNumber prop. There is a <code>&lt;b&gt;</code> tag around "an emphasis" text. BTW, you can choose margin-bottom size and your tag (for seo).',
     });

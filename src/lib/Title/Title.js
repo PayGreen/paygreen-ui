@@ -66,7 +66,7 @@ Title.propTypes = {
     align: PropTypes.oneOf(Object.values(alignOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
-    border: PropTypes.bool,
+    underline: PropTypes.bool,
 };
 
 Title.defaultProps = {
@@ -79,7 +79,7 @@ Title.defaultProps = {
     align: alignDefault,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
-    border: false,
+    underline: false,
 };
 
 export default Title;
