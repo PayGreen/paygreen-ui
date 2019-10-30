@@ -17,7 +17,7 @@ import {
     alignDefault,
     spaceOptions,
     spaceDefault,
-} from '../../shared/const';
+} from '../../shared/constants';
 import {
     TitleH1,
     TitleH2,

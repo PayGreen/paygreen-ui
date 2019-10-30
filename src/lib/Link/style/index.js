@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typeOptions } from '../../../shared/const';
+import { typeOptions } from '../../../shared/constants';
 
 const LinkBase = styled.a`
     display: inline-block;

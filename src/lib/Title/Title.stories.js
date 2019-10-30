@@ -15,7 +15,7 @@ import {
     alignDefault,
     spaceOptions,
     spaceDefault,
-} from '../../shared/const';
+} from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text, radios, select } from '@storybook/addon-knobs';
 

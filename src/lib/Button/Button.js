@@ -9,7 +9,7 @@ import {
     buttonTemplateDefault,
     typeOptions,
     typeDefault
-} from '../../shared/const';
+} from '../../shared/constants';
 import {
     ButtonFill,
     ButtonLine,

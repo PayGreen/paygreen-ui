@@ -5,7 +5,7 @@ import {
     typeDefault,
     colorOptions,
     colorDefault
-} from '../../shared/const';
+} from '../../shared/constants';
 import { LinkBase } from './style';
 
 class Link extends PureComponent {

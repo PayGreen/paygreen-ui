@@ -5,7 +5,7 @@ import {
     colorDefault,
     typeOptions,
     typeDefault
-} from '../../shared/const';
+} from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, radios } from '@storybook/addon-knobs';
 

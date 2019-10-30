@@ -5,7 +5,7 @@ import {
     spaceDefault,
     alignOptions,
     alignDefault
-} from '../../shared/const';
+} from '../../shared/constants';
 import { ButtonGroupBase } from './style';
 
 class ButtonGroup extends PureComponent {

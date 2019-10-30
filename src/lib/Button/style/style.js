@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import { typeOptions } from '../../../shared/const';
+import { typeOptions } from '../../../shared/constants';
 
 const ButtonBase = styled.a`
     display: inline-block;

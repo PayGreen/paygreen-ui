@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import {
     typeOptions,
     colorNumberOptions
-} from '../../../shared/const';
+} from '../../../shared/constants';
 import {
     titleColor,
     smallSizes,
