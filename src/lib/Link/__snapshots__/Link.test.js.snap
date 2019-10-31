@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<a
+  href="#"
+>
+  <span
+    className="sc-bdVaJa hTKCbV"
+    color="primary"
+  >
+    Link text
+  </span>
+</a>
+`;

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="sc-bdVaJa hpwYBX"
+>
+  <a
+    href="#"
+  >
+    <span
+      className="sc-bwzfXH sc-bxivhb jQUYud"
+      color="primary"
+      disabled={false}
+      size="md"
+    >
+      First button
+    </span>
+  </a>
+  <a
+    href="#"
+  >
+    <span
+      className="sc-bwzfXH sc-htpNat hdCOxL"
+      color="primary"
+      disabled={false}
+      size="md"
+    >
+      Second button
+    </span>
+  </a>
+</div>
+`;
