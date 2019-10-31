@@ -20,18 +20,22 @@ storiesOf('ButtonGroup', module)
             align={radios('Align', alignOptions, alignDefault)}
             margin={radios('Margin top', spaceOptions, spaceDefault)}
         >
-            <Button
-                template={buttonTemplateOptions.line}
-                size={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
-            >
-                First button
-            </Button>
+            <a href="#">
+                <Button
+                    template={buttonTemplateOptions.line}
+                    size={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
+                >
+                    First button
+                </Button>
+            </a>
 
-            <Button
-                size={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
-            >
-                Second button
-            </Button>
+            <a href="#">
+                <Button
+                    size={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
+                >
+                    Second button
+                </Button>
+            </a>
         </ButtonGroup>
     ), {
         notes: 'You should always use Button component inside a ButtonGroup.',

@@ -1,17 +1,16 @@
 import styled, {css} from 'styled-components';
 import { colorTypeOptions } from '../../../shared/constants';
 
-const ButtonBase = styled.a`
+const ButtonBase = styled.span`
     display: inline-block;
     position: relative;
-    outline: none;
     text-align: center;
     text-transform: uppercase;
     font-weight: ${props => props.theme.font.weight.bold};
     font-size: ${props => props.theme.button.font[props.size]};
     letter-spacing: ${props => props.theme.button.letterSpacing[props.size]};
     padding: ${props => props.theme.button.paddingHeight[props.size]} ${props => props.theme.button.paddingWidth[props.size]};
-    margin: ${props => props.theme.button.margin};
+    margin: ${props => props.theme.button.shift};
     transition: all ${props => props.theme.transition.xs};
 
     &::before,
@@ -29,20 +28,20 @@ const ButtonBase = styled.a`
     }
 
     &::before {
-        top: ${props => props.theme.button.shift};
-        left: ${props => props.theme.button.shift};
+        top: -${props => props.theme.button.shift};
+        left: -${props => props.theme.button.shift};
     }
 
     &::after {
-        bottom: ${props => props.theme.button.shift};
-        right: ${props => props.theme.button.shift};
+        bottom: -${props => props.theme.button.shift};
+        right: -${props => props.theme.button.shift};
     }
 `;
 
 const hover = css`
-    &:hover,
-    &:active,
-    &:focus {
+    a:hover &,
+    a:active &,
+    a:focus & {
         &::before,
         &::after {
             opacity: 1;

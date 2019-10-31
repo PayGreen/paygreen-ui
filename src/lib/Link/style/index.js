@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { colorTypeOptions } from '../../../shared/constants';
 
-const LinkBase = styled.a`
+const LinkBase = styled.span`
     display: inline-block;
     position: relative;
-    outline: none;
     font-weight: ${props => props.theme.font.weight.bold};
     color: ${props => props.colorType === colorTypeOptions.reverse ?
         props.theme.color.white00 :
@@ -27,9 +26,9 @@ const LinkBase = styled.a`
         transition: all ${props => props.theme.transition.xs};
     }
 
-    &:hover,
-    &:active,
-    &:focus {
+    a:hover &,
+    a:active &,
+    a:focus & {
         color: ${props => props.colorType === colorTypeOptions.reverse ?
             props.theme.color[props.color]['main'] :
             props.theme.color.white00

@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
     a {
         cursor: pointer;
         text-decoration: none;
-        outline-color: ${ThemeDefault.color.primary.main};
+        outline: none;
     }
 
     p {

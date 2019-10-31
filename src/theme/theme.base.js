@@ -162,9 +162,7 @@ export const ThemeBase = {
             md: '16px',
             lg: '19px',
         },
-        shift: '-3px',
-        margin: '10px',
-        marginBlock: '-7px',
+        shift: '3px',
         font: {
             sm: '1.2rem',
             md: '1.4rem',
