@@ -34,6 +34,12 @@ class Breadcrumb extends PureComponent {
 }
 
 Breadcrumb.propTypes = {
+    elements: PropTypes.arrayOf(
+        PropTypes.shape({
+            url: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired
+        })
+    ).isRequired,
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     color: PropTypes.oneOf(Object.values(colorOptions)),
 };
