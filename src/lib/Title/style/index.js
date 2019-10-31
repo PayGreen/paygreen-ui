@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { titleStyle } from './style';
+import { titleStyle } from './base';
 
 const TitleH1 = styled.h1`
     ${titleStyle};
