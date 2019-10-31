@@ -7,7 +7,7 @@ import {
     titleColor,
     smallSizes,
     underlineAlign
-} from './base';
+} from './constants';
 
 const base = css`
     margin-top: ${props => props.theme.space[props.marginTop]};

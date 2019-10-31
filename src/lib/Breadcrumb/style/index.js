@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { textColor } from './base';
+import { textColor } from './constants';
 
 const BreadcrumbBase = styled.ul`
     margin: ${props => props.theme.space.md} 0;
