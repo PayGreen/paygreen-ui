@@ -5,16 +5,9 @@ import { ThemeDefault } from '../../theme';
 
 it('renders without crashing', () => {
     const button = TestRenderer.create(
-        <Button
-            theme={ThemeDefault}
-            template='fill'
-            colorType='original'
-            color='primary'
-            size='md'
-        >
+        <Button theme={ThemeDefault}>
             CTA button
         </Button>
     );
-    let tree = button.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(button.toJSON()).toMatchSnapshot();
 })
