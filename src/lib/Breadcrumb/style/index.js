@@ -21,14 +21,14 @@ const BreadcrumbBase = styled.ul`
 
             &::before {
                 content: '>';
-                color: ${props => textColor.default[props.type]};
+                color: ${props => textColor.default[props.colorType]};
                 margin-right: ${props => props.theme.space.sm};
             }
         }
 
         a {
             outline: none;
-            color: ${props => textColor.link[props.type]};
+            color: ${props => textColor.link[props.colorType]};
             transition: all ${props => props.theme.transition.xs};
         }
 
@@ -37,7 +37,7 @@ const BreadcrumbBase = styled.ul`
                 &:hover,
                 &:active,
                 &:focus {
-                    color: ${props => textColor.hover[props.type]};
+                    color: ${props => textColor.hover[props.colorType]};
                 }
             }
         }
@@ -45,7 +45,7 @@ const BreadcrumbBase = styled.ul`
         &:last-of-type {
             a {
                 cursor: default;
-                color: ${props => textColor.default[props.type]};
+                color: ${props => textColor.default[props.colorType]};
             }
         }
     }

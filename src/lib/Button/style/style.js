@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import { typeOptions } from '../../../shared/constants';
+import { colorTypeOptions } from '../../../shared/constants';
 
 const ButtonBase = styled.a`
     display: inline-block;
@@ -22,7 +22,7 @@ const ButtonBase = styled.a`
         height: 100%;
         width: 100%;
         border-radius: ${props => props.theme.radius.sm};
-        opacity: ${props => props.type === typeOptions.reverse ? 0.6 : 0.5};
+        opacity: ${props => props.colorType === colorTypeOptions.reverse ? 0.6 : 0.5};
         transition:
             all ${props => props.theme.transition.xs},
             opacity ${props => props.theme.transition.sm} linear ${props => props.theme.transition.xs};

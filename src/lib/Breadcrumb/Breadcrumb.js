@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
-    typeOptions,
-    typeDefault,
+    colorTypeOptions,
+    colorTypeDefault,
     colorOptions,
     colorDefault
 } from '../../shared/constants';
@@ -34,12 +34,12 @@ class Breadcrumb extends PureComponent {
 }
 
 Breadcrumb.propTypes = {
-    type: PropTypes.oneOf(Object.values(typeOptions)),
+    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     color: PropTypes.oneOf(Object.values(colorOptions)),
 };
 
 Breadcrumb.defaultProps = {
-    type: typeDefault,
+    colorType: colorTypeDefault,
     color: colorDefault,
 };
 

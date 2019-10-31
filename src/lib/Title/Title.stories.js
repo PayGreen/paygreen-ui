@@ -3,8 +3,8 @@ import Title from './Title';
 import {
     seoOptions,
     seoDefault,
-    typeOptions,
-    typeDefault,
+    colorTypeOptions,
+    colorTypeDefault,
     colorNumberOptions,
     colorOptions,
     colorDefault,
@@ -24,7 +24,7 @@ storiesOf('Title', module)
     .add('With only one color', () => (
         <Title
             seo={select('SEO', seoOptions, seoDefault)}
-            type={radios('Type', typeOptions, typeDefault)}
+            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             color={radios('Color', colorOptions, colorDefault)}
             size={select('Size', fontSizeOptions, 'lg')}
             align={radios('Align', alignOptions, alignDefault)}
@@ -39,7 +39,7 @@ storiesOf('Title', module)
     .add('With two colors', () => (
         <Title
             seo={select('SEO', seoOptions, seoDefault)}
-            type={radios('Type', typeOptions, typeDefault)}
+            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorNumber={colorNumberOptions.two}
             color={radios('Main color', colorOptions, colorDefault)}
             color2={radios('Second color', greyOptions, greyDefault)}

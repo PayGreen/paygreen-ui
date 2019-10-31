@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import {
-    typeOptions,
+    colorTypeOptions,
     colorNumberOptions
 } from '../../../shared/constants';
 import {
@@ -23,20 +23,20 @@ const smallText = css`
 `;
 
 const oneColor = css`
-    color: ${props => props.type === typeOptions.reverse ?
+    color: ${props => props.colorType === colorTypeOptions.reverse ?
         titleColor.whiteLight :
         titleColor.main
     };
 `;
 
 const twoColors = css`
-    color: ${props => props.type === typeOptions.reverse ?
+    color: ${props => props.colorType === colorTypeOptions.reverse ?
         titleColor.whiteLight :
         props.theme.color[props.color2]
     };
 
     b {
-        color: ${props => props.type === typeOptions.reverse ?
+        color: ${props => props.colorType === colorTypeOptions.reverse ?
             titleColor.whiteSolid :
             titleColor.main
         };
@@ -55,7 +55,7 @@ const underline = css`
         bottom: 0;
         height: ${props => props.theme.font.underline.line[props.size]};
         width: ${props => props.theme.font.underline.width[props.size]};
-        background-color: ${props => props.type === typeOptions.reverse ?
+        background-color: ${props => props.colorType === colorTypeOptions.reverse ?
             titleColor.whiteTransparent :
             titleColor.mainLight
         };

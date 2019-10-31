@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {
     seoOptions,
     seoDefault,
-    typeOptions,
-    typeDefault,
+    colorTypeOptions,
+    colorTypeDefault,
     colorNumberOptions,
     colorNumberDefault,
     colorOptions,
@@ -58,7 +58,7 @@ class Title extends PureComponent {
 
 Title.propTypes = {
     seo: PropTypes.oneOf(Object.values(seoOptions)),
-    type: PropTypes.oneOf(Object.values(typeOptions)),
+    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorNumber: PropTypes.oneOf(Object.values(colorNumberOptions)),
     color: PropTypes.oneOf(Object.values(colorOptions)),
     color2: PropTypes.oneOf(Object.values(greyOptions)),
@@ -71,7 +71,7 @@ Title.propTypes = {
 
 Title.defaultProps = {
     seo: seoDefault,
-    type: typeDefault,
+    colorType: colorTypeDefault,
     colorNumber: colorNumberDefault,
     color: colorDefault,
     color2: greyDefault,

@@ -7,8 +7,8 @@ import {
     buttonSizeDefault,
     buttonTemplateOptions,
     buttonTemplateDefault,
-    typeOptions,
-    typeDefault
+    colorTypeOptions,
+    colorTypeDefault
 } from '../../shared/constants';
 import {
     ButtonFill,
@@ -27,14 +27,14 @@ class Button extends PureComponent {
             }
             
             return <ButtonFillDisabled {...this.props}>{this.props.children}</ButtonFillDisabled>;
-        } else if (this.props.type === typeOptions.reverse) {
+        } else if (this.props.colorType === colorTypeOptions.reverse) {
             if (this.props.template === buttonTemplateOptions.line) {
                 return <ButtonLineReverse {...this.props}>{this.props.children}</ButtonLineReverse>;
             }
             
             return <ButtonFillReverse {...this.props}>{this.props.children}</ButtonFillReverse>;
         } else {
-            // Case of this.props.type === typeDefault
+            // Case of this.props.colorType === colorTypeDefault
             if (this.props.template === buttonTemplateOptions.line) {
                 return <ButtonLine {...this.props}>{this.props.children}</ButtonLine>;
             }
@@ -46,7 +46,7 @@ class Button extends PureComponent {
 
 Button.propTypes = {
     template: PropTypes.oneOf(Object.values(buttonTemplateOptions)),
-    type: PropTypes.oneOf(Object.values(typeOptions)),
+    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     color: PropTypes.oneOf(Object.values(colorOptions)),
     size: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     disabled: PropTypes.bool,
@@ -54,7 +54,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
     template: buttonTemplateDefault,
-    type: typeDefault,
+    colorType: colorTypeDefault,
     color: colorDefault,
     size: buttonSizeDefault,
     disabled: false,

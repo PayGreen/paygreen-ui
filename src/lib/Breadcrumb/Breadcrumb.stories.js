@@ -3,8 +3,8 @@ import Breadcrumb from './Breadcrumb';
 import {
     colorOptions,
     colorDefault,
-    typeOptions,
-    typeDefault
+    colorTypeOptions,
+    colorTypeDefault
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, radios } from '@storybook/addon-knobs';
@@ -33,7 +33,7 @@ storiesOf('Breadcrumb', module)
     .add('Breadcrumb', () => (
         <Breadcrumb
             elements={sampleLinks}
-            type={radios('Type', typeOptions, typeDefault)}
+            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             color={radios('Color', colorOptions, colorDefault)}
         />
     ), {
