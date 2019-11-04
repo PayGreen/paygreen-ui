@@ -12,8 +12,8 @@ storiesOf('Input', module)
     .add('Text', () => (
         <Input
             id="sampleId1"
-            placeholder="Your text"
-            label="Your label"
+            placeholder="Firstname Lastname"
+            label="Your name"
             shadow={boolean('With shadow', false)}
             status={radios('State', formStatusOptions, formStatusDefault)}
         />
@@ -24,11 +24,11 @@ storiesOf('Input', module)
         <Input
             type="tel"
             id="sampleId2"
-            placeholder="Your text"
-            label="Your label"
+            placeholder="+33 (0)6 11 22 33 44"
+            label="Your phone number"
             shadow={boolean('With shadow', false)}
             status={radios('State', formStatusOptions, formStatusDefault)}
         />
     ), {
-        notes: 'Style for input tel. It is smaller than default input because its value is always short.',
+        notes: 'Style for input tel. It is smaller than default input because its value is always short. Input tel comes with react-input-mask library.',
     });
