@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { typeOptions } from '../../../shared/const';
+import { colorTypeOptions } from '../../../shared/constants';
 
 const LinkBase = styled.a`
     display: inline-block;
     position: relative;
     outline: none;
     font-weight: ${props => props.theme.font.weight.bold};
-    color: ${props => props.type === typeOptions.reverse ?
+    color: ${props => props.colorType === colorTypeOptions.reverse ?
         props.theme.color.white00 :
         props.theme.color[props.color]['main']
     };
@@ -19,7 +19,7 @@ const LinkBase = styled.a`
         z-index: ${props => props.theme.zindex.button};
         height: ${props => props.theme.line};
         width: 100%;
-        background-color: ${props => props.type === typeOptions.reverse ?
+        background-color: ${props => props.colorType === colorTypeOptions.reverse ?
             props.theme.color.white00 :
             props.theme.color[props.color]['main']
         };
@@ -30,7 +30,7 @@ const LinkBase = styled.a`
     &:hover,
     &:active,
     &:focus {
-        color: ${props => props.type === typeOptions.reverse ?
+        color: ${props => props.colorType === colorTypeOptions.reverse ?
             props.theme.color[props.color]['main'] :
             props.theme.color.white00
         };

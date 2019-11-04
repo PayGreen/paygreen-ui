@@ -1,35 +1,72 @@
 import { css } from 'styled-components';
-import { transparentize } from 'polished';
-
-const titleColor = {
-    main: props => props.theme.color[props.color]['main'],
-    mainLight: props => transparentize(0.5, props.theme.color[props.color]['main']),
-    whiteSolid: props => transparentize(0.05, props.theme.color.white00),
-    whiteLight: props => transparentize(0.25, props.theme.color.white00),
-    whiteTransparent: props => transparentize(0.7, props.theme.color.white00)
-};
-
-const smallSizes = [
-    'xxs',
-    'xs',
-    'sm'
-];
-
-const underlineAlign = {
-    left: css`
-        left: 0;
-    `,
-    center: css`
-        left: 50%;
-        transform: translateX(-50%);
-    `,
-    right: css`
-        right: 0;
-    `
-};
-
-export {
+import {
+    colorTypeOptions,
+    colorNumberOptions
+} from '../../../shared/constants';
+import {
     titleColor,
     smallSizes,
     underlineAlign
-};
+} from './constants';
+
+const base = css`
+    margin-top: ${props => props.theme.space[props.marginTop]};
+    margin-bottom: ${props => props.theme.space[props.marginTop]};
+    text-align: ${props => props.align};
+    font-size: ${props => props.theme.font.size[props.size]};
+    font-weight: ${props => props.theme.font.weight.bold};
+`;
+
+const smallText = css`
+    text-transform: uppercase;
+    letter-spacing: ${props => props.theme.font.spacing};
+`;
+
+const oneColor = css`
+    color: ${props => props.colorType === colorTypeOptions.reverse ?
+        titleColor.whiteLight :
+        titleColor.main
+    };
+`;
+
+const twoColors = css`
+    color: ${props => props.colorType === colorTypeOptions.reverse ?
+        titleColor.whiteLight :
+        props.theme.color[props.color2]
+    };
+
+    b {
+        color: ${props => props.colorType === colorTypeOptions.reverse ?
+            titleColor.whiteSolid :
+            titleColor.main
+        };
+    }
+`;
+
+const underline = css`
+    position: relative;
+    padding-bottom: ${props => props.theme.font.underline.space[props.size]};
+    margin-bottom: ${props => props.theme.font.underline.space[props.size]};
+
+    &::after {
+        ${props => underlineAlign[props.align]};
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: ${props => props.theme.font.underline.line[props.size]};
+        width: ${props => props.theme.font.underline.width[props.size]};
+        background-color: ${props => props.colorType === colorTypeOptions.reverse ?
+            titleColor.whiteTransparent :
+            titleColor.mainLight
+        };
+    }
+`;
+
+const titleStyle = css`
+    ${base};
+    ${props => smallSizes.includes(props.size) ? smallText : ''};
+    ${props => props.colorNumber === colorNumberOptions.one ? oneColor : twoColors};
+    ${props => props.underline ? underline : ''};
+`;
+
+export { titleStyle };

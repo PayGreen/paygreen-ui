@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
-    typeOptions,
-    typeDefault,
+    colorTypeOptions,
+    colorTypeDefault,
     colorOptions,
     colorDefault
-} from '../../shared/const';
+} from '../../shared/constants';
 import { LinkBase } from './style';
 
 class Link extends PureComponent {
@@ -15,12 +15,12 @@ class Link extends PureComponent {
 }
 
 Link.propTypes = {
-    type: PropTypes.oneOf(Object.values(typeOptions)),
+    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     color: PropTypes.oneOf(Object.values(colorOptions)),
 };
 
 Link.defaultProps = {
-    type: typeDefault,
+    colorType: colorTypeDefault,
     color: colorDefault,
 };
 

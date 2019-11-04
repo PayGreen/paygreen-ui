@@ -9,7 +9,7 @@ import {
     spaceDefault,
     alignOptions,
     alignDefault
-} from '../../shared/const';
+} from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, radios } from '@storybook/addon-knobs';
 

@@ -62,13 +62,13 @@ const alignOptions = {
 
 const alignDefault = alignOptions.left;
 
-// Design types
-const typeOptions = {
+// Color types
+const colorTypeOptions = {
     original: 'original',
     reverse: 'reverse'
 };
 
-const typeDefault = typeOptions.original;
+const colorTypeDefault = colorTypeOptions.original;
 
 // Title tags
 const seoOptions = {
@@ -111,8 +111,8 @@ export {
     spaceDefault,
     alignOptions,
     alignDefault,
-    typeOptions,
-    typeDefault,
+    colorTypeOptions,
+    colorTypeDefault,
     seoOptions,
     seoDefault,
     fontSizeOptions,

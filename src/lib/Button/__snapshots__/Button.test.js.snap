@@ -5,7 +5,7 @@ exports[`renders without crashing 1`] = `
   className="sc-bdVaJa sc-bwzfXH iOZcBl"
   color="primary"
   size="md"
-  type="original"
+  colorType="original"
 >
   CTA button
 </a>

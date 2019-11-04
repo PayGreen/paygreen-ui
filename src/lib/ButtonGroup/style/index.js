@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { alignOptions } from '../../../shared/const';
+import { alignOptions } from '../../../shared/constants';
 
 const ButtonGroupBase = styled.div`
     display: flex;

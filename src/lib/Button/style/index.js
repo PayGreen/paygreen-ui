@@ -3,7 +3,7 @@ import {
     ButtonBase, 
     hover,
     disabled
-} from './style';
+} from './base';
 
 const ButtonFill = styled(ButtonBase)`
     ${hover};

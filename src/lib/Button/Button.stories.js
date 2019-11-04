@@ -6,9 +6,9 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
     buttonTemplateOptions,
-    typeOptions,
-    typeDefault
-} from '../../shared/const';
+    colorTypeOptions,
+    colorTypeDefault
+} from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text, radios } from '@storybook/addon-knobs';
 
@@ -16,7 +16,7 @@ storiesOf('Button', module)
     .addDecorator(withKnobs)
     .add('Fill', () => (
         <Button
-            type={radios('Type', typeOptions, typeDefault)}
+            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             color={radios('Color', colorOptions, colorDefault)}
             size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
             disabled={boolean('Disabled', false)}
@@ -29,7 +29,7 @@ storiesOf('Button', module)
     .add('Line', () => (
         <Button
             template={buttonTemplateOptions.line}
-            type={radios('Type', typeOptions, typeDefault)}
+            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             color={radios('Color', colorOptions, colorDefault)}
             size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
         >

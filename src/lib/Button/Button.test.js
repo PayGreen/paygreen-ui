@@ -8,7 +8,7 @@ it('renders without crashing', () => {
         <Button
             theme={ThemeDefault}
             template='fill'
-            type='original'
+            colorType='original'
             color='primary'
             size='md'
         >
