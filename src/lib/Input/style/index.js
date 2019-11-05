@@ -1,12 +1,5 @@
 import styled from 'styled-components';
-import { formStatusOptions } from '../../../shared/constants';
-
-const textColor = {
-    default: props => props.theme.fontDefault,
-    success: props => props.theme.color.state.success,
-    warning: props => props.theme.fontDefault,
-    danger: props => props.theme.color.state.danger
-};
+import { textColor, underlineAnimation } from './constants';
 
 const InputBase = styled.div`
     max-width: ${props => props.theme.form.inputWidth.md};
@@ -53,17 +46,19 @@ const InputBase = styled.div`
                 top: 0;
                 height: 100%;
                 background-color: ${props => props.theme.color.state[props.status]};
-                opacity: .6;
+                opacity: .7;
             }
 
             &::before {
+                transition: width 0.5s ease;
                 left: 0;
-                width: 0;
+                width: ${props => underlineAnimation.before[props.keyframe]};
             }
 
             &::after {
+                transition: width 0.4s ease, background-color 0s linear 0.9s;
                 right: 0;
-                width: 100%;               
+                width: ${props => underlineAnimation.after[props.keyframe]};
             }
         }
 
