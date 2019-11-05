@@ -29,7 +29,10 @@ class Input extends PureComponent {
     }
 
     render() {
-        return <InputBase>
+        return <InputBase
+            status={this.props.status}
+            key={this.props.status}
+        >
             <label htmlFor={this.props.id}>
                 {this.props.label}
             </label>
@@ -42,6 +45,8 @@ class Input extends PureComponent {
                 value={this.state.value}
                 onChange={this.handleChange}
             />
+
+            <span></span>
         </InputBase>;
     }
 }

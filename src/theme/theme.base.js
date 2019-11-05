@@ -175,6 +175,10 @@ export const ThemeBase = {
         },
     },
     form: {
-
+        inputWidth: {
+            sm: '330px',
+            md: '400px',
+            lg: '500px',
+        }
     },
 };
