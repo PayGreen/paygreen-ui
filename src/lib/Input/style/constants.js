@@ -5,6 +5,13 @@ const textColor = {
     danger: props => props.theme.color.state.danger
 };
 
+const inputPadding = {
+    base: props => props.shadow ? 
+        props.theme.space.sm : 0,
+    larger: props => props.shadow ?
+        props.theme.space.md : props.theme.space.sm,
+};
+
 const underlineAnimation = {
     before: {
         entering: '0', // useless property, must be specify to avoid "cut" in animation
@@ -20,5 +27,6 @@ const underlineAnimation = {
 
 export {
     textColor,
+    inputPadding,
     underlineAnimation
 };

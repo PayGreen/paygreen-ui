@@ -47,6 +47,8 @@ class Input extends PureComponent {
                     <InputBase
                         status={this.props.status}
                         keyframe={keyframe}
+                        inputType={this.props.type}
+                        shadow={this.props.shadow}
                     >
                         <label htmlFor={this.props.id}>
                             {this.props.label}

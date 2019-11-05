@@ -1,8 +1,18 @@
 import styled from 'styled-components';
-import { textColor, underlineAnimation } from './constants';
+import {
+    textColor,
+    inputPadding,
+    underlineAnimation
+} from './constants';
+import { withShadow } from './base';
 
 const InputBase = styled.div`
-    max-width: ${props => props.theme.form.inputWidth.md};
+    max-width: ${props => props.inputType === 'tel' ?
+        props.theme.form.inputWidth.sm :
+        props.theme.form.inputWidth.md
+    };
+
+    ${props => props.shadow ? withShadow : ''};
 
     label {
         display: block;
@@ -18,8 +28,10 @@ const InputBase = styled.div`
         box-sizing: border-box;
         outline: none;
         border: none;
+        border-radius: ${props => props.theme.radius.sm} ${props => props.theme.radius.sm} 0 0;
         padding: ${props => props.theme.space.sm};
-        padding-left: 0;
+        padding-left: ${inputPadding.base};
+        padding-right: ${inputPadding.larger};
         color: ${props => textColor[props.status]};
         background-color: ${props => props.theme.bg};
         width: 100%;
@@ -28,10 +40,6 @@ const InputBase = styled.div`
         ::placeholder {
             color: ${props => props.theme.color.grey20};
             font-style: italic;
-        }
-
-        &[type="tel"] {
-            max-width: ${props => props.theme.form.inputWidth.sm};
         }
 
         & + span {
@@ -65,8 +73,8 @@ const InputBase = styled.div`
         &:hover,
         &:active,
         &:focus {
-            padding-left: ${props => props.theme.space.sm};
-            padding-right: 0;
+            padding-left: ${inputPadding.larger};
+            padding-right: ${inputPadding.base};
 
             & + span {
                 &::before,
