@@ -179,6 +179,7 @@ export const ThemeBase = {
             sm: '330px',
             md: '400px',
             lg: '500px',
-        }
+        },
+        textareaHeight: '200px',
     },
 };
