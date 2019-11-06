@@ -1,15 +1,11 @@
 import styled from 'styled-components';
-import { colorTypeOptions } from '../../../shared/constants';
+import { linkColor } from './constants';
 
-const LinkBase = styled.a`
+const LinkBase = styled.span`
     display: inline-block;
     position: relative;
-    outline: none;
     font-weight: ${props => props.theme.font.weight.bold};
-    color: ${props => props.colorType === colorTypeOptions.reverse ?
-        props.theme.color.white00 :
-        props.theme.color[props.color]['main']
-    };
+    color: ${props => linkColor.base[props.colorType]};
     transition: all ${props => props.theme.transition.xs};
 
     &::after {
@@ -19,21 +15,15 @@ const LinkBase = styled.a`
         z-index: ${props => props.theme.zindex.button};
         height: ${props => props.theme.line};
         width: 100%;
-        background-color: ${props => props.colorType === colorTypeOptions.reverse ?
-            props.theme.color.white00 :
-            props.theme.color[props.color]['main']
-        };
+        background-color: ${props => linkColor.base[props.colorType]};
         opacity: .3;
         transition: all ${props => props.theme.transition.xs};
     }
 
-    &:hover,
-    &:active,
-    &:focus {
-        color: ${props => props.colorType === colorTypeOptions.reverse ?
-            props.theme.color[props.color]['main'] :
-            props.theme.color.white00
-        };
+    a:hover &,
+    a:active &,
+    a:focus & {
+        color: ${props => linkColor.hover[props.colorType]};
 
         &::after {
             height: 100%;

@@ -13,12 +13,13 @@ storiesOf('Link', module)
     .addDecorator(withKnobs)
     .add('Link', () => (
         <p>
+            <a href="#">
             <Link
                 colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
                 color={radios('Color', colorOptions, colorDefault)}
             >
                 {text('Label', 'Link text')}
-            </Link> curabitur congue varius ex et posuere. Maecenas tincidunt diam ut nisl porttitor scelerisque. Donec egestas elit dolor, quis eleifend ipsum sagittis ut. Proin molestie lorem et neque tempus tristique. Mauris finibus dui sem, nec suscipit mi porta a.
+            </Link></a> curabitur congue varius ex et posuere. Maecenas tincidunt diam ut nisl porttitor scelerisque. Donec egestas elit dolor, quis eleifend ipsum sagittis ut. Proin molestie lorem et neque tempus tristique. Mauris finibus dui sem, nec suscipit mi porta a.
         </p>
     ), {
         notes: 'Link should be used inside <code>&lt;p&gt;</code> tags, with text around.',

@@ -2,11 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <span
-  className="sc-bdVaJa sc-bwzfXH iLNELf"
+  className="sc-bZQynM eaOsRb"
   color="primary"
-  disabled={false}
-  size="md"
+  size="base"
 >
-  CTA button
+  Your title with 
+  <b>
+    an emphasis
+  </b>
 </span>
 `;

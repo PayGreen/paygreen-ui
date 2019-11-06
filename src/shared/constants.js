@@ -96,6 +96,16 @@ const fontSizeOptions = {
 
 const fontSizeDefault = fontSizeOptions.default;
 
+// Form input status
+const formStatusOptions = {
+    default: 'default',
+    success: 'success',
+    warning: 'warning',
+    danger: 'danger',
+};
+
+const formStatusDefault = formStatusOptions.default;
+
 export {
     colorNumberOptions,
     colorNumberDefault,
@@ -117,4 +127,6 @@ export {
     seoDefault,
     fontSizeOptions,
     fontSizeDefault,
+    formStatusOptions,
+    formStatusDefault,
 };

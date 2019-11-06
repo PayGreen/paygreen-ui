@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="sc-bdVaJa erJJxl"
+  id="testId1"
+  label="Your name"
+  placeholder="Firstname Lastname"
+  type="text"
+>
+  <label
+    htmlFor="testId1"
+  >
+    Your name
+  </label>
+  <input
+    id="testId1"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    placeholder="Firstname Lastname"
+    type="text"
+    value=""
+  />
+  <span />
+</div>
+`;

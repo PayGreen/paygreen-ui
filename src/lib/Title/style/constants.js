@@ -2,11 +2,18 @@ import { css } from 'styled-components';
 import { transparentize } from 'polished';
 
 const titleColor = {
-    main: props => props.theme.color[props.color]['main'],
-    mainLight: props => transparentize(0.5, props.theme.color[props.color]['main']),
-    whiteSolid: props => transparentize(0.05, props.theme.color.white00),
-    whiteLight: props => transparentize(0.25, props.theme.color.white00),
-    whiteTransparent: props => transparentize(0.7, props.theme.color.white00)
+    main: {
+        original: props => props.theme.color[props.color]['main'],
+        reverse: props => transparentize(0.05, props.theme.color.white00)
+    },
+    secondary: {
+        original: props => props.theme.color[props.color2],
+        reverse: props => transparentize(0.25, props.theme.color.white00)
+    },
+    line: {
+        original: props => transparentize(0.5, props.theme.color[props.color]['main']),
+        reverse: props => transparentize(0.7, props.theme.color.white00)
+    }
 };
 
 const smallSizes = [

@@ -11,8 +11,12 @@ const ButtonGroupBase = styled.div`
             'flex-end' :
             props.align
     };
-    margin: 0 ${props => props.theme.button.marginBlock};
+    margin: 0 -${props => props.theme.space.sm};
     margin-top: ${props => props.theme.space[props.margin]};
+
+    a {
+        margin: ${props => props.theme.space.sm};
+    }
 `;
 
 export { ButtonGroupBase };
