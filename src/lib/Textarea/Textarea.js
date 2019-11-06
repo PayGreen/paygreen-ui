@@ -47,6 +47,7 @@ class Textarea extends PureComponent {
         </div>;
 
         return <TextareaBase
+            theme={this.props.theme} // not necessary, only needed for tests
             params={this.props.params}
             status={this.props.status}
             state={this.state}
