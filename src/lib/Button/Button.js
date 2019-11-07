@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
-    colorOptions,
-    colorDefault,
+    colorThemeOptions,
+    colorThemeDefault,
     buttonSizeOptions,
     buttonSizeDefault,
     buttonTemplateOptions,
@@ -47,7 +47,7 @@ class Button extends PureComponent {
 Button.propTypes = {
     template: PropTypes.oneOf(Object.values(buttonTemplateOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    color: PropTypes.oneOf(Object.values(colorOptions)),
+    color: PropTypes.oneOf(Object.values(colorThemeOptions)),
     size: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     disabled: PropTypes.bool,
 };
@@ -55,7 +55,7 @@ Button.propTypes = {
 Button.defaultProps = {
     template: buttonTemplateDefault,
     colorType: colorTypeDefault,
-    color: colorDefault,
+    color: colorThemeDefault,
     size: buttonSizeDefault,
     disabled: false,
 };

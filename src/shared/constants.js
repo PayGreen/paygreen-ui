@@ -6,15 +6,23 @@ const colorNumberOptions = {
 
 const colorNumberDefault = colorNumberOptions.one;
 
+// Color types
+const colorTypeOptions = {
+    original: 'original',
+    reverse: 'reverse'
+};
+
+const colorTypeDefault = colorTypeOptions.original;
+
 // Color themes
-const colorOptions = {
+const colorThemeOptions = {
     primary: 'primary',
     secondary: 'secondary',
     tertiary: 'tertiary',
     quaternary: 'quaternary'
 };
 
-const colorDefault = colorOptions.primary;
+const colorThemeDefault = colorThemeOptions.primary;
 
 // Grey shades
 const greyOptions = {
@@ -62,14 +70,6 @@ const alignOptions = {
 
 const alignDefault = alignOptions.left;
 
-// Color types
-const colorTypeOptions = {
-    original: 'original',
-    reverse: 'reverse'
-};
-
-const colorTypeDefault = colorTypeOptions.original;
-
 // Title tags
 const seoOptions = {
     h1: '1',
@@ -109,8 +109,10 @@ const formStatusDefault = formStatusOptions.default;
 export {
     colorNumberOptions,
     colorNumberDefault,
-    colorOptions,
-    colorDefault,
+    colorTypeOptions,
+    colorTypeDefault,
+    colorThemeOptions,
+    colorThemeDefault,
     greyOptions,
     greyDefault,
     buttonSizeOptions,
@@ -121,8 +123,6 @@ export {
     spaceDefault,
     alignOptions,
     alignDefault,
-    colorTypeOptions,
-    colorTypeDefault,
     seoOptions,
     seoDefault,
     fontSizeOptions,

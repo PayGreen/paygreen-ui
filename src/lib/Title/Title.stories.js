@@ -6,8 +6,8 @@ import {
     colorTypeOptions,
     colorTypeDefault,
     colorNumberOptions,
-    colorOptions,
-    colorDefault,
+    colorThemeOptions,
+    colorThemeDefault,
     greyOptions,
     greyDefault,
     fontSizeOptions,
@@ -25,7 +25,7 @@ storiesOf('Title', module)
         <Title
             seo={select('SEO', seoOptions, seoDefault)}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-            color={radios('Color', colorOptions, colorDefault)}
+            color={radios('Color', colorThemeOptions, colorThemeDefault)}
             size={select('Size', fontSizeOptions, 'lg')}
             align={radios('Align', alignOptions, alignDefault)}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
@@ -41,7 +41,7 @@ storiesOf('Title', module)
             seo={select('SEO', seoOptions, seoDefault)}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorNumber={colorNumberOptions.two}
-            color={radios('Main color', colorOptions, colorDefault)}
+            color={radios('Main color', colorThemeOptions, colorThemeDefault)}
             color2={radios('Second color', greyOptions, greyDefault)}
             size={select('Size', fontSizeOptions, 'lg')}
             align={radios('Align', alignOptions, alignDefault)}

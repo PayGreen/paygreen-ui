@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {
     colorTypeOptions,
     colorTypeDefault,
-    colorOptions,
-    colorDefault
+    colorThemeOptions,
+    colorThemeDefault
 } from '../../shared/constants';
 import { LinkBase } from './style';
 
@@ -16,12 +16,12 @@ class Link extends PureComponent {
 
 Link.propTypes = {
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    color: PropTypes.oneOf(Object.values(colorOptions)),
+    color: PropTypes.oneOf(Object.values(colorThemeOptions)),
 };
 
 Link.defaultProps = {
     colorType: colorTypeDefault,
-    color: colorDefault,
+    color: colorThemeDefault,
 };
 
 export default Link;
