@@ -29,7 +29,13 @@ class Breadcrumb extends PureComponent {
             </li>
         );
 
-        return <BreadcrumbBase {...this.props}>{items}</BreadcrumbBase>;
+        return <BreadcrumbBase
+            theme={this.props.theme} // not necessary, only needed for tests
+            colorType={this.props.colorType}
+            colorTheme={this.props.colorTheme}
+        >
+            {items}
+        </BreadcrumbBase>;
     }
 }
 
