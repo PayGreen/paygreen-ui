@@ -7,12 +7,12 @@ import {
 import { withShadow } from './base';
 
 const InputBase = styled.div`
-    max-width: ${props => props.inputType === 'tel' ?
+    max-width: ${props => props.type === 'tel' ?
         props.theme.form.inputWidth.sm :
         props.theme.form.inputWidth.md
     };
 
-    ${props => props.shadow ? withShadow : ''};
+    ${props => props.params.shadow ? withShadow : ''};
 
     label {
         display: block;

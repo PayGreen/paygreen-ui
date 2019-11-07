@@ -14,8 +14,10 @@ storiesOf('Input', module)
             id="sampleId1"
             placeholder="Firstname Lastname"
             label="Your name"
-            shadow={boolean('With shadow', false)}
             status={radios('State', formStatusOptions, formStatusDefault)}
+            params={{
+                shadow: boolean('With shadow', false),
+            }}
         />
     ), {
         notes: 'Same as input email, url and number (this is the default style).',
@@ -26,8 +28,10 @@ storiesOf('Input', module)
             id="sampleId2"
             placeholder="+33 (0)6 11 22 33 44"
             label="Your phone number"
-            shadow={boolean('With shadow', false)}
             status={radios('State', formStatusOptions, formStatusDefault)}
+            params={{
+                shadow: boolean('With shadow', false),
+            }}
         />
     ), {
         notes: 'Style for input tel. It is smaller than default input because its value is always short. Input tel comes with react-input-mask library.',
