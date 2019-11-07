@@ -48,7 +48,7 @@ Button.propTypes = {
     template: PropTypes.oneOf(Object.values(buttonTemplateOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    size: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    buttonSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     disabled: PropTypes.bool,
 };
 
@@ -56,7 +56,7 @@ Button.defaultProps = {
     template: buttonTemplateDefault,
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
-    size: buttonSizeDefault,
+    buttonSize: buttonSizeDefault,
     disabled: false,
 };
 

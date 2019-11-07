@@ -19,7 +19,7 @@ storiesOf('Button', module)
             <Button
                 colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
-                size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
+                buttonSize={radios('Button size', buttonSizeOptions, buttonSizeDefault)}
                 disabled={boolean('Disabled', false)}
             >
                 {text('Label', 'CTA button')}
@@ -34,7 +34,8 @@ storiesOf('Button', module)
                 template={buttonTemplateOptions.line}
                 colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
-                size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
+                buttonSize={radios('Button size', buttonSizeOptions, buttonSizeDefault)}
+                disabled={boolean('Disabled', false)}
             >
                 {text('Label', 'CTA button')}
             </Button>

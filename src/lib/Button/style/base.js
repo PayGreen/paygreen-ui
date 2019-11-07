@@ -7,9 +7,9 @@ const ButtonBase = styled.span`
     text-align: center;
     text-transform: uppercase;
     font-weight: ${props => props.theme.font.weight.bold};
-    font-size: ${props => props.theme.button.font[props.size]};
-    letter-spacing: ${props => props.theme.button.letterSpacing[props.size]};
-    padding: ${props => props.theme.button.paddingHeight[props.size]} ${props => props.theme.button.paddingWidth[props.size]};
+    font-size: ${props => props.theme.button.font[props.buttonSize]};
+    letter-spacing: ${props => props.theme.button.letterSpacing[props.buttonSize]};
+    padding: ${props => props.theme.button.paddingHeight[props.buttonSize]} ${props => props.theme.button.paddingWidth[props.buttonSize]};
     margin: ${props => props.theme.button.shift};
     transition: all ${props => props.theme.transition.xs};
 
