@@ -11,7 +11,7 @@ class Textarea extends PureComponent {
         super(props);
 
         this.state = {
-            value: this.props.value,
+            value: props.value !== undefined ? props.value : '',
         };
         
         this.handleChange = this.handleChange.bind(this);

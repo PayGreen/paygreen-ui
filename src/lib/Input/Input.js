@@ -13,7 +13,7 @@ class Input extends PureComponent {
         super(props);
 
         this.state = {
-            value: props.value,
+            value: props.value !== undefined ? props.value : '',
             mask: '',
             status: props.status
         };
