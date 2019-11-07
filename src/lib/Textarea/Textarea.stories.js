@@ -23,5 +23,5 @@ storiesOf('Textarea', module)
             disabled={boolean('Disabled', false)}
         />
     ), {
-        notes: 'Textarea field comes with a characters counter. Color of the counter changes to green when characters\' counter reaches the minlength, and it changes to orange when characters\' number exceeds the 90% of maxlength. By default, counter is dismissed.',
+        notes: 'Textarea field comes with a characters counter. Counter\'s color changes to green when the number of the characters reaches the minlength. Counter\'s color changes to orange when characters\' number exceeds the 90% of maxlength. By default, counter is dismissed.',
     });
