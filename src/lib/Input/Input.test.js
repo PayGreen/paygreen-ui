@@ -13,4 +13,4 @@ it('renders without crashing', () => {
         />
     );
     expect(inputText.toJSON()).toMatchSnapshot();
-})
+});

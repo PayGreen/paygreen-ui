@@ -25,4 +25,4 @@ it('renders without crashing', () => {
         </ButtonGroup>
     );
     expect(buttonGroup.toJSON()).toMatchSnapshot();
-})
+});
