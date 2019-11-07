@@ -25,7 +25,7 @@ storiesOf('Title', module)
         <Title
             seo={select('SEO', seoOptions, seoDefault)}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-            color={radios('Color', colorThemeOptions, colorThemeDefault)}
+            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             size={select('Size', fontSizeOptions, 'lg')}
             align={radios('Align', alignOptions, alignDefault)}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
@@ -41,7 +41,7 @@ storiesOf('Title', module)
             seo={select('SEO', seoOptions, seoDefault)}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorNumber={colorNumberOptions.two}
-            color={radios('Main color', colorThemeOptions, colorThemeDefault)}
+            colorTheme={radios('Main color', colorThemeOptions, colorThemeDefault)}
             color2={radios('Second color', greyOptions, greyDefault)}
             size={select('Size', fontSizeOptions, 'lg')}
             align={radios('Align', alignOptions, alignDefault)}

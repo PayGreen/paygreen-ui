@@ -6,11 +6,11 @@ const textColor = {
         reverse: props => transparentize(0.4, props.theme.color.white00),
     },
     link: {
-        original: props => transparentize(0.3, props.theme.color[props.color]['main']),
+        original: props => transparentize(0.3, props.theme.color[props.colorTheme]['main']),
         reverse: props => transparentize(0.4, props.theme.color.white00),
     },
     hover: {
-        original: props => props.theme.color[props.color]['main'],
+        original: props => props.theme.color[props.colorTheme]['main'],
         reverse: props => transparentize(0.05, props.theme.color.white00),
     }
 };

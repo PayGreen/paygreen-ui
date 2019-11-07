@@ -47,7 +47,7 @@ class Button extends PureComponent {
 Button.propTypes = {
     template: PropTypes.oneOf(Object.values(buttonTemplateOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    color: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     size: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     disabled: PropTypes.bool,
 };
@@ -55,7 +55,7 @@ Button.propTypes = {
 Button.defaultProps = {
     template: buttonTemplateDefault,
     colorType: colorTypeDefault,
-    color: colorThemeDefault,
+    colorTheme: colorThemeDefault,
     size: buttonSizeDefault,
     disabled: false,
 };

@@ -34,8 +34,8 @@ storiesOf('Breadcrumb', module)
         <Breadcrumb
             elements={sampleLinks}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-            color={radios('Color', colorThemeOptions, colorThemeDefault)}
+            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
         />
     ), {
-        notes: 'Breadcrumb takes an array of objects as "element" prop.',
+        notes: 'Breadcrumb takes an array of objects as "elements" prop.',
     });

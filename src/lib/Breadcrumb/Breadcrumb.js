@@ -41,12 +41,12 @@ Breadcrumb.propTypes = {
         })
     ).isRequired,
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    color: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
 };
 
 Breadcrumb.defaultProps = {
     colorType: colorTypeDefault,
-    color: colorThemeDefault,
+    colorTheme: colorThemeDefault,
 };
 
 export default Breadcrumb;

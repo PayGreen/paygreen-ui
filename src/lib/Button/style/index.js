@@ -12,25 +12,25 @@ const ButtonFill = styled(ButtonBase)`
 
     &::before,
     &::after {
-        background-color: ${props => props.theme.color[props.color]['main']};
+        background-color: ${props => props.theme.color[props.colorTheme]['main']};
     }
 `;
 
 const ButtonLine = styled(ButtonBase)`
     ${hover};
 
-    color: ${props => props.theme.color[props.color]['main']};
+    color: ${props => props.theme.color[props.colorTheme]['main']};
 
     &::before,
     &::after {
-        border: solid ${props => props.theme.line} ${props => props.theme.color[props.color]['main']};
+        border: solid ${props => props.theme.line} ${props => props.theme.color[props.colorTheme]['main']};
     }
 `;
 
 const ButtonFillReverse = styled(ButtonBase)`
     ${hover};
     
-    color: ${props => props.theme.color[props.color]['main']};
+    color: ${props => props.theme.color[props.colorTheme]['main']};
 
     &::before,
     &::after {
