@@ -70,12 +70,10 @@ class Textarea extends PureComponent {
 
 Textarea.propTypes = {
     id: PropTypes.string.isRequired,
-    value: PropTypes.string,
-    placeholder: PropTypes.string,
     label: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
     minLength: PropTypes.number,
     maxLength: PropTypes.number,
-    name: PropTypes.string,
     params: PropTypes.shape({
         shadow: PropTypes.bool,
         counter: PropTypes.bool

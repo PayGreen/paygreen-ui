@@ -74,8 +74,8 @@ class Input extends PureComponent {
 Input.propTypes = {
     type: PropTypes.string,
     id: PropTypes.string.isRequired,
-    placeholder: PropTypes.string,
     label: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
     params: PropTypes.shape({
         shadow: PropTypes.bool,
     }),
