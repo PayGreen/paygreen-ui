@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { formStatusOptions } from '../../../shared/constants';
+import { label } from '../../Input/style/base';
 import {
     withShadow,
     enabled,
@@ -13,12 +14,7 @@ const TextareaBase = styled.div`
     ${props => props.disabled ? disabled : enabled};
 
     label {
-        display: block;
-        color: ${props => props.theme.color.grey30};
-        font-size: 1rem;
-        font-weight: ${props => props.theme.font.weight.bold};
-        text-transform: uppercase;
-        letter-spacing: ${props => props.theme.font.spacing};
+        ${label};
         margin-bottom: ${props => props.theme.space.sm};
     }
 

@@ -1,4 +1,4 @@
-const textColor = {
+const fieldTextColor = {
     default: props => props.theme.fontDefault,
     success: props => props.theme.color.state.success,
     warning: props => props.theme.fontDefault,
@@ -26,7 +26,7 @@ const underlineAnimation = {
 };
 
 export {
-    textColor,
+    fieldTextColor,
     inputPadding,
     underlineAnimation
 };

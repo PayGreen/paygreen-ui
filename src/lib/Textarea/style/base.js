@@ -1,19 +1,20 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
-import { textColor } from './constants';
+import { fieldTextColor } from '../../Input/style/constants';
+import { disabledField, fieldShadow } from '../../Input/style/base';
 
 const withShadow = css`
     textarea {
-        box-shadow: 1px 1px 10px ${props => transparentize(0.9, props.theme.color.black00)};
+        ${fieldShadow};
     }
 `;
 
 const enabled = css`
     textarea {
         resize: vertical;
-        color: ${props => textColor[props.status]};
+        color: ${props => fieldTextColor[props.status]};
         background-color: ${props => props.theme.bg};
-        border-color: ${props => transparentize(0.4, props.theme.color.state[props.status])};
+        border-color: ${props => transparentize(0.3, props.theme.color.state[props.status])};
 
         &:hover,
         &:active,
@@ -27,10 +28,8 @@ const enabled = css`
 
 const disabled = css`
     textarea {
+        ${disabledField};
         resize: none;
-        cursor: not-allowed;
-        color: ${props => props.theme.color.grey40};
-        background-color: ${props => props.theme.color.white20};
         border-color: ${props => props.theme.color.grey20};
     }
 `;

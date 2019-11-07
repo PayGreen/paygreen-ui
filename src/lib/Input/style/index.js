@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import {
-    textColor,
+    fieldTextColor,
     inputPadding,
     underlineAnimation
 } from './constants';
-import { withShadow } from './base';
+import { label, withShadow } from './base';
 
 const InputBase = styled.div`
     max-width: ${props => props.type === 'tel' ?
@@ -15,12 +15,7 @@ const InputBase = styled.div`
     ${props => props.params.shadow ? withShadow : ''};
 
     label {
-        display: block;
-        color: ${props => props.theme.color.grey30};
-        font-size: 1rem;
-        font-weight: ${props => props.theme.font.weight.bold};
-        text-transform: uppercase;
-        letter-spacing: ${props => props.theme.font.spacing};
+        ${label};
     }
 
     input {
@@ -32,7 +27,7 @@ const InputBase = styled.div`
         padding: ${props => props.theme.space.sm};
         padding-left: ${inputPadding.base};
         padding-right: ${inputPadding.larger};
-        color: ${props => textColor[props.status]};
+        color: ${props => fieldTextColor[props.status]};
         background-color: ${props => props.theme.bg};
         width: 100%;
         transition: all ${props => props.theme.transition.sm};
