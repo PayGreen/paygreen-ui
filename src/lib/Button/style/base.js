@@ -1,44 +1,10 @@
-import styled, {css} from 'styled-components';
-import { colorTypeOptions } from '../../../shared/constants';
+import { css } from 'styled-components';
+import {
+    buttonColors,
+    enableType
+} from './constants';
 
-const ButtonBase = styled.span`
-    display: inline-block;
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: ${props => props.theme.font.weight.bold};
-    font-size: ${props => props.theme.button.font[props.buttonSize]};
-    letter-spacing: ${props => props.theme.button.letterSpacing[props.buttonSize]};
-    padding: ${props => props.theme.button.paddingHeight[props.buttonSize]} ${props => props.theme.button.paddingWidth[props.buttonSize]};
-    margin: ${props => props.theme.button.shift};
-    transition: all ${props => props.theme.transition.xs};
-
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        z-index: ${props => props.theme.zindex.button};
-        height: 100%;
-        width: 100%;
-        border-radius: ${props => props.theme.radius.sm};
-        opacity: ${props => props.colorType === colorTypeOptions.reverse ? 0.6 : 0.5};
-        transition:
-            all ${props => props.theme.transition.xs},
-            opacity ${props => props.theme.transition.sm} linear ${props => props.theme.transition.xs};
-    }
-
-    &::before {
-        top: -${props => props.theme.button.shift};
-        left: -${props => props.theme.button.shift};
-    }
-
-    &::after {
-        bottom: -${props => props.theme.button.shift};
-        right: -${props => props.theme.button.shift};
-    }
-`;
-
-const hover = css`
+const enabled = css`
     a:hover &,
     a:active &,
     a:focus & {
@@ -63,8 +29,27 @@ const disabled = css`
     cursor: not-allowed;
 `;
 
+const templateStyle = {
+    fill: css`
+        color: ${props => buttonColors.text.fill[props.colorType][enableType(props)]};
+
+        &::before,
+        &::after {
+            background-color: ${props => buttonColors.bg.fill[props.colorType][enableType(props)]};
+        }
+    `,
+    line: css`
+        color: ${props => buttonColors.text.line[props.colorType][enableType(props)]};
+
+        &::before,
+        &::after {
+            border: solid ${props => props.theme.line} ${props => buttonColors.bg.line[props.colorType][enableType(props)]};
+        }
+    `,
+};
+
 export {
-    ButtonBase, 
-    hover,
-    disabled
+    enabled,
+    disabled,
+    templateStyle
 };
