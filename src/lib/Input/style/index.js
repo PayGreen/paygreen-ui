@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { inputPadding } from './constants';
 import {
     label,
+    field,
     withShadow,
     enabled,
     disabled
@@ -20,18 +20,8 @@ const InputBase = styled.div`
     }
 
     input {
+        ${field};
         ${props => props.inputDisabled ? disabled : enabled};
-        
-        display: block;
-        box-sizing: border-box;
-        outline: none;
-        border: none;
-        border-radius: ${props => props.theme.radius.sm} ${props => props.theme.radius.sm} 0 0;
-        padding: ${props => props.theme.space.sm};
-        padding-left: ${inputPadding.base};
-        padding-right: ${inputPadding.larger};
-        width: 100%;
-        transition: all ${props => props.theme.transition.sm};
 
         ::placeholder {
             color: ${props => props.theme.color.grey20};
