@@ -35,6 +35,22 @@ const withShadow = css`
     }
 `;
 
+const canHover = css`
+    &:hover,
+    &:active,
+    &:focus {
+        padding-left: ${inputPadding.larger};
+        padding-right: ${inputPadding.base};
+
+        & + span {
+            &::before,
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+`;
+
 const enabled = css`
     color: ${props => fieldTextColor[props.status]};
     background-color: ${props => props.theme.bg};
@@ -57,19 +73,7 @@ const enabled = css`
         }
     }
 
-    &:hover,
-    &:active,
-    &:focus {
-        padding-left: ${inputPadding.larger};
-        padding-right: ${inputPadding.base};
-
-        & + span {
-            &::before,
-            &::after {
-                opacity: 1;
-            }
-        }
-    }
+    ${props => props.inputReadOnly ? null : canHover};
 `;
 
 const disabled = css`

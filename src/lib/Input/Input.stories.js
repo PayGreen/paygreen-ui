@@ -15,6 +15,7 @@ storiesOf('Input', module)
             placeholder="Firstname Lastname"
             label="Your name"
             disabled={boolean('Disabled', false)}
+            readOnly={boolean('Readonly', false)}
             status={radios('State', formStatusOptions, formStatusDefault)}
             params={{
                 shadow: boolean('With shadow', false),
@@ -30,6 +31,7 @@ storiesOf('Input', module)
             placeholder="+33 (0)6 11 22 33 44"
             label="Your phone number"
             disabled={boolean('Disabled', false)}
+            readOnly={boolean('Readonly', false)}
             status={radios('State', formStatusOptions, formStatusDefault)}
             params={{
                 shadow: boolean('With shadow', false),

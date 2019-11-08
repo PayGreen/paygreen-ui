@@ -53,6 +53,7 @@ class Input extends PureComponent {
                         status={this.props.status}
                         inputType={this.props.type}
                         inputDisabled={this.props.disabled}
+                        inputReadOnly={this.props.readOnly}
                     >
                         <label htmlFor={this.props.id}>
                             {this.props.label}
@@ -78,6 +79,7 @@ Input.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
+    readOnly: PropTypes.bool,
     params: PropTypes.shape({
         shadow: PropTypes.bool,
     }),
