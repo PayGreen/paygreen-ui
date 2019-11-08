@@ -9,6 +9,16 @@ const withShadow = css`
     }
 `;
 
+const canHover = css`
+    &:hover,
+    &:active,
+    &:focus {
+        border-color: ${props => props.theme.color.state[props.status]};
+        padding-left: ${props => props.theme.space.md};
+        padding-right: ${props => props.theme.space.sm};
+    }
+`;
+
 const enabled = css`
     textarea {
         resize: vertical;
@@ -16,13 +26,7 @@ const enabled = css`
         background-color: ${props => props.theme.bg};
         border-color: ${props => transparentize(0.3, props.theme.color.state[props.status])};
 
-        &:hover,
-        &:active,
-        &:focus {
-            border-color: ${props => props.theme.color.state[props.status]};
-            padding-left: ${props => props.theme.space.md};
-            padding-right: ${props => props.theme.space.sm};
-        }
+        ${props => props.inputReadOnly ? null : canHover};
     }
 `;
 

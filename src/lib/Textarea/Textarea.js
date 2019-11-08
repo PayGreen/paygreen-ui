@@ -54,6 +54,7 @@ class Textarea extends PureComponent {
             status={this.props.status}
             state={this.state}
             inputDisabled={this.props.disabled}
+            inputReadOnly={this.props.readOnly}
         >
             <label htmlFor={this.props.id}>
                 {this.props.label}
@@ -65,7 +66,8 @@ class Textarea extends PureComponent {
                 onChange={this.handleChange}
             />
             
-            {this.props.params.counter && !this.props.disabled ? charactersCountBlock : null}
+            {this.props.params.counter && !this.props.disabled && !this.props.readOnly ?
+                charactersCountBlock : null}
         </TextareaBase>;
     }
 }
@@ -74,6 +76,7 @@ Textarea.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
+    readOnly: PropTypes.bool,
     minLength: PropTypes.number,
     maxLength: PropTypes.number,
     params: PropTypes.shape({
