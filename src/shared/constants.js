@@ -70,6 +70,15 @@ const alignOptions = {
 
 const alignDefault = alignOptions.left;
 
+// Justify content
+const justifyContentOptions = {
+    left: 'flex-start',
+    center: 'center',
+    right: 'flex-end'
+};
+
+const justifyContentDefault = justifyContentOptions.left;
+
 // Title tags
 const seoOptions = {
     h1: '1',
@@ -123,6 +132,8 @@ export {
     spaceDefault,
     alignOptions,
     alignDefault,
+    justifyContentOptions,
+    justifyContentDefault,
     seoOptions,
     seoDefault,
     fontSizeOptions,
