@@ -26,6 +26,28 @@ const field = css`
     padding-right: ${inputPadding.larger};
     width: 100%;
     transition: all ${props => props.theme.transition.sm};
+
+    & + span {
+        position: relative;
+        display: block;
+        height: ${props => props.theme.line};
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+    }
 `;
 
 const disabledField = css`

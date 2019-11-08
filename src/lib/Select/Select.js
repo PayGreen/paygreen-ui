@@ -1,30 +1,21 @@
 import React, { PureComponent } from 'react';
 import { Transition } from 'react-transition-group';
-import InputMask from 'react-input-mask';
 import PropTypes from 'prop-types';
 import {
     formStatusOptions,
     formStatusDefault,
 } from '../../shared/constants';
-import { InputBase } from './style';
+import { SelectBase } from './style';
 
-class Input extends PureComponent {
+class Select extends PureComponent {
     constructor(props) {
         super(props);
 
         this.state = {
             value: props.value !== undefined ? props.value : '',
-            mask: '',
-            status: props.status
         };
         
         this.handleChange = this.handleChange.bind(this);
-
-        if (this.props.mask) {
-            this.state.mask = this.props.mask;
-        } else if (this.props.type === 'tel') {
-            this.state.mask = '+99 (0)9 99 99 99 99';
-        }
     }
 
     handleChange(event) {
@@ -32,7 +23,18 @@ class Input extends PureComponent {
     }
 
     render() {
-        const {params, status, label, ...rest} = this.props;
+        const optionsHtml = this.props.options.map((option, index) =>
+            <option
+                key={index}
+                value={option.value}
+                disabled={
+                    option.disabled ||
+                    this.props.readOnly && option.value !== this.state.value
+                }
+            >
+                {option.text}
+            </option>
+        );
 
         let animation = false;
         if (this.props.status !== this.state.status) {
@@ -43,15 +45,25 @@ class Input extends PureComponent {
             }, 1);
         }
 
+        const {
+            options,
+            params,
+            status,
+            state,
+            label,
+            readOnly,
+            ...rest
+        } = this.props;
+
         return <Transition in={animation} timeout={900}>
             {(keyframe) => {
                 return (
-                    <InputBase
+                    <SelectBase
                         keyframe={keyframe}
                         theme={this.props.theme} // not necessary, only needed for tests
                         params={this.props.params}
                         status={this.props.status}
-                        inputType={this.props.type}
+                        state={this.state}
                         inputDisabled={this.props.disabled}
                         inputReadOnly={this.props.readOnly}
                     >
@@ -59,40 +71,45 @@ class Input extends PureComponent {
                             {this.props.label}
                         </label>
 
-                        <InputMask 
+                        <select
                             {...rest}
-                            mask={this.state.mask}
                             value={this.state.value}
                             onChange={this.handleChange}
-                        />
+                        >
+                            {optionsHtml}
+                        </select>
 
                         <span></span>
-                    </InputBase>
+                    </SelectBase>
                 );
             }}
         </Transition>;
     }
 }
 
-Input.propTypes = {
-    type: PropTypes.string,
+Select.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
+    options: PropTypes.arrayOf(
+        PropTypes.shape({
+            value: PropTypes.string.isRequired,
+            text: PropTypes.string.isRequired,
+            disabled: PropTypes.bool
+        })
+    ).isRequired,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     params: PropTypes.shape({
         shadow: PropTypes.bool,
     }),
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
-    mask: PropTypes.string,
 };
 
-Input.defaultProps = {
-    type: 'text',
+Select.defaultProps = {
     params: {
         shadow: false,
     },
     status: formStatusDefault,
 };
 
-export default Input;
+export default Select;

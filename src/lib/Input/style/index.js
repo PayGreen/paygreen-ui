@@ -27,28 +27,6 @@ const InputBase = styled.div`
             color: ${props => props.theme.color.grey20};
             font-style: italic;
         }
-
-        & + span {
-            position: relative;
-            display: block;
-            height: ${props => props.theme.line};
-
-            &::before,
-            &::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                height: 100%;
-            }
-
-            &::before {
-                left: 0;
-            }
-
-            &::after {
-                right: 0;
-            }
-        }
     }
 `;
 
