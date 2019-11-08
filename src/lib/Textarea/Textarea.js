@@ -38,6 +38,8 @@ class Textarea extends PureComponent {
     }
 
     render() {
+        const {params, status, state, label, counterlabel, ...rest} = this.props;
+
         this.characterCount(this.state.value);
 
         const charactersCountBlock = <div>
@@ -51,14 +53,14 @@ class Textarea extends PureComponent {
             params={this.props.params}
             status={this.props.status}
             state={this.state}
-            disabled={this.props.disabled}
+            inputDisabled={this.props.disabled}
         >
             <label htmlFor={this.props.id}>
                 {this.props.label}
             </label>
 
             <textarea
-                {...this.props}
+                {...rest}
                 value={this.state.value}
                 onChange={this.handleChange}
             />
