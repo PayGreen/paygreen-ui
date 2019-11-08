@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa VANoC"
+  className="sc-bdVaJa cyaxhw"
 >
   <label
     htmlFor="textareaTest1"
@@ -10,20 +10,11 @@ exports[`renders without crashing 1`] = `
     Your message
   </label>
   <textarea
-    counterlabel="characters"
     id="textareaTest1"
-    label="Your message"
     maxLength={2000}
     minLength={0}
     onChange={[Function]}
-    params={
-      Object {
-        "counter": true,
-        "shadow": false,
-      }
-    }
     placeholder="Your text…"
-    status="default"
     theme={
       Object {
         "animation": Object {},
@@ -193,6 +184,7 @@ exports[`renders without crashing 1`] = `
         },
       }
     }
+    value=""
   />
   <div>
     <span>

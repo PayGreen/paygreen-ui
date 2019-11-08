@@ -6,7 +6,6 @@ exports[`renders without crashing 1`] = `
 >
   <span
     className="sc-bdVaJa hTKCbV"
-    color="primary"
   >
     Link text
   </span>

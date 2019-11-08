@@ -3,7 +3,6 @@
 exports[`renders without crashing 1`] = `
 <ul
   className="sc-bdVaJa liOYKe"
-  color="primary"
 >
   <li>
     <a
