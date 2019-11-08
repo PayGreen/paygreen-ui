@@ -26,12 +26,12 @@ const fieldShadow = css`
 `;
 
 const withShadow = css`
-    input {
-        ${fieldShadow};
-    }
-
     label {
         margin-bottom: ${props => props.theme.space.xs};
+    }
+    
+    input {
+        ${fieldShadow};
     }
 `;
 
