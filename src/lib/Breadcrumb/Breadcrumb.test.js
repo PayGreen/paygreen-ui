@@ -30,4 +30,4 @@ it('renders without crashing', () => {
         />
     );
     expect(breadcrumb.toJSON()).toMatchSnapshot();
-})
+});

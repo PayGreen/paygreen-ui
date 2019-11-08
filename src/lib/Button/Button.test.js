@@ -10,4 +10,4 @@ it('renders without crashing', () => {
         </Button>
     );
     expect(button.toJSON()).toMatchSnapshot();
-})
+});

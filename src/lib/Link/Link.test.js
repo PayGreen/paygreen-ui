@@ -12,4 +12,4 @@ it('renders without crashing', () => {
         </a>
     );
     expect(link.toJSON()).toMatchSnapshot();
-})
+});

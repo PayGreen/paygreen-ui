@@ -13,7 +13,7 @@ class Input extends PureComponent {
         super(props);
 
         this.state = {
-            value: '',
+            value: props.value !== undefined ? props.value : '',
             mask: '',
             status: props.status
         };
@@ -45,19 +45,19 @@ class Input extends PureComponent {
             {(keyframe) => {
                 return (
                     <InputBase
-                        status={this.props.status}
+                        theme={this.props.theme} // not necessary, only needed for tests
                         keyframe={keyframe}
-                        inputType={this.props.type}
-                        shadow={this.props.shadow}
+                        params={this.props.params}
+                        status={this.props.status}
+                        type={this.props.type}
+                        disabled={this.props.disabled}
                     >
                         <label htmlFor={this.props.id}>
                             {this.props.label}
                         </label>
 
                         <InputMask 
-                            type={this.props.type}
-                            id={this.props.id}
-                            placeholder={this.props.placeholder}
+                            {...this.props}
                             mask={this.state.mask}
                             value={this.state.value}
                             onChange={this.handleChange}
@@ -74,16 +74,20 @@ class Input extends PureComponent {
 Input.propTypes = {
     type: PropTypes.string,
     id: PropTypes.string.isRequired,
-    placeholder: PropTypes.string,
     label: PropTypes.string.isRequired,
-    shadow: PropTypes.bool,
+    disabled: PropTypes.bool,
+    params: PropTypes.shape({
+        shadow: PropTypes.bool,
+    }),
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
     mask: PropTypes.string,
 };
 
 Input.defaultProps = {
     type: 'text',
-    shadow: false,
+    params: {
+        shadow: false,
+    },
     status: formStatusDefault,
 };
 

@@ -2,26 +2,27 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa hhfJAp"
-  type="text"
+  className="sc-bdVaJa VANoC"
 >
   <label
-    htmlFor="testId1"
+    htmlFor="textareaTest1"
   >
-    Your name
+    Your message
   </label>
-  <input
-    id="testId1"
-    label="Your name"
-    onBlur={[Function]}
+  <textarea
+    counterlabel="characters"
+    id="textareaTest1"
+    label="Your message"
+    maxLength={2000}
+    minLength={0}
     onChange={[Function]}
-    onFocus={[Function]}
     params={
       Object {
+        "counter": true,
         "shadow": false,
       }
     }
-    placeholder="Firstname Lastname"
+    placeholder="Your text…"
     status="default"
     theme={
       Object {
@@ -192,8 +193,15 @@ exports[`renders without crashing 1`] = `
         },
       }
     }
-    type="text"
   />
-  <span />
+  <div>
+    <span>
+      0
+    </span>
+     / 
+    2000
+     
+    characters
+  </div>
 </div>
 `;

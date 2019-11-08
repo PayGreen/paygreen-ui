@@ -10,4 +10,4 @@ it('renders without crashing', () => {
         </Title>
     );
     expect(title.toJSON()).toMatchSnapshot();
-})
+});
