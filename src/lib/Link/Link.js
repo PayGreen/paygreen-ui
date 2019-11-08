@@ -10,7 +10,13 @@ import { LinkBase } from './style';
 
 class Link extends PureComponent {
     render() {
-        return <LinkBase {...this.props}>{this.props.children}</LinkBase>;
+        return <LinkBase
+            theme={this.props.theme} // not necessary, only needed for tests
+            colorType={this.props.colorType}
+            colorTheme={this.props.colorTheme}
+        >
+            {this.props.children}
+        </LinkBase>;
     }
 }
 
