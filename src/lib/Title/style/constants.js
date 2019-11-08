@@ -1,4 +1,3 @@
-import { css } from 'styled-components';
 import { transparentize } from 'polished';
 
 const titleColor = {
@@ -16,27 +15,13 @@ const titleColor = {
     }
 };
 
-const smallSizes = [
+const smallFontSizes = [
     'xxs',
     'xs',
     'sm'
 ];
 
-const underlineAlign = {
-    left: css`
-        left: 0;
-    `,
-    center: css`
-        left: 50%;
-        transform: translateX(-50%);
-    `,
-    right: css`
-        right: 0;
-    `
-};
-
 export {
     titleColor,
-    smallSizes,
-    underlineAlign
+    smallFontSizes,
 };

@@ -1,7 +1,7 @@
 // Color nomber
 const colorNumberOptions = {
-    one: '1',
-    two: '2',
+    one: 'one',
+    two: 'two',
 };
 
 const colorNumberDefault = colorNumberOptions.one;
@@ -79,20 +79,20 @@ const justifyContentOptions = {
 
 const justifyContentDefault = justifyContentOptions.left;
 
-// Title tags
-const seoOptions = {
-    h1: '1',
-    h2: '2',
-    h3: '3',
-    h4: '4',
-    h5: '5',
-    h6: '6',
-    span: '0'
+// Title HTML tags
+const titleHtmlTagOptions = {
+    h1: 'h1',
+    h2: 'h2',
+    h3: 'h3',
+    h4: 'h4',
+    h5: 'h5',
+    h6: 'h6',
+    span: 'span'
 };
 
-const seoDefault = seoOptions.span;
+const titleHtmlTagDefault = titleHtmlTagOptions.span;
 
-// Fond sizes
+// Font sizes
 const fontSizeOptions = {
     xxs: 'xxs',
     xs: 'xs',
@@ -134,8 +134,8 @@ export {
     alignDefault,
     justifyContentOptions,
     justifyContentDefault,
-    seoOptions,
-    seoDefault,
+    titleHtmlTagOptions,
+    titleHtmlTagDefault,
     fontSizeOptions,
     fontSizeDefault,
     formStatusOptions,

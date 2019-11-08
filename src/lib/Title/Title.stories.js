@@ -1,8 +1,8 @@
 import React from 'react';
 import Title from './Title';
 import {
-    seoOptions,
-    seoDefault,
+    titleHtmlTagOptions,
+    titleHtmlTagDefault,
     colorTypeOptions,
     colorTypeDefault,
     colorNumberOptions,
@@ -23,11 +23,11 @@ storiesOf('Title', module)
     .addDecorator(withKnobs)
     .add('With only one color', () => (
         <Title
-            seo={select('SEO', seoOptions, seoDefault)}
+            titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
-            size={select('Size', fontSizeOptions, 'lg')}
-            align={radios('Align', alignOptions, alignDefault)}
+            textSize={select('Size', fontSizeOptions, 'lg')}
+            textAlign={radios('Align', alignOptions, alignDefault)}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
             underline={boolean('Underline', true)}
         >
@@ -38,18 +38,18 @@ storiesOf('Title', module)
     })
     .add('With two colors', () => (
         <Title
-            seo={select('SEO', seoOptions, seoDefault)}
+            titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorNumber={colorNumberOptions.two}
             colorTheme={radios('Main color', colorThemeOptions, colorThemeDefault)}
             color2={radios('Second color', greyOptions, greyDefault)}
-            size={select('Size', fontSizeOptions, 'lg')}
-            align={radios('Align', alignOptions, alignDefault)}
+            textSize={select('Size', fontSizeOptions, 'lg')}
+            textAlign={radios('Align', alignOptions, alignDefault)}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
             underline={boolean('Underline', true)}
         >
             Your title with <b>an emphasis</b>
         </Title>
     ), {
-        notes: 'You can change colors number with colorNumber prop. There is a <code>&lt;b&gt;</code> tag around "an emphasis" text. BTW, you can choose margin-bottom size and your tag (for seo).',
+        notes: 'You can change colors number with colorNumber prop. There is a <code>&lt;b&gt;</code> tag around "an emphasis" text. BTW, you can choose margin-bottom size and your HTML tag.',
     });
