@@ -28,6 +28,7 @@ class Textarea extends PureComponent {
             this.state.characters = 0;
         }
 
+        // State = warning when characters reach the 90% of maxLength
         if (this.state.characters > this.props.maxLength * 0.9) {
             this.state.charactersStatus = formStatusOptions.warning;
         } else if (this.state.characters >= this.props.minLength) {
