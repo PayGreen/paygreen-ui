@@ -8,18 +8,19 @@ import {
 } from './base';
 
 const InputBase = styled.div`
-    max-width: ${props => props.type === 'tel' ?
+    max-width: ${props => props.inputType === 'tel' ?
         props.theme.form.inputWidth.sm :
         props.theme.form.inputWidth.md
     };
+
+    ${props => props.params.shadow ? withShadow : null};
 
     label {
         ${label};
     }
 
     input {
-        ${props => props.params.shadow ? withShadow : ''};
-        ${props => props.disabled ? disabled : enabled};
+        ${props => props.inputDisabled ? disabled : enabled};
         
         display: block;
         box-sizing: border-box;

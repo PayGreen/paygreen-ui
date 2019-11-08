@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from './Button';
 import {
-    colorOptions,
-    colorDefault,
+    colorThemeOptions,
+    colorThemeDefault,
     buttonSizeOptions,
     buttonSizeDefault,
     buttonTemplateOptions,
@@ -18,9 +18,11 @@ storiesOf('Button', module)
         <a href="#">
             <Button
                 colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-                color={radios('Color', colorOptions, colorDefault)}
-                size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
-                disabled={boolean('Disabled', false)}
+                colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
+                buttonSize={radios('Button size', buttonSizeOptions, buttonSizeDefault)}
+                params={{
+                    disabled: boolean('Disabled', false),
+                }}
             >
                 {text('Label', 'CTA button')}
             </Button>
@@ -33,8 +35,11 @@ storiesOf('Button', module)
             <Button
                 template={buttonTemplateOptions.line}
                 colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-                color={radios('Color', colorOptions, colorDefault)}
-                size={radios('Size', buttonSizeOptions, buttonSizeDefault)}
+                colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
+                buttonSize={radios('Button size', buttonSizeOptions, buttonSizeDefault)}
+                params={{
+                    disabled: boolean('Disabled', false),
+                }}
             >
                 {text('Label', 'CTA button')}
             </Button>

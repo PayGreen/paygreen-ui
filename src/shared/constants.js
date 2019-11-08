@@ -1,20 +1,28 @@
 // Color nomber
 const colorNumberOptions = {
-    one: '1',
-    two: '2',
+    one: 'one',
+    two: 'two',
 };
 
 const colorNumberDefault = colorNumberOptions.one;
 
+// Color types
+const colorTypeOptions = {
+    original: 'original',
+    reverse: 'reverse'
+};
+
+const colorTypeDefault = colorTypeOptions.original;
+
 // Color themes
-const colorOptions = {
+const colorThemeOptions = {
     primary: 'primary',
     secondary: 'secondary',
     tertiary: 'tertiary',
     quaternary: 'quaternary'
 };
 
-const colorDefault = colorOptions.primary;
+const colorThemeDefault = colorThemeOptions.primary;
 
 // Grey shades
 const greyOptions = {
@@ -62,28 +70,29 @@ const alignOptions = {
 
 const alignDefault = alignOptions.left;
 
-// Color types
-const colorTypeOptions = {
-    original: 'original',
-    reverse: 'reverse'
+// Justify content
+const justifyContentOptions = {
+    left: 'flex-start',
+    center: 'center',
+    right: 'flex-end'
 };
 
-const colorTypeDefault = colorTypeOptions.original;
+const justifyContentDefault = justifyContentOptions.left;
 
-// Title tags
-const seoOptions = {
-    h1: '1',
-    h2: '2',
-    h3: '3',
-    h4: '4',
-    h5: '5',
-    h6: '6',
-    span: '0'
+// Title HTML tags
+const titleHtmlTagOptions = {
+    h1: 'h1',
+    h2: 'h2',
+    h3: 'h3',
+    h4: 'h4',
+    h5: 'h5',
+    h6: 'h6',
+    span: 'span'
 };
 
-const seoDefault = seoOptions.span;
+const titleHtmlTagDefault = titleHtmlTagOptions.span;
 
-// Fond sizes
+// Font sizes
 const fontSizeOptions = {
     xxs: 'xxs',
     xs: 'xs',
@@ -109,8 +118,10 @@ const formStatusDefault = formStatusOptions.default;
 export {
     colorNumberOptions,
     colorNumberDefault,
-    colorOptions,
-    colorDefault,
+    colorTypeOptions,
+    colorTypeDefault,
+    colorThemeOptions,
+    colorThemeDefault,
     greyOptions,
     greyDefault,
     buttonSizeOptions,
@@ -121,10 +132,10 @@ export {
     spaceDefault,
     alignOptions,
     alignDefault,
-    colorTypeOptions,
-    colorTypeDefault,
-    seoOptions,
-    seoDefault,
+    justifyContentOptions,
+    justifyContentDefault,
+    titleHtmlTagOptions,
+    titleHtmlTagDefault,
     fontSizeOptions,
     fontSizeDefault,
     formStatusOptions,

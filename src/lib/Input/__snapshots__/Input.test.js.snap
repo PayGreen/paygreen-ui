@@ -2,8 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa hhfJAp"
-  type="text"
+  className="sc-bdVaJa bTmSXS"
 >
   <label
     htmlFor="testId1"
@@ -12,17 +11,10 @@ exports[`renders without crashing 1`] = `
   </label>
   <input
     id="testId1"
-    label="Your name"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
-    params={
-      Object {
-        "shadow": false,
-      }
-    }
     placeholder="Firstname Lastname"
-    status="default"
     theme={
       Object {
         "animation": Object {},
@@ -193,6 +185,7 @@ exports[`renders without crashing 1`] = `
       }
     }
     type="text"
+    value=""
   />
   <span />
 </div>

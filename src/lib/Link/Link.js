@@ -3,25 +3,31 @@ import PropTypes from 'prop-types';
 import {
     colorTypeOptions,
     colorTypeDefault,
-    colorOptions,
-    colorDefault
+    colorThemeOptions,
+    colorThemeDefault
 } from '../../shared/constants';
 import { LinkBase } from './style';
 
 class Link extends PureComponent {
     render() {
-        return <LinkBase {...this.props}>{this.props.children}</LinkBase>;
+        return <LinkBase
+            theme={this.props.theme} // not necessary, only needed for tests
+            colorType={this.props.colorType}
+            colorTheme={this.props.colorTheme}
+        >
+            {this.props.children}
+        </LinkBase>;
     }
 }
 
 Link.propTypes = {
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    color: PropTypes.oneOf(Object.values(colorOptions)),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
 };
 
 Link.defaultProps = {
     colorType: colorTypeDefault,
-    color: colorDefault,
+    colorTheme: colorThemeDefault,
 };
 
 export default Link;

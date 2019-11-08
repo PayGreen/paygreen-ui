@@ -1,41 +1,22 @@
 import styled from 'styled-components';
-import { titleStyle } from './base';
+import { smallFontSizes } from './constants';
+import {
+    titleColors,
+    smallText,
+    underline
+} from './base';
 
-const TitleH1 = styled.h1`
-    ${titleStyle};
-`;
+const TitleBase = styled.span`
+    ${props => titleColors[props.colorNumber]};
+    ${props => smallFontSizes.includes(props.textSize) ? smallText : null};
+    ${props => props.underline ? underline : null};
 
-const TitleH2 = styled.h2`
-    ${titleStyle};
-`;
-
-const TitleH3 = styled.h3`
-    ${titleStyle};
-`;
-
-const TitleH4 = styled.h3`
-    ${titleStyle};
-`;
-
-const TitleH5 = styled.h5`
-    ${titleStyle};
-`;
-
-const TitleH6 = styled.h6`
-    ${titleStyle};
-`;
-
-const TitleSpan = styled.span`
     display: block;
-    ${titleStyle};
+    margin-top: ${props => props.theme.space[props.marginTop]};
+    margin-bottom: ${props => props.theme.space[props.marginTop]};
+    text-align: ${props => props.textAlign};
+    font-size: ${props => props.theme.font.size[props.textSize]};
+    font-weight: ${props => props.theme.font.weight.bold};
 `;
 
-export {
-    TitleH1,
-    TitleH2,
-    TitleH3,
-    TitleH4,
-    TitleH5,
-    TitleH6,
-    TitleSpan
-};
+export { TitleBase };

@@ -2,9 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <span
-  className="sc-bZQynM eaOsRb"
-  color="primary"
-  size="base"
+  className="sc-bdVaJa dfXRXI"
 >
   Your title with 
   <b>

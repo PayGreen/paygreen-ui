@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from './Link';
 import {
-    colorOptions,
-    colorDefault,
+    colorThemeOptions,
+    colorThemeDefault,
     colorTypeOptions,
     colorTypeDefault
 } from '../../shared/constants';
@@ -16,7 +16,7 @@ storiesOf('Link', module)
             <a href="#">
             <Link
                 colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-                color={radios('Color', colorOptions, colorDefault)}
+                colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             >
                 {text('Label', 'Link text')}
             </Link></a> curabitur congue varius ex et posuere. Maecenas tincidunt diam ut nisl porttitor scelerisque. Donec egestas elit dolor, quis eleifend ipsum sagittis ut. Proin molestie lorem et neque tempus tristique. Mauris finibus dui sem, nec suscipit mi porta a.

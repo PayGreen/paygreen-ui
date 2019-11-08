@@ -6,9 +6,9 @@ const fieldTextColor = {
 };
 
 const inputPadding = {
-    base: props => props.shadow ? 
+    base: props => props.params.shadow ?
         props.theme.space.sm : 0,
-    larger: props => props.shadow ?
+    larger: props => props.params.shadow ?
         props.theme.space.md : props.theme.space.sm,
 };
 

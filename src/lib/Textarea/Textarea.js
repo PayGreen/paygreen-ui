@@ -28,6 +28,7 @@ class Textarea extends PureComponent {
             this.state.characters = 0;
         }
 
+        // State = warning when characters reach the 90% of maxLength
         if (this.state.characters > this.props.maxLength * 0.9) {
             this.state.charactersStatus = formStatusOptions.warning;
         } else if (this.state.characters >= this.props.minLength) {
@@ -38,6 +39,8 @@ class Textarea extends PureComponent {
     }
 
     render() {
+        const {params, status, state, label, counterlabel, ...rest} = this.props;
+
         this.characterCount(this.state.value);
 
         const charactersCountBlock = <div>
@@ -51,19 +54,21 @@ class Textarea extends PureComponent {
             params={this.props.params}
             status={this.props.status}
             state={this.state}
-            disabled={this.props.disabled}
+            inputDisabled={this.props.disabled}
+            inputReadOnly={this.props.readOnly}
         >
             <label htmlFor={this.props.id}>
                 {this.props.label}
             </label>
 
             <textarea
-                {...this.props}
+                {...rest}
                 value={this.state.value}
                 onChange={this.handleChange}
             />
             
-            {this.props.params.counter && !this.props.disabled ? charactersCountBlock : ''}
+            {this.props.params.counter && !this.props.disabled && !this.props.readOnly ?
+                charactersCountBlock : null}
         </TextareaBase>;
     }
 }
@@ -72,6 +77,7 @@ Textarea.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
+    readOnly: PropTypes.bool,
     minLength: PropTypes.number,
     maxLength: PropTypes.number,
     params: PropTypes.shape({

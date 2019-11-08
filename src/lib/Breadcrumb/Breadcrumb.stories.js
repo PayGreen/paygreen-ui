@@ -1,8 +1,8 @@
 import React from 'react';
 import Breadcrumb from './Breadcrumb';
 import {
-    colorOptions,
-    colorDefault,
+    colorThemeOptions,
+    colorThemeDefault,
     colorTypeOptions,
     colorTypeDefault
 } from '../../shared/constants';
@@ -34,8 +34,8 @@ storiesOf('Breadcrumb', module)
         <Breadcrumb
             elements={sampleLinks}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-            color={radios('Color', colorOptions, colorDefault)}
+            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
         />
     ), {
-        notes: 'Breadcrumb takes an array of objects as "element" prop.',
+        notes: 'Breadcrumb takes an array of objects as "elements" prop.',
     });

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {
     colorTypeOptions,
     colorTypeDefault,
-    colorOptions,
-    colorDefault
+    colorThemeOptions,
+    colorThemeDefault
 } from '../../shared/constants';
 import { BreadcrumbBase } from './style';
 
@@ -29,7 +29,13 @@ class Breadcrumb extends PureComponent {
             </li>
         );
 
-        return <BreadcrumbBase {...this.props}>{items}</BreadcrumbBase>;
+        return <BreadcrumbBase
+            theme={this.props.theme} // not necessary, only needed for tests
+            colorType={this.props.colorType}
+            colorTheme={this.props.colorTheme}
+        >
+            {items}
+        </BreadcrumbBase>;
     }
 }
 
@@ -41,12 +47,12 @@ Breadcrumb.propTypes = {
         })
     ).isRequired,
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    color: PropTypes.oneOf(Object.values(colorOptions)),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
 };
 
 Breadcrumb.defaultProps = {
     colorType: colorTypeDefault,
-    color: colorDefault,
+    colorTheme: colorThemeDefault,
 };
 
 export default Breadcrumb;

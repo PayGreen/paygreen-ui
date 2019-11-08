@@ -17,13 +17,13 @@ storiesOf('ButtonGroup', module)
     .addDecorator(withKnobs)
     .add('ButtonGroup', () => (
         <ButtonGroup
-            align={radios('Align', alignOptions, alignDefault)}
-            margin={radios('Margin top', spaceOptions, spaceDefault)}
+            buttonAlign={radios('Buttons align', alignOptions, alignDefault)}
+            blockMargin={radios('Margin top', spaceOptions, spaceDefault)}
         >
             <a href="#">
                 <Button
                     template={buttonTemplateOptions.line}
-                    size={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
+                    buttonSize={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
                 >
                     First button
                 </Button>
@@ -31,7 +31,7 @@ storiesOf('ButtonGroup', module)
 
             <a href="#">
                 <Button
-                    size={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
+                    buttonSize={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
                 >
                     Second button
                 </Button>

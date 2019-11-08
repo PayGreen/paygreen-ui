@@ -40,24 +40,27 @@ class Input extends PureComponent {
                 this.setState({status: this.props.status});
             }, 1);
         }
+
+        const {params, status, label, ...rest} = this.props;
         
         return <Transition in={animation} timeout={900}>
             {(keyframe) => {
                 return (
                     <InputBase
-                        theme={this.props.theme} // not necessary, only needed for tests
                         keyframe={keyframe}
+                        theme={this.props.theme} // not necessary, only needed for tests
                         params={this.props.params}
                         status={this.props.status}
-                        type={this.props.type}
-                        disabled={this.props.disabled}
+                        inputType={this.props.type}
+                        inputDisabled={this.props.disabled}
+                        inputReadOnly={this.props.readOnly}
                     >
                         <label htmlFor={this.props.id}>
                             {this.props.label}
                         </label>
 
                         <InputMask 
-                            {...this.props}
+                            {...rest}
                             mask={this.state.mask}
                             value={this.state.value}
                             onChange={this.handleChange}
@@ -76,6 +79,7 @@ Input.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
+    readOnly: PropTypes.bool,
     params: PropTypes.shape({
         shadow: PropTypes.bool,
     }),

@@ -26,12 +26,28 @@ const fieldShadow = css`
 `;
 
 const withShadow = css`
+    label {
+        margin-bottom: ${props => props.theme.space.xs};
+    }
+    
     input {
         ${fieldShadow};
     }
+`;
 
-    label {
-        margin-bottom: ${props => props.theme.space.xs};
+const canHover = css`
+    &:hover,
+    &:active,
+    &:focus {
+        padding-left: ${inputPadding.larger};
+        padding-right: ${inputPadding.base};
+
+        & + span {
+            &::before,
+            &::after {
+                opacity: 1;
+            }
+        }
     }
 `;
 
@@ -57,19 +73,7 @@ const enabled = css`
         }
     }
 
-    &:hover,
-    &:active,
-    &:focus {
-        padding-left: ${inputPadding.larger};
-        padding-right: ${inputPadding.base};
-
-        & + span {
-            &::before,
-            &::after {
-                opacity: 1;
-            }
-        }
-    }
+    ${props => props.inputReadOnly ? null : canHover};
 `;
 
 const disabled = css`

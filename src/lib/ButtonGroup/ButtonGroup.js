@@ -10,18 +10,24 @@ import { ButtonGroupBase } from './style';
 
 class ButtonGroup extends PureComponent {
     render() {
-        return <ButtonGroupBase {...this.props}>{this.props.children}</ButtonGroupBase>;
+        return <ButtonGroupBase
+            theme={this.props.theme} // not necessary, only needed for tests
+            buttonAlign={this.props.buttonAlign}
+            blockMargin={this.props.blockMargin}
+        >
+            {this.props.children}
+        </ButtonGroupBase>;
     }
 }
 
 ButtonGroup.propTypes = {
-    align: PropTypes.oneOf(Object.values(alignOptions)),
-    margin: PropTypes.oneOf(Object.values(spaceOptions)),
+    buttonAlign: PropTypes.oneOf(Object.values(alignOptions)),
+    blockMargin: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 ButtonGroup.defaultProps = {
-    align: alignDefault,
-    margin: spaceDefault
+    buttonAlign: alignDefault,
+    blockMargin: spaceDefault
 };
 
 export default ButtonGroup;
