@@ -65,7 +65,7 @@ class Textarea extends PureComponent {
                 onChange={this.handleChange}
             />
             
-            {this.props.params.counter && !this.props.disabled ? charactersCountBlock : ''}
+            {this.props.params.counter && !this.props.disabled ? charactersCountBlock : null}
         </TextareaBase>;
     }
 }

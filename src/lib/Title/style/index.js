@@ -8,8 +8,8 @@ import {
 
 const TitleBase = styled.span`
     ${props => titleColors[props.colorNumber]};
-    ${props => smallFontSizes.includes(props.textSize) ? smallText : ''};
-    ${props => props.underline ? underline : ''};
+    ${props => smallFontSizes.includes(props.textSize) ? smallText : null};
+    ${props => props.underline ? underline : null};
 
     display: block;
     margin-top: ${props => props.theme.space[props.marginTop]};

@@ -10,7 +10,7 @@ import {
 const TextareaBase = styled.div`
     max-width: ${props => props.theme.form.inputWidth.lg};
 
-    ${props => props.params.shadow ? withShadow : ''};
+    ${props => props.params.shadow ? withShadow : null};
     ${props => props.inputDisabled ? disabled : enabled};
 
     label {

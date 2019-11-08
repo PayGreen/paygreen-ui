@@ -13,7 +13,7 @@ const InputBase = styled.div`
         props.theme.form.inputWidth.md
     };
 
-    ${props => props.params.shadow ? withShadow : ''};
+    ${props => props.params.shadow ? withShadow : null};
 
     label {
         ${label};
