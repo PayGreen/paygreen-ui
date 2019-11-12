@@ -79,6 +79,15 @@ const justifyContentOptions = {
 
 const justifyContentDefault = justifyContentOptions.left;
 
+// Card HTML tags
+const cardHtmlTagOptions = {
+    div: 'div',
+    article: 'article',
+    aside: 'aside'
+};
+
+const cardHtmlTagDefault = cardHtmlTagOptions.div;
+
 // Title HTML tags
 const titleHtmlTagOptions = {
     h1: 'h1',
@@ -134,6 +143,8 @@ export {
     alignDefault,
     justifyContentOptions,
     justifyContentDefault,
+    cardHtmlTagOptions,
+    cardHtmlTagDefault,
     titleHtmlTagOptions,
     titleHtmlTagDefault,
     fontSizeOptions,
