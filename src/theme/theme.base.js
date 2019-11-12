@@ -182,4 +182,16 @@ export const ThemeBase = {
         },
         textareaHeight: '200px',
     },
+    shadow: {
+        size: {
+            sm: '1px 1px 10px',
+            md: '',
+            lg: ''
+        },
+        opacity: {
+            sm: 0.9,
+            md: '',
+            lg: ''
+        }
+    }
 };

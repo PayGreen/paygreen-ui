@@ -49,6 +49,15 @@ const buttonTemplateOptions = {
 
 const buttonTemplateDefault = buttonTemplateOptions.fill;
 
+// Shadows styles
+const shadowStyleOptions = {
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+};
+
+const shadowStyleDefault = 'sm';
+
 // Spaces
 const spaceOptions = {
     none: 'none',
@@ -137,6 +146,8 @@ export {
     buttonSizeDefault,
     buttonTemplateOptions,
     buttonTemplateDefault,
+    shadowStyleOptions,
+    shadowStyleDefault,
     spaceOptions,
     spaceDefault,
     alignOptions,
