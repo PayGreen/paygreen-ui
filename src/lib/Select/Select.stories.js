@@ -36,14 +36,14 @@ storiesOf('Select', module)
             id="select1"
             label="Your choice"
             options={options}
+            disabled={boolean('Disabled', false)}
+            readOnly={boolean('Readonly', false)}
             status={radios('State', formStatusOptions, formStatusDefault)}
             params={{
                 shadow: boolean('With shadow', false),
             }}
             width={radios('Width', inputWidthOptions, inputWidthDefault)}
-            disabled={boolean('Disabled', false)}
-            readOnly={boolean('Readonly', false)}
         />
     ), {
-        notes: 'Select.',
+        notes: 'You can change select with with "width" props (could be sm, md or lg).',
     });
