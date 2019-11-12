@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import {
     formStatusOptions,
     formStatusDefault,
+    inputWidthOptions,
+    inputWidthDefault
 } from '../../shared/constants';
 import { InputBase } from './style';
 
@@ -32,7 +34,13 @@ class Input extends PureComponent {
     }
 
     render() {
-        const {params, status, label, ...rest} = this.props;
+        const {
+            params,
+            status,
+            width,
+            label,
+            ...rest
+        } = this.props;
 
         let animation = false;
         if (this.props.status !== this.state.status) {
@@ -52,6 +60,7 @@ class Input extends PureComponent {
                         params={this.props.params}
                         status={this.props.status}
                         inputType={this.props.type}
+                        inputWidth={this.props.width}
                         inputDisabled={this.props.disabled}
                         inputReadOnly={this.props.readOnly}
                     >
@@ -78,6 +87,7 @@ Input.propTypes = {
     type: PropTypes.string,
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
+    width: PropTypes.oneOf(Object.values(inputWidthOptions)),
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     params: PropTypes.shape({
@@ -89,6 +99,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
     type: 'text',
+    width: inputWidthDefault,
     params: {
         shadow: false,
     },
