@@ -56,7 +56,7 @@ const shadowStyleOptions = {
     lg: 'lg',
 };
 
-const shadowStyleDefault = 'sm';
+const shadowStyleDefault = 'md';
 
 // Spaces
 const spaceOptions = {

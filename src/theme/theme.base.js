@@ -185,13 +185,13 @@ export const ThemeBase = {
     shadow: {
         size: {
             sm: '1px 1px 10px',
-            md: '',
-            lg: ''
+            md: '2px 2px 15px',
+            lg: '3px 3px 20px'
         },
         opacity: {
             sm: 0.9,
-            md: '',
-            lg: ''
+            md: 0.8,
+            lg: 0.7
         }
     }
 };
