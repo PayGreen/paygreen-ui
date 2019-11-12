@@ -3,6 +3,8 @@ import Select from './Select';
 import {
     formStatusOptions,
     formStatusDefault,
+    inputWidthOptions,
+    inputWidthDefault
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
@@ -38,6 +40,7 @@ storiesOf('Select', module)
             params={{
                 shadow: boolean('With shadow', false),
             }}
+            width={radios('Width', inputWidthOptions, inputWidthDefault)}
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
         />

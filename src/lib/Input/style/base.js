@@ -25,6 +25,7 @@ const field = css`
     padding-left: ${inputPadding.base};
     padding-right: ${inputPadding.larger};
     width: 100%;
+    line-height: 1em;
     transition: all ${props => props.theme.transition.sm};
 
     & + span {
@@ -68,7 +69,8 @@ const withShadow = css`
         margin-bottom: ${props => props.theme.space.xs};
     }
     
-    input {
+    input,
+    select {
         ${fieldShadow};
     }
 `;

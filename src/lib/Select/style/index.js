@@ -8,10 +8,8 @@ import {
 } from '../../Input/style/base';
 
 const SelectBase = styled.div`
-    /* largeur changeante */
-    max-width: ${props => props.theme.form.inputWidth.sm};
-
     ${props => props.params.shadow ? withShadow : null};
+    max-width: ${props => props.theme.form.inputWidth[props.inputWidth]};
 
     label {
         ${label};
@@ -20,6 +18,12 @@ const SelectBase = styled.div`
     select {
         ${field};
         ${props => props.inputDisabled ? disabled : enabled};
+
+        option {
+            &:disabled {
+                color: ${props => props.theme.color.grey30};
+            }
+        }
     }
 `;
 

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import {
     formStatusOptions,
     formStatusDefault,
+    inputWidthOptions,
+    inputWidthDefault
 } from '../../shared/constants';
 import { SelectBase } from './style';
 
@@ -50,6 +52,7 @@ class Select extends PureComponent {
             params,
             status,
             state,
+            width,
             label,
             readOnly,
             ...rest
@@ -64,6 +67,7 @@ class Select extends PureComponent {
                         params={this.props.params}
                         status={this.props.status}
                         state={this.state}
+                        inputWidth={this.props.width}
                         inputDisabled={this.props.disabled}
                         inputReadOnly={this.props.readOnly}
                     >
@@ -97,6 +101,7 @@ Select.propTypes = {
             disabled: PropTypes.bool
         })
     ).isRequired,
+    width: PropTypes.oneOf(Object.values(inputWidthOptions)),
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     params: PropTypes.shape({
@@ -106,6 +111,7 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
+    width: inputWidthDefault,
     params: {
         shadow: false,
     },
