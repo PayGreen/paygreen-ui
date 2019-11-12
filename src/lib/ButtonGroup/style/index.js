@@ -5,6 +5,7 @@ const ButtonGroupBase = styled.div`
     display: flex;
     justify-content: ${props => justifyContentOptions[props.buttonAlign]};
     flex-wrap: wrap;
+    margin: 0 -${props => props.theme.space.sm};
     margin-top: ${props => props.theme.space[props.blockMargin]};
 
     a {
