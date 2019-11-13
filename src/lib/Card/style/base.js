@@ -23,7 +23,11 @@ const radius = css`
 `;
 
 const padding = css`
-    padding: ${props => props.theme.block.padding.sm};
+    padding: ${props => props.theme.space.md};
+
+    @media (${props => props.theme.query.min.sm}) {
+        padding: ${props => props.theme.block.padding.sm};
+    }
 
     @media (${props => props.theme.query.min.md}) {
         padding: ${props => props.theme.block.padding[props.blockSize]};
@@ -43,11 +47,14 @@ const backgroundStyle = {
             ${props => props.theme.color[props.colorTheme]['gradientBase']},
             ${props => props.theme.color[props.colorTheme]['gradientShade']}
         );
-        color: ${props => props.theme.color.white00};
 
         ${shadowStyle};
         ${radius};
         ${padding};
+
+        p {
+            color: ${props => props.theme.color.white00};
+        }
     `
 };
 
