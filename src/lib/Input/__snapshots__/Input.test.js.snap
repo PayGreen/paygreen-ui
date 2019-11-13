@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa bTmSXS"
+  className="sc-bdVaJa hvZHP"
 >
   <label
     htmlFor="testId1"

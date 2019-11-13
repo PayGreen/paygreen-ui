@@ -15,6 +15,42 @@ const label = css`
     letter-spacing: ${props => props.theme.font.spacing};
 `;
 
+const field = css`
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-radius: ${props => props.theme.radius.sm} ${props => props.theme.radius.sm} 0 0;
+    padding: ${props => props.theme.space.sm};
+    padding-left: ${inputPadding.base};
+    padding-right: ${inputPadding.larger};
+    width: 100%;
+    line-height: 1em;
+    transition: all ${props => props.theme.transition.sm};
+
+    & + span {
+        position: relative;
+        display: block;
+        height: ${props => props.theme.line};
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+    }
+`;
+
 const disabledField = css`
     cursor: not-allowed;
     color: ${props => props.theme.color.grey40};
@@ -33,7 +69,8 @@ const withShadow = css`
         margin-bottom: ${props => props.theme.space.xs};
     }
     
-    input {
+    input,
+    select {
         ${fieldShadow};
     }
 `;
@@ -93,6 +130,7 @@ const disabled = css`
 
 export {
     label,
+    field,
     disabledField,
     fieldShadow,
     withShadow,

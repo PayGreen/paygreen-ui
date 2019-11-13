@@ -2,19 +2,16 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa eOKGAx"
+  className="sc-bdVaJa dvhcAK"
 >
   <label
-    htmlFor="textareaTest1"
+    htmlFor="selectId1"
   >
-    Your message
+    Your choice
   </label>
-  <textarea
-    id="textareaTest1"
-    maxLength={2000}
-    minLength={0}
+  <select
+    id="selectId1"
     onChange={[Function]}
-    placeholder="Your text…"
     theme={
       Object {
         "animation": Object {},
@@ -185,15 +182,24 @@ exports[`renders without crashing 1`] = `
       }
     }
     value=""
-  />
-  <div>
-    <span>
-      0
-    </span>
-     / 
-    2000
-     
-    characters
-  </div>
+  >
+    <option
+      disabled={true}
+      value=""
+    >
+      Choose your option...
+    </option>
+    <option
+      value="first"
+    >
+      First option
+    </option>
+    <option
+      value="second"
+    >
+      Second option
+    </option>
+  </select>
+  <span />
 </div>
 `;

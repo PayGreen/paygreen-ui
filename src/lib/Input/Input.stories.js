@@ -3,6 +3,8 @@ import Input from './Input';
 import {
     formStatusOptions,
     formStatusDefault,
+    inputWidthOptions,
+    inputWidthDefault
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
@@ -17,6 +19,7 @@ storiesOf('Input', module)
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
             status={radios('State', formStatusOptions, formStatusDefault)}
+            width={radios('Width', inputWidthOptions, inputWidthDefault)}
             params={{
                 shadow: boolean('With shadow', false),
             }}

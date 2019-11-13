@@ -87,6 +87,14 @@ const blockSizeOptions = {
 };
 
 const blockSizeDefault = blockSizeOptions.md;
+// Input width
+const inputWidthOptions = {
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+}
+
+const inputWidthDefault = inputWidthOptions.md;
 
 // Align
 const alignOptions = {
@@ -172,6 +180,8 @@ export {
     spaceDefault,
     blockSizeOptions,
     blockSizeDefault,
+    inputWidthOptions,
+    inputWidthDefault,
     alignOptions,
     alignDefault,
     justifyContentOptions,
