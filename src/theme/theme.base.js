@@ -118,12 +118,19 @@ export const ThemeBase = {
         lg: '32px',
         xl: '64px',
     },
-    width: {
-        xs: '',
-        sm: '',
-        md: '',
-        lg: '',
-        xl: '',
+    block: {
+        width: {
+            sm: '400px',
+            md: '560px',
+            lg: '640px',
+            xl: '760px',
+        },
+        padding: {
+            sm: '24px',
+            md: '40px',
+            lg: '52px',
+            xl: '68px',
+        },
     },
     transition: {
         xs: '0.2s',
@@ -182,4 +189,16 @@ export const ThemeBase = {
         },
         textareaHeight: '200px',
     },
+    shadow: {
+        size: {
+            sm: '1px 1px 10px',
+            md: '2px 2px 15px',
+            lg: '3px 3px 20px'
+        },
+        opacity: {
+            sm: 0.9,
+            md: 0.8,
+            lg: 0.7
+        }
+    }
 };

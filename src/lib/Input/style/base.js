@@ -22,7 +22,10 @@ const disabledField = css`
 `;
 
 const fieldShadow = css`
-    box-shadow: 1px 1px 10px ${props => transparentize(0.9, props.theme.color.black00)};
+    box-shadow: ${props => props.theme.shadow.size.sm + ' ' + transparentize(
+        props.theme.shadow.opacity.sm,
+        props.theme.color.black00
+    )};
 `;
 
 const withShadow = css`

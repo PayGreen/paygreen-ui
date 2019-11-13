@@ -12,6 +12,7 @@ const ButtonBase = styled.span`
 
     display: inline-block;
     position: relative;
+    z-index: 0;
     text-align: center;
     text-transform: uppercase;
     font-weight: ${props => props.theme.font.weight.bold};

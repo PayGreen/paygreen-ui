@@ -49,6 +49,23 @@ const buttonTemplateOptions = {
 
 const buttonTemplateDefault = buttonTemplateOptions.fill;
 
+// Shadows styles
+const shadowStyleOptions = {
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+};
+
+const shadowStyleDefault = shadowStyleOptions.md;
+
+// Radius sizes
+const radiusOptions = {
+    sm: 'sm',
+    lg: 'lg'
+};
+
+const radiusDefault = radiusOptions.lg;
+
 // Spaces
 const spaceOptions = {
     none: 'none',
@@ -60,6 +77,16 @@ const spaceOptions = {
 };
 
 const spaceDefault = spaceOptions.none;
+
+// Block sizes
+const blockSizeOptions = {
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl'
+};
+
+const blockSizeDefault = blockSizeOptions.md;
 
 // Align
 const alignOptions = {
@@ -78,6 +105,15 @@ const justifyContentOptions = {
 };
 
 const justifyContentDefault = justifyContentOptions.left;
+
+// Card HTML tags
+const cardHtmlTagOptions = {
+    div: 'div',
+    article: 'article',
+    aside: 'aside'
+};
+
+const cardHtmlTagDefault = cardHtmlTagOptions.div;
 
 // Title HTML tags
 const titleHtmlTagOptions = {
@@ -128,12 +164,20 @@ export {
     buttonSizeDefault,
     buttonTemplateOptions,
     buttonTemplateDefault,
+    shadowStyleOptions,
+    shadowStyleDefault,
+    radiusOptions,
+    radiusDefault,
     spaceOptions,
     spaceDefault,
+    blockSizeOptions,
+    blockSizeDefault,
     alignOptions,
     alignDefault,
     justifyContentOptions,
     justifyContentDefault,
+    cardHtmlTagOptions,
+    cardHtmlTagDefault,
     titleHtmlTagOptions,
     titleHtmlTagDefault,
     fontSizeOptions,

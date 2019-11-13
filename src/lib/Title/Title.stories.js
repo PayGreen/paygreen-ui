@@ -23,13 +23,13 @@ storiesOf('Title', module)
     .addDecorator(withKnobs)
     .add('With only one color', () => (
         <Title
-            titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
+            underline={boolean('Underline', true)}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             textSize={select('Size', fontSizeOptions, 'lg')}
             textAlign={radios('Align', alignOptions, alignDefault)}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            underline={boolean('Underline', true)}
+            titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
         >
             {text('Label', 'Your simple title')}
         </Title>
@@ -38,15 +38,15 @@ storiesOf('Title', module)
     })
     .add('With two colors', () => (
         <Title
-            titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
+            underline={boolean('Underline', true)}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorNumber={colorNumberOptions.two}
             colorTheme={radios('Main color', colorThemeOptions, colorThemeDefault)}
             color2={radios('Second color', greyOptions, greyDefault)}
-            textSize={select('Size', fontSizeOptions, 'lg')}
+            textSize={select('Size', fontSizeOptions, fontSizeOptions.lg)}
             textAlign={radios('Align', alignOptions, alignDefault)}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            underline={boolean('Underline', true)}
+            titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
         >
             Your title with <b>an emphasis</b>
         </Title>
