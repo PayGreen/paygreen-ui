@@ -121,15 +121,15 @@ export const ThemeBase = {
     block: {
         width: {
             sm: '400px',
-            md: '530px',
-            lg: '630px',
-            xl: '750px',
+            md: '560px',
+            lg: '640px',
+            xl: '760px',
         },
         padding: {
-            sm: '20px',
-            md: '35px',
-            lg: '50px',
-            xl: '65px',
+            sm: '24px',
+            md: '40px',
+            lg: '52px',
+            xl: '68px',
         },
     },
     transition: {
