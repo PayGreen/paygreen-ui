@@ -51,7 +51,6 @@ class Select extends PureComponent {
             options,
             params,
             status,
-            state,
             width,
             label,
             readOnly,
@@ -64,15 +63,14 @@ class Select extends PureComponent {
                     <SelectBase
                         keyframe={keyframe}
                         theme={this.props.theme} // not necessary, only needed for tests
-                        params={this.props.params}
-                        status={this.props.status}
-                        state={this.state}
-                        inputWidth={this.props.width}
+                        params={params}
+                        status={status}
+                        inputWidth={width}
+                        inputReadOnly={readOnly}
                         inputDisabled={this.props.disabled}
-                        inputReadOnly={this.props.readOnly}
                     >
                         <label htmlFor={this.props.id}>
-                            {this.props.label}
+                            {label}
                         </label>
 
                         <select

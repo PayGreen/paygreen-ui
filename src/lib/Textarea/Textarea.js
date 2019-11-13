@@ -39,20 +39,26 @@ class Textarea extends PureComponent {
     }
 
     render() {
-        const {params, status, state, label, counterlabel, ...rest} = this.props;
+        const {
+            params,
+            status,
+            label,
+            counterlabel,
+            ...rest
+        } = this.props;
 
         this.characterCount(this.state.value);
 
         const charactersCountBlock = <div>
             <span>
                 {this.state.characters}
-            </span>&nbsp;/&nbsp;{this.props.maxLength} {this.props.counterlabel}
+            </span>&nbsp;/&nbsp;{this.props.maxLength} {counterlabel}
         </div>;
 
         return <TextareaBase
             theme={this.props.theme} // not necessary, only needed for tests
-            params={this.props.params}
-            status={this.props.status}
+            params={params}
+            status={status}
             state={this.state}
             inputDisabled={this.props.disabled}
             inputReadOnly={this.props.readOnly}
@@ -67,7 +73,7 @@ class Textarea extends PureComponent {
                 onChange={this.handleChange}
             />
             
-            {this.props.params.counter && !this.props.disabled && !this.props.readOnly ?
+            {params.counter && !this.props.disabled && !this.props.readOnly ?
                 charactersCountBlock : null}
         </TextareaBase>;
     }

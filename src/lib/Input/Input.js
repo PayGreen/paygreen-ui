@@ -57,15 +57,15 @@ class Input extends PureComponent {
                     <InputBase
                         keyframe={keyframe}
                         theme={this.props.theme} // not necessary, only needed for tests
-                        params={this.props.params}
-                        status={this.props.status}
+                        params={params}
+                        status={status}
                         inputType={this.props.type}
-                        inputWidth={this.props.width}
-                        inputDisabled={this.props.disabled}
+                        inputWidth={width}
                         inputReadOnly={this.props.readOnly}
+                        inputDisabled={this.props.disabled}
                     >
                         <label htmlFor={this.props.id}>
-                            {this.props.label}
+                            {label}
                         </label>
 
                         <InputMask 
