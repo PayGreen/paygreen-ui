@@ -44,9 +44,4 @@ export const GlobalStyle = createGlobalStyle`
         color: ${ThemeDefault.color.grey60};
         line-height: 1.5;
     }
-
-    p::selection {
-        color: ${ThemeDefault.color.white00};
-        background-color: ${ThemeDefault.color.primary.main};
-    }
 `;
