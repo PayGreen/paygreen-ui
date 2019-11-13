@@ -43,7 +43,7 @@ storiesOf('Title', module)
             colorNumber={colorNumberOptions.two}
             colorTheme={radios('Main color', colorThemeOptions, colorThemeDefault)}
             color2={radios('Second color', greyOptions, greyDefault)}
-            textSize={select('Size', fontSizeOptions, 'lg')}
+            textSize={select('Size', fontSizeOptions, fontSizeOptions.lg)}
             textAlign={radios('Align', alignOptions, alignDefault)}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
             titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
