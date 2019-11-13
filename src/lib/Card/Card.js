@@ -7,10 +7,10 @@ import {
     colorTypeDefault,
     colorThemeOptions,
     colorThemeDefault,
-    alignOptions,
-    alignDefault,
-    spaceOptions,
-    spaceDefault,
+    shadowStyleOptions,
+    shadowStyleDefault,
+    radiusOptions,
+    radiusDefault,
 } from '../../shared/constants';
 import { CardBase } from './style';
 
@@ -27,10 +27,20 @@ class Card extends PureComponent {
 
 Card.propTypes = {
     cardHtmlTag: PropTypes.oneOf(Object.values(cardHtmlTagOptions)),
+    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    shadow: PropTypes.oneOf(Object.values(shadowStyleOptions)),
+    radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
+    hasBackground: PropTypes.bool,
 };
 
 Card.defaultProps = {
     cardHtmlTag: cardHtmlTagDefault,
+    colorType: colorTypeDefault,
+    colorTheme: colorThemeDefault,
+    shadow: shadowStyleDefault,
+    radiusSize: radiusDefault,
+    hasBackground: true,
 };
 
 export default Card;

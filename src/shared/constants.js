@@ -56,7 +56,15 @@ const shadowStyleOptions = {
     lg: 'lg',
 };
 
-const shadowStyleDefault = 'md';
+const shadowStyleDefault = shadowStyleOptions.md;
+
+// Radius sizes
+const radiusOptions = {
+    sm: 'sm',
+    lg: 'lg'
+};
+
+const radiusDefault = radiusOptions.lg;
 
 // Spaces
 const spaceOptions = {
@@ -148,6 +156,8 @@ export {
     buttonTemplateDefault,
     shadowStyleOptions,
     shadowStyleDefault,
+    radiusOptions,
+    radiusDefault,
     spaceOptions,
     spaceDefault,
     alignOptions,
