@@ -78,6 +78,16 @@ const spaceOptions = {
 
 const spaceDefault = spaceOptions.none;
 
+// Block sizes
+const blockSizeOptions = {
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl'
+};
+
+const blockSizeDefault = blockSizeOptions.md;
+
 // Align
 const alignOptions = {
     left: 'left',
@@ -160,6 +170,8 @@ export {
     radiusDefault,
     spaceOptions,
     spaceDefault,
+    blockSizeOptions,
+    blockSizeDefault,
     alignOptions,
     alignDefault,
     justifyContentOptions,

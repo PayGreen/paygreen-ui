@@ -118,12 +118,19 @@ export const ThemeBase = {
         lg: '32px',
         xl: '64px',
     },
-    width: {
-        xs: '',
-        sm: '',
-        md: '',
-        lg: '',
-        xl: '',
+    block: {
+        width: {
+            sm: '400px',
+            md: '530px',
+            lg: '630px',
+            xl: '750px',
+        },
+        padding: {
+            sm: '20px',
+            md: '35px',
+            lg: '50px',
+            xl: '65px',
+        },
     },
     transition: {
         xs: '0.2s',

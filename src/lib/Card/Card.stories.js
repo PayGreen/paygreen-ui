@@ -9,6 +9,8 @@ import {
     colorThemeDefault,
     shadowStyleOptions,
     shadowStyleDefault,
+    blockSizeOptions,
+    blockSizeDefault,
     radiusOptions,
     radiusDefault,
 } from '../../shared/constants';
@@ -23,6 +25,7 @@ storiesOf('Card', module)
             colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             shadow={radios('Shadow style', shadowStyleOptions, shadowStyleDefault)}
             hasBackground={boolean('With background', true)}
+            blockSize={select('Block dimensions', blockSizeOptions, blockSizeDefault)}
             radiusSize={radios('Border radius', radiusOptions, radiusDefault)}
             cardHtmlTag={select('HTML card tag', cardHtmlTagOptions, cardHtmlTagDefault)}
         >
