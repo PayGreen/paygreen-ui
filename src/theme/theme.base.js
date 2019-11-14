@@ -126,6 +126,7 @@ export const ThemeBase = {
     },
     blockPadding: {
         none: 0,
+        xs: '16px',
         sm: '24px',
         md: '40px',
         lg: '52px',

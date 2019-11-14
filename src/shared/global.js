@@ -39,9 +39,4 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
         outline: none;
     }
-
-    p {
-        color: ${ThemeDefault.color.grey60};
-        line-height: 1.5;
-    }
 `;
