@@ -9,8 +9,8 @@ import {
     colorThemeDefault,
     shadowStyleOptions,
     shadowStyleDefault,
-    blockSizeOptions,
-    blockSizeDefault,
+    blockWidthOptions,
+    blockWidthDefault,
     radiusOptions,
     radiusDefault,
 } from '../../shared/constants';
@@ -32,7 +32,7 @@ Card.propTypes = {
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     shadow: PropTypes.oneOf(Object.values(shadowStyleOptions)),
-    blockSize: PropTypes.oneOf(Object.values(blockSizeOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     hasBackground: PropTypes.bool,
 };
@@ -42,7 +42,7 @@ Card.defaultProps = {
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
     shadow: shadowStyleDefault,
-    blockSize: blockSizeDefault,
+    blockWidth: blockWidthDefault,
     radiusSize: radiusDefault,
     hasBackground: true,
 };

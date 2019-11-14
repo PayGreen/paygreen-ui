@@ -12,8 +12,8 @@ import {
     colorThemeDefault,
     shadowStyleOptions,
     shadowStyleDefault,
-    blockSizeOptions,
-    blockSizeDefault,
+    blockWidthOptions,
+    blockWidthDefault,
     radiusOptions,
     radiusDefault,
 
@@ -35,7 +35,7 @@ storiesOf('Card', module)
             colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
             shadow={radios('Shadow style', shadowStyleOptions, shadowStyleDefault)}
             hasBackground={boolean('With background', true)}
-            blockSize={select('Block dimensions', blockSizeOptions, blockSizeDefault)}
+            blockWidth={select('Block with', blockWidthOptions, blockWidthDefault)}
             radiusSize={radios('Border radius', radiusOptions, radiusDefault)}
             cardHtmlTag={select('HTML card tag', cardHtmlTagOptions, cardHtmlTagDefault)}
         >

@@ -118,26 +118,22 @@ export const ThemeBase = {
         lg: '32px',
         xl: '64px',
     },
-    block: {
-        width: {
-            sm: '400px',
-            md: '560px',
-            lg: '640px',
-            xl: '760px',
-        },
-        padding: {
-            sm: '24px',
-            md: '40px',
-            lg: '52px',
-            xl: '68px',
-        },
+    blockWidth: {
+        sm: '400px',
+        md: '560px',
+        lg: '640px',
+        xl: '760px',
+    },
+    blockPadding: {
+        none: 0,
+        sm: '24px',
+        md: '40px',
+        lg: '52px',
+        xl: '68px',
     },
     transition: {
         xs: '0.2s',
         sm: '0.3s',
-    },
-    animation: {
-
     },
     zindex: {
         hidden: -100,

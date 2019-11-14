@@ -22,25 +22,12 @@ const radius = css`
     border-radius: ${props => props.theme.radius[props.radiusSize]};
 `;
 
-const padding = css`
-    padding: ${props => props.theme.space.md};
-
-    @media (${props => props.theme.query.min.sm}) {
-        padding: ${props => props.theme.block.padding.sm};
-    }
-
-    @media (${props => props.theme.query.min.md}) {
-        padding: ${props => props.theme.block.padding[props.blockSize]};
-    }
-`;
-
 const backgroundStyle = {
     original: css`
         background-color: ${props => props.theme.color.white00};
 
         ${shadowStyle};
         ${radius};
-        ${padding};
     `,
     reverse: css`
         background-image: linear-gradient(
@@ -50,7 +37,6 @@ const backgroundStyle = {
 
         ${shadowStyle};
         ${radius};
-        ${padding};
 
         p {
             color: ${props => props.theme.color.white00};
