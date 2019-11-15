@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './Card';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
+import Text from '../Text/Text';
 import Title from '../Title/Title';
 import {
     cardHtmlTagOptions,
@@ -20,12 +21,15 @@ import {
     colorNumberOptions,
     fontSizeOptions,
     alignOptions,
+    blockPaddingOptions,
+    blockPaddingDefault
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 
 const colorTypeLabel = 'Color type';
 const colorThemeLabel = 'Color theme';
+const blockWidthLabel = 'Block width';
 
 storiesOf('Card', module)
     .addDecorator(withKnobs)
@@ -35,7 +39,7 @@ storiesOf('Card', module)
             colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
             shadow={radios('Shadow style', shadowStyleOptions, shadowStyleDefault)}
             hasBackground={boolean('With background', true)}
-            blockWidth={select('Block with', blockWidthOptions, blockWidthDefault)}
+            blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
             radiusSize={radios('Border radius', radiusOptions, radiusDefault)}
             cardHtmlTag={select('HTML card tag', cardHtmlTagOptions, cardHtmlTagDefault)}
         >
@@ -43,17 +47,28 @@ storiesOf('Card', module)
                 colorNumber={colorNumberOptions.two}
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                marginTop={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
                 underline={true}
                 textSize={fontSizeOptions.lg}
             >
                 Content <b>sample</b>
             </Title>
 
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor velit a ultricies aliquet. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. Curabitur bibendum risus gravida tellus condimentum tristique. Sed ut elit efficitur, sagittis urna sed, scelerisque eros. 
-            </p>
+            <Text
+                colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
+                colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. Curabitur bibendum risus gravida tellus condimentum tristique. Sed ut elit efficitur, sagittis urna sed, scelerisque eros. 
+            </Text>
 
-            <ButtonGroup buttonAlign={alignOptions.center}>
+            <ButtonGroup
+                buttonAlign={alignOptions.center}
+                marginTop={blockPaddingOptions.md}
+                marginBottom={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+            >
                 <a href="#">
                     <Button
                         colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
