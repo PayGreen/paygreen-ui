@@ -19,7 +19,8 @@ const padding = css`
 const blockSpaces = css`
     ${props => stripUnit(props.theme.blockPadding[props.paddingBlock]) > 0 ? padding : null};
 
-    margin: ${props => props.theme.space[props.marginBlock]} 0;
+    margin-top: ${props => props.theme.blockPadding[props.marginTop]};
+    margin-bottom: ${props => props.theme.blockPadding[props.marginBottom]};
 `;
 
 const textColor = {

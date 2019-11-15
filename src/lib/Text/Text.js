@@ -14,8 +14,7 @@ import {
     alignDefault,
     blockPaddingOptions,
     blockPaddingDefault,
-    spaceOptions,
-    spaceDefault
+    spaceOptions
 } from '../../shared/constants';
 import { TextBase } from './style';
 
@@ -38,7 +37,8 @@ Text.propTypes = {
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
     paddingBlock: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    marginBlock: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(blockPaddingOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(blockPaddingOptions)),
     marginInternal: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
@@ -50,7 +50,8 @@ Text.defaultProps = {
     textSize: fontSizeDefault,
     textAlign: alignDefault,
     paddingBlock: blockPaddingDefault,
-    marginBlock: spaceDefault,
+    marginTop: blockPaddingDefault,
+    marginBottom: blockPaddingDefault,
     marginInternal: spaceOptions.sm,
 };
 

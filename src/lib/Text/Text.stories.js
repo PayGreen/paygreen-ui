@@ -13,8 +13,7 @@ import {
     textHtmlTagOptions,
     blockPaddingOptions,
     blockPaddingDefault,
-    spaceOptions,
-    spaceDefault
+    spaceOptions
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, radios, select } from '@storybook/addon-knobs';
@@ -29,7 +28,8 @@ storiesOf('Text', module)
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
             paddingBlock={select('Block\'s padding', blockPaddingOptions, blockPaddingDefault)}
-            marginBlock={select('Block\'s margin', spaceOptions, spaceDefault)}
+            marginTop={select('Block\'s margin top', blockPaddingOptions, blockPaddingDefault)}
+            marginBottom={select('Block\'s margin bottom', blockPaddingOptions, blockPaddingDefault)}
         >
             Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Donec eget <em>nulla in libero</em> laoreet sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat quis risus.
         </Text>
@@ -45,7 +45,8 @@ storiesOf('Text', module)
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
             paddingBlock={select('Block\'s padding', blockPaddingOptions, blockPaddingDefault)}
-            marginBlock={select('Block\'s margin', spaceOptions, spaceDefault)}
+            marginTop={select('Block\'s margin top', blockPaddingOptions, blockPaddingDefault)}
+            marginBottom={select('Block\'s margin bottom', blockPaddingOptions, blockPaddingDefault)}
             marginInternal={select('Internal margin', spaceOptions, spaceOptions.sm)}
         >
             <p>
