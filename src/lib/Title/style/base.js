@@ -21,14 +21,14 @@ const smallText = css`
 
 const underlineAlign = {
     left: css`
-        left: ${props => props.theme.space[props.paddingBlock]};
+        left: ${props => props.theme.blockPadding[props.paddingBlock]};
     `,
     center: css`
         left: 50%;
         transform: translateX(-50%);
     `,
     right: css`
-        right: ${props => props.theme.space[props.paddingBlock]};
+        right: ${props => props.theme.blockPadding[props.paddingBlock]};
     `
 };
 
