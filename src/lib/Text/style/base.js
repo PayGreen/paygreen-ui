@@ -1,18 +1,21 @@
 import { css } from 'styled-components';
 import {
-    paddingSizes,
+    blockSpace,
 } from './constants';
 import { transparentize } from 'polished';
 
 const padding = css`
-    padding: 0 ${paddingSizes.xs};
+    padding-left: ${props => blockSpace('xs', props.paddingBlock)};
+    padding-right: ${props => blockSpace('xs', props.paddingBlock)};
 
     @media (${props => props.theme.query.min.sm}) {
-        padding: 0 ${paddingSizes.sm};
+        padding-left: ${props => blockSpace('sm', props.paddingBlock)};
+        padding-right: ${props => blockSpace('sm', props.paddingBlock)};
     }
 
     @media (${props => props.theme.query.min.md}) {
-        padding: 0 ${paddingSizes.md};
+        padding-left: ${props => blockSpace('md', props.paddingBlock)};
+        padding-right: ${props => blockSpace('md', props.paddingBlock)};
     }
 `;
 
