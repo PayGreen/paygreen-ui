@@ -1,12 +1,15 @@
 import styled from 'styled-components';
+import { math } from 'polished';
 import { justifyContentOptions } from '../../../shared/constants';
+import {
+    buttonSpace
+} from './constants';
 
 const ButtonGroupBase = styled.div`
     display: flex;
     justify-content: ${props => justifyContentOptions[props.buttonAlign]};
     flex-wrap: wrap;
-    margin: 0 -${props => props.theme.space.sm};
-    margin-top: ${props => props.theme.space[props.blockMargin]};
+    margin-bottom: ${props => props.theme.blockPadding[props.marginBottom]};
 
     a {
         margin: ${props => props.theme.space.sm};
