@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import {
     paddingSizes,
 } from './constants';
-import { stripUnit } from 'polished';
+import { transparentize, stripUnit } from 'polished';
 
 const padding = css`
     padding: 0 ${paddingSizes.xs};
@@ -22,8 +22,25 @@ const blockSpaces = css`
     margin: ${props => props.theme.space[props.marginBlock]} 0;
 `;
 
+const textColor = {
+    original: css`
+        color: ${props => props.theme.color[props.mainColor]};
+
+        strong {
+            color: ${props => props.theme.color[props.colorTheme]['main']};
+        }
+    `,
+    reverse: css`
+        color: ${props => transparentize(0.05, props.theme.color.white00)};
+    `,
+};
+
 const textStyle = css`
+    ${props => textColor[props.colorType]};
+
     line-height: 1.5;
+    font-size: ${props => props.theme.font.size[props.textSize]};
+    text-align: ${props => props.textAlign};
 `;
 
 const internalParagraph = css`

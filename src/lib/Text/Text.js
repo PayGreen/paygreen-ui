@@ -3,6 +3,15 @@ import PropTypes from 'prop-types';
 import {
     textHtmlTagOptions,
     textHtmlTagDefault,
+    colorTypeOptions,
+    colorTypeDefault,
+    colorThemeOptions,
+    colorThemeDefault,
+    greyOptions,
+    fontSizeOptions,
+    fontSizeDefault,
+    alignOptions,
+    alignDefault,
     blockPaddingOptions,
     blockPaddingDefault,
     spaceOptions,
@@ -23,6 +32,11 @@ class Text extends PureComponent {
 
 Text.propTypes = {
     textHtmlTag: PropTypes.oneOf(Object.values(textHtmlTagOptions)),
+    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
+    mainColor: PropTypes.oneOf(Object.values(greyOptions)),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
+    textAlign: PropTypes.oneOf(Object.values(alignOptions)),
     paddingBlock: PropTypes.oneOf(Object.values(blockPaddingOptions)),
     marginBlock: PropTypes.oneOf(Object.values(spaceOptions)),
     marginInternal: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -30,6 +44,11 @@ Text.propTypes = {
 
 Text.defaultProps = {
     textHtmlTag: textHtmlTagDefault,
+    colorType: colorTypeDefault,
+    mainColor: greyOptions.grey60,
+    colorTheme: colorThemeDefault,
+    textSize: fontSizeDefault,
+    textAlign: alignDefault,
     paddingBlock: blockPaddingDefault,
     marginBlock: spaceDefault,
     marginInternal: spaceOptions.sm,
