@@ -41,5 +41,5 @@ storiesOf('ButtonGroup', module)
             </a>
         </ButtonGroup>
     ), {
-        notes: 'You must always use Button component inside a ButtonGroup.',
+        notes: 'You must always use Button component inside a ButtonGroup. You can add margin-top, margin-bottom, and padding (left and right only) with props. Button component comes with its own margins: in order to avoid shift with other components, you can compensate buttons margin with the resetMargin prop on ButtonGroup.',
     });
