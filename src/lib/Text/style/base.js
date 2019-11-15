@@ -5,25 +5,53 @@ import {
 import { transparentize } from 'polished';
 
 const padding = css`
-    padding-left: ${props => blockSpace('xs', props.paddingBlock)};
-    padding-right: ${props => blockSpace('xs', props.paddingBlock)};
+    padding: 0 ${props => blockSpace('xs', props.paddingBlock)};
 
     @media (${props => props.theme.query.min.sm}) {
-        padding-left: ${props => blockSpace('sm', props.paddingBlock)};
-        padding-right: ${props => blockSpace('sm', props.paddingBlock)};
+        padding: 0 ${props => blockSpace('sm', props.paddingBlock)};
     }
 
     @media (${props => props.theme.query.min.md}) {
-        padding-left: ${props => blockSpace('md', props.paddingBlock)};
-        padding-right: ${props => blockSpace('md', props.paddingBlock)};
+        padding: 0 ${props => blockSpace('md', props.paddingBlock)};
+    }
+`;
+
+const topMargin = css`
+    margin-top: ${props => blockSpace('xs', props.marginTop)};
+
+    @media (${props => props.theme.query.min.sm}) {
+        margin-top: ${props => blockSpace('sm', props.marginTop)};
+    }
+
+    @media (${props => props.theme.query.min.md}) {
+        margin-top: ${props => blockSpace('md', props.marginTop)};
+    }
+`;
+
+const bottomMargin = css`
+    margin-bottom: ${props => blockSpace('xs', props.marginBottom)};
+
+    @media (${props => props.theme.query.min.sm}) {
+        margin-bottom: ${props => blockSpace('sm', props.marginBottom)};
+    }
+
+    @media (${props => props.theme.query.min.md}) {
+        margin-bottom: ${props => blockSpace('md', props.marginBottom)};
     }
 `;
 
 const blockSpaces = css`
     ${props => props.theme.blockPadding[props.paddingBlock] ? padding : null};
 
-    margin-top: ${props => props.theme.blockPadding[props.marginTop]};
-    margin-bottom: ${props => props.theme.blockPadding[props.marginBottom]};
+    ${props => props.theme.blockPadding[props.marginTop] ? 
+        topMargin :
+        css`margin-top: 0;`
+    };
+
+    ${props => props.theme.blockPadding[props.marginBottom] ? 
+        bottomMargin :
+        css`margin-bottom: 0;`
+    };
 `;
 
 const textColor = {
@@ -63,6 +91,8 @@ const internalParagraph = css`
 `;
 
 export {
+    topMargin,
+    bottomMargin,
     blockSpaces,
     textStyle,
     internalParagraph
