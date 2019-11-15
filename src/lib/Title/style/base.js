@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { blockSpace } from '../../Text/style/constants';
 import { titleColor } from './constants';
 
 const titleColors = {
@@ -21,20 +22,21 @@ const smallText = css`
 
 const underlineAlign = {
     left: css`
-        left: ${props => props.theme.blockPadding[props.paddingBlock]};
+        left: 0;
     `,
     center: css`
         left: 50%;
         transform: translateX(-50%);
     `,
     right: css`
-        right: ${props => props.theme.blockPadding[props.paddingBlock]};
+        right: 0;
     `
 };
 
 const underline = css`
     position: relative;
     padding-bottom: ${props => props.theme.font.underline.space[props.textSize]};
+    margin-bottom: ${props => props.theme.font.underline.space[props.textSize]};
 
     &::after {
         ${props => underlineAlign[props.textAlign]};
@@ -47,8 +49,37 @@ const underline = css`
     }
 `;
 
+const padding = css`
+    margin-left: ${props => blockSpace('xs', props.paddingBlock)};
+    margin-right: ${props => blockSpace('xs', props.paddingBlock)};
+
+    @media (${props => props.theme.query.min.sm}) {
+        margin-left: ${props => blockSpace('sm', props.paddingBlock)};
+        margin-right: ${props => blockSpace('sm', props.paddingBlock)};
+    }
+
+    @media (${props => props.theme.query.min.md}) {
+        margin-left: ${props => blockSpace('md', props.paddingBlock)};
+        margin-right: ${props => blockSpace('md', props.paddingBlock)};
+    }
+`;
+
+const margin = css`
+    margin-top: ${props => blockSpace('xs', props.marginTop)};
+
+    @media (${props => props.theme.query.min.sm}) {
+        margin-top: ${props => blockSpace('sm', props.marginTop)};
+    }
+
+    @media (${props => props.theme.query.min.md}) {
+        margin-top: ${props => blockSpace('md', props.marginTop)};
+    }
+`;
+
 export {
     titleColors,
     smallText,
-    underline
+    underline,
+    padding,
+    margin
 };
