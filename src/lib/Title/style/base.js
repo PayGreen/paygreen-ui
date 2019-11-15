@@ -8,7 +8,7 @@ const titleColors = {
     two: css`
         color: ${props => titleColor.secondary[props.colorType]};
 
-        b {
+        strong {
             color: ${props => titleColor.main[props.colorType]};
         }
     `
