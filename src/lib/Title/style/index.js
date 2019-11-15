@@ -1,11 +1,11 @@
 import styled from 'styled-components';
+import { topMargin } from '../../Text/style/base';
 import { smallFontSizes } from './constants';
 import {
     titleColors,
     smallText,
     underline,
-    padding,
-    margin
+    padding
 } from './base';
 
 const TitleBase = styled.span`
@@ -13,7 +13,7 @@ const TitleBase = styled.span`
     ${props => smallFontSizes.includes(props.textSize) ? smallText : null};
     ${props => props.underline ? underline : null};
     ${props => props.theme.blockPadding[props.paddingBlock] ? padding : null};
-    ${props => props.theme.blockPadding[props.marginTop] ? margin : null};
+    ${props => props.theme.blockPadding[props.marginTop] ? topMargin : null};
 
     display: block;
     text-align: ${props => props.textAlign};

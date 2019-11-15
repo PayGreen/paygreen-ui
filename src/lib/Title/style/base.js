@@ -64,22 +64,9 @@ const padding = css`
     }
 `;
 
-const margin = css`
-    margin-top: ${props => blockSpace('xs', props.marginTop)};
-
-    @media (${props => props.theme.query.min.sm}) {
-        margin-top: ${props => blockSpace('sm', props.marginTop)};
-    }
-
-    @media (${props => props.theme.query.min.md}) {
-        margin-top: ${props => blockSpace('md', props.marginTop)};
-    }
-`;
-
 export {
     titleColors,
     smallText,
     underline,
-    padding,
-    margin
+    padding
 };
