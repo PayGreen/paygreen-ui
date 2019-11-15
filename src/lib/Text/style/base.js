@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import {
     paddingSizes,
 } from './constants';
-import { transparentize, stripUnit } from 'polished';
+import { transparentize } from 'polished';
 
 const padding = css`
     padding: 0 ${paddingSizes.xs};
@@ -17,7 +17,7 @@ const padding = css`
 `;
 
 const blockSpaces = css`
-    ${props => stripUnit(props.theme.blockPadding[props.paddingBlock]) > 0 ? padding : null};
+    ${props => props.theme.blockPadding[props.paddingBlock] ? padding : null};
 
     margin-top: ${props => props.theme.blockPadding[props.marginTop]};
     margin-bottom: ${props => props.theme.blockPadding[props.marginBottom]};
