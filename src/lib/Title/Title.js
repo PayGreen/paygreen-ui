@@ -15,8 +15,8 @@ import {
     fontSizeDefault,
     alignOptions,
     alignDefault,
-    spaceOptions,
-    spaceDefault,
+    blockPaddingOptions,
+    blockPaddingDefault
 } from '../../shared/constants';
 import { TitleBase } from './style';
 
@@ -39,8 +39,8 @@ Title.propTypes = {
     color2: PropTypes.oneOf(Object.values(greyOptions)),
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
-    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(blockPaddingOptions)),
+    paddingBlock: PropTypes.oneOf(Object.values(blockPaddingOptions)),
     underline: PropTypes.bool,
 };
 
@@ -52,8 +52,8 @@ Title.defaultProps = {
     color2: greyDefault,
     textSize: fontSizeDefault,
     textAlign: alignDefault,
-    marginTop: spaceDefault,
-    marginBottom: spaceDefault,
+    marginTop: blockPaddingDefault,
+    paddingBlock: blockPaddingDefault,
     underline: false,
 };
 

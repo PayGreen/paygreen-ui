@@ -12,7 +12,7 @@ const titleColors = {
             color: ${props => titleColor.main[props.colorType]};
         }
     `
-}
+};
 
 const smallText = css`
     text-transform: uppercase;
@@ -21,21 +21,20 @@ const smallText = css`
 
 const underlineAlign = {
     left: css`
-        left: 0;
+        left: ${props => props.theme.space[props.paddingBlock]};
     `,
     center: css`
         left: 50%;
         transform: translateX(-50%);
     `,
     right: css`
-        right: 0;
+        right: ${props => props.theme.space[props.paddingBlock]};
     `
 };
 
 const underline = css`
     position: relative;
     padding-bottom: ${props => props.theme.font.underline.space[props.textSize]};
-    margin-bottom: ${props => props.theme.font.underline.space[props.textSize]};
 
     &::after {
         ${props => underlineAlign[props.textAlign]};
