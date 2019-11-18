@@ -14,8 +14,21 @@ exports[`renders without crashing 1`] = `
     onChange={[Function]}
     theme={
       Object {
-        "animation": Object {},
         "bg": "#ffffff",
+        "blockPadding": Object {
+          "lg": "52px",
+          "md": "40px",
+          "none": 0,
+          "sm": "24px",
+          "xl": "68px",
+          "xs": "16px",
+        },
+        "blockWidth": Object {
+          "lg": "640px",
+          "md": "560px",
+          "sm": "400px",
+          "xl": "760px",
+        },
         "button": Object {
           "font": Object {
             "lg": "1.5rem",
@@ -155,6 +168,18 @@ exports[`renders without crashing 1`] = `
           "lg": "12px",
           "sm": "4px",
         },
+        "shadow": Object {
+          "opacity": Object {
+            "lg": 0.7,
+            "md": 0.8,
+            "sm": 0.9,
+          },
+          "size": Object {
+            "lg": "3px 3px 20px",
+            "md": "2px 2px 15px",
+            "sm": "1px 1px 10px",
+          },
+        },
         "space": Object {
           "lg": "32px",
           "md": "16px",
@@ -166,13 +191,6 @@ exports[`renders without crashing 1`] = `
         "transition": Object {
           "sm": "0.3s",
           "xs": "0.2s",
-        },
-        "width": Object {
-          "lg": "",
-          "md": "",
-          "sm": "",
-          "xl": "",
-          "xs": "",
         },
         "zindex": Object {
           "base": 0,
