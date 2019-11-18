@@ -18,7 +18,7 @@ import {
     blockWidthDefault,
     radiusOptions,
     radiusDefault,
-    borderGradientOptions,
+    gradientOptions,
 
     colorNumberOptions,
     fontSizeOptions,
@@ -91,7 +91,7 @@ storiesOf('Card', module)
             colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
             blockWidth={blockWidthOptions.sm}
             radiusSize={radios('Border radius', radiusOptions, radiusDefault)}
-            borderTop={radios('Border-top style', borderGradientOptions, borderGradientOptions.theme)}
+            borderTop={radios('Border-top style', gradientOptions, gradientOptions.theme)}
         >
             <Title
                 colorNumber={colorNumberOptions.two}

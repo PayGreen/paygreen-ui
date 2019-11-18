@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
 import {
-    borderGradientOptions
+    gradientOptions
 } from '../../../shared/constants';
 
 const shadowStyle = css`
@@ -69,7 +69,7 @@ const backgroundStyle = {
 
         ${shadowStyle};
         ${radius};
-        ${props => props.borderTop !== borderGradientOptions.none ? borderTopElement : null};
+        ${props => props.borderTop !== gradientOptions.none ? borderTopElement : null};
     `,
     reverse: css`
         background-image: linear-gradient(

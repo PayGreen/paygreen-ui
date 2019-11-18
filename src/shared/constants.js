@@ -180,13 +180,13 @@ const formStatusOptions = {
 
 const formStatusDefault = formStatusOptions.default;
 
-const borderGradientOptions = {
+const gradientOptions = {
     none: 'none',
     brand: 'brand',
     theme: 'theme',
 };
 
-const borderGradientDefault = borderGradientOptions.none;
+const gradientDefault = gradientOptions.none;
 
 export {
     colorNumberOptions,
@@ -227,6 +227,6 @@ export {
     fontSizeDefault,
     formStatusOptions,
     formStatusDefault,
-    borderGradientOptions,
-    borderGradientDefault,
+    gradientOptions,
+    gradientDefault,
 };

@@ -13,8 +13,8 @@ import {
     blockWidthDefault,
     radiusOptions,
     radiusDefault,
-    borderGradientOptions,
-    borderGradientDefault,
+    gradientOptions,
+    gradientDefault,
 } from '../../shared/constants';
 import { CardBase } from './style';
 
@@ -37,7 +37,7 @@ Card.propTypes = {
     blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     hasBackground: PropTypes.bool,
-    borderTop: PropTypes.oneOf(Object.values(borderGradientOptions)),
+    borderTop: PropTypes.oneOf(Object.values(gradientOptions)),
     params: PropTypes.shape({
         titleOut: PropTypes.bool,
     }),
@@ -51,7 +51,7 @@ Card.defaultProps = {
     blockWidth: blockWidthDefault,
     radiusSize: radiusDefault,
     hasBackground: true,
-    borderTop: borderGradientDefault,
+    borderTop: gradientDefault,
     params: {
         titleOut: false,
     },
