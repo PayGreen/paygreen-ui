@@ -46,19 +46,6 @@ export const ThemeBase = {
             warning: '#e58a28',
             danger: '#b54025',
         },
-
-        white00: '#ffffff',
-        white10: '#fafafa',
-        white20: '#f6f6f6',
-
-        grey10: '#eeeeee',
-        grey20: '#dbdbdb',
-        grey30: '#aaaaaa',
-        grey40: '#858585',
-        grey50: '#636363',
-        grey60: '#434343',
-
-        black00: '#000000',
     },
     font: {
         size: {

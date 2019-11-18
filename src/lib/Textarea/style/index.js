@@ -34,7 +34,7 @@ const TextareaBase = styled.div`
         transition-duration: ${props => props.theme.transition.sm};
 
         ::placeholder {
-            color: ${props => props.theme.color.grey20};
+            color: ${props => props.theme.wab.grey20};
             font-style: italic;
         }
     }
@@ -42,7 +42,7 @@ const TextareaBase = styled.div`
     div {
         margin-top: ${props => props.theme.space.xs};
         text-align: right;
-        color: ${props => props.theme.color.grey30};
+        color: ${props => props.theme.wab.grey30};
         font-size: ${props => props.theme.font.size.xs};
         font-weight: ${props => props.theme.font.weight.bold};
 

@@ -24,7 +24,7 @@ const radius = css`
 
 const backgroundStyle = {
     original: css`
-        background-color: ${props => props.theme.color.white00};
+        background-color: ${props => props.theme.wab.white00};
 
         ${shadowStyle};
         ${radius};
@@ -39,7 +39,7 @@ const backgroundStyle = {
         ${radius};
 
         p {
-            color: ${props => props.theme.color.white00};
+            color: ${props => props.theme.wab.white00};
         }
     `
 };

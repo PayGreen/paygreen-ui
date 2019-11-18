@@ -56,14 +56,14 @@ const blockSpaces = css`
 
 const textColor = {
     original: css`
-        color: ${props => props.theme.color[props.mainColor]};
+        color: ${props => props.theme.wab[props.mainColor]};
 
         strong {
             color: ${props => props.theme.color[props.colorTheme]['main']};
         }
     `,
     reverse: css`
-        color: ${props => transparentize(0.05, props.theme.color.white00)};
+        color: ${props => transparentize(0.05, props.theme.wab.white00)};
     `,
 };
 
