@@ -65,7 +65,7 @@ storiesOf('Card', module)
 
             <ButtonGroup
                 buttonAlign={alignOptions.center}
-                marginTop={blockPaddingOptions.md}
+                marginTop={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
                 marginBottom={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
                 paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
             >
