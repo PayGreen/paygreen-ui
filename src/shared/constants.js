@@ -34,12 +34,12 @@ const greyDefault = greyOptions.grey40;
 
 // Button sizes
 const buttonSizeOptions = {
-    small: 'sm',
-    medium: 'md',
-    large: 'lg'
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg'
 };
 
-const buttonSizeDefault = buttonSizeOptions.medium;
+const buttonSizeDefault = buttonSizeOptions.md;
 
 // Button sizes
 const buttonTemplateOptions = {
@@ -180,6 +180,14 @@ const formStatusOptions = {
 
 const formStatusDefault = formStatusOptions.default;
 
+const borderGradientOptions = {
+    none: 'none',
+    brand: 'brand',
+    theme: 'theme',
+};
+
+const borderGradientDefault = borderGradientOptions.none;
+
 export {
     colorNumberOptions,
     colorNumberDefault,
@@ -219,4 +227,6 @@ export {
     fontSizeDefault,
     formStatusOptions,
     formStatusDefault,
+    borderGradientOptions,
+    borderGradientDefault,
 };

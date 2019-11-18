@@ -17,12 +17,14 @@ import {
     blockWidthDefault,
     radiusOptions,
     radiusDefault,
+    borderGradientOptions,
 
     colorNumberOptions,
     fontSizeOptions,
     alignOptions,
     blockPaddingOptions,
-    blockPaddingDefault
+    blockPaddingDefault,
+    buttonSizeOptions,
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
@@ -52,7 +54,7 @@ storiesOf('Card', module)
                 underline={true}
                 textSize={fontSizeOptions.lg}
             >
-                Content <b>sample</b>
+                Title <strong>sample</strong>
             </Title>
 
             <Text
@@ -73,6 +75,54 @@ storiesOf('Card', module)
                     <Button
                         colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                    >
+                        Don't click
+                    </Button>
+                </a>
+            </ButtonGroup>
+        </Card>
+    ), {
+        notes: 'Default card.',
+    })
+    .add('Border-top card', () => (
+        <Card
+            colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
+            colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+            blockWidth={blockWidthOptions.sm}
+            radiusSize={radios('Border radius', radiusOptions, radiusDefault)}
+            borderTop={radios('Border-top style', borderGradientOptions, borderGradientOptions.theme)}
+        >
+            <Title
+                colorNumber={colorNumberOptions.two}
+                colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
+                marginTop={blockPaddingOptions.sm}
+                paddingBlock={blockPaddingOptions.sm}
+                textSize={fontSizeOptions.md}
+            >
+                Title sample
+            </Title>
+
+            <Text
+                colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
+                colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                marginTop={blockPaddingOptions.xs}
+                paddingBlock={blockPaddingOptions.sm}
+                textSize={fontSizeOptions.sm}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
+            </Text>
+
+            <ButtonGroup
+                buttonAlign={alignOptions.center}
+                marginTop={blockPaddingOptions.sm}
+                marginBottom={blockPaddingOptions.sm}
+                paddingBlock={blockPaddingOptions.sm}
+            >
+                <a href="#">
+                    <Button
+                        colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
+                        colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                        buttonSize={buttonSizeOptions.sm}
                     >
                         Don't click
                     </Button>
