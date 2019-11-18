@@ -73,6 +73,35 @@ const backgroundStyle = {
     `
 };
 
+const containerStyle = css`
+    max-width: ${props => props.theme.blockWidth[props.blockWidth]};
+    padding: 0.1px;
+`;
+
+const blockStyle = css`
+    ${containerStyle};
+    ${props => props.hasBackground ? backgroundStyle[props.colorType] : null};
+
+    transition: all ${props => props.theme.transition.sm};
+`;
+
+const titleOutBlockStyle = css`
+    ${containerStyle};
+
+    & > :first-child {
+        text-transform: uppercase;
+        letter-spacing: ${props => props.theme.font.spacing};
+        line-height: 0.75;
+        color: ${props => props.theme.color[props.colorTheme]['gradientBase']};
+    }
+
+    & > div:first-of-type {
+        ${blockStyle};
+        max-width: inherit;
+    }
+`;
+
 export {
-    backgroundStyle
+    blockStyle,
+    titleOutBlockStyle
 };

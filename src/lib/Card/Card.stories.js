@@ -131,4 +131,53 @@ storiesOf('Card', module)
         </Card>
     ), {
         notes: 'Card.',
+    })
+    .add('Card with title out', () => (
+        <Card
+            colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeOptions.reverse)}
+            colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+            blockWidth={blockWidthOptions.sm}
+            params={{
+                titleOut: true,
+            }}
+        >
+            <Title
+                colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                paddingBlock={blockPaddingOptions.sm}
+                textSize={fontSizeOptions.lg}
+            >
+                Sample
+            </Title>
+
+            <div>
+                <Text
+                    colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
+                    colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                    marginTop={blockPaddingOptions.sm}
+                    paddingBlock={blockPaddingOptions.sm}
+                    textSize={fontSizeOptions.sm}
+                >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
+                </Text>
+
+                <ButtonGroup
+                    buttonAlign={alignOptions.center}
+                    marginTop={blockPaddingOptions.sm}
+                    marginBottom={blockPaddingOptions.sm}
+                    paddingBlock={blockPaddingOptions.sm}
+                >
+                    <a href="#">
+                        <Button
+                            colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
+                            colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                            buttonSize={buttonSizeOptions.sm}
+                        >
+                            Don't click
+                        </Button>
+                    </a>
+                </ButtonGroup>
+            </div>
+        </Card>
+    ), {
+        notes: 'Card.',
     });

@@ -38,6 +38,9 @@ Card.propTypes = {
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     hasBackground: PropTypes.bool,
     borderTop: PropTypes.oneOf(Object.values(borderGradientOptions)),
+    params: PropTypes.shape({
+        titleOut: PropTypes.bool,
+    }),
 };
 
 Card.defaultProps = {
@@ -48,7 +51,10 @@ Card.defaultProps = {
     blockWidth: blockWidthDefault,
     radiusSize: radiusDefault,
     hasBackground: true,
-    borderTop: borderGradientDefault
+    borderTop: borderGradientDefault,
+    params: {
+        titleOut: false,
+    },
 };
 
 export default Card;
