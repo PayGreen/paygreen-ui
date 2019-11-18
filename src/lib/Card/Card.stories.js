@@ -130,7 +130,7 @@ storiesOf('Card', module)
             </ButtonGroup>
         </Card>
     ), {
-        notes: 'Card.',
+        notes: 'Card with gradient border-top design. Can\'t be used in reverse mode. Border weight changes with border-radius. Available gradients are theme gradients and brand gradient (primary and secondary colors).',
     })
     .add('Card with title out', () => (
         <Card
@@ -179,5 +179,5 @@ storiesOf('Card', module)
             </div>
         </Card>
     ), {
-        notes: 'Card.',
+        notes: 'Card with main title out of the block. Needs an internal div and a titleOut param at "true". Don\'t use this template with long titles!',
     });
