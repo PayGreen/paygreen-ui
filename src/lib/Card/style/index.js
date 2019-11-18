@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {  } from './constants';
 import {
     blockStyle,
     titleOutBlockStyle

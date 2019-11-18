@@ -2,10 +2,7 @@ import { css } from 'styled-components';
 import { transparentize } from 'polished';
 import {
     borderGradientOptions
-} from '../../../shared/constants'; 
-import {
-    
-} from './constants';
+} from '../../../shared/constants';
 
 const shadowStyle = css`
     box-shadow: ${props => props.theme.shadow.size[props.shadow] + ' ' + transparentize(
