@@ -222,4 +222,32 @@ storiesOf('Card', module)
         </Card>
     ), {
         notes: 'Card with image in header. It doesn\'t need a specific prop: just put your <img> tag inside a div class="image" at the beginning of your Card component.',
+    })
+    .add('Card without background', () => (
+        <Card
+            colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
+            colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+            hasBackground={false}
+            blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
+        >
+            <Title
+                colorNumber={colorNumberOptions.two}
+                colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
+                colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                underline={true}
+                textSize={fontSizeOptions.xl}
+            >
+                Title <strong>sample</strong>
+            </Title>
+
+            <Text
+                colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
+                colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                textSize={fontSizeOptions.md}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio.
+            </Text>
+        </Card>
+    ), {
+        notes: 'Very basic card, without background, shadow, paddings and radius. Change background color to see the reverse color type result.',
     });
