@@ -23,6 +23,22 @@ const shadowStyle = css`
 
 const radius = css`
     border-radius: ${props => props.theme.radius[props.radiusSize]};
+
+    & > :first-child {
+        &,
+        & > img {
+            border-top-left-radius: ${props => props.theme.radius[props.radiusSize]};
+            border-top-right-radius: ${props => props.theme.radius[props.radiusSize]};
+        }
+    }
+
+    & > :last-child {
+        &,
+        & > img {
+            border-bottom-left-radius: ${props => props.theme.radius[props.radiusSize]};
+            border-bottom-right-radius: ${props => props.theme.radius[props.radiusSize]};
+        }
+    }
 `;
 
 const borderTopGradient = {
@@ -83,6 +99,17 @@ const blockStyle = css`
     ${props => props.hasBackground ? backgroundStyle[props.colorType] : null};
 
     transition: all ${props => props.theme.transition.sm};
+
+    .image {
+        height: ${props => props.theme.blockHeader[props.blockWidth]};
+
+        img {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
 `;
 
 const titleOutBlockStyle = css`
@@ -95,7 +122,7 @@ const titleOutBlockStyle = css`
         color: ${props => props.theme.color[props.colorTheme]['gradientBase']};
     }
 
-    & > div:first-of-type {
+    & > .container {
         ${blockStyle};
         max-width: inherit;
     }

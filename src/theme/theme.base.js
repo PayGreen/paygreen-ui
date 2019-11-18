@@ -119,6 +119,12 @@ export const ThemeBase = {
         lg: '52px',
         xl: '68px',
     },
+    blockHeader: {
+        sm: '140px',
+        md: '180px',
+        lg: '210px',
+        xl: '240px',
+    },
     transition: {
         xs: '0.2s',
         sm: '0.3s',

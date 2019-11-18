@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
 import Text from '../Text/Text';
 import Title from '../Title/Title';
+import imageFile from './sample/sample.png';
 import {
     cardHtmlTagOptions,
     cardHtmlTagDefault,
@@ -149,7 +150,7 @@ storiesOf('Card', module)
                 Sample
             </Title>
 
-            <div>
+            <div class="container">
                 <Text
                     colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
@@ -180,4 +181,45 @@ storiesOf('Card', module)
         </Card>
     ), {
         notes: 'Card with main title out of the block. Needs an internal div and a titleOut param at "true". Don\'t use this template with long titles!',
+    })
+    .add('Card with image', () => (
+        <Card
+            blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
+        >
+            <div class="image">
+                <img src={imageFile} />
+            </div>
+
+            <Title
+                colorNumber={colorNumberOptions.two}
+                marginTop={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+                textSize={fontSizeOptions.md}
+            >
+                Title sample
+            </Title>
+
+            <Text
+                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+                marginTop={blockPaddingOptions.xs}
+                textSize={fontSizeOptions.sm}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
+            </Text>
+
+            <ButtonGroup
+                buttonAlign={alignOptions.center}
+                marginTop={blockPaddingOptions.sm}
+                marginBottom={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+            >
+                <a href="#">
+                    <Button buttonSize={buttonSizeOptions.sm}>
+                        Don't click
+                    </Button>
+                </a>
+            </ButtonGroup>
+        </Card>
+    ), {
+        notes: 'Card with image in header. It doesn\'t need a specific prop: just put your <img> tag inside a div class="image" at the beginning of your Card component.',
     });
