@@ -6,11 +6,15 @@ const blockSpace = (screen, space) => {
 
     switch (screen) {
         case 'xs':
-            return props => props.theme.blockPadding.xs;
-        case 'sm':
             return props => stripUnit(size(props)) > stripUnit(props.theme.blockPadding.xs) ?
+                props.theme.blockPadding.xs :
+                size(props);
+        case 'sm':
+            return props => stripUnit(size(props)) > stripUnit(props.theme.blockPadding.sm) ?
                 props.theme.blockPadding.sm :
-                props.theme.blockPadding.xs;
+                stripUnit(size(props)) > stripUnit(props.theme.blockPadding.xs) ?
+                    props.theme.blockPadding.xs :
+                    size(props);
         case 'md':
             return props => size(props);
     }
