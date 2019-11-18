@@ -17,7 +17,12 @@ exports[`renders without crashing 1`] = `
     placeholder="Your text…"
     theme={
       Object {
-        "bg": "#ffffff",
+        "blockHeader": Object {
+          "lg": "210px",
+          "md": "180px",
+          "sm": "140px",
+          "xl": "240px",
+        },
         "blockPadding": Object {
           "lg": "52px",
           "md": "40px",
@@ -56,13 +61,6 @@ exports[`renders without crashing 1`] = `
           "shift": "3px",
         },
         "color": Object {
-          "black00": "#000000",
-          "grey10": "#eeeeee",
-          "grey20": "#dbdbdb",
-          "grey30": "#aaaaaa",
-          "grey40": "#858585",
-          "grey50": "#636363",
-          "grey60": "#434343",
           "primary": Object {
             "gradientBase": "#77d1a6",
             "gradientShade": "#a4db95",
@@ -93,9 +91,6 @@ exports[`renders without crashing 1`] = `
             "light": "#f8e1c7",
             "main": "#e58a28",
           },
-          "white00": "#ffffff",
-          "white10": "#fafafa",
-          "white20": "#f6f6f6",
         },
         "font": Object {
           "size": Object {
@@ -142,7 +137,6 @@ exports[`renders without crashing 1`] = `
             "normal": 400,
           },
         },
-        "fontDefault": "#434343",
         "form": Object {
           "inputWidth": Object {
             "lg": "500px",
@@ -194,6 +188,18 @@ exports[`renders without crashing 1`] = `
         "transition": Object {
           "sm": "0.3s",
           "xs": "0.2s",
+        },
+        "wab": Object {
+          "black00": "#000000",
+          "grey10": "#eeeeee",
+          "grey20": "#dbdbdb",
+          "grey30": "#aaaaaa",
+          "grey40": "#858585",
+          "grey50": "#636363",
+          "grey60": "#434343",
+          "white00": "#ffffff",
+          "white10": "#fafafa",
+          "white20": "#f6f6f6",
         },
         "zindex": Object {
           "base": 0,
