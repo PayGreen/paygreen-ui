@@ -4,18 +4,18 @@ let ThemeDark = {...ThemeBase};
 ThemeDark = Object.assign(ThemeDark, {
     name: 'Dark',
     wab: {
-        white00: '#ffffff',
-        white10: '#fafafa',
-        white20: '#f6f6f6',
+        white00: '#202020',
+        white10: '#2c2c2c',
+        white20: '#383838',
     
-        grey10: '#eeeeee',
-        grey20: '#dbdbdb',
-        grey30: '#aaaaaa',
-        grey40: '#858585',
-        grey50: '#636363',
-        grey60: '#434343',
+        grey10: '#494949',
+        grey20: '#5b5b5b',
+        grey30: '#7f7f7f',
+        grey40: '#a2a2a2',
+        grey50: '#cfcfcf',
+        grey60: '#eeeeee',
     
-        black00: '#000000',
+        black00: '#ffffff',
     },
 });
 
