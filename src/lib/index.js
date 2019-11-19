@@ -2,6 +2,7 @@ import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
+import Image from './Image/Image';
 import Input from './Input/Input';
 import Link from './Link/Link';
 import Select from './Select/Select';
@@ -14,6 +15,7 @@ export {
     Button,
     ButtonGroup,
     Card,
+    Image,
     Input,
     Link,
     Select,
