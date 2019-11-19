@@ -151,7 +151,7 @@ storiesOf('Card', module)
                 Sample
             </Title>
 
-            <div class="container">
+            <div className="container">
                 <Text
                     colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
