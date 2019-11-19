@@ -224,7 +224,7 @@ storiesOf('Card', module)
             </ButtonGroup>
         </Card>
     ), {
-        notes: 'Card with image in header. It doesn\'t need a specific prop: just put your <img> tag inside a div class="image" at the beginning of your Card component.',
+        notes: 'Card with image in header. It doesn\'t need a specific prop: just use the Image component at the beginning of your Card component.',
     })
     .add('Card without background', () => (
         <Card
