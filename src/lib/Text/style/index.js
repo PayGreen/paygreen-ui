@@ -4,12 +4,14 @@ import {
 } from '../../../shared/constants'; 
 import {
     blockSpaces,
+    blockBackground,
     textStyle,
     internalParagraph
 } from './base';
 
 const TextBase = styled.p`
     ${blockSpaces};
+    ${props => blockBackground[props.colorType]};
 
     ${props => props.textHtmlTag === textHtmlTagOptions.div ? internalParagraph : textStyle};
 `;
