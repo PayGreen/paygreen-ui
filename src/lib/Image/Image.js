@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
+    colorThemeOptions,
+    colorThemeDefault,
     blockWidthOptions,
     blockWidthDefault,
 } from '../../shared/constants';
@@ -15,10 +17,14 @@ class Image extends PureComponent {
 }
 
 Image.propTypes = {
+    colorChange: PropTypes.bool,
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     blockHeight: PropTypes.oneOf(Object.values(blockWidthOptions)),
 };
 
 Image.defaultProps = {
+    colorChange: false,
+    colorTheme: colorThemeDefault,
     blockHeight: blockWidthDefault,
 };
 

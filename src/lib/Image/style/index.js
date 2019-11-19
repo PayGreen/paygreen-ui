@@ -1,6 +1,10 @@
 import styled from 'styled-components';
+import {
+    changeColor
+} from './base';
 
 const ImageBase = styled.div`
+    ${props => props.colorChange ? changeColor : null};
     height: ${props => props.theme.blockHeader[props.blockHeight]};
 
     img {
