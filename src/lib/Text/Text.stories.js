@@ -71,4 +71,18 @@ storiesOf('Text', module)
         </Text>
     ), {
         notes: 'If you want to add more than paragraph, put your text inside <code>&lt;p&gt;</code> tags and pass textHtmlTag prop to "div".',
+    })
+    .add('Paragraph with background', () => (
+        <Text
+            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+            colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
+            backgroundColor={transparentColorOptions.theme}
+            paddingBlock={blockPaddingOptions.lg}
+            paddingTop={blockPaddingOptions.lg}
+            paddingBottom={blockPaddingOptions.lg}
+        >
+            Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Donec eget nulla in libero laoreet sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat quis risus.
+        </Text>
+    ), {
+        notes: 'You can add background-color, margins and paddings on your Text component.',
     });
