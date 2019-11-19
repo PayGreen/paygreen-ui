@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './Card';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
+import Image from '../Image/Image';
 import Text from '../Text/Text';
 import Title from '../Title/Title';
 import imageFile from './sample/sample.png';
@@ -186,9 +187,11 @@ storiesOf('Card', module)
         <Card
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
         >
-            <div class="image">
+            <Image
+                blockHeight={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
+            >
                 <img src={imageFile} />
-            </div>
+            </Image>
 
             <Title
                 colorNumber={colorNumberOptions.two}
