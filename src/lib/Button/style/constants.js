@@ -1,8 +1,8 @@
 const colorCollection = {
     main: props => props.theme.color[props.colorTheme]['main'],
-    white: props => props.theme.color.white00,
-    lightGrey: props => props.theme.color.white20,
-    grey: props => props.theme.color.grey30,
+    white: props => props.theme.wab.white00,
+    lightGrey: props => props.theme.wab.white20,
+    grey: props => props.theme.wab.grey30,
 };
 
 const buttonColors = {

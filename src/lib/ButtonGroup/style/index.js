@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import { justifyContentOptions } from '../../../shared/constants';
+import {
+    blockSpaces
+} from './base';
 
 const ButtonGroupBase = styled.div`
+    ${blockSpaces};
     display: flex;
     justify-content: ${props => justifyContentOptions[props.buttonAlign]};
     flex-wrap: wrap;
-    margin: 0 -${props => props.theme.space.sm};
-    margin-top: ${props => props.theme.space[props.blockMargin]};
 
     a {
         margin: ${props => props.theme.space.sm};

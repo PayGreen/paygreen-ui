@@ -9,10 +9,12 @@ import {
     colorThemeDefault,
     shadowStyleOptions,
     shadowStyleDefault,
-    blockSizeOptions,
-    blockSizeDefault,
+    blockWidthOptions,
+    blockWidthDefault,
     radiusOptions,
     radiusDefault,
+    gradientOptions,
+    gradientDefault,
 } from '../../shared/constants';
 import { CardBase } from './style';
 
@@ -32,9 +34,13 @@ Card.propTypes = {
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     shadow: PropTypes.oneOf(Object.values(shadowStyleOptions)),
-    blockSize: PropTypes.oneOf(Object.values(blockSizeOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     hasBackground: PropTypes.bool,
+    borderTop: PropTypes.oneOf(Object.values(gradientOptions)),
+    params: PropTypes.shape({
+        titleOut: PropTypes.bool,
+    }),
 };
 
 Card.defaultProps = {
@@ -42,9 +48,13 @@ Card.defaultProps = {
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
     shadow: shadowStyleDefault,
-    blockSize: blockSizeDefault,
+    blockWidth: blockWidthDefault,
     radiusSize: radiusDefault,
     hasBackground: true,
+    borderTop: gradientDefault,
+    params: {
+        titleOut: false,
+    },
 };
 
 export default Card;

@@ -46,19 +46,6 @@ export const ThemeBase = {
             warning: '#e58a28',
             danger: '#b54025',
         },
-
-        white00: '#ffffff',
-        white10: '#fafafa',
-        white20: '#f6f6f6',
-
-        grey10: '#eeeeee',
-        grey20: '#dbdbdb',
-        grey30: '#aaaaaa',
-        grey40: '#858585',
-        grey50: '#636363',
-        grey60: '#434343',
-
-        black00: '#000000',
     },
     font: {
         size: {
@@ -118,26 +105,29 @@ export const ThemeBase = {
         lg: '32px',
         xl: '64px',
     },
-    block: {
-        width: {
-            sm: '400px',
-            md: '560px',
-            lg: '640px',
-            xl: '760px',
-        },
-        padding: {
-            sm: '24px',
-            md: '40px',
-            lg: '52px',
-            xl: '68px',
-        },
+    blockWidth: {
+        sm: '400px',
+        md: '560px',
+        lg: '640px',
+        xl: '760px',
+    },
+    blockPadding: {
+        none: 0,
+        xs: '16px',
+        sm: '24px',
+        md: '40px',
+        lg: '52px',
+        xl: '68px',
+    },
+    blockHeader: {
+        sm: '140px',
+        md: '180px',
+        lg: '210px',
+        xl: '240px',
     },
     transition: {
         xs: '0.2s',
         sm: '0.3s',
-    },
-    animation: {
-
     },
     zindex: {
         hidden: -100,

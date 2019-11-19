@@ -23,7 +23,7 @@ const enabled = css`
     textarea {
         resize: vertical;
         color: ${props => fieldTextColor[props.status]};
-        background-color: ${props => props.theme.bg};
+        background-color: ${props => props.theme.wab.white00};
         border-color: ${props => transparentize(0.3, props.theme.color.state[props.status])};
 
         ${props => props.inputReadOnly ? null : canHover};
@@ -34,7 +34,7 @@ const disabled = css`
     textarea {
         ${disabledField};
         resize: none;
-        border-color: ${props => props.theme.color.grey20};
+        border-color: ${props => props.theme.wab.grey20};
     }
 `;
 

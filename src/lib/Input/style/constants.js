@@ -1,7 +1,7 @@
 const fieldTextColor = {
-    default: props => props.theme.fontDefault,
+    default: props => props.theme.wab.grey60,
     success: props => props.theme.color.state.success,
-    warning: props => props.theme.fontDefault,
+    warning: props => props.theme.wab.grey60,
     danger: props => props.theme.color.state.danger
 };
 

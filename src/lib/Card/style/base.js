@@ -1,8 +1,8 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
 import {
-    
-} from './constants';
+    gradientOptions
+} from '../../../shared/constants';
 
 const shadowStyle = css`
     box-shadow: ${props => props.theme.shadow.size[props.shadow] + ' ' + transparentize(
@@ -20,27 +20,56 @@ const shadowStyle = css`
 
 const radius = css`
     border-radius: ${props => props.theme.radius[props.radiusSize]};
-`;
 
-const padding = css`
-    padding: ${props => props.theme.space.md};
-
-    @media (${props => props.theme.query.min.sm}) {
-        padding: ${props => props.theme.block.padding.sm};
+    & > :first-child {
+        &,
+        & > img {
+            border-top-left-radius: ${props => props.theme.radius[props.radiusSize]};
+            border-top-right-radius: ${props => props.theme.radius[props.radiusSize]};
+        }
     }
 
-    @media (${props => props.theme.query.min.md}) {
-        padding: ${props => props.theme.block.padding[props.blockSize]};
+    & > :last-child {
+        &,
+        & > img {
+            border-bottom-left-radius: ${props => props.theme.radius[props.radiusSize]};
+            border-bottom-right-radius: ${props => props.theme.radius[props.radiusSize]};
+        }
+    }
+`;
+
+const borderTopGradient = {
+    brand: css`
+        background-image: linear-gradient(to left,
+            ${props => props.theme.color.primary.gradientBase},
+            ${props => props.theme.color.secondary.gradientBase}
+        );
+    `,
+    theme: css`
+        background-image: linear-gradient(to left,
+            ${props => props.theme.color[props.colorTheme]['gradientBase']},
+            ${props => props.theme.color[props.colorTheme]['gradientShade']}
+        );
+    `
+};
+
+const borderTopElement = css`
+    &:before {
+        content: '';
+        height: ${props => props.theme.radius[props.radiusSize]};
+        border-radius: ${props => props.theme.radius[props.radiusSize]} ${props => props.theme.radius[props.radiusSize]} 0 0;
+        
+        ${props => borderTopGradient[props.borderTop]};
     }
 `;
 
 const backgroundStyle = {
     original: css`
-        background-color: ${props => props.theme.color.white00};
+        background-color: ${props => props.theme.wab.white00};
 
         ${shadowStyle};
         ${radius};
-        ${padding};
+        ${props => props.borderTop !== gradientOptions.none ? borderTopElement : null};
     `,
     reverse: css`
         background-image: linear-gradient(
@@ -50,14 +79,53 @@ const backgroundStyle = {
 
         ${shadowStyle};
         ${radius};
-        ${padding};
 
         p {
-            color: ${props => props.theme.color.white00};
+            color: ${props => props.theme.wab.white00};
         }
     `
 };
 
+const containerStyle = css`
+    max-width: ${props => props.theme.blockWidth[props.blockWidth]};
+    padding: 0.1px;
+`;
+
+const blockStyle = css`
+    ${containerStyle};
+    ${props => props.hasBackground ? backgroundStyle[props.colorType] : null};
+
+    transition: all ${props => props.theme.transition.sm};
+
+    .image {
+        height: ${props => props.theme.blockHeader[props.blockWidth]};
+
+        img {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+`;
+
+const titleOutBlockStyle = css`
+    ${containerStyle};
+
+    & > :first-child {
+        text-transform: uppercase;
+        letter-spacing: ${props => props.theme.font.spacing};
+        line-height: 0.75;
+        color: ${props => props.theme.color[props.colorTheme]['gradientBase']};
+    }
+
+    & > .container {
+        ${blockStyle};
+        max-width: inherit;
+    }
+`;
+
 export {
-    backgroundStyle
+    blockStyle,
+    titleOutBlockStyle
 };

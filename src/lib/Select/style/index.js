@@ -21,7 +21,7 @@ const SelectBase = styled.div`
 
         option {
             &:disabled {
-                color: ${props => props.theme.color.grey30};
+                color: ${props => props.theme.wab.grey30};
             }
         }
     }

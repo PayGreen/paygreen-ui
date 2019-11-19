@@ -34,12 +34,12 @@ const greyDefault = greyOptions.grey40;
 
 // Button sizes
 const buttonSizeOptions = {
-    small: 'sm',
-    medium: 'md',
-    large: 'lg'
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg'
 };
 
-const buttonSizeDefault = buttonSizeOptions.medium;
+const buttonSizeDefault = buttonSizeOptions.md;
 
 // Button sizes
 const buttonTemplateOptions = {
@@ -78,15 +78,28 @@ const spaceOptions = {
 
 const spaceDefault = spaceOptions.none;
 
-// Block sizes
-const blockSizeOptions = {
+// Block padding
+const blockPaddingOptions = {
+    none: 'none',
+    xs: 'xs',
     sm: 'sm',
     md: 'md',
     lg: 'lg',
     xl: 'xl'
 };
 
-const blockSizeDefault = blockSizeOptions.md;
+const blockPaddingDefault = blockPaddingOptions.none;
+
+// Block width
+const blockWidthOptions = {
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl'
+};
+
+const blockWidthDefault = blockWidthOptions.md;
+
 // Input width
 const inputWidthOptions = {
     sm: 'sm',
@@ -136,6 +149,14 @@ const titleHtmlTagOptions = {
 
 const titleHtmlTagDefault = titleHtmlTagOptions.span;
 
+// Text HTML tags
+const textHtmlTagOptions = {
+    p: 'p',
+    div: 'div'
+};
+
+const textHtmlTagDefault = textHtmlTagOptions.p;
+
 // Font sizes
 const fontSizeOptions = {
     xxs: 'xxs',
@@ -159,6 +180,14 @@ const formStatusOptions = {
 
 const formStatusDefault = formStatusOptions.default;
 
+const gradientOptions = {
+    none: 'none',
+    brand: 'brand',
+    theme: 'theme',
+};
+
+const gradientDefault = gradientOptions.none;
+
 export {
     colorNumberOptions,
     colorNumberDefault,
@@ -178,8 +207,10 @@ export {
     radiusDefault,
     spaceOptions,
     spaceDefault,
-    blockSizeOptions,
-    blockSizeDefault,
+    blockPaddingOptions,
+    blockPaddingDefault,
+    blockWidthOptions,
+    blockWidthDefault,
     inputWidthOptions,
     inputWidthDefault,
     alignOptions,
@@ -190,8 +221,12 @@ export {
     cardHtmlTagDefault,
     titleHtmlTagOptions,
     titleHtmlTagDefault,
+    textHtmlTagOptions,
+    textHtmlTagDefault,
     fontSizeOptions,
     fontSizeDefault,
     formStatusOptions,
     formStatusDefault,
+    gradientOptions,
+    gradientDefault,
 };

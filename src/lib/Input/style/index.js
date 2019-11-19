@@ -24,7 +24,7 @@ const InputBase = styled.div`
         ${props => props.inputDisabled ? disabled : enabled};
 
         ::placeholder {
-            color: ${props => props.theme.color.grey20};
+            color: ${props => props.theme.wab.grey20};
             font-style: italic;
         }
     }

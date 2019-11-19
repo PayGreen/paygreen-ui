@@ -1,60 +1,58 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
-    titleHtmlTagOptions,
-    titleHtmlTagDefault,
+    textHtmlTagOptions,
+    textHtmlTagDefault,
     colorTypeOptions,
     colorTypeDefault,
-    colorNumberOptions,
-    colorNumberDefault,
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
-    greyDefault,
     fontSizeOptions,
     fontSizeDefault,
     alignOptions,
     alignDefault,
     blockPaddingOptions,
-    blockPaddingDefault
+    blockPaddingDefault,
+    spaceOptions
 } from '../../shared/constants';
-import { TitleBase } from './style';
+import { TextBase } from './style';
 
-class Title extends PureComponent {
+class Text extends PureComponent {
     render() {
-        return <TitleBase
-            as={this.props.titleHtmlTag}
+        return <TextBase
+            as={this.props.textHtmlTag}
             {...this.props}
         >
             {this.props.children}
-        </TitleBase>;
+        </TextBase>;
     }
 }
 
-Title.propTypes = {
-    titleHtmlTag: PropTypes.oneOf(Object.values(titleHtmlTagOptions)),
+Text.propTypes = {
+    textHtmlTag: PropTypes.oneOf(Object.values(textHtmlTagOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    colorNumber: PropTypes.oneOf(Object.values(colorNumberOptions)),
+    mainColor: PropTypes.oneOf(Object.values(greyOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    color2: PropTypes.oneOf(Object.values(greyOptions)),
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockPaddingOptions)),
     paddingBlock: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    underline: PropTypes.bool,
+    marginTop: PropTypes.oneOf(Object.values(blockPaddingOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(blockPaddingOptions)),
+    marginInternal: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
-Title.defaultProps = {
-    titleHtmlTag: titleHtmlTagDefault,
+Text.defaultProps = {
+    textHtmlTag: textHtmlTagDefault,
     colorType: colorTypeDefault,
-    colorNumber: colorNumberDefault,
+    mainColor: greyOptions.grey60,
     colorTheme: colorThemeDefault,
-    color2: greyDefault,
     textSize: fontSizeDefault,
     textAlign: alignDefault,
-    marginTop: blockPaddingDefault,
     paddingBlock: blockPaddingDefault,
-    underline: false,
+    marginTop: blockPaddingDefault,
+    marginBottom: blockPaddingDefault,
+    marginInternal: spaceOptions.sm,
 };
 
-export default Title;
+export default Text;

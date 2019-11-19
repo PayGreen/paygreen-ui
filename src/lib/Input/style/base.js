@@ -8,7 +8,7 @@ import {
 
 const label = css`
     display: block;
-    color: ${props => props.theme.color.grey30};
+    color: ${props => props.theme.wab.grey30};
     font-size: 1rem;
     font-weight: ${props => props.theme.font.weight.bold};
     text-transform: uppercase;
@@ -53,14 +53,14 @@ const field = css`
 
 const disabledField = css`
     cursor: not-allowed;
-    color: ${props => props.theme.color.grey40};
-    background-color: ${props => props.theme.color.white20};
+    color: ${props => props.theme.wab.grey40};
+    background-color: ${props => props.theme.wab.white20};
 `;
 
 const fieldShadow = css`
     box-shadow: ${props => props.theme.shadow.size.sm + ' ' + transparentize(
         props.theme.shadow.opacity.sm,
-        props.theme.color.black00
+        props.theme.wab.black00
     )};
 `;
 
@@ -93,7 +93,7 @@ const canHover = css`
 
 const enabled = css`
     color: ${props => fieldTextColor[props.status]};
-    background-color: ${props => props.theme.bg};
+    background-color: ${props => props.theme.wab.white00};
 
     & + span {
         &::before,
@@ -122,7 +122,7 @@ const disabled = css`
     & + span {
         &::before,
         &::after {
-            background-color: ${props => props.theme.color.grey20};
+            background-color: ${props => props.theme.wab.grey20};
             width: 100%;
         }
     }
