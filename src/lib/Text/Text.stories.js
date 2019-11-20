@@ -6,6 +6,8 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
+    transparentColorOptions,
+    transparentColorDefault,
     fontSizeOptions,
     fontSizeDefault,
     alignOptions,
@@ -25,9 +27,12 @@ storiesOf('Text', module)
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             mainColor={radios('Main color', greyOptions, greyOptions.grey60)}
             colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
+            backgroundColor={radios('Background-color', transparentColorOptions, transparentColorDefault)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
             paddingBlock={select('Block\'s padding', blockPaddingOptions, blockPaddingDefault)}
+            paddingTop={select('Padding top', blockPaddingOptions, blockPaddingDefault)}
+            paddingBottom={select('Padding bottom', blockPaddingOptions, blockPaddingDefault)}
             marginTop={select('Block\'s margin top', blockPaddingOptions, blockPaddingDefault)}
             marginBottom={select('Block\'s margin bottom', blockPaddingOptions, blockPaddingDefault)}
         >
@@ -42,9 +47,12 @@ storiesOf('Text', module)
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             mainColor={radios('Main color', greyOptions, greyOptions.grey60)}
             colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
+            backgroundColor={radios('Background-color', transparentColorOptions, transparentColorDefault)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
-            paddingBlock={select('Block\'s padding', blockPaddingOptions, blockPaddingDefault)}
+            paddingBlock={select('Left and right padding', blockPaddingOptions, blockPaddingDefault)}
+            paddingTop={select('Padding top', blockPaddingOptions, blockPaddingDefault)}
+            paddingBottom={select('Padding bottom', blockPaddingOptions, blockPaddingDefault)}
             marginTop={select('Block\'s margin top', blockPaddingOptions, blockPaddingDefault)}
             marginBottom={select('Block\'s margin bottom', blockPaddingOptions, blockPaddingDefault)}
             marginInternal={select('Internal margin', spaceOptions, spaceOptions.sm)}
@@ -63,4 +71,18 @@ storiesOf('Text', module)
         </Text>
     ), {
         notes: 'If you want to add more than paragraph, put your text inside <code>&lt;p&gt;</code> tags and pass textHtmlTag prop to "div".',
+    })
+    .add('Paragraph with background', () => (
+        <Text
+            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+            colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
+            backgroundColor={transparentColorOptions.theme}
+            paddingBlock={blockPaddingOptions.lg}
+            paddingTop={blockPaddingOptions.lg}
+            paddingBottom={blockPaddingOptions.lg}
+        >
+            Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Donec eget nulla in libero laoreet sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat quis risus.
+        </Text>
+    ), {
+        notes: 'You can add background-color, margins and paddings on your Text component.',
     });

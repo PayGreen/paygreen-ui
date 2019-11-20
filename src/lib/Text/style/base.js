@@ -1,6 +1,8 @@
 import { css } from 'styled-components';
+import { transparentColorOptions } from '../../../shared/constants';
 import {
     blockSpace,
+    backgroundColor
 } from './constants';
 import { transparentize } from 'polished';
 
@@ -13,6 +15,30 @@ const padding = css`
 
     @media (${props => props.theme.query.min.md}) {
         padding: 0 ${props => blockSpace('md', props.paddingBlock)};
+    }
+`;
+
+const topPadding = css`
+    padding-top: ${props => blockSpace('xs', props.paddingTop)};
+
+    @media (${props => props.theme.query.min.sm}) {
+        padding-top: ${props => blockSpace('sm', props.paddingTop)};
+    }
+
+    @media (${props => props.theme.query.min.md}) {
+        padding-top: ${props => blockSpace('md', props.paddingTop)};
+    }
+`;
+
+const bottomPadding = css`
+    padding-bottom: ${props => blockSpace('xs', props.paddingBottom)};
+
+    @media (${props => props.theme.query.min.sm}) {
+        padding-bottom: ${props => blockSpace('sm', props.paddingBottom)};
+    }
+
+    @media (${props => props.theme.query.min.md}) {
+        padding-bottom: ${props => blockSpace('md', props.paddingBottom)};
     }
 `;
 
@@ -43,6 +69,16 @@ const bottomMargin = css`
 const blockSpaces = css`
     ${props => props.theme.blockPadding[props.paddingBlock] ? padding : null};
 
+    ${props => props.theme.blockPadding[props.paddingTop] ? 
+        topPadding :
+        css`padding-top: 0;`
+    };
+
+    ${props => props.theme.blockPadding[props.paddingBottom] ? 
+        bottomPadding :
+        css`padding-bottom: 0;`
+    };
+
     ${props => props.theme.blockPadding[props.marginTop] ? 
         topMargin :
         css`margin-top: 0;`
@@ -53,6 +89,15 @@ const blockSpaces = css`
         css`margin-bottom: 0;`
     };
 `;
+
+const blockBackground = {
+    original: css`
+        background-color: ${props => backgroundColor[props.backgroundColor]};
+    `,
+    reverse: css`
+        background-color: ${props => props.backgroundColor !== transparentColorOptions.none ? transparentize(0.85, props.theme.wab.white00) : 'transparent'};
+    `
+};
 
 const textColor = {
     original: css`
@@ -93,7 +138,9 @@ const internalParagraph = css`
 export {
     topMargin,
     bottomMargin,
+    
     blockSpaces,
+    blockBackground,
     textStyle,
     internalParagraph
 };

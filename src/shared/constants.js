@@ -32,6 +32,16 @@ const greyOptions = {
 
 const greyDefault = greyOptions.grey40;
 
+// Transparent colors
+const transparentColorOptions = {
+    none: 'none',
+    grey1: 'grey1',
+    grey2: 'grey2',
+    theme: 'theme'
+};
+
+const transparentColorDefault = transparentColorOptions.none;
+
 // Button sizes
 const buttonSizeOptions = {
     sm: 'sm',
@@ -197,6 +207,8 @@ export {
     colorThemeDefault,
     greyOptions,
     greyDefault,
+    transparentColorOptions,
+    transparentColorDefault,
     buttonSizeOptions,
     buttonSizeDefault,
     buttonTemplateOptions,
