@@ -1,11 +1,13 @@
 import React from 'react';
 import Image from './Image';
-import imageFile from './sample/sample.png';
+import photoFile from './sample/sample.png';
+import drawFile from './sample/sample.svg';
 import {
     colorThemeOptions,
     colorThemeDefault,
     maskOptions,
     maskDefault,
+    imageTypeOptions,
     imageSizeOptions,
     radiusOptions,
     shadowStyleOptions
@@ -15,8 +17,9 @@ import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 
 storiesOf('Image', module)
     .addDecorator(withKnobs)
-    .add('Image', () => (
+    .add('Cover image', () => (
         <Image
+            imageType={imageTypeOptions.cover}
             colorChange={boolean('Modify color', true)}
             colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             bottomStyle={radios('Bottom style', maskOptions, maskDefault)}
@@ -25,8 +28,18 @@ storiesOf('Image', module)
             radiusSize={radios('Border radius', radiusOptions, radiusOptions.none)}
             shadow={radios('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
         >
-            <img src={imageFile} />
+            <img src={photoFile} />
         </Image>
     ), {
-        notes: 'Image.',
+        notes: 'Component made for taking photographs inside a responsive block, without change proportions, thanks to imageType prop passed as "cover".',
+    })
+    .add('Normal image', () => (
+        <Image
+            blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
+            blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
+        >
+            <img src={drawFile} />
+        </Image>
+    ), {
+        notes: 'Default Image component, optimized for SVG drawing and photos.',
     });

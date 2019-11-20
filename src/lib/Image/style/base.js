@@ -32,7 +32,20 @@ const bottomStyle = {
     `,
 };
 
+const imageStyle = {
+    normal: css`
+        max-width: 100%;
+        max-height: 100%;
+    `,
+    cover: css`
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    `,
+};
+
 export {
     changeColor,
-    bottomStyle
+    bottomStyle,
+    imageStyle
 };

@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 import {
     changeColor,
-    bottomStyle
+    bottomStyle,
+    imageStyle
 } from './base';
 
 const ImageBase = styled.figure`
@@ -20,11 +21,9 @@ const ImageBase = styled.figure`
     )};
 
     img {
-        border-radius: ${props => props.theme.radius[props.radiusSize]};
+        ${props => imageStyle[props.imageType]};
         display: block;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
+        border-radius: ${props => props.theme.radius[props.radiusSize]};
     }
 `;
 

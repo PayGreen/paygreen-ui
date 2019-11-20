@@ -138,6 +138,14 @@ const imageSizeOptions = {
 
 const imageSizeDefault = imageSizeOptions.auto;
 
+// Image type
+const imageTypeOptions = {
+    normal: 'normal',
+    cover: 'cover'
+};
+
+const imageTypeDefault = imageTypeOptions.normal;
+
 // Input width
 const inputWidthOptions = {
     sm: 'sm',
@@ -255,6 +263,8 @@ export {
     blockWidthDefault,
     imageSizeOptions,
     imageSizeDefault,
+    imageTypeOptions,
+    imageTypeDefault,
     inputWidthOptions,
     inputWidthDefault,
     alignOptions,

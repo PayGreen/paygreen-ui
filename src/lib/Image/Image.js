@@ -5,6 +5,8 @@ import {
     colorThemeDefault,
     maskOptions,
     maskDefault,
+    imageTypeOptions,
+    imageTypeDefault,
     imageSizeOptions,
     imageSizeDefault,
     radiusOptions,
@@ -21,6 +23,7 @@ class Image extends PureComponent {
 }
 
 Image.propTypes = {
+    imageType: PropTypes.oneOf(Object.values(imageTypeOptions)),
     colorChange: PropTypes.bool,
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(imageSizeOptions)),
@@ -31,6 +34,7 @@ Image.propTypes = {
 };
 
 Image.defaultProps = {
+    imageType: imageTypeDefault,
     colorChange: false,
     colorTheme: colorThemeDefault,
     blockWidth: imageSizeDefault,
