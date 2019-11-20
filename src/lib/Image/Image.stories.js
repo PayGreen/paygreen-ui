@@ -6,7 +6,7 @@ import {
     colorThemeDefault,
     maskOptions,
     maskDefault,
-    blockWidthOptions,
+    imageSizeOptions,
     radiusOptions,
     shadowStyleOptions
 } from '../../shared/constants';
@@ -20,7 +20,8 @@ storiesOf('Image', module)
             colorChange={boolean('Modify color', true)}
             colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             bottomStyle={radios('Bottom style', maskOptions, maskDefault)}
-            blockHeight={select('Image height', blockWidthOptions, blockWidthOptions.xl)}
+            blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
+            blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
             radiusSize={radios('Border radius', radiusOptions, radiusOptions.none)}
             shadow={radios('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
         >

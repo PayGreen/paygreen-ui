@@ -126,6 +126,18 @@ const blockWidthOptions = {
 
 const blockWidthDefault = blockWidthOptions.md;
 
+// Image size
+const imageSizeOptions = {
+    auto: 'auto',
+    xs: 'xs',
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl'
+};
+
+const imageSizeDefault = imageSizeOptions.auto;
+
 // Input width
 const inputWidthOptions = {
     sm: 'sm',
@@ -241,6 +253,8 @@ export {
     blockPaddingDefault,
     blockWidthOptions,
     blockWidthDefault,
+    imageSizeOptions,
+    imageSizeDefault,
     inputWidthOptions,
     inputWidthDefault,
     alignOptions,

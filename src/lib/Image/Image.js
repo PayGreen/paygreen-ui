@@ -5,8 +5,8 @@ import {
     colorThemeDefault,
     maskOptions,
     maskDefault,
-    blockWidthOptions,
-    blockWidthDefault,
+    imageSizeOptions,
+    imageSizeDefault,
     radiusOptions,
     shadowStyleOptions
 } from '../../shared/constants';
@@ -23,7 +23,8 @@ class Image extends PureComponent {
 Image.propTypes = {
     colorChange: PropTypes.bool,
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    blockHeight: PropTypes.oneOf(Object.values(blockWidthOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(imageSizeOptions)),
+    blockHeight: PropTypes.oneOf(Object.values(imageSizeOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     bottomStyle: PropTypes.oneOf(Object.values(maskOptions)),
     shadow: PropTypes.oneOf(Object.values(shadowStyleOptions)),
@@ -32,7 +33,8 @@ Image.propTypes = {
 Image.defaultProps = {
     colorChange: false,
     colorTheme: colorThemeDefault,
-    blockHeight: blockWidthDefault,
+    blockWidth: imageSizeDefault,
+    blockHeight: imageSizeDefault,
     radiusOptions: radiusOptions.none,
     bottomStyle: maskDefault,
     shadow: shadowStyleOptions.none

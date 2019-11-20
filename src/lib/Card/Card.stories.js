@@ -187,9 +187,7 @@ storiesOf('Card', module)
         <Card
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
         >
-            <Image
-                blockHeight={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
-            >
+            <Image>
                 <img src={imageFile} />
             </Image>
 

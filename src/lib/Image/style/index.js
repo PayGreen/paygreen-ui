@@ -5,10 +5,14 @@ import {
     bottomStyle
 } from './base';
 
-const ImageBase = styled.div`
+const ImageBase = styled.figure`
     ${props => props.colorChange ? changeColor : null};
     ${props => bottomStyle[props.bottomStyle]};
-    height: ${props => props.theme.blockHeader[props.blockHeight]};
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    height: ${props => props.theme.imageSize[props.blockHeight]};
+    width: ${props => props.theme.imageSize[props.blockWidth]};
     border-radius: ${props => props.theme.radius[props.radiusSize]};
     box-shadow: ${props => props.theme.shadow.size[props.shadow] + ' ' + transparentize(
         props.theme.shadow.opacity[props.shadow],

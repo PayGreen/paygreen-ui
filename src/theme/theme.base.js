@@ -126,6 +126,14 @@ export const ThemeBase = {
         lg: '210px',
         xl: '240px',
     },
+    imageSize: {
+        auto: 'auto',
+        xs: '240px',
+        sm: '400px',
+        md: '560px',
+        lg: '640px',
+        xl: '760px',
+    },
     transition: {
         xs: '0.2s',
         sm: '0.3s',
@@ -188,6 +196,7 @@ export const ThemeBase = {
             lg: '3px 3px 20px'
         },
         opacity: {
+            none: 1,
             sm: 0.9,
             md: 0.8,
             lg: 0.7
