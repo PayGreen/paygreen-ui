@@ -94,6 +94,7 @@ export const ThemeBase = {
     },
     line: '2px',
     radius: {
+        none: '0',
         sm: '4px',
         lg: '12px',
     },
@@ -181,6 +182,7 @@ export const ThemeBase = {
     },
     shadow: {
         size: {
+            none: '0 0 0',
             sm: '1px 1px 10px',
             md: '2px 2px 15px',
             lg: '3px 3px 20px'

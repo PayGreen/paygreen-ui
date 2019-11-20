@@ -75,6 +75,7 @@ const buttonTemplateDefault = buttonTemplateOptions.fill;
 
 // Shadows styles
 const shadowStyleOptions = {
+    none: 'none',
     sm: 'sm',
     md: 'md',
     lg: 'lg',
@@ -84,6 +85,7 @@ const shadowStyleDefault = shadowStyleOptions.md;
 
 // Radius sizes
 const radiusOptions = {
+    none: 'none',
     sm: 'sm',
     lg: 'lg'
 };

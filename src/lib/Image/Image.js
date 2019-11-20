@@ -7,6 +7,8 @@ import {
     maskDefault,
     blockWidthOptions,
     blockWidthDefault,
+    radiusOptions,
+    shadowStyleOptions
 } from '../../shared/constants';
 import { ImageBase } from './style';
 
@@ -22,14 +24,18 @@ Image.propTypes = {
     colorChange: PropTypes.bool,
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     blockHeight: PropTypes.oneOf(Object.values(blockWidthOptions)),
-    bottomStyle: PropTypes.oneOf(Object.values(maskOptions))
+    radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
+    bottomStyle: PropTypes.oneOf(Object.values(maskOptions)),
+    shadow: PropTypes.oneOf(Object.values(shadowStyleOptions)),
 };
 
 Image.defaultProps = {
     colorChange: false,
     colorTheme: colorThemeDefault,
     blockHeight: blockWidthDefault,
-    bottomStyle: maskDefault
+    radiusOptions: radiusOptions.none,
+    bottomStyle: maskDefault,
+    shadow: shadowStyleOptions.none
 };
 
 export default Image;

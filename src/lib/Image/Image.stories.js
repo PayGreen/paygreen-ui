@@ -7,6 +7,8 @@ import {
     maskOptions,
     maskDefault,
     blockWidthOptions,
+    radiusOptions,
+    shadowStyleOptions
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
@@ -19,6 +21,8 @@ storiesOf('Image', module)
             colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             bottomStyle={radios('Bottom style', maskOptions, maskDefault)}
             blockHeight={select('Image height', blockWidthOptions, blockWidthOptions.xl)}
+            radiusSize={radios('Border radius', radiusOptions, radiusOptions.none)}
+            shadow={radios('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
         >
             <img src={imageFile} />
         </Image>
