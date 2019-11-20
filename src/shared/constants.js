@@ -26,7 +26,11 @@ const colorThemeDefault = colorThemeOptions.primary;
 
 // Grey shades
 const greyOptions = {
+    grey10: 'grey10',
+    grey20: 'grey20',
+    grey30: 'grey30',
     grey40: 'grey40',
+    grey50: 'grey50',
     grey60: 'grey60',
 };
 

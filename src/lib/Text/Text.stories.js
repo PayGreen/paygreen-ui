@@ -25,7 +25,7 @@ storiesOf('Text', module)
     .add('Single paragraph', () => (
         <Text
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-            mainColor={radios('Main color', greyOptions, greyOptions.grey60)}
+            mainColor={select('Main color', greyOptions, greyOptions.grey60)}
             colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
             backgroundColor={radios('Background-color', transparentColorOptions, transparentColorDefault)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
@@ -45,7 +45,7 @@ storiesOf('Text', module)
         <Text
             textHtmlTag={textHtmlTagOptions.div}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-            mainColor={radios('Main color', greyOptions, greyOptions.grey60)}
+            mainColor={select('Main color', greyOptions, greyOptions.grey60)}
             colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
             backgroundColor={radios('Background-color', transparentColorOptions, transparentColorDefault)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
