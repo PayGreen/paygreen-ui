@@ -39,8 +39,8 @@ Title.propTypes = {
     color2: PropTypes.oneOf(Object.values(greyOptions)),
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
+    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    paddingBlock: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     underline: PropTypes.bool,
 };
 
@@ -52,8 +52,8 @@ Title.defaultProps = {
     color2: greyDefault,
     textSize: fontSizeDefault,
     textAlign: alignDefault,
+    marginLateral: blockSpaceDefault,
     marginTop: blockSpaceDefault,
-    paddingBlock: blockSpaceDefault,
     underline: false,
 };
 

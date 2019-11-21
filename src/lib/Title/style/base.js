@@ -1,5 +1,4 @@
 import { css } from 'styled-components';
-import { blockSpace } from '../../Text/style/constants';
 import { titleColor } from './constants';
 
 const titleColors = {
@@ -49,24 +48,8 @@ const underline = css`
     }
 `;
 
-const padding = css`
-    margin-left: ${props => blockSpace('xs', props.paddingBlock)};
-    margin-right: ${props => blockSpace('xs', props.paddingBlock)};
-
-    @media (${props => props.theme.query.min.sm}) {
-        margin-left: ${props => blockSpace('sm', props.paddingBlock)};
-        margin-right: ${props => blockSpace('sm', props.paddingBlock)};
-    }
-
-    @media (${props => props.theme.query.min.md}) {
-        margin-left: ${props => blockSpace('md', props.paddingBlock)};
-        margin-right: ${props => blockSpace('md', props.paddingBlock)};
-    }
-`;
-
 export {
     titleColors,
     smallText,
-    underline,
-    padding
+    underline
 };
