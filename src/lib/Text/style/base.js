@@ -6,15 +6,20 @@ import {
 } from './constants';
 import { transparentize } from 'polished';
 
-const padding = css`
-    padding: 0 ${props => blockSpace('xs', props.paddingBlock)};
+// Paddings
+
+const lateralPadding = css`
+    padding-left: ${props => blockSpace('xs', props.paddingLateral)};
+    padding-right: ${props => blockSpace('xs', props.paddingLateral)};
 
     @media (${props => props.theme.query.min.sm}) {
-        padding: 0 ${props => blockSpace('sm', props.paddingBlock)};
+        padding-left: ${props => blockSpace('sm', props.paddingLateral)};
+        padding-right: ${props => blockSpace('sm', props.paddingLateral)};
     }
 
     @media (${props => props.theme.query.min.md}) {
-        padding: 0 ${props => blockSpace('md', props.paddingBlock)};
+        padding-left: ${props => blockSpace('md', props.paddingLateral)};
+        padding-right: ${props => blockSpace('md', props.paddingLateral)};
     }
 `;
 
@@ -42,6 +47,23 @@ const bottomPadding = css`
     }
 `;
 
+// Margins
+
+const lateralMargin = css`
+    margin-left: ${props => blockSpace('xs', props.marginLateral)};
+    margin-right: ${props => blockSpace('xs', props.marginLateral)};
+
+    @media (${props => props.theme.query.min.sm}) {
+        margin-left: ${props => blockSpace('sm', props.marginLateral)};
+        margin-right: ${props => blockSpace('sm', props.marginLateral)};
+    }
+
+    @media (${props => props.theme.query.min.md}) {
+        margin-left: ${props => blockSpace('md', props.marginLateral)};
+        margin-right: ${props => blockSpace('md', props.marginLateral)};
+    }
+`;
+
 const topMargin = css`
     margin-top: ${props => blockSpace('xs', props.marginTop)};
 
@@ -66,29 +88,19 @@ const bottomMargin = css`
     }
 `;
 
+// All block's spaces
+
 const blockSpaces = css`
-    ${props => props.theme.blockSpace[props.paddingBlock] ? padding : null};
+    ${lateralPadding};
+    ${topPadding};
+    ${bottomPadding};
 
-    ${props => props.theme.blockSpace[props.paddingTop] ? 
-        topPadding :
-        css`padding-top: 0;`
-    };
-
-    ${props => props.theme.blockSpace[props.paddingBottom] ? 
-        bottomPadding :
-        css`padding-bottom: 0;`
-    };
-
-    ${props => props.theme.blockSpace[props.marginTop] ? 
-        topMargin :
-        css`margin-top: 0;`
-    };
-
-    ${props => props.theme.blockSpace[props.marginBottom] ? 
-        bottomMargin :
-        css`margin-bottom: 0;`
-    };
+    ${lateralMargin};
+    ${topMargin};
+    ${bottomMargin};
 `;
+
+// Other styles
 
 const blockBackground = {
     original: css`
@@ -136,11 +148,16 @@ const internalParagraph = css`
 `;
 
 export {
-    topMargin,
-    bottomMargin,
-    
     blockSpaces,
     blockBackground,
     textStyle,
-    internalParagraph
+    internalParagraph,
+
+    // Exports for other components
+    lateralPadding,
+    topPadding,
+    bottomPadding,
+    lateralMargin,
+    topMargin,
+    bottomMargin,
 };

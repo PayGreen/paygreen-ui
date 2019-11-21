@@ -7,7 +7,6 @@ import {
     colorThemeDefault,
     greyOptions,
     transparentColorOptions,
-    transparentColorDefault,
     fontSizeOptions,
     fontSizeDefault,
     alignOptions,
@@ -25,14 +24,12 @@ storiesOf('Text', module)
     .add('Single paragraph', () => (
         <Text
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             mainColor={select('Main color', greyOptions, greyOptions.grey60)}
-            colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
-            backgroundColor={radios('Background-color', transparentColorOptions, transparentColorDefault)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
-            paddingBlock={select('Block\'s padding', blockSpaceOptions, blockSpaceDefault)}
-            paddingTop={select('Padding top', blockSpaceOptions, blockSpaceDefault)}
-            paddingBottom={select('Padding bottom', blockSpaceOptions, blockSpaceDefault)}
+
+            marginLateral={select('Block\'s lateral margins', blockSpaceOptions, blockSpaceDefault)}
             marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}
             marginBottom={select('Block\'s margin bottom', blockSpaceOptions, blockSpaceDefault)}
         >
@@ -45,14 +42,12 @@ storiesOf('Text', module)
         <Text
             textHtmlTag={textHtmlTagOptions.div}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             mainColor={select('Main color', greyOptions, greyOptions.grey60)}
-            colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
-            backgroundColor={radios('Background-color', transparentColorOptions, transparentColorDefault)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
-            paddingBlock={select('Left and right padding', blockSpaceOptions, blockSpaceDefault)}
-            paddingTop={select('Padding top', blockSpaceOptions, blockSpaceDefault)}
-            paddingBottom={select('Padding bottom', blockSpaceOptions, blockSpaceDefault)}
+
+            marginLateral={select('Block\'s lateral margins', blockSpaceOptions, blockSpaceDefault)}
             marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}
             marginBottom={select('Block\'s margin bottom', blockSpaceOptions, blockSpaceDefault)}
             marginInternal={select('Internal margin', spaceOptions, spaceOptions.sm)}
@@ -75,11 +70,16 @@ storiesOf('Text', module)
     .add('Paragraph with background', () => (
         <Text
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-            colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
-            backgroundColor={transparentColorOptions.theme}
-            paddingBlock={blockSpaceOptions.lg}
+            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
+            backgroundColor={radios('Background color', transparentColorOptions, transparentColorOptions.grey1)}
+
+            paddingLateral={blockSpaceOptions.lg}
             paddingTop={blockSpaceOptions.lg}
             paddingBottom={blockSpaceOptions.lg}
+
+            marginLateral={blockSpaceOptions.sm}
+            marginTop={blockSpaceOptions.sm}
+            marginBottom={blockSpaceOptions.sm}
         >
             Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Donec eget nulla in libero laoreet sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat quis risus.
         </Text>

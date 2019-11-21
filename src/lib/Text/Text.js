@@ -39,11 +39,15 @@ Text.propTypes = {
     backgroundColor: PropTypes.oneOf(Object.values(transparentColorOptions)),
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
-    paddingBlock: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+
+    paddingLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     paddingTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     paddingBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+
+    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+
     marginInternal: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
@@ -55,11 +59,15 @@ Text.defaultProps = {
     backgroundColor: transparentColorDefault,
     textSize: fontSizeDefault,
     textAlign: alignDefault,
-    paddingBlock: blockSpaceDefault,
+
+    paddingLateral: blockSpaceDefault,
     paddingTop: blockSpaceDefault,
     paddingBottom: blockSpaceDefault,
+
+    marginLateral: blockSpaceDefault,
     marginTop: blockSpaceDefault,
     marginBottom: blockSpaceDefault,
+
     marginInternal: spaceOptions.sm,
 };
 
