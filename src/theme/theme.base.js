@@ -112,7 +112,7 @@ export const ThemeBase = {
         lg: '640px',
         xl: '760px',
     },
-    blockPadding: {
+    blockSpace: {
         none: 0,
         xs: '16px',
         sm: '24px',

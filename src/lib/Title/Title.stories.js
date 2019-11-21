@@ -13,8 +13,8 @@ import {
     fontSizeOptions,
     alignOptions,
     alignDefault,
-    blockPaddingOptions,
-    blockPaddingDefault
+    blockSpaceOptions,
+    blockSpaceDefault
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text, radios, select } from '@storybook/addon-knobs';
@@ -28,8 +28,8 @@ storiesOf('Title', module)
             colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             textSize={select('Size', fontSizeOptions, 'lg')}
             textAlign={radios('Align', alignOptions, alignDefault)}
-            marginTop={select('Margin top', blockPaddingOptions, blockPaddingDefault)}
-            paddingBlock={select('Padding', blockPaddingOptions, blockPaddingDefault)}
+            marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}
+            paddingBlock={select('Padding', blockSpaceOptions, blockSpaceDefault)}
             titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
         >
             {text('Label', 'Your simple title')}
@@ -46,8 +46,8 @@ storiesOf('Title', module)
             color2={select('Second color', greyOptions, greyDefault)}
             textSize={select('Size', fontSizeOptions, fontSizeOptions.lg)}
             textAlign={radios('Align', alignOptions, alignDefault)}
-            marginTop={select('Margin top', blockPaddingOptions, blockPaddingDefault)}
-            paddingBlock={select('Padding', blockPaddingOptions, blockPaddingDefault)}
+            marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}
+            paddingBlock={select('Padding', blockSpaceOptions, blockSpaceDefault)}
             titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
         >
             Your title with <strong>an emphasis</strong>

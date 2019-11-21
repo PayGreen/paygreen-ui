@@ -105,7 +105,7 @@ const spaceOptions = {
 const spaceDefault = spaceOptions.none;
 
 // Block padding
-const blockPaddingOptions = {
+const blockSpaceOptions = {
     none: 'none',
     xs: 'xs',
     sm: 'sm',
@@ -114,7 +114,7 @@ const blockPaddingOptions = {
     xl: 'xl'
 };
 
-const blockPaddingDefault = blockPaddingOptions.none;
+const blockSpaceDefault = blockSpaceOptions.none;
 
 // Block width
 const blockWidthOptions = {
@@ -257,8 +257,8 @@ export {
     radiusDefault,
     spaceOptions,
     spaceDefault,
-    blockPaddingOptions,
-    blockPaddingDefault,
+    blockSpaceOptions,
+    blockSpaceDefault,
     blockWidthOptions,
     blockWidthDefault,
     imageSizeOptions,

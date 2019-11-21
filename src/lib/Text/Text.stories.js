@@ -13,8 +13,8 @@ import {
     alignOptions,
     alignDefault,
     textHtmlTagOptions,
-    blockPaddingOptions,
-    blockPaddingDefault,
+    blockSpaceOptions,
+    blockSpaceDefault,
     spaceOptions
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
@@ -30,11 +30,11 @@ storiesOf('Text', module)
             backgroundColor={radios('Background-color', transparentColorOptions, transparentColorDefault)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
-            paddingBlock={select('Block\'s padding', blockPaddingOptions, blockPaddingDefault)}
-            paddingTop={select('Padding top', blockPaddingOptions, blockPaddingDefault)}
-            paddingBottom={select('Padding bottom', blockPaddingOptions, blockPaddingDefault)}
-            marginTop={select('Block\'s margin top', blockPaddingOptions, blockPaddingDefault)}
-            marginBottom={select('Block\'s margin bottom', blockPaddingOptions, blockPaddingDefault)}
+            paddingBlock={select('Block\'s padding', blockSpaceOptions, blockSpaceDefault)}
+            paddingTop={select('Padding top', blockSpaceOptions, blockSpaceDefault)}
+            paddingBottom={select('Padding bottom', blockSpaceOptions, blockSpaceDefault)}
+            marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}
+            marginBottom={select('Block\'s margin bottom', blockSpaceOptions, blockSpaceDefault)}
         >
             Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Donec eget <em>nulla in libero</em> laoreet sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat quis risus.
         </Text>
@@ -50,11 +50,11 @@ storiesOf('Text', module)
             backgroundColor={radios('Background-color', transparentColorOptions, transparentColorDefault)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
-            paddingBlock={select('Left and right padding', blockPaddingOptions, blockPaddingDefault)}
-            paddingTop={select('Padding top', blockPaddingOptions, blockPaddingDefault)}
-            paddingBottom={select('Padding bottom', blockPaddingOptions, blockPaddingDefault)}
-            marginTop={select('Block\'s margin top', blockPaddingOptions, blockPaddingDefault)}
-            marginBottom={select('Block\'s margin bottom', blockPaddingOptions, blockPaddingDefault)}
+            paddingBlock={select('Left and right padding', blockSpaceOptions, blockSpaceDefault)}
+            paddingTop={select('Padding top', blockSpaceOptions, blockSpaceDefault)}
+            paddingBottom={select('Padding bottom', blockSpaceOptions, blockSpaceDefault)}
+            marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}
+            marginBottom={select('Block\'s margin bottom', blockSpaceOptions, blockSpaceDefault)}
             marginInternal={select('Internal margin', spaceOptions, spaceOptions.sm)}
         >
             <p>
@@ -77,9 +77,9 @@ storiesOf('Text', module)
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
             backgroundColor={transparentColorOptions.theme}
-            paddingBlock={blockPaddingOptions.lg}
-            paddingTop={blockPaddingOptions.lg}
-            paddingBottom={blockPaddingOptions.lg}
+            paddingBlock={blockSpaceOptions.lg}
+            paddingTop={blockSpaceOptions.lg}
+            paddingBottom={blockSpaceOptions.lg}
         >
             Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Donec eget nulla in libero laoreet sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat quis risus.
         </Text>

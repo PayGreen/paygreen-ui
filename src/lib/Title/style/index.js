@@ -12,8 +12,8 @@ const TitleBase = styled.span`
     ${props => titleColors[props.colorNumber]};
     ${props => smallFontSizes.includes(props.textSize) ? smallText : null};
     ${props => props.underline ? underline : null};
-    ${props => props.theme.blockPadding[props.paddingBlock] ? padding : null};
-    ${props => props.theme.blockPadding[props.marginTop] ? topMargin : null};
+    ${props => props.theme.blockSpace[props.paddingBlock] ? padding : null};
+    ${props => props.theme.blockSpace[props.marginTop] ? topMargin : null};
 
     display: block;
     text-align: ${props => props.textAlign};

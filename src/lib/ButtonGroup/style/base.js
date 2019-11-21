@@ -48,9 +48,9 @@ const bottomMargin = css`
 `;
 
 const blockSpaces = css`
-    ${props => props.theme.blockPadding[props.paddingBlock] ? padding : resetMarginWidth};
-    ${props => props.theme.blockPadding[props.marginTop] ? topMargin : null};
-    ${props => props.theme.blockPadding[props.marginBottom] ? bottomMargin : null};
+    ${props => props.theme.blockSpace[props.paddingBlock] ? padding : resetMarginWidth};
+    ${props => props.theme.blockSpace[props.marginTop] ? topMargin : null};
+    ${props => props.theme.blockSpace[props.marginBottom] ? bottomMargin : null};
 `;
 
 export {

@@ -23,7 +23,7 @@ exports[`renders without crashing 1`] = `
           "sm": "140px",
           "xl": "240px",
         },
-        "blockPadding": Object {
+        "blockSpace": Object {
           "lg": "52px",
           "md": "40px",
           "none": 0,

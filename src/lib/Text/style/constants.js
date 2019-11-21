@@ -1,19 +1,19 @@
 import { stripUnit, transparentize } from 'polished';
-import { blockPaddingOptions } from '../../../shared/constants';
+import { blockSpaceOptions } from '../../../shared/constants';
 
 const blockSpace = (screen, space) => {
-    const size = blockPaddingOptions.hasOwnProperty(space) ? props => props.theme.blockPadding[space] : space;
+    const size = blockSpaceOptions.hasOwnProperty(space) ? props => props.theme.blockSpace[space] : space;
 
     switch (screen) {
         case 'xs':
-            return props => stripUnit(size(props)) > stripUnit(props.theme.blockPadding.xs) ?
-                props.theme.blockPadding.xs :
+            return props => stripUnit(size(props)) > stripUnit(props.theme.blockSpace.xs) ?
+                props.theme.blockSpace.xs :
                 size(props);
         case 'sm':
-            return props => stripUnit(size(props)) > stripUnit(props.theme.blockPadding.sm) ?
-                props.theme.blockPadding.sm :
-                stripUnit(size(props)) > stripUnit(props.theme.blockPadding.xs) ?
-                    props.theme.blockPadding.xs :
+            return props => stripUnit(size(props)) > stripUnit(props.theme.blockSpace.sm) ?
+                props.theme.blockSpace.sm :
+                stripUnit(size(props)) > stripUnit(props.theme.blockSpace.xs) ?
+                    props.theme.blockSpace.xs :
                     size(props);
         case 'md':
             return props => size(props);

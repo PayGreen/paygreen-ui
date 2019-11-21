@@ -67,24 +67,24 @@ const bottomMargin = css`
 `;
 
 const blockSpaces = css`
-    ${props => props.theme.blockPadding[props.paddingBlock] ? padding : null};
+    ${props => props.theme.blockSpace[props.paddingBlock] ? padding : null};
 
-    ${props => props.theme.blockPadding[props.paddingTop] ? 
+    ${props => props.theme.blockSpace[props.paddingTop] ? 
         topPadding :
         css`padding-top: 0;`
     };
 
-    ${props => props.theme.blockPadding[props.paddingBottom] ? 
+    ${props => props.theme.blockSpace[props.paddingBottom] ? 
         bottomPadding :
         css`padding-bottom: 0;`
     };
 
-    ${props => props.theme.blockPadding[props.marginTop] ? 
+    ${props => props.theme.blockSpace[props.marginTop] ? 
         topMargin :
         css`margin-top: 0;`
     };
 
-    ${props => props.theme.blockPadding[props.marginBottom] ? 
+    ${props => props.theme.blockSpace[props.marginBottom] ? 
         bottomMargin :
         css`margin-bottom: 0;`
     };

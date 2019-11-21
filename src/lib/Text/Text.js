@@ -14,8 +14,8 @@ import {
     fontSizeDefault,
     alignOptions,
     alignDefault,
-    blockPaddingOptions,
-    blockPaddingDefault,
+    blockSpaceOptions,
+    blockSpaceDefault,
     spaceOptions
 } from '../../shared/constants';
 import { TextBase } from './style';
@@ -39,11 +39,11 @@ Text.propTypes = {
     backgroundColor: PropTypes.oneOf(Object.values(transparentColorOptions)),
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
-    paddingBlock: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    paddingTop: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    paddingBottom: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockPaddingOptions)),
+    paddingBlock: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    paddingTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    paddingBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     marginInternal: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
@@ -55,11 +55,11 @@ Text.defaultProps = {
     backgroundColor: transparentColorDefault,
     textSize: fontSizeDefault,
     textAlign: alignDefault,
-    paddingBlock: blockPaddingDefault,
-    paddingTop: blockPaddingDefault,
-    paddingBottom: blockPaddingDefault,
-    marginTop: blockPaddingDefault,
-    marginBottom: blockPaddingDefault,
+    paddingBlock: blockSpaceDefault,
+    paddingTop: blockSpaceDefault,
+    paddingBottom: blockSpaceDefault,
+    marginTop: blockSpaceDefault,
+    marginBottom: blockSpaceDefault,
     marginInternal: spaceOptions.sm,
 };
 

@@ -7,8 +7,8 @@ import {
     buttonTemplateOptions,
     alignOptions,
     alignDefault,
-    blockPaddingOptions,
-    blockPaddingDefault
+    blockSpaceOptions,
+    blockSpaceDefault
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
@@ -18,9 +18,9 @@ storiesOf('ButtonGroup', module)
     .add('ButtonGroup', () => (
         <ButtonGroup
             buttonAlign={radios('Buttons align', alignOptions, alignDefault)}
-            marginTop={select('Margin top', blockPaddingOptions, blockPaddingDefault)}
-            marginBottom={select('Margin bottom', blockPaddingOptions, blockPaddingDefault)}
-            paddingBlock={select('Block\'s padding', blockPaddingOptions, blockPaddingDefault)}
+            marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}
+            marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceDefault)}
+            paddingBlock={select('Block\'s padding', blockSpaceOptions, blockSpaceDefault)}
             resetMargin={boolean('Compensate buttons margin', false)}
         >
             <a href="#">
