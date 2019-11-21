@@ -18,10 +18,10 @@ storiesOf('ButtonGroup', module)
     .add('ButtonGroup', () => (
         <ButtonGroup
             buttonAlign={radios('Buttons align', alignOptions, alignDefault)}
+            resetMargin={boolean('Compensate buttons margin', false)}
+            marginLateral={select('Lateral margin', blockSpaceOptions, blockSpaceDefault)}
             marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}
             marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceDefault)}
-            paddingBlock={select('Block\'s padding', blockSpaceOptions, blockSpaceDefault)}
-            resetMargin={boolean('Compensate buttons margin', false)}
         >
             <a href="#">
                 <Button

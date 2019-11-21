@@ -6,7 +6,7 @@ import {
     calculateSpace
 } from './constants';
 
-const resetMarginWidth = css`
+const resetLateralMargin = css`
     margin-left: -${buttonSpace};
     margin-right: -${buttonSpace};
 `;
@@ -48,7 +48,7 @@ const bottomMargin = css`
 `;
 
 const blockSpaces = css`
-    ${props => props.theme.blockSpace[props.paddingBlock] ? padding : resetMarginWidth};
+    ${props => props.theme.blockSpace[props.paddingBlock] ? padding : resetLateralMargin};
     ${props => props.theme.blockSpace[props.marginTop] ? topMargin : null};
     ${props => props.theme.blockSpace[props.marginBottom] ? bottomMargin : null};
 `;
