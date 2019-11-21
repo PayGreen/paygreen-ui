@@ -24,6 +24,7 @@ import {
     colorNumberOptions,
     fontSizeOptions,
     alignOptions,
+    imageTypeOptions,
     blockSpaceOptions,
     blockSpaceDefault,
     buttonSizeOptions,
@@ -187,7 +188,7 @@ storiesOf('Card', module)
         <Card
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
         >
-            <Image>
+            <Image imageType={imageTypeOptions.cover}>
                 <img src={imageFile} />
             </Image>
 
