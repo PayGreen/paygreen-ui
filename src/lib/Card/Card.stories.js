@@ -62,7 +62,7 @@ storiesOf('Card', module)
             <Text
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                paddingBlock={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. Curabitur bibendum risus gravida tellus condimentum tristique. Sed ut elit efficitur, sagittis urna sed, scelerisque eros. 
             </Text>
@@ -107,8 +107,8 @@ storiesOf('Card', module)
             <Text
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                marginLateral={blockSpaceOptions.sm}
                 marginTop={blockSpaceOptions.xs}
-                paddingBlock={blockSpaceOptions.sm}
                 textSize={fontSizeOptions.sm}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
@@ -155,8 +155,8 @@ storiesOf('Card', module)
                 <Text
                     colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                    marginLateral={blockSpaceOptions.sm}
                     marginTop={blockSpaceOptions.sm}
-                    paddingBlock={blockSpaceOptions.sm}
                     textSize={fontSizeOptions.sm}
                 >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
@@ -201,7 +201,7 @@ storiesOf('Card', module)
             </Title>
 
             <Text
-                paddingBlock={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
                 marginTop={blockSpaceOptions.xs}
                 textSize={fontSizeOptions.sm}
             >
