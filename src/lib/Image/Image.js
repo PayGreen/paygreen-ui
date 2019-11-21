@@ -39,7 +39,7 @@ Image.defaultProps = {
     colorTheme: colorThemeDefault,
     blockWidth: imageSizeDefault,
     blockHeight: imageSizeDefault,
-    radiusOptions: radiusOptions.none,
+    radiusSize: radiusOptions.none,
     bottomStyle: maskDefault,
     shadow: shadowStyleOptions.none
 };
