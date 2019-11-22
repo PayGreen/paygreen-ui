@@ -94,6 +94,7 @@ export const ThemeBase = {
     },
     line: '2px',
     radius: {
+        none: '0',
         sm: '4px',
         lg: '12px',
     },
@@ -124,6 +125,14 @@ export const ThemeBase = {
         md: '180px',
         lg: '210px',
         xl: '240px',
+    },
+    imageSize: {
+        auto: 'auto',
+        xs: '240px',
+        sm: '400px',
+        md: '560px',
+        lg: '640px',
+        xl: '760px',
     },
     transition: {
         xs: '0.2s',
@@ -181,11 +190,13 @@ export const ThemeBase = {
     },
     shadow: {
         size: {
+            none: '0 0 0',
             sm: '1px 1px 10px',
             md: '2px 2px 15px',
             lg: '3px 3px 20px'
         },
         opacity: {
+            none: 1,
             sm: 0.9,
             md: 0.8,
             lg: 0.7

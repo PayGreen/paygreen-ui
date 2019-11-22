@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './Card';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
+import Image from '../Image/Image';
 import Text from '../Text/Text';
 import Title from '../Title/Title';
 import imageFile from './sample/sample.png';
@@ -150,7 +151,7 @@ storiesOf('Card', module)
                 Sample
             </Title>
 
-            <div class="container">
+            <div className="container">
                 <Text
                     colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
@@ -186,9 +187,9 @@ storiesOf('Card', module)
         <Card
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
         >
-            <div class="image">
+            <Image>
                 <img src={imageFile} />
-            </div>
+            </Image>
 
             <Title
                 colorNumber={colorNumberOptions.two}
@@ -221,7 +222,7 @@ storiesOf('Card', module)
             </ButtonGroup>
         </Card>
     ), {
-        notes: 'Card with image in header. It doesn\'t need a specific prop: just put your <img> tag inside a div class="image" at the beginning of your Card component.',
+        notes: 'Card with image in header. It doesn\'t need a specific prop: just use the Image component at the beginning of your Card component.',
     })
     .add('Card without background', () => (
         <Card

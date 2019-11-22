@@ -26,7 +26,11 @@ const colorThemeDefault = colorThemeOptions.primary;
 
 // Grey shades
 const greyOptions = {
+    grey10: 'grey10',
+    grey20: 'grey20',
+    grey30: 'grey30',
     grey40: 'grey40',
+    grey50: 'grey50',
     grey60: 'grey60',
 };
 
@@ -41,6 +45,16 @@ const transparentColorOptions = {
 };
 
 const transparentColorDefault = transparentColorOptions.none;
+
+// Mask styles
+const maskOptions = {
+    none: 'none',
+    gradient: 'gradient',
+    waveLeft: 'waveLeft',
+    waveRight: 'waveRight'
+};
+
+const maskDefault = maskOptions.none;
 
 // Button sizes
 const buttonSizeOptions = {
@@ -61,6 +75,7 @@ const buttonTemplateDefault = buttonTemplateOptions.fill;
 
 // Shadows styles
 const shadowStyleOptions = {
+    none: 'none',
     sm: 'sm',
     md: 'md',
     lg: 'lg',
@@ -70,6 +85,7 @@ const shadowStyleDefault = shadowStyleOptions.md;
 
 // Radius sizes
 const radiusOptions = {
+    none: 'none',
     sm: 'sm',
     lg: 'lg'
 };
@@ -109,6 +125,26 @@ const blockWidthOptions = {
 };
 
 const blockWidthDefault = blockWidthOptions.md;
+
+// Image size
+const imageSizeOptions = {
+    auto: 'auto',
+    xs: 'xs',
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl'
+};
+
+const imageSizeDefault = imageSizeOptions.auto;
+
+// Image type
+const imageTypeOptions = {
+    normal: 'normal',
+    cover: 'cover'
+};
+
+const imageTypeDefault = imageTypeOptions.normal;
 
 // Input width
 const inputWidthOptions = {
@@ -209,6 +245,8 @@ export {
     greyDefault,
     transparentColorOptions,
     transparentColorDefault,
+    maskOptions,
+    maskDefault,
     buttonSizeOptions,
     buttonSizeDefault,
     buttonTemplateOptions,
@@ -223,6 +261,10 @@ export {
     blockPaddingDefault,
     blockWidthOptions,
     blockWidthDefault,
+    imageSizeOptions,
+    imageSizeDefault,
+    imageTypeOptions,
+    imageTypeDefault,
     inputWidthOptions,
     inputWidthDefault,
     alignOptions,

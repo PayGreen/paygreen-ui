@@ -96,17 +96,6 @@ const blockStyle = css`
     ${props => props.hasBackground ? backgroundStyle[props.colorType] : null};
 
     transition: all ${props => props.theme.transition.sm};
-
-    .image {
-        height: ${props => props.theme.blockHeader[props.blockWidth]};
-
-        img {
-            display: block;
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-    }
 `;
 
 const titleOutBlockStyle = css`
