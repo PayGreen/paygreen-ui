@@ -38,7 +38,7 @@ storiesOf('Select', module)
             options={options}
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
-            status={radios('State', formStatusOptions, formStatusDefault)}
+            status={radios('Status', formStatusOptions, formStatusDefault)}
             params={{
                 shadow: boolean('With shadow', false),
             }}
