@@ -24,7 +24,7 @@ class AutonomousInput extends PureComponent {
     render() {
         const {
             status,
-            submittedButton,
+            submittedLabel,
             children,
             ...rest
         } = this.props;
@@ -46,12 +46,12 @@ class AutonomousInput extends PureComponent {
 
 AutonomousInput.propTypes = {
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
-    submittedButton: PropTypes.string
+    submittedLabel: PropTypes.string
 };
 
 AutonomousInput.defaultProps = {
     status: formStatusDefault,
-    submittedButton: null
+    submittedLabel: null
 };
 
 export default AutonomousInput;

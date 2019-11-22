@@ -13,7 +13,7 @@ storiesOf('AutonomousInput', module)
         <AutonomousInput
             status={radios('Status', formStatusOptions, formStatusDefault)}
             placeholder={text('Placeholder', 'Your email...')}
-            submittedButton={text('Submitted button label', 'Received!')}
+            submittedLabel={text('Submitted label', 'Received!')}
             type="email"
         >
             <button type="submit">
