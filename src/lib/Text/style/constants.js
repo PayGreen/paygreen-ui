@@ -1,24 +1,61 @@
-import { stripUnit, transparentize } from 'polished';
-import { blockSpaceOptions } from '../../../shared/constants';
+import { css } from 'styled-components';
+import { stripUnit, transparentize, math, directionalProperty } from 'polished';
+
+const calculateSpace = (space, toRemove = 0, coeff = 1) => {
+    return props => math(props.theme.blockSpace[space] + '*' + coeff + '-' + toRemove);
+};
 
 const blockSpace = (screen, space) => {
-    const size = blockSpaceOptions.hasOwnProperty(space) ? props => props.theme.blockSpace[space] : space;
-
     switch (screen) {
         case 'xs':
-            return props => stripUnit(size(props)) > stripUnit(props.theme.blockSpace.xs) ?
+            return props => stripUnit(space(props)) > stripUnit(props.theme.blockSpace.xs) ?
                 props.theme.blockSpace.xs :
-                size(props);
+                space;
         case 'sm':
-            return props => stripUnit(size(props)) > stripUnit(props.theme.blockSpace.sm) ?
+            return props => stripUnit(space(props)) > stripUnit(props.theme.blockSpace.sm) ?
                 props.theme.blockSpace.sm :
-                stripUnit(size(props)) > stripUnit(props.theme.blockSpace.xs) ?
+                stripUnit(space(props)) > stripUnit(props.theme.blockSpace.xs) ?
                     props.theme.blockSpace.xs :
-                    size(props);
+                    space;
         case 'md':
-            return props => size(props);
+            return space;
     }
-}
+};
+
+const responsiveSpaces = (propAttribute, toRemove = 0, bottomCoeff = 1) => {
+    const getSpace = (screen, direction, toRemove, bottomCoeff = 1) => {
+        return props => props[propAttribute + direction] !== undefined ?
+            props => blockSpace(screen, calculateSpace(props[propAttribute + direction], toRemove, bottomCoeff)) :
+            null
+    };
+
+    return css`
+        ${directionalProperty(propAttribute,
+            getSpace('xs', 'Top', toRemove),
+            getSpace('xs', 'Lateral', toRemove),
+            getSpace('xs', 'Bottom', toRemove, bottomCoeff),
+            getSpace('xs', 'Lateral', toRemove)
+        )};
+
+        @media (${props => props.theme.query.min.sm}) {
+            ${directionalProperty(propAttribute,
+                getSpace('sm', 'Top', toRemove),
+                getSpace('sm', 'Lateral', toRemove),
+                getSpace('sm', 'Bottom', toRemove, bottomCoeff),
+                getSpace('sm', 'Lateral', toRemove)
+            )};
+        }
+
+        @media (${props => props.theme.query.min.md}) {
+            ${directionalProperty(propAttribute,
+                getSpace('md', 'Top', toRemove),
+                getSpace('md', 'Lateral', toRemove),
+                getSpace('md', 'Bottom', toRemove, bottomCoeff),
+                getSpace('md', 'Lateral', toRemove)
+            )};
+        }
+    `;
+};
 
 const backgroundColor = {
     none: 'transparent',
@@ -28,6 +65,6 @@ const backgroundColor = {
 };
 
 export {
-    blockSpace,
-    backgroundColor
-}
+    responsiveSpaces,
+    backgroundColor,
+};

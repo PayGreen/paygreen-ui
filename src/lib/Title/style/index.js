@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import {
-    lateralMargin,
-    topMargin
-} from '../../Text/style/base';
+import { responsiveSpaces } from '../../Text/style/constants';
 import { smallFontSizes } from './constants';
 import {
     titleColors,
@@ -14,8 +11,7 @@ const TitleBase = styled.span`
     ${props => titleColors[props.colorNumber]};
     ${props => smallFontSizes.includes(props.textSize) ? smallText : null};
     ${props => props.underline ? underline : null};
-    ${lateralMargin};
-    ${topMargin};
+    ${responsiveSpaces('margin')};
 
     display: block;
     text-align: ${props => props.textAlign};

@@ -52,8 +52,8 @@ storiesOf('Card', module)
                 colorNumber={colorNumberOptions.two}
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
                 marginTop={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
-                paddingBlock={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
                 underline={true}
                 textSize={fontSizeOptions.lg}
             >
@@ -98,8 +98,8 @@ storiesOf('Card', module)
             <Title
                 colorNumber={colorNumberOptions.two}
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
+                marginLateral={blockSpaceOptions.sm}
                 marginTop={blockSpaceOptions.sm}
-                paddingBlock={blockSpaceOptions.sm}
                 textSize={fontSizeOptions.md}
             >
                 Title sample
@@ -146,7 +146,7 @@ storiesOf('Card', module)
         >
             <Title
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                paddingBlock={blockSpaceOptions.sm}
+                marginLateral={blockSpaceOptions.sm}
                 textSize={fontSizeOptions.lg}
             >
                 Sample
@@ -194,8 +194,8 @@ storiesOf('Card', module)
 
             <Title
                 colorNumber={colorNumberOptions.two}
+                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
                 marginTop={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
-                paddingBlock={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
                 textSize={fontSizeOptions.md}
             >
                 Title sample
