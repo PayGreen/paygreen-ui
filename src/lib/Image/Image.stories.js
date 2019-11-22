@@ -28,7 +28,7 @@ storiesOf('Image', module)
             radiusSize={radios('Border radius', radiusOptions, radiusOptions.none)}
             shadow={radios('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
         >
-            <img src={photoFile} />
+            <img src={photoFile} alt="picture" />
         </Image>
     ), {
         notes: 'Component made for taking photographs inside a responsive block, without change proportions, thanks to imageType prop passed as "cover".',
@@ -38,7 +38,7 @@ storiesOf('Image', module)
             blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
             blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
         >
-            <img src={drawFile} />
+            <img src={drawFile} alt="drawing" />
         </Image>
     ), {
         notes: 'Default Image component, optimized for SVG drawing and photos.',

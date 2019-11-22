@@ -189,7 +189,7 @@ storiesOf('Card', module)
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
         >
             <Image imageType={imageTypeOptions.cover}>
-                <img src={imageFile} />
+                <img src={imageFile} alt="picture" />
             </Image>
 
             <Title
