@@ -5,6 +5,7 @@ import {
     textHtmlTagDefault,
     colorTypeOptions,
     colorTypeDefault,
+    colorNumberOptions,
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
@@ -34,6 +35,7 @@ class Text extends PureComponent {
 Text.propTypes = {
     textHtmlTag: PropTypes.oneOf(Object.values(textHtmlTagOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
+    colorNumber: PropTypes.oneOf(Object.values(colorNumberOptions)),
     mainColor: PropTypes.oneOf(Object.values(greyOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     backgroundColor: PropTypes.oneOf(Object.values(transparentColorOptions)),
@@ -54,6 +56,7 @@ Text.propTypes = {
 Text.defaultProps = {
     textHtmlTag: textHtmlTagDefault,
     colorType: colorTypeDefault,
+    colorNumber: colorNumberOptions.two,
     mainColor: greyOptions.grey60,
     colorTheme: colorThemeDefault,
     backgroundColor: transparentColorDefault,

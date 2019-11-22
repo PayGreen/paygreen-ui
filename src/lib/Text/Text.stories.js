@@ -1,6 +1,7 @@
 import React from 'react';
 import Text from './Text';
 import {
+    colorNumberOptions,
     colorTypeOptions,
     colorTypeDefault,
     colorThemeOptions,
@@ -14,7 +15,7 @@ import {
     textHtmlTagOptions,
     blockSpaceOptions,
     blockSpaceDefault,
-    spaceOptions
+    spaceOptions,
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, radios, select } from '@storybook/addon-knobs';
@@ -67,11 +68,12 @@ storiesOf('Text', module)
     ), {
         notes: 'If you want to add more than paragraph, put your text inside <code>&lt;p&gt;</code> tags and pass textHtmlTag prop to "div".',
     })
-    .add('Paragraph with background', () => (
+    .add('Quote or emphasis', () => (
         <Text
+            colorNumber={colorNumberOptions.one}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
-            backgroundColor={radios('Background color', transparentColorOptions, transparentColorOptions.grey1)}
+            backgroundColor={radios('Background color', transparentColorOptions, transparentColorOptions.theme)}
 
             paddingLateral={blockSpaceOptions.lg}
             paddingTop={blockSpaceOptions.lg}

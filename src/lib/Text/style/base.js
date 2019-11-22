@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
 import { transparentColorOptions } from '../../../shared/constants';
-import { backgroundColor } from './constants';
+import { fontColor, backgroundColor } from './constants';
 
 const blockBackground = {
     original: css`
@@ -13,20 +13,20 @@ const blockBackground = {
 };
 
 const textColor = {
-    original: css`
-        color: ${props => props.theme.wab[props.mainColor]};
+    one: css`
+        color: ${props => fontColor.secondary[props.colorType]};
+    `,
+    two: css`
+        color: ${props => fontColor.main[props.colorType]};
 
         strong {
-            color: ${props => props.theme.color[props.colorTheme]['main']};
+            color: ${props => fontColor.secondary[props.colorType]};
         }
-    `,
-    reverse: css`
-        color: ${props => transparentize(0.05, props.theme.wab.white00)};
-    `,
+    `
 };
 
 const textStyle = css`
-    ${props => textColor[props.colorType]};
+    ${props => textColor[props.colorNumber]};
 
     line-height: 1.5;
     font-size: ${props => props.theme.font.size[props.textSize]};
