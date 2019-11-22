@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { responsiveSpaces } from '../../Text/style/constants';
+import { responsiveSpaces } from '../../../shared/spaces';
 import { smallFontSizes } from './constants';
 import {
     titleColors,

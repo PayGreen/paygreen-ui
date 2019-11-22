@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { justifyContentOptions } from '../../../shared/constants';
-import { responsiveSpaces } from '../../Text/style/constants';
+import { responsiveSpaces } from '../../../shared/spaces';
 
 const ButtonGroupBase = styled.div`
     display: flex;

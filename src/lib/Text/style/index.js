@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { textHtmlTagOptions } from '../../../shared/constants';
-import { responsiveSpaces } from './constants';
+import { responsiveSpaces } from '../../../shared/spaces';
 import {
     blockBackground,
     textStyle,
