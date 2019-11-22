@@ -11,6 +11,7 @@ import {
     greyOptions,
     transparentColorOptions,
     transparentColorDefault,
+    radiusOptions,
     fontSizeOptions,
     fontSizeDefault,
     alignOptions,
@@ -39,6 +40,7 @@ Text.propTypes = {
     mainColor: PropTypes.oneOf(Object.values(greyOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     backgroundColor: PropTypes.oneOf(Object.values(transparentColorOptions)),
+    radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
 
@@ -60,6 +62,7 @@ Text.defaultProps = {
     mainColor: greyOptions.grey60,
     colorTheme: colorThemeDefault,
     backgroundColor: transparentColorDefault,
+    radiusSize: radiusOptions.none,
     textSize: fontSizeDefault,
     textAlign: alignDefault,
 

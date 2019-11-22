@@ -8,6 +8,7 @@ import {
     colorThemeDefault,
     greyOptions,
     transparentColorOptions,
+    radiusOptions,
     fontSizeOptions,
     fontSizeDefault,
     alignOptions,
@@ -74,6 +75,7 @@ storiesOf('Text', module)
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             backgroundColor={radios('Background color', transparentColorOptions, transparentColorOptions.theme)}
+            radiusSize={radios('Radius size', radiusOptions, radiusOptions.sm)}
 
             paddingLateral={blockSpaceOptions.lg}
             paddingTop={blockSpaceOptions.lg}
@@ -86,5 +88,5 @@ storiesOf('Text', module)
             Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Donec eget nulla in libero laoreet sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat quis risus.
         </Text>
     ), {
-        notes: 'You can add background-color, margins and paddings on your Text component.',
+        notes: 'You can change background-color, border-radius, text color, margins and paddings on your Text component.',
     });
