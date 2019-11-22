@@ -1,3 +1,4 @@
+import AutonomousInput from './AutonomousInput/AutonomousInput';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
@@ -11,6 +12,7 @@ import Textarea from './Textarea/Textarea';
 import Title from './Title/Title';
 
 export {
+    AutonomousInput,
     Breadcrumb,
     Button,
     ButtonGroup,
