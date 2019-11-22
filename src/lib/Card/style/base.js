@@ -108,7 +108,7 @@ const titleOutBlockStyle = css`
         color: ${props => props.theme.color[props.colorTheme]['gradientBase']};
     }
 
-    & > .container {
+    & > div {
         ${blockStyle};
         max-width: inherit;
     }
