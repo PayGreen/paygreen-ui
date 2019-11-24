@@ -1,12 +1,15 @@
 import React from 'react';
-import Icon from './Icon';
+import { ArrowBottomIcon, CodeIcon } from './Icon';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text, radios } from '@storybook/addon-knobs';
 
-storiesOf('Icon', module)
+storiesOf('Icons', module)
     .addDecorator(withKnobs)
-    .add('Icon', () => (
-        <Icon icon="arrow-bottom"/>
+    .add('Fill', () => (
+        <div>
+            <ArrowBottomIcon size="md" fill="red" />
+            <CodeIcon size="md" fill="red" />
+        </div>
     ), {
-        notes: '',
-    });
+            notes: 'Icons',
+        });
