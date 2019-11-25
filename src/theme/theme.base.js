@@ -142,6 +142,7 @@ export const ThemeBase = {
         hidden: -100,
         button: -5,
         base: 0,
+        front: 5,
     },
     query: {
         min: {
