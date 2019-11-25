@@ -1,4 +1,5 @@
 import React from 'react';
+import IconWrapper from './IconWrapper';
 import {
     ArrowBottom,
     ArrowCircleLeft,
@@ -87,8 +88,6 @@ import {
     Wallet,
     Wheels,
 } from './components';
-
-import IconWrapper from './IconWrapper';
 
 export const ArrowBottomIcon = (props) => <IconWrapper {...props}><ArrowBottom /></IconWrapper>
 export const ArrowCircleLeftIcon = (props) => <IconWrapper {...props}><ArrowCircleLeft /></IconWrapper>

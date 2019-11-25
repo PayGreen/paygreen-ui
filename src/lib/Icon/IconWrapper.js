@@ -1,12 +1,11 @@
-import styled from 'styled-components';
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 
 class IconWrapper extends PureComponent {
     render() {
         const {children, ...rest} = this.props;
+
         const Children = React.Children.map(children, child => {
-            if(typeof child == 'object'){
+            if (typeof child == 'object') {
                 return React.cloneElement(child, {
                     fill: rest.fill,
                     height: '20px',
@@ -14,6 +13,7 @@ class IconWrapper extends PureComponent {
                 });
             }
         });
+
         return (
             <React.Fragment>
                 {Children}

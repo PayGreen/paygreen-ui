@@ -11,5 +11,5 @@ storiesOf('Icons', module)
             <CodeIcon size="md" fill="red" />
         </div>
     ), {
-            notes: 'Icons',
-        });
+        notes: 'Icons',
+    });
