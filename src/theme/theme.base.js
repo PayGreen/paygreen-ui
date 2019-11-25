@@ -106,19 +106,19 @@ export const ThemeBase = {
         lg: '32px',
         xl: '64px',
     },
-    blockWidth: {
-        sm: '400px',
-        md: '560px',
-        lg: '640px',
-        xl: '760px',
-    },
-    blockPadding: {
-        none: 0,
+    blockSpace: {
+        none: '0',
         xs: '16px',
         sm: '24px',
         md: '40px',
         lg: '52px',
         xl: '68px',
+    },
+    blockWidth: {
+        sm: '400px',
+        md: '560px',
+        lg: '640px',
+        xl: '760px',
     },
     blockHeader: {
         sm: '140px',

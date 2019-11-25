@@ -1,18 +1,17 @@
 import styled from 'styled-components';
+import { textHtmlTagOptions } from '../../../shared/constants';
+import { responsiveSpaces } from '../../../shared/spaces';
 import {
-    textHtmlTagOptions
-} from '../../../shared/constants'; 
-import {
-    blockSpaces,
     blockBackground,
     textStyle,
     internalParagraph
 } from './base';
 
 const TextBase = styled.p`
-    ${blockSpaces};
+    ${responsiveSpaces('padding')};
+    ${responsiveSpaces('margin')};
     ${props => blockBackground[props.colorType]};
-
+    border-radius: ${props => props.theme.radius[props.radiusSize]};
     ${props => props.textHtmlTag === textHtmlTagOptions.div ? internalParagraph : textStyle};
 `;
 

@@ -1,21 +1,22 @@
 import React from 'react';
 import Text from './Text';
 import {
+    colorNumberOptions,
     colorTypeOptions,
     colorTypeDefault,
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
     transparentColorOptions,
-    transparentColorDefault,
+    radiusOptions,
     fontSizeOptions,
     fontSizeDefault,
     alignOptions,
     alignDefault,
     textHtmlTagOptions,
-    blockPaddingOptions,
-    blockPaddingDefault,
-    spaceOptions
+    blockSpaceOptions,
+    blockSpaceDefault,
+    spaceOptions,
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, radios, select } from '@storybook/addon-knobs';
@@ -25,16 +26,14 @@ storiesOf('Text', module)
     .add('Single paragraph', () => (
         <Text
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             mainColor={select('Main color', greyOptions, greyOptions.grey60)}
-            colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
-            backgroundColor={radios('Background-color', transparentColorOptions, transparentColorDefault)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
-            paddingBlock={select('Block\'s padding', blockPaddingOptions, blockPaddingDefault)}
-            paddingTop={select('Padding top', blockPaddingOptions, blockPaddingDefault)}
-            paddingBottom={select('Padding bottom', blockPaddingOptions, blockPaddingDefault)}
-            marginTop={select('Block\'s margin top', blockPaddingOptions, blockPaddingDefault)}
-            marginBottom={select('Block\'s margin bottom', blockPaddingOptions, blockPaddingDefault)}
+
+            marginLateral={select('Block\'s lateral margins', blockSpaceOptions, blockSpaceDefault)}
+            marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}
+            marginBottom={select('Block\'s margin bottom', blockSpaceOptions, blockSpaceDefault)}
         >
             Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Donec eget <em>nulla in libero</em> laoreet sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat quis risus.
         </Text>
@@ -45,16 +44,14 @@ storiesOf('Text', module)
         <Text
             textHtmlTag={textHtmlTagOptions.div}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
             mainColor={select('Main color', greyOptions, greyOptions.grey60)}
-            colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
-            backgroundColor={radios('Background-color', transparentColorOptions, transparentColorDefault)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
-            paddingBlock={select('Left and right padding', blockPaddingOptions, blockPaddingDefault)}
-            paddingTop={select('Padding top', blockPaddingOptions, blockPaddingDefault)}
-            paddingBottom={select('Padding bottom', blockPaddingOptions, blockPaddingDefault)}
-            marginTop={select('Block\'s margin top', blockPaddingOptions, blockPaddingDefault)}
-            marginBottom={select('Block\'s margin bottom', blockPaddingOptions, blockPaddingDefault)}
+
+            marginLateral={select('Block\'s lateral margins', blockSpaceOptions, blockSpaceDefault)}
+            marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}
+            marginBottom={select('Block\'s margin bottom', blockSpaceOptions, blockSpaceDefault)}
             marginInternal={select('Internal margin', spaceOptions, spaceOptions.sm)}
         >
             <p>
@@ -72,17 +69,24 @@ storiesOf('Text', module)
     ), {
         notes: 'If you want to add more than paragraph, put your text inside <code>&lt;p&gt;</code> tags and pass textHtmlTag prop to "div".',
     })
-    .add('Paragraph with background', () => (
+    .add('Quote or emphasis', () => (
         <Text
+            colorNumber={colorNumberOptions.one}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-            colorTheme={radios('Color of <strong>', colorThemeOptions, colorThemeDefault)}
-            backgroundColor={transparentColorOptions.theme}
-            paddingBlock={blockPaddingOptions.lg}
-            paddingTop={blockPaddingOptions.lg}
-            paddingBottom={blockPaddingOptions.lg}
+            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
+            backgroundColor={radios('Background color', transparentColorOptions, transparentColorOptions.theme)}
+            radiusSize={radios('Radius size', radiusOptions, radiusOptions.sm)}
+
+            paddingLateral={blockSpaceOptions.lg}
+            paddingTop={blockSpaceOptions.lg}
+            paddingBottom={blockSpaceOptions.lg}
+
+            marginLateral={blockSpaceOptions.sm}
+            marginTop={blockSpaceOptions.sm}
+            marginBottom={blockSpaceOptions.sm}
         >
             Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Donec eget nulla in libero laoreet sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat quis risus.
         </Text>
     ), {
-        notes: 'You can add background-color, margins and paddings on your Text component.',
+        notes: 'You can change background-color, border-radius, text color, margins and paddings on your Text component.',
     });

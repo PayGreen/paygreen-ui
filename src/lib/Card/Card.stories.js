@@ -24,8 +24,9 @@ import {
     colorNumberOptions,
     fontSizeOptions,
     alignOptions,
-    blockPaddingOptions,
-    blockPaddingDefault,
+    imageTypeOptions,
+    blockSpaceOptions,
+    blockSpaceDefault,
     buttonSizeOptions,
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
@@ -51,8 +52,8 @@ storiesOf('Card', module)
                 colorNumber={colorNumberOptions.two}
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                marginTop={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
-                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                marginTop={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
                 underline={true}
                 textSize={fontSizeOptions.lg}
             >
@@ -62,16 +63,16 @@ storiesOf('Card', module)
             <Text
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. Curabitur bibendum risus gravida tellus condimentum tristique. Sed ut elit efficitur, sagittis urna sed, scelerisque eros. 
             </Text>
 
             <ButtonGroup
                 buttonAlign={alignOptions.center}
-                marginTop={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
-                marginBottom={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
-                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+                marginTop={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                marginBottom={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                paddingBlock={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
             >
                 <a href="#">
                     <Button
@@ -97,8 +98,8 @@ storiesOf('Card', module)
             <Title
                 colorNumber={colorNumberOptions.two}
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
-                marginTop={blockPaddingOptions.sm}
-                paddingBlock={blockPaddingOptions.sm}
+                marginLateral={blockSpaceOptions.sm}
+                marginTop={blockSpaceOptions.sm}
                 textSize={fontSizeOptions.md}
             >
                 Title sample
@@ -107,8 +108,8 @@ storiesOf('Card', module)
             <Text
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                marginTop={blockPaddingOptions.xs}
-                paddingBlock={blockPaddingOptions.sm}
+                marginLateral={blockSpaceOptions.sm}
+                marginTop={blockSpaceOptions.xs}
                 textSize={fontSizeOptions.sm}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
@@ -116,9 +117,9 @@ storiesOf('Card', module)
 
             <ButtonGroup
                 buttonAlign={alignOptions.center}
-                marginTop={blockPaddingOptions.sm}
-                marginBottom={blockPaddingOptions.sm}
-                paddingBlock={blockPaddingOptions.sm}
+                marginTop={blockSpaceOptions.sm}
+                marginBottom={blockSpaceOptions.sm}
+                paddingBlock={blockSpaceOptions.sm}
             >
                 <a href="#">
                     <Button
@@ -145,18 +146,18 @@ storiesOf('Card', module)
         >
             <Title
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                paddingBlock={blockPaddingOptions.sm}
+                marginLateral={blockSpaceOptions.sm}
                 textSize={fontSizeOptions.lg}
             >
                 Sample
             </Title>
 
-            <div className="container">
+            <div>
                 <Text
                     colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                    marginTop={blockPaddingOptions.sm}
-                    paddingBlock={blockPaddingOptions.sm}
+                    marginLateral={blockSpaceOptions.sm}
+                    marginTop={blockSpaceOptions.sm}
                     textSize={fontSizeOptions.sm}
                 >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
@@ -164,9 +165,9 @@ storiesOf('Card', module)
 
                 <ButtonGroup
                     buttonAlign={alignOptions.center}
-                    marginTop={blockPaddingOptions.sm}
-                    marginBottom={blockPaddingOptions.sm}
-                    paddingBlock={blockPaddingOptions.sm}
+                    marginTop={blockSpaceOptions.sm}
+                    marginBottom={blockSpaceOptions.sm}
+                    paddingBlock={blockSpaceOptions.sm}
                 >
                     <a href="#">
                         <Button
@@ -187,22 +188,22 @@ storiesOf('Card', module)
         <Card
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
         >
-            <Image>
-                <img src={imageFile} />
+            <Image imageType={imageTypeOptions.cover}>
+                <img src={imageFile} alt="picture" />
             </Image>
 
             <Title
                 colorNumber={colorNumberOptions.two}
-                marginTop={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
-                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                marginTop={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
                 textSize={fontSizeOptions.md}
             >
                 Title sample
             </Title>
 
             <Text
-                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
-                marginTop={blockPaddingOptions.xs}
+                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                marginTop={blockSpaceOptions.xs}
                 textSize={fontSizeOptions.sm}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
@@ -210,9 +211,9 @@ storiesOf('Card', module)
 
             <ButtonGroup
                 buttonAlign={alignOptions.center}
-                marginTop={blockPaddingOptions.sm}
-                marginBottom={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
-                paddingBlock={select(blockWidthLabel, blockPaddingOptions, blockPaddingDefault)}
+                marginTop={blockSpaceOptions.sm}
+                marginBottom={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                paddingBlock={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
             >
                 <a href="#">
                     <Button buttonSize={buttonSizeOptions.sm}>

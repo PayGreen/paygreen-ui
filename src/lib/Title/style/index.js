@@ -1,19 +1,17 @@
 import styled from 'styled-components';
-import { topMargin } from '../../Text/style/base';
+import { responsiveSpaces } from '../../../shared/spaces';
 import { smallFontSizes } from './constants';
 import {
     titleColors,
     smallText,
-    underline,
-    padding
+    underline
 } from './base';
 
 const TitleBase = styled.span`
     ${props => titleColors[props.colorNumber]};
     ${props => smallFontSizes.includes(props.textSize) ? smallText : null};
     ${props => props.underline ? underline : null};
-    ${props => props.theme.blockPadding[props.paddingBlock] ? padding : null};
-    ${props => props.theme.blockPadding[props.marginTop] ? topMargin : null};
+    ${responsiveSpaces('margin')};
 
     display: block;
     text-align: ${props => props.textAlign};

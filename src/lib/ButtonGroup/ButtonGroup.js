@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {
     alignOptions,
     alignDefault,
-    blockPaddingOptions,
-    blockPaddingDefault,
+    blockSpaceOptions,
+    blockSpaceDefault,
 } from '../../shared/constants';
 import { ButtonGroupBase } from './style';
 
@@ -20,18 +20,18 @@ class ButtonGroup extends PureComponent {
 
 ButtonGroup.propTypes = {
     buttonAlign: PropTypes.oneOf(Object.values(alignOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    paddingBlock: PropTypes.oneOf(Object.values(blockPaddingOptions)),
     resetMargin: PropTypes.bool,
+    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
 };
 
 ButtonGroup.defaultProps = {
     buttonAlign: alignDefault,
-    marginTop: blockPaddingDefault,
-    marginBottom: blockPaddingDefault,
-    paddingBlock: blockPaddingDefault,
     resetMargin: true,
+    marginLateral: blockSpaceDefault,
+    marginTop: blockSpaceDefault,
+    marginBottom: blockSpaceDefault,
 };
 
 export default ButtonGroup;

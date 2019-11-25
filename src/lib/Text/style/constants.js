@@ -1,24 +1,15 @@
-import { stripUnit, transparentize } from 'polished';
-import { blockPaddingOptions } from '../../../shared/constants';
+import { transparentize } from 'polished';
 
-const blockSpace = (screen, space) => {
-    const size = blockPaddingOptions.hasOwnProperty(space) ? props => props.theme.blockPadding[space] : space;
-
-    switch (screen) {
-        case 'xs':
-            return props => stripUnit(size(props)) > stripUnit(props.theme.blockPadding.xs) ?
-                props.theme.blockPadding.xs :
-                size(props);
-        case 'sm':
-            return props => stripUnit(size(props)) > stripUnit(props.theme.blockPadding.sm) ?
-                props.theme.blockPadding.sm :
-                stripUnit(size(props)) > stripUnit(props.theme.blockPadding.xs) ?
-                    props.theme.blockPadding.xs :
-                    size(props);
-        case 'md':
-            return props => size(props);
-    }
-}
+const fontColor = {
+    main: {
+        original: props => props.theme.wab[props.mainColor],
+        reverse: props => transparentize(0.05, props.theme.wab.white00)
+    },
+    secondary: {
+        original: props => props.theme.color[props.colorTheme]['main'],
+        reverse: props => transparentize(0.05, props.theme.wab.white00)
+    },
+};
 
 const backgroundColor = {
     none: 'transparent',
@@ -28,6 +19,6 @@ const backgroundColor = {
 };
 
 export {
-    blockSpace,
-    backgroundColor
-}
+    fontColor,
+    backgroundColor,
+};

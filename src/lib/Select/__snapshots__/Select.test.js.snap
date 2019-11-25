@@ -20,10 +20,10 @@ exports[`renders without crashing 1`] = `
           "sm": "140px",
           "xl": "240px",
         },
-        "blockPadding": Object {
+        "blockSpace": Object {
           "lg": "52px",
           "md": "40px",
-          "none": 0,
+          "none": "0",
           "sm": "24px",
           "xl": "68px",
           "xs": "16px",
@@ -142,6 +142,14 @@ exports[`renders without crashing 1`] = `
           },
           "textareaHeight": "200px",
         },
+        "imageSize": Object {
+          "auto": "auto",
+          "lg": "640px",
+          "md": "560px",
+          "sm": "400px",
+          "xl": "760px",
+          "xs": "240px",
+        },
         "line": "2px",
         "name": "Default",
         "query": Object {
@@ -160,17 +168,20 @@ exports[`renders without crashing 1`] = `
         },
         "radius": Object {
           "lg": "12px",
+          "none": "0",
           "sm": "4px",
         },
         "shadow": Object {
           "opacity": Object {
             "lg": 0.7,
             "md": 0.8,
+            "none": 1,
             "sm": 0.9,
           },
           "size": Object {
             "lg": "3px 3px 20px",
             "md": "2px 2px 15px",
+            "none": "0 0 0",
             "sm": "1px 1px 10px",
           },
         },

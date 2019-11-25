@@ -5,17 +5,19 @@ import {
     textHtmlTagDefault,
     colorTypeOptions,
     colorTypeDefault,
+    colorNumberOptions,
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
     transparentColorOptions,
     transparentColorDefault,
+    radiusOptions,
     fontSizeOptions,
     fontSizeDefault,
     alignOptions,
     alignDefault,
-    blockPaddingOptions,
-    blockPaddingDefault,
+    blockSpaceOptions,
+    blockSpaceDefault,
     spaceOptions
 } from '../../shared/constants';
 import { TextBase } from './style';
@@ -34,32 +36,44 @@ class Text extends PureComponent {
 Text.propTypes = {
     textHtmlTag: PropTypes.oneOf(Object.values(textHtmlTagOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
+    colorNumber: PropTypes.oneOf(Object.values(colorNumberOptions)),
     mainColor: PropTypes.oneOf(Object.values(greyOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     backgroundColor: PropTypes.oneOf(Object.values(transparentColorOptions)),
+    radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
-    paddingBlock: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    paddingTop: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    paddingBottom: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockPaddingOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockPaddingOptions)),
+
+    paddingLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    paddingTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    paddingBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+
+    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+
     marginInternal: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Text.defaultProps = {
     textHtmlTag: textHtmlTagDefault,
     colorType: colorTypeDefault,
+    colorNumber: colorNumberOptions.two,
     mainColor: greyOptions.grey60,
     colorTheme: colorThemeDefault,
     backgroundColor: transparentColorDefault,
+    radiusSize: radiusOptions.none,
     textSize: fontSizeDefault,
     textAlign: alignDefault,
-    paddingBlock: blockPaddingDefault,
-    paddingTop: blockPaddingDefault,
-    paddingBottom: blockPaddingDefault,
-    marginTop: blockPaddingDefault,
-    marginBottom: blockPaddingDefault,
+
+    paddingLateral: blockSpaceDefault,
+    paddingTop: blockSpaceDefault,
+    paddingBottom: blockSpaceDefault,
+
+    marginLateral: blockSpaceDefault,
+    marginTop: blockSpaceDefault,
+    marginBottom: blockSpaceDefault,
+
     marginInternal: spaceOptions.sm,
 };
 
