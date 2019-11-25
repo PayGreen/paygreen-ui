@@ -29,17 +29,23 @@ class AutonomousInput extends PureComponent {
             ...rest
         } = this.props;
 
+        const submittedText = <span>{submittedLabel}</span>;
+
         return <AutonomousInputBase
             theme={this.props.theme} // not necessary, only needed for tests
             status={status}
         >
-            <input
-                {...rest}
-                value={this.state.value}
-                onChange={this.handleChange}
-            />
+            <div>
+                <input
+                    {...rest}
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                />
 
-            {children}
+                {children}
+            </div>
+
+            {status === formStatusOptions.success && submittedLabel ? submittedText : null}
         </AutonomousInputBase>;
     }
 }
