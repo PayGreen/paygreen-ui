@@ -10,17 +10,6 @@ export default {
     input: './src/lib/index.js',
     output: [
         {
-            file: pkg.browser,
-            format: 'umd',
-            name: 'Example',
-            globals: {
-                'react': 'React',
-                'react-dom': 'ReactDOM',
-                'prop-types': 'PropTypes',
-                'styled-components': 'styled-components'
-            },
-        },
-        {
             file: pkg.main,
             format: 'cjs',
             name: 'Example',
