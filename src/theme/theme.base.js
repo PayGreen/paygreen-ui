@@ -147,7 +147,7 @@ export const ThemeBase = {
     },
     zindex: {
         hidden: -100,
-        button: -5,
+        layer: -5,
         base: 0,
         front: 5,
     },
