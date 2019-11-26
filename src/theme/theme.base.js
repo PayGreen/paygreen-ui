@@ -40,7 +40,7 @@ export const ThemeBase = {
             gradientShade: '#e98eb9',
         },
 
-        state: {
+        status: {
             success: '#33ad73',
             default: '#00a99d',
             warning: '#e58a28',
