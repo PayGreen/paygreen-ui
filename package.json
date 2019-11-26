@@ -15,14 +15,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/MattMattC/styled-component-library-poc.git"
+        "url": "git+https://github.com/PayGreen/paygreen-ui.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/MattMattC/styled-component-library-poc/issues"
+        "url": "https://github.com/PayGreen/paygreen-ui.git/issues"
     },
-    "homepage": "https://github.com/MattMattC/styled-component-library-poc#readme",
+    "homepage": "https://github.com/PayGreen/paygreen-ui.git#readme",
     "devDependencies": {
         "@babel/cli": "^7.6.0",
         "@babel/core": "^7.6.0",
@@ -34,23 +34,29 @@
         "@storybook/addon-notes": "^5.2.1",
         "@storybook/addon-viewport": "^5.2.1",
         "@storybook/react": "^5.2.1",
+        "babel-eslint": "^10.0.3",
         "babel-loader": "^8.0.6",
         "jest": "^24.9.0",
         "react-test-renderer": "^16.10.1",
         "rollup": "^1.21.4",
         "rollup-plugin-babel": "^4.3.3",
         "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-eslint": "^7.0.0",
         "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-peer-deps-external": "^2.2.0",
+        "rollup-plugin-svg": "^2.0.0",
         "rollup-plugin-uglify": "^6.0.3",
-        "storybook-addon-styled-component-theme": "^1.2.5"
+        "storybook-addon-styled-component-theme": "^1.2.5",
+        "styled-components": "^4.3.2"
     },
     "dependencies": {
-        "polished": "^3.4.1",
-        "react": "^16.9.0",
-        "react-dom": "^16.9.0",
         "react-input-mask": "^2.0.4",
         "react-transition-group": "^4.3.0",
-        "styled-components": "^4.3.2",
-        "styled-normalize": "^8.0.6"
+        "styled-normalize": "^8.0.6",
+        "polished": "^3.4.1"
+    },
+    "peerDependencies": {
+        "react": "^16.9.0",
+        "styled-components": ">= 4"
     }
 }

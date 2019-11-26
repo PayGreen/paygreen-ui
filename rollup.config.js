@@ -1,12 +1,12 @@
 import babel from 'rollup-plugin-babel';
-// ? 
 import resolve from 'rollup-plugin-node-resolve';
-// ? 
 import commonjs from 'rollup-plugin-commonjs';
-// import { uglify } from 'rollup-plugin-uglify';
 import pkg from './package.json';
-export default {
+import svg from 'rollup-plugin-svg'
+import { eslint } from "rollup-plugin-eslint";
+import peerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 
+export default {
     input: './src/lib/index.js',
     output: [
         {
@@ -26,7 +26,6 @@ export default {
             name: 'Example',
             globals: {
                 'react': 'React',
-                'react-dom': 'ReactDOM',
                 'prop-types': 'PropTypes',
                 'styled-components': 'styled-components'
             },
@@ -36,7 +35,6 @@ export default {
             format: 'es',
             globals: {
                 'react': 'React',
-                'react-dom': 'ReactDOM',
                 'prop-types': 'PropTypes',
                 'styled-components': 'styled-components'
             },
@@ -44,15 +42,16 @@ export default {
     ],
     external: [
         'react',
-        'react-dom',
         'styled-components'
     ],
     plugins: [
+        peerDepsExternalPlugin(),
+        eslint(),
+        svg(),
         babel({
-            exclude: 'node_modules/**'
+            exclude: 'node_modules/**',
         }),
         resolve(),
         commonjs(),
-        // uglify()
     ]
 }

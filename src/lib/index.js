@@ -10,7 +10,14 @@ import Text from './Text/Text';
 import Textarea from './Textarea/Textarea';
 import Title from './Title/Title';
 
+// theme
+import { ThemeDefault, ThemeDark } from '../theme'
+import { ThemeProvider as PGThemeProvider, withTheme } from 'styled-components'
+
 export {
+    ThemeDefault,
+    ThemeDark,
+    PGThemeProvider,
     Breadcrumb,
     Button,
     ButtonGroup,
