@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 import { directionalProperty } from 'polished';
-import { colorPalletOptions } from '../../../shared/constants';
 import { svgFill } from './constants';
 import { backgroundStyle } from './base';
 
 const IconBase = styled.span`
-    ${props => props.background && props.colorPallet === colorPalletOptions.theme ? backgroundStyle : null};
+    ${props => props.background ? backgroundStyle : null};
     display: inline-flex;
     width: ${props => props.theme.iconSize[props.iconSize]};
     height: ${props => props.theme.iconSize[props.iconSize]};
