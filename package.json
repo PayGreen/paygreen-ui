@@ -1,62 +1,62 @@
 {
-    "name": "styled-component-library-poc",
-    "version": "0.0.5",
-    "description": "",
-    "main": "build/index.cjs.js",
-    "module": "build/index.esm.js",
-    "browser": "build/index.js",
-    "scripts": {
-        "build": "rollup -c",
-        "storybook": "start-storybook",
-        "prepare": "npm run build",
-        "test": "jest",
-        "test-update": "jest --updateSnapshot",
-        "build-storybook": "build-storybook -c .storybook -o public"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/PayGreen/paygreen-ui.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/PayGreen/paygreen-ui.git/issues"
-    },
-    "homepage": "https://github.com/PayGreen/paygreen-ui.git#readme",
-    "devDependencies": {
-        "@babel/cli": "^7.6.0",
-        "@babel/core": "^7.6.0",
-        "@babel/preset-env": "^7.6.0",
-        "@babel/preset-react": "^7.0.0",
-        "@storybook/addon-a11y": "^5.2.1",
-        "@storybook/addon-backgrounds": "^5.2.5",
-        "@storybook/addon-knobs": "^5.2.1",
-        "@storybook/addon-notes": "^5.2.1",
-        "@storybook/addon-viewport": "^5.2.1",
-        "@storybook/react": "^5.2.1",
-        "babel-eslint": "^10.0.3",
-        "babel-loader": "^8.0.6",
-        "jest": "^24.9.0",
-        "react-test-renderer": "^16.10.1",
-        "rollup": "^1.21.4",
-        "rollup-plugin-babel": "^4.3.3",
-        "rollup-plugin-commonjs": "^10.1.0",
-        "rollup-plugin-eslint": "^7.0.0",
-        "rollup-plugin-node-resolve": "^5.2.0",
-        "rollup-plugin-peer-deps-external": "^2.2.0",
-        "rollup-plugin-svg": "^2.0.0",
-        "rollup-plugin-uglify": "^6.0.3",
-        "storybook-addon-styled-component-theme": "^1.2.5",
-        "styled-components": "^4.3.2"
-    },
-    "dependencies": {
-        "react-input-mask": "^2.0.4",
-        "react-transition-group": "^4.3.0",
-        "styled-normalize": "^8.0.6",
-        "polished": "^3.4.1"
-    },
-    "peerDependencies": {
-        "react": "^16.9.0",
-        "styled-components": ">= 4"
-    }
+  "name": "@paygreen/paygreen-ui",
+  "version": "0.0.6.1",
+  "main": "build/index.cjs.js",
+  "module": "build/index.esm.js",
+  "browser": "build/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "storybook": "start-storybook",
+    "prepare": "npm run build",
+    "test": "jest",
+    "test-update": "jest --updateSnapshot",
+    "build-storybook": "build-storybook -c .storybook -o docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PayGreen/paygreen-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PayGreen/paygreen-ui.git/issues"
+  },
+  "homepage": "https://github.com/PayGreen/paygreen-ui.git#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-a11y": "^5.2.1",
+    "@storybook/addon-backgrounds": "^5.2.5",
+    "@storybook/addon-knobs": "^5.2.1",
+    "@storybook/addon-notes": "^5.2.1",
+    "@storybook/addon-viewport": "^5.2.1",
+    "@storybook/react": "^5.2.1",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.10.1",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-svg": "^2.0.0",
+    "rollup-plugin-uglify": "^6.0.3",
+    "storybook-addon-styled-component-theme": "^1.2.5",
+    "styled-components": "^4.3.2"
+  },
+  "dependencies": {
+    "react-input-mask": "^2.0.4",
+    "react-transition-group": "^4.3.0",
+    "styled-normalize": "^8.0.6",
+    "polished": "^3.4.1"
+  },
+  "peerDependencies": {
+    "react": "^16.9.0",
+    "styled-components": ">= 4"
+  },
+  "description": ""
 }

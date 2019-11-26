@@ -13,8 +13,10 @@ import Title from './Title/Title';
 // theme
 import { ThemeDefault, ThemeDark } from '../theme'
 import { ThemeProvider as PGThemeProvider, withTheme } from 'styled-components'
+import { GlobalStyle } from '../shared/global';
 
 export {
+    GlobalStyle,
     ThemeDefault,
     ThemeDark,
     PGThemeProvider,
