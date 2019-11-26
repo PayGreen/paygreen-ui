@@ -1,3 +1,12 @@
+// Color pallet
+const colorPalletOptions = {
+    theme: 'theme',
+    wab: 'wab',
+    status: 'status'
+};
+
+const colorPalletDefault = colorPalletOptions.theme;
+
 // Color nomber
 const colorNumberOptions = {
     one: 'one',
@@ -126,6 +135,17 @@ const blockWidthOptions = {
 
 const blockWidthDefault = blockWidthOptions.md;
 
+// Icon size
+const iconSizeOptions = {
+    xs: 'xs',
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl'
+};
+
+const iconSizeDefault = iconSizeOptions.sm;
+
 // Image size
 const imageSizeOptions = {
     auto: 'auto',
@@ -235,6 +255,8 @@ const gradientOptions = {
 const gradientDefault = gradientOptions.none;
 
 export {
+    colorPalletOptions,
+    colorPalletDefault,
     colorNumberOptions,
     colorNumberDefault,
     colorTypeOptions,
@@ -261,6 +283,8 @@ export {
     blockSpaceDefault,
     blockWidthOptions,
     blockWidthDefault,
+    iconSizeOptions,
+    iconSizeDefault,
     imageSizeOptions,
     imageSizeDefault,
     imageTypeOptions,

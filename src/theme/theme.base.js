@@ -126,6 +126,13 @@ export const ThemeBase = {
         lg: '210px',
         xl: '240px',
     },
+    iconSize: {
+        xs: '16px',
+        sm: '20px',
+        md: '24px',
+        lg: '32px',
+        xl: '40px',
+    },
     imageSize: {
         auto: 'auto',
         xs: '240px',
