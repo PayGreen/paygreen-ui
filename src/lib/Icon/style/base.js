@@ -31,7 +31,7 @@ const shadowStyle = {
 };
 
 const backgroundStyle = css`
-    ${props => shadowStyle.base[props.colorPallet]};
+    ${props => props.shadow ? shadowStyle.base[props.colorPallet] : null};
 
     padding: ${props => math(props.theme.iconSize[props.iconSize] + '/2 - ' + props.theme.space.xs)};
     border-radius: 50%;
