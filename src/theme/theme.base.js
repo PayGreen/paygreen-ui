@@ -29,13 +29,13 @@ export const ThemeBase = {
         },
         tertiary: {
             main: '#e58a28',
-            light: '#f8e1c7',
+            light: '#fbe6ce',
             gradientBase: '#fab56b',
             gradientShade: '#faa272',
         },
         quaternary: {
             main: '#ec6a6a',
-            light: '#f8d1d2',
+            light: '#ffe0e1',
             gradientBase: '#e98e90',
             gradientShade: '#e98eb9',
         },
