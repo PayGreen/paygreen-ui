@@ -21,5 +21,5 @@ storiesOf('AutonomousInput', module)
             </button>
         </AutonomousInput>
     ), {
-        notes: 'AutonomousInput.',
+        notes: 'AutonomousInput can be used for newsletter subscription. Success status meens field has been successfully submitted.',
     });
