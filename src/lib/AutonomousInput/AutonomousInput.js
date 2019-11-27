@@ -5,7 +5,8 @@ import {
     formStatusOptions,
     formStatusDefault,
     iconSizeOptions,
-    spaceOptions
+    spaceOptions,
+    colorPalletOptions
 } from '../../shared/constants';
 import { AutonomousInputBase } from './style';
 
@@ -33,7 +34,12 @@ class AutonomousInput extends PureComponent {
         } = this.props;
 
         const submittedText = <span>
-            <CheckBoldIcon iconSize={iconSizeOptions.xs} marginRight={spaceOptions.xs} />
+            <CheckBoldIcon
+                iconSize={iconSizeOptions.xs}
+                marginRight={spaceOptions.xs}
+                colorPallet={colorPalletOptions.status}
+                colorStatus={status}
+            />
             {submittedLabel}
         </span>;
 
