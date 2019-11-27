@@ -34,6 +34,7 @@ storiesOf('Icons', module)
                 marginBottom={select('Margin bottom', spaceOptions, spaceOptions.sm)}
                 marginLeft={select('Margin left', spaceOptions, spaceOptions.sm)}
                 marginRight={select('Margin right', spaceOptions, spaceOptions.sm)}
+                centered={boolean('Centered', false)}
             />
         </div>
     ), {

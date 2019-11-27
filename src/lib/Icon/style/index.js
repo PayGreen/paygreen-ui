@@ -7,15 +7,15 @@ import {
 } from './base';
 
 const IconBase = styled.span`
-    display: inline-flex;
+    display: ${props => props.centered ? 'flex' : 'inline-flex'};
     position: relative;
     width: ${props => props.theme.iconSize[props.iconSize]};
     height: ${props => props.theme.iconSize[props.iconSize]};
     ${props => directionalProperty('margin',
         props.theme.space[props.marginTop],
-        props.theme.space[props.marginRight],
+        props.centered ? 'auto' : props.theme.space[props.marginRight],
         props.theme.space[props.marginBottom],
-        props.theme.space[props.marginLeft]
+        props.centered ? 'auto' : props.theme.space[props.marginLeft]
     )};
     transition: all ${props => props.theme.transition.sm};
 
