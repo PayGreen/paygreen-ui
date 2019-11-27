@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { CheckBoldIcon } from '../Icon/Icon';
 import {
     formStatusOptions,
     formStatusDefault,
@@ -8,6 +7,7 @@ import {
     spaceOptions,
     colorPalletOptions
 } from '../../shared/constants';
+import { CheckBoldIcon } from '../Icon/Icon';
 import { AutonomousInputBase } from './style';
 
 class AutonomousInput extends PureComponent {
@@ -36,7 +36,7 @@ class AutonomousInput extends PureComponent {
         const submittedText = <span>
             <CheckBoldIcon
                 iconSize={iconSizeOptions.xs}
-                marginRight={spaceOptions.xs}
+                marginRight={spaceOptions.sm}
                 colorPallet={colorPalletOptions.status}
                 colorStatus={status}
             />

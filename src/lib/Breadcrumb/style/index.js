@@ -15,16 +15,7 @@ const BreadcrumbBase = styled.ul`
     li {
         display: flex;
         align-items: center;
-
-        &:not(:first-of-type) {
-            padding-left: ${props => props.theme.space.sm};
-
-            &::before {
-                content: '>';
-                color: ${props => textColor.default[props.colorType]};
-                margin-right: ${props => props.theme.space.sm};
-            }
-        }
+        padding: ${props => props.theme.space.xs} 0;
 
         a {
             outline: none;
