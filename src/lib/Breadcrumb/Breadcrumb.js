@@ -24,6 +24,7 @@ class Breadcrumb extends PureComponent {
         }
 
         const arrowIcon = <ArrowRightIcon
+            theme={this.props.theme} // not necessary, only needed for tests
             iconSize={iconSizeOptions.xs}
             marginLeft={spaceOptions.xs}
             marginRight={spaceOptions.sm}

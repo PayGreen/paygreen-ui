@@ -35,6 +35,7 @@ class AutonomousInput extends PureComponent {
 
         const submittedText = <span>
             <CheckBoldIcon
+                theme={this.props.theme} // not necessary, only needed for tests
                 iconSize={iconSizeOptions.xs}
                 marginRight={spaceOptions.sm}
                 colorPallet={colorPalletOptions.status}
