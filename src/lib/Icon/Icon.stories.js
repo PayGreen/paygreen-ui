@@ -1,5 +1,11 @@
 import React from 'react';
-import { CodeIcon } from './Icon';
+import {
+    PlaneIcon,
+    OrganizationIcon,
+    ShopIcon,
+    TreesIcon,
+    PointerIcon
+} from './Icon';
 import {
     colorPalletOptions,
     colorPalletDefault,
@@ -15,28 +21,104 @@ import {
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, select, radios } from '@storybook/addon-knobs';
 
+const colorPalletLabel = 'Color pallet';
+const colorThemeLabel = 'Color theme';
+const colorWabLabel = 'Grey colors';
+const colorStatusLabel = 'Status colors';
 const iconSizeLabel = 'Icon size';
+const backgroundLabel = 'With background';
+const shadowLabel = 'With shadow';
+const activeLabel = 'Active';
+const marginTopLabel = 'Margin top';
+const marginBottomLabel = 'Margin bottom';
+const marginLeftLabel = 'Margin left';
+const marginRightLabel = 'Margin right';
+const centeredLabel = 'Centered';
 
 storiesOf('Icons', module)
     .addDecorator(withKnobs)
     .add('Some icons', () => (
         <div>
-            <CodeIcon
-                colorPallet={radios('Color pallet', colorPalletOptions, colorPalletDefault)}
-                colorTheme={select('Color theme', colorThemeOptions, colorThemeDefault)}
-                colorWab={select('Grey colors', greyOptions, greyDefault)}
-                colorStatus={select('Status colors', formStatusOptions, formStatusDefault)}
+            <PlaneIcon
+                colorPallet={radios(colorPalletLabel, colorPalletOptions, colorPalletDefault)}
+                colorTheme={select(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                colorWab={select(colorWabLabel, greyOptions, greyDefault)}
+                colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
-                background={boolean('With background', false)}
-                shadow={boolean('With shadow', false)}
-                active={boolean('Active', false)}
-                marginTop={select('Margin top', spaceOptions, spaceOptions.sm)}
-                marginBottom={select('Margin bottom', spaceOptions, spaceOptions.sm)}
-                marginLeft={select('Margin left', spaceOptions, spaceOptions.sm)}
-                marginRight={select('Margin right', spaceOptions, spaceOptions.sm)}
-                centered={boolean('Centered', false)}
+                background={boolean(backgroundLabel, false)}
+                shadow={boolean(shadowLabel, false)}
+                active={boolean(activeLabel, false)}
+                marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
+                marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
+                marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
+                marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
+                centered={boolean(centeredLabel, false)}
+            />
+
+            <OrganizationIcon
+                colorPallet={radios(colorPalletLabel, colorPalletOptions, colorPalletDefault)}
+                colorTheme={select(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                colorWab={select(colorWabLabel, greyOptions, greyDefault)}
+                colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
+                iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
+                background={boolean(backgroundLabel, false)}
+                shadow={boolean(shadowLabel, false)}
+                active={boolean(activeLabel, false)}
+                marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
+                marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
+                marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
+                marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
+                centered={boolean(centeredLabel, false)}
+            />
+
+            <ShopIcon
+                colorPallet={radios(colorPalletLabel, colorPalletOptions, colorPalletDefault)}
+                colorTheme={select(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                colorWab={select(colorWabLabel, greyOptions, greyDefault)}
+                colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
+                iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
+                background={boolean(backgroundLabel, false)}
+                shadow={boolean(shadowLabel, false)}
+                active={boolean(activeLabel, false)}
+                marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
+                marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
+                marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
+                marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
+                centered={boolean(centeredLabel, false)}
+            />
+
+            <TreesIcon
+                colorPallet={radios(colorPalletLabel, colorPalletOptions, colorPalletDefault)}
+                colorTheme={select(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                colorWab={select(colorWabLabel, greyOptions, greyDefault)}
+                colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
+                iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
+                background={boolean(backgroundLabel, false)}
+                shadow={boolean(shadowLabel, false)}
+                active={boolean(activeLabel, false)}
+                marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
+                marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
+                marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
+                marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
+                centered={boolean(centeredLabel, false)}
+            />
+
+            <PointerIcon
+                colorPallet={radios(colorPalletLabel, colorPalletOptions, colorPalletDefault)}
+                colorTheme={select(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                colorWab={select(colorWabLabel, greyOptions, greyDefault)}
+                colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
+                iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
+                background={boolean(backgroundLabel, false)}
+                shadow={boolean(shadowLabel, false)}
+                active={boolean(activeLabel, false)}
+                marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
+                marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
+                marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
+                marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
+                centered={boolean(centeredLabel, false)}
             />
         </div>
     ), {
-        notes: 'Icons',
+        notes: 'Queen icons with some styles. You can add background, shadow, change colors, add active mode, center icon, change margins or icon size.',
     });
