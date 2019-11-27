@@ -1,3 +1,5 @@
+import Icon from './Icon/components'; 
+
 import AutonomousInput from './AutonomousInput/AutonomousInput';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
@@ -12,6 +14,8 @@ import Textarea from './Textarea/Textarea';
 import Title from './Title/Title';
 
 export {
+    Icon,
+
     AutonomousInput,
     Breadcrumb,
     Button,
@@ -23,5 +27,5 @@ export {
     Select,
     Text,
     Textarea,
-    Title
+    Title,
 };
