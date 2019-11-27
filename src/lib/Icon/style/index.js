@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { directionalProperty } from 'polished';
 import { svgFill } from './constants';
-import { backgroundStyle } from './base';
+import {
+    backgroundStyle,
+    activeStyle
+} from './base';
 
 const IconBase = styled.span`
-    ${props => props.background ? backgroundStyle : null};
     display: inline-flex;
+    position: relative;
     width: ${props => props.theme.iconSize[props.iconSize]};
     height: ${props => props.theme.iconSize[props.iconSize]};
     ${props => directionalProperty('margin',
@@ -14,11 +17,16 @@ const IconBase = styled.span`
         props.theme.space[props.marginBottom],
         props.theme.space[props.marginLeft]
     )};
+    transition: all ${props => props.theme.transition.sm};
 
     svg {
         width: 100%;
         fill: ${props => svgFill[props.colorPallet]};
+        transition: all ${props => props.theme.transition.sm};
     }
+
+    ${props => props.background ? backgroundStyle : null};
+    ${props => props.active ? activeStyle[props.colorPallet] : null};
 `;
 
 export { IconBase };

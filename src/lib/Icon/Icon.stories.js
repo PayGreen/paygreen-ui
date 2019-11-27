@@ -29,6 +29,7 @@ storiesOf('Icons', module)
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
                 background={boolean('With background', false)}
                 shadow={boolean('With shadow', false)}
+                active={boolean('Active', false)}
                 marginTop={select('Margin top', spaceOptions, spaceOptions.sm)}
                 marginBottom={select('Margin bottom', spaceOptions, spaceOptions.sm)}
                 marginLeft={select('Margin left', spaceOptions, spaceOptions.sm)}
