@@ -48,8 +48,8 @@ const submittedAnimation = keyframes`
 `;
 
 const submittedLabel = css`
-    span {
-        display: block;
+    & > span {
+        display: flex;
         position: absolute;
         padding-left: ${fieldRadius};
         padding-top: ${props => props.theme.space.xs};
