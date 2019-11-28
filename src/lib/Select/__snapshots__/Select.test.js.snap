@@ -67,7 +67,7 @@ exports[`renders without crashing 1`] = `
           "quaternary": Object {
             "gradientBase": "#e98e90",
             "gradientShade": "#e98eb9",
-            "light": "#f8d1d2",
+            "light": "#ffe0e1",
             "main": "#ec6a6a",
           },
           "secondary": Object {
@@ -85,7 +85,7 @@ exports[`renders without crashing 1`] = `
           "tertiary": Object {
             "gradientBase": "#fab56b",
             "gradientShade": "#faa272",
-            "light": "#f8e1c7",
+            "light": "#fbe6ce",
             "main": "#e58a28",
           },
         },

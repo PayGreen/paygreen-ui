@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa etpzfq"
+  className="sc-bwzfXH eZiFwo"
 >
   <a
     href="#"
   >
     <span
-      className="sc-bwzfXH bSGCUF"
+      className="sc-bdVaJa gzTKRD"
     >
       First button
     </span>
@@ -17,7 +17,7 @@ exports[`renders without crashing 1`] = `
     href="#"
   >
     <span
-      className="sc-bwzfXH fzAopu"
+      className="sc-bdVaJa hGamvl"
     >
       Second button
     </span>
