@@ -12,7 +12,7 @@ const LinkBase = styled.span`
         content: '';
         position: absolute;
         bottom: 0;
-        z-index: ${props => props.theme.zindex.button};
+        z-index: ${props => props.theme.zindex.layer};
         height: ${props => props.theme.line};
         width: 100%;
         background-color: ${props => linkColor.base[props.colorType]};
