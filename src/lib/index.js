@@ -5,7 +5,7 @@ import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
-import Icon from './Icon/Icon';
+import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 import Input from './Input/Input';
 import Link from './Link/Link';
@@ -22,6 +22,7 @@ export {
     Button,
     ButtonGroup,
     Card,
+    IconLabel,
     Image,
     Input,
     Link,
