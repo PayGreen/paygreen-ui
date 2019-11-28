@@ -1,9 +1,9 @@
-import React from 'react'
-import ButtonGroup from './ButtonGroup';
-import Button from '../Button/Button';
-import { buttonTemplateOptions } from '../../shared/constants';
+import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
+import { buttonTemplateOptions } from '../../shared/constants';
+import Button from '../Button/Button';
+import ButtonGroup from './ButtonGroup';
 
 it('renders without crashing', () => {
     const buttonGroup = TestRenderer.create(

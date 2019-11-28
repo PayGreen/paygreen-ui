@@ -1,11 +1,11 @@
-import React from 'react'
-import Card from './Card';
+import React from 'react';
+import TestRenderer from 'react-test-renderer';
+import { ThemeDefault } from '../../theme';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
 import Text from '../Text/Text';
 import Title from '../Title/Title';
-import TestRenderer from 'react-test-renderer';
-import { ThemeDefault } from '../../theme';
+import Card from './Card';
 
 it('renders without crashing', () => {
     const card = TestRenderer.create(
