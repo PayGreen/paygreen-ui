@@ -36,4 +36,13 @@ const underlineStyle = css`
     }
 `;
 
-export { underlineStyle };
+const uppercaseStyle = css`
+    text-transform: uppercase;
+    font-weight: ${props => props.theme.font.weight.bold};
+    letter-spacing: ${props => props.theme.font.spacing};
+`;
+
+export {
+    underlineStyle,
+    uppercaseStyle
+};
