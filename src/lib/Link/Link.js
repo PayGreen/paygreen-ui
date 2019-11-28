@@ -11,9 +11,7 @@ import { LinkBase } from './style';
 class Link extends PureComponent {
     render() {
         return <LinkBase
-            theme={this.props.theme} // not necessary, only needed for tests
-            colorType={this.props.colorType}
-            colorTheme={this.props.colorTheme}
+            {...this.props}
         >
             {this.props.children}
         </LinkBase>;
@@ -23,11 +21,13 @@ class Link extends PureComponent {
 Link.propTypes = {
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    underline: PropTypes.bool
 };
 
 Link.defaultProps = {
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
+    underline: true
 };
 
 export default Link;

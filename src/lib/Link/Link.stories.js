@@ -8,7 +8,7 @@ import {
     colorTypeDefault
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, radios } from '@storybook/addon-knobs';
+import { withKnobs, text, radios, boolean } from '@storybook/addon-knobs';
 
 storiesOf('Link', module)
     .addDecorator(withKnobs)
@@ -18,11 +18,12 @@ storiesOf('Link', module)
                 <Link
                     colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
                     colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
+                    underline={boolean('With underline', true)}
                 >
                     {text('Label', 'Link text')}
                 </Link>
             </a> curabitur congue varius ex et posuere. Maecenas tincidunt diam ut nisl porttitor scelerisque. Donec egestas elit dolor, quis eleifend ipsum sagittis ut. Proin molestie lorem et neque tempus tristique. Mauris finibus dui sem, nec suscipit mi porta a.
         </Text>
     ), {
-        notes: 'Link should be used inside Text component.',
+        notes: 'Link can be used inside Text component.',
     });
