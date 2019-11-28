@@ -3,8 +3,14 @@ import PropTypes from 'prop-types';
 import {
     colorTypeOptions,
     colorTypeDefault,
+    colorPalletOptions,
+    colorPalletDefault,
     colorThemeOptions,
-    colorThemeDefault
+    colorThemeDefault,
+    greyOptions,
+    greyDefault,
+    formStatusOptions,
+    formStatusDefault,
 } from '../../shared/constants';
 import { LinkBase } from './style';
 
@@ -20,13 +26,19 @@ class Link extends PureComponent {
 
 Link.propTypes = {
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
+    colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    colorWab: PropTypes.oneOf(Object.values(greyOptions)),
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     underline: PropTypes.bool
 };
 
 Link.defaultProps = {
     colorType: colorTypeDefault,
+    colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
+    colorWab: greyDefault,
+    colorStatus: formStatusDefault,
     underline: true
 };
 

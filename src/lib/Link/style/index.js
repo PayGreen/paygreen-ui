@@ -1,10 +1,14 @@
 import styled from 'styled-components';
-import { linkColor } from './constants';
+import { colorTypeOptions } from '../../../shared/constants';
+import { colors } from './constants';
 import { underlineStyle } from './base';
 
 const LinkBase = styled.span`
+    color: ${props => props.colorType === colorTypeOptions.reverse ?
+        colors.secondary :
+        colors.main[props.colorPallet]
+    };
     font-weight: ${props => props.theme.font.weight.bold};
-    color: ${props => linkColor.base[props.colorType]};
     transition: all ${props => props.theme.transition.xs};
 
     ${props => props.underline ? underlineStyle : null};
