@@ -79,10 +79,6 @@ const backgroundStyle = {
 
         ${shadowStyle};
         ${radius};
-
-        p {
-            color: ${props => props.theme.wab.white00};
-        }
     `
 };
 
