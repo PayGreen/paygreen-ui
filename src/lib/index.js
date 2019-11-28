@@ -5,6 +5,7 @@ import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
+import Icon from './Icon/Icon';
 import Image from './Image/Image';
 import Input from './Input/Input';
 import Link from './Link/Link';
