@@ -26,7 +26,7 @@ const hoverBase = css`
     }
 `;
 
-const hoverBaseAlternative = css`
+const hoverAlternative = css`
     &:after {
         content: '';
         position: absolute;
@@ -80,7 +80,7 @@ const main = css`
     }
 
     @media (${props => props.theme.query.min.lg}) {
-        ${props => props.hoverBase ? hoverBaseAlternative : null};
+        ${props => props.hoverAlternative ? hoverAlternative : null};
 
         ${LinkBase} {
             text-align: center;

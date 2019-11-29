@@ -67,7 +67,8 @@ storiesOf('MenuItem', module)
             <MenuItem
                 isMain={true}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                hoverBase={boolean('Hover base', true)}
+                hoverBase={boolean('Hover base (mobile)', true)}
+                hoverAlternative={boolean('Hover alternative (desktop)', true)}
             >
                 <Link
                     underline={false}

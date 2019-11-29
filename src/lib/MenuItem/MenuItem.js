@@ -20,6 +20,7 @@ MenuItem.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     isMain: PropTypes.bool,
     hoverBase: PropTypes.bool,
+    hoverAlternative: PropTypes.bool,
     hoverEmphasis: PropTypes.bool,
 };
 
@@ -27,6 +28,7 @@ MenuItem.defaultProps = {
     colorTheme: colorThemeDefault,
     isMain: false,
     hoverBase: true,
+    hoverAlternative: true,
     hoverEmphasis: false,
 };
 
