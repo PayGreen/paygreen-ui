@@ -15,7 +15,7 @@ import {
     spaceOptions
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 
 const colorPalletLabel = 'Color pallet';
 const colorThemeLabel = 'Color theme';
@@ -64,7 +64,11 @@ storiesOf('MenuItem', module)
     ))
     .add('Main menu item', () => (
         <a href="#">
-            <MenuItem>
+            <MenuItem
+                isMain={true}
+                colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                hoverBase={boolean('Hover base', true)}
+            >
                 <Link
                     underline={false}
                     colorPallet={colorPalletOptions.wab}

@@ -3,8 +3,8 @@ import { LinkBase } from '../../Link/style';
 import { IconLabelBase } from '../../IconLabel/style';
 import { TextBase } from '../../Text/style';
 import {
-    hoverBase,
-    hoverEmphasis
+    main,
+    sub
 } from './base';
 
 const MenuItemBase = styled.div`
@@ -16,9 +16,6 @@ const MenuItemBase = styled.div`
     grid-template-columns: auto 1fr auto;
     align-items: center;
     transition: all ${props => props.theme.transition.sm};
-
-    ${props => props.hoverBase ? hoverBase : null};
-    ${props => props.hoverEmphasis ? hoverEmphasis : null};
 
     .icon {
         grid-area: icon;
@@ -41,6 +38,8 @@ const MenuItemBase = styled.div`
         grid-area: text;
         font-size: ${props => props.theme.font.size.xs};
     }
+
+    ${props => props.isMain ? main : sub};
 `;
 
 export { MenuItemBase };

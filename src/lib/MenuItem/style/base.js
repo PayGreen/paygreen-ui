@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
+import { LinkBase } from '../../Link/style';
 
 const hoverBase = css`
     &:before {
@@ -25,15 +26,33 @@ const hoverBase = css`
     }
 `;
 
-const hoverEmphasis = css`
-    padding-right: ${props => props.theme.space.md};
+const hoverBaseAlternative = css`
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: ${props => props.theme.line};
+        width: 0;
+        transform: translateX(-50%);
+        margin-left: 50%;
+        background-image: linear-gradient(to left,
+            ${props => props.theme.color[props.colorTheme]['gradientBase']},
+            ${props => props.theme.color[props.colorTheme]['gradientShade']}
+        );
+        transition: all ${props => props.theme.transition.sm};
+    }
 
     a:hover &,
     a:active &,
     a:focus & {
-        padding-left: ${props => props.theme.space.md};
-        padding-right: ${props => props.theme.space.sm};
+        &:after {
+            width: 100%;
+        }
     }
+`;
+
+const hoverEmphasis = css`
+    padding-right: ${props => props.theme.space.md};
 
     a:hover &,
     a:active &,
@@ -55,7 +74,28 @@ const hoverEmphasis = css`
     }
 `;
 
+const main = css`
+    @media (${props => props.theme.query.max.lg}) {
+        ${props => props.hoverBase ? hoverBase : null};
+    }
+
+    @media (${props => props.theme.query.min.lg}) {
+        ${props => props.hoverBase ? hoverBaseAlternative : null};
+
+        ${LinkBase} {
+            text-align: center;
+            font-size: ${props => props.theme.font.size.xs};
+            color: ${props => props.theme.wab.grey50};
+        }
+    }
+`;
+
+const sub = css`
+    ${props => props.hoverBase ? hoverBase : null};
+    ${props => props.hoverEmphasis ? hoverEmphasis : null};
+`;
+
 export {
-    hoverBase,
-    hoverEmphasis,
+    main,
+    sub,
 };
