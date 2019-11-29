@@ -9,6 +9,8 @@ import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 import Input from './Input/Input';
 import Link from './Link/Link';
+import MenuItem from './MenuItem/MenuItem';
+import MenuList from './MenuList/MenuList';
 import Select from './Select/Select';
 import Text from './Text/Text';
 import Textarea from './Textarea/Textarea';
@@ -26,6 +28,8 @@ export {
     Image,
     Input,
     Link,
+    MenuItem,
+    MenuList,
     Select,
     Text,
     Textarea,
