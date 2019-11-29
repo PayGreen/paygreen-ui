@@ -144,6 +144,9 @@ export const ThemeBase = {
     transition: {
         xs: '0.2s',
         sm: '0.3s',
+        md: '0.5s',
+        lg: '0.7s',
+        xl: '1s'
     },
     zindex: {
         hidden: -100,
