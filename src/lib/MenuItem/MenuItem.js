@@ -18,11 +18,13 @@ class MenuItem extends PureComponent {
 
 MenuItem.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    hoverBase: PropTypes.bool,
     hoverEmphasis: PropTypes.bool,
 };
 
 MenuItem.defaultProps = {
     colorTheme: colorThemeDefault,
+    hoverBase: true,
     hoverEmphasis: false,
 };
 

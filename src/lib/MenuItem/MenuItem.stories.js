@@ -5,19 +5,25 @@ import Link from '../Link/Link';
 import IconLabel from '../IconLabel/IconLabel';
 import Text from '../Text/Text';
 import {
+    colorPalletOptions,
+    colorPalletDefault,
     colorThemeOptions,
     colorThemeDefault,
+    greyOptions,
+    greyDefault,
     iconSizeOptions,
     spaceOptions
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text, radios, select } from '@storybook/addon-knobs';
 
+const colorPalletLabel = 'Color pallet';
 const colorThemeLabel = 'Color theme';
+const colorWabLabel = 'Grey color';
 
 storiesOf('MenuItem', module)
     .addDecorator(withKnobs)
-    .add('MenuItem', () => (
+    .add('Sub menu item', () => (
         <a href="#">
             <MenuItem
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
@@ -25,12 +31,16 @@ storiesOf('MenuItem', module)
             >
                 <CardsIcon
                     iconSize={iconSizeOptions.lg}
+                    colorPallet={radios(colorPalletLabel, colorPalletOptions, colorPalletDefault)}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                    colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 />
 
                 <Link
                     underline={false}
+                    colorPallet={radios(colorPalletLabel, colorPalletOptions, colorPalletDefault)}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                    colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 >
                     Payment
                 </Link>
@@ -46,11 +56,22 @@ storiesOf('MenuItem', module)
                     Dev
                 </IconLabel>
 
-                <Text
-                    colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                >
-                    Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo, id bibendum felis iaculis eu.
+                <Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo, id bibendum felis iaculis eu.
                 </Text>
+            </MenuItem>
+        </a>
+    ))
+    .add('Main menu item', () => (
+        <a href="#">
+            <MenuItem>
+                <Link
+                    underline={false}
+                    colorPallet={colorPalletOptions.wab}
+                    uppercase={true}
+                >
+                    Payment
+                </Link>
             </MenuItem>
         </a>
     ));
