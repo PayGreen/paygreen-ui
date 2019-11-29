@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <span
-  className="sc-bdVaJa QYmbK"
+  className="sc-bdVaJa QYmbK icon"
 >
   <svg
     viewBox="0 0 143 143"

@@ -197,7 +197,10 @@ exports[`renders without crashing 1`] = `
             "xs": "4px",
           },
           "transition": Object {
+            "lg": "0.7s",
+            "md": "0.5s",
             "sm": "0.3s",
+            "xl": "1s",
             "xs": "0.2s",
           },
           "wab": Object {
@@ -231,7 +234,7 @@ exports[`renders without crashing 1`] = `
   </div>
   <span>
     <span
-      className="sc-bdVaJa jtGBWG"
+      className="sc-bdVaJa jtGBWG icon"
     >
       <svg
         viewBox="0 0 143 143"
