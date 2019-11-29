@@ -17,7 +17,7 @@ const MenuItemBase = styled.div`
     align-items: center;
     transition: all ${props => props.theme.transition.sm};
 
-    .icon {
+    & > .icon {
         grid-area: icon;
         opacity: .4;
         margin-right: ${props => props.theme.space.md};
