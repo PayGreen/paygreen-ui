@@ -1,4 +1,6 @@
 import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { withKnobs, radios } from '@storybook/addon-knobs';
 import {
     colorThemeDefault,
     colorThemeOptions,
@@ -17,8 +19,6 @@ import IconLabel from '../IconLabel/IconLabel';
 import Text from '../Text/Text';
 import MenuItem from '../MenuItem/MenuItem';
 import MenuList from './MenuList';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
 
 const color = [
     colorThemeOptions.primary,
