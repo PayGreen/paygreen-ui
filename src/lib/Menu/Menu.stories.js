@@ -28,6 +28,7 @@ storiesOf('Menu', module)
                 <MenuItem
                     isMain={true}
                     hoverBase={false}
+                    hoverAlternative={false}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 >
                     <Link

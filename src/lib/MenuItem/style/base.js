@@ -74,8 +74,12 @@ const hoverEmphasis = css`
     }
 `;
 
-const titleStyle = css`
+const notClickable = css`
     cursor: default;
+`;
+
+const titleStyle = css`
+    ${notClickable};
     
     ${LinkBase} {
         color: ${props => props.theme.wab.grey30};
@@ -93,7 +97,7 @@ const main = css`
     }
 
     @media (${props => props.theme.query.min.lg}) {
-        ${props => props.hoverAlternative ? hoverAlternative : null};
+        ${props => props.hoverAlternative ? hoverAlternative : notClickable};
 
         ${LinkBase} {
             text-align: center;
