@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, radios } from '@storybook/addon-knobs';
 import {
     colorPalletOptions,
     colorThemeOptions,
@@ -18,99 +18,98 @@ import Menu from './Menu';
 
 const colorThemeLabel = 'Color theme';
 
-storiesOf('Menu', module)
-    .addDecorator(withKnobs)
-    .add('Menu', () => (
-        <Menu
-            colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-        >
+storiesOf('Menu', module).addDecorator(withKnobs)
+.add('Menu', () => (
+    <Menu
+        colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+    >
+        <a href="#">
+            <MenuItem
+                isMain={true}
+                hoverBase={false}
+                hoverAlternative={false}
+                colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+            >
+                <Link
+                    underline={false}
+                    colorPallet={colorPalletOptions.wab}
+                    uppercase={true}
+                >
+                    Our products
+                </Link>
+            </MenuItem>
+        </a>
+
+        <MenuList>
             <a href="#">
                 <MenuItem
-                    isMain={true}
-                    hoverBase={false}
-                    hoverAlternative={false}
+                    hoverEmphasis={true}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 >
+                    <LeafIcon
+                        iconSize={iconSizeOptions.lg}
+                        colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                    />
+
                     <Link
                         underline={false}
-                        colorPallet={colorPalletOptions.wab}
-                        uppercase={true}
+                        colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
-                        Our products
+                        Tree
                     </Link>
+
+                    <Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
+                    </Text>
                 </MenuItem>
             </a>
 
-            <MenuList>
-                <a href="#">
-                    <MenuItem
-                        hoverEmphasis={true}
+            <a href="#">
+                <MenuItem
+                    hoverEmphasis={true}
+                    colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                >
+                    <CardsIcon
+                        iconSize={iconSizeOptions.lg}
+                        colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                    />
+
+                    <Link
+                        underline={false}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
-                        <LeafIcon
-                            iconSize={iconSizeOptions.lg}
+                        Payment
+                    </Link>
+
+                    <IconLabel colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}>
+                        <OutIcon
+                            iconSize={iconSizeOptions.xs}
+                            marginRight={spaceOptions.xs}
                             colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                         />
+                        Dev
+                    </IconLabel>
+                </MenuItem>
+            </a>
 
-                        <Link
-                            underline={false}
-                            colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                        >
-                            Tree
-                        </Link>
+            <a href="#">
+                <MenuItem
+                    hoverEmphasis={true}
+                    colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                >
+                    <OrganizationIcon
+                        iconSize={iconSizeOptions.lg}
+                        colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+                    />
 
-                        <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
-                        </Text>
-                    </MenuItem>
-                </a>
-
-                <a href="#">
-                    <MenuItem
-                        hoverEmphasis={true}
+                    <Link
+                        underline={false}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
-                        <CardsIcon
-                            iconSize={iconSizeOptions.lg}
-                            colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                        />
-
-                        <Link
-                            underline={false}
-                            colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                        >
-                            Payment
-                        </Link>
-
-                        <IconLabel colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}>
-                            <OutIcon
-                                iconSize={iconSizeOptions.xs}
-                                marginRight={spaceOptions.xs}
-                                colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                            />
-                            Dev
-                        </IconLabel>
-                    </MenuItem>
-                </a>
-
-                <a href="#">
-                    <MenuItem
-                        hoverEmphasis={true}
-                        colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                    >
-                        <OrganizationIcon
-                            iconSize={iconSizeOptions.lg}
-                            colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                        />
-
-                        <Link
-                            underline={false}
-                            colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                        >
-                            Rounding
-                        </Link>
-                    </MenuItem>
-                </a>
-            </MenuList>
-        </Menu>
-    ));
+                        Rounding
+                    </Link>
+                </MenuItem>
+            </a>
+        </MenuList>
+    </Menu>
+));
