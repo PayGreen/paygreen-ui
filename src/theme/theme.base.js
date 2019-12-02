@@ -40,7 +40,7 @@ export const ThemeBase = {
             gradientShade: '#e98eb9',
         },
 
-        state: {
+        status: {
             success: '#33ad73',
             default: '#00a99d',
             warning: '#e58a28',
@@ -126,6 +126,13 @@ export const ThemeBase = {
         lg: '210px',
         xl: '240px',
     },
+    iconSize: {
+        xs: '16px',
+        sm: '20px',
+        md: '24px',
+        lg: '32px',
+        xl: '40px',
+    },
     imageSize: {
         auto: 'auto',
         xs: '240px',
@@ -140,7 +147,7 @@ export const ThemeBase = {
     },
     zindex: {
         hidden: -100,
-        button: -5,
+        layer: -5,
         base: 0,
         front: 5,
     },

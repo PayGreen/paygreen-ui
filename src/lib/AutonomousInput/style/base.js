@@ -4,7 +4,7 @@ import { fieldHeight, fieldRadius } from './constants';
 
 const inputColor = css`
     input {
-        color: ${props => props.theme.color.state[props.status]};
+        color: ${props => props.theme.color.status[props.status]};
     }
 `;
 
@@ -13,16 +13,16 @@ const inputHover = css`
         &:hover,
         &:active,
         &:focus {
-            border-bottom-color: ${props => transparentize(0.7, props.theme.color.state[props.status])};
+            border-bottom-color: ${props => transparentize(0.7, props.theme.color.status[props.status])};
         }
     }
 `;
 
 const buttonColor = css`
     button {
-        border-color: ${props => transparentize(0.85, props.theme.color.state[props.status])};
-        background-color: ${props => transparentize(0.9, props.theme.color.state[props.status])};
-        color: ${props => props.theme.color.state[props.status]};
+        border-color: ${props => transparentize(0.85, props.theme.color.status[props.status])};
+        background-color: ${props => transparentize(0.9, props.theme.color.status[props.status])};
+        color: ${props => props.theme.color.status[props.status]};
     }
 `;
 
@@ -32,7 +32,7 @@ const buttonHover = css`
         &:active,
         &:focus {
             color: ${props => props.theme.wab.white00};
-            background-color: ${props => props.theme.color.state[props.status]};
+            background-color: ${props => props.theme.color.status[props.status]};
         }
     }
 `;
@@ -48,13 +48,13 @@ const submittedAnimation = keyframes`
 `;
 
 const submittedLabel = css`
-    span {
-        display: block;
+    & > span {
+        display: flex;
         position: absolute;
         padding-left: ${fieldRadius};
         padding-top: ${props => props.theme.space.xs};
         font-style: italic;
-        color: ${props => props.theme.color.state[props.status]};
+        color: ${props => props.theme.color.status[props.status]};
         animation: ${submittedAnimation} ${props => props.theme.transition.sm} cubic-bezier(0.9, -0.6, 0, 2);
         animation-fill-mode: forwards;
     }

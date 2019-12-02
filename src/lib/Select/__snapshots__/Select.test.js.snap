@@ -76,7 +76,7 @@ exports[`renders without crashing 1`] = `
             "light": "#e1f3f2",
             "main": "#00a99d",
           },
-          "state": Object {
+          "status": Object {
             "danger": "#b54025",
             "default": "#00a99d",
             "success": "#33ad73",
@@ -141,6 +141,13 @@ exports[`renders without crashing 1`] = `
             "sm": "330px",
           },
           "textareaHeight": "200px",
+        },
+        "iconSize": Object {
+          "lg": "32px",
+          "md": "24px",
+          "sm": "20px",
+          "xl": "40px",
+          "xs": "16px",
         },
         "imageSize": Object {
           "auto": "auto",
@@ -211,8 +218,9 @@ exports[`renders without crashing 1`] = `
         },
         "zindex": Object {
           "base": 0,
-          "button": -5,
+          "front": 5,
           "hidden": -100,
+          "layer": -5,
         },
       }
     }

@@ -5,21 +5,11 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 // import { uglify } from 'rollup-plugin-uglify';
 import pkg from './package.json';
+
 export default {
 
     input: './src/lib/index.js',
     output: [
-        {
-            file: pkg.browser,
-            format: 'umd',
-            name: 'Example',
-            globals: {
-                'react': 'React',
-                'react-dom': 'ReactDOM',
-                'prop-types': 'PropTypes',
-                'styled-components': 'styled-components'
-            },
-        },
         {
             file: pkg.main,
             format: 'cjs',
@@ -53,6 +43,5 @@ export default {
         }),
         resolve(),
         commonjs(),
-        // uglify()
     ]
 }

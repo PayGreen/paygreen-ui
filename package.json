@@ -1,10 +1,9 @@
 {
-    "name": "styled-component-library-poc",
+    "name": "paygreen-ui",
     "version": "0.0.5",
     "description": "",
     "main": "build/index.cjs.js",
     "module": "build/index.esm.js",
-    "browser": "build/index.js",
     "scripts": {
         "build": "rollup -c",
         "storybook": "start-storybook",

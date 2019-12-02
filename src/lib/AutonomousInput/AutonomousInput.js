@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import {
     formStatusOptions,
     formStatusDefault,
+    iconSizeOptions,
+    spaceOptions,
+    colorPalletOptions
 } from '../../shared/constants';
+import { CheckBoldIcon } from '../Icon/Icon';
 import { AutonomousInputBase } from './style';
 
 class AutonomousInput extends PureComponent {
@@ -29,7 +33,16 @@ class AutonomousInput extends PureComponent {
             ...rest
         } = this.props;
 
-        const submittedText = <span>{submittedLabel}</span>;
+        const submittedText = <span>
+            <CheckBoldIcon
+                theme={this.props.theme} // not necessary, only needed for tests
+                iconSize={iconSizeOptions.xs}
+                marginRight={spaceOptions.sm}
+                colorPallet={colorPalletOptions.status}
+                colorStatus={status}
+            />
+            {submittedLabel}
+        </span>;
 
         return <AutonomousInputBase
             theme={this.props.theme} // not necessary, only needed for tests
