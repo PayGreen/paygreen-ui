@@ -7,8 +7,6 @@ const MenuListBase = styled.ul`
     margin: 0;
     padding: ${props => props.theme.space.sm} 0;
 
-    ${props => props.isOpen ? null : closed};
-
     @media (${props => props.theme.query.min.lg}) {
         position: absolute;
         margin-top: ${arrowSize};

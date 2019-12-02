@@ -21,12 +21,10 @@ class MenuList extends PureComponent {
 }
 
 MenuList.propTypes = {
-    isOpen: PropTypes.bool,
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
 };
 
 MenuList.defaultProps = {
-    isOpen: true,
     colorTheme: colorThemeDefault,
 };
 

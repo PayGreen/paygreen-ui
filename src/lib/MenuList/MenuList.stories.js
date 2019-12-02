@@ -30,7 +30,6 @@ const color = [
 storiesOf('MenuList', module).addDecorator(withKnobs)
 .add('MenuList', () => (
     <MenuList
-        isOpen={boolean('Is open', true)}
         colorTheme={radios('Shadow color', colorThemeOptions, colorThemeDefault)}
     >
         <a href="#">
