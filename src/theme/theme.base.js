@@ -153,6 +153,8 @@ export const ThemeBase = {
         layer: -5,
         base: 0,
         front: 5,
+        menu: 100,
+        header: 110,
     },
     query: {
         min: {

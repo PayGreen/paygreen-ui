@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
 
-const arrowSize = '24px';
-
 const MenuListBase = styled.ul`
+    box-sizing: border-box;
     margin: 0;
     padding: ${props => props.theme.space.sm} 0;
 
     @media (${props => props.theme.query.min.lg}) {
         position: absolute;
-        margin-top: ${arrowSize};
+        z-index: ${props => props.theme.zindex.menu};
+        margin-top: ${props => props.theme.iconSize.md};
         padding: ${props => props.theme.radius.lg} 0;
         width: ${props => props.theme.blockWidth.sm};
         background-color: ${props => props.theme.wab.white00};
@@ -19,25 +19,16 @@ const MenuListBase = styled.ul`
             props.theme.color[props.colorTheme]['main']
         )};
         transition: all ${props => props.theme.transition.md};
-        transform-origin: center -${arrowSize};
 
         &:before {
             content: '';
             position: absolute;
-            top: -${arrowSize};
-            width: 100%;
-            height: ${arrowSize};
-        }
-
-        &:after {
-            content: '';
-            position: absolute;
-            top: -${arrowSize};
+            top: -${props => props.theme.iconSize.md};
             left: 50%;
             transform: translateX(-50%);
-            border-right : solid ${arrowSize} transparent;
-            border-bottom : solid ${arrowSize} ${props => props.theme.wab.white00};
-            border-left : solid ${arrowSize} transparent;
+            border-right : solid ${props => props.theme.iconSize.md} transparent;
+            border-bottom : solid ${props => props.theme.iconSize.md} ${props => props.theme.wab.white00};
+            border-left : solid ${props => props.theme.iconSize.md} transparent;
         }
     }
 

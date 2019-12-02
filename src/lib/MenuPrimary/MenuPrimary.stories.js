@@ -24,6 +24,22 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
             <a href="#">
                 <MenuItem
                     isMain={true}
+                >
+                    <Link
+                        underline={false}
+                        colorPallet={colorPalletOptions.wab}
+                        uppercase={true}
+                    >
+                        About us
+                    </Link>
+                </MenuItem>
+            </a>
+        </Menu>
+
+        <Menu>
+            <a href="#">
+                <MenuItem
+                    isMain={true}
                     hoverBase={false}
                     hoverAlternative={false}
                 >

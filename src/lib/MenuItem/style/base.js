@@ -97,6 +97,7 @@ const main = css`
     }
 
     @media (${props => props.theme.query.min.lg}) {
+        z-index: ${props => props.theme.zindex.header};
         ${props => props.hoverAlternative ? hoverAlternative : notClickable};
 
         ${LinkBase} {
