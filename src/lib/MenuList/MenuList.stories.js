@@ -12,12 +12,13 @@ import Link from '../Link/Link';
 import IconLabel from '../IconLabel/IconLabel';
 import Text from '../Text/Text';
 import {
+    colorThemeDefault,
     colorThemeOptions,
     iconSizeOptions,
     spaceOptions
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs, radios } from '@storybook/addon-knobs';
 
 const color = [
     colorThemeOptions.primary,
@@ -29,7 +30,7 @@ const color = [
 storiesOf('MenuList', module).addDecorator(withKnobs)
 .add('MenuList', () => (
     <MenuList
-        
+        colorTheme={radios('Shadow color', colorThemeOptions, colorThemeDefault)}
     >
         <a href="#">
             <MenuItem
