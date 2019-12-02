@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import { arrowSize, closed } from './base';
+
+const arrowSize = '24px';
 
 const MenuListBase = styled.ul`
     margin: 0;
@@ -23,6 +24,14 @@ const MenuListBase = styled.ul`
         transform-origin: center -${arrowSize};
 
         &:before {
+            content: '';
+            position: absolute;
+            top: -${arrowSize};
+            width: 100%;
+            height: ${arrowSize};
+        }
+
+        &:after {
             content: '';
             position: absolute;
             top: -${arrowSize};

@@ -7,8 +7,16 @@ const MenuBase = styled.li`
 
     @media (${props => props.theme.query.min.lg}) {
         ${MenuListBase} {
-            transform: translateX(-50%);
             margin-left: 50%;
+            transform: translate(-50%, -100%);
+            opacity: 0;
+        }
+
+        &:hover {
+            ${MenuListBase} {
+                transform: translate(-50%, 0);
+                opacity: 1;
+            }
         }
     }
 `;
