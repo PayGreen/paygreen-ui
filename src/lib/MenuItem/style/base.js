@@ -78,6 +78,7 @@ const titleStyle = css`
     cursor: default;
     
     ${LinkBase} {
+        color: ${props => props.theme.wab.grey30};
         border-bottom: solid ${props => props.theme.line} ${props => props.theme.wab.white20};
     }
 `;
