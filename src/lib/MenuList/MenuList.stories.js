@@ -18,7 +18,7 @@ import {
     spaceOptions
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios } from '@storybook/addon-knobs';
+import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
 
 const color = [
     colorThemeOptions.primary,
@@ -30,6 +30,7 @@ const color = [
 storiesOf('MenuList', module).addDecorator(withKnobs)
 .add('MenuList', () => (
     <MenuList
+        isOpen={boolean('Is open', true)}
         colorTheme={radios('Shadow color', colorThemeOptions, colorThemeDefault)}
     >
         <a href="#">

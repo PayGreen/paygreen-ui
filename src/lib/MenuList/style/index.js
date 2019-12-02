@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-
-const arrowSize = '24px';
+import { arrowSize, closed } from './base';
 
 const MenuListBase = styled.ul`
     margin: 0;
     padding: ${props => props.theme.space.sm} 0;
+
+    ${props => props.isOpen ? null : closed};
 
     @media (${props => props.theme.query.min.lg}) {
         position: absolute;
@@ -14,10 +15,12 @@ const MenuListBase = styled.ul`
         width: ${props => props.theme.blockWidth.sm};
         background-color: ${props => props.theme.wab.white00};
         border-radius: ${props => props.theme.radius.lg};
-        box-shadow: ${props => '0 0 35px ' + transparentize(
+        box-shadow: 0 0 35px ${props => transparentize(
             props.theme.shadow.opacity.lg,
             props.theme.color[props.colorTheme]['main']
         )};
+        transition: all ${props => props.theme.transition.md};
+        transform-origin: center -${arrowSize};
 
         &:before {
             content: '';
