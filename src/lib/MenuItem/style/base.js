@@ -74,9 +74,21 @@ const hoverEmphasis = css`
     }
 `;
 
+const titleStyle = css`
+    cursor: default;
+    
+    ${LinkBase} {
+        border-bottom: solid ${props => props.theme.line} ${props => props.theme.wab.white20};
+    }
+`;
+
 const main = css`
+    ${LinkBase} {
+        padding: ${props => props.theme.space.md} 0;
+    }
+
     @media (${props => props.theme.query.max.lg}) {
-        ${props => props.hoverBase ? hoverBase : null};
+        ${props => props.hoverBase ? hoverBase : titleStyle};
     }
 
     @media (${props => props.theme.query.min.lg}) {
@@ -91,6 +103,13 @@ const main = css`
 `;
 
 const sub = css`
+    padding-top: ${props => props.theme.space.sm};
+    padding-bottom: ${props => props.theme.space.sm};
+
+    ${LinkBase} {
+        padding: ${props => props.theme.space.sm} 0;
+    }
+
     ${props => props.hoverBase ? hoverBase : null};
     ${props => props.hoverEmphasis ? hoverEmphasis : null};
 `;

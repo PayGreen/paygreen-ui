@@ -10,7 +10,7 @@ import {
 const MenuItemBase = styled.div`
     position: relative;
     overflow-x: hidden;
-    padding: ${props => props.theme.space.sm};
+    padding: 0 ${props => props.theme.space.sm};
     display: grid;
     grid-template-areas: "icon link iconLabel" "empty text text";
     grid-template-columns: auto 1fr auto;
@@ -26,7 +26,6 @@ const MenuItemBase = styled.div`
     ${LinkBase} {
         grid-area: link;
         font-size: ${props => props.theme.font.size.sm};
-        padding: ${props => props.theme.space.sm} 0;
     }
 
     ${IconLabelBase} {
