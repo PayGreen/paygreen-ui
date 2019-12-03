@@ -9,6 +9,7 @@ const HeaderBase = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: solid ${props => props.theme.line} ${props => props.theme.wab.white20};
     background-color: ${props => props.theme.wab.white00};
     box-shadow: ${props => props.theme.shadow.size.lg + ' ' + transparentize(
         props.theme.shadow.opacity.sm,

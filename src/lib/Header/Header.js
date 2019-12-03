@@ -1,8 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import {
-    
-} from '../../shared/constants';
 import { HeaderBase } from './style';
 
 class Header extends PureComponent {
@@ -14,13 +10,5 @@ class Header extends PureComponent {
         </HeaderBase>;
     }
 }
-
-Header.propTypes = {
-
-};
-
-Header.defaultProps = {
-
-};
 
 export default Header;
