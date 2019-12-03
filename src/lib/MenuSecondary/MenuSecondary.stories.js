@@ -3,9 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
     iconSizeOptions,
-    alignOptions
+    alignOptions,
+    colorPalletOptions
 } from '../../shared/constants';
-import { LeafIcon } from '../Icon/Icon';
+import { LockIcon, PenIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import MenuItem from '../MenuItem/MenuItem';
 import Menu from '../Menu/Menu';
@@ -24,7 +25,31 @@ storiesOf('MenuSecondary', module).addDecorator(withKnobs)
                     align={alignOptions.center}
                     isMain={true}
                 >
-                    <LeafIcon
+                    <LockIcon
+                        iconSize={iconSizeOptions.lg}
+                        colorPallet={colorPalletOptions.wab}
+                    />
+
+                    <Link
+                        underline={false}
+                        uppercase={true}
+                        colorPallet={colorPalletOptions.wab}
+                    >
+                        Login
+                    </Link>
+                </MenuItem>
+            </a>
+        </Menu>
+
+        <Menu>
+            <a href="#">
+                <MenuItem
+                    hoverBase={false}
+                    hoverEmphasis={true}
+                    align={alignOptions.center}
+                    isMain={true}
+                >
+                    <PenIcon
                         iconSize={iconSizeOptions.lg}
                     />
 
@@ -32,7 +57,7 @@ storiesOf('MenuSecondary', module).addDecorator(withKnobs)
                         underline={false}
                         uppercase={true}
                     >
-                        Login
+                        Subscribe
                     </Link>
                 </MenuItem>
             </a>
