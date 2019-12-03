@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { transparentize } from 'polished';
+import { transparentize, math } from 'polished';
 import { LinkBase } from '../../Link/style';
 
 const hoverBase = css`
@@ -47,6 +47,10 @@ const hoverAlternative = css`
     a:focus & {
         &:after {
             width: 100%;
+        }
+
+        ${LinkBase} {
+            color: ${props => props.theme.color[props.colorTheme]['main']};
         }
     }
 `;
@@ -97,14 +101,16 @@ const main = css`
     }
 
     @media (${props => props.theme.query.min.lg}) {
-        z-index: ${props => props.theme.zindex.header};
-        ${props => props.hoverAlternative ? hoverAlternative : notClickable};
-
         ${LinkBase} {
+            box-sizing: border-box;
+            height: ${props => math(props.theme.grid.header + '+' + props.theme.line)};
             text-align: center;
             font-size: ${props => props.theme.font.size.xs};
             color: ${props => props.theme.wab.grey50};
         }
+
+        z-index: ${props => props.theme.zindex.header};
+        ${props => props.hoverAlternative ? hoverAlternative : notClickable};
     }
 `;
 
