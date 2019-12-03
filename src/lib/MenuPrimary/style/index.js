@@ -10,8 +10,9 @@ const MenuPrimaryBase = styled.ul`
 
     @media (${props => props.theme.query.max.lg}) {
         position: fixed;
-        top: ${props => props.theme.blockSpace.md};
-        height: calc(100vh - ${props => props.theme.blockSpace.md});
+        left: 0;
+        top: ${props => props.theme.grid.header};
+        height: calc(100vh - ${props => props.theme.grid.header});
         width: 100%;
         overflow: auto;
         background-color: ${props => props.theme.wab.white00};

@@ -106,6 +106,9 @@ export const ThemeBase = {
         lg: '32px',
         xl: '64px',
     },
+    grid: {
+        header: '40px',
+    },
     blockSpace: {
         none: '0',
         xs: '16px',
