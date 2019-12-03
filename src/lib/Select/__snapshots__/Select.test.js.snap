@@ -222,8 +222,10 @@ exports[`renders without crashing 1`] = `
         "zindex": Object {
           "base": 0,
           "front": 5,
+          "header": 110,
           "hidden": -100,
           "layer": -5,
+          "menu": 100,
         },
       }
     }
