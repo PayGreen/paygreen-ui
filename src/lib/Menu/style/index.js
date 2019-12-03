@@ -17,13 +17,13 @@ const MenuBase = styled.li`
             &:after {
                 content: '';
                 position: absolute;
-                bottom: -${props => props.theme.iconSize.md};
-                height: ${props => props.theme.iconSize.md};
+                bottom: -${props => props.theme.iconSize.lg};
+                height: ${props => props.theme.iconSize.lg};
                 width: 100%;
             }
 
             ${MenuListBase} {
-                margin-top: ${props => props.theme.iconSize.md};
+                margin-top: ${props => props.theme.iconSize.lg};
                 top: inherit;
                 transform: translate(-50%, 0);
                 opacity: 1;
