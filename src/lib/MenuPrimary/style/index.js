@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { closedStyle } from './base';
 import { MenuBase } from '../../Menu/style';
-import { MenuItemBase } from '../../MenuItem/style';
 
 const MenuPrimaryBase = styled.ul`
     z-index: ${props => props.theme.zindex.header};
@@ -11,8 +10,9 @@ const MenuPrimaryBase = styled.ul`
 
     @media (${props => props.theme.query.max.lg}) {
         position: fixed;
+        top: ${props => props.theme.blockSpace.md};
+        height: calc(100vh - ${props => props.theme.blockSpace.md});
         width: 100%;
-        height: 100vh;
         overflow: auto;
         background-color: ${props => props.theme.wab.white00};
         padding: ${props => props.theme.space.sm} 0;
