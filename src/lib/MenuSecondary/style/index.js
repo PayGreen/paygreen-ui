@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { transparentize } from 'polished';
+import { transparentize, math } from 'polished';
 import { menuBlock } from '../../MenuPrimary/style/base';
 import { closedStyle } from './base';
+import { MenuBase } from '../../Menu/style';
 
 const MenuSecondaryBase = styled.ul`
     ${menuBlock};
@@ -18,7 +19,43 @@ const MenuSecondaryBase = styled.ul`
     }
 
     @media (${props => props.theme.query.min.lg}) {
+        ${MenuBase} {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0;
 
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                transform: rotate(28deg);
+                width: ${props => props.theme.line};
+                height: ${props => props.theme.space.lg};
+                background-color: ${props => props.theme.wab.grey10};
+            }
+
+            &:before {
+                margin-left: -${props => props.theme.space.md};
+            }
+
+            &:after {
+                margin-right: -${props => math(props.theme.space.md + ' - ' + props.theme.line)};
+                right: 0;
+            }
+
+            &:first-of-type {
+                &:before {
+                    display: none;
+                }
+            }
+
+            &:last-of-type {
+                &:after {
+                    display: none;
+                }
+            }
+        }
     }
 `;
 
