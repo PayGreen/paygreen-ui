@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <li
-  className="sc-bZQynM jsZXlm"
+  className="sc-bZQynM jBMHTB"
 >
   <a
     href="#"
   >
     <div
-      className="sc-ifAKCX iwbhEA"
+      className="sc-ifAKCX hBFlYj"
     >
       <span
         className="sc-bwzfXH bgWMuT"
@@ -18,7 +18,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </a>
   <ul
-    className="sc-EHOje hYzhgu"
+    className="sc-EHOje jLwdgN"
   >
     <li>
       <a

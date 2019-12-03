@@ -5,13 +5,13 @@ exports[`renders without crashing 1`] = `
   className="sc-gzVnrw clEjEL"
 >
   <li
-    className="sc-bZQynM jsZXlm"
+    className="sc-bZQynM jBMHTB"
   >
     <a
       href="#"
     >
       <div
-        className="sc-ifAKCX fyPbBK"
+        className="sc-ifAKCX lakPLu"
       >
         <span
           className="sc-bwzfXH bgWMuT"
@@ -22,13 +22,13 @@ exports[`renders without crashing 1`] = `
     </a>
   </li>
   <li
-    className="sc-bZQynM jsZXlm"
+    className="sc-bZQynM jBMHTB"
   >
     <a
       href="#"
     >
       <div
-        className="sc-ifAKCX eNjwQX"
+        className="sc-ifAKCX jSeFdy"
       >
         <span
           className="sc-bwzfXH bgWMuT"
@@ -38,7 +38,7 @@ exports[`renders without crashing 1`] = `
       </div>
     </a>
     <ul
-      className="sc-EHOje hYzhgu"
+      className="sc-EHOje jLwdgN"
     >
       <li>
         <a
