@@ -142,6 +142,9 @@ exports[`renders without crashing 1`] = `
           },
           "textareaHeight": "200px",
         },
+        "grid": Object {
+          "header": "45px",
+        },
         "iconSize": Object {
           "lg": "32px",
           "md": "24px",
@@ -184,6 +187,7 @@ exports[`renders without crashing 1`] = `
             "md": 0.8,
             "none": 1,
             "sm": 0.9,
+            "xs": 0.95,
           },
           "size": Object {
             "lg": "3px 3px 20px",
