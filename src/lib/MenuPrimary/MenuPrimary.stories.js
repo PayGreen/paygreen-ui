@@ -24,10 +24,10 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
             <a href="#">
                 <MenuItem
                     isMain={true}
+                    hoverEmphasis={true}
                 >
                     <Link
                         underline={false}
-                        colorPallet={colorPalletOptions.wab}
                         uppercase={true}
                     >
                         About us

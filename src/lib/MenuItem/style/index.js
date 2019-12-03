@@ -4,7 +4,8 @@ import { IconLabelBase } from '../../IconLabel/style';
 import { TextBase } from '../../Text/style';
 import {
     main,
-    sub
+    sub,
+    align
 } from './base';
 
 const MenuItemBase = styled.div`
@@ -39,6 +40,7 @@ const MenuItemBase = styled.div`
     }
 
     ${props => props.isMain ? main : sub};
+    ${props => align[props.align]};
 `;
 
 export { MenuItemBase };

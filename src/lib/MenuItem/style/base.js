@@ -97,16 +97,22 @@ const main = css`
     }
 
     @media (${props => props.theme.query.max.lg}) {
-        ${props => props.hoverBase ? hoverBase : titleStyle};
+        ${props => props.hoverBase ? hoverBase : null};
+        ${props => props.hoverEmphasis ? hoverEmphasis : null};
+
+        ${props => !props.hoverBase && !props.hoverEmphasis ? titleStyle : null};
     }
 
     @media (${props => props.theme.query.min.lg}) {
+        & > .icon {
+            display: none;
+        }
+
         ${LinkBase} {
             box-sizing: border-box;
             height: ${props => math(props.theme.grid.header + '+' + props.theme.line)};
             text-align: center;
             font-size: ${props => props.theme.font.size.xs};
-            color: ${props => props.theme.wab.grey50};
         }
 
         z-index: ${props => props.theme.zindex.header};
@@ -126,7 +132,21 @@ const sub = css`
     ${props => props.hoverEmphasis ? hoverEmphasis : null};
 `;
 
+const align = {
+    left: css``,
+    center: css`
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    `,
+    right: css`
+        width: fit-content;
+        margin-left: auto;
+    `
+};
+
 export {
     main,
     sub,
+    align
 };
