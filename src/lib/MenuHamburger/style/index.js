@@ -1,11 +1,12 @@
 import styled  from 'styled-components';
+import { math } from 'polished';
 import { line, isClosedStyle, isOpenStyle } from './base';
 
 const MenuHamburgerBase = styled.button`
     box-sizing: border-box;
-    width: 29px;
+    width: ${props => math(props.theme.iconSize.lg + '-' + line)};
+    height: ${props => math(props.theme.iconSize.lg + '-' + line)};
     background-color: transparent;
-    margin: ${line * 2}px;
     border: none;
     padding: 0;
     outline: none;
