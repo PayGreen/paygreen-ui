@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
+import { MenuHamburgerBase } from '../../MenuHamburger/style';
 
 const HeaderBase = styled.header`
     position: relative;
@@ -15,6 +16,12 @@ const HeaderBase = styled.header`
         props.theme.shadow.opacity.sm,
         props.theme.wab.black00
     )};
+
+    @media (${props => props.theme.query.min.lg}) {
+        ${MenuHamburgerBase} {
+            display: none;
+        }
+    }
 `;
 
 export { HeaderBase };
