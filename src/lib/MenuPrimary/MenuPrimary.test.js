@@ -17,7 +17,7 @@ import MenuPrimary from './MenuPrimary';
 
 it('renders without crashing', () => {
     const menuPrimary = TestRenderer.create(
-        <MenuPrimary theme={ThemeDefault}>
+        <MenuPrimary theme={ThemeDefault} isOpen={true}>
             <Menu theme={ThemeDefault}>
                 <a href="#">
                     <MenuItem
