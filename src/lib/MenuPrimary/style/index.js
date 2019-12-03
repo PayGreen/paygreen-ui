@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { transparentize } from 'polished';
 import { closedStyle } from './base';
 import { MenuBase } from '../../Menu/style';
 
@@ -19,6 +20,22 @@ const MenuPrimaryBase = styled.ul`
         padding: ${props => props.theme.space.sm} 0;
         
         ${props => props.isOpen ? null : closedStyle};
+
+        &:before {
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 20px;
+            left: 0;
+            margin-top: -${props => props.theme.space.sm};
+            background-image: linear-gradient(to bottom,
+                ${props => transparentize(
+                    props.theme.shadow.opacity.xs,
+                    props.theme.wab.black00
+                )},
+                transparent
+            );
+        }
     }
 
     @media (${props => props.theme.query.min.lg}) {

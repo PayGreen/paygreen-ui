@@ -107,7 +107,7 @@ export const ThemeBase = {
         xl: '64px',
     },
     grid: {
-        header: '40px',
+        header: '45px',
     },
     blockSpace: {
         none: '0',
@@ -213,6 +213,7 @@ export const ThemeBase = {
         },
         opacity: {
             none: 1,
+            xs: 0.95,
             sm: 0.9,
             md: 0.8,
             lg: 0.7
