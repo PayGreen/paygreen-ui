@@ -14,7 +14,9 @@ import Header from './Header';
 it('renders without crashing', () => {
     const header = TestRenderer.create(
         <Header theme={ThemeDefault}>
-            <MenuHamburger theme={ThemeDefault} />
+            <div className="main-nav">
+                <MenuHamburger theme={ThemeDefault} />
+            </div>
 
             <MenuPrimary theme={ThemeDefault}>
                 <Menu theme={ThemeDefault}>

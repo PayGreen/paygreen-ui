@@ -14,14 +14,6 @@ const MenuBase = styled.li`
         }
 
         &:hover {
-            &:after {
-                content: '';
-                position: absolute;
-                bottom: -${props => props.theme.iconSize.lg};
-                height: ${props => props.theme.iconSize.lg};
-                width: 100%;
-            }
-
             ${MenuListBase} {
                 margin-top: ${props => props.theme.iconSize.lg};
                 top: inherit;

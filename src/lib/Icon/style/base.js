@@ -2,6 +2,14 @@ import { css } from 'styled-components';
 import { transparentize, math } from 'polished';
 import { colorPalletOptions } from '../../../shared/constants';
 
+const removeButtonStyle = css`
+    background: transparent;
+    border: none;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+`;
+
 const shadowStyle = {
     base: {
         theme: css`
@@ -78,7 +86,7 @@ const activeStyle = {
 const backgroundStyle = css`
     padding: ${props => math(props.theme.iconSize[props.iconSize] + '/2 - ' + props.theme.space.xs)};
     border-radius: 50%;
-    background: ${props => props.colorPallet === colorPalletOptions.theme ?
+    background-color: ${props => props.colorPallet === colorPalletOptions.theme ?
         props.theme.color[props.colorTheme]['light'] :
         props.theme.wab.white00
     };
@@ -114,6 +122,7 @@ const backgroundStyle = css`
 `;
 
 export {
+    removeButtonStyle,
     backgroundStyle,
     activeStyle
 };

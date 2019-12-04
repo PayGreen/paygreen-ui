@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {
     colorThemeOptions,
     colorThemeDefault,
+    alignOptions,
+    alignDefault
 } from '../../shared/constants';
 import { MenuItemBase } from './style';
 
@@ -22,6 +24,7 @@ MenuItem.propTypes = {
     hoverBase: PropTypes.bool,
     hoverAlternative: PropTypes.bool,
     hoverEmphasis: PropTypes.bool,
+    align: PropTypes.oneOf(Object.values(alignOptions))
 };
 
 MenuItem.defaultProps = {
@@ -30,6 +33,7 @@ MenuItem.defaultProps = {
     hoverBase: true,
     hoverAlternative: true,
     hoverEmphasis: false,
+    align: alignDefault
 };
 
 export default MenuItem;

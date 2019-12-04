@@ -2,17 +2,17 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-EHOje jLwdgN"
+  className="sc-EHOje jLJEM"
 >
   <li>
     <a
       href="#"
     >
       <div
-        className="sc-ifAKCX kQLjMG"
+        className="sc-ifAKCX hxqMva"
       >
         <span
-          className="sc-bdVaJa hdaFyx icon"
+          className="sc-bdVaJa fAXFGG icon"
         >
           <svg
             viewBox="0 0 143 143"

@@ -8,7 +8,6 @@ const MenuListBase = styled.ul`
 
     @media (${props => props.theme.query.min.lg}) {
         position: absolute;
-        z-index: ${props => props.theme.zindex.menu};
         margin-top: ${props => props.theme.iconSize.lg};
         padding: ${props => props.theme.radius.lg} 0;
         width: ${props => props.theme.blockWidth.sm};
