@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ImageBase } from '../../Image/style';
 import {
     blockStyle,
     titleOutBlockStyle
@@ -7,7 +8,7 @@ import {
 const CardBase = styled.div`
     ${props => props.params.titleOut ? titleOutBlockStyle : blockStyle};
 
-    figure {
+    ${ImageBase} {
         height: ${props => props.theme.blockHeader[props.blockWidth]};
     }
 `;

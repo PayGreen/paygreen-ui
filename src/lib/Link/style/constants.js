@@ -1,12 +1,10 @@
-const linkColor = {
-    base: {
-        original: props => props.theme.color[props.colorTheme]['main'],
-        reverse: props => props.theme.wab.white00
+const colors = {
+    main: {
+        theme: props => props.theme.color[props.colorTheme]['main'],
+        wab: props => props.theme.wab[props.colorWab],
+        status: props => props.theme.color.status[props.colorStatus]
     },
-    hover: {
-        original: props => props.theme.wab.white00,
-        reverse: props => props.theme.color[props.colorTheme]['main']
-    },
+    secondary: props => props.theme.wab.white00
 };
 
-export { linkColor };
+export { colors };

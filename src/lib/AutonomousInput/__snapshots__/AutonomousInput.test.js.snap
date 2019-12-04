@@ -63,7 +63,7 @@ exports[`renders without crashing 1`] = `
             "quaternary": Object {
               "gradientBase": "#e98e90",
               "gradientShade": "#e98eb9",
-              "light": "#f8d1d2",
+              "light": "#ffe0e1",
               "main": "#ec6a6a",
             },
             "secondary": Object {
@@ -81,7 +81,7 @@ exports[`renders without crashing 1`] = `
             "tertiary": Object {
               "gradientBase": "#fab56b",
               "gradientShade": "#faa272",
-              "light": "#f8e1c7",
+              "light": "#fbe6ce",
               "main": "#e58a28",
             },
           },
@@ -138,6 +138,9 @@ exports[`renders without crashing 1`] = `
             },
             "textareaHeight": "200px",
           },
+          "grid": Object {
+            "header": "45px",
+          },
           "iconSize": Object {
             "lg": "32px",
             "md": "24px",
@@ -180,6 +183,7 @@ exports[`renders without crashing 1`] = `
               "md": 0.8,
               "none": 1,
               "sm": 0.9,
+              "xs": 0.95,
             },
             "size": Object {
               "lg": "3px 3px 20px",
@@ -197,7 +201,10 @@ exports[`renders without crashing 1`] = `
             "xs": "4px",
           },
           "transition": Object {
+            "lg": "0.7s",
+            "md": "0.5s",
             "sm": "0.3s",
+            "xl": "1s",
             "xs": "0.2s",
           },
           "wab": Object {
@@ -215,8 +222,10 @@ exports[`renders without crashing 1`] = `
           "zindex": Object {
             "base": 0,
             "front": 5,
+            "header": 110,
             "hidden": -100,
             "layer": -5,
+            "menu": 100,
           },
         }
       }
@@ -231,7 +240,7 @@ exports[`renders without crashing 1`] = `
   </div>
   <span>
     <span
-      className="sc-bdVaJa jtGBWG"
+      className="sc-bdVaJa jtGBWG icon"
     >
       <svg
         viewBox="0 0 143 143"

@@ -29,13 +29,13 @@ export const ThemeBase = {
         },
         tertiary: {
             main: '#e58a28',
-            light: '#f8e1c7',
+            light: '#fbe6ce',
             gradientBase: '#fab56b',
             gradientShade: '#faa272',
         },
         quaternary: {
             main: '#ec6a6a',
-            light: '#f8d1d2',
+            light: '#ffe0e1',
             gradientBase: '#e98e90',
             gradientShade: '#e98eb9',
         },
@@ -106,6 +106,9 @@ export const ThemeBase = {
         lg: '32px',
         xl: '64px',
     },
+    grid: {
+        header: '45px',
+    },
     blockSpace: {
         none: '0',
         xs: '16px',
@@ -144,12 +147,17 @@ export const ThemeBase = {
     transition: {
         xs: '0.2s',
         sm: '0.3s',
+        md: '0.5s',
+        lg: '0.7s',
+        xl: '1s'
     },
     zindex: {
         hidden: -100,
         layer: -5,
         base: 0,
         front: 5,
+        menu: 100,
+        header: 110,
     },
     query: {
         min: {
@@ -205,6 +213,7 @@ export const ThemeBase = {
         },
         opacity: {
             none: 1,
+            xs: 0.95,
             sm: 0.9,
             md: 0.8,
             lg: 0.7

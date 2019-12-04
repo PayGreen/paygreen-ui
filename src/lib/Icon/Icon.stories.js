@@ -23,8 +23,8 @@ import { withKnobs, boolean, select, radios } from '@storybook/addon-knobs';
 
 const colorPalletLabel = 'Color pallet';
 const colorThemeLabel = 'Color theme';
-const colorWabLabel = 'Grey colors';
-const colorStatusLabel = 'Status colors';
+const colorWabLabel = 'Grey color';
+const colorStatusLabel = 'Status color';
 const iconSizeLabel = 'Icon size';
 const backgroundLabel = 'With background';
 const shadowLabel = 'With shadow';

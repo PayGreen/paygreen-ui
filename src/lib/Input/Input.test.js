@@ -1,7 +1,7 @@
-import React from 'react'
-import Input from './Input';
+import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
+import Input from './Input';
 
 it('renders without crashing', () => {
     const inputText = TestRenderer.create(

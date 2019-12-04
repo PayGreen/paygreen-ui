@@ -12,7 +12,7 @@ const ButtonGroupBase = styled.div`
         0.75
     )};
 
-    a {
+    & > * {
         margin: ${props => props.theme.space.sm};
     }
 `;

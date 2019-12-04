@@ -1,35 +1,21 @@
 import styled from 'styled-components';
-import { linkColor } from './constants';
+import { colorTypeOptions } from '../../../shared/constants';
+import { colors } from './constants';
+import {
+    underlineStyle,
+    uppercaseStyle
+} from './base';
 
 const LinkBase = styled.span`
-    display: inline-block;
-    position: relative;
+    color: ${props => props.colorType === colorTypeOptions.reverse ?
+        colors.secondary :
+        colors.main[props.colorPallet]
+    };
     font-weight: ${props => props.theme.font.weight.bold};
-    color: ${props => linkColor.base[props.colorType]};
     transition: all ${props => props.theme.transition.xs};
 
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        z-index: ${props => props.theme.zindex.button};
-        height: ${props => props.theme.line};
-        width: 100%;
-        background-color: ${props => linkColor.base[props.colorType]};
-        opacity: .3;
-        transition: all ${props => props.theme.transition.xs};
-    }
-
-    a:hover &,
-    a:active &,
-    a:focus & {
-        color: ${props => linkColor.hover[props.colorType]};
-
-        &::after {
-            height: 100%;
-            opacity: 1;
-        }
-    }
+    ${props => props.uppercase ? uppercaseStyle : null};
+    ${props => props.underline ? underlineStyle : null};
 `;
 
 export { LinkBase };

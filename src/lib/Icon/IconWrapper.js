@@ -29,7 +29,7 @@ class IconWrapper extends PureComponent {
             }
         });
 
-        return <IconBase {...rest}>
+        return <IconBase {...rest} className="icon">
             {Children}
         </IconBase>;
     }
