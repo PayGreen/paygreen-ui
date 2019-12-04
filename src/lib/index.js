@@ -8,6 +8,7 @@ import Image from './Image/Image';
 import Input from './Input/Input';
 import Header from './Header/Header';
 import Link from './Link/Link';
+import Menu from './Menu/Menu';
 import MenuClose from './MenuClose/MenuClose';
 import MenuHamburger from './MenuHamburger/MenuHamburger';
 import MenuItem from './MenuItem/MenuItem';
@@ -125,6 +126,7 @@ export {
     Input,
     Header,
     Link,
+    Menu,
     MenuClose,
     MenuHamburger,
     MenuItem,
