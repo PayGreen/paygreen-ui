@@ -2,18 +2,22 @@
 
 exports[`renders without crashing 1`] = `
 <header
-  className="sc-htoDjs bCLvYs"
+  className="sc-gZMcBi kLgyQM"
 >
-  <button
-    className="sc-gzVnrw kTyxXa"
-    onClick={[Function]}
+  <div
+    className="main-nav"
   >
-    <span />
-    <span />
-    <span />
-  </button>
+    <button
+      className="sc-gzVnrw kTyxXa"
+      onClick={[Function]}
+    >
+      <span />
+      <span />
+      <span />
+    </button>
+  </div>
   <ul
-    className="sc-bZQynM lhirvp"
+    className="sc-bZQynM hulWZt"
   >
     <li
       className="sc-EHOje bQJWmc"
@@ -22,7 +26,7 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="sc-bxivhb cGUxaq"
+          className="sc-bxivhb hZMdZo"
         >
           <span
             className="sc-bdVaJa bptjzN"

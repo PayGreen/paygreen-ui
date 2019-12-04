@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-gzVnrw fgFoNp"
+  className="sc-gzVnrw jEnnjH"
 >
   <li
     className="sc-bZQynM gXOwUF"
@@ -11,7 +11,7 @@ exports[`renders without crashing 1`] = `
       href="#"
     >
       <div
-        className="sc-ifAKCX jsxNRz"
+        className="sc-ifAKCX fQmQxI"
       >
         <span
           className="sc-bwzfXH bgWMuT"
@@ -28,7 +28,7 @@ exports[`renders without crashing 1`] = `
       href="#"
     >
       <div
-        className="sc-ifAKCX kGRURL"
+        className="sc-ifAKCX UlSBY"
       >
         <span
           className="sc-bwzfXH bgWMuT"
@@ -38,7 +38,7 @@ exports[`renders without crashing 1`] = `
       </div>
     </a>
     <ul
-      className="sc-EHOje jLwdgN"
+      className="sc-EHOje jLJEM"
     >
       <li>
         <a
@@ -48,7 +48,7 @@ exports[`renders without crashing 1`] = `
             className="sc-ifAKCX kQVbqI"
           >
             <span
-              className="sc-bdVaJa hdaFyx icon"
+              className="sc-bdVaJa fAXFGG icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -79,7 +79,7 @@ exports[`renders without crashing 1`] = `
             className="sc-ifAKCX kQVbqI"
           >
             <span
-              className="sc-bdVaJa hdaFyx icon"
+              className="sc-bdVaJa fAXFGG icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -104,7 +104,7 @@ exports[`renders without crashing 1`] = `
               className="sc-htpNat crydfm"
             >
               <span
-                className="sc-bdVaJa bZmTaN icon"
+                className="sc-bdVaJa evZlmj icon"
               >
                 <svg
                   viewBox="0 0 143 143"
