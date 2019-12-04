@@ -1,5 +1,6 @@
 import AutonomousInput from './AutonomousInput/AutonomousInput';
 import Banner from './Banner/Banner';
+import BannerImage from './BannerImage/BannerImage';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
@@ -121,6 +122,7 @@ export {
 
     AutonomousInput,
     Banner,
+    BannerImage,
     Breadcrumb,
     Button,
     ButtonGroup,

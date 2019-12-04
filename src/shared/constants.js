@@ -65,6 +65,15 @@ const maskOptions = {
 
 const maskDefault = maskOptions.none;
 
+// Wave styles
+const waveOptions = {
+    none: 'none',
+    left: 'left',
+    right: 'right'
+};
+
+const waveDefault = waveOptions.left;
+
 // Button sizes
 const buttonSizeOptions = {
     sm: 'sm',
@@ -269,6 +278,8 @@ export {
     transparentColorDefault,
     maskOptions,
     maskDefault,
+    waveOptions,
+    waveDefault,
     buttonSizeOptions,
     buttonSizeDefault,
     buttonTemplateOptions,
