@@ -20,18 +20,18 @@ const BannerImageBase = styled.div`
         width: 100%;
         height: 100%;
         max-height: ${maxHeight};
-        background-color: ${props => props.theme.color[props.colorTheme]['light']};
         mask-image: linear-gradient(to top, transparent, black ${minHeight});
     }
 
     &:before {
         background-image: url('${props => props.image}');
-        background-blend-mode: multiply;
         background-size: cover;
-        opacity: .6;
+        filter: grayscale(1);
+        opacity: .5;
     }
 
     &:after {
+        background-color: ${props => props.theme.color[props.colorTheme]['light']};
         opacity: .8;
     }
 `;
