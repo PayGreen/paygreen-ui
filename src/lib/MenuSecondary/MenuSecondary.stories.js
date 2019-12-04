@@ -10,6 +10,7 @@ import { LockIcon, PenIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import MenuItem from '../MenuItem/MenuItem';
 import Menu from '../Menu/Menu';
+import MenuClose from '../MenuClose/MenuClose';
 import MenuSecondary from './MenuSecondary';
 
 storiesOf('MenuSecondary', module).addDecorator(withKnobs)
@@ -62,5 +63,7 @@ storiesOf('MenuSecondary', module).addDecorator(withKnobs)
                 </MenuItem>
             </a>
         </Menu>
+
+        <MenuClose />
     </MenuSecondary>
 ));

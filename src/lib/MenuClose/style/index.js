@@ -6,7 +6,7 @@ const MenuCloseBase = styled.button`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 180px;
+    width: 190px;
     max-width: 100%;
     background-color: transparent;
     border: none;

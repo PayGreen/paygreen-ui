@@ -3,6 +3,7 @@ import { transparentize, math } from 'polished';
 import { menuBlock } from '../../MenuPrimary/style/base';
 import { closedStyle } from './base';
 import { MenuBase } from '../../Menu/style';
+import { MenuCloseBase } from '../../MenuClose/style';
 
 const MenuSecondaryBase = styled.ul`
     ${menuBlock};
@@ -16,6 +17,10 @@ const MenuSecondaryBase = styled.ul`
         )};
         
         ${props => props.isOpen ? null : closedStyle};
+
+        ${MenuCloseBase} {
+            margin: ${props => props.theme.space.md} auto -${props => props.theme.space.sm} auto;
+        }
     }
 
     @media (${props => props.theme.query.min.lg}) {
@@ -55,6 +60,10 @@ const MenuSecondaryBase = styled.ul`
                     display: none;
                 }
             }
+        }
+
+        ${MenuCloseBase} {
+            display: none;
         }
     }
 `;
