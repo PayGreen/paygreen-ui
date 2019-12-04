@@ -1,4 +1,4 @@
-import Icon from './Icon/components';
+import * as Icon from './Icon/components';
 
 import AutonomousInput from './AutonomousInput/AutonomousInput';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
@@ -39,6 +39,7 @@ export {
     Card,
     IconLabel,
     Image,
+    Input,
     Header,
     Link,
     MenuClose,
