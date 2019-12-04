@@ -1,12 +1,21 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
+    alignOptions,
     colorPalletOptions,
     iconSizeOptions,
     spaceOptions
 } from '../../shared/constants';
-import { LeafIcon, CardsIcon, OrganizationIcon, OutIcon } from '../Icon/Icon';
+import {
+    UserIcon,
+    LeafIcon,
+    CardsIcon,
+    OrganizationIcon,
+    LockIcon,
+    PenIcon,
+    OutIcon
+} from '../Icon/Icon';
 import Link from '../Link/Link';
 import IconLabel from '../IconLabel/IconLabel';
 import Text from '../Text/Text';
@@ -14,16 +23,25 @@ import MenuItem from '../MenuItem/MenuItem';
 import MenuList from '../MenuList/MenuList';
 import Menu from '../Menu/Menu';
 import MenuPrimary from '../MenuPrimary/MenuPrimary';
+import MenuSecondary from '../MenuSecondary/MenuSecondary';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
+import MenuClose from '../MenuClose/MenuClose';
 import Header from './Header';
 
 storiesOf('Header', module).addDecorator(withKnobs)
 .add('Header', () => (
     <Header>
-        <MenuHamburger />
+        <div className="nav-buttons">
+            <MenuHamburger />
+
+            <UserIcon
+                htmlTag="button"
+                iconSize={iconSizeOptions.xl}
+            />
+        </div>
 
         <MenuPrimary
-            isOpen={boolean('Is open', true)}
+            isOpen={boolean('Open primary menu', true)}
         >
             <Menu>
                 <a href="#">
@@ -185,5 +203,57 @@ storiesOf('Header', module).addDecorator(withKnobs)
                 </MenuList>
             </Menu>
         </MenuPrimary>
+
+        <MenuSecondary
+            isOpen={boolean('Open secondary menu', true)}
+        >
+            <Menu>
+                <a href="#">
+                    <MenuItem
+                        hoverBase={false}
+                        hoverEmphasis={true}
+                        align={alignOptions.center}
+                        isMain={true}
+                    >
+                        <LockIcon
+                            iconSize={iconSizeOptions.lg}
+                            colorPallet={colorPalletOptions.wab}
+                        />
+
+                        <Link
+                            underline={false}
+                            uppercase={true}
+                            colorPallet={colorPalletOptions.wab}
+                        >
+                            Login
+                        </Link>
+                    </MenuItem>
+                </a>
+            </Menu>
+
+            <Menu>
+                <a href="#">
+                    <MenuItem
+                        hoverBase={false}
+                        hoverEmphasis={true}
+                        align={alignOptions.center}
+                        isMain={true}
+                    >
+                        <PenIcon
+                            iconSize={iconSizeOptions.lg}
+                        />
+
+                        <Link
+                            underline={false}
+                            uppercase={true}
+                        >
+                            Subscribe
+                        </Link>
+                    </MenuItem>
+                </a>
+            </Menu>
+
+            <MenuClose />
+        </MenuSecondary>
     </Header>
 ));

@@ -115,7 +115,7 @@ const main = css`
             font-size: ${props => props.theme.font.size.xs};
         }
 
-        z-index: ${props => props.theme.zindex.header};
+        z-index: ${props => props.theme.zindex.menu};
         ${props => props.hoverAlternative ? hoverAlternative : notClickable};
     }
 `;

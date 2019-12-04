@@ -19,7 +19,7 @@ class MenuClose extends PureComponent {
                 colorTheme={this.props.colorTheme}
             />
             
-            <svg class="background" viewBox="0 0 170 28.8">
+            <svg className="background" viewBox="0 0 170 28.8">
                 <path d="M85,0.8c37.6,0,63,28,85,28H0C29,28.8,47.4,0.8,85,0.8z" />
             </svg>
         </MenuCloseBase>;

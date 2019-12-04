@@ -1,9 +1,8 @@
 import { css } from 'styled-components';
-import { transparentize } from 'polished';
 import { MenuBase } from '../../Menu/style';
 
 const menuBlock = css`
-    z-index: ${props => props.theme.zindex.header};
+    z-index: ${props => props.theme.zindex.menu};
     box-sizing: border-box;
     margin: 0;
     transition: all ${props => props.theme.transition.md};
@@ -15,22 +14,6 @@ const menuBlock = css`
         top: ${props => props.theme.grid.header};
         width: 100%;
         background-color: ${props => props.theme.wab.white00};
-        
-        &:before {
-            content: '';
-            position: fixed;
-            width: 100%;
-            height: 20px;
-            left: 0;
-            margin-top: -${props => props.theme.space.sm};
-            background-image: linear-gradient(to bottom,
-                ${props => transparentize(
-                    props.theme.shadow.opacity.xs,
-                    props.theme.wab.black00
-                )},
-                transparent
-            );
-        }
     }
 
     @media (${props => props.theme.query.min.lg}) {
