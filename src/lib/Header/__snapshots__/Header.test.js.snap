@@ -13,16 +13,16 @@ exports[`renders without crashing 1`] = `
     <span />
   </button>
   <ul
-    className="sc-bZQynM hKDPcN"
+    className="sc-bZQynM lhirvp"
   >
     <li
-      className="sc-EHOje exJmWu"
+      className="sc-EHOje bQJWmc"
     >
       <a
         href="#"
       >
         <div
-          className="sc-bxivhb euJkLU"
+          className="sc-bxivhb cGUxaq"
         >
           <span
             className="sc-bdVaJa bptjzN"

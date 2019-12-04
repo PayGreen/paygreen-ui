@@ -2,16 +2,16 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-gzVnrw clEjEL"
+  className="sc-gzVnrw fgFoNp"
 >
   <li
-    className="sc-bZQynM jBMHTB"
+    className="sc-bZQynM gXOwUF"
   >
     <a
       href="#"
     >
       <div
-        className="sc-ifAKCX lakPLu"
+        className="sc-ifAKCX jsxNRz"
       >
         <span
           className="sc-bwzfXH bgWMuT"
@@ -22,13 +22,13 @@ exports[`renders without crashing 1`] = `
     </a>
   </li>
   <li
-    className="sc-bZQynM jBMHTB"
+    className="sc-bZQynM gXOwUF"
   >
     <a
       href="#"
     >
       <div
-        className="sc-ifAKCX jSeFdy"
+        className="sc-ifAKCX kGRURL"
       >
         <span
           className="sc-bwzfXH bgWMuT"
@@ -45,7 +45,7 @@ exports[`renders without crashing 1`] = `
           href="#"
         >
           <div
-            className="sc-ifAKCX gHwijN"
+            className="sc-ifAKCX kQVbqI"
           >
             <span
               className="sc-bdVaJa hdaFyx icon"
@@ -76,7 +76,7 @@ exports[`renders without crashing 1`] = `
           href="#"
         >
           <div
-            className="sc-ifAKCX gHwijN"
+            className="sc-ifAKCX kQVbqI"
           >
             <span
               className="sc-bdVaJa hdaFyx icon"
