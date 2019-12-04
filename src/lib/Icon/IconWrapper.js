@@ -29,13 +29,18 @@ class IconWrapper extends PureComponent {
             }
         });
 
-        return <IconBase {...rest} className="icon">
+        return <IconBase
+            as={this.props.htmlTag}
+            {...rest}
+            className="icon"
+        >
             {Children}
         </IconBase>;
     }
 }
 
 IconWrapper.propTypes = {
+    htmlTag: PropTypes.oneOf(['span', 'button']),
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
@@ -52,6 +57,7 @@ IconWrapper.propTypes = {
 };
 
 IconWrapper.defaultProps = {
+    htmlTag: 'span',
     colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,
