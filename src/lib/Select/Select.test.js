@@ -1,7 +1,7 @@
-import React from 'react'
-import Select from './Select';
+import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
+import Select from './Select';
 
 const sampleOptions = [
     {

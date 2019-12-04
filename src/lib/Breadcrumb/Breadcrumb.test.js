@@ -1,7 +1,7 @@
-import React from 'react'
-import Breadcrumb from './Breadcrumb';
+import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
+import Breadcrumb from './Breadcrumb';
 
 const sampleLinks = [
     {

@@ -15,7 +15,7 @@ storiesOf('Textarea', module)
             placeholder="Your text&hellip;"
             label="Your message"
             maxLength={50}
-            status={radios('State', formStatusOptions, formStatusDefault)}
+            status={radios('Status', formStatusOptions, formStatusDefault)}
             params={{
                 shadow: boolean('With shadow', false),
                 counter: boolean('With counter', true)

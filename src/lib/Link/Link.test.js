@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from './Link';
+import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
+import Link from './Link';
 
 it('renders without crashing', () => {
     const link = TestRenderer.create(

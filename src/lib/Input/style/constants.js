@@ -1,8 +1,8 @@
 const fieldTextColor = {
     default: props => props.theme.wab.grey60,
-    success: props => props.theme.color.state.success,
+    success: props => props.theme.color.status.success,
     warning: props => props.theme.wab.grey60,
-    danger: props => props.theme.color.state.danger
+    danger: props => props.theme.color.status.danger
 };
 
 const inputPadding = {

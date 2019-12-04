@@ -18,7 +18,7 @@ storiesOf('Input', module)
             label="Your name"
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
-            status={radios('State', formStatusOptions, formStatusDefault)}
+            status={radios('Status', formStatusOptions, formStatusDefault)}
             width={radios('Width', inputWidthOptions, inputWidthDefault)}
             params={{
                 shadow: boolean('With shadow', false),
@@ -35,7 +35,7 @@ storiesOf('Input', module)
             label="Your phone number"
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
-            status={radios('State', formStatusOptions, formStatusDefault)}
+            status={radios('Status', formStatusOptions, formStatusDefault)}
             params={{
                 shadow: boolean('With shadow', false),
             }}

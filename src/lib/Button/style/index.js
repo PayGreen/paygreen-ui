@@ -26,7 +26,7 @@ const ButtonBase = styled.span`
     &::after {
         content: '';
         position: absolute;
-        z-index: ${props => props.theme.zindex.button};
+        z-index: ${props => props.theme.zindex.layer};
         height: 100%;
         width: 100%;
         border-radius: ${props => props.theme.radius.sm};

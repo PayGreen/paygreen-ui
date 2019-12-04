@@ -4,8 +4,14 @@ import {
     colorTypeOptions,
     colorTypeDefault,
     colorThemeOptions,
-    colorThemeDefault
+    colorThemeDefault,
+
+    colorPalletOptions,
+    spaceOptions,
+    iconSizeOptions,
+    greyOptions
 } from '../../shared/constants';
+import { ArrowRightIcon } from '../Icon/Icon';
 import { BreadcrumbBase } from './style';
 
 class Breadcrumb extends PureComponent {
@@ -17,8 +23,19 @@ class Breadcrumb extends PureComponent {
             }
         }
 
+        const arrowIcon = <ArrowRightIcon
+            theme={this.props.theme} // not necessary, only needed for tests
+            iconSize={iconSizeOptions.xs}
+            marginLeft={spaceOptions.xs}
+            marginRight={spaceOptions.sm}
+            colorPallet={colorPalletOptions.wab}
+            colorWab={greyOptions.grey30}
+        />;
+
         const items = this.props.elements.map((element, index) =>
             <li key={index}>
+                {index ? arrowIcon : null}
+
                 <a
                     href={element.url}
                     tabIndex={index + 1 === this.props.elements.length ? -1 : 0}
