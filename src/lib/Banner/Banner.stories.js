@@ -6,8 +6,15 @@ import {
     colorThemeDefault,
     gradientOptions,
     waveOptions,
-    waveDefault
+    waveDefault,
+
+    colorTypeOptions,
+    fontSizeOptions,
+    blockSpaceOptions
 } from '../../shared/constants';
+import Card from '../Card/Card';
+import Title from '../Title/Title';
+import Text from '../Text/Text';
 import Banner from './Banner';
 
 storiesOf('Banner', module).addDecorator(withKnobs)
@@ -18,8 +25,26 @@ storiesOf('Banner', module).addDecorator(withKnobs)
         gradient={radios('Gradient type', gradientOptions, gradientOptions.theme)}
         colorTheme={select('Color theme', colorThemeOptions, colorThemeDefault)}
     >
-        <div>
-            Sample
-        </div>
+        <Card
+            hasBackground={false}
+        >
+            <Title
+                colorType={colorTypeOptions.reverse}
+                textSize={fontSizeOptions.xl}
+                marginLateral={blockSpaceOptions.md}
+                marginTop={blockSpaceOptions.md}
+            >
+                Your big title
+            </Title>
+
+            <Text
+                colorType={colorTypeOptions.reverse}
+                marginLateral={blockSpaceOptions.md}
+                marginTop={blockSpaceOptions.md}
+                marginBottom={blockSpaceOptions.md}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor velit a ultricies aliquet. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
+            </Text>
+        </Card>
     </Banner>
 ));
