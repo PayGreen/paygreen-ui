@@ -119,7 +119,7 @@ export {
     ThemeDefault,
     ThemeDark,
     PGThemeProvider,
-
+    
     AutonomousInput,
     Banner,
     BannerImage,
@@ -131,7 +131,6 @@ export {
     IconLabel,
     Image,
     Input,
-    Header,
     Link,
     Logo,
     Menu,
