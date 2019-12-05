@@ -5,6 +5,7 @@ import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
+import Divider from './Divider/Divider';
 import Header from './Header/Header';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
@@ -127,6 +128,7 @@ export {
     Button,
     ButtonGroup,
     Card,
+    Divider,
     Header,
     IconLabel,
     Image,
@@ -144,6 +146,7 @@ export {
     Text,
     Textarea,
     Title,
+
     // Icons
     ArrowBottomIcon,
     ArrowCircleLeftIcon,

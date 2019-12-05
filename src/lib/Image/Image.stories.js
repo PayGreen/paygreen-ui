@@ -21,12 +21,12 @@ storiesOf('Image', module)
         <Image
             imageType={imageTypeOptions.cover}
             colorChange={boolean('Modify color', true)}
-            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
+            colorTheme={select('Color theme', colorThemeOptions, colorThemeDefault)}
             bottomStyle={radios('Bottom style', maskOptions, maskDefault)}
             blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
             blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
             radiusSize={radios('Border radius', radiusOptions, radiusOptions.none)}
-            shadow={radios('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
+            shadow={select('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
         >
             <img src={photoFile} alt="picture" />
         </Image>

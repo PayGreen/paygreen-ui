@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="sc-bdVaJa kgEnlp"
+>
+  <svg
+    className="shape"
+    viewBox="0 0 466 102"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M-0.2,4v16c0,0,186.7,47.9,465,31C187.8,65.3-0.2,4-0.2,4z"
+    />
+  </svg>
+  <svg
+    className="shape"
+    viewBox="0 0 466 102"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M-0.2,4v16c0,0,186.7,47.9,465,31C187.8,65.3-0.2,4-0.2,4z"
+    />
+  </svg>
+</div>
+`;

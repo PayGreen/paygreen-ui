@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
         font-family: 'Open Sans', sans-serif;
         font-size: ${ThemeDefault.font.size.base};
     }
