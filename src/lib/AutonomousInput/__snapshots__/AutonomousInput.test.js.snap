@@ -132,6 +132,7 @@ exports[`renders without crashing 1`] = `
             },
             "weight": Object {
               "bold": 700,
+              "extra": 800,
               "normal": 400,
             },
           },
