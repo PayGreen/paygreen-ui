@@ -15,9 +15,9 @@ storiesOf('TableCell', module).addDecorator(withKnobs)
             <img src={cb} />
         </div>
         
-        <p>
+        <span>
             Sample text <i>(more text)</i>
-        </p>
+        </span>
     </TableCell>
 ))
 .add('Cell with link', () => (

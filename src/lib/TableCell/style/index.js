@@ -29,10 +29,6 @@ const TableCellBase = styled.div`
             }
         }
 
-        p {
-            margin: 0;
-        }
-
         i {
             font-size: ${props => props.theme.font.size.xs};
             font-style: italic;
