@@ -60,6 +60,7 @@ export const ThemeBase = {
         weight: {
             normal: 400,
             bold: 700,
+            extra: 800
         },
         spacing: '0.3em',
         underline: {
