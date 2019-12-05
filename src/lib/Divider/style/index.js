@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { waveOptions } from '../../../shared/constants';
+import { responsiveSpaces } from '../../../shared/spaces';
 import { withWave, noWave } from './base';
 
 const DividerBase = styled.div`
-    margin-top: 0;
+    ${responsiveSpaces('margin')};
 
     span {
         display: block;

@@ -5,6 +5,7 @@ import {
     waveDefault,
     colorThemeOptions,
     colorThemeDefault,
+    blockSpaceOptions
 } from '../../shared/constants';
 import { DividerBase } from './style';
 import { shape } from './style/shape';
@@ -34,12 +35,16 @@ class Divider extends PureComponent {
 Divider.propTypes = {
     waveStyle: PropTypes.oneOf(Object.values(waveOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    text: PropTypes.string
+    text: PropTypes.string,
+    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
 };
 
 Divider.defaultProps = {
     waveStyle: waveDefault,
     colorTheme: colorThemeDefault,
+    marginTop: blockSpaceOptions.md,
+    marginBottom: blockSpaceOptions.md,
 };
 
 export default Divider;
