@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import {
     colorThemeOptions,
     colorThemeDefault,
-    gradientOptions
+    gradientOptions,
+    waveOptions,
+    waveDefault
 } from '../../shared/constants';
 import { BannerBase } from './style';
 import { waves } from './style/waves';
@@ -13,9 +15,9 @@ class Banner extends PureComponent {
         return <BannerBase
             {...this.props}
         >
-            {waves}
+            {this.props.topStyle !== waveOptions.none ? waves : null}
             {this.props.children}
-            {waves}
+            {this.props.bottomStyle !== waveOptions.none ? waves : null}
         </BannerBase>;
     }
 }
@@ -23,11 +25,15 @@ class Banner extends PureComponent {
 Banner.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     gradient: PropTypes.oneOf(Object.values(gradientOptions)),
+    topStyle: PropTypes.oneOf(Object.values(waveOptions)),
+    bottomStyle: PropTypes.oneOf(Object.values(waveOptions)),
 };
 
 Banner.defaultProps = {
     colorTheme: colorThemeDefault,
-    gradient: gradientOptions.theme
+    gradient: gradientOptions.theme,
+    topStyle: waveDefault,
+    bottomStyle: waveDefault,
 };
 
 export default Banner;

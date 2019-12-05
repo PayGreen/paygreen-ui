@@ -11,6 +11,14 @@ const color = {
     }
 };
 
+const waveScale = {
+    top: -1,
+    bottom: 1,
+    left: 1,
+    right: -1
+};
+
 export {
-    color
+    color,
+    waveScale
 };

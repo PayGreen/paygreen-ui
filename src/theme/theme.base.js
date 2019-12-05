@@ -129,6 +129,15 @@ export const ThemeBase = {
         lg: '210px',
         xl: '240px',
     },
+    bannerHeight: {
+        xs: '180px',
+        sm: '300px',
+        lg: '700px'
+    },
+    wave: {
+        simple: '8vw',
+        double: '11vw'
+    },
     iconSize: {
         xs: '16px',
         sm: '20px',
