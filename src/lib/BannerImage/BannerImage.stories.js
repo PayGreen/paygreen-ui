@@ -9,8 +9,7 @@ import {
     colorNumberOptions,
     greyOptions,
     fontSizeOptions,
-    blockSpaceOptions,
-    blockWidthDefault
+    blockSpaceOptions
 } from '../../shared/constants';
 import Card from '../Card/Card';
 import Title from '../Title/Title';
@@ -29,7 +28,6 @@ storiesOf('BannerImage', module).addDecorator(withKnobs)
     >
         <Card
             hasBackground={false}
-            blockWidth={blockWidthDefault}
         >
             <Title
                 colorNumber={colorNumberOptions.two}
@@ -46,7 +44,7 @@ storiesOf('BannerImage', module).addDecorator(withKnobs)
                 marginLateral={blockSpaceOptions.md}
                 marginTop={blockSpaceOptions.md}
             >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor velit a ultricies aliquet. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor velit a ultricies aliquet. Donec vehicula in arcu non sodales.
             </Text>
         </Card>
     </BannerImage>
