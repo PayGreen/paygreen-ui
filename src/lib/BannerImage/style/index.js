@@ -1,14 +1,13 @@
 import styled from 'styled-components';
+import { waveOptions } from '../../../shared/constants';
 import { topStyle } from './base';
-
-const minHeight = '300px';
-const maxHeight = '700px';
 
 const BannerImageBase = styled.div`
     ${props => topStyle[props.topStyle]};
     position: relative;
-    min-height: ${minHeight};
-    padding: 8vw .1px ${props => props.theme.blockSpace.md} .1px;
+    min-height: ${props => props.theme.bannerHeight.sm};
+    padding: 0 .1px ${props => props.theme.blockSpace.md} .1px;
+    padding-top: ${props => props.topStyle !== waveOptions.none ? props.theme.wave.simple : 0};
 
     &:before,
     &:after {
@@ -19,8 +18,8 @@ const BannerImageBase = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        max-height: ${maxHeight};
-        mask-image: linear-gradient(to top, transparent, black ${minHeight});
+        max-height: ${props => props.theme.bannerHeight.lg};
+        mask-image: linear-gradient(to top, transparent, black ${props => props.theme.bannerHeight.sm});
     }
 
     &:before {
