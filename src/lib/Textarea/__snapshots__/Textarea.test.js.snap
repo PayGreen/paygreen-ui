@@ -17,6 +17,11 @@ exports[`renders without crashing 1`] = `
     placeholder="Your text…"
     theme={
       Object {
+        "bannerHeight": Object {
+          "lg": "700px",
+          "sm": "300px",
+          "xs": "180px",
+        },
         "blockHeader": Object {
           "lg": "210px",
           "md": "180px",
@@ -226,7 +231,12 @@ exports[`renders without crashing 1`] = `
           "white10": "#fafafa",
           "white20": "#f6f6f6",
         },
+        "wave": Object {
+          "double": "11vw",
+          "simple": "8vw",
+        },
         "zindex": Object {
+          "background": -1,
           "base": 0,
           "front": 5,
           "header": 110,

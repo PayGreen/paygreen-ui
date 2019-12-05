@@ -1,12 +1,14 @@
 import AutonomousInput from './AutonomousInput/AutonomousInput';
+import Banner from './Banner/Banner';
+import BannerImage from './BannerImage/BannerImage';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
+import Header from './Header/Header';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 import Input from './Input/Input';
-import Header from './Header/Header';
 import Link from './Link/Link';
 import Logo from './Logo/Logo';
 import Menu from './Menu/Menu';
@@ -110,18 +112,22 @@ import { WalletIcon } from './Icon/Icon';
 import { WheelsIcon } from './Icon/Icon';
 
 // theme
-import { ThemeDefault, ThemeDark } from '../theme'
-import { ThemeProvider as PGThemeProvider } from 'styled-components'
+import { ThemeDefault, ThemeDark } from '../theme';
+import { ThemeProvider as PGThemeProvider } from 'styled-components';
 
 export {
     ThemeDefault,
     ThemeDark,
     PGThemeProvider,
+
     AutonomousInput,
+    Banner,
+    BannerImage,
     Breadcrumb,
     Button,
     ButtonGroup,
     Card,
+    Header,
     IconLabel,
     Image,
     Input,
