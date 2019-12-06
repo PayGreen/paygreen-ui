@@ -16,12 +16,6 @@ class Select extends PureComponent {
         this.state = {
             value: props.value !== undefined ? props.value : '',
         };
-        
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(event) {
-        this.setState({value: event.target.value});
     }
 
     render() {
@@ -42,8 +36,8 @@ class Select extends PureComponent {
         if (this.props.status !== this.state.status) {
             animation = true;
             setTimeout(() => {
-                animation =  false;
-                this.setState({status: this.props.status});
+                animation = false;
+                this.setState({ status: this.props.status });
             }, 1);
         }
 
@@ -76,7 +70,6 @@ class Select extends PureComponent {
                         <select
                             {...rest}
                             value={this.state.value}
-                            onChange={this.handleChange}
                         >
                             {optionsHtml}
                         </select>
@@ -113,6 +106,7 @@ Select.defaultProps = {
     params: {
         shadow: false,
     },
+    onChange: undefined,
     status: formStatusDefault,
 };
 
