@@ -5,8 +5,8 @@ exports[`renders without crashing 1`] = `
   className="sc-bdVaJa fCiQLK"
 >
   Your title with 
-  <b>
+  <strong>
     an emphasis
-  </b>
+  </strong>
 </span>
 `;
