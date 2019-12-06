@@ -8,7 +8,7 @@ import TableCell from '../TableCell/TableCell';
 import TableRow from './TableRow';
 
 storiesOf('TableRow', module).addDecorator(withKnobs)
-.add('TableRow', () => (
+.add('Simple row', () => (
     <TableRow
         colorTheme={select('Color theme', {...{none: 'none'}, ...colorThemeOptions }, 'none')}
         isMain={false}
@@ -29,6 +29,31 @@ storiesOf('TableRow', module).addDecorator(withKnobs)
             <p>
                 9,90&nbsp;€<b>*</b>
             </p>
+        </TableCell>
+    </TableRow>
+))
+.add('Main row', () => (
+    <TableRow
+        isMain={true}
+    >
+        <TableCell>       
+            Table name
+        </TableCell>
+
+        <TableCell>
+            <span>
+                Price one
+            </span>
+
+            <i>Short description of this column (not <strong>too long</strong>).</i>
+        </TableCell>
+
+        <TableCell>
+            <span>
+                Price two
+            </span>
+
+            <i>Another short description.</i>
         </TableCell>
     </TableRow>
 ));

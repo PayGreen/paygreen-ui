@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import { rowColor } from './base';
+import { rowColor, mainRow } from './base';
 import { TableCellBase } from '../../TableCell/style';
 
 const TableRowBase = styled.div`
@@ -17,6 +17,7 @@ const TableRowBase = styled.div`
     }
 
     ${props => props.colorTheme !== 'none' ? rowColor : null};
+    ${props => props.isMain ? mainRow : null};
 `;
 
 export { TableRowBase };

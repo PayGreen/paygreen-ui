@@ -3,11 +3,13 @@ import { LinkBase } from '../../Link/style';
 
 const TableCellBase = styled.div`
     display: table-cell;
+    vertical-align: middle;
     padding: ${props => props.theme.space.sm} ${props => props.theme.space.md};
     color: ${props => props.theme.wab.grey60};
 
     .content {
         display: flex;
+        justify-content: center;
         align-items: center;
         min-height: 40px;
 
@@ -36,6 +38,12 @@ const TableCellBase = styled.div`
 
         ${LinkBase} {
             line-height: 1.5;
+        }
+    }
+
+    &:first-of-type {
+        .content {
+            justify-content: flex-start;
         }
     }
 `;
