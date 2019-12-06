@@ -8,6 +8,7 @@ const TableRowBase = styled.div`
 
     ${TableCellBase} {
         border-bottom: solid ${props => props.theme.line} ${props => transparentize(0.92, props.theme.wab.black00)};
+        border-radius: ${props => props.theme.radius.sm} ${props => props.theme.radius.sm} 0 0;
     }
 
     &:last-of-type {
