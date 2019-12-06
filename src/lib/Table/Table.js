@@ -11,7 +11,9 @@ class Table extends PureComponent {
         return <TableBase
             {...this.props}
         >
-            {this.props.children}
+            <div className="table">
+                {this.props.children}
+            </div>
         </TableBase>;
     }
 }

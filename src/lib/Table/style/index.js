@@ -5,8 +5,40 @@ import { TableRowBase } from '../../TableRow/style';
 import { TableCellBase } from '../../TableCell/style';
 
 const TableBase = styled.div`
-    display: table;
-    width: 100%;
+    position: relative;
+    overflow-x: auto;
+
+    @media (${props => props.theme.query.max.sm}) {
+        ${TableCellBase} {
+            font-size: 0.85em;
+        }
+    }
+
+    @media (${props => props.theme.query.max.md}) {
+        i,
+        img {
+            display: none;
+        }
+
+        ${TableRowBase} {
+            &:first-of-type {
+                ${TableCellBase} {
+                    &:not(:first-of-type) {
+                        vertical-align: bottom;
+
+                        .content {
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .table {
+        display: table;
+        width: 100%;
+    }
 
     strong {
         color: ${props => props.theme.color[props.colorTheme]['main']};
