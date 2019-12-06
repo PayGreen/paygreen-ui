@@ -11,18 +11,17 @@ storiesOf('TableRow', module).addDecorator(withKnobs)
 .add('Simple row', () => (
     <TableRow
         colorTheme={select('Color theme', {...{none: 'none'}, ...colorThemeOptions }, 'none')}
-        isMain={false}
     >
         <TableCell>
             <span>Sample text <i>(with more text)</i></span>
         </TableCell>
 
         <TableCell>
-            11,90&nbsp;€<b>*</b>
+            11,90&nbsp;€<strong>*</strong>
         </TableCell>
 
         <TableCell>
-            9,90&nbsp;€<b>*</b>
+            9,90&nbsp;€<strong>*</strong>
         </TableCell>
     </TableRow>
 ))

@@ -6,7 +6,7 @@ const rowColor = css`
     background-color: ${props => transparentize(0.95, props.theme.color[props.colorTheme]['main'])};
 
     ${TableCellBase} {
-        b {
+        strong {
             color: ${props => props.theme.color[props.colorTheme]['main']};
         }
     }

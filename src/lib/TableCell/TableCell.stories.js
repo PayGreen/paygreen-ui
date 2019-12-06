@@ -23,7 +23,7 @@ storiesOf('TableCell', module).addDecorator(withKnobs)
 .add('Cell with link', () => (
     <TableCell>
         <a href="#">
-            <Link underline={true}>
+            <Link>
                 Contact us
             </Link>
         </a>
