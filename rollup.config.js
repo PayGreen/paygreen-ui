@@ -2,7 +2,6 @@ import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import pkg from './package.json';
-import svg from 'rollup-plugin-svg'
 import { eslint } from "rollup-plugin-eslint";
 import peerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 import url from '@rollup/plugin-url';
@@ -37,12 +36,13 @@ export default {
     plugins: [
         peerDepsExternalPlugin(),
         eslint(),
-        svg(),
         babel({
             exclude: 'node_modules/**',
         }),
         resolve(),
         commonjs(),
-        url()
+        url({
+            exclude: 'style/**',
+        })
     ]
 }
