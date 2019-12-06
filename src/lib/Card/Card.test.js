@@ -11,7 +11,7 @@ it('renders without crashing', () => {
     const card = TestRenderer.create(
         <Card theme={ThemeDefault}>
             <Title theme={ThemeDefault}>
-                Content <b>sample</b>
+                Content <strong>sample</strong>
             </Title>
 
             <Text theme={ThemeDefault}>
