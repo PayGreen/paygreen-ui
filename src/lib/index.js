@@ -20,6 +20,9 @@ import MenuList from './MenuList/MenuList';
 import MenuPrimary from './MenuPrimary/MenuPrimary';
 import MenuSecondary from './MenuSecondary/MenuSecondary';
 import Select from './Select/Select';
+import Table from './Table/Table';
+import TableCell from './TableCell/TableCell';
+import TableRow from './TableRow/TableRow';
 import Text from './Text/Text';
 import Textarea from './Textarea/Textarea';
 import Title from './Title/Title';
@@ -143,6 +146,9 @@ export {
     MenuPrimary,
     MenuSecondary,
     Select,
+    Table,
+    TableCell,
+    TableRow,
     Text,
     Textarea,
     Title,
