@@ -4,6 +4,7 @@ import { LinkBase } from '../../Link/style';
 const TableCellBase = styled.div`
     display: table-cell;
     vertical-align: middle;
+    text-align: center;
     padding: ${props => props.theme.space.sm} ${props => props.theme.space.md};
     color: ${props => props.theme.wab.grey60};
 
@@ -42,6 +43,8 @@ const TableCellBase = styled.div`
     }
 
     &:first-of-type {
+        text-align: left;
+        
         .content {
             justify-content: flex-start;
         }
