@@ -5,6 +5,7 @@ import pkg from './package.json';
 import svg from 'rollup-plugin-svg'
 import { eslint } from "rollup-plugin-eslint";
 import peerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
+import url from '@rollup/plugin-url';
 
 export default {
     input: './src/lib/index.js',
@@ -42,5 +43,6 @@ export default {
         }),
         resolve(),
         commonjs(),
+        url()
     ]
 }
