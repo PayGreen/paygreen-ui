@@ -12,29 +12,24 @@ class Textarea extends PureComponent {
 
         this.state = {
             value: props.value !== undefined ? props.value : '',
+            charactersStatus: formStatusOptions.default
         };
-        
-        this.handleChange = this.handleChange.bind(this);
+
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
-    }
+        this.setState({ value: event.target.value });
+    }   
 
     characterCount(value) {
-        if (value !== undefined && !isNaN(value.length)) {
-            this.state.characters = value.length;
-        } else {
-            this.state.characters = 0;
-        }
-
+        const lengthCharacters = value.length || 0;
         // State = warning when characters reach the 90% of maxLength
-        if (this.state.characters > this.props.maxLength * 0.9) {
-            this.state.charactersStatus = formStatusOptions.warning;
-        } else if (this.state.characters >= this.props.minLength) {
-            this.state.charactersStatus = formStatusOptions.success;
+        if (lengthCharacters > this.props.maxLength * 0.9) {
+            this.setState({ charactersStatus: formStatusOptions.warning });
+        } else if (lengthCharacters >= this.props.minLength) {
+            this.setState({ charactersStatus: formStatusOptions.success });
         } else {
-            this.state.charactersStatus = formStatusOptions.default;
+            this.setState({ charactersStatus: formStatusOptions.default });
         }
     }
 
@@ -51,7 +46,7 @@ class Textarea extends PureComponent {
 
         const charactersCountBlock = <div>
             <span>
-                {this.state.characters}
+                {this.state.value ? this.state.value.length : 0}
             </span>&nbsp;/&nbsp;{this.props.maxLength} {counterlabel}
         </div>;
 
@@ -70,9 +65,12 @@ class Textarea extends PureComponent {
             <textarea
                 {...rest}
                 value={this.state.value}
-                onChange={this.handleChange}
+                onChange={(e) => { 
+                    this.handleChange(e); 
+                    this.props.onChange ? this.props.onChange(e) : null
+                    }}
             />
-            
+
             {params.counter && !this.props.disabled && !this.props.readOnly ?
                 charactersCountBlock : null}
         </TextareaBase>;
@@ -103,6 +101,8 @@ Textarea.defaultProps = {
     },
     counterlabel: 'characters',
     status: formStatusDefault,
+    onChange: undefined,
+
 };
 
 export default Textarea;

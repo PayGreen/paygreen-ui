@@ -15,22 +15,15 @@ class Input extends PureComponent {
         super(props);
 
         this.state = {
-            value: props.value !== undefined ? props.value : '',
             mask: '',
             status: props.status
         };
         
-        this.handleChange = this.handleChange.bind(this);
-
         if (this.props.mask) {
             this.state.mask = this.props.mask;
         } else if (this.props.type === 'tel') {
             this.state.mask = '+99 (0)9 99 99 99 99';
         }
-    }
-
-    handleChange(event) {
-        this.setState({value: event.target.value});
     }
 
     render() {
@@ -39,6 +32,7 @@ class Input extends PureComponent {
             status,
             width,
             label,
+            handleChange,
             ...rest
         } = this.props;
 
@@ -71,8 +65,6 @@ class Input extends PureComponent {
                         <InputMask 
                             {...rest}
                             mask={this.state.mask}
-                            value={this.state.value}
-                            onChange={this.handleChange}
                         />
 
                         <span></span>
@@ -104,6 +96,7 @@ Input.defaultProps = {
         shadow: false,
     },
     status: formStatusDefault,
+    onChange: undefined,
 };
 
 export default Input;
