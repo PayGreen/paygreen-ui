@@ -184,24 +184,6 @@ const inputWidthOptions = {
 
 const inputWidthDefault = inputWidthOptions.md;
 
-// Align
-const alignOptions = {
-    left: 'left',
-    center: 'center',
-    right: 'right'
-};
-
-const alignDefault = alignOptions.left;
-
-// Justify content
-const justifyContentOptions = {
-    left: 'flex-start',
-    center: 'center',
-    right: 'flex-end'
-};
-
-const justifyContentDefault = justifyContentOptions.left;
-
 // Card HTML tags
 const cardHtmlTagOptions = {
     div: 'div',
@@ -255,6 +237,8 @@ const formStatusOptions = {
 
 const formStatusDefault = formStatusOptions.default;
 
+// Gradient color types
+
 const gradientOptions = {
     none: 'none',
     brand: 'brand',
@@ -262,6 +246,84 @@ const gradientOptions = {
 };
 
 const gradientDefault = gradientOptions.none;
+
+// Grids types
+
+const displayOptions = {
+    flex: 'flex',
+    grid: 'grid',
+    column: 'column'
+};
+
+const displayDefault = displayOptions.flex;
+
+// Columns number
+
+const columnOptions = {
+    two: 2,
+    three: 3
+};
+
+const columnDefault = columnOptions.two;
+
+// Flex direction
+
+const flexDirectionOptions = {
+    row: 'row',
+    column: 'column'
+};
+
+const flexDirectionDefault = flexDirectionOptions.row;
+
+// Flex wrap
+
+const flexWrapOptions = {
+    wrap: 'wrap',
+    nowrap: 'nowrap'
+};
+
+const flexWrapDefault = flexWrapOptions.wrap;
+
+// Justify content
+
+const justifyContentOptions = {
+    left: 'flex-start',
+    center: 'center',
+    right: 'flex-end',
+    spaceBetween: 'space-between'
+};
+
+const justifyContentDefault = justifyContentOptions.left;
+
+// Justify items
+
+const justifyItemsOptions = {
+    stretch: 'stretch',
+    center: 'center',
+    start: 'start',
+    end: 'end'
+};
+
+const justifyItemsDefault = justifyItemsOptions.stretch;
+
+// Align items
+
+const alignItemsOptions = {
+    flexStart: 'flex-start',
+    center: 'center',
+    flexEnd: 'flex-end'
+};
+
+const alignItemsDefault = alignItemsOptions.flexStart;
+
+// Align
+const alignOptions = {
+    left: 'left',
+    center: 'center',
+    right: 'right'
+};
+
+const alignDefault = alignOptions.left;
 
 export {
     colorPalletOptions,
@@ -302,10 +364,6 @@ export {
     imageTypeDefault,
     inputWidthOptions,
     inputWidthDefault,
-    alignOptions,
-    alignDefault,
-    justifyContentOptions,
-    justifyContentDefault,
     cardHtmlTagOptions,
     cardHtmlTagDefault,
     titleHtmlTagOptions,
@@ -318,4 +376,20 @@ export {
     formStatusDefault,
     gradientOptions,
     gradientDefault,
+    displayOptions,
+    displayDefault,
+    columnOptions,
+    columnDefault,
+    flexDirectionOptions,
+    flexDirectionDefault,
+    flexWrapOptions,
+    flexWrapDefault,
+    justifyContentOptions,
+    justifyContentDefault,
+    justifyItemsOptions,
+    justifyItemsDefault,
+    alignItemsOptions,
+    alignItemsDefault,
+    alignOptions,
+    alignDefault,
 };

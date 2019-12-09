@@ -6,6 +6,7 @@ import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
 import Divider from './Divider/Divider';
+import Grid from './Grid/Grid';
 import Header from './Header/Header';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
@@ -132,6 +133,7 @@ export {
     ButtonGroup,
     Card,
     Divider,
+    Grid,
     Header,
     IconLabel,
     Image,

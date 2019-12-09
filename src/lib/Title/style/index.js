@@ -17,6 +17,10 @@ const TitleBase = styled.span`
     text-align: ${props => props.textAlign};
     font-size: ${props => props.theme.font.size[props.textSize]};
     font-weight: ${props => props.theme.font.weight.bold};
+
+    strong {
+        font-weight: ${props => props.theme.font.weight.bold};
+    }
 `;
 
 export { TitleBase };

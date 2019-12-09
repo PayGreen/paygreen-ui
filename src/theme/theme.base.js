@@ -110,6 +110,14 @@ export const ThemeBase = {
     grid: {
         header: '45px',
     },
+    blockShift: {
+        none: '0',
+        xs: '64px',
+        sm: '128px',
+        md: '256px',
+        lg: '320px',
+        xl: '384px',
+    },
     blockSpace: {
         none: '0',
         xs: '16px',
