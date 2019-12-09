@@ -1,5 +1,43 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
+import { shiftSize } from './constants';
+
+const thirdChildShiftStyle = css`
+    &:nth-child(3) {
+        margin-top: ${props => shiftSize.double(props)};
+    }
+`;
+
+const childrenShiftStyle = css`
+    & > * {
+        &:nth-child(2) {
+            margin-top: ${props => shiftSize.simple(props)};
+        }
+
+        ${props => props.columns > 2 ? thirdChildShiftStyle : null};
+    }
+`;
+
+const reverseChildrenShift = {
+    2: css`
+        & > * {
+            &:first-child {
+                margin-top: ${props => shiftSize.simple(props)};
+            }
+        }
+    `,
+    3: css`
+        & > * {
+            &:first-child {
+                margin-top: ${props => shiftSize.double(props)};
+            }
+
+            &:nth-child(2) {
+                margin-top: ${props => shiftSize.simple(props)};
+            }
+        }
+    `
+};
 
 const displayStyle = {
     flex: css`
@@ -16,6 +54,8 @@ const displayStyle = {
             flex-wrap: ${props => props.flexWrap};
             justify-content: ${props => props.justifyContent};
             align-items: ${props => props.alignItems};
+
+            ${props => props.reverseShift ? reverseChildrenShift[props.columns] : childrenShiftStyle};
         }
     `,
     grid: css`
@@ -26,6 +66,8 @@ const displayStyle = {
         @media (${props => props.theme.query.min.md}) {
             grid-template-columns: repeat(${props => props.columns}, 1fr);
             justify-items: ${props => props.justifyItems};
+
+            ${props => props.reverseShift ? reverseChildrenShift[props.columns] : childrenShiftStyle};
         }
     `,
     column: css`
@@ -51,7 +93,7 @@ const displayStyle = {
             columns: ${props => props.columns};
         }
     `
-}
+};
 
 export {
     displayStyle

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import {
     displayOptions,
     displayDefault,
@@ -17,8 +17,8 @@ import {
     alignItemsOptions,
     alignItemsDefault,
     spaceOptions,
-
-    blockSpaceOptions
+    blockSpaceOptions,
+    blockSpaceDefault
 } from '../../shared/constants';
 import Card from '../Card/Card';
 import Text from '../Text/Text';
@@ -36,6 +36,9 @@ storiesOf('Grid', module).addDecorator(withKnobs)
         alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
         gap={select('Gap', spaceOptions, spaceOptions.xs)}
         padding={select('Padding', spaceOptions, spaceOptions.xs)}
+        childrenShift={select('Children shift', blockSpaceOptions, blockSpaceDefault)}
+        negativeShift={boolean('Negative shift', false)}
+        reverseShift={boolean('Reverse shift', false)}
     >
         <Card>
             <Text
