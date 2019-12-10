@@ -5,6 +5,9 @@ import {
 } from './constants';
 
 const enabled = css`
+    button:hover &,
+    button:active &,
+    button:focus &,
     a:hover &,
     a:active &,
     a:focus & {
