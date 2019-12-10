@@ -308,7 +308,7 @@ const justifyItemsOptions = {
     end: 'end'
 };
 
-const justifyItemsDefault = justifyItemsOptions.stretch;
+const justifyItemsDefault = justifyItemsOptions.center;
 
 // Align items
 
