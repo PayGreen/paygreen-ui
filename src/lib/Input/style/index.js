@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { responsiveSpaces } from '../../../shared/spaces';
 import {
     label,
     field,
@@ -8,6 +9,8 @@ import {
 } from './base';
 
 const InputBase = styled.div`
+    ${responsiveSpaces('margin')};
+
     max-width: ${props => props.inputType === 'tel' ?
         props.theme.form.inputWidth.sm :
         props.theme.form.inputWidth[props.inputWidth]

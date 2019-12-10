@@ -6,7 +6,8 @@ import {
     formStatusOptions,
     formStatusDefault,
     inputWidthOptions,
-    inputWidthDefault
+    inputWidthDefault,
+    blockSpaceOptions
 } from '../../shared/constants';
 import { InputBase } from './style';
 
@@ -33,6 +34,8 @@ class Input extends PureComponent {
             width,
             label,
             handleChange,
+            marginTop,
+            marginBottom,
             ...rest
         } = this.props;
 
@@ -57,6 +60,8 @@ class Input extends PureComponent {
                         inputWidth={width}
                         inputReadOnly={this.props.readOnly}
                         inputDisabled={this.props.disabled}
+                        marginTop={marginTop}
+                        marginBottom={marginBottom}
                     >
                         <label htmlFor={this.props.id}>
                             {label}
@@ -87,6 +92,8 @@ Input.propTypes = {
     }),
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
     mask: PropTypes.string,
+    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
 };
 
 Input.defaultProps = {
@@ -97,6 +104,8 @@ Input.defaultProps = {
     },
     status: formStatusDefault,
     onChange: undefined,
+    marginTop: blockSpaceOptions.md,
+    marginBottom: blockSpaceOptions.md,
 };
 
 export default Input;

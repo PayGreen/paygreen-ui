@@ -4,10 +4,11 @@ import {
     formStatusOptions,
     formStatusDefault,
     inputWidthOptions,
-    inputWidthDefault
+    inputWidthDefault,
+    blockSpaceOptions,
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
+import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 
 storiesOf('Input', module)
     .addDecorator(withKnobs)
@@ -23,6 +24,8 @@ storiesOf('Input', module)
             params={{
                 shadow: boolean('With shadow', false),
             }}
+            marginTop={select('Margin top', blockSpaceOptions, blockSpaceOptions.md)}
+            marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceOptions.md)}
         />
     ), {
         notes: 'Same as input email, url and number (this is the default style).',
@@ -39,6 +42,8 @@ storiesOf('Input', module)
             params={{
                 shadow: boolean('With shadow', false),
             }}
+            marginTop={select('Margin top', blockSpaceOptions, blockSpaceOptions.md)}
+            marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceOptions.md)}
         />
     ), {
         notes: 'Style for input tel. It is smaller than default input because its value is always short. Input tel comes with react-input-mask library.',
