@@ -6,7 +6,6 @@ import {
     buttonSizeDefault,
     buttonTemplateOptions,
     alignOptions,
-    alignDefault,
     blockSpaceOptions,
     blockSpaceDefault
 } from '../../shared/constants';
@@ -17,7 +16,7 @@ storiesOf('ButtonGroup', module)
     .addDecorator(withKnobs)
     .add('ButtonGroup', () => (
         <ButtonGroup
-            buttonAlign={radios('Buttons align', alignOptions, alignDefault)}
+            buttonAlign={radios('Buttons align', alignOptions, alignOptions.center)}
             resetMargin={boolean('Compensate buttons margin', false)}
             marginLateral={select('Lateral margin', blockSpaceOptions, blockSpaceDefault)}
             marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}

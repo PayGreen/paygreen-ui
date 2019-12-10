@@ -69,7 +69,6 @@ storiesOf('Card', module)
             </Text>
 
             <ButtonGroup
-                buttonAlign={alignOptions.center}
                 marginTop={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
                 marginBottom={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
                 paddingBlock={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
@@ -116,7 +115,6 @@ storiesOf('Card', module)
             </Text>
 
             <ButtonGroup
-                buttonAlign={alignOptions.center}
                 marginTop={blockSpaceOptions.sm}
                 marginBottom={blockSpaceOptions.sm}
                 paddingBlock={blockSpaceOptions.sm}
@@ -164,7 +162,6 @@ storiesOf('Card', module)
                 </Text>
 
                 <ButtonGroup
-                    buttonAlign={alignOptions.center}
                     marginTop={blockSpaceOptions.sm}
                     marginBottom={blockSpaceOptions.sm}
                     paddingBlock={blockSpaceOptions.sm}
@@ -210,7 +207,6 @@ storiesOf('Card', module)
             </Text>
 
             <ButtonGroup
-                buttonAlign={alignOptions.center}
                 marginTop={blockSpaceOptions.sm}
                 marginBottom={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
                 paddingBlock={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
