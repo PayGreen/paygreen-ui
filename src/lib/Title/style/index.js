@@ -21,6 +21,11 @@ const TitleBase = styled.span`
     strong {
         font-weight: ${props => props.theme.font.weight.bold};
     }
+
+    /* TODO: remove this temporary fix for p inside titles */
+    p {
+        margin: 0;
+    }
 `;
 
 export { TitleBase };
