@@ -26,7 +26,6 @@ storiesOf('Image', module)
             blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
             blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
             radiusSize={radios('Border radius', radiusOptions, radiusOptions.none)}
-            shadow={select('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
         >
             <img src={photoFile} alt="picture" />
         </Image>
@@ -37,6 +36,7 @@ storiesOf('Image', module)
         <Image
             blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
             blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
+            shadow={select('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
         >
             <img src={drawFile} alt="drawing" />
         </Image>
