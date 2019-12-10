@@ -31,6 +31,7 @@ Image.propTypes = {
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     bottomStyle: PropTypes.oneOf(Object.values(maskOptions)),
     shadow: PropTypes.oneOf(Object.values(shadowStyleOptions)),
+    hideOnMobile: PropTypes.bool
 };
 
 Image.defaultProps = {
@@ -41,7 +42,8 @@ Image.defaultProps = {
     blockHeight: imageSizeDefault,
     radiusSize: radiusOptions.none,
     bottomStyle: maskDefault,
-    shadow: shadowStyleOptions.none
+    shadow: shadowStyleOptions.none,
+    hideOnMobile: false
 };
 
 export default Image;

@@ -3,12 +3,14 @@ import { transparentize } from 'polished';
 import {
     changeColor,
     bottomStyle,
-    imageStyle
+    imageStyle,
+    hideOnMobile
 } from './base';
 
 const ImageBase = styled.figure`
     ${props => props.colorChange ? changeColor : null};
     ${props => bottomStyle[props.bottomStyle]};
+    ${props => props.hideOnMobile ? hideOnMobile : null};
     margin: 0;
     max-width: 100%;
     max-height: 100%;

@@ -44,8 +44,15 @@ const imageStyle = {
     `,
 };
 
+const hideOnMobile = css`
+    @media (${props => props.theme.query.max.md}) {
+        display: none;
+    }
+`;
+
 export {
     changeColor,
     bottomStyle,
-    imageStyle
+    imageStyle,
+    hideOnMobile
 };

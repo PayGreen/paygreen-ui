@@ -37,6 +37,7 @@ storiesOf('Image', module)
             blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
             blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
             shadow={select('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
+            hideOnMobile={boolean('Hide on mobile', false)}
         >
             <img src={drawFile} alt="drawing" />
         </Image>
