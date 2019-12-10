@@ -4,7 +4,7 @@ import { responsiveSpaces } from '../../../shared/spaces';
 import { withWave, noWave } from './base';
 
 const DividerBase = styled.div`
-    ${responsiveSpaces('margin')};
+    ${responsiveSpaces('margin', 0, 2, 2)};
 
     span {
         display: block;
