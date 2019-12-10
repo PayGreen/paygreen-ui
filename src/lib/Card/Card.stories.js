@@ -23,7 +23,7 @@ import {
 
     colorNumberOptions,
     fontSizeOptions,
-    alignOptions,
+    maskOptions,
     imageTypeOptions,
     blockSpaceOptions,
     blockSpaceDefault,
@@ -185,14 +185,14 @@ storiesOf('Card', module)
         <Card
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
         >
-            <Image imageType={imageTypeOptions.cover}>
+            <Image imageType={imageTypeOptions.cover} bottomStyle={maskOptions.waveLeft}>
                 <img src={imageFile} alt="picture" />
             </Image>
 
             <Title
                 colorNumber={colorNumberOptions.two}
                 marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
-                marginTop={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                marginTop={blockSpaceOptions.sm}
                 textSize={fontSizeOptions.md}
             >
                 Title sample

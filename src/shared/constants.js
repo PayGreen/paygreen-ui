@@ -191,6 +191,7 @@ const inputWidthDefault = inputWidthOptions.md;
 const cardHtmlTagOptions = {
     div: 'div',
     article: 'article',
+    section: 'section',
     aside: 'aside'
 };
 

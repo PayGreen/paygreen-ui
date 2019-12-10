@@ -84,7 +84,8 @@ const backgroundStyle = {
 
 const containerStyle = css`
     max-width: ${props => props.theme.blockWidth[props.blockWidth]};
-    padding: 0.1px;
+    padding: .1px 0;
+    position: relative;
 `;
 
 const blockStyle = css`

@@ -130,7 +130,7 @@ export const ThemeBase = {
         sm: '400px',
         md: '560px',
         lg: '640px',
-        xl: '760px',
+        xl: '800px',
     },
     blockHeader: {
         sm: '140px',
