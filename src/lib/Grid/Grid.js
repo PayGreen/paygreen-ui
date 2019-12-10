@@ -55,6 +55,7 @@ Grid.defaultProps = {
     alignItems: alignItemsDefault,
     gap: spaceOptions.xs,
     padding: spaceOptions.xs,
+    childrenShift: blockSpaceOptions.none,
     negativeShift: false,
     reverseShift: false,
 };

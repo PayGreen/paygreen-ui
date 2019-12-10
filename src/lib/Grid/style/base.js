@@ -1,5 +1,8 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
+import {
+    blockSpaceOptions
+} from '../../../shared/constants';
 import { shiftSize } from './constants';
 
 const thirdChildShiftStyle = css`
@@ -39,6 +42,10 @@ const reverseChildrenShift = {
     `
 };
 
+const shiftStyle = css`
+    ${props => props.reverseShift ? reverseChildrenShift[props.columns] : childrenShiftStyle};
+`;
+
 const displayStyle = {
     flex: css`
         display: flex;
@@ -55,7 +62,7 @@ const displayStyle = {
             justify-content: ${props => props.justifyContent};
             align-items: ${props => props.alignItems};
 
-            ${props => props.reverseShift ? reverseChildrenShift[props.columns] : childrenShiftStyle};
+            ${props => props.childrenShift !== blockSpaceOptions.none ? shiftStyle : null};
         }
     `,
     grid: css`
@@ -67,7 +74,7 @@ const displayStyle = {
             grid-template-columns: repeat(${props => props.columns}, 1fr);
             justify-items: ${props => props.justifyItems};
 
-            ${props => props.reverseShift ? reverseChildrenShift[props.columns] : childrenShiftStyle};
+            ${props => props.childrenShift !== blockSpaceOptions.none ? shiftStyle : null};
         }
     `,
     column: css`
