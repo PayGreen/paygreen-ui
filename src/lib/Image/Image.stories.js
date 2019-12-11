@@ -10,7 +10,10 @@ import {
     imageTypeOptions,
     imageSizeOptions,
     radiusOptions,
-    shadowStyleOptions
+    shadowStyleOptions,
+    justifyContentOptions,
+    alignItemsOptions,
+    alignItemsDefault,
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
@@ -26,7 +29,6 @@ storiesOf('Image', module)
             blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
             blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
             radiusSize={radios('Border radius', radiusOptions, radiusOptions.none)}
-            shadow={select('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
         >
             <img src={photoFile} alt="picture" />
         </Image>
@@ -37,6 +39,10 @@ storiesOf('Image', module)
         <Image
             blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
             blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
+            shadow={select('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
+            hideOnMobile={boolean('Hide on mobile', false)}
+            justifyContent={select('Justify content', justifyContentOptions, justifyContentOptions.center)}
+            alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
         >
             <img src={drawFile} alt="drawing" />
         </Image>

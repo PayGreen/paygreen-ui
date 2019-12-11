@@ -10,7 +10,10 @@ import {
     imageSizeOptions,
     imageSizeDefault,
     radiusOptions,
-    shadowStyleOptions
+    shadowStyleOptions,
+    justifyContentOptions,
+    alignItemsOptions,
+    alignItemsDefault,
 } from '../../shared/constants';
 import { ImageBase } from './style';
 
@@ -31,6 +34,9 @@ Image.propTypes = {
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     bottomStyle: PropTypes.oneOf(Object.values(maskOptions)),
     shadow: PropTypes.oneOf(Object.values(shadowStyleOptions)),
+    hideOnMobile: PropTypes.bool,
+    justifyContent: PropTypes.oneOf(Object.values(justifyContentOptions)),
+    alignItems: PropTypes.oneOf(Object.values(alignItemsOptions)),
 };
 
 Image.defaultProps = {
@@ -41,7 +47,10 @@ Image.defaultProps = {
     blockHeight: imageSizeDefault,
     radiusSize: radiusOptions.none,
     bottomStyle: maskDefault,
-    shadow: shadowStyleOptions.none
+    shadow: shadowStyleOptions.none,
+    hideOnMobile: false,
+    justifyContent: justifyContentOptions.center,
+    alignItems: alignItemsDefault,
 };
 
 export default Image;

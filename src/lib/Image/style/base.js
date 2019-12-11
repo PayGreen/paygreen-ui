@@ -14,7 +14,7 @@ const changeColor = css`
 const maskImageStyle = css`
     mask-size: 100%;
     mask-repeat: no-repeat;
-    mask-position: bottom;
+    mask-position: center 101%;
 `;
 
 const bottomStyle = {
@@ -44,8 +44,15 @@ const imageStyle = {
     `,
 };
 
+const hideOnMobile = css`
+    @media (${props => props.theme.query.max.md}) {
+        display: none;
+    }
+`;
+
 export {
     changeColor,
     bottomStyle,
-    imageStyle
+    imageStyle,
+    hideOnMobile
 };

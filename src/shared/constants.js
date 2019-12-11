@@ -35,6 +35,9 @@ const colorThemeDefault = colorThemeOptions.primary;
 
 // Grey shades
 const greyOptions = {
+    white00: 'white00',
+    white10: 'white10',
+    white20: 'white20',
     grey10: 'grey10',
     grey20: 'grey20',
     grey30: 'grey30',
@@ -188,6 +191,7 @@ const inputWidthDefault = inputWidthOptions.md;
 const cardHtmlTagOptions = {
     div: 'div',
     article: 'article',
+    section: 'section',
     aside: 'aside'
 };
 
@@ -304,7 +308,7 @@ const justifyItemsOptions = {
     end: 'end'
 };
 
-const justifyItemsDefault = justifyItemsOptions.stretch;
+const justifyItemsDefault = justifyItemsOptions.center;
 
 // Align items
 

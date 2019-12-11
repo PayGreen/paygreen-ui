@@ -19,7 +19,7 @@ import {
     spaceOptions,
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, radios, select, boolean } from '@storybook/addon-knobs';
 
 storiesOf('Text', module)
     .addDecorator(withKnobs)
@@ -30,6 +30,8 @@ storiesOf('Text', module)
             mainColor={select('Main color', greyOptions, greyOptions.grey60)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
+            underline={boolean('Underline', false)}
+            paddingBottom={blockSpaceOptions.sm}
 
             marginLateral={select('Block\'s lateral margins', blockSpaceOptions, blockSpaceDefault)}
             marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}
@@ -48,6 +50,8 @@ storiesOf('Text', module)
             mainColor={select('Main color', greyOptions, greyOptions.grey60)}
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
+            underline={boolean('Underline', false)}
+            paddingBottom={blockSpaceOptions.sm}
 
             marginLateral={select('Block\'s lateral margins', blockSpaceOptions, blockSpaceDefault)}
             marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}

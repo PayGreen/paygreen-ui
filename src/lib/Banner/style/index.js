@@ -7,7 +7,7 @@ const BannerBase = styled.div`
     min-height: ${props => props.theme.bannerHeight.xs};
     margin-top: ${props => props.topStyle !== waveOptions.none ? props.theme.wave.double : 0};
     margin-bottom: ${props => props.bottomStyle !== waveOptions.none ? props.theme.wave.double : 0};
-    padding: .1px;
+    padding: .1px 0;
     background-image: linear-gradient(
         ${props => color.first[props.gradient]},
         ${props => color.second[props.gradient]}

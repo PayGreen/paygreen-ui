@@ -4,10 +4,11 @@ import {
     formStatusOptions,
     formStatusDefault,
     inputWidthOptions,
-    inputWidthDefault
+    inputWidthDefault,
+    blockSpaceOptions
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
+import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 
 const options = [
     {
@@ -43,6 +44,8 @@ storiesOf('Select', module)
                 shadow: boolean('With shadow', false),
             }}
             width={radios('Width', inputWidthOptions, inputWidthDefault)}
+            marginTop={select('Margin top', blockSpaceOptions, blockSpaceOptions.md)}
+            marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceOptions.md)}
         />
     ), {
         notes: 'You can change select with with "width" props (could be sm, md or lg).',

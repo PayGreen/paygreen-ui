@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
     formStatusOptions,
     formStatusDefault,
+    blockSpaceOptions
 } from '../../shared/constants';
 import { TextareaBase } from './style';
 
@@ -39,6 +40,8 @@ class Textarea extends PureComponent {
             status,
             label,
             counterlabel,
+            marginTop,
+            marginBottom,
             ...rest
         } = this.props;
 
@@ -57,6 +60,8 @@ class Textarea extends PureComponent {
             state={this.state}
             inputDisabled={this.props.disabled}
             inputReadOnly={this.props.readOnly}
+            marginTop={marginTop}
+            marginBottom={marginBottom}
         >
             <label htmlFor={this.props.id}>
                 {this.props.label}
@@ -90,6 +95,8 @@ Textarea.propTypes = {
     }),
     counterlabel: PropTypes.string,
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
+    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
 };
 
 Textarea.defaultProps = {
@@ -102,7 +109,8 @@ Textarea.defaultProps = {
     counterlabel: 'characters',
     status: formStatusDefault,
     onChange: undefined,
-
+    marginTop: blockSpaceOptions.md,
+    marginBottom: blockSpaceOptions.md,
 };
 
 export default Textarea;

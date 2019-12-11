@@ -39,6 +39,10 @@ const BreadcrumbBase = styled.ul`
                 color: ${props => textColor.default[props.colorType]};
             }
         }
+
+        .icon {
+            opacity: .8;
+        }
     }
 `;
 
