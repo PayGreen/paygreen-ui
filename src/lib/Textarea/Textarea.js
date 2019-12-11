@@ -19,18 +19,6 @@ class Textarea extends PureComponent {
 
     handleChange(event) {
         this.setState({ value: event.target.value });
-    }   
-
-    characterCount(value) {
-        const lengthCharacters = value.length || 0;
-        // State = warning when characters reach the 90% of maxLength
-        if (lengthCharacters > this.props.maxLength * 0.9) {
-            this.setState({ charactersStatus: formStatusOptions.warning });
-        } else if (lengthCharacters >= this.props.minLength) {
-            this.setState({ charactersStatus: formStatusOptions.success });
-        } else {
-            this.setState({ charactersStatus: formStatusOptions.default });
-        }
     }
 
     render() {
@@ -42,7 +30,13 @@ class Textarea extends PureComponent {
             ...rest
         } = this.props;
 
-        this.characterCount(this.state.value);
+        const lengthCharacters = this.state.value.length || 0;
+        let charactersStatus = formStatusOptions.default;
+        if (lengthCharacters > this.props.maxLength * 0.9) {
+            charactersStatus = formStatusOptions.warning;
+        } else if (lengthCharacters >= this.props.minLength) {
+            charactersStatus = formStatusOptions.success;
+        }
 
         const charactersCountBlock = <div>
             <span>
@@ -54,7 +48,7 @@ class Textarea extends PureComponent {
             theme={this.props.theme} // not necessary, only needed for tests
             params={params}
             status={status}
-            state={this.state}
+            charactersStatus={charactersStatus}
             inputDisabled={this.props.disabled}
             inputReadOnly={this.props.readOnly}
         >
@@ -65,10 +59,10 @@ class Textarea extends PureComponent {
             <textarea
                 {...rest}
                 value={this.state.value}
-                onChange={(e) => { 
-                    this.handleChange(e); 
+                onChange={(e) => {
+                    this.handleChange(e);
                     this.props.onChange ? this.props.onChange(e) : null
-                    }}
+                }}
             />
 
             {params.counter && !this.props.disabled && !this.props.readOnly ?

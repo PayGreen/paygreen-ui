@@ -14,9 +14,10 @@ class Select extends PureComponent {
         super(props);
 
         this.state = {
-            value: props.value !== undefined ? props.value : '',
+            status: ''
         };
     }
+
 
     render() {
         const optionsHtml = this.props.options.map((option, index) =>
@@ -50,7 +51,7 @@ class Select extends PureComponent {
             readOnly,
             ...rest
         } = this.props;
-
+        
         return <Transition in={animation} timeout={900}>
             {(keyframe) => {
                 return (
@@ -67,10 +68,7 @@ class Select extends PureComponent {
                             {label}
                         </label>
 
-                        <select
-                            {...rest}
-                            value={this.state.value}
-                        >
+                        <select {...rest}>
                             {optionsHtml}
                         </select>
 
