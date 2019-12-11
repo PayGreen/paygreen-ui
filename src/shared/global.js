@@ -39,4 +39,12 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
         outline: none;
     }
+
+    button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        outline: none;
+        cursor: pointer;
+    }
 `;

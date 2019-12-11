@@ -11,7 +11,6 @@ import {
     flexWrapOptions,
     flexWrapDefault,
     justifyContentOptions,
-    justifyContentDefault,
     justifyItemsOptions,
     justifyItemsDefault,
     alignItemsOptions,
@@ -31,11 +30,9 @@ storiesOf('Grid', module).addDecorator(withKnobs)
         columns={select('Column number', columnOptions, columnDefault)}
         flexDirection={select('Flex direction', flexDirectionOptions, flexDirectionDefault)}
         flexWrap={select('Flex wrap', flexWrapOptions, flexWrapDefault)}
-        justifyContent={select('Justify content', justifyContentOptions, justifyContentDefault)}
+        justifyContent={select('Justify content', justifyContentOptions, justifyContentOptions.spaceBetween)}
         justifyItems={select('Justify items', justifyItemsOptions, justifyItemsDefault)}
         alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
-        gap={select('Gap', spaceOptions, spaceOptions.xs)}
-        padding={select('Padding', spaceOptions, spaceOptions.xs)}
         childrenShift={select('Children shift', blockSpaceOptions, blockSpaceDefault)}
         negativeShift={boolean('Negative shift', false)}
         reverseShift={boolean('Reverse shift', false)}

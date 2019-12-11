@@ -29,7 +29,7 @@ class Breadcrumb extends PureComponent {
             marginLeft={spaceOptions.xs}
             marginRight={spaceOptions.sm}
             colorPallet={colorPalletOptions.wab}
-            colorWab={greyOptions.grey30}
+            colorWab={this.props.colorType === colorTypeOptions.reverse ? greyOptions.white00 : greyOptions.grey30}
         />;
 
         const items = this.props.elements.map((element, index) =>

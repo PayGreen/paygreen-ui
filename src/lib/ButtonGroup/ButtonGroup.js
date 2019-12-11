@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
     alignOptions,
-    alignDefault,
     blockSpaceOptions,
     blockSpaceDefault,
 } from '../../shared/constants';
@@ -27,7 +26,7 @@ ButtonGroup.propTypes = {
 };
 
 ButtonGroup.defaultProps = {
-    buttonAlign: alignDefault,
+    buttonAlign: alignOptions.center,
     resetMargin: true,
     marginLateral: blockSpaceDefault,
     marginTop: blockSpaceDefault,

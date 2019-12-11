@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { responsiveSpaces } from '../../../shared/spaces';
 import { formStatusOptions } from '../../../shared/constants';
 import { label } from '../../Input/style/base';
 import {
@@ -8,6 +9,7 @@ import {
 } from './base';
 
 const TextareaBase = styled.div`
+    ${responsiveSpaces('margin')};
     max-width: ${props => props.theme.form.inputWidth.lg};
 
     ${props => props.params.shadow ? withShadow : null};

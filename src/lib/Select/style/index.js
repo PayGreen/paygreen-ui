@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { responsiveSpaces } from '../../../shared/spaces';
 import {
     label,
     field,
@@ -8,6 +9,7 @@ import {
 } from '../../Input/style/base';
 
 const SelectBase = styled.div`
+    ${responsiveSpaces('margin')};
     ${props => props.params.shadow ? withShadow : null};
     max-width: ${props => props.theme.form.inputWidth[props.inputWidth]};
 

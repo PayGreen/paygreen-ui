@@ -10,6 +10,10 @@ const thirdChildShiftStyle = css`
 
 const childrenShiftStyle = css`
     & > * {
+        &:first-child {
+            margin-top: 0;
+        }
+
         &:nth-child(2) {
             margin-top: ${props => shiftSize.simple(props)};
         }
@@ -24,6 +28,10 @@ const reverseChildrenShift = {
             &:first-child {
                 margin-top: ${props => shiftSize.simple(props)};
             }
+
+            &:nth-child(2) {
+                margin-top: 0;
+            }
         }
     `,
     3: css`
@@ -35,66 +43,50 @@ const reverseChildrenShift = {
             &:nth-child(2) {
                 margin-top: ${props => shiftSize.simple(props)};
             }
+
+            &:nth-child(3) {
+                margin-top: 0;
+            }
         }
     `
 };
 
+const shiftStyle = css`
+    ${props => props.reverseShift ? reverseChildrenShift[props.columns] : childrenShiftStyle};
+`;
+
 const displayStyle = {
     flex: css`
         display: flex;
-        flex-direction: column;
-        padding: ${props => math(props.theme.space[props.padding] + '-' + props.theme.space[props.gap] + '/2')};
-
-        & > * {
-            margin: ${props => math(props.theme.space[props.gap] + '/2')};
-        }
-
-        @media (${props => props.theme.query.min.md}) {
-            flex-direction: ${props => props.flexDirection};
-            flex-wrap: ${props => props.flexWrap};
-            justify-content: ${props => props.justifyContent};
-            align-items: ${props => props.alignItems};
-
-            ${props => props.reverseShift ? reverseChildrenShift[props.columns] : childrenShiftStyle};
-        }
+        flex-direction: ${props => props.flexDirection};
+        flex-wrap: ${props => props.flexWrap};
+        justify-content: ${props => props.justifyContent};
+        align-items: ${props => props.alignItems};
     `,
     grid: css`
         display: grid;
-        gap: ${props => props.theme.space[props.gap]};
-        padding: ${props => props.theme.space[props.padding]};
-
-        @media (${props => props.theme.query.min.md}) {
-            grid-template-columns: repeat(${props => props.columns}, 1fr);
-            justify-items: ${props => props.justifyItems};
-
-            ${props => props.reverseShift ? reverseChildrenShift[props.columns] : childrenShiftStyle};
-        }
+        grid-template-columns: repeat(${props => props.columns}, 1fr);
+        justify-items: ${props => props.justifyItems};
+        align-items: ${props => props.alignItems};
     `,
     column: css`
-        columns: 1;
-        gap: ${props => props.theme.space[props.gap]};
-        padding: ${props => props.theme.space[props.padding]};
+        width: fit-content;
+        columns: ${props => props.columns};
+        gap: 0;
+        padding-top: ${props => props.theme.space.lg};
+        padding-bottom: ${props => props.theme.space.lg};
 
         & > * {
+            margin-top: 0;
+            margin-bottom: ${props => math(props.theme.space.lg + '*2')};
             break-inside: avoid-column;
-            margin-top: ${props => props.theme.space[props.gap]};
-            margin-bottom: ${props => props.theme.space[props.gap]};
-
-            &:first-child {
-                margin-top: 0;
-            }
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        @media (${props => props.theme.query.min.md}) {
-            columns: ${props => props.columns};
+            /* fix for shadow inside columns */
+            transform: translateZ(0);
         }
     `
 };
 
 export {
-    displayStyle
+    shiftStyle,
+    displayStyle,
 };

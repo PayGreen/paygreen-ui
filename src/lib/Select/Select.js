@@ -5,7 +5,8 @@ import {
     formStatusOptions,
     formStatusDefault,
     inputWidthOptions,
-    inputWidthDefault
+    inputWidthDefault,
+    blockSpaceOptions
 } from '../../shared/constants';
 import { SelectBase } from './style';
 
@@ -49,6 +50,8 @@ class Select extends PureComponent {
             width,
             label,
             readOnly,
+            marginTop,
+            marginBottom,
             ...rest
         } = this.props;
         
@@ -63,6 +66,8 @@ class Select extends PureComponent {
                         inputWidth={width}
                         inputReadOnly={readOnly}
                         inputDisabled={this.props.disabled}
+                        marginTop={marginTop}
+                        marginBottom={marginBottom}
                     >
                         <label htmlFor={this.props.id}>
                             {label}
@@ -97,6 +102,8 @@ Select.propTypes = {
         shadow: PropTypes.bool,
     }),
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
+    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
 };
 
 Select.defaultProps = {
@@ -106,6 +113,8 @@ Select.defaultProps = {
     },
     onChange: undefined,
     status: formStatusDefault,
+    marginTop: blockSpaceOptions.md,
+    marginBottom: blockSpaceOptions.md,
 };
 
 export default Select;
