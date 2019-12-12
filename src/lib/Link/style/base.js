@@ -5,6 +5,8 @@ import { colors } from './constants';
 const underlineStyle = css`
     display: inline-block;
     position: relative;
+    /* Display hover style inside containers with background */
+    z-index: 0;
 
     &::after {
         content: '';
