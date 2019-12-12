@@ -11,6 +11,7 @@ const LogoBase = styled.span`
     display: flex;
     flex-direction: column;
     transition: all ${props => props.theme.transition.sm};
+    width: ${props => props.theme.logoWidth[props.logoWidth]};
 
     svg {
         transition: all ${props => props.theme.transition.sm};
