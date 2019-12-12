@@ -16,6 +16,8 @@ storiesOf('RadioIcon', module).addDecorator(withKnobs)
         <RadioIcon
             text="Option A"
             blockSize={radios(sizeLabel, radioSizeOptions, radioSizeDefault)}
+            id="radioIcon1"
+            name="radioIcon"
         >
             <SatchelIcon />
         </RadioIcon>
@@ -23,7 +25,9 @@ storiesOf('RadioIcon', module).addDecorator(withKnobs)
         <RadioIcon
             text="Option B with more text inside label"
             blockSize={radios(sizeLabel, radioSizeOptions, radioSizeDefault)}
-            >
+            id="radioIcon2"
+            name="radioIcon"
+        >
             <ContractIcon />
         </RadioIcon>
     </div>

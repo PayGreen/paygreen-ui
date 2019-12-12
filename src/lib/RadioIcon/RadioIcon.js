@@ -4,7 +4,8 @@ import {
     radioSizeOptions,
     radioSizeDefault,
     colorPalletOptions,
-    formStatusOptions
+    formStatusOptions,
+    iconSizeOptions
 } from '../../shared/constants';
 import { CheckBoldIcon } from '../Icon/Icon';
 import { RadioIconBase } from './style';
@@ -21,15 +22,16 @@ class RadioIcon extends PureComponent {
         return <RadioIconBase
             blockSize={blockSize}
         >
-            {children}
-
             <input type="radio" {...rest} />
 
             <label htmlFor={this.props.id}>
-                <span>
+                {children}
+
+                <span className="checked">
                     <CheckBoldIcon
                         colorPallet={colorPalletOptions.status}
                         colorStatus={formStatusOptions.success}
+                        iconSize={iconSizeOptions.xs}
                     />
                 </span>
 
@@ -41,7 +43,9 @@ class RadioIcon extends PureComponent {
 
 RadioIcon.propTypes = {
     blockSize: PropTypes.oneOf(Object.values(radioSizeOptions)),
-    text: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
 };
 
 RadioIcon.defaultProps = {

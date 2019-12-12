@@ -174,6 +174,7 @@ export const ThemeBase = {
         layer: -5,
         background: -1,
         base: 0,
+        content: 1,
         front: 5,
         menu: 100,
         header: 110,
@@ -222,6 +223,17 @@ export const ThemeBase = {
             lg: '500px',
         },
         textareaHeight: '200px',
+        radio: {
+            lg: '150px',
+        },
+    },
+    corner: {
+        size: {
+            lg: '34px'
+        },
+        padding: {
+            lg: '6px'
+        }
     },
     shadow: {
         size: {
