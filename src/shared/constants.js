@@ -86,6 +86,14 @@ const buttonSizeOptions = {
 
 const buttonSizeDefault = buttonSizeOptions.md;
 
+// Radio sizes
+const radioSizeOptions = {
+    md: 'md',
+    lg: 'lg'
+};
+
+const radioSizeDefault = radioSizeOptions.lg;
+
 // Button sizes
 const buttonTemplateOptions = {
     fill: 'fill',
@@ -348,6 +356,8 @@ export {
     waveDefault,
     buttonSizeOptions,
     buttonSizeDefault,
+    radioSizeOptions,
+    radioSizeDefault,
     buttonTemplateOptions,
     buttonTemplateDefault,
     shadowStyleOptions,
