@@ -323,7 +323,8 @@ const justifyItemsDefault = justifyItemsOptions.center;
 const alignItemsOptions = {
     flexStart: 'flex-start',
     center: 'center',
-    flexEnd: 'flex-end'
+    flexEnd: 'flex-end',
+    stretch: 'stretch'
 };
 
 const alignItemsDefault = alignItemsOptions.flexStart;
