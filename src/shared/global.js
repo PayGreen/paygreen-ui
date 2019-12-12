@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     aside,
     div,
     form,
+    figure,
     ::before,
     ::after {
         display: block;
