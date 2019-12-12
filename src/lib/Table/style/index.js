@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import { largeFirstColumnStyle } from './base';
+import {
+    largeFirstColumnStyle,
+    backgroundStyle
+} from './base';
 import { TableRowBase } from '../../TableRow/style';
 import { TableCellBase } from '../../TableCell/style';
 
 const TableBase = styled.div`
     position: relative;
     overflow-x: auto;
+    ${props => props.withBackground ? backgroundStyle : null};
 
     @media (${props => props.theme.query.max.sm}) {
         ${TableCellBase} {
