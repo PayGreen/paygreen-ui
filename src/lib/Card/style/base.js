@@ -22,7 +22,7 @@ const radius = css`
     border-radius: ${props => props.theme.radius[props.radiusSize]};
 
     & > :first-child {
-        &,
+        & > div,
         & > img {
             border-top-left-radius: ${props => props.theme.radius[props.radiusSize]};
             border-top-right-radius: ${props => props.theme.radius[props.radiusSize]};
@@ -30,7 +30,7 @@ const radius = css`
     }
 
     & > :last-child {
-        &,
+        & > div,
         & > img {
             border-bottom-left-radius: ${props => props.theme.radius[props.radiusSize]};
             border-bottom-right-radius: ${props => props.theme.radius[props.radiusSize]};
