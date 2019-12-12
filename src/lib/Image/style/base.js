@@ -34,7 +34,7 @@ const bottomStyle = {
 
 const imageStyle = {
     normal: css`
-        max-width: 100%;
+        width: 100%;
         max-height: 100%;
     `,
     cover: css`
