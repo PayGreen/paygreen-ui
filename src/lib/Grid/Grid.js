@@ -20,8 +20,14 @@ import { GridBase } from './style';
 
 class Grid extends PureComponent {
     render() {
+        const {
+            display,
+            ...rest
+        } = this.props;
+
         return <GridBase
-            {...this.props}
+            displayType={display}
+            {...rest}
         >
             {this.props.children}
         </GridBase>;

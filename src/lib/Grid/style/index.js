@@ -23,7 +23,7 @@ const GridBase = styled.div`
             margin: ${props => props.theme.space.lg};
         }
 
-        ${props => displayStyle[props.display]};
+        ${props => displayStyle[props.displayType]};
         ${props => props.childrenShift !== blockSpaceOptions.none ? shiftStyle : null};
     }
 `;
