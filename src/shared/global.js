@@ -48,4 +48,10 @@ export const GlobalStyle = createGlobalStyle`
         outline: none;
         cursor: pointer;
     }
+
+    .hideOnMobile {
+        @media (${ThemeDefault.query.max.md}) {
+            display: none !important;
+        }
+    }
 `;
