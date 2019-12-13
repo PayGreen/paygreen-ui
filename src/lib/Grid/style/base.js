@@ -86,7 +86,12 @@ const displayStyle = {
     `
 };
 
+const flex1Style = css`
+    flex: 1;
+`;
+
 export {
     shiftStyle,
     displayStyle,
+    flex1Style
 };

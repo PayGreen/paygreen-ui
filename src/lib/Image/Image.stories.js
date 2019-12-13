@@ -14,6 +14,7 @@ import {
     justifyContentOptions,
     alignItemsOptions,
     alignItemsDefault,
+    spaceOptions
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
@@ -39,6 +40,7 @@ storiesOf('Image', module)
         <Image
             blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
             blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
+            padding={select('Padding', spaceOptions, spaceOptions.none)}
             shadow={select('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
             hideOnMobile={boolean('Hide on mobile', false)}
             justifyContent={select('Justify content', justifyContentOptions, justifyContentOptions.center)}

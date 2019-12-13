@@ -20,8 +20,14 @@ import { GridBase } from './style';
 
 class Grid extends PureComponent {
     render() {
+        const {
+            display,
+            ...rest
+        } = this.props;
+
         return <GridBase
-            {...this.props}
+            displayType={display}
+            {...rest}
         >
             {this.props.children}
         </GridBase>;
@@ -36,6 +42,7 @@ Grid.propTypes = {
     justifyContent: PropTypes.oneOf(Object.values(justifyContentOptions)),
     justifyItems: PropTypes.oneOf(Object.values(justifyItemsOptions)),
     alignItems: PropTypes.oneOf(Object.values(alignItemsOptions)),
+    flex1: PropTypes.bool,
     childrenShift: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     negativeShift: PropTypes.bool,
     reverseShift: PropTypes.bool,
@@ -49,6 +56,7 @@ Grid.defaultProps = {
     justifyContent: justifyContentOptions.spaceBetween,
     justifyItems: justifyItemsDefault,
     alignItems: alignItemsDefault,
+    flex1: false,
     childrenShift: blockSpaceOptions.none,
     negativeShift: false,
     reverseShift: false,

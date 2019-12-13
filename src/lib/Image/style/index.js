@@ -14,6 +14,7 @@ const ImageBase = styled.figure`
     justify-content: ${props => props.justifyContent};
     align-items: ${props => props.alignItems};
     margin: 0;
+    padding: ${props => props.theme.space[props.padding]};
     max-width: 100%;
     max-height: 100%;
     height: ${props => props.theme.imageSize[props.blockHeight]};

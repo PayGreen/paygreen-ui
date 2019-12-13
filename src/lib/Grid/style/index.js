@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { blockSpaceOptions } from '../../../shared/constants';
-import { displayStyle, shiftStyle } from './base';
+import { displayStyle, shiftStyle, flex1Style } from './base';
 
 const GridBase = styled.div`
     padding: 0 ${props => props.theme.space.sm};
 
     & > * {
         margin: ${props => props.theme.space.md} auto;
+        ${props => props.flex1 ? flex1Style : null};
     }
 
     @media (${props => props.theme.query.min.sm}) {
@@ -23,7 +24,7 @@ const GridBase = styled.div`
             margin: ${props => props.theme.space.lg};
         }
 
-        ${props => displayStyle[props.display]};
+        ${props => displayStyle[props.displayType]};
         ${props => props.childrenShift !== blockSpaceOptions.none ? shiftStyle : null};
     }
 `;

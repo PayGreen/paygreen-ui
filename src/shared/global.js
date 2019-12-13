@@ -22,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     aside,
     div,
     form,
+    figure,
     ::before,
     ::after {
         display: block;
@@ -46,5 +47,11 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         outline: none;
         cursor: pointer;
+    }
+
+    .hideOnMobile {
+        @media (${ThemeDefault.query.max.md}) {
+            display: none !important;
+        }
     }
 `;

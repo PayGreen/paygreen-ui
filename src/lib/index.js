@@ -20,6 +20,7 @@ import MenuItem from './MenuItem/MenuItem';
 import MenuList from './MenuList/MenuList';
 import MenuPrimary from './MenuPrimary/MenuPrimary';
 import MenuSecondary from './MenuSecondary/MenuSecondary';
+import RadioIcon from './RadioIcon/RadioIcon';
 import Select from './Select/Select';
 import Table from './Table/Table';
 import TableCell from './TableCell/TableCell';
@@ -147,6 +148,7 @@ export {
     MenuList,
     MenuPrimary,
     MenuSecondary,
+    RadioIcon,
     Select,
     Table,
     TableCell,

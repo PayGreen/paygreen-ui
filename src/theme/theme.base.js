@@ -162,6 +162,14 @@ export const ThemeBase = {
         lg: '640px',
         xl: '760px',
     },
+    logoWidth: {
+        none: 'auto',
+        xs: '70px',
+        sm: '100px',
+        md: '150px',
+        lg: '200px',
+        xl: '250px',
+    },
     transition: {
         xs: '0.2s',
         sm: '0.3s',
@@ -174,6 +182,7 @@ export const ThemeBase = {
         layer: -5,
         background: -1,
         base: 0,
+        content: 1,
         front: 5,
         menu: 100,
         header: 110,
@@ -222,6 +231,17 @@ export const ThemeBase = {
             lg: '500px',
         },
         textareaHeight: '200px',
+        radio: {
+            lg: '150px',
+        },
+    },
+    corner: {
+        size: {
+            lg: '34px'
+        },
+        padding: {
+            lg: '6px'
+        }
     },
     shadow: {
         size: {
