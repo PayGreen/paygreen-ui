@@ -19,7 +19,6 @@ class Select extends PureComponent {
         };
     }
 
-
     render() {
         const optionsHtml = this.props.options.map((option, index) =>
             <option

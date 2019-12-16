@@ -36,6 +36,7 @@ storiesOf('Select', module)
         <Select
             id="select1"
             label="Your choice"
+            value=""
             options={options}
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
