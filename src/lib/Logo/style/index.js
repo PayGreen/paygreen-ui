@@ -12,9 +12,16 @@ const LogoBase = styled.span`
     flex-direction: column;
     transition: all ${props => props.theme.transition.sm};
     width: ${props => props.theme.logoWidth[props.logoWidth]};
+    height: ${props => props.theme.logoHeight[props.logoHeight]};
 
+    img,
     svg {
         transition: all ${props => props.theme.transition.sm};
+    }
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
     }
 
     ${props => props.white ? whiteStyle : null};

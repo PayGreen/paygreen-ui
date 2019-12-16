@@ -35,6 +35,7 @@ const hoverTopStyle = css`
 `;
 
 const hoverColorStyle = css`
+    img,
     svg {
         filter: grayscale(100%);
         opacity: .7;
@@ -43,6 +44,7 @@ const hoverColorStyle = css`
     a:hover &,
     a:active &,
     a:focus & {
+        img,
         svg {
             filter: grayscale(0%);
             opacity: 1;

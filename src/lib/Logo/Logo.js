@@ -20,6 +20,7 @@ Logo.propTypes = {
     hoverTop: PropTypes.bool,
     hoverColor: PropTypes.bool,
     logoWidth: PropTypes.oneOf(Object.values(spaceOptions)),
+    logoHeight: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Logo.defaultProps = {
@@ -28,7 +29,8 @@ Logo.defaultProps = {
     hoverRight: false,
     hoverTop: false,
     hoverColor: false,
-    logoWidth: spaceOptions.none
+    logoWidth: spaceOptions.none,
+    logoHeight: spaceOptions.none,
 };
 
 export default Logo;

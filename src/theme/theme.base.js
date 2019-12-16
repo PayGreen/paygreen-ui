@@ -162,6 +162,14 @@ export const ThemeBase = {
         lg: '640px',
         xl: '760px',
     },
+    logoHeight: {
+        none: 'auto',
+        xs: '20px',
+        sm: '30px',
+        md: '40px',
+        lg: '50px',
+        xl: '60px',
+    },
     logoWidth: {
         none: 'auto',
         xs: '70px',
