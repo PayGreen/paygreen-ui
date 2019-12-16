@@ -65,7 +65,7 @@ const RadioIconBase = styled.div`
             box-sizing: border-box;
             transform-origin: top right;
             transform: scale(0);
-            transition: all ${props => props.theme.transition.sm};
+            transition: all ${props => props.theme.transition.xs};
         }
 
         &:hover {
