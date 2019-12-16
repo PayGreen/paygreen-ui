@@ -8,7 +8,7 @@ import {
 
 const label = css`
     display: block;
-    color: ${props => props.theme.wab.grey30};
+    color: ${props => props.theme.wab.grey40};
     font-size: 1rem;
     font-weight: ${props => props.theme.font.weight.bold};
     text-transform: uppercase;

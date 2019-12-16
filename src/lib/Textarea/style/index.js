@@ -36,7 +36,7 @@ const TextareaBase = styled.div`
         transition-duration: ${props => props.theme.transition.sm};
 
         ::placeholder {
-            color: ${props => props.theme.wab.grey20};
+            color: ${props => props.theme.wab.grey30};
             font-style: italic;
         }
     }
