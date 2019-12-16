@@ -25,6 +25,9 @@ const GridBase = styled.div`
         }
 
         ${props => displayStyle[props.displayType]};
+    }
+
+    @media (${props => props.theme.query.min.xl}) {
         ${props => props.childrenShift !== blockSpaceOptions.none ? shiftStyle : null};
     }
 `;
