@@ -1,6 +1,6 @@
 {
   "name": "@paygreen/paygreen-ui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
   "browser": "build/index.js",
