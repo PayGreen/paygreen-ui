@@ -5,6 +5,11 @@ const MenuBase = styled.li`
     list-style-type: none;
     position: relative;
 
+    a {
+        /* Display hover style after click on mobile */
+        display: block;
+    }
+
     @media (${props => props.theme.query.min.lg}) {
         ${MenuListBase} {
             margin-top: -${props => props.theme.space.xl};
