@@ -29,7 +29,7 @@ const HeaderBase = styled.header`
         ${headerStyle};
 
         ${MenuHamburgerBase},
-        .icon {
+        button.icon {
             display: none;
         }
 
