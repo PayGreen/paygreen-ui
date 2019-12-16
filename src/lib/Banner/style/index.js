@@ -4,7 +4,6 @@ import { color, waveScale } from './constants';
 
 const BannerBase = styled.div`
     position: relative;
-    min-height: ${props => props.theme.bannerHeight.xs};
     margin-top: ${props => props.topStyle !== waveOptions.none ? props.theme.wave.double : 0};
     margin-bottom: ${props => props.bottomStyle !== waveOptions.none ? props.theme.wave.double : 0};
     padding: .1px 0;
