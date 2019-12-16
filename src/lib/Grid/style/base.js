@@ -79,7 +79,7 @@ const displayStyle = {
         & > * {
             margin-top: 0;
             margin-bottom: ${props => math(props.theme.space.lg + '*2')};
-            break-inside: avoid-column;
+            break-inside: avoid;
             /* fix for shadow inside columns */
             transform: translateZ(0);
         }
