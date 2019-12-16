@@ -42,7 +42,6 @@ storiesOf('Image', module)
             blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
             padding={select('Padding', spaceOptions, spaceOptions.none)}
             shadow={select('Shadow style', shadowStyleOptions, shadowStyleOptions.none)}
-            hideOnMobile={boolean('Hide on mobile', false)}
             justifyContent={select('Justify content', justifyContentOptions, justifyContentOptions.center)}
             alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
         >

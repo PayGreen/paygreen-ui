@@ -36,7 +36,6 @@ Image.propTypes = {
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     bottomStyle: PropTypes.oneOf(Object.values(maskOptions)),
     shadow: PropTypes.oneOf(Object.values(shadowStyleOptions)),
-    hideOnMobile: PropTypes.bool,
     justifyContent: PropTypes.oneOf(Object.values(justifyContentOptions)),
     alignItems: PropTypes.oneOf(Object.values(alignItemsOptions)),
 };
@@ -51,7 +50,6 @@ Image.defaultProps = {
     radiusSize: radiusOptions.none,
     bottomStyle: maskDefault,
     shadow: shadowStyleOptions.none,
-    hideOnMobile: false,
     justifyContent: justifyContentOptions.center,
     alignItems: alignItemsDefault,
 };

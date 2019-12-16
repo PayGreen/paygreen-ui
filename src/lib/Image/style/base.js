@@ -37,6 +37,10 @@ const imageStyle = {
         width: 100%;
         max-height: 100%;
     `,
+    picture: css`
+        max-width: 100%;
+        max-height: 100%;
+    `,
     cover: css`
         object-fit: cover;
         width: 100%;
@@ -44,15 +48,8 @@ const imageStyle = {
     `,
 };
 
-const hideOnMobile = css`
-    @media (${props => props.theme.query.max.md}) {
-        display: none;
-    }
-`;
-
 export {
     changeColor,
     bottomStyle,
-    imageStyle,
-    hideOnMobile
+    imageStyle
 };

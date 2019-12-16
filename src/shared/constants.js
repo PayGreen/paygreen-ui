@@ -181,6 +181,7 @@ const imageSizeDefault = imageSizeOptions.auto;
 // Image type
 const imageTypeOptions = {
     normal: 'normal',
+    picture: 'picture',
     cover: 'cover'
 };
 

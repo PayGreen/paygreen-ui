@@ -3,8 +3,7 @@ import { transparentize } from 'polished';
 import {
     changeColor,
     bottomStyle,
-    imageStyle,
-    hideOnMobile
+    imageStyle
 } from './base';
 
 const ImageBase = styled.figure`
@@ -20,8 +19,6 @@ const ImageBase = styled.figure`
     height: ${props => props.theme.imageSize[props.blockHeight]};
     width: ${props => props.theme.imageSize[props.blockWidth]};
     border-radius: ${props => props.theme.radius[props.radiusSize]};
-
-    ${props => props.hideOnMobile ? hideOnMobile : null};
 
     img {
         ${props => imageStyle[props.imageType]};
