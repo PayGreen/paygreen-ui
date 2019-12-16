@@ -22,7 +22,7 @@ const radius = css`
     border-radius: ${props => props.theme.radius[props.radiusSize]};
 
     & > :first-child {
-        & > div,
+        &:not(.icon),
         & > img {
             border-top-left-radius: ${props => props.theme.radius[props.radiusSize]};
             border-top-right-radius: ${props => props.theme.radius[props.radiusSize]};
@@ -30,7 +30,7 @@ const radius = css`
     }
 
     & > :last-child {
-        & > div,
+        &:not(.icon),
         & > img {
             border-bottom-left-radius: ${props => props.theme.radius[props.radiusSize]};
             border-bottom-right-radius: ${props => props.theme.radius[props.radiusSize]};
@@ -83,9 +83,12 @@ const backgroundStyle = {
 };
 
 const containerStyle = css`
-    max-width: ${props => props.theme.blockWidth[props.blockWidth]};
-    padding: .1px 0;
     position: relative;
+    max-width: ${props => props.theme.blockWidth[props.blockWidth]};
+    padding-top: .1px;
+    padding-bottom: .1px;
+    padding-left: ${props => props.theme.blockSpace[props.paddingLateral]};
+    padding-right: ${props => props.theme.blockSpace[props.paddingLateral]};
 `;
 
 const blockStyle = css`

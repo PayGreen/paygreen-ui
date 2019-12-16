@@ -11,6 +11,8 @@ import {
     shadowStyleDefault,
     blockWidthOptions,
     blockWidthDefault,
+    blockSpaceOptions,
+    blockSpaceDefault,
     radiusOptions,
     radiusDefault,
     gradientOptions,
@@ -38,6 +40,7 @@ Card.propTypes = {
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     hasBackground: PropTypes.bool,
     borderTop: PropTypes.oneOf(Object.values(gradientOptions)),
+    paddingLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     params: PropTypes.shape({
         titleOut: PropTypes.bool,
     }),
@@ -52,6 +55,7 @@ Card.defaultProps = {
     radiusSize: radiusDefault,
     hasBackground: true,
     borderTop: gradientDefault,
+    paddingLateral: blockSpaceDefault,
     params: {
         titleOut: false,
     },
