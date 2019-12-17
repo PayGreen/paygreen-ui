@@ -8,7 +8,7 @@ import {
 const CardBase = styled.div`
     ${props => props.params.titleOut ? titleOutBlockStyle : blockStyle};
 
-    ${ImageBase} {
+    ${ImageBase}:first-child {
         height: ${props => props.theme.blockHeader[props.blockWidth]};
     }
 `;
