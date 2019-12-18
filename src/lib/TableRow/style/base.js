@@ -39,7 +39,8 @@ const mainRow = css`
                     color: ${props => props.theme.wab.grey40};
                 }
 
-                i {
+                i,
+                em {
                     color: ${props => props.theme.wab.grey30};
                     font-style: normal;
                     margin-top: ${props => props.theme.space.sm};
