@@ -10,6 +10,8 @@ import {
 const LogoBase = styled.span`
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     transition: all ${props => props.theme.transition.sm};
     width: ${props => props.theme.logoWidth[props.logoWidth]};
     height: ${props => props.theme.logoHeight[props.logoHeight]};
