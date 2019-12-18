@@ -9,7 +9,7 @@ const menuBlock = css`
 
     @media (${props => props.theme.query.max.lg}) {
         position: fixed;
-        overflow: auto;
+        overflow-y: auto;
         left: 0;
         top: ${props => props.theme.grid.header};
         width: 100%;
