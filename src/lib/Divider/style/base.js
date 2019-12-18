@@ -1,9 +1,12 @@
 import { css } from 'styled-components';
 
-const noText = css`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+const structureBase = css`
+    display: flex;
     align-items: center;
+
+    .shape {
+        flex: 1;
+    }
 `;
 
 const withText = css`
@@ -14,9 +17,7 @@ const withText = css`
     }
 
     @media (${props => props.theme.query.min.md}) {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        align-items: center;
+        ${structureBase};
     }
 `;
 
@@ -38,7 +39,7 @@ const waveStyle = {
 };
 
 const withWave = css`
-    ${props => props.hasText ? withText : noText};
+    ${props => props.hasText ? withText : structureBase};
 
     span {
         max-width: ${props => props.theme.blockWidth.md};
