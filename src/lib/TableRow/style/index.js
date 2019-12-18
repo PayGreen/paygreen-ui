@@ -6,15 +6,29 @@ import { TableCellBase } from '../../TableCell/style';
 const TableRowBase = styled.div`
     display: table-row;
 
-    ${TableCellBase} {
-        border-bottom: solid ${props => props.theme.line} ${props => transparentize(0.92, props.theme.wab.black00)};
-        border-radius: ${props => props.theme.radius.sm} ${props => props.theme.radius.sm} 0 0;
+    &:first-of-type {
+        ${TableCellBase} {
+            &:not(:first-of-type) {
+                @media (${props => props.theme.query.max.md}) {
+                    vertical-align: bottom;
+
+                    .content {
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
     }
 
     &:last-of-type {
         ${TableCellBase} {
             border-bottom: 0;
         }
+    }
+
+    ${TableCellBase} {
+        border-bottom: solid ${props => props.theme.line} ${props => transparentize(0.92, props.theme.wab.black00)};
+        border-radius: ${props => props.theme.radius.sm} ${props => props.theme.radius.sm} 0 0;
     }
 
     ${props => props.colorTheme !== 'none' ? rowColor : null};

@@ -5,15 +5,16 @@ import {
     CheckBoldIcon
 } from '../Icon/Icon';
 import Link from '../Link/Link';
+import Logo from '../Logo/Logo';
 import TableCell from './TableCell';
 import cb from './sample/sample.svg';
 
 storiesOf('TableCell', module).addDecorator(withKnobs)
 .add('Cell with logo', () => (
     <TableCell>
-        <div className="logo">
-            <img src={cb} />
-        </div>
+        <Logo logoHeight="xs" logoWidth="sm">
+            <img src={cb} alt="logo" />
+        </Logo>
         
         <span>
             Sample text <i>(more text)</i>

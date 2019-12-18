@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { transparentize } from 'polished';
 import { LinkBase } from '../../Link/style';
+import { LogoBase } from '../../Logo/style';
 
 const TableCellBase = styled.div`
     display: table-cell;
@@ -8,39 +10,43 @@ const TableCellBase = styled.div`
     padding: ${props => props.theme.space.sm} ${props => props.theme.space.md};
     color: ${props => props.theme.wab.grey60};
 
+    @media (${props => props.theme.query.max.sm}) {
+        font-size: 0.85em;
+    }
+
+    &:nth-child(even) {
+        background-color: ${props => transparentize(0.98, props.theme.wab.black00)};
+    }
+
+    ${LogoBase} {
+        &:first-child {
+            margin-right: ${props => props.theme.space.md};
+        }
+
+        @media (${props => props.theme.query.max.md}) {
+            display: none;
+        }
+    }
+
+    ${LinkBase} {
+        line-height: 1.5;
+    }
+
+    i,
+    em {
+        font-size: ${props => props.theme.font.size.xs};
+        font-style: italic;
+
+        @media (${props => props.theme.query.max.md}) {
+            display: none;
+        }
+    }
+
     .content {
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 40px;
-
-        .logo {
-            height: 25px;
-            width: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &:first-child {
-                margin-right: ${props => props.theme.space.md};
-            }
-
-            img {
-                display: block;
-                max-height: 100%;
-                max-width: 100%;
-            }
-        }
-
-        i,
-        em {
-            font-size: ${props => props.theme.font.size.xs};
-            font-style: italic;
-        }
-
-        ${LinkBase} {
-            line-height: 1.5;
-        }
     }
 
     &:first-of-type {
