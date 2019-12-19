@@ -232,13 +232,13 @@ const fontSizeOptions = {
     xxs: 'xxs',
     xs: 'xs',
     sm: 'sm',
-    default: 'base',
+    base: 'base',
     md: 'md',
     lg: 'lg',
     xl: 'xl'
 };
 
-const fontSizeDefault = fontSizeOptions.default;
+const fontSizeDefault = fontSizeOptions.base;
 
 // Form input status
 const formStatusOptions = {
