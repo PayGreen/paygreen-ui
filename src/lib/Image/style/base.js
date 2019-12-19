@@ -48,8 +48,13 @@ const imageStyle = {
     `,
 };
 
+const backgroundBlock = css`
+    background-color: ${props => props.theme.wab.white00};
+`;
+
 export {
     changeColor,
     bottomStyle,
-    imageStyle
+    imageStyle,
+    backgroundBlock
 };
