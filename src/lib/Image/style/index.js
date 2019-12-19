@@ -19,8 +19,8 @@ const ImageBase = styled.figure`
     justify-content: ${props => props.justifyContent};
     align-items: ${props => props.alignItems};
     margin: 0;
-    max-height: ${props => props.maxHeight !== imageSizeOptions.auto ? props.theme.imageSize[props.maxHeight] : '100%'};
-    max-width: ${props => props.maxWidth !== imageSizeOptions.auto ? props.theme.imageSize[props.maxWidth] : '100%'};
+    max-height: 100%;
+    max-width: 100%;
     height: ${props => props.theme.imageSize[props.blockHeight]};
     width: ${props => props.theme.imageSize[props.blockWidth]};
     border-radius: ${props => props.theme.radius[props.radiusSize]};

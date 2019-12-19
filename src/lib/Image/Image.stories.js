@@ -8,7 +8,6 @@ import {
     maskDefault,
     imageTypeOptions,
     imageSizeOptions,
-    imageSizeDefault,
     radiusOptions,
     shadowStyleOptions,
     shadowStyleDefault,
@@ -56,8 +55,6 @@ storiesOf('Image', module).addDecorator(withKnobs)
         imageType={imageTypeOptions.picture}
         blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
         blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
-        maxWidth={select('Max width', imageSizeOptions, imageSizeDefault)}
-        maxkHeight={select('Max height', imageSizeOptions, imageSizeDefault)}
         radiusSize={radios('Border radius', radiusOptions, radiusOptions.lg)}
         shadow={select('Shadow style', shadowStyleOptions, shadowStyleDefault)}
         padding={select('Padding', spaceOptions, spaceOptions.none)}
