@@ -1,5 +1,26 @@
 import { css } from 'styled-components';
-import { titleColor } from './constants';
+import { titleColor, smallFontSizes, minimizeFont } from './constants';
+
+const smallText = css`
+    text-transform: uppercase;
+    letter-spacing: ${props => props.theme.font.spacing};
+`;
+
+const bigText = css`
+    @media (${props => props.theme.query.max.md}) {
+        font-size: ${props => props.theme.font.size[minimizeFont[props.textSize]]};
+    }
+`;
+
+const fontStyle = css`
+    font-weight: ${props => props.theme.font.weight.bold};
+    font-size: ${props => props.theme.font.size[props.textSize]};
+    ${props => smallFontSizes.includes(props.textSize) ? smallText : bigText};
+
+    strong {
+        font-weight: ${props => props.theme.font.weight.bold};
+    }
+`;
 
 const titleColors = {
     one: css`
@@ -13,11 +34,6 @@ const titleColors = {
         }
     `
 };
-
-const smallText = css`
-    text-transform: uppercase;
-    letter-spacing: ${props => props.theme.font.spacing};
-`;
 
 const underlineAlign = {
     left: css`
@@ -49,7 +65,7 @@ const underline = css`
 `;
 
 export {
+    fontStyle,
     titleColors,
-    smallText,
-    underline
+    underline,
 };

@@ -21,7 +21,15 @@ const smallFontSizes = [
     'sm'
 ];
 
+const minimizeFont = {
+    base: 'base',
+    md: 'base',
+    lg: 'md',
+    xl: 'lg'
+};
+
 export {
     titleColor,
     smallFontSizes,
+    minimizeFont
 };
