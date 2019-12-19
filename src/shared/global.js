@@ -50,7 +50,19 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .hideOnMobile {
+        @media (${ThemeDefault.query.max.sm}) {
+            display: none !important;
+        }
+    }
+
+    .hideOnTablet {
         @media (${ThemeDefault.query.max.md}) {
+            display: none !important;
+        }
+    }
+
+    .hideOnDesktop {
+        @media (${ThemeDefault.query.min.md}) {
             display: none !important;
         }
     }
