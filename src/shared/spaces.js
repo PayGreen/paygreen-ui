@@ -7,10 +7,6 @@ const calculateSpace = (space, toRemove = 0, coeff = 1) => {
 
 const blockSpace = (screen, space) => {
     switch (screen) {
-        case 'xs':
-            return props => stripUnit(space(props)) > stripUnit(props.theme.blockSpace.xs) ?
-                props.theme.blockSpace.xs :
-                space;
         case 'sm':
             return props => stripUnit(space(props)) > stripUnit(props.theme.blockSpace.sm) ?
                 props.theme.blockSpace.sm :
@@ -31,20 +27,11 @@ const responsiveSpaces = (propAttribute, toRemove = 0, bottomCoeff = 1, topCoeff
 
     return css`
         ${directionalProperty(propAttribute,
-            getSpace('xs', 'Top', toRemove, topCoeff),
-            getSpace('xs', 'Lateral', toRemove),
-            getSpace('xs', 'Bottom', toRemove, bottomCoeff),
-            getSpace('xs', 'Lateral', toRemove)
+            getSpace('sm', 'Top', toRemove, topCoeff),
+            getSpace('sm', 'Lateral', toRemove),
+            getSpace('sm', 'Bottom', toRemove, bottomCoeff),
+            getSpace('sm', 'Lateral', toRemove)
         )};
-
-        @media (${props => props.theme.query.min.sm}) {
-            ${directionalProperty(propAttribute,
-                getSpace('sm', 'Top', toRemove, topCoeff),
-                getSpace('sm', 'Lateral', toRemove),
-                getSpace('sm', 'Bottom', toRemove, bottomCoeff),
-                getSpace('sm', 'Lateral', toRemove)
-            )};
-        }
 
         @media (${props => props.theme.query.min.md}) {
             ${directionalProperty(propAttribute,
