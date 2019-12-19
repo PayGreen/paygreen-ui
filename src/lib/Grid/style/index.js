@@ -3,15 +3,11 @@ import { blockSpaceOptions } from '../../../shared/constants';
 import { displayStyle, shiftStyle, flex1Style } from './base';
 
 const GridBase = styled.div`
-    padding: 0 ${props => props.theme.space.sm};
+    padding: ${props => props.theme.space.md};
 
     & > * {
         margin: ${props => props.theme.space.md} auto;
         ${props => props.flex1 ? flex1Style : null};
-    }
-
-    @media (${props => props.theme.query.min.sm}) {
-        padding: 0 ${props => props.theme.space.md};
     }
 
     @media (${props => props.theme.query.min.md}) {
