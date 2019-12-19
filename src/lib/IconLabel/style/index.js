@@ -9,7 +9,7 @@ const IconLabelBase = styled.span`
     color: ${props => props.theme.color[props.colorTheme]['main']};
     padding: ${props => props.theme.space.xs};
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: ${props => props.theme.font.size.tiny};
     font-weight: ${props => props.theme.font.weight.bold};
     letter-spacing: ${props => props.theme.font.spacing};
 

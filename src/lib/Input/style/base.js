@@ -9,7 +9,7 @@ import {
 const label = css`
     display: block;
     color: ${props => props.theme.wab.grey40};
-    font-size: 1rem;
+    font-size: ${props => props.theme.font.size.tiny};
     font-weight: ${props => props.theme.font.weight.bold};
     text-transform: uppercase;
     letter-spacing: ${props => props.theme.font.spacing};
@@ -25,7 +25,7 @@ const field = css`
     padding-left: ${inputPadding.base};
     padding-right: ${inputPadding.larger};
     width: 100%;
-    line-height: 1em;
+    line-height: 1;
     transition: all ${props => props.theme.transition.sm};
 
     & + span {

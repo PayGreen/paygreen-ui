@@ -49,6 +49,7 @@ export const ThemeBase = {
     },
     font: {
         size: {
+            tiny: '1rem',
             xxs: '1.2rem',
             xs: '1.4rem',
             sm: '1.6rem',
@@ -59,8 +60,7 @@ export const ThemeBase = {
         },
         weight: {
             normal: 400,
-            bold: 700,
-            extra: 800
+            bold: 700
         },
         spacing: '0.3em',
         underline: {
