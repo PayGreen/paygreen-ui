@@ -213,12 +213,12 @@ export const ThemeBase = {
         paddingWidth: {
             sm: '22px',
             md: '26px',
-            lg: '29px',
+            lg: '30px',
         },
         paddingHeight: {
-            sm: '13px',
-            md: '16px',
-            lg: '19px',
+            sm: '12px',
+            md: '14px',
+            lg: '16px',
         },
         shift: '3px',
         font: {

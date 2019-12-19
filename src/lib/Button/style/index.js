@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { math } from 'polished';
 import { colorTypeOptions } from '../../../shared/constants';
 import {
     enabled,
@@ -12,15 +13,20 @@ const ButtonBase = styled.span`
 
     display: inline-block;
     position: relative;
-    z-index: 0;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: ${props => props.theme.font.weight.bold};
-    font-size: ${props => props.theme.button.font[props.buttonSize]};
-    letter-spacing: ${props => props.theme.button.letterSpacing[props.buttonSize]};
+    z-index: ${props => props.theme.zindex.base};
     padding: ${props => props.theme.button.paddingHeight[props.buttonSize]} ${props => props.theme.button.paddingWidth[props.buttonSize]};
     margin: ${props => props.theme.button.shift};
     transition: all ${props => props.theme.transition.xs};
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: ${props => props.theme.button.letterSpacing[props.buttonSize]};
+    line-height: 1.5;
+    font-weight: ${props => props.theme.font.weight.bold};
+    font-size: ${props => props.theme.button.font[props.buttonSize]};
+
+    @media (${props => props.theme.query.max.md}) {
+        font-size: ${props => math(props.theme.button.font[props.buttonSize] + '- 0.1')};
+    }
 
     &::before,
     &::after {
