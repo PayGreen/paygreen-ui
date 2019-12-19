@@ -52,7 +52,9 @@ import Letter from './Letter';
 import LinkBold from './LinkBold';
 import Link from './Link';
 import Lock from './Lock';
+import Marker from './Marker';
 import Meal from './Meal';
+import Megaphone from './Megaphone';
 import MenuBold from './MenuBold';
 import Menu from './Menu';
 import Meter from './Meter';
@@ -76,9 +78,11 @@ import Schedule from './Schedule';
 import SearchBold from './SearchBold';
 import Search from './Search';
 import Shop from './Shop';
+import Support from './Support';
 import Trees from './Trees';
 import Trophy from './Trophy';
 import Truck from './Truck';
+import Tv from './Tv';
 import UserBold from './UserBold';
 import Users from './Users';
 import User from './User';
@@ -140,7 +144,9 @@ export {
     LinkBold,
     Link,
     Lock,
+    Marker,
     Meal,
+    Megaphone,
     MenuBold,
     Menu,
     Meter,
@@ -164,9 +170,11 @@ export {
     SearchBold,
     Search,
     Shop,
+    Support,
     Trees,
     Trophy,
     Truck,
+    Tv,
     UserBold,
     Users,
     User,

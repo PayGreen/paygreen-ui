@@ -84,7 +84,9 @@ import { LetterIcon } from './Icon/Icon';
 import { LinkBoldIcon } from './Icon/Icon';
 import { LinkIcon } from './Icon/Icon';
 import { LockIcon } from './Icon/Icon';
+import { MarkerIcon } from './Icon/Icon';
 import { MealIcon } from './Icon/Icon';
+import { MegaphoneIcon } from './Icon/Icon';
 import { MenuBoldIcon } from './Icon/Icon';
 import { MenuIcon } from './Icon/Icon';
 import { MeterIcon } from './Icon/Icon';
@@ -108,9 +110,11 @@ import { ScheduleIcon } from './Icon/Icon';
 import { SearchBoldIcon } from './Icon/Icon';
 import { SearchIcon } from './Icon/Icon';
 import { ShopIcon } from './Icon/Icon';
+import { SupportIcon } from './Icon/Icon';
 import { TreesIcon } from './Icon/Icon';
 import { TrophyIcon } from './Icon/Icon';
 import { TruckIcon } from './Icon/Icon';
+import { TvIcon } from './Icon/Icon';
 import { UserBoldIcon } from './Icon/Icon';
 import { UsersIcon } from './Icon/Icon';
 import { UserIcon } from './Icon/Icon';
@@ -212,7 +216,9 @@ export {
     LinkBoldIcon,
     LinkIcon,
     LockIcon,
+    MarkerIcon,
     MealIcon,
+    MegaphoneIcon,
     MenuBoldIcon,
     MenuIcon,
     MeterIcon,
@@ -236,9 +242,11 @@ export {
     SearchBoldIcon,
     SearchIcon,
     ShopIcon,
+    SupportIcon,
     TreesIcon,
     TrophyIcon,
     TruckIcon,
+    TvIcon,
     UserBoldIcon,
     UsersIcon,
     UserIcon,
