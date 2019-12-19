@@ -27,14 +27,22 @@ const labelSize = {
         }
     `,
     lg: css`
-        width: ${props => props.theme.form.radio.lg};
+        width: ${props => props.theme.form.radio.md};
+
+        @media (${props => props.theme.query.min.sm}) {
+            width: ${props => props.theme.form.radio.lg};
+        }
 
         label {
-            min-height: ${props => props.theme.form.radio.lg};
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            min-height: ${props => props.theme.form.radio.md};
+
+            @media (${props => props.theme.query.min.sm}) {
+                min-height: ${props => props.theme.form.radio.lg};
+            }
 
             & > .icon {
                 width: ${props => props.theme.iconSize.xl};

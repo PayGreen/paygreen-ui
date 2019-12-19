@@ -240,6 +240,7 @@ export const ThemeBase = {
         },
         textareaHeight: '200px',
         radio: {
+            md: '120px',
             lg: '150px',
         },
     },
