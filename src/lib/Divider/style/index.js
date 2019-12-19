@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { waveOptions } from '../../../shared/constants';
-import { responsiveSpaces } from '../../../shared/spaces';
 import { withWave, noWave } from './base';
 
 const DividerBase = styled.div`
-    ${responsiveSpaces('margin', 0, 2, 2)};
+    margin-top: ${props => props.theme.blockSpace[props.marginTop]};
+    margin-bottom: ${props => props.theme.blockSpace[props.marginBottom]};
 
     span {
         display: block;
@@ -12,11 +12,11 @@ const DividerBase = styled.div`
         margin-right: auto;
         text-align: center;
         text-transform: uppercase;
-        font-weight: ${props => props.theme.font.weight.extra};
         letter-spacing: ${props => props.theme.font.spacing};
+        font-weight: ${props => props.theme.font.weight.bold};
         font-size: ${props => props.theme.font.size.md};
 
-        @media (${props => props.theme.query.min.xl}) {
+        @media (${props => props.theme.query.min.md}) {
             font-size: ${props => props.theme.font.size.lg};
         }
     }
