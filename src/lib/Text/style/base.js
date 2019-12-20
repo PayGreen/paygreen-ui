@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
 import { transparentColorOptions } from '../../../shared/constants';
-import { fontColor, backgroundColor } from './constants';
+import { fontColor, backgroundColor, minimizeFont } from './constants';
 
 const blockBackground = {
     original: css`
@@ -29,8 +29,12 @@ const textStyle = css`
     ${props => textColor[props.colorNumber]};
 
     line-height: 1.5;
-    font-size: ${props => props.theme.font.size[props.textSize]};
     text-align: ${props => props.textAlign};
+    font-size: ${props => props.theme.font.size[props.textSize]};
+
+    @media (${props => props.theme.query.max.md}) {
+        font-size: ${props => props.theme.font.size[minimizeFont[props.textSize]]};
+    }
 `;
 
 const internalParagraph = css`

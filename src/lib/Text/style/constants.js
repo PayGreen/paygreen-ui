@@ -18,7 +18,18 @@ const backgroundColor = {
     theme: props => transparentize(0.9, props.theme.color[props.colorTheme]['main']),
 };
 
+const minimizeFont = {
+    xxs: 'xxs',
+    xs: 'xs',
+    sm: 'xs',
+    base: 'sm',
+    md: 'base',
+    lg: 'md',
+    xl: 'lg'
+};
+
 export {
     fontColor,
     backgroundColor,
+    minimizeFont
 };
