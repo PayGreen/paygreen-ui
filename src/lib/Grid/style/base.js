@@ -65,16 +65,24 @@ const displayStyle = {
     `,
     grid: css`
         display: grid;
-        grid-template-columns: repeat(${props => props.columns}, 1fr);
+        grid-template-columns: 1fr 1fr;
         justify-items: ${props => props.justifyItems};
         align-items: ${props => props.alignItems};
+
+        @media (${props => props.theme.query.min.lg}) {
+            grid-template-columns: repeat(${props => props.columns}, 1fr);
+        }
     `,
     column: css`
         width: fit-content;
-        columns: ${props => props.columns};
+        columns: 2;
         gap: 0;
         padding-top: ${props => props.theme.space.lg};
         padding-bottom: ${props => props.theme.space.lg};
+
+        @media (${props => props.theme.query.min.lg}) {
+            columns: ${props => props.columns};
+        }
 
         & > * {
             margin-top: 0;
