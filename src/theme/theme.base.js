@@ -109,6 +109,7 @@ export const ThemeBase = {
     },
     grid: {
         header: '45px',
+        maxWidth: '1400px'
     },
     blockShift: {
         none: '0',

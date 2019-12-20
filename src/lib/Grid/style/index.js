@@ -11,7 +11,7 @@ const GridBase = styled.div`
     }
 
     @media (${props => props.theme.query.min.md}) {
-        max-width: 1400px;
+        max-width: ${props => props.theme.grid.maxWidth};
         margin-left: auto;
         margin-right: auto;
         padding: 0;
