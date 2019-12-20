@@ -19,21 +19,15 @@ const underlineStyle = css`
             colors.secondary :
             colors.main[props.colorPallet]
         };
-        opacity: .3;
+        opacity: .25;
         transition: all ${props => props.theme.transition.xs};
     }
 
     a:hover &,
     a:active &,
     a:focus & {
-        color: ${props => props.colorType === colorTypeOptions.reverse ?
-            colors.main[props.colorPallet] :
-            colors.secondary
-        };
-
         &::after {
             height: 100%;
-            opacity: 1;
         }
     }
 `;
