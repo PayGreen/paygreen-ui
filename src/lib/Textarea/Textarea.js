@@ -57,9 +57,12 @@ class Textarea extends PureComponent {
             marginTop={marginTop}
             marginBottom={marginBottom}
         >
-            <label htmlFor={this.props.id}>
-                {this.props.label}
-            </label>
+            {label ?
+                <label htmlFor={this.props.id}>
+                    {label}
+                </label>
+                : null
+            }
 
             <textarea
                 {...rest}
@@ -78,7 +81,7 @@ class Textarea extends PureComponent {
 
 Textarea.propTypes = {
     id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     minLength: PropTypes.number,

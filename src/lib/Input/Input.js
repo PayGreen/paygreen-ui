@@ -63,9 +63,12 @@ class Input extends PureComponent {
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
-                        <label htmlFor={this.props.id}>
-                            {label}
-                        </label>
+                        {label ?
+                            <label htmlFor={this.props.id}>
+                                {label}
+                            </label>
+                            : null
+                        }
 
                         <InputMask 
                             {...rest}
@@ -83,7 +86,7 @@ class Input extends PureComponent {
 Input.propTypes = {
     type: PropTypes.string,
     id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     width: PropTypes.oneOf(Object.values(inputWidthOptions)),
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,

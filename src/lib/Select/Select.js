@@ -68,9 +68,12 @@ class Select extends PureComponent {
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
-                        <label htmlFor={this.props.id}>
-                            {label}
-                        </label>
+                        {label ?
+                            <label htmlFor={this.props.id}>
+                                {label}
+                            </label>
+                            : null
+                        }
 
                         <select {...rest}>
                             {optionsHtml}
@@ -86,7 +89,7 @@ class Select extends PureComponent {
 
 Select.propTypes = {
     id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     options: PropTypes.arrayOf(
         PropTypes.shape({
             value: PropTypes.string.isRequired,
