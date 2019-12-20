@@ -5,19 +5,26 @@ import {
     radioSizeOptions,
     radioSizeDefault
 } from '../../shared/constants';
-import { SatchelIcon, ContractIcon } from '../Icon/Icon';
+import {
+    SatchelIcon,
+    ContractIcon,
+    MegaphoneIcon,
+    SupportIcon
+} from '../Icon/Icon';
+import Grid from '../Grid/Grid';
 import RadioIcon from './RadioIcon';
 
 const sizeLabel = 'Size';
+const nameIcon = 'radioIcon';
 
 storiesOf('RadioIcon', module).addDecorator(withKnobs)
 .add('RadioIcon', () => (
-    <div>
+    <Grid>
         <RadioIcon
             text="Option A"
             blockSize={radios(sizeLabel, radioSizeOptions, radioSizeDefault)}
-            id="radioIcon1"
-            name="radioIcon"
+            id={nameIcon + 1}
+            name={nameIcon}
         >
             <SatchelIcon />
         </RadioIcon>
@@ -25,10 +32,28 @@ storiesOf('RadioIcon', module).addDecorator(withKnobs)
         <RadioIcon
             text="Option B with more text inside label"
             blockSize={radios(sizeLabel, radioSizeOptions, radioSizeDefault)}
-            id="radioIcon2"
-            name="radioIcon"
+            id={nameIcon + 2}
+            name={nameIcon}
         >
             <ContractIcon />
         </RadioIcon>
-    </div>
+
+        <RadioIcon
+            text="Option C"
+            blockSize={radios(sizeLabel, radioSizeOptions, radioSizeDefault)}
+            id={nameIcon + 3}
+            name={nameIcon}
+        >
+            <MegaphoneIcon />
+        </RadioIcon>
+
+        <RadioIcon
+            text="Option D"
+            blockSize={radios(sizeLabel, radioSizeOptions, radioSizeDefault)}
+            id={nameIcon + 4}
+            name={nameIcon}
+        >
+            <SupportIcon />
+        </RadioIcon>
+    </Grid>
 ));

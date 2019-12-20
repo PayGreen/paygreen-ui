@@ -38,6 +38,7 @@ const labelSize = {
             flex-direction: column;
             align-items: center;
             text-align: center;
+            height: 100%;
             min-height: ${props => props.theme.form.radio.md};
 
             @media (${props => props.theme.query.min.sm}) {
