@@ -66,4 +66,16 @@ export const GlobalStyle = createGlobalStyle`
             display: none !important;
         }
     }
+
+    .hideOnSmallScreen {
+        @media (${ThemeDefault.query.max.lg}) {
+            display: none !important;
+        }
+    }
+
+    .hideOnBigScreen {
+        @media (${ThemeDefault.query.min.lg}) {
+            display: none !important;
+        }
+    }
 `;
