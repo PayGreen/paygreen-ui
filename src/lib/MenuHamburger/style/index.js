@@ -3,6 +3,7 @@ import { math } from 'polished';
 import { line, isClosedStyle, isOpenStyle } from './base';
 
 const MenuHamburgerBase = styled.button`
+    display: block;
     box-sizing: border-box;
     width: ${props => math(props.theme.iconSize.lg + '-' + line)};
     height: ${props => math(props.theme.iconSize.lg + '-' + line)};

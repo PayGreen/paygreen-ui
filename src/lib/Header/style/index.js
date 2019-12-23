@@ -6,8 +6,11 @@ import { MenuHamburgerBase } from '../../MenuHamburger/style';
 import { LogoBase } from '../../Logo/style';
 
 const HeaderBase = styled.header`
-    a {
-        height: 100%;
+    .main-nav {
+        a {
+            display: block;
+            height: 100%;
+        }
     }
 
     ${LogoBase} {
