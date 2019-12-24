@@ -240,6 +240,16 @@ const fontSizeOptions = {
 
 const fontSizeDefault = fontSizeOptions.base;
 
+// List styles
+const listStyleOptions = {
+    dash: 'dash',
+    check: 'check',
+    customIcon: 'customIcon',
+    number: 'number',
+};
+
+const listStyleDefault = listStyleOptions.dash;
+
 // Form input status
 const formStatusOptions = {
     default: 'default',
@@ -388,6 +398,8 @@ export {
     textHtmlTagDefault,
     fontSizeOptions,
     fontSizeDefault,
+    listStyleOptions,
+    listStyleDefault,
     formStatusOptions,
     formStatusDefault,
     gradientOptions,
