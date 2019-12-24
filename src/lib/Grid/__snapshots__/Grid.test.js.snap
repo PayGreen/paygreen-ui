@@ -2,8 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa dDFcNb"
-  display="flex"
+  className="sc-bdVaJa dYnCVf"
 >
   <div>
     Something

@@ -11,15 +11,23 @@ exports[`renders without crashing 1`] = `
       theme={
         Object {
           "bannerHeight": Object {
-            "lg": "700px",
-            "sm": "300px",
-            "xs": "180px",
+            "lg": "100vh",
+            "sm": "50vh",
+            "xs": "33vh",
           },
           "blockHeader": Object {
             "lg": "210px",
             "md": "180px",
             "sm": "140px",
             "xl": "240px",
+          },
+          "blockShift": Object {
+            "lg": "320px",
+            "md": "256px",
+            "none": "0",
+            "sm": "128px",
+            "xl": "384px",
+            "xs": "64px",
           },
           "blockSpace": Object {
             "lg": "52px",
@@ -33,7 +41,7 @@ exports[`renders without crashing 1`] = `
             "lg": "640px",
             "md": "560px",
             "sm": "400px",
-            "xl": "760px",
+            "xl": "800px",
           },
           "button": Object {
             "font": Object {
@@ -47,12 +55,12 @@ exports[`renders without crashing 1`] = `
               "sm": "0.3rem",
             },
             "paddingHeight": Object {
-              "lg": "19px",
-              "md": "16px",
-              "sm": "13px",
+              "lg": "16px",
+              "md": "14px",
+              "sm": "12px",
             },
             "paddingWidth": Object {
-              "lg": "29px",
+              "lg": "30px",
               "md": "26px",
               "sm": "22px",
             },
@@ -90,12 +98,21 @@ exports[`renders without crashing 1`] = `
               "main": "#e58a28",
             },
           },
+          "corner": Object {
+            "padding": Object {
+              "lg": "6px",
+            },
+            "size": Object {
+              "lg": "34px",
+            },
+          },
           "font": Object {
             "size": Object {
               "base": "1.8rem",
               "lg": "3rem",
               "md": "2.1rem",
               "sm": "1.6rem",
+              "tiny": "1rem",
               "xl": "4rem",
               "xs": "1.4rem",
               "xxs": "1.2rem",
@@ -132,7 +149,6 @@ exports[`renders without crashing 1`] = `
             },
             "weight": Object {
               "bold": 700,
-              "extra": 800,
               "normal": 400,
             },
           },
@@ -142,10 +158,15 @@ exports[`renders without crashing 1`] = `
               "md": "400px",
               "sm": "330px",
             },
+            "radio": Object {
+              "lg": "150px",
+              "md": "120px",
+            },
             "textareaHeight": "200px",
           },
           "grid": Object {
             "header": "45px",
+            "maxWidth": "1400px",
           },
           "iconSize": Object {
             "lg": "32px",
@@ -163,6 +184,22 @@ exports[`renders without crashing 1`] = `
             "xs": "240px",
           },
           "line": "2px",
+          "logoHeight": Object {
+            "lg": "50px",
+            "md": "40px",
+            "none": "auto",
+            "sm": "30px",
+            "xl": "60px",
+            "xs": "20px",
+          },
+          "logoWidth": Object {
+            "lg": "200px",
+            "md": "150px",
+            "none": "auto",
+            "sm": "100px",
+            "xl": "250px",
+            "xs": "70px",
+          },
           "name": "Default",
           "query": Object {
             "max": Object {
@@ -232,6 +269,7 @@ exports[`renders without crashing 1`] = `
           "zindex": Object {
             "background": -1,
             "base": 0,
+            "content": 1,
             "front": 5,
             "header": 110,
             "hidden": -100,
