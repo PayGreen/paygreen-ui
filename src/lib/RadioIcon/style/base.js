@@ -8,6 +8,8 @@ const labelSize = {
         label {
             display: flex;
             align-items: center;
+            padding: ${props => props.theme.space.sm};
+            padding-right: ${props => props.theme.space.md};
 
             & > .icon {
                 width: ${props => props.theme.iconSize.lg};
@@ -38,6 +40,7 @@ const labelSize = {
             flex-direction: column;
             align-items: center;
             text-align: center;
+            padding: ${props => props.theme.space.sm};
             height: 100%;
             min-height: ${props => props.theme.form.radio.md};
 

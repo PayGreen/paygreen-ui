@@ -33,7 +33,6 @@ const RadioIconBase = styled.div`
         z-index: ${props => props.theme.zindex.content};
         font-weight: ${props => props.theme.font.weight.bold};
         font-size: ${props => props.theme.font.size.xs};
-        padding: ${props => props.theme.space.sm};
         box-sizing: border-box;
         border-radius: ${props => props.theme.radius.lg};
         color: ${props => props.theme.wab.grey50};
