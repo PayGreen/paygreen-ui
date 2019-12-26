@@ -10,7 +10,6 @@ import {
     formStatusOptions,
     formStatusDefault,
     iconSizeOptions,
-    iconSizeDefault,
     spaceOptions,
     spaceDefault
 } from '../../shared/constants';
@@ -62,7 +61,7 @@ IconWrapper.defaultProps = {
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,
     colorStatus: formStatusDefault,
-    iconSize: iconSizeDefault,
+    iconSize: iconSizeOptions.sm,
     background: false,
     shadow: false,
     active: false,

@@ -7,65 +7,44 @@ import {
     colorThemeDefault,
     blockSpaceOptions,
     blockSpaceDefault,
-
-    formStatusOptions,
     iconSizeOptions,
-    spaceOptions,
-    colorPalletOptions
+    iconSizeDefault
 } from '../../shared/constants';
-import { CheckBoldIcon } from '../Icon/Icon';
 import { ListBase } from './style';
 
 class List extends PureComponent {
     render() {
-        const items = this.props.elements.map((element, index) =>
-            <li key={index}>
-                {element.icon &&
-                this.props.listStyle === listStyleOptions.customIcon ?
-                    element.icon :
-
-                    this.props.listStyle === listStyleOptions.check ?
-                        <CheckBoldIcon
-                            theme={this.props.theme} // not necessary, only needed for tests
-                            iconSize={iconSizeOptions.xs}
-                            marginRight={spaceOptions.sm}
-                            colorPallet={colorPalletOptions.status}
-                            colorStatus={formStatusOptions.success}
-                        />
-                        : null
-                }
-
-                <span className="content">
-                    {element.content}
-                </span>
-
-                {element.details && this.props.hasDetails ?
-                    <span className="details">element.details</span> :
-                    null
-                }
-            </li>
-        );
+        const withoutIconStyles = [
+            listStyleOptions.number,
+            listStyleOptions.dash
+        ];
 
         return <ListBase
             as={this.props.listStyle === listStyleOptions.number ? 'ol' : 'ul'}
             {...this.props}
         >
-            {items}
+            {React.Children.map(this.props.children, (child, index) =>
+                <li key={index}>
+                    {withoutIconStyles.includes(this.props.listStyle) ?
+                        <span className="bullet">
+                            {this.props.listStyle === listStyleOptions.number ?
+                                index + 1 : null}
+                        </span>
+                        : null
+                    }
+
+                    {child}
+                </li>
+            )}
         </ListBase>;
     }
 }
 
 List.propTypes = {
-    elements: PropTypes.arrayOf(
-        PropTypes.shape({
-            icon: PropTypes.element,
-            content: PropTypes.string.isRequired,
-            details: PropTypes.string
-        })
-    ).isRequired,
     listStyle: PropTypes.oneOf(Object.values(listStyleOptions)),
     hasDetails: PropTypes.bool,
     isClickable: PropTypes.bool,
+    bulletSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
@@ -76,6 +55,7 @@ List.defaultProps = {
     listStyle: listStyleDefault,
     hasDetails: false,
     isClickable: false,
+    bulletSize: iconSizeDefault,
     colorTheme: colorThemeDefault,
     marginLateral: blockSpaceDefault,
     marginTop: blockSpaceDefault,

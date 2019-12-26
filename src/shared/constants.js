@@ -164,7 +164,7 @@ const iconSizeOptions = {
     xl: 'xl'
 };
 
-const iconSizeDefault = iconSizeOptions.sm;
+const iconSizeDefault = iconSizeOptions.md;
 
 // Image size
 const imageSizeOptions = {
@@ -243,8 +243,7 @@ const fontSizeDefault = fontSizeOptions.base;
 // List styles
 const listStyleOptions = {
     dash: 'dash',
-    check: 'check',
-    customIcon: 'customIcon',
+    icon: 'icon',
     number: 'number',
 };
 
