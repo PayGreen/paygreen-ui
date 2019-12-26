@@ -29,7 +29,13 @@ class Grid extends PureComponent {
             displayType={display}
             {...rest}
         >
-            {this.props.children}
+            {this.props.display === displayOptions.column ?
+                React.Children.map(this.props.children, (child, index) =>
+                    <div key={index}>
+                        {child}
+                    </div>
+                ) : this.props.children
+            }
         </GridBase>;
     }
 }
