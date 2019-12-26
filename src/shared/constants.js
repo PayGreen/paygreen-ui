@@ -68,14 +68,14 @@ const maskOptions = {
 
 const maskDefault = maskOptions.none;
 
-// Wave styles
-const waveOptions = {
+// Decoration styles
+const decorationOptions = {
     none: 'none',
     left: 'left',
     right: 'right'
 };
 
-const waveDefault = waveOptions.left;
+const decorationDefault = decorationOptions.left;
 
 // Button sizes
 const buttonSizeOptions = {
@@ -363,8 +363,8 @@ export {
     transparentColorDefault,
     maskOptions,
     maskDefault,
-    waveOptions,
-    waveDefault,
+    decorationOptions,
+    decorationDefault,
     buttonSizeOptions,
     buttonSizeDefault,
     radioSizeOptions,

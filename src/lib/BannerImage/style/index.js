@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { waveOptions } from '../../../shared/constants';
+import { decorationOptions } from '../../../shared/constants';
 import { topStyle } from './base';
 
 const BannerImageBase = styled.div`
@@ -7,7 +7,7 @@ const BannerImageBase = styled.div`
     position: relative;
     min-height: ${props => props.theme.bannerHeight.sm};
     padding: 0 .1px ${props => props.theme.blockSpace.md} .1px;
-    padding-top: ${props => props.topStyle !== waveOptions.none ? props.theme.wave.simple : 0};
+    padding-top: ${props => props.topStyle !== decorationOptions.none ? props.theme.wave.simple : 0};
 
     &:before,
     &:after {
