@@ -1,7 +1,8 @@
 import { css } from 'styled-components';
+import { transparentize } from 'polished';
 import { bulletLine, bulletFont } from './constants';
 
-const listStyle = {
+const bulletStyle = {
     icon: css`
         & > .icon {
             height: auto;
@@ -29,6 +30,31 @@ const listStyle = {
     `
 };
 
+const disabledStyle = css`
+    filter: grayscale(1);
+`;
+
+const hoverStyle = css`
+    filter: grayscale(0);
+    background-color: ${props => transparentize(0.95, props.theme.color[props.colorTheme].main)};
+`;
+
+const activeStyle = css`
+    ${hoverStyle};
+`;
+
+const clickableStyle = css`
+    ${props => props.isClicked ? activeStyle : disabledStyle};
+
+    &:hover,
+    &:active,
+    &:focus {
+        ${hoverStyle};
+    }
+`;
+
 export {
-    listStyle
+    bulletStyle,
+    clickableStyle,
+    activeStyle
 };

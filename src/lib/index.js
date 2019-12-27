@@ -12,6 +12,8 @@ import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 import Input from './Input/Input';
 import Link from './Link/Link';
+import List from './List/List';
+import ListItem from './ListItem/ListItem';
 import Logo from './Logo/Logo';
 import Menu from './Menu/Menu';
 import MenuClose from './MenuClose/MenuClose';
@@ -144,6 +146,8 @@ export {
     Image,
     Input,
     Link,
+    List,
+    ListItem,
     Logo,
     Menu,
     MenuClose,
