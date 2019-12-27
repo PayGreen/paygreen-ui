@@ -6,7 +6,9 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     iconSizeOptions,
-    iconSizeDefault
+    iconSizeDefault,
+    decorationOptions,
+    decorationDefault
 } from '../../shared/constants';
 import {
     LeafIcon,
@@ -23,6 +25,7 @@ storiesOf('ListItem', module).addDecorator(withKnobs)
     <ListItem
         href="#"
         isClicked={boolean('Is active', false)}
+        arrow={radios('Arrow if active', decorationOptions, decorationDefault)}
         bulletStyle={listStyleOptions.icon}
         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
         bulletSize={select('Bullet size', iconSizeOptions, iconSizeDefault)}

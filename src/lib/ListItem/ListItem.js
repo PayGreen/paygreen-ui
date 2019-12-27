@@ -7,6 +7,7 @@ import {
     colorThemeDefault,
     iconSizeOptions,
     iconSizeDefault,
+    decorationOptions
 } from '../../shared/constants';
 import { ListItemBase } from './style';
 
@@ -41,6 +42,7 @@ ListItem.propTypes = {
     bulletStyle: PropTypes.oneOf(Object.values(listStyleOptions)),
     bulletSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    arrow: PropTypes.oneOf(Object.values(decorationOptions))
 };
 
 ListItem.defaultProps = {
@@ -49,6 +51,7 @@ ListItem.defaultProps = {
     bulletStyle: listStyleDefault,
     bulletSize: iconSizeDefault,
     colorTheme: colorThemeDefault,
+    arrow: decorationOptions.none
 };
 
 export default ListItem;
