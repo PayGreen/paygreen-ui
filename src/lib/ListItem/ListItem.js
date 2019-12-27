@@ -9,6 +9,7 @@ import {
     iconSizeDefault,
     decorationOptions
 } from '../../shared/constants';
+import { ArrowLeftIcon, ArrowRightIcon } from '../Icon/Icon';
 import { ListItemBase } from './style';
 
 class ListItem extends PureComponent {
@@ -18,11 +19,24 @@ class ListItem extends PureComponent {
             listStyleOptions.dash
         ];
 
+        const isClickable = this.props.href && this.props.href.length;
+
         return <ListItemBase
-            as={this.props.href && this.props.href.length ? 'a' : 'span'}
-            isClickable={this.props.href && this.props.href.length}
+            as={isClickable ? 'a' : 'span'}
+            isClickable={isClickable}
             {...this.props}
         >
+            {isClickable && this.props.arrow === decorationOptions.left ?
+                <span className="arrow">
+                    <ArrowLeftIcon
+                        theme={this.props.theme} // not necessary, only needed for tests
+                        colorTheme={this.props.colorTheme}
+                        iconSize={this.props.bulletSize}
+                    />
+                </span>
+                : null
+            }
+
             {withoutIconStyles.includes(this.props.bulletStyle) ?
                 <span className="bullet">
                     {this.props.bulletStyle === listStyleOptions.number ?
@@ -32,6 +46,17 @@ class ListItem extends PureComponent {
             }
 
             {this.props.children}
+
+            {isClickable && this.props.arrow === decorationOptions.right ?
+                <span className="arrow">
+                    <ArrowRightIcon
+                        theme={this.props.theme} // not necessary, only needed for tests
+                        colorTheme={this.props.colorTheme}
+                        iconSize={this.props.bulletSize}
+                    />
+                </span>
+                : null
+            }
         </ListItemBase>;
     }
 }
