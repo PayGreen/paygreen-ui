@@ -54,7 +54,6 @@ storiesOf('ListItem', module).addDecorator(withKnobs)
 ))
 .add('ListItem with dash', () => (
     <ListItem
-        bulletStyle={listStyleOptions.dash}
         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
         bulletSize={select('Bullet size', iconSizeOptions, iconSizeDefault)}
     >
