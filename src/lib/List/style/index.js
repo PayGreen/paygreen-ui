@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { responsiveSpaces } from '../../../shared/spaces';
-import { dashedOptions } from '../../../shared/constants';
 import { dashedStyle } from './base';
 
 const ListBase = styled.ul`
@@ -8,7 +7,7 @@ const ListBase = styled.ul`
     padding: .1px 0;
     ${responsiveSpaces('margin')};
 
-    ${props => props.dashed !== dashedOptions.none ? dashedStyle : null};
+    ${props => props.hasDashed ? dashedStyle : null};
 `;
 
 export { ListBase };

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {
     listStyleOptions,
     listStyleDefault,
-    dashedOptions,
-    dashedDefault,
     iconSizeOptions,
     iconSizeDefault,
     colorThemeOptions,
@@ -17,13 +15,8 @@ import { dashed } from './style/dashed';
 
 class List extends PureComponent {
     render() {
-        const dashedTop = <span className="dashed top">
-            {dashed[this.props.dashed]}
-        </span>;
-
-        const dashedBottom = <span className="dashed bottom">
-            {dashed[this.props.dashed]}
-        </span>;
+        const dashedTop = <span className="dashed top">{dashed}</span>;
+        const dashedBottom = <span className="dashed bottom">{dashed}</span>;
 
         return <ListBase
             as={this.props.listStyle === listStyleOptions.number ? 'ol' : 'ul'}
@@ -32,11 +25,12 @@ class List extends PureComponent {
             
             {React.Children.map(this.props.children, (child, index) =>
                 <li key={index}>
-                    {index%2 ? dashedTop : null}
+                    {this.props.hasDashed && index%2 ? dashedTop : null}
 
                     {React.cloneElement(child, { number: index + 1 })}
 
-                    {index%2 && (index + 1 < this.props.children.length) ?
+                    {this.props.hasDashed && index%2
+                    && (index + 1 < this.props.children.length) ?
                         dashedBottom :
                         null
                     }
@@ -48,7 +42,7 @@ class List extends PureComponent {
 
 List.propTypes = {
     listStyle: PropTypes.oneOf(Object.values(listStyleOptions)),
-    dashed: PropTypes.oneOf(Object.values(dashedOptions)),
+    hasDashed: PropTypes.bool,
     bulletSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
@@ -58,7 +52,7 @@ List.propTypes = {
 
 List.defaultProps = {
     listStyle: listStyleDefault,
-    dashed: dashedDefault,
+    hasDashed: false,
     bulletSize: iconSizeDefault,
     colorTheme: colorThemeDefault,
     marginLateral: blockSpaceDefault,

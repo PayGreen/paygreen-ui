@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, radios, select, boolean } from '@storybook/addon-knobs';
 import {
     listStyleOptions,
     colorThemeOptions,
@@ -8,9 +8,7 @@ import {
     blockSpaceOptions,
     blockSpaceDefault,
     iconSizeOptions,
-    iconSizeDefault,
-    dashedOptions,
-    dashedDefault,
+    iconSizeDefault
 } from '../../shared/constants';
 import {
     LeafIcon,
@@ -61,7 +59,7 @@ storiesOf('List', module).addDecorator(withKnobs)
 .add('List with icons', () => (
     <List
         listStyle={listStyleOptions.icon}
-        dashed={select('Dashed between li', dashedOptions, dashedDefault)}
+        hasDashed={boolean('Dashed between li', false)}
         bulletSize={select(bulletSizeLabel, iconSizeOptions, iconSizeDefault)}
         marginLateral={select('Lateral margins', blockSpaceOptions, blockSpaceDefault)}
         marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}
@@ -90,7 +88,7 @@ storiesOf('List', module).addDecorator(withKnobs)
 .add('List with check', () => (
     <List
         listStyle={listStyleOptions.icon}
-        dashed={select('Dashed between li', dashedOptions, dashedDefault)}
+        hasDashed={boolean('Dashed between li', false)}
         bulletSize={select(bulletSizeLabel, iconSizeOptions, iconSizeDefault)}
     >
         {sampleBasic.map((element, index) =>
@@ -126,7 +124,7 @@ storiesOf('List', module).addDecorator(withKnobs)
 .add('List with numbers', () => (
     <List
         listStyle={listStyleOptions.number}
-        dashed={select('Dashed between li', dashedOptions, dashedDefault)}
+        hasDashed={boolean('Dashed between li', false)}
         bulletSize={select(bulletSizeLabel, iconSizeOptions, iconSizeDefault)}
         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
     >

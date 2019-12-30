@@ -2,7 +2,6 @@ import { css } from 'styled-components';
 import { math } from 'polished';
 
 const dashedWidth = {
-    none: 0,
     xs: '50px',
     sm: '70px',
     md: '100px',
@@ -10,18 +9,46 @@ const dashedWidth = {
     xl: '220px'
 };
 
+const dashedLine = {
+    xs: css`
+        stroke-width: 2;
+        stroke-dasharray: 5, 12;
+        opacity: .4;
+    `,
+    sm: css`
+        stroke-width: 2;
+        stroke-dasharray: 5, 12;
+        opacity: .3;
+    `,
+    md: css`
+        stroke-width: 1.2;
+        stroke-dasharray: 4, 8;
+        opacity: .3;
+    `,
+    lg: css`
+        stroke-width: 0.9;
+        stroke-dasharray: 4, 8;
+        opacity: .3;
+    `,
+    xl: css`
+        stroke-width: 0.7;
+        stroke-dasharray: 3, 7;
+        opacity: .3;
+    `
+}
+
 const dashedStyle = css`
     li {
         &:nth-child(even) {
             & > :nth-child(2) {
-                margin-left: ${props => dashedWidth[props.dashed]};
+                margin-left: ${props => dashedWidth[props.bulletSize]};
             }
         }
     }
 
     .dashed {
         display: block;
-        width: ${props => dashedWidth[props.dashed]};
+        width: ${props => dashedWidth[props.bulletSize]};
         padding: ${props => math(props.theme.iconSize[props.bulletSize] + '/4')};
         margin-left: ${props => math(props.theme.iconSize[props.bulletSize] + '/2')};
 
@@ -30,8 +57,11 @@ const dashedStyle = css`
         }
 
         svg {
-            fill: ${props => props.theme.color[props.colorTheme].main};
-            opacity: .3;
+            fill: none;
+            stroke: ${props => props.theme.color[props.colorTheme].main};
+            stroke-linecap: round;
+            stroke-miterlimit: 10;
+            ${props => dashedLine[props.bulletSize]}
         }
     }
 `;
