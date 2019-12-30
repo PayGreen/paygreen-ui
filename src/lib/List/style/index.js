@@ -7,7 +7,15 @@ const ListBase = styled.ul`
     padding: .1px 0;
     ${responsiveSpaces('margin')};
 
-    ${props => props.hasDashed ? dashedStyle : null};
+    @media (${props => props.theme.query.max.lg}) {
+        .dashed {
+            display: none;
+        }
+    }
+
+    @media (${props => props.theme.query.min.lg}) {
+        ${props => props.hasDashed ? dashedStyle : null};
+    }
 `;
 
 export { ListBase };
