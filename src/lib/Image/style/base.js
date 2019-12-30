@@ -3,7 +3,7 @@ import waveLeftBottom from './waveLeftBottom.svg';
 import waveRightBottom from './waveRightBottom.svg';
 
 const changeColor = css`
-    background-color: ${props => props.theme.color[props.colorTheme]['light']};
+    background-color: ${props => props.theme.color[props.colorTheme].light};
 
     img {
         opacity: 0.2;

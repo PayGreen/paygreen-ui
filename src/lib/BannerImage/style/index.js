@@ -30,7 +30,7 @@ const BannerImageBase = styled.div`
     }
 
     &:after {
-        background-color: ${props => props.theme.color[props.colorTheme]['light']};
+        background-color: ${props => props.theme.color[props.colorTheme].light};
         opacity: .8;
     }
 `;

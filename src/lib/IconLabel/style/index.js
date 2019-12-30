@@ -5,8 +5,8 @@ const IconLabelBase = styled.span`
     display: inline-flex;
     align-items: center;
     border-radius: ${props => props.theme.radius.sm};
-    background-color: ${props => props.theme.color[props.colorTheme]['light']};
-    color: ${props => props.theme.color[props.colorTheme]['main']};
+    background-color: ${props => props.theme.color[props.colorTheme].light};
+    color: ${props => props.theme.color[props.colorTheme].main};
     padding: ${props => props.theme.space.xs};
     text-transform: uppercase;
     font-size: ${props => props.theme.font.size.tiny};

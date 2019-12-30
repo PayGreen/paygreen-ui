@@ -15,7 +15,7 @@ const shadowStyle = {
         theme: css`
             box-shadow: ${props => props.theme.shadow.size.sm + ' ' + transparentize(
                 props.theme.shadow.opacity.md,
-                props.theme.color[props.colorTheme]['main']
+                props.theme.color[props.colorTheme].main
             )};
         `,
         wab: css`
@@ -35,13 +35,13 @@ const shadowStyle = {
         theme: css`
             box-shadow: ${props => props.theme.shadow.size.md + ' ' + transparentize(
                 props.theme.shadow.opacity.lg,
-                props.theme.color[props.colorTheme]['main']
+                props.theme.color[props.colorTheme].main
             )};
         `,
         wab: css`
             box-shadow: ${props => props.theme.shadow.size.md + ' ' + transparentize(
                 props.theme.shadow.opacity.lg,
-                props.theme.color[props.colorTheme]['main']
+                props.theme.color[props.colorTheme].main
             )};
         `,
         status: css`
@@ -75,7 +75,7 @@ const activeStyle = {
         ${props => props.shadow ? shadowStyle.active.wab : layerStyle};
 
         svg {
-            fill: ${props => props.theme.color[props.colorTheme]['main']};
+            fill: ${props => props.theme.color[props.colorTheme].main};
         }
     `,
     status: css`
@@ -87,7 +87,7 @@ const backgroundStyle = css`
     padding: ${props => math(props.theme.iconSize[props.iconSize] + '/2 - ' + props.theme.space.xs)};
     border-radius: 50%;
     background-color: ${props => props.colorPallet === colorPalletOptions.theme ?
-        props.theme.color[props.colorTheme]['light'] :
+        props.theme.color[props.colorTheme].light :
         props.theme.wab.white00
     };
 
@@ -100,7 +100,7 @@ const backgroundStyle = css`
         width: 100%;
         border-radius: 50%;
         background: ${props => props.colorPallet === colorPalletOptions.theme ?
-            props.theme.color[props.colorTheme]['light'] :
+            props.theme.color[props.colorTheme].light :
             props.theme.wab.white00
         };
         opacity: .5;

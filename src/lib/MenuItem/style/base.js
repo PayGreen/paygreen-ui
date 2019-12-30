@@ -11,8 +11,8 @@ const hoverBase = css`
         width: 200%;
         height: 100%;
         background-image: linear-gradient(to left,
-            ${props => transparentize(1, props.theme.color[props.colorTheme]['gradientBase'])} 50%,
-            ${props => transparentize(0.8, props.theme.color[props.colorTheme]['gradientBase'])} 90%
+            ${props => transparentize(1, props.theme.color[props.colorTheme].gradientBase)} 50%,
+            ${props => transparentize(0.8, props.theme.color[props.colorTheme].gradientBase)} 90%
         );
         transition: all ${props => props.theme.transition.xl};
     }
@@ -36,8 +36,8 @@ const hoverAlternative = css`
         transform: translateX(-50%);
         margin-left: 50%;
         background-image: linear-gradient(to left,
-            ${props => props.theme.color[props.colorTheme]['gradientBase']},
-            ${props => props.theme.color[props.colorTheme]['gradientShade']}
+            ${props => props.theme.color[props.colorTheme].gradientBase},
+            ${props => props.theme.color[props.colorTheme].gradientShade}
         );
         transition: all ${props => props.theme.transition.sm};
     }
@@ -50,7 +50,7 @@ const hoverAlternative = css`
         }
 
         ${LinkBase} {
-            color: ${props => props.theme.color[props.colorTheme]['main']};
+            color: ${props => props.theme.color[props.colorTheme].main};
         }
     }
 `;

@@ -44,12 +44,12 @@ const withWave = css`
     span {
         max-width: ${props => props.theme.blockWidth.md};
         padding: 0 ${props => props.theme.space.sm};
-        color: ${props => props.theme.color[props.colorTheme]['main']};
+        color: ${props => props.theme.color[props.colorTheme].main};
         opacity: .4;
     }
 
     .shape {
-        fill: ${props => props.theme.color[props.colorTheme]['main']};
+        fill: ${props => props.theme.color[props.colorTheme].main};
         opacity: .2;
 
         ${props => waveStyle[props.waveStyle]};
@@ -68,7 +68,7 @@ const noWave = css`
         transform: translateX(-50%);
         height: ${props => props.theme.line};
         width: ${props => props.theme.space.xl};
-        background-color: ${props => props.theme.color[props.colorTheme]['main']};
+        background-color: ${props => props.theme.color[props.colorTheme].main};
         opacity: .4;
     }
 
