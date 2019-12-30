@@ -8,7 +8,9 @@ import {
     blockSpaceOptions,
     blockSpaceDefault,
     iconSizeOptions,
-    iconSizeDefault
+    iconSizeDefault,
+    dashedOptions,
+    dashedDefault,
 } from '../../shared/constants';
 import {
     LeafIcon,
@@ -59,6 +61,8 @@ storiesOf('List', module).addDecorator(withKnobs)
 .add('List with icons', () => (
     <List
         listStyle={listStyleOptions.icon}
+        dashed={select('Dashed between li', dashedOptions, dashedDefault)}
+        bulletSize={select(bulletSizeLabel, iconSizeOptions, iconSizeDefault)}
         marginLateral={select('Lateral margins', blockSpaceOptions, blockSpaceDefault)}
         marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}
         marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceDefault)}
@@ -86,6 +90,8 @@ storiesOf('List', module).addDecorator(withKnobs)
 .add('List with check', () => (
     <List
         listStyle={listStyleOptions.icon}
+        dashed={select('Dashed between li', dashedOptions, dashedDefault)}
+        bulletSize={select(bulletSizeLabel, iconSizeOptions, iconSizeDefault)}
     >
         {sampleBasic.map((element, index) =>
             <ListItem
@@ -120,6 +126,9 @@ storiesOf('List', module).addDecorator(withKnobs)
 .add('List with numbers', () => (
     <List
         listStyle={listStyleOptions.number}
+        dashed={select('Dashed between li', dashedOptions, dashedDefault)}
+        bulletSize={select(bulletSizeLabel, iconSizeOptions, iconSizeDefault)}
+        colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
     >
         {sampleBasic.map((element, index) =>
             <ListItem

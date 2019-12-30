@@ -77,6 +77,18 @@ const decorationOptions = {
 
 const decorationDefault = decorationOptions.left;
 
+// Dashed styles
+const dashedOptions = {
+    none: 'none',
+    xs: 'xs',
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl'
+};
+
+const dashedDefault = dashedOptions.none;
+
 // Button sizes
 const buttonSizeOptions = {
     sm: 'sm',
@@ -365,6 +377,8 @@ export {
     maskDefault,
     decorationOptions,
     decorationDefault,
+    dashedOptions,
+    dashedDefault,
     buttonSizeOptions,
     buttonSizeDefault,
     radioSizeOptions,
