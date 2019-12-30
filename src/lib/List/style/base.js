@@ -13,27 +13,22 @@ const dashedLine = {
     xs: css`
         stroke-width: 2;
         stroke-dasharray: 5, 12;
-        opacity: .4;
     `,
     sm: css`
         stroke-width: 2;
         stroke-dasharray: 5, 12;
-        opacity: .3;
     `,
     md: css`
         stroke-width: 1.2;
         stroke-dasharray: 4, 8;
-        opacity: .3;
     `,
     lg: css`
         stroke-width: 0.9;
         stroke-dasharray: 4, 8;
-        opacity: .3;
     `,
     xl: css`
         stroke-width: 0.7;
         stroke-dasharray: 3, 7;
-        opacity: .3;
     `
 }
 
@@ -58,6 +53,7 @@ const dashedStyle = css`
 
         svg {
             fill: none;
+            opacity: .3;
             stroke: ${props => props.theme.color[props.colorTheme].main};
             stroke-linecap: round;
             stroke-miterlimit: 10;
