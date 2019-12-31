@@ -22,7 +22,6 @@ class List extends PureComponent {
             as={this.props.listStyle === listStyleOptions.number ? 'ol' : 'ul'}
             {...this.props}
         >
-            
             {React.Children.map(this.props.children, (child, index) =>
                 <li key={index}>
                     {this.props.hasDashed && index%2 ? dashedTop : null}
