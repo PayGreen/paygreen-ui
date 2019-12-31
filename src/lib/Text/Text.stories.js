@@ -1,13 +1,17 @@
 import React from 'react';
 import Text from './Text';
 import {
-    colorNumberOptions,
     colorTypeOptions,
     colorTypeDefault,
+    colorPalletOptions,
+    colorPalletDefault,
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
-    transparentColorOptions,
+    greyDefault,
+    formStatusOptions,
+    formStatusDefault,
+
     radiusOptions,
     fontSizeOptions,
     fontSizeDefault,
@@ -26,8 +30,11 @@ storiesOf('Text', module)
     .add('Single paragraph', () => (
         <Text
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
-            mainColor={select('Main color', greyOptions, greyOptions.grey60)}
+            colorPallet={radios('Color pallet', colorPalletOptions, colorPalletOptions.wab)}
+            colorTheme={select('Color theme', colorThemeOptions, colorThemeDefault)}
+            colorWab={select('Grey color', greyOptions, greyOptions.grey60)}
+            colorStatus={select('Status color', formStatusOptions, formStatusDefault)}
+
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
             underline={boolean('Underline', false)}
@@ -45,9 +52,13 @@ storiesOf('Text', module)
     .add('Block of paragraphs', () => (
         <Text
             textHtmlTag={textHtmlTagOptions.div}
+
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
-            mainColor={select('Main color', greyOptions, greyOptions.grey60)}
+            colorPallet={radios('Color pallet', colorPalletOptions, colorPalletOptions.wab)}
+            colorTheme={select('Color theme', colorThemeOptions, colorThemeDefault)}
+            colorWab={select('Grey color', greyOptions, greyOptions.grey60)}
+            colorStatus={select('Status color', formStatusOptions, formStatusDefault)}
+
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
             underline={boolean('Underline', false)}
@@ -75,10 +86,13 @@ storiesOf('Text', module)
     })
     .add('Quote or emphasis', () => (
         <Text
-            colorNumber={colorNumberOptions.one}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
-            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
-            backgroundColor={radios('Background color', transparentColorOptions, transparentColorOptions.theme)}
+            colorPallet={radios('Color pallet', colorPalletOptions, colorPalletDefault)}
+            colorTheme={select('Color theme', colorThemeOptions, colorThemeDefault)}
+            colorWab={select('Grey color', greyOptions, greyDefault)}
+            colorStatus={select('Status color', formStatusOptions, formStatusDefault)}
+
+            hasBackground={true}
             radiusSize={radios('Radius size', radiusOptions, radiusOptions.sm)}
 
             paddingLateral={blockSpaceOptions.lg}

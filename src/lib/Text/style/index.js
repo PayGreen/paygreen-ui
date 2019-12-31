@@ -11,8 +11,8 @@ import {
 const TextBase = styled.p`
     ${responsiveSpaces('padding')};
     ${responsiveSpaces('margin')};
-    ${props => blockBackground[props.colorType]};
     border-radius: ${props => props.theme.radius[props.radiusSize]};
+    ${props => props.hasBackground ? blockBackground[props.colorType] : null};
     ${props => props.textHtmlTag === textHtmlTagOptions.div ? internalParagraph : textStyle};
     ${props => props.underline ? underline : null};
 `;

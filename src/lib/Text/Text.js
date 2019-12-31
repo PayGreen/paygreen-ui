@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import {
     textHtmlTagOptions,
     textHtmlTagDefault,
+
     colorTypeOptions,
     colorTypeDefault,
-    colorNumberOptions,
+    colorPalletOptions,
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
-    transparentColorOptions,
-    transparentColorDefault,
+    formStatusOptions,
+    formStatusDefault,
+
     radiusOptions,
     fontSizeOptions,
     fontSizeDefault,
@@ -35,11 +37,14 @@ class Text extends PureComponent {
 
 Text.propTypes = {
     textHtmlTag: PropTypes.oneOf(Object.values(textHtmlTagOptions)),
+
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    colorNumber: PropTypes.oneOf(Object.values(colorNumberOptions)),
-    mainColor: PropTypes.oneOf(Object.values(greyOptions)),
+    colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    backgroundColor: PropTypes.oneOf(Object.values(transparentColorOptions)),
+    colorWab: PropTypes.oneOf(Object.values(greyOptions)),
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
+
+    hasBackground: PropTypes.bool,
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
@@ -58,11 +63,14 @@ Text.propTypes = {
 
 Text.defaultProps = {
     textHtmlTag: textHtmlTagDefault,
+
     colorType: colorTypeDefault,
-    colorNumber: colorNumberOptions.two,
-    mainColor: greyOptions.grey60,
+    colorPallet: colorPalletOptions.wab,
     colorTheme: colorThemeDefault,
-    backgroundColor: transparentColorDefault,
+    colorWab: greyOptions.grey60,
+    colorStatus: formStatusDefault,
+
+    hasBackground: false,
     radiusSize: radiusOptions.none,
     textSize: fontSizeDefault,
     textAlign: alignDefault,
