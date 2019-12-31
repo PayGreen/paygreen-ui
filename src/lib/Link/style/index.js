@@ -8,8 +8,8 @@ import {
 
 const LinkBase = styled.span`
     color: ${props => props.colorType === colorTypeOptions.reverse ?
-        colors.secondary :
-        colors.main[props.colorPallet]
+        props.theme.wab.white00 :
+        colors[props.colorPallet]
     };
     font-weight: ${props => props.theme.font.weight.bold};
     transition: all ${props => props.theme.transition.xs};

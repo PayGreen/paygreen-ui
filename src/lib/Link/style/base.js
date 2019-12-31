@@ -16,8 +16,8 @@ const underlineStyle = css`
         height: ${props => props.theme.line};
         width: 100%;
         background-color: ${props => props.colorType === colorTypeOptions.reverse ?
-            colors.secondary :
-            colors.main[props.colorPallet]
+            props.theme.wab.white00 :
+            colors[props.colorPallet]
         };
         opacity: .25;
         transition: all ${props => props.theme.transition.xs};
