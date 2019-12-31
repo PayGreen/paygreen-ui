@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 import {
     titleHtmlTagOptions,
     titleHtmlTagDefault,
+
     colorTypeOptions,
     colorTypeDefault,
-    colorNumberOptions,
-    colorNumberDefault,
+    colorPalletOptions,
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
     greyDefault,
+    formStatusOptions,
+    formStatusDefault,
+
     fontSizeOptions,
     fontSizeDefault,
     alignOptions,
@@ -33,10 +36,13 @@ class Title extends PureComponent {
 
 Title.propTypes = {
     titleHtmlTag: PropTypes.oneOf(Object.values(titleHtmlTagOptions)),
+
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    colorNumber: PropTypes.oneOf(Object.values(colorNumberOptions)),
+    colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    color2: PropTypes.oneOf(Object.values(greyOptions)),
+    colorWab: PropTypes.oneOf(Object.values(greyOptions)),
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
+
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
     marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
@@ -46,10 +52,13 @@ Title.propTypes = {
 
 Title.defaultProps = {
     titleHtmlTag: titleHtmlTagDefault,
+
     colorType: colorTypeDefault,
-    colorNumber: colorNumberDefault,
+    colorPallet: colorPalletOptions.wab,
     colorTheme: colorThemeDefault,
-    color2: greyDefault,
+    colorWab: greyDefault,
+    colorStatus: formStatusDefault,
+
     textSize: fontSizeDefault,
     textAlign: alignDefault,
     marginLateral: blockSpaceDefault,
