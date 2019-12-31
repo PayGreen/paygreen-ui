@@ -7,14 +7,6 @@ const colorPalletOptions = {
 
 const colorPalletDefault = colorPalletOptions.theme;
 
-// Color nomber
-const colorNumberOptions = {
-    one: 'one',
-    two: 'two',
-};
-
-const colorNumberDefault = colorNumberOptions.one;
-
 // Color types
 const colorTypeOptions = {
     original: 'original',
@@ -351,8 +343,6 @@ const alignDefault = alignOptions.left;
 export {
     colorPalletOptions,
     colorPalletDefault,
-    colorNumberOptions,
-    colorNumberDefault,
     colorTypeOptions,
     colorTypeDefault,
     colorThemeOptions,
