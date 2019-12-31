@@ -1,8 +1,7 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
 import { colorTypeOptions } from '../../../shared/constants';
-import { colors } from '../../Link/style/constants';
-import { backgroundColor, minimizeFont } from './constants';
+import { mainColor, backgroundColor, minimizeFont } from './constants';
 
 const blockBackground = {
     original: css`
@@ -16,7 +15,7 @@ const blockBackground = {
 const textStyle = css`
     color: ${props => props.colorType === colorTypeOptions.reverse ?
         props.theme.wab.white00 :
-        colors[props.colorPallet]
+        mainColor[props.colorPallet]
     };
 
     line-height: 1.5;

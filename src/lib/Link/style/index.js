@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { colorTypeOptions } from '../../../shared/constants';
-import { colors } from './constants';
+import { mainColor } from '../../Text/style/constants';
 import {
     underlineStyle,
     uppercaseStyle
@@ -9,7 +9,7 @@ import {
 const LinkBase = styled.span`
     color: ${props => props.colorType === colorTypeOptions.reverse ?
         props.theme.wab.white00 :
-        colors[props.colorPallet]
+        mainColor[props.colorPallet]
     };
     font-weight: ${props => props.theme.font.weight.bold};
     transition: all ${props => props.theme.transition.xs};

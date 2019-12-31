@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
 import { colorTypeOptions, colorPalletOptions } from '../../../shared/constants';
-import { colors } from '../../Link/style/constants';
+import { mainColor } from '../../Text/style/constants';
 import { lineColor, smallFontSizes, minimizeFont } from './constants';
 
 const strongColor = css`
@@ -25,7 +25,7 @@ const fontStyle = css`
     ${props => smallFontSizes.includes(props.textSize) ? smallText : bigText};
     color: ${props => props.colorType === colorTypeOptions.reverse ?
         transparentize(0.05, props.theme.wab.white00) :
-        colors[props.colorPallet]
+        mainColor[props.colorPallet]
     };
 
     strong {
