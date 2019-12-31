@@ -25,7 +25,7 @@ const field = css`
     padding-left: ${inputPadding.base};
     padding-right: ${inputPadding.larger};
     width: 100%;
-    line-height: 1;
+    line-height: ${props => props.theme.font.lineHeight.base};
     transition: all ${props => props.theme.transition.sm};
 
     & + span {

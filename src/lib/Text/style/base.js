@@ -18,7 +18,7 @@ const textStyle = css`
         mainColor[props.colorPallet]
     };
 
-    line-height: 1.5;
+    line-height: ${props => props.theme.font.lineHeight.md};
     text-align: ${props => props.textAlign};
     font-size: ${props => props.theme.font.size[props.textSize]};
 
