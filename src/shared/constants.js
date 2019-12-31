@@ -40,16 +40,6 @@ const greyOptions = {
 
 const greyDefault = greyOptions.grey40;
 
-// Transparent colors
-const transparentColorOptions = {
-    none: 'none',
-    grey1: 'grey1',
-    grey2: 'grey2',
-    theme: 'theme'
-};
-
-const transparentColorDefault = transparentColorOptions.none;
-
 // Mask styles
 const maskOptions = {
     none: 'none',
@@ -349,8 +339,6 @@ export {
     colorThemeDefault,
     greyOptions,
     greyDefault,
-    transparentColorOptions,
-    transparentColorDefault,
     maskOptions,
     maskDefault,
     decorationOptions,
