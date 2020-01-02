@@ -167,6 +167,14 @@ export const ThemeBase = {
         lg: '640px',
         xl: '760px',
     },
+    imageCircleSize: {
+        auto: 'auto',
+        xs: '60px',
+        sm: '80px',
+        md: '100px',
+        lg: '120px',
+        xl: '140px',
+    },
     logoHeight: {
         none: 'auto',
         xs: '20px',

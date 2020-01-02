@@ -52,9 +52,31 @@ const backgroundBlock = css`
     background-color: ${props => props.theme.wab.white00};
 `;
 
+const noCropped = css`
+    ${props => bottomStyle[props.bottomStyle]};
+    height: ${props => props.theme.imageSize[props.blockHeight]};
+    width: ${props => props.theme.imageSize[props.blockWidth]};
+    border-radius: ${props => props.theme.radius[props.radiusSize]};
+
+    img {
+        border-radius: ${props => props.theme.radius[props.radiusSize]};
+    }
+`;
+
+const croppedCircle = css`
+    height: ${props => props.theme.imageCircleSize[props.blockHeight]};
+    width: ${props => props.theme.imageCircleSize[props.blockWidth]};
+    border-radius: 50%;
+
+    img {
+        border-radius: 50%;
+    }
+`;
+
 export {
     changeColor,
-    bottomStyle,
     imageStyle,
-    backgroundBlock
+    backgroundBlock,
+    noCropped,
+    croppedCircle
 };

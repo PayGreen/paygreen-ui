@@ -17,6 +17,7 @@ import {
     spaceOptions
 } from '../../shared/constants';
 import Image from './Image';
+import portraitFile from './sample/portrait.png';
 import photoFile from './sample/sample.png';
 import drawFile from './sample/sample.svg';
 
@@ -61,4 +62,15 @@ storiesOf('Image', module).addDecorator(withKnobs)
     >
         <img src={photoFile} alt="picture" />
     </Image>
-));
+))
+.add('Image in circle', () => (
+    <Image
+        imageType={imageTypeOptions.picture}
+        cropCircle={true}
+        blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.sm)}
+        blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.auto)}
+        shadow={select('Shadow style', shadowStyleOptions, shadowStyleDefault)}
+    >
+        <img src={portraitFile} alt="picture" />
+    </Image>
+));;
