@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { decorationOptions } from '../../../shared/constants';
-import { color, waveScale } from './constants';
+import { color } from './constants';
+import { topWaveStyle, bottomWaveStyle } from './base';
 
 const BannerBase = styled.div`
     position: relative;
@@ -12,26 +13,15 @@ const BannerBase = styled.div`
         ${props => color.second[props.gradient]}
     );
 
+    ${props => props.topStyle !== waveOptions.none ? topWaveStyle : null};
+    ${props => props.bottomStyle !== waveOptions.none ? bottomWaveStyle : null};
+
     .waves {
         position: absolute;
         left: 0;
 
         .light {
             opacity: .5;
-        }
-
-        &:first-child {
-            fill: ${props => color.first[props.gradient]};
-            bottom: 100%;
-            transform: scale(${props => waveScale[props.topStyle]}, ${waveScale.top});
-            margin-bottom: -1px;
-        }
-        
-        &:last-child {
-            fill: ${props => color.second[props.gradient]};
-            top: 100%;
-            transform: scale(${props => waveScale[props.bottomStyle]}, ${waveScale.bottom});
-            margin-top: -1px;
         }
     }
 `;
