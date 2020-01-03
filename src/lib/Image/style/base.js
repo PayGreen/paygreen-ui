@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { transparentize } from 'polished';
 import waveLeftBottom from './waveLeftBottom.svg';
 import waveRightBottom from './waveRightBottom.svg';
 
@@ -52,11 +53,20 @@ const backgroundBlock = css`
     background-color: ${props => props.theme.wab.white00};
 `;
 
+const radiusStyle = {
+    notCropped: css`
+        border-radius: ${props => props.theme.radius[props.radiusSize]};
+    `,
+    croppedCircle: css`
+        border-radius: 50%;
+    `
+};
+
 const noCropped = css`
     ${props => bottomStyle[props.bottomStyle]};
+    ${radiusStyle.notCropped};
     height: ${props => props.theme.imageSize[props.blockHeight]};
     width: ${props => props.theme.imageSize[props.blockWidth]};
-    border-radius: ${props => props.theme.radius[props.radiusSize]};
 
     img {
         border-radius: ${props => props.theme.radius[props.radiusSize]};
@@ -64,12 +74,62 @@ const noCropped = css`
 `;
 
 const croppedCircle = css`
+    ${radiusStyle.croppedCircle};
     height: ${props => props.theme.imageCircleSize[props.blockHeight]};
     width: ${props => props.theme.imageCircleSize[props.blockWidth]};
-    border-radius: 50%;
 
     img {
         border-radius: 50%;
+    }
+`;
+
+const shadowStyle = css`
+    margin: 0;
+
+    img {
+        box-shadow: ${props => props.theme.shadow.size[props.shadow] + ' ' + transparentize(
+            props.theme.shadow.opacity[props.shadow],
+            props.colorChange ? props.theme.color[props.colorTheme].main : props.theme.wab.black00
+        )};
+    }
+`;
+
+const decorationShift = '2px';
+
+const decorationStyle = css`
+    position: relative;
+    margin: ${decorationShift};
+    padding: ${props => props.theme.space.sm};
+
+    img {
+        z-index: ${props => props.theme.zindex.base};
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        background-color: ${props => props.theme.color[props.colorTheme].main};
+        opacity: .3;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: ${props => props.theme.zindex.background};
+
+        ${props => radiusStyle[props.cropCircle ? 'croppedCircle' : 'notCropped']};
+    }
+
+    &::before {
+        margin-top: -${decorationShift};
+        margin-left: -${decorationShift};
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        margin-bottom: -${decorationShift};
+        margin-right: -${decorationShift};
+        bottom: 0;
+        right: 0;
     }
 `;
 
@@ -78,5 +138,7 @@ export {
     imageStyle,
     backgroundBlock,
     noCropped,
-    croppedCircle
+    croppedCircle,
+    shadowStyle,
+    decorationStyle
 };

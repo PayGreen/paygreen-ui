@@ -67,6 +67,8 @@ storiesOf('Image', module).addDecorator(withKnobs)
     <Image
         imageType={imageTypeOptions.picture}
         cropCircle={true}
+        hasDecoration={boolean('With decorators', true)}
+        colorTheme={select('Color theme', colorThemeOptions, colorThemeDefault)}
         blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.sm)}
         blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.auto)}
         shadow={select('Shadow style', shadowStyleOptions, shadowStyleDefault)}
