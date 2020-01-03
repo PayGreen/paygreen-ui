@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+import { responsiveSpaces } from '../../../shared/spaces';
 import { textColor } from './constants';
 
 const BreadcrumbBase = styled.ul`
-    margin: ${props => props.theme.space.md} 0;
+    ${responsiveSpaces('margin')};
     padding: 0;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    font-size: ${props => props.theme.font.size.xs};
+    font-size: ${props => props.theme.font.size.xxs};
     font-weight: ${props => props.theme.font.weight.bold};
     text-transform: uppercase;
     letter-spacing: ${props => props.theme.font.spacing};
