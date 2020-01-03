@@ -66,7 +66,7 @@ storiesOf('Image', module).addDecorator(withKnobs)
 .add('Image in circle', () => (
     <Image
         imageType={imageTypeOptions.picture}
-        cropCircle={true}
+        isCircle={true}
         hasDecoration={boolean('With decorators', true)}
         colorTheme={select('Color theme', colorThemeOptions, colorThemeDefault)}
         blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.sm)}

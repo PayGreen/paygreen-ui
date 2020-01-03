@@ -28,7 +28,7 @@ class Image extends PureComponent {
 
 Image.propTypes = {
     imageType: PropTypes.oneOf(Object.values(imageTypeOptions)),
-    cropCircle: PropTypes.bool,
+    isCircle: PropTypes.bool,
     hasDecoration: PropTypes.bool,
     colorChange: PropTypes.bool,
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
@@ -44,7 +44,7 @@ Image.propTypes = {
 
 Image.defaultProps = {
     imageType: imageTypeDefault,
-    cropCircle: false,
+    isCircle: false,
     hasDecoration: false,
     colorChange: false,
     colorTheme: colorThemeDefault,

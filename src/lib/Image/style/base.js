@@ -115,7 +115,7 @@ const decorationStyle = css`
         position: absolute;
         z-index: ${props => props.theme.zindex.background};
 
-        ${props => radiusStyle[props.cropCircle ? 'croppedCircle' : 'notCropped']};
+        ${props => radiusStyle[props.isCircle ? 'croppedCircle' : 'notCropped']};
     }
 
     &::before {
