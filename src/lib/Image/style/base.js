@@ -108,13 +108,13 @@ const decorationStyle = css`
     &::before,
     &::after {
         content: '';
-        background-color: ${props => props.theme.color[props.colorTheme].main};
+        background-color: ${props => props.theme.wab.white00};
         opacity: .3;
         width: 100%;
         height: 100%;
         position: absolute;
         z-index: ${props => props.theme.zindex.background};
-
+        box-shadow: 0 0 ${decorationShift} ${props => transparentize(0.7, props.theme.wab.black00)};
         ${props => radiusStyle[props.isCircle ? 'croppedCircle' : 'notCropped']};
     }
 
