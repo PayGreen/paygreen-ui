@@ -62,7 +62,7 @@ const radiusStyle = {
     `
 };
 
-const noCropped = css`
+const notCropped = css`
     ${props => bottomStyle[props.bottomStyle]};
     ${radiusStyle.notCropped};
     height: ${props => props.theme.imageSize[props.blockHeight]};
@@ -137,7 +137,7 @@ export {
     changeColor,
     imageStyle,
     backgroundBlock,
-    noCropped,
+    notCropped,
     croppedCircle,
     shadowStyle,
     decorationStyle

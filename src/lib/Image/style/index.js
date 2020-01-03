@@ -7,7 +7,7 @@ import {
     changeColor,
     imageStyle,
     backgroundBlock,
-    noCropped,
+    notCropped,
     croppedCircle,
     shadowStyle,
     decorationStyle
@@ -15,7 +15,7 @@ import {
 
 const ImageBase = styled.figure`
     ${props => props.colorChange ? changeColor : null};
-    ${props => props.isCircle ? croppedCircle : noCropped};
+    ${props => props.isCircle ? croppedCircle : notCropped};
     ${props => props.hasDecoration ? decorationStyle : shadowStyle};
     display: flex;
     justify-content: ${props => props.justifyContent};
