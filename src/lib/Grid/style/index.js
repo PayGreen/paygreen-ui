@@ -3,10 +3,10 @@ import { blockSpaceOptions } from '../../../shared/constants';
 import { displayStyle, shiftStyle, flex1Style } from './base';
 
 const GridBase = styled.div`
-    padding: ${props => props.theme.space.md};
+    padding: ${props => props.theme.space[props.blockPadding]};
 
     & > * {
-        margin: ${props => props.theme.space.md} auto;
+        margin: ${props => props.theme.space[props.childrenMargin]} auto;
         ${props => props.flex1 ? flex1Style : null};
     }
 
@@ -17,7 +17,7 @@ const GridBase = styled.div`
         padding: 0;
 
         & > * {
-            margin: ${props => props.theme.space.lg};
+            margin: ${props => props.theme.space[props.childrenMarginBig]};
         }
 
         ${props => displayStyle[props.displayType]};

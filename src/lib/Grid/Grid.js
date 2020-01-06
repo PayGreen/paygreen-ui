@@ -14,7 +14,8 @@ import {
     justifyItemsDefault,
     alignItemsOptions,
     alignItemsDefault,
-    blockSpaceOptions
+    blockSpaceOptions,
+    spaceOptions
 } from '../../shared/constants';
 import { GridBase } from './style';
 
@@ -52,6 +53,9 @@ Grid.propTypes = {
     childrenShift: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     negativeShift: PropTypes.bool,
     reverseShift: PropTypes.bool,
+    blockPadding: PropTypes.oneOf(Object.values(spaceOptions)),
+    childrenMargin: PropTypes.oneOf(Object.values(spaceOptions)),
+    childrenMarginBig: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Grid.defaultProps = {
@@ -66,6 +70,9 @@ Grid.defaultProps = {
     childrenShift: blockSpaceOptions.none,
     negativeShift: false,
     reverseShift: false,
+    blockPadding: spaceOptions.md,
+    childrenMargin: spaceOptions.md,
+    childrenMarginBig: spaceOptions.lg
 };
 
 export default Grid;
