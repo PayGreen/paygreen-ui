@@ -100,13 +100,13 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+    onChange: undefined,
     type: 'text',
     width: inputWidthDefault,
     params: {
         shadow: false,
     },
     status: formStatusDefault,
-    onChange: undefined,
     marginTop: blockSpaceOptions.md,
     marginBottom: blockSpaceOptions.md,
 };

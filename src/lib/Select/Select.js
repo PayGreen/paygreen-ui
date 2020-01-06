@@ -109,11 +109,11 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
+    onChange: undefined,
     width: inputWidthDefault,
     params: {
         shadow: false,
     },
-    onChange: undefined,
     status: formStatusDefault,
     marginTop: blockSpaceOptions.md,
     marginBottom: blockSpaceOptions.md,

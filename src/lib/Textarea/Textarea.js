@@ -97,6 +97,7 @@ Textarea.propTypes = {
 };
 
 Textarea.defaultProps = {
+    onChange: undefined,
     minLength: 0,
     maxLength: 2000,
     params: {
@@ -105,7 +106,6 @@ Textarea.defaultProps = {
     },
     counterlabel: 'characters',
     status: formStatusDefault,
-    onChange: undefined,
     marginTop: blockSpaceOptions.md,
     marginBottom: blockSpaceOptions.md,
 };
