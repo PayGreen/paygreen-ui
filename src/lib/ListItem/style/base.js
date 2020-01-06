@@ -108,6 +108,9 @@ const clickableStyle = css`
 
 const notClickableStyle = css`
     ${gridItemArrow[decorationOptions.none]};
+    
+    padding-left: 0;
+    padding-right: 0;
 `;
 
 export {

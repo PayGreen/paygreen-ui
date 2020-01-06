@@ -6,7 +6,6 @@ import {
     colorThemeDefault,
     decorationOptions,
     decorationDefault,
-    colorNumberOptions,
     greyOptions,
     fontSizeOptions,
     blockSpaceOptions
@@ -30,9 +29,8 @@ storiesOf('BannerImage', module).addDecorator(withKnobs)
             hasBackground={false}
         >
             <Title
-                colorNumber={colorNumberOptions.two}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                color2={greyOptions.grey60}
+                colorWab={greyOptions.grey60}
                 textSize={fontSizeOptions.lg}
                 marginLateral={blockSpaceOptions.md}
                 marginTop={blockSpaceOptions.md}

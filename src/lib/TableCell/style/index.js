@@ -29,7 +29,7 @@ const TableCellBase = styled.div`
     }
 
     ${LinkBase} {
-        line-height: 1.5;
+        line-height: ${props => props.theme.font.lineHeight.md};
     }
 
     i,

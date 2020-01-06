@@ -62,6 +62,10 @@ export const ThemeBase = {
             normal: 400,
             bold: 700
         },
+        lineHeight: {
+            base: 1,
+            md: 1.5
+        },
         spacing: '0.3em',
         underline: {
             space: {

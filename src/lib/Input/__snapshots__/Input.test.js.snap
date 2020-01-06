@@ -113,6 +113,10 @@ exports[`renders without crashing 1`] = `
           },
         },
         "font": Object {
+          "lineHeight": Object {
+            "base": 1,
+            "md": 1.5,
+          },
           "size": Object {
             "base": "1.8rem",
             "lg": "3rem",

@@ -49,7 +49,7 @@ exports[`renders without crashing 1`] = `
       Dev
     </span>
     <p
-      className="sc-bxivhb jKWmYb"
+      className="sc-bxivhb hojHtH"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo, id bibendum felis iaculis eu.
     </p>

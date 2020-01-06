@@ -20,7 +20,7 @@ const ButtonBase = styled.span`
     text-align: center;
     text-transform: uppercase;
     letter-spacing: ${props => props.theme.button.letterSpacing[props.buttonSize]};
-    line-height: 1.5;
+    line-height: ${props => props.theme.font.lineHeight.md};
     font-weight: ${props => props.theme.font.weight.bold};
     font-size: ${props => props.theme.button.font[props.buttonSize]};
 

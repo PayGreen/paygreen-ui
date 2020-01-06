@@ -21,7 +21,6 @@ import {
     radiusDefault,
     gradientOptions,
 
-    colorNumberOptions,
     fontSizeOptions,
     maskOptions,
     imageTypeOptions,
@@ -49,7 +48,6 @@ storiesOf('Card', module)
             cardHtmlTag={select('HTML card tag', cardHtmlTagOptions, cardHtmlTagDefault)}
         >
             <Title
-                colorNumber={colorNumberOptions.two}
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
@@ -95,7 +93,6 @@ storiesOf('Card', module)
             borderTop={radios('Border-top style', gradientOptions, gradientOptions.theme)}
         >
             <Title
-                colorNumber={colorNumberOptions.two}
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 marginLateral={blockSpaceOptions.sm}
                 marginTop={blockSpaceOptions.sm}
@@ -190,7 +187,6 @@ storiesOf('Card', module)
             </Image>
 
             <Title
-                colorNumber={colorNumberOptions.two}
                 marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
                 marginTop={blockSpaceOptions.sm}
                 textSize={fontSizeOptions.md}
@@ -229,7 +225,6 @@ storiesOf('Card', module)
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
         >
             <Title
-                colorNumber={colorNumberOptions.two}
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 underline={true}

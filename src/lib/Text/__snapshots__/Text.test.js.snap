@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <p
-  className="sc-bdVaJa dIXnDs"
+  className="sc-bdVaJa bRFrph"
 >
   Lorem ipsum dolor sit amet, consectetur 
   <strong>

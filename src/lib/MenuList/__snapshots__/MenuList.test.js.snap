@@ -28,7 +28,7 @@ exports[`renders without crashing 1`] = `
           Tree
         </span>
         <p
-          className="sc-htpNat eybqNF"
+          className="sc-htpNat hEjJCA"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
         </p>

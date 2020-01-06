@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import { colorTypeOptions } from '../../../shared/constants';
-import { colors } from './constants';
+import { mainColor } from '../../Text/style/constants';
 
 const underlineStyle = css`
     display: inline-block;
@@ -16,8 +16,8 @@ const underlineStyle = css`
         height: ${props => props.theme.line};
         width: 100%;
         background-color: ${props => props.colorType === colorTypeOptions.reverse ?
-            colors.secondary :
-            colors.main[props.colorPallet]
+            props.theme.wab.white00 :
+            mainColor[props.colorPallet]
         };
         opacity: .25;
         transition: all ${props => props.theme.transition.xs};

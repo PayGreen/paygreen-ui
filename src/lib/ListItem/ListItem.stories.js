@@ -5,6 +5,7 @@ import {
     listStyleOptions,
     colorThemeOptions,
     colorThemeDefault,
+    colorPalletOptions,
     iconSizeOptions,
     iconSizeDefault,
     decorationOptions
@@ -31,7 +32,10 @@ storiesOf('ListItem', module).addDecorator(withKnobs)
     >
         <LeafIcon colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)} />
 
-        <Title colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}>
+        <Title
+            colorPallet={colorPalletOptions.theme}
+            colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
+        >
             First content
         </Title>
 

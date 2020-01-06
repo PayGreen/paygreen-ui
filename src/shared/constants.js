@@ -7,14 +7,6 @@ const colorPalletOptions = {
 
 const colorPalletDefault = colorPalletOptions.theme;
 
-// Color nomber
-const colorNumberOptions = {
-    one: 'one',
-    two: 'two',
-};
-
-const colorNumberDefault = colorNumberOptions.one;
-
 // Color types
 const colorTypeOptions = {
     original: 'original',
@@ -47,16 +39,6 @@ const greyOptions = {
 };
 
 const greyDefault = greyOptions.grey40;
-
-// Transparent colors
-const transparentColorOptions = {
-    none: 'none',
-    grey1: 'grey1',
-    grey2: 'grey2',
-    theme: 'theme'
-};
-
-const transparentColorDefault = transparentColorOptions.none;
 
 // Mask styles
 const maskOptions = {
@@ -351,16 +333,12 @@ const alignDefault = alignOptions.left;
 export {
     colorPalletOptions,
     colorPalletDefault,
-    colorNumberOptions,
-    colorNumberDefault,
     colorTypeOptions,
     colorTypeDefault,
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
     greyDefault,
-    transparentColorOptions,
-    transparentColorDefault,
     maskOptions,
     maskDefault,
     decorationOptions,

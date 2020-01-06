@@ -1,34 +1,24 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
-import { transparentColorOptions } from '../../../shared/constants';
-import { fontColor, backgroundColor, minimizeFont } from './constants';
+import { colorTypeOptions } from '../../../shared/constants';
+import { mainColor, backgroundColor, minimizeFont } from './constants';
 
 const blockBackground = {
     original: css`
-        background-color: ${props => backgroundColor[props.backgroundColor]};
+        background-color: ${props => backgroundColor[props.colorPallet]};
     `,
     reverse: css`
-        background-color: ${props => props.backgroundColor !== transparentColorOptions.none ? transparentize(0.85, props.theme.wab.white00) : 'transparent'};
-    `
-};
-
-const textColor = {
-    one: css`
-        color: ${props => fontColor.secondary[props.colorType]};
-    `,
-    two: css`
-        color: ${props => fontColor.main[props.colorType]};
-
-        strong {
-            color: ${props => fontColor.secondary[props.colorType]};
-        }
+        background-color: ${props => transparentize(0.85, props.theme.wab.white00)};
     `
 };
 
 const textStyle = css`
-    ${props => textColor[props.colorNumber]};
+    color: ${props => props.colorType === colorTypeOptions.reverse ?
+        props.theme.wab.white00 :
+        mainColor[props.colorPallet]
+    };
 
-    line-height: 1.5;
+    line-height: ${props => props.theme.font.lineHeight.md};
     text-align: ${props => props.textAlign};
     font-size: ${props => props.theme.font.size[props.textSize]};
 

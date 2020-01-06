@@ -5,6 +5,7 @@ import {
     listStyleOptions,
     colorThemeOptions,
     colorThemeDefault,
+    colorPalletOptions,
     blockSpaceOptions,
     blockSpaceDefault,
     iconSizeOptions,
@@ -59,7 +60,7 @@ storiesOf('List', module).addDecorator(withKnobs)
 .add('List with icons', () => (
     <List
         listStyle={listStyleOptions.icon}
-        hasDashed={boolean('Dashed between li', false)}
+        hasDashed={boolean('Dashed lines (on desktop)', false)}
         bulletSize={select(bulletSizeLabel, iconSizeOptions, iconSizeDefault)}
         marginLateral={select('Lateral margins', blockSpaceOptions, blockSpaceDefault)}
         marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}
@@ -74,7 +75,7 @@ storiesOf('List', module).addDecorator(withKnobs)
             >
                 {element.icon}
     
-                <Title>
+                <Title colorPallet={colorPalletOptions.theme}>
                     {element.main}
                 </Title>
     
