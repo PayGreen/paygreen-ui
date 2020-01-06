@@ -5,6 +5,8 @@ import {
     colorTypeDefault,
     colorThemeOptions,
     colorThemeDefault,
+    blockSpaceOptions,
+    blockSpaceDefault,
 
     colorPalletOptions,
     spaceOptions,
@@ -65,11 +67,17 @@ Breadcrumb.propTypes = {
     ).isRequired,
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
 };
 
 Breadcrumb.defaultProps = {
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
+    marginLateral: blockSpaceDefault,
+    marginTop: blockSpaceOptions.xs,
+    marginBottom: blockSpaceOptions.xs,
 };
 
 export default Breadcrumb;

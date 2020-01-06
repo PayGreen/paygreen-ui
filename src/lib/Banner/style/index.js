@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 import { decorationOptions } from '../../../shared/constants';
-import { color, waveScale } from './constants';
+import { color } from './constants';
+import { topWaveStyle, bottomWaveStyle } from './base';
 
 const BannerBase = styled.div`
     position: relative;
-    margin-top: ${props => props.topStyle !== decorationOptions.none ? props.theme.wave.double : 0};
-    margin-bottom: ${props => props.bottomStyle !== decorationOptions.none ? props.theme.wave.double : 0};
     padding: .1px 0;
     background-image: linear-gradient(
         ${props => color.first[props.gradient]},
         ${props => color.second[props.gradient]}
     );
+
+    ${props => props.topStyle !== decorationOptions.none ? topWaveStyle : null};
+    ${props => props.bottomStyle !== decorationOptions.none ? bottomWaveStyle : null};
 
     .waves {
         position: absolute;
@@ -18,20 +20,6 @@ const BannerBase = styled.div`
 
         .light {
             opacity: .5;
-        }
-
-        &:first-child {
-            fill: ${props => color.first[props.gradient]};
-            bottom: 100%;
-            transform: scale(${props => waveScale[props.topStyle]}, ${waveScale.top});
-            margin-bottom: -1px;
-        }
-        
-        &:last-child {
-            fill: ${props => color.second[props.gradient]};
-            top: 100%;
-            transform: scale(${props => waveScale[props.bottomStyle]}, ${waveScale.bottom});
-            margin-top: -1px;
         }
     }
 `;
