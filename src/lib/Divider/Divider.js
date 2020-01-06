@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
-    waveOptions,
-    waveDefault,
+    decorationOptions,
+    decorationDefault,
     colorThemeOptions,
     colorThemeDefault,
     blockSpaceOptions
@@ -20,20 +20,20 @@ class Divider extends PureComponent {
             {...this.props}
             hasText={hasText}
         >
-            {this.props.waveStyle !== waveOptions.none ? shape : null}
+            {this.props.waveStyle !== decorationOptions.none ? shape : null}
                 {hasText ?
                     <span>
                         {this.props.text}
                     </span>
                     : null
                 }
-            {this.props.waveStyle !== waveOptions.none ? shape : null}
+            {this.props.waveStyle !== decorationOptions.none ? shape : null}
         </DividerBase>;
     }
 }
 
 Divider.propTypes = {
-    waveStyle: PropTypes.oneOf(Object.values(waveOptions)),
+    waveStyle: PropTypes.oneOf(Object.values(decorationOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     text: PropTypes.string,
     marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
@@ -41,7 +41,7 @@ Divider.propTypes = {
 };
 
 Divider.defaultProps = {
-    waveStyle: waveDefault,
+    waveStyle: decorationDefault,
     colorTheme: colorThemeDefault,
     marginTop: blockSpaceOptions.md,
     marginBottom: blockSpaceOptions.md,

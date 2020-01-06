@@ -35,7 +35,7 @@ storiesOf('Select', module).addDecorator(withKnobs)
     <Select
         id="select1"
         label={text('Label', 'Your choice')}
-        value=""
+        defaultValue=""
         options={options}
         disabled={boolean('Disabled', false)}
         readOnly={boolean('Readonly', false)}

@@ -4,8 +4,8 @@ import { withKnobs, radios } from '@storybook/addon-knobs';
 import {
     colorThemeOptions,
     colorThemeDefault,
-    waveOptions,
-    waveDefault,
+    decorationOptions,
+    decorationDefault,
     colorNumberOptions,
     greyOptions,
     fontSizeOptions,
@@ -23,7 +23,7 @@ storiesOf('BannerImage', module).addDecorator(withKnobs)
 .add('BannerImage', () => (
     <BannerImage
         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-        topStyle={radios('Wave top direction', waveOptions, waveDefault)}
+        topStyle={radios('Wave top direction', decorationOptions, decorationDefault)}
         image={photoFile}
     >
         <Card

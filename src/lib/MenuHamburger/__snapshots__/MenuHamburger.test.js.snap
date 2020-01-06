@@ -2,8 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <button
-  className="sc-bdVaJa boxXte"
-  onClick={[Function]}
+  className="sc-bdVaJa eNQYwt"
 >
   <span />
   <span />

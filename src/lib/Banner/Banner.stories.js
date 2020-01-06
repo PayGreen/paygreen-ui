@@ -5,8 +5,8 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     gradientOptions,
-    waveOptions,
-    waveDefault,
+    decorationOptions,
+    decorationDefault,
 
     colorTypeOptions,
     fontSizeOptions,
@@ -20,8 +20,8 @@ import Banner from './Banner';
 storiesOf('Banner', module).addDecorator(withKnobs)
 .add('Banner', () => (
     <Banner
-        topStyle={radios('Top wave direction', waveOptions, waveDefault)}
-        bottomStyle={radios('Bottom wave direction', waveOptions, waveDefault)}
+        topStyle={radios('Top wave direction', decorationOptions, decorationDefault)}
+        bottomStyle={radios('Bottom wave direction', decorationOptions, decorationDefault)}
         gradient={radios('Gradient type', gradientOptions, gradientOptions.theme)}
         colorTheme={select('Color theme', colorThemeOptions, colorThemeDefault)}
     >

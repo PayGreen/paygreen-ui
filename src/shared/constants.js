@@ -68,14 +68,14 @@ const maskOptions = {
 
 const maskDefault = maskOptions.none;
 
-// Wave styles
-const waveOptions = {
+// Decoration styles
+const decorationOptions = {
     none: 'none',
     left: 'left',
     right: 'right'
 };
 
-const waveDefault = waveOptions.left;
+const decorationDefault = decorationOptions.left;
 
 // Button sizes
 const buttonSizeOptions = {
@@ -164,7 +164,7 @@ const iconSizeOptions = {
     xl: 'xl'
 };
 
-const iconSizeDefault = iconSizeOptions.sm;
+const iconSizeDefault = iconSizeOptions.md;
 
 // Image size
 const imageSizeOptions = {
@@ -239,6 +239,15 @@ const fontSizeOptions = {
 };
 
 const fontSizeDefault = fontSizeOptions.base;
+
+// List styles
+const listStyleOptions = {
+    dash: 'dash',
+    icon: 'icon',
+    number: 'number',
+};
+
+const listStyleDefault = listStyleOptions.dash;
 
 // Form input status
 const formStatusOptions = {
@@ -354,8 +363,8 @@ export {
     transparentColorDefault,
     maskOptions,
     maskDefault,
-    waveOptions,
-    waveDefault,
+    decorationOptions,
+    decorationDefault,
     buttonSizeOptions,
     buttonSizeDefault,
     radioSizeOptions,
@@ -388,6 +397,8 @@ export {
     textHtmlTagDefault,
     fontSizeOptions,
     fontSizeDefault,
+    listStyleOptions,
+    listStyleDefault,
     formStatusOptions,
     formStatusDefault,
     gradientOptions,

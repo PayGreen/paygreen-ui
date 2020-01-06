@@ -4,8 +4,8 @@ import {
     gradientOptions,
     colorThemeOptions,
     colorThemeDefault,
-    waveOptions,
-    waveDefault,
+    decorationOptions,
+    decorationDefault,
 } from '../../shared/constants';
 import { BannerImageBase } from './style';
 
@@ -22,13 +22,13 @@ class BannerImage extends PureComponent {
 BannerImage.propTypes = {
     gradient: PropTypes.oneOf(Object.values(gradientOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    topStyle: PropTypes.oneOf(Object.values(waveOptions)),
+    topStyle: PropTypes.oneOf(Object.values(decorationOptions)),
 };
 
 BannerImage.defaultProps = {
     gradient: gradientOptions.theme,
     colorTheme: colorThemeDefault,
-    topStyle: waveDefault,
+    topStyle: decorationDefault,
 };
 
 export default BannerImage;

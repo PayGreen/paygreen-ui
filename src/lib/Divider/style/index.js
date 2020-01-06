@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { waveOptions } from '../../../shared/constants';
+import { decorationOptions } from '../../../shared/constants';
 import { withWave, noWave } from './base';
 
 const DividerBase = styled.div`
@@ -21,7 +21,7 @@ const DividerBase = styled.div`
         }
     }
 
-    ${props => props.waveStyle !== waveOptions.none ? withWave : noWave};
+    ${props => props.waveStyle !== decorationOptions.none ? withWave : noWave};
 `;
 
 export { DividerBase };

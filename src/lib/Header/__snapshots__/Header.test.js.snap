@@ -2,14 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <header
-  className="sc-gZMcBi kLgyQM"
+  className="sc-gZMcBi iHGTzZ"
 >
   <div
     className="main-nav"
   >
     <button
-      className="sc-gzVnrw kTyxXa"
-      onClick={[Function]}
+      className="sc-gzVnrw klyhST"
     >
       <span />
       <span />
@@ -17,10 +16,10 @@ exports[`renders without crashing 1`] = `
     </button>
   </div>
   <ul
-    className="sc-bZQynM hulWZt"
+    className="sc-bZQynM ewtGaL"
   >
     <li
-      className="sc-EHOje bQJWmc"
+      className="sc-EHOje dkqcmg"
     >
       <a
         href="#"

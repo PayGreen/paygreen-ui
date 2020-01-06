@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-gzVnrw jEnnjH"
+  className="sc-gzVnrw iAicyF"
 >
   <li
-    className="sc-bZQynM gXOwUF"
+    className="sc-bZQynM kHykNj"
   >
     <a
       href="#"
@@ -22,7 +22,7 @@ exports[`renders without crashing 1`] = `
     </a>
   </li>
   <li
-    className="sc-bZQynM gXOwUF"
+    className="sc-bZQynM kHykNj"
   >
     <a
       href="#"
@@ -64,7 +64,7 @@ exports[`renders without crashing 1`] = `
               Tree
             </span>
             <p
-              className="sc-bxivhb dYjcIn"
+              className="sc-bxivhb jKWmYb"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
             </p>
@@ -101,7 +101,7 @@ exports[`renders without crashing 1`] = `
               Payment
             </span>
             <span
-              className="sc-htpNat crydfm"
+              className="sc-htpNat dVhAo"
             >
               <span
                 className="sc-bdVaJa evZlmj icon"

@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-htpNat isTAvH"
+  className="sc-bxivhb fqxiVE"
 >
   <div
-    className="sc-bwzfXH cwqkKR"
+    className="sc-htpNat cddiMM"
   >
     <span
       className="content"
@@ -14,7 +14,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-bwzfXH cwqkKR"
+    className="sc-htpNat cddiMM"
   >
     <span
       className="content"
@@ -23,7 +23,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-bwzfXH cwqkKR"
+    className="sc-htpNat cddiMM"
   >
     <span
       className="content"

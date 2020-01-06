@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios } from '@storybook/addon-knobs';
+import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
 import {
     colorThemeOptions,
     colorThemeDefault
@@ -11,5 +11,6 @@ storiesOf('MenuHamburger', module).addDecorator(withKnobs)
 .add('MenuHamburger', () => (
     <MenuHamburger
         colorTheme={radios('Color', colorThemeOptions, colorThemeDefault)}
+        isOpen={boolean('Is Open', false)}
     />
 ));
