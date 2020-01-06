@@ -3,11 +3,11 @@ import { transparentize } from 'polished';
 import { TableCellBase } from '../../TableCell/style';
 
 const rowColor = css`
-    background-color: ${props => transparentize(0.95, props.theme.color[props.colorTheme]['main'])};
+    background-color: ${props => transparentize(0.95, props.theme.color[props.colorTheme].main)};
 
     ${TableCellBase} {
         strong {
-            color: ${props => props.theme.color[props.colorTheme]['main']};
+            color: ${props => props.theme.color[props.colorTheme].main};
         }
     }
 `;

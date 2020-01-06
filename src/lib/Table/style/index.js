@@ -20,13 +20,13 @@ const TableBase = styled.div`
     ${TableRowBase} {
         &:first-of-type {
             ${TableCellBase} {
-                border-bottom-color: ${props => transparentize(0.5, props.theme.color[props.colorTheme]['main'])};
+                border-bottom-color: ${props => transparentize(0.5, props.theme.color[props.colorTheme].main)};
             }
         }
     }
 
     strong {
-        color: ${props => props.theme.color[props.colorTheme]['main']};
+        color: ${props => props.theme.color[props.colorTheme].main};
     }
     
     ${props => props.largeFirstColumn ? largeFirstColumnStyle : null};

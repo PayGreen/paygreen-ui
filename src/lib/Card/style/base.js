@@ -7,13 +7,13 @@ import {
 const shadowStyle = css`
     box-shadow: ${props => props.theme.shadow.size[props.shadow] + ' ' + transparentize(
         props.theme.shadow.opacity[props.shadow],
-        props.theme.color[props.colorTheme]['main']
+        props.theme.color[props.colorTheme].main
     )};
 
     &:hover {
         box-shadow: ${props => props.theme.shadow.size[props.shadow] + ' ' + transparentize(
             props.theme.shadow.opacity[props.shadow] - 0.1,
-            props.theme.color[props.colorTheme]['main']
+            props.theme.color[props.colorTheme].main
         )};
     }
 `;
@@ -47,8 +47,8 @@ const borderTopGradient = {
     `,
     theme: css`
         background-image: linear-gradient(to left,
-            ${props => props.theme.color[props.colorTheme]['gradientBase']},
-            ${props => props.theme.color[props.colorTheme]['gradientShade']}
+            ${props => props.theme.color[props.colorTheme].gradientBase},
+            ${props => props.theme.color[props.colorTheme].gradientShade}
         );
     `
 };
@@ -73,8 +73,8 @@ const backgroundStyle = {
     `,
     reverse: css`
         background-image: linear-gradient(
-            ${props => props.theme.color[props.colorTheme]['gradientBase']},
-            ${props => props.theme.color[props.colorTheme]['gradientShade']}
+            ${props => props.theme.color[props.colorTheme].gradientBase},
+            ${props => props.theme.color[props.colorTheme].gradientShade}
         );
 
         ${shadowStyle};
@@ -105,7 +105,7 @@ const titleOutBlockStyle = css`
         text-transform: uppercase;
         letter-spacing: ${props => props.theme.font.spacing};
         line-height: 0.75;
-        color: ${props => props.theme.color[props.colorTheme]['gradientBase']};
+        color: ${props => props.theme.color[props.colorTheme].gradientBase};
     }
 
     & > div {

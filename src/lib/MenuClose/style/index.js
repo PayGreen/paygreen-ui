@@ -20,7 +20,7 @@ const MenuCloseBase = styled.button`
 
     .background {
         width: 100%;
-        fill: ${props => props.theme.color[props.colorTheme]['light']};
+        fill: ${props => props.theme.color[props.colorTheme].light};
     }
 `;
 

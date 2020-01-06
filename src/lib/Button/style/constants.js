@@ -1,5 +1,5 @@
 const colorCollection = {
-    main: props => props.theme.color[props.colorTheme]['main'],
+    main: props => props.theme.color[props.colorTheme].main,
     white: props => props.theme.wab.white00,
     lightGrey: props => props.theme.wab.white20,
     grey: props => props.theme.wab.grey30,

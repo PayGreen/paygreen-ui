@@ -15,7 +15,7 @@ const MenuListBase = styled.ul`
         border-radius: ${props => props.theme.radius.lg};
         box-shadow: 0 0 35px ${props => transparentize(
             props.theme.shadow.opacity.lg,
-            props.theme.color[props.colorTheme]['main']
+            props.theme.color[props.colorTheme].main
         )};
         transition: all ${props => props.theme.transition.md};
 

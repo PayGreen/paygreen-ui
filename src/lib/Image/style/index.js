@@ -34,7 +34,7 @@ const ImageBase = styled.figure`
         border-radius: ${props => props.theme.radius[props.radiusSize]};
         box-shadow: ${props => props.theme.shadow.size[props.shadow] + ' ' + transparentize(
             props.theme.shadow.opacity[props.shadow],
-            props.colorChange ? props.theme.color[props.colorTheme]['main'] : props.theme.wab.black00
+            props.colorChange ? props.theme.color[props.colorTheme].main : props.theme.wab.black00
         )};
     }
 `;
