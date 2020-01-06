@@ -55,48 +55,81 @@ const shiftStyle = css`
     ${props => props.reverseShift ? reverseChildrenShift[props.columns] : childrenShiftStyle};
 `;
 
+const flex1Style = css`
+    & > * {
+        flex: 1;
+    }
+`;
+
+const childrenClassicStyle = css`
+    & > * {
+        margin: ${props => props.theme.space[props.childrenMargin]} auto;
+
+        @media (${props => props.theme.query.min.md}) {
+            margin: ${props => props.theme.space[props.childrenMarginBig]};
+        }
+    }
+`;
+
 const displayStyle = {
     flex: css`
-        display: flex;
-        flex-direction: ${props => props.flexDirection};
-        flex-wrap: ${props => props.flexWrap};
-        justify-content: ${props => props.justifyContent};
-        align-items: ${props => props.alignItems};
+        @media (${props => props.theme.query.min.md}) {
+            display: flex;
+            flex-direction: ${props => props.flexDirection};
+            flex-wrap: ${props => props.flexWrap};
+            justify-content: ${props => props.justifyContent};
+            align-items: ${props => props.alignItems};
+
+            ${props => props.flex1 ? flex1Style : null};
+        }
+        
+        ${childrenClassicStyle};
     `,
     grid: css`
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: ${props => props.justifyItems};
-        align-items: ${props => props.alignItems};
+        @media (${props => props.theme.query.min.md}) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: ${props => props.justifyItems};
+            align-items: ${props => props.alignItems};
+        }
 
         @media (${props => props.theme.query.min.lg}) {
             grid-template-columns: repeat(${props => props.columns}, 1fr);
         }
+
+        ${childrenClassicStyle};
     `,
     column: css`
-        width: fit-content;
-        columns: 2;
-        gap: 0;
-        padding-top: ${props => props.theme.space.lg};
-        padding-bottom: ${props => props.theme.space.lg};
+        & > * {
+            padding: ${props => math(props.theme.space[props.childrenMargin] + '/2')} 0;
+
+            & > * {
+                margin: 0 auto;
+            }
+        }
+
+        @media (${props => props.theme.query.min.md}) {
+            padding-top: ${props => props.theme.space[props.childrenMarginBig]};
+            width: fit-content;
+            columns: 2;
+            gap: 0;
+
+            & > * {
+                padding: ${props => props.theme.space[props.childrenMarginBig]};
+                padding-top: 0;
+                padding-bottom: ${props => math(props.theme.space.lg + '*2')};
+                display: inline-block;
+                width: 100%;
+                /* fix for shadow inside columns */
+                transform: translateZ(0);
+            }
+        }
 
         @media (${props => props.theme.query.min.lg}) {
             columns: ${props => props.columns};
         }
-
-        & > * {
-            margin-top: 0;
-            margin-bottom: ${props => math(props.theme.space.lg + '*2')};
-            display: inline-block;
-            /* fix for shadow inside columns */
-            transform: translateZ(0);
-        }
     `
 };
-
-const flex1Style = css`
-    flex: 1;
-`;
 
 export {
     shiftStyle,
