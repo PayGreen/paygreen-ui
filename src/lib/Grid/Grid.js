@@ -21,16 +21,10 @@ import { GridBase } from './style';
 
 class Grid extends PureComponent {
     render() {
-        const {
-            display,
-            ...rest
-        } = this.props;
-
         return <GridBase
-            displayType={display}
-            {...rest}
+            {...this.props}
         >
-            {this.props.display === displayOptions.column ?
+            {this.props.displayType === displayOptions.column ?
                 React.Children.map(this.props.children, (child, index) =>
                     <div key={index}>
                         {child}
@@ -42,7 +36,7 @@ class Grid extends PureComponent {
 }
 
 Grid.propTypes = {
-    display: PropTypes.oneOf(Object.values(displayOptions)),
+    displayType: PropTypes.oneOf(Object.values(displayOptions)),
     columns: PropTypes.oneOf(Object.values(columnOptions)),
     flexDirection: PropTypes.oneOf(Object.values(flexDirectionOptions)),
     flexWrap: PropTypes.oneOf(Object.values(flexWrapOptions)),
@@ -59,7 +53,7 @@ Grid.propTypes = {
 };
 
 Grid.defaultProps = {
-    display: displayDefault,
+    displayType: displayDefault,
     columns: columnDefault,
     flexDirection: flexDirectionDefault,
     flexWrap: flexWrapDefault,

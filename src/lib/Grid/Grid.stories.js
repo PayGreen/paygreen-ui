@@ -25,7 +25,7 @@ import Grid from './Grid';
 storiesOf('Grid', module).addDecorator(withKnobs)
 .add('Grid', () => (
     <Grid
-        display={select('Grid type', displayOptions, displayDefault)}
+        displayType={select('Grid type', displayOptions, displayDefault)}
         columns={select('Column number', columnOptions, columnDefault)}
         flexDirection={select('Flex direction', flexDirectionOptions, flexDirectionDefault)}
         flexWrap={select('Flex wrap', flexWrapOptions, flexWrapDefault)}
