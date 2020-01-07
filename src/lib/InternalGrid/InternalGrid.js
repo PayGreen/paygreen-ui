@@ -14,11 +14,11 @@ import {
 } from '../../shared/constants';
 import { InternalGridBase } from './style';
 
-const InternalGrid = () => {
+const InternalGrid = (props) => {
     return <InternalGridBase
-        {...this.props}
+        {...props}
     >
-        {this.props.children}
+        {props.children}
     </InternalGridBase>;
 };
 
