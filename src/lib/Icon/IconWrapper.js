@@ -15,28 +15,19 @@ import {
 } from '../../shared/constants';
 import { IconBase } from './style';
 
-class IconWrapper extends PureComponent {
-    render() {
-        const {
-            children,
-            ...rest
-        } = this.props;
-
-        const Children = React.Children.map(children, child => {
+const IconWrapper = (props) => {
+    return <IconBase
+        as={props.htmlTag}
+        {...props}
+        className="icon"
+    >
+        {React.Children.map(props.children, child => {
             if (typeof child == 'object') {
                 return React.cloneElement(child);
             }
-        });
-
-        return <IconBase
-            as={this.props.htmlTag}
-            {...rest}
-            className="icon"
-        >
-            {Children}
-        </IconBase>;
-    }
-}
+        })}
+    </IconBase>;
+};
 
 IconWrapper.propTypes = {
     htmlTag: PropTypes.oneOf(['span', 'button']),
