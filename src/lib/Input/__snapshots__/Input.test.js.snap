@@ -185,6 +185,14 @@ exports[`renders without crashing 1`] = `
           "xl": "40px",
           "xs": "16px",
         },
+        "imageCircleSize": Object {
+          "auto": "auto",
+          "lg": "120px",
+          "md": "100px",
+          "sm": "80px",
+          "xl": "140px",
+          "xs": "60px",
+        },
         "imageSize": Object {
           "auto": "auto",
           "lg": "640px",

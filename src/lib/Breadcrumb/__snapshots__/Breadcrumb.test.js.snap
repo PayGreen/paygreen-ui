@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-bwzfXH jPYcWZ"
+  className="sc-bwzfXH bOzmTD"
 >
   <li>
     <a
