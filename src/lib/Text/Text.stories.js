@@ -38,7 +38,6 @@ storiesOf('Text', module)
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
             underline={boolean('Underline', false)}
-            paddingBottom={blockSpaceOptions.sm}
 
             marginLateral={select('Block\'s lateral margins', blockSpaceOptions, blockSpaceDefault)}
             marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}
@@ -62,7 +61,6 @@ storiesOf('Text', module)
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             textAlign={radios('Align', alignOptions, alignDefault)}
             underline={boolean('Underline', false)}
-            paddingBottom={blockSpaceOptions.sm}
 
             marginLateral={select('Block\'s lateral margins', blockSpaceOptions, blockSpaceDefault)}
             marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}
