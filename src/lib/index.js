@@ -11,6 +11,7 @@ import Header from './Header/Header';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 import Input from './Input/Input';
+import InternalGrid from './InternalGrid/InternalGrid';
 import Link from './Link/Link';
 import List from './List/List';
 import ListItem from './ListItem/ListItem';
@@ -145,6 +146,7 @@ export {
     IconLabel,
     Image,
     Input,
+    InternalGrid,
     Link,
     List,
     ListItem,

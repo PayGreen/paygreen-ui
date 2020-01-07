@@ -15,7 +15,6 @@ import {
     justifyItemsDefault,
     alignItemsOptions,
     alignItemsDefault,
-    spaceOptions,
     blockSpaceOptions,
     blockSpaceDefault
 } from '../../shared/constants';
