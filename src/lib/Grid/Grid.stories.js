@@ -26,6 +26,16 @@ import Card from '../Card/Card';
 import Text from '../Text/Text';
 import Grid from './Grid';
 
+const sampleTexts = [
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor velit a ultricies aliquet. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. Curabitur bibendum risus gravida tellus condimentum tristique. Sed ut elit efficitur, sagittis urna sed, scelerisque eros.',
+    'Lorem ipsum dolor elit. Nunc a ornare nulla. Donec id tellus nibh. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a ornare nulla. Donec id tellus nibh. Nunc lobortis consequat placerat. Integer interdum sapien eget purus efficitur vulputate. Morbi sodales, purus tristique lobortis suscipit, nulla nisi porta tellus, quis imperdiet nunc nunc vitae turpis. Donec ullamcorper quis sem eget vestibulum.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a ornare nulla. Donec id tellus nibh. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum. Integer interdum sapien eget purus efficitur vulputate. Morbi sodales, purus tristique lobortis suscipit.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a ornare nulla. Donec id tellus nibh. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum.',
+    'Lorem ipsum dolor sit amet. Nunc a ornare nulla. Donec id tellus nibh. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum. Integer interdum sapien eget purus efficitur vulputate.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum.',
+];
+
 storiesOf('Grid', module).addDecorator(withKnobs)
 .add('Grid', () => (
     <Grid
@@ -41,74 +51,16 @@ storiesOf('Grid', module).addDecorator(withKnobs)
         negativeShift={boolean('Negative shift', false)}
         reverseShift={boolean('Reverse shift', false)}
     >
-        <Card>
-            <Text
-                marginLateral={blockSpaceOptions.sm}
-                marginTop={blockSpaceOptions.sm}
-                marginBottom={blockSpaceOptions.sm}
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor velit a ultricies aliquet. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. Curabitur bibendum risus gravida tellus condimentum tristique. Sed ut elit efficitur, sagittis urna sed, scelerisque eros. 
-            </Text>
-        </Card>
-
-        <Card>
-            <Text
-                marginLateral={blockSpaceOptions.sm}
-                marginTop={blockSpaceOptions.sm}
-                marginBottom={blockSpaceOptions.sm}
-            >
-            Lorem ipsum dolor elit. Nunc a ornare nulla. Donec id tellus nibh. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum.
-            </Text>
-        </Card>
-
-        <Card>
-            <Text
-                marginLateral={blockSpaceOptions.sm}
-                marginTop={blockSpaceOptions.sm}
-                marginBottom={blockSpaceOptions.sm}
-            >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a ornare nulla. Donec id tellus nibh. Nunc lobortis consequat placerat. Integer interdum sapien eget purus efficitur vulputate. Morbi sodales, purus tristique lobortis suscipit, nulla nisi porta tellus, quis imperdiet nunc nunc vitae turpis. Donec ullamcorper quis sem eget vestibulum.
-            </Text>
-        </Card>
-
-        <Card>
-            <Text
-                marginLateral={blockSpaceOptions.sm}
-                marginTop={blockSpaceOptions.sm}
-                marginBottom={blockSpaceOptions.sm}
-            >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a ornare nulla. Donec id tellus nibh. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum. Integer interdum sapien eget purus efficitur vulputate. Morbi sodales, purus tristique lobortis suscipit.
-            </Text>
-        </Card>
-
-        <Card>
-            <Text
-                marginLateral={blockSpaceOptions.sm}
-                marginTop={blockSpaceOptions.sm}
-                marginBottom={blockSpaceOptions.sm}
-            >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a ornare nulla. Donec id tellus nibh. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum.
-            </Text>
-        </Card>
-
-        <Card>
-            <Text
-                marginLateral={blockSpaceOptions.sm}
-                marginTop={blockSpaceOptions.sm}
-                marginBottom={blockSpaceOptions.sm}
-            >
-            Lorem ipsum dolor sit amet. Nunc a ornare nulla. Donec id tellus nibh. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum. Integer interdum sapien eget purus efficitur vulputate.
-            </Text>
-        </Card>
-
-        <Card>
-            <Text
-                marginLateral={blockSpaceOptions.sm}
-                marginTop={blockSpaceOptions.sm}
-                marginBottom={blockSpaceOptions.sm}
-            >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum.
-            </Text>
-        </Card>
+        {sampleTexts.map((element, index) =>
+            <Card key={index}>
+                <Text
+                    marginLateral={blockSpaceOptions.sm}
+                    marginTop={blockSpaceOptions.sm}
+                    marginBottom={blockSpaceOptions.sm}
+                >
+                    {element}
+                </Text>
+            </Card>
+        )}
     </Grid>
 ));
