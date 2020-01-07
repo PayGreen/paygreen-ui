@@ -44,7 +44,7 @@ storiesOf('Card', module)
             shadow={radios('Shadow style', shadowStyleOptions, shadowStyleDefault)}
             hasBackground={boolean('With background', true)}
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
-            radiusSize={radios('Border radius', radiusOptions, radiusDefault)}
+            radius={radios('Border radius', radiusOptions, radiusDefault)}
             htmlTag={select('HTML card tag', cardHtmlTagOptions, cardHtmlTagDefault)}
         >
             <Title
@@ -89,7 +89,7 @@ storiesOf('Card', module)
             colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
             colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
             blockWidth={blockWidthOptions.sm}
-            radiusSize={radios('Border radius', radiusOptions, radiusDefault)}
+            radius={radios('Border radius', radiusOptions, radiusDefault)}
             borderTop={radios('Border-top style', gradientOptions, gradientOptions.theme)}
         >
             <Title
