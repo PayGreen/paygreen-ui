@@ -1,62 +1,7 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
-import { shiftSize } from './constants';
 
-const thirdChildShiftStyle = css`
-    &:nth-child(3) {
-        margin-top: ${props => shiftSize.double(props)};
-    }
-`;
-
-const childrenShiftStyle = css`
-    & > * {
-        &:first-child {
-            margin-top: 0;
-        }
-
-        &:nth-child(2) {
-            margin-top: ${props => shiftSize.simple(props)};
-        }
-
-        ${props => props.columnNumber > 2 ? thirdChildShiftStyle : null};
-    }
-`;
-
-const reverseChildrenShift = {
-    2: css`
-        & > * {
-            &:first-child {
-                margin-top: ${props => shiftSize.simple(props)};
-            }
-
-            &:nth-child(2) {
-                margin-top: 0;
-            }
-        }
-    `,
-    3: css`
-        & > * {
-            &:first-child {
-                margin-top: ${props => shiftSize.double(props)};
-            }
-
-            &:nth-child(2) {
-                margin-top: ${props => shiftSize.simple(props)};
-            }
-
-            &:nth-child(3) {
-                margin-top: 0;
-            }
-        }
-    `
-};
-
-const shiftStyle = css`
-    ${props => props.reverseShift ?
-        reverseChildrenShift[props.columnNumber] : childrenShiftStyle};
-`;
-
-const childrenClassicStyle = css`
+const childrenMargins = css`
     & > * {
         margin: ${props => props.theme.space[props.childrenMargin]} auto;
 
@@ -80,7 +25,7 @@ const displayStyle = {
             }
         }
         
-        ${childrenClassicStyle};
+        ${childrenMargins};
     `,
     grid: css`
         @media (${props => props.theme.query.min.md}) {
@@ -94,7 +39,7 @@ const displayStyle = {
             grid-template-columns: repeat(${props => props.columnNumber}, 1fr);
         }
 
-        ${childrenClassicStyle};
+        ${childrenMargins};
     `,
     column: css`
         & > * {
@@ -128,7 +73,30 @@ const displayStyle = {
     `
 };
 
+function childrenShift(count, shiftSize, isNegative, isReverse) {
+    let styles = '';
+    
+    for (let i = 1; i <= count; i++) {
+        styles += `
+            &:nth-child(${isReverse ? count - i + 1 : i}) {
+                margin-top: ${math(
+                    (isNegative ? '-' : '') +
+                    shiftSize + '*' + (i-1)
+                )};
+            }
+        `
+    }
+
+    return css`
+        & > * {
+            @media (${props => props.theme.query.min.xl}) {
+                ${styles}
+            }
+        }
+    `;
+};
+
 export {
-    shiftStyle,
-    displayStyle
+    displayStyle,
+    childrenShift,
 };

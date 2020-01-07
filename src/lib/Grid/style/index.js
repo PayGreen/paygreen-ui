@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { blockSpaceOptions } from '../../../shared/constants';
-import { displayStyle, shiftStyle } from './base';
+import { displayStyle, childrenShift } from './base';
 
 const GridBase = styled.div`
-    padding: ${props => props.theme.space[props.blockPadding]};
     max-width: 100%;
+    padding: ${props => props.theme.space[props.blockPadding]};
 
     @media (min-width: ${props => props.theme.grid.maxWidth}) {
         max-width: ${props => props.theme.grid.maxWidth};
@@ -15,11 +15,16 @@ const GridBase = styled.div`
         margin: 0 auto;
     }
 
-    @media (${props => props.theme.query.min.xl}) {
-        ${props => props.childrenShift !== blockSpaceOptions.none ? shiftStyle : null};
-    }
-
     ${props => displayStyle[props.displayType]};
+
+    ${props => props.childrenShift !== blockSpaceOptions.none ?
+        childrenShift(
+            props.columnNumber,
+            props.theme.blockShift[props.childrenShift],
+            props.negativeShift,
+            props.reverseShift
+        )
+        : null};
 `;
 
 export { GridBase };
