@@ -261,15 +261,6 @@ const displayOptions = {
 
 const displayDefault = displayOptions.flex;
 
-// Columns number
-
-const columnOptions = {
-    2: 2,
-    3: 3
-};
-
-const columnDefault = columnOptions[2];
-
 // Flex direction
 
 const flexDirectionOptions = {
@@ -383,8 +374,6 @@ export {
     gradientDefault,
     displayOptions,
     displayDefault,
-    columnOptions,
-    columnDefault,
     flexDirectionOptions,
     flexDirectionDefault,
     flexWrapOptions,
