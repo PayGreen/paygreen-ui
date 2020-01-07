@@ -45,7 +45,7 @@ storiesOf('Card', module)
             hasBackground={boolean('With background', true)}
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
             radiusSize={radios('Border radius', radiusOptions, radiusDefault)}
-            cardHtmlTag={select('HTML card tag', cardHtmlTagOptions, cardHtmlTagDefault)}
+            htmlTag={select('HTML card tag', cardHtmlTagOptions, cardHtmlTagDefault)}
         >
             <Title
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}

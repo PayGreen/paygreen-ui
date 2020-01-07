@@ -23,7 +23,7 @@ import { CardBase } from './style';
 class Card extends PureComponent {
     render() {
         return <CardBase
-            as={this.props.cardHtmlTag}
+            as={this.props.htmlTag}
             {...this.props}
         >
             {this.props.children}
@@ -32,7 +32,7 @@ class Card extends PureComponent {
 }
 
 Card.propTypes = {
-    cardHtmlTag: PropTypes.oneOf(Object.values(cardHtmlTagOptions)),
+    htmlTag: PropTypes.oneOf(Object.values(cardHtmlTagOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     shadow: PropTypes.oneOf(Object.values(shadowStyleOptions)),
@@ -47,7 +47,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-    cardHtmlTag: cardHtmlTagDefault,
+    htmlTag: cardHtmlTagDefault,
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
     shadow: shadowStyleDefault,
