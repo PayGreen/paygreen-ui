@@ -25,6 +25,11 @@ class Breadcrumb extends PureComponent {
             }
         }
 
+        const {
+            elements,
+            ...rest
+        } = this.props;
+
         const arrowIcon = <ArrowRightIcon
             theme={this.props.theme} // not necessary, only needed for tests
             iconSize={iconSizeOptions.xs}
@@ -34,26 +39,22 @@ class Breadcrumb extends PureComponent {
             colorWab={this.props.colorType === colorTypeOptions.reverse ? greyOptions.white00 : greyOptions.grey30}
         />;
 
-        const items = this.props.elements.map((element, index) =>
-            <li key={index}>
-                {index ? arrowIcon : null}
-
-                <a
-                    href={element.url}
-                    tabIndex={index + 1 === this.props.elements.length ? -1 : 0}
-                    onClick={preventCurrentPageClick}
-                >
-                    {element.label}
-                </a>
-            </li>
-        );
-
         return <BreadcrumbBase
-            theme={this.props.theme} // not necessary, only needed for tests
-            colorType={this.props.colorType}
-            colorTheme={this.props.colorTheme}
+            {...rest}
         >
-            {items}
+            {elements.map((element, index) =>
+                <li key={index}>
+                    {index ? arrowIcon : null}
+
+                    <a
+                        href={element.url}
+                        tabIndex={index + 1 === this.props.elements.length ? -1 : 0}
+                        onClick={preventCurrentPageClick}
+                    >
+                        {element.label}
+                    </a>
+                </li>
+            )}
         </BreadcrumbBase>;
     }
 }
