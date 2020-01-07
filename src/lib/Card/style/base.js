@@ -19,21 +19,21 @@ const shadowStyle = css`
 `;
 
 const radius = css`
-    border-radius: ${props => props.theme.radius[props.radius]};
+    border-radius: ${props => props.theme.radius[props.radiusSize]};
 
     & > :first-child {
         &:not(.icon),
         & > img {
-            border-top-left-radius: ${props => props.theme.radius[props.radius]};
-            border-top-right-radius: ${props => props.theme.radius[props.radius]};
+            border-top-left-radius: ${props => props.theme.radius[props.radiusSize]};
+            border-top-right-radius: ${props => props.theme.radius[props.radiusSize]};
         }
     }
 
     & > :last-child {
         &:not(.icon),
         & > img {
-            border-bottom-left-radius: ${props => props.theme.radius[props.radius]};
-            border-bottom-right-radius: ${props => props.theme.radius[props.radius]};
+            border-bottom-left-radius: ${props => props.theme.radius[props.radiusSize]};
+            border-bottom-right-radius: ${props => props.theme.radius[props.radiusSize]};
         }
     }
 `;
@@ -56,8 +56,8 @@ const borderTopGradient = {
 const borderTopElement = css`
     &:before {
         content: '';
-        height: ${props => props.theme.radius[props.radius]};
-        border-radius: ${props => props.theme.radius[props.radius]} ${props => props.theme.radius[props.radius]} 0 0;
+        height: ${props => props.theme.radius[props.radiusSize]};
+        border-radius: ${props => props.theme.radius[props.radiusSize]} ${props => props.theme.radius[props.radiusSize]} 0 0;
         
         ${props => borderTopGradient[props.borderTop]};
     }
