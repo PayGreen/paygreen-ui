@@ -18,7 +18,7 @@ class ButtonGroup extends PureComponent {
 }
 
 ButtonGroup.propTypes = {
-    buttonAlign: PropTypes.oneOf(Object.values(alignOptions)),
+    align: PropTypes.oneOf(Object.values(alignOptions)),
     resetMargin: PropTypes.bool,
     marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
@@ -26,7 +26,7 @@ ButtonGroup.propTypes = {
 };
 
 ButtonGroup.defaultProps = {
-    buttonAlign: alignOptions.center,
+    align: alignOptions.center,
     resetMargin: true,
     marginLateral: blockSpaceDefault,
     marginTop: blockSpaceDefault,
