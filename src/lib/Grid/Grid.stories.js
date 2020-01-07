@@ -1,11 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean, number } from '@storybook/addon-knobs';
 import {
     displayOptions,
     displayDefault,
-    columnOptions,
-    columnDefault,
     flexDirectionOptions,
     flexDirectionDefault,
     flexWrapOptions,
@@ -26,7 +24,7 @@ storiesOf('Grid', module).addDecorator(withKnobs)
 .add('Grid', () => (
     <Grid
         displayType={select('Grid type', displayOptions, displayDefault)}
-        columns={select('Column number', columnOptions, columnDefault)}
+        columnNumber={number('Column number', 2)}
         flexDirection={select('Flex direction', flexDirectionOptions, flexDirectionDefault)}
         flexWrap={select('Flex wrap', flexWrapOptions, flexWrapDefault)}
         justifyContent={select('Justify content', justifyContentOptions, justifyContentOptions.spaceBetween)}

@@ -18,7 +18,7 @@ const childrenShiftStyle = css`
             margin-top: ${props => shiftSize.simple(props)};
         }
 
-        ${props => props.columns > 2 ? thirdChildShiftStyle : null};
+        ${props => props.columnNumber > 2 ? thirdChildShiftStyle : null};
     }
 `;
 
@@ -52,7 +52,8 @@ const reverseChildrenShift = {
 };
 
 const shiftStyle = css`
-    ${props => props.reverseShift ? reverseChildrenShift[props.columns] : childrenShiftStyle};
+    ${props => props.reverseShift ?
+        reverseChildrenShift[props.columnNumber] : childrenShiftStyle};
 `;
 
 const flex1Style = css`
@@ -88,13 +89,13 @@ const displayStyle = {
     grid: css`
         @media (${props => props.theme.query.min.md}) {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(${props => props.columnNumber - 1}, 1fr);
             justify-items: ${props => props.justifyItems};
             align-items: ${props => props.alignItems};
         }
 
         @media (${props => props.theme.query.min.lg}) {
-            grid-template-columns: repeat(${props => props.columns}, 1fr);
+            grid-template-columns: repeat(${props => props.columnNumber}, 1fr);
         }
 
         ${childrenClassicStyle};
@@ -111,7 +112,7 @@ const displayStyle = {
         @media (${props => props.theme.query.min.md}) {
             padding-top: ${props => props.theme.space[props.childrenMarginBig]};
             width: fit-content;
-            columns: 2;
+            columns: ${props => props.columnNumber - 1};
             gap: 0;
 
             & > * {
@@ -126,7 +127,7 @@ const displayStyle = {
         }
 
         @media (${props => props.theme.query.min.lg}) {
-            columns: ${props => props.columns};
+            columns: ${props => props.columnNumber};
         }
     `
 };

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {
     displayOptions,
     displayDefault,
-    columnOptions,
-    columnDefault,
     flexDirectionOptions,
     flexDirectionDefault,
     flexWrapOptions,
@@ -37,7 +35,7 @@ class Grid extends PureComponent {
 
 Grid.propTypes = {
     displayType: PropTypes.oneOf(Object.values(displayOptions)),
-    columns: PropTypes.oneOf(Object.values(columnOptions)),
+    columnNumber: PropTypes.number,
     flexDirection: PropTypes.oneOf(Object.values(flexDirectionOptions)),
     flexWrap: PropTypes.oneOf(Object.values(flexWrapOptions)),
     justifyContent: PropTypes.oneOf(Object.values(justifyContentOptions)),
@@ -54,7 +52,7 @@ Grid.propTypes = {
 
 Grid.defaultProps = {
     displayType: displayDefault,
-    columns: columnDefault,
+    columnNumber: 2,
     flexDirection: flexDirectionDefault,
     flexWrap: flexWrapDefault,
     justifyContent: justifyContentOptions.spaceBetween,
