@@ -264,11 +264,11 @@ const displayDefault = displayOptions.flex;
 // Columns number
 
 const columnOptions = {
-    two: 2,
-    three: 3
+    2: 2,
+    3: 3
 };
 
-const columnDefault = columnOptions.two;
+const columnDefault = columnOptions[2];
 
 // Flex direction
 
