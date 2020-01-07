@@ -8,7 +8,7 @@ import {
 } from './base';
 
 const ButtonBase = styled.span`
-    ${props => props.params.disabled ? disabled : enabled};
+    ${props => props.isDisabled ? disabled : enabled};
     ${props => templateStyle[props.template]};
 
     display: inline-block;

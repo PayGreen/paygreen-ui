@@ -15,12 +15,7 @@ import { ButtonBase } from './style';
 class Button extends PureComponent {
     render() {
         return <ButtonBase
-            theme={this.props.theme} // not necessary, only needed for tests
-            template={this.props.template}
-            colorType={this.props.colorType}
-            colorTheme={this.props.colorTheme}
-            buttonSize={this.props.buttonSize}
-            params={this.props.params}
+            {...this.props}
         >
             {this.props.children}
         </ButtonBase>;
@@ -32,9 +27,7 @@ Button.propTypes = {
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     buttonSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
-    params: PropTypes.shape({
-        disabled: PropTypes.bool,
-    }),
+    isDisabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -42,9 +35,7 @@ Button.defaultProps = {
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
     buttonSize: buttonSizeDefault,
-    params: {
-        disabled: false,
-    },
+    isDisabled: false,
 };
 
 export default Button;

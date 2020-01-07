@@ -52,7 +52,7 @@ const buttonColors = {
     }
 }
 
-const enableType = props => props.params.disabled ? 'disabled' : 'enabled';
+const enableType = props => props.isDisabled ? 'disabled' : 'enabled';
 
 export {
     buttonColors,
