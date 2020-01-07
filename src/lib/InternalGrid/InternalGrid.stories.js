@@ -53,8 +53,8 @@ storiesOf('InternalGrid', module).addDecorator(withKnobs)
 .add('Grid', () => (
     <InternalGrid
         displayType={displayOptions.grid}
-        gridColumns={text('Grid columns', '1fr 1fr 1fr')}
-        gridRows={text('Grid rows', 'repeat(2, 60px)')}
+        gridTemplateColumns={text('Grid columns', '1fr 1fr 1fr')}
+        gridTemplateRows={text('Grid rows', 'repeat(2, 60px)')}
         justifyItems={select('Justify items', justifyItemsOptions, justifyItemsDefault)}
         alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
 

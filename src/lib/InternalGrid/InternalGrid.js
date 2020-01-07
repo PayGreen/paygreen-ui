@@ -24,8 +24,8 @@ const InternalGrid = (props) => {
 
 InternalGrid.propTypes = {
     displayType: PropTypes.oneOf([displayOptions.flex, displayOptions.grid]),
-    gridColumns: PropTypes.string,
-    gridRows: PropTypes.string,
+    gridTemplateColumns: PropTypes.string,
+    gridTemplateRows: PropTypes.string,
     flexWrap: PropTypes.oneOf(Object.values(flexWrapOptions)),
     justifyContent: PropTypes.oneOf(Object.values(justifyContentOptions)),
     justifyItems: PropTypes.oneOf(Object.values(justifyItemsOptions)),
@@ -39,8 +39,8 @@ InternalGrid.propTypes = {
 
 InternalGrid.defaultProps = {
     displayType: displayOptions.flex,
-    gridColumns: '',
-    gridRows: '',
+    gridTemplateColumns: 'none',
+    gridTemplateRows: 'none',
     flexWrap: flexWrapDefault,
     justifyContent: justifyContentOptions.spaceBetween,
     justifyItems: justifyItemsDefault,

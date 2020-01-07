@@ -1,13 +1,5 @@
 import { css } from 'styled-components';
 
-const gridColumnsStyle = css`
-    grid-template-columns: ${props => props.gridColumns};
-`;
-
-const gridRowsStyle = css`
-    grid-template-rows: ${props => props.gridRows};
-`;
-
 const displayStyle = {
     flex: css`
         display: flex;
@@ -17,11 +9,10 @@ const displayStyle = {
     `,
     grid: css`
         display: grid;
+        grid-template-columns: ${props => props.gridTemplateColumns};
+        grid-template-rows: ${props => props.gridTemplateRows};
         justify-items: ${props => props.justifyItems};
         align-items: ${props => props.alignItems};
-
-        ${props => props.gridColumns ? gridColumnsStyle : null};
-        ${props => props.gridRows ? gridRowsStyle : null};
     `
 };
 
