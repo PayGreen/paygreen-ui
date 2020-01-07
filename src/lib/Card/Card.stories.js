@@ -135,9 +135,7 @@ storiesOf('Card', module)
             colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeOptions.reverse)}
             colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
             blockWidth={blockWidthOptions.sm}
-            params={{
-                titleOut: true,
-            }}
+            hasTitleOut={true}
         >
             <Title
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
@@ -176,7 +174,7 @@ storiesOf('Card', module)
             </div>
         </Card>
     ), {
-        notes: 'Card with main title out of the block. Needs an internal div and a titleOut param at "true". Don\'t use this template with long titles!',
+        notes: 'Card with main title out of the block. Needs an internal div and a hasTitleOut prop at "true". Don\'t use this template with long titles!',
     })
     .add('Card with image', () => (
         <Card

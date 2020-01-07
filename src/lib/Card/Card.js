@@ -41,9 +41,7 @@ Card.propTypes = {
     hasBackground: PropTypes.bool,
     borderTop: PropTypes.oneOf(Object.values(gradientOptions)),
     paddingLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    params: PropTypes.shape({
-        titleOut: PropTypes.bool,
-    }),
+    hasTitleOut: PropTypes.bool,
 };
 
 Card.defaultProps = {
@@ -56,9 +54,7 @@ Card.defaultProps = {
     hasBackground: true,
     borderTop: gradientDefault,
     paddingLateral: blockSpaceDefault,
-    params: {
-        titleOut: false,
-    },
+    hasTitleOut: false,
 };
 
 export default Card;
