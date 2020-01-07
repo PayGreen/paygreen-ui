@@ -14,15 +14,13 @@ import {
 } from '../../shared/constants';
 import { InternalGridBase } from './style';
 
-class InternalGrid extends PureComponent {
-    render() {
-        return <InternalGridBase
-            {...this.props}
-        >
-            {this.props.children}
-        </InternalGridBase>;
-    }
-}
+const InternalGrid = () => {
+    return <InternalGridBase
+        {...this.props}
+    >
+        {this.props.children}
+    </InternalGridBase>;
+};
 
 InternalGrid.propTypes = {
     display: PropTypes.oneOf([displayOptions.flex, displayOptions.grid]),
