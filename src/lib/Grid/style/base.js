@@ -56,12 +56,6 @@ const shiftStyle = css`
         reverseChildrenShift[props.columnNumber] : childrenShiftStyle};
 `;
 
-const flex1Style = css`
-    & > * {
-        flex: 1;
-    }
-`;
-
 const childrenClassicStyle = css`
     & > * {
         margin: ${props => props.theme.space[props.childrenMargin]} auto;
@@ -81,7 +75,9 @@ const displayStyle = {
             justify-content: ${props => props.justifyContent};
             align-items: ${props => props.alignItems};
 
-            ${props => props.flex1 ? flex1Style : null};
+            & > * {
+                flex: ${props => props.childrenFlex};
+            }
         }
         
         ${childrenClassicStyle};
@@ -134,6 +130,5 @@ const displayStyle = {
 
 export {
     shiftStyle,
-    displayStyle,
-    flex1Style
+    displayStyle
 };

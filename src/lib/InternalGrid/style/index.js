@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { spaceOptions } from '../../../shared/constants';
 import {
     displayStyle,
-    flex1Style,
     marginTop,
     marginBottom,
     marginLateral
@@ -12,7 +11,6 @@ const InternalGridBase = styled.div`
     ${props => displayStyle[props.displayType]};
 
     & > * {
-        ${props => props.flex1 ? flex1Style : null};
         ${props => props.marginTop !== spaceOptions.none ?
             marginTop : null};
         ${props => props.marginBottom !== spaceOptions.none ?

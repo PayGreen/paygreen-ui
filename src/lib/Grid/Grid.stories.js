@@ -1,6 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select, boolean, number } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    select,
+    boolean,
+    number,
+    text
+} from '@storybook/addon-knobs';
 import {
     displayOptions,
     displayDefault,
@@ -30,7 +36,7 @@ storiesOf('Grid', module).addDecorator(withKnobs)
         justifyContent={select('Justify content', justifyContentOptions, justifyContentOptions.spaceBetween)}
         justifyItems={select('Justify items', justifyItemsOptions, justifyItemsDefault)}
         alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
-        flex1={boolean('Flex 1', false)}
+        childrenFlex={text('Children flex', 'initial')}
         childrenShift={select('Children shift', blockSpaceOptions, blockSpaceDefault)}
         negativeShift={boolean('Negative shift', false)}
         reverseShift={boolean('Reverse shift', false)}
