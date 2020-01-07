@@ -9,7 +9,7 @@ import {
 } from './base';
 
 const InternalGridBase = styled.div`
-    ${props => displayStyle[props.display]};
+    ${props => displayStyle[props.displayType]};
 
     & > * {
         ${props => props.flex1 ? flex1Style : null};

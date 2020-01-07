@@ -23,7 +23,7 @@ const InternalGrid = (props) => {
 };
 
 InternalGrid.propTypes = {
-    display: PropTypes.oneOf([displayOptions.flex, displayOptions.grid]),
+    displayType: PropTypes.oneOf([displayOptions.flex, displayOptions.grid]),
     gridColumns: PropTypes.string,
     gridRows: PropTypes.string,
     flexWrap: PropTypes.oneOf(Object.values(flexWrapOptions)),
@@ -38,7 +38,7 @@ InternalGrid.propTypes = {
 };
 
 InternalGrid.defaultProps = {
-    display: displayOptions.flex,
+    displayType: displayOptions.flex,
     gridColumns: '',
     gridRows: '',
     flexWrap: flexWrapDefault,
