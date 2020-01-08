@@ -21,13 +21,13 @@ class Table extends PureComponent {
 Table.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     largeFirstColumn: PropTypes.bool,
-    withBackground: PropTypes.bool
+    hasBackground: PropTypes.bool
 };
 
 Table.defaultProps = {
     colorTheme: colorThemeDefault,
     largeFirstColumn: true,
-    withBackground: false
+    hasBackground: false
 };
 
 export default Table;

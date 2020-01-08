@@ -26,7 +26,7 @@ const colorThemeLabel = 'Color theme';
 const colorWabLabel = 'Grey color';
 const colorStatusLabel = 'Status color';
 const iconSizeLabel = 'Icon size';
-const backgroundLabel = 'With background';
+const backgroundLabel = 'Has background';
 const shadowLabel = 'With shadow';
 const activeLabel = 'Active';
 const marginTopLabel = 'Margin top';
@@ -45,7 +45,7 @@ storiesOf('Icons', module)
                 colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
-                background={boolean(backgroundLabel, false)}
+                hasBackground={boolean(backgroundLabel, false)}
                 shadow={boolean(shadowLabel, false)}
                 active={boolean(activeLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
@@ -61,7 +61,7 @@ storiesOf('Icons', module)
                 colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
-                background={boolean(backgroundLabel, false)}
+                hasBackground={boolean(backgroundLabel, false)}
                 shadow={boolean(shadowLabel, false)}
                 active={boolean(activeLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
@@ -77,7 +77,7 @@ storiesOf('Icons', module)
                 colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
-                background={boolean(backgroundLabel, false)}
+                hasBackground={boolean(backgroundLabel, false)}
                 shadow={boolean(shadowLabel, false)}
                 active={boolean(activeLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
@@ -93,7 +93,7 @@ storiesOf('Icons', module)
                 colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
-                background={boolean(backgroundLabel, false)}
+                hasBackground={boolean(backgroundLabel, false)}
                 shadow={boolean(shadowLabel, false)}
                 active={boolean(activeLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
@@ -109,7 +109,7 @@ storiesOf('Icons', module)
                 colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
-                background={boolean(backgroundLabel, false)}
+                hasBackground={boolean(backgroundLabel, false)}
                 shadow={boolean(shadowLabel, false)}
                 active={boolean(activeLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}

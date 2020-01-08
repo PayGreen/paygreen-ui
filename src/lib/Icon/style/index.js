@@ -29,7 +29,7 @@ const IconBase = styled.span`
         transition: all ${props => props.theme.transition.sm};
     }
 
-    ${props => props.background ? backgroundStyle : null};
+    ${props => props.hasBackground ? backgroundStyle : null};
     ${props => props.active ? activeStyle[props.colorPallet] : null};
 `;
 

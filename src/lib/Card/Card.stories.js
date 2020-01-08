@@ -42,7 +42,7 @@ storiesOf('Card', module)
             colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
             colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
             shadow={radios('Shadow style', shadowStyleOptions, shadowStyleDefault)}
-            hasBackground={boolean('With background', true)}
+            hasBackground={boolean('Has background', true)}
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
             radiusSize={radios('Border radius', radiusOptions, radiusDefault)}
             htmlTag={select('HTML card tag', cardHtmlTagOptions, cardHtmlTagDefault)}

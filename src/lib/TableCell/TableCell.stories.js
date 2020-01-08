@@ -33,7 +33,7 @@ storiesOf('TableCell', module).addDecorator(withKnobs)
 .add('Cell with Icon', () => (
     <TableCell>
         <CheckBoldIcon
-            background={true}
+            hasBackground={true}
         />
     </TableCell>
 ));
