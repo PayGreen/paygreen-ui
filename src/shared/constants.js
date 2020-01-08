@@ -52,7 +52,7 @@ const formStatusOptions = {
 
 const formStatusDefault = formStatusOptions.default;
 
-/* Gradients, masks, decorations, lists and images styles */
+/* Gradients, masks, decorations, buttons and lists styles + image types */
 
 // Gradient color types
 
@@ -92,6 +92,14 @@ const listStyleOptions = {
 
 const listStyleDefault = listStyleOptions.dash;
 
+// Button styles
+const buttonStyleOptions = {
+    fill: 'fill',
+    line: 'line'
+};
+
+const buttonStyleDefault = buttonStyleOptions.fill;
+
 // Image type
 const imageTypeOptions = {
     normal: 'normal',
@@ -120,15 +128,7 @@ const radioSizeOptions = {
 
 const radioSizeDefault = radioSizeOptions.lg;
 
-// Button sizes
-const buttonStyleOptions = {
-    fill: 'fill',
-    line: 'line'
-};
-
-const buttonStyleDefault = buttonStyleOptions.fill;
-
-// Shadows styles
+// Shadow styles
 const shadowSizeOptions = {
     none: 'none',
     sm: 'sm',
@@ -351,6 +351,8 @@ export {
     decorationDefault,
     listStyleOptions,
     listStyleDefault,
+    buttonStyleOptions,
+    buttonStyleDefault,
     imageTypeOptions,
     imageTypeDefault,
 
@@ -358,8 +360,6 @@ export {
     buttonSizeDefault,
     radioSizeOptions,
     radioSizeDefault,
-    buttonStyleOptions,
-    buttonStyleDefault,
     shadowSizeOptions,
     shadowSizeDefault,
     radiusOptions,
