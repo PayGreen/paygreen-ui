@@ -47,12 +47,12 @@ storiesOf('Icons', module)
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
                 hasBackground={boolean(backgroundLabel, false)}
                 shadowSize={boolean(shadowLabel, false)}
-                active={boolean(activeLabel, false)}
+                isActive={boolean(activeLabel, false)}
+                isCentered={boolean(centeredLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
                 marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
                 marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
-                centered={boolean(centeredLabel, false)}
             />
 
             <OrganizationIcon
@@ -63,12 +63,12 @@ storiesOf('Icons', module)
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
                 hasBackground={boolean(backgroundLabel, false)}
                 shadowSize={boolean(shadowLabel, false)}
-                active={boolean(activeLabel, false)}
+                isActive={boolean(activeLabel, false)}
+                isCentered={boolean(centeredLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
                 marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
                 marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
-                centered={boolean(centeredLabel, false)}
             />
 
             <ShopIcon
@@ -79,12 +79,12 @@ storiesOf('Icons', module)
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
                 hasBackground={boolean(backgroundLabel, false)}
                 shadowSize={boolean(shadowLabel, false)}
-                active={boolean(activeLabel, false)}
+                isActive={boolean(activeLabel, false)}
+                isCentered={boolean(centeredLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
                 marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
                 marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
-                centered={boolean(centeredLabel, false)}
             />
 
             <TreesIcon
@@ -95,12 +95,12 @@ storiesOf('Icons', module)
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
                 hasBackground={boolean(backgroundLabel, false)}
                 shadowSize={boolean(shadowLabel, false)}
-                active={boolean(activeLabel, false)}
+                isActive={boolean(activeLabel, false)}
+                isCentered={boolean(centeredLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
                 marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
                 marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
-                centered={boolean(centeredLabel, false)}
             />
 
             <PointerIcon
@@ -111,12 +111,12 @@ storiesOf('Icons', module)
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
                 hasBackground={boolean(backgroundLabel, false)}
                 shadowSize={boolean(shadowLabel, false)}
-                active={boolean(activeLabel, false)}
+                isActive={boolean(activeLabel, false)}
+                isCentered={boolean(centeredLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
                 marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
                 marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
-                centered={boolean(centeredLabel, false)}
             />
         </div>
     ), {

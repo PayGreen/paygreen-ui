@@ -40,12 +40,12 @@ IconWrapper.propTypes = {
     iconSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     hasBackground: PropTypes.bool,
     hasShadow: PropTypes.bool,
-    active: PropTypes.bool,
+    isActive: PropTypes.bool,
+    isCentered: PropTypes.bool,
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     marginLeft: PropTypes.oneOf(Object.values(spaceOptions)),
     marginRight: PropTypes.oneOf(Object.values(spaceOptions)),
-    centered: PropTypes.bool,
 };
 
 IconWrapper.defaultProps = {
@@ -57,12 +57,12 @@ IconWrapper.defaultProps = {
     iconSize: iconSizeOptions.sm,
     hasBackground: false,
     hasShadow: false,
-    active: false,
+    isActive: false,
+    isCentered: false,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
     marginLeft: spaceDefault,
     marginRight: spaceDefault,
-    centered: false,
 };
 
 export default IconWrapper;
