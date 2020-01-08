@@ -10,9 +10,7 @@ it('renders without crashing', () => {
             id="textareaTest1"
             placeholder="Your text&hellip;"
             label="Your message"
-            params={{
-                counter: true
-            }}
+            hasCounter={true}
         />
     );
     expect(textarea.toJSON()).toMatchSnapshot();

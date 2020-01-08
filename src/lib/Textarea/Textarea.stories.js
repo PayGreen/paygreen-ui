@@ -16,9 +16,7 @@ storiesOf('Textarea', module).addDecorator(withKnobs)
         label={text('Label', 'Your message')}
         maxLength={50}
         status={radios('Status', formStatusOptions, formStatusDefault)}
-        params={{
-            counter: boolean('With counter', true)
-        }}
+        hasCounter={boolean('With counter', true)}
         disabled={boolean('Disabled', false)}
         readOnly={boolean('Readonly', false)}
         hasShadow={boolean('With shadow', false)}
