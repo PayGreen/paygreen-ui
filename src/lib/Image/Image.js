@@ -11,7 +11,7 @@ import {
     imageSizeDefault,
     spaceOptions,
     radiusOptions,
-    shadowStyleOptions,
+    shadowSizeOptions,
     justifyContentOptions,
     alignItemsOptions,
     alignItemsDefault,
@@ -37,7 +37,7 @@ Image.propTypes = {
     padding: PropTypes.oneOf(Object.values(spaceOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     bottomStyle: PropTypes.oneOf(Object.values(maskOptions)),
-    shadow: PropTypes.oneOf(Object.values(shadowStyleOptions)),
+    shadow: PropTypes.oneOf(Object.values(shadowSizeOptions)),
     justifyContent: PropTypes.oneOf(Object.values(justifyContentOptions)),
     alignItems: PropTypes.oneOf(Object.values(alignItemsOptions)),
 };
@@ -53,7 +53,7 @@ Image.defaultProps = {
     padding: spaceOptions.none,
     radiusSize: radiusOptions.none,
     bottomStyle: maskDefault,
-    shadow: shadowStyleOptions.none,
+    shadow: shadowSizeOptions.none,
     justifyContent: justifyContentOptions.center,
     alignItems: alignItemsDefault,
 };

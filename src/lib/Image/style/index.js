@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import {
-    spaceOptions,
-    shadowStyleOptions
-} from '../../../shared/constants';
+import { spaceOptions, shadowSizeOptions } from '../../../shared/constants';
 import {
     changeColor,
     imageStyle,
@@ -25,7 +22,9 @@ const ImageBase = styled.figure`
 
     img {
         ${props => imageStyle[props.imageType]};
-        ${props => props.padding !== spaceOptions.none && props.shadow !== shadowStyleOptions.none ? backgroundBlock : null};
+        ${props => props.padding !== spaceOptions.none
+            && props.shadow !== shadowSizeOptions.none ?
+                backgroundBlock : null};
         display: block;
         box-sizing: border-box;
         padding: ${props => props.theme.space[props.padding]};

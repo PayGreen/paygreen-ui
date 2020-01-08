@@ -1,3 +1,11 @@
+// Color types
+const colorTypeOptions = {
+    original: 'original',
+    reverse: 'reverse'
+};
+
+const colorTypeDefault = colorTypeOptions.original;
+
 // Color pallet
 const colorPalletOptions = {
     theme: 'theme',
@@ -6,14 +14,6 @@ const colorPalletOptions = {
 };
 
 const colorPalletDefault = colorPalletOptions.theme;
-
-// Color types
-const colorTypeOptions = {
-    original: 'original',
-    reverse: 'reverse'
-};
-
-const colorTypeDefault = colorTypeOptions.original;
 
 // Color themes
 const colorThemeOptions = {
@@ -40,6 +40,26 @@ const greyOptions = {
 
 const greyDefault = greyOptions.grey40;
 
+// Form input status
+const formStatusOptions = {
+    default: 'default',
+    success: 'success',
+    warning: 'warning',
+    danger: 'danger',
+};
+
+const formStatusDefault = formStatusOptions.default;
+
+// Gradient color types
+
+const gradientOptions = {
+    none: 'none',
+    brand: 'brand',
+    theme: 'theme',
+};
+
+const gradientDefault = gradientOptions.none;
+
 // Mask styles
 const maskOptions = {
     none: 'none',
@@ -58,6 +78,15 @@ const decorationOptions = {
 };
 
 const decorationDefault = decorationOptions.left;
+
+// List styles
+const listStyleOptions = {
+    dash: 'dash',
+    icon: 'icon',
+    number: 'number',
+};
+
+const listStyleDefault = listStyleOptions.dash;
 
 // Button sizes
 const buttonSizeOptions = {
@@ -85,14 +114,14 @@ const buttonStyleOptions = {
 const buttonStyleDefault = buttonStyleOptions.fill;
 
 // Shadows styles
-const shadowStyleOptions = {
+const shadowSizeOptions = {
     none: 'none',
     sm: 'sm',
     md: 'md',
     lg: 'lg',
 };
 
-const shadowStyleDefault = shadowStyleOptions.md;
+const shadowSizeDefault = shadowSizeOptions.md;
 
 // Radius sizes
 const radiusOptions = {
@@ -178,6 +207,19 @@ const inputWidthOptions = {
 
 const inputWidthDefault = inputWidthOptions.md;
 
+// Font sizes
+const fontSizeOptions = {
+    xxs: 'xxs',
+    xs: 'xs',
+    sm: 'sm',
+    base: 'base',
+    md: 'md',
+    lg: 'lg',
+    xl: 'xl'
+};
+
+const fontSizeDefault = fontSizeOptions.base;
+
 // Card HTML tags
 const cardHtmlTagOptions = {
     div: 'div',
@@ -208,48 +250,6 @@ const textHtmlTagOptions = {
 };
 
 const textHtmlTagDefault = textHtmlTagOptions.p;
-
-// Font sizes
-const fontSizeOptions = {
-    xxs: 'xxs',
-    xs: 'xs',
-    sm: 'sm',
-    base: 'base',
-    md: 'md',
-    lg: 'lg',
-    xl: 'xl'
-};
-
-const fontSizeDefault = fontSizeOptions.base;
-
-// List styles
-const listStyleOptions = {
-    dash: 'dash',
-    icon: 'icon',
-    number: 'number',
-};
-
-const listStyleDefault = listStyleOptions.dash;
-
-// Form input status
-const formStatusOptions = {
-    default: 'default',
-    success: 'success',
-    warning: 'warning',
-    danger: 'danger',
-};
-
-const formStatusDefault = formStatusOptions.default;
-
-// Gradient color types
-
-const gradientOptions = {
-    none: 'none',
-    brand: 'brand',
-    theme: 'theme',
-};
-
-const gradientDefault = gradientOptions.none;
 
 // Grids types
 
@@ -322,26 +322,32 @@ const alignOptions = {
 const alignDefault = alignOptions.left;
 
 export {
-    colorPalletOptions,
-    colorPalletDefault,
     colorTypeOptions,
     colorTypeDefault,
+    colorPalletOptions,
+    colorPalletDefault,
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
     greyDefault,
+    formStatusOptions,
+    formStatusDefault,
+    gradientOptions,
+    gradientDefault,
     maskOptions,
     maskDefault,
     decorationOptions,
     decorationDefault,
+    listStyleOptions,
+    listStyleDefault,
     buttonSizeOptions,
     buttonSizeDefault,
     radioSizeOptions,
     radioSizeDefault,
     buttonStyleOptions,
     buttonStyleDefault,
-    shadowStyleOptions,
-    shadowStyleDefault,
+    shadowSizeOptions,
+    shadowSizeDefault,
     radiusOptions,
     radiusDefault,
     spaceOptions,
@@ -358,20 +364,14 @@ export {
     imageTypeDefault,
     inputWidthOptions,
     inputWidthDefault,
+    fontSizeOptions,
+    fontSizeDefault,
     cardHtmlTagOptions,
     cardHtmlTagDefault,
     titleHtmlTagOptions,
     titleHtmlTagDefault,
     textHtmlTagOptions,
     textHtmlTagDefault,
-    fontSizeOptions,
-    fontSizeDefault,
-    listStyleOptions,
-    listStyleDefault,
-    formStatusOptions,
-    formStatusDefault,
-    gradientOptions,
-    gradientDefault,
     displayOptions,
     displayDefault,
     flexDirectionOptions,
