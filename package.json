@@ -31,6 +31,7 @@
     "@rollup/plugin-url": "^4.0.0",
     "@storybook/addon-a11y": "^5.2.1",
     "@storybook/addon-backgrounds": "^5.2.5",
+    "@storybook/addon-docs": "^5.2.8",
     "@storybook/addon-knobs": "^5.2.1",
     "@storybook/addon-notes": "^5.2.1",
     "@storybook/addon-viewport": "^5.2.1",
