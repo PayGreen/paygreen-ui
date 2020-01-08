@@ -13,8 +13,8 @@ const LogoBase = styled.span`
     justify-content: center;
     align-items: center;
     transition: all ${props => props.theme.transition.sm};
-    width: ${props => props.theme.logoWidth[props.logoWidth]};
-    height: ${props => props.theme.logoHeight[props.logoHeight]};
+    width: ${props => props.theme.logoWidth[props.blockWidth]};
+    height: ${props => props.theme.logoHeight[props.blockHeight]};
 
     img,
     svg {

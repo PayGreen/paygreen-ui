@@ -19,8 +19,8 @@ Logo.propTypes = {
     hasHoverRight: PropTypes.bool,
     hasHoverTop: PropTypes.bool,
     hasHoverColor: PropTypes.bool,
-    logoWidth: PropTypes.oneOf(Object.values(spaceOptions)),
-    logoHeight: PropTypes.oneOf(Object.values(spaceOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
+    blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Logo.defaultProps = {
@@ -29,8 +29,8 @@ Logo.defaultProps = {
     hasHoverRight: false,
     hasHoverTop: false,
     hasHoverColor: false,
-    logoWidth: spaceOptions.none,
-    logoHeight: spaceOptions.none,
+    blockWidth: spaceOptions.none,
+    blockHeight: spaceOptions.none,
 };
 
 export default Logo;
