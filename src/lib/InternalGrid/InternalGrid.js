@@ -30,7 +30,7 @@ InternalGrid.propTypes = {
     justifyContent: PropTypes.oneOf(Object.values(justifyContentOptions)),
     justifyItems: PropTypes.oneOf(Object.values(justifyItemsOptions)),
     alignItems: PropTypes.oneOf(Object.values(alignItemsOptions)),
-    flex1: PropTypes.bool,
+    childrenFlex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -45,7 +45,7 @@ InternalGrid.defaultProps = {
     justifyContent: justifyContentOptions.spaceBetween,
     justifyItems: justifyItemsDefault,
     alignItems: alignItemsDefault,
-    flex1: false,
+    childrenFlex: 'initial',
 
     marginLateral: spaceDefault,
     marginTop: spaceDefault,

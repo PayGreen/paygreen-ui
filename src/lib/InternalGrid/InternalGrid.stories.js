@@ -41,7 +41,7 @@ storiesOf('InternalGrid', module).addDecorator(withKnobs)
         flexWrap={select('Flex wrap', flexWrapOptions, flexWrapDefault)}
         justifyContent={select('Justify content', justifyContentOptions, justifyContentOptions.spaceBetween)}
         alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
-        flex1={boolean('Flex 1', false)}
+        childrenFlex={text('Children flex', 'initial')}
 
         marginLateral={select('Children\'s lateral margins', spaceOptions, spaceDefault)}
         marginTop={select('Children\'s margin top', spaceOptions, spaceDefault)}

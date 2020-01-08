@@ -6,6 +6,10 @@ const displayStyle = {
         flex-wrap: ${props => props.flexWrap};
         justify-content: ${props => props.justifyContent};
         align-items: ${props => props.alignItems};
+
+        & > * {
+            flex: ${props => props.childrenFlex};
+        }
     `,
     grid: css`
         display: grid;
@@ -15,10 +19,6 @@ const displayStyle = {
         align-items: ${props => props.alignItems};
     `
 };
-
-const flex1Style = css`
-    flex: 1;
-`;
 
 const marginTop = css`
     margin-top: ${props => props.theme.space[props.marginTop]};
@@ -35,7 +35,6 @@ const marginLateral = css`
 
 export {
     displayStyle,
-    flex1Style,
     marginTop,
     marginBottom,
     marginLateral
