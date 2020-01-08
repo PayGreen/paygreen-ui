@@ -8,7 +8,7 @@ storiesOf('Logo', module).addDecorator(withKnobs)
 .add('Logo', () => (
     <a href="#">
         <Logo
-            baseline={boolean('With baseline', true)}
+            hasBaseline={boolean('With baseline', true)}
             isWhite={boolean('White', false)}
             hoverRight={boolean('Hover right', true)}
             hoverTop={boolean('Hover top', false)}

@@ -36,7 +36,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
             <MenuHamburger />
 
             <a href="#">
-                <Logo baseline={false} hoverRight={true}>
+                <Logo hasBaseline={false} hoverRight={true}>
                     <svg viewBox="0 0 226 54">
                         <path d="M16,30H7.8v13.3H0.6V2.1h16.3c9.6,0,15.7,5.4,15.7,13.8C32.5,25.2,25.1,30,16,30z M16.3,8.6H7.8v14.9h8.4
                             c5.5,0,8.9-3,8.9-7.4C25.2,11.2,21.7,8.6,16.3,8.6z"/>

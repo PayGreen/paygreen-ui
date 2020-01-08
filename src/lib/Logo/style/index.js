@@ -27,7 +27,7 @@ const LogoBase = styled.span`
     }
 
     ${props => props.isWhite ? whiteStyle : null};
-    ${props => props.baseline ? null : noBaselineStyle};
+    ${props => props.hasBaseline ? null : noBaselineStyle};
     ${props => props.hoverRight ? hoverRightStyle : null};
     ${props => props.hoverTop ? hoverTopStyle : null};
     ${props => props.hoverColor ? hoverColorStyle : null};
