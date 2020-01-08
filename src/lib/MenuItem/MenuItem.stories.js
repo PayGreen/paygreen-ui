@@ -37,7 +37,7 @@ storiesOf('MenuItem', module)
                 />
 
                 <Link
-                    underline={false}
+                    hasUnderline={false}
                     colorPallet={radios(colorPalletLabel, colorPalletOptions, colorPalletDefault)}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     colorWab={select(colorWabLabel, greyOptions, greyDefault)}
@@ -71,7 +71,7 @@ storiesOf('MenuItem', module)
                 hoverAlternative={boolean('Hover alternative (desktop)', true)}
             >
                 <Link
-                    underline={false}
+                    hasUnderline={false}
                     colorPallet={colorPalletOptions.wab}
                     uppercase={true}
                 >

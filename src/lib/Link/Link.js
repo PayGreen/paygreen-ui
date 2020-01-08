@@ -30,7 +30,7 @@ Link.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
-    underline: PropTypes.bool,
+    hasUnderline: PropTypes.bool,
     uppercase: PropTypes.bool
 };
 
@@ -40,7 +40,7 @@ Link.defaultProps = {
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,
     colorStatus: formStatusDefault,
-    underline: true,
+    hasUnderline: true,
     uppercase: false
 };
 

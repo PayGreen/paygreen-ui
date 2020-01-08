@@ -52,7 +52,7 @@ storiesOf('Card', module)
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 marginLateral={select(blockWidthLabel, spaceOptions, spaceDefault)}
                 marginTop={select(blockWidthLabel, spaceOptions, spaceDefault)}
-                underline={true}
+                hasUnderline={true}
                 textSize={fontSizeOptions.lg}
             >
                 Title <strong>sample</strong>
@@ -225,7 +225,7 @@ storiesOf('Card', module)
             <Title
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                underline={true}
+                hasUnderline={true}
                 textSize={fontSizeOptions.xl}
             >
                 Title <strong>sample</strong>

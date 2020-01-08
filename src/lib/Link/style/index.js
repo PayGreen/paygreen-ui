@@ -15,7 +15,7 @@ const LinkBase = styled.span`
     transition: all ${props => props.theme.transition.xs};
 
     ${props => props.uppercase ? uppercaseStyle : null};
-    ${props => props.underline ? underlineStyle : null};
+    ${props => props.hasUnderline ? underlineStyle : null};
 `;
 
 export { LinkBase };

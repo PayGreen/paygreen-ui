@@ -47,7 +47,7 @@ Text.propTypes = {
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
-    underline: PropTypes.bool,
+    hasUnderline: PropTypes.bool,
 
     paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     paddingTop: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -73,7 +73,7 @@ Text.defaultProps = {
     radiusSize: radiusOptions.none,
     textSize: fontSizeDefault,
     textAlign: alignDefault,
-    underline: false,
+    hasUnderline: false,
 
     paddingLateral: spaceDefault,
     paddingTop: spaceDefault,

@@ -41,7 +41,7 @@ storiesOf('MenuList', module).addDecorator(withKnobs)
                 />
 
                 <Link
-                    underline={false}
+                    hasUnderline={false}
                 >
                     Tree
                 </Link>
@@ -63,7 +63,7 @@ storiesOf('MenuList', module).addDecorator(withKnobs)
                 />
 
                 <Link
-                    underline={false}
+                    hasUnderline={false}
                     colorTheme={color[1]}
                 >
                     Payment
@@ -93,7 +93,7 @@ storiesOf('MenuList', module).addDecorator(withKnobs)
                 />
 
                 <Link
-                    underline={false}
+                    hasUnderline={false}
                     colorTheme={color[2]}
                 >
                     Lunchkit
@@ -127,7 +127,7 @@ storiesOf('MenuList', module).addDecorator(withKnobs)
                 />
 
                 <Link
-                    underline={false}
+                    hasUnderline={false}
                     colorTheme={color[3]}
                 >
                     Rounding

@@ -22,7 +22,7 @@ it('renders without crashing', () => {
 
                         <Link
                             theme={ThemeDefault}
-                            underline={false}
+                            hasUnderline={false}
                             uppercase={true}
                         >
                             Login

@@ -22,7 +22,7 @@ it('renders without crashing', () => {
                     theme={ThemeDefault}
                 >
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         colorPallet={colorPalletOptions.wab}
                         uppercase={true}
                         theme={ThemeDefault}
@@ -44,7 +44,7 @@ it('renders without crashing', () => {
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             theme={ThemeDefault}
                         >
                             Tree
@@ -67,7 +67,7 @@ it('renders without crashing', () => {
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             theme={ThemeDefault}
                         >
                             Rounding

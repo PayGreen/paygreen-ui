@@ -26,7 +26,7 @@ import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 storiesOf('Title', module).addDecorator(withKnobs)
 .add('Title', () => (
     <Title
-        underline={boolean('Underline', true)}
+        hasUnderline={boolean('Underline', true)}
 
         colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
         colorPallet={radios('Color pallet', colorPalletOptions, colorPalletOptions.wab)}

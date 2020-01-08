@@ -31,7 +31,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
             >
                 <Link
-                    underline={false}
+                    hasUnderline={false}
                     colorPallet={colorPalletOptions.wab}
                     uppercase={true}
                 >
@@ -52,7 +52,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
                     />
 
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
                         Tree
@@ -75,7 +75,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
                     />
 
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
                         Payment
@@ -103,7 +103,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
                     />
 
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
                         Rounding

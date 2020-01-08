@@ -112,7 +112,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                         isMain={true}
                     >
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
                             uppercase={true}
                         >
@@ -130,7 +130,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                         hoverAlternative={false}
                     >
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
                             uppercase={true}
                         >
@@ -149,7 +149,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                             >
                                 Tree
                             </Link>
@@ -169,7 +169,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                             >
                                 Payment
                             </Link>
@@ -193,7 +193,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                             >
                                 Rounding
                             </Link>
@@ -210,7 +210,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                         hoverAlternative={false}
                     >
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
                             uppercase={true}
                         >
@@ -229,7 +229,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                             >
                                 Tree
                             </Link>
@@ -249,7 +249,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                             >
                                 Payment
                             </Link>
@@ -284,7 +284,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             uppercase={true}
                             colorPallet={colorPalletOptions.wab}
                         >
@@ -307,7 +307,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             uppercase={true}
                         >
                             Subscribe

@@ -27,7 +27,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                     hoverEmphasis={true}
                 >
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         uppercase={true}
                     >
                         About us
@@ -44,7 +44,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                     hoverAlternative={false}
                 >
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         colorPallet={colorPalletOptions.wab}
                         uppercase={true}
                     >
@@ -63,7 +63,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Tree
                         </Link>
@@ -83,7 +83,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Payment
                         </Link>
@@ -107,7 +107,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Rounding
                         </Link>
@@ -124,7 +124,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                     hoverAlternative={false}
                 >
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         colorPallet={colorPalletOptions.wab}
                         uppercase={true}
                     >
@@ -143,7 +143,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Tree
                         </Link>
@@ -163,7 +163,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Payment
                         </Link>
@@ -187,7 +187,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Rounding
                         </Link>
