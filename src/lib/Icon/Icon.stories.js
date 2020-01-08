@@ -35,7 +35,7 @@ const marginLeftLabel = 'Margin left';
 const marginRightLabel = 'Margin right';
 const centeredLabel = 'Centered';
 
-storiesOf('Icons', module)
+storiesOf('PayGreen | Icons/Icons', module)
     .addDecorator(withKnobs)
     .add('Some icons', () => (
         <div>

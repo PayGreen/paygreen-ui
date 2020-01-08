@@ -21,7 +21,7 @@ import portraitFile from './sample/portrait.png';
 import photoFile from './sample/sample.png';
 import drawFile from './sample/sample.svg';
 
-storiesOf('Image', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Image', module).addDecorator(withKnobs)
 .add('Cover image', () => (
     <Image
         imageType={imageTypeOptions.cover}

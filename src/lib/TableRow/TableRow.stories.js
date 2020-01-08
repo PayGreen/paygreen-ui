@@ -8,7 +8,7 @@ import {
 import TableCell from '../TableCell/TableCell';
 import TableRow from './TableRow';
 
-storiesOf('TableRow', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Table/TableRow', module).addDecorator(withKnobs)
 .add('Simple row', () => (
     <TableRow
         colorTheme={select('Color theme', colorThemeAllOptions, colorThemeAllDefault)}

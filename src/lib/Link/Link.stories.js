@@ -16,7 +16,7 @@ import {
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select, text, radios, boolean } from '@storybook/addon-knobs';
 
-storiesOf('Link', module)
+storiesOf('Paygreen | Link', module)
     .addDecorator(withKnobs)
     .add('Link', () => (
         <Text>

@@ -23,7 +23,7 @@ import {
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 
-storiesOf('Title', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Title', module).addDecorator(withKnobs)
 .add('Title', () => (
     <Title
         hasUnderline={boolean('Underline', true)}

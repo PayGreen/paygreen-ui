@@ -7,7 +7,7 @@ import {
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, radios } from '@storybook/addon-knobs';
 
-storiesOf('AutonomousInput', module)
+storiesOf('Paygreen | AutonomousInput', module)
     .addDecorator(withKnobs)
     .add('AutonomousInput', () => (
         <AutonomousInput

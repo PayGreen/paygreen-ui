@@ -56,7 +56,7 @@ const sampleBasic = [
     'Lorem ipsum dolor sit adipiscing',
 ];
 
-storiesOf('List', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Lists/List', module).addDecorator(withKnobs)
 .add('List with icons', () => (
     <List
         listStyle={listStyleOptions.icon}

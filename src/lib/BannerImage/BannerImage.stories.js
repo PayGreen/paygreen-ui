@@ -18,7 +18,7 @@ import photoFile from './sample/sample.png';
 
 const colorThemeLabel = 'ColorTheme';
 
-storiesOf('BannerImage', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Banners/BannerImage', module).addDecorator(withKnobs)
 .add('BannerImage', () => (
     <BannerImage
         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}

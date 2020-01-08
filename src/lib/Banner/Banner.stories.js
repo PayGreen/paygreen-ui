@@ -17,7 +17,7 @@ import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Banner from './Banner';
 
-storiesOf('Banner', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Banners/Banner', module).addDecorator(withKnobs)
 .add('Banner', () => (
     <Banner
         topStyle={radios('Top wave direction', decorationOptions, decorationDefault)}

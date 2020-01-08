@@ -13,7 +13,7 @@ import { withKnobs, text, radios, select } from '@storybook/addon-knobs';
 
 const colorThemeLabel = 'Color theme';
 
-storiesOf('IconLabel', module)
+storiesOf('PayGreen | Icons/IconLabel', module)
     .addDecorator(withKnobs)
     .add('IconLabel', () => (
         <IconLabel

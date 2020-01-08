@@ -24,7 +24,7 @@ import {
 import { storiesOf } from '@storybook/react';
 import { withKnobs, radios, select, boolean } from '@storybook/addon-knobs';
 
-storiesOf('Text', module)
+storiesOf('Paygreen | Text', module)
     .addDecorator(withKnobs)
     .add('Single paragraph', () => (
         <Text

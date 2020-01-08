@@ -10,7 +10,7 @@ import {
 } from '../../shared/constants';
 import Input from './Input';
 
-storiesOf('Input', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Forms/Input', module).addDecorator(withKnobs)
 .add('Text', () => (
     <Input
         id="sampleId1"

@@ -21,7 +21,7 @@ const colorPalletLabel = 'Color pallet';
 const colorThemeLabel = 'Color theme';
 const colorWabLabel = 'Grey color';
 
-storiesOf('MenuItem', module)
+storiesOf('Paygreen | Menu/MenuItem', module)
     .addDecorator(withKnobs)
     .add('Sub menu item', () => (
         <a href="#">

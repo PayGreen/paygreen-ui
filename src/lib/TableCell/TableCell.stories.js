@@ -10,7 +10,7 @@ import Logo from '../Logo/Logo';
 import TableCell from './TableCell';
 import cb from './sample/sample.svg';
 
-storiesOf('TableCell', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Table/TableCell', module).addDecorator(withKnobs)
 .add('Cell with logo', () => (
     <TableCell>
         <Logo blockHeight={spaceOptions.xs} blockWidth={spaceOptions.sm}>

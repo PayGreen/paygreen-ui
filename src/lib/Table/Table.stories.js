@@ -10,7 +10,7 @@ import TableCell from '../TableCell/TableCell';
 import TableRow from '../TableRow/TableRow';
 import Table from './Table';
 
-storiesOf('Table', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Table/Table', module).addDecorator(withKnobs)
 .add('Table', () => (
     <Table
         colorTheme={radios('Color', colorThemeOptions, colorThemeDefault)}

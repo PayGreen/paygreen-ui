@@ -15,7 +15,7 @@ import MenuList from '../MenuList/MenuList';
 import Menu from '../Menu/Menu';
 import MenuPrimary from './MenuPrimary';
 
-storiesOf('MenuPrimary', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
 .add('MenuPrimary', () => (
     <MenuPrimary
         isOpen={boolean('Is open', true)}

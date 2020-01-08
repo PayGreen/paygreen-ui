@@ -7,7 +7,7 @@ import {
 } from '../../shared/constants';
 import MenuClose from './MenuClose';
 
-storiesOf('MenuClose', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Menu/MenuClose', module).addDecorator(withKnobs)
 .add('MenuClose', () => (
     <MenuClose
         colorTheme={radios('Color', colorThemeOptions, colorThemeDefault)}

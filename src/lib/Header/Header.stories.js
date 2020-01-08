@@ -30,7 +30,7 @@ import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Logo from '../Logo/Logo';
 import Header from './Header';
 
-storiesOf('Header', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
 .add('Header', () => (
     <Header>
         <div className="main-nav">

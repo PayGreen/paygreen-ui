@@ -14,7 +14,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text, radios } from '@storybook/addon-knobs';
 
 storiesOf('Button', module).addDecorator(withKnobs)
-.add('Button', () => (
+.add('Paygreen | Buttons/Button', () => (
     <a href="#">
         <Button
             buttonStyle={radios('Button style', buttonStyleOptions, buttonStyleDefault)}

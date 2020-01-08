@@ -27,7 +27,7 @@ const color = [
     colorThemeOptions.quaternary
 ];
 
-storiesOf('MenuList', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Menu/MenuList', module).addDecorator(withKnobs)
 .add('MenuList', () => (
     <MenuList
         colorTheme={radios('Shadow color', colorThemeOptions, colorThemeDefault)}

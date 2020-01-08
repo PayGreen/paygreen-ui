@@ -18,7 +18,7 @@ import Menu from './Menu';
 
 const colorThemeLabel = 'Color theme';
 
-storiesOf('Menu', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Menu/Menu', module).addDecorator(withKnobs)
 .add('Menu', () => (
     <Menu
         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}

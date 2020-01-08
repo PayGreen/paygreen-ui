@@ -4,7 +4,7 @@ import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import { spaceOptions } from '../../shared/constants';
 import Logo from './Logo';
 
-storiesOf('Logo', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Logo', module).addDecorator(withKnobs)
 .add('Logo', () => (
     <a href="#">
         <Logo
