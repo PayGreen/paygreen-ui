@@ -102,7 +102,6 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-    onChange: undefined,
     type: 'text',
     status: formStatusDefault,
     hasShadow: false,

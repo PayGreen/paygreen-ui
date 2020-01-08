@@ -110,7 +110,6 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
-    onChange: undefined,
     status: formStatusDefault,
     hasShadow: false,
     blockWidth: inputWidthDefault,
