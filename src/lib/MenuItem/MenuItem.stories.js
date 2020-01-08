@@ -73,7 +73,7 @@ storiesOf('MenuItem', module)
                 <Link
                     hasUnderline={false}
                     colorPallet={colorPalletOptions.wab}
-                    uppercase={true}
+                    hasUppercase={true}
                 >
                     Payment
                 </Link>

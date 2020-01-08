@@ -28,7 +28,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                 >
                     <Link
                         hasUnderline={false}
-                        uppercase={true}
+                        hasUppercase={true}
                     >
                         About us
                     </Link>
@@ -46,7 +46,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                     <Link
                         hasUnderline={false}
                         colorPallet={colorPalletOptions.wab}
-                        uppercase={true}
+                        hasUppercase={true}
                     >
                         Our products
                     </Link>
@@ -126,7 +126,7 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
                     <Link
                         hasUnderline={false}
                         colorPallet={colorPalletOptions.wab}
-                        uppercase={true}
+                        hasUppercase={true}
                     >
                         Other products
                     </Link>

@@ -33,7 +33,7 @@ storiesOf('MenuSecondary', module).addDecorator(withKnobs)
 
                     <Link
                         hasUnderline={false}
-                        uppercase={true}
+                        hasUppercase={true}
                         colorPallet={colorPalletOptions.wab}
                     >
                         Login
@@ -56,7 +56,7 @@ storiesOf('MenuSecondary', module).addDecorator(withKnobs)
 
                     <Link
                         hasUnderline={false}
-                        uppercase={true}
+                        hasUppercase={true}
                     >
                         Subscribe
                     </Link>

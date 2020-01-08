@@ -24,7 +24,7 @@ it('renders without crashing', () => {
                     <Link
                         hasUnderline={false}
                         colorPallet={colorPalletOptions.wab}
-                        uppercase={true}
+                        hasUppercase={true}
                         theme={ThemeDefault}
                     >
                         Our products

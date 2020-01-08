@@ -28,7 +28,7 @@ storiesOf('Link', module)
                     colorWab={select('Grey color', greyOptions, greyDefault)}
                     colorStatus={select('Status color', formStatusOptions, formStatusDefault)}
                     hasUnderline={boolean('With underline', true)}
-                    uppercase={boolean('Uppercase', false)}
+                    hasUppercase={boolean('Uppercase', false)}
                 >
                     {text('Label', 'Link text')}
                 </Link>

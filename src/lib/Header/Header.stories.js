@@ -114,7 +114,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                         <Link
                             hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
-                            uppercase={true}
+                            hasUppercase={true}
                         >
                             About us
                         </Link>
@@ -132,7 +132,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                         <Link
                             hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
-                            uppercase={true}
+                            hasUppercase={true}
                         >
                             Our products
                         </Link>
@@ -212,7 +212,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
                         <Link
                             hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
-                            uppercase={true}
+                            hasUppercase={true}
                         >
                             Other products
                         </Link>
@@ -285,7 +285,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
 
                         <Link
                             hasUnderline={false}
-                            uppercase={true}
+                            hasUppercase={true}
                             colorPallet={colorPalletOptions.wab}
                         >
                             Login
@@ -308,7 +308,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
 
                         <Link
                             hasUnderline={false}
-                            uppercase={true}
+                            hasUppercase={true}
                         >
                             Subscribe
                         </Link>

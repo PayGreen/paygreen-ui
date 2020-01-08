@@ -33,7 +33,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
                 <Link
                     hasUnderline={false}
                     colorPallet={colorPalletOptions.wab}
-                    uppercase={true}
+                    hasUppercase={true}
                 >
                     Our products
                 </Link>
