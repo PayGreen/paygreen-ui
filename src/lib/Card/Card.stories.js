@@ -20,12 +20,12 @@ import {
     radiusOptions,
     radiusDefault,
     gradientOptions,
-
+    
     fontSizeOptions,
     maskOptions,
     imageTypeOptions,
-    blockSpaceOptions,
-    blockSpaceDefault,
+    spaceOptions,
+    spaceDefault,
     buttonSizeOptions,
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
@@ -50,8 +50,8 @@ storiesOf('Card', module)
             <Title
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
-                marginTop={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                marginLateral={select(blockWidthLabel, spaceOptions, spaceDefault)}
+                marginTop={select(blockWidthLabel, spaceOptions, spaceDefault)}
                 underline={true}
                 textSize={fontSizeOptions.lg}
             >
@@ -61,15 +61,15 @@ storiesOf('Card', module)
             <Text
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                marginLateral={select(blockWidthLabel, spaceOptions, spaceDefault)}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. Curabitur bibendum risus gravida tellus condimentum tristique. Sed ut elit efficitur, sagittis urna sed, scelerisque eros. 
             </Text>
 
             <ButtonGroup
-                marginTop={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
-                marginBottom={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
-                paddingBlock={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                marginTop={select(blockWidthLabel, spaceOptions, spaceDefault)}
+                marginBottom={select(blockWidthLabel, spaceOptions, spaceDefault)}
+                paddingBlock={select(blockWidthLabel, spaceOptions, spaceDefault)}
             >
                 <a href="#">
                     <Button
@@ -94,8 +94,8 @@ storiesOf('Card', module)
         >
             <Title
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
-                marginLateral={blockSpaceOptions.sm}
-                marginTop={blockSpaceOptions.sm}
+                marginLateral={spaceOptions.sm}
+                marginTop={spaceOptions.sm}
                 textSize={fontSizeOptions.md}
             >
                 Title sample
@@ -104,17 +104,17 @@ storiesOf('Card', module)
             <Text
                 colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                marginLateral={blockSpaceOptions.sm}
-                marginTop={blockSpaceOptions.xs}
+                marginLateral={spaceOptions.sm}
+                marginTop={spaceOptions.xs}
                 textSize={fontSizeOptions.sm}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
             </Text>
 
             <ButtonGroup
-                marginTop={blockSpaceOptions.sm}
-                marginBottom={blockSpaceOptions.sm}
-                paddingBlock={blockSpaceOptions.sm}
+                marginTop={spaceOptions.sm}
+                marginBottom={spaceOptions.sm}
+                paddingBlock={spaceOptions.sm}
             >
                 <a href="#">
                     <Button
@@ -139,7 +139,7 @@ storiesOf('Card', module)
         >
             <Title
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                marginLateral={blockSpaceOptions.sm}
+                marginLateral={spaceOptions.sm}
                 textSize={fontSizeOptions.lg}
             >
                 Sample
@@ -149,17 +149,17 @@ storiesOf('Card', module)
                 <Text
                     colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                    marginLateral={blockSpaceOptions.sm}
-                    marginTop={blockSpaceOptions.sm}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
                     textSize={fontSizeOptions.sm}
                 >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
                 </Text>
 
                 <ButtonGroup
-                    marginTop={blockSpaceOptions.sm}
-                    marginBottom={blockSpaceOptions.sm}
-                    paddingBlock={blockSpaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                    paddingBlock={spaceOptions.sm}
                 >
                     <a href="#">
                         <Button
@@ -185,25 +185,25 @@ storiesOf('Card', module)
             </Image>
 
             <Title
-                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
-                marginTop={blockSpaceOptions.sm}
+                marginLateral={select(blockWidthLabel, spaceOptions, spaceDefault)}
+                marginTop={spaceOptions.sm}
                 textSize={fontSizeOptions.md}
             >
                 Title sample
             </Title>
 
             <Text
-                marginLateral={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
-                marginTop={blockSpaceOptions.xs}
+                marginLateral={select(blockWidthLabel, spaceOptions, spaceDefault)}
+                marginTop={spaceOptions.xs}
                 textSize={fontSizeOptions.sm}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
             </Text>
 
             <ButtonGroup
-                marginTop={blockSpaceOptions.sm}
-                marginBottom={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
-                paddingBlock={select(blockWidthLabel, blockSpaceOptions, blockSpaceDefault)}
+                marginTop={spaceOptions.sm}
+                marginBottom={select(blockWidthLabel, spaceOptions, spaceDefault)}
+                paddingBlock={select(blockWidthLabel, spaceOptions, spaceDefault)}
             >
                 <a href="#">
                     <Button buttonSize={buttonSizeOptions.sm}>

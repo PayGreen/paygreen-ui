@@ -8,7 +8,7 @@ import {
     decorationDefault,
     greyOptions,
     fontSizeOptions,
-    blockSpaceOptions
+    spaceOptions
 } from '../../shared/constants';
 import Card from '../Card/Card';
 import Title from '../Title/Title';
@@ -32,15 +32,15 @@ storiesOf('BannerImage', module).addDecorator(withKnobs)
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 colorWab={greyOptions.grey60}
                 textSize={fontSizeOptions.lg}
-                marginLateral={blockSpaceOptions.md}
-                marginTop={blockSpaceOptions.md}
+                marginLateral={spaceOptions.md}
+                marginTop={spaceOptions.md}
             >
                 Your title with <strong>an emphasis</strong>
             </Title>
 
             <Text
-                marginLateral={blockSpaceOptions.md}
-                marginTop={blockSpaceOptions.md}
+                marginLateral={spaceOptions.md}
+                marginTop={spaceOptions.md}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor velit a ultricies aliquet. Donec vehicula in arcu non sodales.
             </Text>

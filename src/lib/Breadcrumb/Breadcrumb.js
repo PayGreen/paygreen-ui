@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import {
     colorTypeOptions,
     colorTypeDefault,
+    colorPalletOptions,
     colorThemeOptions,
     colorThemeDefault,
-    blockSpaceOptions,
-    blockSpaceDefault,
-
-    colorPalletOptions,
+    greyOptions,
     spaceOptions,
+    spaceDefault,
     iconSizeOptions,
-    greyOptions
 } from '../../shared/constants';
 import { ArrowRightIcon } from '../Icon/Icon';
 import { BreadcrumbBase } from './style';
@@ -68,17 +66,17 @@ Breadcrumb.propTypes = {
     ).isRequired,
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Breadcrumb.defaultProps = {
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
-    marginLateral: blockSpaceDefault,
-    marginTop: blockSpaceOptions.xs,
-    marginBottom: blockSpaceOptions.xs,
+    marginLateral: spaceDefault,
+    marginTop: spaceOptions.xs,
+    marginBottom: spaceOptions.xs,
 };
 
 export default Breadcrumb;

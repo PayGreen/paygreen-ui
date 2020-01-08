@@ -17,8 +17,8 @@ import {
     fontSizeOptions,
     alignOptions,
     alignDefault,
-    blockSpaceOptions,
-    blockSpaceDefault
+    spaceOptions,
+    spaceDefault
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
@@ -36,8 +36,8 @@ storiesOf('Title', module).addDecorator(withKnobs)
         
         textSize={select('Size', fontSizeOptions, fontSizeOptions.lg)}
         textAlign={radios('Align', alignOptions, alignDefault)}
-        marginLateral={select('Lateral margin', blockSpaceOptions, blockSpaceDefault)}
-        marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}
+        marginLateral={select('Lateral margin', spaceOptions, spaceDefault)}
+        marginTop={select('Margin top', spaceOptions, spaceDefault)}
         titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
     >
         Your title with <strong>an emphasis</strong>

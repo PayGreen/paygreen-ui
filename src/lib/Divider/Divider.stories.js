@@ -6,7 +6,7 @@ import {
     decorationDefault,
     colorThemeOptions,
     colorThemeDefault,
-    blockSpaceOptions
+    spaceOptions
 } from '../../shared/constants';
 import Divider from './Divider';
 
@@ -16,7 +16,7 @@ storiesOf('Divider', module).addDecorator(withKnobs)
         waveStyle={radios('Wave direction', decorationOptions, decorationDefault)}
         colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
         text={text('Text', 'Your text')}
-        marginTop={select('Margin top', blockSpaceOptions, blockSpaceOptions.md)}
-        marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceOptions.md)}
+        marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+        marginBottom={select('Margin bottom', spaceOptions, spaceOptions.md)}
     />
 ));

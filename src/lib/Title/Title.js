@@ -18,8 +18,8 @@ import {
     fontSizeDefault,
     alignOptions,
     alignDefault,
-    blockSpaceOptions,
-    blockSpaceDefault
+    spaceOptions,
+    spaceDefault
 } from '../../shared/constants';
 import { TitleBase } from './style';
 
@@ -45,8 +45,8 @@ Title.propTypes = {
 
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
-    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     underline: PropTypes.bool,
 };
 
@@ -61,8 +61,8 @@ Title.defaultProps = {
 
     textSize: fontSizeDefault,
     textAlign: alignDefault,
-    marginLateral: blockSpaceDefault,
-    marginTop: blockSpaceDefault,
+    marginLateral: spaceDefault,
+    marginTop: spaceDefault,
     underline: false,
 };
 

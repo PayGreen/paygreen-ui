@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
     formStatusOptions,
     formStatusDefault,
-    blockSpaceOptions
+    spaceOptions
 } from '../../shared/constants';
 import { TextareaBase } from './style';
 
@@ -92,8 +92,8 @@ Textarea.propTypes = {
     }),
     counterlabel: PropTypes.string,
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Textarea.defaultProps = {
@@ -106,8 +106,8 @@ Textarea.defaultProps = {
     },
     counterlabel: 'characters',
     status: formStatusDefault,
-    marginTop: blockSpaceOptions.md,
-    marginBottom: blockSpaceOptions.md,
+    marginTop: spaceOptions.md,
+    marginBottom: spaceOptions.md,
 };
 
 export default Textarea;

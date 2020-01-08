@@ -6,7 +6,7 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    blockSpaceOptions
+    spaceOptions
 } from '../../shared/constants';
 import { SelectBase } from './style';
 
@@ -104,8 +104,8 @@ Select.propTypes = {
         shadow: PropTypes.bool,
     }),
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Select.defaultProps = {
@@ -115,8 +115,8 @@ Select.defaultProps = {
         shadow: false,
     },
     status: formStatusDefault,
-    marginTop: blockSpaceOptions.md,
-    marginBottom: blockSpaceOptions.md,
+    marginTop: spaceOptions.md,
+    marginBottom: spaceOptions.md,
 };
 
 export default Select;

@@ -10,7 +10,7 @@ import {
 
     colorTypeOptions,
     fontSizeOptions,
-    blockSpaceOptions
+    spaceOptions
 } from '../../shared/constants';
 import Card from '../Card/Card';
 import Title from '../Title/Title';
@@ -31,17 +31,17 @@ storiesOf('Banner', module).addDecorator(withKnobs)
             <Title
                 colorType={colorTypeOptions.reverse}
                 textSize={fontSizeOptions.xl}
-                marginLateral={blockSpaceOptions.md}
-                marginTop={blockSpaceOptions.md}
+                marginLateral={spaceOptions.md}
+                marginTop={spaceOptions.md}
             >
                 Your big title
             </Title>
 
             <Text
                 colorType={colorTypeOptions.reverse}
-                marginLateral={blockSpaceOptions.md}
-                marginTop={blockSpaceOptions.md}
-                marginBottom={blockSpaceOptions.md}
+                marginLateral={spaceOptions.md}
+                marginTop={spaceOptions.md}
+                marginBottom={spaceOptions.md}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor velit a ultricies aliquet. Donec vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum ullamcorper turpis vel imperdiet. 
             </Text>

@@ -111,6 +111,16 @@ const imageTypeDefault = imageTypeOptions.normal;
 
 /* Sizes */
 
+// Shadow sizes
+const shadowSizeOptions = {
+    none: 'none',
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+};
+
+const shadowSizeDefault = shadowSizeOptions.md;
+
 // Button sizes
 const buttonSizeOptions = {
     sm: 'sm',
@@ -120,6 +130,15 @@ const buttonSizeOptions = {
 
 const buttonSizeDefault = buttonSizeOptions.md;
 
+// Input width
+const inputWidthOptions = {
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+}
+
+const inputWidthDefault = inputWidthOptions.md;
+
 // Radio sizes
 const radioSizeOptions = {
     md: 'md',
@@ -127,16 +146,6 @@ const radioSizeOptions = {
 };
 
 const radioSizeDefault = radioSizeOptions.lg;
-
-// Shadow styles
-const shadowSizeOptions = {
-    none: 'none',
-    sm: 'sm',
-    md: 'md',
-    lg: 'lg',
-};
-
-const shadowSizeDefault = shadowSizeOptions.md;
 
 // Radius sizes
 const radiusOptions = {
@@ -158,18 +167,6 @@ const spaceOptions = {
 };
 
 const spaceDefault = spaceOptions.none;
-
-// Block padding
-const blockSpaceOptions = {
-    none: 'none',
-    xs: 'xs',
-    sm: 'sm',
-    md: 'md',
-    lg: 'lg',
-    xl: 'xl'
-};
-
-const blockSpaceDefault = blockSpaceOptions.none;
 
 // Block width
 const blockWidthOptions = {
@@ -203,15 +200,6 @@ const imageSizeOptions = {
 };
 
 const imageSizeDefault = imageSizeOptions.auto;
-
-// Input width
-const inputWidthOptions = {
-    sm: 'sm',
-    md: 'md',
-    lg: 'lg',
-}
-
-const inputWidthDefault = inputWidthOptions.md;
 
 // Font sizes
 const fontSizeOptions = {
@@ -356,26 +344,25 @@ export {
     imageTypeOptions,
     imageTypeDefault,
 
-    buttonSizeOptions,
-    buttonSizeDefault,
-    radioSizeOptions,
-    radioSizeDefault,
     shadowSizeOptions,
     shadowSizeDefault,
+    buttonSizeOptions,
+    buttonSizeDefault,
+    inputWidthOptions,
+    inputWidthDefault,
+    radioSizeOptions,
+    radioSizeDefault,
     radiusOptions,
     radiusDefault,
     spaceOptions,
     spaceDefault,
-    blockSpaceOptions,
-    blockSpaceDefault,
+
     blockWidthOptions,
     blockWidthDefault,
     iconSizeOptions,
     iconSizeDefault,
     imageSizeOptions,
     imageSizeDefault,
-    inputWidthOptions,
-    inputWidthDefault,
     fontSizeOptions,
     fontSizeDefault,
 

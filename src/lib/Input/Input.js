@@ -7,7 +7,7 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    blockSpaceOptions
+    spaceOptions
 } from '../../shared/constants';
 import { InputBase } from './style';
 
@@ -95,8 +95,8 @@ Input.propTypes = {
     }),
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
     mask: PropTypes.string,
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Input.defaultProps = {
@@ -107,8 +107,8 @@ Input.defaultProps = {
         shadow: false,
     },
     status: formStatusDefault,
-    marginTop: blockSpaceOptions.md,
-    marginBottom: blockSpaceOptions.md,
+    marginTop: spaceOptions.md,
+    marginBottom: spaceOptions.md,
 };
 
 export default Input;

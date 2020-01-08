@@ -6,8 +6,8 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     colorPalletOptions,
-    blockSpaceOptions,
-    blockSpaceDefault,
+    spaceOptions,
+    spaceDefault,
     iconSizeOptions,
     iconSizeDefault
 } from '../../shared/constants';
@@ -62,9 +62,9 @@ storiesOf('List', module).addDecorator(withKnobs)
         listStyle={listStyleOptions.icon}
         hasDashed={boolean('Dashed lines (on desktop)', false)}
         bulletSize={select(bulletSizeLabel, iconSizeOptions, iconSizeDefault)}
-        marginLateral={select('Lateral margins', blockSpaceOptions, blockSpaceDefault)}
-        marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}
-        marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceDefault)}
+        marginLateral={select('Lateral margins', spaceOptions, spaceDefault)}
+        marginTop={select('Margin top', spaceOptions, spaceDefault)}
+        marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
     >
         {sampleWithIcons.map((element, index) =>
             <ListItem

@@ -19,8 +19,8 @@ import {
     justifyItemsDefault,
     alignItemsOptions,
     alignItemsDefault,
-    blockSpaceOptions,
-    blockSpaceDefault
+    spaceOptions,
+    spaceDefault
 } from '../../shared/constants';
 import Card from '../Card/Card';
 import Text from '../Text/Text';
@@ -47,16 +47,16 @@ storiesOf('Grid', module).addDecorator(withKnobs)
         justifyItems={select('Justify items', justifyItemsOptions, justifyItemsDefault)}
         alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
         childrenFlex={text('Children flex', 'initial')}
-        childrenShiftSize={select('Children shift', blockSpaceOptions, blockSpaceDefault)}
+        childrenShiftSize={select('Children shift', spaceOptions, spaceDefault)}
         isNegativeShift={boolean('Negative shift', false)}
         isReverseShift={boolean('Reverse shift', false)}
     >
         {sampleTexts.map((element, index) =>
             <Card key={index}>
                 <Text
-                    marginLateral={blockSpaceOptions.sm}
-                    marginTop={blockSpaceOptions.sm}
-                    marginBottom={blockSpaceOptions.sm}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
                 >
                     {element}
                 </Text>

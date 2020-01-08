@@ -6,8 +6,8 @@ import {
     buttonSizeDefault,
     buttonStyleOptions,
     alignOptions,
-    blockSpaceOptions,
-    blockSpaceDefault
+    spaceOptions,
+    spaceDefault
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
@@ -18,9 +18,9 @@ storiesOf('ButtonGroup', module)
         <ButtonGroup
             align={radios('Buttons align', alignOptions, alignOptions.center)}
             resetMargin={boolean('Compensate buttons margin', false)}
-            marginLateral={select('Lateral margin', blockSpaceOptions, blockSpaceDefault)}
-            marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}
-            marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceDefault)}
+            marginLateral={select('Lateral margin', spaceOptions, spaceDefault)}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
         >
             <a href="#">
                 <Button

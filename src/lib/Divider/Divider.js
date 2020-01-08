@@ -5,7 +5,7 @@ import {
     decorationDefault,
     colorThemeOptions,
     colorThemeDefault,
-    blockSpaceOptions
+    spaceOptions
 } from '../../shared/constants';
 import { DividerBase } from './style';
 import { shape } from './style/shape';
@@ -36,15 +36,15 @@ Divider.propTypes = {
     waveStyle: PropTypes.oneOf(Object.values(decorationOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     text: PropTypes.string,
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Divider.defaultProps = {
     waveStyle: decorationDefault,
     colorTheme: colorThemeDefault,
-    marginTop: blockSpaceOptions.md,
-    marginBottom: blockSpaceOptions.md,
+    marginTop: spaceOptions.md,
+    marginBottom: spaceOptions.md,
 };
 
 export default Divider;

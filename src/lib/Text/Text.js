@@ -18,9 +18,8 @@ import {
     fontSizeDefault,
     alignOptions,
     alignDefault,
-    blockSpaceOptions,
-    blockSpaceDefault,
-    spaceOptions
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import { TextBase } from './style';
 
@@ -50,13 +49,13 @@ Text.propTypes = {
     textAlign: PropTypes.oneOf(Object.values(alignOptions)),
     underline: PropTypes.bool,
 
-    paddingLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    paddingTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    paddingBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 
-    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 
     marginInternal: PropTypes.oneOf(Object.values(spaceOptions)),
 };
@@ -76,13 +75,13 @@ Text.defaultProps = {
     textAlign: alignDefault,
     underline: false,
 
-    paddingLateral: blockSpaceDefault,
-    paddingTop: blockSpaceDefault,
-    paddingBottom: blockSpaceDefault,
+    paddingLateral: spaceDefault,
+    paddingTop: spaceDefault,
+    paddingBottom: spaceDefault,
 
-    marginLateral: blockSpaceDefault,
-    marginTop: blockSpaceDefault,
-    marginBottom: blockSpaceDefault,
+    marginLateral: spaceDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
 
     marginInternal: spaceOptions.sm,
 };

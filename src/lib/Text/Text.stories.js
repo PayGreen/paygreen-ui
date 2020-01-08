@@ -18,9 +18,8 @@ import {
     alignOptions,
     alignDefault,
     textHtmlTagOptions,
-    blockSpaceOptions,
-    blockSpaceDefault,
     spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, radios, select, boolean } from '@storybook/addon-knobs';
@@ -39,9 +38,9 @@ storiesOf('Text', module)
             textAlign={radios('Align', alignOptions, alignDefault)}
             underline={boolean('Underline', false)}
 
-            marginLateral={select('Block\'s lateral margins', blockSpaceOptions, blockSpaceDefault)}
-            marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}
-            marginBottom={select('Block\'s margin bottom', blockSpaceOptions, blockSpaceDefault)}
+            marginLateral={select('Block\'s lateral margins', spaceOptions, spaceDefault)}
+            marginTop={select('Block\'s margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Block\'s margin bottom', spaceOptions, spaceDefault)}
         >
             Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Donec eget <em>nulla in libero</em> laoreet sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat quis risus.
         </Text>
@@ -62,9 +61,9 @@ storiesOf('Text', module)
             textAlign={radios('Align', alignOptions, alignDefault)}
             underline={boolean('Underline', false)}
 
-            marginLateral={select('Block\'s lateral margins', blockSpaceOptions, blockSpaceDefault)}
-            marginTop={select('Block\'s margin top', blockSpaceOptions, blockSpaceDefault)}
-            marginBottom={select('Block\'s margin bottom', blockSpaceOptions, blockSpaceDefault)}
+            marginLateral={select('Block\'s lateral margins', spaceOptions, spaceDefault)}
+            marginTop={select('Block\'s margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Block\'s margin bottom', spaceOptions, spaceDefault)}
             marginInternal={select('Internal margin', spaceOptions, spaceOptions.sm)}
         >
             <p>
@@ -93,13 +92,13 @@ storiesOf('Text', module)
             hasBackground={true}
             radiusSize={radios('Radius size', radiusOptions, radiusOptions.sm)}
 
-            paddingLateral={blockSpaceOptions.lg}
-            paddingTop={blockSpaceOptions.lg}
-            paddingBottom={blockSpaceOptions.lg}
+            paddingLateral={spaceOptions.lg}
+            paddingTop={spaceOptions.lg}
+            paddingBottom={spaceOptions.lg}
 
-            marginLateral={blockSpaceOptions.sm}
-            marginTop={blockSpaceOptions.sm}
-            marginBottom={blockSpaceOptions.sm}
+            marginLateral={spaceOptions.sm}
+            marginTop={spaceOptions.sm}
+            marginBottom={spaceOptions.sm}
         >
             Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>. Donec eget nulla in libero laoreet sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat quis risus.
         </Text>

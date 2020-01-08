@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { blockSpaceOptions } from '../../../shared/constants';
+import { spaceOptions } from '../../../shared/constants';
 import { displayStyle, childrenShift } from './base';
 
 const GridBase = styled.div`
@@ -17,7 +17,7 @@ const GridBase = styled.div`
 
     ${props => displayStyle[props.displayType]};
 
-    ${props => props.childrenShiftSize !== blockSpaceOptions.none ?
+    ${props => props.childrenShiftSize !== spaceOptions.none ?
         childrenShift(
             props.columnNumber,
             props.theme.blockShift[props.childrenShiftSize],
