@@ -11,7 +11,7 @@ import {
 } from './base';
 
 const ImageBase = styled.figure`
-    ${props => props.colorChange ? changeColor : null};
+    ${props => props.hasModifiedColor ? changeColor : null};
     ${props => props.isCircle ? croppedCircle : notCropped};
     ${props => props.hasDecoration ? decorationStyle : shadowStyle};
     display: flex;

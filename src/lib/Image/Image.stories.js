@@ -25,7 +25,7 @@ storiesOf('Image', module).addDecorator(withKnobs)
 .add('Cover image', () => (
     <Image
         imageType={imageTypeOptions.cover}
-        colorChange={boolean('Modify color', true)}
+        hasModifiedColor={boolean('Modify color', true)}
         colorTheme={select('Color theme', colorThemeOptions, colorThemeDefault)}
         bottomStyle={radios('Bottom style', maskOptions, maskDefault)}
         blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
