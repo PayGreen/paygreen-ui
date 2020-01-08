@@ -24,7 +24,7 @@ storiesOf('ButtonGroup', module)
         >
             <a href="#">
                 <Button
-                    template={buttonStyleOptions.line}
+                    buttonStyle={buttonStyleOptions.line}
                     buttonSize={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
                 >
                     First button

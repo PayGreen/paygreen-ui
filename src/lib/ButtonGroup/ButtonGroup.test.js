@@ -11,7 +11,7 @@ it('renders without crashing', () => {
             <a href="#">
                 <Button
                     theme={ThemeDefault}
-                    template={buttonStyleOptions.line}
+                    buttonStyle={buttonStyleOptions.line}
                 >
                     First button
                 </Button>

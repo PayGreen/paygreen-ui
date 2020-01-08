@@ -9,7 +9,7 @@ import {
 
 const ButtonBase = styled.span`
     ${props => props.isDisabled ? disabled : enabled};
-    ${props => templateStyle[props.template]};
+    ${props => templateStyle[props.buttonStyle]};
 
     display: inline-block;
     position: relative;
