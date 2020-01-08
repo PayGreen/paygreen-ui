@@ -8,7 +8,7 @@ const ButtonGroupBase = styled.div`
     flex-wrap: wrap;
     ${props => responsiveSpaces(
         'margin',
-        props.resetMargin ? props.theme.space.sm : 0,
+        props.hasResetedMargins ? props.theme.space.sm : 0,
         0.75
     )};
 
