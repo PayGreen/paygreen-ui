@@ -28,12 +28,12 @@ class AutonomousInput extends PureComponent {
     render() {
         const {
             status,
-            submittedLabel,
+            submittedText,
             children,
             ...rest
         } = this.props;
 
-        const submittedText = <span>
+        const submittedBlock = <span>
             <CheckBoldIcon
                 theme={this.props.theme} // not necessary, only needed for tests
                 iconSize={iconSizeOptions.xs}
@@ -41,7 +41,7 @@ class AutonomousInput extends PureComponent {
                 colorPallet={colorPalletOptions.status}
                 colorStatus={status}
             />
-            {submittedLabel}
+            {submittedText}
         </span>;
 
         return <AutonomousInputBase
@@ -58,19 +58,20 @@ class AutonomousInput extends PureComponent {
                 {children}
             </div>
 
-            {status === formStatusOptions.success && submittedLabel ? submittedText : null}
+            {status === formStatusOptions.success && submittedText.length ?
+                submittedBlock : null}
         </AutonomousInputBase>;
     }
 }
 
 AutonomousInput.propTypes = {
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
-    submittedLabel: PropTypes.string
+    submittedText: PropTypes.string
 };
 
 AutonomousInput.defaultProps = {
     status: formStatusDefault,
-    submittedLabel: null
+    submittedText: 'Submitted!'
 };
 
 export default AutonomousInput;

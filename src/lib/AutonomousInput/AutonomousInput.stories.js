@@ -11,10 +11,10 @@ storiesOf('AutonomousInput', module)
     .addDecorator(withKnobs)
     .add('AutonomousInput', () => (
         <AutonomousInput
-            status={radios('Status', formStatusOptions, formStatusDefault)}
-            placeholder={text('Placeholder', 'Your email...')}
-            submittedLabel={text('Submitted label', 'Received!')}
             type="email"
+            placeholder={text('Placeholder', 'Your email...')}
+            submittedText={text('Submitted label', 'Received!')}
+            status={radios('Status', formStatusOptions, formStatusDefault)}
         >
             <button type="submit">
                 {text('Default button label', 'Send')}
