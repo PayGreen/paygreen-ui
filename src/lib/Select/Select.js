@@ -20,39 +20,30 @@ class Select extends PureComponent {
     }
 
     render() {
-        const optionsHtml = this.props.options.map((option, index) =>
-            <option
-                key={index}
-                value={option.value}
-                disabled={
-                    option.disabled ||
-                    this.props.readOnly && option.value !== this.state.value
-                }
-            >
-                {option.text}
-            </option>
-        );
+        const {
+            options,
+            status,
+            label,
+
+            // must not be passed with rest because there is no readOnly html attribute for select
+            readOnly,
+
+            hasShadow,
+            blockWidth,
+            marginTop,
+            marginBottom,
+            ...rest
+        } = this.props;
 
         let animation = false;
         if (this.props.status !== this.state.status) {
             animation = true;
+
             setTimeout(() => {
                 animation = false;
                 this.setState({ status: this.props.status });
             }, 1);
         }
-
-        const {
-            options,
-            status,
-            width,
-            label,
-            readOnly,
-            hasShadow,
-            marginTop,
-            marginBottom,
-            ...rest
-        } = this.props;
         
         return <Transition in={animation} timeout={900}>
             {(keyframe) => {
@@ -61,10 +52,10 @@ class Select extends PureComponent {
                         keyframe={keyframe}
                         theme={this.props.theme} // not necessary, only needed for tests
                         status={status}
-                        inputWidth={width}
                         inputReadOnly={readOnly}
                         inputDisabled={this.props.disabled}
                         hasShadow={hasShadow}
+                        blockWidth={blockWidth}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
@@ -76,7 +67,19 @@ class Select extends PureComponent {
                         }
 
                         <select {...rest}>
-                            {optionsHtml}
+                            {options.map((option, index) =>
+                                <option
+                                    key={index}
+                                    value={option.value}
+                                    disabled={
+                                        option.disabled ||
+                                        this.props.readOnly
+                                            && option.value !== this.state.value
+                                    }
+                                >
+                                    {option.text}
+                                </option>
+                            )}
                         </select>
 
                         <span></span>
@@ -97,20 +100,20 @@ Select.propTypes = {
             disabled: PropTypes.bool
         })
     ).isRequired,
-    width: PropTypes.oneOf(Object.values(inputWidthOptions)),
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    hasShadow: PropTypes.bool,
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
+    hasShadow: PropTypes.bool,
+    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Select.defaultProps = {
     onChange: undefined,
-    width: inputWidthDefault,
-    hasShadow: false,
     status: formStatusDefault,
+    hasShadow: false,
+    blockWidth: inputWidthDefault,
     marginTop: spaceOptions.md,
     marginBottom: spaceOptions.md,
 };

@@ -20,9 +20,9 @@ class Input extends PureComponent {
             status: props.status
         };
         
-        if (this.props.mask) {
-            this.state.mask = this.props.mask;
-        } else if (this.props.type === 'tel') {
+        if (props.mask && props.mask.length) {
+            this.state.mask = props.mask;
+        } else if (props.type === 'tel') {
             this.state.mask = '+99 (0)9 99 99 99 99';
         }
     }
@@ -30,21 +30,25 @@ class Input extends PureComponent {
     render() {
         const {
             status,
-            width,
             label,
-            handleChange,
             hasShadow,
+            blockWidth,
             marginTop,
             marginBottom,
+
+            // remove mask from rest
+            mask,
+            
             ...rest
         } = this.props;
 
         let animation = false;
-        if (this.props.status !== this.state.status) {
+        if (status !== this.state.status) {
             animation = true;
+
             setTimeout(() => {
                 animation =  false;
-                this.setState({status: this.props.status});
+                this.setState({status: status});
             }, 1);
         }
 
@@ -56,10 +60,10 @@ class Input extends PureComponent {
                         theme={this.props.theme} // not necessary, only needed for tests
                         status={status}
                         inputType={this.props.type}
-                        inputWidth={width}
                         inputReadOnly={this.props.readOnly}
                         inputDisabled={this.props.disabled}
                         hasShadow={hasShadow}
+                        blockWidth={blockWidth}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
@@ -87,22 +91,22 @@ Input.propTypes = {
     type: PropTypes.string,
     id: PropTypes.string.isRequired,
     label: PropTypes.string,
-    width: PropTypes.oneOf(Object.values(inputWidthOptions)),
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    hasShadow: PropTypes.bool,
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
-    mask: PropTypes.string,
+    hasShadow: PropTypes.bool,
+    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    mask: PropTypes.string,
 };
 
 Input.defaultProps = {
     onChange: undefined,
     type: 'text',
-    width: inputWidthDefault,
-    hasShadow: false,
     status: formStatusDefault,
+    hasShadow: false,
+    blockWidth: inputWidthDefault,
     marginTop: spaceOptions.md,
     marginBottom: spaceOptions.md,
 };
