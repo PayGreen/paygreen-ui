@@ -16,9 +16,9 @@ class Logo extends PureComponent {
 Logo.propTypes = {
     hasBaseline: PropTypes.bool,
     isWhite: PropTypes.bool,
-    hoverRight: PropTypes.bool,
-    hoverTop: PropTypes.bool,
-    hoverColor: PropTypes.bool,
+    hasHoverRight: PropTypes.bool,
+    hasHoverTop: PropTypes.bool,
+    hasHoverColor: PropTypes.bool,
     logoWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     logoHeight: PropTypes.oneOf(Object.values(spaceOptions)),
 };
@@ -26,9 +26,9 @@ Logo.propTypes = {
 Logo.defaultProps = {
     hasBaseline: true,
     isWhite: false,
-    hoverRight: false,
-    hoverTop: false,
-    hoverColor: false,
+    hasHoverRight: false,
+    hasHoverTop: false,
+    hasHoverColor: false,
     logoWidth: spaceOptions.none,
     logoHeight: spaceOptions.none,
 };

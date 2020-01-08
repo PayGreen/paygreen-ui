@@ -28,9 +28,9 @@ const LogoBase = styled.span`
 
     ${props => props.isWhite ? whiteStyle : null};
     ${props => props.hasBaseline ? null : noBaselineStyle};
-    ${props => props.hoverRight ? hoverRightStyle : null};
-    ${props => props.hoverTop ? hoverTopStyle : null};
-    ${props => props.hoverColor ? hoverColorStyle : null};
+    ${props => props.hasHoverRight ? hoverRightStyle : null};
+    ${props => props.hasHoverTop ? hoverTopStyle : null};
+    ${props => props.hasHoverColor ? hoverColorStyle : null};
 `;
 
 export { LogoBase };

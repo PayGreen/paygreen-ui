@@ -10,9 +10,9 @@ storiesOf('Logo', module).addDecorator(withKnobs)
         <Logo
             hasBaseline={boolean('With baseline', true)}
             isWhite={boolean('White', false)}
-            hoverRight={boolean('Hover right', true)}
-            hoverTop={boolean('Hover top', false)}
-            hoverColor={boolean('Hover color', false)}
+            hasHoverRight={boolean('Hover right', true)}
+            hasHoverTop={boolean('Hover top', false)}
+            hasHoverColor={boolean('Hover color', false)}
             logoWidth={select('Width', spaceOptions, spaceOptions.none)}
             logoHeight={select('Height', spaceOptions, spaceOptions.none)}
         >
