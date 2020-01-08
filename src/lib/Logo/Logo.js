@@ -15,7 +15,7 @@ class Logo extends PureComponent {
 
 Logo.propTypes = {
     baseline: PropTypes.bool,
-    white: PropTypes.bool,
+    isWhite: PropTypes.bool,
     hoverRight: PropTypes.bool,
     hoverTop: PropTypes.bool,
     hoverColor: PropTypes.bool,
@@ -25,7 +25,7 @@ Logo.propTypes = {
 
 Logo.defaultProps = {
     baseline: true,
-    white: false,
+    isWhite: false,
     hoverRight: false,
     hoverTop: false,
     hoverColor: false,

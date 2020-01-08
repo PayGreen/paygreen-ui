@@ -9,7 +9,7 @@ storiesOf('Logo', module).addDecorator(withKnobs)
     <a href="#">
         <Logo
             baseline={boolean('With baseline', true)}
-            white={boolean('White', false)}
+            isWhite={boolean('White', false)}
             hoverRight={boolean('Hover right', true)}
             hoverTop={boolean('Hover top', false)}
             hoverColor={boolean('Hover color', false)}
