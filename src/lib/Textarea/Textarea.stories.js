@@ -17,11 +17,11 @@ storiesOf('Textarea', module).addDecorator(withKnobs)
         maxLength={50}
         status={radios('Status', formStatusOptions, formStatusDefault)}
         params={{
-            shadow: boolean('With shadow', false),
             counter: boolean('With counter', true)
         }}
         disabled={boolean('Disabled', false)}
         readOnly={boolean('Readonly', false)}
+        hasShadow={boolean('With shadow', false)}
         marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
         marginBottom={select('Margin bottom', spaceOptions, spaceOptions.md)}
     />

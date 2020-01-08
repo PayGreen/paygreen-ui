@@ -29,11 +29,11 @@ class Input extends PureComponent {
 
     render() {
         const {
-            params,
             status,
             width,
             label,
             handleChange,
+            hasShadow,
             marginTop,
             marginBottom,
             ...rest
@@ -54,12 +54,12 @@ class Input extends PureComponent {
                     <InputBase
                         keyframe={keyframe}
                         theme={this.props.theme} // not necessary, only needed for tests
-                        params={params}
                         status={status}
                         inputType={this.props.type}
                         inputWidth={width}
                         inputReadOnly={this.props.readOnly}
                         inputDisabled={this.props.disabled}
+                        hasShadow={hasShadow}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
@@ -90,9 +90,7 @@ Input.propTypes = {
     width: PropTypes.oneOf(Object.values(inputWidthOptions)),
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    params: PropTypes.shape({
-        shadow: PropTypes.bool,
-    }),
+    hasShadow: PropTypes.bool,
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
     mask: PropTypes.string,
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -103,9 +101,7 @@ Input.defaultProps = {
     onChange: undefined,
     type: 'text',
     width: inputWidthDefault,
-    params: {
-        shadow: false,
-    },
+    hasShadow: false,
     status: formStatusDefault,
     marginTop: spaceOptions.md,
     marginBottom: spaceOptions.md,

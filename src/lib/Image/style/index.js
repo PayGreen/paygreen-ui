@@ -23,7 +23,7 @@ const ImageBase = styled.figure`
     img {
         ${props => imageStyle[props.imageType]};
         ${props => props.padding !== spaceOptions.none
-            && props.shadow !== shadowSizeOptions.none ?
+            && props.shadowSize !== shadowSizeOptions.none ?
                 backgroundBlock : null};
         display: block;
         box-sizing: border-box;

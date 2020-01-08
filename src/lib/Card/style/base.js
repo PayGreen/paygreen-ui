@@ -5,14 +5,14 @@ import {
 } from '../../../shared/constants';
 
 const shadowStyle = css`
-    box-shadow: ${props => props.theme.shadow.size[props.shadow] + ' ' + transparentize(
-        props.theme.shadow.opacity[props.shadow],
+    box-shadow: ${props => props.theme.shadow.size[props.shadowSize] + ' ' + transparentize(
+        props.theme.shadow.opacity[props.shadowSize],
         props.theme.color[props.colorTheme].main
     )};
 
     &:hover {
-        box-shadow: ${props => props.theme.shadow.size[props.shadow] + ' ' + transparentize(
-            props.theme.shadow.opacity[props.shadow] - 0.1,
+        box-shadow: ${props => props.theme.shadow.size[props.shadowSize] + ' ' + transparentize(
+            props.theme.shadow.opacity[props.shadowSize] - 0.1,
             props.theme.color[props.colorTheme].main
         )};
     }

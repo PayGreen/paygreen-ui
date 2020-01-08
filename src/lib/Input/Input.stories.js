@@ -20,9 +20,7 @@ storiesOf('Input', module).addDecorator(withKnobs)
         readOnly={boolean('Readonly', false)}
         status={radios('Status', formStatusOptions, formStatusDefault)}
         width={radios('Width', inputWidthOptions, inputWidthDefault)}
-        params={{
-            shadow: boolean('With shadow', false),
-        }}
+        hasShadow={boolean('With shadow', false)}
         marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
         marginBottom={select('Margin bottom', spaceOptions, spaceOptions.md)}
     />
@@ -38,9 +36,7 @@ storiesOf('Input', module).addDecorator(withKnobs)
         disabled={boolean('Disabled', false)}
         readOnly={boolean('Readonly', false)}
         status={radios('Status', formStatusOptions, formStatusDefault)}
-        params={{
-            shadow: boolean('With shadow', false),
-        }}
+        hasShadow={boolean('With shadow', false)}
         marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
         marginBottom={select('Margin bottom', spaceOptions, spaceOptions.md)}
     />

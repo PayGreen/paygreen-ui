@@ -28,6 +28,7 @@ class Textarea extends PureComponent {
             status,
             label,
             counterlabel,
+            hasShadow,
             marginTop,
             marginBottom,
             ...rest
@@ -54,6 +55,7 @@ class Textarea extends PureComponent {
             charactersStatus={charactersStatus}
             inputDisabled={this.props.disabled}
             inputReadOnly={this.props.readOnly}
+            hasShadow={hasShadow}
             marginTop={marginTop}
             marginBottom={marginBottom}
         >
@@ -87,11 +89,11 @@ Textarea.propTypes = {
     minLength: PropTypes.number,
     maxLength: PropTypes.number,
     params: PropTypes.shape({
-        shadow: PropTypes.bool,
         counter: PropTypes.bool
     }),
     counterlabel: PropTypes.string,
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
+    hasShadow: PropTypes.bool,
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
@@ -101,11 +103,11 @@ Textarea.defaultProps = {
     minLength: 0,
     maxLength: 2000,
     params: {
-        shadow: false,
         counter: false
     },
     counterlabel: 'characters',
     status: formStatusDefault,
+    hasShadow: false,
     marginTop: spaceOptions.md,
     marginBottom: spaceOptions.md,
 };

@@ -69,17 +69,17 @@ const layerStyle = css`
 
 const activeStyle = {
     theme: css`
-        ${props => props.shadow ? shadowStyle.active.theme : layerStyle};
+        ${props => props.hasShadow ? shadowStyle.active.theme : layerStyle};
     `,
     wab: css`
-        ${props => props.shadow ? shadowStyle.active.wab : layerStyle};
+        ${props => props.hasShadow ? shadowStyle.active.wab : layerStyle};
 
         svg {
             fill: ${props => props.theme.color[props.colorTheme].main};
         }
     `,
     status: css`
-        ${props => props.shadow ? shadowStyle.active.status : layerStyle};
+        ${props => props.hasShadow ? shadowStyle.active.status : layerStyle};
     `
 };
 
@@ -118,7 +118,7 @@ const backgroundStyle = css`
         transition-delay: .06s;
     }
 
-    ${props => props.shadow ? shadowStyle.base[props.colorPallet] : null};
+    ${props => props.hasShadow ? shadowStyle.base[props.colorPallet] : null};
 `;
 
 export {

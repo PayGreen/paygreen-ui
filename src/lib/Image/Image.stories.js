@@ -42,7 +42,7 @@ storiesOf('Image', module).addDecorator(withKnobs)
         blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
         blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
         padding={select('Padding', spaceOptions, spaceOptions.none)}
-        shadow={select('Shadow style', shadowSizeOptions, shadowSizeOptions.none)}
+        shadowSize={select('Shadow size', shadowSizeOptions, shadowSizeOptions.none)}
         justifyContent={select('Justify content', justifyContentOptions, justifyContentOptions.center)}
         alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
     >
@@ -57,7 +57,7 @@ storiesOf('Image', module).addDecorator(withKnobs)
         blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.xl)}
         blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.xs)}
         radiusSize={radios('Border radius', radiusOptions, radiusOptions.lg)}
-        shadow={select('Shadow style', shadowSizeOptions, shadowSizeDefault)}
+        shadowSize={select('Shadow style', shadowSizeOptions, shadowSizeDefault)}
         padding={select('Padding', spaceOptions, spaceOptions.none)}
     >
         <img src={photoFile} alt="picture" />
@@ -70,7 +70,7 @@ storiesOf('Image', module).addDecorator(withKnobs)
         hasDecoration={boolean('With decorators', true)}
         blockWidth={select('Image width', imageSizeOptions, imageSizeOptions.sm)}
         blockHeight={select('Image height', imageSizeOptions, imageSizeOptions.auto)}
-        shadow={select('Shadow style', shadowSizeOptions, shadowSizeDefault)}
+        shadowSize={select('Shadow style', shadowSizeOptions, shadowSizeDefault)}
     >
         <img src={portraitFile} alt="picture" />
     </Image>

@@ -44,11 +44,11 @@ class Select extends PureComponent {
 
         const {
             options,
-            params,
             status,
             width,
             label,
             readOnly,
+            hasShadow,
             marginTop,
             marginBottom,
             ...rest
@@ -60,11 +60,11 @@ class Select extends PureComponent {
                     <SelectBase
                         keyframe={keyframe}
                         theme={this.props.theme} // not necessary, only needed for tests
-                        params={params}
                         status={status}
                         inputWidth={width}
                         inputReadOnly={readOnly}
                         inputDisabled={this.props.disabled}
+                        hasShadow={hasShadow}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
@@ -100,9 +100,7 @@ Select.propTypes = {
     width: PropTypes.oneOf(Object.values(inputWidthOptions)),
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    params: PropTypes.shape({
-        shadow: PropTypes.bool,
-    }),
+    hasShadow: PropTypes.bool,
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -111,9 +109,7 @@ Select.propTypes = {
 Select.defaultProps = {
     onChange: undefined,
     width: inputWidthDefault,
-    params: {
-        shadow: false,
-    },
+    hasShadow: false,
     status: formStatusDefault,
     marginTop: spaceOptions.md,
     marginBottom: spaceOptions.md,

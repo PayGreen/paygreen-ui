@@ -11,7 +11,6 @@ it('renders without crashing', () => {
             placeholder="Your text&hellip;"
             label="Your message"
             params={{
-                shadow: false,
                 counter: true
             }}
         />

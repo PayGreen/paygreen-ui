@@ -87,8 +87,8 @@ const shadowStyle = css`
     margin: 0;
 
     img {
-        box-shadow: ${props => props.theme.shadow.size[props.shadow] + ' ' + transparentize(
-            props.theme.shadow.opacity[props.shadow],
+        box-shadow: ${props => props.theme.shadow.size[props.shadowSize] + ' ' + transparentize(
+            props.theme.shadow.opacity[props.shadowSize],
             props.colorChange ? props.theme.color[props.colorTheme].main : props.theme.wab.black00
         )};
     }

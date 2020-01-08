@@ -12,7 +12,7 @@ const TextareaBase = styled.div`
     ${responsiveSpaces('margin')};
     max-width: ${props => props.theme.form.inputWidth.lg};
 
-    ${props => props.params.shadow ? withShadow : null};
+    ${props => props.hasShadow ? withShadow : null};
     ${props => props.inputDisabled ? disabled : enabled};
 
     label {

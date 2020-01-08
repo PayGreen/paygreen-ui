@@ -46,7 +46,7 @@ storiesOf('Icons', module)
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
                 hasBackground={boolean(backgroundLabel, false)}
-                shadow={boolean(shadowLabel, false)}
+                shadowSize={boolean(shadowLabel, false)}
                 active={boolean(activeLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
@@ -62,7 +62,7 @@ storiesOf('Icons', module)
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
                 hasBackground={boolean(backgroundLabel, false)}
-                shadow={boolean(shadowLabel, false)}
+                shadowSize={boolean(shadowLabel, false)}
                 active={boolean(activeLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
@@ -78,7 +78,7 @@ storiesOf('Icons', module)
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
                 hasBackground={boolean(backgroundLabel, false)}
-                shadow={boolean(shadowLabel, false)}
+                shadowSize={boolean(shadowLabel, false)}
                 active={boolean(activeLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
@@ -94,7 +94,7 @@ storiesOf('Icons', module)
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
                 hasBackground={boolean(backgroundLabel, false)}
-                shadow={boolean(shadowLabel, false)}
+                shadowSize={boolean(shadowLabel, false)}
                 active={boolean(activeLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
@@ -110,7 +110,7 @@ storiesOf('Icons', module)
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
                 hasBackground={boolean(backgroundLabel, false)}
-                shadow={boolean(shadowLabel, false)}
+                shadowSize={boolean(shadowLabel, false)}
                 active={boolean(activeLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}

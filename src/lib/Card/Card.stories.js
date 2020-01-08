@@ -41,7 +41,7 @@ storiesOf('Card', module)
         <Card
             colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
             colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-            shadow={radios('Shadow style', shadowSizeOptions, shadowSizeDefault)}
+            shadowSize={radios('Shadow size', shadowSizeOptions, shadowSizeDefault)}
             hasBackground={boolean('Has background', true)}
             blockWidth={select(blockWidthLabel, blockWidthOptions, blockWidthDefault)}
             radiusSize={radios('Border radius', radiusOptions, radiusDefault)}
