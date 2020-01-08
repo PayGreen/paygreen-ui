@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { itemHtmlTagOptions, itemHtmlTagDefault } from '../../shared/constants';
 import { MenuBase } from './style';
 
 class Menu extends PureComponent {
@@ -14,11 +15,11 @@ class Menu extends PureComponent {
 }
 
 Menu.propTypes = {
-    blockHtmlTag: PropTypes.oneOf(['li', 'div']),
+    blockHtmlTag: PropTypes.oneOf(Object.values(itemHtmlTagOptions)),
 };
 
 Menu.defaultProps = {
-    blockHtmlTag: 'li',
+    blockHtmlTag: itemHtmlTagDefault,
 };
 
 export default Menu;

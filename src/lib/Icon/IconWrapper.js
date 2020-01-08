@@ -11,7 +11,9 @@ import {
     formStatusDefault,
     iconSizeOptions,
     spaceOptions,
-    spaceDefault
+    spaceDefault,
+    iconHtmlTagOptions,
+    iconHtmlTagDefault,
 } from '../../shared/constants';
 import { IconBase } from './style';
 
@@ -30,7 +32,7 @@ const IconWrapper = (props) => {
 };
 
 IconWrapper.propTypes = {
-    htmlTag: PropTypes.oneOf(['span', 'button']),
+    htmlTag: PropTypes.oneOf(Object.values(iconHtmlTagOptions)),
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
@@ -47,7 +49,7 @@ IconWrapper.propTypes = {
 };
 
 IconWrapper.defaultProps = {
-    htmlTag: 'span',
+    htmlTag: iconHtmlTagDefault,
     colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,

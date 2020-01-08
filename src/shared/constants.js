@@ -27,6 +27,14 @@ const colorThemeOptions = {
 
 const colorThemeDefault = colorThemeOptions.primary;
 
+// Color theme with none option
+const colorThemeAllOptions = {
+    ...{none: 'none'},
+    ...colorThemeOptions
+};
+
+const colorThemeAllDefault = colorThemeAllOptions.none;
+
 // Grey shades
 const greyOptions = {
     white00: 'white00',
@@ -247,6 +255,22 @@ const textHtmlTagOptions = {
 
 const textHtmlTagDefault = textHtmlTagOptions.p;
 
+// Icon HTML tags
+const iconHtmlTagOptions = {
+    span: 'span',
+    button: 'button'
+};
+
+const iconHtmlTagDefault = iconHtmlTagOptions.span;
+
+// Item HTML tags
+const itemHtmlTagOptions = {
+    li: 'li',
+    div: 'div'
+};
+
+const itemHtmlTagDefault = itemHtmlTagOptions.li;
+
 /* Grids and aligns */
 
 // Grids types
@@ -326,6 +350,8 @@ export {
     colorPalletDefault,
     colorThemeOptions,
     colorThemeDefault,
+    colorThemeAllOptions,
+    colorThemeAllDefault,
     greyOptions,
     greyDefault,
     formStatusOptions,
@@ -372,6 +398,10 @@ export {
     titleHtmlTagDefault,
     textHtmlTagOptions,
     textHtmlTagDefault,
+    iconHtmlTagOptions,
+    iconHtmlTagDefault,
+    itemHtmlTagOptions,
+    itemHtmlTagDefault,
 
     displayOptions,
     displayDefault,
