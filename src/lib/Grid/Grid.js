@@ -42,9 +42,11 @@ Grid.propTypes = {
     justifyItems: PropTypes.oneOf(Object.values(justifyItemsOptions)),
     alignItems: PropTypes.oneOf(Object.values(alignItemsOptions)),
     childrenFlex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    childrenShift: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    negativeShift: PropTypes.bool,
-    reverseShift: PropTypes.bool,
+
+    childrenShiftSize: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    isNegativeShift: PropTypes.bool,
+    isReverseShift: PropTypes.bool,
+
     blockPadding: PropTypes.oneOf(Object.values(spaceOptions)),
     childrenMargin: PropTypes.oneOf(Object.values(spaceOptions)),
     childrenMarginBig: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -59,9 +61,11 @@ Grid.defaultProps = {
     justifyItems: justifyItemsDefault,
     alignItems: alignItemsDefault,
     childrenFlex: 'initial',
-    childrenShift: blockSpaceOptions.none,
-    negativeShift: false,
-    reverseShift: false,
+    
+    childrenShiftSize: blockSpaceOptions.none,
+    isNegativeShift: false,
+    isReverseShift: false,
+
     blockPadding: spaceOptions.md,
     childrenMargin: spaceOptions.md,
     childrenMarginBig: spaceOptions.lg

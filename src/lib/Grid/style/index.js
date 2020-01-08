@@ -17,12 +17,12 @@ const GridBase = styled.div`
 
     ${props => displayStyle[props.displayType]};
 
-    ${props => props.childrenShift !== blockSpaceOptions.none ?
+    ${props => props.childrenShiftSize !== blockSpaceOptions.none ?
         childrenShift(
             props.columnNumber,
-            props.theme.blockShift[props.childrenShift],
-            props.negativeShift,
-            props.reverseShift
+            props.theme.blockShift[props.childrenShiftSize],
+            props.isNegativeShift,
+            props.isReverseShift
         )
         : null};
 `;

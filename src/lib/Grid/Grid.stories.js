@@ -47,9 +47,9 @@ storiesOf('Grid', module).addDecorator(withKnobs)
         justifyItems={select('Justify items', justifyItemsOptions, justifyItemsDefault)}
         alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
         childrenFlex={text('Children flex', 'initial')}
-        childrenShift={select('Children shift', blockSpaceOptions, blockSpaceDefault)}
-        negativeShift={boolean('Negative shift', false)}
-        reverseShift={boolean('Reverse shift', false)}
+        childrenShiftSize={select('Children shift', blockSpaceOptions, blockSpaceDefault)}
+        isNegativeShift={boolean('Negative shift', false)}
+        isReverseShift={boolean('Reverse shift', false)}
     >
         {sampleTexts.map((element, index) =>
             <Card key={index}>
