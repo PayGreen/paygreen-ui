@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import {
     buttonSizeOptions,
     buttonSizeDefault,
-    buttonTemplateOptions,
+    buttonStyleOptions,
     alignOptions,
     blockSpaceOptions,
     blockSpaceDefault
@@ -24,7 +24,7 @@ storiesOf('ButtonGroup', module)
         >
             <a href="#">
                 <Button
-                    template={buttonTemplateOptions.line}
+                    template={buttonStyleOptions.line}
                     buttonSize={radios('Buttons size', buttonSizeOptions, buttonSizeDefault)}
                 >
                     First button

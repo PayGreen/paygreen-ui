@@ -5,7 +5,7 @@ import {
     colorThemeDefault,
     buttonSizeOptions,
     buttonSizeDefault,
-    buttonTemplateOptions,
+    buttonStyleOptions,
     colorTypeOptions,
     colorTypeDefault
 } from '../../shared/constants';
@@ -31,7 +31,7 @@ storiesOf('Button', module)
     .add('Line', () => (
         <a href="#">
             <Button
-                template={buttonTemplateOptions.line}
+                template={buttonStyleOptions.line}
                 colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
                 colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
                 buttonSize={radios('Button size', buttonSizeOptions, buttonSizeDefault)}

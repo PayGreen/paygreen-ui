@@ -77,12 +77,12 @@ const radioSizeOptions = {
 const radioSizeDefault = radioSizeOptions.lg;
 
 // Button sizes
-const buttonTemplateOptions = {
+const buttonStyleOptions = {
     fill: 'fill',
     line: 'line'
 };
 
-const buttonTemplateDefault = buttonTemplateOptions.fill;
+const buttonStyleDefault = buttonStyleOptions.fill;
 
 // Shadows styles
 const shadowStyleOptions = {
@@ -338,8 +338,8 @@ export {
     buttonSizeDefault,
     radioSizeOptions,
     radioSizeDefault,
-    buttonTemplateOptions,
-    buttonTemplateDefault,
+    buttonStyleOptions,
+    buttonStyleDefault,
     shadowStyleOptions,
     shadowStyleDefault,
     radiusOptions,

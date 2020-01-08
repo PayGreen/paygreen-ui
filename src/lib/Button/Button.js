@@ -5,8 +5,8 @@ import {
     colorThemeDefault,
     buttonSizeOptions,
     buttonSizeDefault,
-    buttonTemplateOptions,
-    buttonTemplateDefault,
+    buttonStyleOptions,
+    buttonStyleDefault,
     colorTypeOptions,
     colorTypeDefault
 } from '../../shared/constants';
@@ -23,7 +23,7 @@ class Button extends PureComponent {
 }
 
 Button.propTypes = {
-    template: PropTypes.oneOf(Object.values(buttonTemplateOptions)),
+    template: PropTypes.oneOf(Object.values(buttonStyleOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     buttonSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
@@ -31,7 +31,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-    template: buttonTemplateDefault,
+    template: buttonStyleDefault,
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
     buttonSize: buttonSizeDefault,
