@@ -1,3 +1,5 @@
+/* Colors */
+
 // Color types
 const colorTypeOptions = {
     original: 'original',
@@ -50,6 +52,8 @@ const formStatusOptions = {
 
 const formStatusDefault = formStatusOptions.default;
 
+/* Gradients, masks, decorations, lists and images styles */
+
 // Gradient color types
 
 const gradientOptions = {
@@ -87,6 +91,17 @@ const listStyleOptions = {
 };
 
 const listStyleDefault = listStyleOptions.dash;
+
+// Image type
+const imageTypeOptions = {
+    normal: 'normal',
+    picture: 'picture',
+    cover: 'cover'
+};
+
+const imageTypeDefault = imageTypeOptions.normal;
+
+/* Sizes */
 
 // Button sizes
 const buttonSizeOptions = {
@@ -189,15 +204,6 @@ const imageSizeOptions = {
 
 const imageSizeDefault = imageSizeOptions.auto;
 
-// Image type
-const imageTypeOptions = {
-    normal: 'normal',
-    picture: 'picture',
-    cover: 'cover'
-};
-
-const imageTypeDefault = imageTypeOptions.normal;
-
 // Input width
 const inputWidthOptions = {
     sm: 'sm',
@@ -219,6 +225,8 @@ const fontSizeOptions = {
 };
 
 const fontSizeDefault = fontSizeOptions.base;
+
+/* HTML tags */
 
 // Card HTML tags
 const cardHtmlTagOptions = {
@@ -250,6 +258,8 @@ const textHtmlTagOptions = {
 };
 
 const textHtmlTagDefault = textHtmlTagOptions.p;
+
+/* Grids and aligns */
 
 // Grids types
 
@@ -332,6 +342,7 @@ export {
     greyDefault,
     formStatusOptions,
     formStatusDefault,
+
     gradientOptions,
     gradientDefault,
     maskOptions,
@@ -340,6 +351,9 @@ export {
     decorationDefault,
     listStyleOptions,
     listStyleDefault,
+    imageTypeOptions,
+    imageTypeDefault,
+
     buttonSizeOptions,
     buttonSizeDefault,
     radioSizeOptions,
@@ -360,18 +374,18 @@ export {
     iconSizeDefault,
     imageSizeOptions,
     imageSizeDefault,
-    imageTypeOptions,
-    imageTypeDefault,
     inputWidthOptions,
     inputWidthDefault,
     fontSizeOptions,
     fontSizeDefault,
+
     cardHtmlTagOptions,
     cardHtmlTagDefault,
     titleHtmlTagOptions,
     titleHtmlTagDefault,
     textHtmlTagOptions,
     textHtmlTagDefault,
+
     displayOptions,
     displayDefault,
     flexDirectionOptions,
