@@ -31,6 +31,7 @@ Link.propTypes = {
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     hasUnderline: PropTypes.bool,
+    hasHover: PropTypes.bool,
     hasUppercase: PropTypes.bool
 };
 
@@ -41,6 +42,7 @@ Link.defaultProps = {
     colorWab: greyDefault,
     colorStatus: formStatusDefault,
     hasUnderline: true,
+    hasHover: true,
     hasUppercase: false
 };
 

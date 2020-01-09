@@ -15,6 +15,11 @@ import MenuList from '../MenuList/MenuList';
 import Menu from '../Menu/Menu';
 import MenuPrimary from './MenuPrimary';
 
+const subLink = {
+    hasUnderline: false,
+    hasHover: false,
+};
+
 storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
 .add('MenuPrimary', () => (
     <MenuPrimary
@@ -28,6 +33,7 @@ storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
                 >
                     <Link
                         hasUnderline={false}
+                        hasHover={false}
                         hasUppercase={true}
                     >
                         About us
@@ -45,6 +51,7 @@ storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
                 >
                     <Link
                         hasUnderline={false}
+                        hasHover={false}
                         colorPallet={colorPalletOptions.wab}
                         hasUppercase={true}
                     >
@@ -62,9 +69,7 @@ storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
                             iconSize={iconSizeOptions.lg}
                         />
 
-                        <Link
-                            hasUnderline={false}
-                        >
+                        <Link {...subLink}>
                             Tree
                         </Link>
 
@@ -82,9 +87,7 @@ storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
                             iconSize={iconSizeOptions.lg}
                         />
 
-                        <Link
-                            hasUnderline={false}
-                        >
+                        <Link {...subLink}>
                             Payment
                         </Link>
 
@@ -106,9 +109,7 @@ storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
                             iconSize={iconSizeOptions.lg}
                         />
 
-                        <Link
-                            hasUnderline={false}
-                        >
+                        <Link {...subLink}>
                             Rounding
                         </Link>
                     </MenuItem>
@@ -125,6 +126,7 @@ storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
                 >
                     <Link
                         hasUnderline={false}
+                        hasHover={false}
                         colorPallet={colorPalletOptions.wab}
                         hasUppercase={true}
                     >
@@ -142,9 +144,7 @@ storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
                             iconSize={iconSizeOptions.lg}
                         />
 
-                        <Link
-                            hasUnderline={false}
-                        >
+                        <Link {...subLink}>
                             Tree
                         </Link>
 
@@ -162,9 +162,7 @@ storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
                             iconSize={iconSizeOptions.lg}
                         />
 
-                        <Link
-                            hasUnderline={false}
-                        >
+                        <Link {...subLink}>
                             Payment
                         </Link>
 
@@ -186,9 +184,7 @@ storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
                             iconSize={iconSizeOptions.lg}
                         />
 
-                        <Link
-                            hasUnderline={false}
-                        >
+                        <Link {...subLink}>
                             Rounding
                         </Link>
                     </MenuItem>

@@ -32,6 +32,7 @@ storiesOf('Paygreen | Menu/Menu', module).addDecorator(withKnobs)
             >
                 <Link
                     hasUnderline={false}
+                    hasHover={false}
                     colorPallet={colorPalletOptions.wab}
                     hasUppercase={true}
                 >
@@ -53,6 +54,7 @@ storiesOf('Paygreen | Menu/Menu', module).addDecorator(withKnobs)
 
                     <Link
                         hasUnderline={false}
+                        hasHover={false}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
                         Tree
@@ -76,6 +78,7 @@ storiesOf('Paygreen | Menu/Menu', module).addDecorator(withKnobs)
 
                     <Link
                         hasUnderline={false}
+                        hasHover={false}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
                         Payment
@@ -104,6 +107,7 @@ storiesOf('Paygreen | Menu/Menu', module).addDecorator(withKnobs)
 
                     <Link
                         hasUnderline={false}
+                        hasHover={false}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
                         Rounding

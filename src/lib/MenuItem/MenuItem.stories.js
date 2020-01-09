@@ -38,6 +38,7 @@ storiesOf('Paygreen | Menu/MenuItem', module)
 
                 <Link
                     hasUnderline={false}
+                    hasHover={false}
                     colorPallet={radios(colorPalletLabel, colorPalletOptions, colorPalletDefault)}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     colorWab={select(colorWabLabel, greyOptions, greyDefault)}
@@ -72,6 +73,7 @@ storiesOf('Paygreen | Menu/MenuItem', module)
             >
                 <Link
                     hasUnderline={false}
+                    hasHover={false}
                     colorPallet={colorPalletOptions.wab}
                     hasUppercase={true}
                 >

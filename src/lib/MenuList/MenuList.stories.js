@@ -42,6 +42,7 @@ storiesOf('Paygreen | Menu/MenuList', module).addDecorator(withKnobs)
 
                 <Link
                     hasUnderline={false}
+                    hasHover={false}
                 >
                     Tree
                 </Link>
@@ -64,6 +65,7 @@ storiesOf('Paygreen | Menu/MenuList', module).addDecorator(withKnobs)
 
                 <Link
                     hasUnderline={false}
+                    hasHover={false}
                     colorTheme={color[1]}
                 >
                     Payment
@@ -94,6 +96,7 @@ storiesOf('Paygreen | Menu/MenuList', module).addDecorator(withKnobs)
 
                 <Link
                     hasUnderline={false}
+                    hasHover={false}
                     colorTheme={color[2]}
                 >
                     Lunchkit
@@ -128,6 +131,7 @@ storiesOf('Paygreen | Menu/MenuList', module).addDecorator(withKnobs)
 
                 <Link
                     hasUnderline={false}
+                    hasHover={false}
                     colorTheme={color[3]}
                 >
                     Rounding

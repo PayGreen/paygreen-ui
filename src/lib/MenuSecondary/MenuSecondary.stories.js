@@ -33,6 +33,7 @@ storiesOf('Paygreen | Menu/MenuSecondary', module).addDecorator(withKnobs)
 
                     <Link
                         hasUnderline={false}
+                        hasHover={false}
                         hasUppercase={true}
                         colorPallet={colorPalletOptions.wab}
                     >
@@ -56,6 +57,7 @@ storiesOf('Paygreen | Menu/MenuSecondary', module).addDecorator(withKnobs)
 
                     <Link
                         hasUnderline={false}
+                        hasHover={false}
                         hasUppercase={true}
                     >
                         Subscribe

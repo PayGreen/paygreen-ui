@@ -30,6 +30,24 @@ import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Logo from '../Logo/Logo';
 import Header from './Header';
 
+const mainMenuItem = {
+    isMain: true,
+    hasHoverBase: false,
+    hasHoverAlternative: false
+};
+
+const mainLink = {
+    hasHover: false,
+    hasUnderline: false,
+    colorPallet: colorPalletOptions.wab,
+    hasUppercase: true
+};
+
+const subLink = {
+    hasHover: false,
+    hasUnderline: false
+};
+
 storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
 .add('Header', () => (
     <Header>
@@ -109,10 +127,9 @@ storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
         >
             <Menu>
                 <a href="#">
-                    <MenuItem
-                        isMain={true}
-                    >
+                    <MenuItem isMain={true}>
                         <Link
+                            hasHover={false}
                             hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
                             hasUppercase={true}
@@ -125,16 +142,8 @@ storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
 
             <Menu>
                 <a href="#">
-                    <MenuItem
-                        isMain={true}
-                        hasHoverBase={false}
-                        hasHoverAlternative={false}
-                    >
-                        <Link
-                            hasUnderline={false}
-                            colorPallet={colorPalletOptions.wab}
-                            hasUppercase={true}
-                        >
+                    <MenuItem {...mainMenuItem}>
+                        <Link {...mainLink}>
                             Our products
                         </Link>
                     </MenuItem>
@@ -149,9 +158,7 @@ storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
                                 iconSize={iconSizeOptions.lg}
                             />
 
-                            <Link
-                                hasUnderline={false}
-                            >
+                            <Link {...subLink}>
                                 Tree
                             </Link>
 
@@ -169,9 +176,7 @@ storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
                                 iconSize={iconSizeOptions.lg}
                             />
 
-                            <Link
-                                hasUnderline={false}
-                            >
+                            <Link {...subLink}>
                                 Payment
                             </Link>
 
@@ -193,9 +198,7 @@ storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
                                 iconSize={iconSizeOptions.lg}
                             />
 
-                            <Link
-                                hasUnderline={false}
-                            >
+                            <Link {...subLink}>
                                 Rounding
                             </Link>
                         </MenuItem>
@@ -205,16 +208,8 @@ storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
 
             <Menu>
                 <a href="#">
-                    <MenuItem
-                        isMain={true}
-                        hasHoverBase={false}
-                        hasHoverAlternative={false}
-                    >
-                        <Link
-                            hasUnderline={false}
-                            colorPallet={colorPalletOptions.wab}
-                            hasUppercase={true}
-                        >
+                    <MenuItem {...mainMenuItem}>
+                        <Link {...mainLink}>
                             Other products
                         </Link>
                     </MenuItem>
@@ -229,9 +224,7 @@ storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
                                 iconSize={iconSizeOptions.lg}
                             />
 
-                            <Link
-                                hasUnderline={false}
-                            >
+                            <Link {...subLink}>
                                 Tree
                             </Link>
 
@@ -249,9 +242,7 @@ storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
                                 iconSize={iconSizeOptions.lg}
                             />
 
-                            <Link
-                                hasUnderline={false}
-                            >
+                            <Link {...subLink}>
                                 Payment
                             </Link>
 
@@ -285,6 +276,7 @@ storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
                         />
 
                         <Link
+                            hasHover={false}
                             hasUnderline={false}
                             hasUppercase={true}
                             colorPallet={colorPalletOptions.wab}
@@ -308,6 +300,7 @@ storiesOf('Paygreen | Header', module).addDecorator(withKnobs)
                         />
 
                         <Link
+                            hasHover={false}
                             hasUnderline={false}
                             hasUppercase={true}
                         >
