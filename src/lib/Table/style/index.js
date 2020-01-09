@@ -29,7 +29,7 @@ const TableBase = styled.div`
         color: ${props => props.theme.color[props.colorTheme].main};
     }
     
-    ${props => props.largeFirstColumn ? largeFirstColumnStyle : null};
+    ${props => props.hasLargeFirstColumn ? largeFirstColumnStyle : null};
 `;
 
 export { TableBase };

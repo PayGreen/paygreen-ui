@@ -14,7 +14,7 @@ storiesOf('Table', module).addDecorator(withKnobs)
 .add('Table', () => (
     <Table
         colorTheme={radios('Color', colorThemeOptions, colorThemeDefault)}
-        largeFirstColumn={boolean('Large first column', true)}
+        hasLargeFirstColumn={boolean('Large first column', true)}
         hasBackground={boolean('Has background', false)}
     >
         <TableRow
