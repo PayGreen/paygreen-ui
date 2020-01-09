@@ -49,7 +49,7 @@ storiesOf('Text', module)
     })
     .add('Block of paragraphs', () => (
         <Text
-            textHtmlTag={textHtmlTagOptions.div}
+            htmlTag={textHtmlTagOptions.div}
 
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorPallet={radios('Color pallet', colorPalletOptions, colorPalletOptions.wab)}
@@ -78,7 +78,7 @@ storiesOf('Text', module)
             </p>
         </Text>
     ), {
-        notes: 'If you want to add more than paragraph, put your text inside <code>&lt;p&gt;</code> tags and pass textHtmlTag prop to "div".',
+        notes: 'If you want to add more than paragraph, put your text inside <code>&lt;p&gt;</code> tags and pass htmlTag prop to "div".',
     })
     .add('Quote or emphasis', () => (
         <Text

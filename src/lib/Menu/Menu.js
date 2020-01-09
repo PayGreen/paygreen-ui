@@ -6,7 +6,7 @@ import { MenuBase } from './style';
 class Menu extends PureComponent {
     render() {
         return <MenuBase
-            as={this.props.blockHtmlTag}
+            as={this.props.htmlTag}
             {...this.props}
         >
             {this.props.children}
@@ -15,11 +15,11 @@ class Menu extends PureComponent {
 }
 
 Menu.propTypes = {
-    blockHtmlTag: PropTypes.oneOf(Object.values(itemHtmlTagOptions)),
+    htmlTag: PropTypes.oneOf(Object.values(itemHtmlTagOptions)),
 };
 
 Menu.defaultProps = {
-    blockHtmlTag: itemHtmlTagDefault,
+    htmlTag: itemHtmlTagDefault,
 };
 
 export default Menu;

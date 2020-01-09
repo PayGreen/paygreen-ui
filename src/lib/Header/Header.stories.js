@@ -5,7 +5,8 @@ import {
     alignOptions,
     colorPalletOptions,
     iconSizeOptions,
-    spaceOptions
+    spaceOptions,
+    iconHtmlTagOptions
 } from '../../shared/constants';
 import {
     UserIcon,
@@ -98,7 +99,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
             </a>
 
             <UserIcon
-                htmlTag="button"
+                htmlTag={iconHtmlTagOptions.button}
                 iconSize={iconSizeOptions.xl}
             />
         </div>

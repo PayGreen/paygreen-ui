@@ -26,7 +26,7 @@ import { TextBase } from './style';
 class Text extends PureComponent {
     render() {
         return <TextBase
-            as={this.props.textHtmlTag}
+            as={this.props.htmlTag}
             {...this.props}
         >
             {this.props.children}
@@ -35,7 +35,7 @@ class Text extends PureComponent {
 }
 
 Text.propTypes = {
-    textHtmlTag: PropTypes.oneOf(Object.values(textHtmlTagOptions)),
+    htmlTag: PropTypes.oneOf(Object.values(textHtmlTagOptions)),
 
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
@@ -61,7 +61,7 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
-    textHtmlTag: textHtmlTagDefault,
+    htmlTag: textHtmlTagDefault,
 
     colorType: colorTypeDefault,
     colorPallet: colorPalletOptions.wab,

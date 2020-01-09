@@ -26,7 +26,7 @@ import { TitleBase } from './style';
 class Title extends PureComponent {
     render() {
         return <TitleBase
-            as={this.props.titleHtmlTag}
+            as={this.props.htmlTag}
             {...this.props}
         >
             {this.props.children}
@@ -35,7 +35,7 @@ class Title extends PureComponent {
 }
 
 Title.propTypes = {
-    titleHtmlTag: PropTypes.oneOf(Object.values(titleHtmlTagOptions)),
+    htmlTag: PropTypes.oneOf(Object.values(titleHtmlTagOptions)),
 
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
@@ -51,7 +51,7 @@ Title.propTypes = {
 };
 
 Title.defaultProps = {
-    titleHtmlTag: titleHtmlTagDefault,
+    htmlTag: titleHtmlTagDefault,
 
     colorType: colorTypeDefault,
     colorPallet: colorPalletOptions.wab,

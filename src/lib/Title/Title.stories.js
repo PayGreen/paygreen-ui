@@ -38,7 +38,7 @@ storiesOf('Title', module).addDecorator(withKnobs)
         textAlign={radios('Align', alignOptions, alignDefault)}
         marginLateral={select('Lateral margin', spaceOptions, spaceDefault)}
         marginTop={select('Margin top', spaceOptions, spaceDefault)}
-        titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
+        htmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
     >
         Your title with <strong>an emphasis</strong>
     </Title>
