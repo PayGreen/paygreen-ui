@@ -1,7 +1,7 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import { buttonTemplateOptions } from '../../shared/constants';
+import { buttonStyleOptions } from '../../shared/constants';
 import Button from '../Button/Button';
 import ButtonGroup from './ButtonGroup';
 
@@ -11,7 +11,7 @@ it('renders without crashing', () => {
             <a href="#">
                 <Button
                     theme={ThemeDefault}
-                    template={buttonTemplateOptions.line}
+                    buttonStyle={buttonStyleOptions.line}
                 >
                     First button
                 </Button>

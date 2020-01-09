@@ -7,11 +7,10 @@ import AutonomousInput from './AutonomousInput';
 it('renders without crashing', () => {
     const autonomousInput = TestRenderer.create(
         <AutonomousInput
-            status={formStatusOptions.success}
-            placeholder="Your email..."
-            submittedLabel="Received!"
-            type="email"
             theme={ThemeDefault}
+            type="email"
+            placeholder="Your email..."
+            status={formStatusOptions.success}
         >
             <button type="submit">
                 Send

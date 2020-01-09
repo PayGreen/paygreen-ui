@@ -7,7 +7,7 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    blockSpaceOptions
+    spaceOptions
 } from '../../shared/constants';
 import { InputBase } from './style';
 
@@ -20,31 +20,35 @@ class Input extends PureComponent {
             status: props.status
         };
         
-        if (this.props.mask) {
-            this.state.mask = this.props.mask;
-        } else if (this.props.type === 'tel') {
+        if (props.mask && props.mask.length) {
+            this.state.mask = props.mask;
+        } else if (props.type === 'tel') {
             this.state.mask = '+99 (0)9 99 99 99 99';
         }
     }
 
     render() {
         const {
-            params,
             status,
-            width,
             label,
-            handleChange,
+            hasShadow,
+            blockWidth,
             marginTop,
             marginBottom,
+
+            // remove mask from rest
+            mask,
+            
             ...rest
         } = this.props;
 
         let animation = false;
-        if (this.props.status !== this.state.status) {
+        if (status !== this.state.status) {
             animation = true;
+
             setTimeout(() => {
                 animation =  false;
-                this.setState({status: this.props.status});
+                this.setState({status: status});
             }, 1);
         }
 
@@ -54,12 +58,12 @@ class Input extends PureComponent {
                     <InputBase
                         keyframe={keyframe}
                         theme={this.props.theme} // not necessary, only needed for tests
-                        params={params}
                         status={status}
                         inputType={this.props.type}
-                        inputWidth={width}
                         inputReadOnly={this.props.readOnly}
                         inputDisabled={this.props.disabled}
+                        hasShadow={hasShadow}
+                        blockWidth={blockWidth}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
@@ -87,28 +91,23 @@ Input.propTypes = {
     type: PropTypes.string,
     id: PropTypes.string.isRequired,
     label: PropTypes.string,
-    width: PropTypes.oneOf(Object.values(inputWidthOptions)),
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    params: PropTypes.shape({
-        shadow: PropTypes.bool,
-    }),
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
+    hasShadow: PropTypes.bool,
+    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     mask: PropTypes.string,
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
 };
 
 Input.defaultProps = {
     type: 'text',
-    width: inputWidthDefault,
-    params: {
-        shadow: false,
-    },
     status: formStatusDefault,
-    onChange: undefined,
-    marginTop: blockSpaceOptions.md,
-    marginBottom: blockSpaceOptions.md,
+    hasShadow: false,
+    blockWidth: inputWidthDefault,
+    marginTop: spaceOptions.md,
+    marginBottom: spaceOptions.md,
 };
 
 export default Input;

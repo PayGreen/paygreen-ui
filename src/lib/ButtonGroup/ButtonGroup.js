@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
     alignOptions,
-    blockSpaceOptions,
-    blockSpaceDefault,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import { ButtonGroupBase } from './style';
 
@@ -18,19 +18,19 @@ class ButtonGroup extends PureComponent {
 }
 
 ButtonGroup.propTypes = {
-    buttonAlign: PropTypes.oneOf(Object.values(alignOptions)),
-    resetMargin: PropTypes.bool,
-    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    align: PropTypes.oneOf(Object.values(alignOptions)),
+    hasResetedMargins: PropTypes.bool,
+    marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 ButtonGroup.defaultProps = {
-    buttonAlign: alignOptions.center,
-    resetMargin: true,
-    marginLateral: blockSpaceDefault,
-    marginTop: blockSpaceDefault,
-    marginBottom: blockSpaceDefault,
+    align: alignOptions.center,
+    hasResetedMargins: true,
+    marginLateral: spaceDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
 };
 
 export default ButtonGroup;

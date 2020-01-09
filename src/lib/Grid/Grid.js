@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {
     displayOptions,
     displayDefault,
-    columnOptions,
-    columnDefault,
     flexDirectionOptions,
     flexDirectionDefault,
     flexWrapOptions,
@@ -14,23 +12,16 @@ import {
     justifyItemsDefault,
     alignItemsOptions,
     alignItemsDefault,
-    blockSpaceOptions,
     spaceOptions
 } from '../../shared/constants';
 import { GridBase } from './style';
 
 class Grid extends PureComponent {
     render() {
-        const {
-            display,
-            ...rest
-        } = this.props;
-
         return <GridBase
-            displayType={display}
-            {...rest}
+            {...this.props}
         >
-            {this.props.display === displayOptions.column ?
+            {this.props.displayType === displayOptions.column ?
                 React.Children.map(this.props.children, (child, index) =>
                     <div key={index}>
                         {child}
@@ -42,34 +33,38 @@ class Grid extends PureComponent {
 }
 
 Grid.propTypes = {
-    display: PropTypes.oneOf(Object.values(displayOptions)),
-    columns: PropTypes.oneOf(Object.values(columnOptions)),
+    displayType: PropTypes.oneOf(Object.values(displayOptions)),
+    columnNumber: PropTypes.number,
     flexDirection: PropTypes.oneOf(Object.values(flexDirectionOptions)),
     flexWrap: PropTypes.oneOf(Object.values(flexWrapOptions)),
     justifyContent: PropTypes.oneOf(Object.values(justifyContentOptions)),
     justifyItems: PropTypes.oneOf(Object.values(justifyItemsOptions)),
     alignItems: PropTypes.oneOf(Object.values(alignItemsOptions)),
-    flex1: PropTypes.bool,
-    childrenShift: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    negativeShift: PropTypes.bool,
-    reverseShift: PropTypes.bool,
+    childrenFlex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+    childrenShiftSize: PropTypes.oneOf(Object.values(spaceOptions)),
+    isNegativeShift: PropTypes.bool,
+    isReverseShift: PropTypes.bool,
+
     blockPadding: PropTypes.oneOf(Object.values(spaceOptions)),
     childrenMargin: PropTypes.oneOf(Object.values(spaceOptions)),
     childrenMarginBig: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Grid.defaultProps = {
-    display: displayDefault,
-    columns: columnDefault,
+    displayType: displayDefault,
+    columnNumber: 2,
     flexDirection: flexDirectionDefault,
     flexWrap: flexWrapDefault,
     justifyContent: justifyContentOptions.spaceBetween,
     justifyItems: justifyItemsDefault,
     alignItems: alignItemsDefault,
-    flex1: false,
-    childrenShift: blockSpaceOptions.none,
-    negativeShift: false,
-    reverseShift: false,
+    childrenFlex: 'initial',
+    
+    childrenShiftSize: spaceOptions.none,
+    isNegativeShift: false,
+    isReverseShift: false,
+
     blockPadding: spaceOptions.md,
     childrenMargin: spaceOptions.md,
     childrenMarginBig: spaceOptions.lg

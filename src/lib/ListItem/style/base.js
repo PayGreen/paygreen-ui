@@ -96,7 +96,7 @@ const activeStyle = css`
 `;
 
 const clickableStyle = css`
-    ${props => gridItemArrow[props.arrow]};
+    ${props => gridItemArrow[props.arrowStyle]};
     ${props => props.isClicked ? activeStyle : disabledStyle};
 
     &:hover,

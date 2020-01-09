@@ -7,11 +7,11 @@ import {
 
 const TitleBase = styled.span`
     ${responsiveSpaces('margin')};
-    ${props => props.underline ? underline : null};
+    ${props => props.hasUnderline ? underline : null};
     ${fontStyle};
 
     display: block;
-    text-align: ${props => props.textAlign};
+    text-align: ${props => props.align};
 `;
 
 export { TitleBase };

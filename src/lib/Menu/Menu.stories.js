@@ -26,14 +26,14 @@ storiesOf('Menu', module).addDecorator(withKnobs)
         <a href="#">
             <MenuItem
                 isMain={true}
-                hoverBase={false}
-                hoverAlternative={false}
+                hasHoverBase={false}
+                hasHoverAlternative={false}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
             >
                 <Link
-                    underline={false}
+                    hasUnderline={false}
                     colorPallet={colorPalletOptions.wab}
-                    uppercase={true}
+                    hasUppercase={true}
                 >
                     Our products
                 </Link>
@@ -43,7 +43,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
         <MenuList>
             <a href="#">
                 <MenuItem
-                    hoverEmphasis={true}
+                    hasHoverEmphasis={true}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 >
                     <LeafIcon
@@ -52,7 +52,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
                     />
 
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
                         Tree
@@ -66,7 +66,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
 
             <a href="#">
                 <MenuItem
-                    hoverEmphasis={true}
+                    hasHoverEmphasis={true}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 >
                     <CardsIcon
@@ -75,7 +75,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
                     />
 
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
                         Payment
@@ -94,7 +94,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
 
             <a href="#">
                 <MenuItem
-                    hoverEmphasis={true}
+                    hasHoverEmphasis={true}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 >
                     <OrganizationIcon
@@ -103,7 +103,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
                     />
 
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     >
                         Rounding

@@ -14,8 +14,8 @@ const LinkBase = styled.span`
     font-weight: ${props => props.theme.font.weight.bold};
     transition: all ${props => props.theme.transition.xs};
 
-    ${props => props.uppercase ? uppercaseStyle : null};
-    ${props => props.underline ? underlineStyle : null};
+    ${props => props.hasUppercase ? uppercaseStyle : null};
+    ${props => props.hasUnderline ? underlineStyle : null};
 `;
 
 export { LinkBase };

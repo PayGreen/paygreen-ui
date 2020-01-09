@@ -13,10 +13,10 @@ const InputBase = styled.div`
 
     max-width: ${props => props.inputType === 'tel' ?
         props.theme.form.inputWidth.sm :
-        props.theme.form.inputWidth[props.inputWidth]
+        props.theme.form.inputWidth[props.blockWidth]
     };
 
-    ${props => props.params.shadow ? withShadow : null};
+    ${props => props.hasShadow ? withShadow : null};
 
     label {
         ${label};

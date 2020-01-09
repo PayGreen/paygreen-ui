@@ -7,12 +7,12 @@ import {
     colorTypeDefault,
     colorThemeOptions,
     colorThemeDefault,
-    shadowStyleOptions,
-    shadowStyleDefault,
+    shadowSizeOptions,
+    shadowSizeDefault,
     blockWidthOptions,
     blockWidthDefault,
-    blockSpaceOptions,
-    blockSpaceDefault,
+    spaceOptions,
+    spaceDefault,
     radiusOptions,
     radiusDefault,
     gradientOptions,
@@ -23,7 +23,7 @@ import { CardBase } from './style';
 class Card extends PureComponent {
     render() {
         return <CardBase
-            as={this.props.cardHtmlTag}
+            as={this.props.htmlTag}
             {...this.props}
         >
             {this.props.children}
@@ -32,33 +32,29 @@ class Card extends PureComponent {
 }
 
 Card.propTypes = {
-    cardHtmlTag: PropTypes.oneOf(Object.values(cardHtmlTagOptions)),
+    htmlTag: PropTypes.oneOf(Object.values(cardHtmlTagOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    shadow: PropTypes.oneOf(Object.values(shadowStyleOptions)),
+    shadowSize: PropTypes.oneOf(Object.values(shadowSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     hasBackground: PropTypes.bool,
     borderTop: PropTypes.oneOf(Object.values(gradientOptions)),
-    paddingLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    params: PropTypes.shape({
-        titleOut: PropTypes.bool,
-    }),
+    paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    hasTitleOut: PropTypes.bool,
 };
 
 Card.defaultProps = {
-    cardHtmlTag: cardHtmlTagDefault,
+    htmlTag: cardHtmlTagDefault,
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
-    shadow: shadowStyleDefault,
+    shadowSize: shadowSizeDefault,
     blockWidth: blockWidthDefault,
     radiusSize: radiusDefault,
     hasBackground: true,
     borderTop: gradientDefault,
-    paddingLateral: blockSpaceDefault,
-    params: {
-        titleOut: false,
-    },
+    paddingLateral: spaceDefault,
+    hasTitleOut: false,
 };
 
 export default Card;

@@ -11,65 +11,58 @@ import {
     formStatusDefault,
     iconSizeOptions,
     spaceOptions,
-    spaceDefault
+    spaceDefault,
+    iconHtmlTagOptions,
+    iconHtmlTagDefault,
 } from '../../shared/constants';
 import { IconBase } from './style';
 
-class IconWrapper extends PureComponent {
-    render() {
-        const {
-            children,
-            ...rest
-        } = this.props;
-
-        const Children = React.Children.map(children, child => {
+const IconWrapper = (props) => {
+    return <IconBase
+        as={props.htmlTag}
+        {...props}
+        className="icon"
+    >
+        {React.Children.map(props.children, child => {
             if (typeof child == 'object') {
                 return React.cloneElement(child);
             }
-        });
-
-        return <IconBase
-            as={this.props.htmlTag}
-            {...rest}
-            className="icon"
-        >
-            {Children}
-        </IconBase>;
-    }
-}
+        })}
+    </IconBase>;
+};
 
 IconWrapper.propTypes = {
-    htmlTag: PropTypes.oneOf(['span', 'button']),
+    htmlTag: PropTypes.oneOf(Object.values(iconHtmlTagOptions)),
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     iconSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
-    background: PropTypes.bool,
-    shadow: PropTypes.bool,
-    active: PropTypes.bool,
+    hasBackground: PropTypes.bool,
+    hasShadow: PropTypes.bool,
+    isActive: PropTypes.bool,
+    isCentered: PropTypes.bool,
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     marginLeft: PropTypes.oneOf(Object.values(spaceOptions)),
     marginRight: PropTypes.oneOf(Object.values(spaceOptions)),
-    centered: PropTypes.bool,
 };
 
 IconWrapper.defaultProps = {
-    htmlTag: 'span',
+    htmlTag: iconHtmlTagDefault,
     colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,
     colorStatus: formStatusDefault,
     iconSize: iconSizeOptions.sm,
-    background: false,
-    shadow: false,
-    active: false,
+    hasBackground: false,
+    hasShadow: false,
+    isActive: false,
+    isCentered: false,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
     marginLeft: spaceDefault,
     marginRight: spaceDefault,
-    centered: false,
 };
 
 export default IconWrapper;

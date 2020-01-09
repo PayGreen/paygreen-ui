@@ -14,23 +14,23 @@ class Logo extends PureComponent {
 }
 
 Logo.propTypes = {
-    baseline: PropTypes.bool,
-    white: PropTypes.bool,
-    hoverRight: PropTypes.bool,
-    hoverTop: PropTypes.bool,
-    hoverColor: PropTypes.bool,
-    logoWidth: PropTypes.oneOf(Object.values(spaceOptions)),
-    logoHeight: PropTypes.oneOf(Object.values(spaceOptions)),
+    hasBaseline: PropTypes.bool,
+    isWhite: PropTypes.bool,
+    hasHoverRight: PropTypes.bool,
+    hasHoverTop: PropTypes.bool,
+    hasHoverColor: PropTypes.bool,
+    blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
+    blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Logo.defaultProps = {
-    baseline: true,
-    white: false,
-    hoverRight: false,
-    hoverTop: false,
-    hoverColor: false,
-    logoWidth: spaceOptions.none,
-    logoHeight: spaceOptions.none,
+    hasBaseline: true,
+    isWhite: false,
+    hasHoverRight: false,
+    hasHoverTop: false,
+    hasHoverColor: false,
+    blockWidth: spaceOptions.none,
+    blockHeight: spaceOptions.none,
 };
 
 export default Logo;

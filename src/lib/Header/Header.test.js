@@ -26,9 +26,9 @@ it('renders without crashing', () => {
                             theme={ThemeDefault}
                         >
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                                 colorPallet={colorPalletOptions.wab}
-                                uppercase={true}
+                                hasUppercase={true}
                                 theme={ThemeDefault}
                             >
                                 About us

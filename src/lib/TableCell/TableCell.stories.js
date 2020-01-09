@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
+import { spaceOptions } from '../../shared/constants';
 import {
     CheckBoldIcon
 } from '../Icon/Icon';
@@ -12,7 +13,7 @@ import cb from './sample/sample.svg';
 storiesOf('TableCell', module).addDecorator(withKnobs)
 .add('Cell with logo', () => (
     <TableCell>
-        <Logo logoHeight="xs" logoWidth="sm">
+        <Logo blockHeight={spaceOptions.xs} blockWidth={spaceOptions.sm}>
             <img src={cb} alt="logo" />
         </Logo>
         
@@ -33,7 +34,7 @@ storiesOf('TableCell', module).addDecorator(withKnobs)
 .add('Cell with Icon', () => (
     <TableCell>
         <CheckBoldIcon
-            background={true}
+            hasBackground={true}
         />
     </TableCell>
 ));

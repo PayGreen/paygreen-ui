@@ -24,11 +24,11 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
             <a href="#">
                 <MenuItem
                     isMain={true}
-                    hoverEmphasis={true}
+                    hasHoverEmphasis={true}
                 >
                     <Link
-                        underline={false}
-                        uppercase={true}
+                        hasUnderline={false}
+                        hasUppercase={true}
                     >
                         About us
                     </Link>
@@ -40,13 +40,13 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
             <a href="#">
                 <MenuItem
                     isMain={true}
-                    hoverBase={false}
-                    hoverAlternative={false}
+                    hasHoverBase={false}
+                    hasHoverAlternative={false}
                 >
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         colorPallet={colorPalletOptions.wab}
-                        uppercase={true}
+                        hasUppercase={true}
                     >
                         Our products
                     </Link>
@@ -56,14 +56,14 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
             <MenuList>
                 <a href="#">
                     <MenuItem
-                        hoverEmphasis={true}
+                        hasHoverEmphasis={true}
                     >
                         <LeafIcon
                             iconSize={iconSizeOptions.lg}
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Tree
                         </Link>
@@ -76,14 +76,14 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
 
                 <a href="#">
                     <MenuItem
-                        hoverEmphasis={true}
+                        hasHoverEmphasis={true}
                     >
                         <CardsIcon
                             iconSize={iconSizeOptions.lg}
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Payment
                         </Link>
@@ -100,14 +100,14 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
 
                 <a href="#">
                     <MenuItem
-                        hoverEmphasis={true}
+                        hasHoverEmphasis={true}
                     >
                         <OrganizationIcon
                             iconSize={iconSizeOptions.lg}
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Rounding
                         </Link>
@@ -120,13 +120,13 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
             <a href="#">
                 <MenuItem
                     isMain={true}
-                    hoverBase={false}
-                    hoverAlternative={false}
+                    hasHoverBase={false}
+                    hasHoverAlternative={false}
                 >
                     <Link
-                        underline={false}
+                        hasUnderline={false}
                         colorPallet={colorPalletOptions.wab}
-                        uppercase={true}
+                        hasUppercase={true}
                     >
                         Other products
                     </Link>
@@ -136,14 +136,14 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
             <MenuList>
                 <a href="#">
                     <MenuItem
-                        hoverEmphasis={true}
+                        hasHoverEmphasis={true}
                     >
                         <LeafIcon
                             iconSize={iconSizeOptions.lg}
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Tree
                         </Link>
@@ -156,14 +156,14 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
 
                 <a href="#">
                     <MenuItem
-                        hoverEmphasis={true}
+                        hasHoverEmphasis={true}
                     >
                         <CardsIcon
                             iconSize={iconSizeOptions.lg}
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Payment
                         </Link>
@@ -180,14 +180,14 @@ storiesOf('MenuPrimary', module).addDecorator(withKnobs)
 
                 <a href="#">
                     <MenuItem
-                        hoverEmphasis={true}
+                        hasHoverEmphasis={true}
                     >
                         <OrganizationIcon
                             iconSize={iconSizeOptions.lg}
                         />
 
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                         >
                             Rounding
                         </Link>

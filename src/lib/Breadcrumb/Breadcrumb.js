@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import {
     colorTypeOptions,
     colorTypeDefault,
+    colorPalletOptions,
     colorThemeOptions,
     colorThemeDefault,
-    blockSpaceOptions,
-    blockSpaceDefault,
-
-    colorPalletOptions,
+    greyOptions,
     spaceOptions,
+    spaceDefault,
     iconSizeOptions,
-    greyOptions
 } from '../../shared/constants';
 import { ArrowRightIcon } from '../Icon/Icon';
 import { BreadcrumbBase } from './style';
@@ -25,6 +23,11 @@ class Breadcrumb extends PureComponent {
             }
         }
 
+        const {
+            elements,
+            ...rest
+        } = this.props;
+
         const arrowIcon = <ArrowRightIcon
             theme={this.props.theme} // not necessary, only needed for tests
             iconSize={iconSizeOptions.xs}
@@ -34,26 +37,22 @@ class Breadcrumb extends PureComponent {
             colorWab={this.props.colorType === colorTypeOptions.reverse ? greyOptions.white00 : greyOptions.grey30}
         />;
 
-        const items = this.props.elements.map((element, index) =>
-            <li key={index}>
-                {index ? arrowIcon : null}
-
-                <a
-                    href={element.url}
-                    tabIndex={index + 1 === this.props.elements.length ? -1 : 0}
-                    onClick={preventCurrentPageClick}
-                >
-                    {element.label}
-                </a>
-            </li>
-        );
-
         return <BreadcrumbBase
-            theme={this.props.theme} // not necessary, only needed for tests
-            colorType={this.props.colorType}
-            colorTheme={this.props.colorTheme}
+            {...rest}
         >
-            {items}
+            {elements.map((element, index) =>
+                <li key={index}>
+                    {index ? arrowIcon : null}
+
+                    <a
+                        href={element.url}
+                        tabIndex={index + 1 === this.props.elements.length ? -1 : 0}
+                        onClick={preventCurrentPageClick}
+                    >
+                        {element.label}
+                    </a>
+                </li>
+            )}
         </BreadcrumbBase>;
     }
 }
@@ -67,17 +66,17 @@ Breadcrumb.propTypes = {
     ).isRequired,
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Breadcrumb.defaultProps = {
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
-    marginLateral: blockSpaceDefault,
-    marginTop: blockSpaceOptions.xs,
-    marginBottom: blockSpaceOptions.xs,
+    marginLateral: spaceDefault,
+    marginTop: spaceOptions.xs,
+    marginBottom: spaceOptions.xs,
 };
 
 export default Breadcrumb;

@@ -10,8 +10,8 @@ import {
 
 const SelectBase = styled.div`
     ${responsiveSpaces('margin')};
-    ${props => props.params.shadow ? withShadow : null};
-    max-width: ${props => props.theme.form.inputWidth[props.inputWidth]};
+    ${props => props.hasShadow ? withShadow : null};
+    max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
 
     label {
         ${label};

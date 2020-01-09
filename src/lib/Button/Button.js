@@ -5,8 +5,8 @@ import {
     colorThemeDefault,
     buttonSizeOptions,
     buttonSizeDefault,
-    buttonTemplateOptions,
-    buttonTemplateDefault,
+    buttonStyleOptions,
+    buttonStyleDefault,
     colorTypeOptions,
     colorTypeDefault
 } from '../../shared/constants';
@@ -15,12 +15,7 @@ import { ButtonBase } from './style';
 class Button extends PureComponent {
     render() {
         return <ButtonBase
-            theme={this.props.theme} // not necessary, only needed for tests
-            template={this.props.template}
-            colorType={this.props.colorType}
-            colorTheme={this.props.colorTheme}
-            buttonSize={this.props.buttonSize}
-            params={this.props.params}
+            {...this.props}
         >
             {this.props.children}
         </ButtonBase>;
@@ -28,23 +23,19 @@ class Button extends PureComponent {
 }
 
 Button.propTypes = {
-    template: PropTypes.oneOf(Object.values(buttonTemplateOptions)),
+    buttonStyle: PropTypes.oneOf(Object.values(buttonStyleOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     buttonSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
-    params: PropTypes.shape({
-        disabled: PropTypes.bool,
-    }),
+    isDisabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
-    template: buttonTemplateDefault,
+    buttonStyle: buttonStyleDefault,
     colorType: colorTypeDefault,
     colorTheme: colorThemeDefault,
     buttonSize: buttonSizeDefault,
-    params: {
-        disabled: false,
-    },
+    isDisabled: false,
 };
 
 export default Button;

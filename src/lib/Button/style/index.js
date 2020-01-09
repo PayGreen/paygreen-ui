@@ -8,8 +8,8 @@ import {
 } from './base';
 
 const ButtonBase = styled.span`
-    ${props => props.params.disabled ? disabled : enabled};
-    ${props => templateStyle[props.template]};
+    ${props => props.isDisabled ? disabled : enabled};
+    ${props => templateStyle[props.buttonStyle]};
 
     display: inline-block;
     position: relative;

@@ -10,7 +10,7 @@ import { TableRowBase } from '../../TableRow/style';
 const TableBase = styled.div`
     position: relative;
     overflow-x: auto;
-    ${props => props.withBackground ? backgroundStyle : null};
+    ${props => props.hasBackground ? backgroundStyle : null};
 
     .table {
         display: table;
@@ -29,7 +29,7 @@ const TableBase = styled.div`
         color: ${props => props.theme.color[props.colorTheme].main};
     }
     
-    ${props => props.largeFirstColumn ? largeFirstColumnStyle : null};
+    ${props => props.hasLargeFirstColumn ? largeFirstColumnStyle : null};
 `;
 
 export { TableBase };

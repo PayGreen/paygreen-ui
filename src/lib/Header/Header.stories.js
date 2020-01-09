@@ -5,7 +5,8 @@ import {
     alignOptions,
     colorPalletOptions,
     iconSizeOptions,
-    spaceOptions
+    spaceOptions,
+    iconHtmlTagOptions
 } from '../../shared/constants';
 import {
     UserIcon,
@@ -36,7 +37,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
             <MenuHamburger />
 
             <a href="#">
-                <Logo baseline={false} hoverRight={true}>
+                <Logo hasBaseline={false} hasHoverRight={true}>
                     <svg viewBox="0 0 226 54">
                         <path d="M16,30H7.8v13.3H0.6V2.1h16.3c9.6,0,15.7,5.4,15.7,13.8C32.5,25.2,25.1,30,16,30z M16.3,8.6H7.8v14.9h8.4
                             c5.5,0,8.9-3,8.9-7.4C25.2,11.2,21.7,8.6,16.3,8.6z"/>
@@ -98,7 +99,7 @@ storiesOf('Header', module).addDecorator(withKnobs)
             </a>
 
             <UserIcon
-                htmlTag="button"
+                htmlTag={iconHtmlTagOptions.button}
                 iconSize={iconSizeOptions.xl}
             />
         </div>
@@ -112,9 +113,9 @@ storiesOf('Header', module).addDecorator(withKnobs)
                         isMain={true}
                     >
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
-                            uppercase={true}
+                            hasUppercase={true}
                         >
                             About us
                         </Link>
@@ -126,13 +127,13 @@ storiesOf('Header', module).addDecorator(withKnobs)
                 <a href="#">
                     <MenuItem
                         isMain={true}
-                        hoverBase={false}
-                        hoverAlternative={false}
+                        hasHoverBase={false}
+                        hasHoverAlternative={false}
                     >
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
-                            uppercase={true}
+                            hasUppercase={true}
                         >
                             Our products
                         </Link>
@@ -142,14 +143,14 @@ storiesOf('Header', module).addDecorator(withKnobs)
                 <MenuList>
                     <a href="#">
                         <MenuItem
-                            hoverEmphasis={true}
+                            hasHoverEmphasis={true}
                         >
                             <LeafIcon
                                 iconSize={iconSizeOptions.lg}
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                             >
                                 Tree
                             </Link>
@@ -162,14 +163,14 @@ storiesOf('Header', module).addDecorator(withKnobs)
 
                     <a href="#">
                         <MenuItem
-                            hoverEmphasis={true}
+                            hasHoverEmphasis={true}
                         >
                             <CardsIcon
                                 iconSize={iconSizeOptions.lg}
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                             >
                                 Payment
                             </Link>
@@ -186,14 +187,14 @@ storiesOf('Header', module).addDecorator(withKnobs)
 
                     <a href="#">
                         <MenuItem
-                            hoverEmphasis={true}
+                            hasHoverEmphasis={true}
                         >
                             <OrganizationIcon
                                 iconSize={iconSizeOptions.lg}
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                             >
                                 Rounding
                             </Link>
@@ -206,13 +207,13 @@ storiesOf('Header', module).addDecorator(withKnobs)
                 <a href="#">
                     <MenuItem
                         isMain={true}
-                        hoverBase={false}
-                        hoverAlternative={false}
+                        hasHoverBase={false}
+                        hasHoverAlternative={false}
                     >
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
-                            uppercase={true}
+                            hasUppercase={true}
                         >
                             Other products
                         </Link>
@@ -222,14 +223,14 @@ storiesOf('Header', module).addDecorator(withKnobs)
                 <MenuList>
                     <a href="#">
                         <MenuItem
-                            hoverEmphasis={true}
+                            hasHoverEmphasis={true}
                         >
                             <LeafIcon
                                 iconSize={iconSizeOptions.lg}
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                             >
                                 Tree
                             </Link>
@@ -242,14 +243,14 @@ storiesOf('Header', module).addDecorator(withKnobs)
 
                     <a href="#">
                         <MenuItem
-                            hoverEmphasis={true}
+                            hasHoverEmphasis={true}
                         >
                             <CardsIcon
                                 iconSize={iconSizeOptions.lg}
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                             >
                                 Payment
                             </Link>
@@ -273,8 +274,8 @@ storiesOf('Header', module).addDecorator(withKnobs)
             <Menu>
                 <a href="#">
                     <MenuItem
-                        hoverBase={false}
-                        hoverEmphasis={true}
+                        hasHoverBase={false}
+                        hasHoverEmphasis={true}
                         align={alignOptions.center}
                         isMain={true}
                     >
@@ -284,8 +285,8 @@ storiesOf('Header', module).addDecorator(withKnobs)
                         />
 
                         <Link
-                            underline={false}
-                            uppercase={true}
+                            hasUnderline={false}
+                            hasUppercase={true}
                             colorPallet={colorPalletOptions.wab}
                         >
                             Login
@@ -297,8 +298,8 @@ storiesOf('Header', module).addDecorator(withKnobs)
             <Menu>
                 <a href="#">
                     <MenuItem
-                        hoverBase={false}
-                        hoverEmphasis={true}
+                        hasHoverBase={false}
+                        hasHoverEmphasis={true}
                         align={alignOptions.center}
                         isMain={true}
                     >
@@ -307,8 +308,8 @@ storiesOf('Header', module).addDecorator(withKnobs)
                         />
 
                         <Link
-                            underline={false}
-                            uppercase={true}
+                            hasUnderline={false}
+                            hasUppercase={true}
                         >
                             Subscribe
                         </Link>

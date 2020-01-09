@@ -1,11 +1,4 @@
-// Color pallet
-const colorPalletOptions = {
-    theme: 'theme',
-    wab: 'wab',
-    status: 'status'
-};
-
-const colorPalletDefault = colorPalletOptions.theme;
+/* Colors */
 
 // Color types
 const colorTypeOptions = {
@@ -14,6 +7,15 @@ const colorTypeOptions = {
 };
 
 const colorTypeDefault = colorTypeOptions.original;
+
+// Color pallet
+const colorPalletOptions = {
+    theme: 'theme',
+    wab: 'wab',
+    status: 'status'
+};
+
+const colorPalletDefault = colorPalletOptions.theme;
 
 // Color themes
 const colorThemeOptions = {
@@ -24,6 +26,14 @@ const colorThemeOptions = {
 };
 
 const colorThemeDefault = colorThemeOptions.primary;
+
+// Color theme with none option
+const colorThemeAllOptions = {
+    ...{none: 'none'},
+    ...colorThemeOptions
+};
+
+const colorThemeAllDefault = colorThemeAllOptions.none;
 
 // Grey shades
 const greyOptions = {
@@ -39,6 +49,28 @@ const greyOptions = {
 };
 
 const greyDefault = greyOptions.grey40;
+
+// Form input status
+const formStatusOptions = {
+    default: 'default',
+    success: 'success',
+    warning: 'warning',
+    danger: 'danger',
+};
+
+const formStatusDefault = formStatusOptions.default;
+
+/* Gradients, masks, decorations, buttons and lists styles + image types */
+
+// Gradient color types
+
+const gradientOptions = {
+    none: 'none',
+    brand: 'brand',
+    theme: 'theme',
+};
+
+const gradientDefault = gradientOptions.none;
 
 // Mask styles
 const maskOptions = {
@@ -59,6 +91,44 @@ const decorationOptions = {
 
 const decorationDefault = decorationOptions.left;
 
+// List styles
+const listStyleOptions = {
+    dash: 'dash',
+    icon: 'icon',
+    number: 'number',
+};
+
+const listStyleDefault = listStyleOptions.dash;
+
+// Button styles
+const buttonStyleOptions = {
+    fill: 'fill',
+    line: 'line'
+};
+
+const buttonStyleDefault = buttonStyleOptions.fill;
+
+// Image type
+const imageTypeOptions = {
+    normal: 'normal',
+    picture: 'picture',
+    cover: 'cover'
+};
+
+const imageTypeDefault = imageTypeOptions.normal;
+
+/* Sizes */
+
+// Shadow sizes
+const shadowSizeOptions = {
+    none: 'none',
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+};
+
+const shadowSizeDefault = shadowSizeOptions.md;
+
 // Button sizes
 const buttonSizeOptions = {
     sm: 'sm',
@@ -68,6 +138,15 @@ const buttonSizeOptions = {
 
 const buttonSizeDefault = buttonSizeOptions.md;
 
+// Input width
+const inputWidthOptions = {
+    sm: 'sm',
+    md: 'md',
+    lg: 'lg',
+}
+
+const inputWidthDefault = inputWidthOptions.md;
+
 // Radio sizes
 const radioSizeOptions = {
     md: 'md',
@@ -75,24 +154,6 @@ const radioSizeOptions = {
 };
 
 const radioSizeDefault = radioSizeOptions.lg;
-
-// Button sizes
-const buttonTemplateOptions = {
-    fill: 'fill',
-    line: 'line'
-};
-
-const buttonTemplateDefault = buttonTemplateOptions.fill;
-
-// Shadows styles
-const shadowStyleOptions = {
-    none: 'none',
-    sm: 'sm',
-    md: 'md',
-    lg: 'lg',
-};
-
-const shadowStyleDefault = shadowStyleOptions.md;
 
 // Radius sizes
 const radiusOptions = {
@@ -114,18 +175,6 @@ const spaceOptions = {
 };
 
 const spaceDefault = spaceOptions.none;
-
-// Block padding
-const blockSpaceOptions = {
-    none: 'none',
-    xs: 'xs',
-    sm: 'sm',
-    md: 'md',
-    lg: 'lg',
-    xl: 'xl'
-};
-
-const blockSpaceDefault = blockSpaceOptions.none;
 
 // Block width
 const blockWidthOptions = {
@@ -160,23 +209,20 @@ const imageSizeOptions = {
 
 const imageSizeDefault = imageSizeOptions.auto;
 
-// Image type
-const imageTypeOptions = {
-    normal: 'normal',
-    picture: 'picture',
-    cover: 'cover'
-};
-
-const imageTypeDefault = imageTypeOptions.normal;
-
-// Input width
-const inputWidthOptions = {
+// Font sizes
+const fontSizeOptions = {
+    xxs: 'xxs',
+    xs: 'xs',
     sm: 'sm',
+    base: 'base',
     md: 'md',
     lg: 'lg',
-}
+    xl: 'xl'
+};
 
-const inputWidthDefault = inputWidthOptions.md;
+const fontSizeDefault = fontSizeOptions.base;
+
+/* HTML tags */
 
 // Card HTML tags
 const cardHtmlTagOptions = {
@@ -209,47 +255,23 @@ const textHtmlTagOptions = {
 
 const textHtmlTagDefault = textHtmlTagOptions.p;
 
-// Font sizes
-const fontSizeOptions = {
-    xxs: 'xxs',
-    xs: 'xs',
-    sm: 'sm',
-    base: 'base',
-    md: 'md',
-    lg: 'lg',
-    xl: 'xl'
+// Icon HTML tags
+const iconHtmlTagOptions = {
+    span: 'span',
+    button: 'button'
 };
 
-const fontSizeDefault = fontSizeOptions.base;
+const iconHtmlTagDefault = iconHtmlTagOptions.span;
 
-// List styles
-const listStyleOptions = {
-    dash: 'dash',
-    icon: 'icon',
-    number: 'number',
+// Item HTML tags
+const itemHtmlTagOptions = {
+    li: 'li',
+    div: 'div'
 };
 
-const listStyleDefault = listStyleOptions.dash;
+const itemHtmlTagDefault = itemHtmlTagOptions.li;
 
-// Form input status
-const formStatusOptions = {
-    default: 'default',
-    success: 'success',
-    warning: 'warning',
-    danger: 'danger',
-};
-
-const formStatusDefault = formStatusOptions.default;
-
-// Gradient color types
-
-const gradientOptions = {
-    none: 'none',
-    brand: 'brand',
-    theme: 'theme',
-};
-
-const gradientDefault = gradientOptions.none;
+/* Grids and aligns */
 
 // Grids types
 
@@ -260,15 +282,6 @@ const displayOptions = {
 };
 
 const displayDefault = displayOptions.flex;
-
-// Columns number
-
-const columnOptions = {
-    two: 2,
-    three: 3
-};
-
-const columnDefault = columnOptions.two;
 
 // Flex direction
 
@@ -331,60 +344,67 @@ const alignOptions = {
 const alignDefault = alignOptions.left;
 
 export {
-    colorPalletOptions,
-    colorPalletDefault,
     colorTypeOptions,
     colorTypeDefault,
+    colorPalletOptions,
+    colorPalletDefault,
     colorThemeOptions,
     colorThemeDefault,
+    colorThemeAllOptions,
+    colorThemeAllDefault,
     greyOptions,
     greyDefault,
+    formStatusOptions,
+    formStatusDefault,
+
+    gradientOptions,
+    gradientDefault,
     maskOptions,
     maskDefault,
     decorationOptions,
     decorationDefault,
+    listStyleOptions,
+    listStyleDefault,
+    buttonStyleOptions,
+    buttonStyleDefault,
+    imageTypeOptions,
+    imageTypeDefault,
+
+    shadowSizeOptions,
+    shadowSizeDefault,
     buttonSizeOptions,
     buttonSizeDefault,
+    inputWidthOptions,
+    inputWidthDefault,
     radioSizeOptions,
     radioSizeDefault,
-    buttonTemplateOptions,
-    buttonTemplateDefault,
-    shadowStyleOptions,
-    shadowStyleDefault,
     radiusOptions,
     radiusDefault,
     spaceOptions,
     spaceDefault,
-    blockSpaceOptions,
-    blockSpaceDefault,
+
     blockWidthOptions,
     blockWidthDefault,
     iconSizeOptions,
     iconSizeDefault,
     imageSizeOptions,
     imageSizeDefault,
-    imageTypeOptions,
-    imageTypeDefault,
-    inputWidthOptions,
-    inputWidthDefault,
+    fontSizeOptions,
+    fontSizeDefault,
+
     cardHtmlTagOptions,
     cardHtmlTagDefault,
     titleHtmlTagOptions,
     titleHtmlTagDefault,
     textHtmlTagOptions,
     textHtmlTagDefault,
-    fontSizeOptions,
-    fontSizeDefault,
-    listStyleOptions,
-    listStyleDefault,
-    formStatusOptions,
-    formStatusDefault,
-    gradientOptions,
-    gradientDefault,
+    iconHtmlTagOptions,
+    iconHtmlTagDefault,
+    itemHtmlTagOptions,
+    itemHtmlTagDefault,
+
     displayOptions,
     displayDefault,
-    columnOptions,
-    columnDefault,
     flexDirectionOptions,
     flexDirectionDefault,
     flexWrapOptions,

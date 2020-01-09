@@ -6,7 +6,7 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    blockSpaceOptions
+    spaceOptions
 } from '../../shared/constants';
 import Select from './Select';
 
@@ -40,12 +40,10 @@ storiesOf('Select', module).addDecorator(withKnobs)
         disabled={boolean('Disabled', false)}
         readOnly={boolean('Readonly', false)}
         status={radios('Status', formStatusOptions, formStatusDefault)}
-        params={{
-            shadow: boolean('With shadow', false),
-        }}
-        width={radios('Width', inputWidthOptions, inputWidthDefault)}
-        marginTop={select('Margin top', blockSpaceOptions, blockSpaceOptions.md)}
-        marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceOptions.md)}
+        blockWidth={radios('Width', inputWidthOptions, inputWidthDefault)}
+        hasShadow={boolean('With shadow', false)}
+        marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+        marginBottom={select('Margin bottom', spaceOptions, spaceOptions.md)}
     />
 ), {
     notes: 'You can change select with with "width" props (could be sm, md or lg).',

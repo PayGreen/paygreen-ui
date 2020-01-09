@@ -20,8 +20,8 @@ class RadioIcon extends PureComponent {
         } = this.props;
 
         return <RadioIconBase
-            blockSize={blockSize}
             theme={this.props.theme} // not necessary, only needed for tests
+            blockSize={blockSize}
         >
             <input type="radio" {...rest} />
 
@@ -30,10 +30,10 @@ class RadioIcon extends PureComponent {
 
                 <span className="checked">
                     <CheckBoldIcon
+                        theme={this.props.theme} // not necessary, only needed for tests
                         colorPallet={colorPalletOptions.status}
                         colorStatus={formStatusOptions.success}
                         iconSize={iconSizeOptions.xs}
-                        theme={this.props.theme} // not necessary, only needed for tests
                     />
                 </span>
 

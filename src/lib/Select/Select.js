@@ -6,7 +6,7 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    blockSpaceOptions
+    spaceOptions
 } from '../../shared/constants';
 import { SelectBase } from './style';
 
@@ -20,39 +20,30 @@ class Select extends PureComponent {
     }
 
     render() {
-        const optionsHtml = this.props.options.map((option, index) =>
-            <option
-                key={index}
-                value={option.value}
-                disabled={
-                    option.disabled ||
-                    this.props.readOnly && option.value !== this.state.value
-                }
-            >
-                {option.text}
-            </option>
-        );
+        const {
+            options,
+            status,
+            label,
+
+            // must not be passed with rest because there is no readOnly html attribute for select
+            readOnly,
+
+            hasShadow,
+            blockWidth,
+            marginTop,
+            marginBottom,
+            ...rest
+        } = this.props;
 
         let animation = false;
         if (this.props.status !== this.state.status) {
             animation = true;
+
             setTimeout(() => {
                 animation = false;
                 this.setState({ status: this.props.status });
             }, 1);
         }
-
-        const {
-            options,
-            params,
-            status,
-            width,
-            label,
-            readOnly,
-            marginTop,
-            marginBottom,
-            ...rest
-        } = this.props;
         
         return <Transition in={animation} timeout={900}>
             {(keyframe) => {
@@ -60,11 +51,11 @@ class Select extends PureComponent {
                     <SelectBase
                         keyframe={keyframe}
                         theme={this.props.theme} // not necessary, only needed for tests
-                        params={params}
                         status={status}
-                        inputWidth={width}
                         inputReadOnly={readOnly}
                         inputDisabled={this.props.disabled}
+                        hasShadow={hasShadow}
+                        blockWidth={blockWidth}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
@@ -76,7 +67,19 @@ class Select extends PureComponent {
                         }
 
                         <select {...rest}>
-                            {optionsHtml}
+                            {options.map((option, index) =>
+                                <option
+                                    key={index}
+                                    value={option.value}
+                                    disabled={
+                                        option.disabled ||
+                                        this.props.readOnly
+                                            && option.value !== this.state.value
+                                    }
+                                >
+                                    {option.text}
+                                </option>
+                            )}
                         </select>
 
                         <span></span>
@@ -97,26 +100,21 @@ Select.propTypes = {
             disabled: PropTypes.bool
         })
     ).isRequired,
-    width: PropTypes.oneOf(Object.values(inputWidthOptions)),
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    params: PropTypes.shape({
-        shadow: PropTypes.bool,
-    }),
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    hasShadow: PropTypes.bool,
+    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Select.defaultProps = {
-    width: inputWidthDefault,
-    params: {
-        shadow: false,
-    },
-    onChange: undefined,
     status: formStatusDefault,
-    marginTop: blockSpaceOptions.md,
-    marginBottom: blockSpaceOptions.md,
+    hasShadow: false,
+    blockWidth: inputWidthDefault,
+    marginTop: spaceOptions.md,
+    marginBottom: spaceOptions.md,
 };
 
 export default Select;

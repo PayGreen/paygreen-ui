@@ -18,15 +18,15 @@ import {
     fontSizeDefault,
     alignOptions,
     alignDefault,
-    blockSpaceOptions,
-    blockSpaceDefault
+    spaceOptions,
+    spaceDefault
 } from '../../shared/constants';
 import { TitleBase } from './style';
 
 class Title extends PureComponent {
     render() {
         return <TitleBase
-            as={this.props.titleHtmlTag}
+            as={this.props.htmlTag}
             {...this.props}
         >
             {this.props.children}
@@ -35,7 +35,7 @@ class Title extends PureComponent {
 }
 
 Title.propTypes = {
-    titleHtmlTag: PropTypes.oneOf(Object.values(titleHtmlTagOptions)),
+    htmlTag: PropTypes.oneOf(Object.values(titleHtmlTagOptions)),
 
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
@@ -44,14 +44,14 @@ Title.propTypes = {
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
 
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
-    textAlign: PropTypes.oneOf(Object.values(alignOptions)),
-    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    underline: PropTypes.bool,
+    align: PropTypes.oneOf(Object.values(alignOptions)),
+    marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    hasUnderline: PropTypes.bool,
 };
 
 Title.defaultProps = {
-    titleHtmlTag: titleHtmlTagDefault,
+    htmlTag: titleHtmlTagDefault,
 
     colorType: colorTypeDefault,
     colorPallet: colorPalletOptions.wab,
@@ -60,10 +60,10 @@ Title.defaultProps = {
     colorStatus: formStatusDefault,
 
     textSize: fontSizeDefault,
-    textAlign: alignDefault,
-    marginLateral: blockSpaceDefault,
-    marginTop: blockSpaceDefault,
-    underline: false,
+    align: alignDefault,
+    marginLateral: spaceDefault,
+    marginTop: spaceDefault,
+    hasUnderline: false,
 };
 
 export default Title;

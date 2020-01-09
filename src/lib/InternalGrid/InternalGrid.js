@@ -23,14 +23,14 @@ const InternalGrid = (props) => {
 };
 
 InternalGrid.propTypes = {
-    display: PropTypes.oneOf([displayOptions.flex, displayOptions.grid]),
-    gridColumns: PropTypes.string,
-    gridRows: PropTypes.string,
+    displayType: PropTypes.oneOf([displayOptions.flex, displayOptions.grid]),
+    gridTemplateColumns: PropTypes.string,
+    gridTemplateRows: PropTypes.string,
     flexWrap: PropTypes.oneOf(Object.values(flexWrapOptions)),
     justifyContent: PropTypes.oneOf(Object.values(justifyContentOptions)),
     justifyItems: PropTypes.oneOf(Object.values(justifyItemsOptions)),
     alignItems: PropTypes.oneOf(Object.values(alignItemsOptions)),
-    flex1: PropTypes.bool,
+    childrenFlex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -38,14 +38,14 @@ InternalGrid.propTypes = {
 };
 
 InternalGrid.defaultProps = {
-    display: displayOptions.flex,
-    gridColumns: '',
-    gridRows: '',
+    displayType: displayOptions.flex,
+    gridTemplateColumns: 'none',
+    gridTemplateRows: 'none',
     flexWrap: flexWrapDefault,
     justifyContent: justifyContentOptions.spaceBetween,
     justifyItems: justifyItemsDefault,
     alignItems: alignItemsDefault,
-    flex1: false,
+    childrenFlex: 'initial',
 
     marginLateral: spaceDefault,
     marginTop: spaceDefault,

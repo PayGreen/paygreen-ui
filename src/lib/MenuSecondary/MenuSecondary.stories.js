@@ -21,8 +21,8 @@ storiesOf('MenuSecondary', module).addDecorator(withKnobs)
         <Menu>
             <a href="#">
                 <MenuItem
-                    hoverBase={false}
-                    hoverEmphasis={true}
+                    hasHoverBase={false}
+                    hasHoverEmphasis={true}
                     align={alignOptions.center}
                     isMain={true}
                 >
@@ -32,8 +32,8 @@ storiesOf('MenuSecondary', module).addDecorator(withKnobs)
                     />
 
                     <Link
-                        underline={false}
-                        uppercase={true}
+                        hasUnderline={false}
+                        hasUppercase={true}
                         colorPallet={colorPalletOptions.wab}
                     >
                         Login
@@ -45,8 +45,8 @@ storiesOf('MenuSecondary', module).addDecorator(withKnobs)
         <Menu>
             <a href="#">
                 <MenuItem
-                    hoverBase={false}
-                    hoverEmphasis={true}
+                    hasHoverBase={false}
+                    hasHoverEmphasis={true}
                     align={alignOptions.center}
                     isMain={true}
                 >
@@ -55,8 +55,8 @@ storiesOf('MenuSecondary', module).addDecorator(withKnobs)
                     />
 
                     <Link
-                        underline={false}
-                        uppercase={true}
+                        hasUnderline={false}
+                        hasUppercase={true}
                     >
                         Subscribe
                     </Link>

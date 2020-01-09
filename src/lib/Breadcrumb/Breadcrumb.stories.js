@@ -4,10 +4,12 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     colorTypeOptions,
-    colorTypeDefault
+    colorTypeDefault,
+    spaceOptions,
+    spaceDefault
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios } from '@storybook/addon-knobs';
+import { withKnobs, radios, select } from '@storybook/addon-knobs';
 
 const sampleLinks = [
     {
@@ -35,6 +37,9 @@ storiesOf('Breadcrumb', module)
             elements={sampleLinks}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
+            marginLateral={select('Lateral margins', spaceOptions, spaceDefault)}
+            marginTop={select('Margin top', spaceOptions, spaceOptions.xs)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceOptions.xs)}
         />
     ), {
         notes: 'Breadcrumb takes an array of objects as "elements" prop.',

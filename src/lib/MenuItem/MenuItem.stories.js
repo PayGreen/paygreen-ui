@@ -27,7 +27,7 @@ storiesOf('MenuItem', module)
         <a href="#">
             <MenuItem
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                hoverEmphasis={boolean('Hover emphasis', true)}
+                hasHoverEmphasis={boolean('Hover emphasis', true)}
             >
                 <CardsIcon
                     iconSize={iconSizeOptions.lg}
@@ -37,7 +37,7 @@ storiesOf('MenuItem', module)
                 />
 
                 <Link
-                    underline={false}
+                    hasUnderline={false}
                     colorPallet={radios(colorPalletLabel, colorPalletOptions, colorPalletDefault)}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                     colorWab={select(colorWabLabel, greyOptions, greyDefault)}
@@ -67,13 +67,13 @@ storiesOf('MenuItem', module)
             <MenuItem
                 isMain={true}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
-                hoverBase={boolean('Hover base (mobile)', true)}
-                hoverAlternative={boolean('Hover alternative (desktop)', true)}
+                hasHoverBase={boolean('Hover base (mobile)', true)}
+                hasHoverAlternative={boolean('Hover alternative (desktop)', true)}
             >
                 <Link
-                    underline={false}
+                    hasUnderline={false}
                     colorPallet={colorPalletOptions.wab}
-                    uppercase={true}
+                    hasUppercase={true}
                 >
                     Payment
                 </Link>

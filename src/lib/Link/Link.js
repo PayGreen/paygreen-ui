@@ -30,8 +30,8 @@ Link.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
-    underline: PropTypes.bool,
-    uppercase: PropTypes.bool
+    hasUnderline: PropTypes.bool,
+    hasUppercase: PropTypes.bool
 };
 
 Link.defaultProps = {
@@ -40,8 +40,8 @@ Link.defaultProps = {
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,
     colorStatus: formStatusDefault,
-    underline: true,
-    uppercase: false
+    hasUnderline: true,
+    hasUppercase: false
 };
 
 export default Link;

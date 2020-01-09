@@ -26,7 +26,7 @@ const colorThemeLabel = 'Color theme';
 const colorWabLabel = 'Grey color';
 const colorStatusLabel = 'Status color';
 const iconSizeLabel = 'Icon size';
-const backgroundLabel = 'With background';
+const backgroundLabel = 'Has background';
 const shadowLabel = 'With shadow';
 const activeLabel = 'Active';
 const marginTopLabel = 'Margin top';
@@ -45,14 +45,14 @@ storiesOf('Icons', module)
                 colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
-                background={boolean(backgroundLabel, false)}
-                shadow={boolean(shadowLabel, false)}
-                active={boolean(activeLabel, false)}
+                hasBackground={boolean(backgroundLabel, false)}
+                shadowSize={boolean(shadowLabel, false)}
+                isActive={boolean(activeLabel, false)}
+                isCentered={boolean(centeredLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
                 marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
                 marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
-                centered={boolean(centeredLabel, false)}
             />
 
             <OrganizationIcon
@@ -61,14 +61,14 @@ storiesOf('Icons', module)
                 colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
-                background={boolean(backgroundLabel, false)}
-                shadow={boolean(shadowLabel, false)}
-                active={boolean(activeLabel, false)}
+                hasBackground={boolean(backgroundLabel, false)}
+                shadowSize={boolean(shadowLabel, false)}
+                isActive={boolean(activeLabel, false)}
+                isCentered={boolean(centeredLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
                 marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
                 marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
-                centered={boolean(centeredLabel, false)}
             />
 
             <ShopIcon
@@ -77,14 +77,14 @@ storiesOf('Icons', module)
                 colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
-                background={boolean(backgroundLabel, false)}
-                shadow={boolean(shadowLabel, false)}
-                active={boolean(activeLabel, false)}
+                hasBackground={boolean(backgroundLabel, false)}
+                shadowSize={boolean(shadowLabel, false)}
+                isActive={boolean(activeLabel, false)}
+                isCentered={boolean(centeredLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
                 marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
                 marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
-                centered={boolean(centeredLabel, false)}
             />
 
             <TreesIcon
@@ -93,14 +93,14 @@ storiesOf('Icons', module)
                 colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
-                background={boolean(backgroundLabel, false)}
-                shadow={boolean(shadowLabel, false)}
-                active={boolean(activeLabel, false)}
+                hasBackground={boolean(backgroundLabel, false)}
+                shadowSize={boolean(shadowLabel, false)}
+                isActive={boolean(activeLabel, false)}
+                isCentered={boolean(centeredLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
                 marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
                 marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
-                centered={boolean(centeredLabel, false)}
             />
 
             <PointerIcon
@@ -109,14 +109,14 @@ storiesOf('Icons', module)
                 colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(colorStatusLabel, formStatusOptions, formStatusDefault)}
                 iconSize={select(iconSizeLabel, iconSizeOptions, iconSizeOptions.lg)}
-                background={boolean(backgroundLabel, false)}
-                shadow={boolean(shadowLabel, false)}
-                active={boolean(activeLabel, false)}
+                hasBackground={boolean(backgroundLabel, false)}
+                shadowSize={boolean(shadowLabel, false)}
+                isActive={boolean(activeLabel, false)}
+                isCentered={boolean(centeredLabel, false)}
                 marginTop={select(marginTopLabel, spaceOptions, spaceOptions.sm)}
                 marginBottom={select(marginBottomLabel, spaceOptions, spaceOptions.sm)}
                 marginLeft={select(marginLeftLabel, spaceOptions, spaceOptions.sm)}
                 marginRight={select(marginRightLabel, spaceOptions, spaceOptions.sm)}
-                centered={boolean(centeredLabel, false)}
             />
         </div>
     ), {

@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import {
-    colorThemeOptions,
+    colorThemeAllOptions,
+    colorThemeAllDefault,
 } from '../../shared/constants';
 import TableCell from '../TableCell/TableCell';
 import TableRow from './TableRow';
@@ -10,7 +11,7 @@ import TableRow from './TableRow';
 storiesOf('TableRow', module).addDecorator(withKnobs)
 .add('Simple row', () => (
     <TableRow
-        colorTheme={select('Color theme', {...{none: 'none'}, ...colorThemeOptions }, 'none')}
+        colorTheme={select('Color theme', colorThemeAllOptions, colorThemeAllDefault)}
     >
         <TableCell>
             <span>Sample text <i>(with more text)</i></span>

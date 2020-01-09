@@ -7,8 +7,8 @@ import {
     iconSizeDefault,
     colorThemeOptions,
     colorThemeDefault,
-    blockSpaceOptions,
-    blockSpaceDefault
+    spaceOptions,
+    spaceDefault
 } from '../../shared/constants';
 import { ListBase } from './style';
 import { dashed } from './style/dashed';
@@ -44,9 +44,9 @@ List.propTypes = {
     hasDashed: PropTypes.bool,
     bulletSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    marginLateral: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginTop: PropTypes.oneOf(Object.values(blockSpaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(blockSpaceOptions)),
+    marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 List.defaultProps = {
@@ -54,9 +54,9 @@ List.defaultProps = {
     hasDashed: false,
     bulletSize: iconSizeDefault,
     colorTheme: colorThemeDefault,
-    marginLateral: blockSpaceDefault,
-    marginTop: blockSpaceDefault,
-    marginBottom: blockSpaceDefault,
+    marginLateral: spaceDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
 };
 
 export default List;

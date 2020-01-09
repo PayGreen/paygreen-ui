@@ -25,9 +25,9 @@ it('renders without crashing', () => {
                         theme={ThemeDefault}
                     >
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
-                            uppercase={true}
+                            hasUppercase={true}
                             theme={ThemeDefault}
                         >
                             About us
@@ -40,14 +40,14 @@ it('renders without crashing', () => {
                 <a href="#">
                     <MenuItem
                         isMain={true}
-                        hoverBase={false}
-                        hoverAlternative={false}
+                        hasHoverBase={false}
+                        hasHoverAlternative={false}
                         theme={ThemeDefault}
                     >
                         <Link
-                            underline={false}
+                            hasUnderline={false}
                             colorPallet={colorPalletOptions.wab}
-                            uppercase={true}
+                            hasUppercase={true}
                             theme={ThemeDefault}
                         >
                             Other products
@@ -58,7 +58,7 @@ it('renders without crashing', () => {
                 <MenuList theme={ThemeDefault}>
                     <a href="#">
                         <MenuItem
-                            hoverEmphasis={true}
+                            hasHoverEmphasis={true}
                             theme={ThemeDefault}
                         >
                             <LeafIcon
@@ -67,7 +67,7 @@ it('renders without crashing', () => {
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                                 theme={ThemeDefault}
                             >
                                 Tree
@@ -81,7 +81,7 @@ it('renders without crashing', () => {
 
                     <a href="#">
                         <MenuItem
-                            hoverEmphasis={true}
+                            hasHoverEmphasis={true}
                             theme={ThemeDefault}
                         >
                             <CardsIcon
@@ -90,7 +90,7 @@ it('renders without crashing', () => {
                             />
 
                             <Link
-                                underline={false}
+                                hasUnderline={false}
                                 theme={ThemeDefault}
                             >
                                 Payment

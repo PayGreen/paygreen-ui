@@ -17,8 +17,8 @@ import {
     fontSizeOptions,
     alignOptions,
     alignDefault,
-    blockSpaceOptions,
-    blockSpaceDefault
+    spaceOptions,
+    spaceDefault
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
@@ -26,7 +26,7 @@ import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 storiesOf('Title', module).addDecorator(withKnobs)
 .add('Title', () => (
     <Title
-        underline={boolean('Underline', true)}
+        hasUnderline={boolean('Underline', true)}
 
         colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
         colorPallet={radios('Color pallet', colorPalletOptions, colorPalletOptions.wab)}
@@ -35,10 +35,10 @@ storiesOf('Title', module).addDecorator(withKnobs)
         colorStatus={select('Status color', formStatusOptions, formStatusDefault)}
         
         textSize={select('Size', fontSizeOptions, fontSizeOptions.lg)}
-        textAlign={radios('Align', alignOptions, alignDefault)}
-        marginLateral={select('Lateral margin', blockSpaceOptions, blockSpaceDefault)}
-        marginTop={select('Margin top', blockSpaceOptions, blockSpaceDefault)}
-        titleHtmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
+        align={radios('Align', alignOptions, alignDefault)}
+        marginLateral={select('Lateral margin', spaceOptions, spaceDefault)}
+        marginTop={select('Margin top', spaceOptions, spaceDefault)}
+        htmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}
     >
         Your title with <strong>an emphasis</strong>
     </Title>

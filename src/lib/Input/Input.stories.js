@@ -6,7 +6,7 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    blockSpaceOptions,
+    spaceOptions,
 } from '../../shared/constants';
 import Input from './Input';
 
@@ -19,12 +19,10 @@ storiesOf('Input', module).addDecorator(withKnobs)
         disabled={boolean('Disabled', false)}
         readOnly={boolean('Readonly', false)}
         status={radios('Status', formStatusOptions, formStatusDefault)}
-        width={radios('Width', inputWidthOptions, inputWidthDefault)}
-        params={{
-            shadow: boolean('With shadow', false),
-        }}
-        marginTop={select('Margin top', blockSpaceOptions, blockSpaceOptions.md)}
-        marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceOptions.md)}
+        hasShadow={boolean('With shadow', false)}
+        blockWidth={radios('Width', inputWidthOptions, inputWidthDefault)}
+        marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+        marginBottom={select('Margin bottom', spaceOptions, spaceOptions.md)}
     />
 ), {
     notes: 'Same as input email, url and number (this is the default style).',
@@ -38,11 +36,9 @@ storiesOf('Input', module).addDecorator(withKnobs)
         disabled={boolean('Disabled', false)}
         readOnly={boolean('Readonly', false)}
         status={radios('Status', formStatusOptions, formStatusDefault)}
-        params={{
-            shadow: boolean('With shadow', false),
-        }}
-        marginTop={select('Margin top', blockSpaceOptions, blockSpaceOptions.md)}
-        marginBottom={select('Margin bottom', blockSpaceOptions, blockSpaceOptions.md)}
+        hasShadow={boolean('With shadow', false)}
+        marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+        marginBottom={select('Margin bottom', spaceOptions, spaceOptions.md)}
     />
 ), {
     notes: 'Style for input tel. It is smaller than default input because its value is always short. Input tel comes with react-input-mask library.',

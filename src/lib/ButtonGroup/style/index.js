@@ -4,11 +4,11 @@ import { responsiveSpaces } from '../../../shared/spaces';
 
 const ButtonGroupBase = styled.div`
     display: flex;
-    justify-content: ${props => justifyContentOptions[props.buttonAlign]};
+    justify-content: ${props => justifyContentOptions[props.align]};
     flex-wrap: wrap;
     ${props => responsiveSpaces(
         'margin',
-        props.resetMargin ? props.theme.space.sm : 0,
+        props.hasResetedMargins ? props.theme.space.sm : 0,
         0.75
     )};
 

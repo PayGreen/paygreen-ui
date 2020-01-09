@@ -19,7 +19,7 @@ const textStyle = css`
     };
 
     line-height: ${props => props.theme.font.lineHeight.md};
-    text-align: ${props => props.textAlign};
+    text-align: ${props => props.align};
     font-size: ${props => props.theme.font.size[props.textSize]};
 
     @media (${props => props.theme.query.max.md}) {

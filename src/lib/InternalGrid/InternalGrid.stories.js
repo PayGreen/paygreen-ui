@@ -41,7 +41,7 @@ storiesOf('InternalGrid', module).addDecorator(withKnobs)
         flexWrap={select('Flex wrap', flexWrapOptions, flexWrapDefault)}
         justifyContent={select('Justify content', justifyContentOptions, justifyContentOptions.spaceBetween)}
         alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
-        flex1={boolean('Flex 1', false)}
+        childrenFlex={text('Children flex', 'initial')}
 
         marginLateral={select('Children\'s lateral margins', spaceOptions, spaceDefault)}
         marginTop={select('Children\'s margin top', spaceOptions, spaceDefault)}
@@ -52,9 +52,9 @@ storiesOf('InternalGrid', module).addDecorator(withKnobs)
 ))
 .add('Grid', () => (
     <InternalGrid
-        display={displayOptions.grid}
-        gridColumns={text('Grid columns', '1fr 1fr 1fr')}
-        gridRows={text('Grid rows', 'repeat(2, 60px)')}
+        displayType={displayOptions.grid}
+        gridTemplateColumns={text('Grid columns', '1fr 1fr 1fr')}
+        gridTemplateRows={text('Grid rows', 'repeat(2, 60px)')}
         justifyItems={select('Justify items', justifyItemsOptions, justifyItemsDefault)}
         alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
 

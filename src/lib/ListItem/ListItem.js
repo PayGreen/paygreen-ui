@@ -26,7 +26,7 @@ class ListItem extends PureComponent {
             isClickable={isClickable}
             {...this.props}
         >
-            {isClickable && this.props.arrow === decorationOptions.left ?
+            {isClickable && this.props.arrowStyle === decorationOptions.left ?
                 <span className="arrow">
                     <ArrowLeftIcon
                         theme={this.props.theme} // not necessary, only needed for tests
@@ -47,7 +47,7 @@ class ListItem extends PureComponent {
 
             {this.props.children}
 
-            {isClickable && this.props.arrow === decorationOptions.right ?
+            {isClickable && this.props.arrowStyle === decorationOptions.right ?
                 <span className="arrow">
                     <ArrowRightIcon
                         theme={this.props.theme} // not necessary, only needed for tests
@@ -67,7 +67,7 @@ ListItem.propTypes = {
     bulletStyle: PropTypes.oneOf(Object.values(listStyleOptions)),
     bulletSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    arrow: PropTypes.oneOf(Object.values(decorationOptions))
+    arrowStyle: PropTypes.oneOf(Object.values(decorationOptions))
 };
 
 ListItem.defaultProps = {
@@ -76,7 +76,7 @@ ListItem.defaultProps = {
     bulletStyle: listStyleDefault,
     bulletSize: iconSizeDefault,
     colorTheme: colorThemeDefault,
-    arrow: decorationOptions.none
+    arrowStyle: decorationOptions.none
 };
 
 export default ListItem;
