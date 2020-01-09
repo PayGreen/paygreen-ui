@@ -3,6 +3,10 @@ import { transparentize } from 'polished';
 import { colorTypeOptions } from '../../../shared/constants';
 import { mainColor, backgroundColor, minimizeFont } from './constants';
 
+const spanStyle = css`
+    display: block;
+`;
+
 const blockBackground = {
     original: css`
         background-color: ${props => backgroundColor[props.colorPallet]};
@@ -43,6 +47,7 @@ const internalParagraph = css`
 `;
 
 export {
+    spanStyle,
     blockBackground,
     textStyle,
     internalParagraph,

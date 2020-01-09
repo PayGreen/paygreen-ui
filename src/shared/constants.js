@@ -250,7 +250,8 @@ const titleHtmlTagDefault = titleHtmlTagOptions.span;
 // Text HTML tags
 const textHtmlTagOptions = {
     p: 'p',
-    div: 'div'
+    div: 'div',
+    span: 'span'
 };
 
 const textHtmlTagDefault = textHtmlTagOptions.p;
