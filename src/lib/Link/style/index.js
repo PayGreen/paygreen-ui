@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 import { colorTypeOptions } from '../../../shared/constants';
 import { mainColor } from '../../Text/style/constants';
-import {
-    underlineStyle,
-    uppercaseStyle
-} from './base';
+import { uppercaseStyle } from '../../Text/style/base';
+import { underlineStyle } from './base';
 
 const LinkBase = styled.span`
     color: ${props => props.colorType === colorTypeOptions.reverse ?

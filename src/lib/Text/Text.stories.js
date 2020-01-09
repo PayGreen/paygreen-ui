@@ -36,6 +36,7 @@ storiesOf('Paygreen | Text', module)
 
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
             align={radios('Align', alignOptions, alignDefault)}
+            hasUppercase={boolean('Uppercase', false)}
             hasUnderline={boolean('Underline', false)}
 
             marginLateral={select('Block\'s lateral margins', spaceOptions, spaceDefault)}

@@ -7,6 +7,12 @@ const spanStyle = css`
     display: block;
 `;
 
+const uppercaseStyle = css`
+    text-transform: uppercase;
+    font-weight: ${props => props.theme.font.weight.bold};
+    letter-spacing: ${props => props.theme.font.spacing};
+`;
+
 const blockBackground = {
     original: css`
         background-color: ${props => backgroundColor[props.colorPallet]};
@@ -48,6 +54,7 @@ const internalParagraph = css`
 
 export {
     spanStyle,
+    uppercaseStyle,
     blockBackground,
     textStyle,
     internalParagraph,

@@ -43,6 +43,7 @@ Text.propTypes = {
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
 
+    hasUppercase: PropTypes.bool,
     hasBackground: PropTypes.bool,
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
@@ -69,6 +70,7 @@ Text.defaultProps = {
     colorWab: greyOptions.grey60,
     colorStatus: formStatusDefault,
 
+    hasUppercase: false,
     hasBackground: false,
     radiusSize: radiusOptions.none,
     textSize: fontSizeDefault,
