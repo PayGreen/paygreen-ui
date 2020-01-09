@@ -21,8 +21,8 @@ storiesOf('MenuSecondary', module).addDecorator(withKnobs)
         <Menu>
             <a href="#">
                 <MenuItem
-                    hoverBase={false}
-                    hoverEmphasis={true}
+                    hasHoverBase={false}
+                    hasHoverEmphasis={true}
                     align={alignOptions.center}
                     isMain={true}
                 >
@@ -45,8 +45,8 @@ storiesOf('MenuSecondary', module).addDecorator(withKnobs)
         <Menu>
             <a href="#">
                 <MenuItem
-                    hoverBase={false}
-                    hoverEmphasis={true}
+                    hasHoverBase={false}
+                    hasHoverEmphasis={true}
                     align={alignOptions.center}
                     isMain={true}
                 >

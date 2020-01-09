@@ -26,8 +26,8 @@ storiesOf('Menu', module).addDecorator(withKnobs)
         <a href="#">
             <MenuItem
                 isMain={true}
-                hoverBase={false}
-                hoverAlternative={false}
+                hasHoverBase={false}
+                hasHoverAlternative={false}
                 colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
             >
                 <Link
@@ -43,7 +43,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
         <MenuList>
             <a href="#">
                 <MenuItem
-                    hoverEmphasis={true}
+                    hasHoverEmphasis={true}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 >
                     <LeafIcon
@@ -66,7 +66,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
 
             <a href="#">
                 <MenuItem
-                    hoverEmphasis={true}
+                    hasHoverEmphasis={true}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 >
                     <CardsIcon
@@ -94,7 +94,7 @@ storiesOf('Menu', module).addDecorator(withKnobs)
 
             <a href="#">
                 <MenuItem
-                    hoverEmphasis={true}
+                    hasHoverEmphasis={true}
                     colorTheme={radios(colorThemeLabel, colorThemeOptions, colorThemeDefault)}
                 >
                     <OrganizationIcon

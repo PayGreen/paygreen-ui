@@ -97,10 +97,11 @@ const main = css`
     }
 
     @media (${props => props.theme.query.max.lg}) {
-        ${props => props.hoverBase ? hoverBase : null};
-        ${props => props.hoverEmphasis ? hoverEmphasis : null};
+        ${props => props.hasHoverBase ? hoverBase : null};
+        ${props => props.hasHoverEmphasis ? hoverEmphasis : null};
 
-        ${props => !props.hoverBase && !props.hoverEmphasis ? titleStyle : null};
+        ${props => !props.hasHoverBase && !props.hasHoverEmphasis ?
+            titleStyle : null};
     }
 
     @media (${props => props.theme.query.min.lg}) {
@@ -116,7 +117,7 @@ const main = css`
         }
 
         z-index: ${props => props.theme.zindex.menu};
-        ${props => props.hoverAlternative ? hoverAlternative : notClickable};
+        ${props => props.hasHoverAlternative ? hoverAlternative : notClickable};
     }
 `;
 
@@ -128,8 +129,8 @@ const sub = css`
         padding: ${props => props.theme.space.sm} 0;
     }
 
-    ${props => props.hoverBase ? hoverBase : null};
-    ${props => props.hoverEmphasis ? hoverEmphasis : null};
+    ${props => props.hasHoverBase ? hoverBase : null};
+    ${props => props.hasHoverEmphasis ? hoverEmphasis : null};
 `;
 
 const align = {

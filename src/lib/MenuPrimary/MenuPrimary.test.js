@@ -40,8 +40,8 @@ it('renders without crashing', () => {
                 <a href="#">
                     <MenuItem
                         isMain={true}
-                        hoverBase={false}
-                        hoverAlternative={false}
+                        hasHoverBase={false}
+                        hasHoverAlternative={false}
                         theme={ThemeDefault}
                     >
                         <Link
@@ -58,7 +58,7 @@ it('renders without crashing', () => {
                 <MenuList theme={ThemeDefault}>
                     <a href="#">
                         <MenuItem
-                            hoverEmphasis={true}
+                            hasHoverEmphasis={true}
                             theme={ThemeDefault}
                         >
                             <LeafIcon
@@ -81,7 +81,7 @@ it('renders without crashing', () => {
 
                     <a href="#">
                         <MenuItem
-                            hoverEmphasis={true}
+                            hasHoverEmphasis={true}
                             theme={ThemeDefault}
                         >
                             <CardsIcon

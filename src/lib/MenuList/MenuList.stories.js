@@ -34,7 +34,7 @@ storiesOf('MenuList', module).addDecorator(withKnobs)
     >
         <a href="#">
             <MenuItem
-                hoverEmphasis={true}
+                hasHoverEmphasis={true}
             >
                 <LeafIcon
                     iconSize={iconSizeOptions.lg}
@@ -55,7 +55,7 @@ storiesOf('MenuList', module).addDecorator(withKnobs)
         <a href="#">
             <MenuItem
                 colorTheme={color[1]}
-                hoverEmphasis={true}
+                hasHoverEmphasis={true}
             >
                 <CardsIcon
                     iconSize={iconSizeOptions.lg}
@@ -85,7 +85,7 @@ storiesOf('MenuList', module).addDecorator(withKnobs)
         <a href="#">
             <MenuItem
                 colorTheme={color[2]}
-                hoverEmphasis={true}
+                hasHoverEmphasis={true}
             >
                 <MealIcon
                     iconSize={iconSizeOptions.lg}
@@ -119,7 +119,7 @@ storiesOf('MenuList', module).addDecorator(withKnobs)
         <a href="#">
             <MenuItem
                 colorTheme={color[3]}
-                hoverEmphasis={true}
+                hasHoverEmphasis={true}
             >
                 <OrganizationIcon
                     iconSize={iconSizeOptions.lg}
