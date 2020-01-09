@@ -16,13 +16,15 @@ import {
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select, text, radios, boolean } from '@storybook/addon-knobs';
 
+const colorTypeLabel = 'Color type';
+
 storiesOf('Paygreen | Link', module)
     .addDecorator(withKnobs)
     .add('Link', () => (
-        <Text>
+        <Text colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}>
             <a href="#">
                 <Link
-                    colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+                    colorType={radios(colorTypeLabel, colorTypeOptions, colorTypeDefault)}
                     colorPallet={radios('Color pallet', colorPalletOptions, colorPalletDefault)}
                     colorTheme={select('Color theme', colorThemeOptions, colorThemeDefault)}
                     colorWab={select('Grey color', greyOptions, greyDefault)}
