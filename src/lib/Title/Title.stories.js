@@ -35,7 +35,7 @@ storiesOf('Title', module).addDecorator(withKnobs)
         colorStatus={select('Status color', formStatusOptions, formStatusDefault)}
         
         textSize={select('Size', fontSizeOptions, fontSizeOptions.lg)}
-        textAlign={radios('Align', alignOptions, alignDefault)}
+        align={radios('Align', alignOptions, alignDefault)}
         marginLateral={select('Lateral margin', spaceOptions, spaceDefault)}
         marginTop={select('Margin top', spaceOptions, spaceDefault)}
         htmlTag={select('HTML tag', titleHtmlTagOptions, titleHtmlTagDefault)}

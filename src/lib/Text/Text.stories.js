@@ -35,7 +35,7 @@ storiesOf('Text', module)
             colorStatus={select('Status color', formStatusOptions, formStatusDefault)}
 
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
-            textAlign={radios('Align', alignOptions, alignDefault)}
+            align={radios('Align', alignOptions, alignDefault)}
             hasUnderline={boolean('Underline', false)}
 
             marginLateral={select('Block\'s lateral margins', spaceOptions, spaceDefault)}
@@ -58,7 +58,7 @@ storiesOf('Text', module)
             colorStatus={select('Status color', formStatusOptions, formStatusDefault)}
 
             textSize={select('Size', fontSizeOptions, fontSizeDefault)}
-            textAlign={radios('Align', alignOptions, alignDefault)}
+            align={radios('Align', alignOptions, alignDefault)}
 
             marginLateral={select('Block\'s lateral margins', spaceOptions, spaceDefault)}
             marginTop={select('Block\'s margin top', spaceOptions, spaceDefault)}

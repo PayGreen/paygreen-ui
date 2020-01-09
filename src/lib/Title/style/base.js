@@ -57,7 +57,7 @@ const underline = css`
     margin-bottom: ${props => props.theme.font.underline.space[props.textSize]};
 
     &::after {
-        ${props => underlineAlign[props.textAlign]};
+        ${props => underlineAlign[props.align]};
         content: '';
         position: absolute;
         bottom: 0;

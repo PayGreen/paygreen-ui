@@ -11,7 +11,7 @@ const TitleBase = styled.span`
     ${fontStyle};
 
     display: block;
-    text-align: ${props => props.textAlign};
+    text-align: ${props => props.align};
 `;
 
 export { TitleBase };

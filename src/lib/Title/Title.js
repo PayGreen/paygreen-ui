@@ -44,7 +44,7 @@ Title.propTypes = {
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
 
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
-    textAlign: PropTypes.oneOf(Object.values(alignOptions)),
+    align: PropTypes.oneOf(Object.values(alignOptions)),
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     hasUnderline: PropTypes.bool,
@@ -60,7 +60,7 @@ Title.defaultProps = {
     colorStatus: formStatusDefault,
 
     textSize: fontSizeDefault,
-    textAlign: alignDefault,
+    align: alignDefault,
     marginLateral: spaceDefault,
     marginTop: spaceDefault,
     hasUnderline: false,
