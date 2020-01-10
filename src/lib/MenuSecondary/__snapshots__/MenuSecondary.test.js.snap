@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-htoDjs eMhTlR"
+  className="sc-htoDjs cUZOYa"
 >
   <li
     className="sc-bZQynM kHykNj"
@@ -11,7 +11,7 @@ exports[`renders without crashing 1`] = `
       href="#"
     >
       <div
-        className="sc-ifAKCX fQmQxI"
+        className="sc-ifAKCX fEQmoB"
       >
         <span
           className="sc-bdVaJa hPEHiC icon"
@@ -25,7 +25,7 @@ exports[`renders without crashing 1`] = `
           </svg>
         </span>
         <span
-          className="sc-bwzfXH dqBDdq"
+          className="sc-bwzfXH jfixBk"
         >
           Login
         </span>

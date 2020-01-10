@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-gzVnrw iAicyF"
+  className="sc-gzVnrw xGARx"
 >
   <li
     className="sc-bZQynM kHykNj"
@@ -11,10 +11,10 @@ exports[`renders without crashing 1`] = `
       href="#"
     >
       <div
-        className="sc-ifAKCX fQmQxI"
+        className="sc-ifAKCX fEQmoB"
       >
         <span
-          className="sc-bwzfXH bgWMuT"
+          className="sc-bwzfXH kIRMFA"
         >
           About us
         </span>
@@ -31,21 +31,21 @@ exports[`renders without crashing 1`] = `
         className="sc-ifAKCX UlSBY"
       >
         <span
-          className="sc-bwzfXH bgWMuT"
+          className="sc-bwzfXH kIRMFA"
         >
           Other products
         </span>
       </div>
     </a>
     <ul
-      className="sc-EHOje jLJEM"
+      className="sc-EHOje eRCzhA"
     >
       <li>
         <a
           href="#"
         >
           <div
-            className="sc-ifAKCX kQVbqI"
+            className="sc-ifAKCX kmpSbK"
           >
             <span
               className="sc-bdVaJa fAXFGG icon"
@@ -59,12 +59,12 @@ exports[`renders without crashing 1`] = `
               </svg>
             </span>
             <span
-              className="sc-bwzfXH hJLHNv"
+              className="sc-bwzfXH dFoyuL"
             >
               Tree
             </span>
             <p
-              className="sc-bxivhb hojHtH"
+              className="sc-bxivhb dtPYaq"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
             </p>
@@ -76,7 +76,7 @@ exports[`renders without crashing 1`] = `
           href="#"
         >
           <div
-            className="sc-ifAKCX kQVbqI"
+            className="sc-ifAKCX kmpSbK"
           >
             <span
               className="sc-bdVaJa fAXFGG icon"
@@ -96,7 +96,7 @@ exports[`renders without crashing 1`] = `
               </svg>
             </span>
             <span
-              className="sc-bwzfXH hJLHNv"
+              className="sc-bwzfXH dFoyuL"
             >
               Payment
             </span>

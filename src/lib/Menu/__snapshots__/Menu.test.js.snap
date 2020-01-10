@@ -11,21 +11,21 @@ exports[`renders without crashing 1`] = `
       className="sc-ifAKCX bZwbSW"
     >
       <span
-        className="sc-bwzfXH bgWMuT"
+        className="sc-bwzfXH kIRMFA"
       >
         Our products
       </span>
     </div>
   </a>
   <ul
-    className="sc-EHOje jLJEM"
+    className="sc-EHOje eRCzhA"
   >
     <li>
       <a
         href="#"
       >
         <div
-          className="sc-ifAKCX igmcha"
+          className="sc-ifAKCX fkxAoR"
         >
           <span
             className="sc-bdVaJa fAXFGG icon"
@@ -39,12 +39,12 @@ exports[`renders without crashing 1`] = `
             </svg>
           </span>
           <span
-            className="sc-bwzfXH hJLHNv"
+            className="sc-bwzfXH dFoyuL"
           >
             Tree
           </span>
           <p
-            className="sc-htpNat hEjJCA"
+            className="sc-htpNat iAhJj"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
           </p>
@@ -56,7 +56,7 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="sc-ifAKCX igmcha"
+          className="sc-ifAKCX fkxAoR"
         >
           <span
             className="sc-bdVaJa fAXFGG icon"
@@ -73,7 +73,7 @@ exports[`renders without crashing 1`] = `
             </svg>
           </span>
           <span
-            className="sc-bwzfXH hJLHNv"
+            className="sc-bwzfXH dFoyuL"
           >
             Rounding
           </span>
