@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { colorTypeOptions } from '../../../shared/constants';
 import { mainColor } from '../../Text/style/constants';
-import { uppercaseStyle } from '../../Text/style/base';
-import { hoverStyle } from './base';
+import { linkUppercase, hoverStyle } from './base';
 
 const LinkBase = styled.span`
     display: inline-block;
@@ -15,7 +14,7 @@ const LinkBase = styled.span`
     };
     font-weight: ${props => props.theme.font.weight.bold};
     transition: all ${props => props.theme.transition.xs};
-    ${props => props.hasUppercase ? uppercaseStyle : null};
+    ${props => props.hasUppercase ? linkUppercase : null};
 
     &::after {
         content: '';
