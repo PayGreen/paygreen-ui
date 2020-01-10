@@ -1,3 +1,21 @@
+/* Storybook folders */
+const folderSeparator = ' | ';
+const subFolderSeparator = '/';
+
+const folder = {
+    main: 'Basics' + folderSeparator,
+    form: 'Form elements' + folderSeparator,
+    table: 'Tables'  + folderSeparator,
+    template: 'Templates' + folderSeparator,
+
+    sub: {
+        button: 'Buttons' + subFolderSeparator,
+        list: 'Ordinary list' + subFolderSeparator,
+        form: 'Special fields' + subFolderSeparator,
+        structure: 'Structure' + subFolderSeparator,
+    }
+};
+
 /* Colors */
 
 // Color types
@@ -345,6 +363,8 @@ const alignOptions = {
 const alignDefault = alignOptions.left;
 
 export {
+    folder,
+
     colorTypeOptions,
     colorTypeDefault,
     colorPalletOptions,
