@@ -30,7 +30,7 @@ const sampleLinks = [
     },
 ];
 
-storiesOf('Breadcrumb', module)
+storiesOf('Paygreen | Breadcrumb', module)
     .addDecorator(withKnobs)
     .add('Breadcrumb', () => (
         <Breadcrumb

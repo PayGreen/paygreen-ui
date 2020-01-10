@@ -30,7 +30,7 @@ const options = [
     }
 ];
 
-storiesOf('Select', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Forms/Select', module).addDecorator(withKnobs)
 .add('Select', () => (
     <Select
         id="select1"

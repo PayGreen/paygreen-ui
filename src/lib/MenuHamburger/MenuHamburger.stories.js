@@ -7,7 +7,7 @@ import {
 } from '../../shared/constants';
 import MenuHamburger from './MenuHamburger';
 
-storiesOf('MenuHamburger', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Menu/MenuHamburger', module).addDecorator(withKnobs)
 .add('MenuHamburger', () => (
     <MenuHamburger
         colorTheme={radios('Color', colorThemeOptions, colorThemeDefault)}

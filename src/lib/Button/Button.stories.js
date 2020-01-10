@@ -13,7 +13,7 @@ import {
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text, radios } from '@storybook/addon-knobs';
 
-storiesOf('Button', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Buttons/Button', module).addDecorator(withKnobs)
 .add('Button', () => (
     <a href="#">
         <Button

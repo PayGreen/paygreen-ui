@@ -36,7 +36,7 @@ const sampleTexts = [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum.',
 ];
 
-storiesOf('Grid', module).addDecorator(withKnobs)
+storiesOf('Paygreen | System/Grid', module).addDecorator(withKnobs)
 .add('Grid', () => (
     <Grid
         displayType={select('Grid type', displayOptions, displayDefault)}

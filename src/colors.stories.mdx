@@ -1,0 +1,43 @@
+import { Meta, ColorPalette, ColorItem} from '@storybook/addon-docs/blocks';
+
+import { colorThemeOptions, greyOptions } from './shared/constants';
+import {ThemeDefault} from './theme/theme.default';
+
+<Meta title="Paygreen | Colors" />
+
+# Colors
+
+<ColorPalette>
+  <ColorItem title="Primary" subtitle="Main" colors={[ThemeDefault.color.primary.main]} />
+  <ColorItem title="Primary" subtitle="Light" colors={[ThemeDefault.color.primary.light]} />
+  <ColorItem title="Primary" subtitle="Gradient Base" colors={[
+      ThemeDefault.color.primary.gradientBase, ThemeDefault.color.primary.gradientShade]} />
+  
+  <ColorItem title="Secondary" subtitle="Main" colors={[ThemeDefault.color.secondary.main]} />
+  <ColorItem title="Secondary" subtitle="Light" colors={[ThemeDefault.color.secondary.light]} />
+  <ColorItem title="Secondary" subtitle="Gradient Base" colors={[ThemeDefault.color.secondary.gradientBase, ThemeDefault.color.secondary.gradientShade]} />
+  
+  <ColorItem title="Tertiary" subtitle="Main" colors={[ThemeDefault.color.tertiary.main]} />
+  <ColorItem title="Tertiary" subtitle="Light" colors={[ThemeDefault.color.tertiary.light]} />
+  <ColorItem title="Tertiary" subtitle="Gradient Base" colors={[ThemeDefault.color.tertiary.gradientBase, ThemeDefault.color.tertiary.gradientShade]} />
+  
+  <ColorItem title="Quaternary" subtitle="Main" colors={[ThemeDefault.color.quaternary.main]} />
+  <ColorItem title="Quaternary" subtitle="Light" colors={[ThemeDefault.color.quaternary.light]} />
+  <ColorItem title="Quaternary" subtitle="Gradient Base" colors={[ThemeDefault.color.quaternary.gradientBase, ThemeDefault.color.quaternary.gradientShade]} />
+  
+  <ColorItem
+    title="Monochrome"
+    colors={[
+      ThemeDefault.wab.white00,
+      ThemeDefault.wab.white10,
+      ThemeDefault.wab.white20,
+      ThemeDefault.wab.grey10,
+      ThemeDefault.wab.grey20,
+      ThemeDefault.wab.grey30,
+      ThemeDefault.wab.grey40,
+      ThemeDefault.wab.grey50,
+      ThemeDefault.wab.grey60,
+      ThemeDefault.wab.black00
+    ]}
+  />
+</ColorPalette>

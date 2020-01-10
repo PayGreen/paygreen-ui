@@ -12,7 +12,7 @@ import {
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 
-storiesOf('ButtonGroup', module)
+storiesOf('Paygreen | Buttons/ButtonGroup', module)
     .addDecorator(withKnobs)
     .add('ButtonGroup', () => (
         <ButtonGroup

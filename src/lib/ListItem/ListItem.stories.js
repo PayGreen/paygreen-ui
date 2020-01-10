@@ -20,7 +20,7 @@ import ListItem from './ListItem';
 
 const colorThemeLabel = 'Color theme';
 
-storiesOf('ListItem', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Lists/ListItem', module).addDecorator(withKnobs)
 .add('ListItem with Icon', () => (
     <ListItem
         href="#"

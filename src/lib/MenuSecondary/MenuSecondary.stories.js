@@ -13,7 +13,7 @@ import Menu from '../Menu/Menu';
 import MenuClose from '../MenuClose/MenuClose';
 import MenuSecondary from './MenuSecondary';
 
-storiesOf('MenuSecondary', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Menu/MenuSecondary', module).addDecorator(withKnobs)
 .add('MenuSecondary', () => (
     <MenuSecondary
         isOpen={boolean('Is open', true)}

@@ -35,7 +35,7 @@ const colorTypeLabel = 'Color type';
 const colorThemeLabel = 'Color theme';
 const blockWidthLabel = 'Block width';
 
-storiesOf('Card', module)
+storiesOf('Paygreen | Card', module)
     .addDecorator(withKnobs)
     .add('Default card', () => (
         <Card

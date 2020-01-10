@@ -17,7 +17,7 @@ import RadioIcon from './RadioIcon';
 const sizeLabel = 'Size';
 const nameIcon = 'radioIcon';
 
-storiesOf('RadioIcon', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Forms/RadioIcon', module).addDecorator(withKnobs)
 .add('RadioIcon', () => (
     <Grid>
         <RadioIcon

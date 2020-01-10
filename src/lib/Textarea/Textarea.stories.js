@@ -8,7 +8,7 @@ import {
 } from '../../shared/constants';
 import Textarea from './Textarea';
 
-storiesOf('Textarea', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Forms/Textarea', module).addDecorator(withKnobs)
 .add('Textarea', () => (
     <Textarea
         id="textarea1"

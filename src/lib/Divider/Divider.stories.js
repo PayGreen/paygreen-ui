@@ -10,7 +10,7 @@ import {
 } from '../../shared/constants';
 import Divider from './Divider';
 
-storiesOf('Divider', module).addDecorator(withKnobs)
+storiesOf('Paygreen | Divider', module).addDecorator(withKnobs)
 .add('Divider', () => (
     <Divider
         waveStyle={radios('Wave direction', decorationOptions, decorationDefault)}
