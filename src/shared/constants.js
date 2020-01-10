@@ -5,14 +5,16 @@ const subFolderSeparator = '/';
 const folder = {
     main: 'Basics' + folderSeparator,
     form: 'Form elements' + folderSeparator,
-    table: 'Tables'  + folderSeparator,
     template: 'Templates' + folderSeparator,
 
     sub: {
         button: 'Buttons' + subFolderSeparator,
-        list: 'Ordinary list' + subFolderSeparator,
+        control: 'Menu controls' + subFolderSeparator,
         form: 'Special fields' + subFolderSeparator,
-        structure: 'Structure' + subFolderSeparator,
+        list: 'Ordinary list' + subFolderSeparator,
+        menu: 'Menu elements' + subFolderSeparator,
+        structure: 'Grids' + subFolderSeparator,
+        table: 'Tables'  + subFolderSeparator,
     }
 };
 

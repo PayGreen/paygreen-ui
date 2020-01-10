@@ -2,9 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
+    folder,
     iconSizeOptions,
     alignOptions,
-    colorPalletOptions
+    colorPalletOptions,
 } from '../../shared/constants';
 import { LockIcon, PenIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
@@ -13,59 +14,56 @@ import Menu from '../Menu/Menu';
 import MenuClose from '../MenuClose/MenuClose';
 import MenuSecondary from './MenuSecondary';
 
-storiesOf('Paygreen | Menu/MenuSecondary', module).addDecorator(withKnobs)
-.add('MenuSecondary', () => (
-    <MenuSecondary
-        isOpen={boolean('Is open', true)}
-    >
-        <Menu>
-            <a href="#">
-                <MenuItem
-                    hasHoverBase={false}
-                    hasHoverEmphasis={true}
-                    align={alignOptions.center}
-                    isMain={true}
-                >
-                    <LockIcon
-                        iconSize={iconSizeOptions.lg}
-                        colorPallet={colorPalletOptions.wab}
-                    />
-
-                    <Link
-                        hasUnderline={false}
-                        hasHover={false}
-                        hasUppercase={true}
-                        colorPallet={colorPalletOptions.wab}
+storiesOf(folder.template + 'MenuSecondary', module)
+    .addDecorator(withKnobs)
+    .add('MenuSecondary', () => (
+        <MenuSecondary isOpen={boolean('Is open', true)}>
+            <Menu>
+                <a href="#">
+                    <MenuItem
+                        hasHoverBase={false}
+                        hasHoverEmphasis={true}
+                        align={alignOptions.center}
+                        isMain={true}
                     >
-                        Login
-                    </Link>
-                </MenuItem>
-            </a>
-        </Menu>
+                        <LockIcon
+                            iconSize={iconSizeOptions.lg}
+                            colorPallet={colorPalletOptions.wab}
+                        />
 
-        <Menu>
-            <a href="#">
-                <MenuItem
-                    hasHoverBase={false}
-                    hasHoverEmphasis={true}
-                    align={alignOptions.center}
-                    isMain={true}
-                >
-                    <PenIcon
-                        iconSize={iconSizeOptions.lg}
-                    />
+                        <Link
+                            hasUnderline={false}
+                            hasHover={false}
+                            hasUppercase={true}
+                            colorPallet={colorPalletOptions.wab}
+                        >
+                            Login
+                        </Link>
+                    </MenuItem>
+                </a>
+            </Menu>
 
-                    <Link
-                        hasUnderline={false}
-                        hasHover={false}
-                        hasUppercase={true}
+            <Menu>
+                <a href="#">
+                    <MenuItem
+                        hasHoverBase={false}
+                        hasHoverEmphasis={true}
+                        align={alignOptions.center}
+                        isMain={true}
                     >
-                        Subscribe
-                    </Link>
-                </MenuItem>
-            </a>
-        </Menu>
+                        <PenIcon iconSize={iconSizeOptions.lg} />
 
-        <MenuClose />
-    </MenuSecondary>
-));
+                        <Link
+                            hasUnderline={false}
+                            hasHover={false}
+                            hasUppercase={true}
+                        >
+                            Subscribe
+                        </Link>
+                    </MenuItem>
+                </a>
+            </Menu>
+
+            <MenuClose />
+        </MenuSecondary>
+    ));

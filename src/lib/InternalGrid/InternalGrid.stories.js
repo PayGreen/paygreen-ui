@@ -1,13 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
 import {
-    withKnobs,
-    boolean,
-    text,
-    radios,
-    select,
-} from '@storybook/addon-knobs';
-import {
+    folder,
     displayOptions,
     flexWrapOptions,
     flexWrapDefault,
@@ -25,20 +20,17 @@ import InternalGrid from './InternalGrid';
 const content = (
     <>
         <Text>Text 1</Text>
-
         <Text>Text 2</Text>
-
         <Text>Text 3</Text>
-
         <Text>Text 4</Text>
     </>
 );
 
-storiesOf('Paygreen | System/InternalGrid', module)
+storiesOf(folder.main + folder.sub.structure + 'InternalGrid', module)
     .addDecorator(withKnobs)
     .addParameters({
-        componentSubtitle: 'SubTitle',
         component: InternalGrid,
+        /* componentSubtitle: 'SubTitle', */
         parameters: { docs: { page: null } },
     })
     .add('Flex', () => (
