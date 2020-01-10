@@ -60,7 +60,7 @@ const noWave = css`
     position: relative;
     padding-top: ${props => props.theme.space.md};
 
-    &:before {
+    &::before {
         content: '';
         position: absolute;
         top: 0;

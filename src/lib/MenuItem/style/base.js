@@ -3,7 +3,7 @@ import { transparentize, math } from 'polished';
 import { LinkBase } from '../../Link/style';
 
 const hoverBase = css`
-    &:before {
+    &::before {
         content: '';
         position: absolute;
         top: 0;
@@ -20,14 +20,14 @@ const hoverBase = css`
     a:hover &,
     a:active &,
     a:focus & {
-        &:before {
+        &::before {
             left: 0;
         }
     }
 `;
 
 const hoverAlternative = css`
-    &:after {
+    &::after {
         content: '';
         position: absolute;
         bottom: 0;
@@ -45,7 +45,7 @@ const hoverAlternative = css`
     a:hover &,
     a:active &,
     a:focus & {
-        &:after {
+        &::after {
             width: 100%;
         }
 

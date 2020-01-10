@@ -25,7 +25,7 @@ const ListHorizontalBase = styled.ul`
         align-items: center;
 
         &:not(:first-of-type) {
-            &:before {
+            &::before {
                 content: '';
                 height: ${props => props.theme.space.sm};
                 width: ${props => props.theme.space.sm};

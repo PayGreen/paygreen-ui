@@ -56,12 +56,12 @@ const shadowStyle = {
 const layerShift = '6px';
 
 const layerStyle = css`
-    &:before {
+    &::before {
         top: ${layerShift};
         left: ${layerShift};
     }
 
-    &:after {
+    &::after {
         bottom: ${layerShift};
         right: ${layerShift};
     }
@@ -107,12 +107,12 @@ const backgroundStyle = css`
         transition: all ${props => props.theme.transition.sm} cubic-bezier(0.9, -0.6, 0, 2);
     }
 
-    &:before {
+    &::before {
         top: 0;
         left: 0;
     }
 
-    &:after {
+    &::after {
         bottom: 0;
         right: 0;
         transition-delay: .06s;
