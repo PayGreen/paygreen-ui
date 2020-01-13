@@ -20,22 +20,20 @@ const displayStyle = {
     `
 };
 
-const marginTop = css`
-    margin-top: ${props => props.theme.space[props.marginTop]};
-`;
-
-const marginBottom = css`
-    margin-bottom: ${props => props.theme.space[props.marginBottom]};
-`;
-
-const marginLateral = css`
-    margin-left: ${props => props.theme.space[props.marginLateral]};
-    margin-right: ${props => props.theme.space[props.marginLateral]};
-`;
+const childrenMargin = {
+    lateral: css`
+        margin-left: ${props => props.theme.space[props.childrenMarginLateral]};
+        margin-right: ${props => props.theme.space[props.childrenMarginLateral]};
+    `,
+    top: css`
+        margin-top: ${props => props.theme.space[props.childrenMarginTop]};
+    `,
+    bottom: css`
+        margin-bottom: ${props => props.theme.space[props.childrenMarginBottom]};
+    `,
+};
 
 export {
     displayStyle,
-    marginTop,
-    marginBottom,
-    marginLateral
+    childrenMargin
 };

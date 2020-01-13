@@ -72,6 +72,21 @@ storiesOf(folder.main + folder.sub.structure + 'Grid', module)
             )}
             isNegativeShift={boolean('Negative shift', false)}
             isReverseShift={boolean('Reverse shift', false)}
+            blockPadding={select(
+                'Block padding',
+                spaceOptions,
+                spaceOptions.md,
+            )}
+            childrenMargin={select(
+                'Children margin (mobile)',
+                spaceOptions,
+                spaceOptions.md,
+            )}
+            childrenMarginBig={select(
+                'Children margin (laptop)',
+                spaceOptions,
+                spaceOptions.lg,
+            )}
         >
             {sampleTexts.map((element, index) => (
                 <Card key={index}>

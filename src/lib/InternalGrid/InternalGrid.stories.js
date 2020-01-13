@@ -47,17 +47,17 @@ storiesOf(folder.main + folder.sub.structure + 'InternalGrid', module)
                 alignItemsDefault,
             )}
             childrenFlex={text('Children flex', 'initial')}
-            marginLateral={select(
+            childrenMarginLateral={select(
                 "Children's lateral margins",
                 spaceOptions,
                 spaceDefault,
             )}
-            marginTop={select(
+            childrenMarginTop={select(
                 "Children's margin top",
                 spaceOptions,
                 spaceDefault,
             )}
-            marginBottom={select(
+            childrenMarginBottom={select(
                 "Children's margin bottom",
                 spaceOptions,
                 spaceDefault,
@@ -81,17 +81,17 @@ storiesOf(folder.main + folder.sub.structure + 'InternalGrid', module)
                 alignItemsOptions,
                 alignItemsDefault,
             )}
-            marginLateral={select(
+            childrenMarginLateral={select(
                 "Children's lateral margins",
                 spaceOptions,
                 spaceDefault,
             )}
-            marginTop={select(
+            childrenMarginTop={select(
                 "Children's margin top",
                 spaceOptions,
                 spaceDefault,
             )}
-            marginBottom={select(
+            childrenMarginBottom={select(
                 "Children's margin bottom",
                 spaceOptions,
                 spaceDefault,

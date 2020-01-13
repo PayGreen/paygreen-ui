@@ -32,9 +32,9 @@ InternalGrid.propTypes = {
     alignItems: PropTypes.oneOf(Object.values(alignItemsOptions)),
     childrenFlex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 
-    marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
-    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    childrenMarginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    childrenMarginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    childrenMarginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 InternalGrid.defaultProps = {
@@ -47,9 +47,9 @@ InternalGrid.defaultProps = {
     alignItems: alignItemsDefault,
     childrenFlex: 'initial',
 
-    marginLateral: spaceDefault,
-    marginTop: spaceDefault,
-    marginBottom: spaceDefault,
+    childrenMarginLateral: spaceDefault,
+    childrenMarginTop: spaceDefault,
+    childrenMarginBottom: spaceDefault,
 };
 
 export default InternalGrid;
