@@ -81,7 +81,7 @@ class Textarea extends PureComponent {
 }
 
 Textarea.propTypes = {
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     label: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,

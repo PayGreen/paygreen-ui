@@ -91,7 +91,7 @@ class Select extends PureComponent {
 }
 
 Select.propTypes = {
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     label: PropTypes.string,
     options: PropTypes.arrayOf(
         PropTypes.shape({

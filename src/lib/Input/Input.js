@@ -89,7 +89,7 @@ class Input extends PureComponent {
 
 Input.propTypes = {
     type: PropTypes.string,
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string,
     label: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
