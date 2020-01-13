@@ -25,6 +25,7 @@ it('renders without crashing', () => {
                 <Link
                     theme={ThemeDefault}
                     hasUnderline={false}
+                    hasHover={false}
                 >
                     Payment
                 </Link>

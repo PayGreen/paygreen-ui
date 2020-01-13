@@ -16,7 +16,7 @@ const MenuPrimaryBase = styled.ul`
         ${MenuBase} {
             &:hover {
                 /* Let MenuList open when cursor is between MenuItem and MenuList */
-                &:after {
+                &::after {
                     content: '';
                     position: absolute;
                     width: 100%;

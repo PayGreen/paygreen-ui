@@ -27,6 +27,7 @@ it('renders without crashing', () => {
                     <Link
                         theme={ThemeDefault}
                         hasUnderline={false}
+                        hasHover={false}
                     >
                         Tree
                     </Link>

@@ -1,3 +1,23 @@
+/* Storybook folders */
+const folderSeparator = ' | ';
+const subFolderSeparator = '/';
+
+const folder = {
+    main: 'Basics' + folderSeparator,
+    form: 'Form elements' + folderSeparator,
+    template: 'Templates' + folderSeparator,
+
+    sub: {
+        button: 'Buttons' + subFolderSeparator,
+        control: 'Menu controls' + subFolderSeparator,
+        form: 'Special fields' + subFolderSeparator,
+        list: 'Ordinary list' + subFolderSeparator,
+        menu: 'Menu elements' + subFolderSeparator,
+        structure: 'Grids' + subFolderSeparator,
+        table: 'Tables'  + subFolderSeparator,
+    }
+};
+
 /* Colors */
 
 // Color types
@@ -250,7 +270,8 @@ const titleHtmlTagDefault = titleHtmlTagOptions.span;
 // Text HTML tags
 const textHtmlTagOptions = {
     p: 'p',
-    div: 'div'
+    div: 'div',
+    span: 'span'
 };
 
 const textHtmlTagDefault = textHtmlTagOptions.p;
@@ -344,6 +365,8 @@ const alignOptions = {
 const alignDefault = alignOptions.left;
 
 export {
+    folder,
+
     colorTypeOptions,
     colorTypeDefault,
     colorPalletOptions,

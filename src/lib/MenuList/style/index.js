@@ -19,7 +19,7 @@ const MenuListBase = styled.ul`
         )};
         transition: all ${props => props.theme.transition.md};
 
-        &:before {
+        &::before {
             content: '';
             position: absolute;
             top: -${props => props.theme.iconSize.md};

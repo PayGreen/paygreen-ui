@@ -2,9 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
+    folder,
     colorPalletOptions,
     iconSizeOptions,
-    spaceOptions
+    spaceOptions,
 } from '../../shared/constants';
 import { LeafIcon, CardsIcon, OrganizationIcon, OutIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
@@ -15,185 +16,145 @@ import MenuList from '../MenuList/MenuList';
 import Menu from '../Menu/Menu';
 import MenuPrimary from './MenuPrimary';
 
-storiesOf('Paygreen | Menu/MenuPrimary', module).addDecorator(withKnobs)
-.add('MenuPrimary', () => (
-    <MenuPrimary
-        isOpen={boolean('Is open', true)}
-    >
-        <Menu>
-            <a href="#">
-                <MenuItem
-                    isMain={true}
-                    hasHoverEmphasis={true}
-                >
-                    <Link
-                        hasUnderline={false}
-                        hasUppercase={true}
-                    >
-                        About us
-                    </Link>
-                </MenuItem>
-            </a>
-        </Menu>
+const subLink = {
+    hasUnderline: false,
+    hasHover: false,
+};
 
-        <Menu>
-            <a href="#">
-                <MenuItem
-                    isMain={true}
-                    hasHoverBase={false}
-                    hasHoverAlternative={false}
-                >
-                    <Link
-                        hasUnderline={false}
-                        colorPallet={colorPalletOptions.wab}
-                        hasUppercase={true}
-                    >
-                        Our products
-                    </Link>
-                </MenuItem>
-            </a>
-
-            <MenuList>
+storiesOf(folder.template + 'MenuPrimary', module)
+    .addDecorator(withKnobs)
+    .add('MenuPrimary', () => (
+        <MenuPrimary isOpen={boolean('Is open', true)}>
+            <Menu>
                 <a href="#">
-                    <MenuItem
-                        hasHoverEmphasis={true}
-                    >
-                        <LeafIcon
-                            iconSize={iconSizeOptions.lg}
-                        />
-
+                    <MenuItem isMain={true} hasHoverEmphasis={true}>
                         <Link
                             hasUnderline={false}
+                            hasHover={false}
+                            hasUppercase={true}
                         >
-                            Tree
-                        </Link>
-
-                        <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
-                        </Text>
-                    </MenuItem>
-                </a>
-
-                <a href="#">
-                    <MenuItem
-                        hasHoverEmphasis={true}
-                    >
-                        <CardsIcon
-                            iconSize={iconSizeOptions.lg}
-                        />
-
-                        <Link
-                            hasUnderline={false}
-                        >
-                            Payment
-                        </Link>
-
-                        <IconLabel>
-                            <OutIcon
-                                iconSize={iconSizeOptions.xs}
-                                marginRight={spaceOptions.xs}
-                            />
-                            Dev
-                        </IconLabel>
-                    </MenuItem>
-                </a>
-
-                <a href="#">
-                    <MenuItem
-                        hasHoverEmphasis={true}
-                    >
-                        <OrganizationIcon
-                            iconSize={iconSizeOptions.lg}
-                        />
-
-                        <Link
-                            hasUnderline={false}
-                        >
-                            Rounding
+                            About us
                         </Link>
                     </MenuItem>
                 </a>
-            </MenuList>
-        </Menu>
+            </Menu>
 
-        <Menu>
-            <a href="#">
-                <MenuItem
-                    isMain={true}
-                    hasHoverBase={false}
-                    hasHoverAlternative={false}
-                >
-                    <Link
-                        hasUnderline={false}
-                        colorPallet={colorPalletOptions.wab}
-                        hasUppercase={true}
-                    >
-                        Other products
-                    </Link>
-                </MenuItem>
-            </a>
-
-            <MenuList>
+            <Menu>
                 <a href="#">
                     <MenuItem
-                        hasHoverEmphasis={true}
+                        isMain={true}
+                        hasHoverBase={false}
+                        hasHoverAlternative={false}
                     >
-                        <LeafIcon
-                            iconSize={iconSizeOptions.lg}
-                        />
-
                         <Link
                             hasUnderline={false}
+                            hasHover={false}
+                            colorPallet={colorPalletOptions.wab}
+                            hasUppercase={true}
                         >
-                            Tree
-                        </Link>
-
-                        <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
-                        </Text>
-                    </MenuItem>
-                </a>
-
-                <a href="#">
-                    <MenuItem
-                        hasHoverEmphasis={true}
-                    >
-                        <CardsIcon
-                            iconSize={iconSizeOptions.lg}
-                        />
-
-                        <Link
-                            hasUnderline={false}
-                        >
-                            Payment
-                        </Link>
-
-                        <IconLabel>
-                            <OutIcon
-                                iconSize={iconSizeOptions.xs}
-                                marginRight={spaceOptions.xs}
-                            />
-                            Dev
-                        </IconLabel>
-                    </MenuItem>
-                </a>
-
-                <a href="#">
-                    <MenuItem
-                        hasHoverEmphasis={true}
-                    >
-                        <OrganizationIcon
-                            iconSize={iconSizeOptions.lg}
-                        />
-
-                        <Link
-                            hasUnderline={false}
-                        >
-                            Rounding
+                            Our products
                         </Link>
                     </MenuItem>
                 </a>
-            </MenuList>
-        </Menu>
-    </MenuPrimary>
-));
+
+                <MenuList>
+                    <a href="#">
+                        <MenuItem hasHoverEmphasis={true}>
+                            <LeafIcon iconSize={iconSizeOptions.lg} />
+
+                            <Link {...subLink}>Tree</Link>
+
+                            <Text>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Maecenas sit amet accumsan
+                                dolor. Nullam fringilla quam leo.
+                            </Text>
+                        </MenuItem>
+                    </a>
+
+                    <a href="#">
+                        <MenuItem hasHoverEmphasis={true}>
+                            <CardsIcon iconSize={iconSizeOptions.lg} />
+
+                            <Link {...subLink}>Payment</Link>
+
+                            <IconLabel>
+                                <OutIcon
+                                    iconSize={iconSizeOptions.xs}
+                                    marginRight={spaceOptions.xs}
+                                />
+                                Dev
+                            </IconLabel>
+                        </MenuItem>
+                    </a>
+
+                    <a href="#">
+                        <MenuItem hasHoverEmphasis={true}>
+                            <OrganizationIcon iconSize={iconSizeOptions.lg} />
+
+                            <Link {...subLink}>Rounding</Link>
+                        </MenuItem>
+                    </a>
+                </MenuList>
+            </Menu>
+
+            <Menu>
+                <a href="#">
+                    <MenuItem
+                        isMain={true}
+                        hasHoverBase={false}
+                        hasHoverAlternative={false}
+                    >
+                        <Link
+                            hasUnderline={false}
+                            hasHover={false}
+                            colorPallet={colorPalletOptions.wab}
+                            hasUppercase={true}
+                        >
+                            Other products
+                        </Link>
+                    </MenuItem>
+                </a>
+
+                <MenuList>
+                    <a href="#">
+                        <MenuItem hasHoverEmphasis={true}>
+                            <LeafIcon iconSize={iconSizeOptions.lg} />
+
+                            <Link {...subLink}>Tree</Link>
+
+                            <Text>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Maecenas sit amet accumsan
+                                dolor. Nullam fringilla quam leo.
+                            </Text>
+                        </MenuItem>
+                    </a>
+
+                    <a href="#">
+                        <MenuItem hasHoverEmphasis={true}>
+                            <CardsIcon iconSize={iconSizeOptions.lg} />
+
+                            <Link {...subLink}>Payment</Link>
+
+                            <IconLabel>
+                                <OutIcon
+                                    iconSize={iconSizeOptions.xs}
+                                    marginRight={spaceOptions.xs}
+                                />
+                                Dev
+                            </IconLabel>
+                        </MenuItem>
+                    </a>
+
+                    <a href="#">
+                        <MenuItem hasHoverEmphasis={true}>
+                            <OrganizationIcon iconSize={iconSizeOptions.lg} />
+
+                            <Link {...subLink}>Rounding</Link>
+                        </MenuItem>
+                    </a>
+                </MenuList>
+            </Menu>
+        </MenuPrimary>
+    ));

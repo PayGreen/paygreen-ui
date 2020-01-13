@@ -54,7 +54,7 @@ const borderTopGradient = {
 };
 
 const borderTopElement = css`
-    &:before {
+    &::before {
         content: '';
         height: ${props => props.theme.radius[props.radiusSize]};
         border-radius: ${props => props.theme.radius[props.radiusSize]} ${props => props.theme.radius[props.radiusSize]} 0 0;

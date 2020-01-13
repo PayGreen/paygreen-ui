@@ -45,7 +45,7 @@ const HeaderBase = styled.header`
             margin-left: ${props => props.theme.space.lg};
             padding-left: ${props => props.theme.space.lg};
 
-            &:before {
+            &::before {
                 content: '';
                 position: absolute;
                 transform: translate(-50%, -50%);

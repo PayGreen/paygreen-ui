@@ -5,9 +5,10 @@ import {
     select,
     boolean,
     number,
-    text
+    text,
 } from '@storybook/addon-knobs';
 import {
+    folder,
     displayOptions,
     displayDefault,
     flexDirectionOptions,
@@ -20,7 +21,7 @@ import {
     alignItemsOptions,
     alignItemsDefault,
     spaceOptions,
-    spaceDefault
+    spaceDefault,
 } from '../../shared/constants';
 import Card from '../Card/Card';
 import Text from '../Text/Text';
@@ -36,31 +37,52 @@ const sampleTexts = [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum.',
 ];
 
-storiesOf('Paygreen | System/Grid', module).addDecorator(withKnobs)
-.add('Grid', () => (
-    <Grid
-        displayType={select('Grid type', displayOptions, displayDefault)}
-        columnNumber={number('Column number', 2)}
-        flexDirection={select('Flex direction', flexDirectionOptions, flexDirectionDefault)}
-        flexWrap={select('Flex wrap', flexWrapOptions, flexWrapDefault)}
-        justifyContent={select('Justify content', justifyContentOptions, justifyContentOptions.spaceBetween)}
-        justifyItems={select('Justify items', justifyItemsOptions, justifyItemsDefault)}
-        alignItems={select('Align items', alignItemsOptions, alignItemsDefault)}
-        childrenFlex={text('Children flex', 'initial')}
-        childrenShiftSize={select('Children shift', spaceOptions, spaceDefault)}
-        isNegativeShift={boolean('Negative shift', false)}
-        isReverseShift={boolean('Reverse shift', false)}
-    >
-        {sampleTexts.map((element, index) =>
-            <Card key={index}>
-                <Text
-                    marginLateral={spaceOptions.sm}
-                    marginTop={spaceOptions.sm}
-                    marginBottom={spaceOptions.sm}
-                >
-                    {element}
-                </Text>
-            </Card>
-        )}
-    </Grid>
-));
+storiesOf(folder.main + folder.sub.structure + 'Grid', module)
+    .addDecorator(withKnobs)
+    .add('Grid', () => (
+        <Grid
+            displayType={select('Grid type', displayOptions, displayDefault)}
+            columnNumber={number('Column number', 2)}
+            flexDirection={select(
+                'Flex direction',
+                flexDirectionOptions,
+                flexDirectionDefault,
+            )}
+            flexWrap={select('Flex wrap', flexWrapOptions, flexWrapDefault)}
+            justifyContent={select(
+                'Justify content',
+                justifyContentOptions,
+                justifyContentOptions.spaceBetween,
+            )}
+            justifyItems={select(
+                'Justify items',
+                justifyItemsOptions,
+                justifyItemsDefault,
+            )}
+            alignItems={select(
+                'Align items',
+                alignItemsOptions,
+                alignItemsDefault,
+            )}
+            childrenFlex={text('Children flex', 'initial')}
+            childrenShiftSize={select(
+                'Children shift',
+                spaceOptions,
+                spaceDefault,
+            )}
+            isNegativeShift={boolean('Negative shift', false)}
+            isReverseShift={boolean('Reverse shift', false)}
+        >
+            {sampleTexts.map((element, index) => (
+                <Card key={index}>
+                    <Text
+                        marginLateral={spaceOptions.sm}
+                        marginTop={spaceOptions.sm}
+                        marginBottom={spaceOptions.sm}
+                    >
+                        {element}
+                    </Text>
+                </Card>
+            ))}
+        </Grid>
+    ));

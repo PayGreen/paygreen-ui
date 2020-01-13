@@ -1,9 +1,6 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    textHtmlTagOptions,
-    textHtmlTagDefault,
-
     colorTypeOptions,
     colorTypeDefault,
     colorPalletOptions,
@@ -13,42 +10,31 @@ import {
     formStatusOptions,
     formStatusDefault,
 
-    radiusOptions,
-    fontSizeOptions,
-    fontSizeDefault,
     alignOptions,
     alignDefault,
+    
     spaceOptions,
-    spaceDefault,
+    spaceDefault
 } from '../../shared/constants';
-import { TextBase } from './style';
+import { ListHorizontalBase } from './style';
 
-class Text extends PureComponent {
-    render() {
-        return <TextBase
-            as={this.props.htmlTag}
-            {...this.props}
-        >
-            {this.props.children}
-        </TextBase>;
-    }
-}
+const ListHorizontal = props => (
+    <ListHorizontalBase {...props}>
+        {React.Children.map(props.children, (child, index) => (
+            <li key={index}>{child}</li>
+        ))}
+    </ListHorizontalBase>
+);
 
-Text.propTypes = {
-    htmlTag: PropTypes.oneOf(Object.values(textHtmlTagOptions)),
-
+ListHorizontal.propTypes = {
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
 
-    hasUppercase: PropTypes.bool,
-    hasBackground: PropTypes.bool,
-    radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
-    textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     align: PropTypes.oneOf(Object.values(alignOptions)),
-    hasUnderline: PropTypes.bool,
+    hasBackground: PropTypes.bool,
 
     paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     paddingTop: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -57,25 +43,17 @@ Text.propTypes = {
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
-
-    marginInternal: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
-Text.defaultProps = {
-    htmlTag: textHtmlTagDefault,
-
+ListHorizontal.defaultProps = {
     colorType: colorTypeDefault,
     colorPallet: colorPalletOptions.wab,
     colorTheme: colorThemeDefault,
-    colorWab: greyOptions.grey60,
+    colorWab: greyOptions.grey20,
     colorStatus: formStatusDefault,
 
-    hasUppercase: false,
-    hasBackground: false,
-    radiusSize: radiusOptions.none,
-    textSize: fontSizeDefault,
     align: alignDefault,
-    hasUnderline: false,
+    hasBackground: false,
 
     paddingLateral: spaceDefault,
     paddingTop: spaceDefault,
@@ -84,8 +62,6 @@ Text.defaultProps = {
     marginLateral: spaceDefault,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
-
-    marginInternal: spaceOptions.sm,
 };
 
-export default Text;
+export default ListHorizontal;

@@ -9,8 +9,8 @@ const BannerImageBase = styled.div`
     padding: 0 .1px ${props => props.theme.blockSpace.md} .1px;
     padding-top: ${props => props.topStyle !== decorationOptions.none ? props.theme.wave.simple : 0};
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
         content: '';
         position: absolute;
         z-index: ${props => props.theme.zindex.background};
@@ -22,14 +22,14 @@ const BannerImageBase = styled.div`
         mask-image: linear-gradient(to top, transparent, black ${props => props.theme.bannerHeight.sm});
     }
 
-    &:before {
+    &::before {
         background-image: url('${props => props.image}');
         background-size: cover;
         filter: grayscale(1);
         opacity: .5;
     }
 
-    &:after {
+    &::after {
         background-color: ${props => props.theme.color[props.colorTheme].light};
         opacity: .8;
     }

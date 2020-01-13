@@ -2,77 +2,70 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
 import {
+    folder,
     colorThemeOptions,
-    colorThemeDefault
+    colorThemeDefault,
 } from '../../shared/constants';
 import Link from '../Link/Link';
 import TableCell from '../TableCell/TableCell';
 import TableRow from '../TableRow/TableRow';
 import Table from './Table';
 
-storiesOf('Paygreen | Table/Table', module).addDecorator(withKnobs)
-.add('Table', () => (
-    <Table
-        colorTheme={radios('Color', colorThemeOptions, colorThemeDefault)}
-        hasLargeFirstColumn={boolean('Large first column', true)}
-        hasBackground={boolean('Has background', false)}
-    >
-        <TableRow
-            isMain={true}
+storiesOf(folder.main + folder.sub.table + 'Table', module)
+    .addDecorator(withKnobs)
+    .add('Table', () => (
+        <Table
+            colorTheme={radios('Color', colorThemeOptions, colorThemeDefault)}
+            hasLargeFirstColumn={boolean('Large first column', true)}
+            hasBackground={boolean('Has background', false)}
         >
-            <TableCell>       
-                Table name
-            </TableCell>
+            <TableRow isMain={true}>
+                <TableCell>Table name</TableCell>
 
-            <TableCell>
-                <span>
-                    Column one
-                </span>
+                <TableCell>
+                    <span>Column one</span>
 
-                <i>Short description of this column (not <strong>too long</strong>).</i>
-            </TableCell>
+                    <i>
+                        Short description of this column (not{' '}
+                        <strong>too long</strong>).
+                    </i>
+                </TableCell>
 
-            <TableCell>
-                <span>
-                    Column two
-                </span>
+                <TableCell>
+                    <span>Column two</span>
 
-                <i>Another short description.</i>
-            </TableCell>
-        </TableRow>
+                    <i>Another short description.</i>
+                </TableCell>
+            </TableRow>
 
-        <TableRow>
-            <TableCell>
-                Row name
-            </TableCell>
+            <TableRow>
+                <TableCell>Row name</TableCell>
 
-            <TableCell>
-                11,90&nbsp;€
-            </TableCell>
+                <TableCell>11,90&nbsp;€</TableCell>
 
-            <TableCell>
-                9,90&nbsp;€<strong>*</strong>
-            </TableCell>
-        </TableRow>
+                <TableCell>
+                    9,90&nbsp;€<strong>*</strong>
+                </TableCell>
+            </TableRow>
 
-        <TableRow
-            colorTheme={colorThemeOptions.tertiary}
-        >
-            <TableCell>
-                <span>Row name <i>(with some precisions)</i></span>
-            </TableCell>
+            <TableRow colorTheme={colorThemeOptions.tertiary}>
+                <TableCell>
+                    <span>
+                        Row name <i>(with some precisions)</i>
+                    </span>
+                </TableCell>
 
-            <TableCell>
-                <a href="#">
-                    <Link colorTheme={colorThemeOptions.tertiary}>
-                        Contact us
-                    </Link>
-                </a>
-            </TableCell>
+                <TableCell>
+                    <a href="#">
+                        <Link colorTheme={colorThemeOptions.tertiary}>
+                            Contact us
+                        </Link>
+                    </a>
+                </TableCell>
 
-            <TableCell>
-                9,90&nbsp;€<strong>*</strong>
-            </TableCell>
-        </TableRow>
-    </Table>
-));
+                <TableCell>
+                    9,90&nbsp;€<strong>*</strong>
+                </TableCell>
+            </TableRow>
+        </Table>
+    ));
