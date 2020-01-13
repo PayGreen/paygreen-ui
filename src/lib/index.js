@@ -13,6 +13,7 @@ import Image from './Image/Image';
 import Input from './Input/Input';
 import InternalGrid from './InternalGrid/InternalGrid';
 import Link from './Link/Link';
+import List from './List/List';
 import ListHorizontal from './ListHorizontal/ListHorizontal';
 import ListItem from './ListItem/ListItem';
 import Logo from './Logo/Logo';
