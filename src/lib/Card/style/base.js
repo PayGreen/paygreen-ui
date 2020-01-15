@@ -1,8 +1,7 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
-import {
-    gradientOptions
-} from '../../../shared/constants';
+import { gradientOptions } from '../../../shared/constants';
+import { ImageBase } from '../../Image/style';
 
 const shadowStyle = css`
     box-shadow: ${props => props.theme.shadow.size[props.shadowSize] + ' ' + transparentize(
@@ -94,6 +93,10 @@ const containerStyle = css`
 const blockStyle = css`
     ${containerStyle};
     ${props => props.hasBackground ? backgroundStyle[props.colorType] : null};
+
+    & > ${ImageBase}:first-child {
+        height: ${props => props.theme.blockHeader[props.blockWidth]};
+    }
 
     transition: all ${props => props.theme.transition.sm};
 `;
