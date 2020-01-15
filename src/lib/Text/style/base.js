@@ -38,7 +38,7 @@ const textStyle = css`
 `;
 
 const internalParagraph = css`
-    p {
+    & > p {
         ${textStyle};
         margin: ${props => props.theme.space[props.marginInternal]} 0;
 
