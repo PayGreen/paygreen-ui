@@ -102,7 +102,7 @@ const decorationStyle = css`
     padding: ${props => props.theme.space.sm};
 
     img {
-        z-index: ${props => props.theme.zindex.base};
+        z-index: ${props => props.theme.zindex.content};
     }
 
     &::before,
@@ -113,7 +113,6 @@ const decorationStyle = css`
         width: 100%;
         height: 100%;
         position: absolute;
-        z-index: ${props => props.theme.zindex.background};
         box-shadow: 0 0 ${decorationShift} ${props => transparentize(0.7, props.theme.wab.black00)};
         ${props => radiusStyle[props.isCircle ? 'croppedCircle' : 'notCropped']};
     }
