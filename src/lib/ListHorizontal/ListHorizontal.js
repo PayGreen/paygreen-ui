@@ -20,9 +20,11 @@ import { ListHorizontalBase } from './style';
 
 const ListHorizontal = props => (
     <ListHorizontalBase {...props}>
-        {React.Children.map(props.children, (child, index) => (
-            <li key={index}>{child}</li>
-        ))}
+        {React.Children.map(props.children, (child, index) =>
+            child ?
+                <li key={index}>{child}</li>
+                : null
+        )}
     </ListHorizontalBase>
 );
 

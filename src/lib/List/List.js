@@ -23,17 +23,19 @@ class List extends PureComponent {
             {...this.props}
         >
             {React.Children.map(this.props.children, (child, index) =>
-                <li key={index}>
-                    {this.props.hasDashed && index%2 ? dashedTop : null}
+                child ?
+                    <li key={index}>
+                        {this.props.hasDashed && index%2 ? dashedTop : null}
 
-                    {React.cloneElement(child, { number: index + 1 })}
+                        {React.cloneElement(child, { number: index + 1 })}
 
-                    {this.props.hasDashed && index%2
-                    && (index + 1 < this.props.children.length) ?
-                        dashedBottom :
-                        null
-                    }
-                </li>
+                        {this.props.hasDashed && index%2
+                        && (index + 1 < this.props.children.length) ?
+                            dashedBottom :
+                            null
+                        }
+                    </li>
+                    : null
             )}
         </ListBase>;
     }

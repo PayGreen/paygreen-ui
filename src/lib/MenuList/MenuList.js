@@ -12,9 +12,11 @@ class MenuList extends PureComponent {
             {...this.props}
         >
             {React.Children.map(this.props.children, (child, index) =>
-                <li key={index}>
-                    {child}
-                </li>
+                child ?
+                    <li key={index}>
+                        {child}
+                    </li>
+                    : null
             )}
         </MenuListBase>;
     }
