@@ -8,14 +8,15 @@ import { bulletLine, bulletFont, marginBase } from './constants';
 const bulletStyle = {
     icon: css`
         & > .icon {
-            height: auto;
+            height: ${props => props.theme.iconSize[props.bulletSize]};
         }
     `,
     dash: css`
         & > .bullet {
-            height: ${bulletLine};
-            border-radius: ${bulletLine};
+            height: ${bulletLine}px;
+            border-radius: ${bulletLine}px;
             background-color: ${props => props.theme.color[props.colorTheme].main};
+            margin-top: calc(${props => props.theme.font.lineHeight.md/2}em - ${bulletLine/2}px);
         }
     `,
     number: css`
