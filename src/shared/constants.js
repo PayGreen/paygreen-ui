@@ -350,7 +350,8 @@ const alignItemsOptions = {
     flexStart: 'flex-start',
     center: 'center',
     flexEnd: 'flex-end',
-    stretch: 'stretch'
+    stretch: 'stretch',
+    baseline: 'baseline'
 };
 
 const alignItemsDefault = alignItemsOptions.flexStart;
