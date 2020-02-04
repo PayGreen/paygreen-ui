@@ -21,15 +21,6 @@ const FooterBase = styled.footer`
         filter: drop-shadow(0 0 ${props => props.theme.space.md} ${props => props.theme.wab.black00});
         opacity: .2;
     }
-
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        line-height: ${props => props.theme.font.lineHeight.md};
-        font-size: ${props => props.theme.font.size.xs};
-    }
 `;
 
 export { FooterBase };

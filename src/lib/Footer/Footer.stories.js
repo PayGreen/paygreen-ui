@@ -4,12 +4,18 @@ import { withKnobs, radios } from '@storybook/addon-knobs';
 import {
     folder,
     decorationOptions,
-    decorationDefault
+    decorationDefault,
+    alignOptions,
+    fontSizeOptions,
+    spaceOptions,
+    colorPalletOptions,
+    greyOptions
 } from '../../shared/constants';
 import Grid from '../Grid/Grid';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Link from '../Link/Link';
+import FooterList from '../FooterList/FooterList';
 import Footer from './Footer';
 
 const sampleContents = [
@@ -40,7 +46,7 @@ const sampleContents = [
     }
 ];
 
-storiesOf(folder.template + 'Footer', module)
+storiesOf(folder.template + folder.sub.footer + 'Footer', module)
     .addDecorator(withKnobs)
     .add(
         'Footer',
@@ -56,41 +62,41 @@ storiesOf(folder.template + 'Footer', module)
                     {sampleContents.map((sample, index) => (
                         <div key={index}>
                             <Title
-                                align="center"
-                                textSize="xs"
-                                colorWab="grey30"
                                 hasUnderline={true}
-                                marginBottom="xs"
+                                align={alignOptions.center}
+                                textSize={fontSizeOptions.xs}
+                                colorWab={greyOptions.grey30}
+                                marginBottom={spaceOptions.xs}
                             >
                                 {sample.title}
                             </Title>
 
-                            <ul>
+                            <FooterList
+                                align={alignOptions.center}
+                                textSize={fontSizeOptions.xs}
+                                marginBottom={spaceOptions.md}
+                            >
                                 {sample.links.map((link, index) => (
-                                    <li key={index}>
-                                        <a href="#">
-                                            <Link
-                                                hasUnderline={false}
-                                                colorPallet="wab"
-                                                colorWab="grey50"
-                                            >
-                                                {link}
-                                            </Link>
-                                        </a>
-                                    </li>
+                                    <a href="#" key={index}>
+                                        <Link
+                                            hasUnderline={false}
+                                            colorPallet={colorPalletOptions.wab}
+                                            colorWab={greyOptions.grey60}
+                                        >
+                                            {link}
+                                        </Link>
+                                    </a>
                                 ))}
-                            </ul>
+                            </FooterList>
                         </div>
                     ))}
                 </Grid>
 
                 <Text
-                    align="center"
-                    textSize="xxs"
-                    colorWab="grey30"
-                    marginTop="xs"
-                    marginBottom="xs"
-                    marginInternal="none"
+                    align={alignOptions.center}
+                    textSize={fontSizeOptions.xxs}
+                    colorWab={greyOptions.grey30}
+                    marginBottom={spaceOptions.xs}
                 >
                     PayGreen UI library – 2019
                 </Text>

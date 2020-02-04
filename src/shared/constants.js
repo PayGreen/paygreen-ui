@@ -10,6 +10,7 @@ const folder = {
     sub: {
         button: 'Buttons' + subFolderSeparator,
         control: 'Menu controls' + subFolderSeparator,
+        footer: 'Footer' + subFolderSeparator,
         form: 'Special fields' + subFolderSeparator,
         list: 'Ordinary list' + subFolderSeparator,
         menu: 'Menu elements' + subFolderSeparator,

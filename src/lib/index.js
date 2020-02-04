@@ -7,6 +7,7 @@ import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
 import Divider from './Divider/Divider';
 import Footer from './Footer/Footer';
+import FooterList from './FooterList/FooterList';
 import Grid from './Grid/Grid';
 import Header from './Header/Header';
 import IconLabel from './IconLabel/IconLabel';
@@ -144,6 +145,7 @@ export {
     Card,
     Divider,
     Footer,
+    FooterList,
     Grid,
     Header,
     IconLabel,
