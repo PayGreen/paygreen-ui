@@ -8,6 +8,7 @@ const waveRightStyle = css`
 
 const FooterBase = styled.footer`
     background-color: ${props => props.theme.wab.white10};
+    padding: 0.1px 0;
     ${props => topStyle[props.topStyle]};
 
     .waveTop {
@@ -19,6 +20,15 @@ const FooterBase = styled.footer`
         fill: ${props => props.theme.wab.white00};
         filter: drop-shadow(0 0 ${props => props.theme.space.md} ${props => props.theme.wab.black00});
         opacity: .2;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        line-height: ${props => props.theme.font.lineHeight.md};
+        font-size: ${props => props.theme.font.size.xs};
     }
 `;
 
