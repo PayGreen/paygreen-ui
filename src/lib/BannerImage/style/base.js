@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
-import waveLeftTop from './waveLeftTop.svg';
-import waveRightTop from './waveRightTop.svg';
+import maskWaveLeftTop from './maskWaveLeftTop.svg';
+import maskWaveRightTop from './maskWaveRightTop.svg';
 
 const maskImageStyle = css`
     mask-size: 100%;
@@ -12,11 +12,11 @@ const topStyle = {
     none: css``,
     left: css`
         ${maskImageStyle};
-        mask-image: url(${waveLeftTop});
+        mask-image: url(${maskWaveLeftTop});
     `,
     right: css`
         ${maskImageStyle};
-        mask-image: url(${waveRightTop});
+        mask-image: url(${maskWaveRightTop});
     `,
 };
 

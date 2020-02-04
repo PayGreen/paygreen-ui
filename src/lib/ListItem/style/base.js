@@ -38,6 +38,8 @@ const bulletStyle = {
 
 const arrowStyle = css`
     grid-area: arrow;
+    display: flex;
+    align-items: center;
     opacity: 0;
     transition: all ${props => props.theme.transition.md};
 `;
