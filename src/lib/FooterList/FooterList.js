@@ -23,7 +23,6 @@ const FooterList = (props) => {
 FooterList.propTypes = {
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     align: PropTypes.oneOf(Object.values(alignOptions)),
-
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -32,7 +31,6 @@ FooterList.propTypes = {
 FooterList.defaultProps = {
     textSize: fontSizeDefault,
     align: alignDefault,
-
     marginLateral: spaceDefault,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
