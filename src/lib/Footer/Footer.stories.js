@@ -40,7 +40,7 @@ const sampleContents = [
     }
 ];
 
-storiesOf(folder.template + 'Footer', module)
+storiesOf(folder.template + folder.sub.footer + 'Footer', module)
     .addDecorator(withKnobs)
     .add(
         'Footer',
