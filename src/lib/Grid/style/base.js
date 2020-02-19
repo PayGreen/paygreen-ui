@@ -11,6 +11,12 @@ const childrenMargins = css`
     }
 `;
 
+const gridStyles = css`
+    display: grid;
+    justify-items: ${props => props.justifyItems};
+    align-items: ${props => props.alignItems};
+`;
+
 const displayStyle = {
     flex: css`
         @media (${props => props.theme.query.min.md}) {
@@ -29,13 +35,14 @@ const displayStyle = {
     `,
     grid: css`
         @media (${props => props.theme.query.min.md}) {
-            display: grid;
+            width: ${props => props.columnNumber <= 1 ? 'fit-content' : null};
+            ${props => props.columnNumber > 1 ? gridStyles : null};
             grid-template-columns: repeat(${props => props.columnNumber - 1}, 1fr);
-            justify-items: ${props => props.justifyItems};
-            align-items: ${props => props.alignItems};
         }
 
         @media (${props => props.theme.query.min.lg}) {
+            width: ${props => props.columnNumber <= 1 ? 'inherit' : null};
+            ${props => props.columnNumber <= 1 ? gridStyles : null};
             grid-template-columns: repeat(${props => props.columnNumber}, 1fr);
         }
 
