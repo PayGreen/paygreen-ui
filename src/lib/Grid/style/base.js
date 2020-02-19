@@ -35,14 +35,14 @@ const displayStyle = {
     `,
     grid: css`
         @media (${props => props.theme.query.min.md}) {
-            width: ${props => props.columnNumber <= 1 ? 'fit-content' : null};
-            ${props => props.columnNumber > 1 ? gridStyles : null};
+            width: ${props => props.columnNumber <= 2 ? 'fit-content' : null};
+            ${props => props.columnNumber > 2 ? gridStyles : null};
             grid-template-columns: repeat(${props => props.columnNumber - 1}, 1fr);
         }
 
         @media (${props => props.theme.query.min.lg}) {
-            width: ${props => props.columnNumber <= 1 ? 'inherit' : null};
-            ${props => props.columnNumber <= 1 ? gridStyles : null};
+            width: ${props => props.columnNumber <= 2 ? 'inherit' : null};
+            ${props => props.columnNumber <= 2 ? gridStyles : null};
             grid-template-columns: repeat(${props => props.columnNumber}, 1fr);
         }
 
