@@ -12,8 +12,8 @@ import { shape } from './style/shape';
 
 class Divider extends PureComponent {
     render() {
-        const hasText = this.props.text !== undefined
-                        && !isNaN(this.props.text.length)
+        const hasText = this.props.text
+                        && this.props.text.length
                         && this.props.text.length > 0;
 
         return <DividerBase
