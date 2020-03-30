@@ -41,7 +41,7 @@ const arrowStyle = css`
     display: flex;
     align-items: center;
     opacity: 0;
-    transition: all ${props => props.theme.transition.md};
+    transition: all ${props => props.theme.transition.sm};
 `;
 
 const gridItemArrow = {

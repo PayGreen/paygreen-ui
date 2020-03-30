@@ -5,7 +5,6 @@ const menuBlock = css`
     z-index: ${props => props.theme.zindex.menu};
     box-sizing: border-box;
     margin: 0;
-    transition: all ${props => props.theme.transition.md};
 
     @media (${props => props.theme.query.max.lg}) {
         position: fixed;
@@ -14,6 +13,7 @@ const menuBlock = css`
         top: ${props => props.theme.grid.header};
         width: 100%;
         background-color: ${props => props.theme.wab.white00};
+        transition: all ${props => props.theme.transition.sm};
     }
 
     @media (${props => props.theme.query.min.lg}) {

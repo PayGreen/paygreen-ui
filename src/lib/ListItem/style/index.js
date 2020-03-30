@@ -6,7 +6,7 @@ import { bulletStyle, clickableStyle, notClickableStyle } from './base';
 const ListItemBase = styled.span`
     display: grid;
     padding: ${props => math(props.theme.iconSize[props.bulletSize] + '/4')};
-    transition: all ${props => props.theme.transition.md};
+    transition: all ${props => props.theme.transition.sm};
     ${props => bulletStyle[props.bulletStyle]};
     ${props => props.isClickable ? clickableStyle : notClickableStyle};
 
