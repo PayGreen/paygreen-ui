@@ -25,9 +25,18 @@ const MenuListBase = styled.ul`
             top: -${props => props.theme.iconSize.md};
             left: 50%;
             transform: translateX(-50%);
-            border-right : solid ${props => props.theme.iconSize.md} transparent;
-            border-bottom : solid ${props => props.theme.iconSize.md} ${props => props.theme.wab.white00};
-            border-left : solid ${props => props.theme.iconSize.md} transparent;
+            border-right: solid ${props => props.theme.iconSize.md} transparent;
+            border-bottom: solid ${props => props.theme.iconSize.md} ${props => props.theme.wab.white00};
+            border-left: solid ${props => props.theme.iconSize.md} transparent;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -${props => props.theme.iconSize.lg};
+            left: 0;
+            height: ${props => props.theme.iconSize.lg};
+            width: 100%;
         }
     }
 
