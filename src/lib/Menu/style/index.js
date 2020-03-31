@@ -13,15 +13,18 @@ const MenuBase = styled.li`
     @media (${props => props.theme.query.min.lg}) {
         ${MenuListBase} {
             margin-left: 50%;
-            transform-origin: top center;
             transform: translateX(-50%) scale(0);
             opacity: 0;
+            transition-property: opacity, transform;
+            transition-duration: ${props => props.theme.transition.xs}, 0s;
+            transition-delay: 0s, ${props => props.theme.transition.xs};
         }
 
         &:hover {
             ${MenuListBase} {
                 transform: translateX(-50%) scale(1);
                 opacity: 1;
+                transition-delay: ${props => props.theme.transition.xs}, 0s;
             }
         }
     }

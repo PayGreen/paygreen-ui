@@ -17,7 +17,6 @@ const MenuListBase = styled.ul`
             props.theme.shadow.opacity.lg,
             props.theme.color[props.colorTheme].main
         )};
-        transition: all ${props => props.theme.transition.sm};
 
         &::before {
             content: '';
