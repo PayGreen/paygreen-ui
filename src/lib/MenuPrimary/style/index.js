@@ -11,23 +11,6 @@ const MenuPrimaryBase = styled.ul`
         
         ${props => props.isOpen ? null : closedStyle};
     }
-
-    @media (${props => props.theme.query.min.lg}) {
-        ${MenuBase} {
-            &:hover {
-                /* Let MenuList open when cursor is between MenuItem and MenuList */
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 100%;
-                    height: ${props => props.theme.iconSize.lg};
-                    bottom: 0;
-                    transform: translateY(100%);
-                    z-index: ${props => props.theme.zindex.menu};
-                }
-            }
-        }
-    }
 `;
 
 export { MenuPrimaryBase };

@@ -12,18 +12,19 @@ const MenuBase = styled.li`
 
     @media (${props => props.theme.query.min.lg}) {
         ${MenuListBase} {
-            margin-top: -${props => props.theme.space.xl};
             margin-left: 50%;
-            transform: translate(-50%, -100%);
+            transform: translateX(-50%) scale(0);
             opacity: 0;
+            transition-property: opacity, transform;
+            transition-duration: ${props => props.theme.transition.xs}, 0s;
+            transition-delay: 0s, ${props => props.theme.transition.xs};
         }
 
         &:hover {
             ${MenuListBase} {
-                margin-top: ${props => props.theme.iconSize.lg};
-                top: inherit;
-                transform: translate(-50%, 0);
+                transform: translateX(-50%) scale(1);
                 opacity: 1;
+                transition-delay: ${props => props.theme.transition.xs}, 0s;
             }
         }
     }
