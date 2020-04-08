@@ -8,7 +8,7 @@ import {
 } from '../../shared/constants';
 import MenuClose from './MenuClose';
 
-storiesOf(folder.template + folder.sub.control + 'MenuClose', module)
+storiesOf(folder.nav + folder.sub.control + 'MenuClose', module)
     .addDecorator(withKnobs)
     .add('MenuClose', () => (
         <MenuClose

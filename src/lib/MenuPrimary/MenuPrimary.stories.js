@@ -21,7 +21,7 @@ const subLink = {
     hasHover: false,
 };
 
-storiesOf(folder.template + 'MenuPrimary', module)
+storiesOf(folder.nav + 'MenuPrimary', module)
     .addDecorator(withKnobs)
     .add('MenuPrimary', () => (
         <MenuPrimary isOpen={boolean('Is open', true)}>

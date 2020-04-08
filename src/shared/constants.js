@@ -5,7 +5,7 @@ const subFolderSeparator = '/';
 const folder = {
     main: 'Basics' + folderSeparator,
     form: 'Form elements' + folderSeparator,
-    template: 'Templates' + folderSeparator,
+    nav: 'Navigation' + folderSeparator,
 
     sub: {
         button: 'Buttons' + subFolderSeparator,

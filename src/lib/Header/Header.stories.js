@@ -52,7 +52,7 @@ const subLink = {
     hasUnderline: false,
 };
 
-storiesOf(folder.template + 'Header', module)
+storiesOf(folder.nav + 'Header', module)
     .addDecorator(withKnobs)
     .add('Header', () => (
         <Header>
