@@ -10,14 +10,14 @@ import {
 } from '../../shared/constants';
 import { FooterListBase } from './style';
 
-const FooterList = (props) => {
-    return <FooterListBase {...props}>
-        {React.Children.map(props.children, (child, index) =>
-            child ?
-                <li key={index}>{child}</li>
-                : null
-        )}
-    </FooterListBase>;
+const FooterList = props => {
+    return (
+        <FooterListBase {...props}>
+            {React.Children.map(props.children, (child, index) =>
+                child ? <li key={index}>{child}</li> : null,
+            )}
+        </FooterListBase>
+    );
 };
 
 FooterList.propTypes = {

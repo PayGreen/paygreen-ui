@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     gradientOptions,
@@ -9,15 +9,9 @@ import {
 } from '../../shared/constants';
 import { BannerImageBase } from './style';
 
-class BannerImage extends PureComponent {
-    render() {
-        return <BannerImageBase
-            {...this.props}
-        >
-            {this.props.children}
-        </BannerImageBase>;
-    }
-}
+const BannerImage = props => {
+    return <BannerImageBase {...props}>{props.children}</BannerImageBase>;
+};
 
 BannerImage.propTypes = {
     gradient: PropTypes.oneOf(Object.values(gradientOptions)),

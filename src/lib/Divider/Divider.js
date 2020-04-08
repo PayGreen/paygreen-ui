@@ -1,36 +1,26 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     decorationOptions,
     decorationDefault,
     colorThemeOptions,
     colorThemeDefault,
-    spaceOptions
+    spaceOptions,
 } from '../../shared/constants';
 import { DividerBase } from './style';
 import { shape } from './style/shape';
 
-class Divider extends PureComponent {
-    render() {
-        const hasText = this.props.text
-                        && this.props.text.length
-                        && this.props.text.length > 0;
+const Divider = props => {
+    const hasText = props.text && props.text.length;
 
-        return <DividerBase
-            {...this.props}
-            hasText={hasText}
-        >
-            {this.props.waveStyle !== decorationOptions.none ? shape : null}
-                {hasText ?
-                    <span>
-                        {this.props.text}
-                    </span>
-                    : null
-                }
-            {this.props.waveStyle !== decorationOptions.none ? shape : null}
-        </DividerBase>;
-    }
-}
+    return (
+        <DividerBase {...props} hasText={hasText}>
+            {props.waveStyle !== decorationOptions.none ? shape : null}
+            {hasText ? <span>{props.text}</span> : null}
+            {props.waveStyle !== decorationOptions.none ? shape : null}
+        </DividerBase>
+    );
+};
 
 Divider.propTypes = {
     waveStyle: PropTypes.oneOf(Object.values(decorationOptions)),

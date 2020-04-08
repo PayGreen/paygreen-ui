@@ -1,9 +1,8 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     titleHtmlTagOptions,
     titleHtmlTagDefault,
-
     colorTypeOptions,
     colorTypeDefault,
     colorPalletOptions,
@@ -13,26 +12,22 @@ import {
     greyDefault,
     formStatusOptions,
     formStatusDefault,
-
     fontSizeOptions,
     fontSizeDefault,
     alignOptions,
     alignDefault,
     spaceOptions,
-    spaceDefault
+    spaceDefault,
 } from '../../shared/constants';
 import { TitleBase } from './style';
 
-class Title extends PureComponent {
-    render() {
-        return <TitleBase
-            as={this.props.htmlTag}
-            {...this.props}
-        >
-            {this.props.children}
-        </TitleBase>;
-    }
-}
+const Title = props => {
+    return (
+        <TitleBase as={props.htmlTag} {...props}>
+            {props.children}
+        </TitleBase>
+    );
+};
 
 Title.propTypes = {
     htmlTag: PropTypes.oneOf(Object.values(titleHtmlTagOptions)),

@@ -1,9 +1,8 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     textHtmlTagOptions,
     textHtmlTagDefault,
-
     colorTypeOptions,
     colorTypeDefault,
     colorPalletOptions,
@@ -12,7 +11,6 @@ import {
     greyOptions,
     formStatusOptions,
     formStatusDefault,
-
     radiusOptions,
     fontSizeOptions,
     fontSizeDefault,
@@ -23,16 +21,13 @@ import {
 } from '../../shared/constants';
 import { TextBase } from './style';
 
-class Text extends PureComponent {
-    render() {
-        return <TextBase
-            as={this.props.htmlTag}
-            {...this.props}
-        >
-            {this.props.children}
-        </TextBase>;
-    }
-}
+const Text = props => {
+    return (
+        <TextBase as={props.htmlTag} {...props}>
+            {props.children}
+        </TextBase>
+    );
+};
 
 Text.propTypes = {
     htmlTag: PropTypes.oneOf(Object.values(textHtmlTagOptions)),

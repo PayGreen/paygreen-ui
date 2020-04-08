@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     alignOptions,
@@ -7,15 +7,9 @@ import {
 } from '../../shared/constants';
 import { ButtonGroupBase } from './style';
 
-class ButtonGroup extends PureComponent {
-    render() {
-        return <ButtonGroupBase
-            {...this.props}
-        >
-            {this.props.children}
-        </ButtonGroupBase>;
-    }
-}
+const ButtonGroup = props => {
+    return <ButtonGroupBase {...props}>{props.children}</ButtonGroupBase>;
+};
 
 ButtonGroup.propTypes = {
     align: PropTypes.oneOf(Object.values(alignOptions)),

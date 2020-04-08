@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     listStyleOptions,
@@ -7,59 +7,54 @@ import {
     colorThemeDefault,
     iconSizeOptions,
     iconSizeDefault,
-    decorationOptions
+    decorationOptions,
 } from '../../shared/constants';
 import { ArrowLeftIcon, ArrowRightIcon } from '../Icon/Icon';
 import { ListItemBase } from './style';
 
-class ListItem extends PureComponent {
-    render() {
-        const withoutIconStyles = [
-            listStyleOptions.number,
-            listStyleOptions.dash
-        ];
+const ListItem = props => {
+    const withoutIconStyles = [listStyleOptions.number, listStyleOptions.dash];
 
-        const isClickable = this.props.href && this.props.href.length;
+    const isClickable = props.href && props.href.length;
 
-        return <ListItemBase
+    return (
+        <ListItemBase
             as={isClickable ? 'a' : 'span'}
             isClickable={isClickable}
-            {...this.props}
+            {...props}
         >
-            {isClickable && this.props.arrowStyle === decorationOptions.left ?
+            {isClickable && props.arrowStyle === decorationOptions.left ? (
                 <span className="arrow">
                     <ArrowLeftIcon
-                        theme={this.props.theme} // not necessary, only needed for tests
-                        colorTheme={this.props.colorTheme}
-                        iconSize={this.props.bulletSize}
+                        theme={props.theme} // not necessary, only needed for tests
+                        colorTheme={props.colorTheme}
+                        iconSize={props.bulletSize}
                     />
                 </span>
-                : null
-            }
+            ) : null}
 
-            {withoutIconStyles.includes(this.props.bulletStyle) ?
+            {withoutIconStyles.includes(props.bulletStyle) ? (
                 <span className="bullet">
-                    {this.props.bulletStyle === listStyleOptions.number ?
-                        this.props.number : null}
+                    {props.bulletStyle === listStyleOptions.number
+                        ? props.number
+                        : null}
                 </span>
-                : null
-            }
+            ) : null}
 
-            {this.props.children}
+            {props.children}
 
-            {isClickable && this.props.arrowStyle === decorationOptions.right ?
+            {isClickable && props.arrowStyle === decorationOptions.right ? (
                 <span className="arrow">
                     <ArrowRightIcon
-                        theme={this.props.theme} // not necessary, only needed for tests
-                        colorTheme={this.props.colorTheme}
-                        iconSize={this.props.bulletSize}
+                        theme={props.theme} // not necessary, only needed for tests
+                        colorTheme={props.colorTheme}
+                        iconSize={props.bulletSize}
                     />
                 </span>
-                : null
-            }
-        </ListItemBase>;
-    }
-}
+            ) : null}
+        </ListItemBase>
+    );
+};
 
 ListItem.propTypes = {
     number: PropTypes.number,
@@ -67,7 +62,7 @@ ListItem.propTypes = {
     bulletStyle: PropTypes.oneOf(Object.values(listStyleOptions)),
     bulletSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    arrowStyle: PropTypes.oneOf(Object.values(decorationOptions))
+    arrowStyle: PropTypes.oneOf(Object.values(decorationOptions)),
 };
 
 ListItem.defaultProps = {
@@ -76,7 +71,7 @@ ListItem.defaultProps = {
     bulletStyle: listStyleDefault,
     bulletSize: iconSizeDefault,
     colorTheme: colorThemeDefault,
-    arrowStyle: decorationOptions.none
+    arrowStyle: decorationOptions.none,
 };
 
 export default ListItem;

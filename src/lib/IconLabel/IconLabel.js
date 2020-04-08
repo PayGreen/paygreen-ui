@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     colorThemeOptions,
@@ -8,15 +8,9 @@ import {
 } from '../../shared/constants';
 import { IconLabelBase } from './style';
 
-class IconLabel extends PureComponent {
-    render() {
-        return <IconLabelBase
-            {...this.props}
-        >
-            {this.props.children}
-        </IconLabelBase>;
-    }
-}
+const IconLabel = props => {
+    return <IconLabelBase {...props}>{props.children}</IconLabelBase>;
+};
 
 IconLabel.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),

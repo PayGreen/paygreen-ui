@@ -1,16 +1,12 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { TableCellBase } from './style';
 
-class TableCell extends PureComponent {
-    render() {
-        return <TableCellBase
-            {...this.props}
-        >
-            <span className="content">
-                {this.props.children}
-            </span>
-        </TableCellBase>;
-    }
-}
+const TableCell = props => {
+    return (
+        <TableCellBase {...props}>
+            <span className="content">{props.children}</span>
+        </TableCellBase>
+    );
+};
 
 export default TableCell;

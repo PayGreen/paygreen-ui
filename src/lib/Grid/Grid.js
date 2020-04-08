@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     displayOptions,
@@ -12,27 +12,21 @@ import {
     justifyItemsDefault,
     alignItemsOptions,
     alignItemsDefault,
-    spaceOptions
+    spaceOptions,
 } from '../../shared/constants';
 import { GridBase } from './style';
 
-class Grid extends PureComponent {
-    render() {
-        return <GridBase
-            {...this.props}
-        >
-            {this.props.displayType === displayOptions.column ?
-                React.Children.map(this.props.children, (child, index) =>
-                    child ?
-                        <div key={index}>
-                            {child}
-                        </div>
-                        : null
-                ) : this.props.children
-            }
-        </GridBase>;
-    }
-}
+const Grid = props => {
+    return (
+        <GridBase {...props}>
+            {props.displayType === displayOptions.column
+                ? React.Children.map(props.children, (child, index) =>
+                      child ? <div key={index}>{child}</div> : null,
+                  )
+                : props.children}
+        </GridBase>
+    );
+};
 
 Grid.propTypes = {
     displayType: PropTypes.oneOf(Object.values(displayOptions)),
@@ -62,14 +56,14 @@ Grid.defaultProps = {
     justifyItems: justifyItemsDefault,
     alignItems: alignItemsDefault,
     childrenFlex: 'initial',
-    
+
     childrenShiftSize: spaceOptions.none,
     isNegativeShift: false,
     isReverseShift: false,
 
     blockPadding: spaceOptions.md,
     childrenMargin: spaceOptions.md,
-    childrenMarginBig: spaceOptions.lg
+    childrenMarginBig: spaceOptions.lg,
 };
 
 export default Grid;
