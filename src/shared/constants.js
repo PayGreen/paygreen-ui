@@ -6,6 +6,7 @@ const folder = {
     main: 'Basics' + folderSeparator,
     form: 'Form elements' + folderSeparator,
     nav: 'Navigation' + folderSeparator,
+    media: 'Medias' + folderSeparator,
 
     sub: {
         button: 'Buttons' + subFolderSeparator,

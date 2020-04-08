@@ -22,7 +22,7 @@ import portraitFile from './sample/portrait.png';
 import photoFile from './sample/sample.png';
 import drawFile from './sample/sample.svg';
 
-storiesOf(folder.main + 'Image', module)
+storiesOf(folder.media + 'Image', module)
     .addDecorator(withKnobs)
     .add(
         'Cover image',

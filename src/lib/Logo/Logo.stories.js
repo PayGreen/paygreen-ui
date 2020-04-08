@@ -5,7 +5,7 @@ import { folder, spaceOptions } from '../../shared/constants';
 import Logo from './Logo';
 import { logo } from './sample/logo';
 
-storiesOf(folder.main + 'Logo', module)
+storiesOf(folder.media + 'Logo', module)
     .addDecorator(withKnobs)
     .add('Logo', () => (
         <a href="#">
