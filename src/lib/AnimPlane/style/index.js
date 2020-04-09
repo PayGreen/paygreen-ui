@@ -1,20 +1,27 @@
 import styled from 'styled-components';
-import { dotsDelay, dotsTransitions, activeStyle } from './base';
+import {
+    planeAnimationDuration,
+    dotsDelay,
+    dotsTransitions,
+    activeStyle,
+} from './base';
 
 const AnimPlaneBase = styled.div`
     display: flex;
     justify-content: center;
-    
+
     svg {
         width: 100%;
         max-width: ${props => props.theme.imageSize.sm};
         fill: ${props => props.theme.color[props.colorTheme].main};
 
         .plane {
+            transition: opacity ${props => props.theme.transition.sm};
+            transition-delay: ${props => props.dotsCount * dotsDelay}s;
             transform-origin: center;
             animation-fill-mode: forwards;
             animation-delay: ${props => props.dotsCount * dotsDelay}s;
-            animation-duration: 2s;
+            animation-duration: ${planeAnimationDuration}s;
             animation-timing-function: linear;
 
             .normal {
@@ -30,14 +37,14 @@ const AnimPlaneBase = styled.div`
             opacity: 0.4;
 
             path {
-                opacity: ${props => props.isActive ? 0 : 1};
+                opacity: ${props => (props.isActive ? 0 : 1)};
                 transition: all 0;
                 ${props => dotsTransitions(props.dotsCount)};
             }
         }
     }
 
-    ${props => props.isActive ? activeStyle : null};
+    ${props => (props.isActive ? activeStyle : null)};
 `;
 
 export { AnimPlaneBase };

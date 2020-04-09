@@ -1,6 +1,7 @@
 import { css, keyframes } from 'styled-components';
 
 const dotsDelay = 0.05;
+const planeAnimationDuration = 2;
 
 function dotsTransitions(count) {
     var styles = '';
@@ -10,7 +11,7 @@ function dotsTransitions(count) {
             &:nth-of-type(${i + 1}) {
                 transition-delay: ${i * dotsDelay}s;
             }
-        `
+        `;
     }
 
     return styles;
@@ -60,12 +61,11 @@ const activeStyle = css`
     svg {
         .plane {
             animation-name: ${planeAnimation};
+            opacity: 0;
+            transition-delay: ${props =>
+                props.dotsCount * dotsDelay + planeAnimationDuration}s;
         }
     }
 `;
 
-export {
-    dotsDelay,
-    dotsTransitions,
-    activeStyle
-};
+export { planeAnimationDuration, dotsDelay, dotsTransitions, activeStyle };
