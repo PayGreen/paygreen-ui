@@ -3,6 +3,13 @@ import { css, keyframes } from 'styled-components';
 const dotsDelay = 0.05;
 const planeAnimationDuration = 2;
 
+/**
+ * Create transition-delay for all paths in SVG dotted line
+ * It creates the right number of transition-delay regarding to paths count
+ * Each path must appear or disappear after its sibling
+ *
+ * @param {number} count
+ */
 function dotsTransitions(count) {
     var styles = '';
 
@@ -61,7 +68,7 @@ const activeStyle = css`
     .icon {
         transform: scale(1);
         transition-delay: ${props =>
-                props.dotsCount * dotsDelay + planeAnimationDuration}s;
+            props.dotsCount * dotsDelay + planeAnimationDuration}s;
     }
 
     .illu {
