@@ -23,8 +23,8 @@ storiesOf(folder.main + 'Loader', module)
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            paddingTop={select('Padding', spaceOptions, spaceDefault)}
-            paddingBottom={select('Padding', spaceOptions, spaceDefault)}
-            paddingLateral={select('Padding', spaceOptions, spaceDefault)}
+            paddingTop={select('Padding top', spaceOptions, spaceDefault)}
+            paddingBottom={select('Padding bottom', spaceOptions, spaceDefault)}
+            paddingLateral={select('Padding lateral', spaceOptions, spaceDefault)}
         />
     ));
