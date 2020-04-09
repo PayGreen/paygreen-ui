@@ -22,7 +22,7 @@ const colorPalletLabel = 'Color pallet';
 const colorThemeLabel = 'Color theme';
 const colorWabLabel = 'Grey color';
 
-storiesOf(folder.template + folder.sub.menu + 'MenuItem', module)
+storiesOf(folder.nav + folder.sub.menu + 'MenuItem', module)
     .addDecorator(withKnobs)
     .add('Sub menu item', () => (
         <a href="#">

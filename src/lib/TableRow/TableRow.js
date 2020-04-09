@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     colorThemeAllOptions,
@@ -6,24 +6,18 @@ import {
 } from '../../shared/constants';
 import { TableRowBase } from './style';
 
-class TableRow extends PureComponent {
-    render() {
-        return <TableRowBase
-            {...this.props}
-        >
-            {this.props.children}
-        </TableRowBase>;
-    }
-}
+const TableRow = props => {
+    return <TableRowBase {...props}>{props.children}</TableRowBase>;
+};
 
 TableRow.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeAllOptions)),
-    isMain: PropTypes.bool
+    isMain: PropTypes.bool,
 };
 
 TableRow.defaultProps = {
     colorTheme: colorThemeAllDefault,
-    isMain: false
+    isMain: false,
 };
 
 export default TableRow;

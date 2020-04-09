@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     cardHtmlTagOptions,
@@ -20,16 +20,13 @@ import {
 } from '../../shared/constants';
 import { CardBase } from './style';
 
-class Card extends PureComponent {
-    render() {
-        return <CardBase
-            as={this.props.htmlTag}
-            {...this.props}
-        >
-            {this.props.children}
-        </CardBase>;
-    }
-}
+const Card = props => {
+    return (
+        <CardBase as={props.htmlTag} {...props}>
+            {props.children}
+        </CardBase>
+    );
+};
 
 Card.propTypes = {
     htmlTag: PropTypes.oneOf(Object.values(cardHtmlTagOptions)),

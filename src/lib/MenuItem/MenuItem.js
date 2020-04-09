@@ -1,22 +1,16 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     colorThemeOptions,
     colorThemeDefault,
     alignOptions,
-    alignDefault
+    alignDefault,
 } from '../../shared/constants';
 import { MenuItemBase } from './style';
 
-class MenuItem extends PureComponent {
-    render() {
-        return <MenuItemBase
-            {...this.props}
-        >
-            {this.props.children}
-        </MenuItemBase>;
-    }
-}
+const MenuItem = props => {
+    return <MenuItemBase {...props}>{props.children}</MenuItemBase>;
+};
 
 MenuItem.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
@@ -24,7 +18,7 @@ MenuItem.propTypes = {
     hasHoverBase: PropTypes.bool,
     hasHoverAlternative: PropTypes.bool,
     hasHoverEmphasis: PropTypes.bool,
-    align: PropTypes.oneOf(Object.values(alignOptions))
+    align: PropTypes.oneOf(Object.values(alignOptions)),
 };
 
 MenuItem.defaultProps = {
@@ -33,7 +27,7 @@ MenuItem.defaultProps = {
     hasHoverBase: true,
     hasHoverAlternative: true,
     hasHoverEmphasis: false,
-    align: alignDefault
+    align: alignDefault,
 };
 
 export default MenuItem;

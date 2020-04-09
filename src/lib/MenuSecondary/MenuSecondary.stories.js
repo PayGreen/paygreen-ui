@@ -14,7 +14,7 @@ import Menu from '../Menu/Menu';
 import MenuClose from '../MenuClose/MenuClose';
 import MenuSecondary from './MenuSecondary';
 
-storiesOf(folder.template + 'MenuSecondary', module)
+storiesOf(folder.nav + 'MenuSecondary', module)
     .addDecorator(withKnobs)
     .add('MenuSecondary', () => (
         <MenuSecondary isOpen={boolean('Is open', true)}>

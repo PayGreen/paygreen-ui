@@ -19,7 +19,7 @@ import Menu from './Menu';
 
 const colorThemeLabel = 'Color theme';
 
-storiesOf(folder.template + folder.sub.menu + 'Menu', module)
+storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
     .addDecorator(withKnobs)
     .add('Menu', () => (
         <Menu

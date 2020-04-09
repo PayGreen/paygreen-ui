@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     colorTypeOptions,
@@ -14,15 +14,9 @@ import {
 } from '../../shared/constants';
 import { LinkBase } from './style';
 
-class Link extends PureComponent {
-    render() {
-        return <LinkBase
-            {...this.props}
-        >
-            {this.props.children}
-        </LinkBase>;
-    }
-}
+const Link = props => {
+    return <LinkBase {...props}>{props.children}</LinkBase>;
+};
 
 Link.propTypes = {
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
@@ -32,7 +26,7 @@ Link.propTypes = {
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     hasUnderline: PropTypes.bool,
     hasHover: PropTypes.bool,
-    hasUppercase: PropTypes.bool
+    hasUppercase: PropTypes.bool,
 };
 
 Link.defaultProps = {
@@ -43,7 +37,7 @@ Link.defaultProps = {
     colorStatus: formStatusDefault,
     hasUnderline: true,
     hasHover: true,
-    hasUppercase: false
+    hasUppercase: false,
 };
 
 export default Link;

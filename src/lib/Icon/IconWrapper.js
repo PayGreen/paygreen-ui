@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     colorPalletOptions,
@@ -17,18 +17,16 @@ import {
 } from '../../shared/constants';
 import { IconBase } from './style';
 
-const IconWrapper = (props) => {
-    return <IconBase
-        as={props.htmlTag}
-        {...props}
-        className="icon"
-    >
-        {React.Children.map(props.children, child => {
-            if (typeof child == 'object') {
-                return React.cloneElement(child);
-            }
-        })}
-    </IconBase>;
+const IconWrapper = props => {
+    return (
+        <IconBase as={props.htmlTag} {...props} className="icon">
+            {React.Children.map(props.children, child => {
+                if (typeof child == 'object') {
+                    return React.cloneElement(child);
+                }
+            })}
+        </IconBase>
+    );
 };
 
 IconWrapper.propTypes = {

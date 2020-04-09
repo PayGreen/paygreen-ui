@@ -10,16 +10,12 @@ import {
     alignItemsOptions,
     alignItemsDefault,
     spaceOptions,
-    spaceDefault
+    spaceDefault,
 } from '../../shared/constants';
 import { InternalGridBase } from './style';
 
-const InternalGrid = (props) => {
-    return <InternalGridBase
-        {...props}
-    >
-        {props.children}
-    </InternalGridBase>;
+const InternalGrid = props => {
+    return <InternalGridBase {...props}>{props.children}</InternalGridBase>;
 };
 
 InternalGrid.propTypes = {

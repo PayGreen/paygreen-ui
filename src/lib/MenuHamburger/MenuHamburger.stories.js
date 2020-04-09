@@ -8,7 +8,7 @@ import {
 } from '../../shared/constants';
 import MenuHamburger from './MenuHamburger';
 
-storiesOf(folder.template + folder.sub.control + 'MenuHamburger', module)
+storiesOf(folder.nav + folder.sub.control + 'MenuHamburger', module)
     .addDecorator(withKnobs)
     .add('MenuHamburger', () => (
         <MenuHamburger

@@ -1,15 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    colorThemeOptions,
-    colorThemeDefault
-} from '../../shared/constants';
+import { colorThemeOptions, colorThemeDefault } from '../../shared/constants';
 import { MenuHamburgerBase } from './style';
 
 const MenuHamburger = props => (
-    <MenuHamburgerBase
-        {...props}
-    >
+    <MenuHamburgerBase {...props}>
         <span></span>
         <span></span>
         <span></span>
@@ -18,12 +13,12 @@ const MenuHamburger = props => (
 
 MenuHamburger.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    isOpen: PropTypes.bool
+    isOpen: PropTypes.bool,
 };
 
 MenuHamburger.defaultProps = {
     colorTheme: colorThemeDefault,
-    isOpen: false
+    isOpen: false,
 };
 
 export default MenuHamburger;

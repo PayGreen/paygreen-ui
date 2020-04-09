@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    decorationOptions,
-    decorationDefault
-} from '../../shared/constants';
+import { decorationOptions, decorationDefault } from '../../shared/constants';
 import { FooterBase } from './style';
 import { waveTop } from './style/waveTop';
 
-const Footer = (props) => {
-    return <FooterBase {...props}>
-        {props.topStyle !== decorationOptions.none ? waveTop : null}
-        {props.children}
-    </FooterBase>;
+const Footer = props => {
+    return (
+        <FooterBase {...props}>
+            {props.topStyle !== decorationOptions.none ? waveTop : null}
+            {props.children}
+        </FooterBase>
+    );
 };
 
 Footer.propTypes = {

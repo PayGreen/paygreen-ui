@@ -7,7 +7,6 @@ exports[`renders without crashing 1`] = `
   <svg
     className="waves"
     viewBox="0 0 932 94"
-    xmlns="http://www.w3.org/2000/svg"
   >
     <path
       className="light"
@@ -23,7 +22,6 @@ exports[`renders without crashing 1`] = `
   <svg
     className="waves"
     viewBox="0 0 932 94"
-    xmlns="http://www.w3.org/2000/svg"
   >
     <path
       className="light"

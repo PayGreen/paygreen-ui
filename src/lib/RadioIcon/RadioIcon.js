@@ -1,36 +1,31 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     radioSizeOptions,
     radioSizeDefault,
     colorPalletOptions,
     formStatusOptions,
-    iconSizeOptions
+    iconSizeOptions,
 } from '../../shared/constants';
 import { CheckBoldIcon } from '../Icon/Icon';
 import { RadioIconBase } from './style';
 
-class RadioIcon extends PureComponent {
-    render() {
-        const {
-            children,
-            text,
-            blockSize,
-            ...rest
-        } = this.props;
+const RadioIcon = props => {
+    const { children, text, blockSize, ...rest } = props;
 
-        return <RadioIconBase
-            theme={this.props.theme} // not necessary, only needed for tests
+    return (
+        <RadioIconBase
+            theme={props.theme} // not necessary, only needed for tests
             blockSize={blockSize}
         >
             <input type="radio" {...rest} />
 
-            <label htmlFor={this.props.id}>
+            <label htmlFor={props.id}>
                 {children}
 
                 <span className="checked">
                     <CheckBoldIcon
-                        theme={this.props.theme} // not necessary, only needed for tests
+                        theme={props.theme} // not necessary, only needed for tests
                         colorPallet={colorPalletOptions.status}
                         colorStatus={formStatusOptions.success}
                         iconSize={iconSizeOptions.xs}
@@ -39,15 +34,15 @@ class RadioIcon extends PureComponent {
 
                 {text}
             </label>
-        </RadioIconBase>;
-    }
-}
+        </RadioIconBase>
+    );
+};
 
 RadioIcon.propTypes = {
     blockSize: PropTypes.oneOf(Object.values(radioSizeOptions)),
     text: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
 };
 
 RadioIcon.defaultProps = {

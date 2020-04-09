@@ -1,17 +1,11 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { spaceOptions } from '../../shared/constants';
 import { LogoBase } from './style';
 
-class Logo extends PureComponent {
-    render() {
-        return <LogoBase
-            {...this.props}
-        >
-            {this.props.children}
-        </LogoBase>;
-    }
-}
+const Logo = props => {
+    return <LogoBase {...props}>{props.children}</LogoBase>;
+};
 
 Logo.propTypes = {
     hasBaseline: PropTypes.bool,

@@ -28,7 +28,7 @@ const color = [
     colorThemeOptions.quaternary,
 ];
 
-storiesOf(folder.template + folder.sub.menu + 'MenuList', module)
+storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
     .addDecorator(withKnobs)
     .add('MenuList', () => (
         <MenuList

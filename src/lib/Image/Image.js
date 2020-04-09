@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     colorThemeOptions,
@@ -18,13 +18,9 @@ import {
 } from '../../shared/constants';
 import { ImageBase } from './style';
 
-class Image extends PureComponent {
-    render() {
-        return <ImageBase {...this.props}>
-            {this.props.children}
-        </ImageBase>;
-    }
-}
+const Image = props => {
+    return <ImageBase {...props}>{props.children}</ImageBase>;
+};
 
 Image.propTypes = {
     imageType: PropTypes.oneOf(Object.values(imageTypeOptions)),

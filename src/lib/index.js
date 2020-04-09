@@ -1,3 +1,4 @@
+import AnimPlane from './AnimPlane/AnimPlane';
 import AutonomousInput from './AutonomousInput/AutonomousInput';
 import Banner from './Banner/Banner';
 import BannerImage from './BannerImage/BannerImage';
@@ -136,6 +137,7 @@ export {
     ThemeDark,
     PGThemeProvider,
     
+    AnimPlane,
     AutonomousInput,
     Banner,
     BannerImage,

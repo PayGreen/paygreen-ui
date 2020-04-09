@@ -32,6 +32,8 @@ import Logo from '../Logo/Logo';
 import Header from './Header';
 import { logo } from '../Logo/sample/logo';
 
+const mainMenuIsOpenLabel = 'Open primary menu';
+
 const mainMenuItem = {
     isMain: true,
     hasHoverBase: false,
@@ -50,12 +52,12 @@ const subLink = {
     hasUnderline: false,
 };
 
-storiesOf(folder.template + 'Header', module)
+storiesOf(folder.nav + 'Header', module)
     .addDecorator(withKnobs)
     .add('Header', () => (
         <Header>
             <div className="main-nav">
-                <MenuHamburger />
+                <MenuHamburger isOpen={boolean(mainMenuIsOpenLabel, true)} />
 
                 <a href="#">
                     <Logo hasBaseline={false} hasHoverRight={true}>
@@ -69,7 +71,7 @@ storiesOf(folder.template + 'Header', module)
                 />
             </div>
 
-            <MenuPrimary isOpen={boolean('Open primary menu', true)}>
+            <MenuPrimary isOpen={boolean(mainMenuIsOpenLabel, true)}>
                 <Menu>
                     <a href="#">
                         <MenuItem isMain={true}>

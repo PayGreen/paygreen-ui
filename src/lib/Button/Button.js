@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     colorThemeOptions,
@@ -8,19 +8,13 @@ import {
     buttonStyleOptions,
     buttonStyleDefault,
     colorTypeOptions,
-    colorTypeDefault
+    colorTypeDefault,
 } from '../../shared/constants';
 import { ButtonBase } from './style';
 
-class Button extends PureComponent {
-    render() {
-        return <ButtonBase
-            {...this.props}
-        >
-            {this.props.children}
-        </ButtonBase>;
-    }
-}
+const Button = props => {
+    return <ButtonBase {...props}>{props.children}</ButtonBase>;
+};
 
 Button.propTypes = {
     buttonStyle: PropTypes.oneOf(Object.values(buttonStyleOptions)),

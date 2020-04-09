@@ -9,21 +9,17 @@ import {
     greyOptions,
     formStatusOptions,
     formStatusDefault,
-
     alignOptions,
     alignDefault,
-    
     spaceOptions,
-    spaceDefault
+    spaceDefault,
 } from '../../shared/constants';
 import { ListHorizontalBase } from './style';
 
 const ListHorizontal = props => (
     <ListHorizontalBase {...props}>
         {React.Children.map(props.children, (child, index) =>
-            child ?
-                <li key={index}>{child}</li>
-                : null
+            child ? <li key={index}>{child}</li> : null,
         )}
     </ListHorizontalBase>
 );

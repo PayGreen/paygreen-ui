@@ -1,26 +1,24 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     colorThemeOptions,
     colorThemeDefault,
     gradientOptions,
     decorationOptions,
-    decorationDefault
+    decorationDefault,
 } from '../../shared/constants';
 import { BannerBase } from './style';
 import { waves } from './style/waves';
 
-class Banner extends PureComponent {
-    render() {
-        return <BannerBase
-            {...this.props}
-        >
-            {this.props.topStyle !== decorationOptions.none ? waves : null}
-            {this.props.children}
-            {this.props.bottomStyle !== decorationOptions.none ? waves : null}
-        </BannerBase>;
-    }
-}
+const Banner = props => {
+    return (
+        <BannerBase {...props}>
+            {props.topStyle !== decorationOptions.none ? waves : null}
+            {props.children}
+            {props.bottomStyle !== decorationOptions.none ? waves : null}
+        </BannerBase>
+    );
+};
 
 Banner.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
