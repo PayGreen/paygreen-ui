@@ -196,6 +196,13 @@ exports[`renders without crashing 1`] = `
             "xs": "240px",
           },
           "line": "2px",
+          "loaderSize": Object {
+            "lg": "80px",
+            "md": "70px",
+            "sm": "60px",
+            "xl": "90px",
+            "xs": "50px",
+          },
           "logoHeight": Object {
             "lg": "50px",
             "md": "40px",
@@ -286,6 +293,7 @@ exports[`renders without crashing 1`] = `
             "header": 110,
             "hidden": -100,
             "layer": -5,
+            "loader": 90,
             "menu": 100,
           },
         }
