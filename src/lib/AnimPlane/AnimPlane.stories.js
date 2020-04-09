@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios } from '@storybook/addon-knobs';
+import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -17,5 +17,6 @@ storiesOf(folder.media + 'AnimPlane', module)
                 colorThemeOptions,
                 colorThemeDefault,
             )}
+            isActive={boolean('Is active', false)}
         />
     ));
