@@ -1,12 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { colorThemeOptions, colorThemeDefault } from '../../shared/constants';
+import {
+    colorThemeOptions,
+    colorThemeDefault,
+    iconSizeOptions,
+} from '../../shared/constants';
+import { CheckIcon } from '../Icon/Icon';
 import { AnimPlaneBase } from './style';
 import { illu, dotsCount } from './style/illu';
 
 const AnimPlane = props => {
     return (
         <AnimPlaneBase {...props} dotsCount={dotsCount}>
+            <CheckIcon
+                colorTheme={props.colorTheme}
+                iconSize={iconSizeOptions.xl}
+                hasBackground={true}
+            />
+
             {illu}
         </AnimPlaneBase>
     );

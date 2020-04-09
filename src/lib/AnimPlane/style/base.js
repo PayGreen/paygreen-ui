@@ -58,7 +58,13 @@ const planeAnimation = keyframes`
 `;
 
 const activeStyle = css`
-    svg {
+    .icon {
+        transform: scale(1);
+        transition-delay: ${props =>
+                props.dotsCount * dotsDelay + planeAnimationDuration}s;
+    }
+
+    .illu {
         .plane {
             animation-name: ${planeAnimation};
             opacity: 0;

@@ -31,7 +31,7 @@ const dots = (
 );
 
 const illu = (
-    <svg viewBox="0 0 300 215">
+    <svg className="illu" viewBox="0 0 300 215">
         <g className="plane">
             <polygon
                 className="normal"

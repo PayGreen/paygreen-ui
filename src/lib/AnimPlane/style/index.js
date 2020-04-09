@@ -7,10 +7,19 @@ import {
 } from './base';
 
 const AnimPlaneBase = styled.div`
+    position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
 
-    svg {
+    .icon {
+        position: absolute;
+        transform-origin: center;
+        transform: scale(0);
+        transition: all ${props => props.theme.transition.sm};
+    }
+
+    .illu {
         width: 100%;
         max-width: ${props => props.theme.imageSize.sm};
         fill: ${props => props.theme.color[props.colorTheme].main};
