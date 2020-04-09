@@ -13,6 +13,7 @@ const AnimPlane = props => {
     return (
         <AnimPlaneBase {...props} dotsCount={dotsCount}>
             <CheckIcon
+                theme={props.theme} // not necessary, only needed for tests
                 colorTheme={props.colorTheme}
                 iconSize={iconSizeOptions.xl}
                 hasBackground={true}
