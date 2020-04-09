@@ -35,6 +35,7 @@ const hiddenStyle = css`
         height: 0;
         width: 0;
         opacity: 0;
+        border-width: 0;
     }
 `;
 

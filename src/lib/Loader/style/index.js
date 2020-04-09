@@ -8,8 +8,6 @@ const LoaderBase = styled.div`
     justify-content: center;
     transition: all ${props => props.theme.transition.sm};
 
-    ${props => (props.isActive ? activeStyle : hiddenStyle)};
-
     span {
         position: relative;
         transition: all ${props => props.theme.transition.sm};
@@ -45,6 +43,8 @@ const LoaderBase = styled.div`
             right: ${borderSize * 3}px;
         }
     }
+
+    ${props => (props.isActive ? activeStyle : hiddenStyle)};
 `;
 
 export { LoaderBase };
