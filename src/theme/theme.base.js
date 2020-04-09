@@ -191,6 +191,13 @@ export const ThemeBase = {
         lg: '200px',
         xl: '250px',
     },
+    loaderSize: {
+        xs: '50px',
+        sm: '60px',
+        md: '70px',
+        lg: '80px',
+        xl: '90px',
+    },
     transition: {
         xs: '0.2s',
         sm: '0.3s',
@@ -205,6 +212,7 @@ export const ThemeBase = {
         base: 0,
         content: 1,
         front: 5,
+        loader: 90,
         menu: 100,
         header: 110,
     },
