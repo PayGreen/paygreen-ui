@@ -19,6 +19,7 @@ import Link from './Link/Link';
 import List from './List/List';
 import ListHorizontal from './ListHorizontal/ListHorizontal';
 import ListItem from './ListItem/ListItem';
+import Loader from './Loader/Loader';
 import Logo from './Logo/Logo';
 import Menu from './Menu/Menu';
 import MenuClose from './MenuClose/MenuClose';
@@ -158,6 +159,7 @@ export {
     List,
     ListHorizontal,
     ListItem,
+    Loader,
     Logo,
     Menu,
     MenuClose,
