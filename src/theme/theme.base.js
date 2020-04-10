@@ -185,8 +185,8 @@ export const ThemeBase = {
     },
     logoWidth: {
         none: 'auto',
-        xs: '70px',
-        sm: '100px',
+        xs: '90px',
+        sm: '120px',
         md: '150px',
         lg: '200px',
         xl: '250px',
