@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { spaceOptions } from '../../../shared/constants';
 import {
     textSize,
     coloredStyle,
@@ -42,12 +41,7 @@ const LogoBase = styled.span`
         text-transform: uppercase;
         letter-spacing: ${props => props.theme.font.spacing};
         font-weight: ${props => props.theme.font.weight.bold};
-        ${props =>
-            textSize[
-                props.blockWidth !== spaceOptions.none
-                    ? props.blockWidth
-                    : props.blockHeight
-            ]};
+        ${props => textSize[props.textSize]};
     }
 
     ${props => (props.isWhite ? whiteStyle : coloredStyle)};

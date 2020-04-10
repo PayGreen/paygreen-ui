@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-const textSizeBases = {
+const textSize = {
     sm: css`
         font-size: ${props => props.theme.font.size.tiny};
         padding: ${props => props.theme.space.xs};
@@ -16,15 +16,11 @@ const textSizeBases = {
         padding: ${props => props.theme.space.sm};
         margin-left: ${props => props.theme.space.md};
     `,
-};
-
-const textSize = {
-    none: css`${textSizeBases.lg}`,
-    xs: css`${textSizeBases.sm}`,
-    sm: css`${textSizeBases.sm}`,
-    md: css`${textSizeBases.sm}`,
-    lg: css`${textSizeBases.md}`,
-    xl: css`${textSizeBases.lg}`,
+    xl: css`
+        font-size: ${props => props.theme.font.size.sm};
+        padding: ${props => props.theme.space.sm};
+        margin-left: ${props => props.theme.space.md};
+    `,
 };
 
 const textBackground = {

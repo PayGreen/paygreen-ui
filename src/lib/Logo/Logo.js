@@ -5,6 +5,7 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     gradientOptions,
+    blockWidthOptions,
 } from '../../shared/constants';
 import { LogoBase } from './style';
 
@@ -29,6 +30,7 @@ Logo.propTypes = {
     blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
     text: PropTypes.string,
+    textSize: PropTypes.oneOf(Object.values(blockWidthOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     gradient: PropTypes.oneOf(Object.values(gradientOptions)),
 };
@@ -41,6 +43,7 @@ Logo.defaultProps = {
     hasHoverColor: false,
     blockWidth: spaceOptions.none,
     blockHeight: spaceOptions.none,
+    textSize: blockWidthOptions.sm,
     colorTheme: colorThemeDefault,
     gradient: gradientOptions.theme,
 };

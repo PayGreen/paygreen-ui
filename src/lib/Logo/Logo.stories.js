@@ -13,6 +13,7 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     gradientOptions,
+    blockWidthOptions,
 } from '../../shared/constants';
 import Logo from './Logo';
 import { logo } from './sample/logo';
@@ -40,6 +41,11 @@ storiesOf(folder.media + 'Logo', module)
                 hasHoverColor={boolean('Hover color', false)}
                 blockWidth={select('Width', spaceOptions, spaceOptions.md)}
                 blockHeight={select('Height', spaceOptions, spaceOptions.none)}
+                textSize={select(
+                    'Text size',
+                    blockWidthOptions,
+                    blockWidthOptions.sm,
+                )}
             >
                 {logo}
             </Logo>
