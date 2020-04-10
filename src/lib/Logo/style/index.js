@@ -19,7 +19,6 @@ const LogoBase = styled.span`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100%;
         width: ${props => props.theme.logoWidth[props.blockWidth]};
         height: ${props => props.theme.logoHeight[props.blockHeight]};
     }
