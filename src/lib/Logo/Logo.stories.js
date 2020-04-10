@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import { folder, spaceOptions } from '../../shared/constants';
 import Logo from './Logo';
 import { logo } from './sample/logo';
@@ -15,8 +15,9 @@ storiesOf(folder.media + 'Logo', module)
                 hasHoverRight={boolean('Hover right', true)}
                 hasHoverTop={boolean('Hover top', false)}
                 hasHoverColor={boolean('Hover color', false)}
-                blockWidth={select('Width', spaceOptions, spaceOptions.none)}
+                blockWidth={select('Width', spaceOptions, spaceOptions.md)}
                 blockHeight={select('Height', spaceOptions, spaceOptions.none)}
+                text={text('Text', '')}
             >
                 {logo}
             </Logo>

@@ -4,7 +4,15 @@ import { spaceOptions } from '../../shared/constants';
 import { LogoBase } from './style';
 
 const Logo = props => {
-    return <LogoBase {...props}>{props.children}</LogoBase>;
+    const hasText = props.text && props.text.length;
+
+    return (
+        <LogoBase {...props}>
+            <span className="logo">{props.children}</span>
+
+            {hasText ? <span className="text">{props.text}</span> : null}
+        </LogoBase>
+    );
 };
 
 Logo.propTypes = {
@@ -15,6 +23,7 @@ Logo.propTypes = {
     hasHoverColor: PropTypes.bool,
     blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
+    text: PropTypes.string,
 };
 
 Logo.defaultProps = {
