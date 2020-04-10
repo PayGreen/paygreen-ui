@@ -60,7 +60,11 @@ storiesOf(folder.nav + 'Header', module)
                 <MenuHamburger isOpen={boolean(mainMenuIsOpenLabel, true)} />
 
                 <a href="#">
-                    <Logo hasBaseline={false} hasHoverRight={true}>
+                    <Logo
+                        hasBaseline={false}
+                        hasHoverRight={true}
+                        blockWidth={spaceOptions.sm}
+                    >
                         {logo}
                     </Logo>
                 </a>
