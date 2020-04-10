@@ -13,8 +13,6 @@ const LogoBase = styled.span`
     display: flex;
     align-items: center;
     transition: all ${props => props.theme.transition.sm};
-    width: ${props => props.theme.logoWidth[props.blockWidth]};
-    height: ${props => props.theme.logoHeight[props.blockHeight]};
 
     .logo {
         display: flex;
@@ -22,7 +20,8 @@ const LogoBase = styled.span`
         justify-content: center;
         align-items: center;
         height: 100%;
-        flex: 1;
+        width: ${props => props.theme.logoWidth[props.blockWidth]};
+        height: ${props => props.theme.logoHeight[props.blockHeight]};
     }
 
     img,
