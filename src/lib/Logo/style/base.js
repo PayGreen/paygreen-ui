@@ -1,8 +1,38 @@
 import { css } from 'styled-components';
 
+const textBackground = {
+    brand: css`
+        background-image: linear-gradient(to bottom right,
+            ${props => props.theme.color.primary.main},
+            ${props => props.theme.color.secondary.main}
+        );
+    `,
+    theme: css`
+        background-image: linear-gradient(to bottom right,
+            ${props => props.theme.color[props.colorTheme].gradientBase},
+            ${props => props.theme.color[props.colorTheme].gradientShade}
+        );
+    `,
+    none: css`
+        background-color: ${props => props.theme.color[props.colorTheme].main};
+    `,
+}
+
+const coloredStyle = css`
+    .text {
+        color: ${props => props.theme.wab.white00};
+        ${props => textBackground[props.gradient]};
+    }
+`;
+
 const whiteStyle = css`
     svg {
         fill: ${props => props.theme.wab.white00};
+    }
+
+    .text {
+        color: ${props => props.theme.color[props.colorTheme].main};
+        background-color: ${props => props.theme.wab.white00};
     }
 `;
 
@@ -53,6 +83,7 @@ const hoverColorStyle = css`
 `;
 
 export {
+    coloredStyle,
     whiteStyle,
     noBaselineStyle,
     hoverRightStyle,
