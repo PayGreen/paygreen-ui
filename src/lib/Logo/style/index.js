@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { spaceOptions } from '../../../shared/constants';
 import {
+    textSize,
     coloredStyle,
     whiteStyle,
     noBaselineStyle,
@@ -36,13 +38,16 @@ const LogoBase = styled.span`
 
     .text {
         border-radius: ${props => props.theme.radius.sm};
-        padding: ${props => props.theme.space.xs};
-        text-transform: uppercase;
-        font-size: ${props => props.theme.font.size.tiny};
-        font-weight: ${props => props.theme.font.weight.bold};
-        letter-spacing: ${props => props.theme.font.spacing};
-        margin-left: ${props => props.theme.space.sm};
         text-align: center;
+        text-transform: uppercase;
+        letter-spacing: ${props => props.theme.font.spacing};
+        font-weight: ${props => props.theme.font.weight.bold};
+        ${props =>
+            textSize[
+                props.blockWidth !== spaceOptions.none
+                    ? props.blockWidth
+                    : props.blockHeight
+            ]};
     }
 
     ${props => (props.isWhite ? whiteStyle : coloredStyle)};

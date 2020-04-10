@@ -1,5 +1,32 @@
 import { css } from 'styled-components';
 
+const textSizeBases = {
+    sm: css`
+        font-size: ${props => props.theme.font.size.tiny};
+        padding: ${props => props.theme.space.xs};
+        margin-left: ${props => props.theme.space.sm};
+    `,
+    md: css`
+        font-size: ${props => props.theme.font.size.xxs};
+        padding: ${props => props.theme.space.xs};
+        margin-left: ${props => props.theme.space.md};
+    `,
+    lg: css`
+        font-size: ${props => props.theme.font.size.xs};
+        padding: ${props => props.theme.space.sm};
+        margin-left: ${props => props.theme.space.md};
+    `,
+};
+
+const textSize = {
+    none: css`${textSizeBases.lg}`,
+    xs: css`${textSizeBases.sm}`,
+    sm: css`${textSizeBases.sm}`,
+    md: css`${textSizeBases.sm}`,
+    lg: css`${textSizeBases.md}`,
+    xl: css`${textSizeBases.lg}`,
+};
+
 const textBackground = {
     brand: css`
         background-image: linear-gradient(to bottom right,
@@ -83,6 +110,7 @@ const hoverColorStyle = css`
 `;
 
 export {
+    textSize,
     coloredStyle,
     whiteStyle,
     noBaselineStyle,
