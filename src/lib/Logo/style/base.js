@@ -9,7 +9,7 @@ const textSize = {
     md: css`
         font-size: ${props => props.theme.font.size.xxs};
         padding: ${props => props.theme.space.xs};
-        margin-left: ${props => props.theme.space.md};
+        margin-left: ${props => props.theme.space.sm};
     `,
     lg: css`
         font-size: ${props => props.theme.font.size.xs};
