@@ -13,11 +13,6 @@ const HeaderBase = styled.header`
         }
     }
 
-    ${LogoBase} {
-        height: 100%;
-        width: 120px;
-    }
-
     @media (${props => props.theme.query.max.lg}) {
         .main-nav {
             ${headerStyle};
