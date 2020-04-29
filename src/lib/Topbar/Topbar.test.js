@@ -9,11 +9,11 @@ import MenuItem from '../MenuItem/MenuItem';
 import Menu from '../Menu/Menu';
 import MenuPrimary from '../MenuPrimary/MenuPrimary';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
-import TopBar from './TopBar';
+import Topbar from './Topbar';
 
 it('renders without crashing', () => {
-    const topBar = TestRenderer.create(
-        <TopBar theme={ThemeDefault}>
+    const topbar = TestRenderer.create(
+        <Topbar theme={ThemeDefault}>
             <div className="main-nav">
                 <MenuHamburger theme={ThemeDefault} />
             </div>
@@ -38,7 +38,7 @@ it('renders without crashing', () => {
                     </a>
                 </Menu>
             </MenuPrimary>
-        </TopBar>
+        </Topbar>
     );
-    expect(topBar.toJSON()).toMatchSnapshot();
+    expect(topbar.toJSON()).toMatchSnapshot();
 });

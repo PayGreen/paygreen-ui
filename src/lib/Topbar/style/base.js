@@ -1,10 +1,10 @@
 import { css } from 'styled-components';
 
-const topBarStyle = css`
+const topbarStyle = css`
     position: relative;
     z-index: ${props => props.theme.zindex.header};
     @media (${props => props.theme.query.min.md}) {
-        height: ${props => props.theme.grid.topBar};
+        height: ${props => props.theme.grid.topbar};
     }
     @media (${props => props.theme.query.max.md}) {
         height: ${props => props.theme.grid.header};
@@ -18,4 +18,4 @@ const topBarStyle = css`
     background-color: ${props => props.theme.wab.white20};
 `;
 
-export { topBarStyle };
+export { topbarStyle };

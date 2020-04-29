@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { topBarStyle } from './base';
+import { topbarStyle } from './base';
 import { MenuPrimaryBase } from '../../MenuPrimary/style';
 import { MenuSecondaryBase } from '../../MenuSecondary/style';
 import { MenuHamburgerBase } from '../../MenuHamburger/style';
 import { LogoBase } from '../../Logo/style';
 
-const TopBarBase = styled.header`
+const TopbarBase = styled.header`
     .main-nav {
         a {
             display: block;
@@ -15,7 +15,7 @@ const TopBarBase = styled.header`
 
     @media (${props => props.theme.query.max.lg}) {
         .main-nav {
-            ${topBarStyle};
+            ${topbarStyle};
         }
 
         ${LogoBase} {
@@ -24,7 +24,7 @@ const TopBarBase = styled.header`
     }
 
     @media (${props => props.theme.query.min.lg}) {
-        ${topBarStyle};
+        ${topbarStyle};
 
         ${MenuHamburgerBase},
         button.icon {
@@ -55,4 +55,4 @@ const TopBarBase = styled.header`
     }
 `;
 
-export { TopBarBase };
+export { TopbarBase };

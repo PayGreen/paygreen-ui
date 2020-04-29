@@ -29,7 +29,7 @@ import MenuSecondary from '../MenuSecondary/MenuSecondary';
 import MenuClose from '../MenuClose/MenuClose';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Logo from '../Logo/Logo';
-import TopBar from './TopBar';
+import Topbar from './Topbar';
 import { logo } from '../Logo/sample/logo';
 
 const mainMenuIsOpenLabel = 'Open primary menu';
@@ -52,10 +52,10 @@ const subLink = {
     hasUnderline: false,
 };
 
-storiesOf(folder.nav + 'TopBar', module)
+storiesOf(folder.nav + 'Topbar', module)
     .addDecorator(withKnobs)
-    .add('TopBar', () => (
-        <TopBar>
+    .add('Topbar', () => (
+        <Topbar>
             <div className="main-nav">
                 <MenuHamburger isOpen={boolean(mainMenuIsOpenLabel, true)} />
 
@@ -231,5 +231,5 @@ storiesOf(folder.nav + 'TopBar', module)
 
                 <MenuClose />
             </MenuSecondary>
-        </TopBar>
+        </Topbar>
     ));
