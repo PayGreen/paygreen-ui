@@ -36,6 +36,7 @@ import TableRow from './TableRow/TableRow';
 import Text from './Text/Text';
 import Textarea from './Textarea/Textarea';
 import Title from './Title/Title';
+import TopBar from './TopBar/TopBar';
 
 // Icons
 import { ArrowBottomIcon } from './Icon/Icon';
@@ -176,6 +177,7 @@ export {
     Text,
     Textarea,
     Title,
+    TopBar,
 
     // Icons
     ArrowBottomIcon,
