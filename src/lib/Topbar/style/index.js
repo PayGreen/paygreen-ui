@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 import { topbarStyle } from './base';
-import { MenuPrimaryBase } from '../../MenuPrimary/style';
-import { MenuSecondaryBase } from '../../MenuSecondary/style';
-import { MenuHamburgerBase } from '../../MenuHamburger/style';
 import { LogoBase } from '../../Logo/style';
 
 const TopbarBase = styled.header`
@@ -13,7 +10,7 @@ const TopbarBase = styled.header`
         }
     }
 
-    @media (${props => props.theme.query.max.lg}) {
+    @media (${props => props.theme.query.max.md}) {
         .main-nav {
             ${topbarStyle};
         }
@@ -23,34 +20,13 @@ const TopbarBase = styled.header`
         }
     }
 
-    @media (${props => props.theme.query.min.lg}) {
-        ${topbarStyle};
+    @media (${props => props.theme.query.min.md}) {
+        .main-nav {
+            ${topbarStyle};
+        }
 
-        ${MenuHamburgerBase},
-        button.icon {
+        ${LogoBase} {
             display: none;
-        }
-
-        ${MenuPrimaryBase} {
-            flex: 1;
-            justify-content: flex-end;
-        }
-
-        ${MenuSecondaryBase} {
-            margin-left: ${props => props.theme.space.lg};
-            padding-left: ${props => props.theme.space.lg};
-
-            &::before {
-                content: '';
-                position: absolute;
-                transform: translate(-50%, -50%);
-                top: 50%;
-                left: 0;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background-color: ${props => props.theme.wab.grey10};
-            }
         }
     }
 `;
