@@ -1,5 +1,8 @@
 import { css } from 'styled-components';
-import { buttonColors, enableType } from './constants';
+import {
+    buttonColors,
+    enableType
+} from './constants';
 
 const enabled = css`
     button:hover &,
@@ -31,26 +34,25 @@ const disabled = css`
 
 const templateStyle = {
     fill: css`
-        color: ${props =>
-            buttonColors.text.fill[props.colorType][enableType(props)]};
+        color: ${props => buttonColors.text.fill[props.colorType][enableType(props)]};
 
         &::before,
         &::after {
-            background-color: ${props =>
-                buttonColors.bg.fill[props.colorType][enableType(props)]};
+            background-color: ${props => buttonColors.bg.fill[props.colorType][enableType(props)]};
         }
     `,
     line: css`
-        color: ${props =>
-            buttonColors.text.line[props.colorType][enableType(props)]};
+        color: ${props => buttonColors.text.line[props.colorType][enableType(props)]};
 
         &::before,
         &::after {
-            border: solid ${props => props.theme.line}
-                ${props =>
-                    buttonColors.bg.line[props.colorType][enableType(props)]};
+            border: solid ${props => props.theme.line} ${props => buttonColors.bg.line[props.colorType][enableType(props)]};
         }
     `,
 };
 
-export { enabled, disabled, templateStyle };
+export {
+    enabled,
+    disabled,
+    templateStyle
+};

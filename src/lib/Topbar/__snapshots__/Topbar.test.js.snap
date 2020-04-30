@@ -2,18 +2,39 @@
 
 exports[`renders without crashing 1`] = `
 <header
-  className="sc-htpNat kZsaaH"
+  className="sc-gZMcBi dxJbhp"
 >
   <div
     className="main-nav"
   >
     <button
-      className="sc-bdVaJa eNQYwt"
+      className="sc-gzVnrw klyhST"
     >
       <span />
       <span />
       <span />
     </button>
   </div>
+  <ul
+    className="sc-bZQynM jzjWhG"
+  >
+    <li
+      className="sc-EHOje Eovxe"
+    >
+      <a
+        href="#"
+      >
+        <div
+          className="sc-bxivhb mGqfH"
+        >
+          <span
+            className="sc-bdVaJa etiQqm"
+          >
+            About us
+          </span>
+        </div>
+      </a>
+    </li>
+  </ul>
 </header>
 `;
