@@ -2,11 +2,25 @@ import styled from 'styled-components';
 import { isClosedStyle, isOpenStyle, mainStyle } from './base';
 import { TopbarBase } from '../../Topbar/style';
 
-const MainBase = styled.header`
-    ${TopbarBase}    
+const Box = styled.div`
+    overflow-y: scroll;
+`;
+const MainBase = styled.div`
     ${mainStyle}
-    
-    ${props => props.isOpen ? isOpenStyle : isClosedStyle};
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'topbar' 'box';
+    overflow-y: hidden;
+
+    ${TopbarBase} {
+        grid-area: topbar;
+    }
+
+    ${Box} {
+        grid-area: box;
+    }
+
+    ${props => (props.isOpen ? isOpenStyle : isClosedStyle)};
 `;
 
-export { MainBase };
+export { Box, MainBase };

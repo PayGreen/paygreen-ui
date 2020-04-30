@@ -2,13 +2,20 @@ import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
 import Main from './Main';
+import MenuHamburger from '../MenuHamburger/MenuHamburger';
+import Topbar from '../Topbar/Topbar';
+import { Box } from './style';
 
 it('renders without crashing', () => {
-    const topbar = TestRenderer.create(
+    const main = TestRenderer.create(
         <Main theme={ThemeDefault}>
-            <div className="main-nav">
-            </div>
+            <Topbar theme={ThemeDefault}>
+                <div className="main-nav">
+                    <MenuHamburger theme={ThemeDefault} />
+                </div>
+            </Topbar>
+            <Box />
         </Main>,
     );
-    expect(topbar.toJSON()).toMatchSnapshot();
+    expect(main.toJSON()).toMatchSnapshot();
 });
