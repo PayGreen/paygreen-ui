@@ -6,7 +6,6 @@ const mainStyle = css`
     z-index: ${props => props.theme.zindex.header};
     height: 100vh;
     background-color: ${props => props.theme.wab.white00};
-    margin-left: 20px;
     box-shadow: ${props =>
         props.theme.shadow.size.lg +
         ' ' +
