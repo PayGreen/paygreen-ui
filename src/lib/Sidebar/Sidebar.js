@@ -1,8 +1,8 @@
 import React from 'react';
-import { TopbarBase } from './style';
+import { SidebarBase } from './style';
 
-const Topbar = props => {
-    return <TopbarBase {...props}>{props.children}</TopbarBase>;
+const Sidebar = props => {
+    return <SidebarBase {...props}>{props.children}</SidebarBase>;
 };
 
-export default Topbar;
+export default Sidebar;
