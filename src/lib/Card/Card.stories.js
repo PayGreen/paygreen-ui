@@ -22,6 +22,7 @@ import {
     spaceOptions,
     spaceDefault,
     buttonSizeOptions,
+    alignOptions,
 } from '../../shared/constants';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
@@ -33,6 +34,7 @@ import imageFile from './sample/sample.png';
 
 const colorTypeLabel = 'Color type';
 const colorThemeLabel = 'Color theme';
+const colorBgThemeLabel = 'Background color theme';
 const blockWidthLabel = 'Block width';
 
 storiesOf(folder.main + 'Card', module)
@@ -472,5 +474,56 @@ storiesOf(folder.main + 'Card', module)
         {
             notes:
                 'Very basic card, without background, shadow, paddings and radius. Change background color to see the reverse color type result.',
+        },
+    )
+    .add(
+        'Card with colored background',
+        () => (
+            <Card
+                colorBgTheme={select(
+                    colorBgThemeLabel,
+                    colorThemeOptions,
+                    colorThemeDefault,
+                )}
+                shadowSize={radios(
+                    'Shadow size',
+                    shadowSizeOptions,
+                    shadowSizeDefault,
+                )}
+                hasBackground={boolean('Has background', true)}
+                blockWidth={blockWidthOptions.md}
+            >
+                <Title
+                    colorTheme={select(
+                        colorBgThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    marginTop={spaceOptions.sm}
+                    align={alignOptions.center}
+                    textSize={fontSizeOptions.xl}
+                >
+                    Title <strong>sample</strong>
+                </Title>
+                <Text
+                    textSize={fontSizeOptions.sm}
+                    colorTheme={select(
+                        colorBgThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    marginTop={spaceOptions.xs}
+                    marginLateral={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
+                    <strong>Duis porttitor velit a ultricies aliquet</strong>.
+                    Donec vehicula in arcu non sodales. Fusce et consectetur
+                    odio.
+                </Text>
+            </Card>
+        ),
+        {
+            notes: 'Very basic card, with colored background, without shadow.',
         },
     );

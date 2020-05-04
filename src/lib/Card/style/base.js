@@ -64,7 +64,7 @@ const borderTopElement = css`
 
 const backgroundStyle = {
     original: css`
-        background-color: ${props => props.theme.wab.white00};
+        background-color: ${props => props.colorBgTheme ? props.theme.color[props.colorBgTheme].light : props.theme.wab.white00};
 
         ${shadowStyle};
         ${radius};

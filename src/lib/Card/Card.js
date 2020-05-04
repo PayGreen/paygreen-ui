@@ -32,6 +32,7 @@ Card.propTypes = {
     htmlTag: PropTypes.oneOf(Object.values(cardHtmlTagOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    colorBgTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     shadowSize: PropTypes.oneOf(Object.values(shadowSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
