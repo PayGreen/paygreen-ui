@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<header
-  className="sc-htpNat kZsaaH"
+<nav
+  className="sc-bxivhb fBGSvn"
 >
   <div
     className="main-nav"
@@ -15,5 +15,5 @@ exports[`renders without crashing 1`] = `
       <span />
     </button>
   </div>
-</header>
+</nav>
 `;

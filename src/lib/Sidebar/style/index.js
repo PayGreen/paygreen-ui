@@ -4,7 +4,8 @@ import { TopbarBase } from '../../Topbar/style';
 import { LogoBase } from '../../Logo/style';
 
 const SidebarBase = styled.nav`
-    .topbar-nav, .logo-nav {
+    .topbar-nav,
+    .logo-nav {
         width: 100%;
     }
 

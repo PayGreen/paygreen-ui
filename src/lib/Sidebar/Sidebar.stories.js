@@ -1,12 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
-import { folder, spaceOptions } from '../../shared/constants';
+import { withKnobs } from '@storybook/addon-knobs';
+import {
+    colorPalletOptions,
+    greyOptions,
+    folder,
+    spaceOptions,
+} from '../../shared/constants';
 import Logo from '../Logo/Logo';
-import Sidebar from './Sidebar';
 import { logo } from '../Logo/sample/logo';
+import Sidebar from './Sidebar';
 import Topbar from '../Topbar/Topbar';
-import { ArrowRight } from '../Icon/components';
+import { ArrowRightIcon } from '../Icon/Icon';
 
 storiesOf(folder.nav + 'Sidebar', module)
     .addDecorator(withKnobs)
@@ -26,13 +31,12 @@ storiesOf(folder.nav + 'Sidebar', module)
                                 {logo}
                             </Logo>
                         </a>
-                        <div className="icon-nav">
-                            <ArrowRight
-                                htmlTag="button"
-                                iconSize="sm"
-                                colorTheme="primary"
-                            />
-                        </div>
+                        <ArrowRightIcon
+                            htmlTag="button"
+                            iconSize="xl"
+                            colorPallet={colorPalletOptions.wab}
+                            colorWab={greyOptions.grey40}
+                        />
                     </div>
                 </Topbar>
             </div>
