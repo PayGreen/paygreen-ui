@@ -31,6 +31,7 @@ import MenuPrimary from './MenuPrimary/MenuPrimary';
 import MenuSecondary from './MenuSecondary/MenuSecondary';
 import RadioIcon from './RadioIcon/RadioIcon';
 import Select from './Select/Select';
+import Sidebar from './Sidebar/Sidebar';
 import Table from './Table/Table';
 import TableCell from './TableCell/TableCell';
 import TableRow from './TableRow/TableRow';
@@ -172,6 +173,7 @@ export {
     MenuSecondary,
     RadioIcon,
     Select,
+    Sidebar,
     Table,
     TableCell,
     TableRow,
