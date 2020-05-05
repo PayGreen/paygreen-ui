@@ -7,8 +7,12 @@ import {
     cardHtmlTagDefault,
     colorTypeOptions,
     colorTypeDefault,
+    colorPalletOptions,
     colorThemeOptions,
     colorThemeDefault,
+    greyOptions,
+    formStatusOptions,
+    formStatusDefault,
     shadowSizeOptions,
     shadowSizeDefault,
     blockWidthOptions,
@@ -22,7 +26,6 @@ import {
     spaceOptions,
     spaceDefault,
     buttonSizeOptions,
-    alignOptions,
 } from '../../shared/constants';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
@@ -30,12 +33,13 @@ import Image from '../Image/Image';
 import Text from '../Text/Text';
 import Title from '../Title/Title';
 import Card from './Card';
-import Grid from '../Grid/Grid';
 import imageFile from './sample/sample.png';
 
 const colorTypeLabel = 'Color type';
+const colorPalletLabel = 'Color pallet';
 const colorThemeLabel = 'Color theme';
-const colorBgThemeLabel = 'Background color theme';
+const colorWabLabel = 'Grey color';
+const colorStatusLabel = 'Status color';
 const blockWidthLabel = 'Block width';
 
 storiesOf(folder.main + 'Card', module)
@@ -481,87 +485,63 @@ storiesOf(folder.main + 'Card', module)
         'Card with colored background',
         () => (
             <Card
-                colorBgTheme={select(
-                    colorBgThemeLabel,
+                colorPallet={radios(
+                    colorPalletLabel,
+                    colorPalletOptions,
+                    colorPalletOptions.wab,
+                )}
+                colorTheme={select(
+                    colorThemeLabel,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                shadowSize={radios(
-                    'Shadow size',
-                    shadowSizeOptions,
-                    shadowSizeDefault,
+                colorWab={select(
+                    colorWabLabel,
+                    greyOptions,
+                    greyOptions.white20,
                 )}
-                hasBackground={boolean('Has background', true)}
-                blockWidth={blockWidthOptions.md}
+                colorStatus={select(
+                    colorStatusLabel,
+                    formStatusOptions,
+                    formStatusDefault,
+                )}
+                shadowSize={shadowSizeOptions.none}
+                blockWidth={blockWidthOptions.sm}
             >
                 <Title
+                    marginTop={spaceOptions.sm}
+                    marginLateral={spaceOptions.sm}
+                    colorPallet={radios(
+                        colorPalletLabel,
+                        colorPalletOptions,
+                        colorPalletOptions.wab,
+                    )}
                     colorTheme={select(
-                        colorBgThemeLabel,
+                        colorThemeLabel,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
-                    marginTop={spaceOptions.sm}
-                    align={alignOptions.center}
-                    textSize={fontSizeOptions.xl}
+                    colorWab={greyOptions.grey60}
+                    colorStatus={select(
+                        colorStatusLabel,
+                        formStatusOptions,
+                        formStatusDefault,
+                    )}
                 >
-                    Title <strong>sample</strong>
+                    Title <strong>colored</strong>
                 </Title>
+
                 <Text
                     textSize={fontSizeOptions.sm}
-                    colorTheme={select(
-                        colorBgThemeLabel,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
                     marginTop={spaceOptions.xs}
                     marginLateral={spaceOptions.sm}
                     marginBottom={spaceOptions.sm}
                 >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
-                    <strong>Duis porttitor velit a ultricies aliquet</strong>.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Duis <strong>porttitor velit a ultricies aliquet</strong>.
                     Donec vehicula in arcu non sodales. Fusce et consectetur
                     odio.
                 </Text>
-                <Grid>
-                    <Card
-                        borderTop={radios(
-                            'Border-top style',
-                            gradientOptions,
-                            gradientOptions.theme,
-                        )}
-                    >
-                        <Title
-                            colorTheme={select(
-                                colorThemeLabel,
-                                colorThemeOptions,
-                                colorThemeDefault,
-                            )}
-                            marginTop={spaceOptions.sm}
-                            align={alignOptions.center}
-                            textSize={fontSizeOptions.xl}
-                        >
-                            <strong>Inner Card</strong> example
-                        </Title>
-                        <Text
-                            textSize={fontSizeOptions.sm}
-                            colorTheme={select(
-                                colorBgThemeLabel,
-                                colorThemeOptions,
-                                colorThemeDefault,
-                            )}
-                            marginTop={spaceOptions.xs}
-                            marginLateral={spaceOptions.sm}
-                            marginBottom={spaceOptions.sm}
-                        >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit.{' '}
-                            <strong>
-                                Duis porttitor velit a ultricies aliquet
-                            </strong>
-                            .
-                        </Text>
-                    </Card>
-                </Grid>
             </Card>
         ),
         {
