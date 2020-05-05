@@ -15,6 +15,7 @@ import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 import Input from './Input/Input';
 import InternalGrid from './InternalGrid/InternalGrid';
+import Layout from './Layout/Layout';
 import Link from './Link/Link';
 import List from './List/List';
 import ListHorizontal from './ListHorizontal/ListHorizontal';
@@ -157,6 +158,7 @@ export {
     Image,
     Input,
     InternalGrid,
+    Layout,
     Link,
     List,
     ListHorizontal,
