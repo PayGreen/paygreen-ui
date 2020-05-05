@@ -9,7 +9,7 @@ const mainStyle = css`
     box-shadow: ${props =>
         props.theme.shadow.size.lg +
         ' ' +
-        transparentize(props.theme.shadow.opacity.sm, props.theme.wab.black00)};
+        transparentize(props.theme.shadow.opacity.lg, props.theme.wab.black00)};
 `;
 
 const isClosedStyle = css`
