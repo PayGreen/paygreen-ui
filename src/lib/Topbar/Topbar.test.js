@@ -7,9 +7,7 @@ import Topbar from './Topbar';
 it('renders without crashing', () => {
     const topbar = TestRenderer.create(
         <Topbar theme={ThemeDefault}>
-            <div className="main-nav">
-                <MenuHamburger theme={ThemeDefault} />
-            </div>
+            <MenuHamburger theme={ThemeDefault} />
         </Topbar>,
     );
     expect(topbar.toJSON()).toMatchSnapshot();
