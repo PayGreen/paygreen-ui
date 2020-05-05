@@ -11,15 +11,15 @@ storiesOf(folder.nav + 'Topbar', module)
     .addDecorator(withKnobs)
     .add('Topbar', () => (
         <Topbar>
-                <MenuHamburger isOpen={boolean('Is open', true)}/>
-                <a href="#">
-                    <Logo
-                        hasBaseline={false}
-                        hasHoverRight={true}
-                        blockWidth={spaceOptions.sm}
-                    >
-                        {logo}
-                    </Logo>
-                </a>
+            <MenuHamburger isOpen={boolean('Is open', true)} />
+            <a href="#">
+                <Logo
+                    hasBaseline={false}
+                    hasHoverRight={true}
+                    blockWidth={spaceOptions.sm}
+                >
+                    {logo}
+                </Logo>
+            </a>
         </Topbar>
     ));
