@@ -5,6 +5,10 @@ import { LogoBase } from '../../Logo/style';
 
 const SidebarBase = styled.nav`
     ${sidebarStyle};
+    .topbar-nav,
+    .logo-nav {
+        width: 100%;
+    }
 
     @media (${props => props.theme.query.max.md}) {
         .topbar-nav {

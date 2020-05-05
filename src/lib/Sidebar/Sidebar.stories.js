@@ -6,6 +6,8 @@ import {
     greyOptions,
     folder,
     spaceOptions,
+    iconSizeOptions,
+    iconHtmlTagOptions,
 } from '../../shared/constants';
 import Logo from '../Logo/Logo';
 import { logo } from '../Logo/sample/logo';
@@ -19,24 +21,21 @@ storiesOf(folder.nav + 'Sidebar', module)
         <Sidebar>
             <div className="topbar-nav">
                 <Topbar>
-                        <a href="#">
-                            <Logo
-                                hasBaseline={false}
-                                hasHoverRight={true}
-                                blockWidth={spaceOptions.md}
-                                blockHeight="md"
-                                text="tree"
-                                textSize="lg"
-                            >
-                                {logo}
-                            </Logo>
-                        </a>
-                        <ArrowRightIcon
-                            htmlTag="button"
-                            iconSize="xl"
-                            colorPallet={colorPalletOptions.wab}
-                            colorWab={greyOptions.grey40}
-                        />
+                    <a href="#">
+                        <Logo
+                            hasBaseline={false}
+                            hasHoverRight={true}
+                            blockWidth={spaceOptions.md}
+                        >
+                            {logo}
+                        </Logo>
+                    </a>
+                    <ArrowRightIcon
+                        htmlTag={iconHtmlTagOptions.button}
+                        iconSize={iconSizeOptions.xl}
+                        colorPallet={colorPalletOptions.wab}
+                        colorWab={greyOptions.grey40}
+                    />
                 </Topbar>
             </div>
             <div className="logo-nav">
@@ -45,9 +44,6 @@ storiesOf(folder.nav + 'Sidebar', module)
                         hasBaseline={false}
                         hasHoverRight={true}
                         blockWidth={spaceOptions.md}
-                        blockHeight="md"
-                        text="tree"
-                        textSize="lg"
                     >
                         {logo}
                     </Logo>
