@@ -98,7 +98,7 @@ const enabled = css`
     & + span {
         &::before,
         &::after {
-            background-color: ${props => props.theme.color.status[props.status]};
+            background-color: ${props => props.theme.color.status[props.status].main};
             opacity: .7;
         }
 
