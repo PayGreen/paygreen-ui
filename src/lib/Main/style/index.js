@@ -5,6 +5,7 @@ import { TopbarBase } from '../../Topbar/style';
 const Box = styled.div`
     overflow-y: scroll;
 `;
+
 const MainBase = styled.div`
     ${mainStyle}
     display: grid;

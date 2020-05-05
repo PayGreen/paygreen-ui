@@ -21,6 +21,7 @@ const isOpenStyle = css`
     transition: all ${props => props.theme.transition.sm};
     @media (${props => props.theme.query.min.md}) {
         width: calc(100% - ${props => props.theme.grid.sidebar});
+        margin-left: ${props => props.theme.grid.sidebar};
     }
     @media (${props => props.theme.query.max.md}) {
         width: 100%;
