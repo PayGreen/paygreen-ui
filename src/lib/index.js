@@ -36,6 +36,7 @@ import TableRow from './TableRow/TableRow';
 import Text from './Text/Text';
 import Textarea from './Textarea/Textarea';
 import Title from './Title/Title';
+import Topbar from './Topbar/Topbar';
 
 // Icons
 import { ArrowBottomIcon } from './Icon/Icon';
@@ -137,7 +138,6 @@ export {
     ThemeDefault,
     ThemeDark,
     PGThemeProvider,
-    
     AnimPlane,
     AutonomousInput,
     Banner,
@@ -176,7 +176,7 @@ export {
     Text,
     Textarea,
     Title,
-
+    Topbar,
     // Icons
     ArrowBottomIcon,
     ArrowCircleLeftIcon,

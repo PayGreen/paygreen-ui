@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<header
+  className="sc-bwzfXH bJNQPA"
+>
+  <button
+    className="sc-bdVaJa eNQYwt"
+  >
+    <span />
+    <span />
+    <span />
+  </button>
+</header>
+`;
