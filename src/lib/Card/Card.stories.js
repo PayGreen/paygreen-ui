@@ -30,6 +30,7 @@ import Image from '../Image/Image';
 import Text from '../Text/Text';
 import Title from '../Title/Title';
 import Card from './Card';
+import Grid from '../Grid/Grid';
 import imageFile from './sample/sample.png';
 
 const colorTypeLabel = 'Color type';
@@ -521,9 +522,49 @@ storiesOf(folder.main + 'Card', module)
                     Donec vehicula in arcu non sodales. Fusce et consectetur
                     odio.
                 </Text>
+                <Grid>
+                    <Card
+                        borderTop={radios(
+                            'Border-top style',
+                            gradientOptions,
+                            gradientOptions.theme,
+                        )}
+                    >
+                        <Title
+                            colorTheme={select(
+                                colorThemeLabel,
+                                colorThemeOptions,
+                                colorThemeDefault,
+                            )}
+                            marginTop={spaceOptions.sm}
+                            align={alignOptions.center}
+                            textSize={fontSizeOptions.xl}
+                        >
+                            <strong>Inner Card</strong> example
+                        </Title>
+                        <Text
+                            textSize={fontSizeOptions.sm}
+                            colorTheme={select(
+                                colorBgThemeLabel,
+                                colorThemeOptions,
+                                colorThemeDefault,
+                            )}
+                            marginTop={spaceOptions.xs}
+                            marginLateral={spaceOptions.sm}
+                            marginBottom={spaceOptions.sm}
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit.{' '}
+                            <strong>
+                                Duis porttitor velit a ultricies aliquet
+                            </strong>
+                            .
+                        </Text>
+                    </Card>
+                </Grid>
             </Card>
         ),
         {
-            notes: 'Very basic card, with colored background, without shadow.',
+            notes: 'Card with colored background and inner Card.',
         },
     );
