@@ -2,22 +2,18 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bxivhb dnzMlI"
+  className="sc-bxivhb iPkpwe"
 >
   <header
-    className="sc-bwzfXH dImgdB"
+    className="sc-bwzfXH jksTd"
   >
-    <div
-      className="main-nav"
+    <button
+      className="sc-ifAKCX kdVFfN"
     >
-      <button
-        className="sc-ifAKCX kdVFfN"
-      >
-        <span />
-        <span />
-        <span />
-      </button>
-    </div>
+      <span />
+      <span />
+      <span />
+    </button>
   </header>
   <div
     className="sc-htpNat hKEOFC"

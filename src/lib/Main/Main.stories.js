@@ -9,27 +9,23 @@ import Logo from '../Logo/Logo';
 import { logo } from '../Logo/sample/logo';
 import { Box } from './style';
 
-const mainMenuIsOpenLabel = 'Open primary menu';
+const mainMenuIsOpenLabel = 'Open sidebar';
 
 storiesOf(folder.nav + 'Main', module)
     .addDecorator(withKnobs)
     .add('Main', () => (
         <Main isOpen={boolean(mainMenuIsOpenLabel, true)}>
             <Topbar>
-                <div className="main-nav">
-                    <MenuHamburger
-                        isOpen={boolean(mainMenuIsOpenLabel, true)}
-                    />
-                    <a href="#">
-                        <Logo
-                            hasBaseline={false}
-                            hasHoverRight={true}
-                            blockWidth={spaceOptions.sm}
-                        >
-                            {logo}
-                        </Logo>
-                    </a>
-                </div>
+                <MenuHamburger isOpen={boolean(mainMenuIsOpenLabel, true)} />
+                <a href="#">
+                    <Logo
+                        hasBaseline={false}
+                        hasHoverRight={true}
+                        blockWidth={spaceOptions.sm}
+                    >
+                        {logo}
+                    </Logo>
+                </a>
             </Topbar>
             <Box />
         </Main>

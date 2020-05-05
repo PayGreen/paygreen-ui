@@ -10,9 +10,7 @@ it('renders without crashing', () => {
     const main = TestRenderer.create(
         <Main theme={ThemeDefault}>
             <Topbar theme={ThemeDefault}>
-                <div className="main-nav">
-                    <MenuHamburger theme={ThemeDefault} />
-                </div>
+                <MenuHamburger theme={ThemeDefault} />
             </Topbar>
             <Box />
         </Main>,
