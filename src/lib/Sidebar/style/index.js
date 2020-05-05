@@ -4,10 +4,7 @@ import { TopbarBase } from '../../Topbar/style';
 import { LogoBase } from '../../Logo/style';
 
 const SidebarBase = styled.nav`
-    .topbar-nav,
-    .logo-nav {
-        width: 100%;
-    }
+    ${sidebarStyle};
 
     @media (${props => props.theme.query.max.md}) {
         .topbar-nav {
@@ -16,7 +13,6 @@ const SidebarBase = styled.nav`
         .logo-nav {
             display: none;
         }
-        ${sidebarStyle};
     }
 
     @media (${props => props.theme.query.min.md}) {
@@ -27,7 +23,6 @@ const SidebarBase = styled.nav`
             ${LogoBase};
             padding: ${props => props.theme.space.sm};
         }
-        ${sidebarStyle};
     }
 `;
 

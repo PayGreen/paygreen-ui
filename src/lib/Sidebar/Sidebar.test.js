@@ -8,14 +8,12 @@ import { ArrowRightIcon } from '../Icon/Icon';
 it('renders without crashing', () => {
     const sidebar = TestRenderer.create(
         <Sidebar theme={ThemeDefault}>
-            <div className="main-nav">
                 <ArrowRightIcon
                     htmlTag="button"
                     iconSize="xl"
                     colorPallet={colorPalletOptions.wab}
                     colorWab={greyOptions.grey40}
                 />
-            </div>
         </Sidebar>,
     );
     expect(sidebar.toJSON()).toMatchSnapshot();

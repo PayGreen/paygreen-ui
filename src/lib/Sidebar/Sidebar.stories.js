@@ -19,12 +19,12 @@ storiesOf(folder.nav + 'Sidebar', module)
         <Sidebar>
             <div className="topbar-nav">
                 <Topbar>
-                    <div className="main-nav">
                         <a href="#">
                             <Logo
                                 hasBaseline={false}
                                 hasHoverRight={true}
-                                blockWidth={spaceOptions.sm}
+                                blockWidth={spaceOptions.md}
+                                blockHeight="md"
                                 text="tree"
                                 textSize="lg"
                             >
@@ -37,7 +37,6 @@ storiesOf(folder.nav + 'Sidebar', module)
                             colorPallet={colorPalletOptions.wab}
                             colorWab={greyOptions.grey40}
                         />
-                    </div>
                 </Topbar>
             </div>
             <div className="logo-nav">
@@ -45,7 +44,8 @@ storiesOf(folder.nav + 'Sidebar', module)
                     <Logo
                         hasBaseline={false}
                         hasHoverRight={true}
-                        blockWidth={spaceOptions.sm}
+                        blockWidth={spaceOptions.md}
+                        blockHeight="md"
                         text="tree"
                         textSize="lg"
                     >

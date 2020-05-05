@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 
 const sidebarStyle = css`
-    position: relative;
+    position: absolute;
     z-index: ${props => props.theme.zindex.menu};
     height: 100vh;
     transition: all ${props => props.theme.transition.sm};
