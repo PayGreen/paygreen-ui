@@ -7,14 +7,11 @@ import Logo from '../Logo/Logo';
 import Topbar from './Topbar';
 import { logo } from '../Logo/sample/logo';
 
-const mainMenuIsOpenLabel = 'Open primary menu';
-
 storiesOf(folder.nav + 'Topbar', module)
     .addDecorator(withKnobs)
     .add('Topbar', () => (
         <Topbar>
-            <div className="main-nav">
-                <MenuHamburger isOpen={boolean(mainMenuIsOpenLabel, true)} />
+                <MenuHamburger isOpen={boolean('Is open', true)}/>
                 <a href="#">
                     <Logo
                         hasBaseline={false}
@@ -24,6 +21,5 @@ storiesOf(folder.nav + 'Topbar', module)
                         {logo}
                     </Logo>
                 </a>
-            </div>
         </Topbar>
     ));
