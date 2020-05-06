@@ -5,19 +5,17 @@ import {
     iconSizeOptions,
     spaceOptions
 } from '../../shared/constants';
-import { CardsIcon, OutIcon } from '../Icon/Icon';
+import { MeterIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
-import IconLabel from '../IconLabel/IconLabel';
-import Text from '../Text/Text';
-import MenuItem from './MenuItem';
+import SidebarItem from './SidebarItem';
 
 it('renders without crashing', () => {
-    const menuItem = TestRenderer.create(
+    const sidebarItem = TestRenderer.create(
         <a href="#">
-            <MenuItem
+            <SidebarItem
                 theme={ThemeDefault}
             >
-                <CardsIcon
+                <MeterIcon
                     iconSize={iconSizeOptions.lg}
                     theme={ThemeDefault}
                 />
@@ -29,25 +27,8 @@ it('renders without crashing', () => {
                 >
                     Payment
                 </Link>
-
-                <IconLabel
-                    theme={ThemeDefault}
-                >
-                    <OutIcon
-                        theme={ThemeDefault}
-                        iconSize={iconSizeOptions.xs}
-                        marginRight={spaceOptions.xs}
-                    />
-                    Dev
-                </IconLabel>
-
-                <Text
-                    theme={ThemeDefault}
-                >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo, id bibendum felis iaculis eu.
-                </Text>
-            </MenuItem>
+            </SidebarItem>
         </a>
     );
-    expect(menuItem.toJSON()).toMatchSnapshot();
+    expect(sidebarItem.toJSON()).toMatchSnapshot();
 });

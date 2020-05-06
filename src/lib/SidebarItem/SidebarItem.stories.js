@@ -23,47 +23,57 @@ const colorWabLabel = 'Grey color';
 storiesOf(folder.nav + 'SidebarItem', module)
     .addDecorator(withKnobs)
     .add('SidebarItem', () => (
-        <a href="#">
-            <SidebarItem
-                colorTheme={radios(
-                    colorThemeLabel,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                hasHoverEmphasis={boolean('Hover emphasis', true)}
-            >
-                <MeterIcon
-                    iconSize={iconSizeOptions.lg}
-                    colorPallet={radios(
-                        colorPalletLabel,
-                        colorPalletOptions,
-                        colorPalletDefault,
-                    )}
+        <>
+            <a href="#">
+                <SidebarItem
                     colorTheme={radios(
                         colorThemeLabel,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
-                    colorWab={select(colorWabLabel, greyOptions, greyDefault)}
-                />
-
-                <Link
-                    hasUnderline={false}
-                    hasHover={false}
-                    colorPallet={radios(
-                        colorPalletLabel,
-                        colorPalletOptions,
-                        colorPalletDefault,
-                    )}
-                    colorTheme={radios(
-                        colorThemeLabel,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    colorWab={select(colorWabLabel, greyOptions, greyDefault)}
+                    hasHoverEmphasis={boolean('Hover emphasis', true)}
                 >
-                    Tableau de Bord
-                </Link>
-            </SidebarItem>
-        </a>
-    ))
+                    <MeterIcon
+                        iconSize={iconSizeOptions.lg}
+                        colorPallet={radios(
+                            colorPalletLabel,
+                            colorPalletOptions,
+                            colorPalletDefault,
+                        )}
+                        colorTheme={radios(
+                            colorThemeLabel,
+                            colorThemeOptions,
+                            colorThemeDefault,
+                        )}
+                        colorWab={select(
+                            colorWabLabel,
+                            greyOptions,
+                            greyDefault,
+                        )}
+                    />
+
+                    <Link
+                        hasUnderline={false}
+                        hasHover={false}
+                        colorPallet={radios(
+                            colorPalletLabel,
+                            colorPalletOptions,
+                            colorPalletDefault,
+                        )}
+                        colorTheme={radios(
+                            colorThemeLabel,
+                            colorThemeOptions,
+                            colorThemeDefault,
+                        )}
+                        colorWab={select(
+                            colorWabLabel,
+                            greyOptions,
+                            greyDefault,
+                        )}
+                    >
+                        Tableau de Bord
+                    </Link>
+                </SidebarItem>
+            </a>
+        </>
+    ));

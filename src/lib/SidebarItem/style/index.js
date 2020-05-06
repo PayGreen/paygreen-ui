@@ -24,7 +24,8 @@ const SidebarItemBase = styled.div`
 
     ${LinkBase} {
         grid-area: link;
-        font-size: ${props => props.theme.font.size.sm};
+        font-size: ${props => props.theme.font.size[props.textSize]};
+        color: ${props => props.theme.color[props.colorWab]};
     }
 
     ${props => props.isMain ? main : sub};

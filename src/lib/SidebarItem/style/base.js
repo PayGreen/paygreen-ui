@@ -113,7 +113,6 @@ const main = css`
             box-sizing: border-box;
             height: ${props => math(props.theme.grid.header + '+' + props.theme.line)};
             text-align: center;
-            font-size: ${props => props.theme.font.size.xs};
         }
 
         z-index: ${props => props.theme.zindex.menu};

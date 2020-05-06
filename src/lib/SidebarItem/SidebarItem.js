@@ -3,8 +3,16 @@ import PropTypes from 'prop-types';
 import {
     colorThemeOptions,
     colorThemeDefault,
+    colorPalletOptions,
+    colorPalletDefault,
+    colorTypeOptions,
+    colorTypeDefault,
+    greyOptions,
+    greyDefault,
     alignOptions,
     alignDefault,
+    fontSizeOptions,
+    fontSizeDefault,
 } from '../../shared/constants';
 import { SidebarItemBase } from './style';
 
@@ -13,7 +21,13 @@ const SidebarItem = props => {
 };
 
 SidebarItem.propTypes = {
+    textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
+
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
+    colorWab: PropTypes.oneOf(Object.values(greyOptions)),
+    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
+
     isMain: PropTypes.bool,
     hasHoverBase: PropTypes.bool,
     hasHoverAlternative: PropTypes.bool,
@@ -22,7 +36,13 @@ SidebarItem.propTypes = {
 };
 
 SidebarItem.defaultProps = {
+    textSize: fontSizeDefault,
+
     colorTheme: colorThemeDefault,
+    colorPallet: colorPalletDefault,
+    colorWab: greyDefault,
+    colorType: colorTypeDefault,
+
     isMain: false,
     hasHoverBase: true,
     hasHoverAlternative: true,
