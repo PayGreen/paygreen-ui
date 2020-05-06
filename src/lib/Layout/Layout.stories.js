@@ -4,12 +4,10 @@ import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { folder } from '../../shared/constants';
 import Layout from './Layout';
 
-const mainMenuIsOpenLabel = 'Open sidebar';
-
 storiesOf(folder.nav + 'Layout', module)
     .addDecorator(withKnobs)
     .add('Layout', () => (
-        <Layout isOpen={boolean(mainMenuIsOpenLabel, true)}>
+        <Layout isOpen={boolean('Open sidebar', true)}>
             <div>some content here</div>
         </Layout>
     ));
