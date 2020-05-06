@@ -12,6 +12,7 @@ it('renders without crashing', () => {
             <Topbar theme={ThemeDefault}>
                 <MenuHamburger theme={ThemeDefault} />
             </Topbar>
+
             <Box />
         </Main>,
     );

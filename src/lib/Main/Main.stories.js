@@ -16,6 +16,7 @@ storiesOf(folder.nav + 'Main', module)
             <Topbar>
                 <MenuHamburger isOpen={boolean(mainMenuIsOpenLabel, true)} />
             </Topbar>
+
             <Box />
         </Main>
     ));
