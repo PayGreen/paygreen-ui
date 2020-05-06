@@ -1,15 +1,13 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import Main from './Main';
-import MenuHamburger from '../MenuHamburger/MenuHamburger';
-import Topbar from '../Topbar/Topbar';
-import { Box } from './style';
+import Layout from './Layout';
 
 it('renders without crashing', () => {
-    const main = TestRenderer.create(
+    const layout = TestRenderer.create(
         <Layout theme={ThemeDefault}>
+            <div>some content here</div>
         </Layout>,
     );
-    expect(main.toJSON()).toMatchSnapshot();
+    expect(layout.toJSON()).toMatchSnapshot();
 });

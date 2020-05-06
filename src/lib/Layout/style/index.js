@@ -1,8 +1,11 @@
 import styled from 'styled-components';
-import { layoutStyle } from './base';
 
 const LayoutBase = styled.div`
-    ${layoutStyle}
+    position: relative;
+    z-index: ${props => props.theme.zindex.content};
+    background: url(${props => props.theme.pattern}) repeat;
+    height: 100vh;
+    width: 100%;
     display: flex;
     overflow-y: hidden;
 `;

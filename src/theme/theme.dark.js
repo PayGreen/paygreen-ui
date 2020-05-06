@@ -18,7 +18,7 @@ ThemeDark = Object.assign(ThemeDark, {
 
         black00: '#ffffff',
     },
-    pattern: {patternLight},
+    pattern: patternLight,
 });
 
 export { ThemeDark };
