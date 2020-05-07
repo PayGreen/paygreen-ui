@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { math } from 'polished';
+import { math, transparentize } from 'polished';
 import { colorTypeOptions } from '../../../shared/constants';
 import { color } from './constants';
 
@@ -9,7 +9,7 @@ const cos = Math.cos((angle * Math.PI) / 180);
 const backgroundColor = css`
     background-color: ${props =>
         props.colorType === colorTypeOptions.reverse
-            ? props.theme.wab.white00
+            ? transparentize(0.7, props.theme.wab.white00)
             : color[props.colorPallet]};
 `;
 
