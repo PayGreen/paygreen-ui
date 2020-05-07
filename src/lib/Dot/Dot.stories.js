@@ -7,6 +7,8 @@ import {
     dotStyleDefault,
     iconSizeOptions,
     iconSizeDefault,
+    spaceOptions,
+    spaceDefault,
     colorTypeOptions,
     colorTypeDefault,
     colorPalletOptions,
@@ -26,6 +28,9 @@ storiesOf(folder.main + 'Dot', module)
         <Dot
             dotStyle={radios('Style', dotStyleOptions, dotStyleDefault)}
             dotSize={select('Size', iconSizeOptions, iconSizeDefault)}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            marginLateral={select('Margin lateral', spaceOptions, spaceDefault)}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorPallet={radios(
                 'Color pallet',

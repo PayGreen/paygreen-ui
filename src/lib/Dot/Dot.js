@@ -5,6 +5,8 @@ import {
     dotStyleDefault,
     iconSizeOptions,
     iconSizeDefault,
+    spaceOptions,
+    spaceDefault,
     colorTypeOptions,
     colorTypeDefault,
     colorPalletOptions,
@@ -25,6 +27,9 @@ const Dot = props => {
 Dot.propTypes = {
     dotStyle: PropTypes.oneOf(Object.values(dotStyleOptions)),
     dotSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
@@ -35,6 +40,9 @@ Dot.propTypes = {
 Dot.defaultProps = {
     dotStyle: dotStyleDefault,
     dotSize: iconSizeDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    marginLateral: spaceDefault,
     colorType: colorTypeDefault,
     colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
