@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
     folder,
+    itemHtmlTagOptions,
     iconSizeOptions,
     alignOptions,
     colorPalletOptions,
@@ -17,8 +18,11 @@ import MenuSecondary from './MenuSecondary';
 storiesOf(folder.nav + 'MenuSecondary', module)
     .addDecorator(withKnobs)
     .add('MenuSecondary', () => (
-        <MenuSecondary isOpen={boolean('Is open', true)}>
-            <Menu>
+        <MenuSecondary
+            isOpen={boolean('Is open', true)}
+            closeComponent={<MenuClose />}
+        >
+            <Menu htmlTag={itemHtmlTagOptions.div}>
                 <a href="#">
                     <MenuItem
                         hasHoverBase={false}
@@ -43,7 +47,7 @@ storiesOf(folder.nav + 'MenuSecondary', module)
                 </a>
             </Menu>
 
-            <Menu>
+            <Menu htmlTag={itemHtmlTagOptions.div}>
                 <a href="#">
                     <MenuItem
                         hasHoverBase={false}
@@ -63,7 +67,5 @@ storiesOf(folder.nav + 'MenuSecondary', module)
                     </MenuItem>
                 </a>
             </Menu>
-
-            <MenuClose />
         </MenuSecondary>
     ));
