@@ -55,7 +55,7 @@ const RadioIconBase = styled.div`
             position: absolute;
             top: 0;
             right: 0;
-            background-color: ${props => transparentize(0.8, props.theme.color.status.success)};
+            background-color: ${props => transparentize(0.8, props.theme.color.status.success.main)};
             width: ${props => props.theme.corner.size.lg};
             height: ${props => props.theme.corner.size.lg};
             border-radius: 0 ${props => props.theme.radius.lg} 0 100%;

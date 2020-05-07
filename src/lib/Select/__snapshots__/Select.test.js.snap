@@ -89,10 +89,22 @@ exports[`renders without crashing 1`] = `
             "main": "#00a99d",
           },
           "status": Object {
-            "danger": "#b54025",
-            "default": "#00a99d",
-            "success": "#33ad73",
-            "warning": "#e58a28",
+            "danger": Object {
+              "light": "#f7d7d0",
+              "main": "#b54025",
+            },
+            "default": Object {
+              "light": "#e1f3f2",
+              "main": "#00a99d",
+            },
+            "success": Object {
+              "light": "#d5f3e5",
+              "main": "#33ad73",
+            },
+            "warning": Object {
+              "light": "#fbe6ce",
+              "main": "#e58a28",
+            },
           },
           "tertiary": Object {
             "gradientBase": "#fab56b",
@@ -218,9 +230,9 @@ exports[`renders without crashing 1`] = `
           "lg": "200px",
           "md": "150px",
           "none": "auto",
-          "sm": "100px",
+          "sm": "120px",
           "xl": "250px",
-          "xs": "70px",
+          "xs": "90px",
         },
         "name": "Default",
         "query": Object {

@@ -41,10 +41,22 @@ export const ThemeBase = {
         },
 
         status: {
-            success: '#33ad73',
-            default: '#00a99d',
-            warning: '#e58a28',
-            danger: '#b54025',
+            success: {
+                main: '#33ad73',
+                light: '#d5f3e5',
+            },
+            default: {
+                main: '#00a99d',
+                light: '#e1f3f2',
+            },
+            warning: {
+                main: '#e58a28',
+                light: '#fbe6ce',
+            },
+            danger: {
+                main: '#b54025',
+                light: '#f7d7d0',
+            },
         },
     },
     font: {

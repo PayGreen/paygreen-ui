@@ -7,8 +7,12 @@ import {
     cardHtmlTagDefault,
     colorTypeOptions,
     colorTypeDefault,
+    colorPalletOptions,
     colorThemeOptions,
     colorThemeDefault,
+    greyOptions,
+    formStatusOptions,
+    formStatusDefault,
     shadowSizeOptions,
     shadowSizeDefault,
     blockWidthOptions,
@@ -32,7 +36,10 @@ import Card from './Card';
 import imageFile from './sample/sample.png';
 
 const colorTypeLabel = 'Color type';
+const colorPalletLabel = 'Color pallet';
 const colorThemeLabel = 'Color theme';
+const colorWabLabel = 'Grey color';
+const colorStatusLabel = 'Status color';
 const blockWidthLabel = 'Block width';
 
 storiesOf(folder.main + 'Card', module)
@@ -472,5 +479,72 @@ storiesOf(folder.main + 'Card', module)
         {
             notes:
                 'Very basic card, without background, shadow, paddings and radius. Change background color to see the reverse color type result.',
+        },
+    )
+    .add(
+        'Card with colored background',
+        () => (
+            <Card
+                colorPallet={radios(
+                    colorPalletLabel,
+                    colorPalletOptions,
+                    colorPalletOptions.wab,
+                )}
+                colorTheme={select(
+                    colorThemeLabel,
+                    colorThemeOptions,
+                    colorThemeDefault,
+                )}
+                colorWab={select(
+                    colorWabLabel,
+                    greyOptions,
+                    greyOptions.white20,
+                )}
+                colorStatus={select(
+                    colorStatusLabel,
+                    formStatusOptions,
+                    formStatusDefault,
+                )}
+                shadowSize={shadowSizeOptions.none}
+                blockWidth={blockWidthOptions.sm}
+            >
+                <Title
+                    marginTop={spaceOptions.sm}
+                    marginLateral={spaceOptions.sm}
+                    colorPallet={radios(
+                        colorPalletLabel,
+                        colorPalletOptions,
+                        colorPalletOptions.wab,
+                    )}
+                    colorTheme={select(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    colorWab={greyOptions.grey60}
+                    colorStatus={select(
+                        colorStatusLabel,
+                        formStatusOptions,
+                        formStatusDefault,
+                    )}
+                >
+                    Title <strong>colored</strong>
+                </Title>
+
+                <Text
+                    textSize={fontSizeOptions.sm}
+                    marginTop={spaceOptions.xs}
+                    marginLateral={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Duis <strong>porttitor velit a ultricies aliquet</strong>.
+                    Donec vehicula in arcu non sodales. Fusce et consectetur
+                    odio.
+                </Text>
+            </Card>
+        ),
+        {
+            notes: 'Card with colored background and inner Card.',
         },
     );

@@ -27,7 +27,7 @@ const shadowStyle = {
         status: css`
             box-shadow: ${props => props.theme.shadow.size.sm + ' ' + transparentize(
                 props.theme.shadow.opacity.md,
-                props.theme.color.status[props.colorStatus]
+                props.theme.color.status[props.colorStatus].main
             )};
         `
     },
@@ -47,7 +47,7 @@ const shadowStyle = {
         status: css`
             box-shadow: ${props => props.theme.shadow.size.md + ' ' + transparentize(
                 props.theme.shadow.opacity.lg,
-                props.theme.color.status[props.colorStatus]
+                props.theme.color.status[props.colorStatus].main
             )};
         `
     }
