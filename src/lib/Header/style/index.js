@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { headerStyle } from './base';
 import { MenuPrimaryBase } from '../../MenuPrimary/style';
-import { MenuSecondaryBase } from '../../MenuSecondary/style';
 import { MenuHamburgerBase } from '../../MenuHamburger/style';
 import { LogoBase } from '../../Logo/style';
 
@@ -34,23 +33,6 @@ const HeaderBase = styled.header`
         ${MenuPrimaryBase} {
             flex: 1;
             justify-content: flex-end;
-        }
-
-        ${MenuSecondaryBase} {
-            margin-left: ${props => props.theme.space.lg};
-            padding-left: ${props => props.theme.space.lg};
-
-            &::before {
-                content: '';
-                position: absolute;
-                transform: translate(-50%, -50%);
-                top: 50%;
-                left: 0;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background-color: ${props => props.theme.wab.grey10};
-            }
         }
     }
 `;

@@ -5,6 +5,7 @@ import {
     folder,
     alignOptions,
     colorPalletOptions,
+    greyOptions,
     iconSizeOptions,
     spaceOptions,
     iconHtmlTagOptions,
@@ -32,6 +33,7 @@ import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Logo from '../Logo/Logo';
 import Header from './Header';
 import { logo } from '../Logo/sample/logo';
+import Dot from '../Dot/Dot';
 
 const mainMenuIsOpenLabel = 'Open primary menu';
 
@@ -182,6 +184,14 @@ storiesOf(folder.nav + 'Header', module)
                     </MenuList>
                 </Menu>
             </MenuPrimary>
+
+            <Dot
+                className="hideOnSmallScreen"
+                colorPallet={colorPalletOptions.wab}
+                colorWab={greyOptions.grey10}
+                marginLeft={spaceOptions.lg}
+                marginRight={spaceOptions.lg}
+            />
 
             <MenuSecondary
                 isOpen={boolean('Open secondary menu', true)}
