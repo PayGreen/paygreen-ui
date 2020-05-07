@@ -30,7 +30,8 @@ storiesOf(folder.main + 'Dot', module)
             dotSize={select('Size', iconSizeOptions, iconSizeDefault)}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
             marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
-            marginLateral={select('Margin lateral', spaceOptions, spaceDefault)}
+            marginLeft={select('Margin left', spaceOptions, spaceDefault)}
+            marginRight={select('Margin right', spaceOptions, spaceDefault)}
             colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorPallet={radios(
                 'Color pallet',
