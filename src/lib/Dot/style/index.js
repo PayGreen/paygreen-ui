@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { dotStyle } from './base';
 
 const DotBase = styled.span`
-    display: block;
+    ${props => dotStyle[props.dotStyle]};
 `;
 
 export { DotBase };
