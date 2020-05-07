@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<nav
-  className="sc-htpNat kXJAYO"
+<div
+  className="sc-bxivhb jTMxTr"
 >
   <span
-    className="sc-bxivhb gkFAZX icon"
+    className="sc-EHOje XtbNG icon"
   >
     <svg
       viewBox="0 0 143 143"
@@ -15,5 +15,5 @@ exports[`renders without crashing 1`] = `
       />
     </svg>
   </span>
-</nav>
+</div>
 `;

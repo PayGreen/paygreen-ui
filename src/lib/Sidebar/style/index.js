@@ -1,35 +1,35 @@
 import styled from 'styled-components';
-import { sidebarStyle } from './base';
+import { Box } from '../../Main/style';
 import { TopbarBase } from '../../Topbar/style';
-import { LogoBase } from '../../Logo/style';
 
-const SidebarBase = styled.nav`
-    ${sidebarStyle};
-
-    .topbar-nav,
-    .logo-nav {
-        width: 100%;
-    }
-
-    .topbar-nav {
-        ${TopbarBase};
-    }
-
-    .logo-nav {
-        display: none;
-    }
+const SidebarBase = styled.div`
+    position: absolute;
+    z-index: ${props => props.theme.zindex.menu};
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
 
     @media (${props => props.theme.query.min.md}) {
-        .topbar-nav {
-            display: none;
-        }
-
-        .logo-nav {
-            display: block;
-            ${LogoBase};
-            padding: ${props => props.theme.space.sm};
-        }
+        width: ${props => props.theme.grid.sidebar};
     }
 `;
 
-export { SidebarBase };
+const MainSidebar = styled.div`
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'topbar' 'box';
+
+    & > ${TopbarBase} {
+        grid-area: topbar;
+    }
+
+    & > ${Box} {
+        grid-area: box;
+    }
+`;
+
+export { MainSidebar, SidebarBase };
