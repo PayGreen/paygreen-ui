@@ -7,8 +7,8 @@ import {
     colorPalletOptions,
     greyOptions,
 } from '../../shared/constants';
-import { MenuSecondaryBase } from './style';
 import Dot from '../Dot/Dot';
+import { MenuSecondaryBase } from './style';
 
 const MenuSecondary = props => {
     return (
