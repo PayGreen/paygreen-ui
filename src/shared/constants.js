@@ -122,6 +122,15 @@ const listStyleOptions = {
 
 const listStyleDefault = listStyleOptions.dash;
 
+// Dot styles
+const dotStyleOptions = {
+    circle: 'circle',
+    dash: 'dash',
+    slashes: 'slashes',
+};
+
+const dotStyleDefault = dotStyleOptions.circle;
+
 // Button styles
 const buttonStyleOptions = {
     fill: 'fill',
@@ -391,6 +400,8 @@ export {
     decorationDefault,
     listStyleOptions,
     listStyleDefault,
+    dotStyleOptions,
+    dotStyleDefault,
     buttonStyleOptions,
     buttonStyleDefault,
     imageTypeOptions,
