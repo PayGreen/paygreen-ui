@@ -8,6 +8,7 @@ import {
     iconSizeOptions,
     spaceOptions,
     iconHtmlTagOptions,
+    itemHtmlTagOptions,
 } from '../../shared/constants';
 import {
     UserIcon,
@@ -182,8 +183,11 @@ storiesOf(folder.nav + 'Header', module)
                 </Menu>
             </MenuPrimary>
 
-            <MenuSecondary isOpen={boolean('Open secondary menu', true)}>
-                <Menu>
+            <MenuSecondary
+                isOpen={boolean('Open secondary menu', true)}
+                closeComponent={<MenuClose />}
+            >
+                <Menu htmlTag={itemHtmlTagOptions.div}>
                     <a href="#">
                         <MenuItem
                             hasHoverBase={false}
@@ -208,7 +212,7 @@ storiesOf(folder.nav + 'Header', module)
                     </a>
                 </Menu>
 
-                <Menu>
+                <Menu htmlTag={itemHtmlTagOptions.div}>
                     <a href="#">
                         <MenuItem
                             hasHoverBase={false}
@@ -228,8 +232,6 @@ storiesOf(folder.nav + 'Header', module)
                         </MenuItem>
                     </a>
                 </Menu>
-
-                <MenuClose />
             </MenuSecondary>
         </Header>
     ));
