@@ -10,13 +10,11 @@ const SidebarBase = styled.nav`
         width: 100%;
     }
 
-    @media (${props => props.theme.query.max.md}) {
-        .topbar-nav {
-            ${TopbarBase};
-        }
-        .logo-nav {
-            display: none;
-        }
+    .topbar-nav {
+        ${TopbarBase};
+    }
+    .logo-nav {
+        display: none;
     }
 
     @media (${props => props.theme.query.min.md}) {
@@ -24,6 +22,7 @@ const SidebarBase = styled.nav`
             display: none;
         }
         .logo-nav {
+            display: block;
             ${LogoBase};
             padding: ${props => props.theme.space.sm};
         }
