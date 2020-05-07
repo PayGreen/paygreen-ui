@@ -30,6 +30,7 @@ storiesOf(folder.nav + 'Sidebar', module)
                             {logo}
                         </Logo>
                     </a>
+                    
                     <ArrowRightIcon
                         htmlTag={iconHtmlTagOptions.button}
                         iconSize={iconSizeOptions.xl}

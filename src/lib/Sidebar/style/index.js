@@ -5,6 +5,7 @@ import { LogoBase } from '../../Logo/style';
 
 const SidebarBase = styled.nav`
     ${sidebarStyle};
+
     .topbar-nav,
     .logo-nav {
         width: 100%;
@@ -13,6 +14,7 @@ const SidebarBase = styled.nav`
     .topbar-nav {
         ${TopbarBase};
     }
+
     .logo-nav {
         display: none;
     }
@@ -21,6 +23,7 @@ const SidebarBase = styled.nav`
         .topbar-nav {
             display: none;
         }
+
         .logo-nav {
             display: block;
             ${LogoBase};
