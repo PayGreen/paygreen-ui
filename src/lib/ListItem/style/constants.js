@@ -1,7 +1,5 @@
 import { math } from 'polished';
 
-const bulletLine = 3;
-
 const bulletFont = {
     xs: '1.1rem',
     sm: '1.2rem',
@@ -13,7 +11,6 @@ const bulletFont = {
 const marginBase = props => math(props.theme.iconSize[props.bulletSize] + '*0.75');
 
 export {
-    bulletLine,
     bulletFont,
     marginBase
 };
