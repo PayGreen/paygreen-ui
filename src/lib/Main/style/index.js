@@ -4,7 +4,7 @@ import { TopbarBase } from '../../Topbar/style';
 import { isOpenStyle } from './base';
 
 const Box = styled.div`
-    overflow-y: scroll;
+    overflow-y: auto;
 `;
 
 const MainBase = styled.div`
