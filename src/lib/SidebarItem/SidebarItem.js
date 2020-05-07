@@ -39,7 +39,8 @@ SidebarItem.defaultProps = {
     textSize: fontSizeDefault,
 
     colorTheme: colorThemeDefault,
-    colorPallet: colorPalletDefault,
+    // colorPallet: colorPalletDefault,
+    colorPallet: colorPalletOptions.wab,
     colorWab: greyDefault,
     colorType: colorTypeDefault,
 

@@ -1,22 +1,13 @@
 import styled from 'styled-components';
-import { transparentize } from 'polished';
 
 const SidebarListBase = styled.ul`
     box-sizing: border-box;
     margin: 0;
-    padding: ${props => props.theme.space.sm} 0;
+    padding: 0;
 
     @media (${props => props.theme.query.min.lg}) {
         position: absolute;
-        margin-top: ${props => props.theme.iconSize.lg};
-        padding: ${props => props.theme.radius.lg} 0;
         width: ${props => props.theme.blockWidth.sm};
-        background-color: ${props => props.theme.wab.white00};
-        border-radius: ${props => props.theme.radius.lg};
-        box-shadow: 0 0 35px ${props => transparentize(
-            props.theme.shadow.opacity.lg,
-            props.theme.color[props.colorTheme].main
-        )};
 
         &::before {
             content: '';

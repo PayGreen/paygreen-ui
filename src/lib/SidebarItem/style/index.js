@@ -12,7 +12,7 @@ const SidebarItemBase = styled.div`
     padding: 0 ${props => props.theme.space.sm};
     display: grid;
     grid-template-areas: "icon link";
-    grid-template-columns: auto 1fr;
+    grid-template-columns: ${props => props.theme.iconSize.xl} 1fr;
     align-items: center;
     transition: all ${props => props.theme.transition.sm};
 
@@ -25,7 +25,6 @@ const SidebarItemBase = styled.div`
     ${LinkBase} {
         grid-area: link;
         font-size: ${props => props.theme.font.size[props.textSize]};
-        color: ${props => props.theme.color[props.colorWab]};
     }
 
     ${props => props.isMain ? main : sub};

@@ -5,13 +5,14 @@ import {
     folder,
     colorThemeDefault,
     colorThemeOptions,
-    spaceOptions,
-    colorPalletOptions,
-    greyOptions
 } from '../../shared/constants';
 import Link from '../Link/Link';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarList from './SidebarList';
+
+const colorPalletLabel = 'Color pallet';
+const colorThemeLabel = 'Color theme';
+const colorWabLabel = 'Grey color';
 
 const color = [
     colorThemeOptions.primary,
@@ -23,29 +24,45 @@ const color = [
 storiesOf(folder.nav + 'SidebarList', module)
     .addDecorator(withKnobs)
     .add('SidebarList', () => (
-        <SidebarList 
-        >
+        <SidebarList>
             <a href="#">
-                <SidebarItem textSize='sm' hasHoverEmphasis={true}>
-                    <Link hasUnderline={false} hasHover={false}>
-                        Tree
+                <SidebarItem
+                    colorTheme={radios(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    textSize="sm"
+                    hasHoverEmphasis={true}
+                >
+                    <Link
+                        colorPallet="wab"
+                        colorWab="grey60"
+                        hasUnderline={false}
+                        hasHover={false}
+                    >
+                        Vue d'ensemble
                     </Link>
                 </SidebarItem>
             </a>
 
             <a href="#">
-                <SidebarItem 
-                        colorWab={greyOptions.grey40} textSize='sm' hasHoverEmphasis={true}>
-                    <Link hasUnderline={false} hasHover={false}>
-                        Tree
-                    </Link>
-                </SidebarItem>
-            </a>
-
-            <a href="#">
-                <SidebarItem  textSize='sm' hasHoverEmphasis={true}>
-                    <Link hasUnderline={false} hasHover={false}>
-                        Tree
+                <SidebarItem
+                    colorTheme={radios(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    textSize="sm"
+                    hasHoverEmphasis={true}
+                >
+                    <Link
+                        colorPallet="wab"
+                        colorWab="grey60"
+                        hasUnderline={false}
+                        hasHover={false}
+                    >
+                        Vue par projet
                     </Link>
                 </SidebarItem>
             </a>
