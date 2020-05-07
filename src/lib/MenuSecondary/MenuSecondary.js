@@ -19,6 +19,7 @@ const MenuSecondary = props => {
                         <li key={index}>
                             {index ? (
                                 <Dot
+                                    theme={props.theme} // not necessary, only needed for tests
                                     className="hideOnSmallScreen"
                                     dotStyle={dotStyleOptions.slashes}
                                     dotSize={iconSizeOptions.lg}

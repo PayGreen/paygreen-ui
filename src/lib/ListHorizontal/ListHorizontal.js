@@ -25,6 +25,7 @@ const ListHorizontal = props => (
                 <li key={index}>
                     {index ? (
                         <Dot
+                            theme={props.theme} // not necessary, only needed for tests
                             dotSize={iconSizeOptions.xs}
                             colorType={props.colorType}
                             colorPallet={props.colorPallet}
