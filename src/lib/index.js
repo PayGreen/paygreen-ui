@@ -21,6 +21,7 @@ import ListHorizontal from './ListHorizontal/ListHorizontal';
 import ListItem from './ListItem/ListItem';
 import Loader from './Loader/Loader';
 import Logo from './Logo/Logo';
+import Main from './Main/Main';
 import Menu from './Menu/Menu';
 import MenuClose from './MenuClose/MenuClose';
 import MenuHamburger from './MenuHamburger/MenuHamburger';
@@ -161,6 +162,7 @@ export {
     ListItem,
     Loader,
     Logo,
+    Main,
     Menu,
     MenuClose,
     MenuHamburger,
