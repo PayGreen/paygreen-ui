@@ -24,8 +24,6 @@ SidebarItem.propTypes = {
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
 
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
-    colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
 
     isMain: PropTypes.bool,
@@ -41,9 +39,6 @@ SidebarItem.defaultProps = {
     textSize: fontSizeDefault,
 
     colorTheme: colorThemeDefault,
-    colorPallet: colorPalletDefault,
-    // colorPallet: colorPalletOptions.wab,
-    colorWab: greyDefault,
     colorType: colorTypeDefault,
 
     isMain: false,

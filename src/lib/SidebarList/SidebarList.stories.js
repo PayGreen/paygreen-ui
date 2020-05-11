@@ -21,17 +21,13 @@ const color = [
     colorThemeOptions.quaternary,
 ];
 
-storiesOf(folder.nav + 'SidebarList', module)
+storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
     .addDecorator(withKnobs)
     .add('SidebarList', () => (
         <SidebarList>
             <a href="#">
                 <SidebarItem
-                    colorTheme={radios(
-                        colorThemeLabel,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
+
                     textSize="sm"
                     hasHoverEmphasis={true}
                     isActive={boolean('Is active', false)}
@@ -49,11 +45,7 @@ storiesOf(folder.nav + 'SidebarList', module)
 
             <a href="#">
                 <SidebarItem
-                    colorTheme={radios(
-                        colorThemeLabel,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
+
                     textSize="sm"
                     hasHoverEmphasis={true}
                 >

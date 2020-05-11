@@ -16,11 +16,12 @@ import { MeterIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import SidebarItem from './SidebarItem';
 
-const colorPalletLabel = 'Color pallet';
-const colorThemeLabel = 'Color theme';
-const colorWabLabel = 'Grey color';
 
-storiesOf(folder.nav + 'SidebarItem', module)
+
+const colorThemeLabel = 'Color theme';
+
+
+storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
     .addDecorator(withKnobs)
     .add('SidebarItem', () => (
         <>
@@ -35,44 +36,25 @@ storiesOf(folder.nav + 'SidebarItem', module)
                 >
                     <MeterIcon
                         iconSize={iconSizeOptions.lg}
-                        colorPallet={radios(
-                            colorPalletLabel,
-                            colorPalletOptions,
-                            colorPalletDefault,
-                        )}
                         colorTheme={radios(
                             colorThemeLabel,
                             colorThemeOptions,
                             colorThemeDefault,
-                        )}
-                        colorWab={select(
-                            colorWabLabel,
-                            greyOptions,
-                            greyDefault,
                         )}
                     />
 
                     <Link
                         hasUnderline={false}
                         hasHover={false}
-                        colorPallet={radios(
-                            colorPalletLabel,
-                            colorPalletOptions,
-                            colorPalletDefault,
-                        )}
                         colorTheme={radios(
                             colorThemeLabel,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
-                        colorWab={select(
-                            colorWabLabel,
-                            greyOptions,
-                            greyDefault,
-                        )}
                     >
                         Tableau de Bord
                     </Link>
+
                 </SidebarItem>
             </a>
         </>

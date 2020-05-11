@@ -20,21 +20,20 @@ import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarList from '../SidebarList/SidebarList';
 import SidebarMenu from './SidebarMenu';
 
-const color = [
-    colorThemeOptions.primary,
-    colorThemeOptions.secondary,
-    colorThemeOptions.tertiary,
-    colorThemeOptions.quaternary,
-];
 
-const colorPalletLabel = 'Color pallet';
 const colorThemeLabel = 'Color theme';
-const colorWabLabel = 'Grey color';
 
-storiesOf(folder.nav + 'SidebarMenu', module)
+storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
     .addDecorator(withKnobs)
     .add('SidebarMenu', () => (
-        <SidebarMenu>
+        <SidebarMenu
+            isOpen={boolean('is Open', true)}
+            colorTheme={radios(
+                colorThemeLabel,
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+        >
             <a href="#">
                 <SidebarItem
                     colorTheme={radios(
@@ -46,41 +45,25 @@ storiesOf(folder.nav + 'SidebarMenu', module)
                 >
                     <MeterIcon
                         iconSize={iconSizeOptions.lg}
-                        colorPallet={radios(
-                            colorPalletLabel,
-                            colorPalletOptions,
-                            colorPalletDefault,
-                        )}
+                        
                         colorTheme={radios(
                             colorThemeLabel,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
-                        colorWab={select(
-                            colorWabLabel,
-                            greyOptions,
-                            greyDefault,
-                        )}
+                        
                     />
 
                     <Link
                         hasUnderline={false}
                         hasHover={false}
-                        colorPallet={radios(
-                            colorPalletLabel,
-                            colorPalletOptions,
-                            colorPalletDefault,
-                        )}
+                
                         colorTheme={radios(
                             colorThemeLabel,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
-                        colorWab={select(
-                            colorWabLabel,
-                            greyOptions,
-                            greyDefault,
-                        )}
+                        
                     >
                         Tableau de Bord
                     </Link>
@@ -89,6 +72,7 @@ storiesOf(folder.nav + 'SidebarMenu', module)
             <SidebarList>
                 <a href="#">
                     <SidebarItem
+                        isActive={boolean('Is active', false)}
                         colorTheme={radios(
                             colorThemeLabel,
                             colorThemeOptions,
@@ -96,7 +80,6 @@ storiesOf(folder.nav + 'SidebarMenu', module)
                         )}
                         textSize="sm"
                         hasHoverEmphasis={true}
-                        isActive={boolean('Is active', false)}
                     >
                         <Link
                             colorPallet="wab"
