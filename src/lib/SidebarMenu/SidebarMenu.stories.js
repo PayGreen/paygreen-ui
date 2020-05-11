@@ -96,6 +96,7 @@ storiesOf(folder.nav + 'SidebarMenu', module)
                         )}
                         textSize="sm"
                         hasHoverEmphasis={true}
+                        isActive={boolean('Is active', false)}
                     >
                         <Link
                             colorPallet="wab"

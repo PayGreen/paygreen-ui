@@ -6,17 +6,20 @@ import { SidebarMenuBase } from './style';
 const SidebarMenu = props => {
     return (
         <SidebarMenuBase as={props.htmlTag} {...props}>
-        {props.children}
+
+           {props.children}
         </SidebarMenuBase>
     );
 };
 
 SidebarMenu.propTypes = {
     htmlTag: PropTypes.oneOf(Object.values(itemHtmlTagOptions)),
+    isOpen: PropTypes.bool
 };
 
 SidebarMenu.defaultProps = {
     htmlTag: itemHtmlTagDefault,
-};
+    isOpen: false
+}
 
 export default SidebarMenu;

@@ -10,9 +10,20 @@ const hoverBase = css`
         left: -100%;
         width: 200%;
         height: 100%;
-        background-image: linear-gradient(to left,
-            ${props => transparentize(1, props.theme.color[props.colorTheme].gradientBase)} 50%,
-            ${props => transparentize(0.8, props.theme.color[props.colorTheme].gradientBase)} 90%
+        background-image: linear-gradient(
+            to left,
+            ${props =>
+                    transparentize(
+                        1,
+                        props.theme.color[props.colorTheme].gradientBase,
+                    )}
+                50%,
+            ${props =>
+                    transparentize(
+                        0.8,
+                        props.theme.color[props.colorTheme].gradientBase,
+                    )}
+                90%
         );
         transition: all ${props => props.theme.transition.xl};
     }
@@ -35,7 +46,8 @@ const hoverAlternative = css`
         width: 0;
         transform: translateX(-50%);
         margin-left: 50%;
-        background-image: linear-gradient(to left,
+        background-image: linear-gradient(
+            to left,
             ${props => props.theme.color[props.colorTheme].gradientBase},
             ${props => props.theme.color[props.colorTheme].gradientShade}
         );
@@ -78,17 +90,29 @@ const hoverEmphasis = css`
     }
 `;
 
-const notClickable = css`
-    cursor: default;
+const activeStyle = css`
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to left,
+        ${props =>
+                transparentize(
+                    0.8,
+                    props.theme.color[props.colorTheme].gradientShade,
+                )}
+            30%,
+        ${props =>
+                transparentize(
+                    0.7,
+                    props.theme.color[props.colorTheme].gradientBase,
+                )}
+            80%
+    );
+    transition: all ${props => props.theme.transition.xl};
 `;
 
-const titleStyle = css`
-    ${notClickable};
-    
-    ${LinkBase} {
-        color: ${props => props.theme.wab.grey30};
-        border-bottom: solid ${props => props.theme.line} ${props => props.theme.wab.white20};
-    }
+const notClickable = css`
+    cursor: default;
 `;
 
 const main = css`
@@ -97,26 +121,28 @@ const main = css`
     }
 
     @media (${props => props.theme.query.max.lg}) {
-        ${props => props.hasHoverBase ? hoverBase : null};
-        ${props => props.hasHoverEmphasis ? hoverEmphasis : null};
+        ${props => (props.hasHoverBase ? hoverBase : null)};
+        ${props => (props.hasHoverEmphasis ? hoverEmphasis : null)};
 
-        ${props => !props.hasHoverBase && !props.hasHoverEmphasis ?
-            titleStyle : null};
+        ${props =>
+            !props.hasHoverBase && !props.hasHoverEmphasis ? titleStyle : null};
     }
 
     @media (${props => props.theme.query.min.lg}) {
         & > .icon {
             display: none;
         }
-
+        ${props => (props.isActive ? activeStyle : null)};
         ${LinkBase} {
             box-sizing: border-box;
-            height: ${props => math(props.theme.grid.header + '+' + props.theme.line)};
+            height: ${props =>
+                math(props.theme.grid.header + '+' + props.theme.line)};
             text-align: center;
         }
 
         z-index: ${props => props.theme.zindex.menu};
-        ${props => props.hasHoverAlternative ? hoverAlternative : notClickable};
+        ${props =>
+            props.hasHoverAlternative ? hoverAlternative : notClickable};
     }
 `;
 
@@ -128,8 +154,8 @@ const sub = css`
         padding: ${props => props.theme.space.sm} 0;
     }
 
-    ${props => props.hasHoverBase ? hoverBase : null};
-    ${props => props.hasHoverEmphasis ? hoverEmphasis : null};
+    ${props => (props.hasHoverBase ? hoverBase : null)};
+    ${props => (props.hasHoverEmphasis ? hoverEmphasis : null)};
 `;
 
 const align = {
@@ -142,11 +168,7 @@ const align = {
     right: css`
         width: fit-content;
         margin-left: auto;
-    `
+    `,
 };
 
-export {
-    main,
-    sub,
-    align
-};
+export { main, sub, align, activeStyle };

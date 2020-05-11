@@ -3,7 +3,8 @@ import { LinkBase } from '../../Link/style';
 import {
     main,
     sub,
-    align
+    align,
+    activeStyle
 } from './base';
 
 const SidebarItemBase = styled.div`
@@ -24,9 +25,10 @@ const SidebarItemBase = styled.div`
 
     ${LinkBase} {
         grid-area: link;
-        font-size: ${props => props.theme.font.size[props.textSize]};
+        font-size: ${props => props.theme.font.size[props.textSize]};        
     }
-
+    
+    ${props => (props.isActive ? activeStyle : null)};
     ${props => props.isMain ? main : sub};
     ${props => align[props.align]};
 `;

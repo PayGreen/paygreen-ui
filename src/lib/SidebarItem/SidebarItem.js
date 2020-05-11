@@ -33,14 +33,16 @@ SidebarItem.propTypes = {
     hasHoverAlternative: PropTypes.bool,
     hasHoverEmphasis: PropTypes.bool,
     align: PropTypes.oneOf(Object.values(alignOptions)),
+
+    isActive: PropTypes.bool,
 };
 
 SidebarItem.defaultProps = {
     textSize: fontSizeDefault,
 
     colorTheme: colorThemeDefault,
-    // colorPallet: colorPalletDefault,
-    colorPallet: colorPalletOptions.wab,
+    colorPallet: colorPalletDefault,
+    // colorPallet: colorPalletOptions.wab,
     colorWab: greyDefault,
     colorType: colorTypeDefault,
 
@@ -49,6 +51,8 @@ SidebarItem.defaultProps = {
     hasHoverAlternative: true,
     hasHoverEmphasis: false,
     align: alignDefault,
+
+    isActive: false,
 };
 
 export default SidebarItem;

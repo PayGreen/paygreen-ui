@@ -48,8 +48,8 @@ SidebarList.defaultProps = {
     textSize: fontSizeDefault,
 
     colorTheme: colorThemeDefault,
-    // colorPallet: colorPalletDefault,
-    colorPallet: colorPalletOptions.wab,
+    colorPallet: colorPalletDefault,
+    // colorPallet: colorPalletOptions.wab,
     colorWab: greyDefault,
     colorType: colorTypeDefault,
 
