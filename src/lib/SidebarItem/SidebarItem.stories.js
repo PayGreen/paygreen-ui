@@ -16,10 +16,7 @@ import { MeterIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import SidebarItem from './SidebarItem';
 
-
-
 const colorThemeLabel = 'Color theme';
-
 
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
     .addDecorator(withKnobs)
@@ -54,7 +51,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
                     >
                         Tableau de Bord
                     </Link>
-
                 </SidebarItem>
             </a>
         </>

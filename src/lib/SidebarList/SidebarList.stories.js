@@ -10,16 +10,7 @@ import Link from '../Link/Link';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarList from './SidebarList';
 
-const colorPalletLabel = 'Color pallet';
 const colorThemeLabel = 'Color theme';
-const colorWabLabel = 'Grey color';
-
-const color = [
-    colorThemeOptions.primary,
-    colorThemeOptions.secondary,
-    colorThemeOptions.tertiary,
-    colorThemeOptions.quaternary,
-];
 
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
     .addDecorator(withKnobs)
@@ -27,9 +18,13 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
         <SidebarList>
             <a href="#">
                 <SidebarItem
-
                     textSize="sm"
-                    hasHoverEmphasis={true}
+                    colorTheme={radios(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    hasHoverEmphasis={boolean('Hover emphasis', true)}
                     isActive={boolean('Is active', false)}
                 >
                     <Link
@@ -45,9 +40,13 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
 
             <a href="#">
                 <SidebarItem
-
                     textSize="sm"
-                    hasHoverEmphasis={true}
+                    colorTheme={radios(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    hasHoverEmphasis={boolean('Hover emphasis', true)}
                 >
                     <Link
                         colorPallet="wab"

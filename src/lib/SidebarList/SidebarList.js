@@ -21,7 +21,7 @@ const SidebarList = props => {
         <SidebarListBase {...props}>
             {React.Children.map(props.children, (child, index) =>
                 child ? (
-                    <li key={index}>
+                    <li key={index} {...props}>
                         {child}
                     </li>
                 ) : null,
