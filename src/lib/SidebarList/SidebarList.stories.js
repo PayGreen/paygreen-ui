@@ -6,7 +6,6 @@ import {
     colorPalletOptions,
     colorThemeDefault,
     colorThemeOptions,
-    fontSizeOptions,
     greyOptions,
 } from '../../shared/constants';
 import Link from '../Link/Link';

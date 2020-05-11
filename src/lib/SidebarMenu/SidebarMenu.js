@@ -13,10 +13,12 @@ const SidebarMenu = props => {
 
 SidebarMenu.propTypes = {
     htmlTag: PropTypes.oneOf(Object.values(itemHtmlTagOptions)),
+    isOpen: PropTypes.bool
 };
 
 SidebarMenu.defaultProps = {
     htmlTag: itemHtmlTagDefault,
-};
+    isOpen: false
+}
 
 export default SidebarMenu;
