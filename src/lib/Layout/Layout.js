@@ -86,11 +86,11 @@ const Layout = props => {
     );
 };
 
-Main.propTypes = {
+Layout.propTypes = {
     isOpen: PropTypes.bool,
 };
 
-Main.defaultProps = {
+Layout.defaultProps = {
     isOpen: false,
 };
 
