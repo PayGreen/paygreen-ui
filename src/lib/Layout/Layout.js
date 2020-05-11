@@ -1,73 +1,69 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { LayoutBase } from './style';
 import {
     colorPalletOptions,
     greyOptions,
     spaceOptions,
+    iconSizeOptions,
+    iconHtmlTagOptions,
 } from '../../shared/constants';
 import Topbar from '../Topbar/Topbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Main from '../Main/Main';
+import { MainSidebar } from '../Sidebar/style';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Logo from '../Logo/Logo';
 import { logo } from '../Logo/sample/logo';
 import { Box } from '../Main/style';
 import { ArrowRightIcon } from '../Icon/Icon';
 
-const LogoContainer = styled.div`
-    @media (${props => props.theme.query.min.md}) {
-        display: none;
-    }
-`;
-
 const Layout = props => {
+    
+    const logoSidebar = (
+        <a href="#">
+            <Logo
+                hasBaseline={false}
+                hasHoverRight={true}
+                blockWidth={spaceOptions.sm}
+                text="tree"
+                textSize="lg"
+                {...props}
+            >
+                {logo}
+            </Logo>
+        </a>
+    );
+
     return (
         <LayoutBase {...props}>
             <Sidebar {...props}>
-                <div className="topbar-nav">
-                    <Topbar {...props}>
-                        <a href="#">
-                            <Logo
+                <div className="hideOnDesktop">
+                    <MainSidebar {...props}>
+                        <Topbar {...props}>
+                            {logoSidebar}
+
+                            <ArrowRightIcon
                                 {...props}
-                                hasBaseline={false}
-                                hasHoverRight={true}
-                                blockWidth={spaceOptions.sm}
-                                text="tree"
-                                textSize="lg"
-                            >
-                                {logo}
-                            </Logo>
-                        </a>
-                        <ArrowRightIcon
-                            {...props}
-                            htmlTag="button"
-                            iconSize="xl"
-                            colorPallet={colorPalletOptions.wab}
-                            colorWab={greyOptions.grey40}
-                        />
-                    </Topbar>
+                                htmlTag={iconHtmlTagOptions.button}
+                                iconSize={iconSizeOptions.xl}
+                                colorPallet={colorPalletOptions.wab}
+                                colorWab={greyOptions.grey40}
+                            />
+                        </Topbar>
+
+                        <Box />
+                    </MainSidebar>
                 </div>
-                <div className="logo-nav">
-                    <a href="#">
-                        <Logo
-                            {...props}
-                            hasBaseline={false}
-                            hasHoverRight={true}
-                            blockWidth={spaceOptions.sm}
-                            text="tree"
-                            textSize="lg"
-                        >
-                            {logo}
-                        </Logo>
-                    </a>
-                </div>
+
+                <div className="hideOnTablet">{logoSidebar}</div>
             </Sidebar>
+
             <Main {...props}>
                 <Topbar {...props}>
                     <MenuHamburger {...props} />
-                    <LogoContainer {...props}>
+
+                    <div className="hideOnDesktop">
                         <a href="#">
                             <Logo
                                 {...props}
@@ -78,7 +74,7 @@ const Layout = props => {
                                 {logo}
                             </Logo>
                         </a>
-                    </LogoContainer>
+                    </div>
                 </Topbar>
                 <Box {...props}>{props.children}</Box>
             </Main>
