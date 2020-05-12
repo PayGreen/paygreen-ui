@@ -182,6 +182,8 @@ exports[`renders without crashing 1`] = `
         "grid": Object {
           "header": "45px",
           "maxWidth": "1400px",
+          "sidebar": "380px",
+          "topbar": "45px",
         },
         "iconSize": Object {
           "lg": "32px",
