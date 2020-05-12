@@ -6,7 +6,6 @@ const isOpenStyle = css`
     @media (${props => props.theme.query.min.md}) {
         margin-left: ${props => props.theme.grid.sidebar};
         width: calc(100% - ${props => props.theme.grid.sidebar});
-        margin-left: ${props => props.theme.grid.sidebar};
     }
 `;
 
