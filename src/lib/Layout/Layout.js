@@ -11,7 +11,6 @@ import {
 import Topbar from '../Topbar/Topbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Main from '../Main/Main';
-import { MainSidebar } from '../Sidebar/style';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Logo from '../Logo/Logo';
 import { logo } from '../Logo/sample/logo';
@@ -19,63 +18,61 @@ import { Box } from '../Main/style';
 import { ArrowRightIcon } from '../Icon/Icon';
 
 const Layout = props => {
-    
     const logoSidebar = (
-        <a href="#">
-            <Logo
-                hasBaseline={false}
-                hasHoverRight={true}
-                blockWidth={spaceOptions.sm}
-                text="tree"
-                textSize="lg"
-                {...props}
-            >
-                {logo}
-            </Logo>
-        </a>
+        <Logo
+            {...props}
+            hasBaseline={false}
+            hasHoverRight={true}
+            blockWidth={spaceOptions.sm}
+            text="tree"
+            textSize="lg"
+        >
+            {logo}
+        </Logo>
+    );
+
+    const logoTopbar = (
+        <Logo
+            {...props}
+            hasBaseline={false}
+            hasHoverRight={true}
+            blockWidth={spaceOptions.sm}
+        >
+            {logo}
+        </Logo>
     );
 
     return (
         <LayoutBase {...props}>
             <Sidebar {...props}>
-                <div className="hideOnDesktop">
-                    <MainSidebar {...props}>
-                        <Topbar {...props}>
-                            {logoSidebar}
+                <Topbar className="hideOnDesktop" {...props}>
+                    <a href="#">{logoSidebar}</a>
 
-                            <ArrowRightIcon
-                                {...props}
-                                htmlTag={iconHtmlTagOptions.button}
-                                iconSize={iconSizeOptions.xl}
-                                colorPallet={colorPalletOptions.wab}
-                                colorWab={greyOptions.grey40}
-                            />
-                        </Topbar>
+                    <ArrowRightIcon
+                        {...props}
+                        htmlTag={iconHtmlTagOptions.button}
+                        iconSize={iconSizeOptions.xl}
+                        colorPallet={colorPalletOptions.wab}
+                        colorWab={greyOptions.grey40}
+                    />
+                </Topbar>
 
-                        <Box />
-                    </MainSidebar>
-                </div>
+                <a href="#" className="hideOnTablet">
+                    {logoSidebar}
+                </a>
 
-                <div className="hideOnTablet">{logoSidebar}</div>
+                <Box />
             </Sidebar>
 
             <Main {...props}>
                 <Topbar {...props}>
                     <MenuHamburger {...props} />
 
-                    <div className="hideOnDesktop">
-                        <a href="#">
-                            <Logo
-                                {...props}
-                                hasBaseline={false}
-                                hasHoverRight={true}
-                                blockWidth={spaceOptions.sm}
-                            >
-                                {logo}
-                            </Logo>
-                        </a>
-                    </div>
+                    <a href="#" className="hideOnDesktop">
+                        {logoTopbar}
+                    </a>
                 </Topbar>
+
                 <Box {...props}>{props.children}</Box>
             </Main>
         </LayoutBase>
