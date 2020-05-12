@@ -24,7 +24,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
-                    isActive={boolean('Is active', false)}
+                    isActive={boolean('Is Active', false)}
                 >
                     <Link
                         colorPallet="wab"

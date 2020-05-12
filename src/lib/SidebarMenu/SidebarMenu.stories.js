@@ -3,15 +3,9 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
-    colorPalletOptions,
-    colorPalletDefault,
     colorThemeOptions,
     colorThemeDefault,
-    greyOptions,
-    greyDefault,
     iconSizeOptions,
-    spaceOptions,
-    y,
 } from '../../shared/constants';
 
 import Link from '../Link/Link';
@@ -66,7 +60,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
             <SidebarList>
                 <a href="#">
                     <SidebarItem
-                        isActive={boolean('Is active', false)}
+                        isActive={boolean('Is Active', false)}
                         colorTheme={radios(
                             colorThemeLabel,
                             colorThemeOptions,
