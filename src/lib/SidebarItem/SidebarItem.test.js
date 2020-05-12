@@ -1,10 +1,7 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import {
-    iconSizeOptions,
-    spaceOptions
-} from '../../shared/constants';
+import { iconSizeOptions } from '../../shared/constants';
 import { MeterIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import SidebarItem from './SidebarItem';
@@ -12,13 +9,8 @@ import SidebarItem from './SidebarItem';
 it('renders without crashing', () => {
     const sidebarItem = TestRenderer.create(
         <a href="#">
-            <SidebarItem
-                theme={ThemeDefault}
-            >
-                <MeterIcon
-                    iconSize={iconSizeOptions.lg}
-                    theme={ThemeDefault}
-                />
+            <SidebarItem theme={ThemeDefault}>
+                <MeterIcon iconSize={iconSizeOptions.lg} theme={ThemeDefault} />
 
                 <Link
                     theme={ThemeDefault}
@@ -28,7 +20,7 @@ it('renders without crashing', () => {
                     Payment
                 </Link>
             </SidebarItem>
-        </a>
+        </a>,
     );
     expect(sidebarItem.toJSON()).toMatchSnapshot();
 });

@@ -9,8 +9,6 @@ import {
     colorTypeDefault,
     greyOptions,
     greyDefault,
-    alignOptions,
-    alignDefault,
     fontSizeOptions,
     fontSizeDefault,
 } from '../../shared/constants';
@@ -37,11 +35,7 @@ SidebarList.propTypes = {
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
 
-    isMain: PropTypes.bool,
     hasHoverBase: PropTypes.bool,
-    hasHoverAlternative: PropTypes.bool,
-    hasHoverEmphasis: PropTypes.bool,
-    align: PropTypes.oneOf(Object.values(alignOptions)),
 };
 
 SidebarList.defaultProps = {
@@ -49,15 +43,10 @@ SidebarList.defaultProps = {
 
     colorTheme: colorThemeDefault,
     colorPallet: colorPalletDefault,
-    // colorPallet: colorPalletOptions.wab,
     colorWab: greyDefault,
     colorType: colorTypeDefault,
 
-    isMain: false,
     hasHoverBase: true,
-    hasHoverAlternative: true,
-    hasHoverEmphasis: false,
-    align: alignDefault,
 };
 
 export default SidebarList;

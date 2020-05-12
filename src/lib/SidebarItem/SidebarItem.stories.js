@@ -3,14 +3,9 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
-    colorPalletOptions,
-    colorPalletDefault,
     colorThemeOptions,
     colorThemeDefault,
-    greyOptions,
-    greyDefault,
     iconSizeOptions,
-    spaceOptions,
 } from '../../shared/constants';
 import { MeterIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
@@ -29,7 +24,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
-                    hasHoverEmphasis={boolean('Hover emphasis', true)}
                 >
                     <MeterIcon
                         iconSize={iconSizeOptions.lg}

@@ -24,7 +24,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
-                    hasHoverEmphasis={boolean('Hover emphasis', true)}
                     isActive={boolean('Is active', false)}
                 >
                     <Link
@@ -46,7 +45,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
-                    hasHoverEmphasis={boolean('Hover emphasis', true)}
                 >
                     <Link
                         colorPallet="wab"

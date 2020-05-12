@@ -3,13 +3,22 @@ import { SidebarListBase } from '../../SidebarList/style';
 
 const isClosedStyle = css`
     ${SidebarListBase} {
-        display: none;
+        overflow: hidden;
+        height: 0;
+        li {
+            margin: -${props => props.theme.font.size.base} 0;
+            transition: all ${props => props.theme.transition.xs};
+        }
     }
 `;
 
 const isOpenStyle = css`
     ${SidebarListBase} {
-        display: block;
+        overflow: hidden;
+        height: auto;
+        li {
+            transition: all ${props => props.theme.transition.xs};
+        }
     }
 `;
 

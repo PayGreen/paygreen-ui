@@ -1,24 +1,18 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import {
-    iconSizeOptions,
-} from '../../shared/constants';
+import { iconSizeOptions } from '../../shared/constants';
 import { LeafIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import Text from '../Text/Text';
 import SidebarItem from '../SidebarItem/SidebarItem';
-import SidebarList from './SidebarList';
+import SidebarMenu from '../SidebarMenu/SidebarMenu';
 
 it('renders without crashing', () => {
     const sidebarMenu = TestRenderer.create(
-        <SidebarMenu
-            theme={ThemeDefault}
-        >
+        <SidebarMenu theme={ThemeDefault}>
             <a href="#">
-                <SidebarItem
-                    theme={ThemeDefault}
-                >
+                <SidebarItem theme={ThemeDefault}>
                     <LeafIcon
                         iconSize={iconSizeOptions.lg}
                         theme={ThemeDefault}
@@ -33,11 +27,13 @@ it('renders without crashing', () => {
                     </Link>
 
                     <Text theme={ThemeDefault}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Maecenas sit amet accumsan dolor. Nullam fringilla quam
+                        leo.
                     </Text>
                 </SidebarItem>
             </a>
-        </SidebarMenu>
+        </SidebarMenu>,
     );
     expect(sidebarMenu.toJSON()).toMatchSnapshot();
 });
