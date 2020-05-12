@@ -13,13 +13,32 @@ import {
     alignDefault,
     spaceOptions,
     spaceDefault,
+    iconSizeOptions,
 } from '../../shared/constants';
+import Dot from '../Dot/Dot';
 import { ListHorizontalBase } from './style';
 
 const ListHorizontal = props => (
     <ListHorizontalBase {...props}>
         {React.Children.map(props.children, (child, index) =>
-            child ? <li key={index}>{child}</li> : null,
+            child ? (
+                <li key={index}>
+                    {index ? (
+                        <Dot
+                            theme={props.theme} // not necessary, only needed for tests
+                            dotSize={iconSizeOptions.xs}
+                            colorType={props.colorType}
+                            colorPallet={props.colorPallet}
+                            colorTheme={props.colorTheme}
+                            colorWab={props.colorWab}
+                            colorStatus={props.colorStatus}
+                            marginLeft={spaceOptions.md}
+                            marginRight={spaceOptions.md}
+                        />
+                    ) : null}
+                    {child}
+                </li>
+            ) : null,
         )}
     </ListHorizontalBase>
 );

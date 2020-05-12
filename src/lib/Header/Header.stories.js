@@ -5,9 +5,11 @@ import {
     folder,
     alignOptions,
     colorPalletOptions,
+    greyOptions,
     iconSizeOptions,
     spaceOptions,
     iconHtmlTagOptions,
+    itemHtmlTagOptions,
 } from '../../shared/constants';
 import {
     UserIcon,
@@ -31,6 +33,7 @@ import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Logo from '../Logo/Logo';
 import Header from './Header';
 import { logo } from '../Logo/sample/logo';
+import Dot from '../Dot/Dot';
 
 const mainMenuIsOpenLabel = 'Open primary menu';
 
@@ -182,8 +185,19 @@ storiesOf(folder.nav + 'Header', module)
                 </Menu>
             </MenuPrimary>
 
-            <MenuSecondary isOpen={boolean('Open secondary menu', true)}>
-                <Menu>
+            <Dot
+                className="hideOnSmallScreen"
+                colorPallet={colorPalletOptions.wab}
+                colorWab={greyOptions.grey10}
+                marginLeft={spaceOptions.lg}
+                marginRight={spaceOptions.lg}
+            />
+
+            <MenuSecondary
+                isOpen={boolean('Open secondary menu', true)}
+                closeComponent={<MenuClose />}
+            >
+                <Menu htmlTag={itemHtmlTagOptions.div}>
                     <a href="#">
                         <MenuItem
                             hasHoverBase={false}
@@ -208,7 +222,7 @@ storiesOf(folder.nav + 'Header', module)
                     </a>
                 </Menu>
 
-                <Menu>
+                <Menu htmlTag={itemHtmlTagOptions.div}>
                     <a href="#">
                         <MenuItem
                             hasHoverBase={false}
@@ -228,8 +242,6 @@ storiesOf(folder.nav + 'Header', module)
                         </MenuItem>
                     </a>
                 </Menu>
-
-                <MenuClose />
             </MenuSecondary>
         </Header>
     ));

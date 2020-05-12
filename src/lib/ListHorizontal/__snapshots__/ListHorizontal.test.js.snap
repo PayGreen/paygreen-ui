@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-bwzfXH cqMJyC"
+  className="sc-htpNat cMcJRA"
 >
   <li>
     <p
@@ -12,6 +12,9 @@ exports[`renders without crashing 1`] = `
     </p>
   </li>
   <li>
+    <span
+      className="sc-bwzfXH dpzpFw"
+    />
     <p
       className="sc-bdVaJa kXlOUj"
     >
@@ -19,6 +22,9 @@ exports[`renders without crashing 1`] = `
     </p>
   </li>
   <li>
+    <span
+      className="sc-bwzfXH dpzpFw"
+    />
     <p
       className="sc-bdVaJa kXlOUj"
     >

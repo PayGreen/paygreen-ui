@@ -118,6 +118,7 @@ exports[`renders without crashing 1`] = `
               "lg": "34px",
             },
           },
+          "dash": "3px",
           "font": Object {
             "lineHeight": Object {
               "base": 1,

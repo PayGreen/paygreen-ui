@@ -1,16 +1,36 @@
 import styled from 'styled-components';
-import { transparentize, math } from 'polished';
+import { transparentize } from 'polished';
 import { menuBlock } from '../../MenuPrimary/style/base';
 import { closedStyle } from './base';
 import { MenuBase } from '../../Menu/style';
 import { MenuCloseBase } from '../../MenuClose/style';
 
-const MenuSecondaryBase = styled.ul`
+const MenuSecondaryBase = styled.div`
     ${menuBlock};
+
+    ul {
+        margin: 0;
+        padding: ${props => props.theme.space.sm} 0;
+
+        @media (${props => props.theme.query.min.lg}) {
+            display: flex;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            @media (${props => props.theme.query.min.lg}) {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
 
     @media (${props => props.theme.query.max.lg}) {
         max-height: calc(100vh - ${props => props.theme.grid.header});
-        padding: ${props => props.theme.space.sm} 0;
         box-shadow: 0 3px 20px ${props => transparentize(
             props.theme.shadow.opacity.sm,
             props.theme.wab.black00
@@ -19,7 +39,7 @@ const MenuSecondaryBase = styled.ul`
         ${props => props.isOpen ? null : closedStyle};
 
         ${MenuCloseBase} {
-            margin: ${props => props.theme.space.md} auto -${props => props.theme.space.sm} auto;
+            margin: ${props => props.theme.space.md} auto 0 auto;
         }
     }
 
@@ -29,37 +49,6 @@ const MenuSecondaryBase = styled.ul`
             display: flex;
             align-items: center;
             padding: 0;
-
-            &::before,
-            &::after {
-                content: '';
-                position: absolute;
-                transform: rotate(28deg);
-                width: ${props => props.theme.line};
-                height: ${props => props.theme.space.lg};
-                background-color: ${props => props.theme.wab.grey10};
-            }
-
-            &::before {
-                margin-left: -${props => props.theme.space.md};
-            }
-
-            &::after {
-                margin-right: -${props => math(props.theme.space.md + ' - ' + props.theme.line)};
-                right: 0;
-            }
-
-            &:first-of-type {
-                &::before {
-                    display: none;
-                }
-            }
-
-            &:last-of-type {
-                &::after {
-                    display: none;
-                }
-            }
         }
 
         ${MenuCloseBase} {

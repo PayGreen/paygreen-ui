@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
-import { transparentize } from 'polished';
+import { math, transparentize } from 'polished';
 import { decorationOptions } from '../../../shared/constants';
-import { bulletLine, bulletFont, marginBase } from './constants';
+import { bulletFont, marginBase } from './constants';
 
 // Bullet styles
 
@@ -13,10 +13,11 @@ const bulletStyle = {
     `,
     dash: css`
         & > .bullet {
-            height: ${bulletLine}px;
-            border-radius: ${bulletLine}px;
-            background-color: ${props => props.theme.color[props.colorTheme].main};
-            margin-top: calc(${props => props.theme.font.lineHeight.md/2}em - ${bulletLine/2}px);
+            height: ${props => props.theme.dash};
+            border-radius: ${props => props.theme.dash};
+            background-color: ${props =>
+                props.theme.color[props.colorTheme].main};
+            margin-top: calc(${props => props.theme.font.lineHeight.md / 2 + 'em - ' + math(props.theme.dash + '/2')});
         }
     `,
     number: css`
@@ -26,12 +27,13 @@ const bulletStyle = {
             align-items: center;
             height: ${props => props.theme.iconSize[props.bulletSize]};
             border-radius: 50%;
-            background-color: ${props => props.theme.color[props.colorTheme].light};
+            background-color: ${props =>
+                props.theme.color[props.colorTheme].light};
             color: ${props => props.theme.color[props.colorTheme].main};
             font-weight: ${props => props.theme.font.weight.bold};
             font-size: ${props => bulletFont[props.bulletSize]};
         }
-    `
+    `,
 };
 
 // Arrow style (on clicked only)
@@ -78,7 +80,7 @@ const gridItemArrow = {
         & > :nth-child(3) {
             grid-area: details;
         }
-    `
+    `,
 };
 
 const disabledStyle = css`
@@ -87,20 +89,21 @@ const disabledStyle = css`
 
 const hoverStyle = css`
     filter: grayscale(0);
-    background-color: ${props => transparentize(0.95, props.theme.color[props.colorTheme].main)};
+    background-color: ${props =>
+        transparentize(0.95, props.theme.color[props.colorTheme].main)};
 `;
 
 const activeStyle = css`
     ${hoverStyle};
 
     .arrow {
-        opacity: .6;
+        opacity: 0.6;
     }
 `;
 
 const clickableStyle = css`
     ${props => gridItemArrow[props.arrowStyle]};
-    ${props => props.isClicked ? activeStyle : disabledStyle};
+    ${props => (props.isClicked ? activeStyle : disabledStyle)};
 
     &:hover,
     &:active,
@@ -111,13 +114,9 @@ const clickableStyle = css`
 
 const notClickableStyle = css`
     ${gridItemArrow[decorationOptions.none]};
-    
+
     padding-left: 0;
     padding-right: 0;
 `;
 
-export {
-    bulletStyle,
-    clickableStyle,
-    notClickableStyle
-};
+export { bulletStyle, clickableStyle, notClickableStyle };

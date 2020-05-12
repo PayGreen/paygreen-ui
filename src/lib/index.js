@@ -7,6 +7,7 @@ import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
 import Divider from './Divider/Divider';
+import Dot from './Dot/Dot';
 import Footer from './Footer/Footer';
 import FooterList from './FooterList/FooterList';
 import Grid from './Grid/Grid';
@@ -149,6 +150,7 @@ export {
     ButtonGroup,
     Card,
     Divider,
+    Dot,
     Footer,
     FooterList,
     Grid,
