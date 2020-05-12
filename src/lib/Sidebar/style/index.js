@@ -7,29 +7,27 @@ const SidebarBase = styled.div`
     z-index: ${props => props.theme.zindex.menu};
     height: 100vh;
     width: 100%;
-    overflow-y: auto;
+    overflow-y: hidden;
+
+    @media (${props => props.theme.query.max.md}) {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 'topbar' 'box';
+
+        & > ${TopbarBase} {
+            grid-area: topbar;
+        }
+
+        & > ${Box} {
+            grid-area: box;
+            overflow-y: auto;
+        }
+    }
 
     @media (${props => props.theme.query.min.md}) {
         width: ${props => props.theme.grid.sidebar};
+        overflow-y: auto;
     }
 `;
 
-const MainSidebar = styled.div`
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow-y: hidden;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: 'topbar' 'box';
-
-    & > ${TopbarBase} {
-        grid-area: topbar;
-    }
-
-    & > ${Box} {
-        grid-area: box;
-    }
-`;
-
-export { MainSidebar, SidebarBase };
+export { SidebarBase };

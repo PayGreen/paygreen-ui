@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import {
+    folder,
     colorPalletOptions,
     greyOptions,
-    folder,
     spaceOptions,
     iconSizeOptions,
     iconHtmlTagOptions,
@@ -15,41 +15,38 @@ import { ArrowRightIcon } from '../Icon/Icon';
 import { Box } from '../Main/style';
 import Sidebar from './Sidebar';
 import Topbar from '../Topbar/Topbar';
-import { MainSidebar } from './style';
 
 const logoSidebar = (
-    <a href="#">
-        <Logo
-            hasBaseline={false}
-            hasHoverRight={true}
-            blockWidth={spaceOptions.md}
-        >
-            {logo}
-        </Logo>
-    </a>
+    <Logo
+        hasBaseline={false}
+        hasHoverRight={true}
+        blockWidth={spaceOptions.md}
+    >
+        {logo}
+    </Logo>
 );
 
 storiesOf(folder.nav + 'Sidebar', module)
     .addDecorator(withKnobs)
     .add('Sidebar', () => (
         <Sidebar>
-            <div className="hideOnDesktop">
-                <MainSidebar>
-                    <Topbar>
-                        {logoSidebar}
+            <Topbar className="hideOnDesktop">
+                <a href="#">
+                    {logoSidebar}
+                </a>
 
-                        <ArrowRightIcon
-                            htmlTag={iconHtmlTagOptions.button}
-                            iconSize={iconSizeOptions.xl}
-                            colorPallet={colorPalletOptions.wab}
-                            colorWab={greyOptions.grey40}
-                        />
-                    </Topbar>
-                    
-                    <Box />
-                </MainSidebar>
-            </div>
+                <ArrowRightIcon
+                    htmlTag={iconHtmlTagOptions.button}
+                    iconSize={iconSizeOptions.xl}
+                    colorPallet={colorPalletOptions.wab}
+                    colorWab={greyOptions.grey40}
+                />
+            </Topbar>
 
-            <div className="hideOnTablet">{logoSidebar}</div>
+            <a href="#" className="hideOnTablet">
+                {logoSidebar}
+            </a>
+            
+            <Box />
         </Sidebar>
     ));
