@@ -6,6 +6,10 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     colorPalletOptions,
+<<<<<<< HEAD
+=======
+    fontSizeOptions,
+>>>>>>> feature:creation of SidebarMenuCategory component
     greyOptions,
     iconSizeOptions,
 } from '../../shared/constants';
@@ -69,6 +73,10 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
+<<<<<<< HEAD
+=======
+                        textSize={fontSizeOptions.sm}
+>>>>>>> feature:creation of SidebarMenuCategory component
                     >
                         <Link
                             colorPallet={colorPalletOptions.wab}

@@ -1,25 +1,13 @@
 import { css } from 'styled-components';
-import { SidebarListBase } from '../../SidebarList/style';
+// import { SidebarListBase } from '../../SidebarList/style';
 
-const isClosedStyle = css`
-    ${SidebarListBase} {
-        overflow: hidden;
-        height: 0;
-        li {
-            margin: -${props => props.theme.font.size.base} 0;
-            transition: all ${props => props.theme.transition.xs};
-        }
-    }
+const hasTitleStyle = css`
+
+
 `;
 
-const isOpenStyle = css`
-    ${SidebarListBase} {
-        overflow: hidden;
-        height: auto;
-        li {
-            transition: all ${props => props.theme.transition.xs};
-        }
-    }
+const noTitleStyle = css`
+    
 `;
 
-export { isClosedStyle, isOpenStyle };
+export { hasTitleStyle, noTitleStyle };

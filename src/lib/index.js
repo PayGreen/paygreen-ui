@@ -37,6 +37,7 @@ import Sidebar from './Sidebar/Sidebar';
 import SidebarItem from './SidebarItem/SidebarItem';
 import SidebarList from './SidebarList/SidebarList';
 import SidebarMenu from './SidebarMenu/SidebarMenu';
+import SidebarMenuCategory from './SidebarMenuCategory/SidebarMenuCategory';
 import Table from './Table/Table';
 import TableCell from './TableCell/TableCell';
 import TableRow from './TableRow/TableRow';
@@ -184,6 +185,7 @@ export {
     SidebarItem,
     SidebarList,
     SidebarMenu,
+    SidebarMenuCategory,
     Table,
     TableCell,
     TableRow,

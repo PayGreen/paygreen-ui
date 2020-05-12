@@ -6,24 +6,32 @@ import { MeterIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarMenu from '../SidebarMenu/SidebarMenu';
+import SidebarMenuCategory from '../SidebarMenuCategory/SidebarMenuCategory';
 import SidebarList from '../SidebarList/SidebarList';
 
 it('renders without crashing', () => {
-    const sidebarMenu = TestRenderer.create(
-        <SidebarMenu theme={ThemeDefault}>
-            <a href="#">
-             <SidebarItem theme={ThemeDefault}>
-                <MeterIcon iconSize={iconSizeOptions.lg} theme={ThemeDefault} />
+    const sidebarMenuCategory = TestRenderer.create(
+        <SidebarMenuCategory
+            categoryTitle="Categorie de pages"
+            theme={ThemeDefault}
+        >
+            <SidebarMenu theme={ThemeDefault}>
+                <a href="#">
+                    <SidebarItem theme={ThemeDefault}>
+                        <MeterIcon
+                            iconSize={iconSizeOptions.lg}
+                            theme={ThemeDefault}
+                        />
 
-                <Link
-                    theme={ThemeDefault}
-                    hasUnderline={false}
-                    hasHover={false}
-                >
-                    Payment
-                </Link>
-            </SidebarItem>
-            </a>
+                        <Link
+                            theme={ThemeDefault}
+                            hasUnderline={false}
+                            hasHover={false}
+                        >
+                            Payment
+                        </Link>
+                    </SidebarItem>
+                </a>
                 <SidebarList theme={ThemeDefault}>
                     <a href="#">
                         <SidebarItem theme={ThemeDefault}>
@@ -48,7 +56,8 @@ it('renders without crashing', () => {
                         </SidebarItem>
                     </a>
                 </SidebarList>
-        </SidebarMenu>,
+            </SidebarMenu>
+        </SidebarMenuCategory>,
     );
-    expect(sidebarMenu.toJSON()).toMatchSnapshot();
+    expect(sidebarMenuCategory.toJSON()).toMatchSnapshot();
 });

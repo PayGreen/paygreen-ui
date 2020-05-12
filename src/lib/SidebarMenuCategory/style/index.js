@@ -1,40 +1,21 @@
 import styled from 'styled-components';
-import { SidebarItemBase } from '../../SidebarItem/style';
-import { SidebarListBase } from '../../SidebarList/style';
-import { isClosedStyle, isOpenStyle } from './base';
+import { hasTitleStyle, noTitleStyle } from './base';
+import { TitleBase } from '../../Title/style'
 
-const SidebarMenuBase = styled.div`
+const SidebarMenuCategoryBase = styled.div`
     box-sizing: border-box;
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: ${props => props.theme.space.sm} 0;
-    position: relative;
-
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: auto auto;
-    grid-template-areas:
-        'item arrow'
-        'list list';
-
-    ${SidebarItemBase} {
-        grid-area: item;
+    padding: ${props => props.theme.space.md} 0;
+    
+    ${TitleBase} {
+        margin-left:${props => props.theme.space.sm};
+        margin-bottom:${props => props.theme.space.sm};
     }
 
-    ${SidebarListBase} {
-        grid-area: list;
-    }
-
-    & > button {
-        grid-area: arrow;
-    }
-
-    & > .icon {
-        margin: auto;
-    }
-
-    ${props => (props.isOpen ? isOpenStyle : isClosedStyle)};
+    ${props => (props.CategoryTitle ? hasTitleStyle : noTitleStyle)};
 `;
 
-export { SidebarMenuBase };
+export { SidebarMenuCategoryBase };
