@@ -13,13 +13,13 @@ const SidebarItemBase = styled.div`
     & > .icon {
         grid-area: icon;
         opacity: 0.4;
-        margin-right: ${props => props.theme.space.md};
     }
 
     ${LinkBase} {
         grid-area: link;
         font-size: ${props => props.theme.font.size[props.textSize]};
         padding: ${props => props.theme.space.sm} 0;
+        margin-left: ${props => props.theme.space.md};
     }
 
     ${props => (props.isActive ? activeStyle : hoverBase)};

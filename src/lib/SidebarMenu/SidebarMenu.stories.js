@@ -1,10 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
     colorThemeDefault,
+    colorPalletOptions,
+    fontSizeOptions,
+    greyOptions,
     iconSizeOptions,
 } from '../../shared/constants';
 
@@ -66,11 +69,11 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
-                        textSize="sm"
+                        textSize={fontSizeOptions.sm}
                     >
                         <Link
-                            colorPallet="wab"
-                            colorWab="grey60"
+                            colorPallet={colorPalletOptions.wab}
+                            colorWab={greyOptions.grey60}
                             hasUnderline={false}
                             hasHover={false}
                         >
@@ -86,11 +89,11 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
-                        textSize="sm"
+                        textSize={fontSizeOptions.sm}
                     >
                         <Link
-                            colorPallet="wab"
-                            colorWab="grey60"
+                            colorPallet={colorPalletOptions.wab}
+                            colorWab={greyOptions.grey60}
                             hasUnderline={false}
                             hasHover={false}
                         >
