@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, radios, text } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -12,7 +12,7 @@ import {
 } from '../../shared/constants';
 
 import Link from '../Link/Link';
-import { MeterIcon } from '../Icon/Icon';
+import { MeterIcon, LeafIcon } from '../Icon/Icon';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarList from '../SidebarList/SidebarList';
 import SidebarMenu from '../SidebarMenu/SidebarMenu';
@@ -23,7 +23,7 @@ const colorThemeLabel = 'Color theme';
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
     .addDecorator(withKnobs)
     .add('SidebarMenuCategory', () => (
-        <SidebarMenuCategory categoryTitle="Categorie de pages">
+        <SidebarMenuCategory categoryTitle={text('Category', 'Catégorie de Pages')}>
             <SidebarMenu
                 isOpen={boolean('is Open', true)}
                 colorTheme={radios(
@@ -65,7 +65,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                 <SidebarList>
                     <a href="#">
                         <SidebarItem
-                            isActive={boolean('Is Active', false)}
                             colorTheme={radios(
                                 colorThemeLabel,
                                 colorThemeOptions,
@@ -104,6 +103,46 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                         </SidebarItem>
                     </a>
                 </SidebarList>
+            </SidebarMenu>
+
+            <SidebarMenu
+                colorTheme={radios(
+                    colorThemeLabel,
+                    colorThemeOptions,
+                    colorThemeDefault,
+                )}
+            >
+                <a href="#">
+                    <SidebarItem
+                        colorTheme={radios(
+                            colorThemeLabel,
+                            colorThemeOptions,
+                            colorThemeDefault,
+                        )}
+                        isActive={boolean('Is Active', false)}
+                    >
+                        <LeafIcon
+                            iconSize={iconSizeOptions.lg}
+                            colorTheme={radios(
+                                colorThemeLabel,
+                                colorThemeOptions,
+                                colorThemeDefault,
+                            )}
+                        />
+
+                        <Link
+                            hasUnderline={false}
+                            hasHover={false}
+                            colorTheme={radios(
+                                colorThemeLabel,
+                                colorThemeOptions,
+                                colorThemeDefault,
+                            )}
+                        >
+                            Compensations
+                        </Link>
+                    </SidebarItem>
+                </a>
             </SidebarMenu>
         </SidebarMenuCategory>
     ));

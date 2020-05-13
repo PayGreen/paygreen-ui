@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { hasTitleStyle, noTitleStyle } from './base';
 import { TitleBase } from '../../Title/style'
+import { SidebarMenuBase } from '../../SidebarMenu/style'
 
 const SidebarMenuCategoryBase = styled.div`
     box-sizing: border-box;
@@ -15,7 +15,9 @@ const SidebarMenuCategoryBase = styled.div`
         margin-bottom:${props => props.theme.space.sm};
     }
 
-    ${props => (props.CategoryTitle ? hasTitleStyle : noTitleStyle)};
+    ${SidebarMenuBase} {
+        padding:0;
+    }
 `;
 
 export { SidebarMenuCategoryBase };
