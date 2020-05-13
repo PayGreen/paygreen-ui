@@ -90,7 +90,7 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
-                    rotateSize={radios(
+                    rotateSize={select(
                         rotateSizeLabel,
                         rotateSizeOptions,
                         rotateSizeOptions.step0,
@@ -143,7 +143,7 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
-                    rotateSize={radios(
+                    rotateSize={select(
                         rotateSizeLabel,
                         rotateSizeOptions,
                         rotateSizeOptions.step0,
@@ -196,7 +196,7 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
-                    rotateSize={radios(
+                    rotateSize={select(
                         rotateSizeLabel,
                         rotateSizeOptions,
                         rotateSizeOptions.step0,
@@ -249,7 +249,7 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
-                    rotateSize={radios(
+                    rotateSize={select(
                         rotateSizeLabel,
                         rotateSizeOptions,
                         rotateSizeOptions.step0,
@@ -302,7 +302,7 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
-                    rotateSize={radios(
+                    rotateSize={select(
                         rotateSizeLabel,
                         rotateSizeOptions,
                         rotateSizeOptions.step0,
