@@ -13,6 +13,7 @@ import {
     formStatusDefault,
     iconSizeOptions,
     spaceOptions,
+    rotateOptions,
 } from '../../shared/constants';
 import {
     PlaneIcon,
@@ -35,6 +36,7 @@ const marginBottomLabel = 'Margin bottom';
 const marginLeftLabel = 'Margin left';
 const marginRightLabel = 'Margin right';
 const centeredLabel = 'Centered';
+const rotateLabel = 'Rotation (sens horaire)';
 
 storiesOf(folder.main + 'Icons', module)
     .addDecorator(withKnobs)
@@ -88,6 +90,11 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
+                    rotate={radios(
+                        rotateLabel,
+                        rotateOptions,
+                        rotateOptions.step0,
+                    )}
                 />
 
                 <OrganizationIcon
@@ -135,6 +142,11 @@ storiesOf(folder.main + 'Icons', module)
                         marginRightLabel,
                         spaceOptions,
                         spaceOptions.sm,
+                    )}
+                    rotate={radios(
+                        rotateLabel,
+                        rotateOptions,
+                        rotateOptions.step0,
                     )}
                 />
 
@@ -184,6 +196,11 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
+                    rotate={radios(
+                        rotateLabel,
+                        rotateOptions,
+                        rotateOptions.step0,
+                    )}
                 />
 
                 <TreesIcon
@@ -232,6 +249,11 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
+                    rotate={radios(
+                        rotateLabel,
+                        rotateOptions,
+                        rotateOptions.step0,
+                    )}
                 />
 
                 <PointerIcon
@@ -279,6 +301,11 @@ storiesOf(folder.main + 'Icons', module)
                         marginRightLabel,
                         spaceOptions,
                         spaceOptions.sm,
+                    )}
+                    rotate={radios(
+                        rotateLabel,
+                        rotateOptions,
+                        rotateOptions.step0,
                     )}
                 />
             </div>
