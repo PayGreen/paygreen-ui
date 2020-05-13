@@ -27,6 +27,7 @@ Link.propTypes = {
     hasUnderline: PropTypes.bool,
     hasHover: PropTypes.bool,
     hasUppercase: PropTypes.bool,
+    transition: PropTypes.string,
 };
 
 Link.defaultProps = {
@@ -38,6 +39,7 @@ Link.defaultProps = {
     hasUnderline: true,
     hasHover: true,
     hasUppercase: false,
+    transition: null,
 };
 
 export default Link;
