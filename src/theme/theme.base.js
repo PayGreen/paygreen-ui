@@ -168,7 +168,7 @@ export const ThemeBase = {
         double: '11vw'
     },
     iconSize: {
-        xxs: '10px',
+        xxs: '12px',
         xs: '16px',
         sm: '20px',
         md: '24px',
@@ -208,6 +208,7 @@ export const ThemeBase = {
         xl: '250px',
     },
     loaderSize: {
+        xxs: '40px',
         xs: '50px',
         sm: '60px',
         md: '70px',
@@ -303,5 +304,15 @@ export const ThemeBase = {
             md: 0.8,
             lg: 0.7
         }
-    }
+    },
+    rotateSize: {
+        d0: '0deg',
+        d45: '45deg',
+        d90: '90deg',
+        d135: '135deg',
+        d180: '180deg',
+        d225: '225deg',
+        d270: '270deg',
+        d315: '315deg',
+    },
 };

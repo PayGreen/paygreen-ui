@@ -13,7 +13,7 @@ import {
     formStatusDefault,
     iconSizeOptions,
     spaceOptions,
-    rotateOptions,
+    rotateSizeOptions,
 } from '../../shared/constants';
 import {
     PlaneIcon,
@@ -36,7 +36,7 @@ const marginBottomLabel = 'Margin bottom';
 const marginLeftLabel = 'Margin left';
 const marginRightLabel = 'Margin right';
 const centeredLabel = 'Centered';
-const rotateLabel = 'Rotation (sens horaire)';
+const rotateSizeLabel = 'Rotation (sens horaire)';
 
 storiesOf(folder.main + 'Icons', module)
     .addDecorator(withKnobs)
@@ -90,10 +90,10 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
-                    rotate={radios(
-                        rotateLabel,
-                        rotateOptions,
-                        rotateOptions.step0,
+                    rotateSize={radios(
+                        rotateSizeLabel,
+                        rotateSizeOptions,
+                        rotateSizeOptions.step0,
                     )}
                 />
 
@@ -143,10 +143,10 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
-                    rotate={radios(
-                        rotateLabel,
-                        rotateOptions,
-                        rotateOptions.step0,
+                    rotateSize={radios(
+                        rotateSizeLabel,
+                        rotateSizeOptions,
+                        rotateSizeOptions.step0,
                     )}
                 />
 
@@ -196,10 +196,10 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
-                    rotate={radios(
-                        rotateLabel,
-                        rotateOptions,
-                        rotateOptions.step0,
+                    rotateSize={radios(
+                        rotateSizeLabel,
+                        rotateSizeOptions,
+                        rotateSizeOptions.step0,
                     )}
                 />
 
@@ -249,10 +249,10 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
-                    rotate={radios(
-                        rotateLabel,
-                        rotateOptions,
-                        rotateOptions.step0,
+                    rotateSize={radios(
+                        rotateSizeLabel,
+                        rotateSizeOptions,
+                        rotateSizeOptions.step0,
                     )}
                 />
 
@@ -302,10 +302,10 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
-                    rotate={radios(
-                        rotateLabel,
-                        rotateOptions,
-                        rotateOptions.step0,
+                    rotateSize={radios(
+                        rotateSizeLabel,
+                        rotateSizeOptions,
+                        rotateSizeOptions.step0,
                     )}
                 />
             </div>

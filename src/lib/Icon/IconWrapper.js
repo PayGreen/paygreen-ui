@@ -14,8 +14,8 @@ import {
     spaceDefault,
     iconHtmlTagOptions,
     iconHtmlTagDefault,
-    rotateOptions,
-    rotateDefault,
+    rotateSizeOptions,
+    rotateSizeDefault,
 } from '../../shared/constants';
 import { IconBase } from './style';
 
@@ -46,7 +46,7 @@ IconWrapper.propTypes = {
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     marginLeft: PropTypes.oneOf(Object.values(spaceOptions)),
     marginRight: PropTypes.oneOf(Object.values(spaceOptions)),
-    rotate: PropTypes.oneOf(Object.values(rotateOptions)),
+    rotateSize: PropTypes.oneOf(Object.values(rotateSizeOptions)),
     isActive: PropTypes.bool,
 };
 
@@ -65,7 +65,7 @@ IconWrapper.defaultProps = {
     marginBottom: spaceDefault,
     marginLeft: spaceDefault,
     marginRight: spaceDefault,
-    rotate: rotateDefault,
+    rotateSize: rotateSizeDefault,
     isActive: false,
 };
 

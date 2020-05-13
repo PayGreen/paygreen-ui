@@ -377,14 +377,18 @@ const alignOptions = {
 
 const alignDefault = alignOptions.left;
 
-const rotateOptions = {
-    step0: '0',
-    step1: '90',
-    step2: '180',
-    step3: '270',
+const rotateSizeOptions = {
+    d0: 'd0',
+    d45: 'd45',
+    d90: 'd90',
+    d135: 'd135',
+    d180: 'd180',
+    d225: 'd225',
+    d270: 'd270',
+    d315: 'd315',
 };
 
-const rotateDefault = rotateOptions.step0;
+const rotateSizeDefault = rotateSizeOptions.step0;
 
 export {
     folder,
@@ -464,6 +468,6 @@ export {
     alignItemsDefault,
     alignOptions,
     alignDefault,
-    rotateOptions,
-    rotateDefault,
+    rotateSizeOptions,
+    rotateSizeDefault,
 };

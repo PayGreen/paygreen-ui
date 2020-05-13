@@ -1,6 +1,7 @@
 import { math } from 'polished';
 
 const bulletFont = {
+    xxs: '1rem',
     xs: '1.1rem',
     sm: '1.2rem',
     md: '1.4rem',
