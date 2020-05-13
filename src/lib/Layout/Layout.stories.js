@@ -69,6 +69,7 @@ storiesOf(folder.nav + 'Layout', module)
             <Main isOpen={boolean(sidebarIsOpenLabel, true)}>
                 <Topbar>
                     <MenuHamburger />
+                    
                     <a href="#" className="hideOnDesktop">
                         {logoTopbar}
                     </a>
