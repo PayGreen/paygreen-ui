@@ -12,7 +12,7 @@ const SidebarMenuCategoryBase = styled.div`
     
     ${TitleBase} {
         margin-left:${props => props.theme.space.sm};
-        margin-bottom:${props => props.theme.space.sm};
+        margin-bottom:${props => props.theme.space.md};
     }
 
     ${SidebarMenuBase} {
