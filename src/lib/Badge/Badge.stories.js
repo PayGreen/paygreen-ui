@@ -5,6 +5,7 @@ import {
     boolean,
     select,
     radios,
+    text,
 } from '@storybook/addon-knobs';
 import {
     folder,
@@ -31,26 +32,24 @@ storiesOf(folder.main + 'Badge', module)
                 gradientOptions,
                 gradientOptions.theme,
             )}
-            textSize={select(
-                'Size',
-                blockWidthOptions,
-                blockWidthOptions.sm,
-            )}
+            textSize={select('Size', blockWidthOptions, blockWidthOptions.sm)}
         >
-            {text('Text', 'Example')}
-            <ArrowBottomIcon
-                colorPallet={boolean('White', false) ? 'theme' : 'wab'}
-                colorWab="white00"
-                colorTheme={select(
-                    'Color theme',
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                iconSize={select(
-                    'Size',
-                    blockWidthOptions,
-                    blockWidthOptions.sm,
-                )}
-            />
+            {boolean('With text', true) ? text('Text', 'Example') : null}
+            {boolean('With icon', true) ? (
+                <ArrowBottomIcon
+                    colorPallet={boolean('White', false) ? 'theme' : 'wab'}
+                    colorWab="white00"
+                    colorTheme={select(
+                        'Color theme',
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    iconSize={select(
+                        'Size',
+                        blockWidthOptions,
+                        blockWidthOptions.sm,
+                    )}
+                />
+            ) : null}
         </Badge>
     ));

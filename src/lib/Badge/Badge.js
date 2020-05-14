@@ -9,6 +9,10 @@ import {
 import { BadgeBase } from './style';
 
 const Badge = props => {
+    if(!props.children){
+        return null;
+    }
+
     return (
         <BadgeBase {...props}>
             <span className="children">{props.children}</span>
