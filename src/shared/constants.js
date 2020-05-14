@@ -148,6 +148,14 @@ const imageTypeOptions = {
 
 const imageTypeDefault = imageTypeOptions.normal;
 
+// HoverLink styles
+const hoverStyleOptions = {
+    classic: 'classic',
+    soft: 'soft',
+};
+
+const hoverStyleDefault = hoverStyleOptions.classic;
+
 /* Sizes */
 
 // Shadow sizes
@@ -406,6 +414,8 @@ export {
     buttonStyleDefault,
     imageTypeOptions,
     imageTypeDefault,
+    hoverStyleOptions,
+    hoverStyleDefault,
 
     shadowSizeOptions,
     shadowSizeDefault,

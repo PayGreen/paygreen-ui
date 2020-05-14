@@ -11,6 +11,10 @@ import {
     greyDefault,
     formStatusOptions,
     formStatusDefault,
+    hoverStyleOptions,
+    hoverStyleDefault,
+    spaceOptions,
+    spaceDefault
 } from '../../shared/constants';
 import { LinkBase } from './style';
 
@@ -27,7 +31,11 @@ Link.propTypes = {
     hasUnderline: PropTypes.bool,
     hasHover: PropTypes.bool,
     hasUppercase: PropTypes.bool,
-    transition: PropTypes.string,
+    paddingTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingLeft: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingRight: PropTypes.oneOf(Object.values(spaceOptions)),
+    hoverStyle: PropTypes.oneOf(Object.values(hoverStyleOptions)),
 };
 
 Link.defaultProps = {
@@ -39,7 +47,11 @@ Link.defaultProps = {
     hasUnderline: true,
     hasHover: true,
     hasUppercase: false,
-    transition: null,
+    paddingTop: spaceDefault,
+    paddingBottom: spaceDefault,
+    paddingLeft: spaceDefault,
+    paddingRight: spaceDefault,
+    hoverStyle: hoverStyleDefault,
 };
 
 export default Link;

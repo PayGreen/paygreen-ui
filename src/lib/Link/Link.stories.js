@@ -19,6 +19,10 @@ import {
     greyDefault,
     formStatusOptions,
     formStatusDefault,
+    hoverStyleOptions,
+    hoverStyleDefault,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import Text from '../Text/Text';
 import Link from './Link';
@@ -67,6 +71,31 @@ storiesOf(folder.main + 'Link', module)
                         hasUnderline={boolean('Has underline', true)}
                         hasHover={boolean('Has hover', true)}
                         hasUppercase={boolean('Uppercase', false)}
+                        paddingTop={select(
+                            'Padding top',
+                            spaceOptions,
+                            spaceDefault,
+                        )}
+                        paddingBottom={select(
+                            'Padding bottom',
+                            spaceOptions,
+                            spaceDefault,
+                        )}
+                        paddingLeft={select(
+                            'Padding left',
+                            spaceOptions,
+                            spaceDefault,
+                        )}
+                        paddingRight={select(
+                            'Padding right',
+                            spaceOptions,
+                            spaceDefault,
+                        )}
+                        hoverStyle={select(
+                            'Hover Style',
+                            hoverStyleOptions,
+                            hoverStyleDefault,
+                        )}
                     >
                         {text('Label', 'Link text')}
                     </Link>
