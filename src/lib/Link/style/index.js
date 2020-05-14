@@ -2,14 +2,6 @@ import styled from 'styled-components';
 import { colorTypeOptions } from '../../../shared/constants';
 import { mainColor } from '../../Text/style/constants';
 import { linkUppercase, hoverStyle, underlineStyle } from './base';
-import bg from './pattern-light.png'
-
-const Fond = styled.div`
-    background-color:black;
-    padding: 2em;
-    width: 100%;
-    height: 400px;
-`;
 
 const LinkBase = styled.span`
     display: inline-block;
@@ -25,6 +17,7 @@ const LinkBase = styled.span`
     padding-bottom: ${props => props.theme.space[props.paddingBottom]};
     padding-left: ${props => props.theme.space[props.paddingLeft]};
     padding-right: ${props => props.theme.space[props.paddingRight]};
+    
     &::after {
         content: '';
         position: absolute;
@@ -40,4 +33,4 @@ const LinkBase = styled.span`
     ${props => (props.hasHover ? hoverStyle[props.hoverStyle] : null)};
 `;
 
-export { Fond, LinkBase };
+export { LinkBase };

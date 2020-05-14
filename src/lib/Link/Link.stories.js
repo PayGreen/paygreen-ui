@@ -26,7 +26,6 @@ import {
 } from '../../shared/constants';
 import Text from '../Text/Text';
 import Link from './Link';
-import { Fond } from './style';
 
 const colorTypeLabel = 'Color type';
 
@@ -35,7 +34,6 @@ storiesOf(folder.main + 'Link', module)
     .add(
         'Link',
         () => (
-            <Fond>
             <Text
                 colorType={radios(
                     colorTypeLabel,
@@ -72,6 +70,11 @@ storiesOf(folder.main + 'Link', module)
                         )}
                         hasUnderline={boolean('Has underline', true)}
                         hasHover={boolean('Has hover', true)}
+                        hoverStyle={select(
+                            'Hover Style',
+                            hoverStyleOptions,
+                            hoverStyleDefault,
+                        )}
                         hasUppercase={boolean('Uppercase', false)}
                         paddingTop={select(
                             'Padding top',
@@ -93,11 +96,6 @@ storiesOf(folder.main + 'Link', module)
                             spaceOptions,
                             spaceDefault,
                         )}
-                        hoverStyle={select(
-                            'Hover Style',
-                            hoverStyleOptions,
-                            hoverStyleDefault,
-                        )}
                     >
                         {text('Label', 'Link text')}
                     </Link>
@@ -107,7 +105,6 @@ storiesOf(folder.main + 'Link', module)
                 eleifend ipsum sagittis ut. Proin molestie lorem et neque tempus
                 tristique. Mauris finibus dui sem, nec suscipit mi porta a.
             </Text>
-            </Fond>
         ),
         {
             notes: 'Link can be used inside Text component.',

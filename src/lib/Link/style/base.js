@@ -25,72 +25,56 @@ const underlineStyle = css`
     }
 `;
 
-const backgroundGradientStyle = css`
-    background-color: ${props =>
-        props.colorType === colorTypeOptions.reverse
-            ? props.theme.wab.white00
-            : null };
+const gradientBackground = css`
     background-image: linear-gradient(
         to left,
         ${props =>
                 transparentize(
-                    0.2,
+                    0.1,
                     props.theme.color[props.colorTheme].gradientShade,
                 )}
             30%,
         ${props =>
                 transparentize(
-                    0.2,
+                    0.1,
                     props.theme.color[props.colorTheme].gradientBase,
                 )}
             80%
     );
 `;
 
-const backgroundColorStyle = css`
+// switch between background-color or background-image effects depending on colorPallet choice
+const backgroundStyle = css`
     background-color: ${props =>
-        props.colorType === colorTypeOptions.reverse
-            ? props.theme.wab.white00
-            : null };
-    background-image: linear-gradient(
-        to left,
-        ${props =>
-                transparentize(
-                    0.2,
-                    props.theme.color[props.colorTheme].gradientShade,
-                )}
-            30%,
-        ${props =>
-                transparentize(
-                    0.2,
-                    props.theme.color[props.colorTheme].gradientBase,
-                )}
-            80%
+        props.colorPallet === 'wab' || props.colorPallet === 'status'
+            ? mainColor[props.colorPallet]
+            : null};
+    ${props => (props.colorPallet === 'theme' ? gradientBackground : null)}
     );
 `;
 
+const backgroundDarkStyle = css`
+    background-color: ${props => props.theme.wab.white00};
+`;
 
 const hoverStyle = {
     soft: css`
         &::after {
             height: 100%;
             opacity: 0;
-
-            background-color: ${props =>
-                props.colorPallet === 'wab' || props.colorPallet === 'status'
-                    ? mainColor[props.colorPallet]
-                    : null};
-            ${props => (props.colorPallet === 'theme' ? gradientStyle : null)}
-
-            transition: all ${props => props.theme.transition.lg};
+            transition: all ${props => props.theme.transition.md};
+            ${props =>
+                props.colorType === colorTypeOptions.reverse
+                    ? backgroundDarkStyle
+                    : backgroundStyle};
         }
 
         a:hover &,
         a:active &,
         a:focus & {
             &::after {
-                opacity: 0.3;
-                transition: all ${props => props.theme.transition.lg};
+                opacity: 0.4;
+                transition: all ${props => props.theme.transition.md};
             }
         }
     `,
@@ -98,15 +82,14 @@ const hoverStyle = {
         &::after {
             height: ${props => (props.hasUnderline ? props.theme.line : 0)};
             opacity: 0.3;
+            ${props =>
+                props.colorType === colorTypeOptions.reverse
+                    ? backgroundDarkStyle
+                    : backgroundStyle};
 
-            background-color: ${props =>
-                props.colorPallet === 'wab' || props.colorPallet === 'status'
-                    ? mainColor[props.colorPallet]
-                    : null};
-            ${props => (props.colorPallet === 'theme' ? gradientStyle : null)}
-            
             transition: all ${props => props.theme.transition.xs};
         }
+
         a:hover &,
         a:active &,
         a:focus & {
