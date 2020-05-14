@@ -37,7 +37,7 @@ storiesOf(folder.main + 'Badge', module)
                 blockWidthOptions.sm,
             )}
         >
-            Example
+            {text('Text', 'Example')}
             <ArrowBottomIcon
                 colorPallet={boolean('White', false) ? 'theme' : 'wab'}
                 colorWab="white00"

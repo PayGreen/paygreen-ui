@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import {
-    textSize,
-    coloredStyle,
     whiteStyle,
     noBaselineStyle,
     hoverRightStyle,
@@ -33,16 +31,7 @@ const LogoBase = styled.span`
         max-width: 100%;
     }
 
-    .text {
-        border-radius: ${props => props.theme.radius.sm};
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: ${props => props.theme.font.spacing};
-        font-weight: ${props => props.theme.font.weight.bold};
-        ${props => textSize[props.textSize]};
-    }
-
-    ${props => (props.isWhite ? whiteStyle : coloredStyle)};
+    ${props => (props.isWhite ? whiteStyle : null)};
     ${props => (props.hasBaseline ? null : noBaselineStyle)};
     ${props => (props.hasHoverRight ? hoverRightStyle : null)};
     ${props => (props.hasHoverTop ? hoverTopStyle : null)};
