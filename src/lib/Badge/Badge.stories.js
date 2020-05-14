@@ -34,8 +34,8 @@ storiesOf(folder.main + 'Badge', module)
             )}
             textSize={select('Size', blockWidthOptions, blockWidthOptions.sm)}
         >
-            {boolean('With text', true) ? text('Text', 'Example') : null}
-            {boolean('With icon', true) ? (
+            {text('Text', 'Example')}
+            {boolean('With icon', true) && (
                 <ArrowBottomIcon
                     colorPallet={boolean('White', false) ? 'theme' : 'wab'}
                     colorWab="white00"
@@ -50,6 +50,6 @@ storiesOf(folder.main + 'Badge', module)
                         blockWidthOptions.sm,
                     )}
                 />
-            ) : null}
+            )}
         </Badge>
     ));
