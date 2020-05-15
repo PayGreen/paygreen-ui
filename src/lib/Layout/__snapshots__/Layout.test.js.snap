@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa kxNttb"
+  className="sc-bdVaJa cCbJNe"
 >
   <div
-    className="sc-bZQynM kWNEvy"
+    className="sc-bZQynM eLFYwO"
   >
     <span
       className="sc-bwzfXH bUSGIe icon"
@@ -20,10 +20,10 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-EHOje TZGlo"
+    className="sc-EHOje iUmUfC"
   >
     <header
-      className="sc-bxivhb iNlAeG"
+      className="sc-bxivhb cJicZp"
     >
       <button
         className="sc-htpNat idIFDi"
