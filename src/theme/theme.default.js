@@ -1,5 +1,5 @@
 import { ThemeBase } from './theme.base';
-import patternLight from '../lib/Layout/style/pattern-light.png';
+import patternLight from './pattern-light.png';
 
 let ThemeDefault = { ...ThemeBase };
 ThemeDefault = Object.assign(ThemeDefault, {
