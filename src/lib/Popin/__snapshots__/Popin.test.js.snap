@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<ul
+  className="sc-htpNat bAPpsB"
+>
+  <li>
+    <span
+      className="sc-bwzfXH jdNZyP"
+    >
+      Démo
+    </span>
+  </li>
+  <li>
+    <p
+      className="sc-bdVaJa kXlOUj"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+       
+    </p>
+  </li>
+</ul>
+`;
