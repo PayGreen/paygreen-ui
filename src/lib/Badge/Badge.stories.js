@@ -13,6 +13,8 @@ import {
     colorThemeDefault,
     gradientOptions,
     blockWidthOptions,
+    iconSizeDefault,
+    iconSizeOptions,
 } from '../../shared/constants';
 import { ArrowBottomIcon } from '../Icon/Icon';
 import Badge from './Badge';
@@ -32,7 +34,7 @@ storiesOf(folder.main + 'Badge', module)
                 gradientOptions,
                 gradientOptions.theme,
             )}
-            textSize={select('Size', blockWidthOptions, blockWidthOptions.sm)}
+            textSize={select('Text size', blockWidthOptions, blockWidthOptions.sm)}
         >
             {text('Text', 'Example')}
             {boolean('With icon', true) && (
@@ -45,9 +47,9 @@ storiesOf(folder.main + 'Badge', module)
                         colorThemeDefault,
                     )}
                     iconSize={select(
-                        'Size',
-                        blockWidthOptions,
-                        blockWidthOptions.sm,
+                        'Icon size',
+                        iconSizeOptions,
+                        iconSizeOptions.xs,
                     )}
                 />
             )}
