@@ -3,8 +3,11 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
 import {
     folder,
+    colorPalletOptions,
     colorThemeDefault,
     colorThemeOptions,
+    fontSizeOptions,
+    greyOptions,
 } from '../../shared/constants';
 import Link from '../Link/Link';
 import SidebarItem from '../SidebarItem/SidebarItem';
@@ -18,7 +21,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
         <SidebarList>
             <a href="#">
                 <SidebarItem
-                    textSize="sm"
+                    textSize={fontSizeOptions.sm}
                     colorTheme={radios(
                         colorThemeLabel,
                         colorThemeOptions,
@@ -27,8 +30,8 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
                     isActive={boolean('Is Active', false)}
                 >
                     <Link
-                        colorPallet="wab"
-                        colorWab="grey60"
+                        colorPallet={colorPalletOptions.wab}
+                        colorWab={greyOptions.grey60}
                         hasUnderline={false}
                         hasHover={false}
                     >
@@ -39,7 +42,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
 
             <a href="#">
                 <SidebarItem
-                    textSize="sm"
+                    textSize={fontSizeOptions.sm}
                     colorTheme={radios(
                         colorThemeLabel,
                         colorThemeOptions,
@@ -47,8 +50,8 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
                     )}
                 >
                     <Link
-                        colorPallet="wab"
-                        colorWab="grey60"
+                        colorPallet={colorPalletOptions.wab}
+                        colorWab={greyOptions.grey60}
                         hasUnderline={false}
                         hasHover={false}
                     >
