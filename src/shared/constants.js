@@ -388,7 +388,7 @@ const rotateSizeOptions = {
     d315: 'd315',
 };
 
-const rotateSizeDefault = rotateSizeOptions.step0;
+const rotateSizeDefault = rotateSizeOptions.d0;
 
 export {
     folder,

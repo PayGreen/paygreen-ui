@@ -14,6 +14,7 @@ import {
     iconSizeOptions,
     spaceOptions,
     rotateSizeOptions,
+    rotateSizeDefault,
 } from '../../shared/constants';
 import {
     PlaneIcon,
@@ -93,7 +94,7 @@ storiesOf(folder.main + 'Icons', module)
                     rotateSize={select(
                         rotateSizeLabel,
                         rotateSizeOptions,
-                        rotateSizeOptions.step0,
+                        rotateSizeDefault,
                     )}
                 />
 
@@ -146,7 +147,7 @@ storiesOf(folder.main + 'Icons', module)
                     rotateSize={select(
                         rotateSizeLabel,
                         rotateSizeOptions,
-                        rotateSizeOptions.step0,
+                        rotateSizeDefault,
                     )}
                 />
 
@@ -199,7 +200,7 @@ storiesOf(folder.main + 'Icons', module)
                     rotateSize={select(
                         rotateSizeLabel,
                         rotateSizeOptions,
-                        rotateSizeOptions.step0,
+                        rotateSizeDefault,
                     )}
                 />
 
@@ -252,7 +253,7 @@ storiesOf(folder.main + 'Icons', module)
                     rotateSize={select(
                         rotateSizeLabel,
                         rotateSizeOptions,
-                        rotateSizeOptions.step0,
+                        rotateSizeDefault,
                     )}
                 />
 
@@ -305,7 +306,7 @@ storiesOf(folder.main + 'Icons', module)
                     rotateSize={select(
                         rotateSizeLabel,
                         rotateSizeOptions,
-                        rotateSizeOptions.step0,
+                        rotateSizeDefault,
                     )}
                 />
             </div>
