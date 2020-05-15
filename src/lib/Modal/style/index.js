@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-// import { isOpenStyle, isCloseStyle } from './base';
+import { isOpenStyle, isCloseStyle } from './base';
 
 const Overlay = styled.div`
     position: absolute;
@@ -38,6 +38,9 @@ const ModalBase = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    ${props => (props.isOpen ? isOpenStyle : isCloseStyle)};
 `;
+
 
 export { ModalBase, ModalContent, Overlay };
