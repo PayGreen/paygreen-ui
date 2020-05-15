@@ -4,7 +4,6 @@ import { TopbarBase } from '../../Topbar/style';
 
 const SidebarBase = styled.div`
     position: absolute;
-    z-index: ${props => props.theme.zindex.menu};
     height: 100vh;
     width: 100%;
     overflow-y: hidden;
