@@ -7,7 +7,6 @@ const Box = styled.div``;
 
 const MainBase = styled.div`
     position: relative;
-    z-index: ${props => props.theme.zindex.header};
     height: 100vh;
     width: 100%;
     display: grid;

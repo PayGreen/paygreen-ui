@@ -64,5 +64,10 @@
     "react": "^16.9.0",
     "styled-components": ">= 4"
   },
-  "description": "PayGreen Library"
+  "description": "PayGreen Library",
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/fileMock.js"
+    }
+  }
 }
