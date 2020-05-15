@@ -5,11 +5,12 @@ import { isClosedStyle, isOpenStyle } from './base';
 
 const SidebarMenuBase = styled.div`
     box-sizing: border-box;
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: ${props => props.theme.space.sm} 0;
-    position: relative;
+    overflow-x: hidden;
 
     display: grid;
     grid-template-rows: auto 1fr;

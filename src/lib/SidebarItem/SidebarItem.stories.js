@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios} from '@storybook/addon-knobs';
+import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -19,6 +19,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
         <>
             <a href="#">
                 <SidebarItem
+                    isActive={boolean('Is Active', false)}
                     colorTheme={radios(
                         colorThemeLabel,
                         colorThemeOptions,
