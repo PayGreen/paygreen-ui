@@ -28,7 +28,6 @@ storiesOf(folder.main + 'Modal', module)
             isOpen={boolean('is Open', true)}
         >
             <ModalHeader>
-
                 <Title
                     colorPallet={colorPalletOptions.wab}
                     colorWab={greyOptions.grey40}
@@ -36,6 +35,7 @@ storiesOf(folder.main + 'Modal', module)
                 >
                     Que voulez-vous faire ?
                 </Title>
+
                 <CrossIcon
                     htmlTag={iconHtmlTagOptions.button}
                     iconSize={iconSizeOptions.md}
@@ -43,7 +43,7 @@ storiesOf(folder.main + 'Modal', module)
                     colorWab={greyOptions.grey40}
                 />
             </ModalHeader>
-            
+
             <ModalBody>
                 <div>Texte contenu dans le body</div>
             </ModalBody>

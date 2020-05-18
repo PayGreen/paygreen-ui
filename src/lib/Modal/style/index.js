@@ -14,9 +14,11 @@ const ModalContent = styled.div`
     position: relative;
     max-height: 90vh;
     width: 100%;
+
     @media (${props => props.theme.query.min.md}) {
         max-width: ${props => props.theme.blockWidth[props.blockWidth]};
     }
+
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-areas: 'header' 'body';

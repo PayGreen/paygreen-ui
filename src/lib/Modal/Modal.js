@@ -8,6 +8,7 @@ const Modal = props => {
     return (
         <ModalBase {...props}>
             <Overlay {...otherProps} />
+
             <ModalContent {...otherProps}>{props.children}</ModalContent>
         </ModalBase>
     );
