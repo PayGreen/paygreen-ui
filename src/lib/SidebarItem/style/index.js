@@ -7,7 +7,7 @@ const SidebarItemBase = styled.div`
     padding: ${props => props.theme.space.sm};
     display: grid;
     grid-template-areas: 'icon link';
-    grid-template-columns: ${props => props.theme.iconSize.xl} 1fr;
+    grid-template-columns: ${props => props.theme.iconSize.lg} 1fr;
     transition: all ${props => props.theme.transition.sm};
 
     & > .icon {

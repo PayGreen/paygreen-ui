@@ -10,7 +10,6 @@ import {
     greyOptions,
     iconSizeOptions,
 } from '../../shared/constants';
-
 import Link from '../Link/Link';
 import { MeterIcon } from '../Icon/Icon';
 import SidebarItem from '../SidebarItem/SidebarItem';
@@ -60,6 +59,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                     </Link>
                 </SidebarItem>
             </a>
+            
             <SidebarList>
                 <a href="#">
                     <SidebarItem

@@ -16,7 +16,6 @@ const colorThemeLabel = 'Color theme';
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
     .addDecorator(withKnobs)
     .add('SidebarItem', () => (
-        <>
             <a href="#">
                 <SidebarItem
                     isActive={boolean('Is Active', false)}
@@ -48,5 +47,4 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
                     </Link>
                 </SidebarItem>
             </a>
-        </>
     ));

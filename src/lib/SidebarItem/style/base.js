@@ -28,6 +28,7 @@ const hoverBase = css`
     }
 
     a:hover &,
+    a:active &,
     a:focus & {
         &::before {
             left: 0;
@@ -36,8 +37,6 @@ const hoverBase = css`
 `;
 
 const activeStyle = css`
-    width: 100%;
-    height: 100%;
     background-image: linear-gradient(
         to left,
         ${props =>
