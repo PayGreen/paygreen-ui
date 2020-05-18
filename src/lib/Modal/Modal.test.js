@@ -1,20 +1,23 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import Main from './Main';
-import MenuHamburger from '../MenuHamburger/MenuHamburger';
-import Topbar from '../Topbar/Topbar';
-import { Box } from './style';
+import Modal from './Modal';
+import { ModalHeader, ModalBody } from './style/subComponents';
+import Title from '../Title/Title';
+import { CrossIcon } from '../Icon/Icon';
 
 it('renders without crashing', () => {
-    const main = TestRenderer.create(
-        <Main theme={ThemeDefault}>
-            <Topbar theme={ThemeDefault}>
-                <MenuHamburger theme={ThemeDefault} />
-            </Topbar>
+    const modal = TestRenderer.create(
+        <Modal theme={ThemeDefault}>
+            <ModalHeader theme={ThemeDefault}>
+                <Title theme={ThemeDefault}>Que voulez-vous faire ?</Title>
 
-            <Box />
-        </Main>,
+                <CrossIcon theme={ThemeDefault} />
+            </ModalHeader>
+
+            <ModalBody theme={ThemeDefault}>
+            </ModalBody>
+        </Modal>,
     );
-    expect(main.toJSON()).toMatchSnapshot();
+    expect(modal.toJSON()).toMatchSnapshot();
 });

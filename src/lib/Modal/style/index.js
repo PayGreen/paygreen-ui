@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import { isOpenStyle, isCloseStyle } from './base';
+import { isCloseStyle } from './base';
 
 const Overlay = styled.div`
     position: absolute;
@@ -12,9 +12,7 @@ const Overlay = styled.div`
 
 const ModalContent = styled.div`
     position: relative;
-    z-index: ${props => props.theme.zindex.modal};
-    height: auto;
-    max-height:90vh;
+    max-height: 90vh;
     width: 100%;
     @media (${props => props.theme.query.min.md}) {
         max-width: ${props => props.theme.blockWidth[props.blockWidth]};
@@ -22,13 +20,13 @@ const ModalContent = styled.div`
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-areas: 'header' 'body';
-    overflow-y:hidden;
-    background-color:${props => props.theme.wab.white00};
-    border-radius:${props => props.theme.radius.lg};
-    box-shadow: ${props => props.theme.shadow.size.lg + ' ' + transparentize(
-        props.theme.shadow.opacity.md,
-        props.theme.wab.black00
-    )};
+    overflow-y: hidden;
+    background-color: ${props => props.theme.wab.white00};
+    border-radius: ${props => props.theme.radius.lg};
+    box-shadow: ${props =>
+        props.theme.shadow.size.lg +
+        ' ' +
+        transparentize(props.theme.shadow.opacity.md, props.theme.wab.black00)};
 `;
 
 const ModalBase = styled.div`
@@ -39,8 +37,9 @@ const ModalBase = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    ${props => (props.isOpen ? isOpenStyle : isCloseStyle)};
-`;
+    transition: opacity ${props => props.theme.transition.sm};
 
+    ${props => (props.isOpen ? null : isCloseStyle)};
+`;
 
 export { ModalBase, ModalContent, Overlay };

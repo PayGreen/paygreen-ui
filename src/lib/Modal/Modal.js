@@ -7,7 +7,7 @@ const Modal = props => {
     const { children, ...otherProps } = props;
     return (
         <ModalBase {...props}>
-            <Overlay {...otherProps}/>
+            <Overlay {...otherProps} />
             <ModalContent {...otherProps}>{props.children}</ModalContent>
         </ModalBase>
     );

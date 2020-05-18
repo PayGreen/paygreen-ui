@@ -5,14 +5,14 @@ import {
     folder,
     blockWidthOptions,
     blockWidthDefault,
-        colorPalletOptions,
-        greyOptions,
-        iconSizeOptions,
-        iconHtmlTagOptions
+    colorPalletOptions,
+    greyOptions,
+    iconSizeOptions,
+    iconHtmlTagOptions,
+    fontSizeOptions,
 } from '../../shared/constants';
 import Modal from './Modal';
-import { ModalHeader } from './style/base';
-import { ModalBody } from './style/base';
+import { ModalHeader, ModalBody } from './style/subComponents';
 import Title from '../Title/Title';
 import { CrossIcon } from '../Icon/Icon';
 
@@ -28,13 +28,22 @@ storiesOf(folder.main + 'Modal', module)
             isOpen={boolean('is Open', true)}
         >
             <ModalHeader>
-                <Title>Titre de la Modale</Title>
-                <CrossIcon 
-                 htmlTag={iconHtmlTagOptions.button}
-                 iconSize={iconSizeOptions.lg}
-                 colorPallet={colorPalletOptions.wab}
-                 colorWab={greyOptions.grey40}/>
+
+                <Title
+                    colorPallet={colorPalletOptions.wab}
+                    colorWab={greyOptions.grey40}
+                    textSize={fontSizeOptions.md}
+                >
+                    Que voulez-vous faire ?
+                </Title>
+                <CrossIcon
+                    htmlTag={iconHtmlTagOptions.button}
+                    iconSize={iconSizeOptions.md}
+                    colorPallet={colorPalletOptions.wab}
+                    colorWab={greyOptions.grey40}
+                />
             </ModalHeader>
+            
             <ModalBody>
                 <div>Texte contenu dans le body</div>
             </ModalBody>
