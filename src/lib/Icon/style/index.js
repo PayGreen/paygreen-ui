@@ -31,6 +31,7 @@ const IconBase = styled.span`
 
     ${props => props.hasBackground ? backgroundStyle : null};
     ${props => props.isActive ? activeStyle[props.colorPallet] : null};
+    transform: rotate(${props => props.theme.rotateSize[props.rotateSize]});
 `;
 
 export { IconBase };

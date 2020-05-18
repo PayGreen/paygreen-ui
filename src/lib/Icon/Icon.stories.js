@@ -13,6 +13,8 @@ import {
     formStatusDefault,
     iconSizeOptions,
     spaceOptions,
+    rotateSizeOptions,
+    rotateSizeDefault,
 } from '../../shared/constants';
 import {
     PlaneIcon,
@@ -35,6 +37,7 @@ const marginBottomLabel = 'Margin bottom';
 const marginLeftLabel = 'Margin left';
 const marginRightLabel = 'Margin right';
 const centeredLabel = 'Centered';
+const rotateSizeLabel = 'Rotation (sens horaire)';
 
 storiesOf(folder.main + 'Icons', module)
     .addDecorator(withKnobs)
@@ -88,6 +91,11 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
+                    rotateSize={select(
+                        rotateSizeLabel,
+                        rotateSizeOptions,
+                        rotateSizeDefault,
+                    )}
                 />
 
                 <OrganizationIcon
@@ -135,6 +143,11 @@ storiesOf(folder.main + 'Icons', module)
                         marginRightLabel,
                         spaceOptions,
                         spaceOptions.sm,
+                    )}
+                    rotateSize={select(
+                        rotateSizeLabel,
+                        rotateSizeOptions,
+                        rotateSizeDefault,
                     )}
                 />
 
@@ -184,6 +197,11 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
+                    rotateSize={select(
+                        rotateSizeLabel,
+                        rotateSizeOptions,
+                        rotateSizeDefault,
+                    )}
                 />
 
                 <TreesIcon
@@ -232,6 +250,11 @@ storiesOf(folder.main + 'Icons', module)
                         spaceOptions,
                         spaceOptions.sm,
                     )}
+                    rotateSize={select(
+                        rotateSizeLabel,
+                        rotateSizeOptions,
+                        rotateSizeDefault,
+                    )}
                 />
 
                 <PointerIcon
@@ -279,6 +302,11 @@ storiesOf(folder.main + 'Icons', module)
                         marginRightLabel,
                         spaceOptions,
                         spaceOptions.sm,
+                    )}
+                    rotateSize={select(
+                        rotateSizeLabel,
+                        rotateSizeOptions,
+                        rotateSizeDefault,
                     )}
                 />
             </div>

@@ -10,6 +10,10 @@ const dashedWidth = {
 };
 
 const dashedLine = {
+    xxs: css`
+        stroke-width: 2;
+        stroke-dasharray: 5, 12;
+    `,
     xs: css`
         stroke-width: 2;
         stroke-dasharray: 5, 12;

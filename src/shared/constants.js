@@ -219,6 +219,7 @@ const blockWidthDefault = blockWidthOptions.md;
 
 // Icon size
 const iconSizeOptions = {
+    xxs: 'xxs',
     xs: 'xs',
     sm: 'sm',
     md: 'md',
@@ -376,6 +377,19 @@ const alignOptions = {
 
 const alignDefault = alignOptions.left;
 
+const rotateSizeOptions = {
+    d0: 'd0',
+    d45: 'd45',
+    d90: 'd90',
+    d135: 'd135',
+    d180: 'd180',
+    d225: 'd225',
+    d270: 'd270',
+    d315: 'd315',
+};
+
+const rotateSizeDefault = rotateSizeOptions.d0;
+
 export {
     folder,
 
@@ -454,4 +468,6 @@ export {
     alignItemsDefault,
     alignOptions,
     alignDefault,
+    rotateSizeOptions,
+    rotateSizeDefault,
 };
