@@ -4,28 +4,26 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     gradientOptions,
-    blockWidthOptions,
+    colorTypeOptions,
+    colorTypeDefault,
+    fontSizeOptions,
 } from '../../shared/constants';
 import { BadgeBase } from './style';
 
 const Badge = props => {
-    return (
-        <BadgeBase {...props}>
-            <span className="children">{props.children}</span>
-        </BadgeBase>
-    );
+    return <BadgeBase {...props}>{props.children}</BadgeBase>;
 };
 
 Badge.propTypes = {
-    isWhite: PropTypes.bool,
-    textSize: PropTypes.oneOf(Object.values(blockWidthOptions)),
+    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
+    textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     gradient: PropTypes.oneOf(Object.values(gradientOptions)),
 };
 
 Badge.defaultProps = {
-    isWhite: false,
-    textSize: blockWidthOptions.sm,
+    colorType: colorTypeDefault,
+    textSize: fontSizeOptions.sm,
     colorTheme: colorThemeDefault,
     gradient: gradientOptions.theme,
 };

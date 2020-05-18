@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
     withKnobs,
-    boolean,
     select,
     radios,
     text,
@@ -12,46 +11,44 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     gradientOptions,
-    blockWidthOptions,
-    iconSizeDefault,
-    iconSizeOptions,
+    colorTypeOptions,
+    colorTypeDefault,
+    fontSizeOptions,
 } from '../../shared/constants';
-import { ArrowBottomIcon } from '../Icon/Icon';
+
 import Badge from './Badge';
+
+const colorTypeLabel = 'Color type';
+const colorThemeLabel = 'Color theme';
+const gradientTypeLabel = 'Gradient type';
+const textSizeLabel = 'Text size';
+const textLabel = 'Text';
 
 storiesOf(folder.main + 'Badge', module)
     .addDecorator(withKnobs)
     .add('Badge', () => (
         <Badge
-            isWhite={boolean('White', false)}
+            colorType={select(
+                colorTypeLabel,
+                colorTypeOptions,
+                colorTypeDefault,
+            )}
             colorTheme={select(
-                'Color theme',
+                colorThemeLabel,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             gradient={radios(
-                'Gradient type',
+                gradientTypeLabel,
                 gradientOptions,
                 gradientOptions.theme,
             )}
-            textSize={select('Text size', blockWidthOptions, blockWidthOptions.sm)}
-        >
-            {text('Text', 'Example')}
-            {boolean('With icon', true) && (
-                <ArrowBottomIcon
-                    colorPallet={boolean('White', false) ? 'theme' : 'wab'}
-                    colorWab="white00"
-                    colorTheme={select(
-                        'Color theme',
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    iconSize={select(
-                        'Icon size',
-                        iconSizeOptions,
-                        iconSizeOptions.xs,
-                    )}
-                />
+            textSize={select(
+                textSizeLabel,
+                fontSizeOptions,
+                fontSizeOptions.sm,
             )}
+        >
+            {text(textLabel, 'Example')}
         </Badge>
     ));

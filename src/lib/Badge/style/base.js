@@ -1,25 +1,47 @@
 import { css } from 'styled-components';
 
 const textSize = {
+    xxs: css`
+        font-size: ${props => props.theme.font.size.xxs};
+        padding-left: ${props => props.theme.space.xs};
+        padding-right: ${props => props.theme.space.xs};
+        height: ${props => `calc(${props.theme.font.size.xxs} + 0.4rem)`};
+    `,
+    xs: css`
+        font-size: ${props => props.theme.font.size.xs};
+        padding-left: ${props => props.theme.space.xs};
+        padding-right: ${props => props.theme.space.xs};
+        height: ${props => `calc(${props.theme.font.size.xs} + 0.4rem)`};
+    `,
     sm: css`
-        font-size: ${props => props.theme.font.size.tiny};
-        padding: ${props => props.theme.space.xs};
-        margin-left: ${props => props.theme.space.sm};
+        font-size: ${props => props.theme.font.size.sm};
+        padding-left: ${props => props.theme.space.xs};
+        padding-right: ${props => props.theme.space.xs};
+        height: ${props => `calc(${props.theme.font.size.sm} + 0.6rem)`};
+    `,
+    base: css`
+        font-size: ${props => props.theme.font.size.base};
+        padding-left: ${props => props.theme.space.xs};
+        padding-right: ${props => props.theme.space.xs};
+        height: ${props => `calc(${props.theme.font.size.base} + 1.2rem)`};
     `,
     md: css`
-        font-size: ${props => props.theme.font.size.xxs};
-        padding: ${props => props.theme.space.xs};
-        margin-left: ${props => props.theme.space.sm};
+        font-size: ${props => props.theme.font.size.md};
+        padding-left: ${props => props.theme.space.sm};
+        padding-right: ${props => props.theme.space.sm};
+        height: ${props => `calc(${props.theme.font.size.md} + 1.9rem)`};
     `,
     lg: css`
-        font-size: ${props => props.theme.font.size.xs};
-        padding: ${props => props.theme.space.sm};
-        margin-left: ${props => props.theme.space.md};
+        font-size: ${props => props.theme.font.size.lg};
+        padding-left: ${props => props.theme.space.sm};
+        padding-right: ${props => props.theme.space.sm};
+        height: ${props => `calc(${props.theme.font.size.lg} + 2rem)`};
     `,
     xl: css`
-        font-size: ${props => props.theme.font.size.sm};
-        padding: ${props => props.theme.space.sm};
-        margin-left: ${props => props.theme.space.md};
+        font-size: ${props => props.theme.font.size.xl};
+        padding-left: ${props => props.theme.space.sm};
+        padding-right: ${props => props.theme.space.sm};
+        height: ${props => `calc(${props.theme.font.size.xl} + 2rem)`};
     `,
 };
 
@@ -43,18 +65,18 @@ const textBackground = {
     `,
 };
 
-const coloredStyle = css`
+const originalStyle = css`
      {
         color: ${props => props.theme.wab.white00};
         ${props => textBackground[props.gradient]};
     }
 `;
 
-const whiteStyle = css`
+const reverseStyle = css`
      {
         color: ${props => props.theme.color[props.colorTheme].main};
         background-color: ${props => props.theme.wab.white00};
     }
 `;
 
-export { textSize, coloredStyle, whiteStyle };
+export { textSize, originalStyle, reverseStyle };

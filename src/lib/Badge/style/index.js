@@ -1,23 +1,19 @@
 import styled from 'styled-components';
-import { textSize, whiteStyle, coloredStyle } from './base';
+import { textSize, originalStyle, reverseStyle } from './base';
 
 const BadgeBase = styled.span`
-    display: flex;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 
-    .children {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    border-radius: ${props => props.theme.radius.sm};
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: ${props => props.theme.font.spacing};
+    font-weight: ${props => props.theme.font.weight.bold};
 
-        border-radius: ${props => props.theme.radius.sm};
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: ${props => props.theme.font.spacing};
-        font-weight: ${props => props.theme.font.weight.bold};
-
-        ${props => textSize[props.textSize]};
-        ${props => (props.isWhite ? whiteStyle : coloredStyle)};
-    }
+    ${props => textSize[props.textSize]};
+    ${props => (props.colorType === 'original' ? originalStyle : reverseStyle)};
 `;
 
 export { BadgeBase };
