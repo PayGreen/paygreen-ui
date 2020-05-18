@@ -12,9 +12,7 @@ import { PopinBase } from './style';
 const Popin = props => {
     return (
         <PopinBase {...props}>
-            {React.Children.map(props.children, (child, index) =>
-                child ? <li key={index}>{child}</li> : null,
-            )}
+            {props.children}
         </PopinBase>
     );
 };

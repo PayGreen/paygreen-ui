@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 import { activeStyle, hiddenStyle } from './base';
 
-const PopinBase = styled.ul`
+const PopinBase = styled.div`
     box-sizing: border-box;
     margin: 0;
 
@@ -16,12 +16,6 @@ const PopinBase = styled.ul`
         props.theme.shadow.size[props.shadowSize] +
         ' ' +
         transparentize(props.theme.shadow.opacity.sm, props.theme.wab.black00)};
-
-    li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 
     transition-property: opacity, transform;
     transition-duration: ${props => props.theme.transition.xs}, 0.3s;

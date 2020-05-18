@@ -35,8 +35,14 @@ storiesOf(folder.main + 'Popin', module)
         >
             <Title
                 marginTop={spaceOptions.xs}
+                marginLateral={spaceOptions.xs}
                 colorPallet={colorPalletOptions.wab}
                 colorWab={greyOptions.grey60}
+                align={select(
+                    'Text alignment',
+                    alignOptions,
+                    alignOptions.center,
+                )}
             >
                 Démo
             </Title>
