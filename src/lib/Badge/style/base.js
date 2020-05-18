@@ -1,47 +1,48 @@
 import { css } from 'styled-components';
+import { math } from 'polished';
 
 const textSize = {
     xxs: css`
         font-size: ${props => props.theme.font.size.xxs};
         padding-left: ${props => props.theme.space.xs};
         padding-right: ${props => props.theme.space.xs};
-        height: ${props => `calc(${props.theme.font.size.xxs} + 0.4rem)`};
+        height: ${props => math(props.theme.font.size.xxs + ' + 0.4rem')};
     `,
     xs: css`
         font-size: ${props => props.theme.font.size.xs};
         padding-left: ${props => props.theme.space.xs};
         padding-right: ${props => props.theme.space.xs};
-        height: ${props => `calc(${props.theme.font.size.xs} + 0.4rem)`};
+        height: ${props => math(props.theme.font.size.xs + ' + 0.4rem')};
     `,
     sm: css`
         font-size: ${props => props.theme.font.size.sm};
         padding-left: ${props => props.theme.space.xs};
         padding-right: ${props => props.theme.space.xs};
-        height: ${props => `calc(${props.theme.font.size.sm} + 0.6rem)`};
+        height: ${props => math(props.theme.font.size.sm + ' + 0.6rem')};
     `,
     base: css`
         font-size: ${props => props.theme.font.size.base};
         padding-left: ${props => props.theme.space.xs};
         padding-right: ${props => props.theme.space.xs};
-        height: ${props => `calc(${props.theme.font.size.base} + 1.2rem)`};
+        height: ${props => math(props.theme.font.size.base + ' + 1.2rem')};
     `,
     md: css`
         font-size: ${props => props.theme.font.size.md};
         padding-left: ${props => props.theme.space.sm};
         padding-right: ${props => props.theme.space.sm};
-        height: ${props => `calc(${props.theme.font.size.md} + 1.9rem)`};
+        height: ${props => math(props.theme.font.size.md + ' + 2rem')};
     `,
     lg: css`
         font-size: ${props => props.theme.font.size.lg};
         padding-left: ${props => props.theme.space.sm};
         padding-right: ${props => props.theme.space.sm};
-        height: ${props => `calc(${props.theme.font.size.lg} + 2rem)`};
+        height: ${props => math(props.theme.font.size.lg + ' + 2rem')};
     `,
     xl: css`
         font-size: ${props => props.theme.font.size.xl};
         padding-left: ${props => props.theme.space.sm};
         padding-right: ${props => props.theme.space.sm};
-        height: ${props => `calc(${props.theme.font.size.xl} + 2rem)`};
+        height: ${props => math(props.theme.font.size.xl + ' + 2rem')};
     `,
 };
 
