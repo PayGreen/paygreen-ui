@@ -11,24 +11,30 @@ import {
     greyOptions,
     spaceOptions,
     alignOptions,
+    fontSizeOptions,
 } from '../../shared/constants';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Popin from './Popin';
 
+const isActiveLabel = 'Is active';
+const popinSizeLabel = 'Popin size';
+const radiusSizeLabel = 'Radius label';
+const shadowSizeLabel = 'Shadow size';
+
 storiesOf(folder.main + 'Popin', module)
     .addDecorator(withKnobs)
     .add('Popin with text', () => (
         <Popin
-            isActive={boolean('Is active', true)}
+            isActive={boolean(isActiveLabel, true)}
             blockWidth={select(
-                'Popin size',
+                popinSizeLabel,
                 blockWidthOptions,
                 blockWidthOptions.sm,
             )}
-            radiusSize={select('Radius size', radiusOptions, radiusDefault)}
+            radiusSize={select(radiusSizeLabel, radiusOptions, radiusDefault)}
             shadowSize={select(
-                'Shadow size',
+                shadowSizeLabel,
                 shadowSizeOptions,
                 shadowSizeOptions.sm,
             )}
@@ -38,25 +44,17 @@ storiesOf(folder.main + 'Popin', module)
                 marginLateral={spaceOptions.xs}
                 colorPallet={colorPalletOptions.wab}
                 colorWab={greyOptions.grey60}
-                align={select(
-                    'Text alignment',
-                    alignOptions,
-                    alignOptions.center,
-                )}
+                textSize={fontSizeOptions.sm}
+                align={alignOptions.center}
             >
                 Démo
             </Title>
+
             <Text
                 marginTop={spaceOptions.sm}
                 marginLateral={spaceOptions.xs}
                 marginBottom={spaceOptions.xs}
-                colorPallet={colorPalletOptions.wab}
-                colorWab={greyOptions.grey40}
-                align={select(
-                    'Text alignment',
-                    alignOptions,
-                    alignOptions.center,
-                )}
+                textSize={fontSizeOptions.sm}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}

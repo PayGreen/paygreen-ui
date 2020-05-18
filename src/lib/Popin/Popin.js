@@ -18,7 +18,7 @@ const Popin = props => {
 };
 
 Popin.propTypes = {
-    isActive: PropTypes.bool.isRequired,
+    isActive: PropTypes.bool,
     blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     shadowSize: PropTypes.oneOf(Object.values(shadowSizeOptions)),
