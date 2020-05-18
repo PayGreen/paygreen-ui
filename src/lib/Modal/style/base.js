@@ -1,11 +1,10 @@
 import { css } from 'styled-components';
+import styled from 'styled-components';
 
 const isOpenStyle = css`
-    display:block;
     opacity:100%;
 `;
 const isCloseStyle = css`
-    display:none;
     opacity:0;
 `;
 
@@ -23,9 +22,10 @@ const ModalBody = styled.div`
     heigth: 100%;
     padding: ${props => props.theme.space.md};
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     grid-area: body;
+    overflow-y:auto;
 `;
 
-export { isOpenStyle, isCloseStyle, ModalHeader };
+export { isOpenStyle, isCloseStyle, ModalHeader, ModalBody };

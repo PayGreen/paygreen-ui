@@ -19,9 +19,10 @@ const ModalContent = styled.div`
     @media (${props => props.theme.query.min.md}) {
         max-width: ${props => props.theme.blockWidth[props.blockWidth]};
     }
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'header' 'body';
+    overflow-y:hidden;
     background-color:${props => props.theme.wab.white00};
     border-radius:${props => props.theme.radius.lg};
     box-shadow: ${props => props.theme.shadow.size.lg + ' ' + transparentize(
@@ -38,7 +39,6 @@ const ModalBase = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-
     ${props => (props.isOpen ? isOpenStyle : isCloseStyle)};
 `;
 

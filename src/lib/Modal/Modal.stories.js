@@ -5,10 +5,16 @@ import {
     folder,
     blockWidthOptions,
     blockWidthDefault,
+        colorPalletOptions,
+        greyOptions,
+        iconSizeOptions,
+        iconHtmlTagOptions
 } from '../../shared/constants';
 import Modal from './Modal';
+import { ModalHeader } from './style/base';
+import { ModalBody } from './style/base';
 import Title from '../Title/Title';
-import CrossIcon from '../Icon/Icon';
+import { CrossIcon } from '../Icon/Icon';
 
 storiesOf(folder.main + 'Modal', module)
     .addDecorator(withKnobs)
@@ -20,15 +26,17 @@ storiesOf(folder.main + 'Modal', module)
                 blockWidthDefault,
             )}
             isOpen={boolean('is Open', true)}
-        >    <ModalHeader> // une div toute bête qui aura une grid-area: header, par exemple, sans overflow. On peut lui passer n'importe quoi comme enfant, faut juste qu'elle soit en display flex et justify-content: space-between pour disposer les éléments correctements. Elle aura aussi un padding (à tester, environ 16px ?)
-        <Title>Titre de la modale</Title>
-      
-        <CrossIcon />
-      </ModalHeader>
-    
-      <ModalBody> // elle, contrairement au ModalHeader qui est facultatif, elle sera toujours là. Elle sera dans un grid-area: body, aura un padding identique au ModalHeader, un height: 100% et un overflow: auto pour que la modale soit scrollable
-        ....plein de childrens...
-            <div>test de modal</div>
-      </ModalBody>
+        >
+            <ModalHeader>
+                <Title>Titre de la Modale</Title>
+                <CrossIcon 
+                 htmlTag={iconHtmlTagOptions.button}
+                 iconSize={iconSizeOptions.lg}
+                 colorPallet={colorPalletOptions.wab}
+                 colorWab={greyOptions.grey40}/>
+            </ModalHeader>
+            <ModalBody>
+                <div>Texte contenu dans le body</div>
+            </ModalBody>
         </Modal>
     ));
