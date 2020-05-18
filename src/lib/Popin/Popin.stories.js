@@ -12,6 +12,7 @@ import {
     spaceOptions,
     alignOptions,
     fontSizeOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
@@ -21,6 +22,7 @@ const isActiveLabel = 'Is active';
 const popinSizeLabel = 'Popin size';
 const radiusSizeLabel = 'Radius label';
 const shadowSizeLabel = 'Shadow size';
+const marginTopLabel = 'Margin top';
 
 storiesOf(folder.main + 'Popin', module)
     .addDecorator(withKnobs)
@@ -37,6 +39,11 @@ storiesOf(folder.main + 'Popin', module)
                 shadowSizeLabel,
                 shadowSizeOptions,
                 shadowSizeOptions.sm,
+            )}
+            marginTop={select(
+                marginTopLabel,
+                spaceOptions,
+                spaceDefault,
             )}
         >
             <Title
