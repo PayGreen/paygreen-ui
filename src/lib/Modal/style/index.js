@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import { isCloseStyle } from './base';
+import { isCloseStyle, isOpenStyle } from './base';
 
 const Overlay = styled.div`
     position: absolute;
@@ -40,9 +40,10 @@ const ModalBase = styled.div`
     justify-content: center;
     align-items: center;
     transition-property: all, transform;
-    transition-duration: ${props => props.theme.transition.sm},${props => props.theme.transition.xs};
+    transition-duration: ${props => props.theme.transition.sm},
+        ${props => props.theme.transition.xs};
 
-    ${props => (props.isOpen ? null : isCloseStyle)};
+    ${props => (props.isOpen ? isOpenStyle : isCloseStyle)};
 `;
 
 export { ModalBase, ModalContent, Overlay };

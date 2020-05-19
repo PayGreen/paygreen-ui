@@ -6,4 +6,8 @@ const isCloseStyle = css`
     transition-delay: 0s, ${props => props.theme.transition.sm};
 `;
 
-export { isCloseStyle };
+const isOpenStyle = css`
+    transition-delay: ${props => props.theme.transition.sm}, 0s;
+`;
+
+export { isOpenStyle, isCloseStyle };
