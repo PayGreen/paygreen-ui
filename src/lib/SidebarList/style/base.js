@@ -1,20 +1,25 @@
 import { css } from 'styled-components';
 
 const isClosedStyle = css`
-        overflow: hidden;
-        height: 0;
-        li {
-            margin: -${props => props.theme.font.size.base} 0;
-            transition: all ${props => props.theme.transition.xs};
-        }
+    transform: scaleY(0);
+    transition: transform ${props => props.theme.transition.sm} ease
+        ${props => props.theme.transition.xs};
+
+    transition: max-height ${props => props.theme.transition.sm};
+    li {
+        transition: opacity ${props => props.theme.transition.sm};
+        opacity: 0;
+    }
 `;
 
 const isOpenStyle = css`
-        overflow: hidden;
-        height: auto;
-        li {
-            transition: all ${props => props.theme.transition.xs};
-        }
+    transform: scaleY(1);
+    transition: transform ${props => props.theme.transition.sm};
+
+    li {
+        transition: opacity ${props => props.theme.transition.sm} ease
+            ${props => props.theme.transition.xs};
+    }
 `;
 
 export { isClosedStyle, isOpenStyle };

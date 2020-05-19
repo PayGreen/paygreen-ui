@@ -6,17 +6,7 @@ import { SidebarMenuBase } from './style';
 const SidebarMenu = props => {
     return (
         <SidebarMenuBase as={props.htmlTag} {...props}>
-            {props.children.length > 1
-                ? React.Children.map(props.children, (child, index) =>
-                      index === 0
-                          ? React.cloneElement(child, {
-                                isClickable: true
-                            })
-                          : React.cloneElement(child, {
-                                isClickable: false
-                            })
-                  )
-                : props.children}
+            {props.children}
         </SidebarMenuBase>
     );
 };
