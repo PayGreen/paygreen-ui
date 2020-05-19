@@ -4,8 +4,6 @@ const isClosedStyle = css`
     transform: scaleY(0);
     transition: transform ${props => props.theme.transition.sm} ease
         ${props => props.theme.transition.xs};
-
-    transition: max-height ${props => props.theme.transition.sm};
     li {
         transition: opacity ${props => props.theme.transition.sm};
         opacity: 0;

@@ -20,7 +20,6 @@ const colorThemeLabel = 'Color theme';
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
     .addDecorator(withKnobs)
     .add('SidebarMenu', () => (
-        <>
         <SidebarMenu
             colorTheme={radios(
                 colorThemeLabel,
@@ -102,86 +101,4 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                 </a>
             </SidebarList>
         </SidebarMenu>
-                <SidebarMenu
-                colorTheme={radios(
-                    colorThemeLabel,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-            >
-                <a href="#">
-                    <SidebarItem
-                        isClickable={true}
-                        colorTheme={radios(
-                            colorThemeLabel,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
-                        isOpen={boolean('is Open', true)}
-                    >
-                        <MeterIcon
-                            iconSize={iconSizeOptions.lg}
-                            colorTheme={radios(
-                                colorThemeLabel,
-                                colorThemeOptions,
-                                colorThemeDefault,
-                            )}
-                        />
-    
-                        <Link
-                            hasUnderline={false}
-                            hasHover={false}
-                            colorTheme={radios(
-                                colorThemeLabel,
-                                colorThemeOptions,
-                                colorThemeDefault,
-                            )}
-                        >
-                            Tableau de Bord
-                        </Link>
-                    </SidebarItem>
-                </a>
-    
-                <SidebarList isOpen={boolean('is Open', true)}>
-                    <a href="#">
-                        <SidebarItem
-                            isActive={boolean('Is Active', false)}
-                            colorTheme={radios(
-                                colorThemeLabel,
-                                colorThemeOptions,
-                                colorThemeDefault,
-                            )}
-                        >
-                            <Link
-                                colorPallet={colorPalletOptions.wab}
-                                colorWab={greyOptions.grey60}
-                                hasUnderline={false}
-                                hasHover={false}
-                            >
-                                Vue d'ensemble
-                            </Link>
-                        </SidebarItem>
-                    </a>
-    
-                    <a href="#">
-                        <SidebarItem
-                            colorTheme={radios(
-                                colorThemeLabel,
-                                colorThemeOptions,
-                                colorThemeDefault,
-                            )}
-                        >
-                            <Link
-                                colorPallet={colorPalletOptions.wab}
-                                colorWab={greyOptions.grey60}
-                                hasUnderline={false}
-                                hasHover={false}
-                            >
-                                Vue par projet
-                            </Link>
-                        </SidebarItem>
-                    </a>
-                </SidebarList>
-            </SidebarMenu>
-            </>
     ));

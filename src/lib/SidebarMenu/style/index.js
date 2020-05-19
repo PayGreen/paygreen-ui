@@ -5,9 +5,6 @@ const SidebarMenuBase = styled.div`
     padding: ${props => props.theme.space.sm} 0;
     display: flex;
     flex-direction: column;
-    width:380px;
-    overflow:hidden;
-    background-color:lightgray;
 `;
 
 export { SidebarMenuBase };
