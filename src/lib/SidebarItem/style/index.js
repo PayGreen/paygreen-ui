@@ -12,9 +12,9 @@ const SidebarItemBase = styled.div`
 
     & > button.icon {
         grid-area: button;
-        opacity:1;
+        opacity: 1;
     }
-    
+
     & > .icon {
         grid-area: icon;
         opacity: 0.4;

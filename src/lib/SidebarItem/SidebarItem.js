@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import {
     colorThemeOptions,
     colorThemeDefault,
-    fontSizeOptions,
-    fontSizeDefault,
     iconSizeOptions,
     iconHtmlTagOptions,
     rotateSizeOptions,
@@ -36,7 +34,6 @@ const SidebarItem = props => {
 };
 
 SidebarItem.propTypes = {
-    textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     isActive: PropTypes.bool,
     isOpen: PropTypes.bool,
@@ -44,7 +41,6 @@ SidebarItem.propTypes = {
 };
 
 SidebarItem.defaultProps = {
-    textSize: fontSizeDefault,
     colorTheme: colorThemeDefault,
     isActive: false,
     isOpen: true,

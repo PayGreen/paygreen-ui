@@ -16,35 +16,35 @@ const colorThemeLabel = 'Color theme';
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
     .addDecorator(withKnobs)
     .add('SidebarItem', () => (
-            <a href="#">
-                <SidebarItem
-                    isActive={boolean('Is Active', false)}
+        <a href="#">
+            <SidebarItem
+                colorTheme={radios(
+                    colorThemeLabel,
+                    colorThemeOptions,
+                    colorThemeDefault,
+                )}
+                isActive={boolean('Is Active', false)}
+            >
+                <MeterIcon
+                    iconSize={iconSizeOptions.lg}
+                    colorTheme={radios(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                />
+
+                <Link
+                    hasUnderline={false}
+                    hasHover={false}
                     colorTheme={radios(
                         colorThemeLabel,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
                 >
-                    <MeterIcon
-                        iconSize={iconSizeOptions.lg}
-                        colorTheme={radios(
-                            colorThemeLabel,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
-                    />
-
-                    <Link
-                        hasUnderline={false}
-                        hasHover={false}
-                        colorTheme={radios(
-                            colorThemeLabel,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
-                    >
-                        Tableau de Bord
-                    </Link>
-                </SidebarItem>
-            </a>
+                    Tableau de Bord
+                </Link>
+            </SidebarItem>
+        </a>
     ));

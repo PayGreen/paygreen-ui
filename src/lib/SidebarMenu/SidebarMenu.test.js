@@ -27,6 +27,7 @@ it('renders without crashing', () => {
                     </Link>
                 </SidebarItem>
             </a>
+
             <SidebarList theme={ThemeDefault}>
                 <a href="#">
                     <SidebarItem theme={ThemeDefault}>
@@ -39,6 +40,7 @@ it('renders without crashing', () => {
                         </Link>
                     </SidebarItem>
                 </a>
+
                 <a href="#">
                     <SidebarItem theme={ThemeDefault}>
                         <Link

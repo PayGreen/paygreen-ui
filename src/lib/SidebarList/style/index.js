@@ -5,7 +5,9 @@ const SidebarListBase = styled.ul`
     margin: 0;
     padding: 0;
     transform-origin: top;
-    overflow:hidden;
+    transition-property: all, transform;
+    transition-duration: ${props => props.theme.transition.xs},
+        ${props => props.theme.transition.sm};
 
     li {
         list-style-type: none;
@@ -14,7 +16,6 @@ const SidebarListBase = styled.ul`
     }
 
     ${props => (props.isOpen ? isOpenStyle : isClosedStyle)};
-
 `;
 
 export { SidebarListBase };

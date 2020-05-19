@@ -1,23 +1,13 @@
 import { css } from 'styled-components';
 
 const isClosedStyle = css`
+    opacity: 0;
     transform: scaleY(0);
-    transition: transform ${props => props.theme.transition.sm} ease
-        ${props => props.theme.transition.xs};
-    li {
-        transition: opacity ${props => props.theme.transition.sm};
-        opacity: 0;
-    }
+    transition-delay: 0s, ${props => props.theme.transition.xs};
 `;
 
 const isOpenStyle = css`
-    transform: scaleY(1);
-    transition: transform ${props => props.theme.transition.sm};
-
-    li {
-        transition: opacity ${props => props.theme.transition.sm} ease
-            ${props => props.theme.transition.xs};
-    }
+    transition-delay: ${props => props.theme.transition.xs}, 0s;
 `;
 
 export { isClosedStyle, isOpenStyle };
