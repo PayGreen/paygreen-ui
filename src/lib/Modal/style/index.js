@@ -39,7 +39,8 @@ const ModalBase = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity ${props => props.theme.transition.sm};
+    transition-property: all, transform;
+    transition-duration: ${props => props.theme.transition.sm},${props => props.theme.transition.xs};
 
     ${props => (props.isOpen ? null : isCloseStyle)};
 `;
