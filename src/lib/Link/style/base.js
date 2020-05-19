@@ -5,6 +5,7 @@ const linkUppercase = css`
     ${uppercaseStyle};
     /* fix shift of uppercase letters */
     padding-left: ${props => props.theme.font.spacing};
+    
     &::after {
         margin-left: -${props => props.theme.font.spacing};
     }
