@@ -24,6 +24,7 @@ const ClickableBlock = props => {
         <ClickableBlockBase onClick={onClick} {...props}>
             {props.children}
             <ArrowBottomIcon
+                theme={props.theme} // not necessary, only needed for tests
                 hasBackground={false}
                 rotateSize={
                     isActive ? rotateSizeOptions.d180 : rotateSizeDefault
