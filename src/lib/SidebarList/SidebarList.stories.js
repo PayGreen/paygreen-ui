@@ -18,10 +18,9 @@ const colorThemeLabel = 'Color theme';
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
     .addDecorator(withKnobs)
     .add('SidebarList', () => (
-        <SidebarList>
+        <SidebarList isOpen={boolean('is Open', true)}>
             <a href="#">
                 <SidebarItem
-                    textSize={fontSizeOptions.sm}
                     colorTheme={radios(
                         colorThemeLabel,
                         colorThemeOptions,
@@ -42,7 +41,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
 
             <a href="#">
                 <SidebarItem
-                    textSize={fontSizeOptions.sm}
                     colorTheme={radios(
                         colorThemeLabel,
                         colorThemeOptions,

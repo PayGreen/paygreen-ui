@@ -7,22 +7,11 @@ const hoverBase = css`
         position: absolute;
         top: 0;
         left: -100%;
-        width: 200%;
+        width: 100%;
         height: 100%;
-        background-image: linear-gradient(
-            to left,
-            ${props =>
-                    transparentize(
-                        1,
-                        props.theme.color[props.colorTheme].light,
-                    )}
-                40%,
-            ${props =>
-                    transparentize(
-                        0.6,
-                        props.theme.color[props.colorTheme].light,
-                    )}
-                100%
+        background-image: linear-gradient(to left,
+            ${props => transparentize(1, props.theme.color[props.colorTheme].gradientBase)} 50%,
+            ${props => transparentize(0.8, props.theme.color[props.colorTheme].gradientBase)} 90%
         );
         transition: all ${props => props.theme.transition.xl};
     }

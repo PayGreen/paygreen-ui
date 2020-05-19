@@ -6,7 +6,6 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     colorPalletOptions,
-    fontSizeOptions,
     greyOptions,
     iconSizeOptions,
 } from '../../shared/constants';
@@ -22,7 +21,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
     .addDecorator(withKnobs)
     .add('SidebarMenu', () => (
         <SidebarMenu
-            isOpen={boolean('is Open', true)}
             colorTheme={radios(
                 colorThemeLabel,
                 colorThemeOptions,
@@ -36,6 +34,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
+                    isOpen={boolean('is Open', true)}
                 >
                     <MeterIcon
                         iconSize={iconSizeOptions.lg}
@@ -59,17 +58,16 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                     </Link>
                 </SidebarItem>
             </a>
-            
-            <SidebarList>
+
+            <SidebarList isOpen={boolean('is Open', true)}>
                 <a href="#">
                     <SidebarItem
-                        isActive={boolean('Is Active', false)}
+                     isActive={boolean('Is Active', false)}
                         colorTheme={radios(
                             colorThemeLabel,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
-                        textSize={fontSizeOptions.sm}
                     >
                         <Link
                             colorPallet={colorPalletOptions.wab}
@@ -89,7 +87,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
-                        textSize={fontSizeOptions.sm}
                     >
                         <Link
                             colorPallet={colorPalletOptions.wab}

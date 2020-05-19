@@ -18,12 +18,13 @@ const SidebarList = props => {
         </SidebarListBase>
     );
 };
+
 SidebarList.propTypes = {
-    
+    isOpen: PropTypes.bool,
 };
 
 SidebarList.defaultProps = {
-    
+    isOpen: true,
 };
 
 export default SidebarList;
