@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import { colorTypeOptions } from '../../../shared/constants';
 import { mainColor } from '../../Text/style/constants';
-import { linkUppercase, hoverStyle, underlineStyle } from './base';
+import {
+    linkUppercase,
+    classicHoverStyle,
+    softHoverStyle,
+    underlineStyle,
+} from './base';
 
 const LinkBase = styled.span`
     display: inline-block;
@@ -17,20 +22,31 @@ const LinkBase = styled.span`
     padding-bottom: ${props => props.theme.space[props.paddingBottom]};
     padding-left: ${props => props.theme.space[props.paddingLeft]};
     padding-right: ${props => props.theme.space[props.paddingRight]};
-    
+    transition: all ${props => props.theme.transition.xs};
+
     &::after {
         content: '';
         position: absolute;
         bottom: 0;
-        left: 0;
         z-index: ${props => props.theme.zindex.layer};
         width: 100%;
+        background-color: ${props =>
+            props.colorType === colorTypeOptions.reverse
+                ? props.theme.wab.white00
+                : mainColor[props.colorPallet]};
+        transition-property: all, opacity;
+        transition-duration: ${props => props.theme.transition.xs},
+            ${props => props.theme.transition.sm};
     }
-    transition: all ${props => props.theme.transition.xs};
 
     ${props => (props.hasUppercase ? linkUppercase : null)};
     ${props => (props.hasUnderline ? underlineStyle : null)};
-    ${props => (props.hasHover ? hoverStyle[props.hoverStyle] : null)};
+    ${props =>
+        props.hasHover
+            ? props.hasUnderline
+                ? classicHoverStyle
+                : softHoverStyle
+            : null};
 `;
 
 export { LinkBase };

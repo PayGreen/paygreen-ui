@@ -11,10 +11,8 @@ import {
     greyDefault,
     formStatusOptions,
     formStatusDefault,
-    hoverStyleOptions,
-    hoverStyleDefault,
     spaceOptions,
-    spaceDefault
+    spaceDefault,
 } from '../../shared/constants';
 import { LinkBase } from './style';
 
@@ -35,7 +33,6 @@ Link.propTypes = {
     paddingBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     paddingLeft: PropTypes.oneOf(Object.values(spaceOptions)),
     paddingRight: PropTypes.oneOf(Object.values(spaceOptions)),
-    hoverStyle: PropTypes.oneOf(Object.values(hoverStyleOptions)),
 };
 
 Link.defaultProps = {
@@ -51,7 +48,6 @@ Link.defaultProps = {
     paddingBottom: spaceDefault,
     paddingLeft: spaceDefault,
     paddingRight: spaceDefault,
-    hoverStyle: hoverStyleDefault,
 };
 
 export default Link;

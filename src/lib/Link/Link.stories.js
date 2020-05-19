@@ -19,8 +19,6 @@ import {
     greyDefault,
     formStatusOptions,
     formStatusDefault,
-    hoverStyleOptions,
-    hoverStyleDefault,
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
@@ -70,11 +68,6 @@ storiesOf(folder.main + 'Link', module)
                         )}
                         hasUnderline={boolean('Has underline', true)}
                         hasHover={boolean('Has hover', true)}
-                        hoverStyle={select(
-                            'Hover Style',
-                            hoverStyleOptions,
-                            hoverStyleDefault,
-                        )}
                         hasUppercase={boolean('Uppercase', false)}
                         paddingTop={select(
                             'Padding top',
