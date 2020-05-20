@@ -28,6 +28,7 @@ const LinkBase = styled.span`
         content: '';
         position: absolute;
         bottom: 0;
+        left: 0;
         z-index: ${props => props.theme.zindex.layer};
         width: 100%;
         background-color: ${props =>
