@@ -12,13 +12,7 @@ import { ArrowBottomIcon } from '../Icon/Icon';
 
 const ClickableBlock = props => {
     const [isActive, setActive] = useState(false);
-    const onClick = () => {
-        if (isActive) {
-            setActive(false);
-        } else {
-            setActive(true);
-        }
-    };
+    const onClick = () => setActive(!isActive);
 
     return (
         <ClickableBlockBase onClick={onClick} {...props}>

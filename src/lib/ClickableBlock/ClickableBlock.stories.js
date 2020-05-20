@@ -22,7 +22,7 @@ storiesOf(folder.main + 'ClickableBlock', module)
         <ClickableBlock
             borderTop={boolean('Border top', true)}
             borderRight={boolean('Border right', true)}
-            borderLeft={boolean('Border Left', true)}
+            borderLeft={boolean('Border left', true)}
             borderBottom={boolean('Border bottom', true)}
         >
             <Image
@@ -34,11 +34,13 @@ storiesOf(folder.main + 'ClickableBlock', module)
             >
                 <img src={portraitFile} alt="picture" />
             </Image>
+
             <InternalGrid
                 displayType={displayOptions.column}
                 childrenMarginLateral={spaceOptions.sm}
             >
                 <Title>Olivia Gometz</Title>
+
                 <Text>Le colis du boucher</Text>
             </InternalGrid>
         </ClickableBlock>

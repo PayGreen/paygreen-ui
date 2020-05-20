@@ -20,8 +20,8 @@ const ClickableBlockBase = styled.div`
             transparentize(
                 props.theme.shadow.opacity.lg,
                 props.theme.wab.grey10,
-            )};};
-        cursor : pointer;
+            )};
+        cursor: pointer;
     }
 
     transition: background-color ${props => props.theme.transition.sm};
