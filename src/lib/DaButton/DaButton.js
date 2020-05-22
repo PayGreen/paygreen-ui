@@ -9,27 +9,45 @@ import {
     buttonStyleDefault,
     colorTypeOptions,
     colorTypeDefault,
+    colorPalletOptions,
+    colorPalletDefault,
+    gradientOptions,
+    gradientDefault,
+    formStatusOptions,
+    formStatusDefault,
 } from '../../shared/constants';
 import { DaButtonBase } from './style';
 
 const DaButton = props => {
-    return <DaButtonBase {...props}>{props.children}</DaButtonBase>;
+    return (
+        <DaButtonBase {...props}>
+            {props.icon ? props.icon : null} {props.children}
+        </DaButtonBase>
+    );
 };
 
 DaButton.propTypes = {
     buttonStyle: PropTypes.oneOf(Object.values(buttonStyleOptions)),
-    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     buttonSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
+    colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
+    gradient: PropTypes.oneOf(Object.values(gradientOptions)),
     isDisabled: PropTypes.bool,
+    icon: PropTypes.element,
 };
 
 DaButton.defaultProps = {
     buttonStyle: buttonStyleDefault,
-    colorType: colorTypeDefault,
-    colorTheme: colorThemeDefault,
     buttonSize: buttonSizeDefault,
+    colorType: colorTypeDefault,
+    colorPallet: colorPalletDefault,
+    colorTheme: colorThemeDefault,
+    colorStatus: formStatusDefault,
+    gradient: gradientDefault,
     isDisabled: false,
+    icon: null,
 };
 
 export default DaButton;

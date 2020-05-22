@@ -1,60 +1,35 @@
 const colorCollection = {
     main: props => props.theme.color[props.colorTheme].main,
     white: props => props.theme.wab.white00,
-    lightGrey: props => props.theme.wab.white20,
-    grey: props => props.theme.wab.grey30,
+};
+
+const mainColor = {
+    theme: props => props.theme.color[props.colorTheme].main,
+    status: props => props.theme.color.status[props.colorStatus].main,
+    white: props => props.theme.wab.white00,
 };
 
 const buttonColors = {
     text: {
         fill: {
-            original: {
-                enabled: colorCollection.white,
-                disabled: colorCollection.lightGrey
-            },
-            reverse: {
-                enabled: colorCollection.main,
-                disabled: colorCollection.grey
-            },
+            original: colorCollection.white,
+            reverse: colorCollection.main,
         },
         line: {
-            original: {
-                enabled: colorCollection.main,
-                disabled: colorCollection.grey
-            },
-            reverse: {
-                enabled: colorCollection.white,
-                disabled: colorCollection.grey
-            },
-        }
+            original: colorCollection.main,
+            reverse: colorCollection.white,
+        },
     },
     bg: {
         fill: {
-            original: {
-                enabled: colorCollection.main,
-                disabled: colorCollection.grey
-            },
-            reverse: {
-                enabled: colorCollection.white,
-                disabled: colorCollection.grey
-            },
+            original: colorCollection.main,
+            reverse: colorCollection.white,
         },
         line: {
-            original: {
-                enabled: colorCollection.main,
-                disabled: colorCollection.grey
-            },
-            reverse: {
-                enabled: colorCollection.white,
-                disabled: colorCollection.grey
-            },
-        }
-    }
-}
-
-const enableType = props => props.isDisabled ? 'disabled' : 'enabled';
-
-export {
-    buttonColors,
-    enableType
+            original: colorCollection.main,
+            reverse: colorCollection.white,
+        },
+    },
 };
+
+export { buttonColors, mainColor };

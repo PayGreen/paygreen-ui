@@ -1,8 +1,6 @@
 import { css } from 'styled-components';
-import {
-    buttonColors,
-    enableType
-} from './constants';
+import { mainColor } from './constants';
+import { math } from 'polished';
 
 const enabled = css`
     button:hover &,
@@ -11,48 +9,91 @@ const enabled = css`
     a:hover &,
     a:active &,
     a:focus & {
-        &::before,
-        &::after {
-            opacity: 1;
-        }
-
         &::before {
-            top: 0;
-            left: 0;
-        }
-
-        &::after {
-            bottom: 0;
-            right: 0;
+            transform: scale(1);
         }
     }
 `;
 
 const disabled = css`
     cursor: not-allowed;
+    filter: grayscale(1);
 `;
 
-const templateStyle = {
+const originalStyle = {
+    fill: {
+        brand: css``,
+        theme: css``,
+        none: css`
+            background-color: ${props => mainColor[props.colorPallet]};
+            color: ${mainColor.white};
+            .icon {
+                & svg {
+                    fill: ${mainColor.white};
+                }
+            }
+            &::before {
+                background-color: ${props => mainColor[props.colorPallet]};
+            }
+        `,
+    },
+
+    line: {
+        brand: css``,
+        theme: css``,
+        none: css`
+            color: ${props => mainColor[props.colorPallet]};
+            border: solid ${props => props.theme.line}
+                ${props => mainColor[props.colorPallet]};
+
+            .icon {
+                & svg {
+                    fill: ${props => mainColor[props.colorPallet]};
+                }
+            }
+            &::before {
+                background-color: ${props => mainColor[props.colorPallet]};
+            }
+        `,
+    },
+};
+
+const reverseStyle = {
     fill: css`
-        color: ${props => buttonColors.text.fill[props.colorType][enableType(props)]};
-
-        &::before,
-        &::after {
-            background-color: ${props => buttonColors.bg.fill[props.colorType][enableType(props)]};
+        background-color: ${mainColor.white};
+        color: ${props => mainColor[props.colorPallet]};
+        .icon {
+            & svg {
+                fill: ${props => mainColor[props.colorPallet]};
+            }
+        }
+        &::before {
+            background-color: ${mainColor.white};
         }
     `,
+
     line: css`
-        color: ${props => buttonColors.text.line[props.colorType][enableType(props)]};
+        color: ${mainColor.white};
+        border: solid ${props => props.theme.line} ${mainColor.white};
 
-        &::before,
-        &::after {
-            border: solid ${props => props.theme.line} ${props => buttonColors.bg.line[props.colorType][enableType(props)]};
+        .icon {
+            & svg {
+                fill: ${mainColor.white};
+            }
+        }
+        &::before {
+            background-color: ${mainColor.white};
         }
     `,
 };
 
-export {
-    enabled,
-    disabled,
-    templateStyle
-};
+const iconStyleBase = css`
+    .icon {
+        margin-right: ${props =>
+            math(props.theme.button.paddingWidth[props.buttonSize] + '/2')};
+        width: ${props => props.theme.iconSize[props.buttonSize]};
+        height: auto;
+    }
+`;
+
+export { enabled, disabled, originalStyle, reverseStyle, iconStyleBase };

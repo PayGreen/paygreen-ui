@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import {Fond }from './style';
 import {
     folder,
     colorThemeOptions,
@@ -19,6 +20,7 @@ storiesOf(folder.form + folder.sub.button + 'Button', module)
     .add(
         'Button',
         () => (
+            <Fond>
             <a href="#">
                 <Button
                     buttonStyle={radios(
@@ -46,6 +48,7 @@ storiesOf(folder.form + folder.sub.button + 'Button', module)
                     {text('Label', 'CTA button')}
                 </Button>
             </a>
+            </Fond>
         ),
         {
             notes: 'Change background color to test reverse mode.',
