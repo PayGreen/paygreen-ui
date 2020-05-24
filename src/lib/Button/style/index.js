@@ -3,10 +3,6 @@ import { math } from 'polished';
 import { colorTypeOptions } from '../../../shared/constants';
 import { enabled, disabled, templateStyle } from './base';
 
-const Fond = styled.div`
-    height: 300px;
-    background-color: black;
-`;
 const ButtonBase = styled.span`
     ${props => (props.isDisabled ? disabled : enabled)};
     ${props => templateStyle[props.buttonStyle]};
@@ -57,4 +53,4 @@ const ButtonBase = styled.span`
     }
 `;
 
-export { ButtonBase, Fond };
+export { ButtonBase };

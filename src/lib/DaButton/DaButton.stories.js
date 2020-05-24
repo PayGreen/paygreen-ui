@@ -1,6 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text, radios, select } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    boolean,
+    text,
+    radios,
+    select,
+} from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -20,7 +26,6 @@ import {
 } from '../../shared/constants';
 import DaButton from './DaButton';
 import { CoinsIcon } from '../Icon/Icon';
-import {Fond }from './style';
 
 const { wab, ...buttonColorPalletOptions } = colorPalletOptions;
 
@@ -29,7 +34,6 @@ storiesOf(folder.form + folder.sub.button + 'DaButton', module)
     .add(
         'DaButton',
         () => (
-            <Fond>
             <a href="#">
                 <DaButton
                     buttonStyle={radios(
@@ -47,25 +51,25 @@ storiesOf(folder.form + folder.sub.button + 'DaButton', module)
                         colorTypeOptions,
                         colorTypeDefault,
                     )}
-                    colorTheme={select(
-                        'Color theme',
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
                     colorPallet={radios(
                         'Color pallet',
                         buttonColorPalletOptions,
                         colorPalletDefault,
                     )}
-                    colorStatus={select(
-                        'Status color',
-                        formStatusOptions,
-                        formStatusDefault,
-                    )}
                     gradient={radios(
                         'Gradient type',
                         gradientOptions,
                         gradientDefault,
+                    )}
+                    colorTheme={select(
+                        'Color theme',
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    colorStatus={select(
+                        'Status color',
+                        formStatusOptions,
+                        formStatusDefault,
                     )}
                     isDisabled={boolean('Disabled', false)}
                     icon={<CoinsIcon />}
@@ -73,7 +77,6 @@ storiesOf(folder.form + folder.sub.button + 'DaButton', module)
                     {text('Label', 'Fill success')}
                 </DaButton>
             </a>
-            </Fond>
         ),
         {
             notes: 'Change background color to test reverse mode.',

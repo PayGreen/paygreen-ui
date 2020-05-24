@@ -22,16 +22,62 @@ const disabled = css`
 
 const originalStyle = {
     fill: {
-        brand: css``,
-        theme: css``,
-        none: css`
-            background-color: ${props => mainColor[props.colorPallet]};
+        brand: css`
+            background-image: linear-gradient(
+                to bottom right,
+                ${props => props.theme.color.primary.main},
+                ${props => props.theme.color.secondary.main}
+            );
             color: ${mainColor.white};
+
             .icon {
                 & svg {
                     fill: ${mainColor.white};
                 }
             }
+
+            &::before {
+                background-image: linear-gradient(
+                    to bottom right,
+                    ${props => props.theme.color.primary.main},
+                    ${props => props.theme.color.secondary.main}
+                );
+            }
+        `,
+        theme: css`
+            background-image: linear-gradient(
+                to bottom right,
+                ${props => props.theme.color[props.colorTheme].gradientBase},
+                ${props => props.theme.color[props.colorTheme].gradientShade}
+            );
+            color: ${mainColor.white};
+
+            .icon {
+                & svg {
+                    fill: ${mainColor.white};
+                }
+            }
+
+            &::before {
+                background-image: linear-gradient(
+                    to bottom right,
+                    ${props =>
+                        props.theme.color[props.colorTheme].gradientBase},
+                    ${props =>
+                        props.theme.color[props.colorTheme].gradientShade}
+                );
+            }
+        `,
+        none: css`
+            background-color: ${props => mainColor[props.colorPallet]};
+            color: ${mainColor.white};
+
+            .icon {
+                & svg {
+                    fill: ${mainColor.white};
+                }
+            }
+
             &::before {
                 background-color: ${props => mainColor[props.colorPallet]};
             }
@@ -39,8 +85,57 @@ const originalStyle = {
     },
 
     line: {
-        brand: css``,
-        theme: css``,
+        brand: css`
+            color: ${props => props.theme.color.primary.main};
+
+            .icon {
+                & svg {
+                    fill: ${props => props.theme.color.primary.main};
+                }
+            }
+
+            border: solid ${props => props.theme.line};
+            border-left-color: ${props => props.theme.color.primary.main};
+            border-top-color: ${props => props.theme.color.primary.main};
+            border-right-color: ${props => props.theme.color.secondary.main};
+            border-bottom-color: ${props => props.theme.color.secondary.main};
+
+            &::before {
+                background-image: linear-gradient(
+                    to bottom right,
+                    ${props => props.theme.color.primary.main},
+                    ${props => props.theme.color.secondary.main}
+                );
+            }
+        `,
+        theme: css`
+            color: ${props => mainColor.theme};
+
+            .icon {
+                & svg {
+                    fill: ${props => mainColor.theme};
+                }
+            }
+            border: solid ${props => props.theme.line};
+            border-left-color: ${props =>
+                props.theme.color[props.colorTheme].gradientBase};
+            border-top-color: ${props =>
+                props.theme.color[props.colorTheme].gradientBase};
+            border-right-color: ${props =>
+                props.theme.color[props.colorTheme].gradientShade};
+            border-bottom-color: ${props =>
+                props.theme.color[props.colorTheme].gradientShade};
+
+            &::before {
+                background-image: linear-gradient(
+                    to bottom right,
+                    ${props =>
+                        props.theme.color[props.colorTheme].gradientBase},
+                    ${props =>
+                        props.theme.color[props.colorTheme].gradientShade}
+                );
+            }
+        `,
         none: css`
             color: ${props => mainColor[props.colorPallet]};
             border: solid ${props => props.theme.line}
@@ -62,16 +157,17 @@ const reverseStyle = {
     fill: css`
         background-color: ${mainColor.white};
         color: ${props => mainColor[props.colorPallet]};
+
         .icon {
             & svg {
                 fill: ${props => mainColor[props.colorPallet]};
             }
         }
+
         &::before {
             background-color: ${mainColor.white};
         }
     `,
-
     line: css`
         color: ${mainColor.white};
         border: solid ${props => props.theme.line} ${mainColor.white};
@@ -81,6 +177,7 @@ const reverseStyle = {
                 fill: ${mainColor.white};
             }
         }
+
         &::before {
             background-color: ${mainColor.white};
         }

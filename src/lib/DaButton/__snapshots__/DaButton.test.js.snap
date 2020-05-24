@@ -2,8 +2,9 @@
 
 exports[`renders without crashing 1`] = `
 <span
-  className="sc-bdVaJa jtUhyv"
+  className="sc-bdVaJa jgqMas"
 >
+   
   CTA button
 </span>
 `;
