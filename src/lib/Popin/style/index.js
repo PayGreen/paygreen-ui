@@ -13,7 +13,7 @@ const PopinBase = styled.div`
         ' ' +
         transparentize(props.theme.shadow.opacity.sm, props.theme.wab.black00)};
     transition-property: all, transform;
-    transition-duration: ${props => props.theme.transition.xs}, 0.3s;
+    transition-duration: ${props => props.theme.transition.xs}, 0s;
     transform-origin: top;
     ${props => (props.isActive ? activeStyle : hiddenStyle)}
 `;
