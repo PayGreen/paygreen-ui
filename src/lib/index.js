@@ -31,6 +31,7 @@ import MenuItem from './MenuItem/MenuItem';
 import MenuList from './MenuList/MenuList';
 import MenuPrimary from './MenuPrimary/MenuPrimary';
 import MenuSecondary from './MenuSecondary/MenuSecondary';
+import Popin from './Popin/Popin';
 import RadioIcon from './RadioIcon/RadioIcon';
 import Select from './Select/Select';
 import Sidebar from './Sidebar/Sidebar';
@@ -178,6 +179,7 @@ export {
     MenuList,
     MenuPrimary,
     MenuSecondary,
+    Popin,
     RadioIcon,
     Select,
     Sidebar,
