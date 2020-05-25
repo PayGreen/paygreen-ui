@@ -1,14 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    boolean,
-    select,
-} from '@storybook/addon-knobs';
-import {
-    folder,
-    spaceOptions,
-} from '../../shared/constants';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
+import { folder, spaceOptions } from '../../shared/constants';
 import Logo from './Logo';
 import { logo } from './sample/logo';
 

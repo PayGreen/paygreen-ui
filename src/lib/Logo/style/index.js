@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BadgeBase } from '../../Badge/style';
 import {
     whiteStyle,
     noBaselineStyle,
@@ -19,6 +20,10 @@ const LogoBase = styled.span`
         align-items: center;
         width: ${props => props.theme.logoWidth[props.blockWidth]};
         height: ${props => props.theme.logoHeight[props.blockHeight]};
+    }
+
+    ${BadgeBase} {
+        margin-left: ${props => props.theme.space.sm};
     }
 
     img,
