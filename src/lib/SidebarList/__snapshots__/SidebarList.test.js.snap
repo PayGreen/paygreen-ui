@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<ul
+  className="sc-bxivhb hKXPSB"
+>
+  <li>
+    <a
+      href="#"
+    >
+      <div
+        className="sc-bwzfXH jqhEky"
+      >
+        <span
+          className="sc-bdVaJa jvVPIv"
+        >
+          Tree
+        </span>
+      </div>
+    </a>
+  </li>
+  <li>
+    <a
+      href="#"
+    >
+      <div
+        className="sc-bwzfXH jqhEky"
+      >
+        <span
+          className="sc-bdVaJa jvVPIv"
+        >
+          Other
+        </span>
+      </div>
+    </a>
+  </li>
+</ul>
+`;
