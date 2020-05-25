@@ -23,7 +23,7 @@ Badge.propTypes = {
 
 Badge.defaultProps = {
     colorType: colorTypeDefault,
-    textSize: fontSizeOptions.sm,
+    textSize: fontSizeOptions.xxs,
     colorTheme: colorThemeDefault,
     gradient: gradientOptions.theme,
 };

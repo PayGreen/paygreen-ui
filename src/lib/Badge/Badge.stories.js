@@ -9,9 +9,9 @@ import {
     colorTypeOptions,
     colorTypeDefault,
     fontSizeOptions,
-    colorPalletOptions,
     iconSizeOptions,
     iconSizeDefault,
+    spaceOptions
 } from '../../shared/constants';
 import Badge from './Badge';
 import { ArrowBottomIcon } from '../Icon/Icon';
@@ -21,7 +21,6 @@ const colorThemeLabel = 'Color theme';
 const gradientTypeLabel = 'Gradient type';
 const textSizeLabel = 'Text size';
 const textLabel = 'Text';
-const colorPalletLabel = 'Color pallet (Icon)';
 const iconSizeLabel = 'Icon size';
 
 storiesOf(folder.main + 'Badge', module)
@@ -46,28 +45,18 @@ storiesOf(folder.main + 'Badge', module)
             textSize={select(
                 textSizeLabel,
                 fontSizeOptions,
-                fontSizeOptions.sm,
+                fontSizeOptions.xxs,
             )}
         >
             {text(textLabel, 'Example')}
 
             <ArrowBottomIcon
-                colorPallet={select(
-                    colorPalletLabel,
-                    colorPalletOptions,
-                    colorPalletOptions.wab,
-                )}
-                colorTheme={select(
-                    colorThemeLabel,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                colorWab="white00"
                 iconSize={select(
                     iconSizeLabel,
                     iconSizeOptions,
                     iconSizeDefault,
                 )}
+                marginLeft={spaceOptions.xs}
             />
         </Badge>
     ));
