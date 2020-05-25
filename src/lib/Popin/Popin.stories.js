@@ -18,33 +18,23 @@ import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Popin from './Popin';
 
-const isActiveLabel = 'Is active';
-const popinSizeLabel = 'Popin size';
-const radiusSizeLabel = 'Radius label';
-const shadowSizeLabel = 'Shadow size';
-const marginTopLabel = 'Margin top';
-
 storiesOf(folder.main + 'Popin', module)
     .addDecorator(withKnobs)
     .add('Popin with text', () => (
         <Popin
-            isActive={boolean(isActiveLabel, true)}
+            isActive={boolean('Is active', true)}
             blockWidth={select(
-                popinSizeLabel,
+                'Width',
                 blockWidthOptions,
                 blockWidthOptions.sm,
             )}
-            radiusSize={select(radiusSizeLabel, radiusOptions, radiusDefault)}
+            radiusSize={select('Radius size', radiusOptions, radiusDefault)}
             shadowSize={select(
-                shadowSizeLabel,
+                'Shadow size',
                 shadowSizeOptions,
                 shadowSizeOptions.sm,
             )}
-            marginTop={select(
-                marginTopLabel,
-                spaceOptions,
-                spaceDefault,
-            )}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
         >
             <Title
                 marginTop={spaceOptions.xs}
@@ -64,7 +54,7 @@ storiesOf(folder.main + 'Popin', module)
                 textSize={fontSizeOptions.sm}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{' '}
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Text>
         </Popin>
     ));
