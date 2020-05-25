@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 const isClosedStyle = css`
     opacity: 0;
-    height:0;
+    height: 0;
     transition-delay: 0s, ${props => props.theme.transition.xxs};
 `;
 
