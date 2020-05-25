@@ -15,12 +15,12 @@ const SidebarItemBase = styled.div`
         grid-area: icon;
         opacity: 0.4;
     }
-    
+
     & > button.icon {
         grid-area: button;
         opacity: 1;
     }
-    
+
     ${LinkBase} {
         grid-area: link;
         font-size: ${props => props.theme.font.size.sm};

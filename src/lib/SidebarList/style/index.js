@@ -6,11 +6,7 @@ const SidebarListBase = styled.ul`
     padding: 0;
     transition-property: all, height;
     transition-duration: ${props => props.theme.transition.xs};
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
+    list-style-type: none;
 
     ${props => (props.isOpen ? isOpenStyle : isClosedStyle)};
 `;

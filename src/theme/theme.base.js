@@ -216,6 +216,7 @@ export const ThemeBase = {
         xl: '90px',
     },
     transition: {
+        xxs: '0.1s',
         xs: '0.2s',
         sm: '0.3s',
         md: '0.5s',
