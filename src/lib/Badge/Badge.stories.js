@@ -10,7 +10,6 @@ import {
     colorTypeDefault,
     fontSizeOptions,
     iconSizeOptions,
-    iconSizeDefault,
     spaceOptions
 } from '../../shared/constants';
 import Badge from './Badge';
@@ -54,7 +53,7 @@ storiesOf(folder.main + 'Badge', module)
                 iconSize={select(
                     iconSizeLabel,
                     iconSizeOptions,
-                    iconSizeDefault,
+                    iconSizeOptions.sm,
                 )}
                 marginLeft={spaceOptions.xs}
             />

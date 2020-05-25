@@ -3,9 +3,10 @@ import { math } from 'polished';
 import { badgeSize, originalStyle, reverseStyle } from './base';
 
 const BadgeBase = styled.span`
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+    width: fit-content;
     border-radius: ${props => props.theme.radius.sm};
     height: ${props => math(props.theme.font.size[props.textSize] + ' + 1rem')};
     font-size: ${props => props.theme.font.size[props.textSize]};
