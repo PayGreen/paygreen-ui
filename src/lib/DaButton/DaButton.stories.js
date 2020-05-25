@@ -51,15 +51,15 @@ storiesOf(folder.form + folder.sub.button + 'DaButton', module)
                         colorTypeOptions,
                         colorTypeDefault,
                     )}
-                    colorPallet={radios(
-                        'Color pallet',
-                        buttonColorPalletOptions,
-                        colorPalletDefault,
-                    )}
                     gradient={radios(
                         'Gradient type',
                         gradientOptions,
                         gradientDefault,
+                    )}
+                    colorPallet={radios(
+                        'Color pallet',
+                        buttonColorPalletOptions,
+                        colorPalletDefault,
                     )}
                     colorTheme={select(
                         'Color theme',
@@ -74,7 +74,7 @@ storiesOf(folder.form + folder.sub.button + 'DaButton', module)
                     isDisabled={boolean('Disabled', false)}
                     icon={<CoinsIcon />}
                 >
-                    {text('Label', 'Fill success')}
+                    {text('Label', 'CTA button')}
                 </DaButton>
             </a>
         ),

@@ -15,17 +15,22 @@ import {
 const DaButtonBase = styled.span`
     box-sizing: border-box;
     position: relative;
+    z-index: ${props => props.theme.zindex.base};
     display: inline-flex;
     align-items: center;
     height: ${props => props.theme.daButton.buttonHeight[props.buttonSize]};
-    z-index: ${props => props.theme.zindex.base};
     padding: 0 ${props => props.theme.daButton.paddingWidth[props.buttonSize]};
     margin: ${props => props.theme.daButton.shift[props.buttonSize]};
     font-weight: ${props => props.theme.font.weight.bold};
     font-size: ${props => props.theme.daButton.font[props.buttonSize]};
     border-radius: ${props =>
         props.theme.daButton.buttonHeight[props.buttonSize]};
-    transition: all ${props => props.theme.transition.xs};
+    border-style: ${props =>
+        props.buttonStyle === buttonStyleOptions.line ? 'solid' : null};
+    border-width: ${props =>
+        props.buttonStyle === buttonStyleOptions.line
+            ? props.theme.line
+            : null};
 
     &::before {
         content: '';
@@ -51,7 +56,7 @@ const DaButtonBase = styled.span`
                     props.buttonStyle === buttonStyleOptions.line
                         ? math(
                               props.theme.daButton.shift[props.buttonSize] +
-                                  '*2 +' +
+                                  '*2 + ' +
                                   props.theme.line +
                                   '*2',
                           )
@@ -60,8 +65,12 @@ const DaButtonBase = styled.span`
                                   '*2',
                           )} + 100%
         );
-        bottom: -${props => (props.buttonStyle === buttonStyleOptions.line ? math(props.theme.daButton.shift[props.buttonSize] + '+' + props.theme.line) : props.theme.daButton.shift[props.buttonSize])};
-        left: -${props => (props.buttonStyle === buttonStyleOptions.line ? math(props.theme.daButton.shift[props.buttonSize] + '+' + props.theme.line) : props.theme.daButton.shift[props.buttonSize])};
+        bottom: -${props => (props.buttonStyle === buttonStyleOptions.line 
+            ? math(props.theme.daButton.shift[props.buttonSize] + '+ ' + props.theme.line) 
+            : props.theme.daButton.shift[props.buttonSize])};
+        left: -${props => (props.buttonStyle === buttonStyleOptions.line 
+            ? math(props.theme.daButton.shift[props.buttonSize] + '+ ' + props.theme.line) 
+            : props.theme.daButton.shift[props.buttonSize])};
         border-radius: ${props =>
             props.theme.daButton.buttonHeight[props.buttonSize]};
         opacity: ${props =>
@@ -74,7 +83,7 @@ const DaButtonBase = styled.span`
             ? reverseStyle[props.buttonStyle]
             : originalStyle[props.buttonStyle][props.gradient]};
     ${props => (props.isDisabled ? disabled : enabled)};
-    ${props => (props.icon ? iconStyleBase : null)};
+    ${iconStyleBase};
 `;
 
 export { DaButtonBase };

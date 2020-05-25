@@ -291,10 +291,10 @@ export const ThemeBase = {
             md: '1.4rem',
             lg: '1.8rem',
         },
-        letterSpacing: {
-            sm: '0.3rem',
-            md: '0.4rem',
-            lg: '0.45rem',
+        iconSpacing: {
+            sm: '0.9rem',
+            md: '1rem',
+            lg: '1.1rem',
         },
     },
     form: {
