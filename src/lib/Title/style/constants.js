@@ -8,6 +8,7 @@ const lineColor = {
 };
 
 const smallFontSizes = [
+    'tiny',
     'xxs',
     'xs',
     'sm'

@@ -13,6 +13,7 @@ const backgroundColor = {
 };
 
 const minimizeFont = {
+    tiny: 'tiny',
     xxs: 'xxs',
     xs: 'xs',
     sm: 'xs',

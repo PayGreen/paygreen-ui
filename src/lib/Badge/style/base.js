@@ -9,6 +9,7 @@ const bigBadge = css`
 `;
 
 const badgeSize = {
+    tiny: css`${smallBadge};`,
     xxs: css`${smallBadge};`,
     xs: css`${smallBadge};`,
     sm: css`${smallBadge};`,
