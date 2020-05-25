@@ -6,7 +6,6 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     colorPalletOptions,
-    fontSizeOptions,
     greyOptions,
     iconSizeOptions,
 } from '../../shared/constants';
@@ -23,9 +22,10 @@ const colorThemeLabel = 'Color theme';
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
     .addDecorator(withKnobs)
     .add('SidebarMenuCategory', () => (
-        <SidebarMenuCategory categoryTitle={text('Category', 'Catégorie de Pages')}>
+        <SidebarMenuCategory
+            categoryTitle={text('Category', 'Catégorie de Pages')}
+        >
             <SidebarMenu
-                isOpen={boolean('is Open', true)}
                 colorTheme={radios(
                     colorThemeLabel,
                     colorThemeOptions,
@@ -34,11 +34,13 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
             >
                 <a href="#">
                     <SidebarItem
+                        isClickable={true}
                         colorTheme={radios(
                             colorThemeLabel,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
+                        isOpen={boolean('is Open', true)}
                     >
                         <MeterIcon
                             iconSize={iconSizeOptions.lg}
@@ -62,7 +64,8 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                         </Link>
                     </SidebarItem>
                 </a>
-                <SidebarList>
+
+                <SidebarList isOpen={boolean('is Open', true)}>
                     <a href="#">
                         <SidebarItem
                             colorTheme={radios(
@@ -70,7 +73,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
-                            textSize={fontSizeOptions.sm}
                         >
                             <Link
                                 colorPallet={colorPalletOptions.wab}
@@ -90,7 +92,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
-                            textSize={fontSizeOptions.sm}
                         >
                             <Link
                                 colorPallet={colorPalletOptions.wab}
