@@ -9,7 +9,7 @@ const Modal = props => {
         <ModalBase {...props}>
             <Overlay {...otherProps} />
 
-            <ModalContent {...otherProps}>{props.children}</ModalContent>
+            <ModalContent {...otherProps}>{children}</ModalContent>
         </ModalBase>
     );
 };
