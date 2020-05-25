@@ -13,6 +13,8 @@ import { ArrowBottomIcon } from '../Icon/Icon';
 const SidebarItem = props => {
     return (
         <SidebarItemBase {...props}>
+            {props.children}
+            
             {props.isClickable ? (
                 <ArrowBottomIcon
                     theme={props.theme}
@@ -27,8 +29,6 @@ const SidebarItem = props => {
                     }
                 />
             ) : null}
-
-            {props.children}
         </SidebarItemBase>
     );
 };

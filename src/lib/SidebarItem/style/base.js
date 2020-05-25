@@ -43,14 +43,12 @@ const activeStyle = css`
                 transparentize(
                     0.8,
                     props.theme.color[props.colorTheme].gradientShade,
-                )}
-            30%,
+                )},
         ${props =>
                 transparentize(
-                    0.7,
+                    0.8,
                     props.theme.color[props.colorTheme].gradientBase,
                 )}
-            80%
     );
     transition: all ${props => props.theme.transition.xl};
 `;

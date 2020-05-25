@@ -5,21 +5,22 @@ import { activeStyle, hoverBase } from './base';
 const SidebarItemBase = styled.div`
     position: relative;
     padding: ${props => props.theme.space.sm};
+    margin: ${props => props.theme.line} 0;
     display: grid;
     grid-template-areas: 'icon link button';
     grid-template-columns: ${props => props.theme.iconSize.lg} 1fr auto;
     overflow-x: hidden;
 
-    & > button.icon {
-        grid-area: button;
-        opacity: 1;
-    }
-
     & > .icon {
         grid-area: icon;
         opacity: 0.4;
     }
-
+    
+    & > button.icon {
+        grid-area: button;
+        opacity: 1;
+    }
+    
     ${LinkBase} {
         grid-area: link;
         font-size: ${props => props.theme.font.size.sm};

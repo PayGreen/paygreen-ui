@@ -4,14 +4,11 @@ import { isClosedStyle, isOpenStyle } from './base';
 const SidebarListBase = styled.ul`
     margin: 0;
     padding: 0;
-    transform-origin: top;
-    transition-property: all, transform;
-    transition-duration: ${props => props.theme.transition.xs},
-        ${props => props.theme.transition.sm};
+    transition-property: all, height;
+    transition-duration: ${props => props.theme.transition.xs};
 
-    li {
+    ul {
         list-style-type: none;
-        margin: ${props => props.theme.line} 0;
         padding: 0;
     }
 
