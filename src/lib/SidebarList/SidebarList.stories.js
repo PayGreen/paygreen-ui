@@ -7,6 +7,7 @@ import {
     colorThemeDefault,
     colorThemeOptions,
     greyOptions,
+    fontSizeOptions,
 } from '../../shared/constants';
 import Link from '../Link/Link';
 import SidebarItem from '../SidebarItem/SidebarItem';
