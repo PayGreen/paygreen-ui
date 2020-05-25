@@ -244,6 +244,7 @@ const imageSizeDefault = imageSizeOptions.auto;
 
 // Font sizes
 const fontSizeOptions = {
+    tiny: 'tiny',
     xxs: 'xxs',
     xs: 'xs',
     sm: 'sm',

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
+import { BadgeBase } from '../../Badge/style';
 import {
-    textSize,
-    coloredStyle,
     whiteStyle,
     noBaselineStyle,
     hoverRightStyle,
@@ -23,6 +22,10 @@ const LogoBase = styled.span`
         height: ${props => props.theme.logoHeight[props.blockHeight]};
     }
 
+    ${BadgeBase} {
+        margin-left: ${props => props.theme.space.sm};
+    }
+
     img,
     svg {
         transition: all ${props => props.theme.transition.sm};
@@ -33,16 +36,7 @@ const LogoBase = styled.span`
         max-width: 100%;
     }
 
-    .text {
-        border-radius: ${props => props.theme.radius.sm};
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: ${props => props.theme.font.spacing};
-        font-weight: ${props => props.theme.font.weight.bold};
-        ${props => textSize[props.textSize]};
-    }
-
-    ${props => (props.isWhite ? whiteStyle : coloredStyle)};
+    ${props => (props.isWhite ? whiteStyle : null)};
     ${props => (props.hasBaseline ? null : noBaselineStyle)};
     ${props => (props.hasHoverRight ? hoverRightStyle : null)};
     ${props => (props.hasHoverTop ? hoverTopStyle : null)};

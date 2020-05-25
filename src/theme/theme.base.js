@@ -81,6 +81,7 @@ export const ThemeBase = {
         spacing: '0.3em',
         underline: {
             space: {
+                tiny: '8px',
                 xxs: '10px',
                 xs: '10px',
                 sm: '12px',
@@ -90,6 +91,7 @@ export const ThemeBase = {
                 xl: '24px',
             },
             line: {
+                tiny: '2px',
                 xxs: '2px',
                 xs: '2px',
                 sm: '2px',
@@ -99,6 +101,7 @@ export const ThemeBase = {
                 xl: '3px',
             },
             width: {
+                tiny: '30px',
                 xxs: '40px',
                 xs: '40px',
                 sm: '50px',
