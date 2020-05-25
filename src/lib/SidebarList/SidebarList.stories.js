@@ -6,8 +6,8 @@ import {
     colorPalletOptions,
     colorThemeDefault,
     colorThemeOptions,
-    greyOptions,
     fontSizeOptions,
+    greyOptions,
 } from '../../shared/constants';
 import Link from '../Link/Link';
 import SidebarItem from '../SidebarItem/SidebarItem';
