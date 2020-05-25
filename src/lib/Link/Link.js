@@ -11,6 +11,8 @@ import {
     greyDefault,
     formStatusOptions,
     formStatusDefault,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import { LinkBase } from './style';
 
@@ -27,6 +29,10 @@ Link.propTypes = {
     hasUnderline: PropTypes.bool,
     hasHover: PropTypes.bool,
     hasUppercase: PropTypes.bool,
+    paddingTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingLeft: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingRight: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Link.defaultProps = {
@@ -38,6 +44,10 @@ Link.defaultProps = {
     hasUnderline: true,
     hasHover: true,
     hasUppercase: false,
+    paddingTop: spaceDefault,
+    paddingBottom: spaceDefault,
+    paddingLeft: spaceDefault,
+    paddingRight: spaceDefault,
 };
 
 export default Link;
