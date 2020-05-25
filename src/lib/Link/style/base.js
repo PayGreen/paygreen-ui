@@ -1,47 +1,27 @@
 import { css } from 'styled-components';
+import { math } from 'polished';
 import { uppercaseStyle } from '../../Text/style/base';
+
+const opacity = 0.2;
 
 const linkUppercase = css`
     ${uppercaseStyle};
-    /* fix shift of uppercase letters */
-    padding-left: ${props => props.theme.font.spacing};
     
+    /* fix shift of uppercase letters */
     &::after {
-        margin-left: -${props => props.theme.font.spacing};
+        margin-left: ${props => math(props.theme.font.spacing + '/-2')};
     }
 `;
 
-const underlineStyle = css`
-    &::after {
-        height: ${props => props.theme.line};
-        opacity: 0.25;
-    }
-`;
-
-const classicHoverStyle = css`
+const hoverStyle = css`
     a:hover &,
     a:active &,
     a:focus & {
         &::after {
             height: 100%;
+            opacity: ${opacity};
         }
     }
 `;
 
-const softHoverStyle = css`
-    &::after {
-        height: 100%;
-        opacity: 0;
-    }
-
-    a:hover &,
-    a:active &,
-    a:focus & {
-        &::after {
-            opacity: 0.25;
-            height: 100%;
-        }
-    }
-`;
-
-export { underlineStyle, linkUppercase, classicHoverStyle, softHoverStyle };
+export { opacity, linkUppercase, hoverStyle };
