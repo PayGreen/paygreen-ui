@@ -13,10 +13,10 @@ import { MenuSecondaryBase } from './style';
 const MenuSecondary = props => {
     return (
         <MenuSecondaryBase {...props}>
-            <ul>
+            <ul className="menu">
                 {React.Children.map(props.children, (child, index) =>
                     child ? (
-                        <li key={index}>
+                        <li key={index} className="menuElement">
                             {index ? (
                                 <Dot
                                     theme={props.theme} // not necessary, only needed for tests
@@ -29,6 +29,7 @@ const MenuSecondary = props => {
                                     marginRight={spaceOptions.sm}
                                 />
                             ) : null}
+                            
                             {child}
                         </li>
                     ) : null,
