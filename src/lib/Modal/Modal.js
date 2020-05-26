@@ -9,12 +9,10 @@ const Modal = props => {
 
 Modal.propTypes = {
     isOpen: PropTypes.bool,
-    blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
 };
 
 Modal.defaultProps = {
     isOpen: false,
-    blockWidth: blockWidthDefault,
 };
 
 export default Modal;

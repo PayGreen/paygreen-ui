@@ -25,11 +25,6 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
     .addDecorator(withKnobs)
     .add('Modal', () => (
         <Modal
-            blockWidth={select(
-                'Block width',
-                blockWidthOptions,
-                blockWidthDefault,
-            )}
             isOpen={boolean('is Open', true)}
         >
             <Overlay />
