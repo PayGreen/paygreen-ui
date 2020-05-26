@@ -7,7 +7,7 @@ const isCloseStyle = css`
 `;
 
 const isOpenStyle = css`
-    transition-delay: ${props => props.theme.transition.sm}, 0s;
+    transition-delay: ${props => props.theme.transition.xs}, 0s;
 `;
 
 export { isOpenStyle, isCloseStyle };
