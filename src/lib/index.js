@@ -33,6 +33,10 @@ import MenuItem from './MenuItem/MenuItem';
 import MenuList from './MenuList/MenuList';
 import MenuPrimary from './MenuPrimary/MenuPrimary';
 import MenuSecondary from './MenuSecondary/MenuSecondary';
+import Modal from './Modal/Modal';
+import ModalHeader from './ModalHeader/ModalHeader';
+import ModalBody from './ModalBody/ModalBody';
+import ModalContent from './ModalContent/ModalContent';
 import Popin from './Popin/Popin';
 import RadioIcon from './RadioIcon/RadioIcon';
 import Select from './Select/Select';
@@ -183,6 +187,10 @@ export {
     MenuList,
     MenuPrimary,
     MenuSecondary,
+    Modal,
+    ModalBody,
+    ModalHeader,
+    ModalContent,
     Popin,
     RadioIcon,
     Select,

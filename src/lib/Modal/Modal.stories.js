@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import {
     folder,
     blockWidthOptions,
@@ -10,11 +10,16 @@ import {
     iconSizeOptions,
     iconHtmlTagOptions,
     fontSizeOptions,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import Modal from './Modal';
-import { ModalHeader, ModalBody } from './style/subComponents';
 import Title from '../Title/Title';
 import { CrossIcon } from '../Icon/Icon';
+import ModalHeader from '../ModalHeader/ModalHeader';
+import ModalBody from '../ModalBody/ModalBody';
+import ModalContent from '../ModalContent/ModalContent';
+import { Overlay } from './style';
 
 storiesOf(folder.main + folder.sub.modal + 'Modal', module)
     .addDecorator(withKnobs)
@@ -27,25 +32,70 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
             )}
             isOpen={boolean('is Open', true)}
         >
-            <ModalHeader>
-                <Title
-                    colorPallet={colorPalletOptions.wab}
-                    colorWab={greyOptions.grey40}
-                    textSize={fontSizeOptions.md}
+            <Overlay />
+
+            <ModalContent
+                blockWidth={select(
+                    'Block width',
+                    blockWidthOptions,
+                    blockWidthDefault,
+                )}
+            >
+                <ModalHeader
+                    paddingLateral={select(
+                        "ModalHeader's lateral paddings",
+                        spaceOptions,
+                        spaceDefault,
+                    )}
+                    paddingTop={select(
+                        "ModalHeader's padding top",
+                        spaceOptions,
+                        spaceDefault,
+                    )}
+                    paddingBottom={select(
+                        "ModalHeader's padding bottom",
+                        spaceOptions,
+                        spaceDefault,
+                    )}
                 >
-                    Que voulez-vous faire ?
-                </Title>
+                    <Title
+                        colorPallet={colorPalletOptions.wab}
+                        colorWab={greyOptions.grey40}
+                        textSize={fontSizeOptions.md}
+                    >
+                        {text('Label', 'This is the Title')}
+                    </Title>
 
-                <CrossIcon
-                    htmlTag={iconHtmlTagOptions.button}
-                    iconSize={iconSizeOptions.md}
-                    colorPallet={colorPalletOptions.wab}
-                    colorWab={greyOptions.grey40}
-                />
-            </ModalHeader>
+                    <CrossIcon
+                        htmlTag={iconHtmlTagOptions.button}
+                        iconSize={iconSizeOptions.md}
+                        colorPallet={colorPalletOptions.wab}
+                        colorWab={greyOptions.grey40}
+                    />
+                </ModalHeader>
 
-            <ModalBody>
-                <div>Texte contenu dans le body</div>
-            </ModalBody>
+                <ModalBody
+                    paddingLateral={select(
+                        "ModalBody's lateral paddings",
+                        spaceOptions,
+                        spaceDefault,
+                    )}
+                    paddingTop={select(
+                        "ModalBody's padding top",
+                        spaceOptions,
+                        spaceDefault,
+                    )}
+                    paddingBottom={select(
+                        "ModalBody's padding bottom",
+                        spaceOptions,
+                        spaceDefault,
+                    )}
+                >
+                    <div>
+                        Curabitur congue varius ex et posuere. Maecenas
+                        tincidunt diam ut nisl porttitor scelerisque.
+                    </div>
+                </ModalBody>
+            </ModalContent>
         </Modal>
     ));

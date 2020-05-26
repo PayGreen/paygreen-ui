@@ -1,17 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { blockWidthOptions, blockWidthDefault } from '../../shared/constants';
-import { ModalBase, Overlay, ModalContent } from './style';
+import { ModalBase } from './style';
 
 const Modal = props => {
-    const { children, ...otherProps } = props;
-    return (
-        <ModalBase {...props}>
-            <Overlay {...otherProps} />
-
-            <ModalContent {...otherProps}>{children}</ModalContent>
-        </ModalBase>
-    );
+    return <ModalBase {...props}>{props.children}</ModalBase>;
 };
 
 Modal.propTypes = {

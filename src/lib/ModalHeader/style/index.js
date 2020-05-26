@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { responsiveSpaces } from '../../../shared/spaces';
 
 const ModalHeaderBase = styled.div`
     width: 100%;
@@ -10,13 +11,8 @@ const ModalHeaderBase = styled.div`
         margin-left: auto; // needed to align on the right side the cross if no title in modalHeader
     }
 
-    padding: ${props => props.theme.space.sm};
-
-    @media (${props => props.theme.query.min.md}) {
-        padding: ${props => props.theme.space.md};
-    }
-
     grid-area: header;
+    ${responsiveSpaces('padding')};
 `;
 
 export { ModalHeaderBase };

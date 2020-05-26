@@ -2,21 +2,21 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-htpNat fdNpfu"
+  className="sc-bwzfXH fPggSW"
 >
   <div
     className="sc-bdVaJa kthKKb"
   />
   <div
-    className="sc-bwzfXH eRGKZT"
+    className="sc-ifAKCX gqUqZP"
   >
     <div
-      className="sc-bxivhb cyoYAH"
+      className="sc-htpNat gqZXqA"
     >
       <span
         className="sc-EHOje hNdNAy"
       >
-        Que voulez-vous faire ?
+        This is the Title
       </span>
       <span
         className="sc-bZQynM LRUhz icon"
@@ -31,7 +31,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-ifAKCX juULxR"
+      className="sc-bxivhb fPJhRk"
     />
   </div>
 </div>

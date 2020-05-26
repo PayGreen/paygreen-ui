@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, select, text } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -8,11 +8,15 @@ import {
     iconSizeOptions,
     iconHtmlTagOptions,
     fontSizeOptions,
+    blockWidthOptions,
+    blockWidthDefault,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import Title from '../Title/Title';
 import { CrossIcon } from '../Icon/Icon';
 import ModalHeader from '../ModalHeader/ModalHeader';
-import ModalBody  from '../ModalBody/ModalBody';
+import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from './ModalContent';
 
 storiesOf(folder.main + folder.sub.modal + 'ModalContent', module)
@@ -25,13 +29,29 @@ storiesOf(folder.main + folder.sub.modal + 'ModalContent', module)
                 blockWidthDefault,
             )}
         >
-            <ModalHeader>
+            <ModalHeader
+                paddingLateral={select(
+                    "ModalHeader's lateral paddings",
+                    spaceOptions,
+                    spaceDefault,
+                )}
+                paddingTop={select(
+                    "ModalHeader's padding top",
+                    spaceOptions,
+                    spaceDefault,
+                )}
+                paddingBottom={select(
+                    "ModalHeader's padding bottom",
+                    spaceOptions,
+                    spaceDefault,
+                )}
+            >
                 <Title
                     colorPallet={colorPalletOptions.wab}
                     colorWab={greyOptions.grey40}
                     textSize={fontSizeOptions.md}
                 >
-                    Que voulez-vous faire ?
+                    {text('Label', 'This is the Title')}
                 </Title>
 
                 <CrossIcon
@@ -42,8 +62,27 @@ storiesOf(folder.main + folder.sub.modal + 'ModalContent', module)
                 />
             </ModalHeader>
 
-            <ModalBody>
-                <div>Texte contenu dans le body</div>
+            <ModalBody
+                paddingLateral={select(
+                    "ModalBody's lateral paddings",
+                    spaceOptions,
+                    spaceDefault,
+                )}
+                paddingTop={select(
+                    "ModalBody's padding top",
+                    spaceOptions,
+                    spaceDefault,
+                )}
+                paddingBottom={select(
+                    "ModalBody's padding bottom",
+                    spaceOptions,
+                    spaceDefault,
+                )}
+            >
+                <div>
+                    Curabitur congue varius ex et posuere. Maecenas tincidunt
+                    diam ut nisl porttitor scelerisque.
+                </div>
             </ModalBody>
         </ModalContent>
     ));

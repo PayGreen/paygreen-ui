@@ -4,18 +4,14 @@ import { blockWidthOptions, blockWidthDefault } from '../../shared/constants';
 import { ModalContentBase } from './style';
 
 const ModalContent = props => {
-    return (
-        <ModalContentBase {...props}>
-            {props.children}
-        </ModalContentBase>
-    );
+    return <ModalContentBase {...props}>{props.children}</ModalContentBase>;
 };
 
-Modal.propTypes = {
+ModalContent.propTypes = {
     blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
 };
 
-Modal.defaultProps = {
+ModalContent.defaultProps = {
     blockWidth: blockWidthDefault,
 };
 
