@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 import { isCloseStyle, isOpenStyle } from './base';
 
+// composant temporaire sra fait avec  https://paygreen.atlassian.net/browse/PGX-4453
 const Overlay = styled.div`
     position: absolute;
     width: 100%;

@@ -1,31 +1,29 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import {
     folder,
-    blockWidthOptions,
-    blockWidthDefault,
     colorPalletOptions,
     greyOptions,
     iconSizeOptions,
     iconHtmlTagOptions,
     fontSizeOptions,
 } from '../../shared/constants';
-import Modal from './Modal';
-import { ModalHeader, ModalBody } from './style/subComponents';
 import Title from '../Title/Title';
 import { CrossIcon } from '../Icon/Icon';
+import ModalHeader from '../ModalHeader/ModalHeader';
+import ModalBody  from '../ModalBody/ModalBody';
+import ModalContent from './ModalContent';
 
-storiesOf(folder.main + folder.sub.modal + 'Modal', module)
+storiesOf(folder.main + folder.sub.modal + 'ModalContent', module)
     .addDecorator(withKnobs)
-    .add('Modal', () => (
-        <Modal
+    .add('ModalContent', () => (
+        <ModalContent
             blockWidth={select(
                 'Block width',
                 blockWidthOptions,
                 blockWidthDefault,
             )}
-            isOpen={boolean('is Open', true)}
         >
             <ModalHeader>
                 <Title
@@ -47,5 +45,5 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
             <ModalBody>
                 <div>Texte contenu dans le body</div>
             </ModalBody>
-        </Modal>
+        </ModalContent>
     ));

@@ -236,7 +236,7 @@ export const ThemeBase = {
         loader: 90,
         menu: 100,
         header: 110,
-        modal:120,
+        modal: 120,
     },
     query: {
         min: {
