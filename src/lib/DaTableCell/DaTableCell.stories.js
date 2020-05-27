@@ -1,20 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text, radios, select } from '@storybook/addon-knobs';
-import {
-    folder,
-} from '../../shared/constants';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { folder } from '../../shared/constants';
 import DaTableCell from './DaTableCell';
 
 storiesOf(folder.tables + folder.sub.daTable + 'DaTableCell', module)
     .addDecorator(withKnobs)
-    .add(
-        'DaTableCell',
-        () => (
-            <DaTableCell
-                
-            >
-                Sample
-            </DaTableCell>
-        )
-    );
+    .add('DaTableCell', () => (
+        <DaTableCell
+            label={text('Label', 'Label')}
+            isMain={boolean('Is main', true)}
+            isId={boolean('Is id', false)}
+        >
+            Sample
+        </DaTableCell>
+    ));
