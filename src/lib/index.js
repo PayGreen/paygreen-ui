@@ -6,6 +6,9 @@ import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
+import DaTable from './DaTable/DaTable';
+import DaTableCell from './DaTableCell/DaTableCell';
+import DaTableRow from './DaTableRow/DaTableRow';
 import Divider from './Divider/Divider';
 import Dot from './Dot/Dot';
 import Footer from './Footer/Footer';
@@ -154,6 +157,9 @@ export {
     Button,
     ButtonGroup,
     Card,
+    DaTable,
+    DaTableCell,
+    DaTableRow,
     Divider,
     Dot,
     Footer,
