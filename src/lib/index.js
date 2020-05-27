@@ -4,6 +4,7 @@ import Banner from './Banner/Banner';
 import BannerImage from './BannerImage/BannerImage';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
+import DaButton from './DaButton/DaButton';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
 import Divider from './Divider/Divider';
@@ -148,6 +149,7 @@ export {
     BannerImage,
     Breadcrumb,
     Button,
+    DaButton,
     ButtonGroup,
     Card,
     Divider,
