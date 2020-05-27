@@ -274,6 +274,33 @@ export const ThemeBase = {
             lg: '0.45rem',
         },
     },
+    daButton: {
+        buttonHeight: {
+            sm: '32px',
+            md: '38px',
+            lg: '44px',
+        },
+        paddingWidth: {
+            sm: '22px',
+            md: '26px',
+            lg: '30px',
+        },
+        shift: {
+            sm: '2px',
+            md: '4px',
+            lg: '6px',
+        },
+        font: {
+            sm: '1.2rem',
+            md: '1.4rem',
+            lg: '1.8rem',
+        },
+        iconSpacing: {
+            sm: '0.9rem',
+            md: '1rem',
+            lg: '1.1rem',
+        },
+    },
     form: {
         inputWidth: {
             sm: '330px',

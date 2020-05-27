@@ -14,6 +14,8 @@ import {
     inputWidthOptions,
     inputWidthDefault,
     spaceOptions,
+    buttonSizeOptions,
+    buttonSizeDefault,
 } from '../../shared/constants';
 import DaInput from './DaInput';
 
@@ -29,7 +31,6 @@ storiesOf(folder.form + 'DaInput', module)
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
                 status={radios('Status', formStatusOptions, formStatusDefault)}
-                hasShadow={boolean('With shadow', false)}
                 blockWidth={radios(
                     'Width',
                     inputWidthOptions,
@@ -41,7 +42,7 @@ storiesOf(folder.form + 'DaInput', module)
                     spaceOptions,
                     spaceOptions.md,
                 )}
-                buttonSize={radios(
+                fieldSize={radios(
                     'Field size',
                     buttonSizeOptions,
                     buttonSizeDefault,
