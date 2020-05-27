@@ -2,6 +2,7 @@ import AnimPlane from './AnimPlane/AnimPlane';
 import AutonomousInput from './AutonomousInput/AutonomousInput';
 import Banner from './Banner/Banner';
 import BannerImage from './BannerImage/BannerImage';
+import Box from './Box/Box';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
@@ -146,6 +147,7 @@ export {
     AutonomousInput,
     Banner,
     BannerImage,
+    Box,
     Breadcrumb,
     Button,
     ButtonGroup,
