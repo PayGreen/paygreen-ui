@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { transparentize } from 'polished';
+import { transparentize, math } from 'polished';
 import {
     fieldTextColor,
     inputPadding,
@@ -18,7 +18,8 @@ const field = css`
     display: block;
     box-sizing: border-box;
     border: solid ${props => props.theme.line} ${props => props.theme.wab.grey10};
-    border-radius: ${props => props.theme.daButton.buttonHeight[props.FieldSize]}
+    border-radius: ${props =>
+        math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
     padding: ${props => props.theme.space.sm};
     padding-left: ${inputPadding.base};
     padding-right: ${inputPadding.larger};

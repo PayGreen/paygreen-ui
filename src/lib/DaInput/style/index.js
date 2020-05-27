@@ -3,7 +3,6 @@ import { responsiveSpaces } from '../../../shared/spaces';
 import {
     label,
     field,
-    withShadow,
     enabled,
     disabled
 } from './base';
@@ -15,8 +14,6 @@ const DaInputBase = styled.div`
         props.theme.form.inputWidth.sm :
         props.theme.form.inputWidth[props.blockWidth]
     };
-
-    ${props => props.hasShadow ? withShadow : null};
 
     label {
         ${label};
