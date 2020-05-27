@@ -7,6 +7,7 @@ const folder = {
     form: 'Form elements' + folderSeparator,
     nav: 'Navigation' + folderSeparator,
     media: 'Medias' + folderSeparator,
+    tables: 'Tables' + folderSeparator,
 
     sub: {
         button: 'Buttons' + subFolderSeparator,
@@ -17,7 +18,8 @@ const folder = {
         menu: 'Menu elements' + subFolderSeparator,
         sidebarMenu: 'Sidebar elements' + subFolderSeparator,
         structure: 'Grids' + subFolderSeparator,
-        table: 'Tables'  + subFolderSeparator,
+        table: 'Simple tables'  + subFolderSeparator,
+        daTable: 'DaTables'  + subFolderSeparator,
     }
 };
 

@@ -9,7 +9,7 @@ import {
 import TableCell from '../TableCell/TableCell';
 import TableRow from './TableRow';
 
-storiesOf(folder.main + folder.sub.table + 'TableRow', module)
+storiesOf(folder.tables + folder.sub.table + 'TableRow', module)
     .addDecorator(withKnobs)
     .add('Simple row', () => (
         <TableRow
