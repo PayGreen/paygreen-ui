@@ -7,10 +7,10 @@ const DaTableCell = props => {
         <span className="cell-label">{props.label}</span>
     ) : null;
 
-    const content = props.children.length ? (
+    const content = props.children ? (
         <span className="cell-content">{props.children}</span>
     ) : (
-        '&nbsp;'
+        <>&nbsp;</>
     );
 
     return (
