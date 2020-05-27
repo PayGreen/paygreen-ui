@@ -3,7 +3,6 @@ import { transparentize } from 'polished';
 import {
     fieldTextColor,
     inputPadding,
-    underlineAnimation
 } from './constants';
 
 const label = css`
@@ -18,9 +17,8 @@ const label = css`
 const field = css`
     display: block;
     box-sizing: border-box;
-    outline: none;
-    border: none;
-    border-radius: ${props => props.theme.radius.sm} ${props => props.theme.radius.sm} 0 0;
+    border: solid ${props => props.theme.line} ${props => props.theme.wab.grey10};
+    border-radius: ${props => props.theme.daButton.buttonHeight[props.FieldSize]}
     padding: ${props => props.theme.space.sm};
     padding-left: ${inputPadding.base};
     padding-right: ${inputPadding.larger};
@@ -100,16 +98,6 @@ const enabled = css`
         &::after {
             background-color: ${props => props.theme.color.status[props.status].main};
             opacity: .7;
-        }
-
-        &::before {
-            transition: width 0.5s ease;
-            width: ${props => underlineAnimation.before[props.keyframe]};
-        }
-
-        &::after {
-            transition: width 0.4s ease, background-color 0s linear 0.9s;
-            width: ${props => underlineAnimation.after[props.keyframe]};
         }
     }
 
