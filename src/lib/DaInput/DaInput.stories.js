@@ -41,6 +41,11 @@ storiesOf(folder.form + 'DaInput', module)
                     spaceOptions,
                     spaceOptions.md,
                 )}
+                buttonSize={radios(
+                    'Field size',
+                    buttonSizeOptions,
+                    buttonSizeDefault,
+                )}
             />
         ),
         {

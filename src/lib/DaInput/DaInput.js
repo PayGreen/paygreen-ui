@@ -7,7 +7,9 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    spaceOptions
+    spaceOptions,
+    buttonSizeOptions,
+    buttonSizeDefault,
 } from '../../shared/constants';
 import { DaInputBase } from './style';
 
@@ -99,6 +101,7 @@ DaInput.propTypes = {
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     mask: PropTypes.string,
+    fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
 };
 
 DaInput.defaultProps = {
@@ -108,6 +111,7 @@ DaInput.defaultProps = {
     blockWidth: inputWidthDefault,
     marginTop: spaceOptions.md,
     marginBottom: spaceOptions.md,
+    fieldSize: buttonSizeDefault,
 };
 
 export default DaInput;
