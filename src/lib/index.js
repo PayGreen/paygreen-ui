@@ -15,6 +15,7 @@ import Header from './Header/Header';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 import Input from './Input/Input';
+import DaInput from './DaInput/DaInput';
 import InternalGrid from './InternalGrid/InternalGrid';
 import Layout from './Layout/Layout';
 import Link from './Link/Link';
@@ -163,6 +164,7 @@ export {
     IconLabel,
     Image,
     Input,
+    DaInput,
     InternalGrid,
     Layout,
     Link,
