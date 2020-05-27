@@ -24,7 +24,7 @@ const DaButtonBase = styled.span`
     font-weight: ${props => props.theme.font.weight.bold};
     font-size: ${props => props.theme.daButton.font[props.buttonSize]};
     border-radius: ${props =>
-        props.theme.daButton.buttonHeight[props.buttonSize]};
+        math(props.theme.daButton.buttonHeight[props.buttonSize] + '/2')};
     border-style: ${props =>
         props.buttonStyle === buttonStyleOptions.line ? 'solid' : null};
     border-width: ${props =>
