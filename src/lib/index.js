@@ -8,6 +8,7 @@ import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
+import ClickableBlock from './ClickableBlock/ClickableBlock';
 import DaTable from './DaTable/DaTable';
 import DaTableCell from './DaTableCell/DaTableCell';
 import DaTableRow from './DaTableRow/DaTableRow';
@@ -165,6 +166,7 @@ export {
     Button,
     ButtonGroup,
     Card,
+    ClickableBlock,
     DaTable,
     DaTableCell,
     DaTableRow,
