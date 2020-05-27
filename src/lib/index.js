@@ -50,6 +50,7 @@ import Overlay from './Overlay/Overlay';
 import Popin from './Popin/Popin';
 import RadioIcon from './RadioIcon/RadioIcon';
 import Select from './Select/Select';
+import DaSelect from './DaSelect/DaSelect';
 import Sidebar from './Sidebar/Sidebar';
 import SidebarItem from './SidebarItem/SidebarItem';
 import SidebarList from './SidebarList/SidebarList';
@@ -215,6 +216,7 @@ export {
     Popin,
     RadioIcon,
     Select,
+    DaSelect,
     Sidebar,
     SidebarItem,
     SidebarList,
