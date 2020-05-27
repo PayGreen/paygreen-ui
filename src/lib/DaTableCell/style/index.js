@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { math } from 'polished';
 import { borderRight, idStyle, mainStyle, notMainStyle } from './base';
 
 const DaTableCellBase = styled.div`
@@ -11,11 +12,31 @@ const DaTableCellBase = styled.div`
     }
     
     @media (${props => props.theme.query.min.lg}) {
+        position: relative;
         display: table-cell;
+        vertical-align: middle;
         padding: ${props => props.theme.space.sm};
         text-align: center;
 
         ${props => props.isCheckbox ? null : borderRight};
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            height: ${props => math(props.theme.line + '/2')};
+            width: 100%;
+            left: 0;
+            background-color: ${props => props.theme.wab.white00};
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+        }
     }
 
     .cell-label {
