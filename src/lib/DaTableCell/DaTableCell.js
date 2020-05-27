@@ -30,7 +30,7 @@ DaTableCell.propTypes = {
 
 DaTableCell.defaultProps = {
     isMain: true,
-    isCheckbox: true,
+    isCheckbox: false,
     isId: false,
 };
 
