@@ -1,24 +1,58 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-
-} from '../../shared/constants';
 import { DaTableRowBase } from './style';
 
-const DaTableRow = (props) => {
-    return <DaTableRowBase
-        {...props}
-    >
-        {props.children}
-    </DaTableRowBase>;
+const DaTableRow = props => {
+    let hasCheckbox = false;
+    let mainCellCount = 0;
+    let notMainCellCount = 0;
+
+    React.Children.map(props.children, child => {
+        if (child.props.isMain) {
+            mainCellCount++;
+
+            if (child.props.isCheckbox) {
+                hasCheckbox = true;
+            }
+        } else {
+            notMainCellCount++;
+        }
+    });
+
+    let mainIndex = 0;
+    let basicIndex = 0;
+    let className = '';
+
+    return (
+        <DaTableRowBase
+            {...props}
+            hasCheckbox={hasCheckbox}
+            mainCellCount={mainCellCount}
+            notMainCellCount={notMainCellCount}
+        >
+            {React.Children.map(props.children, child => {
+                if (typeof child == 'object') {
+                    if (child.props.isCheckbox) {
+                        className = 'cell-checkbox';
+                    } else if (child.props.isMain) {
+                        mainIndex++;
+                        className = 'cell-main-' + mainIndex;
+                    } else {
+                        basicIndex++;
+                        className = 'cell-basic-' + basicIndex;
+                    }
+
+                    return React.cloneElement(child, {
+                        className: className,
+                    });
+                }
+            })}
+        </DaTableRowBase>
+    );
 };
 
-DaTableRow.propTypes = {
+DaTableRow.propTypes = {};
 
-};
-
-DaTableRow.defaultProps = {
-
-};
+DaTableRow.defaultProps = {};
 
 export default DaTableRow;
