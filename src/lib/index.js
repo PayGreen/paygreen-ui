@@ -1,5 +1,6 @@
 import AnimPlane from './AnimPlane/AnimPlane';
 import AutonomousInput from './AutonomousInput/AutonomousInput';
+import Badge from './Badge/Badge';
 import Banner from './Banner/Banner';
 import BannerImage from './BannerImage/BannerImage';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
@@ -148,6 +149,7 @@ export {
     PGThemeProvider,
     AnimPlane,
     AutonomousInput,
+    Badge,
     Banner,
     BannerImage,
     Breadcrumb,
