@@ -9,32 +9,44 @@ import {
 } from '../../DaInput/style/base';
 
 const DaSelectBase = styled.div`
-    ${responsiveSpaces('margin')};
     position: relative;
-    max-width: ${props => props.theme.form.inputWidth[props.fieldSize]};
-    
+    max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
+
     select {
         ${field};
-        ${props => props.inputDisabled ? disabled : enabled};
-        appearance:none;
+        ${props => (props.inputDisabled ? disabled : enabled)};
+        appearance: none;
 
         option {
             &:disabled {
                 color: ${props => props.theme.wab.grey30};
             }
         }
-        ${props => props.hasHelpButton ? helpButtonStyle : null};
+
+        ${props => (props.hasHelpButton ? helpButtonStyle : null)};
     }
-    
+
     &::after {
-        content: "";
-        position:absolute;
-        border-top: 10px solid #777;
-        border-right: 8px solid transparent;
-        border-left: 8px solid transparent;
+        content: '';
+        position: absolute;
+        border-top: ${props =>
+                math(
+                    props.theme.daButton.buttonHeight[props.fieldSize] + '/3.5',
+                )}
+            solid
+            ${props =>
+                props.inputDisabled
+                    ? props.theme.wab.grey30
+                    : props.theme.wab.grey60};
+        border-right: ${props =>
+                math(props.theme.daButton.buttonHeight[props.fieldSize] + '/4')}
+            solid transparent;
+        border-left: ${props =>
+                math(props.theme.daButton.buttonHeight[props.fieldSize] + '/4')}
+            solid transparent;
         right: ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
-        top:  ${props =>
+        top: ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2.5')};
     }
 `;

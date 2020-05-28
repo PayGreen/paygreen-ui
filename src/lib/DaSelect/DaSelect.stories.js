@@ -4,15 +4,11 @@ import {
     withKnobs,
     boolean,
     radios,
-    select,
 } from '@storybook/addon-knobs';
 import {
     folder,
-    formStatusOptions,
-    formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    spaceOptions,
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
@@ -49,17 +45,15 @@ storiesOf(folder.form + 'DaSelect', module)
                 options={options}
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
-                status={radios('Status', formStatusOptions, formStatusDefault)}
-                marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
-                marginBottom={select(
-                    'Margin bottom',
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
                 fieldSize={radios(
                     'Field size',
                     buttonSizeOptions,
                     buttonSizeDefault,
+                )}
+                blockWidth={radios(
+                    'Block width',
+                    inputWidthOptions,
+                    inputWidthDefault,
                 )}
                 hasHelpButton={boolean('Help button', false)}
             />
