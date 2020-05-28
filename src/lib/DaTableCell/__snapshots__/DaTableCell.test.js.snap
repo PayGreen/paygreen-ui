@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bxivhb hgnEdP"
+  className="sc-bdVaJa KnVGS"
 >
   <span
-    className="content"
+    className="cell-content"
   >
     Something
   </span>

@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <header
-  className="sc-dnqmqq hLfGNE"
+  className="sc-iwsKbI eELuHo"
 >
   <div
     className="main-nav"
@@ -28,7 +28,7 @@ exports[`renders without crashing 1`] = `
           className="sc-bxivhb mGqfH"
         >
           <span
-            className="sc-bdVaJa etiQqm"
+            className="sc-bdVaJa kUfnGr"
           >
             About us
           </span>

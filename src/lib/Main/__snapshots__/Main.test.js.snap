@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-htpNat fKlAfx"
+  className="sc-htpNat iHbVbz"
 >
   <header
-    className="sc-bdVaJa eNIlMj"
+    className="sc-bdVaJa icKNKz"
   >
     <button
       className="sc-bxivhb kHxDQw"
