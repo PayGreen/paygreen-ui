@@ -5,7 +5,6 @@ import {
     boolean,
     radios,
     select,
-    text,
 } from '@storybook/addon-knobs';
 import {
     folder,
@@ -14,6 +13,8 @@ import {
     inputWidthOptions,
     inputWidthDefault,
     spaceOptions,
+    buttonSizeOptions,
+    buttonSizeDefault,
 } from '../../shared/constants';
 import DaSelect from './DaSelect';
 
@@ -44,24 +45,23 @@ storiesOf(folder.form + 'DaSelect', module)
         () => (
             <DaSelect
                 id="select1"
-                label={text('Label', 'Your choice')}
                 defaultValue=""
                 options={options}
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
                 status={radios('Status', formStatusOptions, formStatusDefault)}
-                blockWidth={radios(
-                    'Width',
-                    inputWidthOptions,
-                    inputWidthDefault,
-                )}
-                hasShadow={boolean('With shadow', false)}
                 marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
                 marginBottom={select(
                     'Margin bottom',
                     spaceOptions,
                     spaceOptions.md,
                 )}
+                fieldSize={radios(
+                    'Field size',
+                    buttonSizeOptions,
+                    buttonSizeDefault,
+                )}
+                hasHelpButton={boolean('Help button', false)}
             />
         ),
         {

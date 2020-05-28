@@ -6,7 +6,9 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    spaceOptions
+    spaceOptions,
+    buttonSizeOptions,
+    buttonSizeDefault,
 } from '../../shared/constants';
 import { DaSelectBase } from './style';
 
@@ -23,8 +25,8 @@ class DaSelect extends PureComponent {
         const {
             options,
             status,
-            label,
-
+            fieldSize,
+            hasHelpButton,
             // must not be passed with rest because there is no readOnly html attribute for select
             readOnly,
 
@@ -58,14 +60,9 @@ class DaSelect extends PureComponent {
                         blockWidth={blockWidth}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
+                        fieldSize={fieldSize}
+                        hasHelpButton={hasHelpButton}
                     >
-                        {label ?
-                            <label htmlFor={this.props.id}>
-                                {label}
-                            </label>
-                            : null
-                        }
-
                         <select {...rest}>
                             {options.map((option, index) =>
                                 <option
@@ -81,8 +78,6 @@ class DaSelect extends PureComponent {
                                 </option>
                             )}
                         </select>
-
-                        <span></span>
                     </DaSelectBase>
                 );
             }}
@@ -103,18 +98,18 @@ DaSelect.propTypes = {
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
-    hasShadow: PropTypes.bool,
-    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    hasHelpButton: PropTypes.bool,
 };
 
 DaSelect.defaultProps = {
     status: formStatusDefault,
-    hasShadow: false,
-    blockWidth: inputWidthDefault,
     marginTop: spaceOptions.md,
     marginBottom: spaceOptions.md,
+    fieldSize: buttonSizeDefault,
+    hasHelpButton: false,
 };
 
 export default DaSelect;

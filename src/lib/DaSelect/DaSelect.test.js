@@ -24,7 +24,6 @@ it('renders without crashing', () => {
         <DaSelect
             theme={ThemeDefault}
             id="selectId1"
-            label="Your choice"
             options={sampleOptions}
             
         />
