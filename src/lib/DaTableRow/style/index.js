@@ -5,7 +5,7 @@ import { cellsAreas, toggableStyle, activeStyle, hoverStyle } from './base';
 const DaTableRowBase = styled.div`
     background-color: ${props => props.theme.wab.white10};
     transition: all ${props => props.theme.transition.sm};
-    ${props => props.isActive ? activeStyle : null};
+    ${props => (props.isActive ? activeStyle : null)};
     ${hoverStyle};
 
     @media (${props => props.theme.query.max.lg}) {
@@ -19,7 +19,13 @@ const DaTableRowBase = styled.div`
                 props.notMainCellCount,
                 props.hasCheckbox,
             )};
-        
+        grid-template-columns: ${props =>
+            props.hasCheckbox
+                ? 'repeat(' +
+                  parseInt(props.mainCellCount - 1) +
+                  ', auto) min-content'
+                : 'repeat(' + props.mainCellCount + ', auto)'};
+
         ${cellsAreas};
         ${toggableStyle};
     }
