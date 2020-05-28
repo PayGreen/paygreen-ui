@@ -19,11 +19,11 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableRow', module)
                 />
             </DaTableCell>
 
+            <DaTableCell isId={true}>3456</DaTableCell>
+
             <DaTableCell isMain={false} label="Date">
                 27/05/2020
             </DaTableCell>
-
-            <DaTableCell isId={true}>3456</DaTableCell>
 
             <DaTableCell>Marie Perez</DaTableCell>
 
