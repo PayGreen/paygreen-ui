@@ -27,15 +27,9 @@ storiesOf(folder.form + 'DaInput', module)
             <DaInput
                 id="sampleId1"
                 placeholder="Firstname Lastname"
-                label={text('Label', 'Your name')}
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
                 status={radios('Status', formStatusOptions, formStatusDefault)}
-                blockWidth={radios(
-                    'Width',
-                    inputWidthOptions,
-                    inputWidthDefault,
-                )}
                 marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
                 marginBottom={select(
                     'Margin bottom',
@@ -47,6 +41,7 @@ storiesOf(folder.form + 'DaInput', module)
                     buttonSizeOptions,
                     buttonSizeDefault,
                 )}
+                hasHelpButton={boolean('Help button', false)}
             />
         ),
         {
@@ -61,16 +56,19 @@ storiesOf(folder.form + 'DaInput', module)
                 type="tel"
                 id="sampleId2"
                 placeholder="+33 (0)6 11 22 33 44"
-                label={text('Your label', 'Phone number')}
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
                 status={radios('Status', formStatusOptions, formStatusDefault)}
-                hasShadow={boolean('With shadow', false)}
                 marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
                 marginBottom={select(
                     'Margin bottom',
                     spaceOptions,
                     spaceOptions.md,
+                )}
+                fieldSize={radios(
+                    'Field size',
+                    buttonSizeOptions,
+                    buttonSizeDefault,
                 )}
             />
         ),
