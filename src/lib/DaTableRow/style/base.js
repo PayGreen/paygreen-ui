@@ -61,11 +61,6 @@ const toggableStyle = css`
     }
 `;
 
-const activeStyle = css`
-    background-color: ${props => props.theme.wab.grey10};
-    font-weight: ${props => props.theme.font.weight.bold};
-`;
-
 const hoverStyle = css`
     box-shadow: ${props =>
         props.theme.shadow.size.none +
@@ -74,9 +69,13 @@ const hoverStyle = css`
             props.theme.shadow.opacity.none,
             props.theme.wab.black00,
         )};
+    background-color: ${props => transparentize(1, props.theme.wab.white10)};
+
+    @media (${props => props.theme.query.max.lg}) {
+        background-color: ${props => props.theme.wab.white10};
+    }
 
     &:hover {
-        background-color: ${props => props.theme.wab.white00};
         box-shadow: ${props =>
             props.theme.shadow.size.xs +
             ' ' +
@@ -84,6 +83,20 @@ const hoverStyle = css`
                 props.theme.shadow.opacity.sm,
                 props.theme.wab.black00,
             )};
+        background-color: ${props => props.theme.wab.white00};
+
+        @media (${props => props.theme.query.max.lg}) {
+            background-color: ${props => props.theme.wab.white00};
+        }
+    }
+`;
+
+const activeStyle = css`
+    font-weight: ${props => props.theme.font.weight.bold};
+    background-color: ${props => props.theme.wab.grey10};
+
+    @media (${props => props.theme.query.max.lg}) {
+        background-color: ${props => props.theme.wab.grey10};
     }
 `;
 

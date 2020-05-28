@@ -16,7 +16,6 @@ const DaTableCellBase = styled.div`
         display: table-cell;
         vertical-align: middle;
         padding: ${props => props.theme.space.md};
-        text-align: center;
 
         ${props => props.isCheckbox ? null : borderRight};
 

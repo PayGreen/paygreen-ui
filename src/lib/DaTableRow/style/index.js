@@ -3,10 +3,9 @@ import { gridTemplate } from './constants';
 import { cellsAreas, toggableStyle, activeStyle, hoverStyle } from './base';
 
 const DaTableRowBase = styled.div`
-    background-color: ${props => props.theme.wab.white10};
     transition: all ${props => props.theme.transition.sm};
-    ${props => (props.isActive ? activeStyle : null)};
     ${hoverStyle};
+    ${props => (props.isActive ? activeStyle : null)};
 
     @media (${props => props.theme.query.max.lg}) {
         margin: ${props => props.theme.space.xs};
@@ -32,6 +31,10 @@ const DaTableRowBase = styled.div`
 
     @media (${props => props.theme.query.min.lg}) {
         display: table-row;
+
+        .cell-checkbox {
+            padding-right: 0;
+        }
     }
 `;
 
