@@ -37,6 +37,8 @@ class DaInput extends PureComponent {
             blockWidth,
             marginTop,
             marginBottom,
+            fieldSize,
+            hasHelpButton,
 
             // remove mask from rest
             mask,
@@ -64,24 +66,15 @@ class DaInput extends PureComponent {
                         inputType={this.props.type}
                         inputReadOnly={this.props.readOnly}
                         inputDisabled={this.props.disabled}
-                        hasShadow={hasShadow}
-                        blockWidth={blockWidth}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
+                        fieldSize={fieldSize}
+                        hasHelpButton={hasHelpButton}
                     >
-                        {label ?
-                            <label htmlFor={this.props.id}>
-                                {label}
-                            </label>
-                            : null
-                        }
-
                         <InputMask 
                             {...rest}
                             mask={this.state.mask}
                         />
-
-                        <span></span>
                     </DaInputBase>
                 );
             }}
@@ -92,26 +85,23 @@ class DaInput extends PureComponent {
 DaInput.propTypes = {
     type: PropTypes.string,
     id: PropTypes.string,
-    label: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     status: PropTypes.oneOf(Object.values(formStatusOptions)),
-    hasShadow: PropTypes.bool,
-    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     mask: PropTypes.string,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    hasHelpButton: PropTypes.bool,
 };
 
 DaInput.defaultProps = {
     type: 'text',
     status: formStatusDefault,
-    hasShadow: false,
-    blockWidth: inputWidthDefault,
     marginTop: spaceOptions.md,
     marginBottom: spaceOptions.md,
     fieldSize: buttonSizeDefault,
+    hasHelpButton: false,
 };
 
 export default DaInput;
