@@ -132,7 +132,7 @@ const sampleRows = [
     },
     {
         date: '18/05/2020',
-        name: 'Pierrick Émortis',
+        name: 'Pierrick Aimor-Tis',
         amount: '71.05',
         type: 'Cash',
         status: 'refused',
