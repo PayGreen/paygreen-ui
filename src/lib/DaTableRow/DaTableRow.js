@@ -36,10 +36,10 @@ const DaTableRow = props => {
                         className = 'cell-checkbox';
                     } else if (child.props.isMain) {
                         mainIndex++;
-                        className = 'cell-main-' + mainIndex;
+                        className = 'cell-main cell-main-' + mainIndex;
                     } else {
                         basicIndex++;
-                        className = 'cell-basic-' + basicIndex;
+                        className = 'cell-basic cell-basic-' + basicIndex;
                     }
 
                     return React.cloneElement(child, {
@@ -51,8 +51,12 @@ const DaTableRow = props => {
     );
 };
 
-DaTableRow.propTypes = {};
+DaTableRow.propTypes = {
+    isActive: PropTypes.bool,
+};
 
-DaTableRow.defaultProps = {};
+DaTableRow.defaultProps = {
+    isActive: false,
+};
 
 export default DaTableRow;
