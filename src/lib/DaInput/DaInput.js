@@ -1,106 +1,67 @@
-import React, { PureComponent } from 'react';
-import { Transition } from 'react-transition-group';
+import React, { useState, useEffect } from 'react';
 import InputMask from 'react-input-mask';
 import PropTypes from 'prop-types';
 import {
-    formStatusOptions,
-    formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    spaceOptions,
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
 import { DaInputBase } from './style';
 
-class DaInput extends PureComponent {
-    constructor(props) {
-        super(props);
+const DaInput = props => {
+    const [stateMask, setMask] = useState('');
+    const {
+        fieldSize,
+        blockWidth,
+        hasHelpButton,
+        type,
+        // remove mask from rest
+        mask,
 
-        this.state = {
-            mask: '',
-            status: props.status
-        };
-        
-        if (props.mask && props.mask.length) {
-            this.state.mask = props.mask;
-        } else if (props.type === 'tel') {
-            this.state.mask = '+99 (0)9 99 99 99 99';
+        ...rest
+    } = props;
+
+    useEffect(() => {
+        if (mask && mask.length) {
+            setMask(mask);
+        } else if (type === 'tel') {
+            setMask('+99 (0)9 99 99 99 99');
         }
-    }
+    }, [type, mask]);
 
-    render() {
-        const {
-            status,
-            label,
-            hasShadow,
-            blockWidth,
-            marginTop,
-            marginBottom,
-            fieldSize,
-            hasHelpButton,
-
-            // remove mask from rest
-            mask,
-            
-            ...rest
-        } = this.props;
-
-        let animation = false;
-        if (status !== this.state.status) {
-            animation = true;
-
-            setTimeout(() => {
-                animation =  false;
-                this.setState({status: status});
-            }, 1);
-        }
-
-        return <Transition in={animation} timeout={900}>
-            {(keyframe) => {
-                return (
-                    <DaInputBase
-                        keyframe={keyframe}
-                        theme={this.props.theme} // not necessary, only needed for tests
-                        status={status}
-                        inputType={this.props.type}
-                        inputReadOnly={this.props.readOnly}
-                        inputDisabled={this.props.disabled}
-                        marginTop={marginTop}
-                        marginBottom={marginBottom}
-                        fieldSize={fieldSize}
-                        hasHelpButton={hasHelpButton}
-                    >
-                        <InputMask 
-                            {...rest}
-                            mask={this.state.mask}
-                        />
-                    </DaInputBase>
-                );
-            }}
-        </Transition>;
-    }
-}
+    return (
+        <DaInputBase
+            theme={props.theme} // not necessary, only needed for tests
+            inputType={props.type}
+            inputReadOnly={props.readOnly}
+            inputDisabled={props.disabled}
+            fieldSize={fieldSize}
+            blockWidth={blockWidth}
+            hasHelpButton={hasHelpButton}
+        >
+            <InputMask {...rest} mask={stateMask} />
+        </DaInputBase>
+    );
+};
 
 DaInput.propTypes = {
     type: PropTypes.string,
     id: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    status: PropTypes.oneOf(Object.values(formStatusOptions)),
-    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
-    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     mask: PropTypes.string,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
 };
 
 DaInput.defaultProps = {
     type: 'text',
-    status: formStatusDefault,
-    marginTop: spaceOptions.md,
-    marginBottom: spaceOptions.md,
+    disabled: false,
+    readOnly: false,
     fieldSize: buttonSizeDefault,
+    blockWidth: inputWidthDefault,
     hasHelpButton: false,
 };
 

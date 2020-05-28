@@ -1,19 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    boolean,
-    radios,
-    select,
-    text,
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
 import {
     folder,
-    formStatusOptions,
-    formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    spaceOptions,
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
@@ -29,17 +20,15 @@ storiesOf(folder.form + 'DaInput', module)
                 placeholder="Firstname Lastname"
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
-                status={radios('Status', formStatusOptions, formStatusDefault)}
-                marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
-                marginBottom={select(
-                    'Margin bottom',
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
                 fieldSize={radios(
                     'Field size',
                     buttonSizeOptions,
                     buttonSizeDefault,
+                )}
+                blockWidth={radios(
+                    'Block width',
+                    inputWidthOptions,
+                    inputWidthDefault,
                 )}
                 hasHelpButton={boolean('Help button', false)}
             />
@@ -58,18 +47,12 @@ storiesOf(folder.form + 'DaInput', module)
                 placeholder="+33 (0)6 11 22 33 44"
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
-                status={radios('Status', formStatusOptions, formStatusDefault)}
-                marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
-                marginBottom={select(
-                    'Margin bottom',
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
                 fieldSize={radios(
                     'Field size',
                     buttonSizeOptions,
                     buttonSizeDefault,
                 )}
+                hasHelpButton={boolean('Help button', false)}
             />
         ),
         {

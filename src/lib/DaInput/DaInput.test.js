@@ -9,7 +9,6 @@ it('renders without crashing', () => {
             theme={ThemeDefault}
             id="testId1"
             placeholder="Firstname Lastname"
-            label="Your name"
         />
     );
     expect(daInputText.toJSON()).toMatchSnapshot();
