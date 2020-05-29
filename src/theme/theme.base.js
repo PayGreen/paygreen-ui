@@ -287,7 +287,7 @@ export const ThemeBase = {
             lg: '6px',
         },
         font: {
-            sm: '1.2rem',
+            sm: '1.35rem',
             md: '1.4rem',
             lg: '1.8rem',
         },
