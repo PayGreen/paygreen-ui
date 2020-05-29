@@ -15,6 +15,7 @@ const DaInputBase = styled.div`
             color: ${props => props.theme.wab.grey30};
             font-style: italic;
         }
+        
         ${props => (props.hasHelpButton ? helpButtonStyle : null)};
     }
 `;
