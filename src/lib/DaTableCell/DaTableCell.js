@@ -17,6 +17,7 @@ const DaTableCell = props => {
         <DaTableCellBase {...props} hasLabel={label ? true : false}>
             {label}
             {content}
+            {props.field ? props.field : null}
         </DaTableCellBase>
     );
 };
@@ -26,6 +27,7 @@ DaTableCell.propTypes = {
     isCheckbox: PropTypes.bool,
     isId: PropTypes.bool,
     label: PropTypes.string,
+    field: PropTypes.element,
 };
 
 DaTableCell.defaultProps = {
