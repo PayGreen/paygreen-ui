@@ -9,7 +9,7 @@ it('renders without crashing', () => {
             theme={ThemeDefault}
             id="testId1"
             placeholder="Firstname Lastname"
-        />
+        />,
     );
     expect(daInputText.toJSON()).toMatchSnapshot();
 });

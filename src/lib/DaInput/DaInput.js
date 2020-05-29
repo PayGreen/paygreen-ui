@@ -47,7 +47,6 @@ const DaInput = props => {
 
 DaInput.propTypes = {
     type: PropTypes.string,
-    id: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     mask: PropTypes.string,
