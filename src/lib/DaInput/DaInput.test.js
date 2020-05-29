@@ -7,7 +7,6 @@ it('renders without crashing', () => {
     const daInputText = TestRenderer.create(
         <DaInput
             theme={ThemeDefault}
-            id="testId1"
             placeholder="Firstname Lastname"
         />,
     );

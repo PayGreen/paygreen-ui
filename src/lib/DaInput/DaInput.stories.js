@@ -16,7 +16,6 @@ storiesOf(folder.form + 'DaInput', module)
         'Text',
         () => (
             <DaInput
-                id="sampleId1"
                 placeholder="Firstname Lastname"
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
@@ -43,7 +42,6 @@ storiesOf(folder.form + 'DaInput', module)
         () => (
             <DaInput
                 type="tel"
-                id="sampleId2"
                 placeholder="+33 (0)6 11 22 33 44"
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
