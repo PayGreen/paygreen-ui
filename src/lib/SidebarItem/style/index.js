@@ -9,7 +9,7 @@ const SidebarItemBase = styled.div`
     display: grid;
     grid-template-areas: 'icon link button';
     grid-template-columns: ${props => props.theme.iconSize.lg} 1fr auto;
-    overflow-x: hidden;
+    overflow: hidden;
 
     & > .icon {
         grid-area: icon;
