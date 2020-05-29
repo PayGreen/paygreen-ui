@@ -1,10 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    boolean,
-    radios,
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
 import {
     folder,
     inputWidthOptions,
@@ -40,7 +36,6 @@ storiesOf(folder.form + 'DaSelect', module)
         'DaSelect',
         () => (
             <DaSelect
-                id="select1"
                 defaultValue=""
                 options={options}
                 disabled={boolean('Disabled', false)}
@@ -59,7 +54,6 @@ storiesOf(folder.form + 'DaSelect', module)
             />
         ),
         {
-            notes:
-                'You can change select width with "blockWidth" props.',
+            notes: 'You can change select width with "blockWidth" props.',
         },
     );

@@ -29,6 +29,7 @@ const DaSelectBase = styled.div`
     &::after {
         content: '';
         position: absolute;
+        pointer-events: none;
         border-top: ${props =>
                 math(
                     props.theme.daButton.buttonHeight[props.fieldSize] + '/3.5',

@@ -45,7 +45,6 @@ const DaSelect = props => {
 };
 
 DaSelect.propTypes = {
-    id: PropTypes.string,
     options: PropTypes.arrayOf(
         PropTypes.shape({
             value: PropTypes.string.isRequired,

@@ -16,7 +16,7 @@ const sampleOptions = [
     {
         value: 'second',
         text: 'Second option',
-    }
+    },
 ];
 
 it('renders without crashing', () => {
@@ -25,8 +25,7 @@ it('renders without crashing', () => {
             theme={ThemeDefault}
             id="selectId1"
             options={sampleOptions}
-            
-        />
+        />,
     );
     expect(daSelectBlock.toJSON()).toMatchSnapshot();
 });
