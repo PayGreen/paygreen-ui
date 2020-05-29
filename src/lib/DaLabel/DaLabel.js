@@ -1,29 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    colorTypeOptions,
-    colorTypeDefault,
     buttonSizeOptions,
     buttonSizeDefault,
+    labelHtmlTagOptions,
+    labelHtmlTagDefault,
 } from '../../shared/constants';
 import { DaLabelBase } from './style';
 
 const DaLabel = props => {
     return (
-        <DaLabelBase {...props}>
+        <DaLabelBase as={props.htmlTag} {...props}>
             {props.children}
         </DaLabelBase>
     );
 };
 
 DaLabel.propTypes = {
-    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    htmlTag: PropTypes.oneOf(Object.values(labelHtmlTagOptions)),
 };
 
 DaLabel.defaultProps = {
-    colorType: colorTypeDefault,
     fieldSize: buttonSizeDefault,
+    htmlTag: labelHtmlTagDefault,
 };
 
 export default DaLabel;
