@@ -12,6 +12,7 @@ import Card from './Card/Card';
 import ClickableBlock from './ClickableBlock/ClickableBlock';
 import DaTable from './DaTable/DaTable';
 import DaTableCell from './DaTableCell/DaTableCell';
+import DaTableHead from './DaTableHead/DaTableHead';
 import DaTableRow from './DaTableRow/DaTableRow';
 import Divider from './Divider/Divider';
 import Dot from './Dot/Dot';
@@ -172,6 +173,7 @@ export {
     ClickableBlock,
     DaTable,
     DaTableCell,
+    DaTableHead,
     DaTableRow,
     Divider,
     Dot,
