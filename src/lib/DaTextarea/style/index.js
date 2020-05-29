@@ -8,8 +8,8 @@ const DaTextareaBase = styled.div`
 
     ${props => (props.inputDisabled ? disabled : enabled)};
 
-        &::before,
-        &::after {
+    &::before,
+    &::after {
         content: '';
         position: absolute;
         transform: rotate(45deg);
@@ -18,8 +18,7 @@ const DaTextareaBase = styled.div`
         background-color: ${props => props.theme.wab.grey30}; 
         right: ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '/1.7')};
-        bottom: ${props =>
-            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/1.2')};
+        bottom: ${props => (props.inputDisabled || props.inputReadOnly ? math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2.6') : math(props.theme.daButton.buttonHeight[props.fieldSize] + '/1.2'))};
     }
 
     ::after {
