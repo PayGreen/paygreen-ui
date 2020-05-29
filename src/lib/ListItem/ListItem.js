@@ -63,6 +63,7 @@ ListItem.propTypes = {
     bulletSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     arrowStyle: PropTypes.oneOf(Object.values(decorationOptions)),
+    hasLink: PropTypes.bool,
 };
 
 ListItem.defaultProps = {
@@ -72,6 +73,7 @@ ListItem.defaultProps = {
     bulletSize: iconSizeDefault,
     colorTheme: colorThemeDefault,
     arrowStyle: decorationOptions.none,
+    hasLink: false,
 };
 
 export default ListItem;
