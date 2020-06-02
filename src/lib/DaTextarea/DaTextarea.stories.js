@@ -20,7 +20,6 @@ storiesOf(folder.form + 'DaTextarea', module)
         'DaTextarea',
         () => (
             <DaTextarea
-                id="textarea1"
                 placeholder="Your text&hellip;"
                 maxLength={50}
                 hasCounter={boolean('With counter', true)}

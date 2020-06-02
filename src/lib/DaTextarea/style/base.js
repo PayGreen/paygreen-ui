@@ -1,7 +1,5 @@
 import { css } from 'styled-components';
-import { transparentize } from 'polished';
 import { disabledField } from '../../Input/style/base';
-
 
 const canHover = css`
     &:hover,
@@ -17,7 +15,7 @@ const enabled = css`
         background-color: ${props => props.theme.wab.white00};
         border-color: ${props => props.theme.wab.grey10};
 
-        ${props => props.inputReadOnly ? null : canHover};
+        ${props => (props.inputReadOnly ? null : canHover)};
     }
 `;
 
@@ -29,7 +27,4 @@ const disabled = css`
     }
 `;
 
-export {
-    enabled,
-    disabled
-};
+export { enabled, disabled };

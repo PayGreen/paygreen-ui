@@ -13,21 +13,52 @@ const DaTextareaBase = styled.div`
         content: '';
         position: absolute;
         transform: rotate(45deg);
-        width: ${props => props.theme.line};
-        transform-origin: bottom center;
+        transform-origin: bottom right;
         background-color: ${props => props.theme.wab.grey30}; 
+        width: ${props => props.theme.line};
         right: ${props =>
-            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/1.7')};
-        bottom: ${props => (props.inputDisabled || props.inputReadOnly ? math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2.6') : math(props.theme.daButton.buttonHeight[props.fieldSize] + '/1.2'))};
+            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/3.5')};
+        bottom: ${props =>
+            props.hasCounter && !props.inputDisabled && !props.inputReadOnly
+                ? math(
+                      props.theme.daButton.buttonHeight[props.fieldSize] +
+                          '/3.5' +
+                          '+' +
+                          props.theme.daButton.buttonHeight[props.fieldSize] +
+                          '/1.8',
+                  )
+                : math(
+                      props.theme.daButton.buttonHeight[props.fieldSize] +
+                          '/3.5',
+                  )};
     }
 
     ::after {
-        height: ${props => math(props.theme.line + '*6')};
+        height: ${props =>
+            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
+        margin-right:
+        ${props =>
+            math(
+                'sqrt((' +
+                    props.theme.daButton.buttonHeight[props.fieldSize] +
+                    '/2)' +
+                    '^2' +
+                    '/2)',
+            )};
     }
-    
+
     ::before {
-        height: ${props => math(props.theme.line + '*10')};
-        margin-right: ${props => math(props.theme.line + '*3')};
+        height: ${props =>
+            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/3.5')};
+        margin-right:
+        ${props =>
+            math(
+                'sqrt((' +
+                    props.theme.daButton.buttonHeight[props.fieldSize] +
+                    '/3.5)' +
+                    '^2' +
+                    '/2)',
+            )};
     }
 
     textarea {
@@ -46,11 +77,6 @@ const DaTextareaBase = styled.div`
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')}
         padding: ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '/3')};
-
-            ${props =>
-                math(
-                    props.theme.daButton.buttonHeight[props.fieldSize] + '/2',
-                )};
         font-size: ${props => props.theme.daButton.font[props.fieldSize]};
         transition: all ${props => props.theme.transition.sm};
         
@@ -65,13 +91,14 @@ const DaTextareaBase = styled.div`
     }
 
     div {
-        margin-top: ${props => props.theme.space.xs};
         text-align: right;
+        line-height: ${props =>
+            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/1.8')};
         color: ${props => props.theme.wab.grey60};
         padding: 0 ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
         font-size: ${props =>
-            math(props.theme.daButton.font[props.fieldSize] + '*0.8')};
+            math(props.theme.daButton.font[props.fieldSize] + '*0.85')};
 
         span {
             font-weight: ${props => props.theme.font.weight.bold};

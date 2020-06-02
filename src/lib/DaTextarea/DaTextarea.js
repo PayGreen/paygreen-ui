@@ -33,6 +33,7 @@ const DaTextarea = props => {
     };
 
     const charactersLength = stateValue.length || 0;
+
     useEffect(() => {
         if (charactersLength > props.maxLength * 0.9) {
             setCharactersStatus(formStatusOptions.warning);
@@ -56,6 +57,7 @@ const DaTextarea = props => {
             inputReadOnly={props.readOnly}
             fieldSize={fieldSize}
             blockWidth={blockWidth}
+            hasCounter={hasCounter}
         >
             <textarea
                 {...rest}
@@ -74,7 +76,6 @@ const DaTextarea = props => {
 };
 
 DaTextarea.propTypes = {
-    id: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     minLength: PropTypes.number,
@@ -87,12 +88,14 @@ DaTextarea.propTypes = {
 
 DaTextarea.defaultProps = {
     onChange: undefined,
+    disabled: false,
+    readOnly: false,
     minLength: 0,
     maxLength: 2000,
     hasCounter: false,
     counterText: 'characters',
-    fieldSize: buttonSizeDefault,
     blockWidth: inputWidthDefault,
+    fieldSize: buttonSizeDefault,
 };
 
 export default DaTextarea;
