@@ -18,6 +18,7 @@ import DaTableCell from './DaTableCell/DaTableCell';
 import DaTableHead from './DaTableHead/DaTableHead';
 import DaTableHeadCell from './DaTableHeadCell/DaTableHeadCell';
 import DaTableRow from './DaTableRow/DaTableRow';
+import DaTextarea from './DaTextarea/DaTextarea';
 import Divider from './Divider/Divider';
 import Dot from './Dot/Dot';
 import Footer from './Footer/Footer';
@@ -185,6 +186,7 @@ export {
     DaTableHead,
     DaTableHeadCell,
     DaTableRow,
+    DaTextarea,
     Divider,
     Dot,
     Footer,
