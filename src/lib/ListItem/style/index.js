@@ -8,13 +8,18 @@ const ListItemBase = styled.span`
     padding: ${props => math(props.theme.iconSize[props.bulletSize] + '/4')};
     transition: all ${props => props.theme.transition.sm};
     ${props => bulletStyle[props.bulletStyle]};
-    ${props => props.isClickable ? clickableStyle : notClickableStyle};
+    ${props => (props.isClickable ? clickableStyle : notClickableStyle)};
 
     & > .icon,
     & > .bullet {
         grid-area: bullet;
         width: ${props => props.theme.iconSize[props.bulletSize]};
         margin-right: ${marginBase};
+    }
+
+    @media (${props => props.theme.query.max.lg}) {
+        margin-top: ${props => props.hasLink && props.theme.space.sm};
+        margin-bottom: ${props => props.hasLink && props.theme.space.sm};
     }
 `;
 
