@@ -13,9 +13,9 @@ const HRBase = styled.div`
         directionalProperty(
             'margin',
             props.theme.space[props.marginTop],
-            responsiveSpaces('margin'), // OR auto
+            responsiveSpaces('margin'),
             props.theme.space[props.marginBottom],
-            responsiveSpaces('margin'), // OR auto
+            responsiveSpaces('margin'),
         )};
 
     border: none;
