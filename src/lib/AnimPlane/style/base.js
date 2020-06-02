@@ -11,7 +11,7 @@ const planeAnimationDuration = 2;
  * @param {number} count
  */
 function dotsTransitions(count) {
-    var styles = '';
+    let styles = '';
 
     for (let i = 1; i < count; i++) {
         styles += `

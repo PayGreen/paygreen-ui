@@ -1,5 +1,5 @@
 function gridTemplateTop(mainCount, hasCheckbox) {
-    var template = '';
+    let template = '';
 
     for (let i = 1; i < mainCount; i++) {
         template += ' main-' + i;
@@ -11,10 +11,10 @@ function gridTemplateTop(mainCount, hasCheckbox) {
 }
 
 function gridTemplateBottom(mainCount, notMainCount) {
-    var template = '';
+    let template = '';
 
     for (let i = 1; i <= notMainCount; i++) {
-        var row = '';
+        let row = '';
 
         for (let j = 1; j <= mainCount; j++) {
             row += ' basic-' + i;
