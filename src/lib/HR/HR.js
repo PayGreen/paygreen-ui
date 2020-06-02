@@ -26,12 +26,10 @@ HR.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
-
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
-
-    opacity: PropTypes.number,
+    opacity: PropTypes.number, // Range 0(transparent) to 100(opaque)
 };
 
 HR.defaultProps = {
@@ -40,12 +38,10 @@ HR.defaultProps = {
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,
     colorStatus: formStatusDefault,
-
     marginLateral: spaceDefault,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
-
-    opacity: 100, // Range 0(transparent) to 100(opaque)
+    opacity: 100,
 };
 
 export default HR;

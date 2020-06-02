@@ -30,7 +30,7 @@ const HRBase = styled.div`
             ? props.theme.wab[props.colorWab]
             : props.theme.wab.black00};
     opacity: ${props => props.opacity / 100}
-    height: 1px;
+    height: ${props => props.theme.line};
 `;
 
 export { HRBase };
