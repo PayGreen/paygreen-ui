@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
 
+const borderNone = 'none';
+
 const ClickableBlockBase = styled.div`
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
-
     padding: ${props => props.theme.space.xs};
-    border-top: ${props =>
-        props.borderTop ? props.theme.wab.grey10 + ' solid 1px' : 'none'};
-    border-right: ${props =>
-        props.borderRight ? props.theme.wab.grey10 + ' solid 1px' : 'none'};
-    border-left: ${props =>
-        props.borderLeft ? props.theme.wab.grey10 + ' solid 1px' : 'none'};
-    border-bottom: ${props =>
-        props.borderBottom ? props.theme.wab.grey10 + ' solid 1px' : 'none'};
+    border: ${props => ' solid ' + props.theme.line + props.theme.wab.grey10};
+    border-top: ${props => (props.borderTop ? null : borderNone)};
+    border-right: ${props => (props.borderRight ? null : borderNone)};
+    border-left: ${props => (props.borderLeft ? null : borderNone)};
+    border-bottom: ${props => (props.borderBottom ? null : borderNone)};
+    transition: all ${props => props.theme.transition.xs};
 
     &:hover {
         background-color: ${props =>
@@ -21,10 +21,7 @@ const ClickableBlockBase = styled.div`
                 props.theme.shadow.opacity.lg,
                 props.theme.wab.grey10,
             )};
-        cursor: pointer;
     }
-
-    transition: background-color ${props => props.theme.transition.sm};
 `;
 
 export { ClickableBlockBase };

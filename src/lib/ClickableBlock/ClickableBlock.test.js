@@ -5,7 +5,7 @@ import ClickableBlock from './ClickableBlock';
 
 it('renders without crashing', () => {
     const clickableBlock = TestRenderer.create(
-        <ClickableBlock theme={ThemeDefault}></ClickableBlock>,
+        <ClickableBlock theme={ThemeDefault}>Un ClickableBlock</ClickableBlock>,
     );
     expect(clickableBlock.toJSON()).toMatchSnapshot();
 });

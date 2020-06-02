@@ -5,27 +5,26 @@ import {
     rotateSizeOptions,
     rotateSizeDefault,
     colorPalletOptions,
-    greyDefault,
+    spaceOptions,
 } from '../../shared/constants';
 import { ClickableBlockBase } from './style';
 import { ArrowBottomIcon } from '../Icon/Icon';
 
 const ClickableBlock = props => {
     const [isActive, setActive] = useState(false);
-    const onClick = () => setActive(!isActive);
 
     return (
-        <ClickableBlockBase onClick={onClick} {...props}>
+        <ClickableBlockBase onClick={() => setActive(!isActive)} {...props}>
             {props.children}
+
             <ArrowBottomIcon
                 theme={props.theme} // not necessary, only needed for tests
-                hasBackground={false}
                 rotateSize={
                     isActive ? rotateSizeOptions.d180 : rotateSizeDefault
                 }
-                iconSize={iconSizeOptions.lg}
+                iconSize={iconSizeOptions.md}
                 colorPallet={colorPalletOptions.wab}
-                colorWab={greyDefault}
+                marginLeft={spaceOptions.xs}
             />
         </ClickableBlockBase>
     );

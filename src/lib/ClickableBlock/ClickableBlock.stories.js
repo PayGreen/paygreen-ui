@@ -5,11 +5,7 @@ import {
     folder,
     imageTypeOptions,
     imageSizeOptions,
-    shadowSizeOptions,
-    displayOptions,
-    spaceOptions,
 } from '../../shared/constants';
-import InternalGrid from '../InternalGrid/InternalGrid';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Image from '../Image/Image';
@@ -28,20 +24,15 @@ storiesOf(folder.main + 'ClickableBlock', module)
             <Image
                 imageType={imageTypeOptions.picture}
                 isCircle={true}
-                blockWidth={imageSizeOptions.sm}
-                blockHeight={imageSizeOptions.auto}
-                shadowSize={shadowSizeOptions.none}
+                blockWidth={imageSizeOptions.xs}
             >
                 <img src={portraitFile} alt="picture" />
             </Image>
 
-            <InternalGrid
-                displayType={displayOptions.column}
-                childrenMarginLateral={spaceOptions.sm}
-            >
+            <div>
                 <Title>Olivia Gometz</Title>
 
                 <Text>Le colis du boucher</Text>
-            </InternalGrid>
+            </div>
         </ClickableBlock>
     ));
