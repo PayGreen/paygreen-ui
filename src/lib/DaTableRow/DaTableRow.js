@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import { DaTableRowBase } from './style';
 
 const DaTableRow = props => {
+    let hasId = false;
     let hasCheckbox = false;
     let mainCellCount = 0;
     let notMainCellCount = 0;
 
     React.Children.map(props.children, child => {
+        if (child.props.isId) {
+            hasId = true;
+        }
+
         if (child.props.isMain) {
             mainCellCount++;
 
@@ -26,6 +31,7 @@ const DaTableRow = props => {
     return (
         <DaTableRowBase
             {...props}
+            hasId={hasId}
             hasCheckbox={hasCheckbox}
             mainCellCount={mainCellCount}
             notMainCellCount={notMainCellCount}

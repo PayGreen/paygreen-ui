@@ -34,4 +34,20 @@ function gridTemplate(mainCount, notMainCount, hasCheckbox) {
     );
 }
 
-export { gridTemplate };
+function gridColumns(mainCount, hasCheckbox, hasId) {
+    const idCell = hasId ? 'auto ' : '';
+    const checkboxCell = hasCheckbox ? ' min-content' : '';
+    let basicCells = parseInt(mainCount);
+
+    if (hasCheckbox) {
+        basicCells--;
+    }
+
+    if (hasId) {
+        basicCells--;
+    }
+
+    return idCell + 'repeat(' + basicCells + ', 1fr)' + checkboxCell;
+}
+
+export { gridTemplate, gridColumns };

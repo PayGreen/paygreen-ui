@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { gridTemplate } from './constants';
+import { gridTemplate, gridColumns } from './constants';
 import { cellsAreas, toggableStyle, activeStyle, hoverStyle } from './base';
 
 const DaTableRowBase = styled.div`
@@ -18,12 +18,7 @@ const DaTableRowBase = styled.div`
                 props.notMainCellCount,
                 props.hasCheckbox,
             )};
-        grid-template-columns: ${props =>
-            props.hasCheckbox
-                ? 'repeat(' +
-                  parseInt(props.mainCellCount - 1) +
-                  ', auto) min-content'
-                : 'repeat(' + props.mainCellCount + ', auto)'};
+        grid-template-columns: ${props => gridColumns(props.mainCellCount, props.hasCheckbox, props.hasId)};
 
         ${cellsAreas};
         ${toggableStyle};
