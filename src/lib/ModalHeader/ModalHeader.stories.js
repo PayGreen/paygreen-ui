@@ -4,7 +4,6 @@ import { withKnobs, text, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
-    greyOptions,
     iconSizeOptions,
     iconHtmlTagOptions,
     fontSizeOptions,
@@ -20,26 +19,22 @@ storiesOf(folder.main + folder.sub.modal + 'ModalHeader', module)
     .add('ModalHeader', () => (
         <ModalHeader
             paddingLateral={select(
-                "ModalHeader's lateral paddings",
+                "Lateral padding",
                 spaceOptions,
-                spaceDefault,
+                spaceOptions.sm,
             )}
             paddingTop={select(
-                "ModalHeader's padding top",
+                "Padding top",
                 spaceOptions,
-                spaceDefault,
+                spaceOptions.sm,
             )}
             paddingBottom={select(
-                "ModalHeader's padding bottom",
+                "Padding bottom",
                 spaceOptions,
-                spaceDefault,
+                spaceOptions.sm,
             )}
         >
-            <Title
-                colorPallet={colorPalletOptions.wab}
-                colorWab={greyOptions.grey40}
-                textSize={fontSizeOptions.md}
-            >
+            <Title textSize={fontSizeOptions.md}>
                 {text('Label', 'This is the Title')}
             </Title>
 
@@ -47,7 +42,6 @@ storiesOf(folder.main + folder.sub.modal + 'ModalHeader', module)
                 htmlTag={iconHtmlTagOptions.button}
                 iconSize={iconSizeOptions.md}
                 colorPallet={colorPalletOptions.wab}
-                colorWab={greyOptions.grey40}
             />
         </ModalHeader>
     ));

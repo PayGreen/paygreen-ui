@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { blockWidthOptions, blockWidthDefault } from '../../shared/constants';
 import { ModalBase } from './style';
 
 const Modal = props => {

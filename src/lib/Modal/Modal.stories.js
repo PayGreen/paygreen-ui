@@ -6,7 +6,6 @@ import {
     blockWidthOptions,
     blockWidthDefault,
     colorPalletOptions,
-    greyOptions,
     iconSizeOptions,
     iconHtmlTagOptions,
     fontSizeOptions,
@@ -20,13 +19,14 @@ import ModalHeader from '../ModalHeader/ModalHeader';
 import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from '../ModalContent/ModalContent';
 import { Overlay } from './style';
+import Text from '../Text/Text';
+
+const paddingLateral = 'Lateral padding';
 
 storiesOf(folder.main + folder.sub.modal + 'Modal', module)
     .addDecorator(withKnobs)
     .add('Modal', () => (
-        <Modal
-            isOpen={boolean('is Open', true)}
-        >
+        <Modal isOpen={boolean('is Open', true)}>
             <Overlay />
 
             <ModalContent
@@ -38,26 +38,22 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
             >
                 <ModalHeader
                     paddingLateral={select(
-                        "ModalHeader's lateral paddings",
+                        paddingLateral,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.sm,
                     )}
                     paddingTop={select(
                         "ModalHeader's padding top",
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.sm,
                     )}
                     paddingBottom={select(
                         "ModalHeader's padding bottom",
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.sm,
                     )}
                 >
-                    <Title
-                        colorPallet={colorPalletOptions.wab}
-                        colorWab={greyOptions.grey40}
-                        textSize={fontSizeOptions.md}
-                    >
+                    <Title textSize={fontSizeOptions.md}>
                         {text('Label', 'This is the Title')}
                     </Title>
 
@@ -65,31 +61,30 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
                         htmlTag={iconHtmlTagOptions.button}
                         iconSize={iconSizeOptions.md}
                         colorPallet={colorPalletOptions.wab}
-                        colorWab={greyOptions.grey40}
                     />
                 </ModalHeader>
 
                 <ModalBody
                     paddingLateral={select(
-                        "ModalBody's lateral paddings",
+                        paddingLateral,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.sm,
                     )}
                     paddingTop={select(
                         "ModalBody's padding top",
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.none,
                     )}
                     paddingBottom={select(
                         "ModalBody's padding bottom",
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.sm,
                     )}
                 >
-                    <div>
+                    <Text>
                         Curabitur congue varius ex et posuere. Maecenas
                         tincidunt diam ut nisl porttitor scelerisque.
-                    </div>
+                    </Text>
                 </ModalBody>
             </ModalContent>
         </Modal>

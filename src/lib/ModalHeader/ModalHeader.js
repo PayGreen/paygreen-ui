@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { spaceOptions, spaceDefault } from '../../shared/constants';
+import { spaceOptions } from '../../shared/constants';
 import { ModalHeaderBase } from './style';
 
 const ModalHeader = props => {
@@ -14,9 +14,9 @@ ModalHeader.propTypes = {
 };
 
 ModalHeader.defaultProps = {
-    paddingLateral: spaceDefault,
-    paddingTop: spaceDefault,
-    paddingBottom: spaceDefault,
+    paddingLateral:  spaceOptions.sm,
+    paddingTop:  spaceOptions.sm,
+    paddingBottom:  spaceOptions.sm,
 };
 
 export default ModalHeader;

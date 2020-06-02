@@ -14,9 +14,9 @@ ModalBody.propTypes = {
 };
 
 ModalBody.defaultProps = {
-    paddingLateral: spaceDefault,
-    paddingTop: spaceDefault,
-    paddingBottom: spaceDefault,
+    paddingLateral:  spaceOptions.sm,
+    paddingTop:  spaceOptions.sm,
+    paddingBottom:  spaceOptions.sm,
 };
 
 export default ModalBody;

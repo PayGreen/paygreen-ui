@@ -3,30 +3,31 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { folder, spaceOptions, spaceDefault } from '../../shared/constants';
 import ModalBody from './ModalBody';
+import Text from '../Text/Text';
 
 storiesOf(folder.main + folder.sub.modal + 'ModalBody', module)
     .addDecorator(withKnobs)
     .add('ModalBody', () => (
         <ModalBody
             paddingLateral={select(
-                "ModalBody's lateral paddings",
+                "Lateral padding",
                 spaceOptions,
-                spaceDefault,
+                spaceOptions.sm,
             )}
             paddingTop={select(
-                "ModalBody's padding top",
+                "Padding top",
                 spaceOptions,
-                spaceDefault,
+                spaceOptions.sm,
             )}
             paddingBottom={select(
-                "ModalBody's padding bottom",
+                "Padding bottom",
                 spaceOptions,
-                spaceDefault,
+                spaceOptions.sm,
             )}
         >
-            <div>
+            <Text>
                 Curabitur congue varius ex et posuere. Maecenas tincidunt diam
                 ut nisl porttitor scelerisque.
-            </div>
+            </Text>
         </ModalBody>
     ));
