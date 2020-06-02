@@ -18,8 +18,8 @@ const ListItemBase = styled.span`
     }
 
     @media (${props => props.theme.query.max.lg}) {
-        margin-top: ${props => props.hasLink && '8px'};
-        margin-bottom: ${props => props.hasLink && '8px'};
+        margin-top: ${props => props.hasLink && props.theme.space.sm};
+        margin-bottom: ${props => props.hasLink && props.theme.space.sm};
     }
 `;
 

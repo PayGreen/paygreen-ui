@@ -11,8 +11,8 @@ const FooterListBase = styled.ul`
 
     & > li {
         @media (${props => props.theme.query.max.lg}) {
-            margin-top: ${'8px'};
-            margin-bottom: ${'8px'};
+            margin-top: ${props => props.theme.space.sm};
+            margin-bottom: ${props => props.theme.space.sm};
         }
     }
 `;
