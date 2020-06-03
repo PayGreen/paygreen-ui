@@ -17,6 +17,7 @@ const folder = {
         list: 'Ordinary list' + subFolderSeparator,
         menu: 'Menu elements' + subFolderSeparator,
         sidebarMenu: 'Sidebar elements' + subFolderSeparator,
+        modal: 'Modal elements' + subFolderSeparator,
         structure: 'Grids' + subFolderSeparator,
         table: 'Simple tables'  + subFolderSeparator,
         daTable: 'DaTables'  + subFolderSeparator,
