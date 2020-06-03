@@ -14,7 +14,7 @@ exports[`renders without crashing 1`] = `
         className="sc-ifAKCX fEQmoB"
       >
         <span
-          className="sc-bwzfXH kIRMFA"
+          className="sc-bwzfXH ixqcHG"
         >
           About us
         </span>
@@ -31,7 +31,7 @@ exports[`renders without crashing 1`] = `
         className="sc-ifAKCX UlSBY"
       >
         <span
-          className="sc-bwzfXH kIRMFA"
+          className="sc-bwzfXH ixqcHG"
         >
           Other products
         </span>
@@ -48,7 +48,7 @@ exports[`renders without crashing 1`] = `
             className="sc-ifAKCX kmpSbK"
           >
             <span
-              className="sc-bdVaJa fAXFGG icon"
+              className="sc-bdVaJa ZZzwg icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -59,7 +59,7 @@ exports[`renders without crashing 1`] = `
               </svg>
             </span>
             <span
-              className="sc-bwzfXH dFoyuL"
+              className="sc-bwzfXH ifokyD"
             >
               Tree
             </span>
@@ -79,7 +79,7 @@ exports[`renders without crashing 1`] = `
             className="sc-ifAKCX kmpSbK"
           >
             <span
-              className="sc-bdVaJa fAXFGG icon"
+              className="sc-bdVaJa ZZzwg icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -96,7 +96,7 @@ exports[`renders without crashing 1`] = `
               </svg>
             </span>
             <span
-              className="sc-bwzfXH dFoyuL"
+              className="sc-bwzfXH ifokyD"
             >
               Payment
             </span>
@@ -104,7 +104,7 @@ exports[`renders without crashing 1`] = `
               className="sc-htpNat dVhAo"
             >
               <span
-                className="sc-bdVaJa evZlmj icon"
+                className="sc-bdVaJa iRoBkx icon"
               >
                 <svg
                   viewBox="0 0 143 143"

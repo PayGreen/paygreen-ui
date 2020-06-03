@@ -5,7 +5,7 @@ exports[`renders without crashing 1`] = `
   href="#"
 >
   <div
-    className="sc-htpNat eTdRKT"
+    className="sc-htpNat gBtqyB"
   >
     <span
       className="sc-bdVaJa ZZzwg icon"
@@ -22,7 +22,7 @@ exports[`renders without crashing 1`] = `
       </svg>
     </span>
     <span
-      className="sc-bwzfXH dFoyuL"
+      className="sc-bwzfXH ifokyD"
     >
       Payment
     </span>

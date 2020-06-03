@@ -25,14 +25,14 @@ exports[`renders without crashing 1`] = `
         </svg>
       </span>
       <span
-        className="sc-bwzfXH dFoyuL"
+        className="sc-bwzfXH ifokyD"
       >
         Payment
       </span>
     </div>
   </a>
   <ul
-    className="sc-ifAKCX eeGJct"
+    className="sc-ifAKCX fjrFMS"
   >
     <li>
       <a
@@ -42,7 +42,7 @@ exports[`renders without crashing 1`] = `
           className="sc-htpNat gBtqyB"
         >
           <span
-            className="sc-bwzfXH dFoyuL"
+            className="sc-bwzfXH ifokyD"
           >
             Tree
           </span>
@@ -57,7 +57,7 @@ exports[`renders without crashing 1`] = `
           className="sc-htpNat gBtqyB"
         >
           <span
-            className="sc-bwzfXH dFoyuL"
+            className="sc-bwzfXH ifokyD"
           >
             Other
           </span>
