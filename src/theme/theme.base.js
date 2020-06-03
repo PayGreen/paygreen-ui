@@ -276,11 +276,6 @@ export const ThemeBase = {
             md: '38px',
             lg: '44px',
         },
-        paddingWidth: {
-            sm: '22px',
-            md: '26px',
-            lg: '30px',
-        },
         shift: {
             sm: '2px',
             md: '4px',
@@ -289,7 +284,7 @@ export const ThemeBase = {
         font: {
             sm: '1.35rem',
             md: '1.4rem',
-            lg: '1.8rem',
+            lg: '1.7rem',
         },
         iconSpacing: {
             sm: '0.9rem',

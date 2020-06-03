@@ -30,7 +30,10 @@ DaButton.propTypes = {
     buttonStyle: PropTypes.oneOf(Object.values(buttonStyleOptions)),
     buttonSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
+    colorPallet: PropTypes.oneOf([
+        colorPalletOptions.theme,
+        colorPalletOptions.status,
+    ]),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     gradient: PropTypes.oneOf(Object.values(gradientOptions)),

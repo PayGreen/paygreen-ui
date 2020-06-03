@@ -33,38 +33,38 @@ const colorPalletBase = css`
     }
 `;
 
+const gradientThemeBase = css`
+    background-image: linear-gradient(
+        to bottom right,
+        ${mainColor.gradientBase},
+        ${mainColor.gradientShade}
+    );
+`;
+
+const gradientBrandBase = css`
+    background-image: linear-gradient(
+        to bottom right,
+        ${mainColor.primary},
+        ${mainColor.secondary}
+    );
+`;
+
 const originalStyle = {
     fill: {
         brand: css`
             ${whiteBase};
-            background-image: linear-gradient(
-                to bottom right,
-                ${mainColor.primary},
-                ${mainColor.secondary}
-            );
+            ${gradientBrandBase};
 
             &::before {
-                background-image: linear-gradient(
-                    to bottom right,
-                    ${mainColor.primary},
-                    ${mainColor.secondary}
-                );
+                ${gradientBrandBase};
             }
         `,
         theme: css`
             ${whiteBase};
-            background-image: linear-gradient(
-                to bottom right,
-                ${mainColor.gradientBase},
-                ${mainColor.gradientShade}
-            );
+            ${gradientThemeBase};
 
             &::before {
-                background-image: linear-gradient(
-                    to bottom right,
-                    ${mainColor.gradientBase},
-                    ${mainColor.gradientShade}
-                );
+                ${gradientThemeBase};
             }
         `,
         none: css`
@@ -90,11 +90,7 @@ const originalStyle = {
             }
 
             &::before {
-                background-image: linear-gradient(
-                    to bottom right,
-                    ${mainColor.primary},
-                    ${mainColor.secondary}
-                );
+                ${gradientBrandBase};
             }
         `,
         theme: css`
@@ -109,11 +105,7 @@ const originalStyle = {
             }
 
             &::before {
-                background-image: linear-gradient(
-                    to bottom right,
-                    ${mainColor.gradientBase},
-                    ${mainColor.gradientShade}
-                );
+                ${gradientThemeBase};
             }
         `,
         none: css`

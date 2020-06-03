@@ -1,3 +1,6 @@
+import { buttonStyleOptions } from '../../../shared/constants';
+import { math } from 'polished';
+
 const mainColor = {
     theme: props => props.theme.color[props.colorTheme].main,
     status: props => props.theme.color.status[props.colorStatus].main,
@@ -8,4 +11,13 @@ const mainColor = {
     secondary: props => props.theme.color.secondary.main,
 };
 
-export { mainColor };
+const backgroundCalc = props =>
+    props.buttonStyle === buttonStyleOptions.line
+        ? math(
+              props.theme.daButton.shift[props.buttonSize] +
+                  '+' +
+                  props.theme.line,
+          )
+        : props.theme.daButton.shift[props.buttonSize];
+
+export { backgroundCalc, mainColor };
