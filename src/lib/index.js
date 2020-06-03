@@ -13,6 +13,7 @@ import DaButton from './DaButton/DaButton';
 import DaTable from './DaTable/DaTable';
 import DaTableCell from './DaTableCell/DaTableCell';
 import DaTableHead from './DaTableHead/DaTableHead';
+import DaTableHeadCell from './DaTableHeadCell/DaTableHeadCell';
 import DaTableRow from './DaTableRow/DaTableRow';
 import Divider from './Divider/Divider';
 import Dot from './Dot/Dot';
@@ -174,6 +175,7 @@ export {
     DaTable,
     DaTableCell,
     DaTableHead,
+    DaTableHeadCell,
     DaTableRow,
     Divider,
     Dot,
