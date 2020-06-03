@@ -54,6 +54,8 @@ import ModalBody from './ModalBody/ModalBody';
 import ModalContent from './ModalContent/ModalContent';
 import Overlay from './Overlay/Overlay';
 import Popin from './Popin/Popin';
+import Radio from './Radio/Radio';
+import RadioGroup from './RadioGroup/RadioGroup';
 import RadioIcon from './RadioIcon/RadioIcon';
 import Select from './Select/Select';
 import Sidebar from './Sidebar/Sidebar';
@@ -226,6 +228,8 @@ export {
     ModalContent,
     Overlay,
     Popin,
+    Radio,
+    RadioGroup,
     RadioIcon,
     Select,
     Sidebar,
