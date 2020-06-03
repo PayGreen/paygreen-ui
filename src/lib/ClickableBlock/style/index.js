@@ -8,7 +8,7 @@ const ClickableBlockBase = styled.div`
     display: inline-flex;
     align-items: center;
     padding: ${props => props.theme.space.xs};
-    border: ${props => ' solid ' + props.theme.line + props.theme.wab.grey10};
+    border: solid ${props => props.theme.line + props.theme.wab.grey10};
     border-top: ${props => (props.borderTop ? null : borderNone)};
     border-right: ${props => (props.borderRight ? null : borderNone)};
     border-left: ${props => (props.borderLeft ? null : borderNone)};
