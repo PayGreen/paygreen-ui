@@ -14,9 +14,9 @@ ModalHeader.propTypes = {
 };
 
 ModalHeader.defaultProps = {
-    paddingLateral:  spaceOptions.sm,
-    paddingTop:  spaceOptions.sm,
-    paddingBottom:  spaceOptions.sm,
+    paddingLateral: spaceOptions.sm,
+    paddingTop: spaceOptions.sm,
+    paddingBottom: spaceOptions.sm,
 };
 
 export default ModalHeader;

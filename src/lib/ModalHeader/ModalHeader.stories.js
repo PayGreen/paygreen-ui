@@ -8,7 +8,6 @@ import {
     iconHtmlTagOptions,
     fontSizeOptions,
     spaceOptions,
-    spaceDefault,
 } from '../../shared/constants';
 import ModalHeader from './ModalHeader';
 import Title from '../Title/Title';
@@ -19,17 +18,13 @@ storiesOf(folder.main + folder.sub.modal + 'ModalHeader', module)
     .add('ModalHeader', () => (
         <ModalHeader
             paddingLateral={select(
-                "Lateral padding",
+                'Lateral padding',
                 spaceOptions,
                 spaceOptions.sm,
             )}
-            paddingTop={select(
-                "Padding top",
-                spaceOptions,
-                spaceOptions.sm,
-            )}
+            paddingTop={select('Padding top', spaceOptions, spaceOptions.sm)}
             paddingBottom={select(
-                "Padding bottom",
+                'Padding bottom',
                 spaceOptions,
                 spaceOptions.sm,
             )}

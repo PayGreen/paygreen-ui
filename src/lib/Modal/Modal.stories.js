@@ -10,7 +10,6 @@ import {
     iconHtmlTagOptions,
     fontSizeOptions,
     spaceOptions,
-    spaceDefault,
 } from '../../shared/constants';
 import Modal from './Modal';
 import Title from '../Title/Title';

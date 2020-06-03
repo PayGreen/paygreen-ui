@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs';
-import { folder, spaceOptions, spaceDefault } from '../../shared/constants';
+import { folder, spaceOptions } from '../../shared/constants';
 import ModalBody from './ModalBody';
 import Text from '../Text/Text';
 
@@ -10,17 +10,13 @@ storiesOf(folder.main + folder.sub.modal + 'ModalBody', module)
     .add('ModalBody', () => (
         <ModalBody
             paddingLateral={select(
-                "Lateral padding",
+                'Lateral padding',
                 spaceOptions,
                 spaceOptions.sm,
             )}
-            paddingTop={select(
-                "Padding top",
-                spaceOptions,
-                spaceOptions.sm,
-            )}
+            paddingTop={select('Padding top', spaceOptions, spaceOptions.sm)}
             paddingBottom={select(
-                "Padding bottom",
+                'Padding bottom',
                 spaceOptions,
                 spaceOptions.sm,
             )}
