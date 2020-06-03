@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { math } from 'polished';
 import { arrowBlockStyle, fieldSizeRatio } from './base';
 
-const FormMessageBase = styled.div`
+const MessageBase = styled.div`
     position: relative;
     max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
     border-radius: ${fieldSizeRatio};
@@ -11,8 +11,6 @@ const FormMessageBase = styled.div`
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-areas: 'icon text';
-    grid-column-gap: ${props =>
-        math(props.theme.daButton.buttonHeight[props.fieldSize] + '/3')};
     justify-items: center;
     background-color: ${props =>
         props.theme.color.status[props.colorStatus].light};
@@ -20,6 +18,8 @@ const FormMessageBase = styled.div`
 
     & > .icon {
         grid-area: icon;
+        margin-right: ${props =>
+            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/3')};
         svg {
             fill: ${props => props.theme.color.status[props.colorStatus].main};
         }
@@ -44,4 +44,4 @@ const FormMessageBase = styled.div`
     }
 `;
 
-export { FormMessageBase };
+export { MessageBase };

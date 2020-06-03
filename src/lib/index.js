@@ -38,6 +38,7 @@ import ListItem from './ListItem/ListItem';
 import Loader from './Loader/Loader';
 import Logo from './Logo/Logo';
 import Main from './Main/Main';
+import Message from './Message/Message';
 import Menu from './Menu/Menu';
 import MenuClose from './MenuClose/MenuClose';
 import MenuHamburger from './MenuHamburger/MenuHamburger';
@@ -206,6 +207,7 @@ export {
     Loader,
     Logo,
     Main,
+    Message,
     Menu,
     MenuClose,
     MenuHamburger,

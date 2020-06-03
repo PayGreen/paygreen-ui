@@ -14,7 +14,7 @@ import {
     iconSizeOptions,
 } from '../../shared/constants';
 import Text from '../Text/Text';
-import FormMessage from './FormMessage';
+import Message from './Message';
 import { CautionIcon } from '../Icon/Icon';
 
 const fieldSizeLabel = 'Field size';
@@ -22,10 +22,10 @@ const colorStatusLabel = 'Status color';
 const blockWidthLabel = 'Block width';
 const arrowBlockLabel = 'Arrow block';
 
-storiesOf(folder.form + 'FormMessage', module)
+storiesOf(folder.form + 'Message', module)
     .addDecorator(withKnobs)
-    .add('Form Message', () => (
-        <FormMessage
+    .add('Message', () => (
+        <Message
             colorStatus={select(
                 colorStatusLabel,
                 formStatusOptions,
@@ -51,10 +51,10 @@ storiesOf(folder.form + 'FormMessage', module)
                 Message d'erreur. Je répète ceci est un message d'erreur. Et les
                 erreurs c'est pas bien, pas bien du tout. Vraiment pas cool.
             </Text>
-        </FormMessage>
+        </Message>
     ))
-    .add('Form Message with Icon', () => (
-        <FormMessage
+    .add('Message with Icon', () => (
+        <Message
             colorStatus={select(
                 colorStatusLabel,
                 formStatusOptions,
@@ -88,5 +88,5 @@ storiesOf(folder.form + 'FormMessage', module)
                 Message d'erreur. Je répète ceci est un message d'erreur. Et les
                 erreurs c'est pas bien, pas bien du tout. Vraiment pas cool.
             </Text>
-        </FormMessage>
+        </Message>
     ));

@@ -10,24 +10,24 @@ import {
     arrowBlockOptions,
     arrowBlockDefault,
 } from '../../shared/constants';
-import { FormMessageBase } from './style';
+import { MessageBase } from './style';
 
-const FormMessage = props => {
-    return <FormMessageBase {...props}>{props.children}</FormMessageBase>;
+const Message = props => {
+    return <MessageBase {...props}>{props.children}</MessageBase>;
 };
 
-FormMessage.propTypes = {
+Message.propTypes = {
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     arrowBlock: PropTypes.oneOf(Object.values(arrowBlockOptions)),
 };
 
-FormMessage.defaultProps = {
+Message.defaultProps = {
     colorStatus: formStatusDefault,
     blockWidth: inputWidthDefault,
     fieldSize: buttonSizeDefault,
     arrowBlock: arrowBlockDefault,
 };
 
-export default FormMessage;
+export default Message;
