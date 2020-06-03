@@ -2,16 +2,12 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bwzfXH gWdhZq"
+  className="sc-bwzfXH cuxetE"
 >
   <p
     className="sc-bdVaJa kXlOUj"
   >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    <strong>
-      Duis porttitor velit a ultricies aliquet
-    </strong>
-    . Donec vehicula in arcu non sodales.
+    Lorem ipsum dolor sit amet, consectetur non sodales.
   </p>
 </div>
 `;

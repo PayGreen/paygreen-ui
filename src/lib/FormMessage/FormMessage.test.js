@@ -8,9 +8,9 @@ it('renders without crashing', () => {
     const formMessage = TestRenderer.create(
         <FormMessage theme={ThemeDefault}>
             <Text theme={ThemeDefault}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec vehicula in arcu non sodales.
+                Lorem ipsum dolor sit amet, consectetur non sodales.
             </Text>
-        </FormMessage>
+        </FormMessage>,
     );
     expect(formMessage.toJSON()).toMatchSnapshot();
 });

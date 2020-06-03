@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import { math } from 'polished';
-import { arrowBlockStyle } from './base';
+import { arrowBlockStyle, fieldSizeRatio } from './base';
 
 const FormMessageBase = styled.div`
     position: relative;
     max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
-    border-radius: ${props =>
-        math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')}
-    padding: ${props =>
-        math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
+    border-radius: ${fieldSizeRatio};
+    padding: ${fieldSizeRatio};
     font-size: ${props => props.theme.daButton.font[props.fieldSize]};
-    display:grid;
+    display: grid;
     grid-template-rows: auto 1fr;
     grid-template-areas: 'icon text';
+    grid-column-gap: ${props =>
+        math(props.theme.daButton.buttonHeight[props.fieldSize] + '/3')};
     justify-items: center;
     background-color: ${props =>
         props.theme.color.status[props.colorStatus].light};
@@ -32,7 +32,16 @@ const FormMessageBase = styled.div`
         }
     }
 
-    ${props => props.arrowBlock !== 'none'? arrowBlockStyle[props.arrowBlock] : null};
+    @media (${props => props.theme.query.max.xl}) {
+        ${props => (props.arrowBlock !== 'none' ? arrowBlockStyle.top : null)};
+    }
+
+    @media (${props => props.theme.query.min.xl}) {
+        ${props =>
+            props.arrowBlock !== 'none'
+                ? arrowBlockStyle[props.arrowBlock]
+                : null};
+    }
 `;
 
 export { FormMessageBase };
