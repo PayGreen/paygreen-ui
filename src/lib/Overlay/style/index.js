@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from './constants';
+import { color } from './base';
 
 const OverlayBase = styled.div`
     position: absolute;
@@ -8,14 +8,10 @@ const OverlayBase = styled.div`
     top: 0;
     left: 0;
 
-    background-image: linear-gradient(
-        to right,
-        ${props => color.first[props.gradient]},
-        ${props => color.second[props.gradient]}
-    );
+    ${props => color[props.gradient]};
 
-    zindex: ${props => props.zindex};
-    opacity: ${props => props.opacity / 100};
+    z-index: ${props => props.zindex};
+    opacity: ${props => props.opacityValue / 100};
 `;
 
 export { OverlayBase };

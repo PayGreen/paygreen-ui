@@ -14,7 +14,7 @@ import Text from '../Text/Text';
 const gradientLabel = 'Gradient';
 const colorThemeLabel = 'Color theme';
 const zindexLabel = 'Z index';
-const opacityLabel = 'Opacity';
+const opacityValueLabel = 'Opacity';
 
 storiesOf(folder.main + 'Overlay', module)
     .addDecorator(withKnobs)
@@ -33,7 +33,7 @@ storiesOf(folder.main + 'Overlay', module)
                     colorThemeDefault,
                 )}
                 zindex={number(zindexLabel, 0)}
-                opacity={number(opacityLabel, 60)}
+                opacityValue={number(opacityValueLabel, 60)}
             />
         </>
     ));
