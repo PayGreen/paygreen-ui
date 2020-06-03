@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 import { directionalProperty } from 'polished';
 import { responsiveSpaces } from '../../../shared/spaces';
-import {
-    colorPalletOptions,
-    colorTypeOptions,
-} from '../../../shared/constants';
+import { colorTypeOptions } from '../../../shared/constants';
+import { color } from './constants';
 
 const HRBase = styled.div`
     ${responsiveSpaces('margin')};
@@ -22,14 +20,8 @@ const HRBase = styled.div`
     background: ${props =>
         props.colorType === colorTypeOptions.reverse
             ? props.theme.wab.white00
-            : props.colorPallet === colorPalletOptions.theme
-            ? props.theme.color[props.colorTheme].main
-            : props.colorPallet === colorPalletOptions.status
-            ? props.theme.color.status[props.colorStatus].main
-            : props.colorPallet === colorPalletOptions.wab
-            ? props.theme.wab[props.colorWab]
-            : props.theme.wab.black00};
-    opacity: ${props => props.opacity / 100}
+            : color[props.colorPallet]};
+    opacity: ${props => props.opacityValue / 100};
     height: ${props => props.theme.line};
 `;
 

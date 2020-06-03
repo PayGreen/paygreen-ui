@@ -29,7 +29,7 @@ HR.propTypes = {
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
-    opacity: PropTypes.number, // Range 0(transparent) to 100(opaque)
+    opacityValue: PropTypes.number, // Range 0(transparent) to 100(opaque)
 };
 
 HR.defaultProps = {
@@ -41,7 +41,7 @@ HR.defaultProps = {
     marginLateral: spaceDefault,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
-    opacity: 100,
+    opacityValue: 100,
 };
 
 export default HR;

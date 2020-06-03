@@ -4,8 +4,6 @@ import { ThemeDefault } from '../../theme';
 import HR from './HR';
 
 it('renders without crashing', () => {
-    const hr = TestRenderer.create(
-        <HR theme={ThemeDefault}/>
-    );
+    const hr = TestRenderer.create(<HR theme={ThemeDefault} />);
     expect(hr.toJSON()).toMatchSnapshot();
 });
