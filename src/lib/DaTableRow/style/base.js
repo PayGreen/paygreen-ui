@@ -36,6 +36,10 @@ const cellsAreas = css`
             grid-area: checkbox;
         }
 
+        &-id {
+            grid-area: id;
+        }
+
         ${props => mainCellAreas(props.mainCellCount, props.hasCheckbox)};
         ${props => basicCellAreas(props.notMainCellCount)};
     }

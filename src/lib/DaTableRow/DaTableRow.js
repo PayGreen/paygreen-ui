@@ -9,12 +9,12 @@ const DaTableRow = props => {
     let notMainCellCount = 0;
 
     React.Children.map(props.children, child => {
-        if (child.props.isId) {
-            hasId = true;
-        }
-
         if (child.props.isMain) {
             mainCellCount++;
+
+            if (child.props.isId) {
+                hasId = true;
+            }
 
             if (child.props.isCheckbox) {
                 hasCheckbox = true;
@@ -38,11 +38,15 @@ const DaTableRow = props => {
         >
             {React.Children.map(props.children, child => {
                 if (typeof child == 'object') {
-                    if (child.props.isCheckbox) {
-                        className = 'cell-checkbox';
-                    } else if (child.props.isMain) {
-                        mainIndex++;
-                        className = 'cell-main cell-main-' + mainIndex;
+                    if (child.props.isMain) {
+                        if (child.props.isCheckbox) {
+                            className = 'cell-checkbox';
+                        } else if (child.props.isId) {
+                            className = 'cell-id';
+                        } else {
+                            mainIndex++;
+                            className = 'cell-main cell-main-' + mainIndex;
+                        }
                     } else {
                         basicIndex++;
                         className = 'cell-basic cell-basic-' + basicIndex;

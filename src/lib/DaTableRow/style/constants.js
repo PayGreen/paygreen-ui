@@ -1,15 +1,50 @@
-function gridTemplateTop(mainCount, hasCheckbox) {
-    let template = '';
+/**
+ * Return main cells' number without checkbox and id cells
+ * 
+ * @param {number} mainCount 
+ * @param {boolean} hasCheckbox 
+ * @param {boolean} hasId 
+ */
+function mainCellsCount(mainCount, hasCheckbox, hasId) {
+    let mainCells = mainCount;
 
-    for (let i = 1; i < mainCount; i++) {
+    if (hasCheckbox) {
+        mainCells--;
+    }
+
+    if (hasId) {
+        mainCells--;
+    }
+
+    return mainCells;
+}
+
+/**
+ * Return first part of grid-template-areas
+ * 
+ * @param {number} mainCount 
+ * @param {boolean} hasCheckbox 
+ * @param {boolean} hasId 
+ */
+function gridTemplateTop(mainCount, hasCheckbox, hasId) {
+    const mainCells = mainCellsCount(mainCount, hasCheckbox, hasId);
+    let template = hasId ? 'id' : '';
+
+    for (let i = 1; i <= mainCells; i++) {
         template += ' main-' + i;
     }
 
-    template += hasCheckbox ? ' checkbox' : ' main-' + mainCount;
+    template += hasCheckbox ? ' checkbox' : '';
 
     return '"' + template.trim() + '"';
 }
 
+/**
+ * Return lasts parts of grid-template-areas
+ * 
+ * @param {number} mainCount 
+ * @param {number} notMainCount 
+ */
 function gridTemplateBottom(mainCount, notMainCount) {
     let template = '';
 
@@ -26,28 +61,35 @@ function gridTemplateBottom(mainCount, notMainCount) {
     return template.trim();
 }
 
-function gridTemplate(mainCount, notMainCount, hasCheckbox) {
+/**
+ * Return all grid-template-areas value for CSS
+ * 
+ * @param {number} mainCount 
+ * @param {number} notMainCount 
+ * @param {boolean} hasCheckbox 
+ * @param {boolean} hasId 
+ */
+function gridTemplate(mainCount, notMainCount, hasCheckbox, hasId) {
     return (
-        gridTemplateTop(mainCount, hasCheckbox) +
+        gridTemplateTop(mainCount, hasCheckbox, hasId) +
         ' ' +
         gridTemplateBottom(mainCount, notMainCount)
     );
 }
 
+/**
+ * Return grid-template-columns
+ * 
+ * @param {number} mainCount 
+ * @param {boolean} hasCheckbox 
+ * @param {boolean} hasId 
+ */
 function gridColumns(mainCount, hasCheckbox, hasId) {
+    const mainCells = mainCellsCount(mainCount, hasCheckbox, hasId);
     const idCell = hasId ? 'auto ' : '';
     const checkboxCell = hasCheckbox ? ' min-content' : '';
-    let basicCells = parseInt(mainCount);
 
-    if (hasCheckbox) {
-        basicCells--;
-    }
-
-    if (hasId) {
-        basicCells--;
-    }
-
-    return idCell + 'repeat(' + basicCells + ', 1fr)' + checkboxCell;
+    return idCell + 'repeat(' + mainCells + ', 1fr)' + checkboxCell;
 }
 
 export { gridTemplate, gridColumns };

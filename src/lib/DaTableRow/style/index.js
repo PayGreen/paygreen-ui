@@ -17,8 +17,10 @@ const DaTableRowBase = styled.div`
                 props.mainCellCount,
                 props.notMainCellCount,
                 props.hasCheckbox,
+                props.hasId,
             )};
-        grid-template-columns: ${props => gridColumns(props.mainCellCount, props.hasCheckbox, props.hasId)};
+        grid-template-columns: ${props =>
+            gridColumns(props.mainCellCount, props.hasCheckbox, props.hasId)};
 
         ${cellsAreas};
         ${toggableStyle};
