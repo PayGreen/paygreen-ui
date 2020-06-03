@@ -6,6 +6,7 @@ import BannerImage from './BannerImage/BannerImage';
 import Box from './Box/Box';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
+import DaButton from './DaButton/DaButton';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
 import ClickableBlock from './ClickableBlock/ClickableBlock';
@@ -164,6 +165,7 @@ export {
     Box,
     Breadcrumb,
     Button,
+    DaButton,
     ButtonGroup,
     Card,
     ClickableBlock,
