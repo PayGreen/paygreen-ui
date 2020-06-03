@@ -6,10 +6,10 @@ import BannerImage from './BannerImage/BannerImage';
 import Box from './Box/Box';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
-import DaButton from './DaButton/DaButton';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
 import ClickableBlock from './ClickableBlock/ClickableBlock';
+import DaButton from './DaButton/DaButton';
 import DaTable from './DaTable/DaTable';
 import DaTableCell from './DaTableCell/DaTableCell';
 import DaTableHead from './DaTableHead/DaTableHead';
@@ -167,10 +167,10 @@ export {
     Box,
     Breadcrumb,
     Button,
-    DaButton,
     ButtonGroup,
     Card,
     ClickableBlock,
+    DaButton,
     DaTable,
     DaTableCell,
     DaTableHead,
