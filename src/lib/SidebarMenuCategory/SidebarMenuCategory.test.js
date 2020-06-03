@@ -7,7 +7,6 @@ import Link from '../Link/Link';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarMenu from '../SidebarMenu/SidebarMenu';
 import SidebarMenuCategory from '../SidebarMenuCategory/SidebarMenuCategory';
-import SidebarList from '../SidebarList/SidebarList';
 
 it('renders without crashing', () => {
     const sidebarMenuCategory = TestRenderer.create(
@@ -32,30 +31,6 @@ it('renders without crashing', () => {
                         </Link>
                     </SidebarItem>
                 </a>
-                <SidebarList theme={ThemeDefault}>
-                    <a href="#">
-                        <SidebarItem theme={ThemeDefault}>
-                            <Link
-                                theme={ThemeDefault}
-                                hasUnderline={false}
-                                hasHover={false}
-                            >
-                                Tree
-                            </Link>
-                        </SidebarItem>
-                    </a>
-                    <a href="#">
-                        <SidebarItem theme={ThemeDefault}>
-                            <Link
-                                theme={ThemeDefault}
-                                hasUnderline={false}
-                                hasHover={false}
-                            >
-                                Other
-                            </Link>
-                        </SidebarItem>
-                    </a>
-                </SidebarList>
             </SidebarMenu>
         </SidebarMenuCategory>,
     );

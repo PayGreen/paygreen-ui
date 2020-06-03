@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    colorPalletOptions,
-    fontSizeOptions,
-    greyOptions,
-} from '../../shared/constants';
+import { fontSizeOptions, greyOptions } from '../../shared/constants';
 import { SidebarMenuCategoryBase } from './style';
 import Title from '../Title/Title';
 
@@ -14,9 +10,8 @@ const SidebarMenuCategory = props => {
             {props.categoryTitle ? (
                 <Title
                     {...props}
-                    colorPallet={colorPalletOptions.wab}
                     colorWab={greyOptions.grey30}
-                    textSize={fontSizeOptions.xs}
+                    textSize={fontSizeOptions.xxs}
                 >
                     {props.categoryTitle}
                 </Title>

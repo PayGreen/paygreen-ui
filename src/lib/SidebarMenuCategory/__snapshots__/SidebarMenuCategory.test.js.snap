@@ -5,7 +5,7 @@ exports[`renders without crashing 1`] = `
   className="sc-EHOje hAEGdM"
 >
   <span
-    className="sc-ifAKCX kFZKoo"
+    className="sc-ifAKCX jcryBl"
   >
     Categorie de pages
   </span>
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
       href="#"
     >
       <div
-        className="sc-htpNat GSCaD"
+        className="sc-htpNat iCRsqm"
       >
         <span
           className="sc-bdVaJa ZZzwg icon"
@@ -39,40 +39,6 @@ exports[`renders without crashing 1`] = `
         </span>
       </div>
     </a>
-    <ul
-      className="sc-bZQynM fPsYxz"
-    >
-      <li>
-        <a
-          href="#"
-        >
-          <div
-            className="sc-htpNat GSCaD"
-          >
-            <span
-              className="sc-bwzfXH dFoyuL"
-            >
-              Tree
-            </span>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-        >
-          <div
-            className="sc-htpNat GSCaD"
-          >
-            <span
-              className="sc-bwzfXH dFoyuL"
-            >
-              Other
-            </span>
-          </div>
-        </a>
-      </li>
-    </ul>
   </li>
 </div>
 `;
