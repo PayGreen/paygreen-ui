@@ -37,7 +37,7 @@ const DaTableRow = props => {
             notMainCellCount={notMainCellCount}
         >
             {React.Children.map(props.children, child => {
-                if (typeof child == 'object') {
+                if (typeof child === 'object') {
                     if (child.props.isMain) {
                         if (child.props.isCheckbox) {
                             className = 'cell-checkbox';
