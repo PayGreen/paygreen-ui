@@ -30,8 +30,7 @@ const colorWabLabel = 'Grey color';
 const colorStatusLabel = 'Status color';
 const iconSizeLabel = 'Icon size';
 const backgroundLabel = 'Has background';
-const shadowLabel = 'With shadow';
-const activeLabel = 'Active';
+const hoverLabel = 'Has hover (need background)';
 const marginTopLabel = 'Margin top';
 const marginBottomLabel = 'Margin bottom';
 const marginLeftLabel = 'Margin left';
@@ -68,8 +67,7 @@ storiesOf(folder.main + 'Icons', module)
                         iconSizeOptions.lg,
                     )}
                     hasBackground={boolean(backgroundLabel, false)}
-                    shadowSize={boolean(shadowLabel, false)}
-                    isActive={boolean(activeLabel, false)}
+                    hasHover={boolean(hoverLabel, false)}
                     isCentered={boolean(centeredLabel, false)}
                     marginTop={select(
                         marginTopLabel,
@@ -121,8 +119,7 @@ storiesOf(folder.main + 'Icons', module)
                         iconSizeOptions.lg,
                     )}
                     hasBackground={boolean(backgroundLabel, false)}
-                    shadowSize={boolean(shadowLabel, false)}
-                    isActive={boolean(activeLabel, false)}
+                    hasHover={boolean(hoverLabel, false)}
                     isCentered={boolean(centeredLabel, false)}
                     marginTop={select(
                         marginTopLabel,
@@ -174,8 +171,7 @@ storiesOf(folder.main + 'Icons', module)
                         iconSizeOptions.lg,
                     )}
                     hasBackground={boolean(backgroundLabel, false)}
-                    shadowSize={boolean(shadowLabel, false)}
-                    isActive={boolean(activeLabel, false)}
+                    hasHover={boolean(hoverLabel, false)}
                     isCentered={boolean(centeredLabel, false)}
                     marginTop={select(
                         marginTopLabel,
@@ -227,8 +223,7 @@ storiesOf(folder.main + 'Icons', module)
                         iconSizeOptions.lg,
                     )}
                     hasBackground={boolean(backgroundLabel, false)}
-                    shadowSize={boolean(shadowLabel, false)}
-                    isActive={boolean(activeLabel, false)}
+                    hasHover={boolean(hoverLabel, false)}
                     isCentered={boolean(centeredLabel, false)}
                     marginTop={select(
                         marginTopLabel,
@@ -280,8 +275,7 @@ storiesOf(folder.main + 'Icons', module)
                         iconSizeOptions.lg,
                     )}
                     hasBackground={boolean(backgroundLabel, false)}
-                    shadowSize={boolean(shadowLabel, false)}
-                    isActive={boolean(activeLabel, false)}
+                    hasHover={boolean(hoverLabel, false)}
                     isCentered={boolean(centeredLabel, false)}
                     marginTop={select(
                         marginTopLabel,

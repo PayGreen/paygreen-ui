@@ -39,7 +39,7 @@ IconWrapper.propTypes = {
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     iconSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     hasBackground: PropTypes.bool,
-    hasShadow: PropTypes.bool,
+    hasHover: PropTypes.bool,
     isActive: PropTypes.bool,
     isCentered: PropTypes.bool,
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -47,7 +47,6 @@ IconWrapper.propTypes = {
     marginLeft: PropTypes.oneOf(Object.values(spaceOptions)),
     marginRight: PropTypes.oneOf(Object.values(spaceOptions)),
     rotateSize: PropTypes.oneOf(Object.values(rotateSizeOptions)),
-    isActive: PropTypes.bool,
 };
 
 IconWrapper.defaultProps = {
@@ -58,7 +57,7 @@ IconWrapper.defaultProps = {
     colorStatus: formStatusDefault,
     iconSize: iconSizeOptions.sm,
     hasBackground: false,
-    hasShadow: false,
+    hasHover: false,
     isActive: false,
     isCentered: false,
     marginTop: spaceDefault,
@@ -66,7 +65,6 @@ IconWrapper.defaultProps = {
     marginLeft: spaceDefault,
     marginRight: spaceDefault,
     rotateSize: rotateSizeDefault,
-    isActive: false,
 };
 
 export default IconWrapper;
