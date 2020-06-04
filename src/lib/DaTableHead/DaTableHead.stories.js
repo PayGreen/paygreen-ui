@@ -9,7 +9,7 @@ import DaTableHead from './DaTableHead';
 storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
     .addDecorator(withKnobs)
     .add('DaTableHead', () => (
-        <DaTableHead>
+        <DaTableHead resultsLabel="45 results">
             <DaTableHeadCell isCheckbox={true}>
                 Select/deselect all
                 <input type="checkbox" style={{ display: 'block' }} />
