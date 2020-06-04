@@ -17,11 +17,7 @@ storiesOf(folder.main + 'Overlay', module)
         <>
             <Text>Some text ...</Text>
             <Overlay
-                gradient={select(
-                    'Gradient',
-                    gradientOptions,
-                    gradientDefault,
-                )}
+                gradient={select('Gradient', gradientOptions, gradientDefault)}
                 colorTheme={select(
                     'Color theme',
                     colorThemeOptions,
