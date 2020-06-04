@@ -8,10 +8,10 @@ exports[`renders without crashing 1`] = `
     href="#"
   >
     <div
-      className="sc-htpNat gBtqyB"
+      className="sc-htpNat iCRsqm"
     >
       <span
-        className="sc-bdVaJa ZZzwg icon"
+        className="sc-bdVaJa kMytCS icon"
       >
         <svg
           viewBox="0 0 143 143"
@@ -39,7 +39,7 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="sc-htpNat gBtqyB"
+          className="sc-htpNat iCRsqm"
         >
           <span
             className="sc-bwzfXH ifokyD"
@@ -54,7 +54,7 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="sc-htpNat gBtqyB"
+          className="sc-htpNat iCRsqm"
         >
           <span
             className="sc-bwzfXH ifokyD"
