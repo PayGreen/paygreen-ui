@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    buttonSizeOptions,
-    buttonSizeDefault,
-} from '../../shared/constants';
+import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { RadioBase } from './style';
 
 const Radio = props => {
     const {
         fieldSize,
-        disabled,
-        readOnly,
+        radioDisabled,
+        radioReadOnly,
         radioId,
         radioValue,
         radioName,
@@ -25,8 +22,8 @@ const Radio = props => {
         <RadioBase
             theme={props.theme} // not necessary, only needed for tests
             fieldSize={fieldSize}
-            disabled={disabled}
-            readOnly = {readOnly}
+            radioDisabled={radioDisabled}
+            radioReadOnly={radioReadOnly}
             radioId={radioId}
             radioValue={radioValue}
             radioName={radioName}
@@ -36,8 +33,8 @@ const Radio = props => {
         >
             <input
                 {...rest}
-                disabled={disabled}
-                readOnly = {readOnly}
+                disabled={radioDisabled}
+                readOnly={radioReadOnly}
                 id={radioId}
                 type="radio"
                 name={radioName}
@@ -45,30 +42,28 @@ const Radio = props => {
                 onChange={changed}
                 checked={isChecked}
             />
-            <label  htmlFor={radioId}>
-                {radioLabel}
-            </label>
+            <label htmlFor={radioId}>{radioLabel}</label>
         </RadioBase>
     );
 };
 
 Radio.propTypes = {
-    options: PropTypes.arrayOf(
-        PropTypes.shape({
-            value: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-            disabled: PropTypes.bool,
-        }),
-    ).isRequired,
-    disabled: PropTypes.bool,
-    readOnly: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    radioDisabled: PropTypes.bool,
+    radioReadOnly: PropTypes.bool,
+    radioId: PropTypes.string,
+    radioValue: PropTypes.string,
+    radioName: PropTypes.string,
+    radioLabel: PropTypes.string,
+    isChecked: PropTypes.bool,
+    changed: PropTypes.func,
 };
 
 Radio.defaultProps = {
-    disabled: false,
-    readOnly: false,
     fieldSize: buttonSizeDefault,
+    radioDisabled: false,
+    radioReadOnly: false,
+    isChecked: false,
 };
 
 export default Radio;

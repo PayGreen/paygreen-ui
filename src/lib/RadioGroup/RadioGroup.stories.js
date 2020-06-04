@@ -13,7 +13,6 @@ const radioOptions = [
         id: 'first',
         label: 'First Choice',
         value: 'first',
-        checked: 'true',
     },
     {
         id: 'second',
@@ -34,9 +33,9 @@ storiesOf(folder.form + folder.sub.radio + 'RadioGroup', module)
         () => (
             <RadioGroup
                 radioOptions={radioOptions}
-                radioName='Radio Name'
-                legend='Radio Label'
-                defaultValue='second'
+                radioName="Radio Name"
+                legend="Radio Label"
+                defaultValue="second"
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
                 fieldSize={radios(
@@ -47,6 +46,7 @@ storiesOf(folder.form + folder.sub.radio + 'RadioGroup', module)
             />
         ),
         {
-            notes: 'You can change radiogroup items size with "fieldSize" props.',
+            notes:
+                'You can change radiogroup items size with "fieldSize" props.',
         },
     );

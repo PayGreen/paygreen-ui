@@ -1,17 +1,10 @@
 import styled from 'styled-components';
 import { math } from 'polished';
 import { radioCircleSize, radioSize, ratioSize } from './constants';
-import { enabled, disabled
-} from './base';
+import { enabled, disabled } from './base';
 
 const RadioBase = styled.div`
-    *:before,
-    *:after {
-        box-sizing: border-box;
-    }
-
     margin: ${props => props.theme.space.sm} 0;
-    position: relative;
 
     input[type='radio'] {
         display: none;
@@ -29,7 +22,6 @@ const RadioBase = styled.div`
     }
 
     label {
-        display: inline-block;
         line-height: ${radioSize};
         position: relative;
         padding: 0
@@ -39,7 +31,6 @@ const RadioBase = styled.div`
                 )};
         color: ${props => props.theme.wab.grey60};
         font-size: ${props => props.theme.daButton.font[props.fieldSize]};
-        text-align: left;
 
         &::before,
         &::after {
@@ -69,8 +60,7 @@ const RadioBase = styled.div`
         }
     }
 
-    ${props => props.disabled ? disabled : enabled};
-
+    ${props => (props.radioDisabled ? disabled : enabled)};
 `;
 
 export { RadioBase };

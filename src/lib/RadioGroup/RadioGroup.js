@@ -16,27 +16,33 @@ const RadioGroup = props => {
         fieldSize,
         legend,
         defaultValue,
+
         ...rest
     } = props;
 
-    const [value, setValue] = useState(defaultValue || null);
+    const [stateValue, setValue] = useState(defaultValue || null);
 
     const handleChange = e => {
         setValue(e.target.value);
     };
-    console.log('state', value);
+
     return (
         <RadioGroupBase
-            theme={props.theme} // not necessary, handlely needed for tests
-            readOnly={props.readOnly}
-            disabled={props.disabled}
+            theme={props.theme} // not necessary, only needed for tests
             fieldSize={fieldSize}
+            disabled={props.disabled}
+            readOnly={props.readOnly}
             radioName={radioName}
             legend={legend}
             defaultValue={defaultValue}
             changed={handleChange}
+            radioOptions={radioOptions}
         >
-            <DaLabel fieldSize={fieldSize} htmlTag={labelHtmlTagOptions.legend}>
+            <DaLabel
+                theme={props.theme} // not necessary, only needed for tests
+                fieldSize={fieldSize}
+                htmlTag={labelHtmlTagOptions.legend}
+            >
                 {legend}
             </DaLabel>
 
@@ -48,10 +54,10 @@ const RadioGroup = props => {
                     radioValue={option.value}
                     radioName={radioName}
                     fieldSize={fieldSize}
-                    readOnly={props.readOnly}
-                    disabled={option.disabled || props.disabled}
+                    radioReadOnly={props.readOnly}
+                    radioDisabled={props.disabled}
                     radioLabel={option.label}
-                    isChecked={option.value === value}
+                    isChecked={option.value === stateValue}
                     changed={handleChange}
                 />
             ))}
@@ -60,22 +66,26 @@ const RadioGroup = props => {
 };
 
 RadioGroup.propTypes = {
-    options: PropTypes.arrayOf(
+    fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    radioOptions: PropTypes.arrayOf(
         PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
             value: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-            disabled: PropTypes.bool,
         }),
     ).isRequired,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    radioName: PropTypes.string,
+    legend: PropTypes.string,
+    defaultValue: PropTypes.string,
+    changed: PropTypes.func,
 };
 
 RadioGroup.defaultProps = {
+    fieldSize: buttonSizeDefault,
     disabled: false,
     readOnly: false,
-    fieldSize: buttonSizeDefault,
 };
 
 export default RadioGroup;

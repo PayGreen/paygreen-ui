@@ -2,11 +2,14 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa fnrVPn"
+  className="sc-bdVaJa qXVzc"
 >
-  <select
+  <input
+    checked={false}
     disabled={false}
-    id="selectId1"
+    id="first"
+    name="test"
+    readOnly={false}
     theme={
       Object {
         "bannerHeight": Object {
@@ -124,19 +127,14 @@ exports[`renders without crashing 1`] = `
             "sm": "32px",
           },
           "font": Object {
-            "lg": "1.8rem",
+            "lg": "1.7rem",
             "md": "1.4rem",
-            "sm": "1.2rem",
+            "sm": "1.35rem",
           },
           "iconSpacing": Object {
             "lg": "1.1rem",
             "md": "1rem",
             "sm": "0.9rem",
-          },
-          "paddingWidth": Object {
-            "lg": "30px",
-            "md": "26px",
-            "sm": "22px",
           },
           "shift": Object {
             "lg": "6px",
@@ -207,6 +205,11 @@ exports[`renders without crashing 1`] = `
           "radio": Object {
             "lg": "150px",
             "md": "120px",
+          },
+          "radioButtonSize": Object {
+            "lg": "23px",
+            "md": "21px",
+            "sm": "19px",
           },
           "textareaHeight": "200px",
         },
@@ -356,25 +359,11 @@ exports[`renders without crashing 1`] = `
         },
       }
     }
-  >
-    <option
-      disabled={true}
-      value=""
-    >
-      Choose your option...
-    </option>
-    <option
-      disabled={false}
-      value="first"
-    >
-      First option
-    </option>
-    <option
-      disabled={false}
-      value="second"
-    >
-      Second option
-    </option>
-  </select>
+    type="radio"
+    value="first"
+  />
+  <label
+    htmlFor="first"
+  />
 </div>
 `;

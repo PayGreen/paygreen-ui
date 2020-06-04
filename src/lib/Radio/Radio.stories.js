@@ -10,25 +10,19 @@ import Radio from './Radio';
 
 storiesOf(folder.form + folder.sub.radio + 'Radio', module)
     .addDecorator(withKnobs)
-    .add(
-        'Radio',
-        () => (
-            <Radio
-                defaultValue=""
-                radioId="first"
-                radioValue="first"
-                radioName="test"
-                disabled={boolean('Disabled', false)}
-                readOnly={boolean('Readonly', false)}
-                fieldSize={radios(
-                    'Field size',
-                    buttonSizeOptions,
-                    buttonSizeDefault,
-                )}
-                radioLabel="FirstChoice"
-            />
-        ),
-        {
-            notes: '',
-        },
-    );
+    .add('Radio', () => (
+        <Radio
+            radioId="first"
+            radioValue="first"
+            radioName="test"
+            radioDisabled={boolean('Disabled', false)}
+            radioReadOnly={boolean('Readonly', false)}
+            fieldSize={radios(
+                'Field size',
+                buttonSizeOptions,
+                buttonSizeDefault,
+            )}
+            radioLabel="First Choice"
+            isChecked={boolean('Is checked', false)}
+        />
+    ));

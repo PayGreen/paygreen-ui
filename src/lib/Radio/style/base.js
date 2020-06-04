@@ -12,8 +12,7 @@ const disabled = css`
         &:checked {
             & + label {
                 &::after {
-                    background-color: ${props =>
-                        props.theme.wab.grey30};
+                    background-color: ${props => props.theme.wab.grey30};
                 }
             }
         }
@@ -44,7 +43,7 @@ const enabled = css`
         cursor: pointer;
     }
 
-    ${props => (props.readOnly ? noHover : null)};
+    ${props => (props.radioReadOnly ? noHover : null)};
 `;
 
 export { disabled, enabled };

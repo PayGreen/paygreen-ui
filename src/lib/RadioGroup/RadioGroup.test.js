@@ -1,31 +1,29 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import DaSelect from './DaSelect';
+import RadioGroup from './RadioGroup';
 
-const sampleOptions = [
+const radioOptions = [
     {
-        value: '',
-        text: 'Choose your option...',
-        disabled: true,
-    },
-    {
+        id: 'first',
+        label: 'First Choice',
         value: 'first',
-        text: 'First option',
     },
     {
+        id: 'second',
+        label: 'Second Choice',
         value: 'second',
-        text: 'Second option',
     },
 ];
 
 it('renders without crashing', () => {
-    const daSelectBlock = TestRenderer.create(
-        <DaSelect
+    const radioGroup = TestRenderer.create(
+        <RadioGroup
             theme={ThemeDefault}
-            id="selectId1"
-            options={sampleOptions}
+            radioOptions={radioOptions}
+            radioName="test1"
+            legend="Radio Label"
         />,
     );
-    expect(daSelectBlock.toJSON()).toMatchSnapshot();
+    expect(radioGroup.toJSON()).toMatchSnapshot();
 });
