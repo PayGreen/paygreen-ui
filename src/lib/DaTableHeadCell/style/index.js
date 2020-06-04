@@ -11,7 +11,7 @@ const DaTableHeadCellBase = styled.div`
     @media (${props => props.theme.query.min.lg}) {
         display: table-cell;
         vertical-align: middle;
-        padding: ${props => props.theme.space.sm};
+        padding: ${props => props.theme.space.sm} ${props => props.theme.space.md};
         padding-top: 0;
 
         ${props => (props.isCheckbox ? null : borderRight)};
