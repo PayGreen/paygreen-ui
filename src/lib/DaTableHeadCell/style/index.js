@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { borderRight } from '../../DaTableCell/style/base';
+import { isCheckboxStyle, mobileStyle, hideUselessCell } from './base';
 
 const DaTableHeadCellBase = styled.div`
     padding: ${props => props.theme.space.xs};
@@ -13,8 +14,12 @@ const DaTableHeadCellBase = styled.div`
         padding: ${props => props.theme.space.sm};
         padding-top: 0;
 
-        ${props => props.isCheckbox ? null : borderRight};
+        ${props => (props.isCheckbox ? null : borderRight)};
     }
+
+    ${props => (props.isCheckbox ? isCheckboxStyle : null)};
+    ${props =>
+        props.isCheckbox || props.hasControls ? mobileStyle : hideUselessCell};
 `;
 
 export { DaTableHeadCellBase };

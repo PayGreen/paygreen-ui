@@ -32,6 +32,7 @@ const DaTableHeadCell = (props) => {
 
     return <DaTableHeadCellBase
         {...props}
+        hasControls={sortIcon || groupIcon}
     >
         {props.children}
 
