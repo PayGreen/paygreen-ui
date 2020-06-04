@@ -7,7 +7,6 @@ import {
     iconSizeOptions,
     alignItemsOptions,
     greyOptions,
-    spaceOptions,
 } from '../../shared/constants';
 import InternalGrid from '../InternalGrid/InternalGrid';
 import Title from '../Title/Title';
@@ -34,10 +33,12 @@ class DaTableHead extends PureComponent {
         return (
             <DaTableHeadBase {...this.props} isHeadOpen={this.state.headOpen}>
                 <InternalGrid
+                    theme={this.props.theme} // not necessary, only needed for tests
                     alignItems={alignItemsOptions.center}
                     onClick={this.handleClick}
                 >
                     <Title
+                        theme={this.props.theme} // not necessary, only needed for tests
                         textSize={fontSizeOptions.xxs}
                         colorWab={greyOptions.grey50}
                     >
@@ -45,6 +46,7 @@ class DaTableHead extends PureComponent {
                     </Title>
 
                     <ArrowBottomIcon
+                        theme={this.props.theme} // not necessary, only needed for tests
                         iconSize={iconSizeOptions.md}
                         colorPallet={colorPalletOptions.wab}
                         colorWab={greyOptions.grey60}
@@ -60,6 +62,7 @@ class DaTableHead extends PureComponent {
 
                 {this.props.resultsLabel ? (
                     <Text
+                        theme={this.props.theme} // not necessary, only needed for tests
                         textSize={fontSizeOptions.xs}
                         align={alignItemsOptions.center}
                     >
