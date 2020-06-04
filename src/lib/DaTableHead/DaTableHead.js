@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import {
     fontSizeOptions,
-    iconHtmlTagOptions,
+    rotateSizeOptions,
     colorPalletOptions,
     iconSizeOptions,
     alignItemsOptions,
@@ -15,41 +15,61 @@ import Text from '../Text/Text';
 import { ArrowBottomIcon } from '../Icon/Icon';
 import { DaTableHeadBase } from './style';
 
-const DaTableHead = props => {
-    return (
-        <DaTableHeadBase {...props}>
-            <div className="row">
-                <InternalGrid alignItems={alignItemsOptions.center}>
+class DaTableHead extends PureComponent {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            headOpen: false,
+        };
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.setState({ headOpen: !this.state.headOpen });
+    }
+
+    render() {
+        return (
+            <DaTableHeadBase {...this.props} isHeadOpen={this.state.headOpen}>
+                <InternalGrid
+                    alignItems={alignItemsOptions.center}
+                    onClick={this.handleClick}
+                >
                     <Title
                         textSize={fontSizeOptions.xxs}
                         colorWab={greyOptions.grey50}
                     >
-                        {props.blockTitle}
+                        {this.props.blockTitle}
                     </Title>
 
                     <ArrowBottomIcon
-                        htmlTag={iconHtmlTagOptions.button}
                         iconSize={iconSizeOptions.md}
                         colorPallet={colorPalletOptions.wab}
                         colorWab={greyOptions.grey60}
+                        rotateSize={
+                            this.state.headOpen
+                                ? rotateSizeOptions.d180
+                                : rotateSizeOptions.d0
+                        }
                     />
                 </InternalGrid>
 
-                {props.children}
-            </div>
+                {this.props.children}
 
-            {props.resultsLabel ? (
-                <Text
-                    textSize={fontSizeOptions.sm}
-                    align={alignItemsOptions.center}
-                    marginBottom={spaceOptions.xs}
-                >
-                    {props.resultsLabel}
-                </Text>
-            ) : null}
-        </DaTableHeadBase>
-    );
-};
+                {this.props.resultsLabel ? (
+                    <Text
+                        textSize={fontSizeOptions.xs}
+                        align={alignItemsOptions.center}
+                    >
+                        {this.props.resultsLabel}
+                    </Text>
+                ) : null}
+            </DaTableHeadBase>
+        );
+    }
+}
 
 DaTableHead.propTypes = {
     blockTitle: PropTypes.string,
