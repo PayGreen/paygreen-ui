@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+import { responsiveSpaces } from '../../../shared/spaces';
 
 const DaTableBase = styled.div`
+    ${responsiveSpaces('margin')};
+
     @media (${props => props.theme.query.max.lg}) {
         max-width: ${props => props.theme.blockWidth.md};
     }

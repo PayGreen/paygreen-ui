@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     formStatusOptions,
@@ -152,7 +152,19 @@ const isActiveLabel = 'First line active';
 storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
     .addDecorator(withKnobs)
     .add('DaTable', () => (
-        <DaTable>
+        <DaTable
+            marginLateral={select(
+                'Lateral margins',
+                spaceOptions,
+                spaceOptions.sm,
+            )}
+            marginTop={select('Margin top', spaceOptions, spaceOptions.sm)}
+            marginBottom={select(
+                'Margin bottom',
+                spaceOptions,
+                spaceOptions.sm,
+            )}
+        >
             <DaTableHead resultsLabel="10 results">
                 <DaTableHeadCell isCheckbox={true}>
                     Select/deselect all
