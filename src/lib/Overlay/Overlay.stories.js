@@ -11,11 +11,6 @@ import {
 import Overlay from './Overlay';
 import Text from '../Text/Text';
 
-const gradientLabel = 'Gradient';
-const colorThemeLabel = 'Color theme';
-const zindexLabel = 'Z index';
-const opacityValueLabel = 'Opacity';
-
 storiesOf(folder.main + 'Overlay', module)
     .addDecorator(withKnobs)
     .add('Overlay', () => (
@@ -23,17 +18,17 @@ storiesOf(folder.main + 'Overlay', module)
             <Text>Some text ...</Text>
             <Overlay
                 gradient={select(
-                    gradientLabel,
+                    'Gradient',
                     gradientOptions,
                     gradientDefault,
                 )}
                 colorTheme={select(
-                    colorThemeLabel,
+                    'Color theme',
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                zindex={number(zindexLabel, 0)}
-                opacityValue={number(opacityValueLabel, 60)}
+                zindex={number('Z index', 0)}
+                opacityValue={number('Opacity', 60)}
             />
         </>
     ));
