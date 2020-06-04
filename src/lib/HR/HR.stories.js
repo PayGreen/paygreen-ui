@@ -18,48 +18,30 @@ import {
 } from '../../shared/constants';
 import HR from './HR';
 
-const colorTypeLabel = 'Color type';
-const colorPalletLabel = 'Color pallet';
-const colorThemeLabel = 'Color theme';
-const colorWabLabel = 'Color wab';
-const colorStatusLabel = 'Color status';
-const marginLateralLabel = 'Margin lateral';
-const marginTopLabel = 'Margin top';
-const marginBottomLabel = 'Margin bottom';
-const opacityValueLabel = 'Opacity';
-
 storiesOf(folder.main + 'HR', module)
     .addDecorator(withKnobs)
     .add('HR', () => (
         <HR
-            colorType={select(
-                colorTypeLabel,
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
+            colorType={select('Color type', colorTypeOptions, colorTypeDefault)}
             colorPallet={select(
-                colorPalletLabel,
+                'Color pallet',
                 colorPalletOptions,
                 colorPalletDefault,
             )}
             colorTheme={select(
-                colorThemeLabel,
+                'Color theme',
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select(colorWabLabel, greyOptions, greyDefault)}
+            colorWab={select('Color wab', greyOptions, greyDefault)}
             colorStatus={select(
-                colorStatusLabel,
+                'Color status',
                 formStatusOptions,
                 formStatusDefault,
             )}
-            marginLateral={select(
-                marginLateralLabel,
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginTop={select(marginTopLabel, spaceOptions, spaceDefault)}
-            marginBottom={select(marginBottomLabel, spaceOptions, spaceDefault)}
-            opacityValue={number(opacityValueLabel, 100)}
+            marginLateral={select('Margin lateral', spaceOptions, spaceDefault)}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            opacityValue={number('Opacity', 100)}
         />
     ));
