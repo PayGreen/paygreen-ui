@@ -11,6 +11,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
     .add('DaTableHead', () => (
         <DaTableHead>
             <DaTableHeadCell isCheckbox={true}>
+                Select/deselect all
                 <input type="checkbox" style={{ display: 'block' }} />
             </DaTableHeadCell>
 
@@ -18,10 +19,10 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
                 sortIcon={<ArrowBottomIcon title="Sort DESC on Sample" />}
                 groupIcon={<MenuIcon title="Group on Sample" />}
             >
-                Sample
+                Last Name
             </DaTableHeadCell>
 
-            <DaTableHeadCell>Sample</DaTableHeadCell>
+            <DaTableHeadCell>First name</DaTableHeadCell>
 
             <DaTableHeadCell
                 sortIcon={
@@ -31,11 +32,11 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
                     />
                 }
             >
-                Sample
+                Amount
             </DaTableHeadCell>
 
-            <DaTableHeadCell>Sample</DaTableHeadCell>
+            <DaTableHeadCell>Status</DaTableHeadCell>
 
-            <DaTableHeadCell>Sample</DaTableHeadCell>
+            <DaTableHeadCell>Actions</DaTableHeadCell>
         </DaTableHead>
     ));
