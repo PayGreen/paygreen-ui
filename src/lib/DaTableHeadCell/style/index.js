@@ -13,7 +13,7 @@ const DaTableHeadCellBase = styled.div`
         padding: ${props => props.theme.space.sm};
         padding-top: 0;
 
-        ${props => props.isEmpty ? null : borderRight};
+        ${props => props.isCheckbox ? null : borderRight};
     }
 `;
 
