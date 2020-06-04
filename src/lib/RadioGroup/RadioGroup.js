@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
     buttonSizeOptions,
@@ -10,28 +10,50 @@ import Radio from '../Radio/Radio';
 import DaLabel from '../DaLabel/DaLabel';
 
 const RadioGroup = props => {
-    const { radioOptions, radioName, fieldSize, legend, ...rest } = props;
+    const {
+        radioOptions,
+        radioName,
+        fieldSize,
+        legend,
+        defaultValue,
+        ...rest
+    } = props;
 
+    const [value, setValue] = useState(defaultValue || null);
+
+    const handleChange = e => {
+        setValue(e.target.value);
+    };
+    console.log('state', value);
     return (
         <RadioGroupBase
-            theme={props.theme} // not necessary, only needed for tests
-            inputReadOnly={props.readOnly}
-            inputDisabled={props.disabled}
+            theme={props.theme} // not necessary, handlely needed for tests
+            readOnly={props.readOnly}
+            disabled={props.disabled}
             fieldSize={fieldSize}
             radioName={radioName}
+            legend={legend}
+            defaultValue={defaultValue}
+            changed={handleChange}
         >
-            <DaLabel htmlTag={labelHtmlTagOptions.legend}>{legend}</DaLabel>
-            
+            <DaLabel fieldSize={fieldSize} htmlTag={labelHtmlTagOptions.legend}>
+                {legend}
+            </DaLabel>
+
             {radioOptions.map((option, index) => (
                 <Radio
                     {...rest}
                     key={index}
-                    id={option.id}
-                    value={option.value}
+                    radioId={option.id}
+                    radioValue={option.value}
                     radioName={radioName}
-                    disabled={option.disabled || props.readOnly}
-                    label={option.label}
-                    />
+                    fieldSize={fieldSize}
+                    readOnly={props.readOnly}
+                    disabled={option.disabled || props.disabled}
+                    radioLabel={option.label}
+                    isChecked={option.value === value}
+                    changed={handleChange}
+                />
             ))}
         </RadioGroupBase>
     );

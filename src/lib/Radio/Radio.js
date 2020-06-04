@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    inputWidthOptions,
-    inputWidthDefault,
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
@@ -11,11 +9,14 @@ import { RadioBase } from './style';
 const Radio = props => {
     const {
         fieldSize,
+        disabled,
         readOnly,
-        id,
-        value,
+        radioId,
+        radioValue,
         radioName,
-        label,
+        radioLabel,
+        isChecked,
+        changed,
 
         ...rest
     } = props;
@@ -24,21 +25,28 @@ const Radio = props => {
         <RadioBase
             theme={props.theme} // not necessary, only needed for tests
             fieldSize={fieldSize}
-            disabled={readOnly}
-            id={id}
-            value={value}
+            disabled={disabled}
+            readOnly = {readOnly}
+            radioId={radioId}
+            radioValue={radioValue}
             radioName={radioName}
-            label={label}
+            radioLabel={radioLabel}
+            isChecked={isChecked}
+            changed={changed}
         >
             <input
                 {...rest}
-                id={id}
+                disabled={disabled}
+                readOnly = {readOnly}
+                id={radioId}
                 type="radio"
                 name={radioName}
-                value={value}
+                value={radioValue}
+                onChange={changed}
+                checked={isChecked}
             />
-            <label {...rest} htmlFor={id}>
-                {label}
+            <label  htmlFor={radioId}>
+                {radioLabel}
             </label>
         </RadioBase>
     );

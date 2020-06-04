@@ -8,16 +8,16 @@ import {
 } from '../../shared/constants';
 import Radio from './Radio';
 
-storiesOf(folder.form + 'Radio', module)
+storiesOf(folder.form + folder.sub.radio + 'Radio', module)
     .addDecorator(withKnobs)
     .add(
         'Radio',
         () => (
             <Radio
                 defaultValue=""
-                id="first"
-                value="first"
-                name=""
+                radioId="first"
+                radioValue="first"
+                radioName="test"
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
                 fieldSize={radios(
@@ -25,7 +25,7 @@ storiesOf(folder.form + 'Radio', module)
                     buttonSizeOptions,
                     buttonSizeDefault,
                 )}
-                label="FirstChoice"
+                radioLabel="FirstChoice"
             />
         ),
         {

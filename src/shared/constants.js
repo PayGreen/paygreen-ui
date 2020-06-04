@@ -17,6 +17,7 @@ const folder = {
         form: 'Special fields' + subFolderSeparator,
         list: 'Ordinary list' + subFolderSeparator,
         menu: 'Menu elements' + subFolderSeparator,
+        radio: 'Radio elements'  + subFolderSeparator,
         sidebarMenu: 'Sidebar elements' + subFolderSeparator,
         modal: 'Modal elements' + subFolderSeparator,
         structure: 'Grids' + subFolderSeparator,

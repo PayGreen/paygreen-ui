@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { math } from 'polished';
 
 const RadioGroupBase = styled.fieldset`
-    position: relative;
+    border: none;
+    margin: 0;
+    padding: 0;
 `;
 
 export { RadioGroupBase };

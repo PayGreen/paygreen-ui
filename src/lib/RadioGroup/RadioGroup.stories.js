@@ -13,6 +13,7 @@ const radioOptions = [
         id: 'first',
         label: 'First Choice',
         value: 'first',
+        checked: 'true',
     },
     {
         id: 'second',
@@ -26,16 +27,16 @@ const radioOptions = [
     },
 ];
 
-storiesOf(folder.form + 'RadioGroup', module)
+storiesOf(folder.form + folder.sub.radio + 'RadioGroup', module)
     .addDecorator(withKnobs)
     .add(
         'RadioGroup',
         () => (
             <RadioGroup
-                defaultValue=""
                 radioOptions={radioOptions}
-                radioName='description'
-                legend='legend'
+                radioName='Radio Name'
+                legend='Radio Label'
+                defaultValue='second'
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
                 fieldSize={radios(
