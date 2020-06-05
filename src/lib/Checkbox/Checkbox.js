@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
+import { buttonSizeOptions, buttonSizeDefault, iconSizeOptions } from '../../shared/constants';
 import { CheckboxBase } from './style';
+import { CheckBoldIcon } from '../Icon/Icon';
 
 const Checkbox = props => {
     const {
@@ -42,7 +43,13 @@ const Checkbox = props => {
                 onChange={changed}
                 checked={isChecked}
             />
-            <label htmlFor={checkboxId}>{checkboxLabel}</label>
+            <label htmlFor={checkboxId}>
+                <CheckBoldIcon
+                    theme={props.theme} // not necessary, only needed for tests
+                    iconSize={iconSizeOptions.xs}
+                />
+                {checkboxLabel}
+            </label>
         </CheckboxBase>
     );
 };

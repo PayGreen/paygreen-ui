@@ -6,18 +6,17 @@ const checkboxSize = props =>
     props.theme.form.checkboxButtonSize[props.fieldSize];
 
 const CheckboxBase = styled.div`
-    margin: ${props => props.theme.space.sm} 0;
+    margin: ${props =>
+            math(
+                props.theme.form.checkboxButtonSize[props.fieldSize] + '* 0.5',
+            )}
+        0; // this constant is more adapted than theme.space to keep the balance
 
     input[type='checkbox'] {
         display: none;
 
         &:checked {
             & + label {
-                &::after {
-                    color: ${props => props.theme.wab.white00};
-                    transform: scale(1);
-                }
-
                 &::before {
                     border-color: ${props =>
                         props.theme.color.status.success.main};
@@ -25,6 +24,13 @@ const CheckboxBase = styled.div`
                         props.theme.color.status.success.main};
                 }
                 font-weight: ${props => props.theme.font.weight.bold};
+
+                & > .icon {
+                    transform: scale(1);
+                    svg {
+                        fill: ${props => props.theme.wab.white00};
+                    }
+                }
             }
         }
     }
@@ -42,34 +48,28 @@ const CheckboxBase = styled.div`
         font-size: ${props => props.theme.daButton.font[props.fieldSize]};
 
         &::before,
-        &::after {
+        & > .icon {
             position: absolute;
             box-sizing: border-box;
             transition: all ${props => props.theme.transition.xs};
+            left: 0;
+            top: 0;
+            height: ${checkboxSize};
+            width: ${checkboxSize};
         }
 
         &::before {
-            left: 0;
-            top: 0;
             content: '';
             background-color: ${props => props.theme.wab.white00};
             border: solid 2px ${props => props.theme.wab.grey30};
-            height: ${checkboxSize};
-            width: ${checkboxSize};
             border-radius: 20%;
         }
 
-        &::after {
-            content: 'V';
-            height: ${checkboxSize};
-            width: ${checkboxSize};
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: ${props => props.theme.wab.white00};
-            left: 0;
-            top: 0;
+        & > .icon {
             transform: scale(0);
+            svg {
+                fill: ${props => props.theme.wab.white00};
+            }
         }
     }
 

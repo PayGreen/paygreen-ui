@@ -33,9 +33,11 @@ const enabled = css`
         &:focus {
             &:not(:checked) {
                 & + label {
-                    &::after {
-                        color: ${props => props.theme.wab.grey30};
+                    & > .icon {
                         transform: scale(0.8);
+                        svg {
+                            fill: ${props => props.theme.wab.grey30};
+                        }
                     }
                 }
             }

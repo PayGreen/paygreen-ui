@@ -309,9 +309,9 @@ export const ThemeBase = {
             lg: '150px',
         },
         checkboxButtonSize: {
-            sm: '20px',
-            md: '22px',
-            lg: '24px',
+            sm: '18px',
+            md: '20px',
+            lg: '22px',
         },
     },
     corner: {
