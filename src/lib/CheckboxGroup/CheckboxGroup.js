@@ -27,9 +27,7 @@ const CheckboxGroup = props => {
         if (checked) {
             setValues([...stateValues, value]);
         } else {
-            let oldValues = stateValues;
-            let newValues = oldValues.filter(val => val !== value);
-            setValues(newValues);
+            setValues(stateValues.filter(val => val !== value));
         }
     };
 
