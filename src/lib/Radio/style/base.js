@@ -30,10 +30,12 @@ const enabled = css`
         &:hover,
         &:active,
         &:focus {
-            & + label {
-                &::after {
-                    background-color: ${props => props.theme.wab.grey30};
-                    transform: scale(0.7);
+            &:not(:checked) {
+                & + label {
+                    &::after {
+                        background-color: ${props => props.theme.wab.grey30};
+                        transform: scale(0.7);
+                    }
                 }
             }
         }
