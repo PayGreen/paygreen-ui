@@ -7,7 +7,6 @@ const field = css`
     outline: none;
     border: solid ${props => props.theme.line}
         ${props => props.theme.wab.grey10};
-    border-style: solid;
     border-radius: ${props =>
         math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
     padding: 0
