@@ -12,7 +12,7 @@ import {
     iconSizeOptions
 } from '../../shared/constants';
 import DaHelp from './DaHelp';
-import { QuestionIcon } from '../Icon/Icon';
+import { QuestionBoldIcon } from '../Icon/Icon';
 
 storiesOf(folder.form + folder.sub.button + 'DaHelp', module)
     .addDecorator(withKnobs)
@@ -30,7 +30,7 @@ storiesOf(folder.form + folder.sub.button + 'DaHelp', module)
                     readOnly={boolean('Readonly', false)}
                     isActive={boolean('Is active', false)}
                 >
-                    <QuestionIcon iconSize={iconSizeOptions.md} />
+                    <QuestionBoldIcon/>
                 </DaHelp>
             </a>
         ),
