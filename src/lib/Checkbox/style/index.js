@@ -8,7 +8,7 @@ const checkboxSize = props =>
 const CheckboxBase = styled.div`
     margin: ${props =>
             math(
-                props.theme.form.checkboxButtonSize[props.fieldSize] + '* 0.5',
+                props.theme.form.checkboxButtonSize[props.fieldSize] + '* 0.4',
             )}
         0; // this constant is more adapted than theme.space to keep the balance
 
