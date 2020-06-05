@@ -5,8 +5,8 @@ import { enabled, disabled } from './base';
 
 const RadioBase = styled.div`
     margin: ${props =>
-        math(
-            props.theme.form.radioButtonSize[props.fieldSize] + '* 0.4')} 0;
+            math(props.theme.form.radioButtonSize[props.fieldSize] + '* 0.4')}
+        0;
 
     input[type='radio'] {
         display: none;
