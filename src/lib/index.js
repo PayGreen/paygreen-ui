@@ -8,6 +8,8 @@ import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
+import Checkbox from './Checkbox/Checkbox'
+import CheckboxGroup from './CheckboxGroup/CheckboxGroup'
 import ClickableBlock from './ClickableBlock/ClickableBlock';
 import DaButton from './DaButton/DaButton';
 import DaInput from './DaInput/DaInput';
@@ -176,9 +178,12 @@ export {
     Button,
     ButtonGroup,
     Card,
+    Checkbox,
+    CheckboxGroup,
     ClickableBlock,
     DaButton,
     DaInput,
+    Divider,
     DaLabel,
     DaSelect,
     DaTable,
