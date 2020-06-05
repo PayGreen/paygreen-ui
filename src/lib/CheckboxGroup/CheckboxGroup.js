@@ -20,10 +20,17 @@ const CheckboxGroup = props => {
         ...rest
     } = props;
 
-    const [stateValue, setValue] = useState(defaultValue || null);
+    const [stateValues, setValues] = useState([defaultValue] || []);
 
     const handleChange = e => {
-        setValue(e.target.value);
+        const { checked, value } = e.target;
+        if (checked) {
+            setValues([...stateValues, value]);
+        } else {
+            let oldValues = stateValues;
+            let newValues = oldValues.filter(val => val !== value);
+            setValues(newValues);
+        }
     };
 
     return (
@@ -35,7 +42,6 @@ const CheckboxGroup = props => {
             checkboxName={checkboxName}
             legend={legend}
             defaultValue={defaultValue}
-            changed={handleChange}
             checkboxOptions={checkboxOptions}
         >
             <DaLabel
@@ -57,7 +63,7 @@ const CheckboxGroup = props => {
                     checkboxReadOnly={props.readOnly}
                     checkboxDisabled={props.disabled}
                     checkboxLabel={option.label}
-                    isChecked={option.value === stateValue}
+                    isChecked={stateValues.includes(option.value)}
                     changed={handleChange}
                 />
             ))}
@@ -79,7 +85,6 @@ CheckboxGroup.propTypes = {
     checkboxName: PropTypes.string,
     legend: PropTypes.string,
     defaultValue: PropTypes.string,
-    changed: PropTypes.func,
 };
 
 CheckboxGroup.defaultProps = {

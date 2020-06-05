@@ -33,8 +33,8 @@ storiesOf(folder.form + folder.sub.checkbox + 'CheckboxGroup', module)
         () => (
             <CheckboxGroup
                 checkboxOptions={checkboxOptions}
-                checkboxName="Radio Name"
-                legend="Radio Label"
+                checkboxName="Checkbox Name"
+                legend="Checkbox Label"
                 defaultValue="second"
                 disabled={boolean('Disabled', false)}
                 readOnly={boolean('Readonly', false)}
@@ -47,6 +47,6 @@ storiesOf(folder.form + folder.sub.checkbox + 'CheckboxGroup', module)
         ),
         {
             notes:
-                'You can change radiogroup items size with "fieldSize" props.',
+                'You can change all radiogroup items size with "fieldSize" props.',
         },
     );

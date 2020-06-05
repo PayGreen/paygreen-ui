@@ -1,9 +1,9 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import RadioGroup from './RadioGroup';
+import CheckboxGroup from './CheckboxGroup';
 
-const radioOptions = [
+const checkboxOptions = [
     {
         id: 'first',
         label: 'First Choice',
@@ -17,13 +17,13 @@ const radioOptions = [
 ];
 
 it('renders without crashing', () => {
-    const radioGroup = TestRenderer.create(
-        <RadioGroup
+    const checkboxGroup = TestRenderer.create(
+        <CheckboxGroup
             theme={ThemeDefault}
-            radioOptions={radioOptions}
-            radioName="test1"
-            legend="Radio Label"
+            checkboxOptions={checkboxOptions}
+            checkboxName="test1"
+            legend="Checkbox Label"
         />,
     );
-    expect(radioGroup.toJSON()).toMatchSnapshot();
+    expect(checkboxGroup.toJSON()).toMatchSnapshot();
 });

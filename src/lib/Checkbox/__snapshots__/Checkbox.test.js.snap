@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa qXVzc"
+  className="sc-bdVaJa dNwPHH"
 >
   <input
     checked={false}
@@ -127,7 +127,7 @@ exports[`renders without crashing 1`] = `
             "sm": "32px",
           },
           "font": Object {
-            "lg": "1.7rem",
+            "lg": "1.8rem",
             "md": "1.4rem",
             "sm": "1.35rem",
           },
@@ -135,6 +135,11 @@ exports[`renders without crashing 1`] = `
             "lg": "1.1rem",
             "md": "1rem",
             "sm": "0.9rem",
+          },
+          "paddingWidth": Object {
+            "lg": "30px",
+            "md": "26px",
+            "sm": "22px",
           },
           "shift": Object {
             "lg": "6px",
@@ -197,6 +202,11 @@ exports[`renders without crashing 1`] = `
           },
         },
         "form": Object {
+          "checkboxButtonSize": Object {
+            "lg": "24px",
+            "md": "22px",
+            "sm": "20px",
+          },
           "inputWidth": Object {
             "lg": "500px",
             "md": "400px",
@@ -205,11 +215,6 @@ exports[`renders without crashing 1`] = `
           "radio": Object {
             "lg": "150px",
             "md": "120px",
-          },
-          "radioButtonSize": Object {
-            "lg": "23px",
-            "md": "21px",
-            "sm": "19px",
           },
           "textareaHeight": "200px",
         },
@@ -359,7 +364,7 @@ exports[`renders without crashing 1`] = `
         },
       }
     }
-    type="radio"
+    type="checkbox"
     value="first"
   />
   <label
