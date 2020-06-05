@@ -35,7 +35,6 @@ const RadioGroup = props => {
             radioName={radioName}
             legend={legend}
             defaultValue={defaultValue}
-            changed={handleChange}
             radioOptions={radioOptions}
         >
             <DaLabel
@@ -79,7 +78,6 @@ RadioGroup.propTypes = {
     radioName: PropTypes.string,
     legend: PropTypes.string,
     defaultValue: PropTypes.string,
-    changed: PropTypes.func,
 };
 
 RadioGroup.defaultProps = {
