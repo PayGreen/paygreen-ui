@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { buttonSizeOptions, buttonSizeDefault, iconSizeOptions } from '../../shared/constants';
+import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { CheckboxBase } from './style';
 import { CheckBoldIcon } from '../Icon/Icon';
 
@@ -46,7 +46,6 @@ const Checkbox = props => {
             <label htmlFor={checkboxId}>
                 <CheckBoldIcon
                     theme={props.theme} // not necessary, only needed for tests
-                    iconSize={iconSizeOptions.xs}
                 />
                 {checkboxLabel}
             </label>
