@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { directionalProperty } from 'polished';
-import { borderColor, hoverColor } from './base';
+import { borderColor, hoverStyle } from './base';
 
 const borderNone = 'none';
 
@@ -8,7 +8,8 @@ const ClickableBlockBase = styled.div`
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    
+    outline: transparent;
+
     ${props =>
         directionalProperty(
             'padding',
@@ -33,8 +34,10 @@ const ClickableBlockBase = styled.div`
     border-bottom: ${props => (props.borderBottom ? null : borderNone)};
     transition: all ${props => props.theme.transition.xs};
 
-    &:hover {
-        ${props => hoverColor[props.colorPallet]};
+    &:hover,
+    &:focus,
+    &:active {
+        ${props => hoverStyle[props.colorPallet]};
     }
 `;
 
