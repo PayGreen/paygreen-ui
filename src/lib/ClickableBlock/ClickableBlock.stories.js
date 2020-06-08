@@ -20,6 +20,7 @@ storiesOf(folder.main + 'ClickableBlock', module)
             borderRight={boolean('Border right', true)}
             borderLeft={boolean('Border left', true)}
             borderBottom={boolean('Border bottom', true)}
+            isActive={boolean('Is active', false)}
         >
             <Image
                 imageType={imageTypeOptions.picture}
