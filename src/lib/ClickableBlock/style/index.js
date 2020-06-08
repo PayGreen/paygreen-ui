@@ -38,6 +38,7 @@ const ClickableBlockBase = styled.div`
     &:focus,
     &:active {
         ${props => hoverStyle[props.colorPallet]};
+    }
 `;
 
 export { ClickableBlockBase };
