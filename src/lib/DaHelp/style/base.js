@@ -6,7 +6,8 @@ const activeStyle = css`
         ${props => props.theme.color.secondary.gradientBase},
         ${props => props.theme.color.secondary.gradientShade}
     );
-    & .icon {
+
+    & > .icon {
         svg {
             fill: ${props => props.theme.wab.white00};
         }
@@ -28,7 +29,7 @@ const canHover = css`
 const enabled = css`
     background-color: ${props => props.theme.color.status.default.light};
 
-    & .icon {
+    & > .icon {
         svg {
             fill: ${props => props.theme.color.status.default.main};
         }
@@ -39,6 +40,8 @@ const enabled = css`
 `;
 
 const disabled = css`
+    ${activeStyle}
+
     cursor: not-allowed;
     filter: grayscale(1);
 `;

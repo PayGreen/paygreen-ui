@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { math } from 'polished';
-import { enabled, disabled, activeStyle } from './base';
+import { enabled, disabled } from './base';
 
 const DaHelpBase = styled.button`
     box-sizing: border-box;
@@ -10,27 +10,15 @@ const DaHelpBase = styled.button`
         0
         ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '/5')};
-    height: ${props =>
-        math(
-            props.theme.daButton.buttonHeight[props.fieldSize] +
-                '+' +
-                props.theme.line +
-                '*2',
-        )};
+    height: ${props => props.theme.daButton.buttonHeight[props.fieldSize]};
     border-radius: ${props =>
-        math(
-            props.theme.daButton.buttonHeight[props.fieldSize] +
-                '+' +
-                props.theme.line +
-                '*2' +
-                '/2',
-        )};
+        math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
     border-left: none;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     transition: all ${props => props.theme.transition.xs};
 
-    & .icon {
+    & > .icon {
         width: ${props => props.theme.iconSize[props.fieldSize]};
         height: auto;
     }

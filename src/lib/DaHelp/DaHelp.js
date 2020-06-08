@@ -1,11 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    colorThemeOptions,
-    colorThemeDefault,
-    buttonSizeOptions,
-    buttonSizeDefault,
-} from '../../shared/constants';
+import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { DaHelpBase } from './style';
 
 const DaHelp = props => {
@@ -13,7 +8,6 @@ const DaHelp = props => {
 };
 
 DaHelp.propTypes = {
-    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
@@ -21,7 +15,6 @@ DaHelp.propTypes = {
 };
 
 DaHelp.defaultProps = {
-    colorTheme: colorThemeDefault,
     fieldSize: buttonSizeDefault,
     disabled: false,
     readOnly: false,
