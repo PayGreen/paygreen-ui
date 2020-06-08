@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { transparentize, directionalProperty } from 'polished';
+import { directionalProperty } from 'polished';
+import { borderColor, hoverColor } from './base';
 
 const borderNone = 'none';
 
@@ -23,7 +24,7 @@ const ClickableBlockBase = styled.div`
             props.theme.space[props.marginBottom],
             props.theme.space[props.marginLateral],
         )};
-    border: solid ${props => props.theme.line + props.theme.wab.grey10};
+    ${props => borderColor[props.colorPallet]};
     border-top: ${props => (props.borderTop ? null : borderNone)};
     border-right: ${props => (props.borderRight ? null : borderNone)};
     border-left: ${props => (props.borderLeft ? null : borderNone)};
@@ -31,11 +32,7 @@ const ClickableBlockBase = styled.div`
     transition: all ${props => props.theme.transition.xs};
 
     &:hover {
-        background-color: ${props =>
-            transparentize(
-                props.theme.shadow.opacity.xxl,
-                props.theme.wab.grey10,
-            )};
+        ${props => hoverColor[props.colorPallet]};
     }
 `;
 

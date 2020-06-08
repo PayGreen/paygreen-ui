@@ -7,6 +7,12 @@ import {
     imageSizeOptions,
     spaceOptions,
     spaceDefault,
+    colorPalletOptions,
+    colorThemeOptions,
+    colorThemeDefault,
+    greyOptions,
+    formStatusOptions,
+    formStatusDefault,
 } from '../../shared/constants';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
@@ -18,6 +24,22 @@ storiesOf(folder.main + 'ClickableBlock', module)
     .addDecorator(withKnobs)
     .add('ClickableBlock', () => (
         <ClickableBlock
+            colorPallet={select(
+                'Color pallet',
+                colorPalletOptions,
+                colorPalletOptions.wab,
+            )}
+            colorTheme={select(
+                'Color theme',
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+            colorWab={select('Color wab', greyOptions, greyOptions.grey10)}
+            colorStatus={select(
+                'Color status',
+                formStatusOptions,
+                formStatusDefault,
+            )}
             borderTop={boolean('Border top', true)}
             borderRight={boolean('Border right', true)}
             borderLeft={boolean('Border left', true)}

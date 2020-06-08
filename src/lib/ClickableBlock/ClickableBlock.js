@@ -5,7 +5,13 @@ import {
     rotateSizeOptions,
     rotateSizeDefault,
     colorPalletOptions,
+    colorThemeOptions,
+    colorThemeDefault,
+    greyOptions,
+    formStatusOptions,
+    formStatusDefault,
     spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import { ClickableBlockBase } from './style';
 import { ArrowBottomIcon } from '../Icon/Icon';
@@ -21,7 +27,10 @@ const ClickableBlock = props => {
                     props.isActive ? rotateSizeOptions.d180 : rotateSizeDefault
                 }
                 iconSize={iconSizeOptions.md}
-                colorPallet={colorPalletOptions.wab}
+                colorPallet={props.colorPallet}
+                colorTheme={props.colorTheme}
+                colorWab={props.colorWab}
+                colorStatus={props.colorStatus}
                 marginLeft={spaceOptions.xs}
             />
         </ClickableBlockBase>
@@ -29,6 +38,10 @@ const ClickableBlock = props => {
 };
 
 ClickableBlock.propTypes = {
+    colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    colorWab: PropTypes.oneOf(Object.values(greyOptions)),
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -43,6 +56,16 @@ ClickableBlock.propTypes = {
 };
 
 ClickableBlock.defaultProps = {
+    colorPallet: colorPalletOptions.wab,
+    colorTheme: colorThemeDefault,
+    colorWab: greyOptions.grey10,
+    colorStatus: formStatusDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    marginLateral: spaceDefault,
+    paddingTop: spaceDefault,
+    paddingBottom: spaceDefault,
+    paddingLateral: spaceDefault,
     borderTop: true,
     borderRight: true,
     borderLeft: true,
