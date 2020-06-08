@@ -1,10 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     imageTypeOptions,
     imageSizeOptions,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
@@ -20,6 +22,16 @@ storiesOf(folder.main + 'ClickableBlock', module)
             borderRight={boolean('Border right', true)}
             borderLeft={boolean('Border left', true)}
             borderBottom={boolean('Border bottom', true)}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            marginLateral={select('Margin lateral', spaceOptions, spaceDefault)}
+            paddingTop={select('Padding top', spaceOptions, spaceDefault)}
+            paddingBottom={select('Padding bottom', spaceOptions, spaceDefault)}
+            paddingLateral={select(
+                'Padding lateral',
+                spaceOptions,
+                spaceDefault,
+            )}
             isActive={boolean('Is active', false)}
         >
             <Image

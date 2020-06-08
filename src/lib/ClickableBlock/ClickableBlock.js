@@ -29,6 +29,12 @@ const ClickableBlock = props => {
 };
 
 ClickableBlock.propTypes = {
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     borderTop: PropTypes.bool,
     borderRight: PropTypes.bool,
     borderLeft: PropTypes.bool,
