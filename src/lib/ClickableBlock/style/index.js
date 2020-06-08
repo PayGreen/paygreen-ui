@@ -18,7 +18,7 @@ const ClickableBlockBase = styled.div`
     &:hover {
         background-color: ${props =>
             transparentize(
-                props.theme.shadow.opacity.lg,
+                props.theme.shadow.opacity.xxl,
                 props.theme.wab.grey10,
             )};
     }
