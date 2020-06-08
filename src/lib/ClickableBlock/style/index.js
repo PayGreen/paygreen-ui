@@ -8,6 +8,7 @@ const ClickableBlockBase = styled.div`
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    
     ${props =>
         directionalProperty(
             'padding',
@@ -24,6 +25,7 @@ const ClickableBlockBase = styled.div`
             props.theme.space[props.marginBottom],
             props.theme.space[props.marginLateral],
         )};
+
     ${props => borderColor[props.colorPallet]};
     border-top: ${props => (props.borderTop ? null : borderNone)};
     border-right: ${props => (props.borderRight ? null : borderNone)};

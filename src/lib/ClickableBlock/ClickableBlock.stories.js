@@ -13,6 +13,7 @@ import {
     greyOptions,
     formStatusOptions,
     formStatusDefault,
+    iconSizeOptions,
 } from '../../shared/constants';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
@@ -54,6 +55,7 @@ storiesOf(folder.main + 'ClickableBlock', module)
                 spaceOptions,
                 spaceDefault,
             )}
+            iconSize={select('Icon size', iconSizeOptions, iconSizeOptions.md)}
             isActive={boolean('Is active', false)}
         >
             <Image

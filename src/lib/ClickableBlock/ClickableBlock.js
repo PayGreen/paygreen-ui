@@ -18,7 +18,7 @@ import { ArrowBottomIcon } from '../Icon/Icon';
 
 const ClickableBlock = props => {
     return (
-        <ClickableBlockBase {...props}>
+        <ClickableBlockBase tabIndex="0" {...props}>
             {props.children}
 
             <ArrowBottomIcon
@@ -26,7 +26,7 @@ const ClickableBlock = props => {
                 rotateSize={
                     props.isActive ? rotateSizeOptions.d180 : rotateSizeDefault
                 }
-                iconSize={iconSizeOptions.md}
+                iconSize={props.iconSize}
                 colorPallet={props.colorPallet}
                 colorTheme={props.colorTheme}
                 colorWab={props.colorWab}
@@ -52,6 +52,7 @@ ClickableBlock.propTypes = {
     borderRight: PropTypes.bool,
     borderLeft: PropTypes.bool,
     borderBottom: PropTypes.bool,
+    iconSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     isActive: PropTypes.bool,
 };
 
@@ -70,6 +71,7 @@ ClickableBlock.defaultProps = {
     borderRight: true,
     borderLeft: true,
     borderBottom: true,
+    iconSize: iconSizeOptions.md,
     isActive: false,
 };
 
