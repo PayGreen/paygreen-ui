@@ -43,4 +43,4 @@ const hoverStyle = {
     `,
 };
 
-export { borderColor, hoverStyle, };
+export { borderColor, hoverStyle };
