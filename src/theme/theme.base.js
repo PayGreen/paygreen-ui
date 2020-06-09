@@ -39,6 +39,12 @@ export const ThemeBase = {
             gradientBase: '#e98e90',
             gradientShade: '#e98eb9',
         },
+        quinary: {
+            main: '#a26ae1',
+            light: '#e9d9fb',
+            gradientBase: '#b887ee',
+            gradientShade: '#dd94ef',
+        },
 
         status: {
             success: {

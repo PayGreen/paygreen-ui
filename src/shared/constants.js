@@ -49,7 +49,8 @@ const colorThemeOptions = {
     primary: 'primary',
     secondary: 'secondary',
     tertiary: 'tertiary',
-    quaternary: 'quaternary'
+    quaternary: 'quaternary',
+    quinary: 'quinary'
 };
 
 const colorThemeDefault = colorThemeOptions.primary;
