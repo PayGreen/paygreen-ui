@@ -14,6 +14,7 @@ const DaSelectBase = styled.div`
 
     select {
         ${field};
+        line-height:normal;
         ${props => (props.inputDisabled ? disabled : enabled)};
         appearance: none;
 
