@@ -14,7 +14,6 @@ const DaSelectBase = styled.div`
 
     select {
         ${field};
-        line-height:normal;
         appearance: none;
         
         option {
