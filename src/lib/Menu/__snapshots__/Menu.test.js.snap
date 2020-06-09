@@ -11,7 +11,7 @@ exports[`renders without crashing 1`] = `
       className="sc-ifAKCX bZwbSW"
     >
       <span
-        className="sc-bwzfXH kIRMFA"
+        className="sc-bwzfXH ixqcHG"
       >
         Our products
       </span>
@@ -28,7 +28,7 @@ exports[`renders without crashing 1`] = `
           className="sc-ifAKCX fkxAoR"
         >
           <span
-            className="sc-bdVaJa fAXFGG icon"
+            className="sc-bdVaJa kMytCS icon"
           >
             <svg
               viewBox="0 0 143 143"
@@ -39,7 +39,7 @@ exports[`renders without crashing 1`] = `
             </svg>
           </span>
           <span
-            className="sc-bwzfXH dFoyuL"
+            className="sc-bwzfXH ifokyD"
           >
             Tree
           </span>
@@ -59,7 +59,7 @@ exports[`renders without crashing 1`] = `
           className="sc-ifAKCX fkxAoR"
         >
           <span
-            className="sc-bdVaJa fAXFGG icon"
+            className="sc-bdVaJa kMytCS icon"
           >
             <svg
               viewBox="0 0 143 143"
@@ -73,7 +73,7 @@ exports[`renders without crashing 1`] = `
             </svg>
           </span>
           <span
-            className="sc-bwzfXH dFoyuL"
+            className="sc-bwzfXH ifokyD"
           >
             Rounding
           </span>

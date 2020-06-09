@@ -236,6 +236,7 @@ export const ThemeBase = {
         loader: 90,
         menu: 100,
         header: 110,
+        modal: 120,
     },
     query: {
         min: {
@@ -280,11 +281,6 @@ export const ThemeBase = {
             md: '38px',
             lg: '44px',
         },
-        paddingWidth: {
-            sm: '22px',
-            md: '26px',
-            lg: '30px',
-        },
         shift: {
             sm: '2px',
             md: '4px',
@@ -293,7 +289,7 @@ export const ThemeBase = {
         font: {
             sm: '1.35rem',
             md: '1.4rem',
-            lg: '1.8rem',
+            lg: '1.7rem',
         },
         iconSpacing: {
             sm: '0.9rem',
@@ -324,6 +320,7 @@ export const ThemeBase = {
     shadow: {
         size: {
             none: '0 0 0',
+            xs: '1px 1px 5px',
             sm: '1px 1px 10px',
             md: '2px 2px 15px',
             lg: '3px 3px 20px'

@@ -124,6 +124,28 @@ exports[`renders without crashing 1`] = `
             "lg": "34px",
           },
         },
+        "daButton": Object {
+          "buttonHeight": Object {
+            "lg": "44px",
+            "md": "38px",
+            "sm": "32px",
+          },
+          "font": Object {
+            "lg": "1.7rem",
+            "md": "1.4rem",
+            "sm": "1.35rem",
+          },
+          "iconSpacing": Object {
+            "lg": "1.1rem",
+            "md": "1rem",
+            "sm": "0.9rem",
+          },
+          "shift": Object {
+            "lg": "6px",
+            "md": "4px",
+            "sm": "2px",
+          },
+        },
         "dash": "3px",
         "font": Object {
           "lineHeight": Object {
@@ -147,6 +169,7 @@ exports[`renders without crashing 1`] = `
               "lg": "3px",
               "md": "2px",
               "sm": "2px",
+              "tiny": "2px",
               "xl": "3px",
               "xs": "2px",
               "xxs": "2px",
@@ -156,6 +179,7 @@ exports[`renders without crashing 1`] = `
               "lg": "24px",
               "md": "12px",
               "sm": "12px",
+              "tiny": "8px",
               "xl": "24px",
               "xs": "10px",
               "xxs": "10px",
@@ -165,6 +189,7 @@ exports[`renders without crashing 1`] = `
               "lg": "80px",
               "md": "65px",
               "sm": "50px",
+              "tiny": "30px",
               "xl": "80px",
               "xs": "40px",
               "xxs": "40px",
@@ -199,6 +224,7 @@ exports[`renders without crashing 1`] = `
           "sm": "20px",
           "xl": "40px",
           "xs": "16px",
+          "xxs": "12px",
         },
         "imageCircleSize": Object {
           "auto": "auto",
@@ -223,6 +249,7 @@ exports[`renders without crashing 1`] = `
           "sm": "60px",
           "xl": "90px",
           "xs": "50px",
+          "xxs": "40px",
         },
         "logoHeight": Object {
           "lg": "50px",
@@ -241,6 +268,7 @@ exports[`renders without crashing 1`] = `
           "xs": "90px",
         },
         "name": "Default",
+        "pattern": "test-file-stub",
         "query": Object {
           "max": Object {
             "lg": "max-width: 1199px",
@@ -260,6 +288,16 @@ exports[`renders without crashing 1`] = `
           "none": "0",
           "sm": "4px",
         },
+        "rotateSize": Object {
+          "d0": "0deg",
+          "d135": "135deg",
+          "d180": "180deg",
+          "d225": "225deg",
+          "d270": "270deg",
+          "d315": "315deg",
+          "d45": "45deg",
+          "d90": "90deg",
+        },
         "shadow": Object {
           "opacity": Object {
             "lg": 0.7,
@@ -273,6 +311,7 @@ exports[`renders without crashing 1`] = `
             "md": "2px 2px 15px",
             "none": "0 0 0",
             "sm": "1px 1px 10px",
+            "xs": "1px 1px 5px",
           },
         },
         "space": Object {
@@ -289,6 +328,7 @@ exports[`renders without crashing 1`] = `
           "sm": "0.3s",
           "xl": "1s",
           "xs": "0.2s",
+          "xxs": "0.1s",
         },
         "wab": Object {
           "black00": "#000000",
@@ -316,6 +356,7 @@ exports[`renders without crashing 1`] = `
           "layer": -5,
           "loader": 90,
           "menu": 100,
+          "modal": 120,
         },
       }
     }

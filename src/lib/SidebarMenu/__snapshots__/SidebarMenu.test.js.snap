@@ -8,10 +8,10 @@ exports[`renders without crashing 1`] = `
     href="#"
   >
     <div
-      className="sc-htpNat gBtqyB"
+      className="sc-htpNat iCRsqm"
     >
       <span
-        className="sc-bdVaJa ZZzwg icon"
+        className="sc-bdVaJa kMytCS icon"
       >
         <svg
           viewBox="0 0 143 143"
@@ -25,24 +25,24 @@ exports[`renders without crashing 1`] = `
         </svg>
       </span>
       <span
-        className="sc-bwzfXH dFoyuL"
+        className="sc-bwzfXH ifokyD"
       >
         Payment
       </span>
     </div>
   </a>
   <ul
-    className="sc-ifAKCX eeGJct"
+    className="sc-ifAKCX fjrFMS"
   >
     <li>
       <a
         href="#"
       >
         <div
-          className="sc-htpNat gBtqyB"
+          className="sc-htpNat iCRsqm"
         >
           <span
-            className="sc-bwzfXH dFoyuL"
+            className="sc-bwzfXH ifokyD"
           >
             Tree
           </span>
@@ -54,10 +54,10 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="sc-htpNat gBtqyB"
+          className="sc-htpNat iCRsqm"
         >
           <span
-            className="sc-bwzfXH dFoyuL"
+            className="sc-bwzfXH ifokyD"
           >
             Other
           </span>

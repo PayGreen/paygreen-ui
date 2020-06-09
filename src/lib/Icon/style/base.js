@@ -1,128 +1,101 @@
 import { css } from 'styled-components';
-import { transparentize, math } from 'polished';
+import { math } from 'polished';
 import { colorPalletOptions } from '../../../shared/constants';
 
-const removeButtonStyle = css`
-    background: transparent;
+const resetButtonStyle = css`
+    cursor: pointer;
+    outline: none;
     border: none;
     padding: 0;
-    outline: none;
-    cursor: pointer;
 `;
 
-const shadowStyle = {
-    base: {
-        theme: css`
-            box-shadow: ${props => props.theme.shadow.size.sm + ' ' + transparentize(
-                props.theme.shadow.opacity.md,
-                props.theme.color[props.colorTheme].main
-            )};
-        `,
-        wab: css`
-            box-shadow: ${props => props.theme.shadow.size.sm + ' ' + transparentize(
-                props.theme.shadow.opacity.sm,
-                props.theme.wab.black00
-            )};
-        `,
-        status: css`
-            box-shadow: ${props => props.theme.shadow.size.sm + ' ' + transparentize(
-                props.theme.shadow.opacity.md,
-                props.theme.color.status[props.colorStatus].main
-            )};
-        `
-    },
-    active: {
-        theme: css`
-            box-shadow: ${props => props.theme.shadow.size.md + ' ' + transparentize(
-                props.theme.shadow.opacity.lg,
-                props.theme.color[props.colorTheme].main
-            )};
-        `,
-        wab: css`
-            box-shadow: ${props => props.theme.shadow.size.md + ' ' + transparentize(
-                props.theme.shadow.opacity.lg,
-                props.theme.color[props.colorTheme].main
-            )};
-        `,
-        status: css`
-            box-shadow: ${props => props.theme.shadow.size.md + ' ' + transparentize(
-                props.theme.shadow.opacity.lg,
-                props.theme.color.status[props.colorStatus].main
-            )};
-        `
-    }
-};
-
-const layerShift = '6px';
-
-const layerStyle = css`
-    &::before {
-        top: ${layerShift};
-        left: ${layerShift};
-    }
-
-    &::after {
-        bottom: ${layerShift};
-        right: ${layerShift};
-    }
-`;
-
-const activeStyle = {
+const baseColor = {
     theme: css`
-        ${props => props.hasShadow ? shadowStyle.active.theme : layerStyle};
-    `,
-    wab: css`
-        ${props => props.hasShadow ? shadowStyle.active.wab : layerStyle};
+        background-color: ${props => props.theme.color[props.colorTheme].light};
 
         svg {
             fill: ${props => props.theme.color[props.colorTheme].main};
         }
     `,
+    wab: css`
+        background-color: transparent;
+
+        svg {
+            fill: ${props => props.theme.wab[props.colorWab]};
+        }
+    `,
     status: css`
-        ${props => props.hasShadow ? shadowStyle.active.status : layerStyle};
-    `
+        background-color: ${props =>
+            props.theme.color.status[props.colorStatus].light};
+
+        svg {
+            fill: ${props => props.theme.color.status[props.colorStatus].main};
+        }
+    `,
 };
 
+const activeColor = {
+    theme: css`
+        filter: grayscale(0);
+        background-color: ${props =>
+            props.theme.color[props.colorTheme].gradientBase};
+
+        svg {
+            fill: ${props => props.theme.wab.white00};
+        }
+    `,
+    status: css`
+        filter: grayscale(0);
+        background-color: ${props =>
+            props.theme.color.status[props.colorStatus].main};
+
+        svg {
+            fill: ${props => props.theme.color.status[props.colorStatus].light};
+        }
+    `,
+};
+
+const hasHoverColor = css`
+    filter: grayscale(100%);
+
+    &:hover,
+    &:active,
+    &:focus {
+        ${props => activeColor[props.colorPallet]};
+    }
+
+    ${props => (props.isActive ? activeColor[props.colorPallet] : null)};
+`;
+
 const backgroundStyle = css`
-    padding: ${props => math(props.theme.iconSize[props.iconSize] + '/2 - ' + props.theme.space.xs)};
+    padding: ${props =>
+        math(
+            props.theme.iconSize[props.iconSize] +
+                '/2 - ' +
+                props.theme.space.xs,
+        )};
     border-radius: 50%;
-    background-color: ${props => props.colorPallet === colorPalletOptions.theme ?
-        props.theme.color[props.colorTheme].light :
-        props.theme.wab.white00
-    };
 
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        z-index: ${props => props.theme.zindex.layer};
-        height: 100%;
-        width: 100%;
-        border-radius: 50%;
-        background: ${props => props.colorPallet === colorPalletOptions.theme ?
-            props.theme.color[props.colorTheme].light :
-            props.theme.wab.white00
-        };
-        opacity: .5;
-        transition: all ${props => props.theme.transition.sm} cubic-bezier(0.9, -0.6, 0, 2);
+    ${props =>
+        props.hasHover && props.colorPallet !== colorPalletOptions.wab
+            ? hasHoverColor
+            : null};
+`;
+
+const noBackground = css`
+    background-color: transparent;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: transparent;
     }
-
-    &::before {
-        top: 0;
-        left: 0;
-    }
-
-    &::after {
-        bottom: 0;
-        right: 0;
-        transition-delay: .06s;
-    }
-
-    ${props => props.hasShadow ? shadowStyle.base[props.colorPallet] : null};
 `;
 
 export {
-    removeButtonStyle,
+    resetButtonStyle,
+    baseColor,
+    hasHoverColor,
     backgroundStyle,
-    activeStyle
+    noBackground,
 };

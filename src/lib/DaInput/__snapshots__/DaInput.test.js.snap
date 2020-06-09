@@ -130,7 +130,11 @@ exports[`renders without crashing 1`] = `
           "font": Object {
             "lg": "1.8rem",
             "md": "1.4rem",
+<<<<<<< HEAD
             "sm": "1.35rem",
+=======
+            "sm": "1.2rem",
+>>>>>>> c21948a7734f9da18079a645c47494a52bc705bc
           },
           "iconSpacing": Object {
             "lg": "1.1rem",

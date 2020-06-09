@@ -1,17 +1,27 @@
 import AnimPlane from './AnimPlane/AnimPlane';
 import AutonomousInput from './AutonomousInput/AutonomousInput';
+import Badge from './Badge/Badge';
 import Banner from './Banner/Banner';
 import BannerImage from './BannerImage/BannerImage';
+import Box from './Box/Box';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
+import ClickableBlock from './ClickableBlock/ClickableBlock';
+import DaButton from './DaButton/DaButton';
+import DaTable from './DaTable/DaTable';
+import DaTableCell from './DaTableCell/DaTableCell';
+import DaTableHead from './DaTableHead/DaTableHead';
+import DaTableHeadCell from './DaTableHeadCell/DaTableHeadCell';
+import DaTableRow from './DaTableRow/DaTableRow';
 import Divider from './Divider/Divider';
 import Dot from './Dot/Dot';
 import Footer from './Footer/Footer';
 import FooterList from './FooterList/FooterList';
 import Grid from './Grid/Grid';
 import Header from './Header/Header';
+import HR from './HR/HR';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 import Input from './Input/Input';
@@ -32,6 +42,11 @@ import MenuItem from './MenuItem/MenuItem';
 import MenuList from './MenuList/MenuList';
 import MenuPrimary from './MenuPrimary/MenuPrimary';
 import MenuSecondary from './MenuSecondary/MenuSecondary';
+import Modal from './Modal/Modal';
+import ModalHeader from './ModalHeader/ModalHeader';
+import ModalBody from './ModalBody/ModalBody';
+import ModalContent from './ModalContent/ModalContent';
+import Overlay from './Overlay/Overlay';
 import Popin from './Popin/Popin';
 import RadioIcon from './RadioIcon/RadioIcon';
 import Select from './Select/Select';
@@ -39,6 +54,7 @@ import Sidebar from './Sidebar/Sidebar';
 import SidebarItem from './SidebarItem/SidebarItem';
 import SidebarList from './SidebarList/SidebarList';
 import SidebarMenu from './SidebarMenu/SidebarMenu';
+import SidebarMenuCategory from './SidebarMenuCategory/SidebarMenuCategory';
 import Table from './Table/Table';
 import TableCell from './TableCell/TableCell';
 import TableRow from './TableRow/TableRow';
@@ -149,18 +165,28 @@ export {
     PGThemeProvider,
     AnimPlane,
     AutonomousInput,
+    Badge,
     Banner,
     BannerImage,
+    Box,
     Breadcrumb,
     Button,
     ButtonGroup,
     Card,
+    ClickableBlock,
+    DaButton,
+    DaTable,
+    DaTableCell,
+    DaTableHead,
+    DaTableHeadCell,
+    DaTableRow,
     Divider,
     Dot,
     Footer,
     FooterList,
     Grid,
     Header,
+    HR,
     IconLabel,
     Image,
     Input,
@@ -181,6 +207,11 @@ export {
     MenuList,
     MenuPrimary,
     MenuSecondary,
+    Modal,
+    ModalBody,
+    ModalHeader,
+    ModalContent,
+    Overlay,
     Popin,
     RadioIcon,
     Select,
@@ -188,6 +219,7 @@ export {
     SidebarItem,
     SidebarList,
     SidebarMenu,
+    SidebarMenuCategory,
     Table,
     TableCell,
     TableRow,

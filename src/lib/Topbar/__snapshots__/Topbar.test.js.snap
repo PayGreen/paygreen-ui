@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <header
-  className="sc-bwzfXH bJNQPA"
+  className="sc-bwzfXH dzHGax"
 >
   <button
     className="sc-bdVaJa eNQYwt"

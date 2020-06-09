@@ -36,6 +36,7 @@ storiesOf(folder.main + folder.sub.list + 'ListItem', module)
                 colorThemeDefault,
             )}
             bulletSize={select('Bullet size', iconSizeOptions, iconSizeDefault)}
+            hasLink={boolean('Has link', false)}
         >
             <LeafIcon
                 colorTheme={radios(

@@ -6,7 +6,7 @@ exports[`renders without crashing 1`] = `
 >
   <li>
     <span
-      className="sc-htpNat kDSvXT"
+      className="sc-htpNat iRlhV"
     >
       <span
         className="bullet"
@@ -20,7 +20,7 @@ exports[`renders without crashing 1`] = `
   </li>
   <li>
     <span
-      className="sc-htpNat kDSvXT"
+      className="sc-htpNat iRlhV"
     >
       <span
         className="bullet"

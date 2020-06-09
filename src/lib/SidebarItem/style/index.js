@@ -4,12 +4,12 @@ import { activeStyle, hoverBase } from './base';
 
 const SidebarItemBase = styled.div`
     position: relative;
-    padding: ${props => props.theme.space.sm};
+    padding: ${props => props.theme.space.xs};
     margin: ${props => props.theme.line} 0;
     display: grid;
     grid-template-areas: 'icon link button';
     grid-template-columns: ${props => props.theme.iconSize.lg} 1fr auto;
-    overflow-x: hidden;
+    overflow: hidden;
 
     & > .icon {
         grid-area: icon;
