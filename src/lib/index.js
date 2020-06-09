@@ -23,6 +23,7 @@ import DaTableRow from './DaTableRow/DaTableRow';
 import DaTextarea from './DaTextarea/DaTextarea';
 import Divider from './Divider/Divider';
 import Dot from './Dot/Dot';
+import Dropdown from './Dropdown/Dropdown';
 import Footer from './Footer/Footer';
 import FooterList from './FooterList/FooterList';
 import Grid from './Grid/Grid';
@@ -195,6 +196,7 @@ export {
     DaTextarea,
     Divider,
     Dot,
+    Dropdown,
     Footer,
     FooterList,
     Grid,
