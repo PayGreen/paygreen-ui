@@ -449,8 +449,11 @@ export {
     buttonStyleDefault,
     imageTypeOptions,
     imageTypeDefault,
+<<<<<<< HEAD
     arrowBlockOptions,
     arrowBlockDefault,
+=======
+>>>>>>> feature: added htlmTag for Text
     shadowSizeOptions,
     shadowSizeDefault,
     buttonSizeOptions,
@@ -481,8 +484,11 @@ export {
     iconHtmlTagDefault,
     itemHtmlTagOptions,
     itemHtmlTagDefault,
+<<<<<<< HEAD
     labelHtmlTagOptions,
     labelHtmlTagDefault,
+=======
+>>>>>>> feature: added htlmTag for Text
     displayOptions,
     displayDefault,
     flexDirectionOptions,
