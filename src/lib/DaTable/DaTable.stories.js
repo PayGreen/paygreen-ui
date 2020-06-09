@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     formStatusOptions,
@@ -9,10 +9,18 @@ import {
     iconSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
-import { CheckBoldIcon, CrossBoldIcon, ClockBoldIcon } from '../Icon/Icon';
+import {
+    CheckBoldIcon,
+    CrossBoldIcon,
+    ClockBoldIcon,
+    ArrowBottomIcon,
+    MenuIcon,
+} from '../Icon/Icon';
 import Text from '../Text/Text';
 import DaTableCell from '../DaTableCell/DaTableCell';
 import DaTableRow from '../DaTableRow/DaTableRow';
+import DaTableHeadCell from '../DaTableHeadCell/DaTableHeadCell';
+import DaTableHead from '../DaTableHead/DaTableHead';
 import DaTable from './DaTable';
 
 const iconStyles = {
@@ -144,7 +152,57 @@ const isActiveLabel = 'First line active';
 storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
     .addDecorator(withKnobs)
     .add('DaTable', () => (
-        <DaTable>
+        <DaTable
+            marginLateral={select(
+                'Lateral margins',
+                spaceOptions,
+                spaceOptions.sm,
+            )}
+            marginTop={select('Margin top', spaceOptions, spaceOptions.sm)}
+            marginBottom={select(
+                'Margin bottom',
+                spaceOptions,
+                spaceOptions.sm,
+            )}
+        >
+            <DaTableHead resultsLabel="10 results">
+                <DaTableHeadCell isCheckbox={true}>
+                    Select/deselect all
+                    <input type="checkbox" style={{ display: 'block' }} />
+                </DaTableHeadCell>
+
+                <DaTableHeadCell>ID</DaTableHeadCell>
+
+                <DaTableHeadCell
+                    sortIcon={<ArrowBottomIcon title="Sort DESC on Date" />}
+                >
+                    Date
+                </DaTableHeadCell>
+
+                <DaTableHeadCell>Name</DaTableHeadCell>
+
+                <DaTableHeadCell
+                    sortIcon={
+                        <ArrowBottomIcon
+                            isActive={true}
+                            title="Sort ASC on Amount"
+                        />
+                    }
+                >
+                    Amount
+                </DaTableHeadCell>
+
+                <DaTableHeadCell groupIcon={<MenuIcon title="Group by Type" />}>
+                    Type
+                </DaTableHeadCell>
+
+                <DaTableHeadCell
+                    groupIcon={<MenuIcon title="Group by Status" />}
+                >
+                    Status
+                </DaTableHeadCell>
+            </DaTableHead>
+
             {sampleRows.map((sample, index) => (
                 <DaTableRow
                     key={index}

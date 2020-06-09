@@ -6,12 +6,14 @@ import BannerImage from './BannerImage/BannerImage';
 import Box from './Box/Box';
 import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
-import DaButton from './DaButton/DaButton';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
 import ClickableBlock from './ClickableBlock/ClickableBlock';
+import DaButton from './DaButton/DaButton';
 import DaTable from './DaTable/DaTable';
 import DaTableCell from './DaTableCell/DaTableCell';
+import DaTableHead from './DaTableHead/DaTableHead';
+import DaTableHeadCell from './DaTableHeadCell/DaTableHeadCell';
 import DaTableRow from './DaTableRow/DaTableRow';
 import Divider from './Divider/Divider';
 import Dot from './Dot/Dot';
@@ -166,12 +168,14 @@ export {
     Box,
     Breadcrumb,
     Button,
-    DaButton,
     ButtonGroup,
     Card,
     ClickableBlock,
+    DaButton,
     DaTable,
     DaTableCell,
+    DaTableHead,
+    DaTableHeadCell,
     DaTableRow,
     Divider,
     Dot,

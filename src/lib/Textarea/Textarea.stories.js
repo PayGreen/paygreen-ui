@@ -15,7 +15,7 @@ import {
 } from '../../shared/constants';
 import Textarea from './Textarea';
 
-storiesOf(folder.form + 'Paygreen | Forms/Textarea', module)
+storiesOf(folder.form + 'Textarea', module)
     .addDecorator(withKnobs)
     .add(
         'Textarea',
