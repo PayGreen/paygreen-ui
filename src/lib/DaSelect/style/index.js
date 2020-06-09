@@ -15,15 +15,15 @@ const DaSelectBase = styled.div`
     select {
         ${field};
         line-height:normal;
-        ${props => (props.inputDisabled ? disabled : enabled)};
         appearance: none;
-
+        
         option {
             &:disabled {
                 color: ${props => props.theme.wab.grey30};
             }
         }
-
+        
+        ${props => (props.inputDisabled ? disabled : enabled)};
         ${props => (props.hasHelpButton ? helpButtonStyle : null)};
     }
 

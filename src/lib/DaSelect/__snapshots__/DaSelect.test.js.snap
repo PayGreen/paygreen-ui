@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa fnrVPn"
+  className="sc-bdVaJa fkVZaT"
 >
   <select
     disabled={false}
@@ -124,19 +124,14 @@ exports[`renders without crashing 1`] = `
             "sm": "32px",
           },
           "font": Object {
-            "lg": "1.8rem",
+            "lg": "1.7rem",
             "md": "1.4rem",
-            "sm": "1.2rem",
+            "sm": "1.35rem",
           },
           "iconSpacing": Object {
             "lg": "1.1rem",
             "md": "1rem",
             "sm": "0.9rem",
-          },
-          "paddingWidth": Object {
-            "lg": "30px",
-            "md": "26px",
-            "sm": "22px",
           },
           "shift": Object {
             "lg": "6px",
@@ -309,6 +304,7 @@ exports[`renders without crashing 1`] = `
             "md": "2px 2px 15px",
             "none": "0 0 0",
             "sm": "1px 1px 10px",
+            "xs": "1px 1px 5px",
           },
         },
         "space": Object {
@@ -353,6 +349,7 @@ exports[`renders without crashing 1`] = `
           "layer": -5,
           "loader": 90,
           "menu": 100,
+          "modal": 120,
         },
       }
     }
