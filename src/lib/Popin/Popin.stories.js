@@ -10,9 +10,10 @@ import {
     colorPalletOptions,
     greyOptions,
     spaceOptions,
-    alignOptions,
-    fontSizeOptions,
     spaceDefault,
+    alignOptions,
+    alignDefault,
+    fontSizeOptions,
 } from '../../shared/constants';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
@@ -35,6 +36,7 @@ storiesOf(folder.main + 'Popin', module)
                 shadowSizeOptions.sm,
             )}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            align={select('Alignment', alignOptions, alignDefault)}
         >
             <Title
                 marginTop={spaceOptions.xs}

@@ -10,4 +10,18 @@ const hiddenStyle = css`
     transition-delay: 0s, ${props => props.theme.transition.xs};
 `;
 
-export { activeStyle, hiddenStyle };
+const popinAlign = {
+    left: css`
+        left: 0;
+    `,
+    center: css`
+        left: 50%;
+        transform: translateX(-50%);
+    `,
+    right: css`
+        right: 0;
+    `
+};
+
+
+export { activeStyle, hiddenStyle, popinAlign };

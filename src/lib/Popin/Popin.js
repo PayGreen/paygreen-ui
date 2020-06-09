@@ -8,15 +8,13 @@ import {
     radiusDefault,
     spaceOptions,
     spaceDefault,
+    alignOptions,
+    alignDefault,
 } from '../../shared/constants';
 import { PopinBase } from './style';
 
 const Popin = props => {
-    return (
-        <PopinBase {...props}>
-            {props.children}
-        </PopinBase>
-    );
+    return <PopinBase {...props}>{props.children}</PopinBase>;
 };
 
 Popin.propTypes = {
@@ -25,6 +23,7 @@ Popin.propTypes = {
     blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     shadowSize: PropTypes.oneOf(Object.values(shadowSizeOptions)),
+    align: PropTypes.oneOf(Object.values(alignOptions)),
 };
 
 Popin.defaultProps = {
@@ -33,6 +32,7 @@ Popin.defaultProps = {
     blockWidth: blockWidthDefault,
     radiusSize: radiusDefault,
     shadowSize: shadowSizeOptions.sm,
+    align: PropTypes.oneOf(Object.values(alignDefault)),
 };
 
 export default Popin;
