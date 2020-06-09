@@ -7,6 +7,14 @@ const spanStyle = css`
     display: block;
 `;
 
+const italicStyle = css`
+    font-style: italic;
+`;
+
+const boldStyle = css`
+    font-style: bold;
+`;
+
 const uppercaseStyle = css`
     text-transform: uppercase;
     font-weight: ${props => props.theme.font.weight.bold};
@@ -58,4 +66,6 @@ export {
     blockBackground,
     textStyle,
     internalParagraph,
+    italicStyle,
+    boldStyle,
 };

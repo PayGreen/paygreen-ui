@@ -21,9 +21,9 @@ const folder = {
         sidebarMenu: 'Sidebar elements' + subFolderSeparator,
         modal: 'Modal elements' + subFolderSeparator,
         structure: 'Grids' + subFolderSeparator,
-        table: 'Simple tables'  + subFolderSeparator,
-        daTable: 'DaTables'  + subFolderSeparator,
-    }
+        table: 'Simple tables' + subFolderSeparator,
+        daTable: 'DaTables' + subFolderSeparator,
+    },
 };
 
 /* Colors */
@@ -31,7 +31,7 @@ const folder = {
 // Color types
 const colorTypeOptions = {
     original: 'original',
-    reverse: 'reverse'
+    reverse: 'reverse',
 };
 
 const colorTypeDefault = colorTypeOptions.original;
@@ -40,7 +40,7 @@ const colorTypeDefault = colorTypeOptions.original;
 const colorPalletOptions = {
     theme: 'theme',
     wab: 'wab',
-    status: 'status'
+    status: 'status',
 };
 
 const colorPalletDefault = colorPalletOptions.theme;
@@ -51,15 +51,15 @@ const colorThemeOptions = {
     secondary: 'secondary',
     tertiary: 'tertiary',
     quaternary: 'quaternary',
-    quinary: 'quinary'
+    quinary: 'quinary',
 };
 
 const colorThemeDefault = colorThemeOptions.primary;
 
 // Color theme with none option
 const colorThemeAllOptions = {
-    ...{none: 'none'},
-    ...colorThemeOptions
+    ...{ none: 'none' },
+    ...colorThemeOptions,
 };
 
 const colorThemeAllDefault = colorThemeAllOptions.none;
@@ -106,7 +106,7 @@ const maskOptions = {
     none: 'none',
     gradient: 'gradient',
     waveLeft: 'waveLeft',
-    waveRight: 'waveRight'
+    waveRight: 'waveRight',
 };
 
 const maskDefault = maskOptions.none;
@@ -115,7 +115,7 @@ const maskDefault = maskOptions.none;
 const decorationOptions = {
     none: 'none',
     left: 'left',
-    right: 'right'
+    right: 'right',
 };
 
 const decorationDefault = decorationOptions.left;
@@ -141,7 +141,7 @@ const dotStyleDefault = dotStyleOptions.circle;
 // Button styles
 const buttonStyleOptions = {
     fill: 'fill',
-    line: 'line'
+    line: 'line',
 };
 
 const buttonStyleDefault = buttonStyleOptions.fill;
@@ -150,7 +150,7 @@ const buttonStyleDefault = buttonStyleOptions.fill;
 const imageTypeOptions = {
     normal: 'normal',
     picture: 'picture',
-    cover: 'cover'
+    cover: 'cover',
 };
 
 const imageTypeDefault = imageTypeOptions.normal;
@@ -160,7 +160,7 @@ const arrowBlockOptions = {
     none: 'none',
     right: 'right',
     left: 'left',
-    top: 'top'
+    top: 'top',
 };
 
 const arrowBlockDefault = arrowBlockOptions.none;
@@ -181,7 +181,7 @@ const shadowSizeDefault = shadowSizeOptions.md;
 const buttonSizeOptions = {
     sm: 'sm',
     md: 'md',
-    lg: 'lg'
+    lg: 'lg',
 };
 
 const buttonSizeDefault = buttonSizeOptions.md;
@@ -191,14 +191,14 @@ const inputWidthOptions = {
     sm: 'sm',
     md: 'md',
     lg: 'lg',
-}
+};
 
 const inputWidthDefault = inputWidthOptions.md;
 
 // Radio sizes
 const radioSizeOptions = {
     md: 'md',
-    lg: 'lg'
+    lg: 'lg',
 };
 
 const radioSizeDefault = radioSizeOptions.lg;
@@ -207,7 +207,7 @@ const radioSizeDefault = radioSizeOptions.lg;
 const radiusOptions = {
     none: 'none',
     sm: 'sm',
-    lg: 'lg'
+    lg: 'lg',
 };
 
 const radiusDefault = radiusOptions.lg;
@@ -219,7 +219,7 @@ const spaceOptions = {
     sm: 'sm',
     md: 'md',
     lg: 'lg',
-    xl: 'xl'
+    xl: 'xl',
 };
 
 const spaceDefault = spaceOptions.none;
@@ -229,7 +229,7 @@ const blockWidthOptions = {
     sm: 'sm',
     md: 'md',
     lg: 'lg',
-    xl: 'xl'
+    xl: 'xl',
 };
 
 const blockWidthDefault = blockWidthOptions.md;
@@ -241,7 +241,7 @@ const iconSizeOptions = {
     sm: 'sm',
     md: 'md',
     lg: 'lg',
-    xl: 'xl'
+    xl: 'xl',
 };
 
 const iconSizeDefault = iconSizeOptions.md;
@@ -253,7 +253,7 @@ const imageSizeOptions = {
     sm: 'sm',
     md: 'md',
     lg: 'lg',
-    xl: 'xl'
+    xl: 'xl',
 };
 
 const imageSizeDefault = imageSizeOptions.auto;
@@ -267,7 +267,7 @@ const fontSizeOptions = {
     base: 'base',
     md: 'md',
     lg: 'lg',
-    xl: 'xl'
+    xl: 'xl',
 };
 
 const fontSizeDefault = fontSizeOptions.base;
@@ -279,7 +279,7 @@ const cardHtmlTagOptions = {
     div: 'div',
     article: 'article',
     section: 'section',
-    aside: 'aside'
+    aside: 'aside',
 };
 
 const cardHtmlTagDefault = cardHtmlTagOptions.div;
@@ -292,7 +292,7 @@ const titleHtmlTagOptions = {
     h4: 'h4',
     h5: 'h5',
     h6: 'h6',
-    span: 'span'
+    span: 'span',
 };
 
 const titleHtmlTagDefault = titleHtmlTagOptions.span;
@@ -301,7 +301,12 @@ const titleHtmlTagDefault = titleHtmlTagOptions.span;
 const textHtmlTagOptions = {
     p: 'p',
     div: 'div',
-    span: 'span'
+    span: 'span',
+    em: 'em',
+    q: 'q',
+    strong: 'strong',
+    kbd: 'kbd',
+    sub: 'sub',
 };
 
 const textHtmlTagDefault = textHtmlTagOptions.p;
@@ -309,7 +314,7 @@ const textHtmlTagDefault = textHtmlTagOptions.p;
 // Icon HTML tags
 const iconHtmlTagOptions = {
     span: 'span',
-    button: 'button'
+    button: 'button',
 };
 
 const iconHtmlTagDefault = iconHtmlTagOptions.span;
@@ -317,7 +322,7 @@ const iconHtmlTagDefault = iconHtmlTagOptions.span;
 // Item HTML tags
 const itemHtmlTagOptions = {
     li: 'li',
-    div: 'div'
+    div: 'div',
 };
 
 const itemHtmlTagDefault = itemHtmlTagOptions.li;
@@ -325,7 +330,7 @@ const itemHtmlTagDefault = itemHtmlTagOptions.li;
 // Label HTML tags
 const labelHtmlTagOptions = {
     label: 'label',
-    legend: 'legend'
+    legend: 'legend',
 };
 
 const labelHtmlTagDefault = labelHtmlTagOptions.label;
@@ -337,7 +342,7 @@ const labelHtmlTagDefault = labelHtmlTagOptions.label;
 const displayOptions = {
     flex: 'flex',
     grid: 'grid',
-    column: 'column'
+    column: 'column',
 };
 
 const displayDefault = displayOptions.flex;
@@ -346,7 +351,7 @@ const displayDefault = displayOptions.flex;
 
 const flexDirectionOptions = {
     row: 'row',
-    column: 'column'
+    column: 'column',
 };
 
 const flexDirectionDefault = flexDirectionOptions.row;
@@ -355,7 +360,7 @@ const flexDirectionDefault = flexDirectionOptions.row;
 
 const flexWrapOptions = {
     wrap: 'wrap',
-    nowrap: 'nowrap'
+    nowrap: 'nowrap',
 };
 
 const flexWrapDefault = flexWrapOptions.wrap;
@@ -366,7 +371,7 @@ const justifyContentOptions = {
     left: 'flex-start',
     center: 'center',
     right: 'flex-end',
-    spaceBetween: 'space-between'
+    spaceBetween: 'space-between',
 };
 
 const justifyContentDefault = justifyContentOptions.left;
@@ -377,7 +382,7 @@ const justifyItemsOptions = {
     stretch: 'stretch',
     center: 'center',
     start: 'start',
-    end: 'end'
+    end: 'end',
 };
 
 const justifyItemsDefault = justifyItemsOptions.center;
@@ -389,7 +394,7 @@ const alignItemsOptions = {
     center: 'center',
     flexEnd: 'flex-end',
     stretch: 'stretch',
-    baseline: 'baseline'
+    baseline: 'baseline',
 };
 
 const alignItemsDefault = alignItemsOptions.flexStart;
@@ -398,7 +403,7 @@ const alignItemsDefault = alignItemsOptions.flexStart;
 const alignOptions = {
     left: 'left',
     center: 'center',
-    right: 'right'
+    right: 'right',
 };
 
 const alignDefault = alignOptions.left;
@@ -418,7 +423,6 @@ const rotateSizeDefault = rotateSizeOptions.d0;
 
 export {
     folder,
-
     colorTypeOptions,
     colorTypeDefault,
     colorPalletOptions,
@@ -431,7 +435,6 @@ export {
     greyDefault,
     formStatusOptions,
     formStatusDefault,
-
     gradientOptions,
     gradientDefault,
     maskOptions,
@@ -461,7 +464,6 @@ export {
     radiusDefault,
     spaceOptions,
     spaceDefault,
-
     blockWidthOptions,
     blockWidthDefault,
     iconSizeOptions,
@@ -470,7 +472,6 @@ export {
     imageSizeDefault,
     fontSizeOptions,
     fontSizeDefault,
-
     cardHtmlTagOptions,
     cardHtmlTagDefault,
     titleHtmlTagOptions,
