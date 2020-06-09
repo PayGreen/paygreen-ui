@@ -45,6 +45,7 @@ import Modal from './Modal/Modal';
 import ModalHeader from './ModalHeader/ModalHeader';
 import ModalBody from './ModalBody/ModalBody';
 import ModalContent from './ModalContent/ModalContent';
+import Overlay from './Overlay/Overlay';
 import Popin from './Popin/Popin';
 import RadioIcon from './RadioIcon/RadioIcon';
 import Select from './Select/Select';
@@ -208,6 +209,7 @@ export {
     ModalBody,
     ModalHeader,
     ModalContent,
+    Overlay,
     Popin,
     RadioIcon,
     Select,
