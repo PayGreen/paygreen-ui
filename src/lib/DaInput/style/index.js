@@ -3,7 +3,7 @@ import { field, enabled, disabled, helpButtonStyle } from './base';
 
 const DaInputBase = styled.div`
     max-width: ${props =>
-        props.inputType === 'tel'
+        props.type === 'tel'
             ? props.theme.form.inputWidth.sm
             : props.theme.form.inputWidth[props.blockWidth]};
 
@@ -15,7 +15,7 @@ const DaInputBase = styled.div`
             color: ${props => props.theme.wab.grey30};
             font-style: italic;
         }
-        
+
         ${props => (props.hasHelpButton ? helpButtonStyle : null)};
     }
 `;

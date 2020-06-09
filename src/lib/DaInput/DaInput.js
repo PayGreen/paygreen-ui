@@ -18,7 +18,6 @@ const DaInput = props => {
         type,
         // remove mask from rest
         mask,
-
         ...rest
     } = props;
 
@@ -33,7 +32,7 @@ const DaInput = props => {
     return (
         <DaInputBase
             theme={props.theme} // not necessary, only needed for tests
-            inputType={props.type}
+            type={props.type}
             inputReadOnly={props.readOnly}
             inputDisabled={props.disabled}
             fieldSize={fieldSize}

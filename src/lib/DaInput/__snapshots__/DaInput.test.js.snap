@@ -2,11 +2,11 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa hYEBCc"
+  className="sc-bdVaJa czrpCZ"
+  type="text"
 >
   <input
     disabled={false}
-    id="testId1"
     onBlur={[Function]}
     onFocus={[Function]}
     placeholder="Firstname Lastname"
@@ -130,7 +130,7 @@ exports[`renders without crashing 1`] = `
           "font": Object {
             "lg": "1.8rem",
             "md": "1.4rem",
-            "sm": "1.2rem",
+            "sm": "1.35rem",
           },
           "iconSpacing": Object {
             "lg": "1.1rem",

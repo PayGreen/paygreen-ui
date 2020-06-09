@@ -13,6 +13,7 @@ const field = css`
         ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
     height: ${props => props.theme.daButton.buttonHeight[props.fieldSize]};
+    line-height: ${props => props.theme.daButton.buttonHeight[props.fieldSize]};
     width: 100%;
     font-size: ${props => props.theme.daButton.font[props.fieldSize]};
     color: ${props => props.theme.wab.grey60};
