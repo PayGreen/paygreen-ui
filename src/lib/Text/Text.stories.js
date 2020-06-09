@@ -1,6 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select, boolean } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    radios,
+    select,
+    boolean,
+    text,
+} from '@storybook/addon-knobs';
 import {
     folder,
     colorTypeOptions,
@@ -23,6 +29,8 @@ import {
     spaceDefault,
 } from '../../shared/constants';
 import Text from './Text';
+
+const { div, p, ...newHtmlTagOptions } = textHtmlTagOptions;
 
 storiesOf(folder.main + 'Text', module)
     .addDecorator(withKnobs)
@@ -271,6 +279,99 @@ storiesOf(folder.main + 'Text', module)
                 risus.
             </Text>
         ),
+
+        {
+            notes:
+                'You can change background-color, border-radius, text color, margins and paddings on your Text component.',
+        },
+    )
+    .add(
+        'Test new htmlTags',
+        () => (
+            <>
+                <Text
+                    htmlTag={textHtmlTagOptions.strong}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    Strong Text
+                </Text>
+
+                <Text
+                    htmlTag={textHtmlTagOptions.em}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    Emphasis Text
+                </Text>
+
+                <Text
+                    htmlTag={textHtmlTagOptions.q}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    Quote Text
+                </Text>
+
+                <Text
+                    htmlTag={textHtmlTagOptions.sub}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    Subscript Text
+                </Text>
+
+                <Text
+                    htmlTag={textHtmlTagOptions.kbd}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    KeyBoard Text
+                </Text>
+                <br />
+                <Text
+                    htmlTag={select(
+                        'Html tags',
+                        newHtmlTagOptions,
+                        textHtmlTagOptions.span,
+                    )}
+                    colorType={radios(
+                        'Color type',
+                        colorTypeOptions,
+                        colorTypeDefault,
+                    )}
+                    colorPallet={radios(
+                        'Color pallet',
+                        colorPalletOptions,
+                        colorPalletOptions.wab,
+                    )}
+                    colorTheme={select(
+                        'Color theme',
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    colorWab={select(
+                        'Grey color',
+                        greyOptions,
+                        greyOptions.grey60,
+                    )}
+                    colorStatus={select(
+                        'Status color',
+                        formStatusOptions,
+                        formStatusDefault,
+                    )}
+                    marginLateral={spaceOptions.sm}
+                >
+                    {text('texte', 'Try Me!')}
+                </Text>
+            </>
+        ),
+
         {
             notes:
                 'You can change background-color, border-radius, text color, margins and paddings on your Text component.',
