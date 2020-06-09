@@ -21,6 +21,7 @@ import Footer from './Footer/Footer';
 import FooterList from './FooterList/FooterList';
 import Grid from './Grid/Grid';
 import Header from './Header/Header';
+import HR from './HR/HR';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 import Input from './Input/Input';
@@ -183,6 +184,7 @@ export {
     FooterList,
     Grid,
     Header,
+    HR,
     IconLabel,
     Image,
     Input,
