@@ -2,11 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa fkVZaT"
+  className="sc-bdVaJa AEVIr"
 >
   <select
     disabled={false}
-    id="selectId1"
     theme={
       Object {
         "bannerHeight": Object {

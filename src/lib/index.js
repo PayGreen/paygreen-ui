@@ -10,6 +10,7 @@ import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
 import ClickableBlock from './ClickableBlock/ClickableBlock';
 import DaButton from './DaButton/DaButton';
+import DaSelect from './DaSelect/DaSelect';
 import DaTable from './DaTable/DaTable';
 import DaTableCell from './DaTableCell/DaTableCell';
 import DaTableHead from './DaTableHead/DaTableHead';
@@ -50,7 +51,6 @@ import Overlay from './Overlay/Overlay';
 import Popin from './Popin/Popin';
 import RadioIcon from './RadioIcon/RadioIcon';
 import Select from './Select/Select';
-import DaSelect from './DaSelect/DaSelect';
 import Sidebar from './Sidebar/Sidebar';
 import SidebarItem from './SidebarItem/SidebarItem';
 import SidebarList from './SidebarList/SidebarList';
@@ -176,6 +176,7 @@ export {
     Card,
     ClickableBlock,
     DaButton,
+    DaSelect,
     DaTable,
     DaTableCell,
     DaTableHead,
@@ -216,7 +217,6 @@ export {
     Popin,
     RadioIcon,
     Select,
-    DaSelect,
     Sidebar,
     SidebarItem,
     SidebarList,

@@ -21,11 +21,7 @@ const sampleOptions = [
 
 it('renders without crashing', () => {
     const daSelectBlock = TestRenderer.create(
-        <DaSelect
-            theme={ThemeDefault}
-            id="selectId1"
-            options={sampleOptions}
-        />,
+        <DaSelect theme={ThemeDefault} options={sampleOptions} />,
     );
     expect(daSelectBlock.toJSON()).toMatchSnapshot();
 });

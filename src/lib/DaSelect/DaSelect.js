@@ -16,7 +16,6 @@ const DaSelect = props => {
         hasHelpButton,
         // must not be passed with rest because there is no readOnly html attribute for select
         readOnly,
-
         ...rest
     } = props;
 
