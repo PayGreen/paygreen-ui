@@ -44,7 +44,7 @@ const DaTextarea = props => {
 
     const charactersCountBlock = (
         <div>
-            <span>{charactersLength}</span>&nbsp;/&nbsp;{props.maxLength}{' '}
+            <span>{charactersLength}</span>&nbsp;/&nbsp;{props.maxLength}&nbsp;
             {counterText}
         </div>
     );

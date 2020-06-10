@@ -1,10 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    boolean,
-    radios  
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
