@@ -1,9 +1,29 @@
 import { css } from 'styled-components';
 import { transparentize, math } from 'polished';
 import { colorTypeOptions } from '../../../shared/constants';
+import { responsiveSpaces } from '../../../shared/spaces';
 import { mainColor, backgroundColor, minimizeFont } from './constants';
 
 const htmlTagStyle = {
+    p: css`
+        ${responsiveSpaces('padding')};
+        border-radius: ${props => props.theme.radius[props.radiusSize]};
+    `,
+    div: css`
+        & > p {
+            ${responsiveSpaces('padding')};
+            border-radius: ${props => props.theme.radius[props.radiusSize]};
+            margin: ${props => props.theme.space[props.marginInternal]} 0;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    `,
     span: css`
         display: block;
     `,
@@ -31,13 +51,6 @@ const htmlTagStyle = {
             math(props.theme.font.size[props.textSize] + '* 0.3')};
         padding: ${props =>
             math(props.theme.font.size[props.textSize] + '* 0.3')};
-
-        @media (${props => props.theme.query.min.md}) {
-            border-radius: ${props =>
-                math(props.theme.font.size[props.textSize] + '* 0.3')};
-            padding: ${props =>
-                math(props.theme.font.size[props.textSize] + '* 0.3')};
-        }
     `,
 };
 
@@ -57,7 +70,8 @@ const blockBackground = {
     `,
 };
 
-const textStyle = css`
+const defaultStyle = css`
+    ${responsiveSpaces('margin')};
     color: ${props =>
         props.colorType === colorTypeOptions.reverse
             ? props.theme.wab.white00
@@ -73,25 +87,4 @@ const textStyle = css`
     }
 `;
 
-const internalParagraph = css`
-    & > p {
-        ${textStyle};
-        margin: ${props => props.theme.space[props.marginInternal]} 0;
-
-        &:first-of-type {
-            margin-top: 0;
-        }
-
-        &:last-of-type {
-            margin-bottom: 0;
-        }
-    }
-`;
-
-export {
-    uppercaseStyle,
-    blockBackground,
-    textStyle,
-    internalParagraph,
-    htmlTagStyle,
-};
+export { uppercaseStyle, blockBackground, htmlTagStyle, defaultStyle };
