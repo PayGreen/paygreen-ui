@@ -5,10 +5,7 @@ import DaInput from './DaInput';
 
 it('renders without crashing', () => {
     const daInputText = TestRenderer.create(
-        <DaInput
-            theme={ThemeDefault}
-            placeholder="Firstname Lastname"
-        />,
+        <DaInput theme={ThemeDefault} placeholder="Firstname Lastname" />,
     );
     expect(daInputText.toJSON()).toMatchSnapshot();
 });

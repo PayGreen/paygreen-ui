@@ -10,6 +10,7 @@ import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
 import ClickableBlock from './ClickableBlock/ClickableBlock';
 import DaButton from './DaButton/DaButton';
+import DaSelect from './DaSelect/DaSelect';
 import DaTable from './DaTable/DaTable';
 import DaTableCell from './DaTableCell/DaTableCell';
 import DaTableHead from './DaTableHead/DaTableHead';
@@ -175,6 +176,7 @@ export {
     Card,
     ClickableBlock,
     DaButton,
+    DaSelect,
     DaTable,
     DaTableCell,
     DaTableHead,
