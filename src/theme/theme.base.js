@@ -10,7 +10,7 @@ const query = (value, operator) => {
         value -= 1;
     }
     return operator + '-width: ' + value + 'px';
-}
+};
 
 export const ThemeBase = {
     name: 'Base',
@@ -72,11 +72,11 @@ export const ThemeBase = {
         },
         weight: {
             normal: 400,
-            bold: 700
+            bold: 700,
         },
         lineHeight: {
             base: 1,
-            md: 1.5
+            md: 1.5,
         },
         spacing: '0.3em',
         underline: {
@@ -130,8 +130,8 @@ export const ThemeBase = {
     grid: {
         header: '45px',
         topbar: '45px',
-        sidebar:'380px',
-        maxWidth: '1400px'
+        sidebar: '380px',
+        maxWidth: '1400px',
     },
     blockShift: {
         none: '0',
@@ -164,11 +164,11 @@ export const ThemeBase = {
     bannerHeight: {
         xs: '33vh',
         sm: '50vh',
-        lg: '100vh'
+        lg: '100vh',
     },
     wave: {
         simple: '8vw',
-        double: '11vw'
+        double: '11vw',
     },
     iconSize: {
         xxs: '12px',
@@ -224,7 +224,7 @@ export const ThemeBase = {
         sm: '0.3s',
         md: '0.5s',
         lg: '0.7s',
-        xl: '1s'
+        xl: '1s',
     },
     zindex: {
         hidden: -100,
@@ -311,11 +311,11 @@ export const ThemeBase = {
     },
     corner: {
         size: {
-            lg: '34px'
+            lg: '34px',
         },
         padding: {
-            lg: '6px'
-        }
+            lg: '6px',
+        },
     },
     shadow: {
         size: {
@@ -323,15 +323,15 @@ export const ThemeBase = {
             xs: '1px 1px 5px',
             sm: '1px 1px 10px',
             md: '2px 2px 15px',
-            lg: '3px 3px 20px'
+            lg: '3px 3px 20px',
         },
         opacity: {
             none: 1,
             xs: 0.95,
             sm: 0.9,
             md: 0.8,
-            lg: 0.7
-        }
+            lg: 0.7,
+        },
     },
     rotateSize: {
         d0: '0deg',
