@@ -14,6 +14,7 @@ const DaTextarea = props => {
     const [stateValue, setValue] = useState(
         props.value !== undefined ? props.value : '',
     );
+    const [textAreaAutoHeight, setAutoHeight] = useState('');
     const [stateCharactersStatus, setCharactersStatus] = useState(
         formStatusDefault,
     );
@@ -30,6 +31,7 @@ const DaTextarea = props => {
 
     const handleChange = e => {
         setValue(e.target.value);
+        setAutoHeight(e.target.scrollHeight + 'px');
     };
 
     const charactersLength = stateValue.length || 0;
@@ -58,6 +60,7 @@ const DaTextarea = props => {
             fieldSize={fieldSize}
             blockWidth={blockWidth}
             hasCounter={hasCounter}
+            autoHeight={textAreaAutoHeight}
         >
             <textarea
                 {...rest}

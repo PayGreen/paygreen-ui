@@ -11,7 +11,7 @@ const canHover = css`
 
 const enabled = css`
     textarea {
-        resize: vertical;
+        resize: none;
         background-color: ${props => props.theme.wab.white00};
         border-color: ${props => props.theme.wab.grey10};
 
