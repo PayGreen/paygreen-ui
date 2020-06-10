@@ -11,7 +11,6 @@ const canHover = css`
 
 const enabled = css`
     textarea {
-        resize: none;
         background-color: ${props => props.theme.wab.white00};
         border-color: ${props => props.theme.wab.grey10};
 
@@ -21,7 +20,6 @@ const enabled = css`
 
 const disabled = css`
     textarea {
-        resize: none;
         ${disabledField};
         border-color: ${props => props.theme.wab.grey20};
     }

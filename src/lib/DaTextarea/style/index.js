@@ -26,6 +26,7 @@ const DaTextareaBase = styled.div`
         font-size: ${props => props.theme.daButton.font[props.fieldSize]};
         transition: all ${props => props.theme.transition.sm};
         overflow: hidden;
+        resize: none;
 
         ::placeholder {
             font-style: italic;
