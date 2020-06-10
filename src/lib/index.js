@@ -10,6 +10,8 @@ import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
 import ClickableBlock from './ClickableBlock/ClickableBlock';
 import DaButton from './DaButton/DaButton';
+import DaInput from './DaInput/DaInput';
+import DaLabel from './DaLabel/DaLabel';
 import DaSelect from './DaSelect/DaSelect';
 import DaTable from './DaTable/DaTable';
 import DaTableCell from './DaTableCell/DaTableCell';
@@ -26,7 +28,6 @@ import HR from './HR/HR';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 import Input from './Input/Input';
-import DaInput from './DaInput/DaInput';
 import InternalGrid from './InternalGrid/InternalGrid';
 import Layout from './Layout/Layout';
 import Link from './Link/Link';
@@ -176,6 +177,8 @@ export {
     Card,
     ClickableBlock,
     DaButton,
+    DaInput,
+    DaLabel,
     DaSelect,
     DaTable,
     DaTableCell,
@@ -192,7 +195,6 @@ export {
     IconLabel,
     Image,
     Input,
-    DaInput,
     InternalGrid,
     Layout,
     Link,

@@ -309,6 +309,14 @@ const itemHtmlTagOptions = {
 
 const itemHtmlTagDefault = itemHtmlTagOptions.li;
 
+// Label HTML tags
+const labelHtmlTagOptions = {
+    label: 'label',
+    legend: 'legend'
+};
+
+const labelHtmlTagDefault = labelHtmlTagOptions.label;
+
 /* Grids and aligns */
 
 // Grids types
@@ -458,6 +466,8 @@ export {
     iconHtmlTagDefault,
     itemHtmlTagOptions,
     itemHtmlTagDefault,
+    labelHtmlTagOptions,
+    labelHtmlTagDefault,
 
     displayOptions,
     displayDefault,
