@@ -76,7 +76,6 @@ const defaultStyle = css`
         props.colorType === colorTypeOptions.reverse
             ? props.theme.wab.white00
             : mainColor[props.colorPallet]};
-
     line-height: ${props => props.theme.font.lineHeight.md};
     text-align: ${props => props.align};
     font-size: ${props => props.theme.font.size[props.textSize]};

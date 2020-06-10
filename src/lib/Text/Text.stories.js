@@ -31,7 +31,18 @@ import {
 import Text from './Text';
 import HR from '../HR/HR';
 
-const { div, p, ...newHtmlTagOptions } = textHtmlTagOptions;
+const { div, p, span, ...newHtmlTagOptions } = textHtmlTagOptions;
+
+const colorTypeLabel = 'Color type';
+const colorThemeLabel = 'Color theme';
+const colorPalletLabel = 'Color pallet';
+const colorWabLabel = 'Grey color';
+const colorStatusLabel = 'Status color';
+const textSizeLabel = 'Size';
+const alignLabel = 'Align';
+const lateralMarginLabel = "Block's lateral margins";
+const topMarginLabel = "Block's margin top";
+const bottomMarginLabel = "Block's margin bottom";
 
 storiesOf(folder.main + 'Text', module)
     .addDecorator(withKnobs)
@@ -40,42 +51,46 @@ storiesOf(folder.main + 'Text', module)
         () => (
             <Text
                 colorType={radios(
-                    'Color type',
+                    colorTypeLabel,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorPallet={radios(
-                    'Color pallet',
+                    colorPalletLabel,
                     colorPalletOptions,
                     colorPalletOptions.wab,
                 )}
                 colorTheme={select(
-                    'Color theme',
+                    colorThemeLabel,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                colorWab={select('Grey color', greyOptions, greyOptions.grey60)}
+                colorWab={select(
+                    colorWabLabel,
+                    greyOptions,
+                    greyOptions.grey60,
+                )}
                 colorStatus={select(
-                    'Status color',
+                    colorStatusLabel,
                     formStatusOptions,
                     formStatusDefault,
                 )}
-                textSize={select('Size', fontSizeOptions, fontSizeDefault)}
-                align={radios('Align', alignOptions, alignDefault)}
+                textSize={select(
+                    textSizeLabel,
+                    fontSizeOptions,
+                    fontSizeDefault,
+                )}
+                align={radios(alignLabel, alignOptions, alignDefault)}
                 hasUppercase={boolean('Uppercase', false)}
                 hasUnderline={boolean('Underline', false)}
                 marginLateral={select(
-                    "Block's lateral margins",
+                    lateralMarginLabel,
                     spaceOptions,
                     spaceDefault,
                 )}
-                marginTop={select(
-                    "Block's margin top",
-                    spaceOptions,
-                    spaceDefault,
-                )}
+                marginTop={select(topMarginLabel, spaceOptions, spaceDefault)}
                 marginBottom={select(
-                    "Block's margin bottom",
+                    bottomMarginLabel,
                     spaceOptions,
                     spaceDefault,
                 )}
@@ -99,40 +114,44 @@ storiesOf(folder.main + 'Text', module)
             <Text
                 htmlTag={textHtmlTagOptions.div}
                 colorType={radios(
-                    'Color type',
+                    colorTypeLabel,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorPallet={radios(
-                    'Color pallet',
+                    colorPalletLabel,
                     colorPalletOptions,
                     colorPalletOptions.wab,
                 )}
                 colorTheme={select(
-                    'Color theme',
+                    colorThemeLabel,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                colorWab={select('Grey color', greyOptions, greyOptions.grey60)}
+                colorWab={select(
+                    colorWabLabel,
+                    greyOptions,
+                    greyOptions.grey60,
+                )}
                 colorStatus={select(
-                    'Status color',
+                    colorStatusLabel,
                     formStatusOptions,
                     formStatusDefault,
                 )}
-                textSize={select('Size', fontSizeOptions, fontSizeDefault)}
-                align={radios('Align', alignOptions, alignDefault)}
+                textSize={select(
+                    textSizeLabel,
+                    fontSizeOptions,
+                    fontSizeDefault,
+                )}
+                align={radios(alignLabel, alignOptions, alignDefault)}
                 marginLateral={select(
-                    "Block's lateral margins",
+                    lateralMarginLabel,
                     spaceOptions,
                     spaceDefault,
                 )}
-                marginTop={select(
-                    "Block's margin top",
-                    spaceOptions,
-                    spaceDefault,
-                )}
+                marginTop={select(topMarginLabel, spaceOptions, spaceDefault)}
                 marginBottom={select(
-                    "Block's margin bottom",
+                    bottomMarginLabel,
                     spaceOptions,
                     spaceDefault,
                 )}
@@ -177,23 +196,23 @@ storiesOf(folder.main + 'Text', module)
         () => (
             <Text
                 colorType={radios(
-                    'Color type',
+                    colorTypeLabel,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorPallet={radios(
-                    'Color pallet',
+                    colorPalletLabel,
                     colorPalletOptions,
                     colorPalletDefault,
                 )}
                 colorTheme={select(
-                    'Color theme',
+                    colorThemeLabel,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                colorWab={select('Grey color', greyOptions, greyDefault)}
+                colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(
-                    'Status color',
+                    colorStatusLabel,
                     formStatusOptions,
                     formStatusDefault,
                 )}
@@ -224,10 +243,17 @@ storiesOf(folder.main + 'Text', module)
         },
     )
     .add(
-        'Test new html tags',
+        'New styled html tags',
         () => (
             <>
-
+                <Text
+                    htmlTag={textHtmlTagOptions.em}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    Emphasis Text
+                </Text>
 
                 <Text
                     htmlTag={textHtmlTagOptions.strong}
@@ -236,15 +262,6 @@ storiesOf(folder.main + 'Text', module)
                     marginBottom={spaceOptions.sm}
                 >
                     Strong Text
-                </Text>
-
-                <Text
-                    htmlTag={textHtmlTagOptions.em}
-                    marginLateral={spaceOptions.sm}
-                    marginTop={spaceOptions.sm}
-                    marginBottom={spaceOptions.sm}
-                >
-                    Emphasis Text
                 </Text>
 
                 <Text
@@ -276,7 +293,7 @@ storiesOf(folder.main + 'Text', module)
 
                 <HR
                     marginLateral={spaceOptions.sm}
-                    marginBottom={spaceOptions.sm}
+                    marginBottom={spaceOptions.md}
                     colorPallet={colorPalletOptions.wab}
                     colorWab={greyOptions.grey40}
                 />
@@ -285,35 +302,39 @@ storiesOf(folder.main + 'Text', module)
                     htmlTag={select(
                         'Html tags',
                         newHtmlTagOptions,
-                        textHtmlTagOptions.span,
+                        textHtmlTagOptions.em,
                     )}
                     colorType={radios(
-                        'Color type',
+                        colorTypeLabel,
                         colorTypeOptions,
                         colorTypeDefault,
                     )}
                     colorPallet={radios(
-                        'Color pallet',
+                        colorPalletLabel,
                         colorPalletOptions,
                         colorPalletOptions.wab,
                     )}
                     colorTheme={select(
-                        'Color theme',
+                        colorThemeLabel,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
                     colorWab={select(
-                        'Grey color',
+                        colorWabLabel,
                         greyOptions,
                         greyOptions.grey60,
                     )}
                     colorStatus={select(
-                        'Status color',
+                        colorStatusLabel,
                         formStatusOptions,
                         formStatusDefault,
                     )}
                     marginLateral={spaceOptions.sm}
-                    textSize={select('Size', fontSizeOptions, fontSizeDefault)}
+                    textSize={select(
+                        textSizeLabel,
+                        fontSizeOptions,
+                        fontSizeDefault,
+                    )}
                 >
                     {text('Text', 'Try Me!')}
                 </Text>
