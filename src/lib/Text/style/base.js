@@ -3,40 +3,43 @@ import { transparentize, math } from 'polished';
 import { colorTypeOptions } from '../../../shared/constants';
 import { mainColor, backgroundColor, minimizeFont } from './constants';
 
-const spanStyle = css`
-    display: block;
-`;
+const htmlTagStyle = {
+    span: css`
+        display: block;
+    `,
+    em: css`
+        font-style: italic;
+    `,
+    strong: css`
+        font-weight: bold;
+    `,
+    q: css`
+        display: inline-flex;
+    `,
+    sub: css`
+        font-size: ${props =>
+            math(props.theme.font.size[props.textSize] + '* 0.7')};
 
-const italicStyle = css`
-    font-style: italic;
-`;
-
-const boldStyle = css`
-    font-weight: bold;
-`;
-
-const quoteStyle = css`
-    display: inline-flex;
-`;
-
-const subscriptStyle = css`
-    font-size: ${props => math(props.theme.font.size[props.textSize] + '* 0.7')};
-
-    @media (${props => props.theme.query.max.md}) {
-        font-size: ${props => math(props.theme.font.size[props.textSize] + '* 0.6')};
-    }
-`;
-
-const keyboardStyle = css`
-        border-radius: 2px;
-        padding: 5px;
-        border: 1px solid black;
-        @media (${props => props.theme.query.min.md}) {
-            border-radius: 2px;
-            padding: 5px;
-            border: ${props => props.theme.line} solid black;
+        @media (${props => props.theme.query.max.md}) {
+            font-size: ${props =>
+                math(props.theme.font.size[props.textSize] + '* 0.6')};
         }
-`;
+    `,
+    kbd: css`
+        ${props => blockBackground[props.colorType]};
+        border-radius: ${props =>
+            math(props.theme.font.size[props.textSize] + '* 0.3')};
+        padding: ${props =>
+            math(props.theme.font.size[props.textSize] + '* 0.3')};
+
+        @media (${props => props.theme.query.min.md}) {
+            border-radius: ${props =>
+                math(props.theme.font.size[props.textSize] + '* 0.3')};
+            padding: ${props =>
+                math(props.theme.font.size[props.textSize] + '* 0.3')};
+        }
+    `,
+};
 
 const uppercaseStyle = css`
     text-transform: uppercase;
@@ -86,14 +89,9 @@ const internalParagraph = css`
 `;
 
 export {
-    spanStyle,
     uppercaseStyle,
     blockBackground,
     textStyle,
     internalParagraph,
-    italicStyle,
-    boldStyle,
-    quoteStyle,
-    subscriptStyle,
-    keyboardStyle,
+    htmlTagStyle,
 };

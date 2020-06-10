@@ -29,6 +29,7 @@ import {
     spaceDefault,
 } from '../../shared/constants';
 import Text from './Text';
+import HR from '../HR/HR';
 
 const { div, p, ...newHtmlTagOptions } = textHtmlTagOptions;
 
@@ -80,73 +81,11 @@ storiesOf(folder.main + 'Text', module)
                 )}
             >
                 Lorem ipsum dolor sit amet, consectetur{' '}
-                <Text
-                    htmlTag={textHtmlTagOptions.strong}
-                    colorType={radios(
-                        'Color type',
-                        colorTypeOptions,
-                        colorTypeDefault,
-                    )}
-                    colorPallet={radios(
-                        'Color pallet',
-                        colorPalletOptions,
-                        colorPalletOptions.wab,
-                    )}
-                    colorTheme={select(
-                        'Color theme',
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    colorWab={select(
-                        'Grey color',
-                        greyOptions,
-                        greyOptions.grey60,
-                    )}
-                    colorStatus={select(
-                        'Status color',
-                        formStatusOptions,
-                        formStatusDefault,
-                    )}
-                    textSize={select('Size', fontSizeOptions, fontSizeDefault)}
-                >
-                    adipiscing elit
-                </Text>
-                . Donec eget{' '}
-                <Text
-                    htmlTag={textHtmlTagOptions.em}
-                    colorType={radios(
-                        'Color type',
-                        colorTypeOptions,
-                        colorTypeDefault,
-                    )}
-                    colorPallet={radios(
-                        'Color pallet',
-                        colorPalletOptions,
-                        colorPalletOptions.wab,
-                    )}
-                    colorTheme={select(
-                        'Color theme',
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    colorWab={select(
-                        'Grey color',
-                        greyOptions,
-                        greyOptions.grey60,
-                    )}
-                    colorStatus={select(
-                        'Status color',
-                        formStatusOptions,
-                        formStatusDefault,
-                    )}
-                    textSize={select('Size', fontSizeOptions, fontSizeDefault)}
-                >
-                    nulla in libero
-                </Text>{' '}
-                laoreet sodales. Fusce vestibulum at neque nec convallis.
-                Vivamus quis neque vulputate, fringilla massa vitae, interdum
-                ipsum. Duis enim augue, euismod quis aliquam in, consequat quis
-                risus.
+                <strong>adipiscing elit</strong>. Donec eget{' '}
+                <em>nulla in libero</em> laoreet sodales. Fusce vestibulum at
+                neque nec convallis. Vivamus quis neque vulputate, fringilla
+                massa vitae, interdum ipsum. Duis enim augue, euismod quis
+                aliquam in, consequat quis risus.
             </Text>
         ),
         {
@@ -279,16 +218,17 @@ storiesOf(folder.main + 'Text', module)
                 risus.
             </Text>
         ),
-
         {
             notes:
                 'You can change background-color, border-radius, text color, margins and paddings on your Text component.',
         },
     )
     .add(
-        'Test new htmlTags',
+        'Test new html tags',
         () => (
             <>
+
+
                 <Text
                     htmlTag={textHtmlTagOptions.strong}
                     marginLateral={spaceOptions.sm}
@@ -333,7 +273,14 @@ storiesOf(folder.main + 'Text', module)
                 >
                     KeyBoard Text
                 </Text>
-                <br />
+
+                <HR
+                    marginLateral={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                    colorPallet={colorPalletOptions.wab}
+                    colorWab={greyOptions.grey40}
+                />
+
                 <Text
                     htmlTag={select(
                         'Html tags',
@@ -366,14 +313,15 @@ storiesOf(folder.main + 'Text', module)
                         formStatusDefault,
                     )}
                     marginLateral={spaceOptions.sm}
+                    textSize={select('Size', fontSizeOptions, fontSizeDefault)}
                 >
-                    {text('texte', 'Try Me!')}
+                    {text('Text', 'Try Me!')}
                 </Text>
             </>
         ),
 
         {
             notes:
-                'You can change background-color, border-radius, text color, margins and paddings on your Text component.',
+                'Switch between all html tags available, for each you can change background-color, text color & text size.',
         },
     );
