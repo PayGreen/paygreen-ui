@@ -27,7 +27,46 @@ import Dropdown from '../Dropdown/Dropdown';
 
 storiesOf(folder.main + 'Popin', module)
     .addDecorator(withKnobs)
-    .add('Popin with text', () => (
+    .add('Popin alone', () => (
+        <Popin
+            isActive={boolean('Is active', true)}
+            blockWidth={select(
+                'Width',
+                blockWidthOptions,
+                blockWidthOptions.sm,
+            )}
+            radiusSize={select('Radius size', radiusOptions, radiusDefault)}
+            shadowSize={select(
+                'Shadow size',
+                shadowSizeOptions,
+                shadowSizeOptions.sm,
+            )}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            align={select('Alignment', alignOptions, alignDefault)}
+        >
+            <Title
+                marginTop={spaceOptions.xs}
+                marginLateral={spaceOptions.xs}
+                colorPallet={colorPalletOptions.wab}
+                colorWab={greyOptions.grey60}
+                textSize={fontSizeOptions.sm}
+                align={alignOptions.center}
+            >
+                Démo
+            </Title>
+
+            <Text
+                marginTop={spaceOptions.sm}
+                marginLateral={spaceOptions.xs}
+                marginBottom={spaceOptions.xs}
+                textSize={fontSizeOptions.sm}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Text>
+        </Popin>
+    ))
+    .add('Popin with Parent', () => (
         <Dropdown>
             {/* Use of Dropdown component to show the behavior of Popin when its parent is larger than it */}
             <ClickableBlock colorWab={greyOptions.grey20}>
@@ -47,7 +86,6 @@ storiesOf(folder.main + 'Popin', module)
             </ClickableBlock>
 
             <Popin
-                isActive={boolean('Is active', true)}
                 blockWidth={select(
                     'Width',
                     blockWidthOptions,
