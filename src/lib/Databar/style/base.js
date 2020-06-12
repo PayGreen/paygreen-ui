@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
-import { math } from 'polished';
+import { mainColor } from './constants';
+import { math, transparentize } from 'polished';
 
 const hasBackgroundStyle = css`
     background-color: ${props => props.theme.wab.grey10};
@@ -8,7 +9,7 @@ const hasBackgroundStyle = css`
 const valueStyle = css`
     width: ${props => props.dataWidth + '%'};
     min-width: ${props => props.theme.font.underline.space.xs};
-    background-color: ${props => props.dataColor};
+    background-color: ${props => mainColor[props.colorPallet]};
 `;
 
 const zeroValueStyle = css`

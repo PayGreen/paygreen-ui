@@ -1,10 +1,23 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, number , text} from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    boolean,
+    radios,
+    number,
+    text,
+    select,
+} from '@storybook/addon-knobs';
 import {
     folder,
     blockWidthOptions,
     blockWidthDefault,
+    colorThemeOptions,
+    colorThemeDefault,
+    colorPalletOptions,
+    colorPalletDefault,
+    formStatusOptions,
+    formStatusDefault,
 } from '../../shared/constants';
 import { ThemeDefault } from '../../theme';
 import Databar from './Databar';
@@ -38,26 +51,55 @@ const currentValueOptions = {
     step: 1,
 };
 
+const { wab, ...barColorPalletOptions } = colorPalletOptions;
+const palletColorLabel = 'Color pallet';
+const statusColorLabel = 'Status color';
+const themeColorLabel = 'Theme color';
+
 storiesOf(folder.main + 'Databar', module)
     .addDecorator(withKnobs)
     .add('Databar', () => (
         <Databar
-            dataArray={[
-                {
-                    currentValue: number('Current value', defaultCurrentValue, currentValueOptions),
-                    legend: text('Legend', 'Légende de la barre'),
-                    color: `${ThemeDefault.color.status.default.main}`,
-                },
-            ]}
-            maxValue={number('Max value', defaultMaxValue, maxValueOptions)}
-            unit={text('Unité', 'Tonnes')}
             blockWidth={radios(
                 'Block width',
                 blockWidthOptions,
                 blockWidthDefault,
             )}
             withBackground={boolean('With background', true)}
-            hasDatabarLegend={boolean('With Legend', true)}
+            hasDatabarLegend={boolean('With legend', true)}
+            maxValue={number('Max value', defaultMaxValue, maxValueOptions)}
+            unit={text('Unity', 'Tonnes')}
+            dataArray={[
+                {
+                    currentValue: number(
+                        'Current value',
+                        defaultCurrentValue,
+                        currentValueOptions,
+                    ),
+                    legend: text('Legend', 'légende'),
+                    color:
+                        radios(
+                            palletColorLabel,
+                            barColorPalletOptions,
+                            colorPalletDefault,
+                        ) === 'status'
+                            ? select(
+                                  statusColorLabel,
+                                  formStatusOptions,
+                                  formStatusDefault,
+                              )
+                            : select(
+                                  themeColorLabel,
+                                  colorThemeOptions,
+                                  colorThemeDefault,
+                              ),
+                },
+            ]}
+            colorPallet={radios(
+                palletColorLabel,
+                barColorPalletOptions,
+                colorPalletDefault,
+            )}
         />
     ))
     .add(

@@ -12,13 +12,13 @@ import Title from '../Title/Title';
 
 const Databar = props => {
     const {
-        hasDatabarLegend,
-        withBackground,
         blockWidth,
         dataArray,
+        hasDatabarLegend,
         minValue,
         maxValue,
         unit,
+        withBackground,
         ...rest
     } = props;
 
@@ -32,13 +32,14 @@ const Databar = props => {
                 {...rest}
                 withBackground={withBackground}
                 barType={dataArray.length === 1 ? 'mono' : 'multi'}
-            >
+            >  
                 {dataArray.map((data, index) => (
                     <BarSection
-                        {...rest}
-                        key={index}
-                        dataWidth= {calcPercent(data.currentValue)}
-                        dataColor={data.color}
+                    {...rest}
+                    key={index}
+                    dataWidth= {calcPercent(data.currentValue)}
+                    dataColor={data.color}
+                    colorPallet={props.colorPallet}
                     />
                 ))}
             </Bar>
@@ -50,7 +51,7 @@ const Databar = props => {
                     textSize={fontSizeOptions.md}
                     marginTop={spaceOptions.xs}
                 >
-                    {dataArray[0].legend}{unit.length > 0 && unit !== '%' ? dataArray[0].currentValue : calcPercent(dataArray[0].currentValue)}{unit.length > 0 ? unit : '%'}
+                    {unit.length > 0 && unit !== '%' ? dataArray[0].currentValue : calcPercent(dataArray[0].currentValue)}{unit.length > 0 ? unit : '%'}{dataArray[0].legend}
                 </Title>
             ) : null}
         </DatabarBase>
@@ -58,28 +59,37 @@ const Databar = props => {
 };
 
 Databar.propTypes = {
-    hasDatabarLegend: PropTypes.bool,
     blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
-    withBackground: PropTypes.bool,
-    minValue: PropTypes.number,
-    maxValue: PropTypes.number,
-    unit: PropTypes.string,
+    colorPallet: PropTypes.oneOf([
+        colorPalletOptions.theme,
+        colorPalletOptions.status,
+    ]),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     dataArray: PropTypes.arrayOf(
         PropTypes.shape({
             currentValue: PropTypes.number.isRequired,
             legend: PropTypes.string,
             color: PropTypes.string.isRequired,
         }),
-    ).isRequired,
-};
+        ).isRequired,
+    withBackground: PropTypes.bool,
+    hasDatabarLegend: PropTypes.bool,
+    minValue: PropTypes.number,
+    maxValue: PropTypes.number,
+    unit: PropTypes.string,
+    };
 
 Databar.defaultProps = {
-    hasDatabarLegend: false,
     blockWidth: blockWidthDefault,
-    withBackground: false,
+    colorPallet: colorPalletDefault,
+    colorTheme: colorThemeDefault,
+    colorStatus: formStatusDefault,
+    hasDatabarLegend: false,
     minValue: 0,
     maxValue: 100,
     unit: '%',
+    withBackground: false,
 };
 
 export default Databar;
