@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { math } from 'polished';
 import {
     zeroValueStyle,
     valueStyle,
@@ -14,11 +15,11 @@ const DatabarBase = styled.div`
 
 const Bar = styled.div`
     width: 100%;
-    height: ${props => props.theme.space.sm};
+    height: ${props => props.theme.font.underline.space.xs};
     display: flex;
-    border-radius: ${props => props.theme.space.xs};
+    border-radius: ${props => math(props.theme.font.underline.space.xs + '/2')};
     overflow: hidden;
-    
+
     ${props => (props.barType === 'mono' ? monoDataStyle : multiDataStyle)};
     ${props => (props.withBackground ? hasBackgroundStyle : null)};
 `;

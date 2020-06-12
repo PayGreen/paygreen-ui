@@ -18,29 +18,26 @@ const Databar = props => {
         dataArray,
         minValue,
         maxValue,
+        unit,
         ...rest
     } = props;
 
-    const calcPercent = value => {
-        return ((value - minValue) * 100) / (maxValue - minValue);
+    const calcPercent = (value) => {
+        return Math.round((((value - minValue) * 100) / (maxValue - minValue)) * 10) / 10;
     };
 
     return (
-        <DatabarBase
-            theme={props.theme} // not necessary, only needed for tests
-            blockWidth={blockWidth}
-            {...rest}
-        >
+        <DatabarBase {...rest} blockWidth={blockWidth}>
             <Bar
-                theme={props.theme} // not necessary, only needed for tests
+                {...rest}
                 withBackground={withBackground}
                 barType={dataArray.length === 1 ? 'mono' : 'multi'}
             >
                 {dataArray.map((data, index) => (
                     <BarSection
-                        theme={props.theme} // not necessary, only needed for tests
+                        {...rest}
                         key={index}
-                        dataWidth={calcPercent(data.currentValue)}
+                        dataWidth= {calcPercent(data.currentValue)}
                         dataColor={data.color}
                     />
                 ))}
@@ -53,7 +50,7 @@ const Databar = props => {
                     textSize={fontSizeOptions.md}
                     marginTop={spaceOptions.xs}
                 >
-                    {dataArray[0].legend}
+                    {dataArray[0].legend}{unit.length > 0 && unit !== '%' ? dataArray[0].currentValue : calcPercent(dataArray[0].currentValue)}{unit.length > 0 ? unit : '%'}
                 </Title>
             ) : null}
         </DatabarBase>
@@ -70,7 +67,7 @@ Databar.propTypes = {
     dataArray: PropTypes.arrayOf(
         PropTypes.shape({
             currentValue: PropTypes.number.isRequired,
-            legend: PropTypes.string.isRequired,
+            legend: PropTypes.string,
             color: PropTypes.string.isRequired,
         }),
     ).isRequired,
@@ -79,7 +76,7 @@ Databar.propTypes = {
 Databar.defaultProps = {
     hasDatabarLegend: false,
     blockWidth: blockWidthDefault,
-    withBackground: true,
+    withBackground: false,
     minValue: 0,
     maxValue: 100,
     unit: '%',

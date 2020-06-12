@@ -7,31 +7,34 @@ const hasBackgroundStyle = css`
 
 const valueStyle = css`
     width: ${props => props.dataWidth + '%'};
+    min-width: ${props => props.theme.font.underline.space.xs};
     background-color: ${props => props.dataColor};
 `;
 
 const zeroValueStyle = css`
-    width: ${props => props.theme.space.sm};
+    width: ${props => props.theme.font.underline.space.xs};
     background-color: ${props => props.theme.wab.grey30};
 `;
 
 const monoDataStyle = css`
     & :only-child {
-        border-radius: ${props => props.theme.space.xs};
+        border-radius: ${props =>
+            math(props.theme.font.underline.space.xs + '/2')};
     }
 `;
 
 const multiDataStyle = css`
     & :first-child {
-        margin-right: 1px;
+        margin-right: ${props => math(props.theme.line + '/2')};
     }
-    
-    & :nth-child(n+2):nth-last-child(n+2) {
-        margin: 0 1px 0 1px;
+
+    & :nth-child(n + 2):nth-last-child(n + 2) {
+        margin: 0 ${props => math(props.theme.line + '/2')} 0
+            ${props => math(props.theme.line + '/2')};
     }
 
     & :last-child {
-        margin-left: 1px;
+        margin-left: ${props => math(props.theme.line + '/2')};
     }
 `;
 

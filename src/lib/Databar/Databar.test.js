@@ -13,10 +13,7 @@ const dataArray = [
 
 it('renders without crashing', () => {
     const databar = TestRenderer.create(
-        <Databar
-            theme={ThemeDefault}
-            dataArray={dataArray}
-        />,
+        <Databar theme={ThemeDefault} dataArray={dataArray} />,
     );
     expect(databar.toJSON()).toMatchSnapshot();
 });
