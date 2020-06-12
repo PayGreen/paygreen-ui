@@ -3,14 +3,20 @@ import PropTypes from 'prop-types';
 import {
     blockWidthOptions,
     blockWidthDefault,
+    colorPalletOptions,
+    colorPalletDefault,
+    colorThemeOptions,
+    colorThemeDefault,
+    formStatusOptions,
+    formStatusDefault,
     greyOptions,
     fontSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
-import { DatabarBase, Bar, BarSection } from './style';
+import { DataBarBase, Bar, BarSection } from './style';
 import Title from '../Title/Title';
 
-const Databar = props => {
+const DataBar = props => {
     const {
         blockWidth,
         dataArray,
@@ -23,23 +29,27 @@ const Databar = props => {
     } = props;
 
     const calcPercent = (value) => {
-        return Math.round((((value - minValue) * 100) / (maxValue - minValue)) * 10) / 10;
+        return (
+            Math.round(
+                (((value - minValue) * 100) / (maxValue - minValue)) * 10,
+            ) / 10
+        );
     };
 
     return (
-        <DatabarBase {...rest} blockWidth={blockWidth}>
+        <DataBarBase {...rest} blockWidth={blockWidth}>
             <Bar
                 {...rest}
                 withBackground={withBackground}
                 barType={dataArray.length === 1 ? 'mono' : 'multi'}
-            >  
+            >
                 {dataArray.map((data, index) => (
                     <BarSection
-                    {...rest}
-                    key={index}
-                    dataWidth= {calcPercent(data.currentValue)}
-                    dataColor={data.color}
-                    colorPallet={props.colorPallet}
+                        {...rest}
+                        key={index}
+                        dataWidth={calcPercent(data.currentValue)}
+                        dataColor={data.color}
+                        colorPallet={props.colorPallet}
                     />
                 ))}
             </Bar>
@@ -51,14 +61,18 @@ const Databar = props => {
                     textSize={fontSizeOptions.md}
                     marginTop={spaceOptions.xs}
                 >
-                    {unit.length > 0 && unit !== '%' ? dataArray[0].currentValue : calcPercent(dataArray[0].currentValue)}{unit.length > 0 ? unit : '%'}{dataArray[0].legend}
+                    {unit.length > 0 && unit !== '%'
+                        ? dataArray[0].currentValue
+                        : calcPercent(dataArray[0].currentValue)}
+                    {unit.length > 0 ? unit : '%'}
+                    {dataArray[0].legend}
                 </Title>
             ) : null}
-        </DatabarBase>
+        </DataBarBase>
     );
 };
 
-Databar.propTypes = {
+DataBar.propTypes = {
     blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
     colorPallet: PropTypes.oneOf([
         colorPalletOptions.theme,
@@ -72,15 +86,15 @@ Databar.propTypes = {
             legend: PropTypes.string,
             color: PropTypes.string.isRequired,
         }),
-        ).isRequired,
-    withBackground: PropTypes.bool,
+    ).isRequired,
     hasDatabarLegend: PropTypes.bool,
     minValue: PropTypes.number,
     maxValue: PropTypes.number,
     unit: PropTypes.string,
-    };
+    withBackground: PropTypes.bool,
+};
 
-Databar.defaultProps = {
+DataBar.defaultProps = {
     blockWidth: blockWidthDefault,
     colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
@@ -92,4 +106,4 @@ Databar.defaultProps = {
     withBackground: false,
 };
 
-export default Databar;
+export default DataBar;

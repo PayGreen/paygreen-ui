@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+Array [
+  <p
+    className="sc-bdVaJa gWCmrU"
+  >
+    Lorem ipsum dolor sit amet, consectetur
+     
+    <strong>
+      adipiscing elit
+    </strong>
+    . Donec eget
+     
+    <em>
+      nulla in libero
+    </em>
+     laoreet sodales.
+  </p>,
+  <strong
+    className="sc-bdVaJa gXfCLm"
+  >
+    Lorem ipsum dolor sit amet, consectetur
+  </strong>,
+]
+`;

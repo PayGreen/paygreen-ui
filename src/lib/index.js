@@ -16,12 +16,14 @@ import DaInput from './DaInput/DaInput';
 import DaLabel from './DaLabel/DaLabel';
 import DaHelp from './DaHelp/DaHelp';
 import DaSelect from './DaSelect/DaSelect';
+import DataBar from './DataBar/DataBar';
 import DaTable from './DaTable/DaTable';
 import DaTableCell from './DaTableCell/DaTableCell';
 import DaTableHead from './DaTableHead/DaTableHead';
 import DaTableHeadCell from './DaTableHeadCell/DaTableHeadCell';
 import DaTableRow from './DaTableRow/DaTableRow';
 import DaTextarea from './DaTextarea/DaTextarea';
+import DataLegend from './DataLegend/DataLegend';
 import Divider from './Divider/Divider';
 import Dot from './Dot/Dot';
 import Dropdown from './Dropdown/Dropdown';
@@ -192,12 +194,14 @@ export {
     DaInput,
     DaLabel,
     DaSelect,
+    DataBar,
     DaTable,
     DaTableCell,
     DaTableHead,
     DaTableHeadCell,
     DaTableRow,
     DaTextarea,
+    DataLegend,
     Divider,
     Dot,
     Dropdown,
