@@ -5,11 +5,13 @@ import {
     folder,
     blockWidthOptions,
     blockWidthDefault,
+    buttonSizeOptions,
     colorPalletOptions,
     iconSizeOptions,
     iconHtmlTagOptions,
     fontSizeOptions,
     spaceOptions,
+    formStatusOptions,
 } from '../../shared/constants';
 import Modal from './Modal';
 import Title from '../Title/Title';
@@ -19,6 +21,8 @@ import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from '../ModalContent/ModalContent';
 import { Overlay } from './style';
 import Text from '../Text/Text';
+import DaButton from '../DaButton/DaButton';
+import ButtonGroup from '../ButtonGroup/ButtonGroup';
 
 const paddingLateral = 'Lateral padding';
 
@@ -84,6 +88,17 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
                         Curabitur congue varius ex et posuere. Maecenas
                         tincidunt diam ut nisl porttitor scelerisque.
                     </Text>
+                    <ButtonGroup marginTop={spaceOptions.xs}>
+                        <a href="#">
+                            <DaButton
+                                buttonSize={buttonSizeOptions.md}
+                                colorPallet={colorPalletOptions.status}
+                                colorStatus={formStatusOptions.danger}
+                            >
+                                Close the modal
+                            </DaButton>
+                        </a>
+                    </ButtonGroup>
                 </ModalBody>
             </ModalContent>
         </Modal>
