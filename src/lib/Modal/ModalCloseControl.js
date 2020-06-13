@@ -8,11 +8,10 @@ const ModalCloseControl = props => {
 
     return (
         <ModalCloseControlBase {...props}>
-            {React.Children.map(props.children, child => 
+            {React.Children.map(props.children, child =>
                 React.cloneElement(child, {
                     onClick: () => setOpen(!isOpen),
-
-                })
+                }),
             )}
         </ModalCloseControlBase>
     );

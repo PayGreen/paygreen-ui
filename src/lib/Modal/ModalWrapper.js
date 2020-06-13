@@ -14,11 +14,11 @@ const ModalWrapper = props => {
             }}
         >
             <ModalWrapperBase {...props}>
-                {props.children.map(child => {
-                    return React.cloneElement(child, {
+                {React.Children.map(props.children, child =>
+                    React.cloneElement(child, {
                         isOpen: isOpen,
-                    });
-                })}
+                    }),
+                )}
             </ModalWrapperBase>
         </ModalContext.Provider>
     );

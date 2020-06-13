@@ -96,7 +96,7 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
                                 Curabitur congue varius ex et posuere. Maecenas
                                 tincidunt diam ut nisl porttitor scelerisque.
                             </Text>
-                            
+
                             <ButtonGroup marginTop={spaceOptions.xs}>
                                 <ModalCloseControl>
                                     <DaButton
