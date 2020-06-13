@@ -1,17 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { ModalBase } from './style';
 
 const Modal = props => {
-    const [isOpenState, setOpen] = useState(props.isOpen);
-
-    useEffect(() => {
-        setOpen(props.isOpen)
-    }, [props.isOpen]);
-
-    console.log('state', isOpenState)
     return (
         <ModalBase {...props}>
+            {console.log('prosp de modal', props)}
           {props.children}
         </ModalBase>
     );
@@ -22,7 +16,7 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-    isOpen: true,
+    isOpen: false,
 };
 
 export default Modal;
