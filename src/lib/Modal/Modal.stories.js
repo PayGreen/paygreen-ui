@@ -32,9 +32,8 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
     .addDecorator(withKnobs)
     .add('Modal', () => (
         <>
-            {' '}
             <ModalWrapper>
-                <Modal isOpen={boolean('is Open', true)}>
+                <Modal>
                     <ModalCloseControl>
                         <Overlay opacityValue={20} />
                     </ModalCloseControl>
@@ -97,8 +96,9 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
                                 Curabitur congue varius ex et posuere. Maecenas
                                 tincidunt diam ut nisl porttitor scelerisque.
                             </Text>
+                            
                             <ButtonGroup marginTop={spaceOptions.xs}>
-                                <a href="#">
+                                <ModalCloseControl>
                                     <DaButton
                                         buttonSize={buttonSizeOptions.md}
                                         colorPallet={colorPalletOptions.status}
@@ -106,12 +106,12 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
                                     >
                                         Close the modal
                                     </DaButton>
-                                </a>
+                                </ModalCloseControl>
                             </ButtonGroup>
                         </ModalBody>
                     </ModalContent>
                 </Modal>
-                
+
                 <ButtonGroup marginTop={spaceOptions.xs}>
                     <ModalCloseControl>
                         <DaButton

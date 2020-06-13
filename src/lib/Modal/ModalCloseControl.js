@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useModal } from './authModal.js';
+import { useModal } from './modalContext.js';
 import { ModalCloseControlBase } from './style';
 
 const ModalCloseControl = props => {
-    const { isActive, setActive } = useModal();
+    const { isOpen, setOpen } = useModal();
 
     return (
         <ModalCloseControlBase {...props}>
             {React.Children.map(props.children, child => 
                 React.cloneElement(child, {
-                    onClick: () => setActive(!isActive),
-                    isActive: isActive,
+                    onClick: () => setOpen(!isOpen),
+
                 })
             )}
         </ModalCloseControlBase>
