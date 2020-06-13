@@ -12,9 +12,12 @@ import {
     greyOptions,
     fontSizeOptions,
     spaceOptions,
+    textHtmlTagOptions,
 } from '../../shared/constants';
 import { DataBarBase, Bar, BarSection } from './style';
+import Text from '../Text/Text';
 import Title from '../Title/Title';
+import DataLegend from '../DataLegend/DataLegend';
 
 const DataBar = props => {
     const {
@@ -28,7 +31,7 @@ const DataBar = props => {
         ...rest
     } = props;
 
-    const calcPercent = (value) => {
+    const calcPercent = value => {
         return (
             Math.round(
                 (((value - minValue) * 100) / (maxValue - minValue)) * 10,
@@ -38,35 +41,29 @@ const DataBar = props => {
 
     return (
         <DataBarBase {...rest} blockWidth={blockWidth}>
-            <Bar
-                {...rest}
-                withBackground={withBackground}
-                barType={dataArray.length === 1 ? 'mono' : 'multi'}
-            >
+            <Bar {...rest} withBackground={withBackground}>
                 {dataArray.map((data, index) => (
                     <BarSection
                         {...rest}
                         key={index}
                         dataWidth={calcPercent(data.currentValue)}
                         dataColor={data.color}
-                        colorPallet={props.colorPallet}
                     />
                 ))}
             </Bar>
 
             {dataArray.length === 1 && hasDatabarLegend ? (
-                <Title
+                <DataLegend
                     {...props}
-                    colorWab={greyOptions.grey30}
-                    textSize={fontSizeOptions.md}
-                    marginTop={spaceOptions.xs}
+                    legendUnit={unit.length > 0 ? unit : '%'}
+                    legendValue={
+                        unit.length > 0 && unit !== '%'
+                            ? dataArray[0].currentValue
+                            : calcPercent(dataArray[0].currentValue)
+                    }
                 >
-                    {unit.length > 0 && unit !== '%'
-                        ? dataArray[0].currentValue
-                        : calcPercent(dataArray[0].currentValue)}
-                    {unit.length > 0 ? unit : '%'}
-                    {dataArray[0].legend}
-                </Title>
+                    <Text {...props}>{dataArray[0].legend}</Text>
+                </DataLegend>
             ) : null}
         </DataBarBase>
     );

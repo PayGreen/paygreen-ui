@@ -1,17 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    textHtmlTagOptions,
-    textHtmlTagDefault,
-    colorTypeOptions,
-    colorTypeDefault,
     colorPalletOptions,
+    colorPalletDefault,
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
     formStatusOptions,
     formStatusDefault,
-    radiusOptions,
     fontSizeOptions,
     fontSizeDefault,
     alignOptions,
@@ -20,38 +16,32 @@ import {
     spaceDefault,
 } from '../../shared/constants';
 import { DataLegendBase } from './style';
+import Text from '../Text/Text';
 
 const DataLegend = props => {
     return (
-        <DataLegendBase as={props.htmlTag} {...props}>
+        <DataLegendBase {...props}>
+            <Text {...props}>{props.legendValue}</Text>
+
+            <Text {...props}>{props.legendUnit}</Text>
+
             {props.children}
         </DataLegendBase>
     );
 };
 
 DataLegend.propTypes = {
-
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
-
-    hasUppercase: PropTypes.bool,
-    hasBackground: PropTypes.bool,
-    radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
+    legendValue: PropTypes.number,
+    legendUnit: PropTypes.string,
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     align: PropTypes.oneOf(Object.values(alignOptions)),
-    hasUnderline: PropTypes.bool,
-
-    paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
-    paddingTop: PropTypes.oneOf(Object.values(spaceOptions)),
-    paddingBottom: PropTypes.oneOf(Object.values(spaceOptions)),
-
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
-
-    marginInternal: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 DataLegend.defaultProps = {
@@ -59,23 +49,13 @@ DataLegend.defaultProps = {
     colorTheme: colorThemeDefault,
     colorWab: greyOptions.grey60,
     colorStatus: formStatusDefault,
-
-    hasUppercase: false,
-    hasBackground: false,
-    radiusSize: radiusOptions.none,
+    legendValue: 0,
+    legendUnit: '%',
     textSize: fontSizeDefault,
     align: alignDefault,
-    hasUnderline: false,
-
-    paddingLateral: spaceDefault,
-    paddingTop: spaceDefault,
-    paddingBottom: spaceDefault,
-
     marginLateral: spaceDefault,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
-
-    marginInternal: spaceOptions.sm,
 };
 
 export default DataLegend;

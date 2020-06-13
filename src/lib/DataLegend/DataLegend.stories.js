@@ -81,8 +81,6 @@ storiesOf(folder.main + 'DataLegend', module)
                     fontSizeDefault,
                 )}
                 align={radios(alignLabel, alignOptions, alignDefault)}
-                hasUppercase={boolean('Uppercase', false)}
-                hasUnderline={boolean('Underline', false)}
                 marginLateral={select(
                     lateralMarginLabel,
                     spaceOptions,
