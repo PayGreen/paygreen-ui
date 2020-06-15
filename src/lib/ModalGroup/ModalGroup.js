@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { ModalWrapperBase } from './style';
+import { ModalGroupBase } from './style';
 import { ModalContext } from './modalContext.js';
 
-const ModalWrapper = props => {
+const ModalGroup = props => {
     const [isOpen, setOpen] = useState(false);
 
     return (
@@ -13,19 +12,15 @@ const ModalWrapper = props => {
                 setOpen,
             }}
         >
-            <ModalWrapperBase {...props}>
+            <ModalGroupBase {...props}>
                 {React.Children.map(props.children, child =>
                     React.cloneElement(child, {
                         isOpen: isOpen,
                     }),
                 )}
-            </ModalWrapperBase>
+            </ModalGroupBase>
         </ModalContext.Provider>
     );
 };
 
-ModalWrapper.propTypes = {};
-
-ModalWrapper.defaultProps = {};
-
-export default ModalWrapper;
+export default ModalGroup;

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useModal } from './modalContext.js';
 import { ModalCloseControlBase } from './style';
 
@@ -16,9 +15,5 @@ const ModalCloseControl = props => {
         </ModalCloseControlBase>
     );
 };
-
-ModalCloseControl.propTypes = {};
-
-ModalCloseControl.defaultProps = {};
 
 export default ModalCloseControl;

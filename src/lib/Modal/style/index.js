@@ -16,10 +16,4 @@ const ModalBase = styled.div`
     ${props => (props.isOpen ? isOpenStyle : isCloseStyle)};
 `;
 
-const ModalWrapperBase = styled.div`
-`;
-
-const ModalCloseControlBase = styled.div`
-`;
-
-export { ModalBase, ModalWrapperBase, ModalCloseControlBase };
+export { ModalBase };
