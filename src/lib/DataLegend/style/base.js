@@ -54,36 +54,10 @@ const htmlTagStyle = {
     `,
 };
 
-const uppercaseStyle = css`
-    text-transform: uppercase;
-    font-weight: ${props => props.theme.font.weight.bold};
-    letter-spacing: ${props => props.theme.font.spacing};
+const horizontalStyle = css`
+p {
+    display: inline;
+}
 `;
 
-const blockBackground = {
-    original: css`
-        background-color: ${props => backgroundColor[props.colorPallet]};
-    `,
-    reverse: css`
-        background-color: ${props =>
-            transparentize(0.85, props.theme.wab.white00)};
-    `,
-};
-
-const defaultStyle = css`
-    ${responsiveSpaces('margin')};
-    color: ${props =>
-        props.colorType === colorTypeOptions.reverse
-            ? props.theme.wab.white00
-            : mainColor[props.colorPallet]};
-    line-height: ${props => props.theme.font.lineHeight.md};
-    text-align: ${props => props.align};
-    font-size: ${props => props.theme.font.size[props.textSize]};
-
-    @media (${props => props.theme.query.max.md}) {
-        font-size: ${props =>
-            props.theme.font.size[minimizeFont[props.textSize]]};
-    }
-`;
-
-export { uppercaseStyle, blockBackground, htmlTagStyle, defaultStyle };
+export {  htmlTagStyle, horizontalStyle };

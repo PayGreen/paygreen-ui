@@ -9,14 +9,11 @@ import {
     colorThemeDefault,
     formStatusOptions,
     formStatusDefault,
-    greyOptions,
     fontSizeOptions,
-    spaceOptions,
-    textHtmlTagOptions,
+    fontSizeDefault,
 } from '../../shared/constants';
 import { DataBarBase, Bar, BarSection } from './style';
 import Text from '../Text/Text';
-import Title from '../Title/Title';
 import DataLegend from '../DataLegend/DataLegend';
 
 const DataBar = props => {
@@ -55,6 +52,7 @@ const DataBar = props => {
             {dataArray.length === 1 && hasDatabarLegend ? (
                 <DataLegend
                     {...props}
+                    dataColor={dataArray[0].color}
                     legendUnit={unit.length > 0 ? unit : '%'}
                     legendValue={
                         unit.length > 0 && unit !== '%'
@@ -87,6 +85,7 @@ DataBar.propTypes = {
     hasDatabarLegend: PropTypes.bool,
     minValue: PropTypes.number,
     maxValue: PropTypes.number,
+    textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     unit: PropTypes.string,
     withBackground: PropTypes.bool,
 };
@@ -99,6 +98,7 @@ DataBar.defaultProps = {
     hasDatabarLegend: false,
     minValue: 0,
     maxValue: 100,
+    textSize: fontSizeDefault,
     unit: '%',
     withBackground: false,
 };

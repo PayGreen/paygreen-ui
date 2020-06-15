@@ -8,7 +8,7 @@ const htmlTagStyle = {
     p: css`
         ${responsiveSpaces('padding')};
         border-radius: ${props => props.theme.radius[props.radiusSize]};
-    `,
+        `,
     div: css`
         ${responsiveSpaces('padding')};
         border-radius: ${props => props.theme.radius[props.radiusSize]};

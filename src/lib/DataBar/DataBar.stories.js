@@ -18,6 +18,8 @@ import {
     colorPalletDefault,
     formStatusOptions,
     formStatusDefault,
+    fontSizeOptions,
+    fontSizeDefault,
 } from '../../shared/constants';
 import DataBar from './DataBar';
 
@@ -53,6 +55,7 @@ storiesOf(folder.main + 'Databar', module)
             )}
             withBackground={boolean('With background', true)}
             hasDatabarLegend={boolean('With legend', true)}
+            textSize={select('Text Size', fontSizeOptions, fontSizeDefault)}
             maxValue={number('Max value', defaultMaxValue, maxValueOptions)}
             unit={text('Unity', 'Tonnes')}
             dataArray={[
@@ -62,7 +65,7 @@ storiesOf(folder.main + 'Databar', module)
                         defaultCurrentValue,
                         currentValueOptions,
                     ),
-                    legend: text('Legend', 'légende'),
+                    legend: text('Legend', 'compensé par vous'),
                     color:
                         radios(
                             palletColorLabel,
