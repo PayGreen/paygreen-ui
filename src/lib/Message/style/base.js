@@ -1,5 +1,4 @@
 import { css } from 'styled-components';
-import { math } from 'polished';
 
 const arrowSize = props => props.theme.arrow[props.fieldSize];
 
@@ -7,7 +6,11 @@ const arrowBase = css`
     &::after {
         content: '';
         position: absolute;
-        border: solid ${arrowSize} transparent;
+        border-top: ${arrowSize} solid
+            ${props => props.theme.color.status[props.colorStatus].light};
+        border-right: ${arrowSize} solid transparent;
+        border-left: ${arrowSize} solid transparent;
+        transform-origin: top;
     }
 `;
 
@@ -16,8 +19,8 @@ const arrowBlockStyle = {
     ${arrowBase}
         margin-top: ${arrowSize};
         &::after {
-            border-bottom-color: ${props => props.theme.color.status[props.colorStatus].light};
-            top:-${props => math (props.theme.arrow[props.fieldSize] + '*2')};
+            transform: rotate(180deg);
+            top: 0;
             right: ${arrowSize};
         }
     `,
@@ -25,8 +28,8 @@ const arrowBlockStyle = {
     ${arrowBase}
         margin-left: ${arrowSize};
         &::after {
-            border-right-color: ${props => props.theme.color.status[props.colorStatus].light};
-            left: -${props => math (props.theme.arrow[props.fieldSize] + '*2')};
+            transform: rotate(90deg);
+            left: -${arrowSize};
             top: 50%;
         }
     `,
@@ -34,9 +37,9 @@ const arrowBlockStyle = {
     ${arrowBase}
         margin-right: ${arrowSize};
         &::after {
-            border-left-color: ${props => props.theme.color.status[props.colorStatus].light};
-            right: -${props => math (props.theme.arrow[props.fieldSize] + '*2')};
-            top: 35%;
+            transform: rotate(-90deg);
+            right: -${arrowSize};
+            top: 50%;
         }
     `,
 };

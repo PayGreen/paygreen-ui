@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { math } from 'polished';
 import { arrowBlockStyle, arrowSize } from './base';
-import { TextBase } from '../../Text/style'
+import { TextBase } from '../../Text/style';
 
 const MessageBase = styled.div`
     position: relative;
@@ -18,8 +18,7 @@ const MessageBase = styled.div`
 
     & > .icon {
         grid-area: icon;
-        margin-right: ${props =>
-            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/3')};
+        margin-right: ${arrowSize};
         svg {
             fill: ${props => props.theme.color.status[props.colorStatus].main};
         }
