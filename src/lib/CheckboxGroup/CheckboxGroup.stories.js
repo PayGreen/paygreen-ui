@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
+import { withKnobs, boolean, radios, text } from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
@@ -30,8 +30,8 @@ storiesOf(folder.form + folder.sub.checkbox + 'CheckboxGroup', module)
         () => (
             <CheckboxGroup
                 name="checkboxes"
-                legend="Checkbox Label"
-                value="second"
+                legend={text('Checkboxes Label', 'Checkboxes Label')}
+                value={checkboxOptions[1].value}
                 options={checkboxOptions}
                 disabled={boolean('Disabled', false)}
                 fieldSize={radios(
