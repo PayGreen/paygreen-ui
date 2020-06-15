@@ -99,13 +99,19 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
 
                             <ButtonGroup marginTop={spaceOptions.xs}>
                                 <ModalCloseControl>
-                                    <DaButton
-                                        buttonSize={buttonSizeOptions.md}
-                                        colorPallet={colorPalletOptions.status}
-                                        colorStatus={formStatusOptions.danger}
-                                    >
-                                        Close the modal
-                                    </DaButton>
+                                    <button type="button">
+                                        <DaButton
+                                            buttonSize={buttonSizeOptions.md}
+                                            colorPallet={
+                                                colorPalletOptions.status
+                                            }
+                                            colorStatus={
+                                                formStatusOptions.danger
+                                            }
+                                        >
+                                            Close the modal
+                                        </DaButton>
+                                    </button>
                                 </ModalCloseControl>
                             </ButtonGroup>
                         </ModalBody>
@@ -114,13 +120,15 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
 
                 <ButtonGroup marginTop={spaceOptions.xs}>
                     <ModalCloseControl>
-                        <DaButton
-                            buttonSize={buttonSizeOptions.md}
-                            colorPallet={colorPalletOptions.status}
-                            colorStatus={formStatusOptions.default}
-                        >
-                            Open the modal
-                        </DaButton>
+                        <button type="button">
+                            <DaButton
+                                buttonSize={buttonSizeOptions.md}
+                                colorPallet={colorPalletOptions.status}
+                                colorStatus={formStatusOptions.default}
+                            >
+                                Open the modal
+                            </DaButton>
+                        </button>
                     </ModalCloseControl>
                 </ButtonGroup>
             </ModalWrapper>
