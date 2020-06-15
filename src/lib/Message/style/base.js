@@ -1,52 +1,44 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
 
-const fieldSizeRatio = props =>
-    math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2');
+const arrowSize = props => props.theme.arrow[props.fieldSize];
 
 const arrowBase = css`
     &::after {
         content: '';
         position: absolute;
-        border-top: ${fieldSizeRatio} solid
-            ${props => props.theme.color.status[props.colorStatus].light};
-        border-right: ${fieldSizeRatio} solid transparent;
-        border-left: ${fieldSizeRatio} solid transparent;
-        transform-origin: top;
+        border: solid ${arrowSize} transparent;
     }
 `;
 
 const arrowBlockStyle = {
     top: css`
     ${arrowBase}
-        margin-top: ${fieldSizeRatio};
+        margin-top: ${arrowSize};
         &::after {
-            transform: rotate(180deg);
-            top: 0;
-            right: ${props =>
-                math(
-                    props.theme.daButton.buttonHeight[props.fieldSize] + '/1.5',
-                )};
+            border-bottom-color: ${props => props.theme.color.status[props.colorStatus].light};
+            top:-${props => math (props.theme.arrow[props.fieldSize] + '*2')};
+            right: ${arrowSize};
         }
     `,
     left: css`
     ${arrowBase}
-        margin-left: ${fieldSizeRatio};
+        margin-left: ${arrowSize};
         &::after {
-            transform: rotate(90deg);
-            left: -${fieldSizeRatio};
+            border-right-color: ${props => props.theme.color.status[props.colorStatus].light};
+            left: -${props => math (props.theme.arrow[props.fieldSize] + '*2')};
             top: 50%;
         }
     `,
     right: css`
     ${arrowBase}
-        margin-right: ${fieldSizeRatio};
+        margin-right: ${arrowSize};
         &::after {
-            transform: rotate(-90deg);
-            right: -${fieldSizeRatio};
-            top: 50%;
+            border-left-color: ${props => props.theme.color.status[props.colorStatus].light};
+            right: -${props => math (props.theme.arrow[props.fieldSize] + '*2')};
+            top: 35%;
         }
     `,
 };
 
-export { arrowBlockStyle, fieldSizeRatio };
+export { arrowBlockStyle, arrowSize };

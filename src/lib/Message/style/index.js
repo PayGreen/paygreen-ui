@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 import { math } from 'polished';
-import { arrowBlockStyle, fieldSizeRatio } from './base';
+import { arrowBlockStyle, arrowSize } from './base';
+import { TextBase } from '../../Text/style'
 
 const MessageBase = styled.div`
     position: relative;
     max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
-    border-radius: ${fieldSizeRatio};
-    padding: ${fieldSizeRatio};
-    font-size: ${props => props.theme.daButton.font[props.fieldSize]};
+    border-radius: ${props => props.theme.radius[props.fieldSize]};
+    padding: ${arrowSize};
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-areas: 'icon text';
     justify-items: center;
     background-color: ${props =>
         props.theme.color.status[props.colorStatus].light};
-    color: ${props => props.theme.color.status[props.colorStatus].light};
+    color: ${props => props.theme.color.status[props.colorStatus].main};
 
     & > .icon {
         grid-area: icon;
@@ -25,11 +25,8 @@ const MessageBase = styled.div`
         }
     }
 
-    & > :last-child {
-        &:not(.icon) {
-            grid-area: text;
-            color: ${props => props.theme.color.status[props.colorStatus].main};
-        }
+    & > ${TextBase} {
+        color: ${props => props.theme.color.status[props.colorStatus].main};
     }
 
     @media (${props => props.theme.query.max.xl}) {
