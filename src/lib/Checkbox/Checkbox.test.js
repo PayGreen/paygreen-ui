@@ -7,9 +7,8 @@ it('renders without crashing', () => {
     const checkbox = TestRenderer.create(
         <Checkbox
             theme={ThemeDefault}
-            checkboxId="first"
-            checkboxValue="first"
-            checkboxName="test"
+            id="first"
+            label="First Choice"
         />,
     );
     expect(checkbox.toJSON()).toMatchSnapshot();
