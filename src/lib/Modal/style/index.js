@@ -6,6 +6,8 @@ const ModalBase = styled.div`
     z-index: ${props => props.theme.zindex.modal};
     width: 100%;
     height: 100vh;
+    left: 0;
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;

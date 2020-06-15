@@ -29,6 +29,19 @@ storiesOf(folder.main + folder.sub.modal + 'ModalGroup', module)
     .add('Modal Group', () => (
         <>
             <ModalGroup>
+                <ButtonGroup>
+                    <ModalCloseControl>
+                        <button type="button">
+                            <DaButton
+                                buttonSize={buttonSizeOptions.md}
+                                colorPallet={colorPalletOptions.status}
+                                colorStatus={formStatusOptions.default}
+                            >
+                                Open the modal
+                            </DaButton>
+                        </button>
+                    </ModalCloseControl>
+                </ButtonGroup>
                 <Modal>
                     <ModalCloseControl>
                         <Overlay opacityValue={20} />
@@ -79,20 +92,6 @@ storiesOf(folder.main + folder.sub.modal + 'ModalGroup', module)
                         </ModalBody>
                     </ModalContent>
                 </Modal>
-
-                <ButtonGroup marginTop={spaceOptions.xs}>
-                    <ModalCloseControl>
-                        <button type="button">
-                            <DaButton
-                                buttonSize={buttonSizeOptions.md}
-                                colorPallet={colorPalletOptions.status}
-                                colorStatus={formStatusOptions.default}
-                            >
-                                Open the modal
-                            </DaButton>
-                        </button>
-                    </ModalCloseControl>
-                </ButtonGroup>
             </ModalGroup>
         </>
     ));

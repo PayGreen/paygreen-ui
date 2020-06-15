@@ -54,6 +54,7 @@ import Modal from './Modal/Modal';
 import ModalHeader from './ModalHeader/ModalHeader';
 import ModalBody from './ModalBody/ModalBody';
 import ModalContent from './ModalContent/ModalContent';
+import ModalGroup from './ModalGroup/ModalGroup';
 import Overlay from './Overlay/Overlay';
 import Popin from './Popin/Popin';
 import Radio from './Radio/Radio';
@@ -227,8 +228,9 @@ export {
     MenuSecondary,
     Modal,
     ModalBody,
-    ModalHeader,
     ModalContent,
+    ModalGroup,
+    ModalHeader,
     Overlay,
     Popin,
     Radio,

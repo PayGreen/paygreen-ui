@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ModalGroupBase } from './style';
+import { ModalGroupBase, ModalNoScrollStyle } from './style';
 import { ModalContext } from './modalContext.js';
 
 const ModalGroup = props => {
@@ -12,6 +12,9 @@ const ModalGroup = props => {
                 setOpen,
             }}
         >
+            {/* necessary to prevent scrolling when modal is opened */}
+            {isOpen ? <ModalNoScrollStyle /> : null}
+
             <ModalGroupBase {...props}>
                 {React.Children.map(props.children, child =>
                     React.cloneElement(child, {
