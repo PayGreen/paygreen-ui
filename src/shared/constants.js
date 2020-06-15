@@ -11,6 +11,7 @@ const folder = {
 
     sub: {
         button: 'Buttons' + subFolderSeparator,
+        checkbox: 'Checkbox elements' + subFolderSeparator,
         control: 'Menu controls' + subFolderSeparator,
         footer: 'Footer' + subFolderSeparator,
         form: 'Special fields' + subFolderSeparator,
