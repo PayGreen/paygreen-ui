@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bwzfXH bFHdpU"
+  className="sc-bwzfXH uTxCW"
 >
   <div
     className="sc-bdVaJa gdFTuJ"
   >
     <div
-      className="sc-htpNat hHtpcc"
+      className="sc-htpNat KtFsv"
     >
       <div
         className="sc-EHOje gFNrFt"
@@ -30,7 +30,7 @@ exports[`renders without crashing 1`] = `
           className="sc-htoDjs huVVuq"
         >
           <div
-            className="sc-htpNat hHtpcc"
+            className="sc-htpNat KtFsv"
           >
             <button
               onClick={[Function]}
@@ -52,7 +52,7 @@ exports[`renders without crashing 1`] = `
     className="sc-htoDjs huVVuq"
   >
     <div
-      className="sc-htpNat hHtpcc"
+      className="sc-htpNat KtFsv"
     >
       <button
         onClick={[Function]}
