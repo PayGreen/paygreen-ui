@@ -1,54 +1,61 @@
 import { css } from 'styled-components';
 
-const disabled = css`
-    input[type='checkbox'] {
-        &:disabled {
-            & + label {
-                cursor: not-allowed;
-                color: ${props => props.theme.wab.grey30};
-            }
-        }
+const checkboxSize = props =>
+    props.theme.form.checkboxSize[props.fieldSize];
 
+const checkSize = 0.8;
+
+const disabledStyle = css`
+    label {
+        cursor: not-allowed;
+        color: ${props => props.theme.wab.grey40};
+
+        &::before {
+            border-color: ${props => props.theme.wab.grey20};
+            background-color: ${props => props.theme.wab.white20};
+        }
+    }
+
+    input {
         &:checked {
             & + label {
                 &::before {
-                    background-color: ${props => props.theme.wab.grey30};
-                    border-color: ${props => props.theme.wab.grey30};
+                    border-color: ${props => props.theme.wab.grey20};
+                    background-color: ${props => props.theme.wab.grey20};
                 }
             }
         }
     }
 `;
 
-const noHover = css`
+const basicStyle = css`
     label {
-        pointer-events: none;
+        cursor: pointer;
     }
-`;
 
-const enabled = css`
-    input[type='checkbox'] {
+    input {
         &:hover,
         &:active,
         &:focus {
-            &:not(:checked) {
+            & + label {
+                & > .icon {
+                    transform: scale(${checkSize * 0.75});
+                }
+            }
+        }
+
+        &:checked {
+            &:hover,
+            &:active,
+            &:focus {
                 & + label {
                     & > .icon {
-                        transform: scale(0.8);
-                        svg {
-                            fill: ${props => props.theme.wab.grey30};
-                        }
+                        transform: scale(${checkSize});
                     }
                 }
             }
         }
     }
-
-    label {
-        cursor: pointer;
-    }
-
-    ${props => (props.checkboxReadOnly ? noHover : null)};
 `;
 
-export { disabled, enabled };
+export { checkboxSize, checkSize, disabledStyle, basicStyle };

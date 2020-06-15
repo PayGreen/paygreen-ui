@@ -10,17 +10,14 @@ import CheckboxGroup from './CheckboxGroup';
 
 const checkboxOptions = [
     {
-        id: 'first',
         label: 'First Choice',
         value: 'first',
     },
     {
-        id: 'second',
         label: 'Second Choice',
         value: 'second',
     },
     {
-        id: 'third',
         label: 'Third Choice',
         value: 'third',
     },
@@ -32,12 +29,11 @@ storiesOf(folder.form + folder.sub.checkbox + 'CheckboxGroup', module)
         'CheckboxGroup',
         () => (
             <CheckboxGroup
-                checkboxOptions={checkboxOptions}
-                checkboxName="Checkbox Name"
+                name="checkboxes"
                 legend="Checkbox Label"
-                defaultValue="second"
+                value="second"
+                options={checkboxOptions}
                 disabled={boolean('Disabled', false)}
-                readOnly={boolean('Readonly', false)}
                 fieldSize={radios(
                     'Field size',
                     buttonSizeOptions,
@@ -47,6 +43,6 @@ storiesOf(folder.form + folder.sub.checkbox + 'CheckboxGroup', module)
         ),
         {
             notes:
-                'You can change all radiogroup items size with "fieldSize" props.',
+                'You can change all CheckboxGroup items size with "fieldSize" props.',
         },
     );

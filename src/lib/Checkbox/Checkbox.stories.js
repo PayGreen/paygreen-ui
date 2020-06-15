@@ -12,17 +12,13 @@ storiesOf(folder.form + folder.sub.checkbox + 'Checkbox', module)
     .addDecorator(withKnobs)
     .add('Checkbox', () => (
         <Checkbox
-            checkboxId="first"
-            checkboxValue="first"
-            checkboxName="test"
-            checkboxDisabled={boolean('Disabled', false)}
-            checkboxReadOnly={boolean('Readonly', false)}
+            id="first"
+            label="First Choice"
+            disabled={boolean('Disabled', false)}
             fieldSize={radios(
                 'Field size',
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
-            checkboxLabel="First Choice"
-            isChecked={boolean('Is checked', false)}
         />
     ));

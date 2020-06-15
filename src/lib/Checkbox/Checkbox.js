@@ -5,49 +5,22 @@ import { CheckboxBase } from './style';
 import { CheckBoldIcon } from '../Icon/Icon';
 
 const Checkbox = props => {
-    const {
-        fieldSize,
-        checkboxDisabled,
-        checkboxReadOnly,
-        checkboxId,
-        checkboxValue,
-        checkboxName,
-        checkboxLabel,
-        isChecked,
-        changed,
-
-        ...rest
-    } = props;
+    const { fieldSize, label, id, ...rest } = props;
 
     return (
         <CheckboxBase
             theme={props.theme} // not necessary, only needed for tests
             fieldSize={fieldSize}
-            checkboxDisabled={checkboxDisabled}
-            checkboxReadOnly={checkboxReadOnly}
-            checkboxId={checkboxId}
-            checkboxValue={checkboxValue}
-            checkboxName={checkboxName}
-            checkboxLabel={checkboxLabel}
-            isChecked={isChecked}
-            changed={changed}
+            isDisabled={props.disabled}
         >
-            <input
-                {...rest}
-                disabled={checkboxDisabled}
-                readOnly={checkboxReadOnly}
-                id={checkboxId}
-                type="checkbox"
-                name={checkboxName}
-                value={checkboxValue}
-                onChange={changed}
-                checked={isChecked}
-            />
-            <label htmlFor={checkboxId}>
+            <input {...rest} id={id} type="checkbox" />
+
+            <label htmlFor={id}>
                 <CheckBoldIcon
                     theme={props.theme} // not necessary, only needed for tests
                 />
-                {checkboxLabel}
+
+                {label}
             </label>
         </CheckboxBase>
     );
@@ -55,21 +28,14 @@ const Checkbox = props => {
 
 Checkbox.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
-    checkboxDisabled: PropTypes.bool,
-    checkboxReadOnly: PropTypes.bool,
-    checkboxId: PropTypes.string,
-    checkboxValue: PropTypes.string,
-    checkboxName: PropTypes.string,
-    checkboxLabel: PropTypes.string,
-    isChecked: PropTypes.bool,
-    changed: PropTypes.func,
+    disabled: PropTypes.bool,
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
 };
 
 Checkbox.defaultProps = {
     fieldSize: buttonSizeDefault,
-    checkboxDisabled: false,
-    checkboxReadOnly: false,
-    isChecked: false,
+    disabled: false,
 };
 
 export default Checkbox;
