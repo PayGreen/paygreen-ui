@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
 const ModalNoScrollStyle = createGlobalStyle`
-  body {
-    overflow:hidden;
-  }
+    body {
+        overflow:hidden;
+    }
 `;
 
 const ModalGroupBase = styled.div``;
