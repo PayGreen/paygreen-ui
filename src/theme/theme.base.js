@@ -123,7 +123,7 @@ export const ThemeBase = {
     arrow: {
         sm: '12px',
         md: '16px',
-        lg: '20px'
+        lg: '20px',
     },
     space: {
         none: '0',
