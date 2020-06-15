@@ -11,10 +11,6 @@ const Dropdown = props => {
                     return null;
                 }
 
-                if (child.props.name === 'Popin') {
-                    return React.cloneElement(child, { isActive: isActive });
-                }
-
                 return React.cloneElement(child, {
                     onClick: () => setActive(!isActive),
                     isActive: isActive,
@@ -23,9 +19,5 @@ const Dropdown = props => {
         </DropdownBase>
     );
 };
-
-Dropdown.propTypes = {};
-
-Dropdown.defaultProps = {};
 
 export default Dropdown;
