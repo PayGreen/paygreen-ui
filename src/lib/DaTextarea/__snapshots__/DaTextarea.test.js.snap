@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa dFJPgb"
+  className="sc-bdVaJa BbPRU"
 >
   <textarea
     disabled={false}
@@ -198,6 +198,11 @@ exports[`renders without crashing 1`] = `
           },
         },
         "form": Object {
+          "checkboxSize": Object {
+            "lg": "22px",
+            "md": "20px",
+            "sm": "18px",
+          },
           "inputWidth": Object {
             "lg": "500px",
             "md": "400px",

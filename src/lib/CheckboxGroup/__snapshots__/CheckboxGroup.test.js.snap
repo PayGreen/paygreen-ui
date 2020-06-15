@@ -3,24 +3,20 @@
 exports[`renders without crashing 1`] = `
 <fieldset
   className="sc-bdVaJa iKuaBW"
-  disabled={false}
-  readOnly={false}
 >
   <legend
-    className="sc-bxivhb lfWzxG"
+    className="sc-bxivhb daPzkX"
   >
     Checkbox Label
   </legend>
   <div
-    className="sc-bwzfXH butKnC"
+    className="sc-bwzfXH cXrKxb"
   >
     <input
-      checked={false}
+      defaultChecked={false}
       disabled={false}
-      id="first"
-      name="test1"
-      onChange={[Function]}
-      readOnly={false}
+      id="test0"
+      name="test"
       theme={
         Object {
           "bannerHeight": Object {
@@ -138,7 +134,7 @@ exports[`renders without crashing 1`] = `
               "sm": "32px",
             },
             "font": Object {
-              "lg": "1.8rem",
+              "lg": "1.7rem",
               "md": "1.4rem",
               "sm": "1.35rem",
             },
@@ -146,11 +142,6 @@ exports[`renders without crashing 1`] = `
               "lg": "1.1rem",
               "md": "1rem",
               "sm": "0.9rem",
-            },
-            "paddingWidth": Object {
-              "lg": "30px",
-              "md": "26px",
-              "sm": "22px",
             },
             "shift": Object {
               "lg": "6px",
@@ -213,7 +204,7 @@ exports[`renders without crashing 1`] = `
             },
           },
           "form": Object {
-            "checkboxButtonSize": Object {
+            "checkboxSize": Object {
               "lg": "22px",
               "md": "20px",
               "sm": "18px",
@@ -328,6 +319,7 @@ exports[`renders without crashing 1`] = `
               "md": "2px 2px 15px",
               "none": "0 0 0",
               "sm": "1px 1px 10px",
+              "xs": "1px 1px 5px",
             },
           },
           "space": Object {
@@ -372,6 +364,7 @@ exports[`renders without crashing 1`] = `
             "layer": -5,
             "loader": 90,
             "menu": 100,
+            "modal": 120,
           },
         }
       }
@@ -379,10 +372,10 @@ exports[`renders without crashing 1`] = `
       value="first"
     />
     <label
-      htmlFor="first"
+      htmlFor="test0"
     >
       <span
-        className="sc-htpNat GaXEY icon"
+        className="sc-htpNat cOYojX icon"
       >
         <svg
           viewBox="0 0 143 143"
@@ -396,15 +389,13 @@ exports[`renders without crashing 1`] = `
     </label>
   </div>
   <div
-    className="sc-bwzfXH butKnC"
+    className="sc-bwzfXH cXrKxb"
   >
     <input
-      checked={false}
+      defaultChecked={false}
       disabled={false}
-      id="second"
-      name="test1"
-      onChange={[Function]}
-      readOnly={false}
+      id="test1"
+      name="test"
       theme={
         Object {
           "bannerHeight": Object {
@@ -522,7 +513,7 @@ exports[`renders without crashing 1`] = `
               "sm": "32px",
             },
             "font": Object {
-              "lg": "1.8rem",
+              "lg": "1.7rem",
               "md": "1.4rem",
               "sm": "1.35rem",
             },
@@ -530,11 +521,6 @@ exports[`renders without crashing 1`] = `
               "lg": "1.1rem",
               "md": "1rem",
               "sm": "0.9rem",
-            },
-            "paddingWidth": Object {
-              "lg": "30px",
-              "md": "26px",
-              "sm": "22px",
             },
             "shift": Object {
               "lg": "6px",
@@ -597,7 +583,7 @@ exports[`renders without crashing 1`] = `
             },
           },
           "form": Object {
-            "checkboxButtonSize": Object {
+            "checkboxSize": Object {
               "lg": "22px",
               "md": "20px",
               "sm": "18px",
@@ -712,6 +698,7 @@ exports[`renders without crashing 1`] = `
               "md": "2px 2px 15px",
               "none": "0 0 0",
               "sm": "1px 1px 10px",
+              "xs": "1px 1px 5px",
             },
           },
           "space": Object {
@@ -756,6 +743,7 @@ exports[`renders without crashing 1`] = `
             "layer": -5,
             "loader": 90,
             "menu": 100,
+            "modal": 120,
           },
         }
       }
@@ -763,10 +751,10 @@ exports[`renders without crashing 1`] = `
       value="second"
     />
     <label
-      htmlFor="second"
+      htmlFor="test1"
     >
       <span
-        className="sc-htpNat GaXEY icon"
+        className="sc-htpNat cOYojX icon"
       >
         <svg
           viewBox="0 0 143 143"
