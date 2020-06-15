@@ -10,24 +10,21 @@ import Checkbox from '../Checkbox/Checkbox';
 import DaLabel from '../DaLabel/DaLabel';
 
 const CheckboxGroup = props => {
-    const {
-        legend,
-        value,
-        options,
-        ...rest
-    } = props;
+    const { legend, value, options, ...rest } = props;
 
     return (
         <CheckboxGroupBase
             theme={props.theme} // not necessary, only needed for tests
         >
-            <DaLabel
-                theme={props.theme} // not necessary, only needed for tests
-                htmlTag={labelHtmlTagOptions.legend}
-                fieldSize={props.fieldSize}
-            >
-                {legend}
-            </DaLabel>
+            {legend && legend.length ? (
+                <DaLabel
+                    theme={props.theme} // not necessary, only needed for tests
+                    htmlTag={labelHtmlTagOptions.legend}
+                    fieldSize={props.fieldSize}
+                >
+                    {legend}
+                </DaLabel>
+            ) : null}
 
             {options.map((option, index) => (
                 <Checkbox
@@ -49,7 +46,8 @@ CheckboxGroup.propTypes = {
             label: PropTypes.string.isRequired,
             value: PropTypes.string.isRequired,
         }),
-        ).isRequired,
+    ).isRequired,
+    name: PropTypes.string.isRequired,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     legend: PropTypes.string,
     disabled: PropTypes.bool,
