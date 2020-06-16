@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { menuBlock, closedStyle } from './base';
-import { MenuBase } from '../../Menu/style';
 
 const MenuPrimaryBase = styled.ul`
     ${menuBlock};
