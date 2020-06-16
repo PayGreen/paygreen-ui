@@ -10,14 +10,12 @@ const DaHelp = props => {
 DaHelp.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     disabled: PropTypes.bool,
-    readOnly: PropTypes.bool,
     isActive: PropTypes.bool,
 };
 
 DaHelp.defaultProps = {
     fieldSize: buttonSizeDefault,
     disabled: false,
-    readOnly: false,
     isActive: false,
 };
 

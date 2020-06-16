@@ -4,16 +4,14 @@ import { enabled, disabled } from './base';
 
 const DaHelpBase = styled.button`
     box-sizing: border-box;
-    padding: 0
-        ${props =>
-            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/3')}
-        0
-        ${props =>
-            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/5')};
+    padding: 0;
+    padding-right: ${props =>
+        math(props.theme.daButton.buttonHeight[props.fieldSize] + '/10')};
+    width: ${props => props.theme.daButton.buttonHeight[props.fieldSize]};
     height: ${props => props.theme.daButton.buttonHeight[props.fieldSize]};
+    border: none;
     border-radius: ${props =>
         math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
-    border-left: none;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     transition: all ${props => props.theme.transition.xs};

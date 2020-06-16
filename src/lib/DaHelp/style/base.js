@@ -14,33 +14,27 @@ const activeStyle = css`
     }
 `;
 
-const readOnly = css`
-    cursor: not-allowed;
-`;
-
-const canHover = css`
+const enabled = css`
+    background-color: ${props => props.theme.color.status.default.light};
+    
     &:hover,
     &:active,
     &:focus {
-        ${activeStyle}
+        ${activeStyle};
     }
-`;
-
-const enabled = css`
-    background-color: ${props => props.theme.color.status.default.light};
 
     & > .icon {
         svg {
             fill: ${props => props.theme.color.status.default.main};
         }
     }
+
     ${props => (props.isActive ? activeStyle : null)};
-    ${props => (props.readOnly ? readOnly : canHover)};
 }
 `;
 
 const disabled = css`
-    ${activeStyle}
+    ${activeStyle};
 
     cursor: not-allowed;
     filter: grayscale(1);
