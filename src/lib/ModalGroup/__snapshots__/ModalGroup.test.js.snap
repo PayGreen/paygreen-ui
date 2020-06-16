@@ -2,69 +2,42 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bwzfXH uTxCW"
+  className="sc-EHOje jvzENE"
 >
   <div
-    className="sc-bdVaJa gdFTuJ"
+    className="sc-bZQynM bOrPFB"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sc-bdVaJa eWcNx"
+      >
+         
+        Open the modal
+      </span>
+    </button>
+  </div>
+  <div
+    className="sc-ifAKCX bOwhUU"
   >
     <div
-      className="sc-htpNat KtFsv"
+      className="sc-bZQynM bOrPFB"
     >
       <div
-        className="sc-EHOje gFNrFt"
+        className="sc-bwzfXH efjqAu"
         onClick={[Function]}
       />
     </div>
     <div
-      className="sc-ifAKCX dSmUbg"
+      className="sc-bxivhb jXsEQH"
     >
       <div
-        className="sc-bxivhb cncWlX"
+        className="sc-htpNat gLReSl"
       >
-        <p
-          className="sc-bZQynM ecRNvr"
-        >
-          This is the text.
-        </p>
-        <div
-          className="sc-htoDjs huVVuq"
-        >
-          <div
-            className="sc-htpNat KtFsv"
-          >
-            <button
-              onClick={[Function]}
-              type="button"
-            >
-              <span
-                className="sc-gzVnrw jdqpuk"
-              >
-                 
-                Close the modal
-              </span>
-            </button>
-          </div>
-        </div>
+        This is the text
       </div>
-    </div>
-  </div>
-  <div
-    className="sc-htoDjs huVVuq"
-  >
-    <div
-      className="sc-htpNat KtFsv"
-    >
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        <span
-          className="sc-gzVnrw jdqpuk"
-        >
-           
-          Open the modal
-        </span>
-      </button>
     </div>
   </div>
 </div>
