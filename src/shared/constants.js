@@ -451,7 +451,6 @@ export {
     imageTypeDefault,
     arrowBlockOptions,
     arrowBlockDefault,
-
     shadowSizeOptions,
     shadowSizeDefault,
     buttonSizeOptions,
@@ -484,7 +483,6 @@ export {
     itemHtmlTagDefault,
     labelHtmlTagOptions,
     labelHtmlTagDefault,
-
     displayOptions,
     displayDefault,
     flexDirectionOptions,
