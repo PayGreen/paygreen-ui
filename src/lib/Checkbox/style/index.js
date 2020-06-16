@@ -70,7 +70,7 @@ const CheckboxBase = styled.div`
         }
     }
 
-    ${props => props.isDisabled ? disabledStyle : basicStyle};
+    ${props => (props.isDisabled ? disabledStyle : basicStyle)};
 `;
 
 export { CheckboxBase };

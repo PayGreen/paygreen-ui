@@ -4,66 +4,34 @@ import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { RadioBase } from './style';
 
 const Radio = props => {
-    const {
-        fieldSize,
-        radioDisabled,
-        radioReadOnly,
-        radioId,
-        radioValue,
-        radioName,
-        radioLabel,
-        isChecked,
-        changed,
-
-        ...rest
-    } = props;
+    const { fieldSize, label, id, ...rest } = props;
 
     return (
         <RadioBase
             theme={props.theme} // not necessary, only needed for tests
             fieldSize={fieldSize}
-            radioDisabled={radioDisabled}
-            radioReadOnly={radioReadOnly}
-            radioId={radioId}
-            radioValue={radioValue}
-            radioName={radioName}
-            radioLabel={radioLabel}
-            isChecked={isChecked}
-            changed={changed}
+            isDisabled={props.disabled}
         >
             <input
                 {...rest}
-                disabled={radioDisabled}
-                readOnly={radioReadOnly}
-                id={radioId}
+                id={id}
                 type="radio"
-                name={radioName}
-                value={radioValue}
-                onChange={changed}
-                checked={isChecked}
             />
-            <label htmlFor={radioId}>{radioLabel}</label>
+            <label htmlFor={id}>{label}</label>
         </RadioBase>
     );
 };
 
 Radio.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
-    radioDisabled: PropTypes.bool,
-    radioReadOnly: PropTypes.bool,
-    radioId: PropTypes.string,
-    radioValue: PropTypes.string,
-    radioName: PropTypes.string,
-    radioLabel: PropTypes.string,
-    isChecked: PropTypes.bool,
-    changed: PropTypes.func,
+    disabled: PropTypes.bool,
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
 };
 
 Radio.defaultProps = {
     fieldSize: buttonSizeDefault,
-    radioDisabled: false,
-    radioReadOnly: false,
-    isChecked: false,
+    disabled: false,
 };
 
 export default Radio;

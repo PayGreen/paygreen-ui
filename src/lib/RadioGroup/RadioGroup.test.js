@@ -5,12 +5,10 @@ import RadioGroup from './RadioGroup';
 
 const radioOptions = [
     {
-        id: 'first',
         label: 'First Choice',
         value: 'first',
     },
     {
-        id: 'second',
         label: 'Second Choice',
         value: 'second',
     },
@@ -21,7 +19,7 @@ it('renders without crashing', () => {
         <RadioGroup
             theme={ThemeDefault}
             radioOptions={radioOptions}
-            radioName="test1"
+            name="test1"
             legend="Radio Label"
         />,
     );

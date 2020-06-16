@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
+import { withKnobs, boolean, radios, text } from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
@@ -10,17 +10,14 @@ import RadioGroup from './RadioGroup';
 
 const radioOptions = [
     {
-        id: 'first',
         label: 'First Choice',
         value: 'first',
     },
     {
-        id: 'second',
         label: 'Second Choice',
         value: 'second',
     },
     {
-        id: 'third',
         label: 'Third Choice',
         value: 'third',
     },
@@ -32,12 +29,11 @@ storiesOf(folder.form + folder.sub.radio + 'RadioGroup', module)
         'RadioGroup',
         () => (
             <RadioGroup
-                radioOptions={radioOptions}
-                radioName="Radio Name"
-                legend="Radio Label"
-                defaultValue="second"
+                name="radios"
+                legend={text('Radios Label', 'Radios Label')}
+                value={radioOptions[1].value}
+                options={radioOptions}
                 disabled={boolean('Disabled', false)}
-                readOnly={boolean('Readonly', false)}
                 fieldSize={radios(
                     'Field size',
                     buttonSizeOptions,
@@ -47,6 +43,6 @@ storiesOf(folder.form + folder.sub.radio + 'RadioGroup', module)
         ),
         {
             notes:
-                'You can change radiogroup items size with "fieldSize" props.',
+                'You can change Radiogroup items size with "fieldSize" props.',
         },
     );

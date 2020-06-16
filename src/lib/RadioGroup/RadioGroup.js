@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     buttonSizeOptions,
@@ -10,54 +10,30 @@ import Radio from '../Radio/Radio';
 import DaLabel from '../DaLabel/DaLabel';
 
 const RadioGroup = props => {
-    const {
-        radioOptions,
-        radioName,
-        fieldSize,
-        legend,
-        defaultValue,
-
-        ...rest
-    } = props;
-
-    const [stateValue, setValue] = useState(defaultValue || null);
-
-    const handleChange = e => {
-        setValue(e.target.value);
-    };
+    const { legend, value, options, ...rest } = props;
 
     return (
         <RadioGroupBase
             theme={props.theme} // not necessary, only needed for tests
-            fieldSize={fieldSize}
-            disabled={props.disabled}
-            readOnly={props.readOnly}
-            radioName={radioName}
-            legend={legend}
-            defaultValue={defaultValue}
-            radioOptions={radioOptions}
         >
-            <DaLabel
-                theme={props.theme} // not necessary, only needed for tests
-                fieldSize={fieldSize}
-                htmlTag={labelHtmlTagOptions.legend}
-            >
-                {legend}
-            </DaLabel>
+            {legend && legend.length ? (
+                <DaLabel
+                    theme={props.theme} // not necessary, only needed for tests
+                    htmlTag={labelHtmlTagOptions.legend}
+                    fieldSize={props.fieldSize}
+                >
+                    {legend}
+                </DaLabel>
+            ) : null}
 
-            {radioOptions.map((option, index) => (
+            {options.map((option, index) => (
                 <Radio
                     {...rest}
                     key={index}
-                    radioId={option.id}
-                    radioValue={option.value}
-                    radioName={radioName}
-                    fieldSize={fieldSize}
-                    radioReadOnly={props.readOnly}
-                    radioDisabled={props.disabled}
-                    radioLabel={option.label}
-                    isChecked={option.value === stateValue}
-                    changed={handleChange}
+                    id={props.name + index}
+                    value={option.value}
+                    label={option.label}
+                    defaultChecked={option.value === value}
                 />
             ))}
         </RadioGroupBase>
@@ -65,25 +41,21 @@ const RadioGroup = props => {
 };
 
 RadioGroup.propTypes = {
-    fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
-    radioOptions: PropTypes.arrayOf(
+    options: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string.isRequired,
             label: PropTypes.string.isRequired,
             value: PropTypes.string.isRequired,
         }),
     ).isRequired,
-    disabled: PropTypes.bool,
-    readOnly: PropTypes.bool,
-    radioName: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     legend: PropTypes.string,
-    defaultValue: PropTypes.string,
+    disabled: PropTypes.bool,
 };
 
 RadioGroup.defaultProps = {
     fieldSize: buttonSizeDefault,
     disabled: false,
-    readOnly: false,
 };
 
 export default RadioGroup;

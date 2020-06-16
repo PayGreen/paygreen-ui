@@ -330,6 +330,11 @@ export const ThemeBase = {
             md: '21px',
             lg: '23px',
         },
+        radioButtonSpace: {
+            sm: '8px',
+            md: '10px',
+            lg: '10px',
+        },
     },
     corner: {
         size: {

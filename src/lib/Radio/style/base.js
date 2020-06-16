@@ -1,51 +1,51 @@
 import { css } from 'styled-components';
 
-const disabled = css`
-    input[type='radio'] {
-        &:disabled {
-            & + label {
-                cursor: not-allowed;
-                color: ${props => props.theme.wab.grey30};
-            }
-        }
+const disabledStyle = css`
+    label {
+        cursor: not-allowed;
+        color: ${props => props.theme.wab.grey40};
 
+        &::before {
+            border-color: ${props => props.theme.wab.grey20};
+        }
+    }
+
+    input {
         &:checked {
             & + label {
                 &::after {
-                    background-color: ${props => props.theme.wab.grey30};
+                    background-color: ${props => props.theme.wab.grey20};
                 }
             }
         }
     }
 `;
 
-const noHover = css`
+const basicStyle = css`
     label {
-        pointer-events: none;
+        cursor: pointer;
     }
-`;
 
-const enabled = css`
-    input[type='radio'] {
+    input {
         &:hover,
         &:active,
         &:focus {
-            &:not(:checked) {
                 & + label {
                     &::after {
-                        background-color: ${props => props.theme.wab.grey30};
                         transform: scale(0.7);
+                    }
+                }
+            }
+
+            &:checked {
+                & + label {
+                    &::after {
+                        transform: scale(1);
                     }
                 }
             }
         }
     }
-
-    label {
-        cursor: pointer;
-    }
-
-    ${props => (props.radioReadOnly ? noHover : null)};
 `;
 
-export { disabled, enabled };
+export { disabledStyle, basicStyle };

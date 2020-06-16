@@ -1,7 +1,6 @@
 import { css } from 'styled-components';
 
-const checkboxSize = props =>
-    props.theme.form.checkboxSize[props.fieldSize];
+const checkboxSize = props => props.theme.form.checkboxSize[props.fieldSize];
 
 const checkSize = 0.8;
 
@@ -45,9 +44,6 @@ const basicStyle = css`
         }
 
         &:checked {
-            &:hover,
-            &:active,
-            &:focus {
                 & + label {
                     & > .icon {
                         transform: scale(${checkSize});

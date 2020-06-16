@@ -12,17 +12,13 @@ storiesOf(folder.form + folder.sub.radio + 'Radio', module)
     .addDecorator(withKnobs)
     .add('Radio', () => (
         <Radio
-            radioId="first"
-            radioValue="first"
-            radioName="test"
-            radioDisabled={boolean('Disabled', false)}
-            radioReadOnly={boolean('Readonly', false)}
+            id="first"
+            label="First Choice"
+            disabled={boolean('Disabled', false)}
             fieldSize={radios(
                 'Field size',
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
-            radioLabel="First Choice"
-            isChecked={boolean('Is checked', false)}
         />
     ));

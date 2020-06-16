@@ -1,68 +1,73 @@
 import styled from 'styled-components';
 import { math } from 'polished';
 import { radioCircleSize, radioSize, ratioSize } from './constants';
-import { enabled, disabled } from './base';
+import { basicStyle, disabledStyle } from './base';
 
 const RadioBase = styled.div`
-    margin: ${props =>
-            math(props.theme.form.radioButtonSize[props.fieldSize] + '* 0.4')}
-        0;
+    position: relative;
+    margin: ${props => props.theme.space.sm} 0;
 
-    input[type='radio'] {
-        display: none;
+    label {
+        position: relative;
+        display: flex;
+        line-height: ${radioSize};
+        font-size: ${props => props.theme.daButton.font[props.fieldSize]};
+        color: ${props => props.theme.wab.grey60};
+        transition: all ${props => props.theme.transition.xs};
+
+        &::before,
+        &::after {
+            box-sizing: border-box;
+            content: '';
+            flex-shrink: 0;
+            transition: all ${props => props.theme.transition.xs};
+        }
+
+        &::before {
+            height: ${radioSize};
+            width: ${radioSize};
+            margin-right: ${props => props.theme.space.sm};
+            border-radius: 50%;
+            border: solid ${props => props.theme.line};
+            border-color: ${props => props.theme.wab.grey30};
+            background-color: ${props => props.theme.wab.white00};
+        }
+
+        &::after {
+            position: absolute;
+            height: ${radioCircleSize};
+            width: ${radioCircleSize};
+            background-color: ${props => props.theme.wab.grey30};
+            top: ${ratioSize};
+            left: ${ratioSize};
+            transform: scale(0);
+            transform-origin: center;
+            border-radius: 50%;
+        }
+    }
+
+    input {
+        position: absolute;
+        transform: translate(-50%, -100%);
+        top: ${radioSize};
+        left: ${props => math(radioSize(props) + '/2')};
+        outline: none;
+        box-shadow: none;
+        margin: 0;
 
         &:checked {
             & + label {
+                font-weight: ${props => props.theme.font.weight.bold};
                 &::after {
                     background-color: ${props =>
                         props.theme.color.status.success.main};
                     transform: scale(1);
                 }
-                font-weight: ${props => props.theme.font.weight.bold};
             }
         }
     }
 
-    label {
-        line-height: ${radioSize};
-        position: relative;
-        padding: 0
-            ${props =>
-                math(
-                    props.theme.form.radioButtonSize[props.fieldSize] + '* 1.5',
-                )};
-        color: ${props => props.theme.wab.grey60};
-        font-size: ${props => props.theme.daButton.font[props.fieldSize]};
-
-        &::before,
-        &::after {
-            position: absolute;
-            content: '';
-            border-radius: 50%;
-            box-sizing: border-box;
-            transition: all ${props => props.theme.transition.xs};
-        }
-
-        &::before {
-            left: 0;
-            top: 0;
-            background-color: ${props => props.theme.wab.white00};
-            border: solid 2px ${props => props.theme.wab.grey30};
-            height: ${radioSize};
-            width: ${radioSize};
-        }
-
-        &::after {
-            height: ${props => radioCircleSize[props.fieldSize]};
-            width: ${props => radioCircleSize[props.fieldSize]};
-            background-color: ${props => props.theme.wab.grey30};
-            top: ${props => ratioSize[props.fieldSize]};
-            left: ${props => ratioSize[props.fieldSize]};
-            transform: scale(0);
-        }
-    }
-
-    ${props => (props.radioDisabled ? disabled : enabled)};
+    ${props => (props.isDisabled ? disabledStyle : basicStyle)};
 `;
 
 export { RadioBase };
