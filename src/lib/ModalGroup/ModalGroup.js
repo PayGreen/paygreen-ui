@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ModalGroupBase, ModalNoScrollStyle } from './style';
-import { ModalContext } from './modalContext.js';
+import { ModalContext } from './ModalContext';
 
 const ModalGroup = props => {
     const [isOpen, setOpen] = useState(false);

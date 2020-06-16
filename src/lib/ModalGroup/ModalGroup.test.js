@@ -1,19 +1,23 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import Modal from '../Modal/Modal';
-import ModalGroup from './ModalGroup';
-import ModalCloseControl from './ModalCloseControl';
+import DaButton from '../DaButton/DaButton';
+import Overlay from '../Overlay/Overlay';
 import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from '../ModalContent/ModalContent';
-import Overlay from '../Overlay/Overlay';
-import Text from '../Text/Text';
-import DaButton from '../DaButton/DaButton';
-import ButtonGroup from '../ButtonGroup/ButtonGroup';
+import Modal from '../Modal/Modal';
+import ModalCloseControl from './ModalCloseControl';
+import ModalGroup from './ModalGroup';
 
 it('renders without crashing', () => {
     const modalGroup = TestRenderer.create(
         <ModalGroup>
+            <ModalCloseControl>
+                <button type="button">
+                    <DaButton theme={ThemeDefault}>Open the modal</DaButton>
+                </button>
+            </ModalCloseControl>
+
             <Modal theme={ThemeDefault}>
                 <ModalCloseControl>
                     <Overlay theme={ThemeDefault} />
@@ -21,28 +25,10 @@ it('renders without crashing', () => {
 
                 <ModalContent theme={ThemeDefault}>
                     <ModalBody theme={ThemeDefault}>
-                        <Text theme={ThemeDefault}>This is the text.</Text>
-
-                        <ButtonGroup theme={ThemeDefault}>
-                            <ModalCloseControl>
-                                <button type="button">
-                                    <DaButton theme={ThemeDefault}>
-                                        Close the modal
-                                    </DaButton>
-                                </button>
-                            </ModalCloseControl>
-                        </ButtonGroup>
+                        This is the text
                     </ModalBody>
                 </ModalContent>
             </Modal>
-
-            <ButtonGroup theme={ThemeDefault}>
-                <ModalCloseControl>
-                    <button type="button">
-                        <DaButton theme={ThemeDefault}>Open the modal</DaButton>
-                    </button>
-                </ModalCloseControl>
-            </ButtonGroup>
         </ModalGroup>,
     );
     expect(modalGroup.toJSON()).toMatchSnapshot();

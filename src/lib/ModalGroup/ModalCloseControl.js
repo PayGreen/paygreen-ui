@@ -1,5 +1,5 @@
 import React from 'react';
-import { useModal } from './modalContext.js';
+import { useModal } from './ModalContext';
 import { ModalCloseControlBase } from './style';
 
 const ModalCloseControl = props => {
