@@ -325,6 +325,16 @@ export const ThemeBase = {
             md: '20px',
             lg: '22px',
         },
+        radioButtonSize: {
+            sm: '19px',
+            md: '21px',
+            lg: '23px',
+        },
+        radioButtonSpace: {
+            sm: '8px',
+            md: '10px',
+            lg: '10px',
+        },
     },
     corner: {
         size: {

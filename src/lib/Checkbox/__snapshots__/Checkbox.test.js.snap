@@ -2,13 +2,18 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa jgFGeu"
+  className="sc-bdVaJa cPlsRl"
 >
   <input
     disabled={false}
     id="first"
     theme={
       Object {
+        "arrow": Object {
+          "lg": "20px",
+          "md": "16px",
+          "sm": "12px",
+        },
         "bannerHeight": Object {
           "lg": "100vh",
           "sm": "50vh",
@@ -77,6 +82,12 @@ exports[`renders without crashing 1`] = `
             "gradientShade": "#e98eb9",
             "light": "#ffe0e1",
             "main": "#ec6a6a",
+          },
+          "quinary": Object {
+            "gradientBase": "#b887ee",
+            "gradientShade": "#dd94ef",
+            "light": "#e9d9fb",
+            "main": "#a26ae1",
           },
           "secondary": Object {
             "gradientBase": "#51c6be",
@@ -208,6 +219,16 @@ exports[`renders without crashing 1`] = `
             "lg": "150px",
             "md": "120px",
           },
+          "radioButtonSize": Object {
+            "lg": "23px",
+            "md": "21px",
+            "sm": "19px",
+          },
+          "radioButtonSpace": Object {
+            "lg": "10px",
+            "md": "10px",
+            "sm": "8px",
+          },
           "textareaHeight": "200px",
         },
         "grid": Object {
@@ -283,6 +304,7 @@ exports[`renders without crashing 1`] = `
         },
         "radius": Object {
           "lg": "12px",
+          "md": "8px",
           "none": "0",
           "sm": "4px",
         },

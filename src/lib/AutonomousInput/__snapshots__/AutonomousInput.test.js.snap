@@ -84,6 +84,12 @@ exports[`renders without crashing 1`] = `
               "light": "#ffe0e1",
               "main": "#ec6a6a",
             },
+            "quinary": Object {
+              "gradientBase": "#b887ee",
+              "gradientShade": "#dd94ef",
+              "light": "#e9d9fb",
+              "main": "#a26ae1",
+            },
             "secondary": Object {
               "gradientBase": "#51c6be",
               "gradientShade": "#76bbd8",
@@ -213,6 +219,16 @@ exports[`renders without crashing 1`] = `
             "radio": Object {
               "lg": "150px",
               "md": "120px",
+            },
+            "radioButtonSize": Object {
+              "lg": "23px",
+              "md": "21px",
+              "sm": "19px",
+            },
+            "radioButtonSpace": Object {
+              "lg": "10px",
+              "md": "10px",
+              "sm": "8px",
             },
             "textareaHeight": "200px",
           },

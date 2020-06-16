@@ -1,70 +1,68 @@
 import styled from 'styled-components';
 import { math } from 'polished';
-import { checkboxSize, checkSize, disabledStyle, basicStyle } from './base';
+import { radioCircleSize, radioSize, ratioSize } from './constants';
+import { basicStyle, disabledStyle } from './base';
 
-const CheckboxBase = styled.div`
+const RadioBase = styled.div`
     position: relative;
     margin: ${props => props.theme.space.sm} 0;
 
     label {
         position: relative;
         display: flex;
-        line-height: ${checkboxSize};
+        line-height: ${radioSize};
         font-size: ${props => props.theme.daButton.font[props.fieldSize]};
         color: ${props => props.theme.wab.grey60};
         transition: all ${props => props.theme.transition.xs};
 
-        &::before {
+        &::before,
+        &::after {
             content: '';
+            box-sizing: border-box;
             flex-shrink: 0;
-            height: ${checkboxSize};
-            width: ${checkboxSize};
-            margin-right: ${props => props.theme.space.sm};
-            border-radius: ${props => props.theme.radius.sm};
-            border: solid ${props => props.theme.line};
-            border-color: ${props => props.theme.wab.grey30};
-            background-color: ${props => props.theme.wab.white00};
             transition: all ${props => props.theme.transition.xs};
         }
 
-        & > .icon {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: ${checkboxSize};
-            width: ${checkboxSize};
-            transform: scale(0);
+        &::before {
+            height: ${radioSize};
+            width: ${radioSize};
+            margin-right: ${props => props.theme.space.sm};
+            border-radius: 50%;
+            border: solid ${props => props.theme.line};
+            border-color: ${props => props.theme.wab.grey30};
+            background-color: ${props => props.theme.wab.white00};
+        }
 
-            svg {
-                fill: ${props => props.theme.wab.grey30};
-            }
+        &::after {
+            position: absolute;
+            height: ${radioCircleSize};
+            width: ${radioCircleSize};
+            background-color: ${props => props.theme.wab.grey30};
+            top: ${ratioSize};
+            left: ${ratioSize};
+            transform: scale(0);
+            transform-origin: center;
+            border-radius: 50%;
         }
     }
 
     input {
         position: absolute;
         transform: translate(-50%, -100%);
-        top: ${checkboxSize};
-        left: ${props => math(checkboxSize(props) + '/2')};
+        top: ${radioSize};
+        left: ${props => math(radioSize(props) + '/2')};
         box-shadow: none;
+        margin: 0;
+        margin-top: -${props => props.theme.line};
 
         &:checked {
             & + label {
                 font-weight: ${props => props.theme.font.weight.bold};
-
-                &::before {
-                    border-color: ${props =>
-                        props.theme.color.status.success.main};
+                
+                &::after {
                     background-color: ${props =>
                         props.theme.color.status.success.main};
-                }
-
-                & > .icon {
-                    transform: scale(${checkSize});
-
-                    svg {
-                        fill: ${props => props.theme.wab.white00};
-                    }
+                    transform: scale(1);
                 }
             }
         }
@@ -73,4 +71,4 @@ const CheckboxBase = styled.div`
     ${props => (props.isDisabled ? disabledStyle : basicStyle)};
 `;
 
-export { CheckboxBase };
+export { RadioBase };

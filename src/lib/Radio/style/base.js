@@ -1,9 +1,5 @@
 import { css } from 'styled-components';
 
-const checkboxSize = props => props.theme.form.checkboxSize[props.fieldSize];
-
-const checkSize = 0.8;
-
 const disabledStyle = css`
     label {
         cursor: not-allowed;
@@ -11,15 +7,13 @@ const disabledStyle = css`
 
         &::before {
             border-color: ${props => props.theme.wab.grey20};
-            background-color: ${props => props.theme.wab.white20};
         }
     }
 
     input {
         &:checked {
             & + label {
-                &::before {
-                    border-color: ${props => props.theme.wab.grey20};
+                &::after {
                     background-color: ${props => props.theme.wab.grey20};
                 }
             }
@@ -37,20 +31,20 @@ const basicStyle = css`
         &:active,
         &:focus {
             & + label {
-                & > .icon {
-                    transform: scale(${checkSize * 0.75});
+                &::after {
+                    transform: scale(0.7);
                 }
             }
         }
 
         &:checked {
             & + label {
-                & > .icon {
-                    transform: scale(${checkSize});
+                &::after {
+                    transform: scale(1);
                 }
             }
         }
     }
 `;
 
-export { checkboxSize, checkSize, disabledStyle, basicStyle };
+export { disabledStyle, basicStyle };
