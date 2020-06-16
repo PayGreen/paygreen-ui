@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { transparentize, math } from 'polished';
-import { activeStyle, hiddenStyle } from './base';
+import { activeStyle, hiddenStyle, popinAlign } from './base';
 
 const PopinBase = styled.div`
     position: absolute;
@@ -16,6 +16,7 @@ const PopinBase = styled.div`
     transition-duration: ${props => props.theme.transition.xs}, 0s;
     transform-origin: top;
     ${props => (props.isActive ? activeStyle : hiddenStyle)}
+    ${props => popinAlign[props.align]}
 `;
 
 export { PopinBase };

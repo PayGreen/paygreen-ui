@@ -10,9 +10,10 @@ import {
     colorPalletOptions,
     greyOptions,
     spaceOptions,
-    alignOptions,
-    fontSizeOptions,
     spaceDefault,
+    alignOptions,
+    alignDefault,
+    fontSizeOptions,
 } from '../../shared/constants';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
@@ -20,7 +21,7 @@ import Popin from './Popin';
 
 storiesOf(folder.main + 'Popin', module)
     .addDecorator(withKnobs)
-    .add('Popin with text', () => (
+    .add('Popin', () => (
         <Popin
             isActive={boolean('Is active', true)}
             blockWidth={select(
@@ -35,6 +36,7 @@ storiesOf(folder.main + 'Popin', module)
                 shadowSizeOptions.sm,
             )}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            align={select('Alignment', alignOptions, alignDefault)}
         >
             <Title
                 marginTop={spaceOptions.xs}
@@ -42,9 +44,8 @@ storiesOf(folder.main + 'Popin', module)
                 colorPallet={colorPalletOptions.wab}
                 colorWab={greyOptions.grey60}
                 textSize={fontSizeOptions.sm}
-                align={alignOptions.center}
             >
-                Démo
+                Demo
             </Title>
 
             <Text
