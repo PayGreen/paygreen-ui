@@ -14,6 +14,7 @@ import ClickableBlock from './ClickableBlock/ClickableBlock';
 import DaButton from './DaButton/DaButton';
 import DaInput from './DaInput/DaInput';
 import DaLabel from './DaLabel/DaLabel';
+import DaHelp from './DaHelp/DaHelp';
 import DaSelect from './DaSelect/DaSelect';
 import DaTable from './DaTable/DaTable';
 import DaTableCell from './DaTableCell/DaTableCell';
@@ -185,8 +186,8 @@ export {
     CheckboxGroup,
     ClickableBlock,
     DaButton,
+    DaHelp,
     DaInput,
-    Divider,
     DaLabel,
     DaSelect,
     DaTable,
