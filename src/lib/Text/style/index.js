@@ -8,7 +8,7 @@ import {
 } from './base';
 
 const TextBase = styled.p`
-    ${defaultStyle}
+    ${defaultStyle};
     ${props => htmlTagStyle[props.htmlTag]};
     ${props => (props.hasBackground ? blockBackground[props.colorType] : null)};
     ${props => (props.hasUppercase ? uppercaseStyle : null)};

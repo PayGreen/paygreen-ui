@@ -10,9 +10,10 @@ const htmlTagStyle = {
         border-radius: ${props => props.theme.radius[props.radiusSize]};
     `,
     div: css`
+        ${responsiveSpaces('padding')};
+        border-radius: ${props => props.theme.radius[props.radiusSize]};
+
         & > p {
-            ${responsiveSpaces('padding')};
-            border-radius: ${props => props.theme.radius[props.radiusSize]};
             margin: ${props => props.theme.space[props.marginInternal]} 0;
 
             &:first-of-type {
@@ -31,7 +32,7 @@ const htmlTagStyle = {
         font-style: italic;
     `,
     strong: css`
-        font-weight: bold;
+        font-weight: ${props => props.theme.font.bold};
     `,
     q: css`
         display: inline-flex;
@@ -47,8 +48,7 @@ const htmlTagStyle = {
     `,
     kbd: css`
         ${props => blockBackground[props.colorType]};
-        border-radius: ${props =>
-            math(props.theme.font.size[props.textSize] + '* 0.3')};
+        border-radius: ${props => props.theme.radius.sm};
         padding: ${props =>
             math(props.theme.font.size[props.textSize] + '* 0.3')};
     `,

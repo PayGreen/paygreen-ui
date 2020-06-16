@@ -31,7 +31,7 @@ import {
 import Text from './Text';
 import HR from '../HR/HR';
 
-const { div, p, span, ...newHtmlTagOptions } = textHtmlTagOptions;
+const { div, p, span, ...inlineHtmlTagOptions } = textHtmlTagOptions;
 
 const colorTypeLabel = 'Color type';
 const colorThemeLabel = 'Color theme';
@@ -40,9 +40,9 @@ const colorWabLabel = 'Grey color';
 const colorStatusLabel = 'Status color';
 const textSizeLabel = 'Size';
 const alignLabel = 'Align';
-const lateralMarginLabel = "Block's lateral margins";
-const topMarginLabel = "Block's margin top";
-const bottomMarginLabel = "Block's margin bottom";
+const lateralMarginLabel = 'Block lateral margins';
+const topMarginLabel = 'Block margin top';
+const bottomMarginLabel = 'Block margin bottom';
 
 storiesOf(folder.main + 'Text', module)
     .addDecorator(withKnobs)
@@ -192,7 +192,7 @@ storiesOf(folder.main + 'Text', module)
         },
     )
     .add(
-        'Quote or emphasis',
+        'Text with background',
         () => (
             <Text
                 colorType={radios(
@@ -243,7 +243,7 @@ storiesOf(folder.main + 'Text', module)
         },
     )
     .add(
-        'New styled html tags',
+        'Inline styled html tags',
         () => (
             <>
                 <Text
@@ -301,7 +301,7 @@ storiesOf(folder.main + 'Text', module)
                 <Text
                     htmlTag={select(
                         'Html tags',
-                        newHtmlTagOptions,
+                        inlineHtmlTagOptions,
                         textHtmlTagOptions.em,
                     )}
                     colorType={radios(
