@@ -18,3 +18,7 @@ jobs:
             - run: npm publish --access public
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+            - run: yarn build-storybook
+            - run: yarn deploy-storybook
+              env:
+                  GH_TOKEN: ${{ github.actor }}:${{ github.token }}
