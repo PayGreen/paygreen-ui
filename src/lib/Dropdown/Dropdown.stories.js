@@ -4,22 +4,18 @@ import { withKnobs } from '@storybook/addon-knobs';
 import {
     folder,
     spaceOptions,
-    greyOptions,
     fontSizeOptions,
     blockWidthOptions,
-    colorTypeDefault,
-    colorThemeDefault,
-    gradientOptions,
     iconSizeOptions,
     iconHtmlTagOptions,
 } from '../../shared/constants';
-import Dropdown from './Dropdown';
-import ClickableBlock from '../ClickableBlock/ClickableBlock';
-import Badge from '../Badge/Badge';
 import { PenIcon, ArrowBottomIcon } from '../Icon/Icon';
+import Badge from '../Badge/Badge';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Popin from '../Popin/Popin';
+import ClickableBlock from '../ClickableBlock/ClickableBlock';
+import Dropdown from './Dropdown';
 
 const popin = (
     <Popin marginTop={spaceOptions.sm} blockWidth={blockWidthOptions.sm}>
@@ -28,7 +24,7 @@ const popin = (
             marginLateral={spaceOptions.xs}
             textSize={fontSizeOptions.sm}
         >
-            Ma jolie <strong>Popin</strong> !
+            Popin's title
         </Title>
 
         <Text
@@ -45,36 +41,22 @@ const popin = (
 
 storiesOf(folder.main + 'Dropdown', module)
     .addDecorator(withKnobs)
-    .add(
-        'Dropdown with ClickableBlock',
-        () => (
-            <Dropdown>
-                <ClickableBlock colorWab={greyOptions.grey20}>
-                    <Title>
-                        A very veryyyyy long <strong>Title</strong>
-                    </Title>
-                </ClickableBlock>
+    .add('Dropdown with ClickableBlock', () => (
+        <Dropdown>
+            <ClickableBlock>
+                <Text>Click here</Text>
+            </ClickableBlock>
 
-                {popin}
-            </Dropdown>
-        ),
-        {},
-    )
+            {popin}
+        </Dropdown>
+    ))
     .add(
         'Dropdown with Badge',
         () => (
             <Dropdown>
-                <Badge
-                    colorType={colorTypeDefault}
-                    colorTheme={colorThemeDefault}
-                    gradient={gradientOptions.theme}
-                    textSize={fontSizeOptions.sm}
-                >
+                <Badge textSize={fontSizeOptions.sm}>
                     Badge
-                    <ArrowBottomIcon
-                        iconSize={iconSizeOptions.md}
-                        marginLeft={spaceOptions.xs}
-                    />
+                    <ArrowBottomIcon marginLeft={spaceOptions.xs} />
                 </Badge>
 
                 {popin}
@@ -90,6 +72,7 @@ storiesOf(folder.main + 'Dropdown', module)
                     htmlTag={iconHtmlTagOptions.button}
                     iconSize={iconSizeOptions.lg}
                     hasBackground
+                    hasHover
                 />
 
                 {popin}

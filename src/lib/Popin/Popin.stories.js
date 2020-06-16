@@ -44,7 +44,6 @@ storiesOf(folder.main + 'Popin', module)
                 colorPallet={colorPalletOptions.wab}
                 colorWab={greyOptions.grey60}
                 textSize={fontSizeOptions.sm}
-                align={alignOptions.center}
             >
                 Démo
             </Title>

@@ -5,8 +5,8 @@ const DropdownBase = styled.div`
     position: relative;
     display: inline-block;
 
-    ${PopinBase}{
-        min-width:100%;
+    ${PopinBase} {
+        min-width: 100%;
     }
 `;
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { DropdownBase } from './style';
 import Popin from '../Popin/Popin';
+import { DropdownBase } from './style';
 
 const Dropdown = props => {
     const [isActive, setActive] = useState(false);
