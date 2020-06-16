@@ -10,15 +10,20 @@ exports[`renders without crashing 1`] = `
     Radio Label
   </legend>
   <div
-    className="sc-bwzfXH bYAYYZ"
+    className="sc-bwzfXH ckLwcZ"
   >
     <input
       defaultChecked={false}
       disabled={false}
-      id="test10"
-      name="test1"
+      id="test0"
+      name="test"
       theme={
         Object {
+          "arrow": Object {
+            "lg": "20px",
+            "md": "16px",
+            "sm": "12px",
+          },
           "bannerHeight": Object {
             "lg": "100vh",
             "sm": "50vh",
@@ -87,6 +92,12 @@ exports[`renders without crashing 1`] = `
               "gradientShade": "#e98eb9",
               "light": "#ffe0e1",
               "main": "#ec6a6a",
+            },
+            "quinary": Object {
+              "gradientBase": "#b887ee",
+              "gradientShade": "#dd94ef",
+              "light": "#e9d9fb",
+              "main": "#a26ae1",
             },
             "secondary": Object {
               "gradientBase": "#51c6be",
@@ -303,6 +314,7 @@ exports[`renders without crashing 1`] = `
           },
           "radius": Object {
             "lg": "12px",
+            "md": "8px",
             "none": "0",
             "sm": "4px",
           },
@@ -382,21 +394,26 @@ exports[`renders without crashing 1`] = `
       value="first"
     />
     <label
-      htmlFor="test10"
+      htmlFor="test0"
     >
       First Choice
     </label>
   </div>
   <div
-    className="sc-bwzfXH bYAYYZ"
+    className="sc-bwzfXH ckLwcZ"
   >
     <input
       defaultChecked={false}
       disabled={false}
-      id="test11"
-      name="test1"
+      id="test1"
+      name="test"
       theme={
         Object {
+          "arrow": Object {
+            "lg": "20px",
+            "md": "16px",
+            "sm": "12px",
+          },
           "bannerHeight": Object {
             "lg": "100vh",
             "sm": "50vh",
@@ -465,6 +482,12 @@ exports[`renders without crashing 1`] = `
               "gradientShade": "#e98eb9",
               "light": "#ffe0e1",
               "main": "#ec6a6a",
+            },
+            "quinary": Object {
+              "gradientBase": "#b887ee",
+              "gradientShade": "#dd94ef",
+              "light": "#e9d9fb",
+              "main": "#a26ae1",
             },
             "secondary": Object {
               "gradientBase": "#51c6be",
@@ -681,6 +704,7 @@ exports[`renders without crashing 1`] = `
           },
           "radius": Object {
             "lg": "12px",
+            "md": "8px",
             "none": "0",
             "sm": "4px",
           },
@@ -760,7 +784,7 @@ exports[`renders without crashing 1`] = `
       value="second"
     />
     <label
-      htmlFor="test11"
+      htmlFor="test1"
     >
       Second Choice
     </label>
