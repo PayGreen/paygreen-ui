@@ -1,6 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select, boolean } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    radios,
+    select,
+    boolean,
+    text,
+} from '@storybook/addon-knobs';
 import {
     folder,
     colorTypeOptions,
@@ -23,6 +29,20 @@ import {
     spaceDefault,
 } from '../../shared/constants';
 import Text from './Text';
+import HR from '../HR/HR';
+
+const { div, p, span, ...inlineHtmlTagOptions } = textHtmlTagOptions;
+
+const colorTypeLabel = 'Color type';
+const colorThemeLabel = 'Color theme';
+const colorPalletLabel = 'Color pallet';
+const colorWabLabel = 'Grey color';
+const colorStatusLabel = 'Status color';
+const textSizeLabel = 'Size';
+const alignLabel = 'Align';
+const lateralMarginLabel = 'Block lateral margins';
+const topMarginLabel = 'Block margin top';
+const bottomMarginLabel = 'Block margin bottom';
 
 storiesOf(folder.main + 'Text', module)
     .addDecorator(withKnobs)
@@ -31,42 +51,46 @@ storiesOf(folder.main + 'Text', module)
         () => (
             <Text
                 colorType={radios(
-                    'Color type',
+                    colorTypeLabel,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorPallet={radios(
-                    'Color pallet',
+                    colorPalletLabel,
                     colorPalletOptions,
                     colorPalletOptions.wab,
                 )}
                 colorTheme={select(
-                    'Color theme',
+                    colorThemeLabel,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                colorWab={select('Grey color', greyOptions, greyOptions.grey60)}
+                colorWab={select(
+                    colorWabLabel,
+                    greyOptions,
+                    greyOptions.grey60,
+                )}
                 colorStatus={select(
-                    'Status color',
+                    colorStatusLabel,
                     formStatusOptions,
                     formStatusDefault,
                 )}
-                textSize={select('Size', fontSizeOptions, fontSizeDefault)}
-                align={radios('Align', alignOptions, alignDefault)}
+                textSize={select(
+                    textSizeLabel,
+                    fontSizeOptions,
+                    fontSizeDefault,
+                )}
+                align={radios(alignLabel, alignOptions, alignDefault)}
                 hasUppercase={boolean('Uppercase', false)}
                 hasUnderline={boolean('Underline', false)}
                 marginLateral={select(
-                    "Block's lateral margins",
+                    lateralMarginLabel,
                     spaceOptions,
                     spaceDefault,
                 )}
-                marginTop={select(
-                    "Block's margin top",
-                    spaceOptions,
-                    spaceDefault,
-                )}
+                marginTop={select(topMarginLabel, spaceOptions, spaceDefault)}
                 marginBottom={select(
-                    "Block's margin bottom",
+                    bottomMarginLabel,
                     spaceOptions,
                     spaceDefault,
                 )}
@@ -90,40 +114,44 @@ storiesOf(folder.main + 'Text', module)
             <Text
                 htmlTag={textHtmlTagOptions.div}
                 colorType={radios(
-                    'Color type',
+                    colorTypeLabel,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorPallet={radios(
-                    'Color pallet',
+                    colorPalletLabel,
                     colorPalletOptions,
                     colorPalletOptions.wab,
                 )}
                 colorTheme={select(
-                    'Color theme',
+                    colorThemeLabel,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                colorWab={select('Grey color', greyOptions, greyOptions.grey60)}
+                colorWab={select(
+                    colorWabLabel,
+                    greyOptions,
+                    greyOptions.grey60,
+                )}
                 colorStatus={select(
-                    'Status color',
+                    colorStatusLabel,
                     formStatusOptions,
                     formStatusDefault,
                 )}
-                textSize={select('Size', fontSizeOptions, fontSizeDefault)}
-                align={radios('Align', alignOptions, alignDefault)}
+                textSize={select(
+                    textSizeLabel,
+                    fontSizeOptions,
+                    fontSizeDefault,
+                )}
+                align={radios(alignLabel, alignOptions, alignDefault)}
                 marginLateral={select(
-                    "Block's lateral margins",
+                    lateralMarginLabel,
                     spaceOptions,
                     spaceDefault,
                 )}
-                marginTop={select(
-                    "Block's margin top",
-                    spaceOptions,
-                    spaceDefault,
-                )}
+                marginTop={select(topMarginLabel, spaceOptions, spaceDefault)}
                 marginBottom={select(
-                    "Block's margin bottom",
+                    bottomMarginLabel,
                     spaceOptions,
                     spaceDefault,
                 )}
@@ -164,27 +192,27 @@ storiesOf(folder.main + 'Text', module)
         },
     )
     .add(
-        'Quote or emphasis',
+        'Text with background',
         () => (
             <Text
                 colorType={radios(
-                    'Color type',
+                    colorTypeLabel,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorPallet={radios(
-                    'Color pallet',
+                    colorPalletLabel,
                     colorPalletOptions,
                     colorPalletDefault,
                 )}
                 colorTheme={select(
-                    'Color theme',
+                    colorThemeLabel,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                colorWab={select('Grey color', greyOptions, greyDefault)}
+                colorWab={select(colorWabLabel, greyOptions, greyDefault)}
                 colorStatus={select(
-                    'Status color',
+                    colorStatusLabel,
                     formStatusOptions,
                     formStatusDefault,
                 )}
@@ -212,5 +240,109 @@ storiesOf(folder.main + 'Text', module)
         {
             notes:
                 'You can change background-color, border-radius, text color, margins and paddings on your Text component.',
+        },
+    )
+    .add(
+        'Inline styles',
+        () => (
+            <>
+                <Text
+                    htmlTag={textHtmlTagOptions.em}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    Emphasis Text
+                </Text>
+
+                <Text
+                    htmlTag={textHtmlTagOptions.strong}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    Strong Text
+                </Text>
+
+                <Text
+                    htmlTag={textHtmlTagOptions.q}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    Quote Text
+                </Text>
+
+                <Text
+                    htmlTag={textHtmlTagOptions.sub}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    Subscript Text
+                </Text>
+
+                <Text
+                    htmlTag={textHtmlTagOptions.kbd}
+                    marginLateral={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.sm}
+                >
+                    KeyBoard Text
+                </Text>
+
+                <HR
+                    marginLateral={spaceOptions.sm}
+                    marginBottom={spaceOptions.md}
+                    colorPallet={colorPalletOptions.wab}
+                    colorWab={greyOptions.grey40}
+                />
+
+                <Text
+                    htmlTag={select(
+                        'Html tags',
+                        inlineHtmlTagOptions,
+                        textHtmlTagOptions.em,
+                    )}
+                    colorType={radios(
+                        colorTypeLabel,
+                        colorTypeOptions,
+                        colorTypeDefault,
+                    )}
+                    colorPallet={radios(
+                        colorPalletLabel,
+                        colorPalletOptions,
+                        colorPalletOptions.wab,
+                    )}
+                    colorTheme={select(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    colorWab={select(
+                        colorWabLabel,
+                        greyOptions,
+                        greyOptions.grey60,
+                    )}
+                    colorStatus={select(
+                        colorStatusLabel,
+                        formStatusOptions,
+                        formStatusDefault,
+                    )}
+                    marginLateral={spaceOptions.sm}
+                    textSize={select(
+                        textSizeLabel,
+                        fontSizeOptions,
+                        fontSizeDefault,
+                    )}
+                >
+                    {text('Text', 'Try Me!')}
+                </Text>
+            </>
+        ),
+
+        {
+            notes:
+                'Switch between all html tags available, for each you can change background-color, text color & text size.',
         },
     );
