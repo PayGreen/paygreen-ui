@@ -3,24 +3,20 @@
 exports[`renders without crashing 1`] = `
 <fieldset
   className="sc-bdVaJa iKuaBW"
-  disabled={false}
-  readOnly={false}
 >
   <legend
-    className="sc-htpNat kKSdIE"
+    className="sc-htpNat hWnMQP"
   >
     Radio Label
   </legend>
   <div
-    className="sc-bwzfXH hWuBZM"
+    className="sc-bwzfXH bYAYYZ"
   >
     <input
-      checked={false}
+      defaultChecked={false}
       disabled={false}
-      id="first"
+      id="test10"
       name="test1"
-      onChange={[Function]}
-      readOnly={false}
       theme={
         Object {
           "bannerHeight": Object {
@@ -208,6 +204,11 @@ exports[`renders without crashing 1`] = `
             },
           },
           "form": Object {
+            "checkboxSize": Object {
+              "lg": "22px",
+              "md": "20px",
+              "sm": "18px",
+            },
             "inputWidth": Object {
               "lg": "500px",
               "md": "400px",
@@ -221,6 +222,11 @@ exports[`renders without crashing 1`] = `
               "lg": "23px",
               "md": "21px",
               "sm": "19px",
+            },
+            "radioButtonSpace": Object {
+              "lg": "10px",
+              "md": "10px",
+              "sm": "8px",
             },
             "textareaHeight": "200px",
           },
@@ -323,6 +329,7 @@ exports[`renders without crashing 1`] = `
               "md": "2px 2px 15px",
               "none": "0 0 0",
               "sm": "1px 1px 10px",
+              "xs": "1px 1px 5px",
             },
           },
           "space": Object {
@@ -367,6 +374,7 @@ exports[`renders without crashing 1`] = `
             "layer": -5,
             "loader": 90,
             "menu": 100,
+            "modal": 120,
           },
         }
       }
@@ -374,21 +382,19 @@ exports[`renders without crashing 1`] = `
       value="first"
     />
     <label
-      htmlFor="first"
+      htmlFor="test10"
     >
       First Choice
     </label>
   </div>
   <div
-    className="sc-bwzfXH hWuBZM"
+    className="sc-bwzfXH bYAYYZ"
   >
     <input
-      checked={false}
+      defaultChecked={false}
       disabled={false}
-      id="second"
+      id="test11"
       name="test1"
-      onChange={[Function]}
-      readOnly={false}
       theme={
         Object {
           "bannerHeight": Object {
@@ -576,6 +582,11 @@ exports[`renders without crashing 1`] = `
             },
           },
           "form": Object {
+            "checkboxSize": Object {
+              "lg": "22px",
+              "md": "20px",
+              "sm": "18px",
+            },
             "inputWidth": Object {
               "lg": "500px",
               "md": "400px",
@@ -589,6 +600,11 @@ exports[`renders without crashing 1`] = `
               "lg": "23px",
               "md": "21px",
               "sm": "19px",
+            },
+            "radioButtonSpace": Object {
+              "lg": "10px",
+              "md": "10px",
+              "sm": "8px",
             },
             "textareaHeight": "200px",
           },
@@ -691,6 +707,7 @@ exports[`renders without crashing 1`] = `
               "md": "2px 2px 15px",
               "none": "0 0 0",
               "sm": "1px 1px 10px",
+              "xs": "1px 1px 5px",
             },
           },
           "space": Object {
@@ -735,6 +752,7 @@ exports[`renders without crashing 1`] = `
             "layer": -5,
             "loader": 90,
             "menu": 100,
+            "modal": 120,
           },
         }
       }
@@ -742,7 +760,7 @@ exports[`renders without crashing 1`] = `
       value="second"
     />
     <label
-      htmlFor="second"
+      htmlFor="test11"
     >
       Second Choice
     </label>

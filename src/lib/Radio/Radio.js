@@ -12,11 +12,7 @@ const Radio = props => {
             fieldSize={fieldSize}
             isDisabled={props.disabled}
         >
-            <input
-                {...rest}
-                id={id}
-                type="radio"
-            />
+            <input {...rest} id={id} type="radio" />
             <label htmlFor={id}>{label}</label>
         </RadioBase>
     );

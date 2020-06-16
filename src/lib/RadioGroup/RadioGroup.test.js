@@ -18,7 +18,7 @@ it('renders without crashing', () => {
     const radioGroup = TestRenderer.create(
         <RadioGroup
             theme={ThemeDefault}
-            radioOptions={radioOptions}
+            options={radioOptions}
             name="test1"
             legend="Radio Label"
         />,

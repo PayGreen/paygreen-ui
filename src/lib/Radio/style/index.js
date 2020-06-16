@@ -51,7 +51,6 @@ const RadioBase = styled.div`
         transform: translate(-50%, -100%);
         top: ${radioSize};
         left: ${props => math(radioSize(props) + '/2')};
-        outline: none;
         box-shadow: none;
         margin: 0;
 
