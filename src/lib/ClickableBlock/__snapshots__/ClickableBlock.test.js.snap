@@ -2,8 +2,8 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa iOaYHh"
-  onClick={[Function]}
+  className="sc-bdVaJa gpdvDD"
+  tabIndex="0"
 >
   Un ClickableBlock
   <span
