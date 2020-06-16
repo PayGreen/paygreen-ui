@@ -153,6 +153,16 @@ const imageTypeOptions = {
 
 const imageTypeDefault = imageTypeOptions.normal;
 
+// Arrow block position
+const arrowBlockOptions = {
+    none: 'none',
+    right: 'right',
+    left: 'left',
+    top: 'top'
+};
+
+const arrowBlockDefault = arrowBlockOptions.none;
+
 /* Sizes */
 
 // Shadow sizes
@@ -434,6 +444,8 @@ export {
     buttonStyleDefault,
     imageTypeOptions,
     imageTypeDefault,
+    arrowBlockOptions,
+    arrowBlockDefault,
 
     shadowSizeOptions,
     shadowSizeDefault,

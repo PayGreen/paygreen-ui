@@ -117,7 +117,13 @@ export const ThemeBase = {
     radius: {
         none: '0',
         sm: '4px',
+        md: '8px',
         lg: '12px',
+    },
+    arrow: {
+        sm: '12px',
+        md: '16px',
+        lg: '20px',
     },
     space: {
         none: '0',
