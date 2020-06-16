@@ -11,6 +11,7 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
+    greyDefault,
     formStatusOptions,
     formStatusDefault,
     iconSizeOptions,
@@ -21,10 +22,15 @@ import Image from '../Image/Image';
 import portraitFile from '../Image/sample/portrait.png';
 import ClickableBlock from './ClickableBlock';
 
+const paddingLabel = 'Padding';
+const marginLabel = 'Margin';
+
 storiesOf(folder.main + 'ClickableBlock', module)
     .addDecorator(withKnobs)
     .add('ClickableBlock', () => (
         <ClickableBlock
+            isActive={boolean('Is active', false)}
+            iconSize={select('Icon size', iconSizeOptions, iconSizeOptions.lg)}
             colorPallet={select(
                 'Color pallet',
                 colorPalletOptions,
@@ -35,7 +41,7 @@ storiesOf(folder.main + 'ClickableBlock', module)
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select('Color wab', greyOptions, greyOptions.grey10)}
+            colorWab={select('Color wab', greyOptions, greyDefault)}
             colorStatus={select(
                 'Color status',
                 formStatusOptions,
@@ -45,18 +51,12 @@ storiesOf(folder.main + 'ClickableBlock', module)
             borderRight={boolean('Border right', true)}
             borderLeft={boolean('Border left', true)}
             borderBottom={boolean('Border bottom', true)}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
-            marginLateral={select('Margin lateral', spaceOptions, spaceDefault)}
-            paddingTop={select('Padding top', spaceOptions, spaceDefault)}
-            paddingBottom={select('Padding bottom', spaceOptions, spaceDefault)}
-            paddingLateral={select(
-                'Padding lateral',
-                spaceOptions,
-                spaceDefault,
-            )}
-            iconSize={select('Icon size', iconSizeOptions, iconSizeOptions.md)}
-            isActive={boolean('Is active', false)}
+            paddingTop={select(paddingLabel, spaceOptions, spaceOptions.sm)}
+            paddingBottom={select(paddingLabel, spaceOptions, spaceOptions.sm)}
+            paddingLateral={select(paddingLabel, spaceOptions, spaceOptions.sm)}
+            marginTop={select(marginLabel, spaceOptions, spaceDefault.xs)}
+            marginBottom={select(marginLabel, spaceOptions, spaceDefault.xs)}
+            marginLateral={select(marginLabel, spaceOptions, spaceDefault.xs)}
         >
             <Image
                 imageType={imageTypeOptions.picture}
@@ -69,7 +69,7 @@ storiesOf(folder.main + 'ClickableBlock', module)
             <div>
                 <Title>Olivia Gometz</Title>
 
-                <Text>Le colis du boucher</Text>
+                <Text>Les colis du boucher</Text>
             </div>
         </ClickableBlock>
     ));

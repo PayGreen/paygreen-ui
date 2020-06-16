@@ -9,6 +9,12 @@ const ClickableBlockBase = styled.div`
     display: inline-flex;
     align-items: center;
     outline: transparent;
+    ${props => borderColor[props.colorPallet]};
+    border-top: ${props => (props.borderTop ? null : borderNone)};
+    border-right: ${props => (props.borderRight ? null : borderNone)};
+    border-left: ${props => (props.borderLeft ? null : borderNone)};
+    border-bottom: ${props => (props.borderBottom ? null : borderNone)};
+    transition: all ${props => props.theme.transition.xs};
 
     ${props =>
         directionalProperty(
@@ -18,6 +24,7 @@ const ClickableBlockBase = styled.div`
             props.theme.space[props.paddingBottom],
             props.theme.space[props.paddingLateral],
         )};
+
     ${props =>
         directionalProperty(
             'margin',
@@ -26,13 +33,6 @@ const ClickableBlockBase = styled.div`
             props.theme.space[props.marginBottom],
             props.theme.space[props.marginLateral],
         )};
-
-    ${props => borderColor[props.colorPallet]};
-    border-top: ${props => (props.borderTop ? null : borderNone)};
-    border-right: ${props => (props.borderRight ? null : borderNone)};
-    border-left: ${props => (props.borderLeft ? null : borderNone)};
-    border-bottom: ${props => (props.borderBottom ? null : borderNone)};
-    transition: all ${props => props.theme.transition.xs};
 
     &:hover,
     &:focus,

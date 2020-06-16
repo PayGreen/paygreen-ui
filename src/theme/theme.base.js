@@ -331,8 +331,6 @@ export const ThemeBase = {
             sm: 0.9,
             md: 0.8,
             lg: 0.7,
-            xl: 0.6,
-            xxl: 0.55,
         },
     },
     rotateSize: {

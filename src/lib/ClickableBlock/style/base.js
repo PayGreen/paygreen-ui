@@ -9,7 +9,13 @@ const borderColor = {
     `,
     wab: css`
         border: solid
-            ${props => props.theme.line + props.theme.wab[props.colorWab]};
+            ${props =>
+                props.theme.line +
+                ' ' +
+                transparentize(
+                    props.theme.shadow.opacity.md,
+                    props.theme.wab[props.colorWab],
+                )};
     `,
     status: css`
         border: solid
@@ -23,22 +29,22 @@ const hoverStyle = {
     theme: css`
         background-color: ${props =>
             transparentize(
-                props.theme.shadow.opacity.xl,
-                props.theme.color[props.colorTheme].light,
+                props.theme.shadow.opacity.xs,
+                props.theme.color[props.colorTheme].main,
             )};
     `,
     wab: css`
         background-color: ${props =>
             transparentize(
-                props.theme.shadow.opacity.xl,
+                props.theme.shadow.opacity.sm,
                 props.theme.wab[props.colorWab],
             )};
     `,
     status: css`
         background-color: ${props =>
             transparentize(
-                props.theme.shadow.opacity.xl,
-                props.theme.color.status[props.colorStatus].light,
+                props.theme.shadow.opacity.xs,
+                props.theme.color.status[props.colorStatus].main,
             )};
     `,
 };
