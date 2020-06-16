@@ -21,7 +21,7 @@ import Popin from './Popin';
 
 storiesOf(folder.main + 'Popin', module)
     .addDecorator(withKnobs)
-    .add('Popin alone', () => (
+    .add('Popin', () => (
         <Popin
             isActive={boolean('Is active', true)}
             blockWidth={select(
@@ -45,7 +45,7 @@ storiesOf(folder.main + 'Popin', module)
                 colorWab={greyOptions.grey60}
                 textSize={fontSizeOptions.sm}
             >
-                Démo
+                Demo
             </Title>
 
             <Text
