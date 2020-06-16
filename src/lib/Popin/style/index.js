@@ -5,7 +5,6 @@ import { activeStyle, hiddenStyle, popinAlign } from './base';
 const PopinBase = styled.div`
     position: absolute;
     margin-top: ${props => props.theme.space[props.marginTop]};
-    min-width: 100%;
     width: ${props => math(props.theme.blockWidth[props.blockWidth] + ' / 2')};
     background-color: ${props => props.theme.wab.white00};
     border-radius: ${props => props.theme.radius[props.radiusSize]};

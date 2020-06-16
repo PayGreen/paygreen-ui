@@ -32,7 +32,7 @@ Popin.defaultProps = {
     blockWidth: blockWidthDefault,
     radiusSize: radiusDefault,
     shadowSize: shadowSizeOptions.sm,
-    align: PropTypes.oneOf(Object.values(alignDefault)),
+    align: alignDefault,
 };
 
 export default Popin;

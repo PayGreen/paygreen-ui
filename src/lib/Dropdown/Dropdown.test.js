@@ -4,8 +4,6 @@ import { ThemeDefault } from '../../theme';
 import Dropdown from './Dropdown';
 import { PenIcon } from '../Icon/Icon';
 import Popin from '../Popin/Popin';
-import Title from '../Title/Title';
-import Text from '../Text/Text';
 
 it('renders without crashing', () => {
     const dropdown = TestRenderer.create(
@@ -13,15 +11,8 @@ it('renders without crashing', () => {
             <PenIcon theme={ThemeDefault} />
 
             <Popin theme={ThemeDefault}>
-                <Title theme={ThemeDefault}>
-                    Ma jolie <strong>Popin</strong> !
-                </Title>
-
-                <Text theme={ThemeDefault}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                </Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Popin>
         </Dropdown>,
     );
