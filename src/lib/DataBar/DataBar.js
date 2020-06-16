@@ -11,6 +11,7 @@ import {
     formStatusDefault,
     fontSizeOptions,
     fontSizeDefault,
+    textHtmlTagOptions,
 } from '../../shared/constants';
 import { DataBarBase, Bar, BarSection } from './style';
 import Text from '../Text/Text';
@@ -37,8 +38,12 @@ const DataBar = props => {
     };
 
     return (
-        <DataBarBase {...rest} blockWidth={blockWidth}>
-            <Bar {...rest} withBackground={withBackground}>
+        <DataBarBase {...rest}>
+            <Bar
+                {...rest}
+                withBackground={withBackground}
+                blockWidth={blockWidth}
+            >
                 {dataArray.map((data, index) => (
                     <BarSection
                         {...rest}
@@ -60,7 +65,15 @@ const DataBar = props => {
                             : calcPercent(dataArray[0].currentValue)
                     }
                 >
-                    <Text {...props}>{dataArray[0].legend}</Text>
+                    <Text {...props} colorPallet={colorPalletOptions.wab}>
+                        {dataArray[0].legend}
+                    </Text>
+
+                    {dataArray[0].legendBold ? (
+                        <Text {...props} colorPallet={colorPalletOptions.wab}>
+                            {dataArray[0].legendBold}
+                        </Text>
+                    ) : null}
                 </DataLegend>
             ) : null}
         </DataBarBase>
@@ -79,6 +92,7 @@ DataBar.propTypes = {
         PropTypes.shape({
             currentValue: PropTypes.number.isRequired,
             legend: PropTypes.string,
+            legendBold: PropTypes.string,
             color: PropTypes.string.isRequired,
         }),
     ).isRequired,

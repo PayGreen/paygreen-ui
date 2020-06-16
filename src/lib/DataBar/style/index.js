@@ -9,11 +9,11 @@ import {
 
 const DataBarBase = styled.div`
     width: 100%;
-    max-width: ${props => props.theme.blockWidth[props.blockWidth]};
 `;
 
 const Bar = styled.div`
     width: 100%;
+    max-width: ${props => props.theme.blockWidth[props.blockWidth]};
     height: ${props => props.theme.font.underline.space.xs};
     display: flex;
     border-radius: ${props => math(props.theme.font.underline.space.xs + '/2')};

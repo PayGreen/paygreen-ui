@@ -40,9 +40,9 @@ const currentValueOptions = {
 };
 
 const { wab, ...barColorPalletOptions } = colorPalletOptions;
-const palletColorLabel = 'Color pallet';
-const statusColorLabel = 'Status color';
-const themeColorLabel = 'Theme color';
+const colorPalletLabel = 'Color pallet';
+const colorStatusLabel = 'Status color';
+const colorThemeLabel = 'Theme color';
 
 storiesOf(folder.main + 'Databar', module)
     .addDecorator(withKnobs)
@@ -57,7 +57,7 @@ storiesOf(folder.main + 'Databar', module)
             hasDatabarLegend={boolean('With legend', true)}
             textSize={select('Text Size', fontSizeOptions, fontSizeDefault)}
             maxValue={number('Max value', defaultMaxValue, maxValueOptions)}
-            unit={text('Unity', 'Tonnes')}
+            unit={text('Unity', '%')}
             dataArray={[
                 {
                     currentValue: number(
@@ -65,27 +65,28 @@ storiesOf(folder.main + 'Databar', module)
                         defaultCurrentValue,
                         currentValueOptions,
                     ),
-                    legend: text('Legend', 'compensé par vous'),
+                    legend: text('Legend', ' compensé par'),
+                    legendBold: text('Legend bold', ' vous'),
                     color:
                         radios(
-                            palletColorLabel,
+                            colorPalletLabel,
                             barColorPalletOptions,
                             colorPalletDefault,
                         ) === 'status'
                             ? select(
-                                  statusColorLabel,
+                                  colorStatusLabel,
                                   formStatusOptions,
                                   formStatusDefault,
                               )
                             : select(
-                                  themeColorLabel,
+                                  colorThemeLabel,
                                   colorThemeOptions,
                                   colorThemeDefault,
                               ),
                 },
             ]}
             colorPallet={radios(
-                palletColorLabel,
+                colorPalletLabel,
                 barColorPalletOptions,
                 colorPalletDefault,
             )}
@@ -102,7 +103,7 @@ storiesOf(folder.main + 'Databar', module)
                 )}
                 withBackground={boolean('With background', true)}
                 colorPallet={radios(
-                    palletColorLabel,
+                    colorPalletLabel,
                     barColorPalletOptions,
                     colorPalletDefault,
                 )}
@@ -115,17 +116,17 @@ storiesOf(folder.main + 'Databar', module)
                         ),
                         color:
                             radios(
-                                palletColorLabel,
+                                colorPalletLabel,
                                 barColorPalletOptions,
                                 colorPalletDefault,
                             ) === 'status'
                                 ? select(
-                                      statusColorLabel,
+                                      colorStatusLabel,
                                       formStatusOptions,
                                       formStatusDefault,
                                   )
                                 : select(
-                                      themeColorLabel,
+                                      colorThemeLabel,
                                       colorThemeOptions,
                                       colorThemeDefault,
                                   ),
@@ -138,7 +139,7 @@ storiesOf(folder.main + 'Databar', module)
                         ),
                         color:
                             radios(
-                                palletColorLabel,
+                                colorPalletLabel,
                                 barColorPalletOptions,
                                 colorPalletDefault,
                             ) === 'status'
@@ -161,7 +162,7 @@ storiesOf(folder.main + 'Databar', module)
                         ),
                         color:
                             radios(
-                                palletColorLabel,
+                                colorPalletLabel,
                                 barColorPalletOptions,
                                 colorPalletDefault,
                             ) === 'status'
