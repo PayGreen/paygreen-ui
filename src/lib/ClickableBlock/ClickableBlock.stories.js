@@ -67,9 +67,9 @@ storiesOf(folder.main + 'ClickableBlock', module)
             </Image>
 
             <div>
-                <Title>Olivia Gometz</Title>
+                <Title>Jane Dae</Title>
 
-                <Text>Les colis du boucher</Text>
+                <Text>Lorem Ipsum Store</Text>
             </div>
         </ClickableBlock>
     ));

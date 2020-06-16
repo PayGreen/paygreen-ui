@@ -43,9 +43,9 @@ storiesOf(folder.main + 'Dropdown', module)
                     </Image>
 
                     <div>
-                        <Title>Olivia Gometz</Title>
+                        <Title>Jane Dae</Title>
 
-                        <Text>Le colis du boucher</Text>
+                        <Text>Lorem Ipsum Store</Text>
                     </div>
                 </ClickableBlock>
 
