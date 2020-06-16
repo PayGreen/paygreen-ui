@@ -4,7 +4,7 @@ import { ThemeDefault } from '../../theme';
 import Modal from './Modal';
 import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from '../ModalContent/ModalContent';
-import { Overlay } from './style';
+import Overlay from '../Overlay/Overlay';
 import Text from '../Text/Text';
 
 it('renders without crashing', () => {

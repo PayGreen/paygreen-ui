@@ -12,12 +12,12 @@ import {
     spaceOptions,
 } from '../../shared/constants';
 import Modal from './Modal';
-import Title from '../Title/Title';
-import { CrossIcon } from '../Icon/Icon';
 import ModalHeader from '../ModalHeader/ModalHeader';
 import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from '../ModalContent/ModalContent';
-import { Overlay } from './style';
+import Overlay from '../Overlay/Overlay';
+import Title from '../Title/Title';
+import { CrossIcon } from '../Icon/Icon';
 import Text from '../Text/Text';
 
 const paddingLateral = 'Lateral padding';
@@ -26,7 +26,7 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
     .addDecorator(withKnobs)
     .add('Modal', () => (
         <Modal isOpen={boolean('is Open', true)}>
-            <Overlay />
+            <Overlay opacityValue={20} />
 
             <ModalContent
                 blockWidth={select(

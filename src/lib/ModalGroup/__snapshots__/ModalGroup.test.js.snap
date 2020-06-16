@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="sc-EHOje jvzENE"
+>
+  <div
+    className="sc-bZQynM bOrPFB"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="sc-bdVaJa eWcNx"
+      >
+         
+        Open the modal
+      </span>
+    </button>
+  </div>
+  <div
+    className="sc-ifAKCX bOwhUU"
+  >
+    <div
+      className="sc-bZQynM bOrPFB"
+    >
+      <div
+        className="sc-bwzfXH efjqAu"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="sc-bxivhb jXsEQH"
+    >
+      <div
+        className="sc-htpNat gLReSl"
+      >
+        This is the text
+      </div>
+    </div>
+  </div>
+</div>
+`;
