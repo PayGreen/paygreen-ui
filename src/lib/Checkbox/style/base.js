@@ -44,10 +44,9 @@ const basicStyle = css`
         }
 
         &:checked {
-                & + label {
-                    & > .icon {
-                        transform: scale(${checkSize});
-                    }
+            & + label {
+                & > .icon {
+                    transform: scale(${checkSize});
                 }
             }
         }

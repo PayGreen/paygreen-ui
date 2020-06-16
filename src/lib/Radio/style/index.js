@@ -17,8 +17,8 @@ const RadioBase = styled.div`
 
         &::before,
         &::after {
-            box-sizing: border-box;
             content: '';
+            box-sizing: border-box;
             flex-shrink: 0;
             transition: all ${props => props.theme.transition.xs};
         }
@@ -53,10 +53,12 @@ const RadioBase = styled.div`
         left: ${props => math(radioSize(props) + '/2')};
         box-shadow: none;
         margin: 0;
+        margin-top: -${props => props.theme.line};
 
         &:checked {
             & + label {
                 font-weight: ${props => props.theme.font.weight.bold};
+                
                 &::after {
                     background-color: ${props =>
                         props.theme.color.status.success.main};

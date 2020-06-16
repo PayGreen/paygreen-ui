@@ -19,7 +19,7 @@ it('renders without crashing', () => {
         <RadioGroup
             theme={ThemeDefault}
             options={radioOptions}
-            name="test1"
+            name="test"
             legend="Radio Label"
         />,
     );

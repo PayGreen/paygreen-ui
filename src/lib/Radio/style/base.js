@@ -30,18 +30,17 @@ const basicStyle = css`
         &:hover,
         &:active,
         &:focus {
-                & + label {
-                    &::after {
-                        transform: scale(0.7);
-                    }
+            & + label {
+                &::after {
+                    transform: scale(0.7);
                 }
             }
+        }
 
-            &:checked {
-                & + label {
-                    &::after {
-                        transform: scale(1);
-                    }
+        &:checked {
+            & + label {
+                &::after {
+                    transform: scale(1);
                 }
             }
         }
