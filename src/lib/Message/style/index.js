@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { math } from 'polished';
-import { arrowBlockStyle, arrowSize } from './base';
 import { TextBase } from '../../Text/style';
+import { arrowBlockStyle, arrowSize } from './base';
 
 const MessageBase = styled.div`
     position: relative;
@@ -19,6 +18,7 @@ const MessageBase = styled.div`
     & > .icon {
         grid-area: icon;
         margin-right: ${arrowSize};
+
         svg {
             fill: ${props => props.theme.color.status[props.colorStatus].main};
         }
@@ -28,16 +28,7 @@ const MessageBase = styled.div`
         color: ${props => props.theme.color.status[props.colorStatus].main};
     }
 
-    @media (${props => props.theme.query.max.xl}) {
-        ${props => (props.arrowBlock !== 'none' ? arrowBlockStyle.top : null)};
-    }
-
-    @media (${props => props.theme.query.min.xl}) {
-        ${props =>
-            props.arrowBlock !== 'none'
-                ? arrowBlockStyle[props.arrowBlock]
-                : null};
-    }
+    ${props => arrowBlockStyle[props.arrowBlock]};
 `;
 
 export { MessageBase };
