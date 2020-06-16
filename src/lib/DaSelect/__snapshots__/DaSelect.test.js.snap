@@ -2,12 +2,17 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa AEVIr"
+  className="sc-bdVaJa iQhWSj"
 >
   <select
     disabled={false}
     theme={
       Object {
+        "arrow": Object {
+          "lg": "20px",
+          "md": "16px",
+          "sm": "12px",
+        },
         "bannerHeight": Object {
           "lg": "100vh",
           "sm": "50vh",
@@ -277,6 +282,7 @@ exports[`renders without crashing 1`] = `
         },
         "radius": Object {
           "lg": "12px",
+          "md": "8px",
           "none": "0",
           "sm": "4px",
         },
