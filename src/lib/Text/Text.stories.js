@@ -243,7 +243,7 @@ storiesOf(folder.main + 'Text', module)
         },
     )
     .add(
-        'Inline styled html tags',
+        'Inline styles',
         () => (
             <>
                 <Text
