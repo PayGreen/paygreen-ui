@@ -24,14 +24,10 @@ const DataLegendBase = styled.div`
     strong {
         text-align: ${props => props.align};
         font-size: ${props => props.theme.font.size[props.textSize]};
-        
+
         & :last-child {
             font-weight: bold;
         }
-    }
-
-    & :only-child {
-        font-weight: bold;
     }
 
     ${props => (props.flexDirection === 'row' ? horizontalStyle : null)};
