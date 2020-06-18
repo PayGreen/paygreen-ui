@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { math } from 'polished';
 import { horizontalStyle } from './base';
 import { mainColor } from './constants';
-import { responsiveSpaces } from '../../../shared/spaces';
-
 
 const DataLegendBase = styled.div`
     text-align: ${props => props.align};
@@ -32,7 +30,7 @@ const DataLegendBase = styled.div`
         }
     }
 
-    & > :last-child {
+    & :only-child {
         font-weight: bold;
     }
 

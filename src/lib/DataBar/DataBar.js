@@ -65,11 +65,14 @@ const DataBar = props => {
                             : calcPercent(dataArray[0].currentValue)
                     }
                 >
-                    <Text {...props} colorPallet={colorPalletOptions.wab}>
-                        {dataArray[0].legend}
-                    </Text>
+                    {dataArray[0].legend & dataArray[0].legend.length ? (
+                        <Text {...props} colorPallet={colorPalletOptions.wab}>
+                            {dataArray[0].legend}
+                        </Text>
+                    ) : null}
 
-                    {dataArray[0].legendBold ? (
+                    {dataArray[0].legendBold &
+                    dataArray[0].legendBold.length ? (
                         <Text {...props} colorPallet={colorPalletOptions.wab}>
                             {dataArray[0].legendBold}
                         </Text>
