@@ -11,7 +11,7 @@
     "test": "jest",
     "test-update": "jest --updateSnapshot",
     "build-storybook": "build-storybook -c .storybook -o docs",
-    "deploy-storybook": "storybook-to-ghpages -- -e docs --ci"
+    "deploy-storybook": "storybook-to-ghpages -e docs --ci"
   },
   "repository": {
     "type": "git",
