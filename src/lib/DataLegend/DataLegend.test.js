@@ -12,7 +12,10 @@ it('renders without crashing', () => {
                 <strong>adipiscing elit</strong>. Donec eget{' '}
                 <em>nulla in libero</em> laoreet sodales.
             </DataLegend>
-            <DataLegend theme={ThemeDefault} htmlTag={textHtmlTagOptions.strong}>
+            <DataLegend
+                theme={ThemeDefault}
+                htmlTag={textHtmlTagOptions.strong}
+            >
                 Lorem ipsum dolor sit amet, consectetur
             </DataLegend>
         </>,

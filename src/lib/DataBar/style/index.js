@@ -13,13 +13,13 @@ const DataBarBase = styled.div`
 
 const Bar = styled.div`
     width: 100%;
-    max-width: ${props => props.theme.blockWidth[props.blockWidth]};
-    height: ${props => props.theme.font.underline.space.xs};
+    max-width: ${props => props.theme.dataBar.width[props.blockWidth]};
+    height: ${props => props.theme.dataBar.height};
     display: flex;
-    border-radius: ${props => math(props.theme.font.underline.space.xs + '/2')};
+    border-radius: ${props => math(props.theme.dataBar.height + '/2')};
     overflow: hidden;
 
-    ${childrenStyle}
+    ${childrenStyle};
     ${props => (props.withBackground ? hasBackgroundStyle : null)};
 `;
 

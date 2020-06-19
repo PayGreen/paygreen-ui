@@ -11,7 +11,6 @@ import {
     formStatusDefault,
     fontSizeOptions,
     fontSizeDefault,
-    textHtmlTagOptions,
 } from '../../shared/constants';
 import { DataBarBase, Bar, BarSection } from './style';
 import Text from '../Text/Text';
@@ -21,7 +20,7 @@ const DataBar = props => {
     const {
         blockWidth,
         dataArray,
-        hasDatabarLegend,
+        hasDataLegend,
         minValue,
         maxValue,
         unit,
@@ -54,13 +53,13 @@ const DataBar = props => {
                 ))}
             </Bar>
 
-            {dataArray.length === 1 && hasDatabarLegend ? (
+            {dataArray.length === 1 && hasDataLegend ? (
                 <DataLegend
                     {...props}
                     dataColor={dataArray[0].color}
-                    legendUnit={unit.length > 0 ? unit : '%'}
+                    legendUnit={unit.length ? unit : '%'}
                     legendValue={
-                        unit.length > 0 && unit !== '%'
+                        unit.length && unit !== '%'
                             ? dataArray[0].currentValue
                             : calcPercent(dataArray[0].currentValue)
                     }
@@ -68,13 +67,6 @@ const DataBar = props => {
                     {dataArray[0].legend && dataArray[0].legend.length ? (
                         <Text {...props} colorPallet={colorPalletOptions.wab}>
                             {dataArray[0].legend}
-                        </Text>
-                    ) : null}
-
-                    {dataArray[0].legendBold &&
-                    dataArray[0].legendBold.length ? (
-                        <Text {...props} colorPallet={colorPalletOptions.wab} htmlTag={textHtmlTagOptions.strong}>
-                            {dataArray[0].legendBold}
                         </Text>
                     ) : null}
                 </DataLegend>
@@ -95,11 +87,10 @@ DataBar.propTypes = {
         PropTypes.shape({
             currentValue: PropTypes.number.isRequired,
             legend: PropTypes.string,
-            legendBold: PropTypes.string,
             color: PropTypes.string.isRequired,
         }),
     ).isRequired,
-    hasDatabarLegend: PropTypes.bool,
+    hasDataLegend: PropTypes.bool,
     minValue: PropTypes.number,
     maxValue: PropTypes.number,
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
@@ -112,7 +103,7 @@ DataBar.defaultProps = {
     colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
     colorStatus: formStatusDefault,
-    hasDatabarLegend: false,
+    hasDataLegend: false,
     minValue: 0,
     maxValue: 100,
     textSize: fontSizeDefault,

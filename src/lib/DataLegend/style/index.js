@@ -10,7 +10,10 @@ const DataLegendBase = styled.div`
         line-height: normal;
         font-size: ${props =>
             math(props.theme.font.size[props.textSize] + '* 1.7')};
-        color: ${props => mainColor[props.colorPallet]};
+        color: ${props =>
+            props.legendValue === 0
+                ? props.theme.wab.grey30
+                : mainColor[props.colorPallet]};
 
         span {
             font-size: ${props => props.theme.font.size[props.textSize]};
@@ -24,10 +27,6 @@ const DataLegendBase = styled.div`
     strong {
         text-align: ${props => props.align};
         font-size: ${props => props.theme.font.size[props.textSize]};
-
-        & :last-child {
-            font-weight: bold;
-        }
     }
 
     ${props => (props.flexDirection === 'row' ? horizontalStyle : null)};

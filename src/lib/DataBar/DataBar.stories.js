@@ -54,7 +54,7 @@ storiesOf(folder.main + 'Databar', module)
                 blockWidthDefault,
             )}
             withBackground={boolean('With background', true)}
-            hasDatabarLegend={boolean('With legend', true)}
+            hasDataLegend={boolean('With legend', true)}
             textSize={select('Text Size', fontSizeOptions, fontSizeDefault)}
             maxValue={number('Max value', defaultMaxValue, maxValueOptions)}
             unit={text('Unity', '%')}
@@ -65,8 +65,10 @@ storiesOf(folder.main + 'Databar', module)
                         defaultCurrentValue,
                         currentValueOptions,
                     ),
-                    legend: text('Legend', ' compensé par'),
-                    legendBold: text('Legend bold', ' vous'),
+                    legend: [
+                        text('Legend text', ' compensé par'),
+                        <strong>{text('Legend text bold', ' vous')}</strong>,
+                    ],
                     color:
                         radios(
                             colorPalletLabel,
