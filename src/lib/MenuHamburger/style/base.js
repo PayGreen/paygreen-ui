@@ -1,4 +1,4 @@
-import { css }  from 'styled-components';
+import { css } from 'styled-components';
 
 const line = 3;
 
@@ -26,8 +26,4 @@ const isOpenStyle = css`
     }
 `;
 
-export {
-    line,
-    isClosedStyle,
-    isOpenStyle
-};
+export { line, isClosedStyle, isOpenStyle };

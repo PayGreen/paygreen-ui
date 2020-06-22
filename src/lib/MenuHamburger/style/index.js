@@ -1,6 +1,7 @@
-import styled  from 'styled-components';
+import styled from 'styled-components';
 import { math } from 'polished';
 import { line, isClosedStyle, isOpenStyle } from './base';
+import { mainColor } from './constants';
 
 const MenuHamburgerBase = styled.button`
     display: block;
@@ -18,7 +19,7 @@ const MenuHamburgerBase = styled.button`
         height: ${line}px;
         border-radius: ${props => props.theme.radius.sm};
         margin: ${line * 2}px 0;
-        background-color: ${props => props.theme.color[props.colorTheme].main};
+        background-color: ${props => mainColor[props.colorPallet]};
         transform-origin: center right;
         transition: all ${props => props.theme.transition.sm};
 
@@ -28,7 +29,7 @@ const MenuHamburgerBase = styled.button`
         }
     }
 
-    ${props => props.isOpen ? isOpenStyle : isClosedStyle};
+    ${props => (props.isOpen ? isOpenStyle : isClosedStyle)};
 `;
 
 export { MenuHamburgerBase };
