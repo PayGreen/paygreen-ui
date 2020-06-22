@@ -29,6 +29,6 @@ storiesOf(folder.nav + folder.sub.control + 'MenuHamburger', module)
                 colorThemeDefault,
             )}
             colorWab={select('Color wab', greyOptions, greyDefault)}
-            isOpen={boolean('Is Open', false)}
+            isOpen={boolean('Is open', false)}
         />
     ));
