@@ -8,18 +8,15 @@ const htmlTagStyle = {
     p: css`
         ${responsiveSpaces('padding')};
         border-radius: ${props => props.theme.radius[props.radiusSize]};
-        `,
+    `,
     div: css`
         ${responsiveSpaces('padding')};
         border-radius: ${props => props.theme.radius[props.radiusSize]};
-
         & > p {
             margin: ${props => props.theme.space[props.marginInternal]} 0;
-
             &:first-of-type {
                 margin-top: 0;
             }
-
             &:last-of-type {
                 margin-bottom: 0;
             }
@@ -40,7 +37,6 @@ const htmlTagStyle = {
     sub: css`
         font-size: ${props =>
             math(props.theme.font.size[props.textSize] + '* 0.7')};
-
         @media (${props => props.theme.query.max.md}) {
             font-size: ${props =>
                 math(props.theme.font.size[props.textSize] + '* 0.6')};
@@ -53,14 +49,6 @@ const htmlTagStyle = {
             math(props.theme.font.size[props.textSize] + '* 0.3')};
     `,
 };
-
-const italicStyle = css`
-    font-style: italic;
-`;
-
-const boldStyle = css`
-    font-style: bold;
-`;
 
 const uppercaseStyle = css`
     text-transform: uppercase;
@@ -87,7 +75,6 @@ const defaultStyle = css`
     line-height: ${props => props.theme.font.lineHeight.md};
     text-align: ${props => props.align};
     font-size: ${props => props.theme.font.size[props.textSize]};
-
     @media (${props => props.theme.query.max.md}) {
         font-size: ${props =>
             props.theme.font.size[minimizeFont[props.textSize]]};

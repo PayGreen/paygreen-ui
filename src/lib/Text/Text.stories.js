@@ -96,73 +96,11 @@ storiesOf(folder.main + 'Text', module)
                 )}
             >
                 Lorem ipsum dolor sit amet, consectetur{' '}
-                <Text
-                    htmlTag={textHtmlTagOptions.strong}
-                    colorType={radios(
-                        'Color type',
-                        colorTypeOptions,
-                        colorTypeDefault,
-                    )}
-                    colorPallet={radios(
-                        'Color pallet',
-                        colorPalletOptions,
-                        colorPalletOptions.wab,
-                    )}
-                    colorTheme={select(
-                        'Color theme',
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    colorWab={select(
-                        'Grey color',
-                        greyOptions,
-                        greyOptions.grey60,
-                    )}
-                    colorStatus={select(
-                        'Status color',
-                        formStatusOptions,
-                        formStatusDefault,
-                    )}
-                    textSize={select('Size', fontSizeOptions, fontSizeDefault)}
-                >
-                    adipiscing elit
-                </Text>
-                . Donec eget{' '}
-                <Text
-                    htmlTag={textHtmlTagOptions.em}
-                    colorType={radios(
-                        'Color type',
-                        colorTypeOptions,
-                        colorTypeDefault,
-                    )}
-                    colorPallet={radios(
-                        'Color pallet',
-                        colorPalletOptions,
-                        colorPalletOptions.wab,
-                    )}
-                    colorTheme={select(
-                        'Color theme',
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    colorWab={select(
-                        'Grey color',
-                        greyOptions,
-                        greyOptions.grey60,
-                    )}
-                    colorStatus={select(
-                        'Status color',
-                        formStatusOptions,
-                        formStatusDefault,
-                    )}
-                    textSize={select('Size', fontSizeOptions, fontSizeDefault)}
-                >
-                    nulla in libero
-                </Text>{' '}
-                laoreet sodales. Fusce vestibulum at neque nec convallis.
-                Vivamus quis neque vulputate, fringilla massa vitae, interdum
-                ipsum. Duis enim augue, euismod quis aliquam in, consequat quis
-                risus.
+                <strong>adipiscing elit</strong>. Donec eget{' '}
+                <em>nulla in libero</em> laoreet sodales. Fusce vestibulum at
+                neque nec convallis. Vivamus quis neque vulputate, fringilla
+                massa vitae, interdum ipsum. Duis enim augue, euismod quis
+                aliquam in, consequat quis risus.
             </Text>
         ),
         {
