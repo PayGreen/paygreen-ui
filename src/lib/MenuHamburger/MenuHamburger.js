@@ -19,10 +19,7 @@ const MenuHamburger = props => (
 );
 
 MenuHamburger.propTypes = {
-    colorPallet: PropTypes.oneOf([
-        colorPalletOptions.theme,
-        colorPalletOptions.wab,
-    ]),
+    colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     isOpen: PropTypes.bool,

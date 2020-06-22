@@ -7,12 +7,12 @@ import {
     colorThemeDefault,
     colorPalletOptions,
     colorPalletDefault,
+    formStatusOptions,
+    formStatusDefault,
     greyOptions,
     greyDefault,
 } from '../../shared/constants';
 import MenuHamburger from './MenuHamburger';
-
-const { status, ...hamburgerColorPalletOptions } = colorPalletOptions;
 
 storiesOf(folder.nav + folder.sub.control + 'MenuHamburger', module)
     .addDecorator(withKnobs)
@@ -20,13 +20,18 @@ storiesOf(folder.nav + folder.sub.control + 'MenuHamburger', module)
         <MenuHamburger
             colorPallet={radios(
                 'Color pallet',
-                hamburgerColorPalletOptions,
+                colorPalletOptions,
                 colorPalletDefault,
             )}
             colorTheme={select(
                 'Color theme',
                 colorThemeOptions,
                 colorThemeDefault,
+            )}
+            colorStatus={select(
+                'Color status',
+                formStatusOptions,
+                formStatusDefault,
             )}
             colorWab={select('Color wab', greyOptions, greyDefault)}
             isOpen={boolean('Is open', false)}
