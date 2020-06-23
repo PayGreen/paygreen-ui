@@ -22,17 +22,17 @@ const MenuHamburger = props => (
 
 MenuHamburger.propTypes = {
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
-    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     isOpen: PropTypes.bool,
 };
 
 MenuHamburger.defaultProps = {
     colorPallet: colorPalletDefault,
-    colorStatus: formStatusDefault,
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,
+    colorStatus: formStatusDefault,
     isOpen: false,
 };
 

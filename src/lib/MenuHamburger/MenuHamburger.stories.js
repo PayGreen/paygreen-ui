@@ -18,6 +18,7 @@ storiesOf(folder.nav + folder.sub.control + 'MenuHamburger', module)
     .addDecorator(withKnobs)
     .add('MenuHamburger', () => (
         <MenuHamburger
+            isOpen={boolean('Is open', false)}
             colorPallet={radios(
                 'Color pallet',
                 colorPalletOptions,
@@ -28,12 +29,11 @@ storiesOf(folder.nav + folder.sub.control + 'MenuHamburger', module)
                 colorThemeOptions,
                 colorThemeDefault,
             )}
+            colorWab={select('Color wab', greyOptions, greyDefault)}
             colorStatus={select(
                 'Color status',
                 formStatusOptions,
                 formStatusDefault,
             )}
-            colorWab={select('Color wab', greyOptions, greyDefault)}
-            isOpen={boolean('Is open', false)}
         />
     ));
