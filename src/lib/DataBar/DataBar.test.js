@@ -4,7 +4,7 @@ import { ThemeDefault } from '../../theme';
 import DataBar from './DataBar';
 import { colorThemeDefault } from '../../shared/constants';
 
-const dataArray = [
+const data = [
     {
         currentValue: 20,
         legend: 'légende de la barre',
@@ -14,7 +14,7 @@ const dataArray = [
 
 it('renders without crashing', () => {
     const dataBar = TestRenderer.create(
-        <DataBar theme={ThemeDefault} dataArray={dataArray} />,
+        <DataBar theme={ThemeDefault} data={data} />,
     );
     expect(dataBar.toJSON()).toMatchSnapshot();
 });

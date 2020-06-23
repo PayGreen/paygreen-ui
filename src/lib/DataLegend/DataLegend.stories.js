@@ -58,29 +58,7 @@ storiesOf(folder.main + 'DataLegend', module)
                           )
                 }
             >
-                <Text>
-                    {text('Legend text', ' du')}
-                    <Text
-                        htmlTag={textHtmlTagOptions.strong}
-                        colorPallet={radios(
-                            'Color pallet Legend',
-                            colorPalletOptions,
-                            colorPalletOptions.wab,
-                        )}
-                        colorTheme={select(
-                            'Color theme legend',
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
-                        colorStatus={select(
-                            'Color status legend',
-                            formStatusOptions,
-                            formStatusDefault,
-                        )}
-                    >
-                        {text('Legend text bold ', ' CO2 émis')}
-                    </Text>
-                </Text>
+                du <strong>CO2 compensé</strong>
             </DataLegend>
         ),
         {

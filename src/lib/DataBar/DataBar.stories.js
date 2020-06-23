@@ -71,10 +71,7 @@ storiesOf(folder.main + 'Databar', module)
                         defaultCurrentValue,
                         currentValueOptions,
                     ),
-                    legend: [
-                        text('Legend text', ' compensé par'),
-                        <strong>{text('Legend text bold', ' vous')}</strong>,
-                    ],
+                    legend: ['compensé par', <strong> vous</strong>],
                     color:
                         radios(
                             colorPalletLabel,

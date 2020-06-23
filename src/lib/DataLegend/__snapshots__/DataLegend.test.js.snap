@@ -1,46 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-Array [
-  <div
-    className="sc-bdVaJa dhGUkm"
+<div
+  className="sc-bwzfXH jjwCBA"
+>
+  <span
+    className="value"
   >
-    <p
-      className="sc-bwzfXH iZmiew"
-    >
-      0
-      <span
-        className="sc-bwzfXH hWIfhc"
-      >
-        %
-      </span>
-    </p>
-    Lorem ipsum dolor sit amet, consectetur
-     
-    <strong>
-      adipiscing elit
-    </strong>
-    . Donec eget
-     
-    <em>
-      nulla in libero
-    </em>
-     laoreet sodales.
-  </div>,
-  <div
-    className="sc-bdVaJa dhGUkm"
+    0
+  </span>
+  <span
+    className="unit"
   >
-    <strong
-      className="sc-bwzfXH dGErMn"
-    >
-      0
-      <span
-        className="sc-bwzfXH hWIfhc"
-      >
-        %
-      </span>
-    </strong>
-    Lorem ipsum dolor sit amet, consectetur
-  </div>,
-]
+    %
+  </span>
+  <p
+    className="sc-bdVaJa gDeiyZ"
+  >
+    dolor sit amet, consectetur
+  </p>
+</div>
 `;

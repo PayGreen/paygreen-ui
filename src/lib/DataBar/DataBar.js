@@ -32,9 +32,7 @@ const DataBar = props => {
     const calcValue = (value, toPercent) => {
         let percent = ((value - minValue) / (maxValue - minValue)) * 100;
         if (!toPercent) {
-            return unit.length && unit !== '%'
-                ? value
-                : percent.toFixed(2);
+            return unit.length && unit !== '%' ? value : percent.toFixed(2);
         } else return percent.toFixed(2);
     };
 

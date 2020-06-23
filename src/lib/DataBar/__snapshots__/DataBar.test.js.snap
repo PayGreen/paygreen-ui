@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa gZdsYr"
+  className="sc-bdVaJa bDWFJH"
 >
   <div
-    className="sc-bwzfXH fTpuJq"
+    className="sc-bwzfXH gBiFTx"
   >
     <div
-      className="sc-htpNat jvWImZ"
+      className="sc-htpNat bSYXle"
     />
   </div>
 </div>

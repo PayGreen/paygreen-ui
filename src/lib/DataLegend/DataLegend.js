@@ -17,13 +17,9 @@ import Text from '../Text/Text';
 const DataLegend = props => {
     return (
         <DataLegendBase {...props}>
-            <span className="value">
-                {props.currentValue}
-            </span>
+            <span className="value">{props.currentValue}</span>
 
-            <span className="unit">
-                {props.unit}
-            </span>
+            <span className="unit">{props.unit}</span>
 
             {props.children}
         </DataLegendBase>
