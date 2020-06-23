@@ -5,9 +5,7 @@ import MenuHamburger from './MenuHamburger';
 
 it('renders without crashing', () => {
     const menuHamburger = TestRenderer.create(
-        <MenuHamburger
-            theme={ThemeDefault}
-        />
+        <MenuHamburger theme={ThemeDefault} />,
     );
     expect(menuHamburger.toJSON()).toMatchSnapshot();
 });

@@ -1,6 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { colorThemeOptions, colorThemeDefault } from '../../shared/constants';
+import {
+    colorPalletOptions,
+    colorPalletDefault,
+    colorThemeOptions,
+    colorThemeDefault,
+    formStatusOptions,
+    formStatusDefault,
+    greyOptions,
+    greyDefault,
+} from '../../shared/constants';
 import { MenuHamburgerBase } from './style';
 
 const MenuHamburger = props => (
@@ -12,12 +21,18 @@ const MenuHamburger = props => (
 );
 
 MenuHamburger.propTypes = {
+    colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    colorWab: PropTypes.oneOf(Object.values(greyOptions)),
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     isOpen: PropTypes.bool,
 };
 
 MenuHamburger.defaultProps = {
+    colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
+    colorWab: greyDefault,
+    colorStatus: formStatusDefault,
     isOpen: false,
 };
 
