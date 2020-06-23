@@ -20,7 +20,7 @@ const Bar = styled.div`
     overflow: hidden;
 
     ${childrenStyle};
-    ${props => (props.withBackground ? hasBackgroundStyle : null)};
+    ${props => (props.hasBackground ? hasBackgroundStyle : null)};
 `;
 
 const BarSection = styled.div`

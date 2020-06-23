@@ -53,12 +53,12 @@ storiesOf(folder.main + 'Databar', module)
                 blockWidthOptions,
                 blockWidthDefault,
             )}
-            withBackground={boolean('With background', true)}
+            hasBackground={boolean('With background', true)}
             hasDataLegend={boolean('With legend', true)}
             textSize={select('Text Size', fontSizeOptions, fontSizeDefault)}
             maxValue={number('Max value', defaultMaxValue, maxValueOptions)}
             unit={text('Unity', '%')}
-            dataArray={[
+            data={[
                 {
                     currentValue: number(
                         'Current value',
@@ -103,13 +103,13 @@ storiesOf(folder.main + 'Databar', module)
                     blockWidthOptions,
                     blockWidthDefault,
                 )}
-                withBackground={boolean('With background', true)}
+                hasBackground={boolean('With background', true)}
                 colorPallet={radios(
                     colorPalletLabel,
                     barColorPalletOptions,
                     colorPalletDefault,
                 )}
-                dataArray={[
+                data={[
                     {
                         currentValue: number(
                             'Current value',

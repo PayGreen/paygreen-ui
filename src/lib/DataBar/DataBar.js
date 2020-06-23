@@ -19,58 +19,60 @@ import DataLegend from '../DataLegend/DataLegend';
 const DataBar = props => {
     const {
         blockWidth,
-        dataArray,
+        data,
         hasDataLegend,
         minValue,
         maxValue,
         unit,
-        withBackground,
+        hasBackground,
         ...rest
     } = props;
 
-    const calcPercent = value => {
-        return (
-            Math.round(
-                (((value - minValue) * 100) / (maxValue - minValue)) * 10,
-            ) / 10
-        );
+    const calcValue = (value, toPercent) => {
+        let percent = ((value - minValue) / (maxValue - minValue)) * 100;
+        if (!toPercent) {
+            return unit.length && unit !== '%'
+                ? data.currentValue
+                : percent.toFixed(2);
+        } else return percent.toFixed(2);
     };
 
     return (
         <DataBarBase {...rest}>
             <Bar
                 {...rest}
-                withBackground={withBackground}
+                hasBackground={hasBackground}
                 blockWidth={blockWidth}
             >
-                {dataArray.map((data, index) => (
+                {data.map((data, index) => (
                     <BarSection
                         {...rest}
                         key={index}
-                        dataWidth={calcPercent(data.currentValue)}
+                        dataWidth={calcValue(data.currentValue, true)}
                         dataColor={data.color}
                     />
                 ))}
             </Bar>
 
-            {dataArray.length === 1 && hasDataLegend ? (
-                <DataLegend
-                    {...props}
-                    dataColor={dataArray[0].color}
-                    legendUnit={unit.length ? unit : '%'}
-                    legendValue={
-                        unit.length && unit !== '%'
-                            ? dataArray[0].currentValue
-                            : calcPercent(dataArray[0].currentValue)
-                    }
-                >
-                    {dataArray[0].legend && dataArray[0].legend.length ? (
-                        <Text {...props} colorPallet={colorPalletOptions.wab}>
-                            {dataArray[0].legend}
-                        </Text>
-                    ) : null}
-                </DataLegend>
-            ) : null}
+            {hasDataLegend
+                ? data.map(dataItem => (
+                      <DataLegend
+                          {...rest}
+                          dataColor={dataItem.color}
+                          legendUnit={unit.length ? unit : '%'}
+                          legendValue={calcValue(dataItem.currentValue, false)}
+                      >
+                          {dataItem.legend && dataItem.legend.length ? (
+                              <Text
+                                  {...rest}
+                                  colorPallet={colorPalletOptions.wab}
+                              >
+                                  {dataItem.legend}
+                              </Text>
+                          ) : null}
+                      </DataLegend>
+                  ))
+                : null}
         </DataBarBase>
     );
 };
@@ -83,7 +85,7 @@ DataBar.propTypes = {
     ]),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
-    dataArray: PropTypes.arrayOf(
+    data: PropTypes.arrayOf(
         PropTypes.shape({
             currentValue: PropTypes.number.isRequired,
             legend: PropTypes.string,
@@ -95,7 +97,7 @@ DataBar.propTypes = {
     maxValue: PropTypes.number,
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     unit: PropTypes.string,
-    withBackground: PropTypes.bool,
+    hasBackground: PropTypes.bool,
 };
 
 DataBar.defaultProps = {
@@ -108,7 +110,7 @@ DataBar.defaultProps = {
     maxValue: 100,
     textSize: fontSizeDefault,
     unit: '%',
-    withBackground: false,
+    hasBackground: false,
 };
 
 export default DataBar;
