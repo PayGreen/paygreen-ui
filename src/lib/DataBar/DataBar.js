@@ -11,6 +11,7 @@ import {
     formStatusDefault,
     fontSizeOptions,
     fontSizeDefault,
+    greyOptions,
 } from '../../shared/constants';
 import { DataBarBase, Bar, BarSection } from './style';
 import Text from '../Text/Text';
@@ -98,6 +99,7 @@ DataBar.propTypes = {
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     unit: PropTypes.string,
     hasBackground: PropTypes.bool,
+    backgroundColor: PropTypes.oneOf(Object.values(greyOptions)),
 };
 
 DataBar.defaultProps = {
@@ -111,6 +113,7 @@ DataBar.defaultProps = {
     textSize: fontSizeDefault,
     unit: '%',
     hasBackground: false,
+    backgroundColor: greyOptions.grey10,
 };
 
 export default DataBar;

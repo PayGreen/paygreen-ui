@@ -20,6 +20,7 @@ import {
     formStatusDefault,
     fontSizeOptions,
     fontSizeDefault,
+    greyOptions,
 } from '../../shared/constants';
 import DataBar from './DataBar';
 
@@ -54,6 +55,11 @@ storiesOf(folder.main + 'Databar', module)
                 blockWidthDefault,
             )}
             hasBackground={boolean('With background', true)}
+            backgroundColor={select(
+                'Background color',
+                greyOptions,
+                greyOptions.grey10,
+            )}
             hasDataLegend={boolean('With legend', true)}
             textSize={select('Text Size', fontSizeOptions, fontSizeDefault)}
             maxValue={number('Max value', defaultMaxValue, maxValueOptions)}

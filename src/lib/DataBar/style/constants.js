@@ -1,10 +1,10 @@
-import { transparentize } from 'polished';
+import { math } from 'polished';
 
 const mainColor = {
-    theme: props =>
-        transparentize(0.5, props.theme.color[props.dataColor].main),
-    status: props =>
-        transparentize(0.5, props.theme.color.status[props.dataColor].main),
+    theme: props => props.theme.color[props.dataColor].main,
+    status: props => props.theme.color.status[props.dataColor].main,
 };
 
-export { mainColor };
+const barRadius = props => math(props.theme.dataBar.height + '/2');
+
+export { barRadius, mainColor };

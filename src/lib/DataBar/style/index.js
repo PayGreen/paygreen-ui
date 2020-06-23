@@ -1,31 +1,30 @@
 import styled from 'styled-components';
-import { math } from 'polished';
-import {
-    zeroValueStyle,
-    valueStyle,
-    hasBackgroundStyle,
-    childrenStyle,
-} from './base';
+import { zeroValueStyle, valueStyle, hasBackgroundStyle } from './base';
+import { barRadius } from './constants';
 
-const DataBarBase = styled.div`
-    width: 100%;
-`;
+const DataBarBase = styled.div``;
 
 const Bar = styled.div`
-    width: 100%;
     max-width: ${props => props.theme.dataBar.width[props.blockWidth]};
     height: ${props => props.theme.dataBar.height};
     display: flex;
-    border-radius: ${props => math(props.theme.dataBar.height + '/2')};
+    border-radius: ${barRadius};
     overflow: hidden;
 
-    ${childrenStyle};
     ${props => (props.hasBackground ? hasBackgroundStyle : null)};
 `;
 
 const BarSection = styled.div`
-    ${props => (props.dataWidth !== 0 ? valueStyle : zeroValueStyle)};
-    height: 100%;
+    margin-right: ${props => props.theme.line};
+    width: ${props => props.dataWidth + '%'};
+    min-width: ${props => props.theme.dataBar.height};
+    &:last-of-type {
+        margin-right: 0;
+        border-top-right-radius: ${barRadius};
+        border-bottom-right-radius: ${barRadius};
+    }
+
+    ${props => (props.dataWidth > 0 ? valueStyle : zeroValueStyle)};
 `;
 
 export { DataBarBase, BarSection, Bar };

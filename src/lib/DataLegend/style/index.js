@@ -11,9 +11,9 @@ const DataLegendBase = styled.div`
         font-size: ${props =>
             math(props.theme.font.size[props.textSize] + '* 1.7')};
         color: ${props =>
-            props.legendValue === 0
-                ? props.theme.wab.grey30
-                : mainColor[props.colorPallet]};
+            props.legendValue > 0
+                ? mainColor[props.colorPallet]
+                : props.theme.wab.grey30};
 
         span {
             font-size: ${props => props.theme.font.size[props.textSize]};
