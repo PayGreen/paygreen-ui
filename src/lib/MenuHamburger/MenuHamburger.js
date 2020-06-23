@@ -25,7 +25,6 @@ MenuHamburger.propTypes = {
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
-
     isOpen: PropTypes.bool,
 };
 
