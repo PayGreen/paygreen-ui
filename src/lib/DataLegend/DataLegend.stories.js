@@ -19,8 +19,6 @@ import {
     formStatusDefault,
     fontSizeOptions,
     fontSizeDefault,
-    alignOptions,
-    alignDefault,
     textHtmlTagOptions,
 } from '../../shared/constants';
 import DataLegend from './DataLegend';
@@ -35,14 +33,8 @@ storiesOf(folder.main + 'DataLegend', module)
         () => (
             <DataLegend
                 textSize={select('Text Size', fontSizeOptions, fontSizeDefault)}
-                align={radios('Align', alignOptions, alignDefault)}
-                flexDirection={select(
-                    'Flex direction',
-                    flexDirectionOptions,
-                    flexDirectionDefault,
-                )}
-                legendValue={number('Legend value', 25)}
-                legendUnit={text('Legend unit', '%')}
+                currentValue={number('Legend value', 25)}
+                unit={text('Legend unit', '%')}
                 colorPallet={radios(
                     'Color pallet value',
                     barColorPalletOptions,

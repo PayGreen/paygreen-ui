@@ -372,7 +372,6 @@ export const ThemeBase = {
     },
     dataBar: {
         height: '10px',
-        line: '1px',
         width: {
             sm: '300px',
             md: '400px',

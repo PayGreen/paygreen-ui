@@ -2,16 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
     colorPalletOptions,
-    flexDirectionOptions,
-    flexDirectionDefault,
     fontSizeOptions,
     fontSizeDefault,
-    alignOptions,
-    alignDefault,
-    textHtmlTagOptions,
+    formStatusDefault,
+    formStatusOptions,
+    greyOptions,
     colorThemeDefault,
     colorThemeOptions,
-    formStatusOptions,
     colorPalletDefault,
 } from '../../shared/constants';
 import { DataLegendBase } from './style';
@@ -20,12 +17,14 @@ import Text from '../Text/Text';
 const DataLegend = props => {
     return (
         <DataLegendBase {...props}>
-            <Text {...props}>
-                {props.legendValue}
-                <Text {...props} htmlTag={textHtmlTagOptions.span}>
-                    {props.legendUnit}
-                </Text>
-            </Text>
+            <span className="value">
+                {props.currentValue}
+            </span>
+
+            <span className="unit">
+                {props.unit}
+            </span>
+
             {props.children}
         </DataLegendBase>
     );
@@ -40,21 +39,21 @@ DataLegend.propTypes = {
         Object.values(colorThemeOptions),
         Object.values(formStatusOptions),
     ),
-    legendValue: PropTypes.number,
-    legendUnit: PropTypes.string,
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
+    currentValue: PropTypes.number,
+    unit: PropTypes.string,
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
-    flexDirection: PropTypes.oneOf(Object.values(flexDirectionOptions)),
-    align: PropTypes.oneOf(Object.values(alignOptions)),
 };
 
 DataLegend.defaultProps = {
     colorPallet: colorPalletDefault,
-    dataColor: colorThemeDefault,
-    legendValue: 0,
-    legendUnit: '%',
+    colorTheme: colorThemeDefault,
+    colorWab: greyOptions.white00,
+    colorStatus: formStatusDefault,
+    currentValue: 0,
+    unit: '%',
     textSize: fontSizeDefault,
-    flexDirection: flexDirectionDefault,
-    align: alignDefault,
 };
 
 export default DataLegend;

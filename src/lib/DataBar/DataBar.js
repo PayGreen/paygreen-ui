@@ -33,7 +33,7 @@ const DataBar = props => {
         let percent = ((value - minValue) / (maxValue - minValue)) * 100;
         if (!toPercent) {
             return unit.length && unit !== '%'
-                ? data.currentValue
+                ? value
                 : percent.toFixed(2);
         } else return percent.toFixed(2);
     };
@@ -45,28 +45,30 @@ const DataBar = props => {
                 hasBackground={hasBackground}
                 blockWidth={blockWidth}
             >
-                {data.map((data, index) => (
+                {data.map((dataItem, index) => (
                     <BarSection
                         {...rest}
                         key={index}
-                        dataWidth={calcValue(data.currentValue, true)}
-                        dataColor={data.color}
+                        dataWidth={calcValue(dataItem.currentValue, true)}
+                        dataColor={dataItem.color}
                     />
                 ))}
             </Bar>
 
             {hasDataLegend
-                ? data.map(dataItem => (
+                ? data.map((dataItem, index) => (
                       <DataLegend
                           {...rest}
+                          key={index}
                           dataColor={dataItem.color}
-                          legendUnit={unit.length ? unit : '%'}
-                          legendValue={calcValue(dataItem.currentValue, false)}
+                          unit={unit.length ? unit : '%'}
+                          currentValue={calcValue(dataItem.currentValue, false)}
                       >
                           {dataItem.legend && dataItem.legend.length ? (
                               <Text
                                   {...rest}
                                   colorPallet={colorPalletOptions.wab}
+                                  htmlTag="span"
                               >
                                   {dataItem.legend}
                               </Text>
@@ -90,7 +92,10 @@ DataBar.propTypes = {
         PropTypes.shape({
             currentValue: PropTypes.number.isRequired,
             legend: PropTypes.string,
-            color: PropTypes.string.isRequired,
+            color: PropTypes.oneOf(
+                Object.values(colorThemeOptions),
+                Object.values(formStatusOptions),
+            ).isRequired,
         }),
     ).isRequired,
     hasDataLegend: PropTypes.bool,

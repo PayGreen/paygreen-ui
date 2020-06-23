@@ -1,35 +1,28 @@
 import styled from 'styled-components';
 import { math } from 'polished';
-import { horizontalStyle } from './base';
-import { mainColor } from './constants';
+import { mainColor } from '../../DataBar/style/constants';
 
 const DataLegendBase = styled.div`
-    text-align: ${props => props.align};
+    text-align: left;
+    font-size: ${props => props.theme.font.size[props.textSize]};
+    color: ${props => props.theme.wab.grey60};
 
-    & > :first-child {
-        line-height: normal;
+    span {
+        display: inline-block;
+    }
+
+    .value {
         font-size: ${props =>
             math(props.theme.font.size[props.textSize] + '* 1.7')};
         color: ${props =>
-            props.legendValue > 0
+            props.currentValue > 0
                 ? mainColor[props.colorPallet]
                 : props.theme.wab.grey30};
-
-        span {
-            font-size: ${props => props.theme.font.size[props.textSize]};
-            color: ${props => props.theme.wab.grey60};
-            display: inline;
-            margin-left: ${props => props.theme.space.xs};
-        }
     }
 
-    & > :not(:first-child),
-    strong {
-        text-align: ${props => props.align};
-        font-size: ${props => props.theme.font.size[props.textSize]};
+    .unit {
+        margin: 0 0.2em;
     }
-
-    ${props => (props.flexDirection === 'row' ? horizontalStyle : null)};
 `;
 
 export { DataLegendBase };
