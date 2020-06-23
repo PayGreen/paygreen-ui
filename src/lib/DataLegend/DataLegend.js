@@ -12,7 +12,6 @@ import {
     colorPalletDefault,
 } from '../../shared/constants';
 import { DataLegendBase } from './style';
-import Text from '../Text/Text';
 
 const DataLegend = props => {
     return (
@@ -35,8 +34,6 @@ DataLegend.propTypes = {
         Object.values(colorThemeOptions),
         Object.values(formStatusOptions),
     ),
-    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     currentValue: PropTypes.number,
     unit: PropTypes.string,
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
@@ -44,9 +41,7 @@ DataLegend.propTypes = {
 
 DataLegend.defaultProps = {
     colorPallet: colorPalletDefault,
-    colorTheme: colorThemeDefault,
     colorWab: greyOptions.white00,
-    colorStatus: formStatusDefault,
     currentValue: 0,
     unit: '%',
     textSize: fontSizeDefault,

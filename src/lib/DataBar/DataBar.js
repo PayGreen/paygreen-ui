@@ -84,8 +84,6 @@ DataBar.propTypes = {
         colorPalletOptions.theme,
         colorPalletOptions.status,
     ]),
-    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     data: PropTypes.arrayOf(
         PropTypes.shape({
             currentValue: PropTypes.number.isRequired,
@@ -108,8 +106,6 @@ DataBar.propTypes = {
 DataBar.defaultProps = {
     blockWidth: blockWidthDefault,
     colorPallet: colorPalletDefault,
-    colorTheme: colorThemeDefault,
-    colorStatus: formStatusDefault,
     hasDataLegend: false,
     minValue: 0,
     maxValue: 100,
