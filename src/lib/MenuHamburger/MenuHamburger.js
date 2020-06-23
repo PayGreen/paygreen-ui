@@ -5,6 +5,8 @@ import {
     colorPalletDefault,
     colorThemeOptions,
     colorThemeDefault,
+    formStatusOptions,
+    formStatusDefault,
     greyOptions,
     greyDefault,
 } from '../../shared/constants';
@@ -20,13 +22,16 @@ const MenuHamburger = props => (
 
 MenuHamburger.propTypes = {
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
+
     isOpen: PropTypes.bool,
 };
 
 MenuHamburger.defaultProps = {
     colorPallet: colorPalletDefault,
+    colorStatus: formStatusDefault,
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,
     isOpen: false,
