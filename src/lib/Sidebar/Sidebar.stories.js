@@ -1,10 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import {
-    boolean,
-    radios,
-    withKnobs,
-} from '@storybook/addon-knobs';
+import { boolean, radios, withKnobs } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -40,7 +36,7 @@ storiesOf(folder.nav + 'Sidebar', module)
     .add('Sidebar', () => (
         <Sidebar>
             <Topbar className="hideOnDesktop">
-                <Box marginLeft={spaceOptions.xs}>
+                <Box marginLeft={spaceOptions.sm}>
                     <a href="#">{logoSidebar}</a>
                 </Box>
 

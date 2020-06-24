@@ -28,11 +28,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            paddingLateral={select(
-                paddingLateralLabel,
-                spaceOptions,
-                spaceOptions.xs,
-            )}
         >
             <a href="#">
                 <SidebarItem

@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <li
-  className="sc-bxivhb wgLto"
+  className="sc-bxivhb eIPKRs"
 >
   <a
     href="#"
   >
     <div
-      className="sc-htpNat iCRsqm"
+      className="sc-htpNat fFpPgj"
     >
       <span
         className="sc-bdVaJa kMytCS icon"
@@ -39,7 +39,7 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="sc-htpNat iCRsqm"
+          className="sc-htpNat fFpPgj"
         >
           <span
             className="sc-bwzfXH ifokyD"
@@ -54,7 +54,7 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="sc-htpNat iCRsqm"
+          className="sc-htpNat fFpPgj"
         >
           <span
             className="sc-bwzfXH ifokyD"
