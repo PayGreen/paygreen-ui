@@ -72,22 +72,16 @@ storiesOf(folder.main + 'Databar', module)
                         currentValueOptions,
                     ),
                     legend: ['compensé par', <strong> vous</strong>],
-                    color:
-                        radios(
-                            colorPalletLabel,
-                            barColorPalletOptions,
-                            colorPalletDefault,
-                        ) === 'status'
-                            ? select(
-                                  colorStatusLabel,
-                                  formStatusOptions,
-                                  formStatusDefault,
-                              )
-                            : select(
-                                  colorThemeLabel,
-                                  colorThemeOptions,
-                                  colorThemeDefault,
-                              ),
+                    colorStatus: select(
+                        colorStatusLabel,
+                        formStatusOptions,
+                        formStatusDefault,
+                    ),
+                    colorTheme: select(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    ),
                 },
             ]}
             colorPallet={radios(
@@ -119,22 +113,16 @@ storiesOf(folder.main + 'Databar', module)
                             defaultCurrentValue,
                             currentValueOptions,
                         ),
-                        color:
-                            radios(
-                                colorPalletLabel,
-                                barColorPalletOptions,
-                                colorPalletDefault,
-                            ) === 'status'
-                                ? select(
-                                      colorStatusLabel,
-                                      formStatusOptions,
-                                      formStatusDefault,
-                                  )
-                                : select(
-                                      colorThemeLabel,
-                                      colorThemeOptions,
-                                      colorThemeDefault,
-                                  ),
+                        colorStatus: select(
+                            colorStatusLabel,
+                            formStatusOptions,
+                            formStatusDefault,
+                        ),
+                        colorTheme: select(
+                            colorThemeLabel,
+                            colorThemeOptions,
+                            colorThemeDefault,
+                        ),
                     },
                     {
                         currentValue: number(
@@ -142,22 +130,16 @@ storiesOf(folder.main + 'Databar', module)
                             defaultCurrentValue,
                             currentValueOptions,
                         ),
-                        color:
-                            radios(
-                                colorPalletLabel,
-                                barColorPalletOptions,
-                                colorPalletDefault,
-                            ) === 'status'
-                                ? select(
-                                      'Status color 2',
-                                      formStatusOptions,
-                                      formStatusOptions.danger,
-                                  )
-                                : select(
-                                      'Theme color 2',
-                                      colorThemeOptions,
-                                      colorThemeOptions.quaternary,
-                                  ),
+                        colorStatus: select(
+                            'Status color 2',
+                            formStatusOptions,
+                            formStatusOptions.warning,
+                        ),
+                        colorTheme: select(
+                            'Theme color 2',
+                            colorThemeOptions,
+                            colorThemeOptions.tertiary,
+                        ),
                     },
                     {
                         currentValue: number(
@@ -165,22 +147,16 @@ storiesOf(folder.main + 'Databar', module)
                             defaultCurrentValue,
                             currentValueOptions,
                         ),
-                        color:
-                            radios(
-                                colorPalletLabel,
-                                barColorPalletOptions,
-                                colorPalletDefault,
-                            ) === 'status'
-                                ? select(
-                                      'Status color 3',
-                                      formStatusOptions,
-                                      formStatusOptions.warning,
-                                  )
-                                : select(
-                                      'Theme color 3',
-                                      colorThemeOptions,
-                                      colorThemeOptions.tertiary,
-                                  ),
+                        colorStatus: select(
+                            'Status color 3',
+                            formStatusOptions,
+                            formStatusOptions.danger,
+                        ),
+                        colorTheme: select(
+                            'Theme color 3',
+                            colorThemeOptions,
+                            colorThemeOptions.quaternary,
+                        ),
                     },
                 ]}
             />

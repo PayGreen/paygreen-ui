@@ -6,7 +6,6 @@ import {
     fontSizeDefault,
     formStatusDefault,
     formStatusOptions,
-    greyOptions,
     colorThemeDefault,
     colorThemeOptions,
     colorPalletDefault,
@@ -30,10 +29,8 @@ DataLegend.propTypes = {
         colorPalletOptions.theme,
         colorPalletOptions.status,
     ]),
-    dataColor: PropTypes.oneOf(
-        Object.values(colorThemeOptions),
-        Object.values(formStatusOptions),
-    ),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     currentValue: PropTypes.number,
     unit: PropTypes.string,
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
@@ -41,7 +38,8 @@ DataLegend.propTypes = {
 
 DataLegend.defaultProps = {
     colorPallet: colorPalletDefault,
-    colorWab: greyOptions.white00,
+    colorTheme: colorThemeDefault,
+    colorStatus: formStatusDefault,
     currentValue: 0,
     unit: '%',
     textSize: fontSizeDefault,

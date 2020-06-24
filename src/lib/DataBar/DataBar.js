@@ -6,9 +6,7 @@ import {
     colorPalletOptions,
     colorPalletDefault,
     colorThemeOptions,
-    colorThemeDefault,
     formStatusOptions,
-    formStatusDefault,
     fontSizeOptions,
     fontSizeDefault,
     greyOptions,
@@ -48,7 +46,8 @@ const DataBar = props => {
                         {...rest}
                         key={index}
                         dataWidth={calcValue(dataItem.currentValue, true)}
-                        dataColor={dataItem.color}
+                        colorStatus={dataItem.colorStatus}
+                        colorTheme={dataItem.colorTheme}
                     />
                 ))}
             </Bar>
@@ -58,7 +57,8 @@ const DataBar = props => {
                       <DataLegend
                           {...rest}
                           key={index}
-                          dataColor={dataItem.color}
+                          colorStatus={dataItem.colorStatus}
+                          colorTheme={dataItem.colorTheme}
                           unit={unit.length ? unit : '%'}
                           currentValue={calcValue(dataItem.currentValue, false)}
                       >
@@ -88,8 +88,10 @@ DataBar.propTypes = {
         PropTypes.shape({
             currentValue: PropTypes.number.isRequired,
             legend: PropTypes.string,
-            color: PropTypes.oneOf(
+            colorTheme: PropTypes.oneOf(
                 Object.values(colorThemeOptions),
+            ).isRequired,
+            colorStatus: PropTypes.oneOf(
                 Object.values(formStatusOptions),
             ).isRequired,
         }),
