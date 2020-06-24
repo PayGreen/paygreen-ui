@@ -15,7 +15,7 @@ import { DataLegendBase } from './style';
 const DataLegend = props => {
     return (
         <DataLegendBase {...props}>
-            <span className="value">{props.currentValue}</span>
+            <span className="value">{props.value}</span>
 
             <span className="unit">{props.unit}</span>
 
@@ -31,7 +31,7 @@ DataLegend.propTypes = {
     ]),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
-    currentValue: PropTypes.number,
+    value: PropTypes.number,
     unit: PropTypes.string,
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
 };
@@ -40,7 +40,7 @@ DataLegend.defaultProps = {
     colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
     colorStatus: formStatusDefault,
-    currentValue: 0,
+    value: 0,
     unit: '%',
     textSize: fontSizeDefault,
 };

@@ -32,8 +32,8 @@ const maxValueOptions = {
     step: 1,
 };
 
-const defaultCurrentValue = 50;
-const currentValueOptions = {
+const defaultValue = 50;
+const valueOptions = {
     range: true,
     min: 0,
     max: 100,
@@ -62,15 +62,16 @@ storiesOf(folder.main + 'Databar', module)
             )}
             hasDataLegend={boolean('With legend', true)}
             textSize={select('Text Size', fontSizeOptions, fontSizeDefault)}
-            maxValue={number('Max value', defaultMaxValue, maxValueOptions)}
             unit={text('Unity', '%')}
+            colorPallet={radios(
+                colorPalletLabel,
+                barColorPalletOptions,
+                colorPalletDefault,
+            )}
+            maxValue={number('Max value', defaultMaxValue, maxValueOptions)}
             data={[
                 {
-                    currentValue: number(
-                        'Current value',
-                        defaultCurrentValue,
-                        currentValueOptions,
-                    ),
+                    value: number('Value', defaultValue, valueOptions),
                     legend: ['compensé par', <strong> vous</strong>],
                     colorStatus: select(
                         colorStatusLabel,
@@ -84,11 +85,6 @@ storiesOf(folder.main + 'Databar', module)
                     ),
                 },
             ]}
-            colorPallet={radios(
-                colorPalletLabel,
-                barColorPalletOptions,
-                colorPalletDefault,
-            )}
         />
     ))
     .add(
@@ -108,11 +104,7 @@ storiesOf(folder.main + 'Databar', module)
                 )}
                 data={[
                     {
-                        currentValue: number(
-                            'Current value',
-                            defaultCurrentValue,
-                            currentValueOptions,
-                        ),
+                        value: number('Value 1', defaultValue, valueOptions),
                         colorStatus: select(
                             colorStatusLabel,
                             formStatusOptions,
@@ -125,11 +117,7 @@ storiesOf(folder.main + 'Databar', module)
                         ),
                     },
                     {
-                        currentValue: number(
-                            'Current value 2',
-                            defaultCurrentValue,
-                            currentValueOptions,
-                        ),
+                        value: number('Value 2', defaultValue, valueOptions),
                         colorStatus: select(
                             'Status color 2',
                             formStatusOptions,
@@ -142,11 +130,7 @@ storiesOf(folder.main + 'Databar', module)
                         ),
                     },
                     {
-                        currentValue: number(
-                            'Current value 3',
-                            defaultCurrentValue,
-                            currentValueOptions,
-                        ),
+                        value: number('Value 3', defaultValue, valueOptions),
                         colorStatus: select(
                             'Status color 3',
                             formStatusOptions,

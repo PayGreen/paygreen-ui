@@ -46,7 +46,7 @@ const DataBar = props => {
                     <BarSection
                         {...rest}
                         key={index}
-                        dataWidth={calcValue(dataItem.currentValue, true)}
+                        dataWidth={calcValue(dataItem.value, true)}
                         colorStatus={dataItem.colorStatus}
                         colorTheme={dataItem.colorTheme}
                     />
@@ -61,7 +61,7 @@ const DataBar = props => {
                           colorStatus={dataItem.colorStatus}
                           colorTheme={dataItem.colorTheme}
                           unit={unit.length ? unit : '%'}
-                          currentValue={calcValue(dataItem.currentValue, false)}
+                          value={calcValue(dataItem.value, false)}
                       >
                           {dataItem.legend && dataItem.legend.length ? (
                               <Text
@@ -87,14 +87,12 @@ DataBar.propTypes = {
     ]),
     data: PropTypes.arrayOf(
         PropTypes.shape({
-            currentValue: PropTypes.number.isRequired,
+            value: PropTypes.number.isRequired,
             legend: PropTypes.string,
-            colorTheme: PropTypes.oneOf(
-                Object.values(colorThemeOptions),
-            ).isRequired,
-            colorStatus: PropTypes.oneOf(
-                Object.values(formStatusOptions),
-            ).isRequired,
+            colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions))
+                .isRequired,
+            colorStatus: PropTypes.oneOf(Object.values(formStatusOptions))
+                .isRequired,
         }),
     ).isRequired,
     hasDataLegend: PropTypes.bool,

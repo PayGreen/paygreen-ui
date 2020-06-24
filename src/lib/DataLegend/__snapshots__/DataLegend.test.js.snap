@@ -3,6 +3,7 @@
 exports[`renders without crashing 1`] = `
 <div
   className="sc-bwzfXH jjwCBA"
+  value={0}
 >
   <span
     className="value"
