@@ -6,6 +6,7 @@ import {
     iconSizeOptions,
     iconHtmlTagOptions,
     rotateSizeOptions,
+    spaceOptions,
 } from '../../shared/constants';
 import { SidebarItemBase } from './style';
 import { ArrowBottomIcon } from '../Icon/Icon';
@@ -14,7 +15,7 @@ const SidebarItem = props => {
     return (
         <SidebarItemBase {...props}>
             {props.children}
-            
+
             {props.isClickable ? (
                 <ArrowBottomIcon
                     theme={props.theme}
@@ -38,6 +39,7 @@ SidebarItem.propTypes = {
     isActive: PropTypes.bool,
     isOpen: PropTypes.bool,
     isClickable: PropTypes.bool,
+    paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 SidebarItem.defaultProps = {
@@ -45,6 +47,7 @@ SidebarItem.defaultProps = {
     isActive: false,
     isOpen: true,
     isClickable: false,
+    paddingLateral: spaceOptions.xs,
 };
 
 export default SidebarItem;

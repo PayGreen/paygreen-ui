@@ -1,11 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
+import { withKnobs, radios, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
     colorThemeDefault,
     iconSizeOptions,
+    spaceOptions,
 } from '../../shared/constants';
 import { MeterIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
@@ -24,6 +25,11 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
                     colorThemeDefault,
                 )}
                 isActive={boolean('Is Active', false)}
+                paddingLateral={select(
+                    'Padding lateral',
+                    spaceOptions,
+                    spaceOptions.xs,
+                )}
             >
                 <MeterIcon
                     iconSize={iconSizeOptions.lg}

@@ -5,9 +5,10 @@ const SidebarMenuCategoryBase = styled.div`
     padding: ${props => props.theme.space.md} 0;
 
     ${TitleBase} {
-        margin-left: ${props => props.theme.space.sm};
         margin-bottom: ${props => props.theme.space.md};
+        padding-left: ${props => props.theme.space[props.paddingLateral]};
     }
 `;
 
 export { SidebarMenuCategoryBase };
+    
