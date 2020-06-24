@@ -2,13 +2,14 @@ import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
 import DataBar from './DataBar';
-import { colorThemeDefault } from '../../shared/constants';
+import { colorThemeDefault, formStatusDefault } from '../../shared/constants';
 
 const data = [
     {
         currentValue: 20,
         legend: 'légende de la barre',
-        color: colorThemeDefault,
+        colorStatus: formStatusDefault,
+        colorTheme: colorThemeDefault,
     },
 ];
 

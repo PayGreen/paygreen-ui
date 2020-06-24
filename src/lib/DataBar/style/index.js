@@ -18,6 +18,7 @@ const BarSection = styled.div`
     margin-right: ${props => props.theme.line};
     width: ${props => props.dataWidth + '%'};
     min-width: ${props => props.theme.dataBar.height};
+    
     &:last-of-type {
         margin-right: 0;
         border-top-right-radius: ${barRadius};

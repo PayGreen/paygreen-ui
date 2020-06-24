@@ -27,6 +27,7 @@ const DataBar = props => {
         ...rest
     } = props;
 
+    // to calculate the value depending on unit type and to force calculation to percent if needed
     const calcValue = (value, toPercent) => {
         let percent = ((value - minValue) / (maxValue - minValue)) * 100;
         if (!toPercent) {
