@@ -17,6 +17,7 @@ import SidebarList from '../SidebarList/SidebarList';
 import SidebarMenu from './SidebarMenu';
 
 const colorThemeLabel = 'Color theme';
+const paddingLateralLabel = 'Padding Lateral';
 
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
     .addDecorator(withKnobs)
@@ -28,7 +29,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                 colorThemeDefault,
             )}
             paddingLateral={select(
-                'Padding lateral',
+                paddingLateralLabel,
                 spaceOptions,
                 spaceOptions.xs,
             )}
@@ -42,7 +43,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                         colorThemeDefault,
                     )}
                     paddingLateral={select(
-                        'Padding lateral',
+                        paddingLateralLabel,
                         spaceOptions,
                         spaceOptions.xs,
                     )}
@@ -81,7 +82,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                             colorThemeDefault,
                         )}
                         paddingLateral={select(
-                            'Padding lateral',
+                            paddingLateralLabel,
                             spaceOptions,
                             spaceOptions.xs,
                         )}
@@ -105,7 +106,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                             colorThemeDefault,
                         )}
                         paddingLateral={select(
-                            'Padding lateral',
+                            paddingLateralLabel,
                             spaceOptions,
                             spaceOptions.xs,
                         )}

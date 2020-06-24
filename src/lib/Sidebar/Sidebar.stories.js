@@ -2,9 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
     boolean,
-    text,
     radios,
-    select,
     withKnobs,
 } from '@storybook/addon-knobs';
 import {
@@ -54,7 +52,12 @@ storiesOf(folder.nav + 'Sidebar', module)
                 />
             </Topbar>
 
-            <Box className="hideOnTablet" marginLeft={spaceOptions.md} marginTop={spaceOptions.md} marginBottom={spaceOptions.lg}>
+            <Box
+                className="hideOnTablet"
+                marginLeft={spaceOptions.md}
+                marginTop={spaceOptions.md}
+                marginBottom={spaceOptions.lg}
+            >
                 <a href="#">{logoSidebar}</a>
             </Box>
 

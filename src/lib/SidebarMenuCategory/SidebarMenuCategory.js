@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { fontSizeOptions, greyOptions, spaceOptions } from '../../shared/constants';
+import {
+    fontSizeOptions,
+    greyOptions,
+    spaceOptions,
+} from '../../shared/constants';
 import { SidebarMenuCategoryBase } from './style';
 import Title from '../Title/Title';
 

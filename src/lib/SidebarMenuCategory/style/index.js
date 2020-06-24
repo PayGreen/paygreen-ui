@@ -11,4 +11,3 @@ const SidebarMenuCategoryBase = styled.div`
 `;
 
 export { SidebarMenuCategoryBase };
-    
