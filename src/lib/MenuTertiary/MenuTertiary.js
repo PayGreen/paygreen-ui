@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import ScrollContainer from 'react-indiana-drag-scroll';
 import {} from '../../shared/constants';
 import { MenuTertiaryBase } from './style';
 
 /**
  * Debounce function
- * @param {requestCallback} fn 
- * @param {number} ms 
+ * @param {requestCallback} fn
+ * @param {number} ms
  */
 function debounce(fn, ms) {
     let timer;
@@ -99,13 +100,17 @@ const MenuTertiary = props => {
 
     return (
         <MenuTertiaryBase {...props}>
-            {props.children.map((child, index) => {
-                return React.cloneElement(child, {
-                    key: index,
-                    className:
-                        child.props.href === '#' + activeLink ? 'active' : null,
-                });
-            })}
+            <ScrollContainer horizontal nativeMobileScroll>
+                {props.children.map((child, index) => {
+                    return React.cloneElement(child, {
+                        key: index,
+                        className:
+                            child.props.href === '#' + activeLink
+                                ? 'active'
+                                : null,
+                    });
+                })}
+            </ScrollContainer>
         </MenuTertiaryBase>
     );
 };
