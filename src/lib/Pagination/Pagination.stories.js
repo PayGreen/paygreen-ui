@@ -27,7 +27,7 @@ storiesOf(folder.tables + 'Pagination', module)
     .add('Pagination', () => (
         <Pagination
             pageIndex={number('Page index', defaultPageIndex, maxPageIndex)}
-            pageCount={30}
+            pageCount={1}
             colorTheme={select(
                 'Color theme',
                 colorThemeOptions,

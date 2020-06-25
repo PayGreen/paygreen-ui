@@ -17,7 +17,7 @@ storiesOf(folder.tables + 'PaginationItem', module)
     .add('PaginationItem', () => (
         <PaginationItem
             isActive={boolean('Is active', false)}
-            pageIndex={number('PageIndex', 2)}
+            pageValue={number('PageIndex', 2)}
             colorTheme={select(
                 'Color theme',
                 colorThemeOptions,

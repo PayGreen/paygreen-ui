@@ -4,64 +4,134 @@ import { PaginationBase } from './style';
 import PaginationItem from '../PaginationItem/PaginationItem';
 
 const Pagination = props => {
-    const paginationGroup = (pageIndex, pageCount, canPreviousPage, canNextPage) => {
+    const paginationGroup = (pageIndex, pageCount) => {
         switch (true) {
             case pageIndex === 0:
                 return (
                     <>
                         <PaginationItem
                             {...props}
-                            pageIndex={pageIndex + 1}
+                            pageValue={pageIndex + 1}
                             isActive={true}
                         />
-                        <PaginationItem {...props} pageIndex={pageIndex + 2} onClick={() => nextPage()}/>
-                        <PaginationItem {...props} pageIndex={pageIndex + 3} onClick={() => gotoPage(pageIndex + 2)}/>
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageIndex + 2}
+                            onClick={() => nextPage()}
+                            hidden={pageIndex + 1 >= pageCount}
+                        />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageIndex + 3}
+                            onClick={() => gotoPage(pageIndex + 2)}
+                            hidden={pageIndex + 2 >= pageCount}
+                        />
                         ...
-                        <PaginationItem {...props} pageIndex={pageCount - 1} onClick={() => gotoPage(pageCount - 2)}/>
-                        <PaginationItem {...props} pageIndex={pageCount} onClick={() => gotoPage(pageCount - 1)} />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageCount - 1}
+                            onClick={() => gotoPage(pageCount - 2)}
+                            hidden={pageIndex === pageCount-2}
+                        />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageCount}
+                            onClick={() => gotoPage(pageCount - 1)}
+                            hidden={pageIndex === pageCount-1}
+                        />
+                      
+                        />
                     </>
                 );
             case pageIndex === 1:
                 return (
                     <>
-                        <PaginationItem {...props} pageIndex={pageIndex} onClick={() => previousPage()}/>
                         <PaginationItem
                             {...props}
-                            pageIndex={pageIndex + 1}
+                            pageValue={pageIndex}
+                            onClick={() => previousPage()}
+                        />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageIndex + 1}
                             isActive={true}
                         />
-                        <PaginationItem {...props} pageIndex={pageIndex + 2} onClick={() => nextPage()}/>
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageIndex + 2}
+                            onClick={() => nextPage()}
+                        />
                         ...
-                        <PaginationItem {...props} pageIndex={pageCount - 1} onClick={() => gotoPage(pageCount - 2)}/>
-                        <PaginationItem {...props} pageIndex={pageCount} onClick={() => gotoPage(pageCount - 1)}/>
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageCount - 1}
+                            onClick={() => gotoPage(pageCount - 2)}
+                        />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageCount}
+                            onClick={() => gotoPage(pageCount - 1)}
+                        />
                     </>
                 );
             case pageIndex === pageCount - 1:
                 return (
                     <>
-                        <PaginationItem {...props} pageIndex={1} onClick={() => gotoPage(0)} />
-                        <PaginationItem {...props} pageIndex={2}  onClick={() => gotoPage(1)}/>
-                        ...
-                        <PaginationItem {...props} pageIndex={pageCount - 2} onClick={() => previousPage()} />
                         <PaginationItem
                             {...props}
-                            pageIndex={pageCount - 1}
+                            pageValue={1}
+                            onClick={() => gotoPage(0)}
+                        />
+                        <PaginationItem
+                            {...props}
+                            pageValue={2}
+                            onClick={() => gotoPage(1)}
+                        />
+                        ...
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageCount - 2}
+                            onClick={() => previousPage()}
+                        />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageCount - 1}
                             isActive={true}
                         />
-                        <PaginationItem {...props} pageIndex={pageCount} onClick={() => nextPage()} />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageCount}
+                            onClick={() => nextPage()}
+                        />
                     </>
                 );
             case pageIndex >= pageCount:
                 return (
                     <>
-                        <PaginationItem {...props} pageIndex={1} onClick={() => gotoPage(0)} />
-                        <PaginationItem {...props} pageIndex={2} onClick={() => gotoPage(1)}/>
-                        ...
-                        <PaginationItem {...props} pageIndex={pageCount - 2} onClick={() => gotoPage(pageCount - 3)}/>
-                        <PaginationItem {...props} pageIndex={pageCount - 1} onClick={() => previousPage()}/>
                         <PaginationItem
                             {...props}
-                            pageIndex={pageCount}
+                            pageValue={1}
+                            onClick={() => gotoPage(0)}
+                        />
+                        <PaginationItem
+                            {...props}
+                            pageValue={2}
+                            onClick={() => gotoPage(1)}
+                        />
+                        ...
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageCount - 2}
+                            onClick={() => gotoPage(pageCount - 3)}
+                        />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageCount - 1}
+                            onClick={() => previousPage()}
+                        />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageCount}
                             isActive={true}
                         />
                     </>
@@ -69,17 +139,33 @@ const Pagination = props => {
             default:
                 return (
                     <>
-                        <PaginationItem {...props} pageIndex={1} onClick={() => gotoPage(0)}/>
-                        ...
-                        <PaginationItem {...props} pageIndex={pageIndex} onClick={() => previousPage()}/>
                         <PaginationItem
                             {...props}
-                            pageIndex={pageIndex + 1}
+                            pageValue={1}
+                            onClick={() => gotoPage(0)}
+                        />
+                        ...
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageIndex}
+                            onClick={() => previousPage()}
+                        />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageIndex + 1}
                             isActive={true}
                         />
-                        <PaginationItem {...props} pageIndex={pageIndex + 2} onClick={() => nextPage()} />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageIndex + 2}
+                            onClick={() => nextPage()}
+                        />
                         ...
-                        <PaginationItem {...props} pageIndex={pageCount} onClick={() => gotoPage(pageCount - 1)}  />
+                        <PaginationItem
+                            {...props}
+                            pageValue={pageCount}
+                            onClick={() => gotoPage(pageCount - 1)}
+                        />
                     </>
                 );
         }
@@ -87,7 +173,7 @@ const Pagination = props => {
 
     return (
         <PaginationBase {...props}>
-            {paginationGroup(props.pageIndex, props.pageCount, props.canPreviousPage, props.canNextPage)}
+            {paginationGroup(props.pageIndex, props.pageCount)}
         </PaginationBase>
     );
 };

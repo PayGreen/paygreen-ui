@@ -15,19 +15,19 @@ import { PaginationItemBase } from './style';
 const PaginationItem = props => {
     return (
         <PaginationItemBase {...props} type="button">
-            {props.pageIndex}
+            {props.pageValue}
         </PaginationItemBase>
     );
 };
 
 PaginationItem.propTypes = {
-    pageIndex: PropTypes.number,
+    pageValue: PropTypes.number,
     isActive: PropTypes.bool,
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
 };
 
 PaginationItem.defaultProps = {
-    pageIndex: 0,
+    pageValue: 0,
     isActive: false,
     colorTheme: colorThemeDefault,
 };
