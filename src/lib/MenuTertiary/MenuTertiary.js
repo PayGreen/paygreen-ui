@@ -74,10 +74,12 @@ const MenuTertiary = props => {
      * Set current active link
      */
     const currentActiveLink = debounce(() => {
+        const currentScroll = window.scrollY + 100;
+
         for (const section in sections) {
             if (
-                window.scrollY >= sections[section].top &&
-                window.scrollY <= sections[section].bottom
+                currentScroll >= sections[section].top &&
+                currentScroll <= sections[section].bottom
             ) {
                 setActiveLink(section);
                 break;
@@ -85,7 +87,7 @@ const MenuTertiary = props => {
                 setActiveLink(null);
             }
         }
-    }, 50);
+    }, 10);
 
     /**
      * Refresh menu after load or resize
@@ -108,8 +110,12 @@ const MenuTertiary = props => {
     );
 };
 
-MenuTertiary.propTypes = {};
+MenuTertiary.propTypes = {
+    isFixed: PropTypes.bool,
+};
 
-MenuTertiary.defaultProps = {};
+MenuTertiary.defaultProps = {
+    isFixed: false,
+};
 
 export default MenuTertiary;
