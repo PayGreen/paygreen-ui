@@ -13,6 +13,35 @@ const MenuTertiaryBase = styled.div`
 
     ${props => (props.isFixed ? fixedStyle : null)};
 
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0%;
+        height: 100%;
+        width: ${props => props.theme.space.lg};
+        z-index: ${props => props.theme.zindex.front};
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0;
+        background-image: linear-gradient(
+            to right,
+            ${props => props.theme.wab.white20},
+            transparent
+        );
+    }
+
+    &::after {
+        right: 0;
+        background-image: linear-gradient(
+            to left,
+            ${props => props.theme.wab.white20},
+            transparent
+        );
+    }
+
     .indiana-scroll-container {
         height: 100%;
         display: flex;
