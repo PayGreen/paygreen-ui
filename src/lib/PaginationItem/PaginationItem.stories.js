@@ -20,20 +20,10 @@ storiesOf(folder.tables + 'PaginationItem', module)
         <PaginationItem
             isActive={boolean('Is active', false)}
             pageIndex={number('PageIndex', 2)}
-            colorPallet={radios(
-                'Color pallet',
-                buttonColorPalletOptions,
-                colorPalletDefault,
-            )}
             colorTheme={select(
                 'Color theme',
                 colorThemeOptions,
                 colorThemeDefault,
-            )}
-            colorStatus={select(
-                'Status color',
-                formStatusOptions,
-                formStatusDefault,
             )}
         />
     ));

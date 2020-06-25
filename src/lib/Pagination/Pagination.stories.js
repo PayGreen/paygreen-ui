@@ -28,20 +28,10 @@ storiesOf(folder.tables + 'Pagination', module)
         <Pagination
             pageIndex={number('Page index', defaultPageIndex, maxPageIndex)}
             pageCount={30}
-            colorPallet={radios(
-                'Color pallet',
-                buttonColorPalletOptions,
-                colorPalletDefault,
-            )}
             colorTheme={select(
                 'Color theme',
                 colorThemeOptions,
                 colorThemeDefault,
-            )}
-            colorStatus={select(
-                'Status color',
-                formStatusOptions,
-                formStatusDefault,
             )}
         />
     ));
