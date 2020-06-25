@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ScrollContainer from 'react-indiana-drag-scroll';
-import {} from '../../shared/constants';
+import { colorThemeOptions, colorThemeDefault } from '../../shared/constants';
 import { MenuTertiaryBase } from './style';
 
 /**
@@ -117,10 +117,12 @@ const MenuTertiary = props => {
 
 MenuTertiary.propTypes = {
     isFixed: PropTypes.bool,
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
 };
 
 MenuTertiary.defaultProps = {
     isFixed: false,
+    colorTheme: colorThemeDefault,
 };
 
 export default MenuTertiary;
