@@ -12,8 +12,6 @@ import {
 } from '../../shared/constants';
 import PaginationItem from './PaginationItem';
 
-const { wab, ...buttonColorPalletOptions } = colorPalletOptions;
-
 storiesOf(folder.tables + 'PaginationItem', module)
     .addDecorator(withKnobs)
     .add('PaginationItem', () => (

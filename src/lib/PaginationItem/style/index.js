@@ -11,6 +11,7 @@ const PaginationItemBase = styled.button`
     font-size: ${props => props.theme.daButton.font.lg};
     font-weight: bold;
 
+    display : ${props => (props.hidden ? 'none' : 'inline-block')};
     ${props => (props.isActive ? activeStyle : notActiveStyle)};
 `;
 
