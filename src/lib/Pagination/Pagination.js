@@ -5,63 +5,65 @@ import PaginationItem from '../PaginationItem/PaginationItem';
 
 const Pagination = props => {
     const paginationGroup = (pageIndex, pageCount) => {
-        switch (pageIndex) {
-            case 0:
+        if (pageCount > 5) {
+        }
+        switch (true) {
+            case pageIndex === 0:
                 return (
                     <>
                         <PaginationItem
                             {...props}
-                            pageIndex={pageIndex}
+                            pageIndex={pageIndex + 1}
                             isActive={true}
                         />
-                        <PaginationItem {...props} pageIndex={pageIndex + 1} />
+                        <PaginationItem {...props} pageIndex={pageIndex + 2} />
+                        <PaginationItem {...props} pageIndex={pageIndex + 3} />
+                        ...
+                        <PaginationItem {...props} pageIndex={pageCount - 1} />
+                        <PaginationItem {...props} pageIndex={pageCount} />
+                    </>
+                );
+            case pageIndex === 1:
+                return (
+                    <>
+                        <PaginationItem {...props} pageIndex={pageIndex} />
+                        <PaginationItem
+                            {...props}
+                            pageIndex={pageIndex + 1}
+                            isActive={true}
+                        />
                         <PaginationItem {...props} pageIndex={pageIndex + 2} />
                         ...
                         <PaginationItem {...props} pageIndex={pageCount - 1} />
                         <PaginationItem {...props} pageIndex={pageCount} />
                     </>
                 );
-            case 1:
+            case pageIndex === pageCount - 2:
                 return (
                     <>
-                        <PaginationItem {...props} pageIndex={pageIndex - 1} />
+                        <PaginationItem {...props} pageIndex={1} />
+                        <PaginationItem {...props} pageIndex={2} />
+                        ...
+                        <PaginationItem {...props} pageIndex={pageCount - 2} />
                         <PaginationItem
                             {...props}
-                            pageIndex={pageIndex}
+                            pageIndex={pageCount - 1}
                             isActive={true}
                         />
-                        <PaginationItem {...props} pageIndex={pageIndex + 1} />
+                        <PaginationItem {...props} pageIndex={pageCount} />
+                    </>
+                );
+            case pageIndex >= pageCount:
+                return (
+                    <>
+                        <PaginationItem {...props} pageIndex={1} />
+                        <PaginationItem {...props} pageIndex={2} />
                         ...
+                        <PaginationItem {...props} pageIndex={pageCount - 2} />
                         <PaginationItem {...props} pageIndex={pageCount - 1} />
-                        <PaginationItem {...props} pageIndex={pageCount} />
-                    </>
-                );
-            case pageCount - 1:
-                return (
-                    <>
-                        <PaginationItem {...props} pageIndex={1} />
-                        <PaginationItem {...props} pageIndex={2} />
-                        ...
-                        <PaginationItem {...props} pageIndex={pageIndex - 1} />
                         <PaginationItem
                             {...props}
-                            pageIndex={pageIndex}
-                            isActive={true}
-                        />
-                        <PaginationItem {...props} pageIndex={pageCount} />
-                    </>
-                );
-            case pageCount:
-                return (
-                    <>
-                        <PaginationItem {...props} pageIndex={1} />
-                        <PaginationItem {...props} pageIndex={2} />
-                        ...
-                        <PaginationItem {...props} pageIndex={pageIndex - 2} />
-                        <PaginationItem {...props} pageIndex={pageIndex - 1} />
-                        <PaginationItem
-                            {...props}
-                            pageIndex={pageIndex}
+                            pageIndex={pageCount}
                             isActive={true}
                         />
                     </>
@@ -71,13 +73,13 @@ const Pagination = props => {
                     <>
                         <PaginationItem {...props} pageIndex={1} />
                         ...
-                        <PaginationItem {...props} pageIndex={pageIndex - 1} />
+                        <PaginationItem {...props} pageIndex={pageIndex} />
                         <PaginationItem
                             {...props}
-                            pageIndex={pageIndex}
+                            pageIndex={pageIndex + 1}
                             isActive={true}
                         />
-                        <PaginationItem {...props} pageIndex={pageIndex + 1} />
+                        <PaginationItem {...props} pageIndex={pageIndex + 2} />
                         ...
                         <PaginationItem {...props} pageIndex={pageCount} />
                     </>
@@ -93,10 +95,12 @@ const Pagination = props => {
 };
 
 Pagination.propTypes = {
-    pageIndex: PropTypes.number.isRequired,
+    pageIndex: PropTypes.number,
     pageCount: PropTypes.number.isRequired,
 };
 
-Pagination.defaultProps = {};
+Pagination.defaultProps = {
+    pageIndex: 0,
+};
 
 export default Pagination;

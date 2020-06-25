@@ -14,12 +14,20 @@ import Pagination from './Pagination';
 
 const { wab, ...buttonColorPalletOptions } = colorPalletOptions;
 
+const defaultPageIndex = 15;
+const maxPageIndex = {
+    range: true,
+    min: 0,
+    max: 35,
+    step: 1,
+};
+
 storiesOf(folder.tables + 'Pagination', module)
     .addDecorator(withKnobs)
     .add('Pagination', () => (
         <Pagination
-            pageIndex={number('Page index', 2)}
-            pageCount={number('Page count', 30)}
+            pageIndex={number('Page index', defaultPageIndex, maxPageIndex)}
+            pageCount={30}
             colorPallet={radios(
                 'Color pallet',
                 buttonColorPalletOptions,
