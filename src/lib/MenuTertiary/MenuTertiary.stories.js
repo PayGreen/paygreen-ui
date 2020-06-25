@@ -48,7 +48,7 @@ storiesOf(folder.nav + 'MenuTertiary', module)
     .addDecorator(withKnobs)
     .add('MenuTertiary', () => (
         <>
-            <MenuTertiary>
+            <MenuTertiary isFixed={boolean('Is fixed', true)}>
                 {sampleLinks.map((sample, index) => (
                     <a href={'#' + sample.link} key={index}>
                         {sample.label}
