@@ -1,17 +1,28 @@
 import { css } from 'styled-components';
+import {lightColor, mainColor} from './constants';
 
 const activeStyle = css`
-    background-image: linear-gradient(
-        to bottom right,
-        ${props => props.theme.color.secondary.gradientBase},
-        ${props => props.theme.color.secondary.gradientShade}
-    );
+    background-color: ${props => mainColor[props.colorPallet]};
     color: ${props => props.theme.wab.white00};
 `;
 
+// const activeStyle = css`
+// background-image: linear-gradient(
+//     to bottom right,
+//     ${props => props.theme.color.secondary.gradientBase},
+//     ${props => props.theme.color.secondary.gradientShade}
+// );
+//     background-image: background-image: linear-gradient(
+//         to bottom right,
+//         ${mainColor.gradientBase},
+//         ${mainColor.gradientShade}
+//     );
+//     color: ${props => props.theme.wab.white00};
+// `;
+
 const notActiveStyle = css`
-    background-color: ${props => props.theme.color.status.default.light};
-    color : ${props => props.theme.color.status.default.main};
+    background-color: ${props => lightColor[props.colorPallet]};
+    color : ${props => mainColor[props.colorPallet]};
 
     &:hover,
     &:active,

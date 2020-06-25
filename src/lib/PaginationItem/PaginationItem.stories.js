@@ -1,10 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, number } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
+    colorThemeOptions,
+    colorThemeDefault,
+    colorPalletOptions,
+    colorPalletDefault,
+    formStatusOptions,
+    formStatusDefault,
 } from '../../shared/constants';
 import PaginationItem from './PaginationItem';
+
+const { wab, ...buttonColorPalletOptions } = colorPalletOptions;
 
 storiesOf(folder.tables + 'PaginationItem', module)
     .addDecorator(withKnobs)
@@ -12,5 +20,20 @@ storiesOf(folder.tables + 'PaginationItem', module)
         <PaginationItem
             isActive={boolean('Is active', false)}
             pageIndex={number('PageIndex', 2)}
+            colorPallet={radios(
+                'Color pallet',
+                buttonColorPalletOptions,
+                colorPalletDefault,
+            )}
+            colorTheme={select(
+                'Color theme',
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+            colorStatus={select(
+                'Status color',
+                formStatusOptions,
+                formStatusDefault,
+            )}
         />
     ));
