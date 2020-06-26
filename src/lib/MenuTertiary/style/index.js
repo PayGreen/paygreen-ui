@@ -10,6 +10,7 @@ const MenuTertiaryBase = styled.div`
     white-space: nowrap;
     font-size: ${props => props.theme.font.size.xs};
     background-color: ${props => props.theme.wab.white20};
+    border-bottom: solid ${props => props.theme.line + props.theme.wab.grey10};
 
     ${props => (props.isFixed ? fixedStyle : null)};
 
@@ -17,9 +18,9 @@ const MenuTertiaryBase = styled.div`
     &::after {
         content: '';
         position: absolute;
-        top: 0%;
+        top: 0;
         height: 100%;
-        width: ${props => props.theme.space.lg};
+        width: ${props => props.theme.space.md};
         z-index: ${props => props.theme.zindex.front};
         pointer-events: none;
     }
@@ -51,7 +52,7 @@ const MenuTertiaryBase = styled.div`
         display: flex;
         align-items: center;
         position: relative;
-        margin: 0 ${props => props.theme.space.md};
+        padding: 0 ${props => props.theme.space.md};
         font-weight: ${props => props.theme.font.weight.bold};
         color: ${props => props.theme.wab.grey40};
         transition: all ${props => props.theme.transition.xs};
