@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 import {
     colorThemeOptions,
     colorThemeDefault,
-    colorPalletOptions,
-    colorPalletDefault,
-    gradientOptions,
-    gradientDefault,
-    formStatusOptions,
-    formStatusDefault,
 } from '../../shared/constants';
 import { PaginationItemBase } from './style';
 
