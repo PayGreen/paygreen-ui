@@ -24,8 +24,8 @@ const maxPageIndex = {
     step: 1,
 };
 
-storiesOf(folder.tables + 'Pagination', module)
-    .addDecorator(withKnobs).add('Pagination with custom pageIndex', () => (
+storiesOf(folder.tables + folder.sub.pagination + 'Pagination', module)
+    .addDecorator(withKnobs).add('Pagination with custom page Index', () => (
         <Pagination
             pageIndex={number('Page index', defaultPageIndex, maxPageIndex)}
             pageCount={21}
@@ -36,7 +36,7 @@ storiesOf(folder.tables + 'Pagination', module)
             )}
         />
     ))
-    .add('Pagination with custom pageValue', () => (
+    .add('Pagination with custom page Count', () => (
         <Pagination
             pageIndex={0}
             pageCount={number('Page count', defaultPageCount, maxPageCount)}

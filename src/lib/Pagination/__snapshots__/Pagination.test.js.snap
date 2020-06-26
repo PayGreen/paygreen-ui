@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="sc-bdVaJa ceYYzW"
+>
+  <button
+    className="sc-bwzfXH kSRpqw"
+    onClick={[Function]}
+    type="button"
+  >
+    1
+  </button>
+  ...
+  <button
+    className="sc-bwzfXH kSRpqw"
+    onClick={[Function]}
+    type="button"
+  >
+    2
+  </button>
+  <button
+    className="sc-bwzfXH cYNfZ"
+    type="button"
+  >
+    3
+  </button>
+  <button
+    className="sc-bwzfXH kSRpqw"
+    onClick={[Function]}
+    type="button"
+  >
+    4
+  </button>
+  ...
+  <button
+    className="sc-bwzfXH kSRpqw"
+    onClick={[Function]}
+    type="button"
+  >
+    21
+  </button>
+</div>
+`;

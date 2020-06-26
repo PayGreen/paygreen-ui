@@ -1,23 +1,19 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, number, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
     colorThemeDefault,
-    colorPalletOptions,
-    colorPalletDefault,
-    formStatusOptions,
-    formStatusDefault,
 } from '../../shared/constants';
 import PaginationItem from './PaginationItem';
 
-storiesOf(folder.tables + 'PaginationItem', module)
+storiesOf(folder.tables + folder.sub.pagination + 'PaginationItem', module)
     .addDecorator(withKnobs)
     .add('PaginationItem', () => (
         <PaginationItem
             isActive={boolean('Is active', false)}
-            pageValue={number('PageIndex', 2)}
+            pageValue={number('Page value', 2)}
             colorTheme={select(
                 'Color theme',
                 colorThemeOptions,

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { colorThemeOptions, colorThemeDefault } from '../../shared/constants';
 import { PaginationBase } from './style';
 import PaginationItem from '../PaginationItem/PaginationItem';
 
@@ -217,15 +218,16 @@ const Pagination = props => {
 };
 
 Pagination.propTypes = {
-    pageIndex: PropTypes.number,
+    pageIndex: PropTypes.number.isRequired,
     pageCount: PropTypes.number.isRequired,
     previousPage: PropTypes.func.isRequired,
     nextPage: PropTypes.func.isRequired,
     gotoPage: PropTypes.func.isRequired,
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
 };
 
 Pagination.defaultProps = {
-    pageIndex: 0,
+    colorTheme: colorThemeDefault,
 };
 
 export default Pagination;
