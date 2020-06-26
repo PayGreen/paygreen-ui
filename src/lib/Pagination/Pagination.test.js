@@ -5,11 +5,7 @@ import Pagination from './Pagination';
 
 it('renders without crashing', () => {
     const pagination = TestRenderer.create(
-            <Pagination
-            theme={ThemeDefault}
-            pageIndex={2}
-            pageCount={21}
-        />,
+        <Pagination theme={ThemeDefault} pageIndex={2} pageCount={21} />,
     );
     expect(pagination.toJSON()).toMatchSnapshot();
 });

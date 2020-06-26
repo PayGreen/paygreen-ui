@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    colorThemeOptions,
-    colorThemeDefault,
-} from '../../shared/constants';
+import { colorThemeOptions, colorThemeDefault } from '../../shared/constants';
 import { PaginationItemBase } from './style';
 
 const PaginationItem = props => {

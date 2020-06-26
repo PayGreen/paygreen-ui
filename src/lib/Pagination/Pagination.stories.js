@@ -8,7 +8,6 @@ import {
 } from '../../shared/constants';
 import Pagination from './Pagination';
 
-
 const defaultPageCount = 15;
 const maxPageCount = {
     range: true,
@@ -25,7 +24,8 @@ const maxPageIndex = {
 };
 
 storiesOf(folder.tables + folder.sub.pagination + 'Pagination', module)
-    .addDecorator(withKnobs).add('Pagination with custom page Index', () => (
+    .addDecorator(withKnobs)
+    .add('Pagination with custom page Index', () => (
         <Pagination
             pageIndex={number('Page index', defaultPageIndex, maxPageIndex)}
             pageCount={21}

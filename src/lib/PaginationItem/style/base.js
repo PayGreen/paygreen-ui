@@ -15,8 +15,7 @@ const notActiveStyle = css`
     color :  ${props => props.theme.color[props.colorTheme].main};
 
     &:hover,
-    &:active,
-    &:focus {
+    &:active {
         ${activeStyle};
     }
 }

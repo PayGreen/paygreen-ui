@@ -5,8 +5,7 @@ import PaginationItem from './PaginationItem';
 
 it('renders without crashing', () => {
     const paginationItem = TestRenderer.create(
-        <PaginationItem theme={ThemeDefault}
-        />,
+        <PaginationItem theme={ThemeDefault} />,
     );
     expect(paginationItem.toJSON()).toMatchSnapshot();
 });
