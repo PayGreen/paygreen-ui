@@ -21,9 +21,7 @@ const Pagination = props => {
         nextPage,
         previousPage,
     ) => {
-        if (pageCount === 0) {
-            return null;
-        } else if (pageCount <= 4) {
+        if (pageCount <= 4) {
             const pageValues = [];
             for (let i = 1; i <= pageCount; i++) {
                 pageValues.push(i);
@@ -202,13 +200,15 @@ const Pagination = props => {
 
     return (
         <PaginationBase {...props}>
-            {paginationGroup(
-                pageIndex,
-                pageCount,
-                gotoPage,
-                nextPage,
-                previousPage,
-            )}
+            {pageCount > 0
+                ? paginationGroup(
+                      pageIndex,
+                      pageCount,
+                      gotoPage,
+                      nextPage,
+                      previousPage,
+                  )
+                : null}
         </PaginationBase>
     );
 };
