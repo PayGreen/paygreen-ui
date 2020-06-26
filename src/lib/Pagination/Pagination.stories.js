@@ -25,7 +25,7 @@ const maxPageIndex = {
 
 storiesOf(folder.tables + folder.sub.pagination + 'Pagination', module)
     .addDecorator(withKnobs)
-    .add('Pagination with custom page Index', () => (
+    .add('Pagination with customizable page Index', () => (
         <Pagination
             pageIndex={number('Page index', defaultPageIndex, maxPageIndex)}
             pageCount={21}
@@ -36,14 +36,21 @@ storiesOf(folder.tables + folder.sub.pagination + 'Pagination', module)
             )}
         />
     ))
-    .add('Pagination with custom page Count', () => (
-        <Pagination
-            pageIndex={0}
-            pageCount={number('Page count', defaultPageCount, maxPageCount)}
-            colorTheme={select(
-                'Color theme',
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-        />
-    ));
+    .add(
+        'Pagination with customizable page Count',
+        () => (
+            <Pagination
+                pageIndex={0}
+                pageCount={number('Page count', defaultPageCount, maxPageCount)}
+                colorTheme={select(
+                    'Color theme',
+                    colorThemeOptions,
+                    colorThemeDefault,
+                )}
+            />
+        ),
+        {
+            notes:
+                'Page Index is the index position shared by react-table (starting at 0) for pagination, Page Value is the number displayed in each pagination item (starting at 1) for user',
+        },
+    );

@@ -53,26 +53,22 @@ const Pagination = props => {
                                 {...rest}
                                 pageValue={pageIndex + 2}
                                 onClick={() => nextPage()}
-                                hidden={pageIndex + 1 >= pageCount}
                             />
                             <PaginationItem
                                 {...rest}
                                 pageValue={pageIndex + 3}
                                 onClick={() => gotoPage(pageIndex + 2)}
-                                hidden={pageIndex + 2 >= pageCount}
                             />
                             ...
                             <PaginationItem
                                 {...rest}
                                 pageValue={pageCount - 1}
                                 onClick={() => gotoPage(pageCount - 2)}
-                                hidden={pageCount - 2 <= pageIndex}
                             />
                             <PaginationItem
                                 {...rest}
                                 pageValue={pageCount}
                                 onClick={() => gotoPage(pageCount - 1)}
-                                hidden={pageCount - 1 <= pageIndex}
                             />
                         </>
                     );
@@ -138,7 +134,7 @@ const Pagination = props => {
                             />
                         </>
                     );
-                case pageIndex >= pageCount - 1:
+                case pageIndex === pageCount - 1:
                     return (
                         <>
                             <PaginationItem
@@ -220,9 +216,9 @@ const Pagination = props => {
 Pagination.propTypes = {
     pageIndex: PropTypes.number.isRequired,
     pageCount: PropTypes.number.isRequired,
-    previousPage: PropTypes.func.isRequired,
-    nextPage: PropTypes.func.isRequired,
     gotoPage: PropTypes.func.isRequired,
+    nextPage: PropTypes.func.isRequired,
+    previousPage: PropTypes.func.isRequired,
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
 };
 
