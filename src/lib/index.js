@@ -30,7 +30,6 @@ import Dropdown from './Dropdown/Dropdown';
 import Footer from './Footer/Footer';
 import FooterList from './FooterList/FooterList';
 import Grid from './Grid/Grid';
-import Header from './Header/Header';
 import HR from './HR/HR';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
@@ -47,6 +46,7 @@ import Main from './Main/Main';
 import Message from './Message/Message';
 import Menu from './Menu/Menu';
 import MenuClose from './MenuClose/MenuClose';
+import MenuGroup from './MenuGroup/MenuGroup';
 import MenuHamburger from './MenuHamburger/MenuHamburger';
 import MenuItem from './MenuItem/MenuItem';
 import MenuList from './MenuList/MenuList';
@@ -210,7 +210,6 @@ export {
     Footer,
     FooterList,
     Grid,
-    Header,
     HR,
     IconLabel,
     Image,
@@ -227,6 +226,7 @@ export {
     Message,
     Menu,
     MenuClose,
+    MenuGroup,
     MenuHamburger,
     MenuItem,
     MenuList,

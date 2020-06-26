@@ -31,9 +31,9 @@ import MenuSecondary from '../MenuSecondary/MenuSecondary';
 import MenuClose from '../MenuClose/MenuClose';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Logo from '../Logo/Logo';
-import Header from './Header';
-import { logo } from '../Logo/sample/logo';
 import Dot from '../Dot/Dot';
+import MenuGroup from './MenuGroup';
+import { logo } from '../Logo/sample/logo';
 
 const mainMenuIsOpenLabel = 'Open primary menu';
 
@@ -55,10 +55,10 @@ const subLink = {
     hasUnderline: false,
 };
 
-storiesOf(folder.nav + 'Header', module)
+storiesOf(folder.nav + 'MenuGroup', module)
     .addDecorator(withKnobs)
-    .add('Header', () => (
-        <Header>
+    .add('MenuGroup', () => (
+        <MenuGroup>
             <div className="main-nav">
                 <MenuHamburger isOpen={boolean(mainMenuIsOpenLabel, true)} />
 
@@ -243,5 +243,5 @@ storiesOf(folder.nav + 'Header', module)
                     </a>
                 </Menu>
             </MenuSecondary>
-        </Header>
+        </MenuGroup>
     ));
