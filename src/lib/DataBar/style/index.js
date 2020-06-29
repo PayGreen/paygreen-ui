@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { zeroValueStyle, valueStyle, hasBackgroundStyle } from './base';
 import { barRadius } from './constants';
 
-const DataBarBase = styled.div``;
-
 const Bar = styled.div`
     max-width: ${props => props.theme.dataBar.width[props.blockWidth]};
     height: ${props => props.theme.dataBar.height};
@@ -28,4 +26,4 @@ const BarSection = styled.div`
     ${props => (props.dataWidth > 0 ? valueStyle : zeroValueStyle)};
 `;
 
-export { DataBarBase, BarSection, Bar };
+export { BarSection, Bar };

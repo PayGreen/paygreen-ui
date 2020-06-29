@@ -36,15 +36,15 @@ storiesOf(folder.main + 'DataLegend', module)
                     barColorPalletOptions,
                     colorPalletDefault,
                 )}
-                colorStatus={select(
-                    'Color status value',
-                    formStatusOptions,
-                    formStatusDefault,
-                )}
                 colorTheme={select(
                     'Color theme value',
                     colorThemeOptions,
                     colorThemeDefault,
+                )}
+                colorStatus={select(
+                    'Color status value',
+                    formStatusOptions,
+                    formStatusDefault,
                 )}
             >
                 du <strong>CO2 compensé</strong>

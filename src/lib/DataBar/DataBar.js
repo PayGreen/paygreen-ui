@@ -10,8 +10,9 @@ import {
     fontSizeOptions,
     fontSizeDefault,
     greyOptions,
+    textHtmlTagOptions,
 } from '../../shared/constants';
-import { DataBarBase, Bar, BarSection } from './style';
+import { Bar, BarSection } from './style';
 import Text from '../Text/Text';
 import DataLegend from '../DataLegend/DataLegend';
 
@@ -27,16 +28,21 @@ const DataBar = props => {
         ...rest
     } = props;
 
-    // to calculate the value depending on unit type and to force calculation to percent if needed
+    /**
+     * to calculate the value depending on unit type and to force calculation to percent if needed
+     *
+     * @param {number} value
+     * @param {boolean} toPercent
+     */
     const calcValue = (value, toPercent) => {
         let percent = ((value - minValue) / (maxValue - minValue)) * 100;
         if (!toPercent) {
-            return unit.length && unit !== '%' ? value : percent.toFixed(2);
+            return unit === '%' ? percent.toFixed(2) : value;
         } else return percent.toFixed(2);
     };
 
     return (
-        <DataBarBase {...rest}>
+        <div {...rest}>
             <Bar
                 {...rest}
                 hasBackground={hasBackground}
@@ -47,35 +53,33 @@ const DataBar = props => {
                         {...rest}
                         key={index}
                         dataWidth={calcValue(dataItem.value, true)}
-                        colorStatus={dataItem.colorStatus}
                         colorTheme={dataItem.colorTheme}
+                        colorStatus={dataItem.colorStatus}
                     />
                 ))}
             </Bar>
 
-            {hasDataLegend
-                ? data.map((dataItem, index) => (
-                      <DataLegend
-                          {...rest}
-                          key={index}
-                          colorStatus={dataItem.colorStatus}
-                          colorTheme={dataItem.colorTheme}
-                          unit={unit.length ? unit : '%'}
-                          value={calcValue(dataItem.value, false)}
-                      >
-                          {dataItem.legend && dataItem.legend.length ? (
-                              <Text
-                                  {...rest}
-                                  colorPallet={colorPalletOptions.wab}
-                                  htmlTag="span"
-                              >
-                                  {dataItem.legend}
-                              </Text>
-                          ) : null}
-                      </DataLegend>
-                  ))
-                : null}
-        </DataBarBase>
+            {data.map((dataItem, index) =>
+                dataItem.legend ? (
+                    <DataLegend
+                        {...rest}
+                        key={index}
+                        colorTheme={dataItem.colorTheme}
+                        colorStatus={dataItem.colorStatus}
+                        unit={unit}
+                        value={calcValue(dataItem.value, false)}
+                    >
+                        <Text
+                            {...rest}
+                            colorPallet={colorPalletOptions.wab}
+                            htmlTag={textHtmlTagOptions.span}
+                        >
+                            {dataItem.legend}
+                        </Text>
+                    </DataLegend>
+                ) : null,
+            )}
+        </div>
     );
 };
 
@@ -95,7 +99,6 @@ DataBar.propTypes = {
                 .isRequired,
         }),
     ).isRequired,
-    hasDataLegend: PropTypes.bool,
     minValue: PropTypes.number,
     maxValue: PropTypes.number,
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
@@ -107,7 +110,6 @@ DataBar.propTypes = {
 DataBar.defaultProps = {
     blockWidth: blockWidthDefault,
     colorPallet: colorPalletDefault,
-    hasDataLegend: false,
     minValue: 0,
     maxValue: 100,
     textSize: fontSizeDefault,
