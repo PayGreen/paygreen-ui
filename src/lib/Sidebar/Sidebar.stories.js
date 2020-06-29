@@ -26,7 +26,7 @@ import Box from '../Box/Box';
 const colorThemeLabel = 'Color theme';
 
 const logoSidebar = (
-    <Logo hasBaseline={false} hasHoverRight={true} blockWidth={spaceOptions.md}>
+    <Logo hasBaseline={false} hasHoverRight={true} blockWidth={spaceOptions.sm}>
         {logo}
     </Logo>
 );
@@ -36,9 +36,7 @@ storiesOf(folder.nav + 'Sidebar', module)
     .add('Sidebar', () => (
         <Sidebar>
             <Topbar className="hideOnDesktop">
-                <Box marginLeft={spaceOptions.sm}>
-                    <a href="#">{logoSidebar}</a>
-                </Box>
+                <a href="#">{logoSidebar}</a>
 
                 <ArrowRightIcon
                     htmlTag={iconHtmlTagOptions.button}
@@ -52,7 +50,7 @@ storiesOf(folder.nav + 'Sidebar', module)
                 className="hideOnTablet"
                 marginLeft={spaceOptions.md}
                 marginTop={spaceOptions.md}
-                marginBottom={spaceOptions.lg}
+                marginBottom={spaceOptions.md}
             >
                 <a href="#">{logoSidebar}</a>
             </Box>
