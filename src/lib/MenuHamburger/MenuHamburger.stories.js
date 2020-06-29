@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, radios, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
+    arrowDirectionOptions,
+    arrowDirectionDefault,
     colorThemeOptions,
     colorThemeDefault,
     colorPalletOptions,
@@ -19,6 +21,11 @@ storiesOf(folder.nav + folder.sub.control + 'MenuHamburger', module)
     .add('MenuHamburger', () => (
         <MenuHamburger
             isOpen={boolean('Is open', false)}
+            arrowDirection={radios(
+                'Arrow direction',
+                arrowDirectionOptions,
+                arrowDirectionDefault,
+            )}
             colorPallet={radios(
                 'Color pallet',
                 colorPalletOptions,
