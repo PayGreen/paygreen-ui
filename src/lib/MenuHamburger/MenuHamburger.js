@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+    arrowDirectionOptions,
+    arrowDirectionDefault,
     colorPalletOptions,
     colorPalletDefault,
     colorThemeOptions,
@@ -21,19 +23,21 @@ const MenuHamburger = props => (
 );
 
 MenuHamburger.propTypes = {
+    arrowDirection: PropTypes.oneOf(Object.values(arrowDirectionOptions)),
+    isOpen: PropTypes.bool,
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
-    isOpen: PropTypes.bool,
 };
 
 MenuHamburger.defaultProps = {
+    arrowDirection: arrowDirectionDefault,
+    isOpen: false,
     colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,
     colorStatus: formStatusDefault,
-    isOpen: false,
 };
 
 export default MenuHamburger;

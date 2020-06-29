@@ -158,12 +158,20 @@ const imageTypeDefault = imageTypeOptions.normal;
 // Arrow block position
 const arrowBlockOptions = {
     none: 'none',
-    right: 'right',
-    left: 'left',
     top: 'top',
+    left: 'left',
+    right: 'right',
 };
 
 const arrowBlockDefault = arrowBlockOptions.none;
+
+// Arrow direction
+const arrowDirectionOptions = {
+    left: 'left',
+    right: 'right',
+};
+
+const arrowDirectionDefault = arrowDirectionOptions.left;
 
 /* Sizes */
 
@@ -451,6 +459,8 @@ export {
     imageTypeDefault,
     arrowBlockOptions,
     arrowBlockDefault,
+    arrowDirectionOptions,
+    arrowDirectionDefault,
     shadowSizeOptions,
     shadowSizeDefault,
     buttonSizeOptions,

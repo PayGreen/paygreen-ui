@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { fontSizeOptions, greyOptions } from '../../shared/constants';
+import {
+    fontSizeOptions,
+    greyOptions,
+    spaceOptions,
+} from '../../shared/constants';
 import { SidebarMenuCategoryBase } from './style';
 import Title from '../Title/Title';
 
@@ -23,10 +27,12 @@ const SidebarMenuCategory = props => {
 
 SidebarMenuCategory.propTypes = {
     categoryTitle: PropTypes.string,
+    paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 SidebarMenuCategory.defaultProps = {
     categoryTitle: null,
+    paddingLateral: spaceOptions.xs,
 };
 
 export default SidebarMenuCategory;

@@ -4,7 +4,8 @@ import { activeStyle, hoverBase } from './base';
 
 const SidebarItemBase = styled.div`
     position: relative;
-    padding: ${props => props.theme.space.xs};
+    padding: ${props => props.theme.space.xs}
+        ${props => props.theme.space[props.paddingLateral]};
     margin: ${props => props.theme.line} 0;
     display: grid;
     grid-template-areas: 'icon link button';

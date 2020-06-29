@@ -1,44 +1,31 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
-import Layout from './Layout';
 import {
     folder,
     colorPalletOptions,
-    greyOptions,
     spaceOptions,
-    iconSizeOptions,
-    iconHtmlTagOptions,
+    arrowDirectionOptions,
 } from '../../shared/constants';
 import Topbar from '../Topbar/Topbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Main from '../Main/Main';
-import { Box } from '../Main/style';
+import Box from '../Box/Box';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Logo from '../Logo/Logo';
 import { logo } from '../Logo/sample/logo';
-import { ArrowRightIcon } from '../Icon/Icon';
+import Layout from './Layout';
 
-const logoSidebar = (
-    <Logo
-        hasBaseline={false}
-        hasHoverRight={true}
-        blockWidth={spaceOptions.sm}
-        text="tree"
-        textSize="lg"
-    >
-        {logo}
-    </Logo>
-);
-
-const logoTopbar = (
-    <Logo
-        hasBaseline={false}
-        hasHoverRight={true}
-        blockWidth={spaceOptions.sm}
-    >
-        {logo}
-    </Logo>
+const logoComponent = (
+    <a href="#">
+        <Logo
+            hasBaseline={false}
+            hasHoverRight={true}
+            blockWidth={spaceOptions.sm}
+        >
+            {logo}
+        </Logo>
+    </a>
 );
 
 const sidebarIsOpenLabel = 'Open sidebar';
@@ -49,30 +36,32 @@ storiesOf(folder.nav + 'Layout', module)
         <Layout>
             <Sidebar>
                 <Topbar className="hideOnDesktop">
-                    <a href="#">{logoSidebar}</a>
+                    {logoComponent}
 
-                    <ArrowRightIcon
-                        htmlTag={iconHtmlTagOptions.button}
-                        iconSize={iconSizeOptions.xl}
+                    <MenuHamburger
+                        isOpen={true}
                         colorPallet={colorPalletOptions.wab}
-                        colorWab={greyOptions.grey40}
+                        arrowDirection={arrowDirectionOptions.right}
                     />
                 </Topbar>
 
-                <a href="#" className="hideOnTablet">
-                    {logoSidebar}
-                </a>
+                <Box
+                    className="hideOnTablet"
+                    marginLeft={spaceOptions.sm}
+                    marginTop={spaceOptions.sm}
+                >
+                    {logoComponent}
+                </Box>
 
                 <Box />
             </Sidebar>
 
             <Main isOpen={boolean(sidebarIsOpenLabel, true)}>
                 <Topbar>
-                    <MenuHamburger isOpen={boolean(sidebarIsOpenLabel, true)}/>
-                    
-                    <a href="#" className="hideOnDesktop">
-                        {logoTopbar}
-                    </a>
+                    <MenuHamburger
+                        isOpen={boolean(sidebarIsOpenLabel, true)}
+                        colorPallet={colorPalletOptions.wab}
+                    />
                 </Topbar>
 
                 <Box />

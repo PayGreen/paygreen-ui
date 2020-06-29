@@ -1,6 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, text } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    boolean,
+    radios,
+    select,
+    text,
+} from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -8,6 +14,7 @@ import {
     colorPalletOptions,
     greyOptions,
     iconSizeOptions,
+    spaceOptions,
 } from '../../shared/constants';
 
 import Link from '../Link/Link';
@@ -18,12 +25,18 @@ import SidebarMenu from '../SidebarMenu/SidebarMenu';
 import SidebarMenuCategory from './SidebarMenuCategory';
 
 const colorThemeLabel = 'Color theme';
+const paddingLateralLabel = 'Padding lateral';
 
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
     .addDecorator(withKnobs)
     .add('SidebarMenuCategory', () => (
         <SidebarMenuCategory
             categoryTitle={text('Category', 'Catégorie de Pages')}
+            paddingLateral={select(
+                paddingLateralLabel,
+                spaceOptions,
+                spaceOptions.xs,
+            )}
         >
             <SidebarMenu
                 colorTheme={radios(
@@ -39,6 +52,11 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                             colorThemeLabel,
                             colorThemeOptions,
                             colorThemeDefault,
+                        )}
+                        paddingLateral={select(
+                            paddingLateralLabel,
+                            spaceOptions,
+                            spaceOptions.xs,
                         )}
                         isOpen={boolean('is Open', true)}
                     >
@@ -73,6 +91,11 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
+                            paddingLateral={select(
+                                paddingLateralLabel,
+                                spaceOptions,
+                                spaceOptions.xs,
+                            )}
                         >
                             <Link
                                 colorPallet={colorPalletOptions.wab}
@@ -91,6 +114,11 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                                 colorThemeLabel,
                                 colorThemeOptions,
                                 colorThemeDefault,
+                            )}
+                            paddingLateral={select(
+                                paddingLateralLabel,
+                                spaceOptions,
+                                spaceOptions.xs,
                             )}
                         >
                             <Link
@@ -112,6 +140,11 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
+                paddingLateral={select(
+                    paddingLateralLabel,
+                    spaceOptions,
+                    spaceOptions.xs,
+                )}
             >
                 <a href="#">
                     <SidebarItem
@@ -119,6 +152,11 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                             colorThemeLabel,
                             colorThemeOptions,
                             colorThemeDefault,
+                        )}
+                        paddingLateral={select(
+                            paddingLateralLabel,
+                            spaceOptions,
+                            spaceOptions.xs,
                         )}
                         isActive={boolean('Is Active', false)}
                     >

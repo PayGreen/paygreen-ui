@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
+import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -8,6 +8,7 @@ import {
     colorPalletOptions,
     greyOptions,
     iconSizeOptions,
+    spaceOptions,
 } from '../../shared/constants';
 import Link from '../Link/Link';
 import { MeterIcon } from '../Icon/Icon';
@@ -16,6 +17,7 @@ import SidebarList from '../SidebarList/SidebarList';
 import SidebarMenu from './SidebarMenu';
 
 const colorThemeLabel = 'Color theme';
+const paddingLateralLabel = 'Padding Lateral';
 
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
     .addDecorator(withKnobs)
@@ -34,6 +36,11 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                         colorThemeLabel,
                         colorThemeOptions,
                         colorThemeDefault,
+                    )}
+                    paddingLateral={select(
+                        paddingLateralLabel,
+                        spaceOptions,
+                        spaceOptions.xs,
                     )}
                     isOpen={boolean('is Open', true)}
                 >
@@ -69,6 +76,11 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
+                        paddingLateral={select(
+                            paddingLateralLabel,
+                            spaceOptions,
+                            spaceOptions.xs,
+                        )}
                     >
                         <Link
                             colorPallet={colorPalletOptions.wab}
@@ -87,6 +99,11 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                             colorThemeLabel,
                             colorThemeOptions,
                             colorThemeDefault,
+                        )}
+                        paddingLateral={select(
+                            paddingLateralLabel,
+                            spaceOptions,
+                            spaceOptions.xs,
                         )}
                     >
                         <Link
