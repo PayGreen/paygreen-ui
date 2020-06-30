@@ -12,6 +12,7 @@ const DaLabel = props => {
     return (
         <DaLabelBase as={props.htmlTag} {...props}>
             {props.children}
+            {props.required ? ' *' : null}
         </DaLabelBase>
     );
 };

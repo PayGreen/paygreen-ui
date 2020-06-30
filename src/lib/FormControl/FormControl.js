@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    arrowBlockOptions,
     formStatusOptions,
     formStatusDefault,
 } from '../../shared/constants';
@@ -15,9 +14,12 @@ const FormControl = props => {
                 if (child.type === Message) {
                     return React.cloneElement(child, {
                         colorStatus: props.colorStatus,
+                        required: props.required
                     });
                 } else {
-                    return child;
+                    return React.cloneElement(child, {
+                        required: props.required
+                    });
                 }
             })}
         </FormControlBase>
@@ -26,10 +28,12 @@ const FormControl = props => {
 
 FormControl.propTypes = {
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
+    required: PropTypes.bool,
 };
 
 FormControl.defaultProps = {
     colorStatus: formStatusDefault,
+    required: false,
 };
 
 export default FormControl;

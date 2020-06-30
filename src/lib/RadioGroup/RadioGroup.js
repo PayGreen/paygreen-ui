@@ -21,6 +21,7 @@ const RadioGroup = props => {
                     theme={props.theme} // not necessary, only needed for tests
                     htmlTag={labelHtmlTagOptions.legend}
                     fieldSize={props.fieldSize}
+                    {...rest}
                 >
                     {legend}
                 </DaLabel>
@@ -51,11 +52,13 @@ RadioGroup.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     legend: PropTypes.string,
     disabled: PropTypes.bool,
+    required: PropTypes.bool,
 };
 
 RadioGroup.defaultProps = {
     fieldSize: buttonSizeDefault,
     disabled: false,
+    required: false,
 };
 
 export default RadioGroup;

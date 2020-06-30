@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     arrowBlockOptions,
@@ -26,6 +26,7 @@ import { QuestionBoldIcon } from '../Icon/Icon';
 import FormControl from './FormControl';
 
 const colorStatusLabel = 'Status color';
+const isRequiredLabel = 'Is required';
 
 const selectOptions = [
     {
@@ -86,6 +87,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
+            required={boolean(isRequiredLabel, false)}
         >
             <DaLabel
                 fieldSize={buttonSizeOptions.md}
@@ -122,6 +124,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
+            required={boolean(isRequiredLabel, false)}
         >
             <DaLabel
                 fieldSize={buttonSizeOptions.md}
@@ -162,6 +165,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
+            required={boolean(isRequiredLabel, false)}
         >
             <CheckboxGroup
                 name="checkboxes"
@@ -191,6 +195,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
+            required={boolean(isRequiredLabel, false)}
         >
             <RadioGroup
                 name="radios"
@@ -220,6 +225,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
+            required={boolean(isRequiredLabel, false)}
         >
             <DaLabel
                 fieldSize={buttonSizeOptions.md}

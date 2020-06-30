@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
@@ -26,6 +26,7 @@ storiesOf(folder.form + 'DaLabel', module)
                     labelHtmlTagOptions,
                     labelHtmlTagDefault,
                 )}
+                required={boolean('Is required', false)}
             >
                 Label Description
             </DaLabel>
