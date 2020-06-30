@@ -1,13 +1,48 @@
 import styled from 'styled-components';
-import { errorStyle } from './base';
-import {MessageBase} from '../../Message/style'
+import {
+    formStatusDefault
+} from '../../../shared/constants';
+import { statusStyle } from './base';
+import { MessageBase } from '../../Message/style';
+import { DaLabelBase } from '../../DaLabel/style';
+import { DaSelectBase } from '../../DaSelect/style';
+import { DaInputBase } from '../../DaInput/style';
+import { DaHelpBase } from '../../DaHelp/style';
 
-const FormControlBase = styled.div`
-    ${MessageBase} {
-        display: none;
+const fieldGroup = styled.div`
+    display: grid;
+    grid-template-areas: "label ." "field help";
+    grid-template-columns:  fit-content(100%) fit-content(100%);
+
+    ${DaLabelBase} {
+        grid-area: label;
     }
 
-    ${props => (props.isError ? errorStyle : null)};
+    ${DaSelectBase}, ${DaInputBase}  {
+        grid-area: field;
+    }
+
+    ${DaHelpBase}  {
+        grid-area: help;
+    }
+
+`;
+
+const FormControlBase = styled.div`
+    display: grid;
+    grid-template-areas: 'right fieldGroup left' '. top .';
+    grid-template-columns:  fit-content(100%) fit-content(100%) fit-content(100%);
+
+    ${fieldGroup}{
+        grid-area: fieldGroup;
+    }
+
+    ${MessageBase} {
+        display: none;
+        grid-area: ${props => props.messageStyle};
+    }
+
+    ${props => (props.colorStatus !== formStatusDefault ? statusStyle : null)};
 `;
 
 export { FormControlBase };

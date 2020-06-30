@@ -1,10 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     arrowBlockOptions,
     formStatusOptions,
+    formStatusDefault,
     iconSizeOptions,
     fontSizeOptions,
     buttonSizeOptions,
@@ -18,6 +19,9 @@ import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import Text from '../Text/Text';
 import { CautionIcon } from '../Icon/Icon';
 import FormControl from './FormControl';
+
+const { none, ...messageBlockOptions } = arrowBlockOptions;
+const colorStatusLabel = 'Status color';
 
 const options = [
     {
@@ -56,8 +60,19 @@ const checkboxOptions = [
 
 storiesOf(folder.form + 'FormControl', module)
     .addDecorator(withKnobs)
-    .add('Form Control with input + message', () => (
-        <FormControl isError={boolean('error', false)}>
+    .add('Form Control with select + message', () => (
+        <FormControl
+            colorStatus={select(
+                colorStatusLabel,
+                formStatusOptions,
+                formStatusDefault,
+            )}
+            messageStyle={select(
+                'Message style',
+                messageBlockOptions,
+                messageBlockOptions.top,
+            )}
+        >
             <DaLabel
                 fieldSize={buttonSizeOptions.md}
                 htmlTag={labelHtmlTagOptions.label}
@@ -79,20 +94,25 @@ storiesOf(folder.form + 'FormControl', module)
                 <CautionIcon iconSize={iconSizeOptions.lg} />
 
                 <Text textSize={fontSizeOptions.sm}>
-                    Message d'erreur. Je répète ceci est un message d'erreur.
+                    Ceci est un message à caractère informatif!
                 </Text>
             </Message>
         </FormControl>
     ))
     .add('Form Control with checkbox', () => (
-        <FormControl isError={boolean('error', false)}>
+        <FormControl
+            colorStatus={select(
+                colorStatusLabel,
+                formStatusOptions,
+                formStatusDefault,
+            )}
+        >
             <CheckboxGroup
                 name="checkboxes"
                 legend={'Checkboxes Label'}
                 value={checkboxOptions[1].value}
                 options={checkboxOptions}
                 fieldSize={buttonSizeOptions.md}
-
             />
         </FormControl>
     ));
