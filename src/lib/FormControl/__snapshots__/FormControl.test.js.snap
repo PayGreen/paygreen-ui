@@ -3,9 +3,11 @@
 exports[`renders without crashing 1`] = `
 <div
   className="sc-dnqmqq gvfNwH"
+  required={false}
 >
   <label
     className="sc-bdVaJa bTVvxu"
+    required={false}
   >
     Label Description
   </label>
@@ -19,6 +21,7 @@ exports[`renders without crashing 1`] = `
       onChange={[Function]}
       placeholder="Your text…"
       readOnly={false}
+      required={false}
       theme={
         Object {
           "arrow": Object {
@@ -226,6 +229,7 @@ exports[`renders without crashing 1`] = `
               "lg": "500px",
               "md": "400px",
               "sm": "330px",
+              "xs": "260px",
             },
             "radio": Object {
               "lg": "150px",
@@ -406,6 +410,7 @@ exports[`renders without crashing 1`] = `
   </div>
   <div
     className="sc-bxivhb iezMgg"
+    required={false}
   >
     <p
       className="sc-htpNat jBQmZc"

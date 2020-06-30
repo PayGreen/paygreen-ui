@@ -4,11 +4,10 @@ import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     arrowBlockOptions,
+    buttonSizeOptions,
+    fontSizeOptions,
     formStatusOptions,
     formStatusDefault,
-    iconSizeOptions,
-    fontSizeOptions,
-    buttonSizeOptions,
     inputWidthOptions,
     labelHtmlTagOptions,
 } from '../../shared/constants';
@@ -21,7 +20,6 @@ import Message from '../Message/Message';
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import RadioGroup from '../RadioGroup/RadioGroup';
 import Text from '../Text/Text';
-import { CautionIcon } from '../Icon/Icon';
 import { QuestionBoldIcon } from '../Icon/Icon';
 import FormControl from './FormControl';
 
@@ -93,7 +91,7 @@ storiesOf(folder.form + 'FormControl', module)
                 fieldSize={buttonSizeOptions.md}
                 htmlTag={labelHtmlTagOptions.label}
             >
-                Label Description
+                Select Description
             </DaLabel>
 
             <DaSelect
@@ -128,13 +126,13 @@ storiesOf(folder.form + 'FormControl', module)
                 fieldSize={buttonSizeOptions.md}
                 htmlTag={labelHtmlTagOptions.label}
             >
-                Label Description
+                Input Description
             </DaLabel>
 
             <DaInput
                 placeholder="Firstname Lastname"
                 fieldSize={buttonSizeOptions.md}
-                blockWidth={inputWidthOptions.lg}
+                blockWidth={inputWidthOptions.sm}
                 hasHelpButton={true}
             />
 
@@ -145,7 +143,7 @@ storiesOf(folder.form + 'FormControl', module)
             <Message
                 arrowBlock={arrowBlockOptions.topRight}
                 fieldSize={buttonSizeOptions.md}
-                blockWidth={inputWidthOptions.lg}
+                blockWidth={inputWidthOptions.sm}
             >
                 <Text textSize={fontSizeOptions.sm}>
                     Ceci est un message à caractère informatif! Il est très
@@ -170,6 +168,7 @@ storiesOf(folder.form + 'FormControl', module)
                 options={checkboxOptions}
                 fieldSize={buttonSizeOptions.md}
             />
+
             <Message
                 arrowBlock={arrowBlockOptions.topLeft}
                 fieldSize={buttonSizeOptions.sm}
@@ -198,6 +197,7 @@ storiesOf(folder.form + 'FormControl', module)
                 options={radioOptions}
                 fieldSize={buttonSizeOptions.md}
             />
+
             <Message
                 arrowBlock={arrowBlockOptions.topLeft}
                 fieldSize={buttonSizeOptions.sm}
@@ -223,7 +223,7 @@ storiesOf(folder.form + 'FormControl', module)
                 fieldSize={buttonSizeOptions.md}
                 htmlTag={labelHtmlTagOptions.label}
             >
-                Label Description
+                Text area description
             </DaLabel>
 
             <DaTextarea
@@ -233,6 +233,7 @@ storiesOf(folder.form + 'FormControl', module)
                 fieldSize={buttonSizeOptions.md}
                 blockWidth={inputWidthOptions.md}
             />
+
             <Message
                 arrowBlock={arrowBlockOptions.topRight}
                 fieldSize={buttonSizeOptions.md}
