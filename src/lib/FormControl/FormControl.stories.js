@@ -14,11 +14,14 @@ import {
 } from '../../shared/constants';
 import DaSelect from '../DaSelect/DaSelect';
 import DaLabel from '../DaLabel/DaLabel';
+import DaHelp from '../DaHelp/DaHelp';
+import DaInput from '../DaInput/DaInput';
 import Message from '../Message/Message';
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import Text from '../Text/Text';
 import { CautionIcon } from '../Icon/Icon';
 import FormControl from './FormControl';
+import { QuestionBoldIcon } from '../Icon/Icon';
 
 const { none, ...messageBlockOptions } = arrowBlockOptions;
 const colorStatusLabel = 'Status color';
@@ -84,7 +87,6 @@ storiesOf(folder.form + 'FormControl', module)
                 options={options}
                 fieldSize={buttonSizeOptions.md}
                 blockWidth={inputWidthOptions.sm}
-                hasHelpButton={false}
             />
             <Message
                 arrowBlock={arrowBlockOptions.left}
@@ -97,6 +99,31 @@ storiesOf(folder.form + 'FormControl', module)
                     Ceci est un message à caractère informatif!
                 </Text>
             </Message>
+        </FormControl>
+    ))
+    .add('Form Control with input + help button', () => (
+        <FormControl
+            colorStatus={select(
+                colorStatusLabel,
+                formStatusOptions,
+                formStatusDefault,
+            )}
+        >
+            <DaLabel
+                fieldSize={buttonSizeOptions.md}
+                htmlTag={labelHtmlTagOptions.label}
+            >
+                Label Description
+            </DaLabel>
+            <DaInput
+                placeholder="Firstname Lastname"
+                fieldSize={buttonSizeOptions.md}
+                blockWidth={inputWidthOptions.md}
+                hasHelpButton={true}
+            />
+            <DaHelp fieldSize={buttonSizeOptions.md}>
+                <QuestionBoldIcon />
+            </DaHelp>
         </FormControl>
     ))
     .add('Form Control with checkbox', () => (

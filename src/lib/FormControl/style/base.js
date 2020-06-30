@@ -19,9 +19,29 @@ const statusStyle = css`
         color: ${props => props.theme.color.status[props.colorStatus].main};
     }
 
+    button {
+        background-color: ${props => props.theme.color.status[props.colorStatus].light};
+    
+        &:hover,
+        &:active,
+        &:focus {
+            background-image: none;
+            background-color: ${props => props.theme.color.status[props.colorStatus].main};
+        }
+    
+        & > .icon {
+            svg {
+                fill: ${props => props.theme.color.status[props.colorStatus].main};
+            }
+        }
+    }
+`;
+
+const messageStyle = css`
     ${MessageBase} {
         display: grid;
     }
 `;
 
-export { statusStyle };
+
+export { messageStyle, statusStyle };

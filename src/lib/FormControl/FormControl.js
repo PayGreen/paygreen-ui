@@ -5,20 +5,28 @@ import {
     formStatusOptions,
     formStatusDefault,
 } from '../../shared/constants';
-import { FormControlBase } from './style';
+import { FieldGroup, FormControlBase } from './style';
 import Message from '../Message/Message';
 
 const FormControl = props => {
     return (
         <FormControlBase {...props}>
+            <FieldGroup {...props}>
+                {React.Children.map(props.children, child => {
+                    if (child.type === Message) {
+                        return null;
+                    } else {
+                        return child;
+                    }
+                })}
+            </FieldGroup>
+
             {React.Children.map(props.children, child => {
                 if (child.type === Message) {
                     return React.cloneElement(child, {
                         colorStatus: props.colorStatus,
                         arrowBlock: props.messageStyle,
                     });
-                } else {
-                    return child;
                 }
             })}
         </FormControlBase>

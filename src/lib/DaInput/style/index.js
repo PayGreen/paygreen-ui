@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { field, enabled, disabled, helpButtonStyle } from './base';
 
 const DaInputBase = styled.div`
+    position: relative;
     max-width: ${props =>
         props.type === 'tel'
             ? props.theme.form.inputWidth.sm
