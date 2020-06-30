@@ -9,7 +9,7 @@ import {
 
 const DaSelectBase = styled.div`
     position: relative;
-    max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
+    width: ${props => props.theme.form.inputWidth[props.blockWidth]};
     display: flex;
     align-items: center;
 

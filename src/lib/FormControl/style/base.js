@@ -1,9 +1,9 @@
 import { css } from 'styled-components';
-import { MessageBase } from '../../Message/style';
 
 const statusStyle = css`
     select,
-    input {
+    input,
+    textarea {
         border-color: ${props =>
             props.theme.color.status[props.colorStatus].main};
         &:hover,
@@ -20,28 +20,50 @@ const statusStyle = css`
     }
 
     button {
-        background-color: ${props => props.theme.color.status[props.colorStatus].light};
-    
+        background-color: ${props =>
+            props.theme.color.status[props.colorStatus].light};
+
         &:hover,
         &:active,
         &:focus {
             background-image: none;
-            background-color: ${props => props.theme.color.status[props.colorStatus].main};
+            background-color: ${props =>
+                props.theme.color.status[props.colorStatus].main};
         }
-    
+
         & > .icon {
             svg {
-                fill: ${props => props.theme.color.status[props.colorStatus].main};
+                fill: ${props =>
+                    props.theme.color.status[props.colorStatus].main};
+            }
+        }
+    }
+
+    input[type='checkbox'] {
+        &:checked {
+            & + label {
+                font-weight: ${props => props.theme.font.weight.bold};
+
+                &::before {
+                    border-color: ${props =>
+                        props.theme.color.status[props.colorStatus].main};
+                    background-color: ${props =>
+                        props.theme.color.status[props.colorStatus].main};
+                }
+            }
+        }
+    }
+
+    input[type='radio'] {
+        &:checked {
+            & + label {
+                &::after {
+                    background-color: ${props =>
+                        props.theme.color.status[props.colorStatus].main};
+                }
             }
         }
     }
 `;
 
-const messageStyle = css`
-    ${MessageBase} {
-        display: grid;
-    }
-`;
-
-
-export { messageStyle, statusStyle };
+export { statusStyle };

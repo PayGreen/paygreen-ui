@@ -4,7 +4,7 @@ import { enabled, disabled } from './base';
 
 const DaTextareaBase = styled.div`
     position: relative;
-    max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
+    width: ${props => props.theme.form.inputWidth[props.blockWidth]};
 
     ${props => (props.inputDisabled ? disabled : enabled)};
 
