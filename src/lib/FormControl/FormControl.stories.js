@@ -12,22 +12,22 @@ import {
     inputWidthOptions,
     labelHtmlTagOptions,
 } from '../../shared/constants';
-import DaSelect from '../DaSelect/DaSelect';
-import DaLabel from '../DaLabel/DaLabel';
 import DaHelp from '../DaHelp/DaHelp';
-import DaTextarea from '../DaTextarea/DaTextarea';
 import DaInput from '../DaInput/DaInput';
+import DaLabel from '../DaLabel/DaLabel';
+import DaSelect from '../DaSelect/DaSelect';
+import DaTextarea from '../DaTextarea/DaTextarea';
 import Message from '../Message/Message';
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import RadioGroup from '../RadioGroup/RadioGroup';
 import Text from '../Text/Text';
 import { CautionIcon } from '../Icon/Icon';
-import FormControl from './FormControl';
 import { QuestionBoldIcon } from '../Icon/Icon';
+import FormControl from './FormControl';
 
 const colorStatusLabel = 'Status color';
 
-const options = [
+const selectOptions = [
     {
         value: '',
         text: 'Choose your option...',
@@ -96,7 +96,7 @@ storiesOf(folder.form + 'FormControl', module)
 
             <DaSelect
                 defaultValue=""
-                options={options}
+                options={selectOptions}
                 fieldSize={buttonSizeOptions.md}
                 blockWidth={inputWidthOptions.sm}
             />
@@ -129,15 +129,18 @@ storiesOf(folder.form + 'FormControl', module)
             >
                 Label Description
             </DaLabel>
+
             <DaInput
                 placeholder="Firstname Lastname"
                 fieldSize={buttonSizeOptions.md}
                 blockWidth={inputWidthOptions.lg}
                 hasHelpButton={true}
             />
+
             <DaHelp fieldSize={buttonSizeOptions.md}>
                 <QuestionBoldIcon />
             </DaHelp>
+            
             <Message
                 arrowBlock={arrowBlockOptions.top}
                 fieldSize={buttonSizeOptions.md}
