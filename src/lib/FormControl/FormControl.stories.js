@@ -104,12 +104,10 @@ storiesOf(folder.form + 'FormControl', module)
             />
 
             <Message
-                arrowBlock={arrowBlockOptions.top}
+                arrowBlock={arrowBlockOptions.topRight}
                 fieldSize={buttonSizeOptions.md}
                 blockWidth={inputWidthOptions.sm}
             >
-                <CautionIcon iconSize={iconSizeOptions.lg} />
-
                 <Text textSize={fontSizeOptions.sm}>
                     Ceci est un message à caractère informatif! Il est très
                     important de le lire!
@@ -143,14 +141,12 @@ storiesOf(folder.form + 'FormControl', module)
             <DaHelp fieldSize={buttonSizeOptions.md}>
                 <QuestionBoldIcon />
             </DaHelp>
-            
+
             <Message
-                arrowBlock={arrowBlockOptions.top}
+                arrowBlock={arrowBlockOptions.topRight}
                 fieldSize={buttonSizeOptions.md}
                 blockWidth={inputWidthOptions.lg}
             >
-                <CautionIcon iconSize={iconSizeOptions.lg} />
-
                 <Text textSize={fontSizeOptions.sm}>
                     Ceci est un message à caractère informatif! Il est très
                     important de le lire!
@@ -175,12 +171,10 @@ storiesOf(folder.form + 'FormControl', module)
                 fieldSize={buttonSizeOptions.md}
             />
             <Message
-                arrowBlock={arrowBlockOptions.top}
-                fieldSize={buttonSizeOptions.md}
-                blockWidth={inputWidthOptions.sm}
+                arrowBlock={arrowBlockOptions.topLeft}
+                fieldSize={buttonSizeOptions.sm}
+                blockWidth={inputWidthOptions.xs}
             >
-                <CautionIcon iconSize={iconSizeOptions.lg} />
-
                 <Text textSize={fontSizeOptions.sm}>
                     Ceci est un message à caractère informatif! Il est très
                     important de le lire!
@@ -205,12 +199,10 @@ storiesOf(folder.form + 'FormControl', module)
                 fieldSize={buttonSizeOptions.md}
             />
             <Message
-                arrowBlock={arrowBlockOptions.top}
-                fieldSize={buttonSizeOptions.md}
-                blockWidth={inputWidthOptions.sm}
+                arrowBlock={arrowBlockOptions.topLeft}
+                fieldSize={buttonSizeOptions.sm}
+                blockWidth={inputWidthOptions.xs}
             >
-                <CautionIcon iconSize={iconSizeOptions.lg} />
-
                 <Text textSize={fontSizeOptions.sm}>
                     Ceci est un message à caractère informatif! Il est très
                     important de le lire!
@@ -242,12 +234,10 @@ storiesOf(folder.form + 'FormControl', module)
                 blockWidth={inputWidthOptions.md}
             />
             <Message
-                arrowBlock={arrowBlockOptions.top}
+                arrowBlock={arrowBlockOptions.topRight}
                 fieldSize={buttonSizeOptions.md}
                 blockWidth={inputWidthOptions.md}
             >
-                <CautionIcon iconSize={iconSizeOptions.lg} />
-
                 <Text textSize={fontSizeOptions.sm}>
                     Ceci est un message à caractère informatif! Il est très
                     important de le lire!

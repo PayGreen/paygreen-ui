@@ -311,6 +311,7 @@ export const ThemeBase = {
     },
     form: {
         inputWidth: {
+            xs: '260px',
             sm: '330px',
             md: '400px',
             lg: '500px',
