@@ -21,7 +21,7 @@ const Pagination = props => {
         nextPage,
         previousPage,
     ) => {
-        if (pageCount <= 4) {
+        if (pageCount <= 5) {
             const pageValues = [];
             for (let i = 1; i <= pageCount; i++) {
                 pageValues.push(i);
@@ -37,165 +37,163 @@ const Pagination = props => {
                     />
                 );
             });
-        } else
-            switch (true) {
-                case pageIndex === 0:
-                    return (
-                        <>
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageIndex + 1}
-                                isActive={true}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageIndex + 2}
-                                onClick={() => nextPage()}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageIndex + 3}
-                                onClick={() => gotoPage(pageIndex + 2)}
-                            />
-                            ...
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageCount - 1}
-                                onClick={() => gotoPage(pageCount - 2)}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageCount}
-                                onClick={() => gotoPage(pageCount - 1)}
-                            />
-                        </>
-                    );
-                case pageIndex === 1:
-                    return (
-                        <>
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageIndex}
-                                onClick={() => previousPage()}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageIndex + 1}
-                                isActive={true}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageIndex + 2}
-                                onClick={() => nextPage()}
-                            />
-                            ...
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageCount - 1}
-                                onClick={() => gotoPage(pageCount - 2)}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageCount}
-                                onClick={() => gotoPage(pageCount - 1)}
-                            />
-                        </>
-                    );
-                case pageIndex === pageCount - 2:
-                    return (
-                        <>
-                            <PaginationItem
-                                {...rest}
-                                pageValue={1}
-                                onClick={() => gotoPage(0)}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={2}
-                                onClick={() => gotoPage(1)}
-                            />
-                            ...
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageCount - 2}
-                                onClick={() => previousPage()}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageCount - 1}
-                                isActive={true}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageCount}
-                                onClick={() => nextPage()}
-                            />
-                        </>
-                    );
-                case pageIndex === pageCount - 1:
-                    return (
-                        <>
-                            <PaginationItem
-                                {...rest}
-                                pageValue={1}
-                                onClick={() => gotoPage(0)}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={2}
-                                onClick={() => gotoPage(1)}
-                            />
-                            ...
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageCount - 2}
-                                onClick={() => gotoPage(pageCount - 3)}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageCount - 1}
-                                onClick={() => previousPage()}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageCount}
-                                isActive={true}
-                            />
-                        </>
-                    );
-                default:
-                    return (
-                        <>
-                            <PaginationItem
-                                {...rest}
-                                pageValue={1}
-                                onClick={() => gotoPage(0)}
-                            />
-                            ...
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageIndex}
-                                onClick={() => previousPage()}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageIndex + 1}
-                                isActive={true}
-                            />
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageIndex + 2}
-                                onClick={() => nextPage()}
-                            />
-                            ...
-                            <PaginationItem
-                                {...rest}
-                                pageValue={pageCount}
-                                onClick={() => gotoPage(pageCount - 1)}
-                            />
-                        </>
-                    );
-            }
+        } else if (pageIndex === 0) {
+            return (
+                <>
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageIndex + 1}
+                        isActive={true}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageIndex + 2}
+                        onClick={() => nextPage()}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageIndex + 3}
+                        onClick={() => gotoPage(pageIndex + 2)}
+                    />
+                    ...
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageCount - 1}
+                        onClick={() => gotoPage(pageCount - 2)}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageCount}
+                        onClick={() => gotoPage(pageCount - 1)}
+                    />
+                </>
+            );
+        } else if (pageIndex === 1) {
+            return (
+                <>
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageIndex}
+                        onClick={() => previousPage()}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageIndex + 1}
+                        isActive={true}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageIndex + 2}
+                        onClick={() => nextPage()}
+                    />
+                    ...
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageCount - 1}
+                        onClick={() => gotoPage(pageCount - 2)}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageCount}
+                        onClick={() => gotoPage(pageCount - 1)}
+                    />
+                </>
+            );
+        } else if (pageIndex === pageCount - 2) {
+            return (
+                <>
+                    <PaginationItem
+                        {...rest}
+                        pageValue={1}
+                        onClick={() => gotoPage(0)}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={2}
+                        onClick={() => gotoPage(1)}
+                    />
+                    ...
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageCount - 2}
+                        onClick={() => previousPage()}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageCount - 1}
+                        isActive={true}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageCount}
+                        onClick={() => nextPage()}
+                    />
+                </>
+            );
+        } else if (pageIndex === pageCount - 1) {
+            return (
+                <>
+                    <PaginationItem
+                        {...rest}
+                        pageValue={1}
+                        onClick={() => gotoPage(0)}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={2}
+                        onClick={() => gotoPage(1)}
+                    />
+                    ...
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageCount - 2}
+                        onClick={() => gotoPage(pageCount - 3)}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageCount - 1}
+                        onClick={() => previousPage()}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageCount}
+                        isActive={true}
+                    />
+                </>
+            );
+        } else {
+            return (
+                <>
+                    <PaginationItem
+                        {...rest}
+                        pageValue={1}
+                        onClick={() => gotoPage(0)}
+                    />
+                    ...
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageIndex}
+                        onClick={() => previousPage()}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageIndex + 1}
+                        isActive={true}
+                    />
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageIndex + 2}
+                        onClick={() => nextPage()}
+                    />
+                    ...
+                    <PaginationItem
+                        {...rest}
+                        pageValue={pageCount}
+                        onClick={() => gotoPage(pageCount - 1)}
+                    />
+                </>
+            );
+        }
     };
 
     return (
