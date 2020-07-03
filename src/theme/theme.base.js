@@ -370,4 +370,13 @@ export const ThemeBase = {
         d270: '270deg',
         d315: '315deg',
     },
+    dataBar: {
+        height: '10px',
+        width: {
+            sm: '300px',
+            md: '400px',
+            lg: '500px',
+            xl: '600px',
+        },
+    },
 };

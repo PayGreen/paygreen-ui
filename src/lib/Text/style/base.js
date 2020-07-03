@@ -79,7 +79,7 @@ const defaultStyle = css`
     line-height: ${props => props.theme.font.lineHeight.md};
     text-align: ${props => props.align};
     font-size: ${props => props.theme.font.size[props.textSize]};
-
+    
     @media (${props => props.theme.query.max.md}) {
         font-size: ${props =>
             props.theme.font.size[minimizeFont[props.textSize]]};
