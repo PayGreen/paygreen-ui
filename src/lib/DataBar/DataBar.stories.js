@@ -24,20 +24,10 @@ import {
 } from '../../shared/constants';
 import DataBar from './DataBar';
 
-const defaultMaxValue = 100;
-const maxValueOptions = {
-    range: true,
-    min: 100,
-    max: 300,
-    step: 1,
-};
-
-const defaultValue = 50;
+const defaultValue = 25;
 const valueOptions = {
     range: true,
-    min: 0,
     max: 100,
-    step: 1,
 };
 
 const { wab, ...barColorPalletOptions } = colorPalletOptions;
@@ -67,11 +57,11 @@ storiesOf(folder.main + 'Databar', module)
                 barColorPalletOptions,
                 colorPalletDefault,
             )}
-            maxValue={number('Max value', defaultMaxValue, maxValueOptions)}
+            maxValue={number('Max value', 100)}
             data={[
                 {
                     value: number('Value', defaultValue, valueOptions),
-                    legend: ['compensé par', <strong> vous</strong>],
+                    legend: ['compensé par ', <strong>vous</strong>],
                     colorTheme: select(
                         colorThemeLabel,
                         colorThemeOptions,
@@ -104,42 +94,18 @@ storiesOf(folder.main + 'Databar', module)
                 data={[
                     {
                         value: number('Value 1', defaultValue, valueOptions),
-                        colorTheme: select(
-                            colorThemeLabel,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        ),
-                        colorStatus: select(
-                            colorStatusLabel,
-                            formStatusOptions,
-                            formStatusDefault,
-                        ),
+                        colorTheme: colorThemeDefault,
+                        colorStatus: formStatusDefault,
                     },
                     {
                         value: number('Value 2', defaultValue, valueOptions),
-                        colorTheme: select(
-                            'Theme color 2',
-                            colorThemeOptions,
-                            colorThemeOptions.tertiary,
-                        ),
-                        colorStatus: select(
-                            'Status color 2',
-                            formStatusOptions,
-                            formStatusOptions.warning,
-                        ),
+                        colorTheme: colorThemeOptions.tertiary,
+                        colorStatus: formStatusOptions.warning,
                     },
                     {
                         value: number('Value 3', defaultValue, valueOptions),
-                        colorTheme: select(
-                            'Theme color 3',
-                            colorThemeOptions,
-                            colorThemeOptions.quaternary,
-                        ),
-                        colorStatus: select(
-                            'Status color 3',
-                            formStatusOptions,
-                            formStatusOptions.danger,
-                        ),
+                        colorTheme: colorThemeOptions.quaternary,
+                        colorStatus: formStatusOptions.danger,
                     },
                 ]}
             />
