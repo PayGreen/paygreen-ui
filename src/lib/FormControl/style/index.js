@@ -10,9 +10,11 @@ import { CheckboxGroupBase } from '../../CheckboxGroup/style';
 import { RadioGroupBase } from '../../RadioGroup/style';
 import { DaTextareaBase } from '../../DaTextarea/style';
 
+const dynamicArea = props => (props.hasHelpButton ? 'help' : 'field');
+
 const FormControlBase = styled.div`
     display: grid;
-    grid-template-areas: 'label .' 'field help' 'message message';
+    grid-template-areas: 'label .' 'field ${dynamicArea}' 'message message';
     grid-template-columns: auto 1fr;
 
     ${DaLabelBase} {

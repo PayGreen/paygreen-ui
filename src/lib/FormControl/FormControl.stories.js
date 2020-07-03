@@ -121,6 +121,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusDefault,
             )}
             required={boolean(isRequiredLabel, false)}
+            hasHelpButton={true}
         >
             <DaLabel
                 fieldSize={buttonSizeOptions.md}

@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-dnqmqq gvfNwH"
+  className="sc-iwsKbI eOiaFi"
   required={false}
 >
   <label
@@ -12,7 +12,7 @@ exports[`renders without crashing 1`] = `
     Label Description
   </label>
   <div
-    className="sc-bwzfXH gReRUR"
+    className="sc-bwzfXH kDdjyq"
   >
     <textarea
       disabled={false}
