@@ -52,6 +52,7 @@ import MenuItem from './MenuItem/MenuItem';
 import MenuList from './MenuList/MenuList';
 import MenuPrimary from './MenuPrimary/MenuPrimary';
 import MenuSecondary from './MenuSecondary/MenuSecondary';
+import MenuTertiary from './MenuTertiary/MenuTertiary';
 import Modal from './Modal/Modal';
 import ModalBody from './ModalBody/ModalBody';
 import ModalContent from './ModalContent/ModalContent';
@@ -232,6 +233,7 @@ export {
     MenuList,
     MenuPrimary,
     MenuSecondary,
+    MenuTertiary,
     Modal,
     ModalBody,
     ModalContent,
