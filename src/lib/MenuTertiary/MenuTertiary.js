@@ -1,90 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ScrollContainer from 'react-indiana-drag-scroll';
+import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import { colorThemeOptions, colorThemeDefault } from '../../shared/constants';
+import { useDebounce } from './hook/useDebounce';
+import { useWindowSize } from './hook/useWindowSize';
 import { MenuTertiaryBase } from './style';
 
-/**
- * Debounce function
- * @param {requestCallback} fn
- * @param {number} ms
- */
-function debounce(fn, ms) {
-    let timer;
-
-    return _ => {
-        clearTimeout(timer);
-
-        timer = setTimeout(_ => {
-            timer = null;
-            fn.apply(this, arguments);
-        }, ms);
-    };
-}
-
 const MenuTertiary = props => {
-    /**
-     * Get all page sections from links anchors
-     */
-    let sections = {};
-
-    React.Children.map(props.children, child => {
-        if (
-            child.props &&
-            child.props.href &&
-            child.props.href.startsWith('#')
-        ) {
-            const id = child.props.href.replace('#', '');
-            sections[id] = { top: 0, bottom: 0 };
-        }
-    });
-
-    /**
-     * Define which link is active
-     */
+    const debounceTime = 200;
     const [activeLink, setActiveLink] = useState(null);
+    const [sections, setSections] = useState(null);
+    const [scrollTop, setScrollTop] = useState(0);
 
-    /**
-     * Listen resize and scroll events
-     */
+    useScrollPosition(
+        ({ prevPos, currPos }) => {
+            setScrollTop(currPos.y + 100);
+        },
+        [],
+        null,
+        true,
+        debounceTime,
+    );
+
+    const windowSize = useDebounce(useWindowSize(), debounceTime);
+
     useEffect(() => {
-        window.addEventListener('load', refreshMenu);
-        window.addEventListener('resize', refreshMenu);
-        window.addEventListener('scroll', currentActiveLink);
+        let sectionsTmp = [];
 
-        return _ => {
-            window.removeEventListener('load', refreshMenu);
-            window.removeEventListener('resize', refreshMenu);
-            window.removeEventListener('scroll', currentActiveLink);
-        };
-    }, []);
-
-    /**
-     * Set sections top and bottom positions
-     */
-    const sectionsPositions = debounce(() => {
-        for (const section in sections) {
-            const target = document.getElementById(section);
-
-            if (target) {
-                sections[section] = {
-                    top: target.offsetTop,
-                    bottom: target.offsetTop + target.offsetHeight,
-                };
+        React.Children.map(props.children, child => {
+            if (
+                child.props &&
+                child.props.href &&
+                child.props.href.startsWith('#')
+            ) {
+                const id = child.props.href.replace('#', '');
+                const target = document.getElementById(id);
+                if (target) {
+                    sectionsTmp[id] = {
+                        top: target.offsetTop,
+                        bottom: target.offsetTop + target.offsetHeight,
+                    };
+                }
             }
-        }
-    }, 100);
+        });
 
-    /**
-     * Set current active link
-     */
-    const currentActiveLink = debounce(() => {
-        const currentScroll = window.scrollY + 100;
+        setSections(sectionsTmp);
+    }, [windowSize]);
 
+    useEffect(() => {
         for (const section in sections) {
             if (
-                currentScroll >= sections[section].top &&
-                currentScroll <= sections[section].bottom
+                scrollTop >= sections[section].top &&
+                scrollTop <= sections[section].bottom
             ) {
                 setActiveLink(section);
                 break;
@@ -92,15 +60,7 @@ const MenuTertiary = props => {
                 setActiveLink(null);
             }
         }
-    }, 10);
-
-    /**
-     * Refresh menu after load or resize
-     */
-    const refreshMenu = () => {
-        sectionsPositions();
-        currentActiveLink();
-    };
+    }, [windowSize, scrollTop, sections]);
 
     return (
         <MenuTertiaryBase {...props}>
