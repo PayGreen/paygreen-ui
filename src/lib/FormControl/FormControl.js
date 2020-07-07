@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { formStatusOptions, formStatusDefault } from '../../shared/constants';
 import { FormControlBase } from './style';
 import Message from '../Message/Message';
+import DaLabel from '../DaLabel/DaLabel';
 
 const FormControl = props => {
     return (
@@ -11,11 +12,14 @@ const FormControl = props => {
                 if (child.type === Message) {
                     return React.cloneElement(child, {
                         colorStatus: props.colorStatus,
-                        required: props.required,
+                    });
+                } else if (child.type === DaLabel) {
+                    return React.cloneElement(child, {
+                        isRequired: props.isRequired,
                     });
                 } else {
                     return React.cloneElement(child, {
-                        required: props.required,
+                        required: props.isRequired,
                     });
                 }
             })}
@@ -25,13 +29,13 @@ const FormControl = props => {
 
 FormControl.propTypes = {
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
-    required: PropTypes.bool,
+    isRequired: PropTypes.bool,
     hasHelpButton: PropTypes.bool,
 };
 
 FormControl.defaultProps = {
     colorStatus: formStatusDefault,
-    required: false,
+    isRequired: false,
     hasHelpButton: false,
 };
 

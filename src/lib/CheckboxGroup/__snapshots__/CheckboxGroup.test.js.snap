@@ -5,7 +5,7 @@ exports[`renders without crashing 1`] = `
   className="sc-bdVaJa iKuaBW"
 >
   <legend
-    className="sc-bxivhb daPzkX"
+    className="sc-bxivhb RZHBY"
   >
     Checkbox Label
   </legend>
@@ -161,6 +161,15 @@ exports[`renders without crashing 1`] = `
             },
           },
           "dash": "3px",
+          "dataBar": Object {
+            "height": "10px",
+            "width": Object {
+              "lg": "500px",
+              "md": "400px",
+              "sm": "300px",
+              "xl": "600px",
+            },
+          },
           "font": Object {
             "lineHeight": Object {
               "base": 1,
@@ -224,6 +233,7 @@ exports[`renders without crashing 1`] = `
               "lg": "500px",
               "md": "400px",
               "sm": "330px",
+              "xs": "260px",
             },
             "radio": Object {
               "lg": "150px",
@@ -562,6 +572,15 @@ exports[`renders without crashing 1`] = `
             },
           },
           "dash": "3px",
+          "dataBar": Object {
+            "height": "10px",
+            "width": Object {
+              "lg": "500px",
+              "md": "400px",
+              "sm": "300px",
+              "xl": "600px",
+            },
+          },
           "font": Object {
             "lineHeight": Object {
               "base": 1,
@@ -625,6 +644,7 @@ exports[`renders without crashing 1`] = `
               "lg": "500px",
               "md": "400px",
               "sm": "330px",
+              "xs": "260px",
             },
             "radio": Object {
               "lg": "150px",

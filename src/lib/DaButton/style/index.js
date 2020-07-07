@@ -13,7 +13,7 @@ import {
 } from './base';
 import { backgroundCalc } from './constants';
 
-const DaButtonBase = styled.div`
+const DaButtonBase = styled.span`
     box-sizing: border-box;
     position: relative;
     z-index: ${props => props.theme.zindex.base};

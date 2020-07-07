@@ -53,7 +53,6 @@ DaSelect.propTypes = {
     ).isRequired,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    required: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
@@ -62,7 +61,6 @@ DaSelect.propTypes = {
 DaSelect.defaultProps = {
     disabled: false,
     readOnly: false,
-    required: false,
     fieldSize: buttonSizeDefault,
     blockWidth: inputWidthDefault,
     hasHelpButton: false,

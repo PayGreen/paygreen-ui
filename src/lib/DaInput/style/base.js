@@ -46,17 +46,13 @@ const helpButtonStyle = css`
     }
 
     width: ${props =>
-        props.type === 'tel'
-            ? math(
-                  props.theme.form.inputWidth.sm +
-                      '-' +
-                      props.theme.daButton.buttonHeight[props.fieldSize],
-              )
-            : math(
-                  props.theme.form.inputWidth[props.blockWidth] +
-                      '-' +
-                      props.theme.daButton.buttonHeight[props.fieldSize],
-              )};
+        math(
+            props.theme.form.inputWidth[
+                props.type === 'tel' ? 'sm' : props.blockWidth
+            ] +
+                '-' +
+                props.theme.daButton.buttonHeight[props.fieldSize],
+        )};
 `;
 
 export { field, disabled, enabled, helpButtonStyle };

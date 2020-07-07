@@ -81,7 +81,6 @@ const DaTextarea = props => {
 DaTextarea.propTypes = {
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    required: PropTypes.bool,
     minLength: PropTypes.number,
     maxLength: PropTypes.number,
     hasCounter: PropTypes.bool,
@@ -94,7 +93,6 @@ DaTextarea.defaultProps = {
     onChange: undefined,
     disabled: false,
     readOnly: false,
-    required: false,
     minLength: 0,
     maxLength: 2000,
     hasCounter: false,

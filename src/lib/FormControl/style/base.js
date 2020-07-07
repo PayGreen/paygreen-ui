@@ -1,25 +1,39 @@
 import { css } from 'styled-components';
+import { DaInputBase } from '../../DaInput/style';
+import { DaHelpBase } from '../../DaHelp/style';
+import { DaLabelBase } from '../../DaLabel/style';
+import { DaSelectBase } from '../../DaSelect/style';
+import { DaTextareaBase } from '../../DaTextarea/style';
+import { CheckboxGroupBase } from '../../CheckboxGroup/style';
+import { CheckboxBase } from '../../Checkbox/style';
+import { MessageBase } from '../../Message/style';
+import { RadioGroupBase } from '../../RadioGroup/style';
+import { RadioBase } from '../../Radio/style';
 
 const statusStyle = css`
-    select,
-    input,
-    textarea {
-        border-color: ${props =>
-            props.theme.color.status[props.colorStatus].main};
-        &:hover,
-        &:active,
-        &:focus {
+    ${DaSelectBase} {
+        select {
             border-color: ${props =>
                 props.theme.color.status[props.colorStatus].main};
+
+            &:hover,
+            &:active,
+            &:focus {
+                border-color: ${props =>
+                    props.theme.color.status[props.colorStatus].main};
+            }
         }
     }
 
-    & > label,
-    legend {
+    ${DaLabelBase} {
         color: ${props => props.theme.color.status[props.colorStatus].main};
+       
+        .required {
+            color: ${props => props.theme.color.status[props.colorStatus].main};
+        }
     }
 
-    button {
+    ${DaHelpBase} {
         background-color: ${props =>
             props.theme.color.status[props.colorStatus].light};
 
@@ -39,31 +53,59 @@ const statusStyle = css`
         }
     }
 
-    input[type='checkbox'] {
-        &:checked {
-            & + label {
-                font-weight: ${props => props.theme.font.weight.bold};
-
-                &::before {
-                    border-color: ${props =>
-                        props.theme.color.status[props.colorStatus].main};
-                    background-color: ${props =>
-                        props.theme.color.status[props.colorStatus].main};
+    ${RadioBase} {
+        input {
+            &:checked {
+                & + label {
+                    &::before {
+                        border-color: ${props =>
+                            props.theme.color.status[props.colorStatus].main};
+                        background-color: ${props =>
+                            props.theme.color.status[props.colorStatus].main};
+                    }
                 }
             }
         }
     }
 
-    input[type='radio'] {
-        &:checked {
-            & + label {
-                &::after {
-                    background-color: ${props =>
-                        props.theme.color.status[props.colorStatus].main};
+    ${CheckboxBase} {
+        input {
+            &:checked {
+                & + label {
+                    &::after {
+                        background-color: ${props =>
+                            props.theme.color.status[props.colorStatus].main};
+                    }
                 }
             }
         }
     }
 `;
 
-export { statusStyle };
+const gridStyle = css`
+    display: grid;
+    grid-template-areas: 'label label' 'field help' 'message message';
+    grid-template-columns: auto 1fr;
+
+    ${DaLabelBase} {
+        grid-area: label;
+    }
+
+    ${DaInputBase},
+    ${DaSelectBase},
+    ${DaTextareaBase},
+    ${CheckboxGroupBase},
+    ${RadioGroupBase} {
+        grid-area: field;
+    }
+
+    ${DaHelpBase} {
+        grid-area: help;
+    }
+
+    ${MessageBase} {
+        grid-area: message;
+    }
+`;
+
+export { gridStyle, statusStyle };

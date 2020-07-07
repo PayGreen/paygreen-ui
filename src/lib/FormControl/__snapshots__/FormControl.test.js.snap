@@ -2,12 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-iwsKbI eOiaFi"
-  required={false}
+  className="sc-gZMcBi csjNvB"
 >
   <label
-    className="sc-bdVaJa bTVvxu"
-    required={false}
+    className="sc-bdVaJa jJNzAC"
   >
     Label Description
   </label>
@@ -166,6 +164,15 @@ exports[`renders without crashing 1`] = `
             },
           },
           "dash": "3px",
+          "dataBar": Object {
+            "height": "10px",
+            "width": Object {
+              "lg": "500px",
+              "md": "400px",
+              "sm": "300px",
+              "xl": "600px",
+            },
+          },
           "font": Object {
             "lineHeight": Object {
               "base": 1,
@@ -410,10 +417,9 @@ exports[`renders without crashing 1`] = `
   </div>
   <div
     className="sc-bxivhb iezMgg"
-    required={false}
   >
     <p
-      className="sc-htpNat jBQmZc"
+      className="sc-htpNat kYXZDM"
     >
       Lorem ipsum dolor sit amet, consectetur non sodales.
     </p>

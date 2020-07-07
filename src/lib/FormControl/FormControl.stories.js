@@ -9,7 +9,6 @@ import {
     formStatusOptions,
     formStatusDefault,
     inputWidthOptions,
-    labelHtmlTagOptions,
 } from '../../shared/constants';
 import DaHelp from '../DaHelp/DaHelp';
 import DaInput from '../DaInput/DaInput';
@@ -18,7 +17,6 @@ import DaSelect from '../DaSelect/DaSelect';
 import DaTextarea from '../DaTextarea/DaTextarea';
 import Message from '../Message/Message';
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
-import RadioGroup from '../RadioGroup/RadioGroup';
 import Text from '../Text/Text';
 import { QuestionBoldIcon } from '../Icon/Icon';
 import FormControl from './FormControl';
@@ -61,21 +59,6 @@ const checkboxOptions = [
     },
 ];
 
-const radioOptions = [
-    {
-        label: 'First Choice',
-        value: 'first',
-    },
-    {
-        label: 'Second Choice',
-        value: 'second',
-    },
-    {
-        label: 'Third Choice',
-        value: 'third',
-    },
-];
-
 storiesOf(folder.form + 'FormControl', module)
     .addDecorator(withKnobs)
     .add('Form Control with select', () => (
@@ -85,14 +68,9 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
-            required={boolean(isRequiredLabel, false)}
+            isRequired={boolean(isRequiredLabel, false)}
         >
-            <DaLabel
-                fieldSize={buttonSizeOptions.md}
-                htmlTag={labelHtmlTagOptions.label}
-            >
-                Select Description
-            </DaLabel>
+            <DaLabel>Select Label</DaLabel>
 
             <DaSelect
                 defaultValue=""
@@ -100,35 +78,19 @@ storiesOf(folder.form + 'FormControl', module)
                 fieldSize={buttonSizeOptions.md}
                 blockWidth={inputWidthOptions.sm}
             />
-
-            <Message
-                arrowBlock={arrowBlockOptions.topRight}
-                fieldSize={buttonSizeOptions.md}
-                blockWidth={inputWidthOptions.sm}
-            >
-                <Text textSize={fontSizeOptions.sm}>
-                    Ceci est un message à caractère informatif! Il est très
-                    important de le lire!
-                </Text>
-            </Message>
         </FormControl>
     ))
-    .add('Form Control with input + help button', () => (
+    .add('Form Control with input + help button and Message', () => (
         <FormControl
             colorStatus={select(
                 colorStatusLabel,
                 formStatusOptions,
                 formStatusDefault,
             )}
-            required={boolean(isRequiredLabel, false)}
+            isRequired={boolean(isRequiredLabel, false)}
             hasHelpButton={true}
         >
-            <DaLabel
-                fieldSize={buttonSizeOptions.md}
-                htmlTag={labelHtmlTagOptions.label}
-            >
-                Input Description
-            </DaLabel>
+            <DaLabel>Input Description</DaLabel>
 
             <DaInput
                 placeholder="Firstname Lastname"
@@ -141,26 +103,30 @@ storiesOf(folder.form + 'FormControl', module)
                 <QuestionBoldIcon />
             </DaHelp>
 
-            <Message
-                arrowBlock={arrowBlockOptions.topRight}
-                fieldSize={buttonSizeOptions.md}
-                blockWidth={inputWidthOptions.sm}
-            >
-                <Text textSize={fontSizeOptions.sm}>
-                    Ceci est un message à caractère informatif! Il est très
-                    important de le lire!
-                </Text>
-            </Message>
+            {boolean('is DaHelp button clicked', true) ? (
+                <Message
+                    arrowBlock={arrowBlockOptions.topRight}
+                    fieldSize={buttonSizeOptions.md}
+                    blockWidth={inputWidthOptions.sm}
+                >
+                    <Text textSize={fontSizeOptions.sm}>
+                        Ceci est un message à caractère informatif! Il est très
+                        important de le lire!
+                    </Text>
+                </Message>
+            ) : (
+                <Text></Text>
+            )}
         </FormControl>
     ))
-    .add('Form Control with checkbox', () => (
+    .add('Form Control with checkbox and Message', () => (
         <FormControl
             colorStatus={select(
                 colorStatusLabel,
                 formStatusOptions,
                 formStatusDefault,
             )}
-            required={boolean(isRequiredLabel, false)}
+            isRequired={boolean(isRequiredLabel, false)}
         >
             <CheckboxGroup
                 name="checkboxes"
@@ -169,36 +135,6 @@ storiesOf(folder.form + 'FormControl', module)
                 options={checkboxOptions}
                 fieldSize={buttonSizeOptions.md}
             />
-
-            <Message
-                arrowBlock={arrowBlockOptions.topLeft}
-                fieldSize={buttonSizeOptions.sm}
-                blockWidth={inputWidthOptions.xs}
-            >
-                <Text textSize={fontSizeOptions.sm}>
-                    Ceci est un message à caractère informatif! Il est très
-                    important de le lire!
-                </Text>
-            </Message>
-        </FormControl>
-    ))
-    .add('Form Control with radio', () => (
-        <FormControl
-            colorStatus={select(
-                colorStatusLabel,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            required={boolean(isRequiredLabel, false)}
-        >
-            <RadioGroup
-                name="radios"
-                legend={'Radios Label'}
-                value={radioOptions[1].value}
-                options={radioOptions}
-                fieldSize={buttonSizeOptions.md}
-            />
-
             <Message
                 arrowBlock={arrowBlockOptions.topLeft}
                 fieldSize={buttonSizeOptions.sm}
@@ -218,32 +154,15 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
-            required={boolean(isRequiredLabel, false)}
+            isRequired={boolean(isRequiredLabel, false)}
         >
-            <DaLabel
-                fieldSize={buttonSizeOptions.md}
-                htmlTag={labelHtmlTagOptions.label}
-            >
-                Text area description
-            </DaLabel>
+            <DaLabel>Text area description</DaLabel>
 
             <DaTextarea
                 placeholder="Your text&hellip;"
                 maxLength={800}
                 hasCounter={true}
                 fieldSize={buttonSizeOptions.md}
-                blockWidth={inputWidthOptions.md}
             />
-
-            <Message
-                arrowBlock={arrowBlockOptions.topRight}
-                fieldSize={buttonSizeOptions.md}
-                blockWidth={inputWidthOptions.md}
-            >
-                <Text textSize={fontSizeOptions.sm}>
-                    Ceci est un message à caractère informatif! Il est très
-                    important de le lire!
-                </Text>
-            </Message>
         </FormControl>
     ));
