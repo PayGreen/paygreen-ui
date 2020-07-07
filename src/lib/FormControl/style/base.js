@@ -11,8 +11,8 @@ import { RadioGroupBase } from '../../RadioGroup/style';
 import { RadioBase } from '../../Radio/style';
 
 const statusStyle = css`
-    ${DaSelectBase} {
-        select {
+    ${DaSelectBase}, ${DaInputBase}, ${DaTextareaBase}{
+        select, input, textarea {
             border-color: ${props =>
                 props.theme.color.status[props.colorStatus].main};
 
