@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-dnqmqq kWIKDf"
+  className="sc-dnqmqq kIuEIo"
 >
   <ul
     className="menu"
@@ -17,7 +17,7 @@ exports[`renders without crashing 1`] = `
           href="#"
         >
           <div
-            className="sc-ifAKCX fEQmoB"
+            className="sc-ifAKCX eviDdb"
           >
             <span
               className="sc-bdVaJa dqKbbE icon"

@@ -7,7 +7,6 @@ import { colorThemeDefault, formStatusDefault } from '../../shared/constants';
 const data = [
     {
         value: 20,
-        legend: 'légende de la barre',
         colorStatus: formStatusDefault,
         colorTheme: colorThemeDefault,
     },

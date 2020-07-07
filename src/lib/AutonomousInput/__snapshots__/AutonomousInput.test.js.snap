@@ -152,6 +152,15 @@ exports[`renders without crashing 1`] = `
             },
           },
           "dash": "3px",
+          "dataBar": Object {
+            "height": "10px",
+            "width": Object {
+              "lg": "500px",
+              "md": "400px",
+              "sm": "300px",
+              "xl": "600px",
+            },
+          },
           "font": Object {
             "lineHeight": Object {
               "base": 1,
@@ -376,8 +385,9 @@ exports[`renders without crashing 1`] = `
             "hidden": -100,
             "layer": -5,
             "loader": 90,
-            "menu": 100,
+            "menu": 105,
             "modal": 120,
+            "subHeader": 100,
           },
         }
       }
