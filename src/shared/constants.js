@@ -20,6 +20,7 @@ const folder = {
         radio: 'Radio elements'  + subFolderSeparator,
         sidebarMenu: 'Sidebar elements' + subFolderSeparator,
         modal: 'Modal elements' + subFolderSeparator,
+        pagination: 'Pagination elements' + subFolderSeparator,
         structure: 'Grids' + subFolderSeparator,
         table: 'Simple tables' + subFolderSeparator,
         daTable: 'DaTables' + subFolderSeparator,

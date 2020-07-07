@@ -8,8 +8,8 @@ import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
-import Checkbox from './Checkbox/Checkbox'
-import CheckboxGroup from './CheckboxGroup/CheckboxGroup'
+import Checkbox from './Checkbox/Checkbox';
+import CheckboxGroup from './CheckboxGroup/CheckboxGroup';
 import ClickableBlock from './ClickableBlock/ClickableBlock';
 import DaButton from './DaButton/DaButton';
 import DaInput from './DaInput/DaInput';
@@ -58,6 +58,8 @@ import ModalContent from './ModalContent/ModalContent';
 import ModalGroup from './ModalGroup/ModalGroup';
 import ModalHeader from './ModalHeader/ModalHeader';
 import Overlay from './Overlay/Overlay';
+import Pagination from './Pagination/Pagination';
+import PaginationItem from './PaginationItem/PaginationItem';
 import Popin from './Popin/Popin';
 import Radio from './Radio/Radio';
 import RadioGroup from './RadioGroup/RadioGroup';
@@ -236,6 +238,8 @@ export {
     ModalGroup,
     ModalHeader,
     Overlay,
+    Pagination,
+    PaginationItem,
     Popin,
     Radio,
     RadioGroup,
