@@ -19,6 +19,7 @@ import {
 import Text from '../Text/Text';
 import DaTableCell from '../DaTableCell/DaTableCell';
 import DaTableRow from '../DaTableRow/DaTableRow';
+import DaTableBody from '../DaTableBody/DaTableBody';
 import DaTableHeadCell from '../DaTableHeadCell/DaTableHeadCell';
 import DaTableHead from '../DaTableHead/DaTableHead';
 import DaTable from './DaTable';
@@ -203,40 +204,46 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
                 </DaTableHeadCell>
             </DaTableHead>
 
-            {sampleRows.map((sample, index) => (
-                <DaTableRow
-                    key={index}
-                    isActive={!index ? boolean(isActiveLabel, false) : false}
-                >
-                    <DaTableCell isCheckbox={true}>
-                        <input
-                            type="checkbox"
-                            checked={
-                                !index ? boolean(isActiveLabel, false) : false
-                            }
-                            readOnly={true}
-                        />
-                    </DaTableCell>
+            <DaTableBody>
+                {sampleRows.map((sample, index) => (
+                    <DaTableRow
+                        key={index}
+                        isActive={
+                            !index ? boolean(isActiveLabel, false) : false
+                        }
+                    >
+                        <DaTableCell isCheckbox={true}>
+                            <input
+                                type="checkbox"
+                                checked={
+                                    !index
+                                        ? boolean(isActiveLabel, false)
+                                        : false
+                                }
+                                readOnly={true}
+                            />
+                        </DaTableCell>
 
-                    <DaTableCell isId={true}>{3400 + index}</DaTableCell>
+                        <DaTableCell isId={true}>{3400 + index}</DaTableCell>
 
-                    <DaTableCell isMain={false} label="Date">
-                        {sample.date}
-                    </DaTableCell>
+                        <DaTableCell isMain={false} label="Date">
+                            {sample.date}
+                        </DaTableCell>
 
-                    <DaTableCell>{sample.name}</DaTableCell>
+                        <DaTableCell>{sample.name}</DaTableCell>
 
-                    <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
+                        <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
 
-                    <DaTableCell isMain={false} label="Type">
-                        {sample.type}
-                    </DaTableCell>
+                        <DaTableCell isMain={false} label="Type">
+                            {sample.type}
+                        </DaTableCell>
 
-                    <DaTableCell isMain={false} label="Status">
-                        {status.icon[sample.status]}
-                        {status.text[sample.status]}
-                    </DaTableCell>
-                </DaTableRow>
-            ))}
+                        <DaTableCell isMain={false} label="Status">
+                            {status.icon[sample.status]}
+                            {status.text[sample.status]}
+                        </DaTableCell>
+                    </DaTableRow>
+                ))}
+            </DaTableBody>
         </DaTable>
     ));
