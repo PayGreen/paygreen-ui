@@ -39,9 +39,20 @@ const disabled = css`
 `;
 
 const helpButtonStyle = css`
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    input {
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    width: ${props =>
+        math(
+            props.theme.form.inputWidth[
+                props.type === 'tel' ? 'sm' : props.blockWidth
+            ] +
+                '-' +
+                props.theme.daButton.buttonHeight[props.fieldSize],
+        )};
 `;
 
 export { field, disabled, enabled, helpButtonStyle };

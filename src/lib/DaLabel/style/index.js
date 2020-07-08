@@ -10,6 +10,11 @@ const DaLabelBase = styled.label`
         props.theme.space.xs +
         ' ' +
         math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
+
+    .required {
+        margin-left: 0.2em;
+        color: ${props => props.theme.color.status.warning.main};
+    }
 `;
 
 export { DaLabelBase };

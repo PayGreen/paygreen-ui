@@ -159,9 +159,10 @@ const imageTypeDefault = imageTypeOptions.normal;
 // Arrow block position
 const arrowBlockOptions = {
     none: 'none',
-    top: 'top',
     left: 'left',
     right: 'right',
+    topLeft: 'topLeft',
+    topRight: 'topRight',
 };
 
 const arrowBlockDefault = arrowBlockOptions.none;
@@ -197,6 +198,7 @@ const buttonSizeDefault = buttonSizeOptions.md;
 
 // Input width
 const inputWidthOptions = {
+    xs: 'xs',
     sm: 'sm',
     md: 'md',
     lg: 'lg',

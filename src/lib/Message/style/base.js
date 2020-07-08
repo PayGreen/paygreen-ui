@@ -20,15 +20,26 @@ const arrowDefaultStyle = css`
     &::after {
         transform: rotate(180deg);
         top: 0;
-        right: ${arrowSize};
     }
 `;
 
 const arrowBlockStyle = {
     none: css``,
-    top: css`
+    topRight: css`
         ${arrowBase};
         ${arrowDefaultStyle};
+
+        &::after {
+            right: ${arrowSize};
+        }
+    `,
+    topLeft: css`
+        ${arrowBase};
+        ${arrowDefaultStyle};
+
+        &::after {
+            left: ${arrowSize};
+        }
     `,
     left: css`
         ${arrowBase};

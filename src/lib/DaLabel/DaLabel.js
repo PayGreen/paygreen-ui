@@ -12,6 +12,7 @@ const DaLabel = props => {
     return (
         <DaLabelBase as={props.htmlTag} {...props}>
             {props.children}
+            {props.isRequired ? <span className="required">*</span> : null}
         </DaLabelBase>
     );
 };
@@ -19,11 +20,13 @@ const DaLabel = props => {
 DaLabel.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     htmlTag: PropTypes.oneOf(Object.values(labelHtmlTagOptions)),
+    isRequired: PropTypes.bool,
 };
 
 DaLabel.defaultProps = {
     fieldSize: buttonSizeDefault,
     htmlTag: labelHtmlTagDefault,
+    isRequired: false,
 };
 
 export default DaLabel;

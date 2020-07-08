@@ -21,6 +21,7 @@ const disabled = css`
 
 const whiteBase = css`
     color: ${mainColor.white};
+    
     .icon svg {
         fill: ${mainColor.white};
     }
@@ -28,6 +29,7 @@ const whiteBase = css`
 
 const colorPalletBase = css`
     color: ${props => mainColor[props.colorPallet]};
+
     .icon svg {
         fill: ${props => mainColor[props.colorPallet]};
     }

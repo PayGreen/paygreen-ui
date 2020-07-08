@@ -29,6 +29,7 @@ import Dot from './Dot/Dot';
 import Dropdown from './Dropdown/Dropdown';
 import Footer from './Footer/Footer';
 import FooterList from './FooterList/FooterList';
+import FormControl from './FormControl/FormControl';
 import Grid from './Grid/Grid';
 import Header from './Header/Header';
 import HR from './HR/HR';
@@ -209,6 +210,7 @@ export {
     Dropdown,
     Footer,
     FooterList,
+    FormControl,
     Grid,
     Header,
     HR,
