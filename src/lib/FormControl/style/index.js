@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { formStatusDefault } from '../../../shared/constants';
 import { gridStyle, statusStyle } from './base';
-import { MessageBase } from '../../Message/style';
 import { DaSelectBase } from '../../DaSelect/style';
 import { DaInputBase } from '../../DaInput/style';
 import { CheckboxGroupBase } from '../../CheckboxGroup/style';

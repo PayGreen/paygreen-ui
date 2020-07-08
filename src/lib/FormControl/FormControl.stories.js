@@ -17,8 +17,6 @@ import DaSelect from '../DaSelect/DaSelect';
 import DaTextarea from '../DaTextarea/DaTextarea';
 import Message from '../Message/Message';
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
-import RadioGroup from '../RadioGroup/RadioGroup';
-
 import Text from '../Text/Text';
 import { QuestionBoldIcon } from '../Icon/Icon';
 import FormControl from './FormControl';
@@ -62,15 +60,15 @@ const checkboxOptions = [
 ];
 
 const MessageContent = (
-    <Text textSize={fontSizeOptions.sm}>
-        Ceci est un message à caractère informatif! Il est très important de le
-        lire!
+    <Text textSize={fontSizeOptions.xs}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean felis
+        erat, porttitor vel.
     </Text>
 );
 
 storiesOf(folder.form + 'FormControl', module)
     .addDecorator(withKnobs)
-    .add('Form Control with select', () => (
+    .add('FormControl with DaSelect', () => (
         <FormControl
             colorStatus={select(
                 colorStatusLabel,
@@ -79,7 +77,7 @@ storiesOf(folder.form + 'FormControl', module)
             )}
             isRequired={boolean(isRequiredLabel, false)}
         >
-            <DaLabel>Select Label</DaLabel>
+            <DaLabel>Select label</DaLabel>
 
             <DaSelect
                 defaultValue=""
@@ -88,7 +86,7 @@ storiesOf(folder.form + 'FormControl', module)
             />
         </FormControl>
     ))
-    .add('Form Control with input + help button and Message', () => (
+    .add('FormControl with DaInput, DaHelp and Message', () => (
         <FormControl
             colorStatus={select(
                 colorStatusLabel,
@@ -98,7 +96,7 @@ storiesOf(folder.form + 'FormControl', module)
             isRequired={boolean(isRequiredLabel, false)}
             hasHelpButton={true}
         >
-            <DaLabel>Input Description</DaLabel>
+            <DaLabel>Input label</DaLabel>
 
             <DaInput
                 placeholder="Firstname Lastname"
@@ -110,7 +108,7 @@ storiesOf(folder.form + 'FormControl', module)
                 <QuestionBoldIcon />
             </DaHelp>
 
-            {boolean('is DaHelp button clicked', true) ? (
+            {boolean('Is DaHelp clicked', true) ? (
                 <Message
                     arrowBlock={arrowBlockOptions.topRight}
                     blockWidth={inputWidthOptions.sm}
@@ -122,7 +120,7 @@ storiesOf(folder.form + 'FormControl', module)
             )}
         </FormControl>
     ))
-    .add('Form Control with checkbox and Message', () => (
+    .add('Form Control with CheckboxGroup and Message', () => (
         <FormControl
             colorStatus={select(
                 colorStatusLabel,
@@ -147,7 +145,7 @@ storiesOf(folder.form + 'FormControl', module)
             </Message>
         </FormControl>
     ))
-    .add('Form Control with text area', () => (
+    .add('FormControl with DaTextarea', () => (
         <FormControl
             colorStatus={select(
                 colorStatusLabel,
