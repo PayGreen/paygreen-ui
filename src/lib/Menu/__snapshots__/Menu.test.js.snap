@@ -8,7 +8,7 @@ exports[`renders without crashing 1`] = `
     href="#"
   >
     <div
-      className="sc-ifAKCX bZwbSW"
+      className="sc-ifAKCX jHPpuQ"
     >
       <span
         className="sc-bwzfXH ixqcHG"
@@ -44,7 +44,7 @@ exports[`renders without crashing 1`] = `
             Tree
           </span>
           <p
-            className="sc-htpNat jBQmZc"
+            className="sc-htpNat kYXZDM"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
           </p>

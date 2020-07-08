@@ -7,7 +7,7 @@ const Dropdown = props => {
 
     return (
         <DropdownBase {...props}>
-            {props.children.map((child, index) => {
+            {React.Children.map(props.children, (child, index) => {
                 if (!child) {
                     return null;
                 }

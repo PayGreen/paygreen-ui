@@ -5,14 +5,14 @@ exports[`renders without crashing 1`] = `
   className="sc-bwzfXH joSvVD"
 >
   <button
-    className="sc-bdVaJa cpPFFY"
+    className="sc-bdVaJa iKkiNH"
     onClick={[Function]}
     type="button"
   >
     1
   </button>
   <button
-    className="sc-bdVaJa cpPFFY"
+    className="sc-bdVaJa iKkiNH"
     onClick={[Function]}
     type="button"
   >
@@ -26,7 +26,7 @@ exports[`renders without crashing 1`] = `
     3
   </button>
   <button
-    className="sc-bdVaJa cpPFFY"
+    className="sc-bdVaJa iKkiNH"
     onClick={[Function]}
     type="button"
   >
@@ -34,7 +34,7 @@ exports[`renders without crashing 1`] = `
   </button>
   ...
   <button
-    className="sc-bdVaJa cpPFFY"
+    className="sc-bdVaJa iKkiNH"
     onClick={[Function]}
     type="button"
   >

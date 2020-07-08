@@ -6,7 +6,7 @@ exports[`renders without crashing 1`] = `
 >
   <li>
     <p
-      className="sc-bdVaJa hjZTbz"
+      className="sc-bdVaJa girSNX"
     >
       Text 1
     </p>
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
       className="sc-bwzfXH dpzpFw"
     />
     <p
-      className="sc-bdVaJa hjZTbz"
+      className="sc-bdVaJa girSNX"
     >
       Text 2
     </p>
@@ -26,7 +26,7 @@ exports[`renders without crashing 1`] = `
       className="sc-bwzfXH dpzpFw"
     />
     <p
-      className="sc-bdVaJa hjZTbz"
+      className="sc-bdVaJa girSNX"
     >
       Text 3
     </p>

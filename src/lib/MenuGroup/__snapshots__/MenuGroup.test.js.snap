@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<header
+<div
   className="sc-iwsKbI eELuHo"
 >
   <div
     className="main-nav"
   >
     <button
-      className="sc-gzVnrw klyhST"
+      className="sc-gzVnrw colTIH"
     >
       <span />
       <span />
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
     </button>
   </div>
   <ul
-    className="sc-bZQynM jzjWhG"
+    className="sc-bZQynM jSAaQJ"
   >
     <li
       className="sc-EHOje Eovxe"
@@ -25,7 +25,7 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="sc-bxivhb mGqfH"
+          className="sc-bxivhb bmMRVF"
         >
           <span
             className="sc-bdVaJa kUfnGr"
@@ -36,5 +36,5 @@ exports[`renders without crashing 1`] = `
       </a>
     </li>
   </ul>
-</header>
+</div>
 `;

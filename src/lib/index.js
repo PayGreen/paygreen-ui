@@ -32,7 +32,6 @@ import Footer from './Footer/Footer';
 import FooterList from './FooterList/FooterList';
 import FormControl from './FormControl/FormControl';
 import Grid from './Grid/Grid';
-import Header from './Header/Header';
 import HR from './HR/HR';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
@@ -49,11 +48,13 @@ import Main from './Main/Main';
 import Message from './Message/Message';
 import Menu from './Menu/Menu';
 import MenuClose from './MenuClose/MenuClose';
+import MenuGroup from './MenuGroup/MenuGroup';
 import MenuHamburger from './MenuHamburger/MenuHamburger';
 import MenuItem from './MenuItem/MenuItem';
 import MenuList from './MenuList/MenuList';
 import MenuPrimary from './MenuPrimary/MenuPrimary';
 import MenuSecondary from './MenuSecondary/MenuSecondary';
+import MenuTertiary from './MenuTertiary/MenuTertiary';
 import Modal from './Modal/Modal';
 import ModalBody from './ModalBody/ModalBody';
 import ModalContent from './ModalContent/ModalContent';
@@ -214,7 +215,6 @@ export {
     FooterList,
     FormControl,
     Grid,
-    Header,
     HR,
     IconLabel,
     Image,
@@ -231,11 +231,13 @@ export {
     Message,
     Menu,
     MenuClose,
+    MenuGroup,
     MenuHamburger,
     MenuItem,
     MenuList,
     MenuPrimary,
     MenuSecondary,
+    MenuTertiary,
     Modal,
     ModalBody,
     ModalContent,

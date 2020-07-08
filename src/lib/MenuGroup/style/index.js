@@ -4,7 +4,7 @@ import { MenuPrimaryBase } from '../../MenuPrimary/style';
 import { MenuHamburgerBase } from '../../MenuHamburger/style';
 import { LogoBase } from '../../Logo/style';
 
-const HeaderBase = styled.header`
+const MenuGroupBase = styled.div`
     .main-nav {
         a {
             display: block;
@@ -37,4 +37,4 @@ const HeaderBase = styled.header`
     }
 `;
 
-export { HeaderBase };
+export { MenuGroupBase };
