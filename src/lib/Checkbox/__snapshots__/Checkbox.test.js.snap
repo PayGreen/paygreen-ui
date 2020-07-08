@@ -223,6 +223,7 @@ exports[`renders without crashing 1`] = `
             "lg": "500px",
             "md": "400px",
             "sm": "330px",
+            "xs": "260px",
           },
           "radio": Object {
             "lg": "150px",
