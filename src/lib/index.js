@@ -18,6 +18,7 @@ import DaHelp from './DaHelp/DaHelp';
 import DaSelect from './DaSelect/DaSelect';
 import DataBar from './DataBar/DataBar';
 import DaTable from './DaTable/DaTable';
+import DaTableBody from './DaTableBody/DaTableBody';
 import DaTableCell from './DaTableCell/DaTableCell';
 import DaTableHead from './DaTableHead/DaTableHead';
 import DaTableHeadCell from './DaTableHeadCell/DaTableHeadCell';
@@ -198,6 +199,7 @@ export {
     DaSelect,
     DataBar,
     DaTable,
+    DaTableBody,
     DaTableCell,
     DaTableHead,
     DaTableHeadCell,
