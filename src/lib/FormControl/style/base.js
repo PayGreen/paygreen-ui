@@ -11,17 +11,17 @@ import { RadioGroupBase } from '../../RadioGroup/style';
 import { RadioBase } from '../../Radio/style';
 
 const statusStyle = css`
-    ${DaSelectBase}, ${DaInputBase}, ${DaTextareaBase}{
-        select, input, textarea {
+    ${DaSelectBase} select,
+    ${DaInputBase} input,
+    ${DaTextareaBase} textarea {
+        border-color: ${props =>
+            props.theme.color.status[props.colorStatus].main};
+
+        &:hover,
+        &:active,
+        &:focus {
             border-color: ${props =>
                 props.theme.color.status[props.colorStatus].main};
-
-            &:hover,
-            &:active,
-            &:focus {
-                border-color: ${props =>
-                    props.theme.color.status[props.colorStatus].main};
-            }
         }
     }
 
@@ -57,9 +57,7 @@ const statusStyle = css`
         input {
             &:checked {
                 & + label {
-                    &::before {
-                        border-color: ${props =>
-                            props.theme.color.status[props.colorStatus].main};
+                    &::after {
                         background-color: ${props =>
                             props.theme.color.status[props.colorStatus].main};
                     }
@@ -67,12 +65,14 @@ const statusStyle = css`
             }
         }
     }
-
+    
     ${CheckboxBase} {
         input {
             &:checked {
                 & + label {
-                    &::after {
+                    &::before {
+                        border-color: ${props =>
+                            props.theme.color.status[props.colorStatus].main};
                         background-color: ${props =>
                             props.theme.color.status[props.colorStatus].main};
                     }

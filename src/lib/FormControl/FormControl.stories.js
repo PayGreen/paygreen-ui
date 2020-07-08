@@ -17,6 +17,8 @@ import DaSelect from '../DaSelect/DaSelect';
 import DaTextarea from '../DaTextarea/DaTextarea';
 import Message from '../Message/Message';
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
+import RadioGroup from '../RadioGroup/RadioGroup';
+
 import Text from '../Text/Text';
 import { QuestionBoldIcon } from '../Icon/Icon';
 import FormControl from './FormControl';
@@ -59,6 +61,13 @@ const checkboxOptions = [
     },
 ];
 
+const MessageContent = (
+    <Text textSize={fontSizeOptions.sm}>
+        Ceci est un message à caractère informatif! Il est très important de le
+        lire!
+    </Text>
+);
+
 storiesOf(folder.form + 'FormControl', module)
     .addDecorator(withKnobs)
     .add('Form Control with select', () => (
@@ -75,7 +84,6 @@ storiesOf(folder.form + 'FormControl', module)
             <DaSelect
                 defaultValue=""
                 options={selectOptions}
-                fieldSize={buttonSizeOptions.md}
                 blockWidth={inputWidthOptions.sm}
             />
         </FormControl>
@@ -94,28 +102,23 @@ storiesOf(folder.form + 'FormControl', module)
 
             <DaInput
                 placeholder="Firstname Lastname"
-                fieldSize={buttonSizeOptions.md}
                 blockWidth={inputWidthOptions.sm}
                 hasHelpButton={true}
             />
 
-            <DaHelp fieldSize={buttonSizeOptions.md}>
+            <DaHelp>
                 <QuestionBoldIcon />
             </DaHelp>
 
             {boolean('is DaHelp button clicked', true) ? (
                 <Message
                     arrowBlock={arrowBlockOptions.topRight}
-                    fieldSize={buttonSizeOptions.md}
                     blockWidth={inputWidthOptions.sm}
                 >
-                    <Text textSize={fontSizeOptions.sm}>
-                        Ceci est un message à caractère informatif! Il est très
-                        important de le lire!
-                    </Text>
+                    {MessageContent}
                 </Message>
             ) : (
-                <Text></Text>
+                <div></div> //to replace 'null' value and avoid error from storybook
             )}
         </FormControl>
     ))
@@ -133,17 +136,14 @@ storiesOf(folder.form + 'FormControl', module)
                 legend={'Checkboxes Label'}
                 value={checkboxOptions[1].value}
                 options={checkboxOptions}
-                fieldSize={buttonSizeOptions.md}
             />
+
             <Message
                 arrowBlock={arrowBlockOptions.topLeft}
                 fieldSize={buttonSizeOptions.sm}
                 blockWidth={inputWidthOptions.xs}
             >
-                <Text textSize={fontSizeOptions.sm}>
-                    Ceci est un message à caractère informatif! Il est très
-                    important de le lire!
-                </Text>
+                {MessageContent}
             </Message>
         </FormControl>
     ))
@@ -156,13 +156,12 @@ storiesOf(folder.form + 'FormControl', module)
             )}
             isRequired={boolean(isRequiredLabel, false)}
         >
-            <DaLabel>Text area description</DaLabel>
+            <DaLabel>Textarea description</DaLabel>
 
             <DaTextarea
                 placeholder="Your text&hellip;"
                 maxLength={800}
                 hasCounter={true}
-                fieldSize={buttonSizeOptions.md}
             />
         </FormControl>
     ));

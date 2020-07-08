@@ -21,7 +21,7 @@ const CheckboxGroup = props => {
                     theme={props.theme} // not necessary, only needed for tests
                     htmlTag={labelHtmlTagOptions.legend}
                     fieldSize={props.fieldSize}
-                    isRequired={props.required}
+                    isRequired={props.isRequired}
                 >
                     {legend}
                 </DaLabel>
@@ -52,11 +52,13 @@ CheckboxGroup.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     legend: PropTypes.string,
     disabled: PropTypes.bool,
+    isRequired: PropTypes.bool,
 };
 
 CheckboxGroup.defaultProps = {
     fieldSize: buttonSizeDefault,
     disabled: false,
+    isRequired: false,
 };
 
 export default CheckboxGroup;

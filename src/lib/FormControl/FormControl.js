@@ -4,6 +4,8 @@ import { formStatusOptions, formStatusDefault } from '../../shared/constants';
 import { FormControlBase } from './style';
 import Message from '../Message/Message';
 import DaLabel from '../DaLabel/DaLabel';
+import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
+import RadioGroup from '../RadioGroup/RadioGroup';
 
 const FormControl = props => {
     return (
@@ -13,7 +15,11 @@ const FormControl = props => {
                     return React.cloneElement(child, {
                         colorStatus: props.colorStatus,
                     });
-                } else if (child.type === DaLabel) {
+                } else if (
+                    child.type === DaLabel ||
+                    child.type === RadioGroup ||
+                    child.type === CheckboxGroup
+                ) {
                     return React.cloneElement(child, {
                         isRequired: props.isRequired,
                     });
