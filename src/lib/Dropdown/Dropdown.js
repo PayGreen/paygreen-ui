@@ -7,6 +7,13 @@ const Dropdown = props => {
 
     return (
         <DropdownBase {...props}>
+            {isActive ? (
+                <div
+                    className="invisible-close"
+                    onClick={() => setActive(!isActive)}
+                ></div>
+            ) : null}
+
             {React.Children.map(props.children, (child, index) => {
                 if (!child) {
                     return null;
