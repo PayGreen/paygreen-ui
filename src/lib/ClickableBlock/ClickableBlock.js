@@ -55,6 +55,7 @@ ClickableBlock.propTypes = {
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
+    isHiddenOnMobile: PropTypes.bool,
 };
 
 ClickableBlock.defaultProps = {
@@ -74,6 +75,7 @@ ClickableBlock.defaultProps = {
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
     marginLateral: spaceDefault,
+    isHiddenOnMobile: false,
 };
 
 export default ClickableBlock;
