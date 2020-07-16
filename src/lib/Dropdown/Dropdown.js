@@ -6,34 +6,30 @@ const Dropdown = props => {
     const [isActive, setActive] = useState(false);
 
     return (
-        <>
-            <DropdownBase {...props}>
-                {isActive ? (
-                    <InvisibleCloseButton
-                        onClick={() => setActive(!isActive)}
-                    />
-                ) : null}
+        <DropdownBase {...props}>
+            {isActive ? (
+                <InvisibleCloseButton onClick={() => setActive(!isActive)} />
+            ) : null}
 
-                {React.Children.map(props.children, (child, index) => {
-                    if (!child) {
-                        return null;
-                    }
+            {React.Children.map(props.children, (child, index) => {
+                if (!child) {
+                    return null;
+                }
 
-                    if (child.type === Popin) {
-                        return React.cloneElement(child, {
-                            isActive: isActive,
-                            key: index,
-                        });
-                    }
-
+                if (child.type === Popin) {
                     return React.cloneElement(child, {
-                        onClick: () => setActive(!isActive),
                         isActive: isActive,
                         key: index,
                     });
-                })}
-            </DropdownBase>
-        </>
+                }
+
+                return React.cloneElement(child, {
+                    onClick: () => setActive(!isActive),
+                    isActive: isActive,
+                    key: index,
+                });
+            })}
+        </DropdownBase>
     );
 };
 
