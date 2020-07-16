@@ -261,6 +261,7 @@ exports[`renders without crashing 1`] = `
           "sm": "80px",
           "xl": "140px",
           "xs": "60px",
+          "xxs": "38px",
         },
         "imageSize": Object {
           "auto": "auto",
@@ -269,6 +270,7 @@ exports[`renders without crashing 1`] = `
           "sm": "400px",
           "xl": "760px",
           "xs": "240px",
+          "xxs": "150px",
         },
         "line": "2px",
         "loaderSize": Object {
@@ -386,6 +388,7 @@ exports[`renders without crashing 1`] = `
           "loader": 90,
           "menu": 105,
           "modal": 120,
+          "popin": 115,
           "subHeader": 100,
         },
       }

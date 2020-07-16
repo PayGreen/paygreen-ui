@@ -39,7 +39,9 @@ export default {
         resolve(),
         commonjs({
             // explicitly specify unresolvable named exports
-            namedExports: {  '@n8tb1t/use-scroll-position': [ 'useScrollPosition' ] },
+            namedExports: {
+                '@n8tb1t/use-scroll-position': ['useScrollPosition'],
+            },
         }),
         url({
             exclude: 'style/**',
