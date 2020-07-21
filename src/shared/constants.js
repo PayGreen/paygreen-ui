@@ -17,7 +17,7 @@ const folder = {
         form: 'Special fields' + subFolderSeparator,
         list: 'Ordinary list' + subFolderSeparator,
         menu: 'Menu elements' + subFolderSeparator,
-        radio: 'Radio elements'  + subFolderSeparator,
+        radio: 'Radio elements' + subFolderSeparator,
         sidebarMenu: 'Sidebar elements' + subFolderSeparator,
         modal: 'Modal elements' + subFolderSeparator,
         pagination: 'Pagination elements' + subFolderSeparator,
@@ -260,6 +260,7 @@ const iconSizeDefault = iconSizeOptions.md;
 // Image size
 const imageSizeOptions = {
     auto: 'auto',
+    xxs: 'xxs',
     xs: 'xs',
     sm: 'sm',
     md: 'md',

@@ -10,4 +10,13 @@ const DropdownBase = styled.div`
     }
 `;
 
-export { DropdownBase };
+const InvisibleCloseButton = styled.div`
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: ${props => props.theme.zindex.popin};
+`;
+
+export { DropdownBase, InvisibleCloseButton };

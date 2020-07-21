@@ -29,6 +29,7 @@ storiesOf(folder.main + 'ClickableBlock', module)
     .addDecorator(withKnobs)
     .add('ClickableBlock', () => (
         <ClickableBlock
+            isHiddenOnMobile={true}
             isActive={boolean('Is active', false)}
             iconSize={select('Icon size', iconSizeOptions, iconSizeOptions.lg)}
             colorPallet={select(

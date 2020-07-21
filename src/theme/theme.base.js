@@ -192,6 +192,7 @@ export const ThemeBase = {
     },
     imageSize: {
         auto: 'auto',
+        xxs: '150px',
         xs: '240px',
         sm: '400px',
         md: '560px',
@@ -200,6 +201,7 @@ export const ThemeBase = {
     },
     imageCircleSize: {
         auto: 'auto',
+        xxs: '38px',
         xs: '60px',
         sm: '80px',
         md: '100px',
@@ -249,6 +251,7 @@ export const ThemeBase = {
         subHeader: 100,
         menu: 105,
         header: 110,
+        popin: 115,
         modal: 120,
     },
     query: {

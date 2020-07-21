@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 
 const activeStyle = css`
-    transition-delay: 0s
+    transition-delay: 0s;
 `;
 
 const hiddenStyle = css`
@@ -20,8 +20,7 @@ const popinAlign = {
     `,
     right: css`
         right: 0;
-    `
+    `,
 };
-
 
 export { activeStyle, hiddenStyle, popinAlign };
