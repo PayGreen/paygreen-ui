@@ -12,7 +12,7 @@ const MainBase = styled.div`
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-areas: 'topbar' 'box';
-    overflow-y: hidden;
+    overflow-y : auto;
     background-color: ${props => props.theme.wab.white00};
     box-shadow: ${props =>
         props.theme.shadow.size.lg +
