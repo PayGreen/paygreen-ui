@@ -4,7 +4,7 @@ import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { RadioBase } from './style';
 
 const Radio = props => {
-    const { fieldSize, label, id, ...rest } = props;
+    const { fieldSize, label, id, ref, ...rest } = props;
 
     return (
         <RadioBase
@@ -12,7 +12,7 @@ const Radio = props => {
             fieldSize={fieldSize}
             isDisabled={props.disabled}
         >
-            <input {...rest} id={id} type="radio" />
+            <input {...rest} ref={ref} id={id} type="radio" />
             <label htmlFor={id}>{label}</label>
         </RadioBase>
     );
@@ -23,6 +23,10 @@ Radio.propTypes = {
     disabled: PropTypes.bool,
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
+    ref: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
+    ]),
 };
 
 Radio.defaultProps = {

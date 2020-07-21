@@ -16,6 +16,7 @@ const DaSelect = props => {
         hasHelpButton,
         // must not be passed with rest because there is no readOnly html attribute for select
         readOnly,
+        ref,
         ...rest
     } = props;
 
@@ -28,7 +29,7 @@ const DaSelect = props => {
             fieldSize={fieldSize}
             hasHelpButton={hasHelpButton}
         >
-            <select {...rest}>
+            <select ref={ref} {...rest}>
                 {options.map((option, index) => (
                     <option
                         key={index}
@@ -56,6 +57,10 @@ DaSelect.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
+    ref: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLSelectElement) }),
+    ]),
 };
 
 DaSelect.defaultProps = {

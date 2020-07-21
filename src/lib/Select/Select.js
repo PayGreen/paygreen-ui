@@ -24,14 +24,13 @@ class Select extends PureComponent {
             options,
             status,
             label,
-
             // must not be passed with rest because there is no readOnly html attribute for select
             readOnly,
-
             hasShadow,
             blockWidth,
             marginTop,
             marginBottom,
+            ref,
             ...rest
         } = this.props;
 
@@ -66,7 +65,7 @@ class Select extends PureComponent {
                             : null
                         }
 
-                        <select {...rest}>
+                        <select ref={ref} {...rest}>
                             {options.map((option, index) =>
                                 <option
                                     key={index}
@@ -107,6 +106,10 @@ Select.propTypes = {
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    ref: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLSelectElement) }),
+    ]),
 };
 
 Select.defaultProps = {

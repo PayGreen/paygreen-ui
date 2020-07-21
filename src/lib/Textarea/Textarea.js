@@ -30,6 +30,7 @@ class Textarea extends PureComponent {
             hasShadow,
             marginTop,
             marginBottom,
+            ref,
             ...rest
         } = this.props;
 
@@ -67,6 +68,7 @@ class Textarea extends PureComponent {
 
             <textarea
                 {...rest}
+                ref={ref}
                 value={this.state.value}
                 onChange={(e) => {
                     this.handleChange(e);
@@ -93,6 +95,10 @@ Textarea.propTypes = {
     hasShadow: PropTypes.bool,
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    ref: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLTextAreaElement) }),
+    ]),
 };
 
 Textarea.defaultProps = {

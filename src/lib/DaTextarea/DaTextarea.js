@@ -26,6 +26,7 @@ const DaTextarea = props => {
         marginBottom,
         fieldSize,
         blockWidth,
+        ref,
         ...rest
     } = props;
 
@@ -64,6 +65,7 @@ const DaTextarea = props => {
         >
             <textarea
                 {...rest}
+                ref={ref}
                 value={stateValue}
                 onChange={e => {
                     handleChange(e);
@@ -87,6 +89,10 @@ DaTextarea.propTypes = {
     counterText: PropTypes.string,
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    ref: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLTextAreaElement) }),
+    ]),
 };
 
 DaTextarea.defaultProps = {

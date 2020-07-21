@@ -1,3 +1,7 @@
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import InputMask from 'react-input-mask';
 import PropTypes from 'prop-types';
@@ -15,6 +19,7 @@ const DaInput = props => {
         fieldSize,
         blockWidth,
         hasHelpButton,
+        ref,
         type,
         // remove mask from rest
         mask,
@@ -39,7 +44,7 @@ const DaInput = props => {
             blockWidth={blockWidth}
             hasHelpButton={hasHelpButton}
         >
-            <InputMask {...rest} mask={stateMask} />
+            <InputMask inputRef={ref} {...rest} mask={stateMask} />
         </DaInputBase>
     );
 };
@@ -52,6 +57,10 @@ DaInput.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
+    ref: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
+    ]),
 };
 
 DaInput.defaultProps = {

@@ -35,10 +35,9 @@ class Input extends PureComponent {
             blockWidth,
             marginTop,
             marginBottom,
-
+            ref,
             // remove mask from rest
             mask,
-            
             ...rest
         } = this.props;
 
@@ -77,6 +76,7 @@ class Input extends PureComponent {
                         <InputMask 
                             {...rest}
                             mask={this.state.mask}
+                            inputRef={ref}
                         />
 
                         <span></span>
@@ -99,6 +99,10 @@ Input.propTypes = {
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     mask: PropTypes.string,
+    ref: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
+    ]),
 };
 
 Input.defaultProps = {
