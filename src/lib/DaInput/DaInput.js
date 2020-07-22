@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import InputMask from 'react-input-mask';
 import PropTypes from 'prop-types';
@@ -13,13 +9,12 @@ import {
 } from '../../shared/constants';
 import { DaInputBase } from './style';
 
-const DaInput = props => {
+const DaInput = React.forwardRef((props, ref) => {
     const [stateMask, setMask] = useState('');
     const {
         fieldSize,
         blockWidth,
         hasHelpButton,
-        ref,
         type,
         // remove mask from rest
         mask,
@@ -47,7 +42,7 @@ const DaInput = props => {
             <InputMask inputRef={ref} {...rest} mask={stateMask} />
         </DaInputBase>
     );
-};
+});
 
 DaInput.propTypes = {
     type: PropTypes.string,

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { RadioBase } from './style';
 
-const Radio = props => {
-    const { fieldSize, label, id, ref, ...rest } = props;
+const Radio = React.forwardRef((props, ref) => {
+    const { fieldSize, label, id, ...rest } = props;
 
     return (
         <RadioBase
@@ -16,7 +16,7 @@ const Radio = props => {
             <label htmlFor={id}>{label}</label>
         </RadioBase>
     );
-};
+});
 
 Radio.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),

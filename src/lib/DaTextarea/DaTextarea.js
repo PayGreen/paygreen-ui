@@ -10,7 +10,7 @@ import {
 } from '../../shared/constants';
 import { DaTextareaBase } from './style';
 
-const DaTextarea = props => {
+const DaTextarea = React.forwardRef((props, ref) => {
     const [stateValue, setValue] = useState(
         props.value !== undefined ? props.value : '',
     );
@@ -26,7 +26,6 @@ const DaTextarea = props => {
         marginBottom,
         fieldSize,
         blockWidth,
-        ref,
         ...rest
     } = props;
 
@@ -78,7 +77,7 @@ const DaTextarea = props => {
                 : null}
         </DaTextareaBase>
     );
-};
+});
 
 DaTextarea.propTypes = {
     disabled: PropTypes.bool,

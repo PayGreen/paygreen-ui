@@ -4,8 +4,8 @@ import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { CheckboxBase } from './style';
 import { CheckBoldIcon } from '../Icon/Icon';
 
-const Checkbox = props => {
-    const { fieldSize, label, id, ref, ...rest } = props;
+const Checkbox = React.forwardRef((props, ref) => {
+    const { fieldSize, label, id, ...rest } = props;
 
     return (
         <CheckboxBase
@@ -24,7 +24,7 @@ const Checkbox = props => {
             </label>
         </CheckboxBase>
     );
-};
+});
 
 Checkbox.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),

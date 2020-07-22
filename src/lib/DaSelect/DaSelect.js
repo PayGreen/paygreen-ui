@@ -8,7 +8,7 @@ import {
 } from '../../shared/constants';
 import { DaSelectBase } from './style';
 
-const DaSelect = props => {
+const DaSelect = React.forwardRef((props, ref) => {
     const {
         options,
         fieldSize,
@@ -16,7 +16,6 @@ const DaSelect = props => {
         hasHelpButton,
         // must not be passed with rest because there is no readOnly html attribute for select
         readOnly,
-        ref,
         ...rest
     } = props;
 
@@ -42,7 +41,7 @@ const DaSelect = props => {
             </select>
         </DaSelectBase>
     );
-};
+});
 
 DaSelect.propTypes = {
     options: PropTypes.arrayOf(
