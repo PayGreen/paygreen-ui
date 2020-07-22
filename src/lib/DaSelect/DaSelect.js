@@ -33,7 +33,11 @@ const DaSelect = React.forwardRef((props, ref) => {
                     <option
                         key={index}
                         value={option.value}
-                        disabled={option.disabled || props.readOnly}
+                        disabled={
+                            option.disabled ||
+                            (props.readOnly &&
+                                option.value !== props.defaultValue)
+                        }
                     >
                         {option.text}
                     </option>
