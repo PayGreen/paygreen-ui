@@ -30,7 +30,7 @@ Checkbox.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     disabled: PropTypes.bool,
     id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     ref: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
