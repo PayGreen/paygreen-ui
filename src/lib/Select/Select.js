@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import { Transition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import {
@@ -6,88 +6,78 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    spaceOptions
+    spaceOptions,
 } from '../../shared/constants';
 import { SelectBase } from './style';
 
-class Select extends PureComponent {
-    constructor(props) {
-        super(props);
+const Select = React.forwardRef((props, ref) => {
+    const {
+        options,
+        status,
+        label,
+        // must not be passed with rest because there is no readOnly html attribute for select
+        readOnly,
+        hasShadow,
+        blockWidth,
+        marginTop,
+        marginBottom,
+        ...rest
+    } = props;
 
-        this.state = {
-            status: ''
-        };
+    const [stateStatus, setStatus] = useState(status);
+
+    let animation = false;
+    if (status !== stateStatus) {
+        animation = true;
+
+        setTimeout(() => {
+            animation = false;
+            setStatus(status);
+        }, 1);
     }
 
-    render() {
-        const {
-            options,
-            status,
-            label,
-            // must not be passed with rest because there is no readOnly html attribute for select
-            readOnly,
-            hasShadow,
-            blockWidth,
-            marginTop,
-            marginBottom,
-            ref,
-            ...rest
-        } = this.props;
-
-        let animation = false;
-        if (this.props.status !== this.state.status) {
-            animation = true;
-
-            setTimeout(() => {
-                animation = false;
-                this.setState({ status: this.props.status });
-            }, 1);
-        }
-        
-        return <Transition in={animation} timeout={900}>
-            {(keyframe) => {
+    return (
+        <Transition in={animation} timeout={900}>
+            {keyframe => {
                 return (
                     <SelectBase
                         keyframe={keyframe}
-                        theme={this.props.theme} // not necessary, only needed for tests
+                        theme={props.theme} // not necessary, only needed for tests
                         status={status}
                         inputReadOnly={readOnly}
-                        inputDisabled={this.props.disabled}
+                        inputDisabled={props.disabled}
                         hasShadow={hasShadow}
                         blockWidth={blockWidth}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
-                        {label ?
-                            <label htmlFor={this.props.id}>
-                                {label}
-                            </label>
-                            : null
-                        }
+                        {label ? (
+                            <label htmlFor={props.id}>{label}</label>
+                        ) : null}
 
                         <select ref={ref} {...rest}>
-                            {options.map((option, index) =>
+                            {options.map((option, index) => (
                                 <option
                                     key={index}
                                     value={option.value}
                                     disabled={
                                         option.disabled ||
-                                        this.props.readOnly
-                                            && option.value !== this.state.value
+                                        (props.readOnly &&
+                                            option.value !== props.defaultValue)
                                     }
                                 >
                                     {option.text}
                                 </option>
-                            )}
+                            ))}
                         </select>
 
                         <span></span>
                     </SelectBase>
                 );
             }}
-        </Transition>;
-    }
-}
+        </Transition>
+    );
+});
 
 Select.propTypes = {
     id: PropTypes.string,
@@ -96,8 +86,8 @@ Select.propTypes = {
         PropTypes.shape({
             value: PropTypes.string.isRequired,
             text: PropTypes.string.isRequired,
-            disabled: PropTypes.bool
-        })
+            disabled: PropTypes.bool,
+        }),
     ).isRequired,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
