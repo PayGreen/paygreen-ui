@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Box } from '../../Main/style';
+import { BoxBase } from '../../Box/style';
 import { TopbarBase } from '../../Topbar/style';
 
 const SidebarBase = styled.div`
@@ -17,7 +17,7 @@ const SidebarBase = styled.div`
             grid-area: topbar;
         }
 
-        & > ${Box} {
+        & > ${BoxBase} {
             grid-area: box;
             overflow-y: auto;
         }

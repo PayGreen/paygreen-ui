@@ -5,7 +5,7 @@ import { folder } from '../../shared/constants';
 import Main from './Main';
 import Topbar from '../Topbar/Topbar';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
-import { Box } from './style';
+import Box from '../Box/Box';
 
 const mainMenuIsOpenLabel = 'Open sidebar';
 

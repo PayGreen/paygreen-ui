@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-htpNat haYpkD"
+  className="sc-htpNat iHbVbz"
 >
   <header
     className="sc-bdVaJa icKNKz"
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
     </button>
   </header>
   <div
-    className="sc-bwzfXH uTxCW"
+    className="sc-bwzfXH hIddlc"
   />
 </div>
 `;

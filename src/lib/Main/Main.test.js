@@ -4,7 +4,7 @@ import { ThemeDefault } from '../../theme';
 import Main from './Main';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Topbar from '../Topbar/Topbar';
-import { Box } from './style';
+import Box from '../Box/Box';
 
 it('renders without crashing', () => {
     const main = TestRenderer.create(
@@ -13,7 +13,7 @@ it('renders without crashing', () => {
                 <MenuHamburger theme={ThemeDefault} />
             </Topbar>
 
-            <Box />
+            <Box theme={ThemeDefault}/>
         </Main>,
     );
     expect(main.toJSON()).toMatchSnapshot();
