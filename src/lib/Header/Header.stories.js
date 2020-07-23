@@ -89,7 +89,7 @@ storiesOf(folder.nav + 'Header', module)
     .addDecorator(withKnobs)
     .add('Header', () => (
         <>
-            <Header isFixed={boolean('Fixed Header', true)}>
+            <Header>
                 <MenuGroup>
                     <div className="main-nav">
                         <MenuHamburger
