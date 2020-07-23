@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { RadioBase } from './style';
 
-const Radio = React.forwardRef((props, ref) => {
-    const { fieldSize, label, id, ...rest } = props;
+const Radio = props => {
+    const { fieldSize, label, id, inputRef, ...rest } = props;
 
     return (
         <RadioBase
@@ -12,18 +12,18 @@ const Radio = React.forwardRef((props, ref) => {
             fieldSize={fieldSize}
             isDisabled={props.disabled}
         >
-            <input {...rest} ref={ref} id={id} type="radio" />
+            <input {...rest} ref={inputRef} id={id} type="radio" />
             <label htmlFor={id}>{label}</label>
         </RadioBase>
     );
-});
+};
 
 Radio.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     disabled: PropTypes.bool,
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    ref: PropTypes.oneOfType([
+    inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
     ]),

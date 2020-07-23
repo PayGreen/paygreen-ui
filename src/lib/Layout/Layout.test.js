@@ -7,7 +7,7 @@ import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Topbar from '../Topbar/Topbar';
 import Main from '../Main/Main';
 import Sidebar from '../Sidebar/Sidebar';
-import { Box } from '../Main/style';
+import Box from '../Box/Box';
 
 it('renders without crashing', () => {
     const layout = TestRenderer.create(
@@ -21,7 +21,7 @@ it('renders without crashing', () => {
                     <MenuHamburger theme={ThemeDefault} />
                 </Topbar>
 
-                <Box />
+                <Box theme={ThemeDefault}/>
             </Main>
         </Layout>,
     );

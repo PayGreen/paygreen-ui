@@ -11,12 +11,13 @@ import {
 } from '../../shared/constants';
 import { InputBase } from './style';
 
-const Input = React.forwardRef((props, ref) => {
+const Input = props => {
     const {
         status,
         label,
         hasShadow,
         blockWidth,
+        inputRef,
         marginTop,
         marginBottom,
         type,
@@ -66,7 +67,11 @@ const Input = React.forwardRef((props, ref) => {
                             <label htmlFor={props.id}>{label}</label>
                         ) : null}
 
-                        <InputMask {...rest} mask={stateMask} inputRef={ref} />
+                        <InputMask
+                            {...rest}
+                            mask={stateMask}
+                            inputRef={inputRef}
+                        />
 
                         <span></span>
                     </InputBase>
@@ -74,7 +79,7 @@ const Input = React.forwardRef((props, ref) => {
             }}
         </Transition>
     );
-});
+};
 
 Input.propTypes = {
     type: PropTypes.string,
@@ -88,7 +93,7 @@ Input.propTypes = {
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     mask: PropTypes.string,
-    ref: PropTypes.oneOfType([
+    inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
     ]),

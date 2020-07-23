@@ -10,7 +10,7 @@ import {
 } from '../../shared/constants';
 import { DaTextareaBase } from './style';
 
-const DaTextarea = React.forwardRef((props, ref) => {
+const DaTextarea = props => {
     const [stateValue, setValue] = useState(
         props.value !== undefined ? props.value : '',
     );
@@ -26,6 +26,7 @@ const DaTextarea = React.forwardRef((props, ref) => {
         marginBottom,
         fieldSize,
         blockWidth,
+        inputRef,
         ...rest
     } = props;
 
@@ -64,7 +65,7 @@ const DaTextarea = React.forwardRef((props, ref) => {
         >
             <textarea
                 {...rest}
-                ref={ref}
+                ref={inputRef}
                 value={stateValue}
                 onChange={e => {
                     handleChange(e);
@@ -77,7 +78,7 @@ const DaTextarea = React.forwardRef((props, ref) => {
                 : null}
         </DaTextareaBase>
     );
-});
+};
 
 DaTextarea.propTypes = {
     disabled: PropTypes.bool,
@@ -88,7 +89,7 @@ DaTextarea.propTypes = {
     counterText: PropTypes.string,
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
-    ref: PropTypes.oneOfType([
+    inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(HTMLTextAreaElement) }),
     ]),

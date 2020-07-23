@@ -8,7 +8,7 @@ import {
 } from '../../shared/constants';
 import { DaSelectBase } from './style';
 
-const DaSelect = React.forwardRef((props, ref) => {
+const DaSelect = props => {
     const {
         options,
         fieldSize,
@@ -16,6 +16,7 @@ const DaSelect = React.forwardRef((props, ref) => {
         hasHelpButton,
         // must not be passed with rest because there is no readOnly html attribute for select
         readOnly,
+        inputRef,
         ...rest
     } = props;
 
@@ -28,7 +29,7 @@ const DaSelect = React.forwardRef((props, ref) => {
             fieldSize={fieldSize}
             hasHelpButton={hasHelpButton}
         >
-            <select ref={ref} {...rest}>
+            <select ref={inputRef} {...rest}>
                 {options.map((option, index) => (
                     <option
                         key={index}
@@ -45,7 +46,7 @@ const DaSelect = React.forwardRef((props, ref) => {
             </select>
         </DaSelectBase>
     );
-});
+};
 
 DaSelect.propTypes = {
     options: PropTypes.arrayOf(
@@ -60,7 +61,7 @@ DaSelect.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
-    ref: PropTypes.oneOfType([
+    inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(HTMLSelectElement) }),
     ]),

@@ -9,7 +9,7 @@ import {
 } from '../../shared/constants';
 import { DaInputBase } from './style';
 
-const DaInput = React.forwardRef((props, ref) => {
+const DaInput = props => {
     const [stateMask, setMask] = useState('');
     const {
         fieldSize,
@@ -18,6 +18,7 @@ const DaInput = React.forwardRef((props, ref) => {
         type,
         // remove mask from rest
         mask,
+        inputRef,
         ...rest
     } = props;
 
@@ -39,10 +40,10 @@ const DaInput = React.forwardRef((props, ref) => {
             blockWidth={blockWidth}
             hasHelpButton={hasHelpButton}
         >
-            <InputMask inputRef={ref} {...rest} mask={stateMask} />
+            <InputMask inputRef={inputRef} {...rest} mask={stateMask} />
         </DaInputBase>
     );
-});
+};
 
 DaInput.propTypes = {
     type: PropTypes.string,
@@ -52,7 +53,7 @@ DaInput.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
-    ref: PropTypes.oneOfType([
+    inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
     ]),

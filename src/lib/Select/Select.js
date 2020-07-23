@@ -10,7 +10,7 @@ import {
 } from '../../shared/constants';
 import { SelectBase } from './style';
 
-const Select = React.forwardRef((props, ref) => {
+const Select = props => {
     const {
         options,
         status,
@@ -21,6 +21,7 @@ const Select = React.forwardRef((props, ref) => {
         blockWidth,
         marginTop,
         marginBottom,
+        inputRef,
         ...rest
     } = props;
 
@@ -55,7 +56,7 @@ const Select = React.forwardRef((props, ref) => {
                             <label htmlFor={props.id}>{label}</label>
                         ) : null}
 
-                        <select ref={ref} {...rest}>
+                        <select ref={inputRef} {...rest}>
                             {options.map((option, index) => (
                                 <option
                                     key={index}
@@ -77,7 +78,7 @@ const Select = React.forwardRef((props, ref) => {
             }}
         </Transition>
     );
-});
+};
 
 Select.propTypes = {
     id: PropTypes.string,
@@ -96,7 +97,7 @@ Select.propTypes = {
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
-    ref: PropTypes.oneOfType([
+    inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(HTMLSelectElement) }),
     ]),

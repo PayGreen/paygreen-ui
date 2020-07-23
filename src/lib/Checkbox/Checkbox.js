@@ -4,8 +4,8 @@ import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { CheckboxBase } from './style';
 import { CheckBoldIcon } from '../Icon/Icon';
 
-const Checkbox = React.forwardRef((props, ref) => {
-    const { fieldSize, label, id, ...rest } = props;
+const Checkbox = props => {
+    const { fieldSize, label, id, inputRef, ...rest } = props;
 
     return (
         <CheckboxBase
@@ -13,7 +13,7 @@ const Checkbox = React.forwardRef((props, ref) => {
             fieldSize={fieldSize}
             isDisabled={props.disabled}
         >
-            <input {...rest} ref={ref} id={id} type="checkbox" />
+            <input {...rest} ref={inputRef} id={id} type="checkbox" />
 
             <label htmlFor={id}>
                 <CheckBoldIcon
@@ -24,14 +24,14 @@ const Checkbox = React.forwardRef((props, ref) => {
             </label>
         </CheckboxBase>
     );
-});
+};
 
 Checkbox.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     disabled: PropTypes.bool,
     id: PropTypes.string.isRequired,
     label: PropTypes.string,
-    ref: PropTypes.oneOfType([
+    inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
     ]),

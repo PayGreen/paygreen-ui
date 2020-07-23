@@ -7,7 +7,7 @@ import {
 } from '../../shared/constants';
 import { TextareaBase } from './style';
 
-const Textarea = React.forwardRef((props, ref) => {
+const Textarea = props => {
     const [stateValue, setValue] = useState(
         props.value !== undefined ? props.value : '',
     );
@@ -25,6 +25,7 @@ const Textarea = React.forwardRef((props, ref) => {
         hasCounter,
         counterText,
         hasShadow,
+        inputRef,
         marginTop,
         marginBottom,
         ...rest
@@ -62,7 +63,7 @@ const Textarea = React.forwardRef((props, ref) => {
 
             <textarea
                 {...rest}
-                ref={ref}
+                ref={inputRef}
                 value={stateValue}
                 onChange={e => {
                     handleChange(e);
@@ -75,7 +76,7 @@ const Textarea = React.forwardRef((props, ref) => {
                 : null}
         </TextareaBase>
     );
-});
+};
 
 Textarea.propTypes = {
     id: PropTypes.string,
@@ -90,7 +91,7 @@ Textarea.propTypes = {
     hasShadow: PropTypes.bool,
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
-    ref: PropTypes.oneOfType([
+    inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(HTMLTextAreaElement) }),
     ]),
