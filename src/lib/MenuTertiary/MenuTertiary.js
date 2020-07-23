@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
-import { colorThemeOptions, colorThemeDefault } from '../../shared/constants';
-import { useDebounce } from './hook/useDebounce';
-import { useWindowSize } from './hook/useWindowSize';
+import { useDebounce } from '../../shared/hook/useDebounce';
+import { useWindowSize } from '../../shared/hook/useWindowSize';
+import {
+    debounceTime,
+    colorThemeOptions,
+    colorThemeDefault,
+} from '../../shared/constants';
 import { MenuTertiaryBase } from './style';
 
 const MenuTertiary = props => {
-    const debounceTime = 200;
     const [activeLink, setActiveLink] = useState(null);
     const [sections, setSections] = useState(null);
     const [scrollTop, setScrollTop] = useState(0);
