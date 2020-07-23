@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-iwsKbI eELuHo"
+  className="sc-VigVT dpSpeP"
 >
   <div
     className="main-nav"
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
     </button>
   </div>
   <ul
-    className="sc-bZQynM jSAaQJ"
+    className="sc-bZQynM dxjVBw"
   >
     <li
       className="sc-EHOje Eovxe"
@@ -25,7 +25,7 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="sc-bxivhb bmMRVF"
+          className="sc-bxivhb hLWZBO"
         >
           <span
             className="sc-bdVaJa kUfnGr"

@@ -253,6 +253,7 @@ exports[`renders without crashing 1`] = `
           },
           "grid": Object {
             "header": "45px",
+            "headerBig": "70px",
             "maxWidth": "1400px",
             "sidebar": "380px",
             "topbar": "45px",
@@ -668,6 +669,7 @@ exports[`renders without crashing 1`] = `
           },
           "grid": Object {
             "header": "45px",
+            "headerBig": "70px",
             "maxWidth": "1400px",
             "sidebar": "380px",
             "topbar": "45px",

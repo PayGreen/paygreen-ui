@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-gzVnrw bUtanH"
+  className="sc-gzVnrw gBFbZq"
 >
   <li
     className="sc-bZQynM hAyDJP"
@@ -11,7 +11,7 @@ exports[`renders without crashing 1`] = `
       href="#"
     >
       <div
-        className="sc-ifAKCX eviDdb"
+        className="sc-ifAKCX gfKdSC"
       >
         <span
           className="sc-bwzfXH ixqcHG"
@@ -28,7 +28,7 @@ exports[`renders without crashing 1`] = `
       href="#"
     >
       <div
-        className="sc-ifAKCX MtCwo"
+        className="sc-ifAKCX fnYEPe"
       >
         <span
           className="sc-bwzfXH ixqcHG"
