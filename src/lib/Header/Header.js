@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import { debounceTime } from '../../shared/constants';
 import MenuGroup from '../MenuGroup/MenuGroup';
@@ -30,14 +29,16 @@ const Header = props => {
     let hasMenuTertiary = false;
 
     React.Children.map(props.children, child => {
-        if (child.type === MenuTertiary) {
+        if (child && child.type === MenuTertiary) {
             hasMenuTertiary = true;
         }
     });
 
+    const menuTertiaryStartDisplay = 110; // pixels to the top
+
     return (
-        <HeaderBase {...props}>
-            {React.Children.map(props.children, (child, index) => {
+        <HeaderBase {...props} hasTopStyle={scrollTop <= 0}>
+            {React.Children.map(props.children, child => {
                 if (!child) {
                     return null;
                 }
@@ -46,14 +47,15 @@ const Header = props => {
                     return React.cloneElement(child, {
                         isHidden:
                             hasMenuTertiary &&
-                            scrollDirection === direction.bottom,
+                            scrollDirection === direction.bottom &&
+                            scrollTop > menuTertiaryStartDisplay,
                         hasTopStyle: scrollTop <= 0,
                     });
                 }
 
                 if (child.type === MenuTertiary) {
                     return React.cloneElement(child, {
-                        isHidden: scrollTop <= 0,
+                        isHidden: scrollTop <= menuTertiaryStartDisplay,
                     });
                 }
 
@@ -61,14 +63,6 @@ const Header = props => {
             })}
         </HeaderBase>
     );
-};
-
-Header.propTypes = {
-    isFixed: PropTypes.bool,
-};
-
-Header.defaultProps = {
-    isFixed: false,
 };
 
 export default Header;

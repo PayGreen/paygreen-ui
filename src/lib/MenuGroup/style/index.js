@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { MenuPrimaryBase } from '../../MenuPrimary/style';
 import { MenuHamburgerBase } from '../../MenuHamburger/style';
 import { LogoBase } from '../../Logo/style';
-import { headerStyle, hiddenStyle } from './base';
+import { headerStyle, hiddenStyle, topStyle } from './base';
 
 const MenuGroupBase = styled.div`
     .main-nav {
@@ -26,6 +26,7 @@ const MenuGroupBase = styled.div`
     @media (${props => props.theme.query.min.lg}) {
         ${headerStyle};
         ${props => props.isHidden ? hiddenStyle : null};
+        ${props => props.hasTopStyle ? topStyle : null};
 
         ${MenuHamburgerBase},
         button.icon {

@@ -11,8 +11,14 @@ import {
     iconHtmlTagOptions,
     iconSizeOptions,
     textHtmlTagOptions,
+    decorationOptions,
+    colorTypeOptions,
+    fontSizeOptions,
 } from '../../shared/constants';
-import { UserIcon, LockIcon } from '../Icon/Icon';
+import { UserIcon } from '../Icon/Icon';
+import Card from '../Card/Card';
+import Title from '../Title/Title';
+import Banner from '../Banner/Banner';
 import Text from '../Text/Text';
 import Link from '../Link/Link';
 import MenuItem from '../MenuItem/MenuItem';
@@ -20,6 +26,7 @@ import Menu from '../Menu/Menu';
 import MenuPrimary from '../MenuPrimary/MenuPrimary';
 import MenuSecondary from '../MenuSecondary/MenuSecondary';
 import MenuTertiary from '../MenuTertiary/MenuTertiary';
+import MenuList from '../MenuList/MenuList';
 import MenuClose from '../MenuClose/MenuClose';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Logo from '../Logo/Logo';
@@ -28,11 +35,29 @@ import MenuGroup from '../MenuGroup/MenuGroup';
 import Header from './Header';
 import { logo } from '../Logo/sample/logo';
 
+const secondaryItem = {
+    hasHoverBase: false,
+    hasHoverEmphasis: true,
+    align: alignOptions.center,
+    isMain: true,
+};
+
 const mainLink = {
     hasHover: false,
     hasUnderline: false,
     colorPallet: colorPalletOptions.wab,
     hasUppercase: true,
+};
+
+const secondaryLink = {
+    hasHover: false,
+    hasUnderline: false,
+    hasUppercase: true,
+};
+
+const subLink = {
+    hasHover: false,
+    hasUnderline: false,
 };
 
 const sampleLinks = [
@@ -100,10 +125,35 @@ storiesOf(folder.nav + 'Header', module)
 
                         <Menu>
                             <a href="#">
-                                <MenuItem isMain={true}>
-                                    <Link {...mainLink}>Our products</Link>
+                                <MenuItem
+                                    isMain={true}
+                                    hasHoverBase={false}
+                                    hasHoverAlternative={false}
+                                >
+                                    <Link {...mainLink}>Other products</Link>
                                 </MenuItem>
                             </a>
+
+                            <MenuList>
+                                <a href="#">
+                                    <MenuItem hasHoverEmphasis={true}>
+                                        <Link {...subLink}>Tree</Link>
+
+                                        <Text>
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit.
+                                            Maecenas sit amet accumsan dolor.
+                                            Nullam fringilla quam leo.
+                                        </Text>
+                                    </MenuItem>
+                                </a>
+
+                                <a href="#">
+                                    <MenuItem hasHoverEmphasis={true}>
+                                        <Link {...subLink}>Payment</Link>
+                                    </MenuItem>
+                                </a>
+                            </MenuList>
                         </Menu>
 
                         <Menu>
@@ -129,25 +179,16 @@ storiesOf(folder.nav + 'Header', module)
                     >
                         <Menu htmlTag={itemHtmlTagOptions.div}>
                             <a href="#">
-                                <MenuItem
-                                    hasHoverBase={false}
-                                    hasHoverEmphasis={true}
-                                    align={alignOptions.center}
-                                    isMain={true}
-                                >
-                                    <LockIcon
-                                        iconSize={iconSizeOptions.lg}
-                                        colorPallet={colorPalletOptions.wab}
-                                    />
+                                <MenuItem {...secondaryItem}>
+                                    <Link {...secondaryLink}>Login</Link>
+                                </MenuItem>
+                            </a>
+                        </Menu>
 
-                                    <Link
-                                        hasHover={false}
-                                        hasUnderline={false}
-                                        hasUppercase={true}
-                                        colorPallet={colorPalletOptions.wab}
-                                    >
-                                        Login
-                                    </Link>
+                        <Menu htmlTag={itemHtmlTagOptions.div}>
+                            <a href="#">
+                                <MenuItem {...secondaryItem}>
+                                    <Link {...secondaryLink}>Subscribe</Link>
                                 </MenuItem>
                             </a>
                         </Menu>
@@ -164,6 +205,31 @@ storiesOf(folder.nav + 'Header', module)
                     </MenuTertiary>
                 ) : null}
             </Header>
+
+            <Banner topStyle={decorationOptions.none}>
+                <Card hasBackground={false}>
+                    <Title
+                        colorType={colorTypeOptions.reverse}
+                        textSize={fontSizeOptions.xl}
+                        marginLateral={spaceOptions.md}
+                        marginTop={spaceOptions.md}
+                    >
+                        Your big title
+                    </Title>
+
+                    <Text
+                        colorType={colorTypeOptions.reverse}
+                        marginLateral={spaceOptions.md}
+                        marginTop={spaceOptions.md}
+                        marginBottom={spaceOptions.md}
+                    >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Duis porttitor velit a ultricies aliquet. Donec vehicula
+                        in arcu non sodales. Fusce et consectetur odio. Ut
+                        bibendum ullamcorper turpis vel imperdiet.
+                    </Text>
+                </Card>
+            </Banner>
 
             <Text
                 marginTop={spaceOptions.xl}

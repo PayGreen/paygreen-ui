@@ -2,6 +2,7 @@ import { css } from 'styled-components';
 
 const hiddenStyle = css`
     margin-top: -${props => props.theme.grid.header};
+    opacity: 0;
 `;
 
 const fixedStyle = css`

@@ -58,7 +58,10 @@ const subLink = {
 storiesOf(folder.nav + 'MenuGroup', module)
     .addDecorator(withKnobs)
     .add('MenuGroup', () => (
-        <MenuGroup isHidden={boolean('Is hidden', false)}>
+        <MenuGroup
+            isHidden={boolean('Is hidden', false)}
+            hasTopStyle={boolean('Top style', false)}
+        >
             <div className="main-nav">
                 <MenuHamburger isOpen={boolean(mainMenuIsOpenLabel, true)} />
 

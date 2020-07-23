@@ -1,4 +1,11 @@
 import { css } from 'styled-components';
+import { MenuPrimaryBase } from '../../MenuPrimary/style';
+import { MenuSecondaryBase } from '../../MenuSecondary/style';
+import { MenuBase } from '../../Menu/style';
+import { MenuItemBase } from '../../MenuItem/style';
+import { LinkBase } from '../../Link/style';
+import { DotBase } from '../../Dot/style';
+import { LogoBase } from '../../Logo/style';
 
 const hiddenStyle = css`
     margin-top: -${props => props.theme.grid.header};
@@ -17,4 +24,66 @@ const headerStyle = css`
     transition: all ${props => props.theme.transition.sm};
 `;
 
-export { headerStyle, hiddenStyle };
+const topStyle = css`
+    background-color: transparent;
+    border-bottom: none;
+    height: ${props => props.theme.grid.headerBig};
+
+    ${LogoBase} {
+        svg {
+            fill: ${props => props.theme.wab.white00};
+        }
+
+        .baseline {
+            display: block;
+        }
+
+        .logo {
+            width: ${props => props.theme.logoWidth.md};
+        }
+    } 
+
+    ${MenuPrimaryBase},
+    ${MenuSecondaryBase} {
+        ${MenuBase} {
+            & > a {
+                ${MenuItemBase} {
+                    &::after {
+                        background-image: none;
+                        background-color: ${props => props.theme.wab.white00};
+                        opacity: .5;
+                    }
+                }
+
+                ${LinkBase} {
+                    color: ${props => props.theme.wab.white00};
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    ${LinkBase} {
+                        color: ${props => props.theme.wab.white00};
+                    }
+                }
+            }
+        }
+    }
+
+    ${MenuSecondaryBase} {
+        ${DotBase} {
+            &::before,
+            &::after {
+                background-color: ${props => props.theme.wab.white00};
+                opacity: .5;
+            }
+        }
+    }
+
+    & > ${DotBase} {
+        background-color: ${props => props.theme.wab.white00};
+        opacity: .5;
+    }
+`;
+
+export { headerStyle, hiddenStyle, topStyle };

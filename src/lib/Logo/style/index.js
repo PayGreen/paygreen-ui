@@ -20,6 +20,7 @@ const LogoBase = styled.span`
         align-items: center;
         width: ${props => props.theme.logoWidth[props.blockWidth]};
         height: ${props => props.theme.logoHeight[props.blockHeight]};
+        transition: all ${props => props.theme.transition.sm};
     }
 
     ${BadgeBase} {
