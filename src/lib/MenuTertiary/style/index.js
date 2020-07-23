@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fixedStyle } from './base';
+import { hiddenStyle, fixedStyle } from './base';
 
 const MenuTertiaryBase = styled.div`
     position: relative;
@@ -11,7 +11,9 @@ const MenuTertiaryBase = styled.div`
     font-size: ${props => props.theme.font.size.xs};
     background-color: ${props => props.theme.wab.white20};
     border-bottom: solid ${props => props.theme.line + props.theme.wab.grey10};
+    transition: all ${props => props.theme.transition.sm};
 
+    ${props => (props.isHidden ? hiddenStyle : null)};
     ${props => (props.isFixed ? fixedStyle : null)};
 
     &::before,

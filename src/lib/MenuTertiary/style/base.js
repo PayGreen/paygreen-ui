@@ -1,5 +1,9 @@
 import { css } from 'styled-components';
 
+const hiddenStyle = css`
+    margin-top: -${props => props.theme.grid.header};
+`;
+
 const fixedStyle = css`
     position: fixed;
     width: 100%;
@@ -7,4 +11,4 @@ const fixedStyle = css`
     left: 0;
 `;
 
-export { fixedStyle };
+export { hiddenStyle, fixedStyle };

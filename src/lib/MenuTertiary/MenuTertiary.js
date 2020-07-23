@@ -84,11 +84,13 @@ const MenuTertiary = props => {
 
 MenuTertiary.propTypes = {
     isFixed: PropTypes.bool,
+    isHidden: PropTypes.bool,
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
 };
 
 MenuTertiary.defaultProps = {
     isFixed: false,
+    isHidden: false,
     colorTheme: colorThemeDefault,
 };
 
