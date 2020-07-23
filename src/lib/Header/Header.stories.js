@@ -206,7 +206,7 @@ storiesOf(folder.nav + 'Header', module)
                 ) : null}
             </Header>
 
-            <Banner topStyle={decorationOptions.none}>
+            <Banner topStyle={decorationOptions.none} isFirstContent={true}>
                 <Card hasBackground={false}>
                     <Title
                         colorType={colorTypeOptions.reverse}

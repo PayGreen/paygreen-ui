@@ -1,6 +1,10 @@
 import { css } from 'styled-components';
 import { color, waveScale } from './constants';
 
+const spaceForHeader = css`
+    padding-top: ${props => props.theme.grid.headerBig};
+`;
+
 const topWaveStyle = css`
     margin-top: ${props => props.theme.wave.double};
 
@@ -28,6 +32,7 @@ const bottomWaveStyle = css`
 `;
 
 export {
+    spaceForHeader,
     topWaveStyle,
     bottomWaveStyle
 };
