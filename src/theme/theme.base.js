@@ -12,24 +12,36 @@ const query = (value, operator) => {
     return operator + '-width: ' + value + 'px';
 };
 
+const pallet = {
+    green: {
+        main: '#33ad73',
+        light: '#d5f3e5',
+    },
+    blue: {
+        main: '#00a99d',
+        light: '#e1f3f2',
+    },
+    orange: {
+        main: '#e58a28',
+        light: '#fbe6ce',
+    },
+};
+
 export const ThemeBase = {
     name: 'Base',
     color: {
         primary: {
-            main: '#33ad73',
-            light: '#d5f3e5',
+            ...pallet.green,
             gradientBase: '#77d1a6',
             gradientShade: '#a4db95',
         },
         secondary: {
-            main: '#00a99d',
-            light: '#e1f3f2',
+            ...pallet.blue,
             gradientBase: '#51c6be',
             gradientShade: '#76bbd8',
         },
         tertiary: {
-            main: '#e58a28',
-            light: '#fbe6ce',
+            ...pallet.orange,
             gradientBase: '#fab56b',
             gradientShade: '#faa272',
         },
@@ -48,16 +60,13 @@ export const ThemeBase = {
 
         status: {
             success: {
-                main: '#33ad73',
-                light: '#d5f3e5',
+                ...pallet.green,
             },
             default: {
-                main: '#00a99d',
-                light: '#e1f3f2',
+                ...pallet.blue,
             },
             warning: {
-                main: '#e58a28',
-                light: '#fbe6ce',
+                ...pallet.orange,
             },
             danger: {
                 main: '#b54025',
