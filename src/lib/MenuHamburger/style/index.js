@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { math } from 'polished';
 import { line, sideStyle, isClosedStyle, isOpenStyle } from './base';
-import { mainColor } from './constants';
+import { mainColor } from '../../Text/style/constants';
 
 const MenuHamburgerBase = styled.button`
     display: block;

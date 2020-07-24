@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { responsiveSpaces } from '../../../shared/spaces';
 import { colorTypeOptions } from '../../../shared/constants';
-import { color } from './constants';
+import { mainColor } from '../../Text/style/constants';
 
 const HRBase = styled.div`
     ${responsiveSpaces('margin', 0, 1, 1, ['Lateral'])};
@@ -11,7 +11,7 @@ const HRBase = styled.div`
     background: ${props =>
         props.colorType === colorTypeOptions.reverse
             ? props.theme.wab.white00
-            : color[props.colorPallet]};
+            : mainColor[props.colorPallet]};
     opacity: ${props => props.opacityValue / 100};
     height: ${props => props.theme.line};
 `;
