@@ -2,22 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DaTableCellBase } from './style';
 
-const DaTableCell = props => {
-    const label = props.label ? (
-        <span className="cell-label">{props.label}</span>
+const DaTableCell = ({ children, label, field, ...rest }) => {
+    const labelContent = label ? (
+        <span className="cell-label">{label}</span>
     ) : null;
 
-    const content = props.children ? (
-        <span className="cell-content">{props.children}</span>
+    const content = children ? (
+        <span className="cell-content">{children}</span>
     ) : (
         <>&nbsp;</>
     );
 
     return (
-        <DaTableCellBase {...props} hasLabel={label ? true : false}>
-            {label}
+        <DaTableCellBase {...rest} hasLabel={labelContent ? true : false}>
+            {labelContent}
             {content}
-            {props.field ? props.field : null}
+            {field ? field : null}
         </DaTableCellBase>
     );
 };
