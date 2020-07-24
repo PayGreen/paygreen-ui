@@ -56,7 +56,7 @@ const Select = props => {
                             <label htmlFor={props.id}>{label}</label>
                         ) : null}
 
-                        <select ref={inputRef} {...rest}>
+                        <select  {...rest} ref={inputRef}>
                             {options.map((option, index) => (
                                 <option
                                     key={index}

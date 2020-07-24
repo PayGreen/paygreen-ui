@@ -401,6 +401,7 @@ exports[`renders without crashing 1`] = `
         },
       }
     }
+    type="text"
   />
   <span />
 </div>

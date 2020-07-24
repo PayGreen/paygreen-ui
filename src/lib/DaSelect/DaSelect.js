@@ -29,7 +29,7 @@ const DaSelect = props => {
             fieldSize={fieldSize}
             hasHelpButton={hasHelpButton}
         >
-            <select ref={inputRef} {...rest}>
+            <select {...rest} ref={inputRef}>
                 {options.map((option, index) => (
                     <option
                         key={index}

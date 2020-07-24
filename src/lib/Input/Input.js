@@ -20,7 +20,6 @@ const Input = props => {
         inputRef,
         marginTop,
         marginBottom,
-        type,
         // remove mask from rest
         mask,
         ...rest
@@ -32,10 +31,10 @@ const Input = props => {
     useEffect(() => {
         if (mask && mask.length) {
             setMask(mask);
-        } else if (type === 'tel') {
+        } else if (props.type === 'tel') {
             setMask('+99 (0)9 99 99 99 99');
         }
-    }, [type, mask]);
+    }, [props.type, mask]);
 
     let animation = false;
     if (status !== stateStatus) {
@@ -69,8 +68,8 @@ const Input = props => {
 
                         <InputMask
                             {...rest}
-                            mask={stateMask}
                             inputRef={inputRef}
+                            mask={stateMask}
                         />
 
                         <span></span>

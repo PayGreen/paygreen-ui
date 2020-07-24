@@ -15,7 +15,6 @@ const DaInput = props => {
         fieldSize,
         blockWidth,
         hasHelpButton,
-        type,
         // remove mask from rest
         mask,
         inputRef,
@@ -25,22 +24,22 @@ const DaInput = props => {
     useEffect(() => {
         if (mask && mask.length) {
             setMask(mask);
-        } else if (type === 'tel') {
+        } else if (props.type === 'tel') {
             setMask('+99 (0)9 99 99 99 99');
         }
-    }, [type, mask]);
+    }, [props.type, mask]);
 
     return (
         <DaInputBase
             theme={props.theme} // not necessary, only needed for tests
-            type={props.type}
+            inputType={props.type}
             inputReadOnly={props.readOnly}
             inputDisabled={props.disabled}
             fieldSize={fieldSize}
             blockWidth={blockWidth}
             hasHelpButton={hasHelpButton}
         >
-            <InputMask inputRef={inputRef} {...rest} mask={stateMask} />
+            <InputMask {...rest} inputRef={inputRef} mask={stateMask} />
         </DaInputBase>
     );
 };

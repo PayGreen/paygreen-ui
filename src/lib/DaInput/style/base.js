@@ -48,7 +48,7 @@ const helpButtonStyle = css`
     width: ${props =>
         math(
             props.theme.form.inputWidth[
-                props.type === 'tel' ? 'sm' : props.blockWidth
+                props.inputType === 'tel' ? 'sm' : props.blockWidth
             ] +
                 '-' +
                 props.theme.daButton.buttonHeight[props.fieldSize],

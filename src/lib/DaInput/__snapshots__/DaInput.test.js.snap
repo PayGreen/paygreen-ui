@@ -3,7 +3,6 @@
 exports[`renders without crashing 1`] = `
 <div
   className="sc-bdVaJa gqTPav"
-  type="text"
 >
   <input
     disabled={false}
@@ -398,6 +397,7 @@ exports[`renders without crashing 1`] = `
         },
       }
     }
+    type="text"
   />
 </div>
 `;
