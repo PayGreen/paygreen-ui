@@ -38,12 +38,12 @@ storiesOf(folder.main + 'Corner', module)
                 cornerPositionOptions,
                 cornerPositionDefault,
             )}
+            radiusSize={select(radiusSizeLabel, radiusOptions, radiusDefault)}
             colorStyle={radios(
                 colorStyleLabel,
                 colorStyleOptions,
                 colorStyleDefault,
             )}
-            radiusSize={radios(radiusSizeLabel, radiusOptions, radiusDefault)}
             colorPallet={radios(
                 colorPalletLabel,
                 cornerColorPalletOptions,
@@ -69,12 +69,12 @@ storiesOf(folder.main + 'Corner', module)
                 cornerPositionOptions,
                 cornerPositionDefault,
             )}
+            radiusSize={select(radiusSizeLabel, radiusOptions, radiusDefault)}
             colorStyle={radios(
                 colorStyleLabel,
                 colorStyleOptions,
                 colorStyleDefault,
             )}
-            radiusSize={radios(radiusSizeLabel, radiusOptions, radiusDefault)}
             colorPallet={radios(
                 colorPalletLabel,
                 cornerColorPalletOptions,

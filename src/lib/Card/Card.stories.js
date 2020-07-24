@@ -26,12 +26,15 @@ import {
     spaceOptions,
     spaceDefault,
     buttonSizeOptions,
+    colorStyleOptions,
+    cornerPositionOptions,
 } from '../../shared/constants';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
 import Image from '../Image/Image';
 import Text from '../Text/Text';
 import Title from '../Title/Title';
+import Corner from '../Corner/Corner';
 import Card from './Card';
 import imageFile from './sample/sample.png';
 
@@ -80,6 +83,12 @@ storiesOf(folder.main + 'Card', module)
                     cardHtmlTagDefault,
                 )}
             >
+                <Corner
+                    label="Since 2016"
+                    colorStyle={colorStyleOptions.light}
+                    cornerPosition={cornerPositionOptions.right}
+                />
+
                 <Title
                     colorType={radios(
                         colorTypeLabel,

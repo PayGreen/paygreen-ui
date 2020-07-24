@@ -21,9 +21,11 @@ const Corner = ({ children, label, ...rest }) => {
         {...rest}
         hasChildren={children ? true : false}
     >
-        <span className="corner">
-            {label}
-        </span>
+        <div className="corner">
+            <span>
+                {label}
+            </span>
+        </div>
 
         {children}
     </CornerBase>;

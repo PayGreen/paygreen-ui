@@ -254,6 +254,7 @@ export const ThemeBase = {
         background: -1,
         base: 0,
         content: 1,
+        corner: 3,
         front: 5,
         loader: 90,
         subHeader: 100,
