@@ -3,7 +3,7 @@ import { transparentize } from 'polished';
 const mainColor = {
     theme: props => props.theme.color[props.colorTheme].main,
     wab: props => props.theme.wab[props.colorWab],
-    status: props => props.theme.color.status[props.colorStatus].main,
+    status: props => props.theme.status[props.colorStatus].main,
 };
 
 const backgroundColor = {
@@ -11,7 +11,7 @@ const backgroundColor = {
         transparentize(0.9, props.theme.color[props.colorTheme].main),
     wab: props => transparentize(0.97, props.theme.wab.black00),
     status: props =>
-        transparentize(0.9, props.theme.color.status[props.colorStatus].main),
+        transparentize(0.9, props.theme.status[props.colorStatus].main),
 };
 
 const minimizeFont = {

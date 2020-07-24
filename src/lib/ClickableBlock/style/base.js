@@ -21,7 +21,7 @@ const borderColor = {
         border: solid
             ${props =>
                 props.theme.line +
-                props.theme.color.status[props.colorStatus].light};
+                props.theme.status[props.colorStatus].light};
     `,
 };
 
@@ -44,7 +44,7 @@ const hoverStyle = {
         background-color: ${props =>
             transparentize(
                 props.theme.shadow.opacity.xs,
-                props.theme.color.status[props.colorStatus].main,
+                props.theme.status[props.colorStatus].main,
             )};
     `,
 };

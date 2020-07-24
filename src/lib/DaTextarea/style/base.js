@@ -5,7 +5,7 @@ const canHover = css`
     &:hover,
     &:active,
     &:focus {
-        border-color: ${props => props.theme.color.status.default.main};
+        border-color: ${props => props.theme.status.default.main};
     }
 `;
 

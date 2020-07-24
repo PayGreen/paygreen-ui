@@ -57,21 +57,20 @@ export const ThemeBase = {
             gradientBase: '#b887ee',
             gradientShade: '#dd94ef',
         },
-
-        status: {
-            success: {
-                ...pallet.green,
-            },
-            default: {
-                ...pallet.blue,
-            },
-            warning: {
-                ...pallet.orange,
-            },
-            danger: {
-                main: '#b54025',
-                light: '#f7d7d0',
-            },
+    },
+    status: {
+        success: {
+            ...pallet.green,
+        },
+        default: {
+            ...pallet.blue,
+        },
+        warning: {
+            ...pallet.orange,
+        },
+        danger: {
+            main: '#b54025',
+            light: '#f7d7d0',
         },
     },
     font: {

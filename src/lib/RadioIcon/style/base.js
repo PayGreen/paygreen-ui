@@ -58,17 +58,17 @@ const labelSize = {
 };
 
 const activeStyle = css`
-    color: ${props => props.theme.color.status.success.main};
+    color: ${props => props.theme.status.success.main};
     box-shadow: ${props => props.theme.shadow.size.md + ' ' + transparentize(
         0.7,
-        props.theme.color.status.success.main
+        props.theme.status.success.main
     )};
 
     & > .icon {
         opacity: .7;
 
         svg {
-            fill: ${props => props.theme.color.status.success.main};
+            fill: ${props => props.theme.status.success.main};
         }
     }
 `;

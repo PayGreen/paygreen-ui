@@ -15,40 +15,40 @@ const statusStyle = css`
     ${DaInputBase} input,
     ${DaTextareaBase} textarea {
         border-color: ${props =>
-            props.theme.color.status[props.colorStatus].main};
+            props.theme.status[props.colorStatus].main};
 
         &:hover,
         &:active,
         &:focus {
             border-color: ${props =>
-                props.theme.color.status[props.colorStatus].main};
+                props.theme.status[props.colorStatus].main};
         }
     }
 
     ${DaLabelBase} {
-        color: ${props => props.theme.color.status[props.colorStatus].main};
+        color: ${props => props.theme.status[props.colorStatus].main};
        
         .required {
-            color: ${props => props.theme.color.status[props.colorStatus].main};
+            color: ${props => props.theme.status[props.colorStatus].main};
         }
     }
 
     ${DaHelpBase} {
         background-color: ${props =>
-            props.theme.color.status[props.colorStatus].light};
+            props.theme.status[props.colorStatus].light};
 
         &:hover,
         &:active,
         &:focus {
             background-image: none;
             background-color: ${props =>
-                props.theme.color.status[props.colorStatus].main};
+                props.theme.status[props.colorStatus].main};
         }
 
         & > .icon {
             svg {
                 fill: ${props =>
-                    props.theme.color.status[props.colorStatus].main};
+                    props.theme.status[props.colorStatus].main};
             }
         }
     }
@@ -59,7 +59,7 @@ const statusStyle = css`
                 & + label {
                     &::after {
                         background-color: ${props =>
-                            props.theme.color.status[props.colorStatus].main};
+                            props.theme.status[props.colorStatus].main};
                     }
                 }
             }
@@ -72,9 +72,9 @@ const statusStyle = css`
                 & + label {
                     &::before {
                         border-color: ${props =>
-                            props.theme.color.status[props.colorStatus].main};
+                            props.theme.status[props.colorStatus].main};
                         background-color: ${props =>
-                            props.theme.color.status[props.colorStatus].main};
+                            props.theme.status[props.colorStatus].main};
                     }
                 }
             }

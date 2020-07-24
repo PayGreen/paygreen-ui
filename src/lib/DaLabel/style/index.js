@@ -13,7 +13,7 @@ const DaLabelBase = styled.label`
 
     .required {
         margin-left: 0.2em;
-        color: ${props => props.theme.color.status.warning.main};
+        color: ${props => props.theme.status.warning.main};
     }
 `;
 

@@ -9,7 +9,7 @@ const arrowBase = css`
         position: absolute;
         border: solid ${arrowSize} transparent;
         border-top-color: ${props =>
-            props.theme.color.status[props.colorStatus].light};
+            props.theme.status[props.colorStatus].light};
         transform-origin: top;
     }
 `;

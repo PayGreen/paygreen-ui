@@ -54,9 +54,9 @@ const CheckboxBase = styled.div`
 
                 &::before {
                     border-color: ${props =>
-                        props.theme.color.status.success.main};
+                        props.theme.status.success.main};
                     background-color: ${props =>
-                        props.theme.color.status.success.main};
+                        props.theme.status.success.main};
                 }
 
                 & > .icon {
