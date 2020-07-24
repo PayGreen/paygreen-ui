@@ -15,7 +15,10 @@ import {
     colorThemeDefault,
     formStatusOptions,
     formStatusDefault,
+    spaceOptions,
+    fontSizeOptions,
 } from '../../shared/constants';
+import Text from '../Text/Text';
 import Popin from '../Popin/Popin';
 import Corner from './Corner';
 
@@ -92,9 +95,16 @@ storiesOf(folder.main + 'Corner', module)
             )}
         >
             <Popin>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas consectetur placerat tellus, sed blandit justo porta a.
-                Pellentesque habitant morbi tristique senectus.
+                <Text
+                    marginTop={spaceOptions.xs}
+                    marginLateral={spaceOptions.xs}
+                    marginBottom={spaceOptions.xs}
+                    textSize={fontSizeOptions.xs}
+                >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                </Text>
             </Popin>
         </Corner>
     ));

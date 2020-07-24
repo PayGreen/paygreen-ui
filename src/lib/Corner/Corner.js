@@ -14,21 +14,31 @@ import {
     formStatusOptions,
     formStatusDefault,
 } from '../../shared/constants';
+import Popin from '../Popin/Popin';
 import { CornerBase } from './style';
 
 const Corner = ({ children, label, ...rest }) => {
-    return <CornerBase
-        {...rest}
-        hasChildren={children ? true : false}
-    >
-        <div className="corner">
-            <span>
-                {label}
-            </span>
-        </div>
+    return (
+        <CornerBase {...rest} hasChildren={children ? true : false}>
+            <div className="corner">
+                <span>{label}</span>
+            </div>
 
-        {children}
-    </CornerBase>;
+            {React.Children.map(children, child => {
+                if (!child) {
+                    return null;
+                }
+
+                if (child.type === Popin) {
+                    return React.cloneElement(child, {
+                        isActive: true,
+                    });
+                }
+
+                return child;
+            })}
+        </CornerBase>
+    );
 };
 
 Corner.propTypes = {

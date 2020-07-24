@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { PopinBase } from '../../Popin/style';
 import {
     backgroundStyle,
     colorStyle,
@@ -20,6 +21,28 @@ const CornerBase = styled.div`
             ${props => colorStyle[props.colorStyle]};
             font-weight: ${props => props.theme.font.weight.bold};
             white-space: nowrap;
+        }
+    }
+
+    ${PopinBase} {
+        opacity: 0;
+        pointer-events: none;
+        left: inherit;
+        ${props => positionStyle[props.cornerPosition]};
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: ${props => props.theme.space.lg};
+            margin-top: -${props => props.theme.space.lg};
+        }
+    }
+
+    &:hover {
+        ${PopinBase} {
+            opacity: 1;
+            pointer-events: inherit;
         }
     }
 `;
