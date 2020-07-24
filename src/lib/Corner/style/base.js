@@ -32,33 +32,64 @@ const colorStyle = {
     `,
 };
 
-const bannerPosition = {
+const positionStyle = {
     left: css`
         left: 0;
-
-        .corner {
-            span {
-                transform: rotate(-45deg) translateY(-100%);
-                transform-origin: top right;
-                margin-left: -43%;
-            }
-        }
     `,
     right: css`
         right: 0;
+    `,
+};
 
-        .corner {
-            margin-left: auto;
+const squarePosition = {
+    left: css`
+        padding-right: ${props => props.theme.space.xs};
+        border-top-left-radius: ${props =>
+            props.theme.radius[props.radiusSize]};
+        border-bottom-right-radius: 100%;
+    `,
+    right: css`
+        padding-left: ${props => props.theme.space.xs};
+        border-top-right-radius: ${props =>
+            props.theme.radius[props.radiusSize]};
+        border-bottom-left-radius: 100%;
+    `,
+};
 
-            span {
-                transform: rotate(45deg) translateY(-100%);
-                transform-origin: top left;
-            }
+const bannerPosition = {
+    left: css`
+        span {
+            transform: rotate(-45deg) translateY(-100%);
+            transform-origin: top right;
+            margin-left: -43%;
+        }
+    `,
+    right: css`
+        margin-left: auto;
+
+        span {
+            transform: rotate(45deg) translateY(-100%);
+            transform-origin: top left;
         }
     `,
 };
 
-const squareStyle = css``;
+const squareStyle = css`
+    .corner {
+        span {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: ${props => props.theme.space.lg};
+            min-width: ${props => props.theme.space.lg};
+            line-height: ${props => props.theme.font.lineHeight.base};
+            padding-bottom: ${props => props.theme.space.xs};
+
+            ${props => squarePosition[props.cornerPosition]};
+        }
+    }
+`;
 
 const bannerStyle = css`
     pointer-events: none;
@@ -77,9 +108,9 @@ const bannerStyle = css`
             letter-spacing: ${props => props.theme.font.spacing};
             line-height: ${props => props.theme.font.lineHeight.md};
         }
-    }
 
-    ${props => bannerPosition[props.cornerPosition]};
+        ${props => bannerPosition[props.cornerPosition]};
+    }
 `;
 
-export { backgroundStyle, colorStyle, squareStyle, bannerStyle };
+export { backgroundStyle, colorStyle, positionStyle, squareStyle, bannerStyle };
