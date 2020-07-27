@@ -17,7 +17,6 @@ const DaInput = props => {
         hasHelpButton,
         // remove mask from rest
         mask,
-        inputRef,
         ...rest
     } = props;
 
@@ -39,7 +38,7 @@ const DaInput = props => {
             blockWidth={blockWidth}
             hasHelpButton={hasHelpButton}
         >
-            <InputMask {...rest} inputRef={inputRef} mask={stateMask} />
+            <InputMask {...rest} inputRef={props.inputRef} mask={stateMask} />
         </DaInputBase>
     );
 };

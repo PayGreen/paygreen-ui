@@ -17,7 +17,6 @@ const Input = props => {
         label,
         hasShadow,
         blockWidth,
-        inputRef,
         marginTop,
         marginBottom,
         // remove mask from rest
@@ -68,7 +67,7 @@ const Input = props => {
 
                         <InputMask
                             {...rest}
-                            inputRef={inputRef}
+                            inputRef={props.inputRef}
                             mask={stateMask}
                         />
 
