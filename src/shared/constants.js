@@ -28,7 +28,6 @@ const folder = {
 };
 
 // Debounce
-
 const debounceTime = 200;
 
 /* Colors */

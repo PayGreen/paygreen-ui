@@ -24,12 +24,12 @@ const MenuGroup = props => {
 
 MenuGroup.propTypes = {
     isHidden: PropTypes.bool,
-    hasTopStyle: PropTypes.bool
+    hasTopStyle: PropTypes.bool,
 };
 
 MenuGroup.defaultProps = {
     isHidden: false,
-    hasTopStyle: false
+    hasTopStyle: false,
 };
 
 export default MenuGroup;

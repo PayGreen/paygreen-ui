@@ -19,7 +19,8 @@ const headerStyle = css`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid ${props => props.theme.line} ${props => props.theme.wab.white20};
+    border-bottom: solid
+        ${props => props.theme.line + ' ' + props.theme.wab.white20};
     background-color: ${props => props.theme.wab.white00};
     transition: all ${props => props.theme.transition.sm};
 `;
@@ -41,7 +42,7 @@ const topStyle = css`
         .logo {
             width: ${props => props.theme.logoWidth.md};
         }
-    } 
+    }
 
     ${MenuPrimaryBase},
     ${MenuSecondaryBase} {
@@ -51,7 +52,7 @@ const topStyle = css`
                     &::after {
                         background-image: none;
                         background-color: ${props => props.theme.wab.white00};
-                        opacity: .5;
+                        opacity: 0.5;
                     }
                 }
 
@@ -75,14 +76,14 @@ const topStyle = css`
             &::before,
             &::after {
                 background-color: ${props => props.theme.wab.white00};
-                opacity: .5;
+                opacity: 0.5;
             }
         }
     }
 
     & > ${DotBase} {
         background-color: ${props => props.theme.wab.white00};
-        opacity: .5;
+        opacity: 0.5;
     }
 `;
 
