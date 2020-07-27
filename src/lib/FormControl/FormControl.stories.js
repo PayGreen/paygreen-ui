@@ -22,7 +22,7 @@ import { QuestionBoldIcon } from '../Icon/Icon';
 import FormControl from './FormControl';
 
 const colorStatusLabel = 'Status color';
-const isRequiredLabel = 'Is required';
+const requiredLabel = 'Required';
 
 const selectOptions = [
     {
@@ -75,7 +75,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
-            isRequired={boolean(isRequiredLabel, false)}
+            required={boolean(requiredLabel, false)}
         >
             <DaLabel>Select label</DaLabel>
 
@@ -93,7 +93,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
-            isRequired={boolean(isRequiredLabel, false)}
+            required={boolean(requiredLabel, false)}
             hasHelpButton={true}
         >
             <DaLabel>Input label</DaLabel>
@@ -127,7 +127,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
-            isRequired={boolean(isRequiredLabel, false)}
+            required={boolean(requiredLabel, false)}
         >
             <CheckboxGroup
                 name="checkboxes"
@@ -152,7 +152,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
-            isRequired={boolean(isRequiredLabel, false)}
+            required={boolean(requiredLabel, false)}
         >
             <DaLabel>Textarea description</DaLabel>
 

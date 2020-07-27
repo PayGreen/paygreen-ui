@@ -26,7 +26,7 @@ storiesOf(folder.form + 'DaLabel', module)
                     labelHtmlTagOptions,
                     labelHtmlTagDefault,
                 )}
-                isRequired={boolean('Is required', false)}
+                required={boolean('Is required', false)}
             >
                 Label Description
             </DaLabel>

@@ -15,7 +15,6 @@ const DaInput = props => {
         fieldSize,
         blockWidth,
         hasHelpButton,
-        type,
         // remove mask from rest
         mask,
         ...rest
@@ -24,15 +23,15 @@ const DaInput = props => {
     useEffect(() => {
         if (mask && mask.length) {
             setMask(mask);
-        } else if (type === 'tel') {
+        } else if (props.type === 'tel') {
             setMask('+99 (0)9 99 99 99 99');
         }
-    }, [type, mask]);
+    }, [props.type, mask]);
 
     return (
         <DaInputBase
             theme={props.theme} // not necessary, only needed for tests
-            type={props.type}
+            inputType={props.type}
             inputReadOnly={props.readOnly}
             inputDisabled={props.disabled}
             fieldSize={fieldSize}
@@ -52,6 +51,10 @@ DaInput.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
+    inputRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
+    ]),
 };
 
 DaInput.defaultProps = {

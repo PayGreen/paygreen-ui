@@ -1,84 +1,82 @@
-import React, { PureComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
     formStatusOptions,
     formStatusDefault,
-    spaceOptions
+    spaceOptions,
 } from '../../shared/constants';
 import { TextareaBase } from './style';
 
-class Textarea extends PureComponent {
-    constructor(props) {
-        super(props);
+const Textarea = props => {
+    const [stateValue, setValue] = useState(
+        props.value !== undefined ? props.value : '',
+    );
+    const [stateCharactersStatus, setCharactersStatus] = useState(
+        formStatusDefault,
+    );
 
-        this.state = {
-            value: props.value !== undefined ? props.value : '',
-            charactersStatus: formStatusOptions.default
-        };
-    }
+    const handleChange = e => {
+        setValue(e.target.value);
+    };
 
-    handleChange(event) {
-        this.setState({ value: event.target.value });
-    }
+    const {
+        status,
+        label,
+        hasCounter,
+        counterText,
+        hasShadow,
+        inputRef,
+        marginTop,
+        marginBottom,
+        ...rest
+    } = props;
 
-    render() {
-        const {
-            status,
-            label,
-            hasCounter,
-            counterText,
-            hasShadow,
-            marginTop,
-            marginBottom,
-            ...rest
-        } = this.props;
+    const charactersLength = stateValue.length || 0;
 
-        const charactersLength = this.state.value.length || 0;
-        let charactersStatus = formStatusOptions.default;
-
-        if (charactersLength > this.props.maxLength * 0.9) {
-            charactersStatus = formStatusOptions.warning;
-        } else if (charactersLength >= this.props.minLength) {
-            charactersStatus = formStatusOptions.success;
+    useEffect(() => {
+        if (charactersLength > props.maxLength * 0.9) {
+            setCharactersStatus(formStatusOptions.warning);
+        } else if (charactersLength >= props.minLength) {
+            setCharactersStatus(formStatusOptions.success);
         }
+    }, [charactersLength]);
 
-        const charactersCountBlock = <div>
-            <span>
-                {charactersLength}
-            </span>&nbsp;/&nbsp;{this.props.maxLength} {counterText}
-        </div>;
+    const charactersCountBlock = (
+        <div>
+            <span>{charactersLength}</span>&nbsp;/&nbsp;{props.maxLength}{' '}
+            {counterText}
+        </div>
+    );
 
-        return <TextareaBase
-            theme={this.props.theme} // not necessary, only needed for tests
+    return (
+        <TextareaBase
+            theme={props.theme} // not necessary, only needed for tests
             status={status}
-            charactersStatus={charactersStatus}
-            inputDisabled={this.props.disabled}
-            inputReadOnly={this.props.readOnly}
+            charactersStatus={stateCharactersStatus}
+            inputDisabled={props.disabled}
+            inputReadOnly={props.readOnly}
             hasShadow={hasShadow}
             marginTop={marginTop}
             marginBottom={marginBottom}
         >
-            {label ?
-                <label htmlFor={this.props.id}>
-                    {label}
-                </label>
-                : null
-            }
+            {label ? <label htmlFor={props.id}>{label}</label> : null}
 
             <textarea
                 {...rest}
-                value={this.state.value}
-                onChange={(e) => {
-                    this.handleChange(e);
-                    this.props.onChange ? this.props.onChange(e) : null;
+                ref={inputRef}
+                value={stateValue}
+                onChange={e => {
+                    handleChange(e);
+                    props.onChange ? props.onChange(e) : null;
                 }}
             />
 
-            {hasCounter && !this.props.disabled && !this.props.readOnly ?
-                charactersCountBlock : null}
-        </TextareaBase>;
-    }
-}
+            {hasCounter && !props.disabled && !props.readOnly
+                ? charactersCountBlock
+                : null}
+        </TextareaBase>
+    );
+};
 
 Textarea.propTypes = {
     id: PropTypes.string,
@@ -93,6 +91,10 @@ Textarea.propTypes = {
     hasShadow: PropTypes.bool,
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    inputRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLTextAreaElement) }),
+    ]),
 };
 
 Textarea.defaultProps = {

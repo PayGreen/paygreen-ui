@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Transition } from 'react-transition-group';
 import InputMask from 'react-input-mask';
 import PropTypes from 'prop-types';
@@ -7,85 +7,73 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    spaceOptions
+    spaceOptions,
 } from '../../shared/constants';
 import { InputBase } from './style';
 
-class Input extends PureComponent {
-    constructor(props) {
-        super(props);
+const Input = props => {
+    const {
+        status,
+        label,
+        hasShadow,
+        blockWidth,
+        marginTop,
+        marginBottom,
+        // remove mask from rest
+        mask,
+        ...rest
+    } = props;
 
-        this.state = {
-            mask: '',
-            status: props.status
-        };
-        
-        if (props.mask && props.mask.length) {
-            this.state.mask = props.mask;
+    const [stateMask, setMask] = useState('');
+    const [stateStatus, setStatus] = useState(status);
+
+    useEffect(() => {
+        if (mask && mask.length) {
+            setMask(mask);
         } else if (props.type === 'tel') {
-            this.state.mask = '+99 (0)9 99 99 99 99';
+            setMask('+99 (0)9 99 99 99 99');
         }
+    }, [props.type, mask]);
+
+    let animation = false;
+    if (status !== stateStatus) {
+        animation = true;
+
+        setTimeout(() => {
+            animation = false;
+            setStatus(status);
+        }, 1);
     }
 
-    render() {
-        const {
-            status,
-            label,
-            hasShadow,
-            blockWidth,
-            marginTop,
-            marginBottom,
-
-            // remove mask from rest
-            mask,
-            
-            ...rest
-        } = this.props;
-
-        let animation = false;
-        if (status !== this.state.status) {
-            animation = true;
-
-            setTimeout(() => {
-                animation =  false;
-                this.setState({status: status});
-            }, 1);
-        }
-
-        return <Transition in={animation} timeout={900}>
-            {(keyframe) => {
+    return (
+        <Transition in={animation} timeout={900}>
+            {keyframe => {
                 return (
                     <InputBase
                         keyframe={keyframe}
-                        theme={this.props.theme} // not necessary, only needed for tests
+                        theme={props.theme} // not necessary, only needed for tests
                         status={status}
-                        inputType={this.props.type}
-                        inputReadOnly={this.props.readOnly}
-                        inputDisabled={this.props.disabled}
+                        inputType={props.type}
+                        inputReadOnly={props.readOnly}
+                        inputDisabled={props.disabled}
                         hasShadow={hasShadow}
                         blockWidth={blockWidth}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
-                        {label ?
-                            <label htmlFor={this.props.id}>
-                                {label}
-                            </label>
-                            : null
-                        }
+                        {label ? (
+                            <label htmlFor={props.id}>{label}</label>
+                        ) : null}
 
-                        <InputMask 
-                            {...rest}
-                            mask={this.state.mask}
-                        />
+                        <InputMask {...rest} mask={stateMask} />
 
                         <span></span>
                     </InputBase>
                 );
             }}
-        </Transition>;
-    }
-}
+        </Transition>
+    );
+};
 
 Input.propTypes = {
     type: PropTypes.string,
@@ -99,6 +87,10 @@ Input.propTypes = {
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     mask: PropTypes.string,
+    inputRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
+    ]),
 };
 
 Input.defaultProps = {

@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 import { TopbarBase } from '../../Topbar/style';
 import { isOpenStyle } from './base';
-
-const Box = styled.div``;
+import { BoxBase } from '../../Box/style';
 
 const MainBase = styled.div`
     position: relative;
@@ -24,7 +23,7 @@ const MainBase = styled.div`
         grid-area: topbar;
     }
 
-    & > ${Box} {
+    & > ${BoxBase} {
         grid-area: box;
         overflow-y: auto;
     }
@@ -32,4 +31,4 @@ const MainBase = styled.div`
     ${props => (props.isOpen ? isOpenStyle : null)};
 `;
 
-export { Box, MainBase };
+export { MainBase };

@@ -3,7 +3,7 @@ import { field, enabled, disabled, helpButtonStyle } from './base';
 
 const DaInputBase = styled.div`
     max-width: ${props =>
-        props.type === 'tel'
+        props.inputType === 'tel'
             ? props.theme.form.inputWidth.sm
             : props.theme.form.inputWidth[props.blockWidth]};
 

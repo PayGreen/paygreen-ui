@@ -5,7 +5,7 @@ import { CheckboxBase } from './style';
 import { CheckBoldIcon } from '../Icon/Icon';
 
 const Checkbox = props => {
-    const { fieldSize, label, id, ...rest } = props;
+    const { fieldSize, label, id, inputRef, ...rest } = props;
 
     return (
         <CheckboxBase
@@ -13,7 +13,7 @@ const Checkbox = props => {
             fieldSize={fieldSize}
             isDisabled={props.disabled}
         >
-            <input {...rest} id={id} type="checkbox" />
+            <input {...rest} ref={inputRef} id={id} type="checkbox" />
 
             <label htmlFor={id}>
                 <CheckBoldIcon
@@ -30,7 +30,11 @@ Checkbox.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     disabled: PropTypes.bool,
     id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
+    inputRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
+    ]),
 };
 
 Checkbox.defaultProps = {
