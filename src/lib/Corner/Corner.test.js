@@ -5,9 +5,7 @@ import Corner from './Corner';
 
 it('renders without crashing', () => {
     const component = TestRenderer.create(
-        <Corner theme={ThemeDefault}>
-            Something
-        </Corner>
+        <Corner theme={ThemeDefault} label={'Corner'} />
     );
     expect(component.toJSON()).toMatchSnapshot();
 });
