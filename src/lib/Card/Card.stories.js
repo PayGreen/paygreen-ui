@@ -32,6 +32,7 @@ import {
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
 import Image from '../Image/Image';
+import Popin from '../Popin/Popin';
 import Text from '../Text/Text';
 import Title from '../Title/Title';
 import Corner from '../Corner/Corner';
@@ -44,6 +45,7 @@ const colorThemeLabel = 'Color theme';
 const colorWabLabel = 'Grey color';
 const colorStatusLabel = 'Status color';
 const blockWidthLabel = 'Block width';
+const borderRadiusLabel = 'Border radius';
 
 storiesOf(folder.main + 'Card', module)
     .addDecorator(withKnobs)
@@ -73,7 +75,7 @@ storiesOf(folder.main + 'Card', module)
                     blockWidthDefault,
                 )}
                 radiusSize={radios(
-                    'Border radius',
+                    borderRadiusLabel,
                     radiusOptions,
                     radiusDefault,
                 )}
@@ -87,6 +89,11 @@ storiesOf(folder.main + 'Card', module)
                     label="Since 2016"
                     colorStyle={colorStyleOptions.light}
                     cornerPosition={cornerPositionOptions.right}
+                    colorTheme={radios(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
                 />
 
                 <Title
@@ -198,7 +205,7 @@ storiesOf(folder.main + 'Card', module)
                 )}
                 blockWidth={blockWidthOptions.sm}
                 radiusSize={radios(
-                    'Border radius',
+                    borderRadiusLabel,
                     radiusOptions,
                     radiusDefault,
                 )}
@@ -517,6 +524,47 @@ storiesOf(folder.main + 'Card', module)
                 shadowSize={shadowSizeOptions.none}
                 blockWidth={blockWidthOptions.sm}
             >
+                <Corner
+                    label="?"
+                    cornerPosition={cornerPositionOptions.right}
+                    colorPallet={
+                        radios(
+                            colorPalletLabel,
+                            colorPalletOptions,
+                            colorPalletOptions.wab,
+                        ) === colorPalletOptions.wab
+                            ? colorPalletOptions.theme
+                            : radios(
+                                  colorPalletLabel,
+                                  colorPalletOptions,
+                                  colorPalletOptions.wab,
+                              )
+                    }
+                    colorTheme={select(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    colorStatus={select(
+                        colorStatusLabel,
+                        formStatusOptions,
+                        formStatusDefault,
+                    )}
+                >
+                    <Popin>
+                        <Text
+                            marginTop={spaceOptions.xs}
+                            marginLateral={spaceOptions.xs}
+                            marginBottom={spaceOptions.xs}
+                            textSize={fontSizeOptions.xs}
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua.
+                        </Text>
+                    </Popin>
+                </Corner>
+
                 <Title
                     marginTop={spaceOptions.sm}
                     marginLateral={spaceOptions.sm}
