@@ -16,7 +16,6 @@ exports[`renders without crashing 1`] = `
       defaultChecked={false}
       disabled={false}
       id="test0"
-      isRequired={false}
       name="test"
       theme={
         Object {
@@ -432,7 +431,6 @@ exports[`renders without crashing 1`] = `
       defaultChecked={false}
       disabled={false}
       id="test1"
-      isRequired={false}
       name="test"
       theme={
         Object {
