@@ -33,6 +33,13 @@ const ToggleBase = styled.div`
                     background-color: ${props =>
                         color.bg.checked[props.colorPallet]};
 
+                    .icon {
+                        svg {
+                            fill: ${props =>
+                                color.main.checked[props.colorPallet]};
+                        }
+                    }
+
                     &::before {
                         left: 100%;
                         transform: translateX(-100%);
@@ -64,6 +71,12 @@ const ToggleBase = styled.div`
             transition: all ${props => props.theme.transition.xs};
             color: ${props => color.main.base[props.colorPallet]};
             background-color: ${props => color.bg.base[props.colorPallet]};
+
+            .icon {
+                svg {
+                    fill: ${props => color.main.base[props.colorPallet]};
+                }
+            }
 
             &::before {
                 content: '';

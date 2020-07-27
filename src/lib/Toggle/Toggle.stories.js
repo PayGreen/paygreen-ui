@@ -10,6 +10,7 @@ import {
     greyDefault,
     formStatusOptions,
 } from '../../shared/constants';
+import { BulbIcon, BeakerIcon } from '../Icon/Icon';
 import Toggle from './Toggle';
 
 const colorThemeLabel = 'Color theme';
@@ -48,10 +49,40 @@ storiesOf(folder.form + 'Toggle', module)
         )
     )
     .add(
-        'Toggle with texts',
+        'Toggle with icons',
         () => (
             <Toggle
                 id="toggle2"
+                checkedLabel={<BulbIcon />}
+                notCheckedLabel={<BeakerIcon />}
+                colorPallet={radios(
+                    colorPalletLabel,
+                    colorPalletOptions,
+                    colorPalletOptions.status,
+                )}
+                colorTheme={select(
+                    colorThemeLabel,
+                    colorThemeOptions,
+                    colorThemeDefault,
+                )}
+                colorWab={select(
+                    colorWabLabel,
+                    greyOptions,
+                    greyDefault,
+                )}
+                colorStatus={select(
+                    colorStatusLabel,
+                    formStatusOptions,
+                    formStatusOptions.success,
+                )}
+            />
+        )
+    )
+    .add(
+        'Toggle with texts',
+        () => (
+            <Toggle
+                id="toggle3"
                 checkedLabel={text('Checked label', 'Yes')}
                 notCheckedLabel={text('Not checked label', 'No')}
                 colorPallet={radios(
