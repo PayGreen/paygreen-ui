@@ -8,11 +8,11 @@ import {
 } from '../../shared/constants';
 import { DaLabelBase } from './style';
 
-const DaLabel = props => {
+const DaLabel = ({children, required, htmlTag, ...rest}) => {
     return (
-        <DaLabelBase as={props.htmlTag} {...props}>
-            {props.children}
-            {props.isRequired ? <span className="required">*</span> : null}
+        <DaLabelBase as={htmlTag} {...rest}>
+            {children}
+            {required ? <span className="required">*</span> : null}
         </DaLabelBase>
     );
 };
@@ -20,13 +20,13 @@ const DaLabel = props => {
 DaLabel.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     htmlTag: PropTypes.oneOf(Object.values(labelHtmlTagOptions)),
-    isRequired: PropTypes.bool,
+    required: PropTypes.bool,
 };
 
 DaLabel.defaultProps = {
     fieldSize: buttonSizeDefault,
     htmlTag: labelHtmlTagDefault,
-    isRequired: false,
+    required: false,
 };
 
 export default DaLabel;

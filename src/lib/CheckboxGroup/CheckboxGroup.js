@@ -10,7 +10,7 @@ import Checkbox from '../Checkbox/Checkbox';
 import DaLabel from '../DaLabel/DaLabel';
 
 const CheckboxGroup = props => {
-    const { legend, value, options, ...rest } = props;
+    const { legend, value, options, required, ...rest } = props;
 
     return (
         <CheckboxGroupBase
@@ -21,7 +21,7 @@ const CheckboxGroup = props => {
                     theme={props.theme} // not necessary, only needed for tests
                     htmlTag={labelHtmlTagOptions.legend}
                     fieldSize={props.fieldSize}
-                    isRequired={props.isRequired}
+                    required={required}
                 >
                     {legend}
                 </DaLabel>
@@ -52,13 +52,13 @@ CheckboxGroup.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     legend: PropTypes.string,
     disabled: PropTypes.bool,
-    isRequired: PropTypes.bool,
+    required: PropTypes.bool,
 };
 
 CheckboxGroup.defaultProps = {
     fieldSize: buttonSizeDefault,
     disabled: false,
-    isRequired: false,
+    required: false,
 };
 
 export default CheckboxGroup;
