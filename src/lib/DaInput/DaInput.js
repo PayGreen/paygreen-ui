@@ -38,7 +38,7 @@ const DaInput = props => {
             blockWidth={blockWidth}
             hasHelpButton={hasHelpButton}
         >
-            <InputMask {...rest} inputRef={props.inputRef} mask={stateMask} />
+            <InputMask {...rest} mask={stateMask} />
         </DaInputBase>
     );
 };

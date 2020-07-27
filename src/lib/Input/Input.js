@@ -65,11 +65,7 @@ const Input = props => {
                             <label htmlFor={props.id}>{label}</label>
                         ) : null}
 
-                        <InputMask
-                            {...rest}
-                            inputRef={props.inputRef}
-                            mask={stateMask}
-                        />
+                        <InputMask {...rest} mask={stateMask} />
 
                         <span></span>
                     </InputBase>
