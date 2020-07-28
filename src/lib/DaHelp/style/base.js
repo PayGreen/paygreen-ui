@@ -15,7 +15,7 @@ const activeStyle = css`
 `;
 
 const enabled = css`
-    background-color: ${props => props.theme.color.status.default.light};
+    background-color: ${props => props.theme.status.default.light};
     
     &:hover,
     &:active,
@@ -25,7 +25,7 @@ const enabled = css`
 
     & > .icon {
         svg {
-            fill: ${props => props.theme.color.status.default.main};
+            fill: ${props => props.theme.status.default.main};
         }
     }
 

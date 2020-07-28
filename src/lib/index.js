@@ -11,6 +11,7 @@ import Card from './Card/Card';
 import Checkbox from './Checkbox/Checkbox';
 import CheckboxGroup from './CheckboxGroup/CheckboxGroup';
 import ClickableBlock from './ClickableBlock/ClickableBlock';
+import Corner from './Corner/Corner';
 import DaButton from './DaButton/DaButton';
 import DaInput from './DaInput/DaInput';
 import DaLabel from './DaLabel/DaLabel';
@@ -195,6 +196,7 @@ export {
     Checkbox,
     CheckboxGroup,
     ClickableBlock,
+    Corner,
     DaButton,
     DaHelp,
     DaInput,

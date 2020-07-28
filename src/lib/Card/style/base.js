@@ -84,7 +84,7 @@ const backgroundColor = {
     `,
     status: css`
         background-color: ${props =>
-            props.theme.color.status[props.colorStatus].light};
+            props.theme.status[props.colorStatus].light};
     `,
 };
 

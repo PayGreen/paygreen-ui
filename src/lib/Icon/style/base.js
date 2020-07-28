@@ -26,10 +26,10 @@ const baseColor = {
     `,
     status: css`
         background-color: ${props =>
-            props.theme.color.status[props.colorStatus].light};
+            props.theme.status[props.colorStatus].light};
 
         svg {
-            fill: ${props => props.theme.color.status[props.colorStatus].main};
+            fill: ${props => props.theme.status[props.colorStatus].main};
         }
     `,
 };
@@ -47,10 +47,10 @@ const activeColor = {
     status: css`
         filter: grayscale(0);
         background-color: ${props =>
-            props.theme.color.status[props.colorStatus].main};
+            props.theme.status[props.colorStatus].main};
 
         svg {
-            fill: ${props => props.theme.color.status[props.colorStatus].light};
+            fill: ${props => props.theme.status[props.colorStatus].light};
         }
     `,
 };

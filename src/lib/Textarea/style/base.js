@@ -13,7 +13,7 @@ const canHover = css`
     &:hover,
     &:active,
     &:focus {
-        border-color: ${props => props.theme.color.status[props.status].main};
+        border-color: ${props => props.theme.status[props.status].main};
         padding-left: ${props => props.theme.space.md};
         padding-right: ${props => props.theme.space.sm};
     }
@@ -24,7 +24,7 @@ const enabled = css`
         resize: vertical;
         color: ${props => fieldTextColor[props.status]};
         background-color: ${props => props.theme.wab.white00};
-        border-color: ${props => transparentize(0.3, props.theme.color.status[props.status].main)};
+        border-color: ${props => transparentize(0.3, props.theme.status[props.status].main)};
 
         ${props => props.inputReadOnly ? null : canHover};
     }

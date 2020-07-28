@@ -49,7 +49,7 @@ const DaTextareaBase = styled.div`
         span {
             font-weight: ${props => props.theme.font.weight.bold};
             color: ${props =>
-                props.theme.color.status[props.charactersStatus].main};
+                props.theme.status[props.charactersStatus].main};
         }
     }
 `;

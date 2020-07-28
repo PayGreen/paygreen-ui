@@ -61,7 +61,7 @@ const RadioBase = styled.div`
                 
                 &::after {
                     background-color: ${props =>
-                        props.theme.color.status.success.main};
+                        props.theme.status.success.main};
                     transform: scale(1);
                 }
             }

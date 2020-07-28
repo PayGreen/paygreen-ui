@@ -40,6 +40,14 @@ const colorTypeOptions = {
 
 const colorTypeDefault = colorTypeOptions.original;
 
+// Color styles
+const colorStyleOptions = {
+    main: 'main',
+    light: 'light',
+};
+
+const colorStyleDefault = colorStyleOptions.main;
+
 // Color pallet
 const colorPalletOptions = {
     theme: 'theme',
@@ -158,6 +166,14 @@ const imageTypeOptions = {
 };
 
 const imageTypeDefault = imageTypeOptions.normal;
+
+// Corner position
+const cornerPositionOptions = {
+    left: 'left',
+    right: 'right'
+};
+
+const cornerPositionDefault = cornerPositionOptions.left;
 
 // Arrow block position
 const arrowBlockOptions = {
@@ -441,6 +457,8 @@ export {
     debounceTime,
     colorTypeOptions,
     colorTypeDefault,
+    colorStyleOptions,
+    colorStyleDefault,
     colorPalletOptions,
     colorPalletDefault,
     colorThemeOptions,
@@ -465,6 +483,8 @@ export {
     buttonStyleDefault,
     imageTypeOptions,
     imageTypeDefault,
+    cornerPositionOptions,
+    cornerPositionDefault,
     arrowBlockOptions,
     arrowBlockDefault,
     arrowDirectionOptions,

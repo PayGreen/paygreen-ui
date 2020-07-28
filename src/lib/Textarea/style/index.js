@@ -49,7 +49,7 @@ const TextareaBase = styled.div`
         font-weight: ${props => props.theme.font.weight.bold};
 
         span {
-            color: ${props => props.theme.color.status[formStatusOptions[props.charactersStatus]].main};
+            color: ${props => props.theme.status[formStatusOptions[props.charactersStatus]].main};
         }
     }
 `;

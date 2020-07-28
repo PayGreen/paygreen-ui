@@ -1,38 +1,114 @@
-import { Meta, ColorPalette, ColorItem} from '@storybook/addon-docs/blocks';
-import {ThemeDefault} from './theme/theme.default';
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+import { ThemeDefault } from './theme/theme.default';
 
 <Meta title="Colors" />
 
 # Colors
 
+## Theme
+
 <ColorPalette>
-  <ColorItem title="Primary" subtitle="Main" colors={[ThemeDefault.color.primary.main]} />
-  <ColorItem title="Primary" subtitle="Light" colors={[ThemeDefault.color.primary.light]} />
-  <ColorItem title="Primary" subtitle="Gradient" colors={[
-    ThemeDefault.color.primary.gradientBase, ThemeDefault.color.primary.gradientShade]} />
-  
-  <ColorItem title="Secondary" subtitle="Main" colors={[ThemeDefault.color.secondary.main]} />
-  <ColorItem title="Secondary" subtitle="Light" colors={[ThemeDefault.color.secondary.light]} />
-  <ColorItem title="Secondary" subtitle="Gradient" colors={[
-    ThemeDefault.color.secondary.gradientBase, ThemeDefault.color.secondary.gradientShade]} />
-  
-  <ColorItem title="Tertiary" subtitle="Main" colors={[ThemeDefault.color.tertiary.main]} />
-  <ColorItem title="Tertiary" subtitle="Light" colors={[ThemeDefault.color.tertiary.light]} />
-  <ColorItem title="Tertiary" subtitle="Gradient" colors={[
-    ThemeDefault.color.tertiary.gradientBase, ThemeDefault.color.tertiary.gradientShade]} />
-  
-  <ColorItem title="Quaternary" subtitle="Main" colors={[ThemeDefault.color.quaternary.main]} />
-  <ColorItem title="Quaternary" subtitle="Light" colors={[ThemeDefault.color.quaternary.light]} />
-  <ColorItem title="Quaternary" subtitle="Gradient" colors={[
-    ThemeDefault.color.quaternary.gradientBase, ThemeDefault.color.quaternary.gradientShade]} />
-  
-  <ColorItem title="Quinary" subtitle="Main" colors={[ThemeDefault.color.quinary.main]} />
-  <ColorItem title="Quinary" subtitle="Light" colors={[ThemeDefault.color.quinary.light]} />
-  <ColorItem title="Quinary" subtitle="Gradient" colors={[
-    ThemeDefault.color.quinary.gradientBase, ThemeDefault.color.quinary.gradientShade]} />
+  <ColorItem
+    title="Primary"
+    subtitle="Main | Light | GradientBase | GradientShade"
+    colors={[
+      ThemeDefault.color.primary.main,
+      ThemeDefault.color.primary.light,
+      ThemeDefault.color.primary.gradientBase,
+      ThemeDefault.color.primary.gradientShade
+    ]}
+  />
 
   <ColorItem
-    title="White & Black"
+    title="Secondary"
+    subtitle="Main | Light | GradientBase | GradientShade"
+    colors={[
+      ThemeDefault.color.secondary.main,
+      ThemeDefault.color.secondary.light,
+      ThemeDefault.color.secondary.gradientBase,
+      ThemeDefault.color.secondary.gradientShade
+    ]}
+  />
+
+  <ColorItem
+    title="Tertiary"
+    subtitle="Main | Light | GradientBase | GradientShade"
+    colors={[
+      ThemeDefault.color.tertiary.main,
+      ThemeDefault.color.tertiary.light,
+      ThemeDefault.color.tertiary.gradientBase,
+      ThemeDefault.color.tertiary.gradientShade
+    ]}
+  />
+
+  <ColorItem
+    title="Quaternary"
+    subtitle="Main | Light | GradientBase | GradientShade"
+    colors={[
+      ThemeDefault.color.quaternary.main,
+      ThemeDefault.color.quaternary.light,
+      ThemeDefault.color.quaternary.gradientBase,
+      ThemeDefault.color.quaternary.gradientShade
+    ]}
+  />
+
+  <ColorItem
+    title="Quinary"
+    subtitle="Main | Light | GradientBase | GradientShade"
+    colors={[
+      ThemeDefault.color.quinary.main,
+      ThemeDefault.color.quinary.light,
+      ThemeDefault.color.quinary.gradientBase,
+      ThemeDefault.color.quinary.gradientShade
+    ]}
+  />
+</ColorPalette>
+
+## Status
+
+<ColorPalette>
+  <ColorItem
+    title="Default"
+    subtitle="Main | Light"
+    colors={[
+      ThemeDefault.status.default.main,
+      ThemeDefault.status.default.light
+    ]}
+  />
+
+  <ColorItem
+    title="Success"
+    subtitle="Main | Light"
+    colors={[
+      ThemeDefault.status.success.main,
+      ThemeDefault.status.success.light
+    ]}
+  />
+
+  <ColorItem
+    title="Warning"
+    subtitle="Main | Light"
+    colors={[
+      ThemeDefault.status.warning.main,
+      ThemeDefault.status.warning.light
+    ]}
+  />
+
+  <ColorItem
+    title="Danger"
+    subtitle="Main | Light"
+    colors={[
+      ThemeDefault.status.danger.main,
+      ThemeDefault.status.danger.light
+    ]}
+  />
+</ColorPalette>
+
+## White & Black
+
+<ColorPalette>
+  <ColorItem
+    title="WaB"
     colors={[
       ThemeDefault.wab.white00,
       ThemeDefault.wab.white10,

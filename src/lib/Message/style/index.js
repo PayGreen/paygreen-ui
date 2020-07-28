@@ -12,20 +12,20 @@ const MessageBase = styled.div`
     grid-template-areas: 'icon text';
     justify-items: center;
     background-color: ${props =>
-        props.theme.color.status[props.colorStatus].light};
-    color: ${props => props.theme.color.status[props.colorStatus].main};
+        props.theme.status[props.colorStatus].light};
+    color: ${props => props.theme.status[props.colorStatus].main};
 
     & > .icon {
         grid-area: icon;
         margin-right: ${arrowSize};
 
         svg {
-            fill: ${props => props.theme.color.status[props.colorStatus].main};
+            fill: ${props => props.theme.status[props.colorStatus].main};
         }
     }
 
     & > ${TextBase} {
-        color: ${props => props.theme.color.status[props.colorStatus].main};
+        color: ${props => props.theme.status[props.colorStatus].main};
     }
 
     ${props => arrowBlockStyle[props.arrowBlock]};
