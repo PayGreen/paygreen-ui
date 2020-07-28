@@ -350,7 +350,7 @@ export const ThemeBase = {
             md: '10px',
             lg: '10px',
         },
-        toggle: '34px',
+        toggle: '30px',
     },
     corner: {
         size: {
