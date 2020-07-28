@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { transparentize } from 'polished';
 import { MenuBase } from '../../Menu/style';
 
 const menuBlock = css`
@@ -14,6 +15,24 @@ const menuBlock = css`
         width: 100%;
         background-color: ${props => props.theme.wab.white00};
         transition: all ${props => props.theme.transition.sm};
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 20px;
+            background-image: linear-gradient(
+                to bottom,
+                ${props =>
+                    transparentize(
+                        props.theme.shadow.opacity.sm,
+                        props.theme.wab.black00,
+                    )},
+                transparent
+            );
+            opacity: 0.6;
+        }
     }
 
     @media (${props => props.theme.query.min.lg}) {
@@ -40,7 +59,4 @@ const closedStyle = css`
     transform: translateX(-100%);
 `;
 
-export {
-    menuBlock,
-    closedStyle
-};
+export { menuBlock, closedStyle };

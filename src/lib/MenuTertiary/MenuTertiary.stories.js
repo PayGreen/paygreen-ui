@@ -46,6 +46,7 @@ storiesOf(folder.nav + 'MenuTertiary', module)
         <>
             <MenuTertiary
                 isFixed={boolean('Is fixed', true)}
+                isHidden={boolean('Is hidden', false)}
                 colorTheme={radios(
                     'Color theme',
                     colorThemeOptions,

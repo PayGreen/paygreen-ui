@@ -92,6 +92,8 @@ const titleStyle = css`
 `;
 
 const main = css`
+    white-space: nowrap;
+    
     ${LinkBase} {
         padding: ${props => props.theme.space.md} 0;
     }

@@ -25,6 +25,7 @@ Banner.propTypes = {
     gradient: PropTypes.oneOf(Object.values(gradientOptions)),
     topStyle: PropTypes.oneOf(Object.values(decorationOptions)),
     bottomStyle: PropTypes.oneOf(Object.values(decorationOptions)),
+    isFirstContent: PropTypes.bool
 };
 
 Banner.defaultProps = {
@@ -32,6 +33,7 @@ Banner.defaultProps = {
     gradient: gradientOptions.theme,
     topStyle: decorationDefault,
     bottomStyle: decorationDefault,
+    isFirstContent: false
 };
 
 export default Banner;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { decorationOptions } from '../../../shared/constants';
 import { color } from './constants';
-import { topWaveStyle, bottomWaveStyle } from './base';
+import { spaceForHeader, topWaveStyle, bottomWaveStyle } from './base';
 
 const BannerBase = styled.div`
     position: relative;
@@ -10,7 +10,8 @@ const BannerBase = styled.div`
         ${props => color.first[props.gradient]},
         ${props => color.second[props.gradient]}
     );
-
+    
+    ${props => props.isFirstContent ? spaceForHeader : null};
     ${props => props.topStyle !== decorationOptions.none ? topWaveStyle : null};
     ${props => props.bottomStyle !== decorationOptions.none ? bottomWaveStyle : null};
 

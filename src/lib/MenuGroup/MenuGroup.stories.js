@@ -58,7 +58,10 @@ const subLink = {
 storiesOf(folder.nav + 'MenuGroup', module)
     .addDecorator(withKnobs)
     .add('MenuGroup', () => (
-        <MenuGroup>
+        <MenuGroup
+            isHidden={boolean('Is hidden', false)}
+            hasTopStyle={boolean('Top style', false)}
+        >
             <div className="main-nav">
                 <MenuHamburger isOpen={boolean(mainMenuIsOpenLabel, true)} />
 
@@ -82,14 +85,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                 <Menu>
                     <a href="#">
                         <MenuItem isMain={true}>
-                            <Link
-                                hasHover={false}
-                                hasUnderline={false}
-                                colorPallet={colorPalletOptions.wab}
-                                hasUppercase={true}
-                            >
-                                About us
-                            </Link>
+                            <Link {...mainLink}>About us</Link>
                         </MenuItem>
                     </a>
                 </Menu>
@@ -210,14 +206,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                                 colorPallet={colorPalletOptions.wab}
                             />
 
-                            <Link
-                                hasHover={false}
-                                hasUnderline={false}
-                                hasUppercase={true}
-                                colorPallet={colorPalletOptions.wab}
-                            >
-                                Login
-                            </Link>
+                            <Link {...mainLink}>Login</Link>
                         </MenuItem>
                     </a>
                 </Menu>

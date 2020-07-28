@@ -340,7 +340,6 @@ storiesOf(folder.main + 'Text', module)
                 </Text>
             </>
         ),
-
         {
             notes:
                 'Switch between all html tags available, for each you can change background-color, text color & text size.',

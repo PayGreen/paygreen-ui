@@ -27,6 +27,9 @@ const folder = {
     },
 };
 
+// Debounce
+const debounceTime = 200;
+
 /* Colors */
 
 // Color types
@@ -435,6 +438,7 @@ const rotateSizeDefault = rotateSizeOptions.d0;
 
 export {
     folder,
+    debounceTime,
     colorTypeOptions,
     colorTypeDefault,
     colorPalletOptions,

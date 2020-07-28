@@ -141,6 +141,7 @@ export const ThemeBase = {
     },
     grid: {
         header: '45px',
+        headerBig: '70px',
         topbar: '45px',
         sidebar: '380px',
         maxWidth: '1400px',
