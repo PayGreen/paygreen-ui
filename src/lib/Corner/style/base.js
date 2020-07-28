@@ -61,7 +61,7 @@ const bannerPosition = {
         span {
             transform: rotate(-45deg) translateY(-100%);
             transform-origin: top right;
-            margin-left: -43%;
+            margin-left: -42%;
         }
     `,
     right: css`
@@ -70,6 +70,7 @@ const bannerPosition = {
         span {
             transform: rotate(45deg) translateY(-100%);
             transform-origin: top left;
+            margin-right: -42%;
         }
     `,
 };
@@ -78,12 +79,8 @@ const squareStyle = css`
     .corner {
         span {
             box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: ${props => props.theme.space.lg};
             min-width: ${props => props.theme.space.lg};
-            line-height: ${props => props.theme.font.lineHeight.base};
             padding-bottom: ${props => props.theme.space.xs};
 
             ${props => squarePosition[props.cornerPosition]};
@@ -100,13 +97,13 @@ const bannerStyle = css`
         overflow: hidden;
 
         span {
-            display: inline-block;
+            box-sizing: content-box;
+            min-height: ${props => props.theme.space.md};
             padding: ${props =>
-                props.theme.space.xs + ' ' + props.theme.space.lg};
+                props.theme.space.sm + ' ' + props.theme.space.lg};
             text-transform: uppercase;
             font-size: ${props => props.theme.font.size.xxs};
             letter-spacing: ${props => props.theme.font.spacing};
-            line-height: ${props => props.theme.font.lineHeight.md};
         }
 
         ${props => bannerPosition[props.cornerPosition]};

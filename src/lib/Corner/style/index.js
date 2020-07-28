@@ -19,6 +19,10 @@ const CornerBase = styled.div`
         span {
             ${backgroundStyle};
             ${props => colorStyle[props.colorStyle]};
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: ${props => props.theme.font.lineHeight.base};
             font-weight: ${props => props.theme.font.weight.bold};
             white-space: nowrap;
         }
@@ -30,7 +34,7 @@ const CornerBase = styled.div`
         left: inherit;
         ${props => positionStyle[props.cornerPosition]};
 
-        &::before {
+        &::before { /* add transparent zone above Popin to improve hover behaviour */
             content: '';
             position: absolute;
             width: 100%;
