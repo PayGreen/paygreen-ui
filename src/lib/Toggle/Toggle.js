@@ -50,8 +50,14 @@ const Toggle = ({
 
 Toggle.propTypes = {
     id: PropTypes.string.isRequired,
-    checkedLabel: PropTypes.string,
-    notCheckedLabel: PropTypes.string,
+    checkedLabel:  PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.element,
+    ]),
+    notCheckedLabel: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.element,
+    ]),
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
