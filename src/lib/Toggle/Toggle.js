@@ -36,11 +36,11 @@ const Toggle = ({
 
                 <div className="toggle">
                     <span className="checked-label">
-                        {checkedLabel ? checkedLabel : null}
+                        {checkedLabel || null}
                     </span>
 
                     <span className="not-checked-label">
-                        {notCheckedLabel ? notCheckedLabel : null}
+                        {notCheckedLabel || null}
                     </span>
                 </div>
             </label>
