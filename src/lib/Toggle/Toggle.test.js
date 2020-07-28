@@ -5,9 +5,7 @@ import Toggle from './Toggle';
 
 it('renders without crashing', () => {
     const component = TestRenderer.create(
-        <Toggle theme={ThemeDefault}>
-            Something
-        </Toggle>
+        <Toggle theme={ThemeDefault} id="toggle-test" />
     );
     expect(component.toJSON()).toMatchSnapshot();
 });

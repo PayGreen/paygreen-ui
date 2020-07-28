@@ -23,6 +23,7 @@ const Toggle = ({
 }) => {
     return (
         <ToggleBase
+            theme={rest.theme} // not necessary, only needed for tests
             colorPallet={colorPallet}
             colorTheme={colorTheme}
             colorWab={colorWab}
