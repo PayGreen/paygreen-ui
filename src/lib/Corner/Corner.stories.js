@@ -41,7 +41,6 @@ storiesOf(folder.main + 'Corner', module)
                 cornerPositionOptions,
                 cornerPositionDefault,
             )}
-            radiusSize={select(radiusSizeLabel, radiusOptions, radiusDefault)}
             colorStyle={radios(
                 colorStyleLabel,
                 colorStyleOptions,
