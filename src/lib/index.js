@@ -81,6 +81,7 @@ import TableRow from './TableRow/TableRow';
 import Text from './Text/Text';
 import Textarea from './Textarea/Textarea';
 import Title from './Title/Title';
+import Toggle from './Toggle/Toggle';
 import Topbar from './Topbar/Topbar';
 
 // Icons
@@ -266,6 +267,7 @@ export {
     Text,
     Textarea,
     Title,
+    Toggle,
     Topbar,
     // Icons
     ArrowBottomIcon,

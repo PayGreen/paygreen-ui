@@ -7,7 +7,7 @@ const ModalHeaderBase = styled.div`
     align-items: center;
 
     .icon {
-        margin-left: auto; // needed to align on the right side the cross if no title in modalHeader
+        margin-left: auto;
     }
 
     grid-area: header;

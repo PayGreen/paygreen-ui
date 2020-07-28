@@ -103,24 +103,6 @@ exports[`renders without crashing 1`] = `
             "light": "#e1f3f2",
             "main": "#00a99d",
           },
-          "status": Object {
-            "danger": Object {
-              "light": "#f7d7d0",
-              "main": "#b54025",
-            },
-            "default": Object {
-              "light": "#e1f3f2",
-              "main": "#00a99d",
-            },
-            "success": Object {
-              "light": "#d5f3e5",
-              "main": "#33ad73",
-            },
-            "warning": Object {
-              "light": "#fbe6ce",
-              "main": "#e58a28",
-            },
-          },
           "tertiary": Object {
             "gradientBase": "#fab56b",
             "gradientShade": "#faa272",
@@ -248,6 +230,7 @@ exports[`renders without crashing 1`] = `
             "sm": "8px",
           },
           "textareaHeight": "200px",
+          "toggle": "30px",
         },
         "grid": Object {
           "header": "45px",
@@ -363,6 +346,24 @@ exports[`renders without crashing 1`] = `
           "xl": "64px",
           "xs": "4px",
         },
+        "status": Object {
+          "danger": Object {
+            "light": "#f7d7d0",
+            "main": "#b54025",
+          },
+          "default": Object {
+            "light": "#e1f3f2",
+            "main": "#00a99d",
+          },
+          "success": Object {
+            "light": "#d5f3e5",
+            "main": "#33ad73",
+          },
+          "warning": Object {
+            "light": "#fbe6ce",
+            "main": "#e58a28",
+          },
+        },
         "transition": Object {
           "lg": "0.7s",
           "md": "0.5s",
@@ -391,6 +392,7 @@ exports[`renders without crashing 1`] = `
           "background": -1,
           "base": 0,
           "content": 1,
+          "corner": 3,
           "front": 5,
           "header": 110,
           "hidden": -100,
