@@ -47,25 +47,16 @@ const topStyle = css`
     ${MenuPrimaryBase},
     ${MenuSecondaryBase} {
         ${MenuBase} {
-            & > a {
-                ${MenuItemBase} {
-                    &::after {
-                        background-image: none;
-                        background-color: ${props => props.theme.wab.white00};
-                        opacity: 0.5;
-                    }
+            & > ${MenuItemBase},
+            & > a ${MenuItemBase} {
+                &::after {
+                    background-image: none;
+                    background-color: ${props => props.theme.wab.white00};
+                    opacity: 0.5;
                 }
 
                 ${LinkBase} {
                     color: ${props => props.theme.wab.white00};
-                }
-
-                &:hover,
-                &:active,
-                &:focus {
-                    ${LinkBase} {
-                        color: ${props => props.theme.wab.white00};
-                    }
                 }
             }
         }

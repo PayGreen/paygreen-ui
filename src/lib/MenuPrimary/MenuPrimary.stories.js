@@ -40,22 +40,20 @@ storiesOf(folder.nav + 'MenuPrimary', module)
             </Menu>
 
             <Menu>
-                <a href="#">
-                    <MenuItem
-                        isMain={true}
-                        hasHoverBase={false}
-                        hasHoverAlternative={false}
+                <MenuItem
+                    isMain={true}
+                    hasHoverBase={false}
+                    hasHoverAlternative={false}
+                >
+                    <Link
+                        hasUnderline={false}
+                        hasHover={false}
+                        colorPallet={colorPalletOptions.wab}
+                        hasUppercase={true}
                     >
-                        <Link
-                            hasUnderline={false}
-                            hasHover={false}
-                            colorPallet={colorPalletOptions.wab}
-                            hasUppercase={true}
-                        >
-                            Our products
-                        </Link>
-                    </MenuItem>
-                </a>
+                        Our products
+                    </Link>
+                </MenuItem>
 
                 <MenuList>
                     <a href="#">
@@ -99,22 +97,20 @@ storiesOf(folder.nav + 'MenuPrimary', module)
             </Menu>
 
             <Menu>
-                <a href="#">
-                    <MenuItem
-                        isMain={true}
-                        hasHoverBase={false}
-                        hasHoverAlternative={false}
+                <MenuItem
+                    isMain={true}
+                    hasHoverBase={false}
+                    hasHoverAlternative={false}
+                >
+                    <Link
+                        hasUnderline={false}
+                        hasHover={false}
+                        colorPallet={colorPalletOptions.wab}
+                        hasUppercase={true}
                     >
-                        <Link
-                            hasUnderline={false}
-                            hasHover={false}
-                            colorPallet={colorPalletOptions.wab}
-                            hasUppercase={true}
-                        >
-                            Other products
-                        </Link>
-                    </MenuItem>
-                </a>
+                        Other products
+                    </Link>
+                </MenuItem>
 
                 <MenuList>
                     <a href="#">
