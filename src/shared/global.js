@@ -13,6 +13,10 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 62.5%;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body,
     main,
     header,

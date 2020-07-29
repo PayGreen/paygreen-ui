@@ -126,17 +126,15 @@ storiesOf(folder.nav + 'Header', module)
                             </Menu>
 
                             <Menu>
-                                <a href="#">
-                                    <MenuItem
-                                        isMain={true}
-                                        hasHoverBase={false}
-                                        hasHoverAlternative={false}
-                                    >
-                                        <Link {...mainLink}>
-                                            Other products
-                                        </Link>
-                                    </MenuItem>
-                                </a>
+                                <MenuItem
+                                    isMain={true}
+                                    hasHoverBase={false}
+                                    hasHoverAlternative={false}
+                                >
+                                    <Link {...mainLink}>
+                                        Other products
+                                    </Link>
+                                </MenuItem>
 
                                 <MenuList>
                                     <a href="#">

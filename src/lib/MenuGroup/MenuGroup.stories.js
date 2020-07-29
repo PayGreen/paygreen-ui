@@ -91,11 +91,9 @@ storiesOf(folder.nav + 'MenuGroup', module)
                 </Menu>
 
                 <Menu>
-                    <a href="#">
-                        <MenuItem {...mainMenuItem}>
-                            <Link {...mainLink}>Our products</Link>
-                        </MenuItem>
-                    </a>
+                    <MenuItem {...mainMenuItem}>
+                        <Link {...mainLink}>Our products</Link>
+                    </MenuItem>
 
                     <MenuList>
                         <a href="#">
@@ -141,11 +139,9 @@ storiesOf(folder.nav + 'MenuGroup', module)
                 </Menu>
 
                 <Menu>
-                    <a href="#">
-                        <MenuItem {...mainMenuItem}>
-                            <Link {...mainLink}>Other products</Link>
-                        </MenuItem>
-                    </a>
+                    <MenuItem {...mainMenuItem}>
+                        <Link {...mainLink}>Other products</Link>
+                    </MenuItem>
 
                     <MenuList>
                         <a href="#">

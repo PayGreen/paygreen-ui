@@ -15,7 +15,8 @@ const MenuGroupBase = styled.div`
     @media (${props => props.theme.query.max.lg}) {
         .main-nav {
             ${headerStyle};
-            ${props => props.isHidden && !props.hasOpenMenu ? hiddenStyle : null};
+            ${props =>
+                props.isHidden && !props.hasOpenMenu ? hiddenStyle : null};
         }
 
         ${LogoBase} {
@@ -25,8 +26,8 @@ const MenuGroupBase = styled.div`
 
     @media (${props => props.theme.query.min.lg}) {
         ${headerStyle};
-        ${props => props.isHidden ? hiddenStyle : null};
-        ${props => props.hasTopStyle ? topStyle : null};
+        ${props => (props.isHidden ? hiddenStyle : null)};
+        ${props => (props.hasTopStyle ? topStyle : null)};
 
         ${MenuHamburgerBase},
         button.icon {
