@@ -56,7 +56,7 @@ const Select = props => {
                             <label htmlFor={props.id}>{label}</label>
                         ) : null}
 
-                        <select  {...rest} ref={inputRef}>
+                        <select {...rest} ref={inputRef}>
                             {options.map((option, index) => (
                                 <option
                                     key={index}
@@ -99,7 +99,7 @@ Select.propTypes = {
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(HTMLSelectElement) }),
+        PropTypes.shape({ current: PropTypes.any }),
     ]),
 };
 

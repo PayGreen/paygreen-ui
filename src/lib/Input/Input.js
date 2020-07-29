@@ -89,7 +89,7 @@ Input.propTypes = {
     mask: PropTypes.string,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
+        PropTypes.shape({ current: PropTypes.any }),
     ]),
 };
 

@@ -91,7 +91,7 @@ DaTextarea.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(HTMLTextAreaElement) }),
+        PropTypes.shape({ current: PropTypes.any }),
     ]),
 };
 

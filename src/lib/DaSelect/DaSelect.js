@@ -63,7 +63,7 @@ DaSelect.propTypes = {
     hasHelpButton: PropTypes.bool,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(HTMLSelectElement) }),
+        PropTypes.shape({ current: PropTypes.any }),
     ]),
 };
 
