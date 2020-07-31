@@ -17,7 +17,7 @@ const MenuTertiary = props => {
     const [scrollTop, setScrollTop] = useState(0);
 
     useScrollPosition(
-        ({ prevPos, currPos }) => {
+        ({ currPos }) => {
             setScrollTop(currPos.y + 100);
         },
         [],
