@@ -14,13 +14,8 @@ import {
     gradientOptions,
     fontSizeOptions,
 } from '../../shared/constants';
+import label from '../../shared/labels';
 import Badge from './Badge';
-
-const colorTypeLabel = 'Color type';
-const colorThemeLabel = 'Color theme';
-const gradientTypeLabel = 'Gradient type';
-const textSizeLabel = 'Text size';
-const textLabel = 'Text';
 
 storiesOf(folder.text + 'Badge', module)
     .addDecorator(withKnobs)
@@ -28,7 +23,7 @@ storiesOf(folder.text + 'Badge', module)
         <Badge
             htmlTag={radios('HTML tag', iconHtmlTagOptions, iconHtmlTagDefault)}
             colorType={select(
-                colorTypeLabel,
+                label.colorType,
                 colorTypeOptions,
                 colorTypeDefault,
             )}
@@ -38,21 +33,30 @@ storiesOf(folder.text + 'Badge', module)
                 colorStyleDefault,
             )}
             colorTheme={select(
-                colorThemeLabel,
+                label.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             gradient={radios(
-                gradientTypeLabel,
+                label.gradient,
                 gradientOptions,
                 gradientOptions.theme,
             )}
             textSize={select(
-                textSizeLabel,
+                label.textSize,
                 fontSizeOptions,
                 fontSizeOptions.xxs,
             )}
         >
-            {text(textLabel, 'Example')}
+            {text(label.text, 'Example')}
+
+            <ArrowBottomIcon
+                iconSize={select(
+                    label.iconSize,
+                    iconSizeOptions,
+                    iconSizeOptions.sm,
+                )}
+                marginLeft={spaceOptions.xs}
+            />
         </Badge>
     ));

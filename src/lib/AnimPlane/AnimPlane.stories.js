@@ -6,6 +6,7 @@ import {
     colorThemeOptions,
     colorThemeDefault,
 } from '../../shared/constants';
+import label from '../../shared/labels';
 import AnimPlane from './AnimPlane';
 
 storiesOf(folder.media + 'AnimPlane', module)
@@ -13,10 +14,10 @@ storiesOf(folder.media + 'AnimPlane', module)
     .add('AnimPlane', () => (
         <AnimPlane
             colorTheme={radios(
-                'Color theme',
+                label.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            isActive={boolean('Is active', false)}
+            isActive={boolean(label.isActive, false)}
         />
     ));
