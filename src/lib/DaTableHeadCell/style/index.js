@@ -18,7 +18,7 @@ const DaTableHeadCellBase = styled.div`
 
     ${props => (props.isCheckbox ? isCheckboxStyle : null)};
     ${props =>
-        props.isCheckbox || props.hasControls ? mobileStyle : hideUselessCell};
+        props.isCheckbox || props.hasControls || props.children ? mobileStyle : hideUselessCell};
 `;
 
 export { DaTableHeadCellBase };

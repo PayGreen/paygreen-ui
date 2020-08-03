@@ -10,6 +10,10 @@ const mobileStyle = css`
     @media (${props => props.theme.query.max.lg}) {
         display: flex;
         align-items: center;
+
+        .cell-child {
+            margin : 0 ${props => props.theme.space.xs}
+        }
     }
 `;
 

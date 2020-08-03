@@ -5,24 +5,25 @@ import { folder } from '../../shared/constants';
 import { ArrowBottomIcon, MenuIcon } from '../Icon/Icon';
 import DaTableHeadCell from '../DaTableHeadCell/DaTableHeadCell';
 import DaTableHead from './DaTableHead';
+import DaInput from '../DaInput/DaInput';
 
 storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
     .addDecorator(withKnobs)
     .add('DaTableHead', () => (
         <DaTableHead resultsLabel="45 results">
-            <DaTableHeadCell isCheckbox={true}>
-                Select/deselect all
+            <DaTableHeadCell isCheckbox={true} label="Select/deselect all">
                 <input type="checkbox" style={{ display: 'block' }} />
             </DaTableHeadCell>
 
             <DaTableHeadCell
                 sortIcon={<ArrowBottomIcon title="Sort DESC on Sample" />}
                 groupIcon={<MenuIcon title="Group on Sample" />}
-            >
-                Last Name
-            </DaTableHeadCell>
+                label="Last Name"
+            />
 
-            <DaTableHeadCell>First name</DaTableHeadCell>
+            <DaTableHeadCell label="First name">
+                <DaInput placeholder="Search" fieldSize="sm" />
+            </DaTableHeadCell>
 
             <DaTableHeadCell
                 sortIcon={
@@ -31,12 +32,12 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
                         title="Sort ASC on Sample"
                     />
                 }
-            >
-                Amount
+                label="Amount"
+            ><DaInput placeholder="Search" fieldSize="sm" />
             </DaTableHeadCell>
 
-            <DaTableHeadCell>Status</DaTableHeadCell>
+            <DaTableHeadCell label="Status" />
 
-            <DaTableHeadCell>Actions</DaTableHeadCell>
+            <DaTableHeadCell label="Actions" />
         </DaTableHead>
     ));
