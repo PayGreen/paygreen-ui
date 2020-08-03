@@ -61,7 +61,8 @@
     "react-indiana-drag-scroll": "^1.7.0",
     "react-input-mask": "^2.0.4",
     "react-transition-group": "^4.3.0",
-    "styled-normalize": "^8.0.6"
+    "styled-normalize": "^8.0.6",
+    "moment": "^2.27.0"
   },
   "peerDependencies": {
     "react": "^16.13.1",

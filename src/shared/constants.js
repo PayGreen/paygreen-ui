@@ -24,6 +24,8 @@ const folder = {
         sidebarMenu: 'Sidebar elements' + folderSeparator,
         structure: 'Grids' + folderSeparator,
         table: 'Simple tables' + folderSeparator,
+        daTable: 'DaTables' + folderSeparator,
+        datePicker: 'DatePicker' + folderSeparator,
     },
 };
 
