@@ -25,6 +25,7 @@ const mainStyle = css`
     .cell-label {
         display: none;
     }
+    margin: auto 15px;
 `;
 
 const notMainStyle = css`

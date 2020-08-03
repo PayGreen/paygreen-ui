@@ -21,9 +21,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
                 label="Last Name"
             />
 
-            <DaTableHeadCell label="First name">
-                <DaInput placeholder="Search" fieldSize="sm" />
-            </DaTableHeadCell>
+            <DaTableHeadCell label="First name"/>
 
             <DaTableHeadCell
                 sortIcon={
@@ -33,8 +31,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
                     />
                 }
                 label="Amount"
-            ><DaInput placeholder="Search" fieldSize="sm" />
-            </DaTableHeadCell>
+            />
 
             <DaTableHeadCell label="Status" />
 

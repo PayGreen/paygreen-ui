@@ -32,11 +32,11 @@ const DaTableHeadCell = ({ children, label, ...rest }) => {
 
     return (
         <DaTableHeadCellBase {...rest} hasControls={sortIcon || groupIcon}>
-            <span>{label}</span>
-            {sortIcon ? sortIcon : null}
-            {groupIcon ? groupIcon : null}
+            {label ? <span>{label}</span> : null}
+            {sortIcon ? <span className="icon-child">{sortIcon}</span> : null}
+            {groupIcon ? <span className="icon-child">{groupIcon}</span> : null}
 
-            <span className="cell-child">{children}</span>
+            {children ? <span className="cell-child">{children}</span> : null}
         </DaTableHeadCellBase>
     );
 };

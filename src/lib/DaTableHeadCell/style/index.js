@@ -16,6 +16,10 @@ const DaTableHeadCellBase = styled.div`
         ${props => (props.isCheckbox ? null : borderRight)};
     }
 
+    .icon-child {
+        margin-left: ${props => props.theme.space.xs};
+    }
+
     ${props => (props.isCheckbox ? isCheckboxStyle : null)};
     ${props =>
         props.isCheckbox || props.hasControls || props.children ? mobileStyle : hideUselessCell};
