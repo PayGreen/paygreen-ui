@@ -56,7 +56,6 @@ const activeColor = {
 };
 
 const hasHoverColor = css`
-    filter: grayscale(100%);
 
     &:hover,
     &:active,
