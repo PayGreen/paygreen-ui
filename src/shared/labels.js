@@ -1,3 +1,9 @@
+/**
+ * MAJ des stories des composants par ordre alphabétique
+ * Fait jusqu'au composant Badge inclus
+ * Prochain composant : Banner
+ */
+
 const label = {
     text: 'Text',
     iconSize: 'Icon size',
