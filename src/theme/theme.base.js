@@ -191,13 +191,23 @@ export const ThemeBase = {
         simple: '8vw',
         double: '11vw',
     },
-    iconSize: {
-        xxs: '12px',
-        xs: '16px',
-        sm: '20px',
-        md: '24px',
-        lg: '32px',
-        xl: '40px',
+    icon: {
+        iconSize: {
+            xxs: '12px',
+            xs: '16px',
+            sm: '20px',
+            md: '24px',
+            lg: '32px',
+            xl: '40px',
+        },
+        iconShift: {
+            xxs: '2px',
+            xs: '3px',
+            sm: '4px',
+            md: '4px',
+            lg: '6px',
+            xl: '6px',
+        },
     },
     imageSize: {
         auto: 'auto',

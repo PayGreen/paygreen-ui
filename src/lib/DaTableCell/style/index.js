@@ -7,17 +7,17 @@ const DaTableCellBase = styled.div`
     padding: ${props => props.theme.space.xs};
 
     @media (${props => props.theme.query.max.lg}) {
-        ${props => props.isId ? idStyle : null};
-        ${props => props.isMain ? mainStyle : notMainStyle};
+        ${props => (props.isId ? idStyle : null)};
+        ${props => (props.isMain ? mainStyle : notMainStyle)};
     }
-    
+
     @media (${props => props.theme.query.min.lg}) {
         position: relative;
         display: table-cell;
         vertical-align: middle;
         padding: ${props => props.theme.space.md};
 
-        ${props => props.isCheckbox ? null : borderRight};
+        ${props => (props.isCheckbox ? null : borderRight)};
 
         &::before,
         &::after {

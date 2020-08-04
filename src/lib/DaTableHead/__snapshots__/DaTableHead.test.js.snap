@@ -14,7 +14,7 @@ exports[`renders without crashing 1`] = `
       Search and filters
     </span>
     <span
-      className="sc-ifAKCX kcGUTJ icon"
+      className="sc-ifAKCX hlIZAo icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -26,19 +26,31 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-bdVaJa gemDnD"
+    className="sc-bdVaJa jHvvQy"
   >
-    Something
+    <span
+      className="cell-child"
+    >
+      Something
+    </span>
   </div>
   <div
-    className="sc-bdVaJa gemDnD"
+    className="sc-bdVaJa jHvvQy"
   >
-    Something
+    <span
+      className="cell-child"
+    >
+      Something
+    </span>
   </div>
   <div
-    className="sc-bdVaJa gemDnD"
+    className="sc-bdVaJa jHvvQy"
   >
-    Something
+    <span
+      className="cell-child"
+    >
+      Something
+    </span>
   </div>
 </div>
 `;

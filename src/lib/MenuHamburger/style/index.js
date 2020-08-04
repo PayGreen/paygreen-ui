@@ -6,8 +6,8 @@ import { mainColor } from '../../Text/style/constants';
 const MenuHamburgerBase = styled.button`
     display: block;
     box-sizing: border-box;
-    width: ${props => math(props.theme.iconSize.lg + '-' + line)};
-    height: ${props => math(props.theme.iconSize.lg + '-' + line)};
+    width: ${props => math(props.theme.icon.iconSize.lg + '-' + line)};
+    height: ${props => math(props.theme.icon.iconSize.lg + '-' + line)};
     background-color: transparent;
     border: none;
     padding: 0;

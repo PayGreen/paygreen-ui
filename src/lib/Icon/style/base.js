@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
 import { colorPalletOptions } from '../../../shared/constants';
+import { backgroundCalc } from '../../DaButton/style/constants';
 
 const resetButtonStyle = css`
     cursor: pointer;
@@ -36,44 +37,79 @@ const baseColor = {
 
 const activeColor = {
     theme: css`
-        filter: grayscale(0);
         background-color: ${props =>
             props.theme.color[props.colorTheme].gradientBase};
 
         svg {
             fill: ${props => props.theme.wab.white00};
         }
+
+        &::before {
+            background-color: ${props =>
+                props.theme.color[props.colorTheme].gradientBase};
+        }
     `,
     status: css`
-        filter: grayscale(0);
         background-color: ${props =>
             props.theme.status[props.colorStatus].main};
 
         svg {
             fill: ${props => props.theme.status[props.colorStatus].light};
         }
+
+        &::before {
+            background-color: ${props =>
+                props.theme.status[props.colorStatus].main};
+        }
     `,
 };
 
 const hasHoverColor = css`
-
     &:hover,
     &:active,
     &:focus {
         ${props => activeColor[props.colorPallet]};
     }
 
-    ${props => (props.isActive ? activeColor[props.colorPallet] : null)};
+    ${props =>
+        props.isActive
+            ? css`
+                  &:hover,
+                  &:active,
+                  &:focus {
+                    &::before {
+                        transform: scale(1);
+                    }
+                  }
+              `
+            : null};
 `;
 
 const backgroundStyle = css`
     padding: ${props =>
         math(
-            props.theme.iconSize[props.iconSize] +
+            props.theme.icon.iconSize[props.iconSize] +
                 '/2 - ' +
                 props.theme.space.xs,
         )};
     border-radius: 50%;
+
+    &::before {
+        content: '';
+        position: absolute;
+        box-sizing: content-box;
+        transform: scale(0);
+        z-index: ${props => props.theme.zindex.layer};
+        height: 100%;
+        width: 100%
+        padding: ${props =>props.theme.icon.iconShift[props.iconSize]};
+        bottom: -${props =>props.theme.icon.iconShift[props.iconSize]};
+        left: -${props =>props.theme.icon.iconShift[props.iconSize]};
+        border-radius: 50%;
+        opacity: 0.4;
+        transition: all ${props => props.theme.transition.sm};
+    }
+
 
     ${props =>
         props.hasHover && props.colorPallet !== colorPalletOptions.wab
@@ -92,9 +128,10 @@ const noBackground = css`
 `;
 
 export {
-    resetButtonStyle,
+    activeColor,
     baseColor,
-    hasHoverColor,
     backgroundStyle,
+    hasHoverColor,
     noBackground,
+    resetButtonStyle,
 };

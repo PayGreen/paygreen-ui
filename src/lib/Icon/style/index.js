@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { directionalProperty } from 'polished';
 import { iconHtmlTagOptions } from '../../../shared/constants';
 import {
+    activeColor,
     resetButtonStyle,
     baseColor,
     backgroundStyle,
@@ -15,8 +16,8 @@ const IconBase = styled.span`
     display: ${props => (props.isCentered ? 'flex' : 'inline-flex')};
     box-sizing: content-box;
     position: relative;
-    width: ${props => props.theme.iconSize[props.iconSize]};
-    height: ${props => props.theme.iconSize[props.iconSize]};
+    width: ${props => props.theme.icon.iconSize[props.iconSize]};
+    height: ${props => props.theme.icon.iconSize[props.iconSize]};
     ${props =>
         directionalProperty(
             'margin',
@@ -35,6 +36,7 @@ const IconBase = styled.span`
 
     ${props => baseColor[props.colorPallet]};
     ${props => (props.hasBackground ? backgroundStyle : noBackground)};
+    ${props => (props.hasBackground && props.isActive ? activeColor[props.colorPallet] : null)};
 `;
 
 export { IconBase };

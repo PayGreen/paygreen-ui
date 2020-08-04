@@ -12,8 +12,8 @@ const labelSize = {
             padding-right: ${props => props.theme.space.md};
 
             & > .icon {
-                width: ${props => props.theme.iconSize.lg};
-                height: ${props => props.theme.iconSize.lg};
+                width: ${props => props.theme.icon.iconSize.lg};
+                height: ${props => props.theme.icon.iconSize.lg};
                 margin-right: ${props => props.theme.space.sm};
             }
         }
@@ -49,8 +49,8 @@ const labelSize = {
             }
 
             & > .icon {
-                width: ${props => props.theme.iconSize.xl};
-                height: ${props => props.theme.iconSize.xl};
+                width: ${props => props.theme.icon.iconSize.xl};
+                height: ${props => props.theme.icon.iconSize.xl};
                 margin: ${props => props.theme.space.md} 0;
             }
         }
