@@ -14,8 +14,8 @@ storiesOf(folder.form + folder.sub.datePicker + 'CalendarCell', module)
     .add('CalendarCell', () => (
         <CalendarCell
             date={moment()}
-            colorTheme={select(
-                'Color theme',
+            colorStatus={select(
+                'Color status',
                 formStatusOptions,
                 formStatusDefault,
             )}
