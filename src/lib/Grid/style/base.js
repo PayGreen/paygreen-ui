@@ -1,6 +1,19 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
 
+const gridAlign = {
+    left: css`
+        margin: 0;
+    `,
+    center: css`
+        margin: 0 auto;
+    `,
+    right: css`
+        margin: 0;
+        margin-left: auto;
+    `,
+};
+
 const childrenMargins = css`
     & > * {
         margin: ${props => props.theme.space[props.childrenMargin]} auto;
@@ -104,6 +117,7 @@ function childrenShift(count, shiftSize, isNegative, isReverse) {
 };
 
 export {
+    gridAlign,
     displayStyle,
     childrenShift,
 };

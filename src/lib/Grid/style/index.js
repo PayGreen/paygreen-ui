@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { spaceOptions } from '../../../shared/constants';
-import { displayStyle, childrenShift } from './base';
+import { gridAlign, displayStyle, childrenShift } from './base';
 
 const GridBase = styled.div`
     max-width: 100%;
@@ -12,7 +12,7 @@ const GridBase = styled.div`
 
     @media (${props => props.theme.query.min.md}) {
         padding: 0;
-        margin: 0 auto;
+        ${props => gridAlign[props.align]};
     }
 
     ${props => displayStyle[props.displayType]};

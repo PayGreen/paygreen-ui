@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+    alignOptions,
     displayOptions,
     displayDefault,
     flexDirectionOptions,
@@ -29,6 +30,7 @@ const Grid = props => {
 };
 
 Grid.propTypes = {
+    align: PropTypes.oneOf(Object.values(alignOptions)),
     displayType: PropTypes.oneOf(Object.values(displayOptions)),
     columnNumber: PropTypes.number,
     flexDirection: PropTypes.oneOf(Object.values(flexDirectionOptions)),
@@ -48,6 +50,7 @@ Grid.propTypes = {
 };
 
 Grid.defaultProps = {
+    align: alignOptions.center,
     displayType: displayDefault,
     columnNumber: 2,
     flexDirection: flexDirectionDefault,

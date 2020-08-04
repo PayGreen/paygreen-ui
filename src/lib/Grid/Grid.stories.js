@@ -6,6 +6,7 @@ import {
     boolean,
     number,
     text,
+    radios,
 } from '@storybook/addon-knobs';
 import {
     folder,
@@ -22,6 +23,7 @@ import {
     alignItemsDefault,
     spaceOptions,
     spaceDefault,
+    alignOptions,
 } from '../../shared/constants';
 import Card from '../Card/Card';
 import Text from '../Text/Text';
@@ -41,14 +43,15 @@ storiesOf(folder.main + folder.sub.structure + 'Grid', module)
     .addDecorator(withKnobs)
     .add('Grid', () => (
         <Grid
-            displayType={select('Grid type', displayOptions, displayDefault)}
+            align={radios('Align', alignOptions, alignOptions.center)}
+            displayType={radios('Grid type', displayOptions, displayDefault)}
             columnNumber={number('Column number', 2)}
-            flexDirection={select(
+            flexDirection={radios(
                 'Flex direction',
                 flexDirectionOptions,
                 flexDirectionDefault,
             )}
-            flexWrap={select('Flex wrap', flexWrapOptions, flexWrapDefault)}
+            flexWrap={radios('Flex wrap', flexWrapOptions, flexWrapDefault)}
             justifyContent={select(
                 'Justify content',
                 justifyContentOptions,
