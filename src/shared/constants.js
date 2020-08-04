@@ -1,6 +1,5 @@
 /* Storybook folders */
-const folderSeparator = ' | ';
-const subFolderSeparator = '/';
+const folderSeparator = '/';
 
 const folder = {
     main: 'Basics' + folderSeparator,
@@ -10,20 +9,20 @@ const folder = {
     tables: 'Tables' + folderSeparator,
 
     sub: {
-        button: 'Buttons' + subFolderSeparator,
-        checkbox: 'Checkbox elements' + subFolderSeparator,
-        control: 'Menu controls' + subFolderSeparator,
-        footer: 'Footer' + subFolderSeparator,
-        form: 'Special fields' + subFolderSeparator,
-        list: 'Ordinary list' + subFolderSeparator,
-        menu: 'Menu elements' + subFolderSeparator,
-        radio: 'Radio elements' + subFolderSeparator,
-        sidebarMenu: 'Sidebar elements' + subFolderSeparator,
-        modal: 'Modal elements' + subFolderSeparator,
-        pagination: 'Pagination elements' + subFolderSeparator,
-        structure: 'Grids' + subFolderSeparator,
-        table: 'Simple tables' + subFolderSeparator,
-        daTable: 'DaTables' + subFolderSeparator,
+        button: 'Buttons' + folderSeparator,
+        checkbox: 'Checkbox elements' + folderSeparator,
+        control: 'Menu controls' + folderSeparator,
+        footer: 'Footer' + folderSeparator,
+        form: 'Special fields' + folderSeparator,
+        list: 'Ordinary list' + folderSeparator,
+        menu: 'Menu elements' + folderSeparator,
+        radio: 'Radio elements' + folderSeparator,
+        sidebarMenu: 'Sidebar elements' + folderSeparator,
+        modal: 'Modal elements' + folderSeparator,
+        pagination: 'Pagination elements' + folderSeparator,
+        structure: 'Grids' + folderSeparator,
+        table: 'Simple tables' + folderSeparator,
+        daTable: 'DaTables' + folderSeparator,
     },
 };
 
