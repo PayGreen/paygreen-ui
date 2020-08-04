@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs';
-import { folder } from '../../shared/constants';
+import { folder, alignOptions } from '../../shared/constants';
 import Box from './Box';
 import Card from '../Card/Card';
 import Title from '../Title/Title';
@@ -52,7 +52,8 @@ storiesOf(folder.main + 'Box', module)
             )}
         >
             <Card>
-                <Title align="center">Card</Title>
+                <Title align={alignOptions.center}>Card</Title>
+
                 <Box
                     padding={select(
                         'Inner padding',
@@ -106,7 +107,7 @@ storiesOf(folder.main + 'Box', module)
                     )}
                 >
                     <Card>
-                        <Title align="center">Inner Card</Title>
+                        <Title align={alignOptions.center}>Inner Card</Title>
                     </Card>
                 </Box>
             </Card>
