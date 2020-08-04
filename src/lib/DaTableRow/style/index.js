@@ -21,6 +21,7 @@ const DaTableRowBase = styled.div`
             )};
         grid-template-columns: ${props =>
             gridColumns(props.mainCellCount, props.hasCheckbox, props.hasId)};
+        align-items: center; 
 
         ${cellsAreas};
         ${toggableStyle};
