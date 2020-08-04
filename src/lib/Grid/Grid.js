@@ -46,6 +46,7 @@ Grid.propTypes = {
     isReverseShift: PropTypes.bool,
 
     blockPadding: PropTypes.oneOf(Object.values(spaceOptions)),
+    gridGap: PropTypes.oneOf(Object.values(spaceOptions)),
     childrenMargin: PropTypes.oneOf(Object.values(spaceOptions)),
     childrenMarginBig: PropTypes.oneOf(Object.values(spaceOptions)),
 };
@@ -66,6 +67,7 @@ Grid.defaultProps = {
     isReverseShift: false,
 
     blockPadding: spaceOptions.md,
+    gridGap: spaceOptions.none,
     childrenMargin: spaceOptions.md,
     childrenMarginBig: spaceOptions.lg,
 };

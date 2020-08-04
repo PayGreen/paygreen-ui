@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
+import { spaceOptions } from '../../../shared/constants';
 
 const gridAlign = {
     left: css`
@@ -28,12 +29,13 @@ const gridStyles = css`
     display: grid;
     justify-items: ${props => props.justifyItems};
     align-items: ${props => props.alignItems};
+    gap: ${props => props.theme.space[props.gridGap]};
 `;
 
 const gridColumns = {
     two: css`
-        @media (${props => props.theme.query.min.md}) and
-            (${props => props.theme.query.max.lg}) {
+        @media (${props => props.theme.query.min.md})
+            and (${props => props.theme.query.max.lg}) {
             width: fit-content;
         }
 
@@ -87,13 +89,14 @@ const displayStyle = {
     grid: css`
         ${props =>
             props.columnNumber <= 2 ? gridColumns.two : gridColumns.more};
-        
+
         ${props =>
             props.gridTemplateColumns
                 ? gridTemplate.custom
                 : gridTemplate.auto};
 
-        ${childrenMargins};
+        ${props =>
+            props.gridGap === spaceOptions.none ? childrenMargins : null};
     `,
     column: css`
         & > * {
