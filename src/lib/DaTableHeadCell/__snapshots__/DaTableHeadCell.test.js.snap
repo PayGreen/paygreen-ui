@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bwzfXH ercQWu"
+  className="sc-bwzfXH lkbGbx"
 >
   <span
     className="icon-child"
@@ -19,10 +19,10 @@ exports[`renders without crashing 1`] = `
       </svg>
     </button>
   </span>
-  <span
+  <div
     className="cell-child"
   >
     Something
-  </span>
+  </div>
 </div>
 `;

@@ -36,7 +36,10 @@ const IconBase = styled.span`
 
     ${props => baseColor[props.colorPallet]};
     ${props => (props.hasBackground ? backgroundStyle : noBackground)};
-    ${props => (props.hasBackground && props.isActive ? activeColor[props.colorPallet] : null)};
+    ${props =>
+        props.hasBackground && props.isActive
+            ? activeColor[props.colorPallet]
+            : null};
 `;
 
 export { IconBase };

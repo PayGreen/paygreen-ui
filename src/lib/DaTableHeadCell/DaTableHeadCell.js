@@ -36,7 +36,7 @@ const DaTableHeadCell = ({ children, label, ...rest }) => {
             {sortIcon ? <span className="icon-child">{sortIcon}</span> : null}
             {groupIcon ? <span className="icon-child">{groupIcon}</span> : null}
 
-            {children ? <span className="cell-child">{children}</span> : null}
+            {children ? <div className="cell-child">{children}</div> : null}
         </DaTableHeadCellBase>
     );
 };

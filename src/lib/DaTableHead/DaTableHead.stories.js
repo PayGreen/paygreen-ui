@@ -5,7 +5,6 @@ import { folder } from '../../shared/constants';
 import { ArrowBottomIcon, MenuIcon } from '../Icon/Icon';
 import DaTableHeadCell from '../DaTableHeadCell/DaTableHeadCell';
 import DaTableHead from './DaTableHead';
-import DaInput from '../DaInput/DaInput';
 
 storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
     .addDecorator(withKnobs)
@@ -21,7 +20,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
                 label="Last Name"
             />
 
-            <DaTableHeadCell label="First name"/>
+            <DaTableHeadCell label="First name" />
 
             <DaTableHeadCell
                 sortIcon={

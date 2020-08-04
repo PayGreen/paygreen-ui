@@ -12,7 +12,7 @@ const mobileStyle = css`
         align-items: center;
 
         .cell-child {
-            margin : 0 ${props => props.theme.space.xs};
+            margin: 0 ${props => props.theme.space.xs};
         }
     }
 `;

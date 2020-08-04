@@ -26,31 +26,31 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-bdVaJa jHvvQy"
+    className="sc-bdVaJa daJfHa"
   >
-    <span
+    <div
       className="cell-child"
     >
       Something
-    </span>
+    </div>
   </div>
   <div
-    className="sc-bdVaJa jHvvQy"
+    className="sc-bdVaJa daJfHa"
   >
-    <span
+    <div
       className="cell-child"
     >
       Something
-    </span>
+    </div>
   </div>
   <div
-    className="sc-bdVaJa jHvvQy"
+    className="sc-bdVaJa daJfHa"
   >
-    <span
+    <div
       className="cell-child"
     >
       Something
-    </span>
+    </div>
   </div>
 </div>
 `;

@@ -1,7 +1,6 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
 import { colorPalletOptions } from '../../../shared/constants';
-import { backgroundCalc } from '../../DaButton/style/constants';
 
 const resetButtonStyle = css`
     cursor: pointer;
@@ -77,13 +76,15 @@ const hasHoverColor = css`
                   &:hover,
                   &:active,
                   &:focus {
-                    &::before {
-                        transform: scale(1);
-                    }
+                      &::before {
+                          transform: scale(1);
+                      }
                   }
               `
             : null};
 `;
+
+const calcShift = props => props.theme.icon.iconShift[props.iconSize];
 
 const backgroundStyle = css`
     padding: ${props =>
@@ -102,9 +103,9 @@ const backgroundStyle = css`
         z-index: ${props => props.theme.zindex.layer};
         height: 100%;
         width: 100%
-        padding: ${props =>props.theme.icon.iconShift[props.iconSize]};
-        bottom: -${props =>props.theme.icon.iconShift[props.iconSize]};
-        left: -${props =>props.theme.icon.iconShift[props.iconSize]};
+        padding: ${calcShift};
+        bottom: -${calcShift};
+        left: -${calcShift};
         border-radius: 50%;
         opacity: 0.4;
         transition: all ${props => props.theme.transition.sm};
