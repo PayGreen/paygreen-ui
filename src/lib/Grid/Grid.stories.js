@@ -46,6 +46,7 @@ storiesOf(folder.main + folder.sub.structure + 'Grid', module)
             align={radios('Align', alignOptions, alignOptions.center)}
             displayType={radios('Grid type', displayOptions, displayDefault)}
             columnNumber={number('Column number', 2)}
+            gridTemplateColumns={text('Grid columns', '')}
             flexDirection={radios(
                 'Flex direction',
                 flexDirectionOptions,

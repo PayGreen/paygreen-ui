@@ -33,6 +33,7 @@ Grid.propTypes = {
     align: PropTypes.oneOf(Object.values(alignOptions)),
     displayType: PropTypes.oneOf(Object.values(displayOptions)),
     columnNumber: PropTypes.number,
+    gridTemplateColumns: PropTypes.string,
     flexDirection: PropTypes.oneOf(Object.values(flexDirectionOptions)),
     flexWrap: PropTypes.oneOf(Object.values(flexWrapOptions)),
     justifyContent: PropTypes.oneOf(Object.values(justifyContentOptions)),
