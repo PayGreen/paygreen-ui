@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import { MonthContext } from '../context/MonthContext';
 import CalendarNavbarBase from './style';
 import {
     formStatusOptions,
@@ -9,13 +10,18 @@ import {
 import { ThemeDefault } from '../../../theme';
 import { ArrowLeftIcon, ArrowRightIcon } from '../../Icon/Icon';
 
-const CalendarNavbar = ({ month, onMonthChange, ...rest }) => {
+const CalendarNavbar = ({ ...rest }) => {
+    const [month, setMonth] = useContext(MonthContext);
+    if (!month) {
+        return null;
+    }
+
     /**
      * @desc Use onMonthChange function to go to previous month
      * @param e{event}
      */
     const previousMonth = e => {
-        onMonthChange(month - 1);
+        setMonth(month - 1);
         e.preventDefault();
     };
     /**
@@ -23,7 +29,7 @@ const CalendarNavbar = ({ month, onMonthChange, ...rest }) => {
      * @param e{event}
      */
     const nextMonth = e => {
-        onMonthChange(month + 1);
+        setMonth(month + 1);
         e.preventDefault();
     };
 
@@ -41,32 +47,32 @@ const CalendarNavbar = ({ month, onMonthChange, ...rest }) => {
 
     return (
         <CalendarNavbarBase {...rest}>
-            <ArrowLeftIcon
-                onClick={previousMonth}
-                colorPallet="wab"
-                colorWab="white00"
-                theme={ThemeDefault}
-            />
+            <div className="arrow-button">
+                <ArrowLeftIcon
+                    onClick={previousMonth}
+                    colorPallet="wab"
+                    colorWab="white00"
+                    theme={ThemeDefault}
+                />
+            </div>
             <span>{capitalize(month)}</span>
-            <ArrowRightIcon
-                onClick={nextMonth}
-                colorPallet="wab"
-                colorWab="white00"
-                theme={ThemeDefault}
-            />
+            <div className="arrow-button">
+                <ArrowRightIcon
+                    onClick={nextMonth}
+                    colorPallet="wab"
+                    colorWab="white00"
+                    theme={ThemeDefault}
+                />
+            </div>
         </CalendarNavbarBase>
     );
 };
 
 CalendarNavbar.propTypes = {
-    month: PropTypes.number,
-    onMonthChange: PropTypes.func,
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
 };
 
 CalendarNavbar.defaultProps = {
-    month: moment().month(),
-    onMonthChange: () => {},
     colorStatus: formStatusDefault,
 };
 

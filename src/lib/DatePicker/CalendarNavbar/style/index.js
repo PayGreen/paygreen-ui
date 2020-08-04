@@ -17,6 +17,13 @@ const CalendarNavbarBase = styled.div`
 
     border-top-left-radius: ${props => props.theme.radius.lg};
     border-top-right-radius: ${props => props.theme.radius.lg};
+
+    & > .arrow-button {
+        cursor: pointer;
+        
+        padding-left: ${props => props.theme.space.sm};
+        padding-right: ${props => props.theme.space.sm};
+    }
 `;
 
 export default CalendarNavbarBase;

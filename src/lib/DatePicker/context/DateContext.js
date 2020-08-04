@@ -1,8 +1,12 @@
-import { createContext } from 'react';
+import React, { createContext } from 'react';
 
-const DateContext = createContext([{}, () => {}]);
-const DateContextProvider = props => {
-    return <DateContext.Provider>{props.children}</DateContext.Provider>;
+const DateContext = createContext([null, () => {}]);
+const DateContextProvider = ({ value, ...props }) => {
+    return (
+        <DateContext.Provider value={value}>
+            {props.children}
+        </DateContext.Provider>
+    );
 };
 
 export { DateContext, DateContextProvider };

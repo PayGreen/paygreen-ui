@@ -8,28 +8,24 @@ import {
     formStatusDefault,
 } from '../../../shared/constants';
 import CalendarNavbar from './CalendarNavbar';
+import { MonthContextProvider } from '../context/MonthContext';
+
+// Variables to initialize Context in demo
+let month = moment().month();
+let setMonth = e => {
+    month = e;
+};
 
 storiesOf(folder.form + folder.sub.datePicker + 'CalendarNavbar', module)
     .addDecorator(withKnobs)
     .add('CalendarNavbar', () => (
-        <CalendarNavbar
-            colorStatus={select(
-                'Color status',
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            month={number('Month index', moment().month(), {
-                range: true,
-                min: 0,
-                max: 11,
-                step: 1,
-            })}
-            onMonthChange={e => {
-                console.log(
-                    moment()
-                        .month(e)
-                        .startOf('M'),
-                );
-            }}
-        />
+        <MonthContextProvider value={[month, setMonth]}>
+            <CalendarNavbar
+                colorStatus={select(
+                    'Color status',
+                    formStatusOptions,
+                    formStatusDefault,
+                )}
+            />
+        </MonthContextProvider>
     ));

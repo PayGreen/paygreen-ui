@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { MonthContext } from '../context/MonthContext';
 import moment from 'moment';
 import CalendarGridBase from './style';
 import CalendarCell from '../CalendarCell/CalendarCell';
@@ -21,7 +22,12 @@ const getMonthBoundaries = month => {
     return [startOfMonth, endOfMonth];
 };
 
-const CalendarGrid = ({ month, ...rest }) => {
+const CalendarGrid = ({ ...rest }) => {
+    const [month, setMonth] = useContext(MonthContext);
+    if (!month) {
+        return null;
+    }
+
     const [startOfMonth, endOfMonth] = getMonthBoundaries(month);
 
     const daysOfMonth = [];
@@ -43,12 +49,8 @@ const CalendarGrid = ({ month, ...rest }) => {
     );
 };
 
-CalendarGrid.propTypes = {
-    month: PropTypes.number,
-};
+CalendarGrid.propTypes = {};
 
-CalendarGrid.defaultProps = {
-    month: moment().month(),
-};
+CalendarGrid.defaultProps = {};
 
 export default CalendarGrid;

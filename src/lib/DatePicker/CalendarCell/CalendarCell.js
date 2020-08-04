@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import {
     formStatusOptions,
     formStatusDefault,
 } from '../../../shared/constants';
 import CalendarCellBase from './style';
-// :: import { DateContext } from '../context/DateContext';
+import { DateContext } from '../context/DateContext';
 
 const CalendarCell = ({ date, colorStatus, isDisabled, ...rest }) => {
-    // Uncomment '::' when the component 'Calendar' is working
-    const [selectedDate, setSelectedDate] = [null, null]; // :: useContext(DateContext);
+    const [selectedDate, setSelectedDate] = useContext(DateContext);
+    if (!selectedDate) {
+        return null;
+    }
 
     const handleOnClick = e => {
-        // :: if (!isDisabled) { setSelectedDate(date); }
+        if (!isDisabled) {
+            setSelectedDate(date);
+        }
         e.preventDefault();
     };
 
@@ -20,7 +24,6 @@ const CalendarCell = ({ date, colorStatus, isDisabled, ...rest }) => {
         <CalendarCellBase
             onClick={handleOnClick}
             isSelected={
-                (date && selectedDate) &&
                 date.format('DD/MM/YYYY') === selectedDate.format('DD/MM/YYYY')
             }
             colorStatus={colorStatus}
