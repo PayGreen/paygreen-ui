@@ -22,7 +22,7 @@ const getMonthBoundaries = month => {
     return [startOfMonth, endOfMonth];
 };
 
-const CalendarGrid = ({ ...rest }) => {
+const CalendarGrid = ({ minimumDate, maximumDate, ...rest }) => {
     const [month, setMonth] = useContext(MonthContext);
     if (!month) {
         return null;
@@ -33,10 +33,19 @@ const CalendarGrid = ({ ...rest }) => {
     const daysOfMonth = [];
     let daysCursor = moment(startOfMonth);
     do {
+        let isDisabled = false;
+        if (minimumDate) {
+            if (daysCursor < minimumDate) isDisabled = true;
+        }
+        if (maximumDate) {
+            if (daysCursor > maximumDate) isDisabled = true;
+        }
+
         daysOfMonth.push(
             <CalendarCell
                 key={daysCursor.toDate()}
                 date={daysCursor.clone()}
+                isDisabled={isDisabled}
                 {...rest}
             />,
         );
@@ -49,8 +58,14 @@ const CalendarGrid = ({ ...rest }) => {
     );
 };
 
-CalendarGrid.propTypes = {};
+CalendarGrid.propTypes = {
+    minimumDate: PropTypes.object,
+    maximumDate: PropTypes.object,
+};
 
-CalendarGrid.defaultProps = {};
+CalendarGrid.defaultProps = {
+    minimumDate: null,
+    maximumDate: null,
+};
 
 export default CalendarGrid;

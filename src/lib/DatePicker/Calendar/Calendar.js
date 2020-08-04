@@ -7,16 +7,26 @@ import CalendarNavbar from '../CalendarNavbar/CalendarNavbar';
 import CalendarWeekdays from '../CalendarWeekdays/CalendarWeekdays';
 import CalendarGrid from '../CalendarGrid/CalendarGrid';
 
-const Calendar = ({ currentMonth, locale, ...rest }) => {
+const Calendar = ({
+    currentMonth,
+    locale,
+    minimumDate,
+    maximumDate,
+    ...rest
+}) => {
     const [month, setMonth] = useState(currentMonth);
     moment.locale(locale);
 
     return (
         <MonthContextProvider value={[month, setMonth]}>
-            <CalendarBase>
+            <CalendarBase {...rest}>
                 <CalendarNavbar {...rest} />
                 <CalendarWeekdays {...rest} />
-                <CalendarGrid {...rest} />
+                <CalendarGrid
+                    minimumDate={minimumDate}
+                    maximumDate={maximumDate}
+                    {...rest}
+                />
             </CalendarBase>
         </MonthContextProvider>
     );

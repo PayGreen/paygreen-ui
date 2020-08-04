@@ -2,16 +2,16 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-bdVaJa TgvSk"
 >
   <div
-    className="sc-bwzfXH gHrKLg"
+    className="sc-bwzfXH inZryP"
   >
     <div
       className="arrow-button"
     >
       <span
-        className="sc-htpNat bQmXwk icon"
+        className="sc-htpNat lipesK icon"
         onClick={[Function]}
       >
         <svg
@@ -30,7 +30,7 @@ exports[`renders without crashing 1`] = `
       className="arrow-button"
     >
       <span
-        className="sc-htpNat bQmXwk icon"
+        className="sc-htpNat lipesK icon"
         onClick={[Function]}
       >
         <svg
@@ -44,7 +44,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-bxivhb cJUsOi"
+    className="sc-bxivhb fqeepJ"
   >
     <div>
       L
@@ -69,7 +69,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-ifAKCX spCdI"
+    className="sc-ifAKCX iUpWxB"
     offset={6}
   />
 </div>

@@ -14,6 +14,9 @@ const CalendarGridBase = styled.div`
     height: auto;
     padding: ${props => props.theme.line};
 
+    border-bottom-left-radius: ${props => props.theme.radius.lg};
+    border-bottom-right-radius: ${props => props.theme.radius.lg};
+
     background-color: ${props => props.theme.wab.white00};
 
     div:first-child {

@@ -10,8 +10,8 @@ const CalendarWeekdaysBase = styled.div`
             (${props => props.theme.line} * 8)
     );
     height: auto;
-    color: ${props => props.theme.wab.white00};
-    background-color: ${props => props.theme.status[props.colorStatus].main};
+    color: ${props => props.theme.status[props.colorStatus].main};
+    background-color: ${props => props.theme.status[props.colorStatus].light};
     cursor: default;
 
     & div {

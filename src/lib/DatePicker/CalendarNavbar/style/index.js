@@ -12,8 +12,8 @@ const CalendarNavbarBase = styled.div`
     height: ${props => props.theme.iconSize.xl};
     padding: ${props => props.theme.line};
 
-    color: ${props => props.theme.wab.white00};
-    background-color: ${props => props.theme.status[props.colorStatus].main};
+    color: ${props => props.theme.status[props.colorStatus].main};
+    background-color: ${props => props.theme.status[props.colorStatus].light};
 
     border-top-left-radius: ${props => props.theme.radius.lg};
     border-top-right-radius: ${props => props.theme.radius.lg};
@@ -23,6 +23,10 @@ const CalendarNavbarBase = styled.div`
         
         padding-left: ${props => props.theme.space.sm};
         padding-right: ${props => props.theme.space.sm};
+    }
+
+    & > span {
+        font-weight: bold;
     }
 `;
 

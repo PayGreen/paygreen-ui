@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select, number } from '@storybook/addon-knobs';
@@ -10,22 +10,20 @@ import {
 import CalendarNavbar from './CalendarNavbar';
 import { MonthContextProvider } from '../context/MonthContext';
 
-// Variables to initialize Context in demo
-let month = moment().month();
-let setMonth = e => {
-    month = e;
-};
-
 storiesOf(folder.form + folder.sub.datePicker + 'CalendarNavbar', module)
     .addDecorator(withKnobs)
-    .add('CalendarNavbar', () => (
-        <MonthContextProvider value={[month, setMonth]}>
-            <CalendarNavbar
-                colorStatus={select(
-                    'Color status',
-                    formStatusOptions,
-                    formStatusDefault,
-                )}
-            />
-        </MonthContextProvider>
-    ));
+    .add('CalendarNavbar', () => {
+        const [month, setMonth] = useState(moment().month());
+
+        return (
+            <MonthContextProvider value={[month, setMonth]}>
+                <CalendarNavbar
+                    colorStatus={select(
+                        'Color status',
+                        formStatusOptions,
+                        formStatusDefault,
+                    )}
+                />
+            </MonthContextProvider>
+        );
+    });

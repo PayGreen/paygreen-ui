@@ -10,7 +10,7 @@ import {
 import { ThemeDefault } from '../../../theme';
 import { ArrowLeftIcon, ArrowRightIcon } from '../../Icon/Icon';
 
-const CalendarNavbar = ({ ...rest }) => {
+const CalendarNavbar = ({ colorStatus, ...rest }) => {
     const [month, setMonth] = useContext(MonthContext);
     if (!month) {
         return null;
@@ -46,12 +46,12 @@ const CalendarNavbar = ({ ...rest }) => {
     };
 
     return (
-        <CalendarNavbarBase {...rest}>
+        <CalendarNavbarBase colorStatus={colorStatus} {...rest}>
             <div className="arrow-button">
                 <ArrowLeftIcon
                     onClick={previousMonth}
-                    colorPallet="wab"
-                    colorWab="white00"
+                    colorPallet="status"
+                    colorStatus={colorStatus}
                     theme={ThemeDefault}
                 />
             </div>
@@ -59,8 +59,8 @@ const CalendarNavbar = ({ ...rest }) => {
             <div className="arrow-button">
                 <ArrowRightIcon
                     onClick={nextMonth}
-                    colorPallet="wab"
-                    colorWab="white00"
+                    colorPallet="status"
+                    colorStatus={colorStatus}
                     theme={ThemeDefault}
                 />
             </div>
