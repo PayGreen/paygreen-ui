@@ -8,7 +8,7 @@ const CalendarCellBase = styled.div`
     justify-content: center;
     align-items: center;
 
-    ${props => (props.isDisabled ? disabled : enabled)};I
+    ${props => (props.isDisabled ? disabled : enabled)};
     ${props => !props.isDisabled && props.isSelected && selected};
 `;
 

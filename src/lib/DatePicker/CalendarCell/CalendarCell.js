@@ -7,12 +7,12 @@ import {
 import CalendarCellBase from './style';
 // :: import { DateContext } from '../context/DateContext';
 
-const CalendarCell = ({ date, colorStatus, ...rest }) => {
+const CalendarCell = ({ date, colorStatus, isDisabled, ...rest }) => {
     // Uncomment '::' when the component 'Calendar' is working
     const [selectedDate, setSelectedDate] = [null, null]; // :: useContext(DateContext);
 
     const handleOnClick = e => {
-        // :: setSelectedDate(date);
+        // :: if (!isDisabled) { setSelectedDate(date); }
         e.preventDefault();
     };
 
@@ -24,6 +24,7 @@ const CalendarCell = ({ date, colorStatus, ...rest }) => {
                 date.format('DD/MM/YYYY') === selectedDate.format('DD/MM/YYYY')
             }
             colorStatus={colorStatus}
+            isDisabled={isDisabled}
             {...rest}
         >
             {date ? date.format('D') : null}

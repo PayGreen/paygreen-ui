@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import CalendarGridBase from './style/index';
+import CalendarGridBase from './style';
 import CalendarCell from '../CalendarCell/CalendarCell';
 
 /**
