@@ -135,9 +135,9 @@ export const ThemeBase = {
         lg: '12px',
     },
     arrow: {
-        sm: '12px',
-        md: '16px',
-        lg: '20px',
+        sm: '8px',
+        md: '12px',
+        lg: '16px',
     },
     space: {
         none: '0',
