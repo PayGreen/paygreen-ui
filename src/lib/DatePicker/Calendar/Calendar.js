@@ -6,6 +6,10 @@ import CalendarBase from './style';
 import CalendarNavbar from '../CalendarNavbar/CalendarNavbar';
 import CalendarWeekdays from '../CalendarWeekdays/CalendarWeekdays';
 import CalendarGrid from '../CalendarGrid/CalendarGrid';
+import {
+    formStatusOptions,
+    formStatusDefault,
+} from '../../../shared/constants';
 
 const Calendar = ({
     currentMonth,
@@ -35,11 +39,17 @@ const Calendar = ({
 Calendar.propTypes = {
     currentMonth: PropTypes.number,
     locale: PropTypes.string,
+    minimumDate: PropTypes.object,
+    maximumDate: PropTypes.object,
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
 };
 
 Calendar.defaultProps = {
     currentMonth: moment().month(),
     locale: 'fr',
+    minimumDate: null,
+    maximumDate: null,
+    colorStatus: formStatusDefault,
 };
 
 export default Calendar;

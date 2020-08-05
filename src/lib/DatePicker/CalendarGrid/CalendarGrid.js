@@ -4,6 +4,10 @@ import { MonthContext } from '../context/MonthContext';
 import moment from 'moment';
 import CalendarGridBase from './style';
 import CalendarCell from '../CalendarCell/CalendarCell';
+import {
+    formStatusOptions,
+    formStatusDefault,
+} from '../../../shared/constants';
 
 /**
  * @desc Return the first and last days of Month using month index.
@@ -61,11 +65,13 @@ const CalendarGrid = ({ minimumDate, maximumDate, ...rest }) => {
 CalendarGrid.propTypes = {
     minimumDate: PropTypes.object,
     maximumDate: PropTypes.object,
+    colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
 };
 
 CalendarGrid.defaultProps = {
     minimumDate: null,
     maximumDate: null,
+    colorStatus: formStatusDefault,
 };
 
 export default CalendarGrid;
