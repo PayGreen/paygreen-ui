@@ -55,40 +55,9 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHeadCell', module)
     .add('DaTableHeadCell with children', () => (
         <DaTableHeadCell
             sortIcon={
-                boolean('With sort icon', false) ? (
-                    <ArrowBottomIcon
-                        isActive={boolean(sortIconActiveLabel, false)}
-                        rotateSize={
-                            boolean(ascSortLabel, false) &&
-                            boolean(sortIconActiveLabel, false)
-                                ? rotateSizeOptions.d180
-                                : rotateSizeOptions.d0
-                        }
-                        title={
-                            boolean(ascSortLabel, false) &&
-                            boolean(sortIconActiveLabel, false)
-                                ? 'Cancel sort on Sample'
-                                : 'Sort ' +
-                                  (boolean(sortIconActiveLabel, false)
-                                      ? 'ASC'
-                                      : 'DESC') +
-                                  ' on Sample'
-                        }
-                    />
-                ) : null
+                boolean('With sort icon', false) ? <ArrowBottomIcon /> : null
             }
-            groupIcon={
-                boolean('With group icon', false) ? (
-                    <MenuIcon
-                        isActive={boolean(groupIconActiveLabel, false)}
-                        title={
-                            boolean(groupIconActiveLabel, false)
-                                ? 'Cancel group on Sample'
-                                : 'Group on Sample'
-                        }
-                    />
-                ) : null
-            }
+            groupIcon={boolean('With group icon', false) ? <MenuIcon /> : null}
             label="Cell for DaTableHead"
         >
             <DaInput placeholder="Search" fieldSize="sm" />

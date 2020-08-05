@@ -22,6 +22,7 @@ import DaTableRow from '../DaTableRow/DaTableRow';
 import DaTableBody from '../DaTableBody/DaTableBody';
 import DaTableHeadCell from '../DaTableHeadCell/DaTableHeadCell';
 import DaTableHead from '../DaTableHead/DaTableHead';
+import DaInput from '../DaInput/DaInput';
 import DaTable from './DaTable';
 
 const iconStyles = {
@@ -183,7 +184,9 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
                         label="Date"
                     />
 
-                    <DaTableHeadCell label="Name" />
+                    <DaTableHeadCell label="Name">
+                        <DaInput placeholder="Search name" fieldSize="sm" />
+                    </DaTableHeadCell>
 
                     <DaTableHeadCell
                         sortIcon={

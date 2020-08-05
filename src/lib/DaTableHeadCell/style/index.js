@@ -10,8 +10,7 @@ const DaTableHeadCellBase = styled.div`
 
     @media (${props => props.theme.query.min.lg}) {
         display: table-cell;
-        padding: ${props => props.theme.space.sm}
-            ${props => props.theme.space.md};
+        padding: ${props => props.theme.space.sm + ' ' + props.theme.space.md};
         padding-top: 0;
 
         .cell-child {

@@ -46,8 +46,7 @@ const notMainStyle = css`
         &::after {
             content: '';
             flex: 1;
-            border-top: dotted ${props => props.theme.line}
-                ${props => props.theme.wab.grey20};
+            border-top: dotted ${props => props.theme.line + ' ' + props.theme.wab.grey20};
             margin: 0 ${props => props.theme.space.xs};
         }
     }
