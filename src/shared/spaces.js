@@ -42,6 +42,13 @@ const responsiveSpaces = (
         topCoeff,
         directions,
     ) => {
+        if (
+            ['Left', 'Right'].includes(direction) &&
+            !directions.includes(direction)
+        ) {
+            direction = directionProperty.lateral;
+        }
+
         return props =>
             directions.includes(direction) &&
             props[propAttribute + direction] !== undefined
@@ -71,7 +78,7 @@ const responsiveSpaces = (
             ),
             getSpace(
                 'sm',
-                directionProperty.lateral,
+                'Right',
                 toRemove,
                 bottomCoeff,
                 topCoeff,
@@ -85,14 +92,7 @@ const responsiveSpaces = (
                 topCoeff,
                 directions,
             ),
-            getSpace(
-                'sm',
-                directionProperty.lateral,
-                toRemove,
-                bottomCoeff,
-                topCoeff,
-                directions,
-            ),
+            getSpace('sm', 'Left', toRemove, bottomCoeff, topCoeff, directions),
         )};
 
         @media (${props => props.theme.query.min.md}) {
@@ -108,7 +108,7 @@ const responsiveSpaces = (
                 ),
                 getSpace(
                     'md',
-                    directionProperty.lateral,
+                    'Right',
                     toRemove,
                     bottomCoeff,
                     topCoeff,
@@ -124,7 +124,7 @@ const responsiveSpaces = (
                 ),
                 getSpace(
                     'md',
-                    directionProperty.lateral,
+                    'Left',
                     toRemove,
                     bottomCoeff,
                     topCoeff,
