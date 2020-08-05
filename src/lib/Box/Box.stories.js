@@ -1,115 +1,72 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs';
-import { folder, alignOptions } from '../../shared/constants';
+import { folder, spaceOptions, spaceDefault } from '../../shared/constants';
+import Text from '../Text/Text';
 import Box from './Box';
-import Card from '../Card/Card';
-import Title from '../Title/Title';
 
-const spaceOptions = {
+const spaceOptionsCustom = {
     null: null,
-    none: 'none',
-    xs: 'xs',
-    sm: 'sm',
-    md: 'md',
-    lg: 'lg',
-    xl: 'xl',
+    ...spaceOptions,
 };
 
 storiesOf(folder.main + 'Box', module)
     .addDecorator(withKnobs)
     .add('Box', () => (
         <Box
-            padding={select('Padding', spaceOptions, spaceOptions.none)}
-            paddingTop={select('Padding top', spaceOptions, spaceOptions.null)}
+            padding={select('Padding', spaceOptions, spaceDefault)}
+            paddingTop={select(
+                'Padding top',
+                spaceOptionsCustom,
+                spaceOptionsCustom.null,
+            )}
             paddingRight={select(
                 'Padding right',
-                spaceOptions,
-                spaceOptions.null,
+                spaceOptionsCustom,
+                spaceOptionsCustom.null,
             )}
             paddingLeft={select(
                 'Padding left',
-                spaceOptions,
-                spaceOptions.null,
+                spaceOptionsCustom,
+                spaceOptionsCustom.null,
             )}
             paddingBottom={select(
                 'Padding bottom',
-                spaceOptions,
-                spaceOptions.null,
+                spaceOptionsCustom,
+                spaceOptionsCustom.null,
             )}
-            margin={select('Margin', spaceOptions, spaceOptions.none)}
-            marginTop={select('Margin top', spaceOptions, spaceOptions.null)}
+            margin={select('Margin', spaceOptions, spaceDefault)}
+            marginTop={select(
+                'Margin top',
+                spaceOptionsCustom,
+                spaceOptionsCustom.null,
+            )}
             marginRight={select(
                 'Margin right',
-                spaceOptions,
-                spaceOptions.null,
+                spaceOptionsCustom,
+                spaceOptionsCustom.null,
             )}
-            marginLeft={select('Margin left', spaceOptions, spaceOptions.null)}
+            marginLeft={select(
+                'Margin left',
+                spaceOptionsCustom,
+                spaceOptionsCustom.null,
+            )}
             marginBottom={select(
                 'Margin bottom',
-                spaceOptions,
-                spaceOptions.null,
+                spaceOptionsCustom,
+                spaceOptionsCustom.null,
             )}
         >
-            <Card>
-                <Title align={alignOptions.center}>Card</Title>
-
-                <Box
-                    padding={select(
-                        'Inner padding',
-                        spaceOptions,
-                        spaceOptions.none,
-                    )}
-                    paddingTop={select(
-                        'Inner padding top',
-                        spaceOptions,
-                        spaceOptions.null,
-                    )}
-                    paddingRight={select(
-                        'Inner padding right',
-                        spaceOptions,
-                        spaceOptions.null,
-                    )}
-                    paddingLeft={select(
-                        'Inner padding left',
-                        spaceOptions,
-                        spaceOptions.null,
-                    )}
-                    paddingBottom={select(
-                        'Inner padding bottom',
-                        spaceOptions,
-                        spaceOptions.null,
-                    )}
-                    margin={select(
-                        'Inner margin',
-                        spaceOptions,
-                        spaceOptions.none,
-                    )}
-                    marginTop={select(
-                        'Inner margin top',
-                        spaceOptions,
-                        spaceOptions.null,
-                    )}
-                    marginRight={select(
-                        'Inner margin right',
-                        spaceOptions,
-                        spaceOptions.null,
-                    )}
-                    marginLeft={select(
-                        'Inner margin left',
-                        spaceOptions,
-                        spaceOptions.null,
-                    )}
-                    marginBottom={select(
-                        'Inner margin bottom',
-                        spaceOptions,
-                        spaceOptions.null,
-                    )}
-                >
-                    <Card>
-                        <Title align={alignOptions.center}>Inner Card</Title>
-                    </Card>
-                </Box>
-            </Card>
+            <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                suscipit purus in blandit commodo. Vivamus rhoncus, quam sit
+                amet dignissim elementum, velit purus vestibulum nunc, consequat
+                gravida ex felis vel tortor. Maecenas ornare dolor eget metus
+                bibendum, non sollicitudin magna finibus. Integer ut tincidunt
+                mi, sit amet viverra diam. Morbi molestie nibh accumsan dolor
+                facilisis egestas. Etiam aliquet cursus imperdiet. Pellentesque
+                ut quam purus. Etiam maximus, augue quis consequat ornare, justo
+                metus aliquet tellus, vitae pellentesque libero velit vel erat.
+            </Text>
         </Box>
     ));

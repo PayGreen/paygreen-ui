@@ -3,8 +3,6 @@ import styled from 'styled-components';
 const BoxBase = styled.div`
     max-width: 100%;
 
-    padding: ${props => props.theme.space[props.padding]};
-
     padding-top: ${props =>
         props.paddingTop
             ? props.theme.space[props.paddingTop]
@@ -24,8 +22,6 @@ const BoxBase = styled.div`
         props.paddingBottom
             ? props.theme.space[props.paddingBottom]
             : props.theme.space[props.padding]};
-
-    margin: ${props => props.theme.space[props.margin]};
 
     margin-top: ${props =>
         props.marginTop
