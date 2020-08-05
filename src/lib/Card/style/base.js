@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
-import { gradientOptions } from '../../../shared/constants';
+import { gradientOptions, spaceOptions } from '../../../shared/constants';
+import { responsiveSpaces } from '../../../shared/spaces';
 import { ImageBase } from '../../Image/style';
 
 const shadowStyle = css`
@@ -110,10 +111,19 @@ const backgroundStyle = {
 const containerStyle = css`
     position: relative;
     max-width: ${props => props.theme.blockWidth[props.blockWidth]};
-    padding-top: 0.1px;
-    padding-bottom: 0.1px;
-    padding-left: ${props => props.theme.blockSpace[props.paddingLateral]};
-    padding-right: ${props => props.theme.blockSpace[props.paddingLateral]};
+    ${responsiveSpaces('padding', 0, 1, 1, ['Lateral'])};
+    ${props =>
+        props.paddingTop !== spaceOptions.none
+            ? responsiveSpaces('padding', 0, 1, 1, ['Top'])
+            : css`
+                  padding-top: 0.1px;
+              `};
+    ${props =>
+        props.paddingBottom !== spaceOptions.none
+            ? responsiveSpaces('padding', 0, 1, 1, ['Bottom'])
+            : css`
+                  padding-bottom: 0.1px;
+              `};
 `;
 
 const blockStyle = css`

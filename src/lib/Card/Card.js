@@ -44,6 +44,8 @@ Card.propTypes = {
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     hasBackground: PropTypes.bool,
     borderTop: PropTypes.oneOf(Object.values(gradientOptions)),
+    paddingTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    paddingBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     hasTitleOut: PropTypes.bool,
 };
@@ -60,6 +62,8 @@ Card.defaultProps = {
     radiusSize: radiusDefault,
     hasBackground: true,
     borderTop: gradientDefault,
+    paddingTop: spaceDefault,
+    paddingBottom: spaceDefault,
     paddingLateral: spaceDefault,
     hasTitleOut: false,
 };
