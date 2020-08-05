@@ -9,7 +9,7 @@ const bulletFont = {
     xl: '2rem'
 };
 
-const marginBase = props => math(props.theme.icon.iconSize[props.bulletSize] + '*0.75');
+const marginBase = props => math(props.theme.icon.size[props.bulletSize] + '*0.75');
 
 export {
     bulletFont,

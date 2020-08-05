@@ -192,7 +192,7 @@ export const ThemeBase = {
         double: '11vw',
     },
     icon: {
-        iconSize: {
+        size: {
             xxs: '12px',
             xs: '16px',
             sm: '20px',
@@ -200,7 +200,7 @@ export const ThemeBase = {
             lg: '32px',
             xl: '40px',
         },
-        iconShift: {
+        shift: {
             xxs: '2px',
             xs: '3px',
             sm: '4px',

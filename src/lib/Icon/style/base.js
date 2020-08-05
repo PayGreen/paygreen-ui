@@ -84,12 +84,12 @@ const hasHoverColor = css`
             : null};
 `;
 
-const calcShift = props => props.theme.icon.iconShift[props.iconSize];
+const calcShift = props => props.theme.icon.shift[props.iconSize];
 
 const backgroundStyle = css`
     padding: ${props =>
         math(
-            props.theme.icon.iconSize[props.iconSize] +
+            props.theme.icon.size[props.iconSize] +
                 '/2 - ' +
                 props.theme.space.xs,
         )};

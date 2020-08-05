@@ -8,7 +8,7 @@ import { bulletFont, marginBase } from './constants';
 const bulletStyle = {
     icon: css`
         & > .icon {
-            height: ${props => props.theme.icon.iconSize[props.bulletSize]};
+            height: ${props => props.theme.icon.size[props.bulletSize]};
         }
     `,
     dash: css`
@@ -25,7 +25,7 @@ const bulletStyle = {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: ${props => props.theme.icon.iconSize[props.bulletSize]};
+            height: ${props => props.theme.icon.size[props.bulletSize]};
             border-radius: 50%;
             background-color: ${props =>
                 props.theme.color[props.colorTheme].light};

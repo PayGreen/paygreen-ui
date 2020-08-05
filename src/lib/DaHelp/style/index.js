@@ -17,7 +17,7 @@ const DaHelpBase = styled.button`
     transition: all ${props => props.theme.transition.xs};
 
     & > .icon {
-        width: ${props => props.theme.icon.iconSize[props.fieldSize]};
+        width: ${props => props.theme.icon.size[props.fieldSize]};
         height: auto;
     }
 

@@ -232,7 +232,7 @@ exports[`renders without crashing 1`] = `
           "topbar": "45px",
         },
         "icon": Object {
-          "iconShift": Object {
+          "shift": Object {
             "lg": "6px",
             "md": "4px",
             "sm": "4px",
@@ -240,7 +240,7 @@ exports[`renders without crashing 1`] = `
             "xs": "3px",
             "xxs": "2px",
           },
-          "iconSize": Object {
+          "size": Object {
             "lg": "32px",
             "md": "24px",
             "sm": "20px",

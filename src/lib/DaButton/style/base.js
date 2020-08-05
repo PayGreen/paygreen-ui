@@ -144,7 +144,7 @@ const iconStyleBase = css`
     .icon {
         margin-right: ${props =>
             props.theme.daButton.iconSpacing[props.buttonSize]};
-        width: ${props => props.theme.icon.iconSize[props.buttonSize]};
+        width: ${props => props.theme.icon.size[props.buttonSize]};
         height: auto;
     }
 `;

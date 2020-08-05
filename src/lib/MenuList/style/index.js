@@ -8,7 +8,7 @@ const MenuListBase = styled.ul`
 
     @media (${props => props.theme.query.min.lg}) {
         position: absolute;
-        margin-top: ${props => props.theme.icon.iconSize.lg};
+        margin-top: ${props => props.theme.icon.size.lg};
         padding: ${props => props.theme.radius.lg} 0;
         width: ${props => props.theme.blockWidth.sm};
         background-color: ${props => props.theme.wab.white00};
@@ -21,20 +21,20 @@ const MenuListBase = styled.ul`
         &::before {
             content: '';
             position: absolute;
-            top: -${props => props.theme.icon.iconSize.md};
+            top: -${props => props.theme.icon.size.md};
             left: 50%;
             transform: translateX(-50%);
-            border-right: solid ${props => props.theme.icon.iconSize.md} transparent;
-            border-bottom: solid ${props => props.theme.icon.iconSize.md} ${props => props.theme.wab.white00};
-            border-left: solid ${props => props.theme.icon.iconSize.md} transparent;
+            border-right: solid ${props => props.theme.icon.size.md} transparent;
+            border-bottom: solid ${props => props.theme.icon.size.md} ${props => props.theme.wab.white00};
+            border-left: solid ${props => props.theme.icon.size.md} transparent;
         }
 
         &::after {
             content: '';
             position: absolute;
-            top: -${props => props.theme.icon.iconSize.lg};
+            top: -${props => props.theme.icon.size.lg};
             left: 0;
-            height: ${props => props.theme.icon.iconSize.lg};
+            height: ${props => props.theme.icon.size.lg};
             width: 100%;
         }
     }

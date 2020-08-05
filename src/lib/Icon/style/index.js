@@ -16,8 +16,8 @@ const IconBase = styled.span`
     display: ${props => (props.isCentered ? 'flex' : 'inline-flex')};
     box-sizing: content-box;
     position: relative;
-    width: ${props => props.theme.icon.iconSize[props.iconSize]};
-    height: ${props => props.theme.icon.iconSize[props.iconSize]};
+    width: ${props => props.theme.icon.size[props.iconSize]};
+    height: ${props => props.theme.icon.size[props.iconSize]};
     ${props =>
         directionalProperty(
             'margin',
