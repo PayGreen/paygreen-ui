@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import { folder, spaceOptions, spaceDefault } from '../../shared/constants';
 import Text from '../Text/Text';
 import Box from './Box';
@@ -14,6 +14,7 @@ storiesOf(folder.main + 'Box', module)
     .addDecorator(withKnobs)
     .add('Box', () => (
         <Box
+            hasResponsivePadding={boolean('Has responsive padding', false)}
             padding={select('Padding', spaceOptions, spaceDefault)}
             paddingTop={select(
                 'Padding top',
@@ -35,6 +36,7 @@ storiesOf(folder.main + 'Box', module)
                 spaceOptionsCustom,
                 spaceOptionsCustom.null,
             )}
+            hasResponsiveMargin={boolean('Has responsive margin', false)}
             margin={select('Margin', spaceOptions, spaceDefault)}
             marginTop={select(
                 'Margin top',

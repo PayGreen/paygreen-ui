@@ -3,45 +3,15 @@ import styled from 'styled-components';
 const BoxBase = styled.div`
     max-width: 100%;
 
-    padding-top: ${props =>
-        props.paddingTop
-            ? props.theme.space[props.paddingTop]
-            : props.theme.space[props.padding]};
-
-    padding-right: ${props =>
-        props.paddingRight
-            ? props.theme.space[props.paddingRight]
-            : props.theme.space[props.padding]};
-
-    padding-left: ${props =>
-        props.paddingLeft
-            ? props.theme.space[props.paddingLeft]
-            : props.theme.space[props.padding]};
-
-    padding-bottom: ${props =>
-        props.paddingBottom
-            ? props.theme.space[props.paddingBottom]
-            : props.theme.space[props.padding]};
-
-    margin-top: ${props =>
-        props.marginTop
-            ? props.theme.space[props.marginTop]
-            : props.theme.space[props.margin]};
-
-    margin-right: ${props =>
-        props.marginRight
-            ? props.theme.space[props.marginRight]
-            : props.theme.space[props.margin]};
-
-    margin-left: ${props =>
-        props.marginLeft
-            ? props.theme.space[props.marginLeft]
-            : props.theme.space[props.margin]};
-
-    margin-bottom: ${props =>
-        props.marginBottom
-            ? props.theme.space[props.marginBottom]
-            : props.theme.space[props.margin]};
+    padding-top: ${props => props.theme.space[props.paddingTop]};
+    padding-right: ${props => props.theme.space[props.paddingRight]};
+    padding-left: ${props => props.theme.space[props.paddingLeft]};
+    padding-bottom: ${props => props.theme.space[props.paddingBottom]};
+    
+    margin-top: ${props => props.theme.space[props.marginTop]};
+    margin-right: ${props => props.theme.space[props.marginRight]};
+    margin-left: ${props => props.theme.space[props.marginLeft]};
+    margin-bottom: ${props => props.theme.space[props.marginBottom]};
 `;
 
 export { BoxBase };
