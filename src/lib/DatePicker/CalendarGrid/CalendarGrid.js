@@ -28,7 +28,7 @@ const getMonthBoundaries = month => {
 
 const CalendarGrid = ({ minimumDate, maximumDate, ...rest }) => {
     const [month, setMonth] = useContext(MonthContext);
-    if (!month) {
+    if (month === null) {
         return null;
     }
 

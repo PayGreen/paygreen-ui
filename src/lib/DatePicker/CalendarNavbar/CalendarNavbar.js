@@ -12,7 +12,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from '../../Icon/Icon';
 
 const CalendarNavbar = ({ colorStatus, ...rest }) => {
     const [month, setMonth] = useContext(MonthContext);
-    if (!month) {
+    if (month === null) {
         return null;
     }
 
