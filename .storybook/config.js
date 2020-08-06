@@ -24,6 +24,7 @@ addParameters({
         }),
         isFullscreen: false,
         showPanel: true,
+        showRoots: true,
     },
     backgrounds: [
         // https://www.npmjs.com/package/@storybook/addon-backgrounds
