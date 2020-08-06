@@ -11,7 +11,7 @@ const CalendarCell = ({ date, colorStatus, isDisabled, ...rest }) => {
     const [selectedDate, setSelectedDate] = useContext(DateContext);
 
     const handleOnClick = e => {
-        if (!isDisabled && selectedDate) {
+        if (!isDisabled) {
             setSelectedDate(date);
         }
         e.preventDefault();
