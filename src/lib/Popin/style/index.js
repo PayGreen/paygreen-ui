@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 import { transparentize, math } from 'polished';
+import { spaceOptions } from '../../../shared/constants';
 import { activeStyle, hiddenStyle, popinAlign } from './base';
 
 const PopinBase = styled.div`
     position: absolute;
     z-index: ${props => props.theme.zindex.popin};
     margin-top: ${props => props.theme.space[props.marginTop]};
-    width: ${props => math(props.theme.blockWidth[props.blockWidth] + ' / 2')};
+    width: ${props =>
+        props.blockWidth !== spaceOptions.none
+            ? math(props.theme.blockWidth[props.blockWidth] + ' / 2')
+            : '50%'};
     background-color: ${props => props.theme.wab.white00};
     border-radius: ${props => props.theme.radius[props.radiusSize]};
     box-shadow: ${props =>

@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import {
     folder,
-    blockWidthOptions,
     shadowSizeOptions,
     radiusOptions,
     radiusDefault,
@@ -26,8 +25,8 @@ storiesOf(folder.main + 'Popin', module)
             isActive={boolean('Is active', true)}
             blockWidth={select(
                 'Width',
-                blockWidthOptions,
-                blockWidthOptions.sm,
+                spaceOptions,
+                spaceOptions.sm,
             )}
             radiusSize={select('Radius size', radiusOptions, radiusDefault)}
             shadowSize={select(

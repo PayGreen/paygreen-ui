@@ -15,8 +15,6 @@ import {
     formStatusDefault,
     shadowSizeOptions,
     shadowSizeDefault,
-    blockWidthOptions,
-    blockWidthDefault,
     radiusOptions,
     radiusDefault,
     gradientOptions,
@@ -24,7 +22,6 @@ import {
     maskOptions,
     imageTypeOptions,
     spaceOptions,
-    spaceDefault,
     buttonSizeOptions,
     colorStyleOptions,
     cornerPositionOptions,
@@ -44,7 +41,7 @@ const colorPalletLabel = 'Color pallet';
 const colorThemeLabel = 'Color theme';
 const colorWabLabel = 'Grey color';
 const colorStatusLabel = 'Status color';
-const blockWidthLabel = 'Block width';
+const blockWidthLabel = 'Width';
 const borderRadiusLabel = 'Border radius';
 
 storiesOf(folder.main + 'Card', module)
@@ -71,8 +68,8 @@ storiesOf(folder.main + 'Card', module)
                 hasBackground={boolean('Has background', true)}
                 blockWidth={select(
                     blockWidthLabel,
-                    blockWidthOptions,
-                    blockWidthDefault,
+                    spaceOptions,
+                    spaceOptions.md,
                 )}
                 radiusSize={radios(
                     borderRadiusLabel,
@@ -110,12 +107,12 @@ storiesOf(folder.main + 'Card', module)
                     marginLateral={select(
                         blockWidthLabel,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.md,
                     )}
                     marginTop={select(
                         blockWidthLabel,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.md,
                     )}
                     hasUnderline={true}
                     textSize={fontSizeOptions.lg}
@@ -137,7 +134,7 @@ storiesOf(folder.main + 'Card', module)
                     marginLateral={select(
                         blockWidthLabel,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.md,
                     )}
                 >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
@@ -153,18 +150,19 @@ storiesOf(folder.main + 'Card', module)
                     marginTop={select(
                         blockWidthLabel,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.md,
                     )}
                     marginBottom={select(
                         blockWidthLabel,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.md,
                     )}
                     paddingBlock={select(
                         blockWidthLabel,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.md,
                     )}
+                    hasResetedMargins={false}
                 >
                     <a href="#">
                         <Button
@@ -203,7 +201,7 @@ storiesOf(folder.main + 'Card', module)
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                blockWidth={blockWidthOptions.sm}
+                blockWidth={spaceOptions.sm}
                 radiusSize={radios(
                     borderRadiusLabel,
                     radiusOptions,
@@ -293,7 +291,7 @@ storiesOf(folder.main + 'Card', module)
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                blockWidth={blockWidthOptions.sm}
+                blockWidth={spaceOptions.sm}
                 hasTitleOut={true}
             >
                 <Title
@@ -370,8 +368,8 @@ storiesOf(folder.main + 'Card', module)
             <Card
                 blockWidth={select(
                     blockWidthLabel,
-                    blockWidthOptions,
-                    blockWidthDefault,
+                    spaceOptions,
+                    spaceOptions.md,
                 )}
             >
                 <Image
@@ -385,7 +383,7 @@ storiesOf(folder.main + 'Card', module)
                     marginLateral={select(
                         blockWidthLabel,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.md,
                     )}
                     marginTop={spaceOptions.sm}
                     textSize={fontSizeOptions.md}
@@ -397,7 +395,7 @@ storiesOf(folder.main + 'Card', module)
                     marginLateral={select(
                         blockWidthLabel,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.md,
                     )}
                     marginTop={spaceOptions.xs}
                     textSize={fontSizeOptions.sm}
@@ -413,12 +411,12 @@ storiesOf(folder.main + 'Card', module)
                     marginBottom={select(
                         blockWidthLabel,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.md,
                     )}
                     paddingBlock={select(
                         blockWidthLabel,
                         spaceOptions,
-                        spaceDefault,
+                        spaceOptions.md,
                     )}
                 >
                     <a href="#">
@@ -451,8 +449,8 @@ storiesOf(folder.main + 'Card', module)
                 hasBackground={false}
                 blockWidth={select(
                     blockWidthLabel,
-                    blockWidthOptions,
-                    blockWidthDefault,
+                    spaceOptions,
+                    spaceOptions.md,
                 )}
             >
                 <Title
@@ -522,7 +520,7 @@ storiesOf(folder.main + 'Card', module)
                     formStatusDefault,
                 )}
                 shadowSize={shadowSizeOptions.none}
-                blockWidth={blockWidthOptions.sm}
+                blockWidth={spaceOptions.sm}
             >
                 <Corner
                     label="?"

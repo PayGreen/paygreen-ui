@@ -10,8 +10,7 @@ import {
 } from '@storybook/addon-knobs';
 import {
     folder,
-    blockWidthOptions,
-    blockWidthDefault,
+    spaceOptions,
     colorThemeOptions,
     colorThemeDefault,
     colorPalletOptions,
@@ -39,11 +38,6 @@ storiesOf(folder.main + 'Databar', module)
     .addDecorator(withKnobs)
     .add('DataBar', () => (
         <DataBar
-            blockWidth={radios(
-                'Block width',
-                blockWidthOptions,
-                blockWidthDefault,
-            )}
             hasBackground={boolean('With background', true)}
             backgroundColor={select(
                 'Background color',
@@ -74,17 +68,13 @@ storiesOf(folder.main + 'Databar', module)
                     ),
                 },
             ]}
+            blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
         />
     ))
     .add(
         'DataBar Multi',
         () => (
             <DataBar
-                blockWidth={radios(
-                    'Block width',
-                    blockWidthOptions,
-                    blockWidthDefault,
-                )}
                 hasBackground={boolean('With background', true)}
                 colorPallet={radios(
                     colorPalletLabel,
@@ -108,6 +98,11 @@ storiesOf(folder.main + 'Databar', module)
                         colorStatus: formStatusOptions.danger,
                     },
                 ]}
+                blockWidth={select(
+                    'Block width',
+                    spaceOptions,
+                    spaceOptions.md,
+                )}
             />
         ),
         {

@@ -5,7 +5,6 @@ import {
     folder,
     spaceOptions,
     fontSizeOptions,
-    blockWidthOptions,
     iconSizeOptions,
     iconHtmlTagOptions,
 } from '../../shared/constants';
@@ -18,7 +17,7 @@ import ClickableBlock from '../ClickableBlock/ClickableBlock';
 import Dropdown from './Dropdown';
 
 const popin = (
-    <Popin marginTop={spaceOptions.sm} blockWidth={blockWidthOptions.sm}>
+    <Popin marginTop={spaceOptions.sm} blockWidth={spaceOptions.sm}>
         <Title
             marginTop={spaceOptions.xs}
             marginLateral={spaceOptions.xs}

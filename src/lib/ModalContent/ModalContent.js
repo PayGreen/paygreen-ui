@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { blockWidthOptions, blockWidthDefault } from '../../shared/constants';
+import { spaceOptions } from '../../shared/constants';
 import { ModalContentBase } from './style';
 
 const ModalContent = props => {
@@ -8,11 +8,11 @@ const ModalContent = props => {
 };
 
 ModalContent.propTypes = {
-    blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 ModalContent.defaultProps = {
-    blockWidth: blockWidthDefault,
+    blockWidth: spaceOptions.md,
 };
 
 export default ModalContent;

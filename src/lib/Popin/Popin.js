@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    blockWidthOptions,
-    blockWidthDefault,
     shadowSizeOptions,
     radiusOptions,
     radiusDefault,
@@ -20,7 +18,7 @@ const Popin = props => {
 Popin.propTypes = {
     isActive: PropTypes.bool,
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
-    blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     shadowSize: PropTypes.oneOf(Object.values(shadowSizeOptions)),
     align: PropTypes.oneOf(Object.values(alignOptions)),
@@ -29,7 +27,7 @@ Popin.propTypes = {
 Popin.defaultProps = {
     isActive: false,
     marginTop: spaceDefault,
-    blockWidth: blockWidthDefault,
+    blockWidth: spaceOptions.md,
     radiusSize: radiusDefault,
     shadowSize: shadowSizeOptions.sm,
     align: alignDefault,

@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    blockWidthOptions,
-    blockWidthDefault,
+    spaceOptions,
     colorPalletOptions,
     colorPalletDefault,
     colorThemeOptions,
@@ -44,7 +43,7 @@ const DataBar = props => {
     };
 
     return (
-        <div {...rest}>
+        <div>
             <Bar
                 {...rest}
                 hasBackground={hasBackground}
@@ -76,7 +75,13 @@ const DataBar = props => {
                             colorPallet={colorPalletOptions.wab}
                             htmlTag={textHtmlTagOptions.span}
                         >
-                            {dataItem.legend}
+                            {Array.isArray(dataItem.legend)
+                                ? dataItem.legend.map((text, index) => (
+                                      <React.Fragment key={index}>
+                                          {text}
+                                      </React.Fragment>
+                                  ))
+                                : dataItem.legend}
                         </Text>
                     </DataLegend>
                 ) : null,
@@ -86,7 +91,7 @@ const DataBar = props => {
 };
 
 DataBar.propTypes = {
-    blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     colorPallet: PropTypes.oneOf([
         colorPalletOptions.theme,
         colorPalletOptions.status,
@@ -94,7 +99,7 @@ DataBar.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.shape({
             value: PropTypes.number.isRequired,
-            legend: PropTypes.string,
+            legend: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
             colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions))
                 .isRequired,
             colorStatus: PropTypes.oneOf(Object.values(formStatusOptions))
@@ -110,7 +115,7 @@ DataBar.propTypes = {
 };
 
 DataBar.defaultProps = {
-    blockWidth: blockWidthDefault,
+    blockWidth: spaceOptions.md,
     colorPallet: colorPalletDefault,
     minValue: 0,
     maxValue: 100,
