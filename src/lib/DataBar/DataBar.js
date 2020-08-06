@@ -5,7 +5,9 @@ import {
     colorPalletOptions,
     colorPalletDefault,
     colorThemeOptions,
+    colorThemeDefault,
     formStatusOptions,
+    formStatusDefault,
     fontSizeOptions,
     fontSizeDefault,
     greyOptions,
@@ -55,8 +57,16 @@ const DataBar = props => {
                         {...rest}
                         key={index}
                         dataWidth={calcValue(dataItem.value, true)}
-                        colorTheme={dataItem.colorTheme}
-                        colorStatus={dataItem.colorStatus}
+                        colorTheme={
+                            dataItem.colorTheme
+                                ? dataItem.colorTheme
+                                : colorThemeDefault
+                        }
+                        colorStatus={
+                            dataItem.colorStatus
+                                ? dataItem.colorStatus
+                                : formStatusDefault
+                        }
                     />
                 ))}
             </Bar>
@@ -66,8 +76,16 @@ const DataBar = props => {
                     <DataLegend
                         {...rest}
                         key={index}
-                        colorTheme={dataItem.colorTheme}
-                        colorStatus={dataItem.colorStatus}
+                        colorTheme={
+                            dataItem.colorTheme
+                                ? dataItem.colorTheme
+                                : colorThemeDefault
+                        }
+                        colorStatus={
+                            dataItem.colorStatus
+                                ? dataItem.colorStatus
+                                : formStatusDefault
+                        }
                         unit={unit}
                         value={calcValue(dataItem.value, false)}
                     >
@@ -101,10 +119,8 @@ DataBar.propTypes = {
         PropTypes.shape({
             value: PropTypes.number.isRequired,
             legend: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-            colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions))
-                .isRequired,
-            colorStatus: PropTypes.oneOf(Object.values(formStatusOptions))
-                .isRequired,
+            colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+            colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
         }),
     ).isRequired,
     minValue: PropTypes.number,

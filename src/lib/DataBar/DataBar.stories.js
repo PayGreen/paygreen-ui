@@ -71,41 +71,27 @@ storiesOf(folder.main + 'Databar', module)
             blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
         />
     ))
-    .add(
-        'DataBar Multi',
-        () => (
-            <DataBar
-                hasBackground={boolean('With background', true)}
-                colorPallet={radios(
-                    colorPalletLabel,
-                    barColorPalletOptions,
-                    colorPalletDefault,
-                )}
-                data={[
-                    {
-                        value: number('Value 1', defaultValue, valueOptions),
-                        colorTheme: colorThemeDefault,
-                        colorStatus: formStatusDefault,
-                    },
-                    {
-                        value: number('Value 2', defaultValue, valueOptions),
-                        colorTheme: colorThemeOptions.tertiary,
-                        colorStatus: formStatusOptions.warning,
-                    },
-                    {
-                        value: number('Value 3', defaultValue, valueOptions),
-                        colorTheme: colorThemeOptions.quaternary,
-                        colorStatus: formStatusOptions.danger,
-                    },
-                ]}
-                blockWidth={select(
-                    'Block width',
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-            />
-        ),
-        {
-            notes: 'For multi DataBar, legend will be displayed separately',
-        },
-    );
+    .add('DataBar Multi', () => (
+        <DataBar
+            hasBackground={boolean('With background', true)}
+            colorPallet={radios(
+                colorPalletLabel,
+                barColorPalletOptions,
+                colorPalletDefault,
+            )}
+            data={[
+                { value: number('Value 1', defaultValue, valueOptions) },
+                {
+                    value: number('Value 2', defaultValue, valueOptions),
+                    colorTheme: colorThemeOptions.tertiary,
+                    colorStatus: formStatusOptions.warning,
+                },
+                {
+                    value: number('Value 3', defaultValue, valueOptions),
+                    colorTheme: colorThemeOptions.quaternary,
+                    colorStatus: formStatusOptions.danger,
+                },
+            ]}
+            blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
+        />
+    ));
