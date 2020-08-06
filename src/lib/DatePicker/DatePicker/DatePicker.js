@@ -37,7 +37,9 @@ const DatePicker = ({
     ...rest
 }) => {
     const [selectedDate, setSelectedDate] = useState(
-        value ? moment(value, dateFormat[locale]) : null,
+        moment(value, dateFormat[locale], true).isValid()
+            ? moment(value, dateFormat[locale])
+            : null,
     );
     useEffect(() => {
         if (selectedDate) {
@@ -80,7 +82,10 @@ const DatePicker = ({
                         <Calendar
                             currentMonth={
                                 selectedDate
-                                    ? selectedDate.month()
+                                    ? selectedDate.month() !== moment().month()
+                                        ? selectedDate.diff(moment(), 'M') +
+                                          moment().month()
+                                        : moment().month()
                                     : moment().month()
                             }
                             locale={locale}
