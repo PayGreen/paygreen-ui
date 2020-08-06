@@ -24,6 +24,7 @@ Popin.propTypes = {
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     shadowSize: PropTypes.oneOf(Object.values(shadowSizeOptions)),
     align: PropTypes.oneOf(Object.values(alignOptions)),
+    hasStyle: PropTypes.bool,
 };
 
 Popin.defaultProps = {
@@ -33,6 +34,7 @@ Popin.defaultProps = {
     radiusSize: radiusDefault,
     shadowSize: shadowSizeOptions.sm,
     align: alignDefault,
+    hasStyle: true,
 };
 
 export default Popin;

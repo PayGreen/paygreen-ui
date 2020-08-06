@@ -26,6 +26,7 @@ const DatePicker = ({
     minimumDate,
     maximumDate,
     colorStatus,
+    inputRef,
     ...rest
 }) => {
     const [selectedDate, setSelectedDate] = useState(moment());
@@ -41,10 +42,11 @@ const DatePicker = ({
                         fieldSize={fieldSize}
                         blockWidth={blockWidth}
                         hasHelpButton={hasHelpButton}
+                        inputRef={inputRef}
                         {...rest}
                     />
 
-                    <Popin {...rest}>
+                    <Popin hasStyle={false} {...rest}>
                         <Calendar
                             currentMonth={selectedDate.month()}
                             locale={locale}
