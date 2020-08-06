@@ -9,12 +9,9 @@ import { DateContext } from '../context/DateContext';
 
 const CalendarCell = ({ date, colorStatus, isDisabled, ...rest }) => {
     const [selectedDate, setSelectedDate] = useContext(DateContext);
-    if (!selectedDate) {
-        return null;
-    }
 
     const handleOnClick = e => {
-        if (!isDisabled) {
+        if (!isDisabled && selectedDate) {
             setSelectedDate(date);
         }
         e.preventDefault();
@@ -24,7 +21,10 @@ const CalendarCell = ({ date, colorStatus, isDisabled, ...rest }) => {
         <CalendarCellBase
             onClick={handleOnClick}
             isSelected={
-                date.format('DD/MM/YYYY') === selectedDate.format('DD/MM/YYYY')
+                selectedDate
+                    ? date.format('DD/MM/YYYY') ===
+                      selectedDate.format('DD/MM/YYYY')
+                    : false
             }
             colorStatus={colorStatus}
             isDisabled={isDisabled}
