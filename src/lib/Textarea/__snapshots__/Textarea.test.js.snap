@@ -18,9 +18,9 @@ exports[`renders without crashing 1`] = `
     theme={
       Object {
         "arrow": Object {
-          "lg": "20px",
-          "md": "16px",
-          "sm": "12px",
+          "lg": "16px",
+          "md": "12px",
+          "sm": "8px",
         },
         "bannerHeight": Object {
           "lg": "100vh",
