@@ -42,5 +42,17 @@ storiesOf(folder.form + folder.sub.datePicker + 'DatePicker', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
+            minimumDate={text(
+                'Minimum date',
+                moment()
+                    .add(-1, 'M')
+                    .format('DD/MM/YYYY'),
+            )}
+            maximumDate={text(
+                'Maximum date',
+                moment()
+                    .add(1, 'M')
+                    .format('DD/MM/YYYY'),
+            )}
         />
     ));

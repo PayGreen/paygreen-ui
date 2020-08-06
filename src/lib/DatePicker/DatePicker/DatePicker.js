@@ -4,7 +4,8 @@ import moment from 'moment';
 import { DateContextProvider } from '../context/DateContext';
 import DatePickerBase from './style';
 import DropDown from '../../Dropdown/Dropdown';
-import DatePickerInput from '../DatePickerInput/DatePickerInput';
+import DatePickerInput from '../DatePickerInput/DatePickerInput'; // Can be replaced by DaInput but blockWidth doesn't works
+import DaInput from '../../DaInput/DaInput';
 import Popin from '../../Popin/Popin';
 import Calendar from '../Calendar/Calendar';
 import {
@@ -15,6 +16,11 @@ import {
     inputWidthDefault,
     inputWidthOptions,
 } from '../../../shared/constants';
+
+const dateFormat = {
+    fr: 'DD/MM/YYYY',
+    en: 'MM/DD/YYYY',
+};
 
 const DatePicker = ({
     value,
@@ -31,11 +37,11 @@ const DatePicker = ({
     ...rest
 }) => {
     const [selectedDate, setSelectedDate] = useState(
-        value ? moment(value, 'DD/MM/YYYY') : null,
+        value ? moment(value, dateFormat[locale]) : null,
     );
     useEffect(() => {
         if (selectedDate) {
-            setInputValue(selectedDate.format('DD/MM/YYYY'));
+            setInputValue(selectedDate.format(dateFormat[locale]));
         }
     });
 
@@ -47,8 +53,8 @@ const DatePicker = ({
         }
         setInputValue(e.target.value);
 
-        if (moment(e.target.value, 'DD/MM/YYYY', true).isValid()) {
-            setSelectedDate(moment(e.target.value, 'DD/MM/YYYY'));
+        if (moment(e.target.value, dateFormat[locale], true).isValid()) {
+            setSelectedDate(moment(e.target.value, dateFormat[locale]));
         }
     };
 
@@ -56,7 +62,9 @@ const DatePicker = ({
         <DateContextProvider value={[selectedDate, setSelectedDate]}>
             <DatePickerBase {...rest}>
                 <DropDown {...rest}>
-                    <DatePickerInput
+                    <DaInput
+                        type="text"
+                        mask="99/99/9999"
                         value={inputValue}
                         onChange={handleOnChange}
                         readOnly={readOnly}
@@ -76,8 +84,24 @@ const DatePicker = ({
                                     : moment().month()
                             }
                             locale={locale}
-                            minimumDate={minimumDate}
-                            maximumDate={maximumDate}
+                            minimumDate={
+                                moment(
+                                    minimumDate,
+                                    dateFormat[locale],
+                                    true,
+                                ).isValid()
+                                    ? moment(minimumDate, dateFormat[locale])
+                                    : null
+                            }
+                            maximumDate={
+                                moment(
+                                    maximumDate,
+                                    dateFormat[locale],
+                                    true,
+                                ).isValid()
+                                    ? moment(maximumDate, dateFormat[locale])
+                                    : null
+                            }
                             colorStatus={colorStatus}
                             {...rest}
                         />
@@ -104,8 +128,8 @@ DatePicker.propTypes = {
 
     // Calendar props
     locale: PropTypes.string,
-    minimumDate: PropTypes.object, // Moment instance
-    maximumDate: PropTypes.object, // Moment instance
+    minimumDate: PropTypes.string,
+    maximumDate: PropTypes.string,
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
 };
 
