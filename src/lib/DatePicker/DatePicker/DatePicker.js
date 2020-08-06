@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { DateContextProvider } from '../context/DateContext';
@@ -17,6 +17,7 @@ import {
 } from '../../../shared/constants';
 
 const DatePicker = ({
+    value,
     readOnly,
     disabled,
     fieldSize,
@@ -29,14 +30,35 @@ const DatePicker = ({
     inputRef,
     ...rest
 }) => {
-    const [selectedDate, setSelectedDate] = useState(moment());
+    const [selectedDate, setSelectedDate] = useState(
+        value ? moment(value, 'DD/MM/YYYY') : null,
+    );
+    useEffect(() => {
+        if (selectedDate) {
+            setInputValue(selectedDate.format('DD/MM/YYYY'));
+        }
+    });
+
+    const [inputValue, setInputValue] = useState(value);
+
+    const handleOnChange = e => {
+        if (selectedDate) {
+            setSelectedDate(null);
+        }
+        setInputValue(e.target.value);
+
+        if (moment(e.target.value, 'DD/MM/YYYY', true).isValid()) {
+            setSelectedDate(moment(e.target.value, 'DD/MM/YYYY'));
+        }
+    };
 
     return (
         <DateContextProvider value={[selectedDate, setSelectedDate]}>
             <DatePickerBase {...rest}>
                 <DropDown {...rest}>
                     <DatePickerInput
-                        value={selectedDate.format('DD/MM/YYYY')}
+                        value={inputValue}
+                        onChange={handleOnChange}
                         readOnly={readOnly}
                         disabled={disabled}
                         fieldSize={fieldSize}
@@ -48,7 +70,11 @@ const DatePicker = ({
 
                     <Popin hasStyle={false} {...rest}>
                         <Calendar
-                            currentMonth={selectedDate.month()}
+                            currentMonth={
+                                selectedDate
+                                    ? selectedDate.month()
+                                    : moment().month()
+                            }
                             locale={locale}
                             minimumDate={minimumDate}
                             maximumDate={maximumDate}
@@ -63,6 +89,8 @@ const DatePicker = ({
 };
 
 DatePicker.propTypes = {
+    value: PropTypes.string,
+
     // Input props
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
@@ -82,6 +110,8 @@ DatePicker.propTypes = {
 };
 
 DatePicker.defaultProps = {
+    value: '',
+
     // Input props
     disabled: false,
     readOnly: false,
