@@ -3,8 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
-    titleHtmlTagOptions,
-    titleHtmlTagDefault,
     colorTypeOptions,
     colorTypeDefault,
     colorPalletOptions,
@@ -58,10 +56,10 @@ storiesOf(folder.main + 'Title', module)
                     spaceDefault,
                 )}
                 marginTop={select('Margin top', spaceOptions, spaceDefault)}
-                htmlTag={select(
-                    'HTML tag',
-                    titleHtmlTagOptions,
-                    titleHtmlTagDefault,
+                marginBottom={select(
+                    'Margin bottom',
+                    spaceOptions,
+                    spaceDefault,
                 )}
             >
                 Your title with <strong>an emphasis</strong>
