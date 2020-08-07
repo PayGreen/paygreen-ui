@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import moment from 'moment';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select, date } from '@storybook/addon-knobs';
+import { withKnobs, select, text } from '@storybook/addon-knobs';
 import {
     folder,
     formStatusOptions,
@@ -24,14 +24,22 @@ storiesOf(folder.form + folder.sub.datePicker + 'Calendar', module)
                         formStatusDefault,
                     )}
                     minimumDate={moment(
-                        moment()
-                            .add(-1, 'M')
-                            .toDate(),
+                        text(
+                            'Minimum date',
+                            moment()
+                                .add(-1, 'M')
+                                .format('DD/MM/YYYY'),
+                        ),
+                        'DD/MM/YYYY',
                     )}
                     maximumDate={moment(
-                        moment()
-                            .add(1, 'M')
-                            .toDate(),
+                        text(
+                            'Maximum date',
+                            moment()
+                                .add(1, 'M')
+                                .format('DD/MM/YYYY'),
+                        ),
+                        'DD/MM/YYYY',
                     )}
                 />
             </DateContextProvider>
