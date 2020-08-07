@@ -10,16 +10,25 @@ const DaTableHeadCellBase = styled.div`
 
     @media (${props => props.theme.query.min.lg}) {
         display: table-cell;
-        vertical-align: middle;
-        padding: ${props => props.theme.space.sm} ${props => props.theme.space.md};
+        padding: ${props => props.theme.space.sm + ' ' + props.theme.space.md};
         padding-top: 0;
+
+        .cell-child {
+            margin-top: ${props => props.theme.space.xs};
+        }
 
         ${props => (props.isCheckbox ? null : borderRight)};
     }
 
+    .icon-child {
+        margin-left: ${props => props.theme.space.xs};
+    }
+
     ${props => (props.isCheckbox ? isCheckboxStyle : null)};
     ${props =>
-        props.isCheckbox || props.hasControls ? mobileStyle : hideUselessCell};
+        props.isCheckbox || props.hasControls || props.children
+            ? mobileStyle
+            : hideUselessCell};
 `;
 
 export { DaTableHeadCellBase };

@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { folder, rotateSizeOptions } from '../../shared/constants';
 import { ArrowBottomIcon, MenuIcon } from '../Icon/Icon';
+import DaInput from '../DaInput/DaInput';
 import DaTableHeadCell from './DaTableHeadCell';
 
 const sortIconActiveLabel = 'Sort icon active';
@@ -48,7 +49,17 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHeadCell', module)
                     />
                 ) : null
             }
+            label="Cell for DaTableHead"
+        ></DaTableHeadCell>
+    ))
+    .add('DaTableHeadCell with children', () => (
+        <DaTableHeadCell
+            sortIcon={
+                boolean('With sort icon', false) ? <ArrowBottomIcon /> : null
+            }
+            groupIcon={boolean('With group icon', false) ? <MenuIcon /> : null}
+            label="Cell for DaTableHead"
         >
-            Cell for DaTableHead
+            <DaInput placeholder="Search" fieldSize="sm" />
         </DaTableHeadCell>
     ));

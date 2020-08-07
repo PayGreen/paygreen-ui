@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bwzfXH kNQsRW"
+  className="sc-bwzfXH iBHjTe"
 >
   <div
-    className="sc-bdVaJa igqJNM cell-checkbox"
+    className="sc-bdVaJa fCCeHr cell-checkbox"
   >
     <span
       className="cell-content"
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-bdVaJa bSlSYA cell-id"
+    className="sc-bdVaJa buROYz cell-id"
   >
     <span
       className="cell-content"
@@ -25,7 +25,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-bdVaJa KnVGS cell-main cell-main-1"
+    className="sc-bdVaJa dBnJxf cell-main cell-main-1"
   >
     <span
       className="cell-content"
@@ -34,7 +34,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-bdVaJa iyIPAb cell-basic cell-basic-1"
+    className="sc-bdVaJa dWysYI cell-basic cell-basic-1"
   >
     <span
       className="cell-content"

@@ -12,9 +12,9 @@ exports[`renders without crashing 1`] = `
       theme={
         Object {
           "arrow": Object {
-            "lg": "20px",
-            "md": "16px",
-            "sm": "12px",
+            "lg": "16px",
+            "md": "12px",
+            "sm": "8px",
           },
           "bannerHeight": Object {
             "lg": "100vh",
@@ -233,13 +233,23 @@ exports[`renders without crashing 1`] = `
             "sidebar": "380px",
             "topbar": "45px",
           },
-          "iconSize": Object {
-            "lg": "32px",
-            "md": "24px",
-            "sm": "20px",
-            "xl": "40px",
-            "xs": "16px",
-            "xxs": "12px",
+          "icon": Object {
+            "shift": Object {
+              "lg": "6px",
+              "md": "4px",
+              "sm": "4px",
+              "xl": "6px",
+              "xs": "3px",
+              "xxs": "2px",
+            },
+            "size": Object {
+              "lg": "32px",
+              "md": "24px",
+              "sm": "20px",
+              "xl": "40px",
+              "xs": "16px",
+              "xxs": "12px",
+            },
           },
           "imageCircleSize": Object {
             "auto": "auto",

@@ -16,14 +16,14 @@ const backgroundColor = css`
 const dotStyle = {
     circle: css`
         display: inline-block;
-        width: ${props => math(props.theme.iconSize[props.dotSize] + '/2')};
-        height: ${props => math(props.theme.iconSize[props.dotSize] + '/2')};
+        width: ${props => math(props.theme.icon.size[props.dotSize] + '/2')};
+        height: ${props => math(props.theme.icon.size[props.dotSize] + '/2')};
         border-radius: 50%;
         ${backgroundColor};
     `,
     dash: css`
         display: inline-block;
-        width: ${props => props.theme.iconSize[props.dotSize]};
+        width: ${props => props.theme.icon.size[props.dotSize]};
         height: ${props => props.theme.dash};
         border-radius: ${props => props.theme.dash};
         ${backgroundColor};
@@ -33,11 +33,11 @@ const dotStyle = {
         width: ${props =>
             math(
                 'sqrt((' +
-                    props.theme.iconSize[props.dotSize] +
+                    props.theme.icon.size[props.dotSize] +
                     '/' +
                     cos +
                     ')^2 - ' +
-                    props.theme.iconSize[props.dotSize] +
+                    props.theme.icon.size[props.dotSize] +
                     '^2) + ' +
                     props.theme.line +
                     '*2',
@@ -51,15 +51,15 @@ const dotStyle = {
             margin-top: ${props =>
                 math(
                     '(' +
-                        props.theme.iconSize[props.dotSize] +
+                        props.theme.icon.size[props.dotSize] +
                         '/' +
                         cos +
                         '-' +
-                        props.theme.iconSize[props.dotSize] +
+                        props.theme.icon.size[props.dotSize] +
                         ')/-2',
                 )};
             width: ${props => props.theme.line};
-            height: ${props => props.theme.iconSize[props.dotSize]};
+            height: ${props => props.theme.icon.size[props.dotSize]};
             transform-origin: bottom center;
             ${backgroundColor};
         }

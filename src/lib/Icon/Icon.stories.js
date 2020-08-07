@@ -30,7 +30,8 @@ const colorWabLabel = 'Grey color';
 const colorStatusLabel = 'Status color';
 const iconSizeLabel = 'Icon size';
 const backgroundLabel = 'Has background';
-const hoverLabel = 'Has hover (need background)';
+const hoverLabel = 'Has hover (needs background)';
+const isActiveLabel = 'Is Active (needs background)';
 const marginTopLabel = 'Margin top';
 const marginBottomLabel = 'Margin bottom';
 const marginLeftLabel = 'Margin left';
@@ -68,6 +69,7 @@ storiesOf(folder.main + 'Icons', module)
                     )}
                     hasBackground={boolean(backgroundLabel, false)}
                     hasHover={boolean(hoverLabel, false)}
+                    isActive={boolean(isActiveLabel, false)}
                     isCentered={boolean(centeredLabel, false)}
                     marginTop={select(
                         marginTopLabel,
@@ -120,6 +122,7 @@ storiesOf(folder.main + 'Icons', module)
                     )}
                     hasBackground={boolean(backgroundLabel, false)}
                     hasHover={boolean(hoverLabel, false)}
+                    isActive={boolean(isActiveLabel, false)}
                     isCentered={boolean(centeredLabel, false)}
                     marginTop={select(
                         marginTopLabel,
@@ -172,6 +175,7 @@ storiesOf(folder.main + 'Icons', module)
                     )}
                     hasBackground={boolean(backgroundLabel, false)}
                     hasHover={boolean(hoverLabel, false)}
+                    isActive={boolean(isActiveLabel, false)}
                     isCentered={boolean(centeredLabel, false)}
                     marginTop={select(
                         marginTopLabel,
@@ -224,6 +228,7 @@ storiesOf(folder.main + 'Icons', module)
                     )}
                     hasBackground={boolean(backgroundLabel, false)}
                     hasHover={boolean(hoverLabel, false)}
+                    isActive={boolean(isActiveLabel, false)}
                     isCentered={boolean(centeredLabel, false)}
                     marginTop={select(
                         marginTopLabel,
@@ -276,6 +281,7 @@ storiesOf(folder.main + 'Icons', module)
                     )}
                     hasBackground={boolean(backgroundLabel, false)}
                     hasHover={boolean(hoverLabel, false)}
+                    isActive={boolean(isActiveLabel, false)}
                     isCentered={boolean(centeredLabel, false)}
                     marginTop={select(
                         marginTopLabel,

@@ -48,8 +48,8 @@ const dashedStyle = css`
     .dashed {
         display: block;
         width: ${props => dashedWidth[props.bulletSize]};
-        padding: ${props => math(props.theme.iconSize[props.bulletSize] + '/4')};
-        margin-left: ${props => math(props.theme.iconSize[props.bulletSize] + '/2')};
+        padding: ${props => math(props.theme.icon.size[props.bulletSize] + '/4')};
+        margin-left: ${props => math(props.theme.icon.size[props.bulletSize] + '/2')};
 
         &.bottom {
             transform: scaleX(-1);

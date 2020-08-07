@@ -15,7 +15,7 @@ exports[`renders without crashing 1`] = `
   </li>
   <li>
     <span
-      className="sc-bdVaJa cxRUev icon"
+      className="sc-bdVaJa iIWOpx icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -35,7 +35,7 @@ exports[`renders without crashing 1`] = `
   </li>
   <li>
     <span
-      className="sc-bdVaJa cxRUev icon"
+      className="sc-bdVaJa iIWOpx icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -55,7 +55,7 @@ exports[`renders without crashing 1`] = `
   </li>
   <li>
     <span
-      className="sc-bdVaJa cxRUev icon"
+      className="sc-bdVaJa iIWOpx icon"
     >
       <svg
         viewBox="0 0 143 143"

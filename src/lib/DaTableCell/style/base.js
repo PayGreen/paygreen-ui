@@ -29,7 +29,7 @@ const mainStyle = css`
 
 const notMainStyle = css`
     display: flex;
-    justify-content: ${props => props.hasLabel ? 'space-between' : 'center'};
+    justify-content: ${props => (props.hasLabel ? 'space-between' : 'center')};
     align-items: center;
     white-space: nowrap;
 
@@ -46,7 +46,7 @@ const notMainStyle = css`
         &::after {
             content: '';
             flex: 1;
-            border-top: dotted ${props => props.theme.line} ${props => props.theme.wab.grey20};
+            border-top: dotted ${props => props.theme.line + ' ' + props.theme.wab.grey20};
             margin: 0 ${props => props.theme.space.xs};
         }
     }

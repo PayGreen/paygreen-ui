@@ -22,6 +22,7 @@ import DaTableRow from '../DaTableRow/DaTableRow';
 import DaTableBody from '../DaTableBody/DaTableBody';
 import DaTableHeadCell from '../DaTableHeadCell/DaTableHeadCell';
 import DaTableHead from '../DaTableHead/DaTableHead';
+import DaInput from '../DaInput/DaInput';
 import DaTable from './DaTable';
 
 const iconStyles = {
@@ -152,98 +153,109 @@ const isActiveLabel = 'First line active';
 
 storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
     .addDecorator(withKnobs)
-    .add('DaTable', () => (
-        <DaTable
-            marginLateral={select(
-                'Lateral margins',
-                spaceOptions,
-                spaceOptions.sm,
-            )}
-            marginTop={select('Margin top', spaceOptions, spaceOptions.sm)}
-            marginBottom={select(
-                'Margin bottom',
-                spaceOptions,
-                spaceOptions.sm,
-            )}
-        >
-            <DaTableHead resultsLabel="10 results">
-                <DaTableHeadCell isCheckbox={true}>
-                    Select/deselect all
-                    <input type="checkbox" style={{ display: 'block' }} />
-                </DaTableHeadCell>
-
-                <DaTableHeadCell>ID</DaTableHeadCell>
-
-                <DaTableHeadCell
-                    sortIcon={<ArrowBottomIcon title="Sort DESC on Date" />}
-                >
-                    Date
-                </DaTableHeadCell>
-
-                <DaTableHeadCell>Name</DaTableHeadCell>
-
-                <DaTableHeadCell
-                    sortIcon={
-                        <ArrowBottomIcon
-                            isActive={true}
-                            title="Sort ASC on Amount"
-                        />
-                    }
-                >
-                    Amount
-                </DaTableHeadCell>
-
-                <DaTableHeadCell groupIcon={<MenuIcon title="Group by Type" />}>
-                    Type
-                </DaTableHeadCell>
-
-                <DaTableHeadCell
-                    groupIcon={<MenuIcon title="Group by Status" />}
-                >
-                    Status
-                </DaTableHeadCell>
-            </DaTableHead>
-
-            <DaTableBody>
-                {sampleRows.map((sample, index) => (
-                    <DaTableRow
-                        key={index}
-                        isActive={
-                            !index ? boolean(isActiveLabel, false) : false
-                        }
+    .add(
+        'DaTable',
+        () => (
+            <DaTable
+                marginLateral={select(
+                    'Lateral margins',
+                    spaceOptions,
+                    spaceOptions.sm,
+                )}
+                marginTop={select('Margin top', spaceOptions, spaceOptions.sm)}
+                marginBottom={select(
+                    'Margin bottom',
+                    spaceOptions,
+                    spaceOptions.sm,
+                )}
+            >
+                <DaTableHead resultsLabel="10 results">
+                    <DaTableHeadCell
+                        isCheckbox={true}
+                        label="Select/deselect all"
                     >
-                        <DaTableCell isCheckbox={true}>
-                            <input
-                                type="checkbox"
-                                checked={
-                                    !index
-                                        ? boolean(isActiveLabel, false)
-                                        : false
-                                }
-                                readOnly={true}
+                        <input type="checkbox" style={{ display: 'block' }} />
+                    </DaTableHeadCell>
+
+                    <DaTableHeadCell label="ID" />
+
+                    <DaTableHeadCell
+                        sortIcon={<ArrowBottomIcon title="Sort DESC on Date" />}
+                        label="Date"
+                    />
+
+                    <DaTableHeadCell label="Name">
+                        <DaInput placeholder="Search name" fieldSize="sm" />
+                    </DaTableHeadCell>
+
+                    <DaTableHeadCell
+                        sortIcon={
+                            <ArrowBottomIcon
+                                isActive={true}
+                                title="Sort ASC on Amount"
                             />
-                        </DaTableCell>
+                        }
+                        label="Amount"
+                    />
 
-                        <DaTableCell isId={true}>{3400 + index}</DaTableCell>
+                    <DaTableHeadCell
+                        groupIcon={<MenuIcon title="Group by Type" />}
+                        label="Type"
+                    />
 
-                        <DaTableCell isMain={false} label="Date">
-                            {sample.date}
-                        </DaTableCell>
+                    <DaTableHeadCell
+                        groupIcon={<MenuIcon title="Group by Status" />}
+                        label="Status"
+                    />
+                </DaTableHead>
 
-                        <DaTableCell>{sample.name}</DaTableCell>
+                <DaTableBody>
+                    {sampleRows.map((sample, index) => (
+                        <DaTableRow
+                            key={index}
+                            isActive={
+                                !index ? boolean(isActiveLabel, false) : false
+                            }
+                        >
+                            <DaTableCell isCheckbox={true}>
+                                <input
+                                    type="checkbox"
+                                    checked={
+                                        !index
+                                            ? boolean(isActiveLabel, false)
+                                            : false
+                                    }
+                                    readOnly={true}
+                                />
+                            </DaTableCell>
 
-                        <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
+                            <DaTableCell isId={true}>
+                                {3400 + index}
+                            </DaTableCell>
 
-                        <DaTableCell isMain={false} label="Type">
-                            {sample.type}
-                        </DaTableCell>
+                            <DaTableCell isMain={false} label="Date">
+                                {sample.date}
+                            </DaTableCell>
 
-                        <DaTableCell isMain={false} label="Status">
-                            {status.icon[sample.status]}
-                            {status.text[sample.status]}
-                        </DaTableCell>
-                    </DaTableRow>
-                ))}
-            </DaTableBody>
-        </DaTable>
-    ));
+                            <DaTableCell>{sample.name}</DaTableCell>
+
+                            <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
+
+                            <DaTableCell isMain={false} label="Type">
+                                {sample.type}
+                            </DaTableCell>
+
+                            <DaTableCell isMain={false} label="Status">
+                                {status.icon[sample.status]}
+                                {status.text[sample.status]}
+                            </DaTableCell>
+                        </DaTableRow>
+                    ))}
+                </DaTableBody>
+            </DaTable>
+        ),
+        {
+            notes:
+                'input search is not functional, it is used here only for layout purpose',
+        },
+    );

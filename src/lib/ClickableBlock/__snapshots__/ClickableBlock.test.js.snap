@@ -7,7 +7,7 @@ exports[`renders without crashing 1`] = `
 >
   Un ClickableBlock
   <span
-    className="sc-bdVaJa gSkMoB icon"
+    className="sc-bdVaJa fmrqxd icon"
   >
     <svg
       viewBox="0 0 143 143"
