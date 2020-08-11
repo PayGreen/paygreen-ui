@@ -7,22 +7,17 @@ const selected = css`
 `;
 
 const enabled = css`
-    cursor: pointer;
-
-    &:hover {
-        color: ${props =>
-            !props.isSelected
-                ? props.theme.status[props.colorStatus].main
-                : null}
+    &:hover,
+    &:active,
+    &:focus {
+        color: ${props => props.theme.status[props.colorStatus].main};
         background-color: ${props =>
-            !props.isSelected
-                ? props.theme.status[props.colorStatus].light
-                : null};
+            props.theme.status[props.colorStatus].light};
     }
 `;
 
 const disabled = css`
-    cursor: default;
+    cursor: not-allowed;
     color: ${props => props.theme.wab.grey40};
 `;
 
