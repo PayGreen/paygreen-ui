@@ -13,7 +13,7 @@ const CalendarWeekdays = props => {
     return (
         <CalendarWeekdaysBase {...props}>
             {days.map(day => (
-                <div key={day}>{day.charAt(0).toUpperCase()}</div>
+                <div key={day}>{day.charAt(0)}</div>
             ))}
         </CalendarWeekdaysBase>
     );

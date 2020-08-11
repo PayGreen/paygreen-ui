@@ -18,7 +18,7 @@ const enabled = css`
 
 const disabled = css`
     cursor: not-allowed;
-    color: ${props => props.theme.wab.grey40};
+    color: ${props => props.theme.wab.grey30};
 `;
 
 export { selected, enabled, disabled };

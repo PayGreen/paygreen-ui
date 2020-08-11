@@ -56,7 +56,7 @@ const CalendarGrid = ({ minimumDate, maximumDate, ...rest }) => {
     } while (daysCursor.add(1, 'days').diff(endOfMonth) < 0);
 
     return (
-        <CalendarGridBase offset={startOfMonth.isoWeekday()} {...rest}>
+        <CalendarGridBase dayOffset={startOfMonth.isoWeekday()} {...rest}>
             {daysOfMonth}
         </CalendarGridBase>
     );

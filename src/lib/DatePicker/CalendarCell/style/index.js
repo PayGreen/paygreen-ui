@@ -10,8 +10,11 @@ const CalendarCellBase = styled.button`
     height: ${props => props.theme.icon.size.lg};
 
     border-radius: 50%;
+    color: ${props => props.theme.wab.grey60};
     ${props =>
         props.isDisabled ? disabled : props.isSelected ? selected : enabled};
+
+    transition: all ${props => props.theme.transition.xs}
 `;
 
 export default CalendarCellBase;

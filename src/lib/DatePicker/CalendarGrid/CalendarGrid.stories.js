@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import moment from 'moment';
 import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
-import { folder } from '../../../shared/constants';
+import { withKnobs, select } from '@storybook/addon-knobs';
+import {
+    folder,
+    formStatusDefault,
+    formStatusOptions,
+} from '../../../shared/constants';
 import CalendarGrid from './CalendarGrid';
 import { MonthContextProvider } from '../context/MonthContext';
 import { DateContextProvider } from '../context/DateContext';
@@ -16,7 +20,13 @@ storiesOf(folder.form + folder.sub.datePicker + 'CalendarGrid', module)
         return (
             <DateContextProvider value={[selectedDate, setSelectedDate]}>
                 <MonthContextProvider value={[month, setMonth]}>
-                    <CalendarGrid />
+                    <CalendarGrid
+                        colorStatus={select(
+                            'Color status',
+                            formStatusOptions,
+                            formStatusDefault,
+                        )}
+                    />
                 </MonthContextProvider>
             </DateContextProvider>
         );

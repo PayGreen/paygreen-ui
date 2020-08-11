@@ -38,7 +38,7 @@ const Calendar = ({
 
 Calendar.propTypes = {
     currentMonth: PropTypes.number,
-    locale: PropTypes.string,   // Moment Local Code in 2 letters
+    locale: PropTypes.string, // Moment Local Code in 2 letters
     minimumDate: PropTypes.object,
     maximumDate: PropTypes.object,
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),

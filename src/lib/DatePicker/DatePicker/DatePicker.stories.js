@@ -12,8 +12,6 @@ import {
     folder,
     buttonSizeDefault,
     buttonSizeOptions,
-    inputWidthDefault,
-    inputWidthOptions,
     formStatusDefault,
     formStatusOptions,
 } from '../../../shared/constants';
@@ -23,7 +21,6 @@ storiesOf(folder.form + folder.sub.datePicker + 'DatePicker', module)
     .addDecorator(withKnobs)
     .add('DatePicker', () => (
         <DatePicker
-            placeholder={text('Placeholder', 'JJ/MM/AAAA')}
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
             fieldSize={radios(
@@ -31,12 +28,6 @@ storiesOf(folder.form + folder.sub.datePicker + 'DatePicker', module)
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
-            blockWidth={radios(
-                'Input width',
-                inputWidthOptions,
-                inputWidthDefault,
-            )}
-            hasHelpButton={boolean('Help button', false)}
             colorStatus={select(
                 'Color status',
                 formStatusOptions,

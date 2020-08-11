@@ -4,8 +4,11 @@ import moment from 'moment';
 import { MonthContext } from '../context/MonthContext';
 import CalendarNavbarBase from './style';
 import {
+    colorPalletOptions,
     formStatusOptions,
     formStatusDefault,
+    spaceOptions,
+    iconHtmlTagOptions,
 } from '../../../shared/constants';
 import { ThemeDefault } from '../../../theme';
 import { ArrowLeftIcon, ArrowRightIcon } from '../../Icon/Icon';
@@ -47,23 +50,25 @@ const CalendarNavbar = ({ colorStatus, ...rest }) => {
 
     return (
         <CalendarNavbarBase colorStatus={colorStatus} {...rest}>
-            <div className="arrow-button">
-                <ArrowLeftIcon
-                    onClick={previousMonth}
-                    colorPallet="status"
-                    colorStatus={colorStatus}
-                    theme={ThemeDefault}
-                />
-            </div>
-            <span>{capitalize(month)}</span>
-            <div className="arrow-button">
-                <ArrowRightIcon
-                    onClick={nextMonth}
-                    colorPallet="status"
-                    colorStatus={colorStatus}
-                    theme={ThemeDefault}
-                />
-            </div>
+            <ArrowLeftIcon
+                onClick={previousMonth}
+                colorPallet={colorPalletOptions.status}
+                colorStatus={colorStatus}
+                theme={ThemeDefault}
+                marginLeft={spaceOptions.sm}
+                marginRight={spaceOptions.sm}
+                htmlTag={iconHtmlTagOptions.button}
+            />
+            {capitalize(month)}
+            <ArrowRightIcon
+                onClick={nextMonth}
+                colorPallet={colorPalletOptions.status}
+                colorStatus={colorStatus}
+                theme={ThemeDefault}
+                marginLeft={spaceOptions.sm}
+                marginRight={spaceOptions.sm}
+                htmlTag={iconHtmlTagOptions.button}
+            />
         </CalendarNavbarBase>
     );
 };
