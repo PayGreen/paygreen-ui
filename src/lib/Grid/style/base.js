@@ -1,6 +1,5 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
-import { spaceOptions } from '../../../shared/constants';
 
 const gridAlign = {
     left: css`
@@ -31,24 +30,6 @@ const gridStyles = css`
     align-items: ${props => props.alignItems};
     gap: ${props => props.theme.space[props.gridGap]};
 `;
-
-const gridColumns = {
-    two: css`
-        @media (${props => props.theme.query.min.md})
-            and (${props => props.theme.query.max.lg}) {
-            width: fit-content;
-        }
-
-        @media (${props => props.theme.query.min.lg}) {
-            ${gridStyles};
-        }
-    `,
-    more: css`
-        @media (${props => props.theme.query.min.md}) {
-            ${gridStyles};
-        }
-    `,
-};
 
 const gridTemplate = {
     custom: css`
@@ -87,16 +68,16 @@ const displayStyle = {
         ${childrenMargins};
     `,
     grid: css`
-        ${props =>
-            props.columnNumber <= 2 ? gridColumns.two : gridColumns.more};
+        @media (${props => props.theme.query.min.md}) {
+            ${gridStyles};
+        }
 
         ${props =>
             props.gridTemplateColumns
                 ? gridTemplate.custom
                 : gridTemplate.auto};
 
-        ${props =>
-            props.gridGap === spaceOptions.none ? childrenMargins : null};
+        ${childrenMargins};
     `,
     column: css`
         & > * {
@@ -148,7 +129,7 @@ function childrenShift(count, shiftSize, isNegative, isReverse) {
     return css`
         & > * {
             @media (${props => props.theme.query.min.xl}) {
-                ${styles}
+                ${styles};
             }
         }
     `;

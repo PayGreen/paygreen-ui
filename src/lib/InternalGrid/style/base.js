@@ -15,25 +15,25 @@ const displayStyle = {
         display: grid;
         grid-template-columns: ${props => props.gridTemplateColumns};
         grid-template-rows: ${props => props.gridTemplateRows};
+        gap: ${props => props.theme.space[props.gridGap]};
         justify-items: ${props => props.justifyItems};
         align-items: ${props => props.alignItems};
-    `
+    `,
 };
 
 const childrenMargin = {
     lateral: css`
         margin-left: ${props => props.theme.space[props.childrenMarginLateral]};
-        margin-right: ${props => props.theme.space[props.childrenMarginLateral]};
+        margin-right: ${props =>
+            props.theme.space[props.childrenMarginLateral]};
     `,
     top: css`
         margin-top: ${props => props.theme.space[props.childrenMarginTop]};
     `,
     bottom: css`
-        margin-bottom: ${props => props.theme.space[props.childrenMarginBottom]};
+        margin-bottom: ${props =>
+            props.theme.space[props.childrenMarginBottom]};
     `,
 };
 
-export {
-    displayStyle,
-    childrenMargin
-};
+export { displayStyle, childrenMargin };
