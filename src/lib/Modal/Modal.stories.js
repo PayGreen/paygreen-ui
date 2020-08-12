@@ -51,7 +51,7 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
                     )}
                 >
                     <Title textSize={fontSizeOptions.md}>
-                        {text('Label', 'The title')}
+                        {text('Label', 'This is the Title')}
                     </Title>
 
                     <CrossIcon
