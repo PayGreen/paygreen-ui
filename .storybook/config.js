@@ -1,5 +1,4 @@
 import React from 'react';
-import { withA11y } from '@storybook/addon-a11y';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { create } from '@storybook/theming';
@@ -8,7 +7,6 @@ import { GlobalStyle } from '../src/shared/global';
 import * as themes from '../src/theme';
 
 addDecorator(withThemesProvider(Object.keys(themes).map(k => themes[k])));
-addDecorator(withA11y);
 
 addParameters({
     viewport: {
@@ -42,6 +40,12 @@ addParameters({
             { name: 'DarkMode', value: '#202020' },
         ]
     },
+    a11y: {
+        element: "#root",
+        config: {},
+        options: {},
+        manual: true,
+    }
 });
 
 addDecorator(story => (
