@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DaInput from '../DaInput/DaInput';
 import Popin from '../Popin/Popin';
 import { DropdownBase, InvisibleCloseButton } from './style';
 
@@ -14,6 +15,13 @@ const Dropdown = props => {
             {React.Children.map(props.children, (child, index) => {
                 if (!child) {
                     return null;
+                }
+
+                if (child.type === DaInput) {
+                    return React.cloneElement(child, {
+                        onClick: () => setActive(!isActive),
+                        key: index,
+                    });
                 }
 
                 if (child.type === Popin) {
