@@ -65,7 +65,6 @@ const DatePicker = ({
             <DatePickerBase {...rest}>
                 <DropDown {...rest}>
                     <DaInput
-                        type="text"
                         mask="99/99/9999"
                         value={inputValue}
                         onChange={handleOnChange}
@@ -81,11 +80,10 @@ const DatePicker = ({
                     <Popin hasStyle={false} {...rest}>
                         <Calendar
                             currentMonth={
-                                selectedDate
-                                    ? selectedDate.month() !== moment().month()
-                                        ? selectedDate.diff(moment(), 'M') +
-                                          moment().month()
-                                        : moment().month()
+                                selectedDate &&
+                                selectedDate.month() !== moment().month()
+                                    ? selectedDate.diff(moment(), 'M') +
+                                      moment().month()
                                     : moment().month()
                             }
                             locale={locale}
