@@ -11,6 +11,8 @@ import {
     formStatusDefault,
     greyOptions,
     greyDefault,
+    spaceOptions,
+    spaceDefault
 } from '../../shared/constants';
 import { MenuHamburgerBase } from './style';
 
@@ -29,6 +31,10 @@ MenuHamburger.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginRight: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginLeft: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 MenuHamburger.defaultProps = {
@@ -38,6 +44,10 @@ MenuHamburger.defaultProps = {
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,
     colorStatus: formStatusDefault,
+    marginTop: spaceDefault,
+    marginRight: spaceDefault,
+    marginLeft: spaceDefault,
+    marginBottom: spaceDefault,
 };
 
 export default MenuHamburger;
