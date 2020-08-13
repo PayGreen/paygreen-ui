@@ -76,39 +76,46 @@ const DatePicker = ({
                         inputRef={inputRef}
                         {...rest}
                     />
-
-                    <Popin hasStyle={false} {...rest}>
-                        <Calendar
-                            currentMonth={
-                                selectedDate &&
-                                selectedDate.month() !== moment().month()
-                                    ? selectedDate.diff(moment(), 'M') +
-                                      moment().month()
-                                    : moment().month()
-                            }
-                            locale={locale}
-                            minimumDate={
-                                moment(
-                                    minimumDate,
-                                    dateFormat[locale],
-                                    true,
-                                ).isValid()
-                                    ? moment(minimumDate, dateFormat[locale])
-                                    : null
-                            }
-                            maximumDate={
-                                moment(
-                                    maximumDate,
-                                    dateFormat[locale],
-                                    true,
-                                ).isValid()
-                                    ? moment(maximumDate, dateFormat[locale])
-                                    : null
-                            }
-                            colorStatus={colorStatus}
-                            {...rest}
-                        />
-                    </Popin>
+                    {readOnly || disabled ? null : (
+                        <Popin hasStyle={false} {...rest}>
+                            <Calendar
+                                currentMonth={
+                                    selectedDate &&
+                                    selectedDate.month() !== moment().month()
+                                        ? selectedDate.diff(moment(), 'M') +
+                                          moment().month()
+                                        : moment().month()
+                                }
+                                locale={locale}
+                                minimumDate={
+                                    moment(
+                                        minimumDate,
+                                        dateFormat[locale],
+                                        true,
+                                    ).isValid()
+                                        ? moment(
+                                              minimumDate,
+                                              dateFormat[locale],
+                                          )
+                                        : null
+                                }
+                                maximumDate={
+                                    moment(
+                                        maximumDate,
+                                        dateFormat[locale],
+                                        true,
+                                    ).isValid()
+                                        ? moment(
+                                              maximumDate,
+                                              dateFormat[locale],
+                                          )
+                                        : null
+                                }
+                                colorStatus={colorStatus}
+                                {...rest}
+                            />
+                        </Popin>
+                    )}
                 </DropDown>
             </DatePickerBase>
         </DateContextProvider>
