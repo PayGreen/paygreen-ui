@@ -2,15 +2,15 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-gZMcBi csjNvB"
+  className="sc-fzpans eEzyTn"
 >
   <label
-    className="sc-bdVaJa jJNzAC"
+    className="sc-AxjAm jasnSF"
   >
     Label Description
   </label>
   <div
-    className="sc-bwzfXH kDdjyq"
+    className="sc-AxirZ knjpPo"
   >
     <textarea
       disabled={false}
@@ -35,8 +35,10 @@ exports[`renders without crashing 1`] = `
           "blockHeader": Object {
             "lg": "210px",
             "md": "180px",
+            "none": "180px",
             "sm": "140px",
             "xl": "240px",
+            "xs": "120px",
           },
           "blockShift": Object {
             "lg": "320px",
@@ -57,8 +59,10 @@ exports[`renders without crashing 1`] = `
           "blockWidth": Object {
             "lg": "640px",
             "md": "560px",
+            "none": "100%",
             "sm": "400px",
             "xl": "800px",
+            "xs": "300px",
           },
           "button": Object {
             "font": Object {
@@ -151,8 +155,10 @@ exports[`renders without crashing 1`] = `
             "width": Object {
               "lg": "500px",
               "md": "400px",
+              "none": "100%",
               "sm": "300px",
               "xl": "600px",
+              "xs": "250px",
             },
           },
           "font": Object {
@@ -433,10 +439,10 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-bxivhb eJTobv"
+    className="sc-AxhCb jdLahJ"
   >
     <p
-      className="sc-htpNat kYXZDM"
+      className="sc-AxiKw izNBgV"
     >
       Lorem ipsum dolor sit amet, consectetur non sodales.
     </p>

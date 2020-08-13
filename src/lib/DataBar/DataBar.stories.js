@@ -10,8 +10,7 @@ import {
 } from '@storybook/addon-knobs';
 import {
     folder,
-    blockWidthOptions,
-    blockWidthDefault,
+    spaceOptions,
     colorThemeOptions,
     colorThemeDefault,
     colorPalletOptions,
@@ -39,11 +38,6 @@ storiesOf(folder.main + 'Databar', module)
     .addDecorator(withKnobs)
     .add('DataBar', () => (
         <DataBar
-            blockWidth={radios(
-                'Block width',
-                blockWidthOptions,
-                blockWidthDefault,
-            )}
             hasBackground={boolean('With background', true)}
             backgroundColor={select(
                 'Background color',
@@ -74,43 +68,30 @@ storiesOf(folder.main + 'Databar', module)
                     ),
                 },
             ]}
+            blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
         />
     ))
-    .add(
-        'DataBar Multi',
-        () => (
-            <DataBar
-                blockWidth={radios(
-                    'Block width',
-                    blockWidthOptions,
-                    blockWidthDefault,
-                )}
-                hasBackground={boolean('With background', true)}
-                colorPallet={radios(
-                    colorPalletLabel,
-                    barColorPalletOptions,
-                    colorPalletDefault,
-                )}
-                data={[
-                    {
-                        value: number('Value 1', defaultValue, valueOptions),
-                        colorTheme: colorThemeDefault,
-                        colorStatus: formStatusDefault,
-                    },
-                    {
-                        value: number('Value 2', defaultValue, valueOptions),
-                        colorTheme: colorThemeOptions.tertiary,
-                        colorStatus: formStatusOptions.warning,
-                    },
-                    {
-                        value: number('Value 3', defaultValue, valueOptions),
-                        colorTheme: colorThemeOptions.quaternary,
-                        colorStatus: formStatusOptions.danger,
-                    },
-                ]}
-            />
-        ),
-        {
-            notes: 'For multi DataBar, legend will be displayed separately',
-        },
-    );
+    .add('DataBar Multi', () => (
+        <DataBar
+            hasBackground={boolean('With background', true)}
+            colorPallet={radios(
+                colorPalletLabel,
+                barColorPalletOptions,
+                colorPalletDefault,
+            )}
+            data={[
+                { value: number('Value 1', defaultValue, valueOptions) },
+                {
+                    value: number('Value 2', defaultValue, valueOptions),
+                    colorTheme: colorThemeOptions.tertiary,
+                    colorStatus: formStatusOptions.warning,
+                },
+                {
+                    value: number('Value 3', defaultValue, valueOptions),
+                    colorTheme: colorThemeOptions.quaternary,
+                    colorStatus: formStatusOptions.danger,
+                },
+            ]}
+            blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
+        />
+    ));

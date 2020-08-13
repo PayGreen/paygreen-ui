@@ -1,20 +1,44 @@
 import { css } from 'styled-components';
 import { stripUnit, math, directionalProperty } from 'polished';
 
-const calculateSpace = (space, toRemove = 0, coeff = 1) => {
+/**
+ * Calculate space with value in theme (space), value to remove and coeff
+ *
+ * @param {string} space
+ * @param {number} toRemove
+ * @param {number} coeff
+ * @param {string} spaceTheme 'blockSpace' or 'space'
+ *
+ * @returns {string}
+ */
+const calculateSpace = (
+    space,
+    toRemove = 0,
+    coeff = 1,
+    spaceTheme = 'blockSpace',
+) => {
     return props =>
-        math(props.theme.blockSpace[space] + '*' + coeff + '-' + toRemove);
+        math(props.theme[spaceTheme][space] + '*' + coeff + '-' + toRemove);
 };
 
-const blockSpace = (screen, space) => {
+/**
+ * Return correct space for specified screen
+ *
+ * @param {string} screen
+ * @param {string} space
+ * @param {string} spaceTheme 'blockSpace' or 'space'
+ *
+ * @returns {string}
+ */
+const blockSpace = (screen, space, spaceTheme = 'blockSpace') => {
     switch (screen) {
         case 'sm':
             return props =>
-                stripUnit(space(props)) > stripUnit(props.theme.blockSpace.sm)
-                    ? props.theme.blockSpace.sm
+                stripUnit(space(props)) > stripUnit(props.theme[spaceTheme].sm)
+                    ? props.theme[spaceTheme].sm
                     : stripUnit(space(props)) >
-                      stripUnit(props.theme.blockSpace.xs)
-                    ? props.theme.blockSpace.xs
+                      stripUnit(props.theme[spaceTheme].xs)
+                    ? props.theme[spaceTheme].xs
                     : space;
         case 'md':
             return space;
@@ -27,6 +51,17 @@ const directionProperty = {
     lateral: 'Lateral',
 };
 
+/**
+ * Create CSS for responsive space attribute
+ *
+ * @param {string} propAttribute margin or padding
+ * @param {number} toRemove value to remove to space
+ * @param {number} bottomCoeff coeff for bottom space
+ * @param {number} topCoeff coeff for top space
+ * @param {Array} directions which directions (top, right, left, bottom) create in css
+ *
+ * @returns {string} css
+ */
 const responsiveSpaces = (
     propAttribute,
     toRemove = 0,
@@ -34,6 +69,18 @@ const responsiveSpaces = (
     topCoeff = 1,
     directions = Object.values(directionProperty),
 ) => {
+    /**
+     * Get correct space for given direction if exists
+     *
+     * @param {string} screen sm, md
+     * @param {string} direction Top, Right, Left, Right, Lateral
+     * @param {number} toRemove value to remove to space
+     * @param {number} bottomCoeff coeff for bottom space
+     * @param {number} topCoeff coeff for top space
+     * @param {Array} directions all directions which be created in css
+     *
+     * @returns {string|null}
+     */
     const getSpace = (
         screen,
         direction,
@@ -42,6 +89,20 @@ const responsiveSpaces = (
         topCoeff,
         directions,
     ) => {
+        if (
+            ['Left', 'Right'].includes(direction) &&
+            !directions.includes(direction)
+        ) {
+            direction = directionProperty.lateral;
+        }
+
+        const coeff =
+            direction === directionProperty.top
+                ? topCoeff
+                : direction === directionProperty.bottom
+                ? bottomCoeff
+                : 1;
+
         return props =>
             directions.includes(direction) &&
             props[propAttribute + direction] !== undefined
@@ -51,8 +112,7 @@ const responsiveSpaces = (
                           calculateSpace(
                               props[propAttribute + direction],
                               toRemove,
-                              bottomCoeff,
-                              topCoeff,
+                              coeff
                           ),
                       )
                 : null;
@@ -71,7 +131,7 @@ const responsiveSpaces = (
             ),
             getSpace(
                 'sm',
-                directionProperty.lateral,
+                'Right',
                 toRemove,
                 bottomCoeff,
                 topCoeff,
@@ -85,14 +145,7 @@ const responsiveSpaces = (
                 topCoeff,
                 directions,
             ),
-            getSpace(
-                'sm',
-                directionProperty.lateral,
-                toRemove,
-                bottomCoeff,
-                topCoeff,
-                directions,
-            ),
+            getSpace('sm', 'Left', toRemove, bottomCoeff, topCoeff, directions),
         )};
 
         @media (${props => props.theme.query.min.md}) {
@@ -108,7 +161,7 @@ const responsiveSpaces = (
                 ),
                 getSpace(
                     'md',
-                    directionProperty.lateral,
+                    'Right',
                     toRemove,
                     bottomCoeff,
                     topCoeff,
@@ -124,7 +177,7 @@ const responsiveSpaces = (
                 ),
                 getSpace(
                     'md',
-                    directionProperty.lateral,
+                    'Left',
                     toRemove,
                     bottomCoeff,
                     topCoeff,
@@ -135,4 +188,4 @@ const responsiveSpaces = (
     `;
 };
 
-export { responsiveSpaces };
+export { calculateSpace, blockSpace, responsiveSpaces };

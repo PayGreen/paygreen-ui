@@ -171,12 +171,16 @@ export const ThemeBase = {
         xl: '68px',
     },
     blockWidth: {
+        none: '100%',
+        xs: '300px',
         sm: '400px',
         md: '560px',
         lg: '640px',
         xl: '800px',
     },
     blockHeader: {
+        none: '180px',
+        xs: '120px',
         sm: '140px',
         md: '180px',
         lg: '210px',
@@ -399,6 +403,8 @@ export const ThemeBase = {
     dataBar: {
         height: '10px',
         width: {
+            none: '100%',
+            xs: '250px',
             sm: '300px',
             md: '400px',
             lg: '500px',

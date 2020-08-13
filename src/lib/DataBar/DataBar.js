@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    blockWidthOptions,
-    blockWidthDefault,
+    spaceOptions,
     colorPalletOptions,
     colorPalletDefault,
     colorThemeOptions,
+    colorThemeDefault,
     formStatusOptions,
+    formStatusDefault,
     fontSizeOptions,
     fontSizeDefault,
     greyOptions,
@@ -36,15 +37,16 @@ const DataBar = props => {
      */
     const calcValue = (value, toPercent) => {
         let percent = ((value - minValue) / (maxValue - minValue)) * 100;
-        if (!toPercent) {
-            return unit === '%' ? percent.toFixed(2) : value;
+
+        if (!toPercent && unit !== '%') {
+            return value;
         } else {
-            return percent.toFixed(2);
+            return Number(percent.toFixed(2));
         }
     };
 
     return (
-        <div {...rest}>
+        <div>
             <Bar
                 {...rest}
                 hasBackground={hasBackground}
@@ -55,8 +57,16 @@ const DataBar = props => {
                         {...rest}
                         key={index}
                         dataWidth={calcValue(dataItem.value, true)}
-                        colorTheme={dataItem.colorTheme}
-                        colorStatus={dataItem.colorStatus}
+                        colorTheme={
+                            dataItem.colorTheme
+                                ? dataItem.colorTheme
+                                : colorThemeDefault
+                        }
+                        colorStatus={
+                            dataItem.colorStatus
+                                ? dataItem.colorStatus
+                                : formStatusDefault
+                        }
                     />
                 ))}
             </Bar>
@@ -66,8 +76,16 @@ const DataBar = props => {
                     <DataLegend
                         {...rest}
                         key={index}
-                        colorTheme={dataItem.colorTheme}
-                        colorStatus={dataItem.colorStatus}
+                        colorTheme={
+                            dataItem.colorTheme
+                                ? dataItem.colorTheme
+                                : colorThemeDefault
+                        }
+                        colorStatus={
+                            dataItem.colorStatus
+                                ? dataItem.colorStatus
+                                : formStatusDefault
+                        }
                         unit={unit}
                         value={calcValue(dataItem.value, false)}
                     >
@@ -76,7 +94,13 @@ const DataBar = props => {
                             colorPallet={colorPalletOptions.wab}
                             htmlTag={textHtmlTagOptions.span}
                         >
-                            {dataItem.legend}
+                            {Array.isArray(dataItem.legend)
+                                ? dataItem.legend.map((text, index) => (
+                                      <React.Fragment key={index}>
+                                          {text}
+                                      </React.Fragment>
+                                  ))
+                                : dataItem.legend}
                         </Text>
                     </DataLegend>
                 ) : null,
@@ -86,7 +110,7 @@ const DataBar = props => {
 };
 
 DataBar.propTypes = {
-    blockWidth: PropTypes.oneOf(Object.values(blockWidthOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     colorPallet: PropTypes.oneOf([
         colorPalletOptions.theme,
         colorPalletOptions.status,
@@ -94,11 +118,9 @@ DataBar.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.shape({
             value: PropTypes.number.isRequired,
-            legend: PropTypes.string,
-            colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions))
-                .isRequired,
-            colorStatus: PropTypes.oneOf(Object.values(formStatusOptions))
-                .isRequired,
+            legend: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+            colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+            colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
         }),
     ).isRequired,
     minValue: PropTypes.number,
@@ -110,7 +132,7 @@ DataBar.propTypes = {
 };
 
 DataBar.defaultProps = {
-    blockWidth: blockWidthDefault,
+    blockWidth: spaceOptions.md,
     colorPallet: colorPalletDefault,
     minValue: 0,
     maxValue: 100,

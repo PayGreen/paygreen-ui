@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bwzfXH buajBR"
+  className="sc-AxirZ dVOoKD"
 >
   <span
     className="icon-child"
   >
     <button
-      className="sc-bdVaJa hFnlbY icon"
+      className="sc-AxjAm bJVDpT icon"
     >
       <svg
         viewBox="0 0 143 143"

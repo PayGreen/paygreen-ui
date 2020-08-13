@@ -1,5 +1,19 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
+import { calculateSpace, blockSpace } from '../../../shared/spaces';
+
+const gridAlign = {
+    left: css`
+        margin: 0;
+    `,
+    center: css`
+        margin: 0 auto;
+    `,
+    right: css`
+        margin: 0;
+        margin-left: auto;
+    `,
+};
 
 const childrenMargins = css`
     & > * {
@@ -11,11 +25,51 @@ const childrenMargins = css`
     }
 `;
 
+const gridGap = css`
+    gap: ${props =>
+        blockSpace(
+            'sm',
+            calculateSpace(props.gridGap, 0, 1, 'space'),
+            'space',
+        )};
+
+    @media (${props => props.theme.query.min.lg}) {
+        gap: ${props =>
+            blockSpace(
+                'md',
+                calculateSpace(props.gridGap, 0, 1, 'space'),
+                'space',
+            )};
+    }
+`;
+
 const gridStyles = css`
     display: grid;
     justify-items: ${props => props.justifyItems};
     align-items: ${props => props.alignItems};
+
+    ${gridGap};
 `;
+
+const gridTemplate = {
+    custom: css`
+        @media (${props => props.theme.query.min.md}) {
+            grid-template-columns: ${props => props.gridTemplateColumns};
+        }
+    `,
+    auto: css`
+        @media (${props => props.theme.query.min.md}) {
+            grid-template-columns: repeat(
+                ${props => props.columnNumber - 1},
+                1fr
+            );
+        }
+
+        @media (${props => props.theme.query.min.lg}) {
+            grid-template-columns: repeat(${props => props.columnNumber}, 1fr);
+        }
+    `,
+};
 
 const displayStyle = {
     flex: css`
@@ -30,27 +84,26 @@ const displayStyle = {
                 flex: ${props => props.childrenFlex};
             }
         }
-        
+
         ${childrenMargins};
     `,
     grid: css`
         @media (${props => props.theme.query.min.md}) {
-            width: ${props => props.columnNumber <= 2 ? 'fit-content' : null};
-            ${props => props.columnNumber > 2 ? gridStyles : null};
-            grid-template-columns: repeat(${props => props.columnNumber - 1}, 1fr);
+            ${gridStyles};
         }
 
-        @media (${props => props.theme.query.min.lg}) {
-            width: ${props => props.columnNumber <= 2 ? 'inherit' : null};
-            ${props => props.columnNumber <= 2 ? gridStyles : null};
-            grid-template-columns: repeat(${props => props.columnNumber}, 1fr);
-        }
+        ${props =>
+            props.gridTemplateColumns
+                ? gridTemplate.custom
+                : gridTemplate.auto};
 
         ${childrenMargins};
     `,
     column: css`
         & > * {
-            padding: ${props => math(props.theme.space[props.childrenMargin] + '/2')} 0;
+            padding: ${props =>
+                    math(props.theme.space[props.childrenMargin] + '/2')}
+                0;
 
             & > * {
                 margin: 0 auto;
@@ -77,33 +130,29 @@ const displayStyle = {
         @media (${props => props.theme.query.min.lg}) {
             columns: ${props => props.columnNumber};
         }
-    `
+    `,
 };
 
 function childrenShift(count, shiftSize, isNegative, isReverse) {
     let styles = '';
-    
+
     for (let i = 1; i <= count; i++) {
         styles += `
             &:nth-child(${isReverse ? count - i + 1 : i}) {
                 margin-top: ${math(
-                    (isNegative ? '-' : '') +
-                    shiftSize + '*' + (i-1)
+                    (isNegative ? '-' : '') + shiftSize + '*' + (i - 1),
                 )};
             }
-        `
+        `;
     }
 
     return css`
         & > * {
             @media (${props => props.theme.query.min.xl}) {
-                ${styles}
+                ${styles};
             }
         }
     `;
-};
+}
 
-export {
-    displayStyle,
-    childrenShift,
-};
+export { gridGap, gridAlign, displayStyle, childrenShift };

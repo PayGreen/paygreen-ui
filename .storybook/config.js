@@ -1,14 +1,12 @@
-import * as themes from '../src/theme';
-import { configure, addDecorator, addParameters } from '@storybook/react';
-import { withThemesProvider } from 'storybook-addon-styled-component-theme';
-import { withA11y } from '@storybook/addon-a11y';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { create } from '@storybook/theming';
-import { GlobalStyle } from '../src/shared/global';
 import React from 'react';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { configure, addDecorator, addParameters } from '@storybook/react';
+import { create } from '@storybook/theming';
+import { withThemesProvider } from 'storybook-addon-styled-component-theme';
+import { GlobalStyle } from '../src/shared/global';
+import * as themes from '../src/theme';
 
 addDecorator(withThemesProvider(Object.keys(themes).map(k => themes[k])));
-addDecorator(withA11y);
 
 addParameters({
     viewport: {
@@ -26,19 +24,28 @@ addParameters({
         showPanel: true,
         showRoots: true,
     },
-    backgrounds: [
+    backgrounds: {
         // https://www.npmjs.com/package/@storybook/addon-backgrounds
-        { name: 'White', value: '#ffffff', default: true },
-        { name: 'Primary', value: '#77d1a6' },
-        { name: 'PrimaryShade', value: '#a4db95' },
-        { name: 'Secondary', value: '#51c6be' },
-        { name: 'SecondaryShade', value: '#76bbd8' },
-        { name: 'Tertiary', value: '#fab56b' },
-        { name: 'TertiaryShade', value: '#faa272' },
-        { name: 'Quaternary', value: '#e98e90' },
-        { name: 'QuaternaryShade', value: '#e98eb9' },
-        { name: 'DarkMode', value: '#202020' },
-    ],
+        default: 'White',
+        values: [
+            { name: 'White', value: '#ffffff' },
+            { name: 'Primary', value: '#77d1a6' },
+            { name: 'PrimaryShade', value: '#a4db95' },
+            { name: 'Secondary', value: '#51c6be' },
+            { name: 'SecondaryShade', value: '#76bbd8' },
+            { name: 'Tertiary', value: '#fab56b' },
+            { name: 'TertiaryShade', value: '#faa272' },
+            { name: 'Quaternary', value: '#e98e90' },
+            { name: 'QuaternaryShade', value: '#e98eb9' },
+            { name: 'DarkMode', value: '#202020' },
+        ]
+    },
+    a11y: {
+        element: "#root",
+        config: {},
+        options: {},
+        manual: true,
+    }
 });
 
 addDecorator(story => (

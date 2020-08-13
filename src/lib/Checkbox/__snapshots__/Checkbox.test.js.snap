@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa cPlsRl"
+  className="sc-AxjAm eQJjPF"
 >
   <input
     disabled={false}
@@ -22,8 +22,10 @@ exports[`renders without crashing 1`] = `
         "blockHeader": Object {
           "lg": "210px",
           "md": "180px",
+          "none": "180px",
           "sm": "140px",
           "xl": "240px",
+          "xs": "120px",
         },
         "blockShift": Object {
           "lg": "320px",
@@ -44,8 +46,10 @@ exports[`renders without crashing 1`] = `
         "blockWidth": Object {
           "lg": "640px",
           "md": "560px",
+          "none": "100%",
           "sm": "400px",
           "xl": "800px",
+          "xs": "300px",
         },
         "button": Object {
           "font": Object {
@@ -138,8 +142,10 @@ exports[`renders without crashing 1`] = `
           "width": Object {
             "lg": "500px",
             "md": "400px",
+            "none": "100%",
             "sm": "300px",
             "xl": "600px",
+            "xs": "250px",
           },
         },
         "font": Object {
@@ -413,7 +419,7 @@ exports[`renders without crashing 1`] = `
     htmlFor="first"
   >
     <span
-      className="sc-bwzfXH nnwdP icon"
+      className="sc-AxirZ kucKJC icon"
     >
       <svg
         viewBox="0 0 143 143"

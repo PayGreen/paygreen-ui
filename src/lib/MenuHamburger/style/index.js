@@ -4,15 +4,19 @@ import { line, sideStyle, isClosedStyle, isOpenStyle } from './base';
 import { mainColor } from '../../Text/style/constants';
 
 const MenuHamburgerBase = styled.button`
+    cursor: pointer;
     display: block;
     box-sizing: border-box;
     width: ${props => math(props.theme.icon.size.lg + '-' + line)};
     height: ${props => math(props.theme.icon.size.lg + '-' + line)};
-    background-color: transparent;
-    border: none;
     padding: 0;
+    border: none;
     outline: none;
-    cursor: pointer;
+    background-color: transparent;
+    margin-top: ${props => props.theme.space[props.marginTop]};
+    margin-right: ${props => props.theme.space[props.marginRight]};
+    margin-left: ${props => props.theme.space[props.marginLeft]};
+    margin-bottom: ${props => props.theme.space[props.marginBottom]};
 
     span {
         display: block;

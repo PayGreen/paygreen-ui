@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+    alignOptions,
     displayOptions,
     displayDefault,
     flexDirectionOptions,
@@ -29,8 +30,10 @@ const Grid = props => {
 };
 
 Grid.propTypes = {
+    align: PropTypes.oneOf(Object.values(alignOptions)),
     displayType: PropTypes.oneOf(Object.values(displayOptions)),
     columnNumber: PropTypes.number,
+    gridTemplateColumns: PropTypes.string,
     flexDirection: PropTypes.oneOf(Object.values(flexDirectionOptions)),
     flexWrap: PropTypes.oneOf(Object.values(flexWrapOptions)),
     justifyContent: PropTypes.oneOf(Object.values(justifyContentOptions)),
@@ -43,11 +46,13 @@ Grid.propTypes = {
     isReverseShift: PropTypes.bool,
 
     blockPadding: PropTypes.oneOf(Object.values(spaceOptions)),
+    gridGap: PropTypes.oneOf(Object.values(spaceOptions)),
     childrenMargin: PropTypes.oneOf(Object.values(spaceOptions)),
     childrenMarginBig: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Grid.defaultProps = {
+    align: alignOptions.center,
     displayType: displayDefault,
     columnNumber: 2,
     flexDirection: flexDirectionDefault,
@@ -62,6 +67,7 @@ Grid.defaultProps = {
     isReverseShift: false,
 
     blockPadding: spaceOptions.md,
+    gridGap: spaceOptions.none,
     childrenMargin: spaceOptions.md,
     childrenMarginBig: spaceOptions.lg,
 };

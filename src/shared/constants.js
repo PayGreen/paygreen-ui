@@ -253,16 +253,6 @@ const spaceOptions = {
 
 const spaceDefault = spaceOptions.none;
 
-// Block width
-const blockWidthOptions = {
-    sm: 'sm',
-    md: 'md',
-    lg: 'lg',
-    xl: 'xl',
-};
-
-const blockWidthDefault = blockWidthOptions.md;
-
 // Icon size
 const iconSizeOptions = {
     xxs: 'xxs',
@@ -500,8 +490,6 @@ export {
     radiusDefault,
     spaceOptions,
     spaceDefault,
-    blockWidthOptions,
-    blockWidthDefault,
     iconSizeOptions,
     iconSizeDefault,
     imageSizeOptions,

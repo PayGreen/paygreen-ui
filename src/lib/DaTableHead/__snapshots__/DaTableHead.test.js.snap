@@ -2,19 +2,19 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-EHOje dofElP"
+  className="sc-AxgMl kSUkaj"
 >
   <div
-    className="sc-bwzfXH dtsvhd"
+    className="sc-AxirZ dwiqZT"
     onClick={[Function]}
   >
     <span
-      className="sc-htpNat eLDjAU"
+      className="sc-AxiKw haPQLs"
     >
       Search and filters
     </span>
     <span
-      className="sc-ifAKCX hlIZAo icon"
+      className="sc-AxhUy lapeZU icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -26,7 +26,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-bdVaJa fGKDYj"
+    className="sc-AxjAm kHKYlU"
   >
     <div
       className="cell-child"
@@ -35,7 +35,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-bdVaJa fGKDYj"
+    className="sc-AxjAm kHKYlU"
   >
     <div
       className="cell-child"
@@ -44,7 +44,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-bdVaJa fGKDYj"
+    className="sc-AxjAm kHKYlU"
   >
     <div
       className="cell-child"

@@ -3,8 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, select, text } from '@storybook/addon-knobs';
 import {
     folder,
-    blockWidthOptions,
-    blockWidthDefault,
     colorPalletOptions,
     iconSizeOptions,
     iconHtmlTagOptions,
@@ -25,14 +23,14 @@ const paddingLateral = 'Lateral padding';
 storiesOf(folder.main + folder.sub.modal + 'Modal', module)
     .addDecorator(withKnobs)
     .add('Modal', () => (
-        <Modal isOpen={boolean('is Open', true)}>
+        <Modal isOpen={boolean('Is open', true)}>
             <Overlay opacityValue={20} />
 
             <ModalContent
                 blockWidth={select(
                     'Block width',
-                    blockWidthOptions,
-                    blockWidthDefault,
+                    spaceOptions,
+                    spaceOptions.md,
                 )}
             >
                 <ModalHeader
@@ -42,12 +40,12 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
                         spaceOptions.sm,
                     )}
                     paddingTop={select(
-                        "ModalHeader's padding top",
+                        'ModalHeader\'s padding top',
                         spaceOptions,
                         spaceOptions.sm,
                     )}
                     paddingBottom={select(
-                        "ModalHeader's padding bottom",
+                        'ModalHeader\'s padding bottom',
                         spaceOptions,
                         spaceOptions.sm,
                     )}
@@ -70,12 +68,12 @@ storiesOf(folder.main + folder.sub.modal + 'Modal', module)
                         spaceOptions.sm,
                     )}
                     paddingTop={select(
-                        "ModalBody's padding top",
+                        'ModalBody\'s padding top',
                         spaceOptions,
                         spaceOptions.none,
                     )}
                     paddingBottom={select(
-                        "ModalBody's padding bottom",
+                        'ModalBody\'s padding bottom',
                         spaceOptions,
                         spaceOptions.sm,
                     )}

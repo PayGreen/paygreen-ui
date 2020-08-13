@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, select } from '@storybook/addon-knobs';
+import { withKnobs, text, select, radios } from '@storybook/addon-knobs';
 import {
     folder,
     displayOptions,
@@ -35,7 +35,7 @@ storiesOf(folder.main + folder.sub.structure + 'InternalGrid', module)
     })
     .add('Flex', () => (
         <InternalGrid
-            flexWrap={select('Flex wrap', flexWrapOptions, flexWrapDefault)}
+            flexWrap={radios('Flex wrap', flexWrapOptions, flexWrapDefault)}
             justifyContent={select(
                 'Justify content',
                 justifyContentOptions,
@@ -71,6 +71,11 @@ storiesOf(folder.main + folder.sub.structure + 'InternalGrid', module)
             displayType={displayOptions.grid}
             gridTemplateColumns={text('Grid columns', '1fr 1fr 1fr')}
             gridTemplateRows={text('Grid rows', 'repeat(2, 60px)')}
+            gridGap={select(
+                'Grid gap',
+                spaceOptions,
+                spaceDefault,
+            )}
             justifyItems={select(
                 'Justify items',
                 justifyItemsOptions,

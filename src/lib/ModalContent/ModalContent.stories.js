@@ -7,8 +7,6 @@ import {
     iconSizeOptions,
     iconHtmlTagOptions,
     fontSizeOptions,
-    blockWidthOptions,
-    blockWidthDefault,
     spaceOptions,
 } from '../../shared/constants';
 import Title from '../Title/Title';
@@ -24,11 +22,7 @@ storiesOf(folder.main + folder.sub.modal + 'ModalContent', module)
     .addDecorator(withKnobs)
     .add('ModalContent', () => (
         <ModalContent
-            blockWidth={select(
-                'Block width',
-                blockWidthOptions,
-                blockWidthDefault,
-            )}
+            blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
         >
             <ModalHeader
                 paddingLateral={select(
