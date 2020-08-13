@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <button
-  className="sc-bwzfXH bpcymw"
+  className="sc-AxirZ gxFIJY"
 >
   <span
-    className="sc-bdVaJa nVZSh icon"
+    className="sc-AxjAm gvlGpt icon"
   >
     <svg
       viewBox="0 0 143 143"

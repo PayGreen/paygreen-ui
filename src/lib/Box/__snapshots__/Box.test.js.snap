@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa cReuPP"
+  className="sc-AxjAm ZrymP"
 >
   <div>
     Premier élément
   </div>
   <div
-    className="sc-bdVaJa cReuPP"
+    className="sc-AxjAm ZrymP"
   >
     <div>
       Deuxième élément

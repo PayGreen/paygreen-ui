@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa iDgVjP"
+  className="sc-AxjAm hIdplr"
 >
   <input
     disabled={false}

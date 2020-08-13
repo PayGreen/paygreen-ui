@@ -2,17 +2,17 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-EHOje jvzENE"
+  className="sc-AxgMl fFPQpl"
 >
   <div
-    className="sc-bZQynM bOrPFB"
+    className="sc-AxheI fniENP"
   >
     <button
       onClick={[Function]}
       type="button"
     >
       <span
-        className="sc-bdVaJa cawBGT"
+        className="sc-AxjAm jCcELs"
       >
          
         Open the modal
@@ -20,21 +20,21 @@ exports[`renders without crashing 1`] = `
     </button>
   </div>
   <div
-    className="sc-ifAKCX bOwhUU"
+    className="sc-AxhUy jBGgCf"
   >
     <div
-      className="sc-bZQynM bOrPFB"
+      className="sc-AxheI fniENP"
     >
       <div
-        className="sc-bwzfXH efjqAu"
+        className="sc-AxirZ cKOSau"
         onClick={[Function]}
       />
     </div>
     <div
-      className="sc-bxivhb jXsEQH"
+      className="sc-AxhCb MeQqL"
     >
       <div
-        className="sc-htpNat gLReSl"
+        className="sc-AxiKw gYxlyN"
       >
         This is the text
       </div>
