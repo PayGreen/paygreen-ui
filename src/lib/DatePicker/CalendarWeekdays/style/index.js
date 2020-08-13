@@ -6,7 +6,7 @@ const CalendarWeekdaysBase = styled.div`
     grid-gap: ${props => props.theme.line};
     justify-content: start;
     width: calc(
-        (${props => props.theme.iconSize.lg} * 7) +
+        (${props => props.theme.icon.size.lg} * 7) +
             (${props => props.theme.line} * 8)
     );
     height: auto;
@@ -16,8 +16,8 @@ const CalendarWeekdaysBase = styled.div`
 
     & div {
         display: flex;
-        width: ${props => props.theme.iconSize.lg};
-        height: ${props => props.theme.iconSize.lg};
+        width: ${props => props.theme.icon.size.lg};
+        height: ${props => props.theme.icon.size.lg};
         justify-content: center;
         align-items: center;
     }

@@ -23,6 +23,7 @@ const folder = {
         structure: 'Grids' + folderSeparator,
         table: 'Simple tables' + folderSeparator,
         daTable: 'DaTables' + folderSeparator,
+        datePicker: 'DatePicker' + folderSeparator,
     },
 };
 

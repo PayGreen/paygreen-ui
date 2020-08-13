@@ -6,10 +6,10 @@ const CalendarNavbarBase = styled.div`
     justify-content: space-between;
 
     width: calc(
-        (${props => props.theme.iconSize.lg} * 7) +
+        (${props => props.theme.icon.size.lg} * 7) +
             (${props => props.theme.line} * 8)
     );
-    height: ${props => props.theme.iconSize.xl};
+    height: ${props => props.theme.icon.size.xl};
     padding: ${props => props.theme.line};
 
     color: ${props => props.theme.status[props.colorStatus].main};

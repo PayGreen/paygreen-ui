@@ -3,8 +3,8 @@ import { selected, enabled, disabled } from './base';
 
 const CalendarCellBase = styled.div`
     display: flex;
-    width: ${props => props.theme.iconSize.lg};
-    height: ${props => props.theme.iconSize.lg};
+    width: ${props => props.theme.icon.size.lg};
+    height: ${props => props.theme.icon.size.lg};
     justify-content: center;
     align-items: center;
 

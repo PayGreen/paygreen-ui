@@ -8,7 +8,7 @@ const CalendarGridBase = styled.div`
     justify-content: start;
     
     width: calc(
-        (${props => props.theme.iconSize.lg} * 7) +
+        (${props => props.theme.icon.size.lg} * 7) +
             (${props => props.theme.line} * 8)
     );
     height: auto;
