@@ -61,7 +61,7 @@ const DatePicker = ({
                     {...rest}
                 />
 
-                {readOnly || disabled ? null : (
+                {rest.readOnly || rest.disabled ? null : (
                     <Popin hasStyle={false}>
                         <Calendar
                             currentMonth={
