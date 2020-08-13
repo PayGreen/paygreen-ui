@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
+import { calculateSpace, blockSpace } from '../../../shared/spaces';
 
 const gridAlign = {
     left: css`
@@ -24,11 +25,30 @@ const childrenMargins = css`
     }
 `;
 
+const gridGap = css`
+    gap: ${props =>
+        blockSpace(
+            'sm',
+            calculateSpace(props.gridGap, 0, 1, 'space'),
+            'space',
+        )};
+
+    @media (${props => props.theme.query.min.lg}) {
+        gap: ${props =>
+            blockSpace(
+                'md',
+                calculateSpace(props.gridGap, 0, 1, 'space'),
+                'space',
+            )};
+    }
+`;
+
 const gridStyles = css`
     display: grid;
     justify-items: ${props => props.justifyItems};
     align-items: ${props => props.alignItems};
-    gap: ${props => props.theme.space[props.gridGap]};
+
+    ${gridGap};
 `;
 
 const gridTemplate = {
@@ -135,4 +155,4 @@ function childrenShift(count, shiftSize, isNegative, isReverse) {
     `;
 }
 
-export { gridAlign, displayStyle, childrenShift };
+export { gridGap, gridAlign, displayStyle, childrenShift };

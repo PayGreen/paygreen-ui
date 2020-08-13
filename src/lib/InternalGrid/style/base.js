@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { gridGap } from '../../Grid/style/base';
 
 const displayStyle = {
     flex: css`
@@ -15,9 +16,10 @@ const displayStyle = {
         display: grid;
         grid-template-columns: ${props => props.gridTemplateColumns};
         grid-template-rows: ${props => props.gridTemplateRows};
-        gap: ${props => props.theme.space[props.gridGap]};
         justify-items: ${props => props.justifyItems};
         align-items: ${props => props.alignItems};
+
+        ${gridGap};
     `,
 };
 
