@@ -39,7 +39,7 @@ const App = () => (
             </Title>
 
             <Text>
-                A simple exemple of use for the component <strong>Card</strong>.
+                A simple example of use for the component <strong>Card</strong>.
             </Text>
         </Card>
     </PGThemeProvider>
