@@ -102,7 +102,7 @@ const backgroundStyle = css`
         transform: scale(0);
         z-index: ${props => props.theme.zindex.layer};
         height: 100%;
-        width: 100%
+        width: 100%;
         padding: ${calcShift};
         bottom: -${calcShift};
         left: -${calcShift};
@@ -110,7 +110,6 @@ const backgroundStyle = css`
         opacity: 0.4;
         transition: all ${props => props.theme.transition.sm};
     }
-
 
     ${props =>
         props.hasHover && props.colorPallet !== colorPalletOptions.wab
