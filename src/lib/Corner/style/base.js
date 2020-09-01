@@ -37,7 +37,17 @@ const positionStyle = {
         left: 0;
     `,
     right: css`
+        left: inherit;
         right: 0;
+    `,
+};
+
+const centeredPopinStyle = {
+    left: css`
+        transform: translateX(-50%);
+    `,
+    right: css`
+        transform: translateX(50%);
     `,
 };
 
@@ -110,4 +120,11 @@ const bannerStyle = css`
     }
 `;
 
-export { backgroundStyle, colorStyle, positionStyle, squareStyle, bannerStyle };
+export {
+    backgroundStyle,
+    colorStyle,
+    positionStyle,
+    centeredPopinStyle,
+    squareStyle,
+    bannerStyle,
+};

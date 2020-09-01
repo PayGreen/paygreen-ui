@@ -44,6 +44,7 @@ const Corner = ({ children, label, ...rest }) => {
 Corner.propTypes = {
     label: PropTypes.string.isRequired,
     cornerPosition: PropTypes.oneOf(Object.values(cornerPositionOptions)),
+    hasCenteredPopin: PropTypes.bool,
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     colorStyle: PropTypes.oneOf(Object.values(colorStyleOptions)),
     colorPallet: PropTypes.oneOf([
@@ -56,6 +57,7 @@ Corner.propTypes = {
 
 Corner.defaultProps = {
     cornerPosition: cornerPositionDefault,
+    hasCenteredPopin: false,
     radiusSize: radiusDefault,
     colorStyle: colorStyleDefault,
     colorPallet: colorPalletDefault,
