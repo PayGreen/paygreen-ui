@@ -32,6 +32,7 @@ import {
   Cart,
   CautionBold,
   Caution,
+  Change,
   CheckBold,
   Checkbox,
   Check,
@@ -45,6 +46,7 @@ import {
   Download,
   Empty,
   Eye,
+  Factory,
   Globe,
   Heart,
   Hourglass,
@@ -54,13 +56,18 @@ import {
   Letter,
   LinkBold,
   Link,
+  List,
   Lock,
   Marker,
   Meal,
   Megaphone,
   MenuBold,
+  MenuDots,
   Menu,
   Meter,
+  Minus,
+  Moon,
+  Moove,
   Organization,
   Out,
   Paperclip,
@@ -68,6 +75,7 @@ import {
   Phone,
   Picture,
   Plane,
+  Plus,
   Pointer,
   Popin,
   QuestionBold,
@@ -81,6 +89,7 @@ import {
   SearchBold,
   Search,
   Shop,
+  Sun,
   Support,
   Trees,
   Trophy,
@@ -90,6 +99,7 @@ import {
   Users,
   User,
   Wallet,
+  Weight,
   Wheels,
 } from './components';
 
@@ -124,6 +134,7 @@ export const CarIcon = (props) => <IconWrapper {...props}><Car /></IconWrapper>
 export const CartIcon = (props) => <IconWrapper {...props}><Cart /></IconWrapper>
 export const CautionBoldIcon = (props) => <IconWrapper {...props}><CautionBold /></IconWrapper>
 export const CautionIcon = (props) => <IconWrapper {...props}><Caution /></IconWrapper>
+export const ChangeIcon = (props) => <IconWrapper {...props}><Change /></IconWrapper>
 export const CheckBoldIcon = (props) => <IconWrapper {...props}><CheckBold /></IconWrapper>
 export const CheckboxIcon = (props) => <IconWrapper {...props}><Checkbox /></IconWrapper>
 export const CheckIcon = (props) => <IconWrapper {...props}><Check /></IconWrapper>
@@ -137,6 +148,7 @@ export const CrossIcon = (props) => <IconWrapper {...props}><Cross /></IconWrapp
 export const DownloadIcon = (props) => <IconWrapper {...props}><Download /></IconWrapper>
 export const EmptyIcon = (props) => <IconWrapper {...props}><Empty /></IconWrapper>
 export const EyeIcon = (props) => <IconWrapper {...props}><Eye /></IconWrapper>
+export const FactoryIcon = (props) => <IconWrapper {...props}><Factory /></IconWrapper>
 export const GlobeIcon = (props) => <IconWrapper {...props}><Globe /></IconWrapper>
 export const HeartIcon = (props) => <IconWrapper {...props}><Heart /></IconWrapper>
 export const HourglassIcon = (props) => <IconWrapper {...props}><Hourglass /></IconWrapper>
@@ -146,13 +158,18 @@ export const LetterBoldIcon = (props) => <IconWrapper {...props}><LetterBold /><
 export const LetterIcon = (props) => <IconWrapper {...props}><Letter /></IconWrapper>
 export const LinkBoldIcon = (props) => <IconWrapper {...props}><LinkBold /></IconWrapper>
 export const LinkIcon = (props) => <IconWrapper {...props}><Link /></IconWrapper>
+export const ListIcon = (props) => <IconWrapper {...props}><List /></IconWrapper>
 export const LockIcon = (props) => <IconWrapper {...props}><Lock /></IconWrapper>
 export const MarkerIcon = (props) => <IconWrapper {...props}><Marker /></IconWrapper>
 export const MealIcon = (props) => <IconWrapper {...props}><Meal /></IconWrapper>
 export const MegaphoneIcon = (props) => <IconWrapper {...props}><Megaphone /></IconWrapper>
 export const MenuBoldIcon = (props) => <IconWrapper {...props}><MenuBold /></IconWrapper>
+export const MenuDotsIcon = (props) => <IconWrapper {...props}><MenuDots /></IconWrapper>
 export const MenuIcon = (props) => <IconWrapper {...props}><Menu /></IconWrapper>
 export const MeterIcon = (props) => <IconWrapper {...props}><Meter /></IconWrapper>
+export const MinusIcon = (props) => <IconWrapper {...props}><Minus /></IconWrapper>
+export const MoonIcon = (props) => <IconWrapper {...props}><Moon /></IconWrapper>
+export const MooveIcon = (props) => <IconWrapper {...props}><Moove /></IconWrapper>
 export const OrganizationIcon = (props) => <IconWrapper {...props}><Organization /></IconWrapper>
 export const OutIcon = (props) => <IconWrapper {...props}><Out /></IconWrapper>
 export const PaperclipIcon = (props) => <IconWrapper {...props}><Paperclip /></IconWrapper>
@@ -160,6 +177,7 @@ export const PenIcon = (props) => <IconWrapper {...props}><Pen /></IconWrapper>
 export const PhoneIcon = (props) => <IconWrapper {...props}><Phone /></IconWrapper>
 export const PictureIcon = (props) => <IconWrapper {...props}><Picture /></IconWrapper>
 export const PlaneIcon = (props) => <IconWrapper {...props}><Plane /></IconWrapper>
+export const PlusIcon = (props) => <IconWrapper {...props}><Plus /></IconWrapper>
 export const PointerIcon = (props) => <IconWrapper {...props}><Pointer /></IconWrapper>
 export const PopinIcon = (props) => <IconWrapper {...props}><Popin /></IconWrapper>
 export const QuestionBoldIcon = (props) => <IconWrapper {...props}><QuestionBold /></IconWrapper>
@@ -173,6 +191,7 @@ export const ScheduleIcon = (props) => <IconWrapper {...props}><Schedule /></Ico
 export const SearchBoldIcon = (props) => <IconWrapper {...props}><SearchBold /></IconWrapper>
 export const SearchIcon = (props) => <IconWrapper {...props}><Search /></IconWrapper>
 export const ShopIcon = (props) => <IconWrapper {...props}><Shop /></IconWrapper>
+export const SunIcon = (props) => <IconWrapper {...props}><Sun /></IconWrapper>
 export const SupportIcon = (props) => <IconWrapper {...props}><Support /></IconWrapper>
 export const TreesIcon = (props) => <IconWrapper {...props}><Trees /></IconWrapper>
 export const TrophyIcon = (props) => <IconWrapper {...props}><Trophy /></IconWrapper>
@@ -182,4 +201,5 @@ export const UserBoldIcon = (props) => <IconWrapper {...props}><UserBold /></Ico
 export const UsersIcon = (props) => <IconWrapper {...props}><Users /></IconWrapper>
 export const UserIcon = (props) => <IconWrapper {...props}><User /></IconWrapper>
 export const WalletIcon = (props) => <IconWrapper {...props}><Wallet /></IconWrapper>
+export const WeightIcon = (props) => <IconWrapper {...props}><Weight /></IconWrapper>
 export const WheelsIcon = (props) => <IconWrapper {...props}><Wheels /></IconWrapper>
