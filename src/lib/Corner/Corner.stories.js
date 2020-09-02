@@ -1,6 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, radios, select } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    text,
+    radios,
+    select,
+    boolean,
+} from '@storybook/addon-knobs';
 import {
     folder,
     cornerPositionOptions,
@@ -71,6 +77,7 @@ storiesOf(folder.main + 'Corner', module)
                 cornerPositionOptions,
                 cornerPositionDefault,
             )}
+            hasCenteredPopin={boolean('Centered popin', false)}
             radiusSize={select(radiusSizeLabel, radiusOptions, radiusDefault)}
             colorStyle={radios(
                 colorStyleLabel,

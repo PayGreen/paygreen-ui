@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 
 const isOpenStyle = css`
-    margin-left: 100%;
+    margin-left: 110%; /* 10% margin in order to mask Main shadow */
 
     @media (${props => props.theme.query.min.md}) {
         margin-left: ${props => props.theme.grid.sidebar};

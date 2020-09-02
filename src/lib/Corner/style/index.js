@@ -4,6 +4,7 @@ import {
     backgroundStyle,
     colorStyle,
     positionStyle,
+    centeredPopinStyle,
     squareStyle,
     bannerStyle,
 } from './base';
@@ -31,10 +32,14 @@ const CornerBase = styled.div`
     ${PopinBase} {
         opacity: 0;
         pointer-events: none;
-        left: inherit;
         ${props => positionStyle[props.cornerPosition]};
+        ${props =>
+            props.hasCenteredPopin
+                ? centeredPopinStyle[props.cornerPosition]
+                : null};
 
-        &::before { /* add transparent zone above Popin to improve hover behaviour */
+        &::before {
+            /* add transparent zone above Popin to improve hover behaviour */
             content: '';
             position: absolute;
             width: 100%;
