@@ -29,6 +29,7 @@ import Car from './Car';
 import Cart from './Cart';
 import CautionBold from './CautionBold';
 import Caution from './Caution';
+import Change from './Change';
 import CheckBold from './CheckBold';
 import Checkbox from './Checkbox';
 import Check from './Check';
@@ -42,6 +43,7 @@ import Cross from './Cross';
 import Download from './Download';
 import Empty from './Empty';
 import Eye from './Eye';
+import Factory from './Factory';
 import Globe from './Globe';
 import Heart from './Heart';
 import Hourglass from './Hourglass';
@@ -51,13 +53,18 @@ import LetterBold from './LetterBold';
 import Letter from './Letter';
 import LinkBold from './LinkBold';
 import Link from './Link';
+import List from './List';
 import Lock from './Lock';
 import Marker from './Marker';
 import Meal from './Meal';
 import Megaphone from './Megaphone';
 import MenuBold from './MenuBold';
+import MenuDots from './MenuDots';
 import Menu from './Menu';
 import Meter from './Meter';
+import Minus from './Minus';
+import Moon from './Moon';
+import Moove from './Moove';
 import Organization from './Organization';
 import Out from './Out';
 import Paperclip from './Paperclip';
@@ -65,6 +72,7 @@ import Pen from './Pen';
 import Phone from './Phone';
 import Picture from './Picture';
 import Plane from './Plane';
+import Plus from './Plus';
 import Pointer from './Pointer';
 import Popin from './Popin';
 import QuestionBold from './QuestionBold';
@@ -78,6 +86,7 @@ import Schedule from './Schedule';
 import SearchBold from './SearchBold';
 import Search from './Search';
 import Shop from './Shop';
+import Sun from './Sun';
 import Support from './Support';
 import Trees from './Trees';
 import Trophy from './Trophy';
@@ -87,6 +96,7 @@ import UserBold from './UserBold';
 import Users from './Users';
 import User from './User';
 import Wallet from './Wallet';
+import Weight from './Weight';
 import Wheels from './Wheels';
 
 export {
@@ -121,6 +131,7 @@ export {
     Cart,
     CautionBold,
     Caution,
+    Change,
     CheckBold,
     Checkbox,
     Check,
@@ -134,6 +145,7 @@ export {
     Download,
     Empty,
     Eye,
+    Factory,
     Globe,
     Heart,
     Hourglass,
@@ -143,13 +155,18 @@ export {
     Letter,
     LinkBold,
     Link,
+    List,
     Lock,
     Marker,
     Meal,
     Megaphone,
     MenuBold,
+    MenuDots,
     Menu,
     Meter,
+    Minus,
+    Moon,
+    Moove,
     Organization,
     Out,
     Paperclip,
@@ -157,6 +174,7 @@ export {
     Phone,
     Picture,
     Plane,
+    Plus,
     Pointer,
     Popin,
     QuestionBold,
@@ -170,6 +188,7 @@ export {
     SearchBold,
     Search,
     Shop,
+    Sun,
     Support,
     Trees,
     Trophy,
@@ -179,5 +198,6 @@ export {
     Users,
     User,
     Wallet,
+    Weight,
     Wheels,
-}
+};

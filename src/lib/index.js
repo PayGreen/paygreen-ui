@@ -116,6 +116,7 @@ import { CarIcon } from './Icon/Icon';
 import { CartIcon } from './Icon/Icon';
 import { CautionBoldIcon } from './Icon/Icon';
 import { CautionIcon } from './Icon/Icon';
+import { ChangeIcon } from './Icon/Icon';
 import { CheckBoldIcon } from './Icon/Icon';
 import { CheckboxIcon } from './Icon/Icon';
 import { CheckIcon } from './Icon/Icon';
@@ -129,6 +130,7 @@ import { CrossIcon } from './Icon/Icon';
 import { DownloadIcon } from './Icon/Icon';
 import { EmptyIcon } from './Icon/Icon';
 import { EyeIcon } from './Icon/Icon';
+import { FactoryIcon } from './Icon/Icon';
 import { GlobeIcon } from './Icon/Icon';
 import { HeartIcon } from './Icon/Icon';
 import { HourglassIcon } from './Icon/Icon';
@@ -138,13 +140,18 @@ import { LetterBoldIcon } from './Icon/Icon';
 import { LetterIcon } from './Icon/Icon';
 import { LinkBoldIcon } from './Icon/Icon';
 import { LinkIcon } from './Icon/Icon';
+import { ListIcon } from './Icon/Icon';
 import { LockIcon } from './Icon/Icon';
 import { MarkerIcon } from './Icon/Icon';
 import { MealIcon } from './Icon/Icon';
 import { MegaphoneIcon } from './Icon/Icon';
 import { MenuBoldIcon } from './Icon/Icon';
+import { MenuDotsIcon } from './Icon/Icon';
 import { MenuIcon } from './Icon/Icon';
 import { MeterIcon } from './Icon/Icon';
+import { MinusIcon } from './Icon/Icon';
+import { MoonIcon } from './Icon/Icon';
+import { MooveIcon } from './Icon/Icon';
 import { OrganizationIcon } from './Icon/Icon';
 import { OutIcon } from './Icon/Icon';
 import { PaperclipIcon } from './Icon/Icon';
@@ -152,6 +159,7 @@ import { PenIcon } from './Icon/Icon';
 import { PhoneIcon } from './Icon/Icon';
 import { PictureIcon } from './Icon/Icon';
 import { PlaneIcon } from './Icon/Icon';
+import { PlusIcon } from './Icon/Icon';
 import { PointerIcon } from './Icon/Icon';
 import { PopinIcon } from './Icon/Icon';
 import { QuestionBoldIcon } from './Icon/Icon';
@@ -165,6 +173,7 @@ import { ScheduleIcon } from './Icon/Icon';
 import { SearchBoldIcon } from './Icon/Icon';
 import { SearchIcon } from './Icon/Icon';
 import { ShopIcon } from './Icon/Icon';
+import { SunIcon } from './Icon/Icon';
 import { SupportIcon } from './Icon/Icon';
 import { TreesIcon } from './Icon/Icon';
 import { TrophyIcon } from './Icon/Icon';
@@ -174,6 +183,7 @@ import { UserBoldIcon } from './Icon/Icon';
 import { UsersIcon } from './Icon/Icon';
 import { UserIcon } from './Icon/Icon';
 import { WalletIcon } from './Icon/Icon';
+import { WeightIcon } from './Icon/Icon';
 import { WheelsIcon } from './Icon/Icon';
 
 // theme
@@ -301,6 +311,7 @@ export {
     CartIcon,
     CautionBoldIcon,
     CautionIcon,
+    ChangeIcon,
     CheckBoldIcon,
     CheckboxIcon,
     CheckIcon,
@@ -314,6 +325,7 @@ export {
     DownloadIcon,
     EmptyIcon,
     EyeIcon,
+    FactoryIcon,
     GlobeIcon,
     HeartIcon,
     HourglassIcon,
@@ -323,13 +335,18 @@ export {
     LetterIcon,
     LinkBoldIcon,
     LinkIcon,
+    ListIcon,
     LockIcon,
     MarkerIcon,
     MealIcon,
     MegaphoneIcon,
     MenuBoldIcon,
+    MenuDotsIcon,
     MenuIcon,
     MeterIcon,
+    MinusIcon,
+    MoonIcon,
+    MooveIcon,
     OrganizationIcon,
     OutIcon,
     PaperclipIcon,
@@ -337,6 +354,7 @@ export {
     PhoneIcon,
     PictureIcon,
     PlaneIcon,
+    PlusIcon,
     PointerIcon,
     PopinIcon,
     QuestionBoldIcon,
@@ -350,6 +368,7 @@ export {
     SearchBoldIcon,
     SearchIcon,
     ShopIcon,
+    SunIcon,
     SupportIcon,
     TreesIcon,
     TrophyIcon,
@@ -359,5 +378,6 @@ export {
     UsersIcon,
     UserIcon,
     WalletIcon,
+    WeightIcon,
     WheelsIcon,
 };
