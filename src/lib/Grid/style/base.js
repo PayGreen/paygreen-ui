@@ -114,7 +114,7 @@ const displayStyle = {
             padding-top: ${props => props.theme.space[props.childrenMarginBig]};
             width: fit-content;
             columns: ${props => props.columnNumber - 1};
-            gap: 0;
+            gap: ${props => props.theme.blockSpace[props.gridGap]};
 
             & > * {
                 padding: ${props => props.theme.space[props.childrenMarginBig]};
