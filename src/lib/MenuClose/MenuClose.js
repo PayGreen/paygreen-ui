@@ -4,6 +4,7 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     iconSizeOptions,
+    rotateSizeOptions,
 } from '../../shared/constants';
 import { ArrowTopIcon } from '../Icon/Icon';
 import { MenuCloseBase } from './style';
@@ -15,6 +16,9 @@ const MenuClose = props => {
                 theme={props.theme} // not necessary, only needed for tests
                 iconSize={iconSizeOptions.lg}
                 colorTheme={props.colorTheme}
+                rotateSize={
+                    props.isOpen ? rotateSizeOptions.d0 : rotateSizeOptions.d180
+                }
             />
 
             <svg className="background" viewBox="0 0 170 28.8">
@@ -26,10 +30,12 @@ const MenuClose = props => {
 
 MenuClose.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    isOpen: PropTypes.bool,
 };
 
 MenuClose.defaultProps = {
     colorTheme: colorThemeDefault,
+    isOpen: true,
 };
 
 export default MenuClose;
