@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-AxgMl fYqYcY"
+  className="sc-AxheI kMbFAc"
 >
   <span
-    className="sc-AxhUy gIpERM"
+    className="sc-AxgMl jMEmOG"
   >
     Categorie de pages
   </span>
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
       href="#"
     >
       <div
-        className="sc-AxiKw iOMvtQ"
+        className="sc-AxiKw sbvyA"
       >
         <span
           className="sc-AxjAm gvlGpt icon"

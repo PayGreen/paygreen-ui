@@ -1,7 +1,10 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import { iconSizeOptions } from '../../shared/constants';
+import {
+    iconSizeOptions,
+    sidebarItemHtmlTagOptions,
+} from '../../shared/constants';
 import { MeterIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import SidebarItem from '../SidebarItem/SidebarItem';
@@ -11,22 +14,20 @@ import SidebarList from '../SidebarList/SidebarList';
 it('renders without crashing', () => {
     const sidebarMenu = TestRenderer.create(
         <SidebarMenu theme={ThemeDefault}>
-            <a href="#">
-                <SidebarItem theme={ThemeDefault}>
-                    <MeterIcon
-                        iconSize={iconSizeOptions.lg}
-                        theme={ThemeDefault}
-                    />
+            <SidebarItem
+                theme={ThemeDefault}
+                as={sidebarItemHtmlTagOptions.button}
+            >
+                <MeterIcon iconSize={iconSizeOptions.lg} theme={ThemeDefault} />
 
-                    <Link
-                        theme={ThemeDefault}
-                        hasUnderline={false}
-                        hasHover={false}
-                    >
-                        Payment
-                    </Link>
-                </SidebarItem>
-            </a>
+                <Link
+                    theme={ThemeDefault}
+                    hasUnderline={false}
+                    hasHover={false}
+                >
+                    Payment
+                </Link>
+            </SidebarItem>
 
             <SidebarList theme={ThemeDefault}>
                 <a href="#">

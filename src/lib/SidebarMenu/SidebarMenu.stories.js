@@ -8,6 +8,7 @@ import {
     colorPalletOptions,
     greyOptions,
     iconSizeOptions,
+    sidebarItemHtmlTagOptions,
     spaceOptions,
 } from '../../shared/constants';
 import Link from '../Link/Link';
@@ -29,45 +30,42 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                 colorThemeDefault,
             )}
         >
-            <a href="#">
-                <SidebarItem
-                    isClickable={true}
+            <SidebarItem
+                htmlTag={sidebarItemHtmlTagOptions.button}
+                colorTheme={radios(
+                    colorThemeLabel,
+                    colorThemeOptions,
+                    colorThemeDefault,
+                )}
+                paddingLateral={select(
+                    paddingLateralLabel,
+                    spaceOptions,
+                    spaceOptions.xs,
+                )}
+            >
+                <MeterIcon
+                    iconSize={iconSizeOptions.lg}
                     colorTheme={radios(
                         colorThemeLabel,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
-                    paddingLateral={select(
-                        paddingLateralLabel,
-                        spaceOptions,
-                        spaceOptions.xs,
+                />
+
+                <Link
+                    hasUnderline={false}
+                    hasHover={false}
+                    colorTheme={radios(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
                     )}
-                    isOpen={boolean('is Open', true)}
                 >
-                    <MeterIcon
-                        iconSize={iconSizeOptions.lg}
-                        colorTheme={radios(
-                            colorThemeLabel,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
-                    />
+                    Tableau de Bord
+                </Link>
+            </SidebarItem>
 
-                    <Link
-                        hasUnderline={false}
-                        hasHover={false}
-                        colorTheme={radios(
-                            colorThemeLabel,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
-                    >
-                        Tableau de Bord
-                    </Link>
-                </SidebarItem>
-            </a>
-
-            <SidebarList isOpen={boolean('is Open', true)}>
+            <SidebarList>
                 <a href="#">
                     <SidebarItem
                         isActive={boolean('Is Active', false)}

@@ -10,6 +10,7 @@ import {
     spaceOptions,
     iconSizeOptions,
     iconHtmlTagOptions,
+    sidebarItemHtmlTagOptions,
 } from '../../shared/constants';
 import Logo from '../Logo/Logo';
 import { logo } from '../Logo/sample/logo';
@@ -68,41 +69,38 @@ storiesOf(folder.nav + 'Sidebar', module)
                         )}
                         paddingLateral={spaceOptions.md}
                     >
-                        <a href="#">
-                            <SidebarItem
-                                isClickable={true}
+                        <SidebarItem
+                            htmlTag={sidebarItemHtmlTagOptions.button}
+                            colorTheme={radios(
+                                colorThemeLabel,
+                                colorThemeOptions,
+                                colorThemeDefault,
+                            )}
+                            paddingLateral={spaceOptions.md}
+                        >
+                            <MeterIcon
+                                iconSize={iconSizeOptions.lg}
                                 colorTheme={radios(
                                     colorThemeLabel,
                                     colorThemeOptions,
                                     colorThemeDefault,
                                 )}
-                                paddingLateral={spaceOptions.md}
-                                isOpen={boolean('is Open', true)}
+                            />
+
+                            <Link
+                                hasUnderline={false}
+                                hasHover={false}
+                                colorTheme={radios(
+                                    colorThemeLabel,
+                                    colorThemeOptions,
+                                    colorThemeDefault,
+                                )}
                             >
-                                <MeterIcon
-                                    iconSize={iconSizeOptions.lg}
-                                    colorTheme={radios(
-                                        colorThemeLabel,
-                                        colorThemeOptions,
-                                        colorThemeDefault,
-                                    )}
-                                />
+                                Tableau de Bord
+                            </Link>
+                        </SidebarItem>
 
-                                <Link
-                                    hasUnderline={false}
-                                    hasHover={false}
-                                    colorTheme={radios(
-                                        colorThemeLabel,
-                                        colorThemeOptions,
-                                        colorThemeDefault,
-                                    )}
-                                >
-                                    Tableau de Bord
-                                </Link>
-                            </SidebarItem>
-                        </a>
-
-                        <SidebarList isOpen={boolean('is Open', true)}>
+                        <SidebarList>
                             <a href="#">
                                 <SidebarItem
                                     colorTheme={radios(

@@ -355,6 +355,14 @@ const labelHtmlTagOptions = {
 
 const labelHtmlTagDefault = labelHtmlTagOptions.label;
 
+// SidebarItem HTML tags
+const sidebarItemHtmlTagOptions = {
+    div: 'div',
+    button: 'button',
+};
+
+const sidebarItemHtmlTagDefault = sidebarItemHtmlTagOptions.div;
+
 /* Grids and aligns */
 
 // Grids types
@@ -508,6 +516,8 @@ export {
     itemHtmlTagDefault,
     labelHtmlTagOptions,
     labelHtmlTagDefault,
+    sidebarItemHtmlTagOptions,
+    sidebarItemHtmlTagDefault,
     displayOptions,
     displayDefault,
     flexDirectionOptions,

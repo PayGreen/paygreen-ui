@@ -4,27 +4,27 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     iconSizeOptions,
-    iconHtmlTagOptions,
     rotateSizeOptions,
+    sidebarItemHtmlTagOptions,
+    sidebarItemHtmlTagDefault,
     spaceOptions,
 } from '../../shared/constants';
 import { SidebarItemBase } from './style';
 import { ArrowBottomIcon } from '../Icon/Icon';
 
-const SidebarItem = props => {
+const SidebarItem = ({ children, htmlTag, ...rest }) => {
     return (
-        <SidebarItemBase {...props}>
-            {props.children}
+        <SidebarItemBase as={htmlTag} {...rest}>
+            {children}
 
-            {props.isClickable ? (
+            {htmlTag === sidebarItemHtmlTagOptions.button ? (
                 <ArrowBottomIcon
-                    theme={props.theme}
-                    htmlTag={iconHtmlTagOptions.button}
-                    colorTheme={props.colorTheme}
+                    theme={rest.theme}
+                    colorTheme={rest.colorTheme}
                     iconSize={iconSizeOptions.sm}
                     hasBackground={true}
                     rotateSize={
-                        props.isOpen
+                        rest.isOpen
                             ? rotateSizeOptions.d180
                             : rotateSizeOptions.d0
                     }
@@ -36,17 +36,17 @@ const SidebarItem = props => {
 
 SidebarItem.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    htmlTag: PropTypes.oneOf(Object.values(sidebarItemHtmlTagOptions)),
     isActive: PropTypes.bool,
     isOpen: PropTypes.bool,
-    isClickable: PropTypes.bool,
     paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 SidebarItem.defaultProps = {
     colorTheme: colorThemeDefault,
+    htmlTag: sidebarItemHtmlTagDefault,
     isActive: false,
     isOpen: true,
-    isClickable: false,
     paddingLateral: spaceOptions.xs,
 };
 
