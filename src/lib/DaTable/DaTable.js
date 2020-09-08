@@ -8,12 +8,14 @@ const DaTable = props => {
 };
 
 DaTable.propTypes = {
+    blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 DaTable.defaultProps = {
+    blockWidth: spaceOptions.md,
     marginLateral: spaceDefault,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,

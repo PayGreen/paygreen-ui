@@ -26,7 +26,7 @@ const DaTableHead = props => {
             >
                 <Title
                     theme={props.theme} // not necessary, only needed for tests
-                    textSize={fontSizeOptions.xxs}
+                    textSize={fontSizeOptions.xs}
                     colorWab={greyOptions.grey50}
                 >
                     {props.blockTitle}
