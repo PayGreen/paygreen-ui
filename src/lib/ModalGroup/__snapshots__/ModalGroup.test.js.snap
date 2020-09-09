@@ -2,42 +2,19 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-AxgMl fFPQpl"
+  className="sc-AxhCb jacuZC"
 >
   <div
-    className="sc-AxheI fniENP"
-  >
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      <span
-        className="sc-AxjAm jCcELs"
-      >
-         
-        Open the modal
-      </span>
-    </button>
-  </div>
+    className="sc-AxjAm jQOiSJ"
+    onClick={[Function]}
+  />
   <div
-    className="sc-AxhUy jBGgCf"
+    className="sc-AxiKw BA-DEX"
   >
     <div
-      className="sc-AxheI fniENP"
+      className="sc-AxirZ hJVQgR"
     >
-      <div
-        className="sc-AxirZ cKOSau"
-        onClick={[Function]}
-      />
-    </div>
-    <div
-      className="sc-AxhCb MeQqL"
-    >
-      <div
-        className="sc-AxiKw gYxlyN"
-      >
-        This is the text
-      </div>
+      This is the text
     </div>
   </div>
 </div>
