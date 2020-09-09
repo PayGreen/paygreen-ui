@@ -60,6 +60,7 @@ import MenuTertiary from './MenuTertiary/MenuTertiary';
 import Modal from './Modal/Modal';
 import ModalBody from './ModalBody/ModalBody';
 import ModalContent from './ModalContent/ModalContent';
+import ModalControl from './ModalGroup/ModalControl';
 import ModalGroup from './ModalGroup/ModalGroup';
 import ModalHeader from './ModalHeader/ModalHeader';
 import Overlay from './Overlay/Overlay';
@@ -256,6 +257,7 @@ export {
     Modal,
     ModalBody,
     ModalContent,
+    ModalControl,
     ModalGroup,
     ModalHeader,
     Overlay,
