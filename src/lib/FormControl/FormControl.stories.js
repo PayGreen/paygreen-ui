@@ -9,6 +9,8 @@ import {
     formStatusOptions,
     formStatusDefault,
     inputWidthOptions,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import DaHelp from '../DaHelp/DaHelp';
 import DaInput from '../DaInput/DaInput';
@@ -76,6 +78,16 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusDefault,
             )}
             required={boolean(requiredLabel, false)}
+            marginTop={select(
+                'Margin top',
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginBottom={select(
+                'Margin bottom',
+                spaceOptions,
+                spaceDefault,
+            )}
         >
             <DaLabel>Select label</DaLabel>
 
@@ -116,7 +128,7 @@ storiesOf(folder.form + 'FormControl', module)
                     {MessageContent}
                 </Message>
             ) : (
-                <div></div> //to replace 'null' value and avoid error from storybook
+                <></> //to replace 'null' value and avoid error from storybook
             )}
         </FormControl>
     ))

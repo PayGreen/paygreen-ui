@@ -1,14 +1,9 @@
-import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
 const ModalNoScrollStyle = createGlobalStyle`
     body {
-        overflow: hidden;
+        overflow: hidden !important;
     }
 `;
 
-const ModalGroupBase = styled.div``;
-
-const ModalCloseControlBase = styled.div``;
-
-export { ModalNoScrollStyle, ModalGroupBase, ModalCloseControlBase };
+export { ModalNoScrollStyle };

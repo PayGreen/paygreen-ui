@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { formStatusOptions, formStatusDefault } from '../../shared/constants';
+import {
+    formStatusOptions,
+    formStatusDefault,
+    spaceOptions,
+    spaceDefault,
+} from '../../shared/constants';
 import { FormControlBase } from './style';
 import Message from '../Message/Message';
 
-const FormControl = ({children, required, colorStatus, ...rest}) => {
+const FormControl = ({ children, required, colorStatus, ...rest }) => {
     return (
         <FormControlBase {...rest} colorStatus={colorStatus}>
             {React.Children.map(children, child => {
@@ -26,12 +31,16 @@ FormControl.propTypes = {
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     required: PropTypes.bool,
     hasHelpButton: PropTypes.bool,
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 FormControl.defaultProps = {
     colorStatus: formStatusDefault,
     required: false,
     hasHelpButton: false,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
 };
 
 export default FormControl;

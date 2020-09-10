@@ -21,14 +21,14 @@ import ModalHeader from '../ModalHeader/ModalHeader';
 import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from '../ModalContent/ModalContent';
 import Modal from '../Modal/Modal';
-import ModalCloseControl from './ModalCloseControl';
+import ModalControl from './ModalControl';
 import ModalGroup from './ModalGroup';
 
 storiesOf(folder.main + folder.sub.modal + 'ModalGroup', module)
     .addDecorator(withKnobs)
     .add('Modal Group', () => (
         <ModalGroup>
-            <ModalCloseControl>
+            <ModalControl>
                 <button type="button">
                     <DaButton
                         buttonSize={buttonSizeOptions.md}
@@ -38,12 +38,12 @@ storiesOf(folder.main + folder.sub.modal + 'ModalGroup', module)
                         Open the modal
                     </DaButton>
                 </button>
-            </ModalCloseControl>
+            </ModalControl>
 
             <Modal>
-                <ModalCloseControl>
+                <ModalControl>
                     <Overlay opacityValue={20} />
-                </ModalCloseControl>
+                </ModalControl>
 
                 <ModalContent>
                     <ModalHeader>
@@ -51,13 +51,13 @@ storiesOf(folder.main + folder.sub.modal + 'ModalGroup', module)
                             This is the Title
                         </Title>
 
-                        <ModalCloseControl>
+                        <ModalControl>
                             <CrossIcon
                                 htmlTag={iconHtmlTagOptions.button}
                                 iconSize={iconSizeOptions.md}
                                 colorPallet={colorPalletOptions.wab}
                             />
-                        </ModalCloseControl>
+                        </ModalControl>
                     </ModalHeader>
 
                     <ModalBody
@@ -71,7 +71,7 @@ storiesOf(folder.main + folder.sub.modal + 'ModalGroup', module)
                         </Text>
 
                         <ButtonGroup marginTop={spaceOptions.xs}>
-                            <ModalCloseControl>
+                            <ModalControl>
                                 <button type="button">
                                     <DaButton
                                         buttonSize={buttonSizeOptions.md}
@@ -85,7 +85,7 @@ storiesOf(folder.main + folder.sub.modal + 'ModalGroup', module)
                                         Close the modal
                                     </DaButton>
                                 </button>
-                            </ModalCloseControl>
+                            </ModalControl>
                         </ButtonGroup>
                     </ModalBody>
                 </ModalContent>

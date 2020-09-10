@@ -1,27 +1,17 @@
 import React, { useState } from 'react';
-import { ModalGroupBase, ModalNoScrollStyle } from './style';
+import { ModalNoScrollStyle } from './style';
 import { ModalContext } from './ModalContext';
 
 const ModalGroup = props => {
     const [isOpen, setOpen] = useState(false);
 
     return (
-        <ModalContext.Provider
-            value={{
-                isOpen,
-                setOpen,
-            }}
-        >
-            {/* necessary to prevent scrolling when modal is opened */}
+        <ModalContext.Provider value={{ isOpen, setOpen }}>
             {isOpen ? <ModalNoScrollStyle /> : null}
 
-            <ModalGroupBase {...props}>
-                {React.Children.map(props.children, child =>
-                    React.cloneElement(child, {
-                        isOpen: isOpen,
-                    }),
-                )}
-            </ModalGroupBase>
+            {React.Children.map(props.children, child =>
+                React.cloneElement(child, { isOpen: isOpen }),
+            )}
         </ModalContext.Provider>
     );
 };
