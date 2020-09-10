@@ -10,6 +10,8 @@ import { DaTextareaBase } from '../../DaTextarea/style';
 const FormControlBase = styled.div`
     ${props => (props.colorStatus !== formStatusDefault ? statusStyle : null)};
     ${props => (props.hasHelpButton ? gridStyle : null)};
+    margin-top: ${props => props.theme.space[props.marginTop]};
+    margin-bottom: ${props => props.theme.space[props.marginBottom]};
 
     ${DaInputBase},
     ${DaSelectBase},
