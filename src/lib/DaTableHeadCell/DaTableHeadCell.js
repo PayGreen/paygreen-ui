@@ -31,12 +31,36 @@ const DaTableHeadCell = ({ children, label, ...rest }) => {
     }
 
     return (
-        <DaTableHeadCellBase {...rest} hasControls={sortIcon || groupIcon}>
-            {label ? <span>{label}</span> : null}
-            {sortIcon ? <span className="icon-child">{sortIcon}</span> : null}
-            {groupIcon ? <span className="icon-child">{groupIcon}</span> : null}
+        <DaTableHeadCellBase
+            {...rest}
+            hasControls={sortIcon || groupIcon}
+            className={!children && !sortIcon ? 'hideOnSmallScreen' : null}
+        >
+            <div className="head-child">
+                {label ? <span className="label-child">{label}</span> : null}
 
-            {children ? <div className="cell-child">{children}</div> : null}
+                {sortIcon ? (
+                    <span className="icon-child">{sortIcon}</span>
+                ) : null}
+
+                {groupIcon ? (
+                    <span className="icon-child hideOnSmallScreen">
+                        {groupIcon}
+                    </span>
+                ) : null}
+
+                {children && rest.isCheckbox ? (
+                    <span className="hideOnBigScreen">{children}</span>
+                ) : null}
+            </div>
+
+            {children && !rest.isCheckbox ? (
+                <div className="cell-child">{children}</div>
+            ) : null}
+
+            {children && rest.isCheckbox ? (
+                <div className="hideOnSmallScreen">{children}</div>
+            ) : null}
         </DaTableHeadCellBase>
     );
 };

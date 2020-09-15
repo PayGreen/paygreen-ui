@@ -6,7 +6,7 @@ const DaTableBase = styled.div`
     color: ${props => props.theme.wab.grey60};
 
     @media (${props => props.theme.query.max.lg}) {
-        max-width: ${props => props.theme.blockWidth.md};
+        max-width: ${props => props.theme.blockWidth[props.blockWidth]};
     }
 
     @media (${props => props.theme.query.min.lg}) {

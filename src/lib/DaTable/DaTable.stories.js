@@ -23,6 +23,7 @@ import DaTableBody from '../DaTableBody/DaTableBody';
 import DaTableHeadCell from '../DaTableHeadCell/DaTableHeadCell';
 import DaTableHead from '../DaTableHead/DaTableHead';
 import DaInput from '../DaInput/DaInput';
+import Checkbox from '../Checkbox/Checkbox';
 import DaTable from './DaTable';
 
 const iconStyles = {
@@ -157,6 +158,11 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
         'DaTable',
         () => (
             <DaTable
+                blockWidth={select(
+                    'Width on small screens',
+                    spaceOptions,
+                    spaceOptions.md,
+                )}
                 marginLateral={select(
                     'Lateral margins',
                     spaceOptions,
@@ -174,7 +180,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
                         isCheckbox={true}
                         label="Select/deselect all"
                     >
-                        <input type="checkbox" style={{ display: 'block' }} />
+                        <Checkbox id="select" />
                     </DaTableHeadCell>
 
                     <DaTableHeadCell label="ID" />
@@ -184,8 +190,8 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
                         label="Date"
                     />
 
-                    <DaTableHeadCell label="Name">
-                        <DaInput placeholder="Search name" fieldSize="sm" />
+                    <DaTableHeadCell label="Name" sortIcon={<ArrowBottomIcon title="Sort DESC on Sample" />}>
+                        <DaInput placeholder="Search name" fieldSize="sm" blockWidth="sm" />
                     </DaTableHeadCell>
 
                     <DaTableHeadCell
@@ -218,8 +224,8 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
                             }
                         >
                             <DaTableCell isCheckbox={true}>
-                                <input
-                                    type="checkbox"
+                                <Checkbox
+                                    id={index.toString()}
                                     checked={
                                         !index
                                             ? boolean(isActiveLabel, false)

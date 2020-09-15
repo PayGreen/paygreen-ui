@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { folder } from '../../shared/constants';
 import DaTableCell from '../DaTableCell/DaTableCell';
+import Checkbox from '../Checkbox/Checkbox';
 import DaTableRow from './DaTableRow';
 
 const isActiveLabel = 'Is active';
@@ -12,8 +13,8 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableRow', module)
     .add('DaTableRow', () => (
         <DaTableRow isActive={boolean(isActiveLabel, false)}>
             <DaTableCell isCheckbox={true}>
-                <input
-                    type="checkbox"
+                <Checkbox
+                    id="select"
                     checked={boolean(isActiveLabel, false)}
                     readOnly={true}
                 />

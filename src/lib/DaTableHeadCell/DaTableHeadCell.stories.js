@@ -8,7 +8,7 @@ import DaTableHeadCell from './DaTableHeadCell';
 
 const sortIconActiveLabel = 'Sort icon active';
 const ascSortLabel = 'ASC sort (need ' + sortIconActiveLabel + ')';
-const groupIconActiveLabel = 'Group icon active';
+const groupIconActiveLabel = 'Group icon active (only on Desktop)';
 
 storiesOf(folder.tables + folder.sub.daTable + 'DaTableHeadCell', module)
     .addDecorator(withKnobs)
@@ -38,7 +38,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHeadCell', module)
                 ) : null
             }
             groupIcon={
-                boolean('With group icon', false) ? (
+                boolean('With group icon (only on Desktop)', false) ? (
                     <MenuIcon
                         isActive={boolean(groupIconActiveLabel, false)}
                         title={
@@ -57,7 +57,11 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHeadCell', module)
             sortIcon={
                 boolean('With sort icon', false) ? <ArrowBottomIcon /> : null
             }
-            groupIcon={boolean('With group icon', false) ? <MenuIcon /> : null}
+            groupIcon={
+                boolean('With group icon (only on Desktop)', false) ? (
+                    <MenuIcon />
+                ) : null
+            }
             label="Cell for DaTableHead"
         >
             <DaInput placeholder="Search" fieldSize="sm" />

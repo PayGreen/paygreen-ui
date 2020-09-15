@@ -17,11 +17,11 @@ const DaTableHeadCellBase = styled.div`
             margin-top: ${props => props.theme.space.xs};
         }
 
-        ${props => (props.isCheckbox ? null : borderRight)};
-    }
+        .icon-child {
+            margin-left: ${props => props.theme.space.xs};
+        }
 
-    .icon-child {
-        margin-left: ${props => props.theme.space.xs};
+        ${props => (props.isCheckbox ? null : borderRight)};
     }
 
     ${props => (props.isCheckbox ? isCheckboxStyle : null)};
