@@ -1,5 +1,26 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
+import { sidebarItemHtmlTagOptions } from '../../../shared/constants';
+
+const aHoverStyle = css`
+    a:hover &,
+    a:active &,
+    a:focus & {
+        &::before {
+            left: 0;
+        }
+    }
+`;
+
+const buttonHoverStyle = css`
+    &:hover,
+    &:active,
+    &:focus {
+        &::before {
+            left: 0;
+        }
+    }
+`;
 
 const hoverBase = css`
     &::before {
@@ -27,30 +48,31 @@ const hoverBase = css`
         transition: all ${props => props.theme.transition.xl};
     }
 
-    a:hover &,
-    a:active &,
-    a:focus & {
-        &::before {
-            left: 0;
-        }
-    }
+    ${props =>
+        props.as === sidebarItemHtmlTagOptions.button
+            ? buttonHoverStyle
+            : aHoverStyle}
 `;
 
 const activeStyle = css`
     background-image: linear-gradient(
         to left,
         ${props =>
-                transparentize(
-                    0.8,
-                    props.theme.color[props.colorTheme].gradientShade,
-                )},
+            transparentize(
+                0.8,
+                props.theme.color[props.colorTheme].gradientShade,
+            )},
         ${props =>
-                transparentize(
-                    0.8,
-                    props.theme.color[props.colorTheme].gradientBase,
-                )}
+            transparentize(
+                0.8,
+                props.theme.color[props.colorTheme].gradientBase,
+            )}
     );
     transition: all ${props => props.theme.transition.xl};
 `;
 
-export { activeStyle, hoverBase };
+const buttonStyle = css`
+    width: 100%;
+`;
+
+export { activeStyle, buttonStyle, hoverBase };

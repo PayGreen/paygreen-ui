@@ -8,6 +8,7 @@ const ModalBase = styled.div`
     height: 100vh;
     left: 0;
     top: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
