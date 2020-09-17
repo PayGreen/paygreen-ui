@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { folder, rotateSizeOptions } from '../../shared/constants';
-import { ArrowBottomIcon, MenuIcon } from '../Icon/Icon';
+import { ArrowBottomIcon, ListIcon } from '../Icon/Icon';
 import DaInput from '../DaInput/DaInput';
 import DaTableHeadCell from './DaTableHeadCell';
 
@@ -39,7 +39,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHeadCell', module)
             }
             groupIcon={
                 boolean('With group icon (only on Desktop)', false) ? (
-                    <MenuIcon
+                    <ListIcon
                         isActive={boolean(groupIconActiveLabel, false)}
                         title={
                             boolean(groupIconActiveLabel, false)
@@ -59,7 +59,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableHeadCell', module)
             }
             groupIcon={
                 boolean('With group icon (only on Desktop)', false) ? (
-                    <MenuIcon />
+                    <ListIcon />
                 ) : null
             }
             label="Cell for DaTableHead"

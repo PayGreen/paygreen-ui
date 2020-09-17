@@ -14,7 +14,7 @@ import {
     CrossBoldIcon,
     ClockBoldIcon,
     ArrowBottomIcon,
-    MenuIcon,
+    ListIcon,
 } from '../Icon/Icon';
 import Text from '../Text/Text';
 import DaTableCell from '../DaTableCell/DaTableCell';
@@ -211,12 +211,12 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
                     />
 
                     <DaTableHeadCell
-                        groupIcon={<MenuIcon title="Group by Type" />}
+                        groupIcon={<ListIcon title="Group by Type" />}
                         label="Type"
                     />
 
                     <DaTableHeadCell
-                        groupIcon={<MenuIcon title="Group by Status" />}
+                        groupIcon={<ListIcon title="Group by Status" />}
                         label="Status"
                     />
                 </DaTableHead>
