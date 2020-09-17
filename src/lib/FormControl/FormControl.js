@@ -13,6 +13,9 @@ const FormControl = ({ children, required, colorStatus, ...rest }) => {
     return (
         <FormControlBase {...rest} colorStatus={colorStatus}>
             {React.Children.map(children, child => {
+                if (!child) {
+                    return null;
+                }
                 if (child.type === Message) {
                     return React.cloneElement(child, {
                         colorStatus: colorStatus,

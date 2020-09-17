@@ -24,7 +24,6 @@ const baseColor = {
         }
 
         .badge {
-            background-color: ${props => props.theme.color[props.colorWab]};
             color: ${props => props.theme.wab[props.colorWab]};
         }
     `,
@@ -137,25 +136,24 @@ const noBackground = css`
     }
 `;
 
+const iconSize = props => math(props.theme.icon.size[props.iconSize] + '/2');
+
 const badgeStyle = css`
     .badge {
         box-sizing: content-box;
         position: absolute;
         bottom: 0;
         left: ${props => math(props.theme.icon.size[props.iconSize] + '*1.2')};
-        min-width: ${props =>
-            math(props.theme.icon.size[props.iconSize] + '/2')};
-        height: ${props => math(props.theme.icon.size[props.iconSize] + '/2')};
+        min-width: ${iconSize};
+        height: ${iconSize};
         padding: ${props =>
             math(
                 props.theme.icon.size[props.iconSize] +
                     '/4 - ' +
                     props.theme.space.xs,
             )};
-        border-radius: ${props =>
-            math(props.theme.icon.size[props.iconSize] + '/2')};
-        font-size: ${props =>
-            math(props.theme.font.size[props.iconSize] + '/2 ')};
+        border-radius: ${iconSize};
+        font-size: ${iconSize};
         font-weight: ${props => props.theme.font.weight.bold};
     }
 `;

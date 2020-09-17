@@ -335,7 +335,7 @@ storiesOf(folder.main + 'Icons', module)
     .add('Icon with badge number', () => (
         <BellIcon
             htmlTag={iconHtmlTagOptions.button}
-            badgeNumber={number('value', defaultValue, options)}
+            badgeNumber={number('Badge value', defaultValue, options)}
             colorPallet={radios(
                 colorPalletLabel,
                 colorPalletOptions,
