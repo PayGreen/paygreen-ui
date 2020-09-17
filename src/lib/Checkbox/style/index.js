@@ -4,6 +4,7 @@ import { checkboxSize, checkSize, disabledStyle, basicStyle } from './base';
 
 const CheckboxBase = styled.div`
     position: relative;
+    display: flex; /* avoid 100% large label (for hover) */
     margin: ${props => props.theme.space.sm} 0;
 
     label {
@@ -42,6 +43,7 @@ const CheckboxBase = styled.div`
     }
 
     input {
+        outline: none;
         position: absolute;
         transform: translate(-50%, -100%);
         top: ${checkboxSize};
