@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Checkbox from '../Checkbox/Checkbox';
 import { DaTableCellBase } from './style';
 
 const DaTableCell = ({ children, label, field, ...rest }) => {
-    const labelContent = label ? (
+    const labelContent = label && label.length ? (
         <span className="cell-label">{label}</span>
     ) : null;
 
@@ -14,7 +15,11 @@ const DaTableCell = ({ children, label, field, ...rest }) => {
     );
 
     return (
-        <DaTableCellBase {...rest} hasLabel={labelContent ? true : false}>
+        <DaTableCellBase
+            {...rest}
+            isCheckbox={children && children.type === Checkbox}
+            hasLabel={label && label.length}
+        >
             {labelContent}
             {content}
             {field ? field : null}
@@ -24,7 +29,6 @@ const DaTableCell = ({ children, label, field, ...rest }) => {
 
 DaTableCell.propTypes = {
     isMain: PropTypes.bool,
-    isCheckbox: PropTypes.bool,
     isId: PropTypes.bool,
     label: PropTypes.string,
     field: PropTypes.element,
@@ -32,7 +36,6 @@ DaTableCell.propTypes = {
 
 DaTableCell.defaultProps = {
     isMain: true,
-    isCheckbox: false,
     isId: false,
 };
 

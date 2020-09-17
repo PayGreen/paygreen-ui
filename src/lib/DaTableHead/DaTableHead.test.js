@@ -9,7 +9,7 @@ import DaTableHead from './DaTableHead';
 it('renders without crashing', () => {
     const component = TestRenderer.create(
         <DaTableHead theme={ThemeDefault}>
-            <DaTableHeadCell isCheckbox={true} theme={ThemeDefault}>
+            <DaTableHeadCell theme={ThemeDefault}>
                 <Checkbox id="select" theme={ThemeDefault}/>
             </DaTableHeadCell>
 

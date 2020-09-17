@@ -7,9 +7,10 @@ import {
     formStatusDefault,
     spaceOptions,
 } from '../../shared/constants';
+import Checkbox from '../Checkbox/Checkbox';
 import { DaTableHeadCellBase } from './style';
 
-const DaTableHeadCell = ({ children, label, ...rest }) => {
+const DaTableHeadCell = ({ children, label, sortIcon, groupIcon, ...rest }) => {
     const iconProps = {
         htmlTag: iconHtmlTagOptions.button,
         iconSize: iconSizeOptions.xxs,
@@ -19,20 +20,13 @@ const DaTableHeadCell = ({ children, label, ...rest }) => {
         colorPallet: colorPalletOptions.status,
         colorStatus: formStatusDefault,
     };
-    let sortIcon = null;
-    let groupIcon = null;
 
-    if (rest.sortIcon) {
-        sortIcon = React.cloneElement(rest.sortIcon, iconProps);
-    }
-
-    if (rest.groupIcon) {
-        groupIcon = React.cloneElement(rest.groupIcon, iconProps);
-    }
+    const isCheckbox = children && children.type === Checkbox;
 
     return (
         <DaTableHeadCellBase
             {...rest}
+            isCheckbox={isCheckbox}
             hasControls={sortIcon || groupIcon}
             className={!children && !sortIcon ? 'hideOnSmallScreen' : null}
         >
@@ -40,25 +34,27 @@ const DaTableHeadCell = ({ children, label, ...rest }) => {
                 {label ? <span className="label-child">{label}</span> : null}
 
                 {sortIcon ? (
-                    <span className="icon-child">{sortIcon}</span>
+                    <span className="icon-child">
+                        {React.cloneElement(sortIcon, iconProps)}
+                    </span>
                 ) : null}
 
                 {groupIcon ? (
                     <span className="icon-child hideOnSmallScreen">
-                        {groupIcon}
+                        {React.cloneElement(groupIcon, iconProps)}
                     </span>
                 ) : null}
 
-                {children && rest.isCheckbox ? (
+                {children && isCheckbox ? (
                     <span className="hideOnBigScreen">{children}</span>
                 ) : null}
             </div>
 
-            {children && !rest.isCheckbox ? (
+            {children && !isCheckbox ? (
                 <div className="cell-child">{children}</div>
             ) : null}
 
-            {children && rest.isCheckbox ? (
+            {children && isCheckbox ? (
                 <div className="hideOnSmallScreen">{children}</div>
             ) : null}
         </DaTableHeadCellBase>
@@ -66,14 +62,12 @@ const DaTableHeadCell = ({ children, label, ...rest }) => {
 };
 
 DaTableHeadCell.propTypes = {
-    isCheckbox: PropTypes.bool,
     sortIcon: PropTypes.element,
     groupIcon: PropTypes.element,
     label: PropTypes.string,
 };
 
 DaTableHeadCell.defaultProps = {
-    isCheckbox: false,
     sortIcon: null,
     groupIcon: null,
 };

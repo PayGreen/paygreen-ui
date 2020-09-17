@@ -176,10 +176,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
                 )}
             >
                 <DaTableHead resultsLabel="10 results">
-                    <DaTableHeadCell
-                        isCheckbox={true}
-                        label="Select/deselect all"
-                    >
+                    <DaTableHeadCell label="Select/deselect all">
                         <Checkbox id="select" />
                     </DaTableHeadCell>
 
@@ -190,8 +187,17 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
                         label="Date"
                     />
 
-                    <DaTableHeadCell label="Name" sortIcon={<ArrowBottomIcon title="Sort DESC on Sample" />}>
-                        <DaInput placeholder="Search name" fieldSize="sm" blockWidth="sm" />
+                    <DaTableHeadCell
+                        label="Name"
+                        sortIcon={
+                            <ArrowBottomIcon title="Sort DESC on Sample" />
+                        }
+                    >
+                        <DaInput
+                            placeholder="Search name"
+                            fieldSize="sm"
+                            blockWidth="sm"
+                        />
                     </DaTableHeadCell>
 
                     <DaTableHeadCell
@@ -223,7 +229,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
                                 !index ? boolean(isActiveLabel, false) : false
                             }
                         >
-                            <DaTableCell isCheckbox={true}>
+                            <DaTableCell>
                                 <Checkbox
                                     id={index.toString()}
                                     checked={

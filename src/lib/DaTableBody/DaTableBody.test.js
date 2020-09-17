@@ -1,6 +1,7 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
+import Checkbox from '../Checkbox/Checkbox';
 import DaTableCell from '../DaTableCell/DaTableCell';
 import DaTableRow from '../DaTableRow/DaTableRow';
 import DaTableBody from './DaTableBody';
@@ -9,8 +10,8 @@ it('renders without crashing', () => {
     const component = TestRenderer.create(
         <DaTableBody theme={ThemeDefault}>
             <DaTableRow theme={ThemeDefault}>
-                <DaTableCell theme={ThemeDefault} isCheckbox={true}>
-                    <input type="checkbox" />
+                <DaTableCell theme={ThemeDefault}>
+                    <Checkbox theme={ThemeDefault} id="select"/>
                 </DaTableCell>
 
                 <DaTableCell theme={ThemeDefault} isId={true}>

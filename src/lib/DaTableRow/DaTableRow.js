@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Checkbox from '../Checkbox/Checkbox';
 import { DaTableRowBase } from './style';
 
 const DaTableRow = props => {
@@ -16,7 +17,10 @@ const DaTableRow = props => {
                 hasId = true;
             }
 
-            if (child.props.isCheckbox) {
+            if (
+                child.props.children &&
+                child.props.children.type === Checkbox
+            ) {
                 hasCheckbox = true;
             }
         } else {
@@ -39,7 +43,10 @@ const DaTableRow = props => {
             {React.Children.map(props.children, child => {
                 if (typeof child === 'object') {
                     if (child.props.isMain) {
-                        if (child.props.isCheckbox) {
+                        if (
+                            child.props.children &&
+                            child.props.children.type === Checkbox
+                        ) {
                             className = 'cell-checkbox';
                         } else if (child.props.isId) {
                             className = 'cell-id';

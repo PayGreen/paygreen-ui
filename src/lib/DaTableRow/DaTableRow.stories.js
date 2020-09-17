@@ -12,7 +12,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTableRow', module)
     .addDecorator(withKnobs)
     .add('DaTableRow', () => (
         <DaTableRow isActive={boolean(isActiveLabel, false)}>
-            <DaTableCell isCheckbox={true}>
+            <DaTableCell>
                 <Checkbox
                     id="select"
                     checked={boolean(isActiveLabel, false)}
