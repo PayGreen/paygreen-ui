@@ -40,6 +40,7 @@ const bulletStyle = {
 
 const arrowStyle = css`
     grid-area: arrow;
+    align-self: center;
     display: flex;
     align-items: center;
     opacity: 0;
@@ -104,6 +105,12 @@ const activeStyle = css`
 const clickableStyle = css`
     ${props => gridItemArrow[props.arrowStyle]};
     ${props => (props.isClicked ? activeStyle : disabledStyle)};
+    width: 100%; /* Fix for button tag */
+
+    @media (${props => props.theme.query.max.lg}) {
+        margin-top: ${props => props.theme.space.sm};
+        margin-bottom: ${props => props.theme.space.sm};
+    }
 
     &:hover,
     &:active,

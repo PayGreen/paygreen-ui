@@ -8,18 +8,20 @@ import {
     iconSizeOptions,
     iconSizeDefault,
     decorationOptions,
+    iconHtmlTagOptions,
+    iconHtmlTagDefault
 } from '../../shared/constants';
 import { ArrowLeftIcon, ArrowRightIcon } from '../Icon/Icon';
 import { ListItemBase } from './style';
 
 const ListItem = props => {
     const withoutIconStyles = [listStyleOptions.number, listStyleOptions.dash];
-
-    const isClickable = props.href && props.href.length;
+    const isClickable = props.htmlTag === iconHtmlTagOptions.button;
 
     return (
         <ListItemBase
-            as={isClickable ? 'a' : 'span'}
+            as={props.htmlTag}
+            type={isClickable ? 'button' : null}
             isClickable={isClickable}
             {...props}
         >
@@ -57,23 +59,23 @@ const ListItem = props => {
 };
 
 ListItem.propTypes = {
+    htmlTag: PropTypes.oneOf(Object.values(iconHtmlTagOptions)),
     number: PropTypes.number,
     isClicked: PropTypes.bool,
     bulletStyle: PropTypes.oneOf(Object.values(listStyleOptions)),
     bulletSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     arrowStyle: PropTypes.oneOf(Object.values(decorationOptions)),
-    hasLink: PropTypes.bool,
 };
 
 ListItem.defaultProps = {
+    htmlTag: iconHtmlTagDefault,
     number: 1,
     isClicked: false,
     bulletStyle: listStyleDefault,
     bulletSize: iconSizeDefault,
     colorTheme: colorThemeDefault,
     arrowStyle: decorationOptions.none,
-    hasLink: false,
 };
 
 export default ListItem;

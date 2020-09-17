@@ -11,6 +11,7 @@ import {
     spaceDefault,
     iconSizeOptions,
     iconSizeDefault,
+    iconHtmlTagOptions,
 } from '../../shared/constants';
 import {
     LeafIcon,
@@ -80,7 +81,7 @@ storiesOf(folder.main + folder.sub.list + 'List', module)
             {sampleWithIcons.map((element, index) => (
                 <ListItem
                     key={index}
-                    href="#"
+                    htmlTag={iconHtmlTagOptions.button}
                     bulletStyle={listStyleOptions.icon}
                     bulletSize={select(
                         bulletSizeLabel,
