@@ -13,6 +13,8 @@ import {
     arrowBlockDefault,
     iconSizeOptions,
     fontSizeOptions,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import Text from '../Text/Text';
 import Message from './Message';
@@ -46,6 +48,16 @@ storiesOf(folder.form + 'Message', module)
                 blockWidthLabel,
                 inputWidthOptions,
                 inputWidthDefault,
+            )}
+            marginTop={select(
+                'Margin top',
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginBottom={select(
+                'Margin bottom',
+                spaceOptions,
+                spaceDefault,
             )}
         >
             <Text textSize={fontSizeOptions.sm}>

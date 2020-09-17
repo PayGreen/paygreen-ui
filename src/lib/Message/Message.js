@@ -9,6 +9,8 @@ import {
     inputWidthDefault,
     arrowBlockOptions,
     arrowBlockDefault,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import { MessageBase } from './style';
 
@@ -21,6 +23,8 @@ Message.propTypes = {
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     arrowBlock: PropTypes.oneOf(Object.values(arrowBlockOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 Message.defaultProps = {
@@ -28,6 +32,8 @@ Message.defaultProps = {
     blockWidth: inputWidthDefault,
     fieldSize: buttonSizeDefault,
     arrowBlock: arrowBlockDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
 };
 
 export default Message;
