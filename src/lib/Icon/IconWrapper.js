@@ -27,12 +27,18 @@ const IconWrapper = props => {
                     return React.cloneElement(child);
                 }
             })}
+            {props.badgeNumber ? (
+                <div className="badge">
+                    {props.badgeNumber <= 99 ? props.badgeNumber : 99 + '+'}
+                </div>
+            ) : null}
         </IconBase>
     );
 };
 
 IconWrapper.propTypes = {
     htmlTag: PropTypes.oneOf(Object.values(iconHtmlTagOptions)),
+    badgeNumber: PropTypes.number,
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
@@ -51,6 +57,7 @@ IconWrapper.propTypes = {
 
 IconWrapper.defaultProps = {
     htmlTag: iconHtmlTagDefault,
+    badgeNumber: 0,
     colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,

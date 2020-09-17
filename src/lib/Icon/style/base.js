@@ -120,8 +120,25 @@ const noBackground = css`
     }
 `;
 
+const badgeStyle = css`
+    .badge {
+        box-sizing: border-box;
+        position : absolute;
+        bottom : 0;
+        right : 0;
+        background-color: red;
+        color : white;
+        padding: 0 ${props => math(props.theme.icon.size[props.iconSize] + '/6')};
+        width: ${props => math(props.theme.icon.size[props.iconSize] + '/2')};
+        height: ${props => math(props.theme.icon.size[props.iconSize] + '/2')};
+        border-radius: ${props => math(props.theme.icon.size[props.iconSize] + '/3')};
+        font-size: ${props => math(props.theme.icon.size[props.iconSize] + '/3')};
+    }
+`;
+
 export {
     activeColor,
+    badgeStyle,
     baseColor,
     backgroundStyle,
     hasHoverColor,

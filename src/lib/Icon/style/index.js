@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { directionalProperty } from 'polished';
 import {
     activeColor,
+    badgeStyle,
+    resetButtonStyle,
     baseColor,
     backgroundStyle,
     noBackground,
@@ -35,6 +37,9 @@ const IconBase = styled.span`
         props.hasBackground && props.isActive
             ? activeColor[props.colorPallet]
             : null};
+
+    ${props =>
+        props.badgeNumber ? badgeStyle : null};
 `;
 
 export { IconBase };

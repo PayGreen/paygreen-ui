@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select, radios } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, select, radios } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -38,6 +38,14 @@ const marginLeftLabel = 'Margin left';
 const marginRightLabel = 'Margin right';
 const centeredLabel = 'Centered';
 const rotateSizeLabel = 'Rotation (sens horaire)';
+
+const defaultValue = 3;
+const options = {
+  range: true,
+  min: 0,
+  max: 110,
+  step: 1,
+};
 
 storiesOf(folder.main + 'Icons', module)
     .addDecorator(withKnobs)
@@ -315,4 +323,34 @@ storiesOf(folder.main + 'Icons', module)
             notes:
                 'Queen icons with some styles. You can add background, shadow, change colors, add active mode, center icon, change margins or icon size.',
         },
+    )
+    .add(
+        'Icon with badge number',
+        () => (
+            <PointerIcon
+                    badgeNumber={number("value", defaultValue, options)}
+                    colorPallet={radios(
+                        colorPalletLabel,
+                        colorPalletOptions,
+                        colorPalletDefault,
+                    )}
+                    colorTheme={select(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
+                    colorStatus={select(
+                        colorStatusLabel,
+                        formStatusOptions,
+                        formStatusDefault,
+                    )}
+                    iconSize={select(
+                        iconSizeLabel,
+                        iconSizeOptions,
+                        iconSizeOptions.lg,
+                    )}
+                    hasBackground={boolean(backgroundLabel, false)}
+                    hasHover={boolean(hoverLabel, false)}
+                />
+        )
     );
