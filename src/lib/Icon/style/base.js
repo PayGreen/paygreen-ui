@@ -9,12 +9,23 @@ const baseColor = {
         svg {
             fill: ${props => props.theme.color[props.colorTheme].main};
         }
+
+        .badge {
+            background-color: ${props =>
+                props.theme.color[props.colorTheme].gradientBase};
+            color: ${props => props.theme.wab.white00};
+        }
     `,
     wab: css`
         background-color: transparent;
 
         svg {
             fill: ${props => props.theme.wab[props.colorWab]};
+        }
+
+        .badge {
+            background-color: ${props => props.theme.color[props.colorWab]};
+            color: ${props => props.theme.wab[props.colorWab]};
         }
     `,
     status: css`
@@ -23,6 +34,12 @@ const baseColor = {
 
         svg {
             fill: ${props => props.theme.status[props.colorStatus].main};
+        }
+
+        .badge {
+            background-color: ${props =>
+                props.theme.status[props.colorStatus].main};
+            color: ${props => props.theme.wab.white00};
         }
     `,
 };
@@ -122,17 +139,24 @@ const noBackground = css`
 
 const badgeStyle = css`
     .badge {
-        box-sizing: border-box;
-        position : absolute;
-        bottom : 0;
-        right : 0;
-        background-color: red;
-        color : white;
-        padding: 0 ${props => math(props.theme.icon.size[props.iconSize] + '/6')};
-        width: ${props => math(props.theme.icon.size[props.iconSize] + '/2')};
+        box-sizing: content-box;
+        position: absolute;
+        bottom: 0;
+        left: ${props => math(props.theme.icon.size[props.iconSize] + '*1.2')};
+        min-width: ${props =>
+            math(props.theme.icon.size[props.iconSize] + '/2')};
         height: ${props => math(props.theme.icon.size[props.iconSize] + '/2')};
-        border-radius: ${props => math(props.theme.icon.size[props.iconSize] + '/3')};
-        font-size: ${props => math(props.theme.icon.size[props.iconSize] + '/3')};
+        padding: ${props =>
+            math(
+                props.theme.icon.size[props.iconSize] +
+                    '/4 - ' +
+                    props.theme.space.xs,
+            )};
+        border-radius: ${props =>
+            math(props.theme.icon.size[props.iconSize] + '/2')};
+        font-size: ${props =>
+            math(props.theme.font.size[props.iconSize] + '/2 ')};
+        font-weight: ${props => props.theme.font.weight.bold};
     }
 `;
 

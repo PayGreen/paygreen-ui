@@ -27,10 +27,11 @@ const IconWrapper = props => {
                     return React.cloneElement(child);
                 }
             })}
+
             {props.badgeNumber ? (
-                <div className="badge">
+                <span className="badge">
                     {props.badgeNumber <= 99 ? props.badgeNumber : 99 + '+'}
-                </div>
+                </span>
             ) : null}
         </IconBase>
     );
