@@ -13,7 +13,7 @@ import ModalHeader from './ModalHeader';
 import Title from '../Title/Title';
 import { CrossIcon } from '../Icon/Icon';
 
-storiesOf(folder.main + folder.sub.modal + 'ModalHeader', module)
+storiesOf(folder.popup + folder.sub.modal + 'ModalHeader', module)
     .addDecorator(withKnobs)
     .add('ModalHeader', () => (
         <ModalHeader

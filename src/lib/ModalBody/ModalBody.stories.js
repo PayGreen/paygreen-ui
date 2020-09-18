@@ -5,7 +5,7 @@ import { folder, spaceOptions } from '../../shared/constants';
 import ModalBody from './ModalBody';
 import Text from '../Text/Text';
 
-storiesOf(folder.main + folder.sub.modal + 'ModalBody', module)
+storiesOf(folder.popup + folder.sub.modal + 'ModalBody', module)
     .addDecorator(withKnobs)
     .add('ModalBody', () => (
         <ModalBody

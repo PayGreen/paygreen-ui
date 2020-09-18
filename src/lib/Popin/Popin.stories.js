@@ -18,7 +18,7 @@ import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Popin from './Popin';
 
-storiesOf(folder.main + 'Popin', module)
+storiesOf(folder.popup + 'Popin', module)
     .addDecorator(withKnobs)
     .add('Popin', () => (
         <Popin

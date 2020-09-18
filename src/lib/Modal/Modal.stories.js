@@ -20,7 +20,7 @@ import Text from '../Text/Text';
 
 const paddingLateral = 'Lateral padding';
 
-storiesOf(folder.main + folder.sub.modal + 'Modal', module)
+storiesOf(folder.popup + folder.sub.modal + 'Modal', module)
     .addDecorator(withKnobs)
     .add('Modal', () => (
         <Modal isOpen={boolean('Is open', true)}>

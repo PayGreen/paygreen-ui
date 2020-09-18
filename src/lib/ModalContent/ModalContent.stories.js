@@ -18,7 +18,7 @@ import Text from '../Text/Text';
 
 const paddingLateral = 'Lateral padding';
 
-storiesOf(folder.main + folder.sub.modal + 'ModalContent', module)
+storiesOf(folder.popup + folder.sub.modal + 'ModalContent', module)
     .addDecorator(withKnobs)
     .add('ModalContent', () => (
         <ModalContent

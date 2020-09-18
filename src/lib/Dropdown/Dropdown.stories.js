@@ -38,7 +38,7 @@ const popin = (
     </Popin>
 );
 
-storiesOf(folder.main + 'Dropdown', module)
+storiesOf(folder.popup + 'Dropdown', module)
     .addDecorator(withKnobs)
     .add('Dropdown with ClickableBlock', () => (
         <Dropdown>

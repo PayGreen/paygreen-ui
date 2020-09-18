@@ -25,7 +25,7 @@ import ClickableBlock from './ClickableBlock';
 const paddingLabel = 'Padding';
 const marginLabel = 'Margin';
 
-storiesOf(folder.main + 'ClickableBlock', module)
+storiesOf(folder.popup + 'ClickableBlock', module)
     .addDecorator(withKnobs)
     .add('ClickableBlock', () => (
         <ClickableBlock
