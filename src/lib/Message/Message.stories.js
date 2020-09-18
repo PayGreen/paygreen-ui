@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, radios, select, text } from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
@@ -49,20 +49,14 @@ storiesOf(folder.form + 'Message', module)
                 inputWidthOptions,
                 inputWidthDefault,
             )}
-            marginTop={select(
-                'Margin top',
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginBottom={select(
-                'Margin bottom',
-                spaceOptions,
-                spaceDefault,
-            )}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
         >
             <Text textSize={fontSizeOptions.sm}>
-                Message d'erreur. Je répète ceci est un message d'erreur. Et les
-                erreurs c'est pas bien, pas bien du tout. Vraiment pas cool.
+                {text(
+                    'Message content',
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend aliquet libero. Morbi ultrices tristique leo vitae porta.',
+                )}
             </Text>
         </Message>
     ))
@@ -90,7 +84,7 @@ storiesOf(folder.form + 'Message', module)
             )}
         >
             <CautionIcon
-                iconSize={iconSizeOptions.lg}
+                iconSize={iconSizeOptions.md}
                 colorStatus={select(
                     colorStatusLabel,
                     formStatusOptions,
@@ -99,8 +93,10 @@ storiesOf(folder.form + 'Message', module)
             />
 
             <Text textSize={fontSizeOptions.sm}>
-                Message d'erreur. Je répète ceci est un message d'erreur. Et les
-                erreurs c'est pas bien, pas bien du tout. Vraiment pas cool.
+                {text(
+                    'Message content',
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend aliquet libero. Morbi ultrices tristique leo vitae porta.',
+                )}
             </Text>
         </Message>
     ));
