@@ -25,7 +25,7 @@ const fieldSizeLabel = 'Field size';
 const colorStatusLabel = 'Status color';
 const blockWidthLabel = 'Block width';
 
-storiesOf(folder.form + 'Message', module)
+storiesOf(folder.main + 'Message', module)
     .addDecorator(withKnobs)
     .add('Message', () => (
         <Message

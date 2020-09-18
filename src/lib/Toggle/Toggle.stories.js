@@ -18,7 +18,7 @@ const colorPalletLabel = 'Color pallet';
 const colorWabLabel = 'Grey color';
 const colorStatusLabel = 'Status color';
 
-storiesOf(folder.form + 'Toggle', module)
+storiesOf(folder.form + folder.sub.form + 'Toggle', module)
     .addDecorator(withKnobs)
     .add(
         'Toggle simple',
