@@ -8,12 +8,12 @@ import {
 const RadioIconBase = styled.div`
     ${props => labelSize[props.blockSize]};
     position: relative;
-    display: flex; /* avoid 100% large label (for hover) */
 
     input {
+        box-shadow: none;
         outline: none;
         position: absolute;
-        bottom: 1px;
+        bottom: 0;
         transform: translateX(-50%);
         left: 50%;
 
