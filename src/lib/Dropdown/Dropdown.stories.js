@@ -42,7 +42,11 @@ storiesOf(folder.popup + 'Dropdown', module)
     .addDecorator(withKnobs)
     .add('Dropdown with ClickableBlock', () => (
         <Dropdown>
-            <ClickableBlock>
+            <ClickableBlock
+                paddingLateral={spaceOptions.sm}
+                paddingTop={spaceOptions.sm}
+                paddingBottom={spaceOptions.sm}
+            >
                 <Text>Click here</Text>
             </ClickableBlock>
 

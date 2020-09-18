@@ -48,9 +48,9 @@ storiesOf(folder.popup + 'ClickableBlock', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
-            borderTop={boolean('Border top', true)}
-            borderRight={boolean('Border right', true)}
-            borderLeft={boolean('Border left', true)}
+            borderTop={boolean('Border top', false)}
+            borderRight={boolean('Border right', false)}
+            borderLeft={boolean('Border left', false)}
             borderBottom={boolean('Border bottom', true)}
             paddingTop={select(paddingLabel, spaceOptions, spaceOptions.sm)}
             paddingBottom={select(paddingLabel, spaceOptions, spaceOptions.sm)}
@@ -63,6 +63,7 @@ storiesOf(folder.popup + 'ClickableBlock', module)
                 imageType={imageTypeOptions.picture}
                 isCircle={true}
                 blockWidth={imageSizeOptions.xs}
+                marginRight={spaceOptions.md}
             >
                 <img src={portraitFile} alt="picture" />
             </Image>
