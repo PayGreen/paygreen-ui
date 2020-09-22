@@ -59,7 +59,7 @@ const radiusStyle = {
     `,
     croppedCircle: css`
         border-radius: 50%;
-    `
+    `,
 };
 
 const notCropped = css`
@@ -84,13 +84,16 @@ const croppedCircle = css`
 `;
 
 const shadowStyle = css`
-    margin: 0;
-
     img {
-        box-shadow: ${props => props.theme.shadow.size[props.shadowSize] + ' ' + transparentize(
-            props.theme.shadow.opacity[props.shadowSize],
-            props.hasModifiedColor ? props.theme.color[props.colorTheme].main : props.theme.wab.black00
-        )};
+        box-shadow: ${props =>
+            props.theme.shadow.size[props.shadowSize] +
+            ' ' +
+            transparentize(
+                props.theme.shadow.opacity[props.shadowSize],
+                props.hasModifiedColor
+                    ? props.theme.color[props.colorTheme].main
+                    : props.theme.wab.black00,
+            )};
     }
 `;
 
@@ -98,7 +101,6 @@ const decorationShift = '2px';
 
 const decorationStyle = css`
     position: relative;
-    margin: ${decorationShift};
     padding: ${props => props.theme.space.sm};
 
     img {
@@ -109,12 +111,17 @@ const decorationStyle = css`
     &::after {
         content: '';
         background-color: ${props => props.theme.wab.white00};
-        opacity: .3;
+        opacity: 0.3;
         width: 100%;
         height: 100%;
         position: absolute;
-        box-shadow: 0 0 ${decorationShift} ${props => transparentize(0.7, props.theme.wab.black00)};
-        ${props => radiusStyle[props.isCircle ? 'croppedCircle' : 'notCropped']};
+        box-shadow: 0 0
+            ${props =>
+                decorationShift +
+                ' ' +
+                transparentize(0.7, props.theme.wab.black00)};
+        ${props =>
+            radiusStyle[props.isCircle ? 'croppedCircle' : 'notCropped']};
     }
 
     &::before {
@@ -139,5 +146,6 @@ export {
     notCropped,
     croppedCircle,
     shadowStyle,
-    decorationStyle
+    decorationShift,
+    decorationStyle,
 };

@@ -37,6 +37,8 @@ addParameters({
             { name: 'TertiaryShade', value: '#faa272' },
             { name: 'Quaternary', value: '#e98e90' },
             { name: 'QuaternaryShade', value: '#e98eb9' },
+            { name: 'Quinary', value: '#b887ee' },
+            { name: 'QuinaryShade', value: '#dd94ef' },
             { name: 'DarkMode', value: '#202020' },
         ]
     },

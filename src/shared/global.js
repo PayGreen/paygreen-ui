@@ -39,16 +39,29 @@ export const GlobalStyle = createGlobalStyle`
 
     a {
         cursor: pointer;
-        text-decoration: none;
         outline: none;
+        text-decoration: none;
     }
 
     button {
+        cursor: pointer;
+        outline: none;
         background-color: transparent;
         border: none;
         padding: 0;
+    }
+
+    input,
+    select,
+    textarea {
+        display: block;
+        box-sizing: border-box;
         outline: none;
-        cursor: pointer;
+    }
+
+    [type="checkbox"],
+    [type="radio"] {
+        box-shadow: none;
     }
 
     .hideOnMobile {

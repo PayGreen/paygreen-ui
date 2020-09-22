@@ -24,7 +24,7 @@ import Modal from '../Modal/Modal';
 import ModalControl from './ModalControl';
 import ModalGroup from './ModalGroup';
 
-storiesOf(folder.main + folder.sub.modal + 'ModalGroup', module)
+storiesOf(folder.popup + folder.sub.modal + 'ModalGroup', module)
     .addDecorator(withKnobs)
     .add('Modal Group', () => (
         <ModalGroup>

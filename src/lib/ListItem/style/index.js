@@ -16,11 +16,6 @@ const ListItemBase = styled.span`
         width: ${props => props.theme.icon.size[props.bulletSize]};
         margin-right: ${marginBase};
     }
-
-    @media (${props => props.theme.query.max.lg}) {
-        margin-top: ${props => props.hasLink && props.theme.space.sm};
-        margin-bottom: ${props => props.hasLink && props.theme.space.sm};
-    }
 `;
 
 export { ListItemBase };

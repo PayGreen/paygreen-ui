@@ -38,11 +38,15 @@ const popin = (
     </Popin>
 );
 
-storiesOf(folder.main + 'Dropdown', module)
+storiesOf(folder.popup + 'Dropdown', module)
     .addDecorator(withKnobs)
     .add('Dropdown with ClickableBlock', () => (
         <Dropdown>
-            <ClickableBlock>
+            <ClickableBlock
+                paddingLateral={spaceOptions.sm}
+                paddingTop={spaceOptions.sm}
+                paddingBottom={spaceOptions.sm}
+            >
                 <Text>Click here</Text>
             </ClickableBlock>
 
@@ -53,7 +57,10 @@ storiesOf(folder.main + 'Dropdown', module)
         'Dropdown with Badge',
         () => (
             <Dropdown>
-                <Badge textSize={fontSizeOptions.sm}>
+                <Badge
+                    textSize={fontSizeOptions.xs}
+                    htmlTag={iconHtmlTagOptions.button}
+                >
                     Badge
                     <ArrowBottomIcon marginLeft={spaceOptions.xs} />
                 </Badge>

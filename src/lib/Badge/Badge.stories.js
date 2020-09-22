@@ -3,29 +3,28 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, select, radios, text } from '@storybook/addon-knobs';
 import {
     folder,
+    iconHtmlTagOptions,
+    iconHtmlTagDefault,
     colorThemeOptions,
     colorThemeDefault,
     gradientOptions,
     colorTypeOptions,
     colorTypeDefault,
     fontSizeOptions,
-    iconSizeOptions,
-    spaceOptions
 } from '../../shared/constants';
 import Badge from './Badge';
-import { ArrowBottomIcon } from '../Icon/Icon';
 
 const colorTypeLabel = 'Color type';
 const colorThemeLabel = 'Color theme';
 const gradientTypeLabel = 'Gradient type';
 const textSizeLabel = 'Text size';
 const textLabel = 'Text';
-const iconSizeLabel = 'Icon size';
 
 storiesOf(folder.main + 'Badge', module)
     .addDecorator(withKnobs)
     .add('Badge', () => (
         <Badge
+            htmlTag={radios('HTML tag', iconHtmlTagOptions, iconHtmlTagDefault)}
             colorType={select(
                 colorTypeLabel,
                 colorTypeOptions,
@@ -48,14 +47,5 @@ storiesOf(folder.main + 'Badge', module)
             )}
         >
             {text(textLabel, 'Example')}
-
-            <ArrowBottomIcon
-                iconSize={select(
-                    iconSizeLabel,
-                    iconSizeOptions,
-                    iconSizeOptions.sm,
-                )}
-                marginLeft={spaceOptions.xs}
-            />
         </Badge>
     ));

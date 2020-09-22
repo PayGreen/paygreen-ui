@@ -10,6 +10,7 @@ import {
     iconSizeOptions,
     iconSizeDefault,
     decorationOptions,
+    iconHtmlTagOptions,
 } from '../../shared/constants';
 import { LeafIcon, CheckBoldIcon } from '../Icon/Icon';
 import Text from '../Text/Text';
@@ -22,7 +23,7 @@ storiesOf(folder.main + folder.sub.list + 'ListItem', module)
     .addDecorator(withKnobs)
     .add('ListItem with Icon', () => (
         <ListItem
-            href="#"
+            htmlTag={iconHtmlTagOptions.button}
             isClicked={boolean('Is active', false)}
             arrowStyle={radios(
                 'Arrow (if active)',
@@ -36,7 +37,6 @@ storiesOf(folder.main + folder.sub.list + 'ListItem', module)
                 colorThemeDefault,
             )}
             bulletSize={select('Bullet size', iconSizeOptions, iconSizeDefault)}
-            hasLink={boolean('Has link', false)}
         >
             <LeafIcon
                 colorTheme={radios(

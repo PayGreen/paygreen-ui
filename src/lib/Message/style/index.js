@@ -7,10 +7,11 @@ const MessageBase = styled.div`
     max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
     border-radius: ${props => props.theme.radius[props.fieldSize]};
     padding: ${arrowSize};
-    display: grid;
+    margin-top: ${props => props.theme.space[props.marginTop]};
+    margin-bottom: ${props => props.theme.space[props.marginBottom]};
+    display: inline-grid;
     grid-template-rows: auto 1fr;
     grid-template-areas: 'icon text';
-    justify-items: center;
     background-color: ${props =>
         props.theme.status[props.colorStatus].light};
     color: ${props => props.theme.status[props.colorStatus].main};

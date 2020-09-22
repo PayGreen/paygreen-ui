@@ -11,7 +11,7 @@ import {
 import Overlay from './Overlay';
 import Text from '../Text/Text';
 
-storiesOf(folder.main + 'Overlay', module)
+storiesOf(folder.popup + 'Overlay', module)
     .addDecorator(withKnobs)
     .add('Overlay', () => (
         <>

@@ -13,10 +13,12 @@ const MainBase = styled.div`
     grid-template-areas: 'topbar' 'box';
     overflow-y: hidden;
     background-color: ${props => props.theme.wab.white00};
-    box-shadow: ${props =>
-        props.theme.shadow.size.lg +
-        ' ' +
-        transparentize(props.theme.shadow.opacity.lg, props.theme.wab.black00)};
+    box-shadow: 0 0 40px
+        ${props =>
+            transparentize(
+                props.theme.shadow.opacity.md,
+                props.theme.wab.black00,
+            )};
     transition: all ${props => props.theme.transition.sm};
 
     & > ${TopbarBase} {

@@ -21,12 +21,9 @@ const TextareaBase = styled.div`
     }
 
     textarea {
-        display: block;
-        box-sizing: border-box;
         width: 100%;
         min-height: ${props => props.theme.form.textareaHeight};
         max-height: ${props => props.theme.form.inputWidth.lg};
-        outline: none;
         border-style: solid;
         border-width: ${props => props.theme.line};
         border-radius: ${props => props.theme.radius.sm};

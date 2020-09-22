@@ -16,6 +16,7 @@ import {
     alignItemsOptions,
     alignItemsDefault,
     spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import Image from './Image';
 import portraitFile from './sample/portrait.png';
@@ -142,11 +143,10 @@ storiesOf(folder.media + 'Image', module)
                 imageSizeOptions,
                 imageSizeOptions.auto,
             )}
-            shadowSize={select(
-                'Shadow style',
-                shadowSizeOptions,
-                shadowSizeDefault,
-            )}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            marginLeft={select('Margin left', spaceOptions, spaceDefault)}
+            marginRight={select('Margin right', spaceOptions, spaceDefault)}
         >
             <img src={portraitFile} alt="picture" />
         </Image>

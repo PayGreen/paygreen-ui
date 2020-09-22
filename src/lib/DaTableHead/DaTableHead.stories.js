@@ -2,22 +2,22 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { folder } from '../../shared/constants';
-import { ArrowBottomIcon, MenuIcon } from '../Icon/Icon';
-import DaTableHeadCell from '../DaTableHeadCell/DaTableHeadCell';
+import { ArrowBottomIcon, ListIcon } from '../Icon/Icon';
 import Checkbox from '../Checkbox/Checkbox';
+import DaTableHeadCell from '../DaTableHeadCell/DaTableHeadCell';
 import DaTableHead from './DaTableHead';
 
 storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
     .addDecorator(withKnobs)
     .add('DaTableHead', () => (
         <DaTableHead resultsLabel="45 results">
-            <DaTableHeadCell isCheckbox={true} label="Select/deselect all">
+            <DaTableHeadCell label="Select/deselect all">
                 <Checkbox id="select"/>
             </DaTableHeadCell>
 
             <DaTableHeadCell
                 sortIcon={<ArrowBottomIcon title="Sort DESC on Sample" />}
-                groupIcon={<MenuIcon title="Group on Sample" />}
+                groupIcon={<ListIcon title="Group on Sample" />}
                 label="Last Name"
             />
 

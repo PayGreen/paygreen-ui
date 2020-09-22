@@ -2,9 +2,6 @@ import { css } from 'styled-components';
 import { math } from 'polished';
 
 const field = css`
-    box-sizing: border-box;
-    display: block;
-    outline: none;
     border: solid ${props => props.theme.line + ' ' + props.theme.wab.grey10};
     border-radius: ${props =>
         math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};

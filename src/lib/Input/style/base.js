@@ -16,9 +16,6 @@ const label = css`
 `;
 
 const field = css`
-    display: block;
-    box-sizing: border-box;
-    outline: none;
     border: none;
     border-radius: ${props => props.theme.radius.sm} ${props => props.theme.radius.sm} 0 0;
     padding: ${props => props.theme.space.sm};

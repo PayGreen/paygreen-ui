@@ -2,27 +2,28 @@
 const folderSeparator = '/';
 
 const folder = {
-    main: 'Basics' + folderSeparator,
     form: 'Form elements' + folderSeparator,
-    nav: 'Navigation' + folderSeparator,
+    main: 'Basics' + folderSeparator,
     media: 'Medias' + folderSeparator,
+    nav: 'Navigation' + folderSeparator,
+    popup: 'Popups' + folderSeparator,
     tables: 'Tables' + folderSeparator,
 
     sub: {
         button: 'Buttons' + folderSeparator,
+        daTable: 'DaTables' + folderSeparator,
         checkbox: 'Checkbox elements' + folderSeparator,
         control: 'Menu controls' + folderSeparator,
         footer: 'Footer' + folderSeparator,
         form: 'Special fields' + folderSeparator,
         list: 'Ordinary list' + folderSeparator,
         menu: 'Menu elements' + folderSeparator,
-        radio: 'Radio elements' + folderSeparator,
-        sidebarMenu: 'Sidebar elements' + folderSeparator,
         modal: 'Modal elements' + folderSeparator,
         pagination: 'Pagination elements' + folderSeparator,
+        radio: 'Radio elements' + folderSeparator,
+        sidebarMenu: 'Sidebar elements' + folderSeparator,
         structure: 'Grids' + folderSeparator,
         table: 'Simple tables' + folderSeparator,
-        daTable: 'DaTables' + folderSeparator,
     },
 };
 

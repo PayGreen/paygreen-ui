@@ -6,6 +6,7 @@ import { basicStyle, disabledStyle } from './base';
 const RadioBase = styled.div`
     position: relative;
     margin: ${props => props.theme.space.sm} 0;
+    display: flex; /* avoid 100% large label (for hover) */
 
     label {
         position: relative;
@@ -51,8 +52,6 @@ const RadioBase = styled.div`
         transform: translate(-50%, -100%);
         top: ${radioSize};
         left: ${props => math(radioSize(props) + '/2')};
-        box-shadow: none;
-        margin: 0;
         margin-top: -${props => props.theme.line};
 
         &:checked {
