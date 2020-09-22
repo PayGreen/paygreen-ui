@@ -8,6 +8,7 @@ const PaginationItemBase = styled.button`
     padding: 0 ${props => props.theme.space.xs};
     min-width: ${props => props.theme.daButton.buttonHeight.sm};
     height: ${props => props.theme.daButton.buttonHeight.sm};
+    line-height: ${props => props.theme.daButton.buttonHeight.sm};
     border-radius: ${props =>
         math(props.theme.daButton.buttonHeight.sm + '/2')};
     font-size: ${props => props.theme.daButton.font.lg};
