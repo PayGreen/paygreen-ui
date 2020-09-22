@@ -10,8 +10,6 @@ const RadioIconBase = styled.div`
     position: relative;
 
     input {
-        box-shadow: none;
-        outline: none;
         position: absolute;
         bottom: 0;
         transform: translateX(-50%);

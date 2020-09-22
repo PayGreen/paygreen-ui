@@ -4,15 +4,10 @@ const MenuCloseBase = styled.button`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 190px;
     max-width: 100%;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    outline: none;
-    cursor: pointer;
 
     .icon {
         position: absolute;

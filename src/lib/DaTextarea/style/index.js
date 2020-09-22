@@ -9,13 +9,10 @@ const DaTextareaBase = styled.div`
     ${props => (props.inputDisabled ? disabled : enabled)};
 
     textarea {
-        box-sizing: border-box;
-        display: block;
         width: 100%;
         height: ${props => (props.autoHeight ? props.autoHeight : 'auto')};
         min-height: ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '*5')};
-        outline: none;
         border-style: solid;
         border-width: ${props => props.theme.line};
         border-color: ${props => props.theme.wab.grey10};

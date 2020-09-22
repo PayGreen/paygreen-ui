@@ -16,9 +16,6 @@ const AutonomousInputBase = styled.div`
 
     input {
         flex: 1;
-        display: block;
-        box-sizing: border-box;
-        outline: none;
         height: ${fieldHeight};
         background-color: ${props => props.theme.wab.white00};
         border: solid ${props => props.theme.line} ${props => props.theme.wab.grey10};
@@ -35,8 +32,6 @@ const AutonomousInputBase = styled.div`
     }
 
     button {
-        outline: none;
-        cursor: pointer;
         height: ${fieldHeight};
         border-style: solid;
         border-width: ${props => props.theme.line};

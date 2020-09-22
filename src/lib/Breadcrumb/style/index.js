@@ -19,7 +19,6 @@ const BreadcrumbBase = styled.ul`
         padding: ${props => props.theme.space.xs} 0;
 
         a {
-            outline: none;
             color: ${props => textColor.link[props.colorType]};
             transition: all ${props => props.theme.transition.xs};
         }

@@ -2,13 +2,6 @@ import { css } from 'styled-components';
 import { math } from 'polished';
 import { colorPalletOptions } from '../../../shared/constants';
 
-const resetButtonStyle = css`
-    cursor: pointer;
-    outline: none;
-    border: none;
-    padding: 0;
-`;
-
 const baseColor = {
     theme: css`
         background-color: ${props => props.theme.color[props.colorTheme].light};
@@ -133,5 +126,4 @@ export {
     backgroundStyle,
     hasHoverColor,
     noBackground,
-    resetButtonStyle,
 };

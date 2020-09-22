@@ -24,8 +24,6 @@ const ToggleBase = styled.div`
 
         input {
             position: absolute;
-            border: none;
-            box-shadow: unset;
 
             &:checked {
                 & + .toggle {

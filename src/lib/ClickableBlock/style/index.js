@@ -7,9 +7,9 @@ const borderNone = 'none';
 
 const ClickableBlockBase = styled.div`
     cursor: pointer;
+    outline: none;
     display: inline-flex;
     align-items: center;
-    outline: transparent;
     ${props => borderColor[props.colorPallet]};
     border-top: ${props => (props.borderTop ? null : borderNone)};
     border-right: ${props => (props.borderRight ? null : borderNone)};
@@ -19,7 +19,7 @@ const ClickableBlockBase = styled.div`
 
     ${IconBase} {
         @media (${props => props.theme.query.max.md}) {
-            ${props => (props.isHiddenOnMobile ? 'display:none' : null)}
+            display: ${props => (props.isHiddenOnMobile ? 'none' : null)};
         }
     }
 

@@ -48,13 +48,10 @@ const RadioBase = styled.div`
     }
 
     input {
-        outline: none;
         position: absolute;
         transform: translate(-50%, -100%);
         top: ${radioSize};
         left: ${props => math(radioSize(props) + '/2')};
-        box-shadow: none;
-        margin: 0;
         margin-top: -${props => props.theme.line};
 
         &:checked {

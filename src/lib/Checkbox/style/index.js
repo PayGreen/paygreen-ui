@@ -43,12 +43,10 @@ const CheckboxBase = styled.div`
     }
 
     input {
-        outline: none;
         position: absolute;
         transform: translate(-50%, -100%);
         top: ${checkboxSize};
         left: ${props => math(checkboxSize(props) + '/2')};
-        box-shadow: none;
 
         &:checked {
             & + label {

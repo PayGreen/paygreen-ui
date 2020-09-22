@@ -1,18 +1,13 @@
 import styled from 'styled-components';
 import { directionalProperty } from 'polished';
-import { iconHtmlTagOptions } from '../../../shared/constants';
 import {
     activeColor,
-    resetButtonStyle,
     baseColor,
     backgroundStyle,
     noBackground,
 } from './base';
 
 const IconBase = styled.span`
-    ${props =>
-        props.htmlTag === iconHtmlTagOptions.button ? resetButtonStyle : null};
-
     display: ${props => (props.isCentered ? 'flex' : 'inline-flex')};
     box-sizing: content-box;
     position: relative;
