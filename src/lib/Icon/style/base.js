@@ -136,25 +136,20 @@ const noBackground = css`
     }
 `;
 
-const iconSize = props => math(props.theme.icon.size[props.iconSize] + '/2');
+const iconSize = props => math(props.theme.icon.size[props.iconSize] + '*3/4');
 
 const badgeStyle = css`
     .badge {
-        box-sizing: content-box;
+        box-sizing: border-box;
         position: absolute;
         bottom: 0;
-        left: ${props => math(props.theme.icon.size[props.iconSize] + '*1.2')};
+        left: 70%;
         min-width: ${iconSize};
         height: ${iconSize};
-        padding: ${props =>
-            math(
-                props.theme.icon.size[props.iconSize] +
-                    '/4 - ' +
-                    props.theme.space.xs,
-            )};
-        border-radius: ${iconSize};
-        font-size: ${iconSize};
-        font-weight: ${props => props.theme.font.weight.bold};
+        line-height: ${iconSize};
+        padding: 0 ${props => props.theme.line};
+        border-radius: ${props => math(iconSize(props) + '/2')};
+        font-size: ${props => math(props.theme.icon.size[props.iconSize] + '/2')};
     }
 `;
 
