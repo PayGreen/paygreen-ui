@@ -9,7 +9,7 @@ const activeStyle = css`
 
     & > .icon {
         svg {
-            fill: ${props => props.theme.wab.white00};
+            fill: ${props => props.theme.wab.white00} !important;
         }
     }
 `;

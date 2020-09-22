@@ -148,6 +148,7 @@ const badgeStyle = css`
         border-radius: ${props => math(countSize(props) + '/2')};
         font-size: ${props =>
             math(props.theme.icon.size[props.iconSize] + '/2')};
+        text-align: center;
     }
 `;
 
