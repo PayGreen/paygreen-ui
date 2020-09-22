@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
 import { colorPalletOptions } from '../../../shared/constants';
+import { countSize, calcShift } from './constants';
 
 const baseColor = {
     theme: css`
@@ -93,8 +94,6 @@ const hasHoverColor = css`
             : null};
 `;
 
-const calcShift = props => props.theme.icon.shift[props.iconSize];
-
 const backgroundStyle = css`
     padding: ${props =>
         math(
@@ -136,20 +135,19 @@ const noBackground = css`
     }
 `;
 
-const iconSize = props => math(props.theme.icon.size[props.iconSize] + '*3/4');
-
 const badgeStyle = css`
     .badge {
         box-sizing: border-box;
         position: absolute;
         bottom: 0;
         left: 70%;
-        min-width: ${iconSize};
-        height: ${iconSize};
-        line-height: ${iconSize};
+        min-width: ${countSize};
+        height: ${countSize};
+        line-height: ${countSize};
         padding: 0 ${props => props.theme.line};
-        border-radius: ${props => math(iconSize(props) + '/2')};
-        font-size: ${props => math(props.theme.icon.size[props.iconSize] + '/2')};
+        border-radius: ${props => math(countSize(props) + '/2')};
+        font-size: ${props =>
+            math(props.theme.icon.size[props.iconSize] + '/2')};
     }
 `;
 

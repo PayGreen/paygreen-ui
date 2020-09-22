@@ -38,7 +38,7 @@ const IconBase = styled.span`
             ? activeColor[props.colorPallet]
             : null};
 
-    ${props => (props.badgeNumber ? badgeStyle : null)};
+    ${props => (props.number ? badgeStyle : null)};
 `;
 
 export { IconBase };

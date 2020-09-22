@@ -20,6 +20,8 @@ import {
 import { IconBase } from './style';
 
 const IconWrapper = props => {
+    let isReadable = ['xs', 'xxs'].includes(props.iconSize) ? false : true;
+
     return (
         <IconBase as={props.htmlTag} {...props} className="icon">
             {React.Children.map(props.children, child => {
@@ -28,9 +30,9 @@ const IconWrapper = props => {
                 }
             })}
 
-            {props.badgeNumber ? (
+            {props.number && props.number > 0 && isReadable ? (
                 <span className="badge">
-                    {props.badgeNumber <= 99 ? props.badgeNumber : 99 + '+'}
+                    {props.number <= 99 ? props.number : 99 + '+'}
                 </span>
             ) : null}
         </IconBase>
@@ -39,7 +41,7 @@ const IconWrapper = props => {
 
 IconWrapper.propTypes = {
     htmlTag: PropTypes.oneOf(Object.values(iconHtmlTagOptions)),
-    badgeNumber: PropTypes.number,
+    number: PropTypes.number,
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
@@ -58,7 +60,7 @@ IconWrapper.propTypes = {
 
 IconWrapper.defaultProps = {
     htmlTag: iconHtmlTagDefault,
-    badgeNumber: 0,
+    number: 0,
     colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,

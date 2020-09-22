@@ -47,14 +47,6 @@ const marginRightLabel = 'Margin right';
 const centeredLabel = 'Centered';
 const rotateSizeLabel = 'Rotation (sens horaire)';
 
-const defaultValue = 3;
-const options = {
-    range: true,
-    min: 0,
-    max: 110,
-    step: 1,
-};
-
 storiesOf(folder.main + 'Icons', module)
     .addDecorator(withKnobs)
     .add(
@@ -335,7 +327,12 @@ storiesOf(folder.main + 'Icons', module)
     .add('Icon with badge number', () => (
         <BellIcon
             htmlTag={iconHtmlTagOptions.button}
-            badgeNumber={number('Badge value', defaultValue, options)}
+            number={number('Count value', 3, {
+                range: true,
+                min: 0,
+                max: 110,
+                step: 1,
+            })}
             colorPallet={radios(
                 colorPalletLabel,
                 colorPalletOptions,
@@ -358,6 +355,6 @@ storiesOf(folder.main + 'Icons', module)
                 iconSizeOptions.md,
             )}
             hasBackground={true}
-            hasHover={boolean(hoverLabel, false)}
+            hasHover={true}
         />
     ));
