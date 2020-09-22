@@ -11,8 +11,8 @@ const SidebarMenu = props => {
     return (
         <SidebarMenuBase as={props.htmlTag} {...props}>
             {React.Children.map(props.children, child => {
-                switch (child.type) {
-                    case undefined:
+                switch (child && child.type) {
+                    case null:
                         return null;
                     case SidebarItem:
                         return React.cloneElement(child, {
