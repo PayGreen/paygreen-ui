@@ -57,7 +57,10 @@ storiesOf(folder.popup + 'Dropdown', module)
         'Dropdown with Badge',
         () => (
             <Dropdown>
-                <Badge textSize={fontSizeOptions.sm}>
+                <Badge
+                    textSize={fontSizeOptions.xs}
+                    htmlTag={iconHtmlTagOptions.button}
+                >
                     Badge
                     <ArrowBottomIcon marginLeft={spaceOptions.xs} />
                 </Badge>
