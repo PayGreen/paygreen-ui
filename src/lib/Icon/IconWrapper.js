@@ -31,7 +31,7 @@ const IconWrapper = props => {
             })}
 
             {props.number && props.number > 0 && isReadable ? (
-                <span className="badge">
+                <span className="badge-number">
                     {props.number <= 99 ? props.number : 99 + '+'}
                 </span>
             ) : null}

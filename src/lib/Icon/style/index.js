@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { directionalProperty } from 'polished';
 import {
     activeColor,
-    badgeStyle,
-    resetButtonStyle,
     baseColor,
     backgroundStyle,
     noBackground,
+    numberStyle,
 } from './base';
 
 const IconBase = styled.span`
@@ -38,7 +37,7 @@ const IconBase = styled.span`
             ? activeColor[props.colorPallet]
             : null};
 
-    ${props => (props.number ? badgeStyle : null)};
+    ${props => (props.number ? numberStyle : null)};
 `;
 
 export { IconBase };

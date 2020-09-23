@@ -11,7 +11,7 @@ const baseColor = {
             fill: ${props => props.theme.color[props.colorTheme].main};
         }
 
-        .badge {
+        .badge-number {
             background-color: ${props =>
                 props.theme.color[props.colorTheme].gradientBase};
             color: ${props => props.theme.wab.white00};
@@ -24,7 +24,7 @@ const baseColor = {
             fill: ${props => props.theme.wab[props.colorWab]};
         }
 
-        .badge {
+        .badge-number {
             color: ${props => props.theme.wab[props.colorWab]};
         }
     `,
@@ -36,7 +36,7 @@ const baseColor = {
             fill: ${props => props.theme.status[props.colorStatus].main};
         }
 
-        .badge {
+        .badge-number {
             background-color: ${props =>
                 props.theme.status[props.colorStatus].main};
             color: ${props => props.theme.wab.white00};
@@ -135,8 +135,8 @@ const noBackground = css`
     }
 `;
 
-const badgeStyle = css`
-    .badge {
+const numberStyle = css`
+    .badge-number {
         box-sizing: border-box;
         position: absolute;
         bottom: 0;
@@ -154,9 +154,9 @@ const badgeStyle = css`
 
 export {
     activeColor,
-    badgeStyle,
     baseColor,
     backgroundStyle,
     hasHoverColor,
     noBackground,
+    numberStyle,
 };
