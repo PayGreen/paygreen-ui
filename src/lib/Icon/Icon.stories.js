@@ -329,9 +329,7 @@ storiesOf(folder.main + 'Icons', module)
             htmlTag={iconHtmlTagOptions.button}
             number={number('Count value', 3, {
                 range: true,
-                min: 0,
                 max: 110,
-                step: 1,
             })}
             colorPallet={radios(
                 colorPalletLabel,

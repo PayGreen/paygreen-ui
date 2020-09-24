@@ -20,7 +20,7 @@ import {
 import { IconBase } from './style';
 
 const IconWrapper = props => {
-    let isReadable = ['xs', 'xxs'].includes(props.iconSize) ? false : true;
+    const maxDisplayed = 99;
 
     return (
         <IconBase as={props.htmlTag} {...props} className="icon">
@@ -30,9 +30,14 @@ const IconWrapper = props => {
                 }
             })}
 
-            {props.number && props.number > 0 && isReadable ? (
+            {props.number > 0 &&
+            ![iconSizeOptions.xs, iconSizeOptions.xxs].includes(
+                props.iconSize,
+            ) ? (
                 <span className="badge-number">
-                    {props.number <= 99 ? props.number : 99 + '+'}
+                    {props.number <= maxDisplayed
+                        ? props.number
+                        : maxDisplayed + '+'}
                 </span>
             ) : null}
         </IconBase>
