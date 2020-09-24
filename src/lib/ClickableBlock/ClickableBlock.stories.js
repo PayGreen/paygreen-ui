@@ -16,48 +16,58 @@ import {
     formStatusDefault,
     iconSizeOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Image from '../Image/Image';
 import portraitFile from '../Image/sample/portrait.png';
 import ClickableBlock from './ClickableBlock';
 
-const paddingLabel = 'Padding';
-const marginLabel = 'Margin';
-
 storiesOf(folder.popup + 'ClickableBlock', module)
     .addDecorator(withKnobs)
     .add('ClickableBlock', () => (
         <ClickableBlock
             isHiddenOnMobile={true}
-            isActive={boolean('Is active', false)}
-            iconSize={select('Icon size', iconSizeOptions, iconSizeOptions.lg)}
+            isActive={boolean(labels.isActive, false)}
+            iconSize={select(
+                labels.iconSize,
+                iconSizeOptions,
+                iconSizeOptions.lg,
+            )}
             colorPallet={select(
-                'Color pallet',
+                labels.colorPallet,
                 colorPalletOptions,
                 colorPalletOptions.wab,
             )}
             colorTheme={select(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select('Color wab', greyOptions, greyDefault)}
+            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
             colorStatus={select(
-                'Color status',
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
-            borderTop={boolean('Border top', false)}
-            borderRight={boolean('Border right', false)}
-            borderLeft={boolean('Border left', false)}
-            borderBottom={boolean('Border bottom', true)}
-            paddingTop={select(paddingLabel, spaceOptions, spaceOptions.sm)}
-            paddingBottom={select(paddingLabel, spaceOptions, spaceOptions.sm)}
-            paddingLateral={select(paddingLabel, spaceOptions, spaceOptions.sm)}
-            marginTop={select(marginLabel, spaceOptions, spaceDefault)}
-            marginBottom={select(marginLabel, spaceOptions, spaceDefault)}
-            marginLateral={select(marginLabel, spaceOptions, spaceDefault)}
+            borderTop={boolean(labels.borderTop, false)}
+            borderRight={boolean(labels.borderRight, false)}
+            borderLeft={boolean(labels.borderLeft, false)}
+            borderBottom={boolean(labels.borderBottom, true)}
+            paddingTop={select(labels.padding, spaceOptions, spaceOptions.sm)}
+            paddingBottom={select(
+                labels.padding,
+                spaceOptions,
+                spaceOptions.sm,
+            )}
+            paddingLateral={select(
+                labels.padding,
+                spaceOptions,
+                spaceOptions.sm,
+            )}
+            marginTop={select(labels.margin, spaceOptions, spaceDefault.xs)}
+            marginBottom={select(labels.margin, spaceOptions, spaceDefault.xs)}
+            marginLateral={select(labels.margin, spaceOptions, spaceDefault.xs)}
         >
             <Image
                 imageType={imageTypeOptions.picture}

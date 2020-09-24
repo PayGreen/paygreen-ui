@@ -5,6 +5,7 @@ import {
     folder,
     iconHtmlTagOptions,
     iconHtmlTagDefault,
+    iconSizeOptions,
     colorTypeOptions,
     colorTypeDefault,
     colorStyleOptions,
@@ -13,46 +14,52 @@ import {
     colorThemeDefault,
     gradientOptions,
     fontSizeOptions,
+    spaceOptions,
 } from '../../shared/constants';
-import label from '../../shared/labels';
+import labels from '../../shared/labels';
 import Badge from './Badge';
+import { ArrowBottomIcon } from '../Icon/Icon';
 
 storiesOf(folder.text + 'Badge', module)
     .addDecorator(withKnobs)
     .add('Badge', () => (
         <Badge
-            htmlTag={radios('HTML tag', iconHtmlTagOptions, iconHtmlTagDefault)}
+            htmlTag={radios(
+                labels.htmlTag,
+                iconHtmlTagOptions,
+                iconHtmlTagDefault,
+            )}
             colorType={select(
-                label.colorType,
+                labels.colorType,
                 colorTypeOptions,
                 colorTypeDefault,
             )}
             colorStyle={radios(
-                'Color style',
+                labels.colorStyle,
                 colorStyleOptions,
                 colorStyleDefault,
             )}
             colorTheme={select(
-                label.colorTheme,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             gradient={radios(
-                label.gradient,
+                labels.gradient,
                 gradientOptions,
                 gradientOptions.theme,
             )}
             textSize={select(
-                label.textSize,
+                labels.textSize,
                 fontSizeOptions,
                 fontSizeOptions.xxs,
             )}
         >
-            {text(label.text, 'Example')}
+            {text(labels.text, 'Example')}
 
             <ArrowBottomIcon
                 iconSize={select(
-                    label.iconSize,
+                    labels.iconSize,
                     iconSizeOptions,
                     iconSizeOptions.sm,
                 )}

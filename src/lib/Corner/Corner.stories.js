@@ -25,6 +25,7 @@ import {
     spaceOptions,
     fontSizeOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { QuestionBoldIcon } from '../Icon/Icon';
 import Text from '../Text/Text';
 import Popin from '../Popin/Popin';
@@ -32,41 +33,34 @@ import Corner from './Corner';
 
 const { wab, ...cornerColorPalletOptions } = colorPalletOptions;
 
-const positionLabel = 'Position';
-const colorStyleLabel = 'Color style';
-const radiusSizeLabel = 'Radius size';
-const colorPalletLabel = 'Color pallet';
-const colorThemeLabel = 'Color theme';
-const colorStatusLabel = 'Status color';
-
 storiesOf(folder.block + 'Corner', module)
     .addDecorator(withKnobs)
     .add('Corner banner', () => (
         <Corner
-            label={text('Label', 'Corner')}
+            label={text(labels.label, 'Corner')}
             cornerStyle={cornerStyleOptions.banner}
-            position={radios(
-                positionLabel,
-                lateralPositionOptions,
-                lateralPositionDefault,
+            cornerPosition={radios(
+                labels.cornerPosition,
+                cornerPositionOptions,
+                cornerPositionDefault,
             )}
             colorStyle={radios(
-                colorStyleLabel,
+                labels.colorStyle,
                 colorStyleOptions,
                 colorStyleDefault,
             )}
             colorPallet={radios(
-                colorPalletLabel,
+                labels.colorPallet,
                 cornerColorPalletOptions,
                 colorPalletDefault,
             )}
             colorTheme={select(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             colorStatus={select(
-                colorStatusLabel,
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
@@ -76,29 +70,33 @@ storiesOf(folder.block + 'Corner', module)
         <Corner
             label={<QuestionBoldIcon />}
             position={radios(
-                positionLabel,
+                'Position',
                 lateralPositionOptions,
                 lateralPositionDefault,
             )}
-            hasCenteredPopin={boolean('Centered popin', false)}
-            radiusSize={select(radiusSizeLabel, radiusOptions, radiusDefault)}
+            hasCenteredPopin={boolean(labels.centeredPopin, false)}
+            radiusSize={select(
+                labels.borderRadius,
+                radiusOptions,
+                radiusDefault,
+            )}
             colorStyle={radios(
-                colorStyleLabel,
+                labels.colorStyle,
                 colorStyleOptions,
                 colorStyleDefault,
             )}
             colorPallet={radios(
-                colorPalletLabel,
+                labels.colorPallet,
                 cornerColorPalletOptions,
                 colorPalletDefault,
             )}
             colorTheme={select(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             colorStatus={select(
-                colorStatusLabel,
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}

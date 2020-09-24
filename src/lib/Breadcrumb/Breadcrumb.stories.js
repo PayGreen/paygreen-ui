@@ -10,6 +10,7 @@ import {
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Breadcrumb from './Breadcrumb';
 
 const sampleLinks = [
@@ -36,20 +37,24 @@ storiesOf(folder.text + 'Breadcrumb', module)
     .add('Breadcrumb', () => (
         <Breadcrumb
             elements={sampleLinks}
-            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+            colorType={radios(
+                labels.colorType,
+                colorTypeOptions,
+                colorTypeDefault,
+            )}
             colorTheme={radios(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             marginLateral={select(
-                'Lateral margins',
+                labels.marginLateral,
                 spaceOptions,
                 spaceDefault,
             )}
-            marginTop={select('Margin top', spaceOptions, spaceOptions.xs)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceOptions.xs)}
             marginBottom={select(
-                'Margin bottom',
+                labels.marginBottom,
                 spaceOptions,
                 spaceOptions.xs,
             )}

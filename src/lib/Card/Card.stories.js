@@ -27,6 +27,7 @@ import {
     lateralPositionOptions,
     cornerStyleOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
 import Image from '../Image/Image';
@@ -37,38 +38,38 @@ import Corner from '../Corner/Corner';
 import Card from './Card';
 import imageFile from './sample/sample.png';
 
-const colorTypeLabel = 'Color type';
-const colorPalletLabel = 'Color pallet';
-const colorThemeLabel = 'Color theme';
-const colorWabLabel = 'Grey color';
-const colorStatusLabel = 'Status color';
-const blockWidthLabel = 'Width';
-const borderRadiusLabel = 'Border radius';
-
 storiesOf(folder.block + 'Card', module)
     .addDecorator(withKnobs)
     .add('Default card', () => (
         <Card
             colorType={radios(
-                colorTypeLabel,
+                labels.colorType,
                 colorTypeOptions,
                 colorTypeDefault,
             )}
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             shadowSize={radios(
-                'Shadow size',
+                labels.shadowSize,
                 shadowSizeOptions,
                 shadowSizeDefault,
             )}
-            hasBackground={boolean('Has background', true)}
-            blockWidth={select(blockWidthLabel, spaceOptions, spaceOptions.md)}
-            radiusSize={radios(borderRadiusLabel, radiusOptions, radiusDefault)}
+            hasBackground={boolean(labels.hasBackground, true)}
+            blockWidth={select(
+                labels.blockWidth,
+                spaceOptions,
+                spaceOptions.md,
+            )}
+            radiusSize={radios(
+                labels.borderRadius,
+                radiusOptions,
+                radiusDefault,
+            )}
             htmlTag={select(
-                'HTML card tag',
+                labels.htmlTag,
                 cardHtmlTagOptions,
                 cardHtmlTagDefault,
             )}
@@ -79,7 +80,7 @@ storiesOf(folder.block + 'Card', module)
                 colorStyle={colorStyleOptions.light}
                 position={lateralPositionOptions.right}
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
@@ -87,22 +88,22 @@ storiesOf(folder.block + 'Card', module)
 
             <Title
                 colorType={radios(
-                    colorTypeLabel,
+                    labels.colorType,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
                 marginLateral={select(
-                    blockWidthLabel,
+                    labels.blockWidth,
                     spaceOptions,
                     spaceOptions.md,
                 )}
                 marginTop={select(
-                    blockWidthLabel,
+                    labels.blockWidth,
                     spaceOptions,
                     spaceOptions.md,
                 )}
@@ -114,17 +115,17 @@ storiesOf(folder.block + 'Card', module)
 
             <Text
                 colorType={radios(
-                    colorTypeLabel,
+                    labels.colorType,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
                 marginLateral={select(
-                    blockWidthLabel,
+                    labels.blockWidth,
                     spaceOptions,
                     spaceOptions.md,
                 )}
@@ -139,17 +140,17 @@ storiesOf(folder.block + 'Card', module)
 
             <ButtonGroup
                 marginTop={select(
-                    blockWidthLabel,
+                    labels.blockWidth,
                     spaceOptions,
                     spaceOptions.md,
                 )}
                 marginBottom={select(
-                    blockWidthLabel,
+                    labels.blockWidth,
                     spaceOptions,
                     spaceOptions.md,
                 )}
                 paddingBlock={select(
-                    blockWidthLabel,
+                    labels.blockWidth,
                     spaceOptions,
                     spaceOptions.md,
                 )}
@@ -158,12 +159,12 @@ storiesOf(folder.block + 'Card', module)
                 <button type="button">
                     <Button
                         colorType={radios(
-                            colorTypeLabel,
+                            labels.colorType,
                             colorTypeOptions,
                             colorTypeDefault,
                         )}
                         colorTheme={radios(
-                            colorThemeLabel,
+                            labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
@@ -177,26 +178,30 @@ storiesOf(folder.block + 'Card', module)
     .add('Border-top card', () => (
         <Card
             colorType={radios(
-                colorTypeLabel,
+                labels.colorType,
                 colorTypeOptions,
                 colorTypeDefault,
             )}
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             blockWidth={spaceOptions.sm}
-            radiusSize={radios(borderRadiusLabel, radiusOptions, radiusDefault)}
+            radiusSize={radios(
+                labels.borderRadius,
+                radiusOptions,
+                radiusDefault,
+            )}
             borderTop={radios(
-                'Border-top style',
+                labels.borderTopStyle,
                 gradientOptions,
                 gradientOptions.theme,
             )}
         >
             <Title
                 colorType={radios(
-                    colorTypeLabel,
+                    labels.colorType,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
@@ -209,12 +214,12 @@ storiesOf(folder.block + 'Card', module)
 
             <Text
                 colorType={radios(
-                    colorTypeLabel,
+                    labels.colorType,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
@@ -236,12 +241,12 @@ storiesOf(folder.block + 'Card', module)
                 <button type="button">
                     <Button
                         colorType={radios(
-                            colorTypeLabel,
+                            labels.colorType,
                             colorTypeOptions,
                             colorTypeDefault,
                         )}
                         colorTheme={radios(
-                            colorThemeLabel,
+                            labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
@@ -256,12 +261,12 @@ storiesOf(folder.block + 'Card', module)
     .add('Card with title out', () => (
         <Card
             colorType={radios(
-                colorTypeLabel,
+                labels.colorType,
                 colorTypeOptions,
                 colorTypeOptions.reverse,
             )}
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
@@ -270,7 +275,7 @@ storiesOf(folder.block + 'Card', module)
         >
             <Title
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
@@ -283,12 +288,12 @@ storiesOf(folder.block + 'Card', module)
             <div>
                 <Text
                     colorType={radios(
-                        colorTypeLabel,
+                        labels.colorType,
                         colorTypeOptions,
                         colorTypeDefault,
                     )}
                     colorTheme={radios(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
@@ -310,12 +315,12 @@ storiesOf(folder.block + 'Card', module)
                     <button type="button">
                         <Button
                             colorType={radios(
-                                colorTypeLabel,
+                                labels.colorType,
                                 colorTypeOptions,
                                 colorTypeDefault,
                             )}
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
@@ -330,7 +335,11 @@ storiesOf(folder.block + 'Card', module)
     ))
     .add('Card with image', () => (
         <Card
-            blockWidth={select(blockWidthLabel, spaceOptions, spaceOptions.md)}
+            blockWidth={select(
+                labels.blockWidth,
+                spaceOptions,
+                spaceOptions.md,
+            )}
             isShadowWab={boolean('Is shadow wab', true)}
         >
             <Image
@@ -342,7 +351,7 @@ storiesOf(folder.block + 'Card', module)
 
             <Title
                 marginLateral={select(
-                    blockWidthLabel,
+                    labels.blockWidth,
                     spaceOptions,
                     spaceOptions.md,
                 )}
@@ -354,7 +363,7 @@ storiesOf(folder.block + 'Card', module)
 
             <Text
                 marginLateral={select(
-                    blockWidthLabel,
+                    labels.blockWidth,
                     spaceOptions,
                     spaceOptions.md,
                 )}
@@ -370,12 +379,12 @@ storiesOf(folder.block + 'Card', module)
             <ButtonGroup
                 marginTop={spaceOptions.sm}
                 marginBottom={select(
-                    blockWidthLabel,
+                    labels.blockWidth,
                     spaceOptions,
                     spaceOptions.md,
                 )}
                 paddingBlock={select(
-                    blockWidthLabel,
+                    labels.blockWidth,
                     spaceOptions,
                     spaceOptions.md,
                 )}
@@ -391,26 +400,30 @@ storiesOf(folder.block + 'Card', module)
     .add('Card without background', () => (
         <Card
             colorType={radios(
-                colorTypeLabel,
+                labels.colorType,
                 colorTypeOptions,
                 colorTypeDefault,
             )}
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             hasBackground={false}
-            blockWidth={select(blockWidthLabel, spaceOptions, spaceOptions.md)}
+            blockWidth={select(
+                labels.blockWidth,
+                spaceOptions,
+                spaceOptions.md,
+            )}
         >
             <Title
                 colorType={radios(
-                    colorTypeLabel,
+                    labels.colorType,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
@@ -422,12 +435,12 @@ storiesOf(folder.block + 'Card', module)
 
             <Text
                 colorType={radios(
-                    colorTypeLabel,
+                    labels.colorType,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
@@ -442,18 +455,18 @@ storiesOf(folder.block + 'Card', module)
     .add('Card with colored background', () => (
         <Card
             colorPallet={radios(
-                colorPalletLabel,
+                labels.colorPallet,
                 colorPalletOptions,
                 colorPalletOptions.wab,
             )}
             colorTheme={select(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select(colorWabLabel, greyOptions, greyOptions.white20)}
+            colorWab={select(labels.colorWab, greyOptions, greyOptions.white20)}
             colorStatus={select(
-                colorStatusLabel,
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
@@ -465,24 +478,24 @@ storiesOf(folder.block + 'Card', module)
                 position={lateralPositionOptions.right}
                 colorPallet={
                     radios(
-                        colorPalletLabel,
+                        labels.colorPallet,
                         colorPalletOptions,
                         colorPalletOptions.wab,
                     ) === colorPalletOptions.wab
                         ? colorPalletOptions.theme
                         : radios(
-                              colorPalletLabel,
+                              labels.colorPallet,
                               colorPalletOptions,
                               colorPalletOptions.wab,
                           )
                 }
                 colorTheme={select(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
                 colorStatus={select(
-                    colorStatusLabel,
+                    labels.colorStatus,
                     formStatusOptions,
                     formStatusDefault,
                 )}
@@ -505,17 +518,17 @@ storiesOf(folder.block + 'Card', module)
                 marginTop={spaceOptions.sm}
                 marginLateral={spaceOptions.sm}
                 colorPallet={radios(
-                    colorPalletLabel,
+                    labels.colorPallet,
                     colorPalletOptions,
                     colorPalletOptions.wab,
                 )}
                 colorTheme={select(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
                 colorStatus={select(
-                    colorStatusLabel,
+                    labels.colorStatus,
                     formStatusOptions,
                     formStatusDefault,
                 )}

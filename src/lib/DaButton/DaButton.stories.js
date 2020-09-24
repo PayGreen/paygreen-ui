@@ -24,6 +24,7 @@ import {
     gradientOptions,
     gradientDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import DaButton from './DaButton';
 import { CoinsIcon } from '../Icon/Icon';
 
@@ -35,44 +36,44 @@ storiesOf(folder.form + folder.sub.button + 'DaButton', module)
         <button type="button">
             <DaButton
                 buttonStyle={radios(
-                    'Button style',
+                    labels.buttonStyle,
                     buttonStyleOptions,
                     buttonStyleDefault,
                 )}
                 buttonSize={radios(
-                    'Button size',
+                    labels.buttonSize,
                     buttonSizeOptions,
                     buttonSizeDefault,
                 )}
                 colorType={radios(
-                    'Color type',
+                    labels.colorType,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 gradient={radios(
-                    'Gradient type',
+                    labels.gradient,
                     gradientOptions,
                     gradientDefault,
                 )}
                 colorPallet={radios(
-                    'Color pallet',
+                    labels.colorPallet,
                     buttonColorPalletOptions,
                     colorPalletDefault,
                 )}
                 colorTheme={select(
-                    'Color theme',
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
                 colorStatus={select(
-                    'Status color',
+                    labels.colorStatus,
                     formStatusOptions,
                     formStatusDefault,
                 )}
-                isDisabled={boolean('Disabled', false)}
+                isDisabled={boolean(labels.disabled, false)}
                 icon={<CoinsIcon />}
             >
-                {text('Label', 'CTA button')}
+                {text(labels.label, 'CTA button')}
             </DaButton>
         </button>
     ));
