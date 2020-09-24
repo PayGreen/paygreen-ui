@@ -1,7 +1,7 @@
 /**
  * MAJ des stories des composants par ordre alphabétique
- * Fait jusqu'au composant Badge inclus
- * Prochain composant : Banner
+ * Fait jusqu'au composant DaButton inclus
+ * Prochain composant : DaHelp
  */
 
 const labels = {
