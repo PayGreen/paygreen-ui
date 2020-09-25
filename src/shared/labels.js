@@ -1,7 +1,7 @@
 /**
  * MAJ des stories des composants par ordre alphabétique
- * Fait jusqu'au composant DaButton inclus
- * Prochain composant : DaHelp
+ * Fait jusqu'au composant DaTableHead inclus
+ * Prochain composant : DaTableHeadCell
  */
 
 const labels = {
