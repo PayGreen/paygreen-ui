@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { DateContextProvider } from '../context/DateContext';
+import localeConfig from '../localeConfig';
 import DropDown from '../../Dropdown/Dropdown';
 import DaInput from '../../DaInput/DaInput';
 import Popin from '../../Popin/Popin';
@@ -13,31 +14,39 @@ import {
     formStatusOptions,
 } from '../../../shared/constants';
 
-const dateFormat = {
-    fr: 'DD/MM/YYYY',
-    en: 'MM/DD/YYYY',
-};
-
 const DatePicker = ({
     value,
     locale,
     minimumDate,
     maximumDate,
+    placeholder,
     colorStatus,
     ...rest
 }) => {
+    // Update moment locale globally
+    // Note : Default locale of moment is 'en', overwrite it with custom config 'pg-fr'
+    moment.updateLocale(
+        'pg-' + locale,
+        localeConfig['pg-' + locale] ? localeConfig['pg-' + locale] : null,
+    );
+    const dateFormat = localeConfig['pg-' + locale]
+        ? localeConfig['pg-' + locale].longDateFormat.L
+        : localeConfig['pg-fr'].longDateFormat.L;
+
+    // Save default value of input ...
     const [selectedDate, setSelectedDate] = useState(
-        moment(value, dateFormat[locale], true).isValid()
-            ? moment(value, dateFormat[locale])
+        moment(value, dateFormat, true).isValid()
+            ? moment(value, dateFormat)
             : null,
     );
+
+    // And extract input state handling
+    const [inputValue, setInputValue] = useState(value);
     useEffect(() => {
         if (selectedDate) {
-            setInputValue(selectedDate.format(dateFormat[locale]));
+            setInputValue(selectedDate.format(dateFormat));
         }
     });
-
-    const [inputValue, setInputValue] = useState(value);
 
     const handleOnChange = e => {
         if (selectedDate) {
@@ -45,16 +54,25 @@ const DatePicker = ({
         }
         setInputValue(e.target.value);
 
-        if (moment(e.target.value, dateFormat[locale], true).isValid()) {
-            setSelectedDate(moment(e.target.value, dateFormat[locale]));
+        if (moment(e.target.value, dateFormat, true).isValid()) {
+            setSelectedDate(moment(e.target.value, dateFormat));
         }
     };
+
+    console.log(
+        'Diff :',
+        selectedDate && selectedDate.diff(moment().startOf('M'), 'M'),
+        'Selected :',
+        selectedDate && selectedDate.format('M'),
+        'Current :',
+        moment().format('M'),
+    );
 
     return (
         <DateContextProvider value={[selectedDate, setSelectedDate]}>
             <DropDown>
                 <DaInput
-                    placeholder="JJ/MM/AAAA"
+                    placeholder={placeholder}
                     mask="99/99/9999"
                     value={inputValue}
                     onChange={handleOnChange}
@@ -65,29 +83,19 @@ const DatePicker = ({
                     <Popin hasStyle={false}>
                         <Calendar
                             currentMonth={
-                                selectedDate &&
-                                selectedDate.month() !== moment().month()
-                                    ? selectedDate.diff(moment(), 'M') +
+                                selectedDate && selectedDate !== moment()
+                                    ? selectedDate.diff(moment().startOf('M'), 'M') +
                                       moment().month()
                                     : moment().month()
                             }
-                            locale={locale}
                             minimumDate={
-                                moment(
-                                    minimumDate,
-                                    dateFormat[locale],
-                                    true,
-                                ).isValid()
-                                    ? moment(minimumDate, dateFormat[locale])
+                                moment(minimumDate, dateFormat, true).isValid()
+                                    ? moment(minimumDate, dateFormat)
                                     : null
                             }
                             maximumDate={
-                                moment(
-                                    maximumDate,
-                                    dateFormat[locale],
-                                    true,
-                                ).isValid()
-                                    ? moment(maximumDate, dateFormat[locale])
+                                moment(maximumDate, dateFormat, true).isValid()
+                                    ? moment(maximumDate, dateFormat)
                                     : null
                             }
                             colorStatus={colorStatus}
@@ -103,6 +111,7 @@ DatePicker.propTypes = {
     value: PropTypes.string,
 
     // Input props
+    placeholder: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),

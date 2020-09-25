@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { MonthContextProvider } from '../context/MonthContext';
@@ -13,13 +13,15 @@ import {
 
 const Calendar = ({
     currentMonth,
-    locale,
     minimumDate,
     maximumDate,
     ...rest
 }) => {
     const [month, setMonth] = useState(currentMonth);
-    moment.locale(locale);
+
+    useEffect(() => {
+        setMonth(currentMonth);
+    }, [currentMonth]);
 
     return (
         <MonthContextProvider value={[month, setMonth]}>
@@ -38,7 +40,6 @@ const Calendar = ({
 
 Calendar.propTypes = {
     currentMonth: PropTypes.number,
-    locale: PropTypes.string, // Moment Local Code in 2 letters
     minimumDate: PropTypes.object,
     maximumDate: PropTypes.object,
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
@@ -46,7 +47,6 @@ Calendar.propTypes = {
 
 Calendar.defaultProps = {
     currentMonth: moment().month(),
-    locale: 'fr',
     minimumDate: null,
     maximumDate: null,
     colorStatus: formStatusDefault,
