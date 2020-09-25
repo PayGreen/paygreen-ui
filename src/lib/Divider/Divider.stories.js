@@ -9,6 +9,7 @@ import {
     colorThemeDefault,
     spaceOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Divider from './Divider';
 
 storiesOf(folder.grid + 'Divider', module)
@@ -16,19 +17,19 @@ storiesOf(folder.grid + 'Divider', module)
     .add('Divider', () => (
         <Divider
             waveStyle={radios(
-                'Wave direction',
+                labels.waveDirection,
                 decorationOptions,
                 decorationDefault,
             )}
             colorTheme={radios(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            text={text('Text', 'Your text')}
-            marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+            text={text(labels.text, 'Your text')}
+            marginTop={select(labels.marginTop, spaceOptions, spaceOptions.md)}
             marginBottom={select(
-                'Margin bottom',
+                labels.marginBottom,
                 spaceOptions,
                 spaceOptions.md,
             )}

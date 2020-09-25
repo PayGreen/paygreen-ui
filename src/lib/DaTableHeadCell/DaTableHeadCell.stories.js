@@ -7,10 +7,6 @@ import { ArrowBottomIcon, ListIcon } from '../Icon/Icon';
 import DaInput from '../DaInput/DaInput';
 import DaTableHeadCell from './DaTableHeadCell';
 
-const sortIconActiveLabel = 'Sort icon active';
-const ascSortLabel = 'ASC sort (need ' + sortIconActiveLabel + ')';
-const groupIconActiveLabel = 'Group icon active (only on Desktop)';
-
 storiesOf(folder.table + folder.sub.daTable + 'DaTableHeadCell', module)
     .addDecorator(withKnobs)
     .add('DaTableHeadCell', () => (
@@ -18,19 +14,19 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTableHeadCell', module)
             sortIcon={
                 boolean(labels.withSortIcon, false) ? (
                     <ArrowBottomIcon
-                        isActive={boolean(sortIconActiveLabel, false)}
+                        isActive={boolean(labels.sortIconActive, false)}
                         rotateSize={
-                            boolean(ascSortLabel, false) &&
-                            boolean(sortIconActiveLabel, false)
+                            boolean(labels.ascSort, false) &&
+                            boolean(labels.sortIconActive, false)
                                 ? rotateSizeOptions.d180
                                 : rotateSizeOptions.d0
                         }
                         title={
-                            boolean(ascSortLabel, false) &&
-                            boolean(sortIconActiveLabel, false)
+                            boolean(labels.ascSort, false) &&
+                            boolean(labels.sortIconActive, false)
                                 ? 'Cancel sort on Sample'
                                 : 'Sort ' +
-                                  (boolean(sortIconActiveLabel, false)
+                                  (boolean(labels.sortIconActive, false)
                                       ? 'ASC'
                                       : 'DESC') +
                                   ' on Sample'
@@ -41,9 +37,9 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTableHeadCell', module)
             groupIcon={
                 boolean(labels.withGroupIcon, false) ? (
                     <ListIcon
-                        isActive={boolean(groupIconActiveLabel, false)}
+                        isActive={boolean(labels.groupIconActive, false)}
                         title={
-                            boolean(groupIconActiveLabel, false)
+                            boolean(labels.groupIconActive, false)
                                 ? 'Cancel group on Sample'
                                 : 'Group on Sample'
                         }
@@ -56,10 +52,10 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTableHeadCell', module)
     .add('DaTableHeadCell with children', () => (
         <DaTableHeadCell
             sortIcon={
-                boolean('With sort icon', false) ? <ArrowBottomIcon /> : null
+                boolean(labels.withSortIcon, false) ? <ArrowBottomIcon /> : null
             }
             groupIcon={
-                boolean('With group icon (only on Desktop)', false) ? (
+                boolean(labels.withGroupIcon, false) ? (
                     <ListIcon />
                 ) : null
             }

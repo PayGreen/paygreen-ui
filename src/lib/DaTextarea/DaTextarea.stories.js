@@ -8,6 +8,7 @@ import {
     inputWidthOptions,
     inputWidthDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import DaTextarea from './DaTextarea';
 
 storiesOf(folder.form + 'DaTextarea', module)
@@ -16,17 +17,17 @@ storiesOf(folder.form + 'DaTextarea', module)
         <DaTextarea
             placeholder="Your text&hellip;"
             maxLength={800}
-            hasCounter={boolean('With counter', true)}
-            disabled={boolean('Disabled', false)}
-            readOnly={boolean('Readonly', false)}
+            hasCounter={boolean(labels.withCounter, true)}
+            disabled={boolean(labels.disabled, false)}
+            readOnly={boolean(labels.readOnly, false)}
             isRounded={boolean('Is rounded', false)}
             fieldSize={radios(
-                'Field size',
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
             blockWidth={radios(
-                'Block width',
+                labels.blockWidth,
                 inputWidthOptions,
                 inputWidthDefault,
             )}

@@ -1,7 +1,7 @@
 /**
  * MAJ des stories des composants par ordre alphabétique
- * Fait jusqu'au composant DaTableHead inclus
- * Prochain composant : DaTableHeadCell
+ * Fait jusqu'au composant Dot inclus
+ * Prochain composant : DropDown
  */
 
 const labels = {
@@ -23,6 +23,9 @@ const labels = {
     submittedText: 'Submitted text',
     centeredPopin: 'Centered popin',
     hasHelpButton: 'Has help button',
+    sortIconActive: 'Sort icon is active',
+    groupIconActive: 'Group icon active (only on Desktop)',
+    ascSort: 'ASC sort (need Sort icon active)',
 
     // Colors
     colorType: 'Color type',
@@ -41,6 +44,7 @@ const labels = {
     isId: 'Is ID',
     withSortIcon: 'With sort icon',
     withGroupIcon: 'With group icon (only on Desktop)',
+    withCounter: 'With counter',
     disabled: 'Disabled',
     readOnly: 'Readonly',
     compensatedButtonMargins: 'Compensate buttons margin',
@@ -63,7 +67,9 @@ const labels = {
     buttonSize: 'Button size',
     buttonAlign: 'Buttons align',
 
-    // Checkbox
+    // Dot
+    dotSize: 'Dot size',
+    dotStyle: 'Dot Style',
 
     // Spaces
     margin: 'Margin',
@@ -79,6 +85,7 @@ const labels = {
     paddingBottom: 'Padding bottom',
 
     // Waves
+    waveDirection: 'Wave direction',
     topWaveDirection: 'Top wave direction',
     bottomWaveDirection: 'Bottom wave direction',
 };
