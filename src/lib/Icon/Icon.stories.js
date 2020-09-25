@@ -1,6 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select, radios } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    boolean,
+    number,
+    select,
+    radios,
+} from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -11,17 +17,19 @@ import {
     greyDefault,
     formStatusOptions,
     formStatusDefault,
+    iconHtmlTagOptions,
     iconSizeOptions,
     spaceOptions,
     rotateSizeOptions,
     rotateSizeDefault,
 } from '../../shared/constants';
 import {
-    PlaneIcon,
+    BellIcon,
     OrganizationIcon,
+    PlaneIcon,
+    PointerIcon,
     ShopIcon,
     TreesIcon,
-    PointerIcon,
 } from './Icon';
 
 const colorPalletLabel = 'Color pallet';
@@ -315,4 +323,36 @@ storiesOf(folder.main + 'Icons', module)
             notes:
                 'Queen icons with some styles. You can add background, shadow, change colors, add active mode, center icon, change margins or icon size.',
         },
-    );
+    )
+    .add('Icon with badge number', () => (
+        <BellIcon
+            htmlTag={iconHtmlTagOptions.button}
+            number={number('Count value', 3, {
+                range: true,
+                max: 110,
+            })}
+            colorPallet={radios(
+                colorPalletLabel,
+                colorPalletOptions,
+                colorPalletDefault,
+            )}
+            colorTheme={select(
+                colorThemeLabel,
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+            colorWab={select(colorWabLabel, greyOptions, greyDefault)}
+            colorStatus={select(
+                colorStatusLabel,
+                formStatusOptions,
+                formStatusDefault,
+            )}
+            iconSize={select(
+                iconSizeLabel,
+                iconSizeOptions,
+                iconSizeOptions.md,
+            )}
+            hasBackground={true}
+            hasHover={true}
+        />
+    ));

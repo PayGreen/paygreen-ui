@@ -32,6 +32,9 @@ const MenuTertiary = props => {
         let sectionsTmp = [];
 
         React.Children.map(props.children, child => {
+            if (!child) {
+                return null;
+            }
             if (
                 child.props &&
                 child.props.href &&

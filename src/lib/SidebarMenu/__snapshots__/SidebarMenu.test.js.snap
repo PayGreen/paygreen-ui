@@ -2,14 +2,14 @@
 
 exports[`renders without crashing 1`] = `
 <li
-  className="sc-AxhCb bRdIaB"
+  className="sc-hKFyIo cvuXns"
 >
   <button
-    className="sc-AxiKw kFHwiy"
+    className="sc-dlnjPT iFVcrt"
     onClick={[Function]}
   >
     <span
-      className="sc-AxjAm gvlGpt icon"
+      className="sc-bdnylx bFNvIq icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -23,23 +23,23 @@ exports[`renders without crashing 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxirZ jzYeZj"
+      className="sc-gtssRu bUTzkg"
     >
       Payment
     </span>
   </button>
   <ul
-    className="sc-AxhUy belQjJ"
+    className="sc-eCApGN gXlNGt"
   >
     <li>
       <a
         href="#"
       >
         <div
-          className="sc-AxiKw sbvyA"
+          className="sc-dlnjPT meiZz"
         >
           <span
-            className="sc-AxirZ jzYeZj"
+            className="sc-gtssRu bUTzkg"
           >
             Tree
           </span>
@@ -51,10 +51,10 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="sc-AxiKw sbvyA"
+          className="sc-dlnjPT meiZz"
         >
           <span
-            className="sc-AxirZ jzYeZj"
+            className="sc-gtssRu bUTzkg"
           >
             Other
           </span>

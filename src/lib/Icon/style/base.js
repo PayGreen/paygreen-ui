@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
 import { colorPalletOptions } from '../../../shared/constants';
+import { countSize, calcShift } from './constants';
 
 const baseColor = {
     theme: css`
@@ -9,12 +10,22 @@ const baseColor = {
         svg {
             fill: ${props => props.theme.color[props.colorTheme].main};
         }
+
+        .badge-number {
+            background-color: ${props =>
+                props.theme.color[props.colorTheme].gradientBase};
+            color: ${props => props.theme.wab.white00};
+        }
     `,
     wab: css`
         background-color: transparent;
 
         svg {
             fill: ${props => props.theme.wab[props.colorWab]};
+        }
+
+        .badge-number {
+            color: ${props => props.theme.wab[props.colorWab]};
         }
     `,
     status: css`
@@ -23,6 +34,12 @@ const baseColor = {
 
         svg {
             fill: ${props => props.theme.status[props.colorStatus].main};
+        }
+
+        .badge-number {
+            background-color: ${props =>
+                props.theme.status[props.colorStatus].main};
+            color: ${props => props.theme.wab.white00};
         }
     `,
 };
@@ -77,8 +94,6 @@ const hasHoverColor = css`
             : null};
 `;
 
-const calcShift = props => props.theme.icon.shift[props.iconSize];
-
 const backgroundStyle = css`
     padding: ${props =>
         math(
@@ -120,10 +135,28 @@ const noBackground = css`
     }
 `;
 
+const numberStyle = css`
+    .badge-number {
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 0;
+        left: 70%;
+        min-width: ${countSize};
+        height: ${countSize};
+        line-height: ${countSize};
+        padding: 0 ${props => props.theme.line};
+        border-radius: ${props => math(countSize(props) + '/2')};
+        font-size: ${props =>
+            math(props.theme.icon.size[props.iconSize] + '/2')};
+        text-align: center;
+    }
+`;
+
 export {
     activeColor,
     baseColor,
     backgroundStyle,
     hasHoverColor,
     noBackground,
+    numberStyle,
 };

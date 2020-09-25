@@ -20,6 +20,8 @@ import {
 import { IconBase } from './style';
 
 const IconWrapper = props => {
+    const maxDisplayed = 99;
+
     return (
         <IconBase as={props.htmlTag} {...props} className="icon">
             {React.Children.map(props.children, child => {
@@ -27,12 +29,24 @@ const IconWrapper = props => {
                     return React.cloneElement(child);
                 }
             })}
+
+            {props.number > 0 &&
+            ![iconSizeOptions.xs, iconSizeOptions.xxs].includes(
+                props.iconSize,
+            ) ? (
+                <span className="badge-number">
+                    {props.number <= maxDisplayed
+                        ? props.number
+                        : maxDisplayed + '+'}
+                </span>
+            ) : null}
         </IconBase>
     );
 };
 
 IconWrapper.propTypes = {
     htmlTag: PropTypes.oneOf(Object.values(iconHtmlTagOptions)),
+    number: PropTypes.number,
     colorPallet: PropTypes.oneOf(Object.values(colorPalletOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
@@ -51,6 +65,7 @@ IconWrapper.propTypes = {
 
 IconWrapper.defaultProps = {
     htmlTag: iconHtmlTagDefault,
+    number: 0,
     colorPallet: colorPalletDefault,
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,

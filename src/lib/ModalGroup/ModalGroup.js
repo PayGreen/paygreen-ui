@@ -9,9 +9,13 @@ const ModalGroup = props => {
         <ModalContext.Provider value={{ isOpen, setOpen }}>
             {isOpen ? <ModalNoScrollStyle /> : null}
 
-            {React.Children.map(props.children, child =>
-                React.cloneElement(child, { isOpen: isOpen }),
-            )}
+            {React.Children.map(props.children, child => {
+                if (!child) {
+                    return null;
+                } else {
+                    return React.cloneElement(child, { isOpen: isOpen });
+                }
+            })}
         </ModalContext.Provider>
     );
 };

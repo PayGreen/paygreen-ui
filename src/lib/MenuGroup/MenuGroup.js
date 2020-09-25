@@ -8,6 +8,9 @@ const MenuGroup = props => {
     let hasOpenMenu = false;
 
     React.Children.map(props.children, child => {
+        if (!child) {
+            return null;
+        }
         if ([MenuPrimary, MenuSecondary].includes(child.type)) {
             if (child.props.isOpen) {
                 hasOpenMenu = true;

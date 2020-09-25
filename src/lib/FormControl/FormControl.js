@@ -13,14 +13,17 @@ const FormControl = ({ children, required, colorStatus, ...rest }) => {
     return (
         <FormControlBase {...rest} colorStatus={colorStatus}>
             {React.Children.map(children, child => {
-                if (child.type === Message) {
-                    return React.cloneElement(child, {
-                        colorStatus: colorStatus,
-                    });
-                } else {
-                    return React.cloneElement(child, {
-                        required: required,
-                    });
+                switch (child && child.type) {
+                    case null:
+                        return null;
+                    case Message:
+                        return React.cloneElement(child, {
+                            colorStatus: colorStatus,
+                        });
+                    default:
+                        return React.cloneElement(child, {
+                            required: required,
+                        });
                 }
             })}
         </FormControlBase>
