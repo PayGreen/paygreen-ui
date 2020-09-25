@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { folder, rotateSizeOptions } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { ArrowBottomIcon, ListIcon } from '../Icon/Icon';
 import DaInput from '../DaInput/DaInput';
 import DaTableHeadCell from './DaTableHeadCell';
@@ -15,7 +16,7 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTableHeadCell', module)
     .add('DaTableHeadCell', () => (
         <DaTableHeadCell
             sortIcon={
-                boolean('With sort icon', false) ? (
+                boolean(labels.withSortIcon, false) ? (
                     <ArrowBottomIcon
                         isActive={boolean(sortIconActiveLabel, false)}
                         rotateSize={
@@ -38,7 +39,7 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTableHeadCell', module)
                 ) : null
             }
             groupIcon={
-                boolean('With group icon (only on Desktop)', false) ? (
+                boolean(labels.withGroupIcon, false) ? (
                     <ListIcon
                         isActive={boolean(groupIconActiveLabel, false)}
                         title={

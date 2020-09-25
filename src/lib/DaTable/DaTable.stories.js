@@ -10,6 +10,7 @@ import {
     spaceOptions,
     alignOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import {
     CheckBoldIcon,
     CrossBoldIcon,
@@ -152,7 +153,6 @@ const sampleRows = [
 ];
 
 const isLoadingLabel = 'Is loading';
-const isActiveLabel = 'First line active';
 
 storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
     .addDecorator(withKnobs)
@@ -161,18 +161,18 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
             isLoading={boolean(isLoadingLabel, false)}
             loadingRowNumber={sampleRows.length}
             blockWidth={select(
-                'Width on small screens',
+                labels.smallScreenWidth,
                 spaceOptions,
                 spaceOptions.md,
             )}
             marginLateral={select(
-                'Lateral margins',
+                labels.marginLateral,
                 spaceOptions,
                 spaceOptions.sm,
             )}
-            marginTop={select('Margin top', spaceOptions, spaceOptions.sm)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceOptions.sm)}
             marginBottom={select(
-                'Margin bottom',
+                labels.marginBottom,
                 spaceOptions,
                 spaceOptions.sm,
             )}
@@ -225,7 +225,7 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
                         <DaTableRow
                             key={index}
                             isActive={
-                                !index ? boolean(isActiveLabel, false) : false
+                                !index ? boolean(labels.isActive, false) : false
                             }
                         >
                             <DaTableCell>
@@ -233,7 +233,7 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
                                     id={'checkbox' + index}
                                     checked={
                                         !index
-                                            ? boolean(isActiveLabel, false)
+                                            ? boolean(labels.isActive, false)
                                             : false
                                     }
                                     readOnly={true}

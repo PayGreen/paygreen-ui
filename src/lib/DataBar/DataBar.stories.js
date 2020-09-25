@@ -21,6 +21,7 @@ import {
     fontSizeDefault,
     greyOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import DataBar from './DataBar';
 
 const defaultValue = 25;
@@ -30,68 +31,65 @@ const valueOptions = {
 };
 
 const { wab, ...barColorPalletOptions } = colorPalletOptions;
-const colorPalletLabel = 'Color pallet';
-const colorStatusLabel = 'Status color';
-const colorThemeLabel = 'Theme color';
 
 storiesOf(folder.graph + 'Databar', module)
     .addDecorator(withKnobs)
     .add('DataBar', () => (
         <DataBar
-            hasBackground={boolean('With background', true)}
+            hasBackground={boolean(labels.hasBackground, true)}
             backgroundColor={select(
-                'Background color',
+                labels.backgroundColor,
                 greyOptions,
                 greyOptions.grey10,
             )}
-            textSize={select('Text Size', fontSizeOptions, fontSizeDefault)}
-            unit={text('Unity', '%')}
+            textSize={select(labels.textSize, fontSizeOptions, fontSizeDefault)}
+            unit={text(labels.unity, '%')}
             colorPallet={radios(
-                colorPalletLabel,
+                labels.colorPallet,
                 barColorPalletOptions,
                 colorPalletDefault,
             )}
-            maxValue={number('Max value', 100)}
+            maxValue={number(labels.maxValue, 100)}
             data={[
                 {
-                    value: number('Value', defaultValue, valueOptions),
+                    value: number(labels.value, defaultValue, valueOptions),
                     legend: ['compensé par ', <strong>vous</strong>],
                     colorTheme: select(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     ),
                     colorStatus: select(
-                        colorStatusLabel,
+                        labels.colorStatus,
                         formStatusOptions,
                         formStatusDefault,
                     ),
                 },
             ]}
-            blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
+            blockWidth={select(labels.blockWidth, spaceOptions, spaceOptions.md)}
         />
     ))
     .add('DataBar Multi', () => (
         <DataBar
-            hasBackground={boolean('With background', true)}
+            hasBackground={boolean(labels.hasBackground, true)}
             colorPallet={radios(
-                colorPalletLabel,
+                labels.colorPallet,
                 barColorPalletOptions,
                 colorPalletDefault,
             )}
             data={[
-                { value: number('Value 1', defaultValue, valueOptions) },
+                { value: number(labels.value + ' 1', defaultValue, valueOptions) },
                 {
-                    value: number('Value 2', defaultValue, valueOptions),
+                    value: number(labels.value + ' 2', defaultValue, valueOptions),
                     colorTheme: colorThemeOptions.tertiary,
                     colorStatus: formStatusOptions.warning,
                 },
                 {
-                    value: number('Value 3', defaultValue, valueOptions),
+                    value: number(labels.value + ' 3', defaultValue, valueOptions),
                     colorTheme: colorThemeOptions.quaternary,
                     colorStatus: formStatusOptions.danger,
                 },
             ]}
-            blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
+            blockWidth={select(labels.blockWidth, spaceOptions, spaceOptions.md)}
         />
     ));

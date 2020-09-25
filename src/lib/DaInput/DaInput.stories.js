@@ -8,6 +8,7 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { PhoneIcon, SearchIcon } from '../Icon/Icon';
 import DaInput from './DaInput';
 
@@ -16,21 +17,21 @@ storiesOf(folder.form + 'DaInput', module)
     .add('Text', () => (
         <DaInput
             placeholder="Firstname Lastname"
-            disabled={boolean('Disabled', false)}
-            readOnly={boolean('Readonly', false)}
+            disabled={boolean(labels.disabled, false)}
+            readOnly={boolean(labels.readOnly, false)}
             isRounded={boolean('Is rounded', false)}
             fieldSize={radios(
-                'Field size',
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
             blockWidth={radios(
-                'Block width',
+                labels.blockWidth,
                 inputWidthOptions,
                 inputWidthDefault,
             )}
             hasStaticWidth={boolean('Has static width', false)}
-            hasHelpButton={boolean('Help button', false)}
+            hasHelpButton={boolean(labels.hasHelpButton, false)}
             icon={boolean('Has icon', true) ? <SearchIcon /> : null}
         />
     ))
@@ -38,15 +39,15 @@ storiesOf(folder.form + 'DaInput', module)
         <DaInput
             type="tel"
             placeholder="+33 (0)6 11 22 33 44"
-            disabled={boolean('Disabled', false)}
-            readOnly={boolean('Readonly', false)}
+            disabled={boolean(labels.disabled, false)}
+            readOnly={boolean(labels.readOnly, false)}
             isRounded={boolean('Is rounded', false)}
             fieldSize={radios(
-                'Field size',
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
-            hasHelpButton={boolean('Help button', false)}
+            hasHelpButton={boolean(labels.hasHelpButton, false)}
             icon={boolean('Has icon', true) ? <PhoneIcon /> : null}
         />
     ));

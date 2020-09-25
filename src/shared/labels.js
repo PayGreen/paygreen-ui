@@ -11,6 +11,7 @@ const labels = {
     htmlTag: 'HTML Tags',
     shadowSize: 'Shadow size',
     blockWidth: 'Width',
+    smallScreenWidth: 'Width on small screens',
     borderRadius: 'Border radius',
     hasBackground: 'Has background',
     borderTopStyle: 'Border-top style',
@@ -21,6 +22,7 @@ const labels = {
     cornerPosition: 'Corner position',
     submittedText: 'Submitted text',
     centeredPopin: 'Centered popin',
+    hasHelpButton: 'Has help button',
 
     // Colors
     colorType: 'Color type',
@@ -30,10 +32,17 @@ const labels = {
     colorStyle: 'Color style',
     colorWab: 'Color wab',
     gradient: 'Gradient',
+    backgroundColor: 'Background color',
 
     // Booleans
     isActive: 'Is active',
+    isRequired: 'Is required',
+    isMain: 'Is main',
+    isId: 'Is ID',
+    withSortIcon: 'With sort icon',
+    withGroupIcon: 'With group icon (only on Desktop)',
     disabled: 'Disabled',
+    readOnly: 'Readonly',
     compensatedButtonMargins: 'Compensate buttons margin',
     hasResponsiveMargin: 'Has responsive margin',
     hasResponsivePadding: 'Has responsive padding',
@@ -45,6 +54,9 @@ const labels = {
     placeholder: 'Placeholder',
     fieldSize: 'Field size',
     status: 'Status',
+    unity: 'Unity',
+    value: 'Value',
+    maxValue: 'Max value',
 
     // Buttons
     buttonStyle: 'Button style',
