@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-fzozJi bylUof"
+  className="sc-dnqmqq iDCRcP"
 >
   <ul
     className="menu"
@@ -11,16 +11,16 @@ exports[`renders without crashing 1`] = `
       className="menuElement"
     >
       <li
-        className="sc-AxheI jvAQGL"
+        className="sc-bZQynM hAyDJP"
       >
         <a
           href="#"
         >
           <div
-            className="sc-AxhUy kaaOk"
+            className="sc-ifAKCX cyXVwd"
           >
             <span
-              className="sc-AxjAm fMIVWV icon"
+              className="sc-bdVaJa jeaiJn icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -31,7 +31,7 @@ exports[`renders without crashing 1`] = `
               </svg>
             </span>
             <span
-              className="sc-AxirZ cdAPYE"
+              className="sc-bwzfXH btCcNs"
             >
               Login
             </span>

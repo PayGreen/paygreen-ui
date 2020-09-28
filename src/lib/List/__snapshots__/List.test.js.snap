@@ -2,17 +2,18 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-AxhCb hQYqoW"
+  className="sc-bxivhb bjQHua"
 >
   <li>
     <span
-      className="sc-AxiKw eRDEkc"
+      className="sc-htpNat kDSvXT"
+      type={null}
     >
       <span
         className="bullet"
       />
       <p
-        className="sc-AxjAm fCzfxO"
+        className="sc-bdVaJa girSNX"
       >
         Something
       </p>
@@ -20,13 +21,14 @@ exports[`renders without crashing 1`] = `
   </li>
   <li>
     <span
-      className="sc-AxiKw eRDEkc"
+      className="sc-htpNat kDSvXT"
+      type={null}
     >
       <span
         className="bullet"
       />
       <p
-        className="sc-AxjAm fCzfxO"
+        className="sc-bdVaJa girSNX"
       >
         Something else
       </p>

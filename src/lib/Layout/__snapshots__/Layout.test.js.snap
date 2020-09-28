@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-AxjAm dCIMEW"
+  className="sc-bdVaJa cCbJNe"
 >
   <div
-    className="sc-AxheI efsUa"
+    className="sc-bZQynM eLFYwO"
   >
     <span
-      className="sc-AxirZ kucKJC icon"
+      className="sc-bwzfXH imIBnl icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -20,13 +20,13 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-AxgMl biXNuZ"
+    className="sc-EHOje biQLyh"
   >
     <header
-      className="sc-AxhCb jmgXZq"
+      className="sc-bxivhb cJicZp"
     >
       <button
-        className="sc-AxiKw pKXyV"
+        className="sc-htpNat ftFqHA"
       >
         <span />
         <span />
@@ -34,7 +34,7 @@ exports[`renders without crashing 1`] = `
       </button>
     </header>
     <div
-      className="sc-AxhUy gGsSBF"
+      className="sc-ifAKCX bzUpzJ"
     />
   </div>
 </div>

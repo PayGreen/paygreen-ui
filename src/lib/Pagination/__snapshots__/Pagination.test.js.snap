@@ -2,31 +2,31 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-AxirZ iqUdeX"
+  className="sc-bwzfXH joSvVD"
 >
   <button
-    className="sc-AxjAm bKSRpI"
+    className="sc-bdVaJa hsirYx"
     onClick={[Function]}
     type="button"
   >
     1
   </button>
   <button
-    className="sc-AxjAm bKSRpI"
+    className="sc-bdVaJa hsirYx"
     onClick={[Function]}
     type="button"
   >
     2
   </button>
   <button
-    className="sc-AxjAm kpwhkT"
+    className="sc-bdVaJa iMcZUL"
     onClick={[Function]}
     type="button"
   >
     3
   </button>
   <button
-    className="sc-AxjAm bKSRpI"
+    className="sc-bdVaJa hsirYx"
     onClick={[Function]}
     type="button"
   >
@@ -34,7 +34,7 @@ exports[`renders without crashing 1`] = `
   </button>
   ...
   <button
-    className="sc-AxjAm bKSRpI"
+    className="sc-bdVaJa hsirYx"
     onClick={[Function]}
     type="button"
   >

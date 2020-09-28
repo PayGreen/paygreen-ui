@@ -5,10 +5,10 @@ exports[`renders without crashing 1`] = `
   href="#"
 >
   <div
-    className="sc-AxhUy kpzVZQ"
+    className="sc-ifAKCX kTIejG"
   >
     <span
-      className="sc-AxjAm gvlGpt icon"
+      className="sc-bdVaJa fcjtnt icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -25,15 +25,15 @@ exports[`renders without crashing 1`] = `
       </svg>
     </span>
     <span
-      className="sc-AxirZ jzYeZj"
+      className="sc-bwzfXH ifokyD"
     >
       Payment
     </span>
     <span
-      className="sc-AxiKw gOItVN"
+      className="sc-htpNat dVhAo"
     >
       <span
-        className="sc-AxjAm jxwbER icon"
+        className="sc-bdVaJa bTfzca icon"
       >
         <svg
           viewBox="0 0 143 143"
@@ -49,7 +49,7 @@ exports[`renders without crashing 1`] = `
       Dev
     </span>
     <p
-      className="sc-AxhCb jNWkpF"
+      className="sc-bxivhb eggmCa"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo, id bibendum felis iaculis eu.
     </p>

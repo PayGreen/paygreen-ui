@@ -2,7 +2,8 @@
 
 exports[`renders without crashing 1`] = `
 <span
-  className="sc-AxjAm dQNuuy"
+  className="sc-bwzfXH izKXvk"
+  type={null}
 >
   Test
 </span>

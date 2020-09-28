@@ -2,15 +2,15 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-AxjAm WqzNo"
+  className="sc-bdVaJa kVWSvM"
 >
   <span
-    className="sc-AxirZ TTjCR"
+    className="sc-bwzfXH lnUdvK"
   >
     This is the Title
   </span>
   <span
-    className="sc-AxiKw fRCbKS icon"
+    className="sc-htpNat jTyhfH icon"
   >
     <svg
       viewBox="0 0 143 143"

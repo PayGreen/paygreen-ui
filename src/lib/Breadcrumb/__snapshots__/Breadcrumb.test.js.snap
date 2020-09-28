@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-AxirZ gwubQR"
+  className="sc-bwzfXH bFfsfX"
 >
   <li>
     <a
@@ -15,7 +15,7 @@ exports[`renders without crashing 1`] = `
   </li>
   <li>
     <span
-      className="sc-AxjAm bzMlqZ icon"
+      className="sc-bdVaJa kyBNXu icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -35,7 +35,7 @@ exports[`renders without crashing 1`] = `
   </li>
   <li>
     <span
-      className="sc-AxjAm bzMlqZ icon"
+      className="sc-bdVaJa kyBNXu icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -55,7 +55,7 @@ exports[`renders without crashing 1`] = `
   </li>
   <li>
     <span
-      className="sc-AxjAm bzMlqZ icon"
+      className="sc-bdVaJa kyBNXu icon"
     >
       <svg
         viewBox="0 0 143 143"

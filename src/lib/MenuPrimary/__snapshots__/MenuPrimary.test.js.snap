@@ -2,19 +2,19 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-Axmtr dcQmLy"
+  className="sc-gzVnrw gBFbZq"
 >
   <li
-    className="sc-AxheI jvAQGL"
+    className="sc-bZQynM hAyDJP"
   >
     <a
       href="#"
     >
       <div
-        className="sc-AxhUy kaaOk"
+        className="sc-ifAKCX cyXVwd"
       >
         <span
-          className="sc-AxirZ cOMYrc"
+          className="sc-bwzfXH ixqcHG"
         >
           About us
         </span>
@@ -22,33 +22,33 @@ exports[`renders without crashing 1`] = `
     </a>
   </li>
   <li
-    className="sc-AxheI jvAQGL"
+    className="sc-bZQynM hAyDJP"
   >
     <a
       href="#"
     >
       <div
-        className="sc-AxhUy hiLlOl"
+        className="sc-ifAKCX hndDUf"
       >
         <span
-          className="sc-AxirZ cOMYrc"
+          className="sc-bwzfXH ixqcHG"
         >
           Other products
         </span>
       </div>
     </a>
     <ul
-      className="sc-AxgMl htZcib"
+      className="sc-EHOje jRrjoX"
     >
       <li>
         <a
           href="#"
         >
           <div
-            className="sc-AxhUy jIhVWj"
+            className="sc-ifAKCX hObubV"
           >
             <span
-              className="sc-AxjAm gvlGpt icon"
+              className="sc-bdVaJa fcjtnt icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -59,12 +59,12 @@ exports[`renders without crashing 1`] = `
               </svg>
             </span>
             <span
-              className="sc-AxirZ jzYeZj"
+              className="sc-bwzfXH ifokyD"
             >
               Tree
             </span>
             <p
-              className="sc-AxhCb jNWkpF"
+              className="sc-bxivhb eggmCa"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
             </p>
@@ -76,10 +76,10 @@ exports[`renders without crashing 1`] = `
           href="#"
         >
           <div
-            className="sc-AxhUy jIhVWj"
+            className="sc-ifAKCX hObubV"
           >
             <span
-              className="sc-AxjAm gvlGpt icon"
+              className="sc-bdVaJa fcjtnt icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -96,15 +96,15 @@ exports[`renders without crashing 1`] = `
               </svg>
             </span>
             <span
-              className="sc-AxirZ jzYeZj"
+              className="sc-bwzfXH ifokyD"
             >
               Payment
             </span>
             <span
-              className="sc-AxiKw gOItVN"
+              className="sc-htpNat dVhAo"
             >
               <span
-                className="sc-AxjAm jxwbER icon"
+                className="sc-bdVaJa bTfzca icon"
               >
                 <svg
                   viewBox="0 0 143 143"

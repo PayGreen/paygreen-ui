@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-AxirZ cTAnQb"
+  className="sc-bwzfXH kDfzCr"
 >
   <div>
     <input
@@ -425,7 +425,7 @@ exports[`renders without crashing 1`] = `
   </div>
   <span>
     <span
-      className="sc-AxjAm lmKoDB icon"
+      className="sc-bdVaJa eygIN icon"
     >
       <svg
         viewBox="0 0 143 143"

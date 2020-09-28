@@ -2,24 +2,24 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-gKAblj iDyuEC"
+  className="sc-bZQynM gvQgOG"
 >
   <span
-    className="sc-jSFkmK ioMYhU"
+    className="sc-EHOje jSWenB"
   >
     Categorie de pages
   </span>
   <li
-    className="sc-hKFyIo cvuXns"
+    className="sc-bxivhb eIPKRs"
   >
     <a
       href="#"
     >
       <div
-        className="sc-dlnjPT meiZz"
+        className="sc-htpNat gCTvAu"
       >
         <span
-          className="sc-bdnylx bFNvIq icon"
+          className="sc-bdVaJa fcjtnt icon"
         >
           <svg
             viewBox="0 0 143 143"
@@ -33,7 +33,7 @@ exports[`renders without crashing 1`] = `
           </svg>
         </span>
         <span
-          className="sc-gtssRu bUTzkg"
+          className="sc-bwzfXH ifokyD"
         >
           Payment
         </span>

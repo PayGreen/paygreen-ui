@@ -2,19 +2,19 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-AxheI gylJhh"
+  className="sc-bZQynM hRZEfi"
 >
   <div
-    className="sc-AxhCb cyvaLD"
+    className="sc-bxivhb IfbVk"
     onClick={[Function]}
   >
     <span
-      className="sc-AxhUy fofcPT"
+      className="sc-ifAKCX evrMkw"
     >
       Search and filters
     </span>
     <span
-      className="sc-AxjAm jXdjOy icon"
+      className="sc-bdVaJa cUxPzH icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -26,7 +26,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-AxiKw NnWsC"
+    className="sc-htpNat gZcOQw"
   >
     <div
       className="head-child"
@@ -35,7 +35,7 @@ exports[`renders without crashing 1`] = `
         className="hideOnBigScreen"
       >
         <div
-          className="sc-AxirZ dhSHCK"
+          className="sc-bwzfXH faOlws"
         >
           <input
             disabled={false}
@@ -452,7 +452,7 @@ exports[`renders without crashing 1`] = `
             htmlFor="select"
           >
             <span
-              className="sc-AxjAm fMIVWV icon"
+              className="sc-bdVaJa jeaiJn icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -470,7 +470,7 @@ exports[`renders without crashing 1`] = `
       className="hideOnSmallScreen"
     >
       <div
-        className="sc-AxirZ dhSHCK"
+        className="sc-bwzfXH faOlws"
       >
         <input
           disabled={false}
@@ -887,7 +887,7 @@ exports[`renders without crashing 1`] = `
           htmlFor="select"
         >
           <span
-            className="sc-AxjAm fMIVWV icon"
+            className="sc-bdVaJa jeaiJn icon"
           >
             <svg
               viewBox="0 0 143 143"
@@ -902,7 +902,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxiKw eqaZWR"
+    className="sc-htpNat bywxiU"
   >
     <div
       className="head-child"
@@ -911,7 +911,7 @@ exports[`renders without crashing 1`] = `
         className="icon-child"
       >
         <button
-          className="sc-AxjAm fpWeSO icon"
+          className="sc-bdVaJa hMNEHe icon"
         >
           <svg
             viewBox="0 0 143 143"
@@ -930,7 +930,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxiKw eqaZWR"
+    className="sc-htpNat bywxiU"
   >
     <div
       className="head-child"

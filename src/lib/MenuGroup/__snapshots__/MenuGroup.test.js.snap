@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-crzoUp jhbWTO"
+  className="sc-VigVT cweoNk"
 >
   <div
     className="main-nav"
   >
     <button
-      className="sc-iCoHVE hklUks"
+      className="sc-gzVnrw jarawN"
     >
       <span />
       <span />
@@ -16,19 +16,19 @@ exports[`renders without crashing 1`] = `
     </button>
   </div>
   <ul
-    className="sc-gKAblj dtEAja"
+    className="sc-bZQynM dxjVBw"
   >
     <li
-      className="sc-jSFkmK hOCjj"
+      className="sc-EHOje Eovxe"
     >
       <a
         href="#"
       >
         <div
-          className="sc-hKFyIo cIhOzM"
+          className="sc-bxivhb gczXZR"
         >
           <span
-            className="sc-bdnylx fbEkUe"
+            className="sc-bdVaJa kUfnGr"
           >
             About us
           </span>
