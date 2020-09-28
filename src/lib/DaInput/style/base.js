@@ -36,7 +36,8 @@ const disabled = css`
 `;
 
 const helpButtonStyle = css`
-    input {
+    input,
+    select {
         border-right: none;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;

@@ -26,8 +26,9 @@ const DaSelectBase = styled.div`
         }
 
         ${props => (props.inputDisabled ? disabled : enabled)};
-        ${props => (props.hasHelpButton ? helpButtonStyle : null)};
     }
+    
+    ${props => (props.hasHelpButton ? helpButtonStyle : null)};
 
     &::after {
         content: '';

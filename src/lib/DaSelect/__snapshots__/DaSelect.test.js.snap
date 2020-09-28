@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-AxjAm hmvwza"
+  className="sc-bdVaJa FgRfh"
 >
   <select
     disabled={false}
