@@ -59,14 +59,23 @@ const DatePicker = ({
         }
     };
 
-    console.log(
-        'Diff :',
-        selectedDate && selectedDate.diff(moment().startOf('M'), 'M'),
-        'Selected :',
-        selectedDate && selectedDate.format('M'),
-        'Current :',
-        moment().format('M'),
-    );
+    const calcMonthIndex = () => {
+        if (!selectedDate) {
+            return moment().month();
+        }
+
+        if (selectedDate === moment().startOf('d')) {
+            return moment().month();
+        }
+
+        const yearDiff = selectedDate.format('YYYY') - moment().format('YYYY');
+        const monthDiff = selectedDate.format('M') - moment().format('M');
+
+        return yearDiff !== 0
+            ? moment().month() + yearDiff * 12 + monthDiff
+            : moment().month() + monthDiff;
+    };
+    const monthIndex = calcMonthIndex();
 
     return (
         <DateContextProvider value={[selectedDate, setSelectedDate]}>
@@ -82,12 +91,7 @@ const DatePicker = ({
                 {rest.readOnly || rest.disabled ? null : (
                     <Popin hasStyle={false}>
                         <Calendar
-                            currentMonth={
-                                selectedDate && selectedDate !== moment()
-                                    ? selectedDate.diff(moment().startOf('M'), 'M') +
-                                      moment().month()
-                                    : moment().month()
-                            }
+                            currentMonth={monthIndex}
                             minimumDate={
                                 moment(minimumDate, dateFormat, true).isValid()
                                     ? moment(minimumDate, dateFormat)
