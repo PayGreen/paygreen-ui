@@ -12,13 +12,7 @@ it('renders without crashing', () => {
             <SidebarItem theme={ThemeDefault}>
                 <MeterIcon iconSize={iconSizeOptions.lg} theme={ThemeDefault} />
 
-                <Link
-                    theme={ThemeDefault}
-                    hasUnderline={false}
-                    hasHover={false}
-                >
-                    Payment
-                </Link>
+                <Link theme={ThemeDefault}>Payment</Link>
             </SidebarItem>
         </a>,
     );

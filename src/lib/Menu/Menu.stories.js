@@ -41,8 +41,6 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                     )}
                 >
                     <Link
-                        hasUnderline={false}
-                        hasHover={false}
                         colorPallet={colorPalletOptions.wab}
                         hasUppercase={true}
                     >
@@ -71,8 +69,6 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                         />
 
                         <Link
-                            hasUnderline={false}
-                            hasHover={false}
                             colorTheme={radios(
                                 colorThemeLabel,
                                 colorThemeOptions,
@@ -109,8 +105,6 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                         />
 
                         <Link
-                            hasUnderline={false}
-                            hasHover={false}
                             colorTheme={radios(
                                 colorThemeLabel,
                                 colorThemeOptions,
@@ -160,8 +154,6 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                         />
 
                         <Link
-                            hasUnderline={false}
-                            hasHover={false}
                             colorTheme={radios(
                                 colorThemeLabel,
                                 colorThemeOptions,

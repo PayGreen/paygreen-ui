@@ -41,8 +41,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
                 />
 
                 <Link
-                    hasUnderline={false}
-                    hasHover={false}
                     colorTheme={radios(
                         colorThemeLabel,
                         colorThemeOptions,

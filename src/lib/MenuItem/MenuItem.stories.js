@@ -50,8 +50,6 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuItem', module)
                 />
 
                 <Link
-                    hasUnderline={false}
-                    hasHover={false}
                     colorPallet={radios(
                         colorPalletLabel,
                         colorPalletOptions,
@@ -109,12 +107,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuItem', module)
                     true,
                 )}
             >
-                <Link
-                    hasUnderline={false}
-                    hasHover={false}
-                    colorPallet={colorPalletOptions.wab}
-                    hasUppercase={true}
-                >
+                <Link colorPallet={colorPalletOptions.wab} hasUppercase={true}>
                     Payment
                 </Link>
             </MenuItem>

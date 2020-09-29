@@ -53,8 +53,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                 />
 
                 <Link
-                    hasUnderline={false}
-                    hasHover={false}
                     colorTheme={radios(
                         colorThemeLabel,
                         colorThemeOptions,
@@ -83,8 +81,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                         <Link
                             colorPallet={colorPalletOptions.wab}
                             colorWab={greyOptions.grey60}
-                            hasUnderline={false}
-                            hasHover={false}
                         >
                             Vue d'ensemble
                         </Link>
@@ -107,8 +103,6 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                         <Link
                             colorPallet={colorPalletOptions.wab}
                             colorWab={greyOptions.grey60}
-                            hasUnderline={false}
-                            hasHover={false}
                         >
                             Vue par projet
                         </Link>

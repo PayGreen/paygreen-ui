@@ -4,7 +4,7 @@ import { ThemeDefault } from '../../theme';
 import {
     colorPalletOptions,
     iconSizeOptions,
-    spaceOptions
+    spaceOptions,
 } from '../../shared/constants';
 import { LeafIcon, CardsIcon, OutIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
@@ -20,13 +20,8 @@ it('renders without crashing', () => {
         <MenuPrimary theme={ThemeDefault} isOpen={true}>
             <Menu theme={ThemeDefault}>
                 <a href="#">
-                    <MenuItem
-                        isMain={true}
-                        theme={ThemeDefault}
-                    >
+                    <MenuItem isMain={true} theme={ThemeDefault}>
                         <Link
-                            hasUnderline={false}
-                            hasHover={false}
                             colorPallet={colorPalletOptions.wab}
                             hasUppercase={true}
                             theme={ThemeDefault}
@@ -46,8 +41,6 @@ it('renders without crashing', () => {
                         theme={ThemeDefault}
                     >
                         <Link
-                            hasUnderline={false}
-                            hasHover={false}
                             colorPallet={colorPalletOptions.wab}
                             hasUppercase={true}
                             theme={ThemeDefault}
@@ -59,46 +52,30 @@ it('renders without crashing', () => {
 
                 <MenuList theme={ThemeDefault}>
                     <a href="#">
-                        <MenuItem
-                            hasHoverEmphasis={true}
-                            theme={ThemeDefault}
-                        >
+                        <MenuItem hasHoverEmphasis={true} theme={ThemeDefault}>
                             <LeafIcon
                                 iconSize={iconSizeOptions.lg}
                                 theme={ThemeDefault}
                             />
 
-                            <Link
-                                hasUnderline={false}
-                                hasHover={false}
-                                theme={ThemeDefault}
-                            >
-                                Tree
-                            </Link>
+                            <Link theme={ThemeDefault}>Tree</Link>
 
                             <Text theme={ThemeDefault}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Maecenas sit amet accumsan
+                                dolor. Nullam fringilla quam leo.
                             </Text>
                         </MenuItem>
                     </a>
 
                     <a href="#">
-                        <MenuItem
-                            hasHoverEmphasis={true}
-                            theme={ThemeDefault}
-                        >
+                        <MenuItem hasHoverEmphasis={true} theme={ThemeDefault}>
                             <CardsIcon
                                 iconSize={iconSizeOptions.lg}
                                 theme={ThemeDefault}
                             />
 
-                            <Link
-                                hasUnderline={false}
-                                hasHover={false}
-                                theme={ThemeDefault}
-                            >
-                                Payment
-                            </Link>
+                            <Link theme={ThemeDefault}>Payment</Link>
 
                             <IconLabel theme={ThemeDefault}>
                                 <OutIcon
@@ -112,7 +89,7 @@ it('renders without crashing', () => {
                     </a>
                 </MenuList>
             </Menu>
-        </MenuPrimary>
+        </MenuPrimary>,
     );
     expect(menuPrimary.toJSON()).toMatchSnapshot();
 });

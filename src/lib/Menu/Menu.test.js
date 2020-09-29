@@ -11,9 +11,7 @@ import Menu from './Menu';
 
 it('renders without crashing', () => {
     const menu = TestRenderer.create(
-        <Menu
-            theme={ThemeDefault}
-        >
+        <Menu theme={ThemeDefault}>
             <a href="#">
                 <MenuItem
                     isMain={true}
@@ -22,8 +20,6 @@ it('renders without crashing', () => {
                     theme={ThemeDefault}
                 >
                     <Link
-                        hasUnderline={false}
-                        hasHover={false}
                         colorPallet={colorPalletOptions.wab}
                         hasUppercase={true}
                         theme={ThemeDefault}
@@ -35,50 +31,34 @@ it('renders without crashing', () => {
 
             <MenuList theme={ThemeDefault}>
                 <a href="#">
-                    <MenuItem
-                        hasHoverEmphasis={true}
-                        theme={ThemeDefault}
-                    >
+                    <MenuItem hasHoverEmphasis={true} theme={ThemeDefault}>
                         <LeafIcon
                             iconSize={iconSizeOptions.lg}
                             theme={ThemeDefault}
                         />
 
-                        <Link
-                            hasUnderline={false}
-                            hasHover={false}
-                            theme={ThemeDefault}
-                        >
-                            Tree
-                        </Link>
+                        <Link theme={ThemeDefault}>Tree</Link>
 
                         <Text theme={ThemeDefault}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Maecenas sit amet accumsan dolor. Nullam
+                            fringilla quam leo.
                         </Text>
                     </MenuItem>
                 </a>
 
                 <a href="#">
-                    <MenuItem
-                        hasHoverEmphasis={true}
-                        theme={ThemeDefault}
-                    >
+                    <MenuItem hasHoverEmphasis={true} theme={ThemeDefault}>
                         <OrganizationIcon
                             iconSize={iconSizeOptions.lg}
                             theme={ThemeDefault}
                         />
 
-                        <Link
-                            hasUnderline={false}
-                            hasHover={false}
-                            theme={ThemeDefault}
-                        >
-                            Rounding
-                        </Link>
+                        <Link theme={ThemeDefault}>Rounding</Link>
                     </MenuItem>
                 </a>
             </MenuList>
-        </Menu>
+        </Menu>,
     );
     expect(menu.toJSON()).toMatchSnapshot();
 });

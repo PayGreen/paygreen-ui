@@ -43,21 +43,12 @@ const secondaryItem = {
 };
 
 const mainLink = {
-    hasHover: false,
-    hasUnderline: false,
     colorPallet: colorPalletOptions.wab,
     hasUppercase: true,
 };
 
 const secondaryLink = {
-    hasHover: false,
-    hasUnderline: false,
     hasUppercase: true,
-};
-
-const subLink = {
-    hasHover: false,
-    hasUnderline: false,
 };
 
 const sampleLinks = [
@@ -131,15 +122,13 @@ storiesOf(folder.nav + 'Header', module)
                                     hasHoverBase={false}
                                     hasHoverAlternative={false}
                                 >
-                                    <Link {...mainLink}>
-                                        Other products
-                                    </Link>
+                                    <Link {...mainLink}>Other products</Link>
                                 </MenuItem>
 
                                 <MenuList>
                                     <a href="#">
                                         <MenuItem hasHoverEmphasis={true}>
-                                            <Link {...subLink}>Tree</Link>
+                                            <Link>Tree</Link>
 
                                             <Text>
                                                 Lorem ipsum dolor sit amet,
@@ -153,7 +142,7 @@ storiesOf(folder.nav + 'Header', module)
 
                                     <a href="#">
                                         <MenuItem hasHoverEmphasis={true}>
-                                            <Link {...subLink}>Payment</Link>
+                                            <Link>Payment</Link>
                                         </MenuItem>
                                     </a>
                                 </MenuList>

@@ -16,11 +16,6 @@ import MenuList from '../MenuList/MenuList';
 import Menu from '../Menu/Menu';
 import MenuPrimary from './MenuPrimary';
 
-const subLink = {
-    hasUnderline: false,
-    hasHover: false,
-};
-
 storiesOf(folder.nav + 'MenuPrimary', module)
     .addDecorator(withKnobs)
     .add('MenuPrimary', () => (
@@ -28,13 +23,7 @@ storiesOf(folder.nav + 'MenuPrimary', module)
             <Menu>
                 <a href="#">
                     <MenuItem isMain={true} hasHoverEmphasis={true}>
-                        <Link
-                            hasUnderline={false}
-                            hasHover={false}
-                            hasUppercase={true}
-                        >
-                            About us
-                        </Link>
+                        <Link hasUppercase={true}>About us</Link>
                     </MenuItem>
                 </a>
             </Menu>
@@ -46,8 +35,6 @@ storiesOf(folder.nav + 'MenuPrimary', module)
                     hasHoverAlternative={false}
                 >
                     <Link
-                        hasUnderline={false}
-                        hasHover={false}
                         colorPallet={colorPalletOptions.wab}
                         hasUppercase={true}
                     >
@@ -60,7 +47,7 @@ storiesOf(folder.nav + 'MenuPrimary', module)
                         <MenuItem hasHoverEmphasis={true}>
                             <LeafIcon iconSize={iconSizeOptions.lg} />
 
-                            <Link {...subLink}>Tree</Link>
+                            <Link>Tree</Link>
 
                             <Text>
                                 Lorem ipsum dolor sit amet, consectetur
@@ -74,7 +61,7 @@ storiesOf(folder.nav + 'MenuPrimary', module)
                         <MenuItem hasHoverEmphasis={true}>
                             <CardsIcon iconSize={iconSizeOptions.lg} />
 
-                            <Link {...subLink}>Payment</Link>
+                            <Link>Payment</Link>
 
                             <IconLabel>
                                 <OutIcon
@@ -90,7 +77,7 @@ storiesOf(folder.nav + 'MenuPrimary', module)
                         <MenuItem hasHoverEmphasis={true}>
                             <OrganizationIcon iconSize={iconSizeOptions.lg} />
 
-                            <Link {...subLink}>Rounding</Link>
+                            <Link>Rounding</Link>
                         </MenuItem>
                     </a>
                 </MenuList>
@@ -103,8 +90,6 @@ storiesOf(folder.nav + 'MenuPrimary', module)
                     hasHoverAlternative={false}
                 >
                     <Link
-                        hasUnderline={false}
-                        hasHover={false}
                         colorPallet={colorPalletOptions.wab}
                         hasUppercase={true}
                     >
@@ -117,7 +102,7 @@ storiesOf(folder.nav + 'MenuPrimary', module)
                         <MenuItem hasHoverEmphasis={true}>
                             <LeafIcon iconSize={iconSizeOptions.lg} />
 
-                            <Link {...subLink}>Tree</Link>
+                            <Link>Tree</Link>
 
                             <Text>
                                 Lorem ipsum dolor sit amet, consectetur
@@ -131,7 +116,7 @@ storiesOf(folder.nav + 'MenuPrimary', module)
                         <MenuItem hasHoverEmphasis={true}>
                             <CardsIcon iconSize={iconSizeOptions.lg} />
 
-                            <Link {...subLink}>Payment</Link>
+                            <Link>Payment</Link>
 
                             <IconLabel>
                                 <OutIcon
@@ -147,7 +132,7 @@ storiesOf(folder.nav + 'MenuPrimary', module)
                         <MenuItem hasHoverEmphasis={true}>
                             <OrganizationIcon iconSize={iconSizeOptions.lg} />
 
-                            <Link {...subLink}>Rounding</Link>
+                            <Link>Rounding</Link>
                         </MenuItem>
                     </a>
                 </MenuList>
