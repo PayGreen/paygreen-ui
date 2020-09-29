@@ -1,6 +1,10 @@
 {
   "name": "@paygreen/paygreen-ui",
   "version": "0.6.0",
+  "description": "PayGreen UI library",
+  "author": "PayGreen Front Team",
+  "license": "ISC",
+  "homepage": "https://github.com/PayGreen/paygreen-ui.git#readme",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
   "browser": "build/index.js",
@@ -17,32 +21,29 @@
     "type": "git",
     "url": "git+https://github.com/PayGreen/paygreen-ui.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/PayGreen/paygreen-ui.git/issues"
   },
-  "homepage": "https://github.com/PayGreen/paygreen-ui.git#readme",
   "devDependencies": {
     "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.0.0",
-    "@rollup/plugin-url": "^4.0.0",
-    "@storybook/addon-a11y": "^5.3.21",
-    "@storybook/addon-backgrounds": "^5.2.5",
-    "@storybook/addon-docs": "^5.2.8",
-    "@storybook/addon-knobs": "^5.3.21",
-    "@storybook/addon-notes": "^5.3.21",
-    "@storybook/addon-viewport": "^5.3.21",
-    "@storybook/react": "^5.3.21",
-    "@storybook/storybook-deployer": "^2.8.1",
+    "@rollup/plugin-url": "^5.0.1",
+    "@storybook/addon-a11y": "^6.0.22",
+    "@storybook/addon-backgrounds": "^6.0.22",
+    "@storybook/addon-docs": "^6.0.22",
+    "@storybook/addon-knobs": "^6.0.22",
+    "@storybook/addon-notes": "^5.3.19",
+    "@storybook/addon-viewport": "^6.0.22",
+    "@storybook/react": "^6.0.22",
+    "@storybook/storybook-deployer": "^2.8.6",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "jest": "^24.9.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.1.2",
     "react-test-renderer": "^16.10.1",
     "rollup": "^1.21.4",
     "rollup-plugin-babel": "^4.3.3",
@@ -52,21 +53,20 @@
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-svg": "^2.0.0",
     "storybook-addon-styled-component-theme": "^1.2.5",
-    "styled-components": "^4.3.2"
+    "styled-components": "^5.2.0"
   },
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^1.0.43",
-    "polished": "^3.4.1",
-    "react-indiana-drag-scroll": "^1.6.1",
+    "polished": "^3.6.7",
+    "react-indiana-drag-scroll": "^1.7.0",
     "react-input-mask": "^2.0.4",
     "react-transition-group": "^4.3.0",
     "styled-normalize": "^8.0.6"
   },
   "peerDependencies": {
-    "react": "^16.9.0",
-    "styled-components": ">= 4"
+    "react": "^16.13.1",
+    "styled-components": ">= 5"
   },
-  "description": "PayGreen Library",
   "jest": {
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/fileMock.js"

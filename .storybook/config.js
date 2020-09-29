@@ -24,38 +24,24 @@ addParameters({
         showPanel: true,
         showRoots: true,
     },
-    // backgrounds: { // storybook 6
-    //     // https://www.npmjs.com/package/@storybook/addon-backgrounds
-    //     default: 'White',
-    //     values: [
-    //         { name: 'White', value: '#ffffff' },
-    //         { name: 'Primary', value: '#77d1a6' },
-    //         { name: 'PrimaryShade', value: '#a4db95' },
-    //         { name: 'Secondary', value: '#51c6be' },
-    //         { name: 'SecondaryShade', value: '#76bbd8' },
-    //         { name: 'Tertiary', value: '#fab56b' },
-    //         { name: 'TertiaryShade', value: '#faa272' },
-    //         { name: 'Quaternary', value: '#e98e90' },
-    //         { name: 'QuaternaryShade', value: '#e98eb9' },
-    //         { name: 'Quinary', value: '#b887ee' },
-    //         { name: 'QuinaryShade', value: '#dd94ef' },
-    //         { name: 'DarkMode', value: '#202020' },
-    //     ]
-    // },
-    backgrounds: [
-        { name: 'White', value: '#ffffff', default: true },
-        { name: 'Primary', value: '#77d1a6' },
-        { name: 'PrimaryShade', value: '#a4db95' },
-        { name: 'Secondary', value: '#51c6be' },
-        { name: 'SecondaryShade', value: '#76bbd8' },
-        { name: 'Tertiary', value: '#fab56b' },
-        { name: 'TertiaryShade', value: '#faa272' },
-        { name: 'Quaternary', value: '#e98e90' },
-        { name: 'QuaternaryShade', value: '#e98eb9' },
-        { name: 'Quinary', value: '#b887ee' },
-        { name: 'QuinaryShade', value: '#dd94ef' },
-        { name: 'DarkMode', value: '#202020' },
-    ],
+    backgrounds: {
+        // https://www.npmjs.com/package/@storybook/addon-backgrounds
+        default: 'White',
+        values: [
+            { name: 'White', value: '#ffffff' },
+            { name: 'Primary', value: '#77d1a6' },
+            { name: 'PrimaryShade', value: '#a4db95' },
+            { name: 'Secondary', value: '#51c6be' },
+            { name: 'SecondaryShade', value: '#76bbd8' },
+            { name: 'Tertiary', value: '#fab56b' },
+            { name: 'TertiaryShade', value: '#faa272' },
+            { name: 'Quaternary', value: '#e98e90' },
+            { name: 'QuaternaryShade', value: '#e98eb9' },
+            { name: 'Quinary', value: '#b887ee' },
+            { name: 'QuinaryShade', value: '#dd94ef' },
+            { name: 'DarkMode', value: '#202020' },
+        ]
+    },
     a11y: {
         element: '#root',
         config: {},
