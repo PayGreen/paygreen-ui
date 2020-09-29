@@ -29,6 +29,10 @@ const SidebarItemBase = styled.div`
         font-size: ${props => props.theme.font.size.sm};
         padding: ${props => props.theme.space.sm} 0;
         margin-left: ${props => props.theme.space.md};
+
+        &::after {
+            display: none !important;
+        }
     }
 
     ${props =>

@@ -76,10 +76,6 @@ const hoverEmphasis = css`
         padding-left: ${props => props.theme.space.md};
         padding-right: ${props => props.theme.space.sm};
     }
-`;
-
-const subHoverEmphasis = css`
-    ${hoverEmphasis};
 
     @media (${props => props.theme.query.min.lg}) {
         padding-left: ${props => props.theme.space.md};
@@ -116,15 +112,15 @@ const main = css`
     }
 
     @media (${props => props.theme.query.max.lg}) {
-        ${props => (props.hasHoverBase ? hoverBase : null)};
-        ${props => (props.hasHoverEmphasis ? hoverEmphasis : null)};
-
         ${props =>
-            !props.hasHoverBase && !props.hasHoverEmphasis ? titleStyle : null};
+            !props.hasHoverBase && !props.hasHoverEmphasis ? titleStyle : null}
     }
 
     @media (${props => props.theme.query.min.lg}) {
-        & > .icon {
+        padding: 0 ${props => props.theme.space.sm} !important;
+
+        & > .icon,
+        &::before {
             display: none;
         }
 
@@ -149,9 +145,6 @@ const sub = css`
     ${LinkBase} {
         padding: ${props => props.theme.space.sm} 0;
     }
-
-    ${props => (props.hasHoverBase ? hoverBase : null)};
-    ${props => (props.hasHoverEmphasis ? subHoverEmphasis : null)};
 `;
 
 const align = {
@@ -167,4 +160,4 @@ const align = {
     `,
 };
 
-export { main, sub, align };
+export { main, sub, hoverBase, hoverEmphasis, align };

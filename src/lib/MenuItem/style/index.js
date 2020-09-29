@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { LinkBase } from '../../Link/style';
 import { IconLabelBase } from '../../IconLabel/style';
 import { TextBase } from '../../Text/style';
-import { main, sub, align } from './base';
+import { main, sub, hoverBase, hoverEmphasis, align } from './base';
 
 const MenuItemBase = styled.div`
     position: relative;
@@ -23,6 +23,10 @@ const MenuItemBase = styled.div`
     ${LinkBase} {
         grid-area: link;
         font-size: ${props => props.theme.font.size.sm};
+
+        &::after {
+            display: none !important;
+        }
     }
 
     ${IconLabelBase} {
@@ -35,6 +39,8 @@ const MenuItemBase = styled.div`
         font-size: ${props => props.theme.font.size.xs};
     }
 
+    ${props => (props.hasHoverBase ? hoverBase : null)};
+    ${props => (props.hasHoverEmphasis ? hoverEmphasis : null)};
     ${props => (props.isMain ? main : sub)};
     ${props => align[props.align]};
 `;
