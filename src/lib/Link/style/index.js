@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colorTypeOptions } from '../../../shared/constants';
 import { mainColor } from '../../Text/style/constants';
-import { opacity, linkUppercase, hoverStyle } from './base';
+import { opacity, linkUppercase } from './base';
 
 const LinkBase = styled.span`
     display: inline-block;
@@ -35,8 +35,16 @@ const LinkBase = styled.span`
         transition: all ${props => props.theme.transition.xs};
     }
 
+    a:hover &,
+    a:active &,
+    a:focus & {
+        &::after {
+            height: 100%;
+            opacity: ${opacity};
+        }
+    }
+
     ${props => (props.hasUppercase ? linkUppercase : null)};
-    ${props => (props.hasHover ? hoverStyle : null)};
 `;
 
 export { LinkBase };

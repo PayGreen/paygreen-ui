@@ -71,7 +71,6 @@ storiesOf(folder.main + 'Link', module)
                             formStatusDefault,
                         )}
                         hasUnderline={boolean('Has underline', true)}
-                        hasHover={boolean('Has hover', true)}
                         hasUppercase={boolean('Uppercase', false)}
                     >
                         {text('Label', 'Link text')}
