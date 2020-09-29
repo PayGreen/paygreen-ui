@@ -126,7 +126,7 @@ DatePicker.propTypes = {
     ]),
 
     // Calendar props
-    locale: PropTypes.string,
+    locale: PropTypes.string,   // 2-letters short language code
     minimumDate: PropTypes.string,
     maximumDate: PropTypes.string,
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
