@@ -22,6 +22,10 @@ const Badge = props => {
             {...props}
         >
             {React.Children.map(props.children, (child, index) => {
+                if (!child) {
+                    return null;
+                }
+                
                 if (child.type === ArrowBottomIcon) {
                     return React.cloneElement(child, {
                         rotateSize: props.isActive
