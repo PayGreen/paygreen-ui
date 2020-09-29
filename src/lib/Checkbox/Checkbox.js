@@ -12,6 +12,7 @@ const Checkbox = props => {
             theme={props.theme} // not necessary, only needed for tests
             fieldSize={fieldSize}
             isDisabled={props.disabled}
+            hasLabel={label && label.length > 0}
         >
             <input {...rest} ref={inputRef} id={id} type="checkbox" />
 
