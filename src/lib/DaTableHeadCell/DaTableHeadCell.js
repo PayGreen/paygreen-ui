@@ -5,7 +5,6 @@ import {
     iconSizeOptions,
     colorPalletOptions,
     formStatusDefault,
-    spaceOptions,
 } from '../../shared/constants';
 import Checkbox from '../Checkbox/Checkbox';
 import { DaTableHeadCellBase } from './style';
@@ -16,7 +15,6 @@ const DaTableHeadCell = ({ children, label, sortIcon, groupIcon, ...rest }) => {
         iconSize: iconSizeOptions.xxs,
         hasBackground: true,
         hasHover: true,
-        marginLeft: spaceOptions.xs,
         colorPallet: colorPalletOptions.status,
         colorStatus: formStatusDefault,
     };

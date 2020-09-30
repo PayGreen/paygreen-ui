@@ -28,7 +28,6 @@ const DaTableHeadBase = styled.div`
 
     ${InternalGridBase} {
         cursor: pointer;
-        margin-right: ${props => props.theme.space.sm};
     }
 
     ${InternalGridBase},
