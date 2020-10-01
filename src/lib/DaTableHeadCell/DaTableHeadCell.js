@@ -9,7 +9,14 @@ import {
 import Checkbox from '../Checkbox/Checkbox';
 import { DaTableHeadCellBase } from './style';
 
-const DaTableHeadCell = ({ children, label, sortIcon, groupIcon, ...rest }) => {
+const DaTableHeadCell = ({
+    children,
+    label,
+    sortIcon,
+    groupIcon,
+    isCheckbox,
+    ...rest
+}) => {
     const iconProps = {
         htmlTag: iconHtmlTagOptions.button,
         iconSize: iconSizeOptions.xxs,
@@ -19,12 +26,13 @@ const DaTableHeadCell = ({ children, label, sortIcon, groupIcon, ...rest }) => {
         colorStatus: formStatusDefault,
     };
 
-    const isCheckbox = children && children.type === Checkbox;
+    const cellIsCheckbox =
+        isCheckbox || (children && children.type === Checkbox);
 
     return (
         <DaTableHeadCellBase
             {...rest}
-            isCheckbox={isCheckbox}
+            isCheckbox={cellIsCheckbox}
             hasControls={sortIcon || groupIcon}
             className={!children && !sortIcon ? 'hideOnSmallScreen' : null}
         >
@@ -43,16 +51,16 @@ const DaTableHeadCell = ({ children, label, sortIcon, groupIcon, ...rest }) => {
                     </span>
                 ) : null}
 
-                {children && isCheckbox ? (
+                {children && cellIsCheckbox ? (
                     <span className="hideOnBigScreen">{children}</span>
                 ) : null}
             </div>
 
-            {children && !isCheckbox ? (
+            {children && !cellIsCheckbox ? (
                 <div className="cell-child">{children}</div>
             ) : null}
 
-            {children && isCheckbox ? (
+            {children && cellIsCheckbox ? (
                 <div className="hideOnSmallScreen">{children}</div>
             ) : null}
         </DaTableHeadCellBase>
@@ -63,11 +71,13 @@ DaTableHeadCell.propTypes = {
     sortIcon: PropTypes.element,
     groupIcon: PropTypes.element,
     label: PropTypes.string,
+    isCheckbox: PropTypes.bool,
 };
 
 DaTableHeadCell.defaultProps = {
     sortIcon: null,
     groupIcon: null,
+    isCheckbox: false,
 };
 
 export default DaTableHeadCell;

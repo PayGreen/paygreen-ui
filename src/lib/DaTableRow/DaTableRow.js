@@ -19,6 +19,7 @@ const DaTableRow = props => {
                 }
 
                 if (
+                    child.props.isCheckbox ||
                     child.props.children &&
                     child.props.children.type === Checkbox
                 ) {
@@ -46,6 +47,7 @@ const DaTableRow = props => {
                 if (typeof child === 'object') {
                     if (child.props.isMain) {
                         if (
+                            child.props.isCheckbox ||
                             child.props.children &&
                             child.props.children.type === Checkbox
                         ) {
