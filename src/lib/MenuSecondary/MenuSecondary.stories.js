@@ -36,8 +36,6 @@ storiesOf(folder.nav + 'MenuSecondary', module)
                         />
 
                         <Link
-                            hasUnderline={false}
-                            hasHover={false}
                             hasUppercase={true}
                             colorPallet={colorPalletOptions.wab}
                         >
@@ -57,13 +55,7 @@ storiesOf(folder.nav + 'MenuSecondary', module)
                     >
                         <PenIcon iconSize={iconSizeOptions.lg} />
 
-                        <Link
-                            hasUnderline={false}
-                            hasHover={false}
-                            hasUppercase={true}
-                        >
-                            Subscribe
-                        </Link>
+                        <Link hasUppercase={true}>Subscribe</Link>
                     </MenuItem>
                 </a>
             </Menu>

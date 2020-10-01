@@ -231,7 +231,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
                         >
                             <DaTableCell>
                                 <Checkbox
-                                    id={index.toString()}
+                                    id={'checkbox' + index}
                                     checked={
                                         !index
                                             ? boolean(isActiveLabel, false)

@@ -13,15 +13,4 @@ const linkUppercase = css`
     }
 `;
 
-const hoverStyle = css`
-    a:hover &,
-    a:active &,
-    a:focus & {
-        &::after {
-            height: 100%;
-            opacity: ${opacity};
-        }
-    }
-`;
-
-export { opacity, linkUppercase, hoverStyle };
+export { opacity, linkUppercase };

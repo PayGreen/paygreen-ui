@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { transparentize } from 'polished';
 import { InternalGridBase } from '../../InternalGrid/style';
 import { TextBase } from '../../Text/style';
-import { closedStyle } from './base';
+import { openStyle, closedStyle } from './base';
 
 const DaTableHeadBase = styled.div`
     @media (${props => props.theme.query.max.lg}) {
@@ -19,7 +19,7 @@ const DaTableHeadBase = styled.div`
                 props.theme.wab.black00,
             )};
         overflow: hidden;
-        ${props => (props.isHeadOpen ? null : closedStyle)};
+        ${props => (props.isHeadOpen ? openStyle : closedStyle)};
     }
 
     @media (${props => props.theme.query.min.lg}) {
@@ -28,7 +28,6 @@ const DaTableHeadBase = styled.div`
 
     ${InternalGridBase} {
         cursor: pointer;
-        margin-right: ${props => props.theme.space.sm};
     }
 
     ${InternalGridBase},

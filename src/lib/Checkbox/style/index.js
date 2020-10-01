@@ -20,7 +20,7 @@ const CheckboxBase = styled.div`
             flex-shrink: 0;
             height: ${checkboxSize};
             width: ${checkboxSize};
-            margin-right: ${props => props.theme.space.sm};
+            margin-right: ${props => props.hasLabel ? props.theme.space.sm : 0};
             border-radius: ${props => props.theme.radius.sm};
             border: solid ${props => props.theme.line};
             border-color: ${props => props.theme.wab.grey30};

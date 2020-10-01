@@ -23,7 +23,6 @@ const mobileStyle = css`
                 ${IconBase} {
                     width: ${props => props.theme.icon.size.sm};
                     height: ${props => props.theme.icon.size.sm};
-                    margin-right: ${props => props.theme.space.xs};
                     padding: ${props =>
                         math(
                             props.theme.icon.size.sm +

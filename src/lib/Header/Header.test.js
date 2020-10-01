@@ -21,12 +21,7 @@ it('renders without crashing', () => {
                     <Menu theme={ThemeDefault}>
                         <a href="#">
                             <MenuItem isMain={true} theme={ThemeDefault}>
-                                <Link
-                                    theme={ThemeDefault}
-                                    hasUnderline={false}
-                                    hasHover={false}
-                                    hasUppercase={true}
-                                >
+                                <Link theme={ThemeDefault} hasUnderline={false}>
                                     About us
                                 </Link>
                             </MenuItem>

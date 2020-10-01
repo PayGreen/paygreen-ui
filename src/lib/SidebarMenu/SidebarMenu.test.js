@@ -20,37 +20,19 @@ it('renders without crashing', () => {
             >
                 <MeterIcon iconSize={iconSizeOptions.lg} theme={ThemeDefault} />
 
-                <Link
-                    theme={ThemeDefault}
-                    hasUnderline={false}
-                    hasHover={false}
-                >
-                    Payment
-                </Link>
+                <Link theme={ThemeDefault}>Payment</Link>
             </SidebarItem>
 
             <SidebarList theme={ThemeDefault}>
                 <a href="#">
                     <SidebarItem theme={ThemeDefault}>
-                        <Link
-                            theme={ThemeDefault}
-                            hasUnderline={false}
-                            hasHover={false}
-                        >
-                            Tree
-                        </Link>
+                        <Link theme={ThemeDefault}>Tree</Link>
                     </SidebarItem>
                 </a>
 
                 <a href="#">
                     <SidebarItem theme={ThemeDefault}>
-                        <Link
-                            theme={ThemeDefault}
-                            hasUnderline={false}
-                            hasHover={false}
-                        >
-                            Other
-                        </Link>
+                        <Link theme={ThemeDefault}>Other</Link>
                     </SidebarItem>
                 </a>
             </SidebarList>

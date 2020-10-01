@@ -10,25 +10,13 @@ it('renders without crashing', () => {
         <SidebarList theme={ThemeDefault}>
             <a href="#">
                 <SidebarItem theme={ThemeDefault}>
-                    <Link
-                        theme={ThemeDefault}
-                        hasUnderline={false}
-                        hasHover={false}
-                    >
-                        Tree
-                    </Link>
+                    <Link theme={ThemeDefault}>Tree</Link>
                 </SidebarItem>
             </a>
-            
+
             <a href="#">
                 <SidebarItem theme={ThemeDefault}>
-                    <Link
-                        theme={ThemeDefault}
-                        hasUnderline={false}
-                        hasHover={false}
-                    >
-                        Other
-                    </Link>
+                    <Link theme={ThemeDefault}>Other</Link>
                 </SidebarItem>
             </a>
         </SidebarList>,

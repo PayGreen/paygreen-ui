@@ -42,9 +42,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
                 <MenuItem hasHoverEmphasis={true}>
                     <LeafIcon iconSize={iconSizeOptions.lg} />
 
-                    <Link hasUnderline={false} hasHover={false}>
-                        Tree
-                    </Link>
+                    <Link>Tree</Link>
 
                     <Text>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -61,13 +59,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
                         colorTheme={color[1]}
                     />
 
-                    <Link
-                        hasUnderline={false}
-                        hasHover={false}
-                        colorTheme={color[1]}
-                    >
-                        Payment
-                    </Link>
+                    <Link colorTheme={color[1]}>Payment</Link>
 
                     <IconLabel colorTheme={color[1]}>
                         <OutIcon
@@ -87,13 +79,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
                         colorTheme={color[2]}
                     />
 
-                    <Link
-                        hasUnderline={false}
-                        hasHover={false}
-                        colorTheme={color[2]}
-                    >
-                        Lunchkit
-                    </Link>
+                    <Link colorTheme={color[2]}>Lunchkit</Link>
 
                     <IconLabel colorTheme={color[2]}>
                         <OutIcon
@@ -118,13 +104,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
                         colorTheme={color[3]}
                     />
 
-                    <Link
-                        hasUnderline={false}
-                        hasHover={false}
-                        colorTheme={color[3]}
-                    >
-                        Rounding
-                    </Link>
+                    <Link colorTheme={color[3]}>Rounding</Link>
                 </MenuItem>
             </a>
         </MenuList>

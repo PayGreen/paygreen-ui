@@ -11,6 +11,8 @@ import {
     iconSizeDefault,
     decorationOptions,
     iconHtmlTagOptions,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import { LeafIcon, CheckBoldIcon } from '../Icon/Icon';
 import Text from '../Text/Text';
@@ -37,6 +39,8 @@ storiesOf(folder.main + folder.sub.list + 'ListItem', module)
                 colorThemeDefault,
             )}
             bulletSize={select('Bullet size', iconSizeOptions, iconSizeDefault)}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
         >
             <LeafIcon
                 colorTheme={radios(

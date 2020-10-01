@@ -10,21 +10,24 @@ const DaTableRow = props => {
     let notMainCellCount = 0;
 
     React.Children.map(props.children, child => {
-        if (child.props.isMain) {
-            mainCellCount++;
+        if (typeof child === 'object') {
+            if (child.props.isMain) {
+                mainCellCount++;
 
-            if (child.props.isId) {
-                hasId = true;
-            }
+                if (child.props.isId) {
+                    hasId = true;
+                }
 
-            if (
-                child.props.children &&
-                child.props.children.type === Checkbox
-            ) {
-                hasCheckbox = true;
+                if (
+                    child.props.isCheckbox ||
+                    child.props.children &&
+                    child.props.children.type === Checkbox
+                ) {
+                    hasCheckbox = true;
+                }
+            } else {
+                notMainCellCount++;
             }
-        } else {
-            notMainCellCount++;
         }
     });
 
@@ -44,6 +47,7 @@ const DaTableRow = props => {
                 if (typeof child === 'object') {
                     if (child.props.isMain) {
                         if (
+                            child.props.isCheckbox ||
                             child.props.children &&
                             child.props.children.type === Checkbox
                         ) {

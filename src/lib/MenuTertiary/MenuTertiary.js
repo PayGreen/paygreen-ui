@@ -72,6 +72,10 @@ const MenuTertiary = props => {
         <MenuTertiaryBase {...props}>
             <ScrollContainer horizontal nativeMobileScroll>
                 {React.Children.map(props.children, (child, index) => {
+                    if (!child) {
+                        return null;
+                    }
+                    
                     return React.cloneElement(child, {
                         key: index,
                         className:

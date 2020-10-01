@@ -12,26 +12,16 @@ it('renders without crashing', () => {
         <MenuSecondary theme={ThemeDefault} isOpen={true}>
             <Menu theme={ThemeDefault}>
                 <a href="#">
-                    <MenuItem
-                        theme={ThemeDefault}
-                        isMain={true}
-                    >
-                        <LockIcon
-                            theme={ThemeDefault}
-                        />
+                    <MenuItem theme={ThemeDefault} isMain={true}>
+                        <LockIcon theme={ThemeDefault} />
 
-                        <Link
-                            theme={ThemeDefault}
-                            hasUnderline={false}
-                            hasHover={false}
-                            hasUppercase={true}
-                        >
+                        <Link theme={ThemeDefault} hasUppercase={true}>
                             Login
                         </Link>
                     </MenuItem>
                 </a>
             </Menu>
-        </MenuSecondary>
+        </MenuSecondary>,
     );
     expect(element.toJSON()).toMatchSnapshot();
 });

@@ -22,13 +22,7 @@ it('renders without crashing', () => {
                             theme={ThemeDefault}
                         />
 
-                        <Link
-                            theme={ThemeDefault}
-                            hasUnderline={false}
-                            hasHover={false}
-                        >
-                            Payment
-                        </Link>
+                        <Link theme={ThemeDefault}>Payment</Link>
                     </SidebarItem>
                 </a>
             </SidebarMenu>

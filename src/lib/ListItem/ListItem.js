@@ -9,7 +9,9 @@ import {
     iconSizeDefault,
     decorationOptions,
     iconHtmlTagOptions,
-    iconHtmlTagDefault
+    iconHtmlTagDefault,
+    spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import { ArrowLeftIcon, ArrowRightIcon } from '../Icon/Icon';
 import { ListItemBase } from './style';
@@ -66,6 +68,8 @@ ListItem.propTypes = {
     bulletSize: PropTypes.oneOf(Object.values(iconSizeOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     arrowStyle: PropTypes.oneOf(Object.values(decorationOptions)),
+    marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
+    marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 ListItem.defaultProps = {
@@ -76,6 +80,8 @@ ListItem.defaultProps = {
     bulletSize: iconSizeDefault,
     colorTheme: colorThemeDefault,
     arrowStyle: decorationOptions.none,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
 };
 
 export default ListItem;

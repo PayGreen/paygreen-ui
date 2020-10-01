@@ -21,8 +21,6 @@ it('renders without crashing', () => {
                     <a href="#">
                         <MenuItem isMain={true} theme={ThemeDefault}>
                             <Link
-                                hasUnderline={false}
-                                hasHover={false}
                                 colorPallet={colorPalletOptions.wab}
                                 hasUppercase={true}
                                 theme={ThemeDefault}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Checkbox from '../Checkbox/Checkbox';
 import { DaTableCellBase } from './style';
 
-const DaTableCell = ({ children, label, field, ...rest }) => {
+const DaTableCell = ({ children, label, field, isCheckbox, ...rest }) => {
     const labelContent = label && label.length ? (
         <span className="cell-label">{label}</span>
     ) : null;
@@ -17,7 +17,7 @@ const DaTableCell = ({ children, label, field, ...rest }) => {
     return (
         <DaTableCellBase
             {...rest}
-            isCheckbox={children && children.type === Checkbox}
+            isCheckbox={isCheckbox || children && children.type === Checkbox}
             hasLabel={label && label.length}
         >
             {labelContent}
@@ -28,6 +28,7 @@ const DaTableCell = ({ children, label, field, ...rest }) => {
 };
 
 DaTableCell.propTypes = {
+    isCheckbox: PropTypes.bool,
     isMain: PropTypes.bool,
     isId: PropTypes.bool,
     label: PropTypes.string,
@@ -35,6 +36,7 @@ DaTableCell.propTypes = {
 };
 
 DaTableCell.defaultProps = {
+    isCheckbox: false,
     isMain: true,
     isId: false,
 };

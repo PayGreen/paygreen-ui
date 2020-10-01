@@ -44,15 +44,8 @@ const mainMenuItem = {
 };
 
 const mainLink = {
-    hasHover: false,
-    hasUnderline: false,
     colorPallet: colorPalletOptions.wab,
     hasUppercase: true,
-};
-
-const subLink = {
-    hasHover: false,
-    hasUnderline: false,
 };
 
 storiesOf(folder.nav + 'MenuGroup', module)
@@ -100,7 +93,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                             <MenuItem hasHoverEmphasis={true}>
                                 <LeafIcon iconSize={iconSizeOptions.lg} />
 
-                                <Link {...subLink}>Tree</Link>
+                                <Link>Tree</Link>
 
                                 <Text>
                                     Lorem ipsum dolor sit amet, consectetur
@@ -114,7 +107,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                             <MenuItem hasHoverEmphasis={true}>
                                 <CardsIcon iconSize={iconSizeOptions.lg} />
 
-                                <Link {...subLink}>Payment</Link>
+                                <Link>Payment</Link>
 
                                 <IconLabel>
                                     <OutIcon
@@ -132,7 +125,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                                     iconSize={iconSizeOptions.lg}
                                 />
 
-                                <Link {...subLink}>Rounding</Link>
+                                <Link>Rounding</Link>
                             </MenuItem>
                         </a>
                     </MenuList>
@@ -148,7 +141,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                             <MenuItem hasHoverEmphasis={true}>
                                 <LeafIcon iconSize={iconSizeOptions.lg} />
 
-                                <Link {...subLink}>Tree</Link>
+                                <Link>Tree</Link>
 
                                 <Text>
                                     Lorem ipsum dolor sit amet, consectetur
@@ -162,7 +155,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                             <MenuItem hasHoverEmphasis={true}>
                                 <CardsIcon iconSize={iconSizeOptions.lg} />
 
-                                <Link {...subLink}>Payment</Link>
+                                <Link>Payment</Link>
 
                                 <IconLabel>
                                     <OutIcon
@@ -217,13 +210,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                         >
                             <PenIcon iconSize={iconSizeOptions.lg} />
 
-                            <Link
-                                hasHover={false}
-                                hasUnderline={false}
-                                hasUppercase={true}
-                            >
-                                Subscribe
-                            </Link>
+                            <Link hasUppercase={true}>Subscribe</Link>
                         </MenuItem>
                     </a>
                 </Menu>

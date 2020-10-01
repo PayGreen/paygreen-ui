@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CheckboxBase } from '../../Checkbox/style';
 import { gridTemplate, gridColumns } from './constants';
 import { cellsAreas, toggableStyle, activeStyle, hoverStyle } from './base';
 
@@ -6,6 +7,10 @@ const DaTableRowBase = styled.div`
     transition: all ${props => props.theme.transition.sm};
     ${hoverStyle};
     ${props => (props.isActive ? activeStyle : null)};
+
+    ${CheckboxBase} {
+        margin: ${props => props.theme.space.xs} 0;
+    }
 
     @media (${props => props.theme.query.max.lg}) {
         margin: ${props => props.theme.space.xs};
