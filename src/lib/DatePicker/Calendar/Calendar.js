@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { MonthContextProvider } from '../context/MonthContext';
-import CalendarBase from './style';
 import CalendarNavbar from '../CalendarNavbar/CalendarNavbar';
 import CalendarWeekdays from '../CalendarWeekdays/CalendarWeekdays';
 import CalendarGrid from '../CalendarGrid/CalendarGrid';
@@ -25,15 +24,13 @@ const Calendar = ({
 
     return (
         <MonthContextProvider value={[month, setMonth]}>
-            <CalendarBase {...rest}>
-                <CalendarNavbar {...rest} />
-                <CalendarWeekdays {...rest} />
-                <CalendarGrid
-                    minimumDate={minimumDate}
-                    maximumDate={maximumDate}
-                    {...rest}
-                />
-            </CalendarBase>
+            <CalendarNavbar {...rest} />
+            <CalendarWeekdays {...rest} />
+            <CalendarGrid
+                minimumDate={minimumDate}
+                maximumDate={maximumDate}
+                {...rest}
+            />
         </MonthContextProvider>
     );
 };

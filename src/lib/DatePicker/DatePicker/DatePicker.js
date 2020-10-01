@@ -13,6 +13,7 @@ import {
     formStatusDefault,
     formStatusOptions,
 } from '../../../shared/constants';
+import { DatePickerBase } from './style';
 
 const DatePicker = ({
     value,
@@ -79,34 +80,44 @@ const DatePicker = ({
 
     return (
         <DateContextProvider value={[selectedDate, setSelectedDate]}>
-            <DropDown>
-                <DaInput
-                    placeholder={placeholder}
-                    mask="99/99/9999"
-                    value={inputValue}
-                    onChange={handleOnChange}
-                    {...rest}
-                />
+            <DatePickerBase>
+                <DropDown>
+                    <DaInput
+                        placeholder={placeholder}
+                        mask="99/99/9999"
+                        value={inputValue}
+                        onChange={handleOnChange}
+                        {...rest}
+                    />
 
-                {rest.readOnly || rest.disabled ? null : (
-                    <Popin hasStyle={false}>
-                        <Calendar
-                            currentMonth={monthIndex}
-                            minimumDate={
-                                moment(minimumDate, dateFormat, true).isValid()
-                                    ? moment(minimumDate, dateFormat)
-                                    : null
-                            }
-                            maximumDate={
-                                moment(maximumDate, dateFormat, true).isValid()
-                                    ? moment(maximumDate, dateFormat)
-                                    : null
-                            }
-                            colorStatus={colorStatus}
-                        />
-                    </Popin>
-                )}
-            </DropDown>
+                    {rest.readOnly || rest.disabled ? null : (
+                        <Popin>
+                            <Calendar
+                                currentMonth={monthIndex}
+                                minimumDate={
+                                    moment(
+                                        minimumDate,
+                                        dateFormat,
+                                        true,
+                                    ).isValid()
+                                        ? moment(minimumDate, dateFormat)
+                                        : null
+                                }
+                                maximumDate={
+                                    moment(
+                                        maximumDate,
+                                        dateFormat,
+                                        true,
+                                    ).isValid()
+                                        ? moment(maximumDate, dateFormat)
+                                        : null
+                                }
+                                colorStatus={colorStatus}
+                            />
+                        </Popin>
+                    )}
+                </DropDown>
+            </DatePickerBase>
         </DateContextProvider>
     );
 };
