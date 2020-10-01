@@ -12,6 +12,7 @@ const folder = {
     sub: {
         button: 'Buttons' + folderSeparator,
         daTable: 'DaTables' + folderSeparator,
+        datePicker: 'DatePicker' + folderSeparator,
         checkbox: 'Checkbox elements' + folderSeparator,
         control: 'Menu controls' + folderSeparator,
         footer: 'Footer' + folderSeparator,
@@ -24,8 +25,6 @@ const folder = {
         sidebarMenu: 'Sidebar elements' + folderSeparator,
         structure: 'Grids' + folderSeparator,
         table: 'Simple tables' + folderSeparator,
-        daTable: 'DaTables' + folderSeparator,
-        datePicker: 'DatePicker' + folderSeparator,
     },
 };
 
