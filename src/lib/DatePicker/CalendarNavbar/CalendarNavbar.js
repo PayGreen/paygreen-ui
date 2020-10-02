@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { MonthContext } from '../context/MonthContext';
-import CalendarNavbarBase from './style';
 import {
     colorPalletOptions,
     formStatusOptions,
@@ -10,8 +8,16 @@ import {
     spaceOptions,
     iconHtmlTagOptions,
 } from '../../../shared/constants';
-import { ThemeDefault } from '../../../theme';
 import { ArrowLeftIcon, ArrowRightIcon } from '../../Icon/Icon';
+import { MonthContext } from '../context/MonthContext';
+import CalendarNavbarBase from './style';
+
+const arrowProps = {
+    marginLeft: spaceOptions.sm,
+    marginRight: spaceOptions.sm,
+    htmlTag: iconHtmlTagOptions.button,
+    colorPallet: colorPalletOptions.status,
+};
 
 const CalendarNavbar = ({ colorStatus, ...rest }) => {
     const [month, setMonth] = useContext(MonthContext);
@@ -24,50 +30,35 @@ const CalendarNavbar = ({ colorStatus, ...rest }) => {
      * @param e{event}
      */
     const previousMonth = e => {
-        setMonth(month - 1);
         e.preventDefault();
+        setMonth(month - 1);
     };
+
     /**
      * @desc Use onMonthChange function to go to next month
      * @param e{event}
      */
     const nextMonth = e => {
-        setMonth(month + 1);
         e.preventDefault();
-    };
-
-    /**
-     * @desc Return a formatted string containing current month and year
-     * @param monthIndex{number} The month index used by momentJS (Zero indexed)
-     */
-    const capitalize = monthIndex => {
-        let monthLabel = moment()
-            .month(monthIndex)
-            .format('MMMM YYYY');
-
-        return monthLabel.charAt(0).toUpperCase() + monthLabel.slice(1);
+        setMonth(month + 1);
     };
 
     return (
         <CalendarNavbarBase colorStatus={colorStatus} {...rest}>
             <ArrowLeftIcon
                 onClick={previousMonth}
-                colorPallet={colorPalletOptions.status}
                 colorStatus={colorStatus}
-                theme={ThemeDefault}
-                marginLeft={spaceOptions.sm}
-                marginRight={spaceOptions.sm}
-                htmlTag={iconHtmlTagOptions.button}
+                theme={rest.theme} // not necessary, only needed for tests
+                {...arrowProps}
             />
-            {capitalize(month)}
+            
+            {moment().month(month).format('MMMM YYYY')}
+
             <ArrowRightIcon
                 onClick={nextMonth}
-                colorPallet={colorPalletOptions.status}
                 colorStatus={colorStatus}
-                theme={ThemeDefault}
-                marginLeft={spaceOptions.sm}
-                marginRight={spaceOptions.sm}
-                htmlTag={iconHtmlTagOptions.button}
+                theme={rest.theme} // not necessary, only needed for tests
+                {...arrowProps}
             />
         </CalendarNavbarBase>
     );

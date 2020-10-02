@@ -1,10 +1,10 @@
 import React, { createContext } from 'react';
 
 const MonthContext = createContext([null, () => {}]);
-const MonthContextProvider = ({ value, ...props }) => {
+const MonthContextProvider = ({ value, children }) => {
     return (
         <MonthContext.Provider value={value}>
-            {props.children}
+            {children}
         </MonthContext.Provider>
     );
 };

@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { MonthContextProvider } from '../context/MonthContext';
-import CalendarNavbar from '../CalendarNavbar/CalendarNavbar';
-import CalendarWeekdays from '../CalendarWeekdays/CalendarWeekdays';
-import CalendarGrid from '../CalendarGrid/CalendarGrid';
 import {
     formStatusOptions,
     formStatusDefault,
 } from '../../../shared/constants';
+import { MonthContextProvider } from '../context/MonthContext';
+import CalendarNavbar from '../CalendarNavbar/CalendarNavbar';
+import CalendarWeekdays from '../CalendarWeekdays/CalendarWeekdays';
+import CalendarGrid from '../CalendarGrid/CalendarGrid';
 
-const Calendar = ({
-    currentMonth,
-    minimumDate,
-    maximumDate,
-    ...rest
-}) => {
+const Calendar = ({ currentMonth, minimumDate, maximumDate, ...rest }) => {
     const [month, setMonth] = useState(currentMonth);
 
     useEffect(() => {

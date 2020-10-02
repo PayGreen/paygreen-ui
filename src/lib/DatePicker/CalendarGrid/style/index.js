@@ -3,10 +3,8 @@ import CalendarCellBase from '../../CalendarCell/style';
 
 const CalendarGridBase = styled.div`
     display: grid;
-
     grid-template-columns: repeat(7, auto);
-    grid-gap: ${props => props.theme.line};
-    justify-content: start;
+    gap: ${props => props.theme.line};
 
     padding: ${props => props.theme.line};
 

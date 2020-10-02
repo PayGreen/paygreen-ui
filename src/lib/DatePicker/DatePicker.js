@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { DateContextProvider } from '../context/DateContext';
-import localeConfig from '../localeConfig';
-import DropDown from '../../Dropdown/Dropdown';
-import DaInput from '../../DaInput/DaInput';
-import Popin from '../../Popin/Popin';
-import Calendar from '../Calendar/Calendar';
 import {
-    buttonSizeDefault,
+    inputWidthOptions,
     buttonSizeOptions,
     formStatusDefault,
     formStatusOptions,
-} from '../../../shared/constants';
+    localeOptions,
+    localeDefault,
+} from '../../shared/constants';
+import DropDown from '../Dropdown/Dropdown';
+import DaInput from '../DaInput/DaInput';
+import Popin from '../Popin/Popin';
+import { DateContextProvider } from './context/DateContext';
+import Calendar from './Calendar/Calendar';
+import localeConfig from './localeConfig';
 import { DatePickerBase } from './style';
 
 const DatePicker = ({
@@ -20,21 +22,18 @@ const DatePicker = ({
     locale,
     minimumDate,
     maximumDate,
-    placeholder,
     colorStatus,
     ...rest
 }) => {
     // Update moment locale globally
     // Note : Default locale of moment is 'en', overwrite it with custom config 'pg-fr'
-    moment.updateLocale(
-        'pg-' + locale,
-        localeConfig['pg-' + locale] ? localeConfig['pg-' + locale] : null,
-    );
-    const dateFormat = localeConfig['pg-' + locale]
-        ? localeConfig['pg-' + locale].longDateFormat.L
-        : localeConfig['pg-fr'].longDateFormat.L;
+    const pgLocale = localeConfig['pg-' + localeOptions[locale]]
+        ? 'pg-' + localeOptions[locale]
+        : 'pg-' + localeDefault;
+    const dateFormat = localeConfig[pgLocale].longDateFormat.L;
+    moment.updateLocale(pgLocale, localeConfig[pgLocale]);
 
-    // Save default value of input ...
+    // Save default value of input...
     const [selectedDate, setSelectedDate] = useState(
         moment(value, dateFormat, true).isValid()
             ? moment(value, dateFormat)
@@ -61,11 +60,7 @@ const DatePicker = ({
     };
 
     const calcMonthIndex = () => {
-        if (!selectedDate) {
-            return moment().month();
-        }
-
-        if (selectedDate === moment().startOf('d')) {
+        if (!selectedDate || selectedDate === moment().startOf('d')) {
             return moment().month();
         }
 
@@ -76,24 +71,23 @@ const DatePicker = ({
             ? moment().month() + yearDiff * 12 + monthDiff
             : moment().month() + monthDiff;
     };
-    const monthIndex = calcMonthIndex();
 
     return (
         <DateContextProvider value={[selectedDate, setSelectedDate]}>
             <DatePickerBase>
                 <DropDown>
                     <DaInput
-                        placeholder={placeholder}
+                        {...rest}
                         mask="99/99/9999"
+                        type="text"
                         value={inputValue}
                         onChange={handleOnChange}
-                        {...rest}
                     />
 
                     {rest.readOnly || rest.disabled ? null : (
                         <Popin>
                             <Calendar
-                                currentMonth={monthIndex}
+                                currentMonth={calcMonthIndex()}
                                 minimumDate={
                                     moment(
                                         minimumDate,
@@ -129,6 +123,7 @@ DatePicker.propTypes = {
     placeholder: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
+    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     hasHelpButton: PropTypes.bool,
     inputRef: PropTypes.oneOfType([
@@ -137,7 +132,7 @@ DatePicker.propTypes = {
     ]),
 
     // Calendar props
-    locale: PropTypes.string,   // 2-letters short language code
+    locale: PropTypes.oneOf(Object.values(localeOptions)), // 2-letters short language code
     minimumDate: PropTypes.string,
     maximumDate: PropTypes.string,
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
@@ -149,11 +144,9 @@ DatePicker.defaultProps = {
     // Input props
     disabled: false,
     readOnly: false,
-    fieldSize: buttonSizeDefault,
-    hasHelpButton: false,
 
     // Calendar props
-    locale: 'fr',
+    locale: localeDefault,
     minimumDate: null,
     maximumDate: null,
     colorStatus: formStatusDefault,

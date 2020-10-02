@@ -1,10 +1,10 @@
 import React, { createContext } from 'react';
 
 const DateContext = createContext([null, () => {}]);
-const DateContextProvider = ({ value, ...props }) => {
+const DateContextProvider = ({ value, children }) => {
     return (
         <DateContext.Provider value={value}>
-            {props.children}
+            {children}
         </DateContext.Provider>
     );
 };

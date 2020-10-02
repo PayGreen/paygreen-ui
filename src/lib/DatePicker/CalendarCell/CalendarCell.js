@@ -4,17 +4,19 @@ import {
     formStatusOptions,
     formStatusDefault,
 } from '../../../shared/constants';
-import CalendarCellBase from './style';
+import config from '../localeConfig';
 import { DateContext } from '../context/DateContext';
+import CalendarCellBase from './style';
 
-const CalendarCell = ({ date, colorStatus, isDisabled, ...rest }) => {
+const CalendarCell = ({ date, isDisabled, ...rest }) => {
     const [selectedDate, setSelectedDate] = useContext(DateContext);
+    const dateFormat = config['pg-en'].longDateFormat.L;
 
     const handleOnClick = e => {
+        e.preventDefault();
         if (!isDisabled) {
             setSelectedDate(date);
         }
-        e.preventDefault();
     };
 
     return (
@@ -22,27 +24,25 @@ const CalendarCell = ({ date, colorStatus, isDisabled, ...rest }) => {
             onClick={handleOnClick}
             isSelected={
                 selectedDate
-                    ? date.format('DD/MM/YYYY') ===
-                      selectedDate.format('DD/MM/YYYY')
+                    ? date.format(dateFormat) ===
+                      selectedDate.format(dateFormat)
                     : false
             }
-            colorStatus={colorStatus}
             isDisabled={isDisabled}
             {...rest}
         >
-            {date ? date.format('D') : null}
+            {date.format('D')}
         </CalendarCellBase>
     );
 };
 
 CalendarCell.propTypes = {
-    date: PropTypes.object,
+    date: PropTypes.object.isRequired,
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     isDisabled: PropTypes.bool,
 };
 
 CalendarCell.defaultProps = {
-    date: null,
     colorStatus: formStatusDefault,
     isDisabled: false,
 };

@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { MonthContext } from '../context/MonthContext';
 import moment from 'moment';
-import CalendarGridBase from './style';
-import CalendarCell from '../CalendarCell/CalendarCell';
 import {
     formStatusOptions,
     formStatusDefault,
 } from '../../../shared/constants';
+import { MonthContext } from '../context/MonthContext';
+import CalendarCell from '../CalendarCell/CalendarCell';
+import CalendarGridBase from './style';
 
 /**
  * @desc Return the first and last days of Month using month index.
@@ -27,7 +27,7 @@ const getMonthBoundaries = month => {
 };
 
 const CalendarGrid = ({ minimumDate, maximumDate, ...rest }) => {
-    const [month, setMonth] = useContext(MonthContext);
+    const [month] = useContext(MonthContext);
     if (month === null) {
         return null;
     }
@@ -36,13 +36,14 @@ const CalendarGrid = ({ minimumDate, maximumDate, ...rest }) => {
 
     const daysOfMonth = [];
     let daysCursor = moment(startOfMonth);
+
     do {
         let isDisabled = false;
-        if (minimumDate) {
-            if (daysCursor < minimumDate) isDisabled = true;
-        }
-        if (maximumDate) {
-            if (daysCursor > maximumDate) isDisabled = true;
+        if (
+            (minimumDate && daysCursor < minimumDate) ||
+            (maximumDate && daysCursor > maximumDate)
+        ) {
+            isDisabled = true;
         }
 
         daysOfMonth.push(

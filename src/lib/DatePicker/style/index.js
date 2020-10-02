@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PopinBase } from '../../../Popin/style';
+import { PopinBase } from '../../Popin/style';
 
 const DatePickerBase = styled.div`
     ${PopinBase} {

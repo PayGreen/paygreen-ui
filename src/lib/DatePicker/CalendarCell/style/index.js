@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { selected, enabled, disabled } from './base';
+import { selected, hover, disabled } from './base';
 
 const CalendarCellBase = styled.button`
     display: flex;
@@ -11,10 +11,9 @@ const CalendarCellBase = styled.button`
 
     border-radius: 50%;
     color: ${props => props.theme.wab.grey60};
+    transition: all ${props => props.theme.transition.xs};
     ${props =>
-        props.isDisabled ? disabled : props.isSelected ? selected : enabled};
-
-    transition: all ${props => props.theme.transition.xs}
+        props.isDisabled ? disabled : props.isSelected ? selected : hover};
 `;
 
 export default CalendarCellBase;

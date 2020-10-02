@@ -14,15 +14,19 @@ import {
     buttonSizeOptions,
     formStatusDefault,
     formStatusOptions,
-} from '../../../shared/constants';
+    localeOptions,
+    localeDefault,
+} from '../../shared/constants';
 import DatePicker from './DatePicker';
 
-storiesOf(folder.form + folder.sub.datePicker + 'DatePicker', module)
+storiesOf(folder.form + 'DatePicker', module)
     .addDecorator(withKnobs)
     .add('DatePicker', () => (
         <DatePicker
+            placeholder={text('Placeholder', moment().format('DD/MM/YYYY'))}
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
+            locale={select('Locale', localeOptions, localeDefault)}
             fieldSize={radios(
                 'Field size',
                 buttonSizeOptions,
@@ -35,15 +39,11 @@ storiesOf(folder.form + folder.sub.datePicker + 'DatePicker', module)
             )}
             minimumDate={text(
                 'Minimum date',
-                moment()
-                    .add(-1, 'M')
-                    .format('DD/MM/YYYY'),
+                moment().add(-1, 'M').format('DD/MM/YYYY'),
             )}
             maximumDate={text(
                 'Maximum date',
-                moment()
-                    .add(1, 'M')
-                    .format('DD/MM/YYYY'),
+                moment().add(1, 'M').format('DD/MM/YYYY'),
             )}
         />
     ));

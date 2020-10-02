@@ -1,12 +1,12 @@
 import { css } from 'styled-components';
 
 const selected = css`
-    font-weight: bold;
+    font-weight: ${props => props.theme.font.weight.bold};
     color: ${props => props.theme.wab.white00};
     background-color: ${props => props.theme.status[props.colorStatus].main};
 `;
 
-const enabled = css`
+const hover = css`
     &:hover,
     &:active,
     &:focus {
@@ -21,4 +21,4 @@ const disabled = css`
     color: ${props => props.theme.wab.grey30};
 `;
 
-export { selected, enabled, disabled };
+export { selected, hover, disabled };

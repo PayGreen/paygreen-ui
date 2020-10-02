@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../../theme';
-import CalendarCell from './CalendarCell';
 import { DateContextProvider } from '../context/DateContext';
+import CalendarCell from './CalendarCell';
 
 const CalendarCell_withContext = () => {
     const [selectedDate, setSelectedDate] = useState(moment());

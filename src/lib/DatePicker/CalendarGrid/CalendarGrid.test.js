@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../../theme';
-import CalendarGrid from './CalendarGrid';
 import { DateContextProvider } from '../context/DateContext';
 import { MonthContextProvider } from '../context/MonthContext';
+import CalendarGrid from './CalendarGrid';
 
 const CalendarGrid_withContext = () => {
     const [selectedDate, setSelectedDate] = useState(moment());
