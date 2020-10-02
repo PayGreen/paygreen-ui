@@ -23,7 +23,7 @@ storiesOf(folder.form + 'DatePicker', module)
     .addDecorator(withKnobs)
     .add('DatePicker', () => (
         <DatePicker
-            placeholder={text('Placeholder', moment().format('DD/MM/YYYY'))}
+            placeholder={moment().format('DD/MM/YYYY')}
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
             locale={select('Locale', localeOptions, localeDefault)}
