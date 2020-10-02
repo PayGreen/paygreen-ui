@@ -74,8 +74,8 @@ const DatePicker = ({
 
     return (
         <DateContextProvider value={[selectedDate, setSelectedDate]}>
-            <DatePickerBase>
-                <DropDown>
+            <DatePickerBase theme={rest.theme}>
+                <DropDown theme={rest.theme}>
                     <DaInput
                         {...rest}
                         mask="99/99/9999"
@@ -85,8 +85,9 @@ const DatePicker = ({
                     />
 
                     {rest.readOnly || rest.disabled ? null : (
-                        <Popin>
+                        <Popin theme={rest.theme}>
                             <Calendar
+                                theme={rest.theme}
                                 currentMonth={calcMonthIndex()}
                                 minimumDate={
                                     moment(
