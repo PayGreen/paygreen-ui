@@ -187,9 +187,14 @@ import { WalletIcon } from './Icon/Icon';
 import { WeightIcon } from './Icon/Icon';
 import { WheelsIcon } from './Icon/Icon';
 
-// theme
+// Theme
 import { ThemeDefault, ThemeDark } from '../theme';
 import { ThemeProvider as PGThemeProvider } from 'styled-components';
+
+// GlobalStyle
+import AutoBlockScroll from './GlobalStyle/AutoBlockScroll';
+import { BlockedScrollStyle } from './GlobalStyle/GlobalStyle';
+import { NoScrollStyle } from './GlobalStyle/GlobalStyle';
 
 export {
     ThemeDefault,
@@ -382,4 +387,8 @@ export {
     WalletIcon,
     WeightIcon,
     WheelsIcon,
+    // GlobalStyle
+    AutoBlockScroll,
+    BlockedScrollStyle,
+    NoScrollStyle,
 };

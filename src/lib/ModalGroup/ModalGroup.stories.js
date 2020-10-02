@@ -75,12 +75,8 @@ storiesOf(folder.popup + folder.sub.modal + 'ModalGroup', module)
                                 <button type="button">
                                     <DaButton
                                         buttonSize={buttonSizeOptions.md}
-                                        colorPallet={
-                                            colorPalletOptions.status
-                                        }
-                                        colorStatus={
-                                            formStatusOptions.danger
-                                        }
+                                        colorPallet={colorPalletOptions.status}
+                                        colorStatus={formStatusOptions.danger}
                                     >
                                         Close the modal
                                     </DaButton>

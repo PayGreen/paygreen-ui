@@ -2,17 +2,17 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bxivhb WcjIm"
+  className="sc-hKFyIo cyXxJu"
 >
   <div
-    className="sc-bdVaJa bMYxrm"
+    className="sc-bdnylx wSlvk"
     onClick={[Function]}
   />
   <div
-    className="sc-htpNat cvzpAh"
+    className="sc-dlnjPT ijDRgc"
   >
     <div
-      className="sc-bwzfXH goZZsy"
+      className="sc-gtssRu frZqVm"
     >
       This is the text
     </div>
