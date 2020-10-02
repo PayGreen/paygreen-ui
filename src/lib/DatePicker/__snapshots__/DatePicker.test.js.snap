@@ -2,28 +2,27 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa bDWFJH"
+  className="sc-pNWxx dpBhgW"
 >
   <div
-    className="sc-htpNat bghDxa"
+    className="sc-dlnjPT bCfFqb"
   >
     <div
-      className="sc-ifAKCX dEcUUG"
+      className="sc-bdnylx hcdtAV"
     >
       <input
-        isActive={false}
+        disabled={false}
         onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
-        onMouseDown={[Function]}
-        onPaste={[Function]}
+        readOnly={false}
         theme={
           Object {
             "arrow": Object {
-              "lg": "20px",
-              "md": "16px",
-              "sm": "12px",
+              "lg": "16px",
+              "md": "12px",
+              "sm": "8px",
             },
             "bannerHeight": Object {
               "lg": "100vh",
@@ -33,8 +32,10 @@ exports[`renders without crashing 1`] = `
             "blockHeader": Object {
               "lg": "210px",
               "md": "180px",
+              "none": "180px",
               "sm": "140px",
               "xl": "240px",
+              "xs": "120px",
             },
             "blockShift": Object {
               "lg": "320px",
@@ -55,8 +56,10 @@ exports[`renders without crashing 1`] = `
             "blockWidth": Object {
               "lg": "640px",
               "md": "560px",
+              "none": "100%",
               "sm": "400px",
               "xl": "800px",
+              "xs": "300px",
             },
             "button": Object {
               "font": Object {
@@ -149,8 +152,10 @@ exports[`renders without crashing 1`] = `
               "width": Object {
                 "lg": "500px",
                 "md": "400px",
+                "none": "100%",
                 "sm": "300px",
                 "xl": "600px",
+                "xs": "250px",
               },
             },
             "font": Object {
@@ -242,13 +247,23 @@ exports[`renders without crashing 1`] = `
               "sidebar": "380px",
               "topbar": "45px",
             },
-            "iconSize": Object {
-              "lg": "32px",
-              "md": "24px",
-              "sm": "20px",
-              "xl": "40px",
-              "xs": "16px",
-              "xxs": "12px",
+            "icon": Object {
+              "shift": Object {
+                "lg": "6px",
+                "md": "4px",
+                "sm": "4px",
+                "xl": "6px",
+                "xs": "3px",
+                "xxs": "2px",
+              },
+              "size": Object {
+                "lg": "32px",
+                "md": "24px",
+                "sm": "20px",
+                "xl": "40px",
+                "xs": "16px",
+                "xxs": "12px",
+              },
             },
             "imageCircleSize": Object {
               "auto": "auto",
@@ -408,270 +423,256 @@ exports[`renders without crashing 1`] = `
             },
           }
         }
-        value="05/08/2020"
+        type="text"
+        value=""
       />
     </div>
     <div
-      className="sc-bwzfXH cizFbM"
+      className="sc-gtssRu UMcqx"
     >
       <div
-        className="sc-EHOje kuFPjf"
+        className="sc-jSFkmK iMguSg"
       >
-        <div
-          className="sc-bZQynM blBfOS"
+        <button
+          className="sc-eCApGN bnjLlx icon"
+          onClick={[Function]}
         >
-          <div
-            className="arrow-button"
+          <svg
+            viewBox="0 0 143 143"
           >
-            <span
-              className="sc-gzVnrw gdQjKb icon"
-              onClick={[Function]}
-            >
-              <svg
-                viewBox="0 0 143 143"
-              >
-                <path
-                  d="M97.8 123.9c-.8 0-1.6-.3-2.3-.9l-55-47.6c-.8-.7-1.2-1.6-1.2-2.6s.4-2 1.2-2.6l55-48.2c1.5-1.3 3.7-1.1 4.9.3 1.3 1.5 1.1 3.7-.3 4.9l-52 45.6 52 45c1.5 1.3 1.6 3.5.4 4.9-.8.8-1.8 1.2-2.7 1.2z"
-                />
-              </svg>
-            </span>
-          </div>
-          <span>
-            Août 2020
-          </span>
-          <div
-            className="arrow-button"
-          >
-            <span
-              className="sc-gzVnrw gdQjKb icon"
-              onClick={[Function]}
-            >
-              <svg
-                viewBox="0 0 143 143"
-              >
-                <path
-                  d="M43.5 123.9c-1 0-1.9-.4-2.6-1.2-1.3-1.5-1.1-3.7.3-4.9l52-45.6-52-45c-1.5-1.3-1.6-3.5-.4-4.9 1.3-1.5 3.5-1.6 4.9-.4l55 47.6c.8.7 1.2 1.6 1.2 2.6s-.4 2-1.2 2.6l-55 48.2c-.6.7-1.4 1-2.2 1z"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-        <div
-          className="sc-htoDjs gxdlgH"
+            <path
+              d="M97.8 123.9c-.8 0-1.6-.3-2.3-.9l-55-47.6c-.8-.7-1.2-1.6-1.2-2.6s.4-2 1.2-2.6l55-48.2c1.5-1.3 3.7-1.1 4.9.3 1.3 1.5 1.1 3.7-.3 4.9l-52 45.6 52 45c1.5 1.3 1.6 3.5.4 4.9-.8.8-1.8 1.2-2.7 1.2z"
+            />
+          </svg>
+        </button>
+        octobre 2020
+        <button
+          className="sc-eCApGN bnjLlx icon"
+          onClick={[Function]}
         >
-          <div>
-            L
-          </div>
-          <div>
-            M
-          </div>
-          <div>
-            M
-          </div>
-          <div>
-            J
-          </div>
-          <div>
-            V
-          </div>
-          <div>
-            S
-          </div>
-          <div>
-            D
-          </div>
+          <svg
+            viewBox="0 0 143 143"
+          >
+            <path
+              d="M43.5 123.9c-1 0-1.9-.4-2.6-1.2-1.3-1.5-1.1-3.7.3-4.9l52-45.6-52-45c-1.5-1.3-1.6-3.5-.4-4.9 1.3-1.5 3.5-1.6 4.9-.4l55 47.6c.8.7 1.2 1.6 1.2 2.6s-.4 2-1.2 2.6l-55 48.2c-.6.7-1.4 1-2.2 1z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="sc-gKAblj gUTLEv"
+      >
+        <div>
+          l
         </div>
-        <div
-          className="sc-dnqmqq lmrhGg"
-          offset={6}
+        <div>
+          m
+        </div>
+        <div>
+          m
+        </div>
+        <div>
+          j
+        </div>
+        <div>
+          v
+        </div>
+        <div>
+          s
+        </div>
+        <div>
+          d
+        </div>
+      </div>
+      <div
+        className="sc-fujyUd jQCZhe"
+      >
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
         >
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            1
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            2
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            3
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            4
-          </div>
-          <div
-            className="sc-iwsKbI jlrgSq"
-            onClick={[Function]}
-          >
-            5
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            6
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            7
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            8
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            9
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            10
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            11
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            12
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            13
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            14
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            15
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            16
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            17
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            18
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            19
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            20
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            21
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            22
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            23
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            24
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            25
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            26
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            27
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            28
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            29
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            30
-          </div>
-          <div
-            className="sc-iwsKbI fglbOo"
-            onClick={[Function]}
-          >
-            31
-          </div>
-        </div>
+          1
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          2
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          3
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          4
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          5
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          6
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          7
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          8
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          9
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          10
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          11
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          12
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          13
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          14
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          15
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          16
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          17
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          18
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          19
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          20
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          21
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          22
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          23
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          24
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          25
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          26
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          27
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          28
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          29
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          30
+        </button>
+        <button
+          className="sc-iCoHVE bEIACw"
+          onClick={[Function]}
+        >
+          31
+        </button>
       </div>
     </div>
   </div>
