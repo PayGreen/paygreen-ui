@@ -170,7 +170,7 @@ const imageTypeDefault = imageTypeOptions.normal;
 // Corner position
 const cornerPositionOptions = {
     left: 'left',
-    right: 'right'
+    right: 'right',
 };
 
 const cornerPositionDefault = cornerPositionOptions.left;
@@ -450,6 +450,13 @@ const rotateSizeOptions = {
 
 const rotateSizeDefault = rotateSizeOptions.d0;
 
+const localeOptions = {
+    fr: 'fr',
+    en: 'en',
+};
+
+const localeDefault = localeOptions.fr;
+
 export {
     folder,
     debounceTime,
@@ -535,4 +542,6 @@ export {
     alignDefault,
     rotateSizeOptions,
     rotateSizeDefault,
+    localeOptions,
+    localeDefault,
 };

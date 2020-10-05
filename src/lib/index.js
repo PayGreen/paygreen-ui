@@ -25,6 +25,7 @@ import DaTableHead from './DaTableHead/DaTableHead';
 import DaTableHeadCell from './DaTableHeadCell/DaTableHeadCell';
 import DaTableRow from './DaTableRow/DaTableRow';
 import DataLegend from './DataLegend/DataLegend';
+import DatePicker from './DatePicker/DatePicker';
 import DaTextarea from './DaTextarea/DaTextarea';
 import Divider from './Divider/Divider';
 import Dot from './Dot/Dot';
@@ -227,6 +228,7 @@ export {
     DaTableHeadCell,
     DaTableRow,
     DataLegend,
+    DatePicker,
     DaTextarea,
     Divider,
     Dot,

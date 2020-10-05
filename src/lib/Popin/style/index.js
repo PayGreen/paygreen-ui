@@ -20,6 +20,7 @@ const PopinBase = styled.div`
     transition-property: all, transform;
     transition-duration: ${props => props.theme.transition.xs}, 0s;
     transform-origin: top;
+
     ${props => (props.isActive ? activeStyle : hiddenStyle)};
     ${props => popinAlign[props.align]};
 `;

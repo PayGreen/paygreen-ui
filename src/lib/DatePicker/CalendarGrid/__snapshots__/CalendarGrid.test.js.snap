@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="sc-gtssRu jpCDEw"
+>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    1
+  </button>
+  <button
+    className="sc-bdnylx jnOwhQ"
+    onClick={[Function]}
+  >
+    2
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    3
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    4
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    5
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    6
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    7
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    8
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    9
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    10
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    11
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    12
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    13
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    14
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    15
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    16
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    17
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    18
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    19
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    20
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    21
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    22
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    23
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    24
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    25
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    26
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    27
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    28
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    29
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    30
+  </button>
+  <button
+    className="sc-bdnylx cOCPhb"
+    onClick={[Function]}
+  >
+    31
+  </button>
+</div>
+`;
