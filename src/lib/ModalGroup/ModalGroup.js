@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ModalNoScrollStyle } from './style';
+import AutoBlockScroll from '../GlobalStyle/AutoBlockScroll';
 import { ModalContext } from './ModalContext';
 
 const ModalGroup = props => {
@@ -7,7 +7,7 @@ const ModalGroup = props => {
 
     return (
         <ModalContext.Provider value={{ isOpen, setOpen }}>
-            {isOpen ? <ModalNoScrollStyle /> : null}
+            {isOpen ? <AutoBlockScroll /> : null}
 
             {React.Children.map(props.children, child => {
                 if (!child) {
