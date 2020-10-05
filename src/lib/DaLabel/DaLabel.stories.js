@@ -12,27 +12,20 @@ import DaLabel from './DaLabel';
 
 storiesOf(folder.form + 'DaLabel', module)
     .addDecorator(withKnobs)
-    .add(
-        'DaLabel',
-        () => (
-            <DaLabel
-                fieldSize={select(
-                    'Field Size',
-                    buttonSizeOptions,
-                    buttonSizeDefault,
-                )}
-                htmlTag={select(
-                    'HTML tag',
-                    labelHtmlTagOptions,
-                    labelHtmlTagDefault,
-                )}
-                required={boolean('Is required', false)}
-            >
-                Label Description
-            </DaLabel>
-        ),
-        {
-            notes:
-                'fieldSize adjusts font size and padding to the size of input/select component associated.',
-        },
-    );
+    .add('DaLabel', () => (
+        <DaLabel
+            fieldSize={select(
+                'Field Size',
+                buttonSizeOptions,
+                buttonSizeDefault,
+            )}
+            htmlTag={select(
+                'HTML tag',
+                labelHtmlTagOptions,
+                labelHtmlTagDefault,
+            )}
+            required={boolean('Is required', false)}
+        >
+            Label Description
+        </DaLabel>
+    ));

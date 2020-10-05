@@ -154,120 +154,109 @@ const isActiveLabel = 'First line active';
 
 storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
     .addDecorator(withKnobs)
-    .add(
-        'DaTable',
-        () => (
-            <DaTable
-                blockWidth={select(
-                    'Width on small screens',
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-                marginLateral={select(
-                    'Lateral margins',
-                    spaceOptions,
-                    spaceOptions.sm,
-                )}
-                marginTop={select('Margin top', spaceOptions, spaceOptions.sm)}
-                marginBottom={select(
-                    'Margin bottom',
-                    spaceOptions,
-                    spaceOptions.sm,
-                )}
-            >
-                <DaTableHead resultsLabel="10 results">
-                    <DaTableHeadCell label="Select/deselect all">
-                        <Checkbox id="select" />
-                    </DaTableHeadCell>
+    .add('DaTable', () => (
+        <DaTable
+            blockWidth={select(
+                'Width on small screens',
+                spaceOptions,
+                spaceOptions.md,
+            )}
+            marginLateral={select(
+                'Lateral margins',
+                spaceOptions,
+                spaceOptions.sm,
+            )}
+            marginTop={select('Margin top', spaceOptions, spaceOptions.sm)}
+            marginBottom={select(
+                'Margin bottom',
+                spaceOptions,
+                spaceOptions.sm,
+            )}
+        >
+            <DaTableHead resultsLabel="10 results">
+                <DaTableHeadCell label="Select/deselect all">
+                    <Checkbox id="select" />
+                </DaTableHeadCell>
 
-                    <DaTableHeadCell label="ID" />
+                <DaTableHeadCell label="ID" />
 
-                    <DaTableHeadCell
-                        sortIcon={<ArrowBottomIcon title="Sort DESC on Date" />}
-                        label="Date"
+                <DaTableHeadCell
+                    sortIcon={<ArrowBottomIcon title="Sort DESC on Date" />}
+                    label="Date"
+                />
+
+                <DaTableHeadCell
+                    label="Name"
+                    sortIcon={<ArrowBottomIcon title="Sort DESC on Sample" />}
+                >
+                    <DaInput
+                        placeholder="Search name"
+                        fieldSize="sm"
+                        blockWidth="sm"
                     />
+                </DaTableHeadCell>
 
-                    <DaTableHeadCell
-                        label="Name"
-                        sortIcon={
-                            <ArrowBottomIcon title="Sort DESC on Sample" />
+                <DaTableHeadCell
+                    sortIcon={
+                        <ArrowBottomIcon
+                            isActive={true}
+                            title="Sort ASC on Amount"
+                        />
+                    }
+                    label="Amount"
+                />
+
+                <DaTableHeadCell
+                    groupIcon={<ListIcon title="Group by Type" />}
+                    label="Type"
+                />
+
+                <DaTableHeadCell
+                    groupIcon={<ListIcon title="Group by Status" />}
+                    label="Status"
+                />
+            </DaTableHead>
+
+            <DaTableBody>
+                {sampleRows.map((sample, index) => (
+                    <DaTableRow
+                        key={index}
+                        isActive={
+                            !index ? boolean(isActiveLabel, false) : false
                         }
                     >
-                        <DaInput
-                            placeholder="Search name"
-                            fieldSize="sm"
-                            blockWidth="sm"
-                        />
-                    </DaTableHeadCell>
-
-                    <DaTableHeadCell
-                        sortIcon={
-                            <ArrowBottomIcon
-                                isActive={true}
-                                title="Sort ASC on Amount"
+                        <DaTableCell>
+                            <Checkbox
+                                id={'checkbox' + index}
+                                checked={
+                                    !index
+                                        ? boolean(isActiveLabel, false)
+                                        : false
+                                }
+                                readOnly={true}
                             />
-                        }
-                        label="Amount"
-                    />
+                        </DaTableCell>
 
-                    <DaTableHeadCell
-                        groupIcon={<ListIcon title="Group by Type" />}
-                        label="Type"
-                    />
+                        <DaTableCell isId={true}>{3400 + index}</DaTableCell>
 
-                    <DaTableHeadCell
-                        groupIcon={<ListIcon title="Group by Status" />}
-                        label="Status"
-                    />
-                </DaTableHead>
+                        <DaTableCell isMain={false} label="Date">
+                            {sample.date}
+                        </DaTableCell>
 
-                <DaTableBody>
-                    {sampleRows.map((sample, index) => (
-                        <DaTableRow
-                            key={index}
-                            isActive={
-                                !index ? boolean(isActiveLabel, false) : false
-                            }
-                        >
-                            <DaTableCell>
-                                <Checkbox
-                                    id={'checkbox' + index}
-                                    checked={
-                                        !index
-                                            ? boolean(isActiveLabel, false)
-                                            : false
-                                    }
-                                    readOnly={true}
-                                />
-                            </DaTableCell>
+                        <DaTableCell>{sample.name}</DaTableCell>
 
-                            <DaTableCell isId={true}>
-                                {3400 + index}
-                            </DaTableCell>
+                        <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
 
-                            <DaTableCell isMain={false} label="Date">
-                                {sample.date}
-                            </DaTableCell>
+                        <DaTableCell isMain={false} label="Type">
+                            {sample.type}
+                        </DaTableCell>
 
-                            <DaTableCell>{sample.name}</DaTableCell>
-
-                            <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
-
-                            <DaTableCell isMain={false} label="Type">
-                                {sample.type}
-                            </DaTableCell>
-
-                            <DaTableCell isMain={false} label="Status">
-                                {status.icon[sample.status]}
-                                {status.text[sample.status]}
-                            </DaTableCell>
-                        </DaTableRow>
-                    ))}
-                </DaTableBody>
-            </DaTable>
-        ),
-        {
-            notes:
-                'input search is not functional, it is used here only for layout purpose',
-        },
-    );
+                        <DaTableCell isMain={false} label="Status">
+                            {status.icon[sample.status]}
+                            {status.text[sample.status]}
+                        </DaTableCell>
+                    </DaTableRow>
+                ))}
+            </DaTableBody>
+        </DaTable>
+    ));

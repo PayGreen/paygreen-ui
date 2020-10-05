@@ -39,33 +39,22 @@ const options = [
 
 storiesOf(folder.form + 'Select', module)
     .addDecorator(withKnobs)
-    .add(
-        'Select',
-        () => (
-            <Select
-                id="select1"
-                label={text('Label', 'Your choice')}
-                defaultValue=""
-                options={options}
-                disabled={boolean('Disabled', false)}
-                readOnly={boolean('Readonly', false)}
-                status={radios('Status', formStatusOptions, formStatusDefault)}
-                blockWidth={radios(
-                    'Width',
-                    inputWidthOptions,
-                    inputWidthDefault,
-                )}
-                hasShadow={boolean('With shadow', false)}
-                marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
-                marginBottom={select(
-                    'Margin bottom',
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-            />
-        ),
-        {
-            notes:
-                'You can change select width with "blockWidth" props.',
-        },
-    );
+    .add('Select', () => (
+        <Select
+            id="select1"
+            label={text('Label', 'Your choice')}
+            defaultValue=""
+            options={options}
+            disabled={boolean('Disabled', false)}
+            readOnly={boolean('Readonly', false)}
+            status={radios('Status', formStatusOptions, formStatusDefault)}
+            blockWidth={radios('Width', inputWidthOptions, inputWidthDefault)}
+            hasShadow={boolean('With shadow', false)}
+            marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+            marginBottom={select(
+                'Margin bottom',
+                spaceOptions,
+                spaceOptions.md,
+            )}
+        />
+    ));
