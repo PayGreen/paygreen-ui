@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa hgEpyC"
+  className="sc-bdnylx gSSNhn"
 >
   <p
-    className="sc-bwzfXH fCFVfG"
+    className="sc-gtssRu gASViO"
   >
     This is the body.
   </p>

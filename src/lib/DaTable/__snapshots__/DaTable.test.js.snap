@@ -2,19 +2,19 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-ifAKCX iluPUl"
+  className="sc-eCApGN kgQPki"
 >
   <div
-    className="sc-bxivhb ftCeDc"
+    className="sc-hKFyIo esPAUF"
   >
     <div
-      className="sc-htpNat iVGmst cell-checkbox"
+      className="sc-dlnjPT dlPmts cell-checkbox"
     >
       <span
         className="cell-content"
       >
         <div
-          className="sc-bdVaJa eJKMSw"
+          className="sc-bdnylx fEqqqr"
         >
           <input
             disabled={false}
@@ -431,7 +431,7 @@ exports[`renders without crashing 1`] = `
             htmlFor="select"
           >
             <span
-              className="sc-bwzfXH imIBnl icon"
+              className="sc-gtssRu gpLNlF icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -446,7 +446,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-htpNat jkjErs cell-id"
+      className="sc-dlnjPT erjDBd cell-id"
     >
       <span
         className="cell-content"
@@ -455,7 +455,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-htpNat kRvIEH cell-main cell-main-1"
+      className="sc-dlnjPT jkgqZS cell-main cell-main-1"
     >
       <span
         className="cell-content"
@@ -464,7 +464,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-htpNat hxWjQI cell-basic cell-basic-1"
+      className="sc-dlnjPT giFRrA cell-basic cell-basic-1"
     >
       <span
         className="cell-content"
@@ -474,16 +474,16 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-bxivhb ftCeDc"
+    className="sc-hKFyIo esPAUF"
   >
     <div
-      className="sc-htpNat iVGmst cell-checkbox"
+      className="sc-dlnjPT dlPmts cell-checkbox"
     >
       <span
         className="cell-content"
       >
         <div
-          className="sc-bdVaJa eJKMSw"
+          className="sc-bdnylx fEqqqr"
         >
           <input
             disabled={false}
@@ -900,7 +900,7 @@ exports[`renders without crashing 1`] = `
             htmlFor="select"
           >
             <span
-              className="sc-bwzfXH imIBnl icon"
+              className="sc-gtssRu gpLNlF icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -915,7 +915,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-htpNat jkjErs cell-id"
+      className="sc-dlnjPT erjDBd cell-id"
     >
       <span
         className="cell-content"
@@ -924,7 +924,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-htpNat kRvIEH cell-main cell-main-1"
+      className="sc-dlnjPT jkgqZS cell-main cell-main-1"
     >
       <span
         className="cell-content"
@@ -933,7 +933,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-htpNat hxWjQI cell-basic cell-basic-1"
+      className="sc-dlnjPT giFRrA cell-basic cell-basic-1"
     >
       <span
         className="cell-content"
@@ -943,16 +943,16 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-bxivhb ftCeDc"
+    className="sc-hKFyIo esPAUF"
   >
     <div
-      className="sc-htpNat iVGmst cell-checkbox"
+      className="sc-dlnjPT dlPmts cell-checkbox"
     >
       <span
         className="cell-content"
       >
         <div
-          className="sc-bdVaJa eJKMSw"
+          className="sc-bdnylx fEqqqr"
         >
           <input
             disabled={false}
@@ -1369,7 +1369,7 @@ exports[`renders without crashing 1`] = `
             htmlFor="select"
           >
             <span
-              className="sc-bwzfXH imIBnl icon"
+              className="sc-gtssRu gpLNlF icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -1384,7 +1384,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-htpNat jkjErs cell-id"
+      className="sc-dlnjPT erjDBd cell-id"
     >
       <span
         className="cell-content"
@@ -1393,7 +1393,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-htpNat kRvIEH cell-main cell-main-1"
+      className="sc-dlnjPT jkgqZS cell-main cell-main-1"
     >
       <span
         className="cell-content"
@@ -1402,7 +1402,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-htpNat hxWjQI cell-basic cell-basic-1"
+      className="sc-dlnjPT giFRrA cell-basic cell-basic-1"
     >
       <span
         className="cell-content"

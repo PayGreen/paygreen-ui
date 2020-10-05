@@ -5,6 +5,6 @@ exports[`renders without crashing 1`] = `
   className="sc-bdnylx jnOwhQ"
   onClick={[Function]}
 >
-  2
+  5
 </button>
 `;

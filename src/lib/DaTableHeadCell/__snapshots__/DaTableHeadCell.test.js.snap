@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-htpNat bywxiU"
+  className="sc-dlnjPT jwrbSl"
 >
   <div
     className="head-child"
@@ -11,7 +11,7 @@ exports[`renders without crashing 1`] = `
       className="icon-child"
     >
       <button
-        className="sc-bdVaJa hMNEHe icon"
+        className="sc-bdnylx byxMUi icon"
       >
         <svg
           viewBox="0 0 143 143"

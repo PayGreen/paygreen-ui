@@ -66,7 +66,7 @@ Array [
       1
     </button>
     <button
-      className="sc-hKFyIo jXwTVT"
+      className="sc-hKFyIo dYnkNw"
       onClick={[Function]}
     >
       2
@@ -84,7 +84,7 @@ Array [
       4
     </button>
     <button
-      className="sc-hKFyIo dYnkNw"
+      className="sc-hKFyIo jXwTVT"
       onClick={[Function]}
     >
       5

@@ -2,19 +2,19 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa lnSgeO"
+  className="sc-bdnylx grHSrR"
 >
   <div
-    className="sc-bxivhb eWxaKk"
+    className="sc-hKFyIo fupIGb"
   />
   <div
-    className="sc-htpNat cvzpAh"
+    className="sc-dlnjPT ijDRgc"
   >
     <div
-      className="sc-bwzfXH goZZsy"
+      className="sc-gtssRu frZqVm"
     >
       <p
-        className="sc-ifAKCX jKwIjc"
+        className="sc-eCApGN gVdMXE"
       >
         This is the body.
       </p>

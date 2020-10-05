@@ -2,15 +2,15 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-gZMcBi dZAngw"
+  className="sc-kEqYlL fYShpP"
 >
   <label
-    className="sc-bdVaJa jJNzAC"
+    className="sc-bdnylx gqKkYQ"
   >
     Label Description
   </label>
   <div
-    className="sc-bwzfXH jLQeQC"
+    className="sc-gtssRu crwDUp"
   >
     <textarea
       disabled={false}
@@ -439,10 +439,10 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-bxivhb dOYMzn"
+    className="sc-hKFyIo divsPd"
   >
     <p
-      className="sc-htpNat kYXZDM"
+      className="sc-dlnjPT lHAie"
     >
       Lorem ipsum dolor sit amet, consectetur non sodales.
     </p>

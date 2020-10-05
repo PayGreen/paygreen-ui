@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <header
-  className="sc-bwzfXH dzHGax"
+  className="sc-gtssRu kOUloh"
 >
   <button
-    className="sc-bdVaJa ilaUfN"
+    className="sc-bdnylx LlpSo"
   >
     <span />
     <span />

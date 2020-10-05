@@ -2,15 +2,15 @@
 
 exports[`renders without crashing 1`] = `
 <fieldset
-  className="sc-bdVaJa iKuaBW"
+  className="sc-bdnylx ggHZSY"
 >
   <legend
-    className="sc-bxivhb RZHBY"
+    className="sc-hKFyIo jQVUZX"
   >
     Checkbox Label
   </legend>
   <div
-    className="sc-bwzfXH faOlws"
+    className="sc-gtssRu iubhFe"
   >
     <input
       defaultChecked={false}
@@ -430,7 +430,7 @@ exports[`renders without crashing 1`] = `
       htmlFor="test0"
     >
       <span
-        className="sc-htpNat jTyhfH icon"
+        className="sc-dlnjPT dACYvt icon"
       >
         <svg
           viewBox="0 0 143 143"
@@ -444,7 +444,7 @@ exports[`renders without crashing 1`] = `
     </label>
   </div>
   <div
-    className="sc-bwzfXH faOlws"
+    className="sc-gtssRu iubhFe"
   >
     <input
       defaultChecked={false}
@@ -864,7 +864,7 @@ exports[`renders without crashing 1`] = `
       htmlFor="test1"
     >
       <span
-        className="sc-htpNat jTyhfH icon"
+        className="sc-dlnjPT dACYvt icon"
       >
         <svg
           viewBox="0 0 143 143"

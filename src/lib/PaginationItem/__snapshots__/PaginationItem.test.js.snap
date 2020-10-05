@@ -2,9 +2,9 @@
 
 exports[`renders without crashing 1`] = `
 <button
-  className="sc-bdVaJa hsirYx"
+  className="sc-bdnylx haWOow"
   type="button"
 >
-  0
+  1
 </button>
 `;

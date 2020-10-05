@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-EHOje iJpkvE"
+  className="sc-jSFkmK eAAJBy"
 >
   <span
-    className="sc-bxivhb kMJdSQ"
+    className="sc-hKFyIo kSUfrA"
   >
     Content 
     <strong>
@@ -13,7 +13,7 @@ exports[`renders without crashing 1`] = `
     </strong>
   </span>
   <p
-    className="sc-htpNat kYXZDM"
+    className="sc-dlnjPT lHAie"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     <strong>
@@ -22,13 +22,13 @@ exports[`renders without crashing 1`] = `
     . Donec vehicula in arcu non sodales.
   </p>
   <div
-    className="sc-bwzfXH lkkfRi"
+    className="sc-gtssRu EkDLQ"
   >
     <a
       href="#"
     >
       <span
-        className="sc-bdVaJa jtUhyv"
+        className="sc-bdnylx kELcmq"
       >
         Don't click
       </span>

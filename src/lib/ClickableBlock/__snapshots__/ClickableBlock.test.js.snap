@@ -2,12 +2,12 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bwzfXH iqcJFS"
+  className="sc-gtssRu enPGKN"
   tabIndex="0"
 >
   Un ClickableBlock
   <span
-    className="sc-bdVaJa jpshHU icon"
+    className="sc-bdnylx kjIMsQ icon"
   >
     <svg
       viewBox="0 0 143 143"

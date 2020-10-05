@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdVaJa eJKMSw"
+  className="sc-bdnylx bUvsjD"
 >
   <input
     disabled={false}
@@ -419,7 +419,7 @@ exports[`renders without crashing 1`] = `
     htmlFor="first"
   >
     <span
-      className="sc-bwzfXH imIBnl icon"
+      className="sc-gtssRu gpLNlF icon"
     >
       <svg
         viewBox="0 0 143 143"

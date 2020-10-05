@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bwzfXH hSIiPf"
+  className="sc-gtssRu eMAGQ"
   value={0}
 >
   <span
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
     %
   </span>
   <p
-    className="sc-bdVaJa girSNX"
+    className="sc-bdnylx egJJsX"
   >
     dolor sit amet, consectetur
   </p>

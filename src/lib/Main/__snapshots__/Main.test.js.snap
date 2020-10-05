@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-htpNat eXyRaE"
+  className="sc-dlnjPT cEtkyc"
 >
   <header
-    className="sc-bdVaJa icKNKz"
+    className="sc-bdnylx iprAhY"
   >
     <button
-      className="sc-bxivhb hPEAQO"
+      className="sc-hKFyIo jZDovn"
     >
       <span />
       <span />
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
     </button>
   </header>
   <div
-    className="sc-bwzfXH bGsxUp"
+    className="sc-gtssRu bLLHED"
   />
 </div>
 `;
