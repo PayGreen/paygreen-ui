@@ -25,24 +25,17 @@ const checkboxOptions = [
 
 storiesOf(folder.form + folder.sub.checkbox + 'CheckboxGroup', module)
     .addDecorator(withKnobs)
-    .add(
-        'CheckboxGroup',
-        () => (
-            <CheckboxGroup
-                name="checkboxes"
-                legend={text('Checkboxes Label', 'Checkboxes Label')}
-                value={checkboxOptions[1].value}
-                options={checkboxOptions}
-                disabled={boolean('Disabled', false)}
-                fieldSize={radios(
-                    'Field size',
-                    buttonSizeOptions,
-                    buttonSizeDefault,
-                )}
-            />
-        ),
-        {
-            notes:
-                'You can change all CheckboxGroup items size with "fieldSize" props.',
-        },
-    );
+    .add('CheckboxGroup', () => (
+        <CheckboxGroup
+            name="checkboxes"
+            legend={text('Checkboxes Label', 'Checkboxes Label')}
+            value={checkboxOptions[1].value}
+            options={checkboxOptions}
+            disabled={boolean('Disabled', false)}
+            fieldSize={radios(
+                'Field size',
+                buttonSizeOptions,
+                buttonSizeDefault,
+            )}
+        />
+    ));

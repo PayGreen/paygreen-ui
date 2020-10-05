@@ -18,7 +18,7 @@ PaginationItem.propTypes = {
 };
 
 PaginationItem.defaultProps = {
-    pageValue: 0,
+    pageValue: 1,
     isActive: false,
     colorTheme: colorThemeDefault,
 };

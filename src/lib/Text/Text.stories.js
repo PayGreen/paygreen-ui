@@ -46,302 +46,245 @@ const bottomMarginLabel = 'Block margin bottom';
 
 storiesOf(folder.main + 'Text', module)
     .addDecorator(withKnobs)
-    .add(
-        'Single paragraph',
-        () => (
-            <Text
-                colorType={radios(
-                    colorTypeLabel,
-                    colorTypeOptions,
-                    colorTypeDefault,
-                )}
-                colorPallet={radios(
-                    colorPalletLabel,
-                    colorPalletOptions,
-                    colorPalletOptions.wab,
-                )}
-                colorTheme={select(
-                    colorThemeLabel,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                colorWab={select(
-                    colorWabLabel,
-                    greyOptions,
-                    greyOptions.grey60,
-                )}
-                colorStatus={select(
-                    colorStatusLabel,
-                    formStatusOptions,
-                    formStatusDefault,
-                )}
-                textSize={select(
-                    textSizeLabel,
-                    fontSizeOptions,
-                    fontSizeDefault,
-                )}
-                align={radios(alignLabel, alignOptions, alignDefault)}
-                hasUppercase={boolean('Uppercase', false)}
-                hasUnderline={boolean('Underline', false)}
-                marginLateral={select(
-                    lateralMarginLabel,
-                    spaceOptions,
-                    spaceDefault,
-                )}
-                marginTop={select(topMarginLabel, spaceOptions, spaceDefault)}
-                marginBottom={select(
-                    bottomMarginLabel,
-                    spaceOptions,
-                    spaceDefault,
-                )}
-            >
-                Lorem ipsum dolor sit amet, consectetur{' '}
-                <strong>adipiscing elit</strong>. Donec eget{' '}
-                <em>nulla in libero</em> laoreet sodales. Fusce vestibulum at
-                neque nec convallis. Vivamus quis neque vulputate, fringilla
-                massa vitae, interdum ipsum. Duis enim augue, euismod quis
-                aliquam in, consequat quis risus.
-            </Text>
-        ),
-        {
-            notes:
-                'Text component must be used to adding any text without specific component, or inside components like Card.',
-        },
-    )
-    .add(
-        'Block of paragraphs',
-        () => (
-            <Text
-                htmlTag={textHtmlTagOptions.div}
-                colorType={radios(
-                    colorTypeLabel,
-                    colorTypeOptions,
-                    colorTypeDefault,
-                )}
-                colorPallet={radios(
-                    colorPalletLabel,
-                    colorPalletOptions,
-                    colorPalletOptions.wab,
-                )}
-                colorTheme={select(
-                    colorThemeLabel,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                colorWab={select(
-                    colorWabLabel,
-                    greyOptions,
-                    greyOptions.grey60,
-                )}
-                colorStatus={select(
-                    colorStatusLabel,
-                    formStatusOptions,
-                    formStatusDefault,
-                )}
-                textSize={select(
-                    textSizeLabel,
-                    fontSizeOptions,
-                    fontSizeDefault,
-                )}
-                align={radios(alignLabel, alignOptions, alignDefault)}
-                marginLateral={select(
-                    lateralMarginLabel,
-                    spaceOptions,
-                    spaceDefault,
-                )}
-                marginTop={select(topMarginLabel, spaceOptions, spaceDefault)}
-                marginBottom={select(
-                    bottomMarginLabel,
-                    spaceOptions,
-                    spaceDefault,
-                )}
-                marginInternal={select(
-                    'Internal margin',
-                    spaceOptions,
-                    spaceOptions.sm,
-                )}
-            >
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur{' '}
-                    <strong>adipiscing elit</strong>. Donec eget nulla in libero
-                    laoreet sodales. Fusce vestibulum at neque nec convallis.
-                    Vivamus quis neque vulputate, fringilla massa vitae,
-                    interdum ipsum. Duis enim augue, euismod quis aliquam in,
-                    consequat quis risus.
-                </p>
-
-                <p>
-                    Etiam diam elit, fringilla sit amet blandit sit amet,{' '}
-                    <em>rutrum varius est</em>. Integer gravida vel urna nec
-                    interdum. Suspendisse vel quam et libero pellentesque
-                    aliquet. Sed est velit, dignissim eget nunc a, ornare tempor
-                    odio. In efficitur, leo in vestibulum posuere, tellus enim
-                    porttitor nisl, a tincidunt mauris quam sit amet mi.
-                </p>
-
-                <p>
-                    Nam rhoncus ligula posuere justo consequat. Suspendisse nunc
-                    nulla, pellentesque at tellus et, hendrerit facilisis dolor.
-                    Sed a dignissim mauris.
-                </p>
-            </Text>
-        ),
-        {
-            notes:
-                'If you want to add more than paragraph, put your text inside <code>&lt;p&gt;</code> tags and pass htmlTag prop to "div".',
-        },
-    )
-    .add(
-        'Text with background',
-        () => (
-            <Text
-                colorType={radios(
-                    colorTypeLabel,
-                    colorTypeOptions,
-                    colorTypeDefault,
-                )}
-                colorPallet={radios(
-                    colorPalletLabel,
-                    colorPalletOptions,
-                    colorPalletDefault,
-                )}
-                colorTheme={select(
-                    colorThemeLabel,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                colorWab={select(colorWabLabel, greyOptions, greyDefault)}
-                colorStatus={select(
-                    colorStatusLabel,
-                    formStatusOptions,
-                    formStatusDefault,
-                )}
-                hasBackground={true}
-                radiusSize={radios(
-                    'Radius size',
-                    radiusOptions,
-                    radiusOptions.sm,
-                )}
-                paddingLateral={spaceOptions.lg}
-                paddingTop={spaceOptions.lg}
-                paddingBottom={spaceOptions.lg}
-                marginLateral={spaceOptions.sm}
-                marginTop={spaceOptions.sm}
-                marginBottom={spaceOptions.sm}
-            >
+    .add('Single paragraph', () => (
+        <Text
+            colorType={radios(
+                colorTypeLabel,
+                colorTypeOptions,
+                colorTypeDefault,
+            )}
+            colorPallet={radios(
+                colorPalletLabel,
+                colorPalletOptions,
+                colorPalletOptions.wab,
+            )}
+            colorTheme={select(
+                colorThemeLabel,
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+            colorWab={select(colorWabLabel, greyOptions, greyOptions.grey60)}
+            colorStatus={select(
+                colorStatusLabel,
+                formStatusOptions,
+                formStatusDefault,
+            )}
+            textSize={select(textSizeLabel, fontSizeOptions, fontSizeDefault)}
+            align={radios(alignLabel, alignOptions, alignDefault)}
+            hasUppercase={boolean('Uppercase', false)}
+            hasUnderline={boolean('Underline', false)}
+            marginLateral={select(
+                lateralMarginLabel,
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginTop={select(topMarginLabel, spaceOptions, spaceDefault)}
+            marginBottom={select(bottomMarginLabel, spaceOptions, spaceDefault)}
+        >
+            Lorem ipsum dolor sit amet, consectetur{' '}
+            <strong>adipiscing elit</strong>. Donec eget{' '}
+            <em>nulla in libero</em> laoreet sodales. Fusce vestibulum at neque
+            nec convallis. Vivamus quis neque vulputate, fringilla massa vitae,
+            interdum ipsum. Duis enim augue, euismod quis aliquam in, consequat
+            quis risus.
+        </Text>
+    ))
+    .add('Block of paragraphs', () => (
+        <Text
+            htmlTag={textHtmlTagOptions.div}
+            colorType={radios(
+                colorTypeLabel,
+                colorTypeOptions,
+                colorTypeDefault,
+            )}
+            colorPallet={radios(
+                colorPalletLabel,
+                colorPalletOptions,
+                colorPalletOptions.wab,
+            )}
+            colorTheme={select(
+                colorThemeLabel,
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+            colorWab={select(colorWabLabel, greyOptions, greyOptions.grey60)}
+            colorStatus={select(
+                colorStatusLabel,
+                formStatusOptions,
+                formStatusDefault,
+            )}
+            textSize={select(textSizeLabel, fontSizeOptions, fontSizeDefault)}
+            align={radios(alignLabel, alignOptions, alignDefault)}
+            marginLateral={select(
+                lateralMarginLabel,
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginTop={select(topMarginLabel, spaceOptions, spaceDefault)}
+            marginBottom={select(bottomMarginLabel, spaceOptions, spaceDefault)}
+            marginInternal={select(
+                'Internal margin',
+                spaceOptions,
+                spaceOptions.sm,
+            )}
+        >
+            <p>
                 Lorem ipsum dolor sit amet, consectetur{' '}
                 <strong>adipiscing elit</strong>. Donec eget nulla in libero
                 laoreet sodales. Fusce vestibulum at neque nec convallis.
                 Vivamus quis neque vulputate, fringilla massa vitae, interdum
                 ipsum. Duis enim augue, euismod quis aliquam in, consequat quis
                 risus.
+            </p>
+
+            <p>
+                Etiam diam elit, fringilla sit amet blandit sit amet,{' '}
+                <em>rutrum varius est</em>. Integer gravida vel urna nec
+                interdum. Suspendisse vel quam et libero pellentesque aliquet.
+                Sed est velit, dignissim eget nunc a, ornare tempor odio. In
+                efficitur, leo in vestibulum posuere, tellus enim porttitor
+                nisl, a tincidunt mauris quam sit amet mi.
+            </p>
+
+            <p>
+                Nam rhoncus ligula posuere justo consequat. Suspendisse nunc
+                nulla, pellentesque at tellus et, hendrerit facilisis dolor. Sed
+                a dignissim mauris.
+            </p>
+        </Text>
+    ))
+    .add('Text with background', () => (
+        <Text
+            colorType={radios(
+                colorTypeLabel,
+                colorTypeOptions,
+                colorTypeDefault,
+            )}
+            colorPallet={radios(
+                colorPalletLabel,
+                colorPalletOptions,
+                colorPalletDefault,
+            )}
+            colorTheme={select(
+                colorThemeLabel,
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+            colorWab={select(colorWabLabel, greyOptions, greyDefault)}
+            colorStatus={select(
+                colorStatusLabel,
+                formStatusOptions,
+                formStatusDefault,
+            )}
+            hasBackground={true}
+            radiusSize={radios('Radius size', radiusOptions, radiusOptions.sm)}
+            paddingLateral={spaceOptions.lg}
+            paddingTop={spaceOptions.lg}
+            paddingBottom={spaceOptions.lg}
+            marginLateral={spaceOptions.sm}
+            marginTop={spaceOptions.sm}
+            marginBottom={spaceOptions.sm}
+        >
+            Lorem ipsum dolor sit amet, consectetur{' '}
+            <strong>adipiscing elit</strong>. Donec eget nulla in libero laoreet
+            sodales. Fusce vestibulum at neque nec convallis. Vivamus quis neque
+            vulputate, fringilla massa vitae, interdum ipsum. Duis enim augue,
+            euismod quis aliquam in, consequat quis risus.
+        </Text>
+    ))
+    .add('Inline styles', () => (
+        <>
+            <Text
+                htmlTag={textHtmlTagOptions.em}
+                marginLateral={spaceOptions.sm}
+                marginTop={spaceOptions.sm}
+                marginBottom={spaceOptions.sm}
+            >
+                Emphasis Text
             </Text>
-        ),
-        {
-            notes:
-                'You can change background-color, border-radius, text color, margins and paddings on your Text component.',
-        },
-    )
-    .add(
-        'Inline styles',
-        () => (
-            <>
-                <Text
-                    htmlTag={textHtmlTagOptions.em}
-                    marginLateral={spaceOptions.sm}
-                    marginTop={spaceOptions.sm}
-                    marginBottom={spaceOptions.sm}
-                >
-                    Emphasis Text
-                </Text>
 
-                <Text
-                    htmlTag={textHtmlTagOptions.strong}
-                    marginLateral={spaceOptions.sm}
-                    marginTop={spaceOptions.sm}
-                    marginBottom={spaceOptions.sm}
-                >
-                    Strong Text
-                </Text>
+            <Text
+                htmlTag={textHtmlTagOptions.strong}
+                marginLateral={spaceOptions.sm}
+                marginTop={spaceOptions.sm}
+                marginBottom={spaceOptions.sm}
+            >
+                Strong Text
+            </Text>
 
-                <Text
-                    htmlTag={textHtmlTagOptions.q}
-                    marginLateral={spaceOptions.sm}
-                    marginTop={spaceOptions.sm}
-                    marginBottom={spaceOptions.sm}
-                >
-                    Quote Text
-                </Text>
+            <Text
+                htmlTag={textHtmlTagOptions.q}
+                marginLateral={spaceOptions.sm}
+                marginTop={spaceOptions.sm}
+                marginBottom={spaceOptions.sm}
+            >
+                Quote Text
+            </Text>
 
-                <Text
-                    htmlTag={textHtmlTagOptions.sub}
-                    marginLateral={spaceOptions.sm}
-                    marginTop={spaceOptions.sm}
-                    marginBottom={spaceOptions.sm}
-                >
-                    Subscript Text
-                </Text>
+            <Text
+                htmlTag={textHtmlTagOptions.sub}
+                marginLateral={spaceOptions.sm}
+                marginTop={spaceOptions.sm}
+                marginBottom={spaceOptions.sm}
+            >
+                Subscript Text
+            </Text>
 
-                <Text
-                    htmlTag={textHtmlTagOptions.kbd}
-                    marginLateral={spaceOptions.sm}
-                    marginTop={spaceOptions.sm}
-                    marginBottom={spaceOptions.sm}
-                >
-                    KeyBoard Text
-                </Text>
+            <Text
+                htmlTag={textHtmlTagOptions.kbd}
+                marginLateral={spaceOptions.sm}
+                marginTop={spaceOptions.sm}
+                marginBottom={spaceOptions.sm}
+            >
+                KeyBoard Text
+            </Text>
 
-                <HR
-                    marginLateral={spaceOptions.sm}
-                    marginBottom={spaceOptions.md}
-                    colorPallet={colorPalletOptions.wab}
-                    colorWab={greyOptions.grey40}
-                />
+            <HR
+                marginLateral={spaceOptions.sm}
+                marginBottom={spaceOptions.md}
+                colorPallet={colorPalletOptions.wab}
+                colorWab={greyOptions.grey40}
+            />
 
-                <Text
-                    htmlTag={select(
-                        'Html tags',
-                        inlineHtmlTagOptions,
-                        textHtmlTagOptions.em,
-                    )}
-                    colorType={radios(
-                        colorTypeLabel,
-                        colorTypeOptions,
-                        colorTypeDefault,
-                    )}
-                    colorPallet={radios(
-                        colorPalletLabel,
-                        colorPalletOptions,
-                        colorPalletOptions.wab,
-                    )}
-                    colorTheme={select(
-                        colorThemeLabel,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    colorWab={select(
-                        colorWabLabel,
-                        greyOptions,
-                        greyOptions.grey60,
-                    )}
-                    colorStatus={select(
-                        colorStatusLabel,
-                        formStatusOptions,
-                        formStatusDefault,
-                    )}
-                    marginLateral={spaceOptions.sm}
-                    textSize={select(
-                        textSizeLabel,
-                        fontSizeOptions,
-                        fontSizeDefault,
-                    )}
-                >
-                    {text('Text', 'Try Me!')}
-                </Text>
-            </>
-        ),
-        {
-            notes:
-                'Switch between all html tags available, for each you can change background-color, text color & text size.',
-        },
-    );
+            <Text
+                htmlTag={select(
+                    'Html tags',
+                    inlineHtmlTagOptions,
+                    textHtmlTagOptions.em,
+                )}
+                colorType={radios(
+                    colorTypeLabel,
+                    colorTypeOptions,
+                    colorTypeDefault,
+                )}
+                colorPallet={radios(
+                    colorPalletLabel,
+                    colorPalletOptions,
+                    colorPalletOptions.wab,
+                )}
+                colorTheme={select(
+                    colorThemeLabel,
+                    colorThemeOptions,
+                    colorThemeDefault,
+                )}
+                colorWab={select(
+                    colorWabLabel,
+                    greyOptions,
+                    greyOptions.grey60,
+                )}
+                colorStatus={select(
+                    colorStatusLabel,
+                    formStatusOptions,
+                    formStatusDefault,
+                )}
+                marginLateral={spaceOptions.sm}
+                textSize={select(
+                    textSizeLabel,
+                    fontSizeOptions,
+                    fontSizeDefault,
+                )}
+            >
+                {text('Text', 'Try Me!')}
+            </Text>
+        </>
+    ));

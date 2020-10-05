@@ -33,35 +33,25 @@ const sampleLinks = [
 
 storiesOf(folder.nav + 'Breadcrumb', module)
     .addDecorator(withKnobs)
-    .add(
-        'Breadcrumb',
-        () => (
-            <Breadcrumb
-                elements={sampleLinks}
-                colorType={radios(
-                    'Color type',
-                    colorTypeOptions,
-                    colorTypeDefault,
-                )}
-                colorTheme={radios(
-                    'Color theme',
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                marginLateral={select(
-                    'Lateral margins',
-                    spaceOptions,
-                    spaceDefault,
-                )}
-                marginTop={select('Margin top', spaceOptions, spaceOptions.xs)}
-                marginBottom={select(
-                    'Margin bottom',
-                    spaceOptions,
-                    spaceOptions.xs,
-                )}
-            />
-        ),
-        {
-            notes: 'Breadcrumb takes an array of objects as "elements" prop.',
-        },
-    );
+    .add('Breadcrumb', () => (
+        <Breadcrumb
+            elements={sampleLinks}
+            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+            colorTheme={radios(
+                'Color theme',
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+            marginLateral={select(
+                'Lateral margins',
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginTop={select('Margin top', spaceOptions, spaceOptions.xs)}
+            marginBottom={select(
+                'Margin bottom',
+                spaceOptions,
+                spaceOptions.xs,
+            )}
+        />
+    ));

@@ -25,81 +25,67 @@ import drawFile from './sample/sample.svg';
 
 storiesOf(folder.media + 'Image', module)
     .addDecorator(withKnobs)
-    .add(
-        'Cover image',
-        () => (
-            <Image
-                imageType={imageTypeOptions.cover}
-                hasModifiedColor={boolean('Modify color', true)}
-                colorTheme={select(
-                    'Color theme',
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                bottomStyle={radios('Bottom style', maskOptions, maskDefault)}
-                blockWidth={select(
-                    'Image width',
-                    imageSizeOptions,
-                    imageSizeOptions.xl,
-                )}
-                blockHeight={select(
-                    'Image height',
-                    imageSizeOptions,
-                    imageSizeOptions.xs,
-                )}
-                radiusSize={radios(
-                    'Border radius',
-                    radiusOptions,
-                    radiusOptions.none,
-                )}
-            >
-                <img src={photoFile} alt="picture" />
-            </Image>
-        ),
-        {
-            notes:
-                'Component made for taking photographs inside a responsive block, without change proportions, thanks to imageType prop passed as "cover".',
-        },
-    )
-    .add(
-        'Normal image',
-        () => (
-            <Image
-                blockWidth={select(
-                    'Image width',
-                    imageSizeOptions,
-                    imageSizeOptions.xl,
-                )}
-                blockHeight={select(
-                    'Image height',
-                    imageSizeOptions,
-                    imageSizeOptions.xs,
-                )}
-                padding={select('Padding', spaceOptions, spaceOptions.none)}
-                shadowSize={select(
-                    'Shadow size',
-                    shadowSizeOptions,
-                    shadowSizeOptions.none,
-                )}
-                justifyContent={select(
-                    'Justify content',
-                    justifyContentOptions,
-                    justifyContentOptions.center,
-                )}
-                alignItems={select(
-                    'Align items',
-                    alignItemsOptions,
-                    alignItemsDefault,
-                )}
-            >
-                <img src={drawFile} alt="drawing" />
-            </Image>
-        ),
-        {
-            notes:
-                'Default Image component, optimized for SVG drawing and photos.',
-        },
-    )
+    .add('Cover image', () => (
+        <Image
+            imageType={imageTypeOptions.cover}
+            hasModifiedColor={boolean('Modify color', true)}
+            colorTheme={select(
+                'Color theme',
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+            bottomStyle={radios('Bottom style', maskOptions, maskDefault)}
+            blockWidth={select(
+                'Image width',
+                imageSizeOptions,
+                imageSizeOptions.xl,
+            )}
+            blockHeight={select(
+                'Image height',
+                imageSizeOptions,
+                imageSizeOptions.xs,
+            )}
+            radiusSize={radios(
+                'Border radius',
+                radiusOptions,
+                radiusOptions.none,
+            )}
+        >
+            <img src={photoFile} alt="picture" />
+        </Image>
+    ))
+    .add('Normal image', () => (
+        <Image
+            blockWidth={select(
+                'Image width',
+                imageSizeOptions,
+                imageSizeOptions.xl,
+            )}
+            blockHeight={select(
+                'Image height',
+                imageSizeOptions,
+                imageSizeOptions.xs,
+            )}
+            padding={select('Padding', spaceOptions, spaceOptions.none)}
+            shadowSize={select(
+                'Shadow size',
+                shadowSizeOptions,
+                shadowSizeOptions.none,
+            )}
+            justifyContent={select(
+                'Justify content',
+                justifyContentOptions,
+                justifyContentOptions.center,
+            )}
+            alignItems={select(
+                'Align items',
+                alignItemsOptions,
+                alignItemsDefault,
+            )}
+        >
+            <img src={drawFile} alt="drawing" />
+        </Image>
+    ))
     .add('Picture image', () => (
         <Image
             imageType={imageTypeOptions.picture}

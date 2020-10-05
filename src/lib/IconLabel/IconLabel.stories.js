@@ -16,38 +16,28 @@ const colorThemeLabel = 'Color theme';
 
 storiesOf(folder.main + 'IconLabel', module)
     .addDecorator(withKnobs)
-    .add(
-        'IconLabel',
-        () => (
-            <IconLabel
+    .add('IconLabel', () => (
+        <IconLabel
+            colorTheme={radios(
+                colorThemeLabel,
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            marginLeft={select('Margin left', spaceOptions, spaceDefault)}
+            marginRight={select('Margin right', spaceOptions, spaceDefault)}
+        >
+            <OutIcon
+                iconSize={iconSizeOptions.xs}
+                marginRight={spaceOptions.xs}
                 colorTheme={radios(
                     colorThemeLabel,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                marginTop={select('Margin top', spaceOptions, spaceDefault)}
-                marginBottom={select(
-                    'Margin bottom',
-                    spaceOptions,
-                    spaceDefault,
-                )}
-                marginLeft={select('Margin left', spaceOptions, spaceDefault)}
-                marginRight={select('Margin right', spaceOptions, spaceDefault)}
-            >
-                <OutIcon
-                    iconSize={iconSizeOptions.xs}
-                    marginRight={spaceOptions.xs}
-                    colorTheme={radios(
-                        colorThemeLabel,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                />
+            />
 
-                {text('Label', 'Sample')}
-            </IconLabel>
-        ),
-        {
-            notes: 'IconLabel.',
-        },
-    );
+            {text('Label', 'Sample')}
+        </IconLabel>
+    ));

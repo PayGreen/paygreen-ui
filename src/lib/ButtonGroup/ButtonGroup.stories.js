@@ -15,56 +15,37 @@ import Button from '../Button/Button';
 
 storiesOf(folder.form + folder.sub.button + 'ButtonGroup', module)
     .addDecorator(withKnobs)
-    .add(
-        'ButtonGroup',
-        () => (
-            <ButtonGroup
-                align={radios(
-                    'Buttons align',
-                    alignOptions,
-                    alignOptions.center,
-                )}
-                hasResetedMargins={boolean('Compensate buttons margin', false)}
-                marginLateral={select(
-                    'Lateral margin',
-                    spaceOptions,
-                    spaceDefault,
-                )}
-                marginTop={select('Margin top', spaceOptions, spaceDefault)}
-                marginBottom={select(
-                    'Margin bottom',
-                    spaceOptions,
-                    spaceDefault,
-                )}
-            >
-                <a href="#">
-                    <Button
-                        buttonStyle={buttonStyleOptions.line}
-                        buttonSize={radios(
-                            'Buttons size',
-                            buttonSizeOptions,
-                            buttonSizeDefault,
-                        )}
-                    >
-                        First button
-                    </Button>
-                </a>
+    .add('ButtonGroup', () => (
+        <ButtonGroup
+            align={radios('Buttons align', alignOptions, alignOptions.center)}
+            hasResetedMargins={boolean('Compensate buttons margin', false)}
+            marginLateral={select('Lateral margin', spaceOptions, spaceDefault)}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+        >
+            <a href="#">
+                <Button
+                    buttonStyle={buttonStyleOptions.line}
+                    buttonSize={radios(
+                        'Buttons size',
+                        buttonSizeOptions,
+                        buttonSizeDefault,
+                    )}
+                >
+                    First button
+                </Button>
+            </a>
 
-                <a href="#">
-                    <Button
-                        buttonSize={radios(
-                            'Buttons size',
-                            buttonSizeOptions,
-                            buttonSizeDefault,
-                        )}
-                    >
-                        Second button
-                    </Button>
-                </a>
-            </ButtonGroup>
-        ),
-        {
-            notes:
-                'You must always use Button component inside a ButtonGroup. You can add margin-top, margin-bottom, and padding (left and right only) with props. Button component comes with its own margins: in order to avoid shift with other components, you can compensate buttons margin with the hasResetedMargins prop on ButtonGroup.',
-        },
-    );
+            <a href="#">
+                <Button
+                    buttonSize={radios(
+                        'Buttons size',
+                        buttonSizeOptions,
+                        buttonSizeDefault,
+                    )}
+                >
+                    Second button
+                </Button>
+            </a>
+        </ButtonGroup>
+    ));

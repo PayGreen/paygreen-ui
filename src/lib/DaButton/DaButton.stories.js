@@ -31,54 +31,48 @@ const { wab, ...buttonColorPalletOptions } = colorPalletOptions;
 
 storiesOf(folder.form + folder.sub.button + 'DaButton', module)
     .addDecorator(withKnobs)
-    .add(
-        'DaButton',
-        () => (
-            <a href="#">
-                <DaButton
-                    buttonStyle={radios(
-                        'Button style',
-                        buttonStyleOptions,
-                        buttonStyleDefault,
-                    )}
-                    buttonSize={radios(
-                        'Button size',
-                        buttonSizeOptions,
-                        buttonSizeDefault,
-                    )}
-                    colorType={radios(
-                        'Color type',
-                        colorTypeOptions,
-                        colorTypeDefault,
-                    )}
-                    gradient={radios(
-                        'Gradient type',
-                        gradientOptions,
-                        gradientDefault,
-                    )}
-                    colorPallet={radios(
-                        'Color pallet',
-                        buttonColorPalletOptions,
-                        colorPalletDefault,
-                    )}
-                    colorTheme={select(
-                        'Color theme',
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    colorStatus={select(
-                        'Status color',
-                        formStatusOptions,
-                        formStatusDefault,
-                    )}
-                    isDisabled={boolean('Disabled', false)}
-                    icon={<CoinsIcon />}
-                >
-                    {text('Label', 'CTA button')}
-                </DaButton>
-            </a>
-        ),
-        {
-            notes: 'Change background color to test reverse mode.',
-        },
-    );
+    .add('DaButton', () => (
+        <a href="#">
+            <DaButton
+                buttonStyle={radios(
+                    'Button style',
+                    buttonStyleOptions,
+                    buttonStyleDefault,
+                )}
+                buttonSize={radios(
+                    'Button size',
+                    buttonSizeOptions,
+                    buttonSizeDefault,
+                )}
+                colorType={radios(
+                    'Color type',
+                    colorTypeOptions,
+                    colorTypeDefault,
+                )}
+                gradient={radios(
+                    'Gradient type',
+                    gradientOptions,
+                    gradientDefault,
+                )}
+                colorPallet={radios(
+                    'Color pallet',
+                    buttonColorPalletOptions,
+                    colorPalletDefault,
+                )}
+                colorTheme={select(
+                    'Color theme',
+                    colorThemeOptions,
+                    colorThemeDefault,
+                )}
+                colorStatus={select(
+                    'Status color',
+                    formStatusOptions,
+                    formStatusDefault,
+                )}
+                isDisabled={boolean('Disabled', false)}
+                icon={<CoinsIcon />}
+            >
+                {text('Label', 'CTA button')}
+            </DaButton>
+        </a>
+    ));

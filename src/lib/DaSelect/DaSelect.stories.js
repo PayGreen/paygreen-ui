@@ -32,28 +32,22 @@ const options = [
 
 storiesOf(folder.form + 'DaSelect', module)
     .addDecorator(withKnobs)
-    .add(
-        'DaSelect',
-        () => (
-            <DaSelect
-                defaultValue=""
-                options={options}
-                disabled={boolean('Disabled', false)}
-                readOnly={boolean('Readonly', false)}
-                fieldSize={radios(
-                    'Field size',
-                    buttonSizeOptions,
-                    buttonSizeDefault,
-                )}
-                blockWidth={radios(
-                    'Block width',
-                    inputWidthOptions,
-                    inputWidthDefault,
-                )}
-                hasHelpButton={boolean('Help button', false)}
-            />
-        ),
-        {
-            notes: 'You can change select width with "blockWidth" props.',
-        },
-    );
+    .add('DaSelect', () => (
+        <DaSelect
+            defaultValue=""
+            options={options}
+            disabled={boolean('Disabled', false)}
+            readOnly={boolean('Readonly', false)}
+            fieldSize={radios(
+                'Field size',
+                buttonSizeOptions,
+                buttonSizeDefault,
+            )}
+            blockWidth={radios(
+                'Block width',
+                inputWidthOptions,
+                inputWidthDefault,
+            )}
+            hasHelpButton={boolean('Help button', false)}
+        />
+    ));

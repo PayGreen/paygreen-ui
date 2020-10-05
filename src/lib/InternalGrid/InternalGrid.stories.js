@@ -28,11 +28,6 @@ const content = (
 
 storiesOf(folder.main + folder.sub.structure + 'InternalGrid', module)
     .addDecorator(withKnobs)
-    .addParameters({
-        component: InternalGrid,
-        /* componentSubtitle: 'SubTitle', */
-        parameters: { docs: { page: null } },
-    })
     .add('Flex', () => (
         <InternalGrid
             flexWrap={radios('Flex wrap', flexWrapOptions, flexWrapDefault)}
@@ -71,11 +66,7 @@ storiesOf(folder.main + folder.sub.structure + 'InternalGrid', module)
             displayType={displayOptions.grid}
             gridTemplateColumns={text('Grid columns', '1fr 1fr 1fr')}
             gridTemplateRows={text('Grid rows', 'repeat(2, 60px)')}
-            gridGap={select(
-                'Grid gap',
-                spaceOptions,
-                spaceDefault,
-            )}
+            gridGap={select('Grid gap', spaceOptions, spaceDefault)}
             justifyItems={select(
                 'Justify items',
                 justifyItemsOptions,
