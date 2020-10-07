@@ -1,10 +1,10 @@
-import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import pkg from './package.json';
+import babel from '@rollup/plugin-babel';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import url from '@rollup/plugin-url';
 import { eslint } from 'rollup-plugin-eslint';
 import peerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
-import url from '@rollup/plugin-url';
+import pkg from './package.json';
 
 export default {
     input: './src/lib/index.js',
@@ -34,15 +34,11 @@ export default {
         peerDepsExternalPlugin(),
         eslint(),
         babel({
+            babelHelpers: 'bundled',
             exclude: 'node_modules/**',
         }),
         resolve(),
-        commonjs({
-            // explicitly specify unresolvable named exports
-            namedExports: {
-                '@n8tb1t/use-scroll-position': ['useScrollPosition'],
-            },
-        }),
+        commonjs(),
         url({
             exclude: 'style/**',
         }),
