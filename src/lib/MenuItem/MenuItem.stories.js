@@ -1,115 +1,33 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
 import {
     folder,
-    colorPalletOptions,
-    colorPalletDefault,
     colorThemeOptions,
     colorThemeDefault,
-    greyOptions,
-    greyDefault,
     iconSizeOptions,
-    spaceOptions,
 } from '../../shared/constants';
-import { CardsIcon, OutIcon } from '../Icon/Icon';
-import Link from '../Link/Link';
-import IconLabel from '../IconLabel/IconLabel';
-import Text from '../Text/Text';
+import { LinkIcon } from '../Icon/Icon';
 import MenuItem from './MenuItem';
-
-const colorPalletLabel = 'Color pallet';
-const colorThemeLabel = 'Color theme';
-const colorWabLabel = 'Grey color';
 
 storiesOf(folder.nav + folder.sub.menu + 'MenuItem', module)
     .addDecorator(withKnobs)
-    .add('Sub menu item', () => (
+    .add('MenuItem', () => (
         <a href="#">
             <MenuItem
+                isClickable={boolean('Is clickable', true)}
                 colorTheme={radios(
-                    colorThemeLabel,
+                    'Color theme',
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                hasHoverEmphasis={boolean('Hover emphasis', true)}
             >
-                <CardsIcon
-                    iconSize={iconSizeOptions.lg}
-                    colorPallet={radios(
-                        colorPalletLabel,
-                        colorPalletOptions,
-                        colorPalletDefault,
-                    )}
-                    colorTheme={radios(
-                        colorThemeLabel,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    colorWab={select(colorWabLabel, greyOptions, greyDefault)}
-                />
-
-                <Link
-                    colorPallet={radios(
-                        colorPalletLabel,
-                        colorPalletOptions,
-                        colorPalletDefault,
-                    )}
-                    colorTheme={radios(
-                        colorThemeLabel,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    colorWab={select(colorWabLabel, greyOptions, greyDefault)}
-                >
-                    Payment
-                </Link>
-
-                <IconLabel
-                    colorTheme={radios(
-                        colorThemeLabel,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                >
-                    <OutIcon
-                        iconSize={iconSizeOptions.xs}
-                        marginRight={spaceOptions.xs}
-                        colorTheme={radios(
-                            colorThemeLabel,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
-                    />
-                    Dev
-                </IconLabel>
-
-                <Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas sit amet accumsan dolor. Nullam fringilla quam leo,
-                    id bibendum felis iaculis eu.
-                </Text>
-            </MenuItem>
-        </a>
-    ))
-    .add('Main menu item', () => (
-        <a href="#">
-            <MenuItem
-                isMain={true}
-                colorTheme={radios(
-                    colorThemeLabel,
-                    colorThemeOptions,
-                    colorThemeDefault,
+                {boolean('Width icon (mobile only)', false) ? (
+                    <LinkIcon iconSize={iconSizeOptions.lg} />
+                ) : (
+                    <></> //to replace 'null' value and avoid error from storybook
                 )}
-                hasHoverBase={boolean('Hover base (mobile)', true)}
-                hasHoverAlternative={boolean(
-                    'Hover alternative (desktop)',
-                    true,
-                )}
-            >
-                <Link colorPallet={colorPalletOptions.wab} hasUppercase={true}>
-                    Payment
-                </Link>
+                Payment link
             </MenuItem>
         </a>
     ));

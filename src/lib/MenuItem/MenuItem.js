@@ -1,11 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    colorThemeOptions,
-    colorThemeDefault,
-    alignOptions,
-    alignDefault,
-} from '../../shared/constants';
+import { colorThemeOptions, colorThemeDefault } from '../../shared/constants';
 import { MenuItemBase } from './style';
 
 const MenuItem = props => {
@@ -14,20 +9,12 @@ const MenuItem = props => {
 
 MenuItem.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    isMain: PropTypes.bool,
-    hasHoverBase: PropTypes.bool,
-    hasHoverAlternative: PropTypes.bool,
-    hasHoverEmphasis: PropTypes.bool,
-    align: PropTypes.oneOf(Object.values(alignOptions)),
+    isClickable: PropTypes.bool,
 };
 
 MenuItem.defaultProps = {
     colorTheme: colorThemeDefault,
-    isMain: false,
-    hasHoverBase: true,
-    hasHoverAlternative: true,
-    hasHoverEmphasis: false,
-    align: alignDefault,
+    isClickable: true,
 };
 
 export default MenuItem;
