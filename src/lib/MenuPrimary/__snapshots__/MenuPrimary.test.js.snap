@@ -2,53 +2,41 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-iCoHVE iLBJaJ"
+  className="style__MenuPrimaryBase-sc-4ap9m-0 dqEskV"
 >
   <li
-    className="sc-gKAblj jAlyMo"
+    className="style__MenuBase-sc-6r1iet-0 EOKtT"
   >
     <a
       href="#"
     >
       <div
-        className="sc-eCApGN euYLFn"
+        className="style__MenuItemBase-sc-4wfueo-0 kQDKBR"
       >
-        <span
-          className="sc-gtssRu jUNXqZ"
-        >
-          About us
-        </span>
+        About us
       </div>
     </a>
   </li>
   <li
-    className="sc-gKAblj jAlyMo"
+    className="style__MenuBase-sc-6r1iet-0 EOKtT"
   >
-    <a
-      href="#"
+    <div
+      className="style__MenuItemBase-sc-4wfueo-0 liCkWZ"
     >
-      <div
-        className="sc-eCApGN hWjlWc"
-      >
-        <span
-          className="sc-gtssRu jUNXqZ"
-        >
-          Other products
-        </span>
-      </div>
-    </a>
+      Other products
+    </div>
     <ul
-      className="sc-jSFkmK iJBxZV"
+      className="style__MenuListBase-sc-144u7yf-0 jsCqiM"
     >
       <li>
         <a
           href="#"
         >
           <div
-            className="sc-eCApGN dzGBkT"
+            className="style__MenuListItemBase-sc-81dvyg-0 fEBEyG"
           >
             <span
-              className="sc-bdnylx jOzeYY icon"
+              className="style__IconBase-ak3679-0 weCXC icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -59,12 +47,12 @@ exports[`renders without crashing 1`] = `
               </svg>
             </span>
             <span
-              className="sc-gtssRu dyJodu"
+              className="style__LinkBase-sc-1gvcrtp-0 fjbDy"
             >
               Tree
             </span>
             <p
-              className="sc-hKFyIo ljWCxQ"
+              className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
             </p>
@@ -76,10 +64,10 @@ exports[`renders without crashing 1`] = `
           href="#"
         >
           <div
-            className="sc-eCApGN dzGBkT"
+            className="style__MenuListItemBase-sc-81dvyg-0 fEBEyG"
           >
             <span
-              className="sc-bdnylx jOzeYY icon"
+              className="style__IconBase-ak3679-0 weCXC icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -96,15 +84,15 @@ exports[`renders without crashing 1`] = `
               </svg>
             </span>
             <span
-              className="sc-gtssRu dyJodu"
+              className="style__LinkBase-sc-1gvcrtp-0 fjbDy"
             >
               Payment
             </span>
             <span
-              className="sc-dlnjPT kBJvqa"
+              className="style__IconLabelBase-sc-113x6jx-0 fZXecA"
             >
               <span
-                className="sc-bdnylx gaaTY icon"
+                className="style__IconBase-ak3679-0 evqAiC icon"
               >
                 <svg
                   viewBox="0 0 143 143"

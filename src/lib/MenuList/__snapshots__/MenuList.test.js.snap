@@ -2,17 +2,17 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-jSFkmK iJBxZV"
+  className="style__MenuListBase-sc-144u7yf-0 jsCqiM"
 >
   <li>
     <a
       href="#"
     >
       <div
-        className="sc-eCApGN fWLoMs"
+        className="style__MenuListItemBase-sc-81dvyg-0 fEBEyG"
       >
         <span
-          className="sc-bdnylx jOzeYY icon"
+          className="style__IconBase-ak3679-0 weCXC icon"
         >
           <svg
             viewBox="0 0 143 143"
@@ -23,12 +23,12 @@ exports[`renders without crashing 1`] = `
           </svg>
         </span>
         <span
-          className="sc-gtssRu dyJodu"
+          className="style__LinkBase-sc-1gvcrtp-0 fjbDy"
         >
           Tree
         </span>
         <p
-          className="sc-dlnjPT lHAie"
+          className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
         </p>

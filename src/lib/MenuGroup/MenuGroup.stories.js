@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
     folder,
-    alignOptions,
     colorPalletOptions,
     greyOptions,
     iconSizeOptions,
@@ -25,6 +24,7 @@ import IconLabel from '../IconLabel/IconLabel';
 import Text from '../Text/Text';
 import MenuItem from '../MenuItem/MenuItem';
 import MenuList from '../MenuList/MenuList';
+import MenuListItem from '../MenuListItem/MenuListItem';
 import Menu from '../Menu/Menu';
 import MenuPrimary from '../MenuPrimary/MenuPrimary';
 import MenuSecondary from '../MenuSecondary/MenuSecondary';
@@ -36,17 +36,6 @@ import MenuGroup from './MenuGroup';
 import { logo } from '../Logo/sample/logo';
 
 const mainMenuIsOpenLabel = 'Open primary menu';
-
-const mainMenuItem = {
-    isMain: true,
-    hasHoverBase: false,
-    hasHoverAlternative: false,
-};
-
-const mainLink = {
-    colorPallet: colorPalletOptions.wab,
-    hasUppercase: true,
-};
 
 storiesOf(folder.nav + 'MenuGroup', module)
     .addDecorator(withKnobs)
@@ -77,20 +66,16 @@ storiesOf(folder.nav + 'MenuGroup', module)
             <MenuPrimary isOpen={boolean(mainMenuIsOpenLabel, true)}>
                 <Menu>
                     <a href="#">
-                        <MenuItem isMain={true}>
-                            <Link {...mainLink}>About us</Link>
-                        </MenuItem>
+                        <MenuItem>About us</MenuItem>
                     </a>
                 </Menu>
 
                 <Menu>
-                    <MenuItem {...mainMenuItem}>
-                        <Link {...mainLink}>Our products</Link>
-                    </MenuItem>
+                    <MenuItem isClickable={false}>Our products</MenuItem>
 
                     <MenuList>
                         <a href="#">
-                            <MenuItem hasHoverEmphasis={true}>
+                            <MenuListItem>
                                 <LeafIcon iconSize={iconSizeOptions.lg} />
 
                                 <Link>Tree</Link>
@@ -100,11 +85,11 @@ storiesOf(folder.nav + 'MenuGroup', module)
                                     adipiscing elit. Maecenas sit amet accumsan
                                     dolor. Nullam fringilla quam leo.
                                 </Text>
-                            </MenuItem>
+                            </MenuListItem>
                         </a>
 
                         <a href="#">
-                            <MenuItem hasHoverEmphasis={true}>
+                            <MenuListItem>
                                 <CardsIcon iconSize={iconSizeOptions.lg} />
 
                                 <Link>Payment</Link>
@@ -116,29 +101,27 @@ storiesOf(folder.nav + 'MenuGroup', module)
                                     />
                                     Dev
                                 </IconLabel>
-                            </MenuItem>
+                            </MenuListItem>
                         </a>
 
                         <a href="#">
-                            <MenuItem hasHoverEmphasis={true}>
+                            <MenuListItem>
                                 <OrganizationIcon
                                     iconSize={iconSizeOptions.lg}
                                 />
 
                                 <Link>Rounding</Link>
-                            </MenuItem>
+                            </MenuListItem>
                         </a>
                     </MenuList>
                 </Menu>
 
                 <Menu>
-                    <MenuItem {...mainMenuItem}>
-                        <Link {...mainLink}>Other products</Link>
-                    </MenuItem>
+                    <MenuItem isClickable={false}>Other products</MenuItem>
 
                     <MenuList>
                         <a href="#">
-                            <MenuItem hasHoverEmphasis={true}>
+                            <MenuListItem>
                                 <LeafIcon iconSize={iconSizeOptions.lg} />
 
                                 <Link>Tree</Link>
@@ -148,11 +131,11 @@ storiesOf(folder.nav + 'MenuGroup', module)
                                     adipiscing elit. Maecenas sit amet accumsan
                                     dolor. Nullam fringilla quam leo.
                                 </Text>
-                            </MenuItem>
+                            </MenuListItem>
                         </a>
 
                         <a href="#">
-                            <MenuItem hasHoverEmphasis={true}>
+                            <MenuListItem>
                                 <CardsIcon iconSize={iconSizeOptions.lg} />
 
                                 <Link>Payment</Link>
@@ -164,7 +147,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                                     />
                                     Dev
                                 </IconLabel>
-                            </MenuItem>
+                            </MenuListItem>
                         </a>
                     </MenuList>
                 </Menu>
@@ -184,33 +167,18 @@ storiesOf(folder.nav + 'MenuGroup', module)
             >
                 <Menu htmlTag={itemHtmlTagOptions.div}>
                     <a href="#">
-                        <MenuItem
-                            hasHoverBase={false}
-                            hasHoverEmphasis={true}
-                            align={alignOptions.center}
-                            isMain={true}
-                        >
-                            <LockIcon
-                                iconSize={iconSizeOptions.lg}
-                                colorPallet={colorPalletOptions.wab}
-                            />
-
-                            <Link {...mainLink}>Login</Link>
+                        <MenuItem>
+                            <LockIcon iconSize={iconSizeOptions.lg} />
+                            Login
                         </MenuItem>
                     </a>
                 </Menu>
 
                 <Menu htmlTag={itemHtmlTagOptions.div}>
                     <a href="#">
-                        <MenuItem
-                            hasHoverBase={false}
-                            hasHoverEmphasis={true}
-                            align={alignOptions.center}
-                            isMain={true}
-                        >
+                        <MenuItem>
                             <PenIcon iconSize={iconSizeOptions.lg} />
-
-                            <Link hasUppercase={true}>Subscribe</Link>
+                            Subscribe
                         </MenuItem>
                     </a>
                 </Menu>

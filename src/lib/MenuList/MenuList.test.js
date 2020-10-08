@@ -5,14 +5,14 @@ import { iconSizeOptions } from '../../shared/constants';
 import { LeafIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import Text from '../Text/Text';
-import MenuItem from '../MenuItem/MenuItem';
+import MenuListItem from '../MenuListItem/MenuListItem';
 import MenuList from './MenuList';
 
 it('renders without crashing', () => {
     const menuList = TestRenderer.create(
         <MenuList theme={ThemeDefault}>
             <a href="#">
-                <MenuItem theme={ThemeDefault}>
+                <MenuListItem theme={ThemeDefault}>
                     <LeafIcon
                         iconSize={iconSizeOptions.lg}
                         theme={ThemeDefault}
@@ -25,7 +25,7 @@ it('renders without crashing', () => {
                         Maecenas sit amet accumsan dolor. Nullam fringilla quam
                         leo.
                     </Text>
-                </MenuItem>
+                </MenuListItem>
             </a>
         </MenuList>,
     );

@@ -18,7 +18,7 @@ import {
 import Link from '../Link/Link';
 import IconLabel from '../IconLabel/IconLabel';
 import Text from '../Text/Text';
-import MenuItem from '../MenuItem/MenuItem';
+import MenuListItem from '../MenuListItem/MenuListItem';
 import MenuList from './MenuList';
 
 const color = [
@@ -39,7 +39,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
             )}
         >
             <a href="#">
-                <MenuItem hasHoverEmphasis={true}>
+                <MenuListItem>
                     <LeafIcon iconSize={iconSizeOptions.lg} />
 
                     <Link>Tree</Link>
@@ -49,11 +49,11 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
                         Maecenas sit amet accumsan dolor. Nullam fringilla quam
                         leo.
                     </Text>
-                </MenuItem>
+                </MenuListItem>
             </a>
 
             <a href="#">
-                <MenuItem colorTheme={color[1]} hasHoverEmphasis={true}>
+                <MenuListItem colorTheme={color[1]}>
                     <CardsIcon
                         iconSize={iconSizeOptions.lg}
                         colorTheme={color[1]}
@@ -69,11 +69,11 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
                         />
                         Dev
                     </IconLabel>
-                </MenuItem>
+                </MenuListItem>
             </a>
 
             <a href="#">
-                <MenuItem colorTheme={color[2]} hasHoverEmphasis={true}>
+                <MenuListItem colorTheme={color[2]}>
                     <MealIcon
                         iconSize={iconSizeOptions.lg}
                         colorTheme={color[2]}
@@ -94,18 +94,18 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Maecenas sit amet accumsan dolor.
                     </Text>
-                </MenuItem>
+                </MenuListItem>
             </a>
 
             <a href="#">
-                <MenuItem colorTheme={color[3]} hasHoverEmphasis={true}>
+                <MenuListItem colorTheme={color[3]}>
                     <OrganizationIcon
                         iconSize={iconSizeOptions.lg}
                         colorTheme={color[3]}
                     />
 
                     <Link colorTheme={color[3]}>Rounding</Link>
-                </MenuItem>
+                </MenuListItem>
             </a>
         </MenuList>
     ));

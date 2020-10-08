@@ -5,11 +5,9 @@ import {
     folder,
     itemHtmlTagOptions,
     iconSizeOptions,
-    alignOptions,
-    colorPalletOptions,
+    colorThemeOptions,
 } from '../../shared/constants';
 import { LockIcon, PenIcon } from '../Icon/Icon';
-import Link from '../Link/Link';
 import MenuItem from '../MenuItem/MenuItem';
 import Menu from '../Menu/Menu';
 import MenuClose from '../MenuClose/MenuClose';
@@ -24,38 +22,18 @@ storiesOf(folder.nav + 'MenuSecondary', module)
         >
             <Menu htmlTag={itemHtmlTagOptions.div}>
                 <a href="#">
-                    <MenuItem
-                        hasHoverBase={false}
-                        hasHoverEmphasis={true}
-                        align={alignOptions.center}
-                        isMain={true}
-                    >
-                        <LockIcon
-                            iconSize={iconSizeOptions.lg}
-                            colorPallet={colorPalletOptions.wab}
-                        />
-
-                        <Link
-                            hasUppercase={true}
-                            colorPallet={colorPalletOptions.wab}
-                        >
-                            Login
-                        </Link>
+                    <MenuItem>
+                        <LockIcon iconSize={iconSizeOptions.lg} />
+                        Login
                     </MenuItem>
                 </a>
             </Menu>
 
             <Menu htmlTag={itemHtmlTagOptions.div}>
                 <a href="#">
-                    <MenuItem
-                        hasHoverBase={false}
-                        hasHoverEmphasis={true}
-                        align={alignOptions.center}
-                        isMain={true}
-                    >
+                    <MenuItem colorTheme={colorThemeOptions.secondary}>
                         <PenIcon iconSize={iconSizeOptions.lg} />
-
-                        <Link hasUppercase={true}>Subscribe</Link>
+                        Subscribe
                     </MenuItem>
                 </a>
             </Menu>

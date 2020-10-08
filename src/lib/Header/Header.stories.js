@@ -4,7 +4,6 @@ import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     spaceOptions,
-    alignOptions,
     colorPalletOptions,
     greyOptions,
     itemHtmlTagOptions,
@@ -22,11 +21,12 @@ import Banner from '../Banner/Banner';
 import Text from '../Text/Text';
 import Link from '../Link/Link';
 import MenuItem from '../MenuItem/MenuItem';
+import MenuList from '../MenuList/MenuList';
+import MenuListItem from '../MenuListItem/MenuListItem';
 import Menu from '../Menu/Menu';
 import MenuPrimary from '../MenuPrimary/MenuPrimary';
 import MenuSecondary from '../MenuSecondary/MenuSecondary';
 import MenuTertiary from '../MenuTertiary/MenuTertiary';
-import MenuList from '../MenuList/MenuList';
 import MenuClose from '../MenuClose/MenuClose';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Logo from '../Logo/Logo';
@@ -34,22 +34,6 @@ import Dot from '../Dot/Dot';
 import MenuGroup from '../MenuGroup/MenuGroup';
 import Header from './Header';
 import { logo } from '../Logo/sample/logo';
-
-const secondaryItem = {
-    hasHoverBase: false,
-    hasHoverEmphasis: true,
-    align: alignOptions.center,
-    isMain: true,
-};
-
-const mainLink = {
-    colorPallet: colorPalletOptions.wab,
-    hasUppercase: true,
-};
-
-const secondaryLink = {
-    hasUppercase: true,
-};
 
 const sampleLinks = [
     {
@@ -108,24 +92,18 @@ storiesOf(folder.nav + 'Header', module)
                     >
                         <Menu>
                             <a href="#">
-                                <MenuItem isMain={true}>
-                                    <Link {...mainLink}>About us</Link>
-                                </MenuItem>
+                                <MenuItem>About us</MenuItem>
                             </a>
                         </Menu>
 
                         <Menu>
-                            <MenuItem
-                                isMain={true}
-                                hasHoverBase={false}
-                                hasHoverAlternative={false}
-                            >
-                                <Link {...mainLink}>Other products</Link>
+                            <MenuItem isClickable={false}>
+                                Other products
                             </MenuItem>
 
                             <MenuList>
                                 <a href="#">
-                                    <MenuItem hasHoverEmphasis={true}>
+                                    <MenuListItem>
                                         <Link>Tree</Link>
 
                                         <Text>
@@ -134,22 +112,20 @@ storiesOf(folder.nav + 'Header', module)
                                             Maecenas sit amet accumsan dolor.
                                             Nullam fringilla quam leo.
                                         </Text>
-                                    </MenuItem>
+                                    </MenuListItem>
                                 </a>
 
                                 <a href="#">
-                                    <MenuItem hasHoverEmphasis={true}>
+                                    <MenuListItem>
                                         <Link>Payment</Link>
-                                    </MenuItem>
+                                    </MenuListItem>
                                 </a>
                             </MenuList>
                         </Menu>
 
                         <Menu>
                             <a href="#">
-                                <MenuItem isMain={true}>
-                                    <Link {...mainLink}>Visit us</Link>
-                                </MenuItem>
+                                <MenuItem>Visit us</MenuItem>
                             </a>
                         </Menu>
                     </MenuPrimary>
@@ -168,17 +144,13 @@ storiesOf(folder.nav + 'Header', module)
                     >
                         <Menu htmlTag={itemHtmlTagOptions.div}>
                             <a href="#">
-                                <MenuItem {...secondaryItem}>
-                                    <Link {...secondaryLink}>Login</Link>
-                                </MenuItem>
+                                <MenuItem>Login</MenuItem>
                             </a>
                         </Menu>
 
                         <Menu htmlTag={itemHtmlTagOptions.div}>
                             <a href="#">
-                                <MenuItem {...secondaryItem}>
-                                    <Link {...secondaryLink}>Subscribe</Link>
-                                </MenuItem>
+                                <MenuItem>Subscribe</MenuItem>
                             </a>
                         </Menu>
                     </MenuSecondary>
@@ -192,7 +164,9 @@ storiesOf(folder.nav + 'Header', module)
                             </a>
                         ))}
                     </MenuTertiary>
-                ) : null}
+                ) : (
+                    <></>
+                )}
             </Header>
 
             <Banner topStyle={decorationOptions.none} isFirstContent={true}>
