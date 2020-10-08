@@ -34,7 +34,11 @@ const DaTableHeadCell = ({
             {...rest}
             isCheckbox={cellIsCheckbox}
             hasControls={sortIcon || groupIcon}
-            className={!children && !sortIcon ? 'hideOnSmallScreen' : null}
+            className={
+                !sortIcon && (!children || !cellIsCheckbox)
+                    ? 'hideOnSmallScreen'
+                    : null
+            }
         >
             <div className="head-child">
                 {label ? <span className="label-child">{label}</span> : null}
