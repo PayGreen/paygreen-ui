@@ -1,12 +1,13 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
+import { ListItemBase } from '../../ListItem/style';
 
 const dashedWidth = {
     xs: '50px',
     sm: '70px',
     md: '100px',
     lg: '160px',
-    xl: '220px'
+    xl: '220px',
 };
 
 const dashedLine = {
@@ -33,13 +34,17 @@ const dashedLine = {
     xl: css`
         stroke-width: 0.7;
         stroke-dasharray: 3, 7;
-    `
-}
+    `,
+};
 
 const dashedStyle = css`
     li {
+        ${ListItemBase} {
+            width: auto;
+        }
+
         &:nth-child(even) {
-            & > :nth-child(2) {
+            ${ListItemBase} {
                 margin-left: ${props => dashedWidth[props.bulletSize]};
             }
         }
@@ -48,8 +53,10 @@ const dashedStyle = css`
     .dashed {
         display: block;
         width: ${props => dashedWidth[props.bulletSize]};
-        padding: ${props => math(props.theme.icon.size[props.bulletSize] + '/4')};
-        margin-left: ${props => math(props.theme.icon.size[props.bulletSize] + '/2')};
+        padding: ${props =>
+            math(props.theme.icon.size[props.bulletSize] + '/4')};
+        margin-left: ${props =>
+            math(props.theme.icon.size[props.bulletSize] + '/2')};
 
         &.bottom {
             transform: scaleX(-1);
@@ -57,7 +64,7 @@ const dashedStyle = css`
 
         svg {
             fill: none;
-            opacity: .3;
+            opacity: 0.3;
             stroke: ${props => props.theme.color[props.colorTheme].main};
             stroke-linecap: round;
             stroke-miterlimit: 10;
@@ -66,6 +73,4 @@ const dashedStyle = css`
     }
 `;
 
-export {
-    dashedStyle
-};
+export { dashedStyle };
