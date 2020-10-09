@@ -32,7 +32,7 @@ const { wab, ...buttonColorPalletOptions } = colorPalletOptions;
 storiesOf(folder.form + folder.sub.button + 'DaButton', module)
     .addDecorator(withKnobs)
     .add('DaButton', () => (
-        <a href="#">
+        <button type="button">
             <DaButton
                 buttonStyle={radios(
                     'Button style',
@@ -74,5 +74,5 @@ storiesOf(folder.form + folder.sub.button + 'DaButton', module)
             >
                 {text('Label', 'CTA button')}
             </DaButton>
-        </a>
+        </button>
     ));

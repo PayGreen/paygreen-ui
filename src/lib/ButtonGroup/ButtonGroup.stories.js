@@ -23,7 +23,7 @@ storiesOf(folder.form + folder.sub.button + 'ButtonGroup', module)
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
             marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
         >
-            <a href="#">
+            <button type="button">
                 <Button
                     buttonStyle={buttonStyleOptions.line}
                     buttonSize={radios(
@@ -34,9 +34,9 @@ storiesOf(folder.form + folder.sub.button + 'ButtonGroup', module)
                 >
                     First button
                 </Button>
-            </a>
+            </button>
 
-            <a href="#">
+            <button type="button">
                 <Button
                     buttonSize={radios(
                         'Buttons size',
@@ -46,6 +46,6 @@ storiesOf(folder.form + folder.sub.button + 'ButtonGroup', module)
                 >
                     Second button
                 </Button>
-            </a>
+            </button>
         </ButtonGroup>
     ));

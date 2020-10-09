@@ -19,11 +19,11 @@ it('renders without crashing', () => {
             </Text>
 
             <ButtonGroup theme={ThemeDefault}>
-                <a href="#">
+                <button type="button">
                     <Button theme={ThemeDefault}>
-                        Don't click
+                        Your button
                     </Button>
-                </a>
+                </button>
             </ButtonGroup>
         </Card>
     );

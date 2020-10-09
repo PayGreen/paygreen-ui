@@ -17,7 +17,7 @@ import { withKnobs, boolean, text, radios } from '@storybook/addon-knobs';
 storiesOf(folder.form + folder.sub.button + 'Button', module)
     .addDecorator(withKnobs)
     .add('Button', () => (
-        <a href="#">
+        <button type="button">
             <Button
                 buttonStyle={radios(
                     'Button style',
@@ -43,5 +43,5 @@ storiesOf(folder.form + folder.sub.button + 'Button', module)
             >
                 {text('Label', 'CTA button')}
             </Button>
-        </a>
+        </button>
     ));

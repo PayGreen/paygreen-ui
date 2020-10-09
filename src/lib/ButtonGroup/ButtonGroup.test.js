@@ -8,20 +8,20 @@ import ButtonGroup from './ButtonGroup';
 it('renders without crashing', () => {
     const buttonGroup = TestRenderer.create(
         <ButtonGroup theme={ThemeDefault}>
-            <a href="#">
+            <button type="button">
                 <Button
                     theme={ThemeDefault}
                     buttonStyle={buttonStyleOptions.line}
                 >
                     First button
                 </Button>
-            </a>
+            </button>
 
-            <a href="#">
+            <button type="button">
                 <Button theme={ThemeDefault}>
                     Second button
                 </Button>
-            </a>
+            </button>
         </ButtonGroup>
     );
     expect(buttonGroup.toJSON()).toMatchSnapshot();

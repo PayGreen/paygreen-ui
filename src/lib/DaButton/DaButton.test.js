@@ -5,7 +5,9 @@ import DaButton from './DaButton';
 
 it('renders without crashing', () => {
     const daButton = TestRenderer.create(
-        <DaButton theme={ThemeDefault}>CTA button</DaButton>,
+        <button type="button">
+            <DaButton theme={ThemeDefault}>CTA button</DaButton>
+        </button>,
     );
     expect(daButton.toJSON()).toMatchSnapshot();
 });

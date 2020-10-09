@@ -5,9 +5,9 @@ import Button from './Button';
 
 it('renders without crashing', () => {
     const button = TestRenderer.create(
-        <Button theme={ThemeDefault}>
-            CTA button
-        </Button>
+        <button type="button">
+            <Button theme={ThemeDefault}>CTA button</Button>
+        </button>,
     );
     expect(button.toJSON()).toMatchSnapshot();
 });

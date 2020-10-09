@@ -153,7 +153,7 @@ storiesOf(folder.main + 'Card', module)
                 )}
                 hasResetedMargins={false}
             >
-                <a href="#">
+                <button type="button">
                     <Button
                         colorType={radios(
                             colorTypeLabel,
@@ -166,9 +166,9 @@ storiesOf(folder.main + 'Card', module)
                             colorThemeDefault,
                         )}
                     >
-                        Don't click
+                        Your button
                     </Button>
-                </a>
+                </button>
             </ButtonGroup>
         </Card>
     ))
@@ -231,7 +231,7 @@ storiesOf(folder.main + 'Card', module)
                 marginBottom={spaceOptions.sm}
                 paddingBlock={spaceOptions.sm}
             >
-                <a href="#">
+                <button type="button">
                     <Button
                         colorType={radios(
                             colorTypeLabel,
@@ -245,9 +245,9 @@ storiesOf(folder.main + 'Card', module)
                         )}
                         buttonSize={buttonSizeOptions.sm}
                     >
-                        Don't click
+                        Your button
                     </Button>
-                </a>
+                </button>
             </ButtonGroup>
         </Card>
     ))
@@ -305,7 +305,7 @@ storiesOf(folder.main + 'Card', module)
                     marginBottom={spaceOptions.sm}
                     paddingBlock={spaceOptions.sm}
                 >
-                    <a href="#">
+                    <button type="button">
                         <Button
                             colorType={radios(
                                 colorTypeLabel,
@@ -319,9 +319,9 @@ storiesOf(folder.main + 'Card', module)
                             )}
                             buttonSize={buttonSizeOptions.sm}
                         >
-                            Don't click
+                            Your button
                         </Button>
-                    </a>
+                    </button>
                 </ButtonGroup>
             </div>
         </Card>
@@ -377,11 +377,11 @@ storiesOf(folder.main + 'Card', module)
                     spaceOptions.md,
                 )}
             >
-                <a href="#">
+                <button type="button">
                     <Button buttonSize={buttonSizeOptions.sm}>
                         Don't click
                     </Button>
-                </a>
+                </button>
             </ButtonGroup>
         </Card>
     ))
