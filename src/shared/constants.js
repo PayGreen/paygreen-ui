@@ -177,10 +177,12 @@ const cornerPositionDefault = cornerPositionOptions.left;
 // Arrow block position
 const arrowBlockOptions = {
     none: 'none',
-    left: 'left',
-    right: 'right',
     topLeft: 'topLeft',
     topRight: 'topRight',
+    bottomLeft: 'bottomLeft',
+    bottomRight: 'bottomRight',
+    left: 'left',
+    right: 'right',
 };
 
 const arrowBlockDefault = arrowBlockOptions.none;
