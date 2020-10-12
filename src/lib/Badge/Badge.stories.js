@@ -5,7 +5,6 @@ import {
     folder,
     iconHtmlTagOptions,
     iconHtmlTagDefault,
-    iconSizeOptions,
     colorTypeOptions,
     colorTypeDefault,
     colorStyleOptions,
@@ -14,11 +13,9 @@ import {
     colorThemeDefault,
     gradientOptions,
     fontSizeOptions,
-    spaceOptions,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
 import Badge from './Badge';
-import { ArrowBottomIcon } from '../Icon/Icon';
 
 storiesOf(folder.text + 'Badge', module)
     .addDecorator(withKnobs)
@@ -56,14 +53,5 @@ storiesOf(folder.text + 'Badge', module)
             )}
         >
             {text(labels.text, 'Example')}
-
-            <ArrowBottomIcon
-                iconSize={select(
-                    labels.iconSize,
-                    iconSizeOptions,
-                    iconSizeOptions.sm,
-                )}
-                marginLeft={spaceOptions.xs}
-            />
         </Badge>
     ));
