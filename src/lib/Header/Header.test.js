@@ -1,7 +1,6 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import Link from '../Link/Link';
 import MenuItem from '../MenuItem/MenuItem';
 import Menu from '../Menu/Menu';
 import MenuPrimary from '../MenuPrimary/MenuPrimary';
@@ -20,11 +19,7 @@ it('renders without crashing', () => {
                 <MenuPrimary theme={ThemeDefault}>
                     <Menu theme={ThemeDefault}>
                         <a href="#">
-                            <MenuItem isMain={true} theme={ThemeDefault}>
-                                <Link theme={ThemeDefault} hasUnderline={false}>
-                                    About us
-                                </Link>
-                            </MenuItem>
+                            <MenuItem theme={ThemeDefault}>About us</MenuItem>
                         </a>
                     </Menu>
                 </MenuPrimary>

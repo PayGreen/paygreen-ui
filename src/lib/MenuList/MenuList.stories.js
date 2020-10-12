@@ -18,7 +18,7 @@ import {
 import Link from '../Link/Link';
 import IconLabel from '../IconLabel/IconLabel';
 import Text from '../Text/Text';
-import MenuItem from '../MenuItem/MenuItem';
+import MenuListItem from '../MenuListItem/MenuListItem';
 import MenuList from './MenuList';
 
 const color = [
@@ -31,81 +31,83 @@ const color = [
 storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
     .addDecorator(withKnobs)
     .add('MenuList', () => (
-        <MenuList
-            colorTheme={radios(
-                'Shadow color',
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-        >
-            <a href="#">
-                <MenuItem hasHoverEmphasis={true}>
-                    <LeafIcon iconSize={iconSizeOptions.lg} />
+        <div style={{ position: 'relative' }}>
+            <MenuList
+                colorTheme={radios(
+                    'Shadow color',
+                    colorThemeOptions,
+                    colorThemeDefault,
+                )}
+            >
+                <a href="#">
+                    <MenuListItem>
+                        <LeafIcon iconSize={iconSizeOptions.lg} />
 
-                    <Link>Tree</Link>
+                        <Link>Tree</Link>
 
-                    <Text>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Maecenas sit amet accumsan dolor. Nullam fringilla quam
-                        leo.
-                    </Text>
-                </MenuItem>
-            </a>
+                        <Text>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Maecenas sit amet accumsan dolor. Nullam
+                            fringilla quam leo.
+                        </Text>
+                    </MenuListItem>
+                </a>
 
-            <a href="#">
-                <MenuItem colorTheme={color[1]} hasHoverEmphasis={true}>
-                    <CardsIcon
-                        iconSize={iconSizeOptions.lg}
-                        colorTheme={color[1]}
-                    />
-
-                    <Link colorTheme={color[1]}>Payment</Link>
-
-                    <IconLabel colorTheme={color[1]}>
-                        <OutIcon
-                            iconSize={iconSizeOptions.xs}
-                            marginRight={spaceOptions.xs}
+                <a href="#">
+                    <MenuListItem colorTheme={color[1]}>
+                        <CardsIcon
+                            iconSize={iconSizeOptions.lg}
                             colorTheme={color[1]}
                         />
-                        Dev
-                    </IconLabel>
-                </MenuItem>
-            </a>
 
-            <a href="#">
-                <MenuItem colorTheme={color[2]} hasHoverEmphasis={true}>
-                    <MealIcon
-                        iconSize={iconSizeOptions.lg}
-                        colorTheme={color[2]}
-                    />
+                        <Link colorTheme={color[1]}>Payment</Link>
 
-                    <Link colorTheme={color[2]}>Lunchkit</Link>
+                        <IconLabel colorTheme={color[1]}>
+                            <OutIcon
+                                iconSize={iconSizeOptions.xs}
+                                marginRight={spaceOptions.xs}
+                                colorTheme={color[1]}
+                            />
+                            Dev
+                        </IconLabel>
+                    </MenuListItem>
+                </a>
 
-                    <IconLabel colorTheme={color[2]}>
-                        <OutIcon
-                            iconSize={iconSizeOptions.xs}
-                            marginRight={spaceOptions.xs}
+                <a href="#">
+                    <MenuListItem colorTheme={color[2]}>
+                        <MealIcon
+                            iconSize={iconSizeOptions.lg}
                             colorTheme={color[2]}
                         />
-                        Dev
-                    </IconLabel>
 
-                    <Text>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Maecenas sit amet accumsan dolor.
-                    </Text>
-                </MenuItem>
-            </a>
+                        <Link colorTheme={color[2]}>Lunchkit</Link>
 
-            <a href="#">
-                <MenuItem colorTheme={color[3]} hasHoverEmphasis={true}>
-                    <OrganizationIcon
-                        iconSize={iconSizeOptions.lg}
-                        colorTheme={color[3]}
-                    />
+                        <IconLabel colorTheme={color[2]}>
+                            <OutIcon
+                                iconSize={iconSizeOptions.xs}
+                                marginRight={spaceOptions.xs}
+                                colorTheme={color[2]}
+                            />
+                            Dev
+                        </IconLabel>
 
-                    <Link colorTheme={color[3]}>Rounding</Link>
-                </MenuItem>
-            </a>
-        </MenuList>
+                        <Text>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Maecenas sit amet accumsan dolor.
+                        </Text>
+                    </MenuListItem>
+                </a>
+
+                <a href="#">
+                    <MenuListItem colorTheme={color[3]}>
+                        <OrganizationIcon
+                            iconSize={iconSizeOptions.lg}
+                            colorTheme={color[3]}
+                        />
+
+                        <Link colorTheme={color[3]}>Rounding</Link>
+                    </MenuListItem>
+                </a>
+            </MenuList>
+        </div>
     ));

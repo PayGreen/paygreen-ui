@@ -11,6 +11,7 @@ import {
     iconSizeOptions,
     iconHtmlTagOptions,
     sidebarItemHtmlTagOptions,
+    hoverDirectionOptions,
 } from '../../shared/constants';
 import Logo from '../Logo/Logo';
 import { logo } from '../Logo/sample/logo';
@@ -27,7 +28,11 @@ import Box from '../Box/Box';
 const colorThemeLabel = 'Color theme';
 
 const logoSidebar = (
-    <Logo hasBaseline={false} hasHoverRight={true} blockWidth={spaceOptions.sm}>
+    <Logo
+        hasBaseline={false}
+        hoverDirection={hoverDirectionOptions.right}
+        blockWidth={spaceOptions.sm}
+    >
         {logo}
     </Logo>
 );

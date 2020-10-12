@@ -1,12 +1,13 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import { colorPalletOptions } from '../../shared/constants';
-import Link from '../Link/Link';
+import { itemHtmlTagOptions } from '../../shared/constants';
 import MenuItem from '../MenuItem/MenuItem';
 import Menu from '../Menu/Menu';
 import MenuPrimary from '../MenuPrimary/MenuPrimary';
+import MenuSecondary from '../MenuSecondary/MenuSecondary';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
+import MenuClose from '../MenuClose/MenuClose';
 import MenuGroup from './MenuGroup';
 
 it('renders without crashing', () => {
@@ -19,18 +20,21 @@ it('renders without crashing', () => {
             <MenuPrimary theme={ThemeDefault}>
                 <Menu theme={ThemeDefault}>
                     <a href="#">
-                        <MenuItem isMain={true} theme={ThemeDefault}>
-                            <Link
-                                colorPallet={colorPalletOptions.wab}
-                                hasUppercase={true}
-                                theme={ThemeDefault}
-                            >
-                                About us
-                            </Link>
-                        </MenuItem>
+                        <MenuItem theme={ThemeDefault}>About us</MenuItem>
                     </a>
                 </Menu>
             </MenuPrimary>
+
+            <MenuSecondary
+                theme={ThemeDefault}
+                closeComponent={<MenuClose theme={ThemeDefault} />}
+            >
+                <Menu theme={ThemeDefault} htmlTag={itemHtmlTagOptions.div}>
+                    <a href="#">
+                        <MenuItem theme={ThemeDefault}>Login</MenuItem>
+                    </a>
+                </Menu>
+            </MenuSecondary>
         </MenuGroup>,
     );
     expect(component.toJSON()).toMatchSnapshot();

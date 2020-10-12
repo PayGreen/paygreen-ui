@@ -3,14 +3,14 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
     folder,
-    itemHtmlTagOptions,
     iconSizeOptions,
-    alignOptions,
-    colorPalletOptions,
+    itemHtmlTagOptions,
 } from '../../shared/constants';
-import { LockIcon, PenIcon } from '../Icon/Icon';
+import { ShopIcon, OrganizationIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import MenuItem from '../MenuItem/MenuItem';
+import MenuList from '../MenuList/MenuList';
+import MenuListItem from '../MenuListItem/MenuListItem';
 import Menu from '../Menu/Menu';
 import MenuClose from '../MenuClose/MenuClose';
 import MenuSecondary from './MenuSecondary';
@@ -24,40 +24,30 @@ storiesOf(folder.nav + 'MenuSecondary', module)
         >
             <Menu htmlTag={itemHtmlTagOptions.div}>
                 <a href="#">
-                    <MenuItem
-                        hasHoverBase={false}
-                        hasHoverEmphasis={true}
-                        align={alignOptions.center}
-                        isMain={true}
-                    >
-                        <LockIcon
-                            iconSize={iconSizeOptions.lg}
-                            colorPallet={colorPalletOptions.wab}
-                        />
-
-                        <Link
-                            hasUppercase={true}
-                            colorPallet={colorPalletOptions.wab}
-                        >
-                            Login
-                        </Link>
-                    </MenuItem>
+                    <MenuItem>Login</MenuItem>
                 </a>
             </Menu>
 
             <Menu htmlTag={itemHtmlTagOptions.div}>
-                <a href="#">
-                    <MenuItem
-                        hasHoverBase={false}
-                        hasHoverEmphasis={true}
-                        align={alignOptions.center}
-                        isMain={true}
-                    >
-                        <PenIcon iconSize={iconSizeOptions.lg} />
+                <MenuItem isClickable={false}>Subscribe</MenuItem>
 
-                        <Link hasUppercase={true}>Subscribe</Link>
-                    </MenuItem>
-                </a>
+                <MenuList>
+                    <a href="#">
+                        <MenuListItem>
+                            <ShopIcon iconSize={iconSizeOptions.lg} />
+
+                            <Link>As shop</Link>
+                        </MenuListItem>
+                    </a>
+
+                    <a href="#">
+                        <MenuListItem>
+                            <OrganizationIcon iconSize={iconSizeOptions.lg} />
+
+                            <Link>As organization</Link>
+                        </MenuListItem>
+                    </a>
+                </MenuList>
             </Menu>
         </MenuSecondary>
     ));

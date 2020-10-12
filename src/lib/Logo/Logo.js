@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { spaceOptions } from '../../shared/constants';
+import {
+    spaceOptions,
+    hoverDirectionOptions,
+    hoverDirectionDefault,
+} from '../../shared/constants';
 import { LogoBase } from './style';
 
 const Logo = props => {
@@ -16,9 +20,8 @@ const Logo = props => {
 Logo.propTypes = {
     hasBaseline: PropTypes.bool,
     isWhite: PropTypes.bool,
-    hasHoverRight: PropTypes.bool,
-    hasHoverTop: PropTypes.bool,
     hasHoverColor: PropTypes.bool,
+    hoverDirection: PropTypes.oneOf(Object.values(hoverDirectionOptions)),
     blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
     badge: PropTypes.element,
@@ -27,9 +30,8 @@ Logo.propTypes = {
 Logo.defaultProps = {
     hasBaseline: true,
     isWhite: false,
-    hasHoverRight: false,
-    hasHoverTop: false,
     hasHoverColor: false,
+    hoverDirection: hoverDirectionDefault,
     blockWidth: spaceOptions.none,
     blockHeight: spaceOptions.none,
 };

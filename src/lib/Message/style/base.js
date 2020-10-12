@@ -14,7 +14,7 @@ const arrowBase = css`
     }
 `;
 
-const arrowDefaultStyle = css`
+const topStyle = css`
     margin-top: ${arrowSize};
 
     &::after {
@@ -23,29 +23,61 @@ const arrowDefaultStyle = css`
     }
 `;
 
+const bottomStyle = css`
+    margin-bottom: ${arrowSize};
+
+    &::after {
+        top: 100%;
+    }
+`;
+
+const topLeftStyle = css`
+    ${topStyle};
+
+    &::after {
+        left: ${arrowSize};
+    }
+`;
+
+const bottomLeftStyle = css`
+    ${bottomStyle};
+
+    &::after {
+        left: ${arrowSize};
+    }
+`;
+
 const arrowBlockStyle = {
     none: css``,
+    topLeft: css`
+        ${arrowBase};
+        ${topLeftStyle};
+    `,
     topRight: css`
         ${arrowBase};
-        ${arrowDefaultStyle};
+        ${topStyle};
 
         &::after {
             right: ${arrowSize};
         }
     `,
-    topLeft: css`
+    bottomLeft: css`
         ${arrowBase};
-        ${arrowDefaultStyle};
+        ${bottomLeftStyle};
+    `,
+    bottomRight: css`
+        ${arrowBase};
+        ${bottomStyle};
 
         &::after {
-            left: ${arrowSize};
+            right: ${arrowSize};
         }
     `,
     left: css`
         ${arrowBase};
 
         @media (${props => props.theme.query.max[arrowBreakpoint]}) {
-            ${arrowDefaultStyle};
+            ${topLeftStyle};
         }
 
         @media (${props => props.theme.query.min[arrowBreakpoint]}) {
@@ -62,7 +94,7 @@ const arrowBlockStyle = {
         ${arrowBase};
 
         @media (${props => props.theme.query.max[arrowBreakpoint]}) {
-            ${arrowDefaultStyle};
+            ${bottomLeftStyle};
         }
 
         @media (${props => props.theme.query.min[arrowBreakpoint]}) {

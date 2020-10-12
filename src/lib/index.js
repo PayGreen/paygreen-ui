@@ -55,6 +55,7 @@ import MenuGroup from './MenuGroup/MenuGroup';
 import MenuHamburger from './MenuHamburger/MenuHamburger';
 import MenuItem from './MenuItem/MenuItem';
 import MenuList from './MenuList/MenuList';
+import MenuListItem from './MenuListItem/MenuListItem';
 import MenuPrimary from './MenuPrimary/MenuPrimary';
 import MenuSecondary from './MenuSecondary/MenuSecondary';
 import MenuTertiary from './MenuTertiary/MenuTertiary';
@@ -258,6 +259,7 @@ export {
     MenuHamburger,
     MenuItem,
     MenuList,
+    MenuListItem,
     MenuPrimary,
     MenuSecondary,
     MenuTertiary,

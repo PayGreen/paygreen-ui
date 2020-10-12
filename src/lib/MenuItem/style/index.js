@@ -1,48 +1,39 @@
 import styled from 'styled-components';
-import { LinkBase } from '../../Link/style';
-import { IconLabelBase } from '../../IconLabel/style';
-import { TextBase } from '../../Text/style';
-import { main, sub, hoverBase, hoverEmphasis, align } from './base';
+import { math } from 'polished';
+import { uppercaseStyle } from '../../Text/style/base';
+import { noClickableStyle, isClickableStyle } from './base';
 
 const MenuItemBase = styled.div`
-    position: relative;
-    overflow-x: hidden;
-    padding: 0 ${props => props.theme.space.sm};
-    display: grid;
-    grid-template-areas: 'icon link iconLabel' 'empty text text';
-    grid-template-columns: auto 1fr auto;
+    display: flex;
     align-items: center;
+    height: ${props => math(props.theme.grid.header + '+' + props.theme.line)};
+    padding: 0 ${props => props.theme.space.sm};
+    font-size: ${props => props.theme.font.size.sm};
+    white-space: nowrap;
     transition: all ${props => props.theme.transition.sm};
+    ${uppercaseStyle};
+    ${props => props.isClickable ? isClickableStyle : noClickableStyle};
 
-    & > .icon {
-        grid-area: icon;
-        opacity: 0.4;
-        margin-right: ${props => props.theme.space.md};
-    }
+    .icon {
+        opacity: 0.6;
+        margin-right: ${props => props.theme.space.sm};
 
-    ${LinkBase} {
-        grid-area: link;
-        font-size: ${props => props.theme.font.size.sm};
-
-        &::after {
-            display: none !important;
+        svg {
+            fill: ${props => props.theme.color[props.colorTheme].main};
         }
     }
 
-    ${IconLabelBase} {
-        grid-area: iconLabel;
-        margin-left: ${props => props.theme.space.md};
-    }
-
-    ${TextBase} {
-        grid-area: text;
+    @media (${props => props.theme.query.min.lg}) {
+        flex-direction: column;
+        justify-content: center;
+        z-index: ${props => props.theme.zindex.menu};
+        text-align: center;
         font-size: ${props => props.theme.font.size.xs};
-    }
 
-    ${props => (props.hasHoverBase ? hoverBase : null)};
-    ${props => (props.hasHoverEmphasis ? hoverEmphasis : null)};
-    ${props => (props.isMain ? main : sub)};
-    ${props => align[props.align]};
+        .icon {
+            display: none;
+        }
+    }
 `;
 
 export { MenuItemBase };

@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, radios } from '@storybook/addon-knobs';
 import {
     folder,
-    colorPalletOptions,
     colorThemeOptions,
     colorThemeDefault,
     iconSizeOptions,
@@ -15,6 +14,7 @@ import IconLabel from '../IconLabel/IconLabel';
 import Text from '../Text/Text';
 import MenuItem from '../MenuItem/MenuItem';
 import MenuList from '../MenuList/MenuList';
+import MenuListItem from '../MenuListItem/MenuListItem';
 import Menu from './Menu';
 
 const colorThemeLabel = 'Color theme';
@@ -31,28 +31,20 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
         >
             <a href="#">
                 <MenuItem
-                    isMain={true}
-                    hasHoverBase={false}
-                    hasHoverAlternative={false}
+                    isClickable={false}
                     colorTheme={radios(
                         colorThemeLabel,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
                 >
-                    <Link
-                        colorPallet={colorPalletOptions.wab}
-                        hasUppercase={true}
-                    >
-                        Our products
-                    </Link>
+                    Our products
                 </MenuItem>
             </a>
 
             <MenuList>
                 <a href="#">
-                    <MenuItem
-                        hasHoverEmphasis={true}
+                    <MenuListItem
                         colorTheme={radios(
                             colorThemeLabel,
                             colorThemeOptions,
@@ -83,12 +75,11 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                             elit. Maecenas sit amet accumsan dolor. Nullam
                             fringilla quam leo.
                         </Text>
-                    </MenuItem>
+                    </MenuListItem>
                 </a>
 
                 <a href="#">
-                    <MenuItem
-                        hasHoverEmphasis={true}
+                    <MenuListItem
                         colorTheme={radios(
                             colorThemeLabel,
                             colorThemeOptions,
@@ -132,12 +123,11 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                             />
                             Dev
                         </IconLabel>
-                    </MenuItem>
+                    </MenuListItem>
                 </a>
 
                 <a href="#">
-                    <MenuItem
-                        hasHoverEmphasis={true}
+                    <MenuListItem
                         colorTheme={radios(
                             colorThemeLabel,
                             colorThemeOptions,
@@ -162,7 +152,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                         >
                             Rounding
                         </Link>
-                    </MenuItem>
+                    </MenuListItem>
                 </a>
             </MenuList>
         </Menu>

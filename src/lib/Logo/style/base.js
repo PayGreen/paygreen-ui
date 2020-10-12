@@ -12,33 +12,11 @@ const noBaselineStyle = css`
     }
 `;
 
-const hoverRightStyle = css`
-    padding-right: ${props => props.theme.space.sm};
-
-    a:hover &,
-    a:active &,
-    a:focus & {
-        padding-right: 0;
-        padding-left: ${props => props.theme.space.sm};
-    }
-`;
-
-const hoverTopStyle = css`
-    padding-top: ${props => props.theme.space.sm};
-
-    a:hover &,
-    a:active &,
-    a:focus & {
-        padding-bottom: ${props => props.theme.space.sm};
-        padding-top: 0;
-    }
-`;
-
 const hoverColorStyle = css`
     img,
     svg {
         filter: grayscale(100%);
-        opacity: .7;
+        opacity: 0.7;
     }
 
     a:hover &,
@@ -52,10 +30,22 @@ const hoverColorStyle = css`
     }
 `;
 
-export {
-    whiteStyle,
-    noBaselineStyle,
-    hoverRightStyle,
-    hoverTopStyle,
-    hoverColorStyle
+const hoverDirectionStyle = {
+    none: css`
+        padding: 0 !important;
+    `,
+    top: css`
+        padding-top: ${props => props.theme.space.sm};
+        padding-bottom: 0;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    `,
+    right: css`
+        padding-right: ${props => props.theme.space.sm};
+        padding-left: 0;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    `,
 };
+
+export { noBaselineStyle, whiteStyle, hoverColorStyle, hoverDirectionStyle };

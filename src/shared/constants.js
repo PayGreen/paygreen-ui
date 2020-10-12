@@ -104,7 +104,6 @@ const formStatusDefault = formStatusOptions.default;
 /* Gradients, masks, decorations, buttons and lists styles + image types */
 
 // Gradient color types
-
 const gradientOptions = {
     none: 'none',
     brand: 'brand',
@@ -178,10 +177,12 @@ const cornerPositionDefault = cornerPositionOptions.left;
 // Arrow block position
 const arrowBlockOptions = {
     none: 'none',
-    left: 'left',
-    right: 'right',
     topLeft: 'topLeft',
     topRight: 'topRight',
+    bottomLeft: 'bottomLeft',
+    bottomRight: 'bottomRight',
+    left: 'left',
+    right: 'right',
 };
 
 const arrowBlockDefault = arrowBlockOptions.none;
@@ -367,7 +368,6 @@ const sidebarItemHtmlTagDefault = sidebarItemHtmlTagOptions.div;
 /* Grids and aligns */
 
 // Grids types
-
 const displayOptions = {
     flex: 'flex',
     grid: 'grid',
@@ -377,7 +377,6 @@ const displayOptions = {
 const displayDefault = displayOptions.flex;
 
 // Flex direction
-
 const flexDirectionOptions = {
     row: 'row',
     column: 'column',
@@ -386,7 +385,6 @@ const flexDirectionOptions = {
 const flexDirectionDefault = flexDirectionOptions.row;
 
 // Flex wrap
-
 const flexWrapOptions = {
     wrap: 'wrap',
     nowrap: 'nowrap',
@@ -395,7 +393,6 @@ const flexWrapOptions = {
 const flexWrapDefault = flexWrapOptions.wrap;
 
 // Justify content
-
 const justifyContentOptions = {
     left: 'flex-start',
     center: 'center',
@@ -406,7 +403,6 @@ const justifyContentOptions = {
 const justifyContentDefault = justifyContentOptions.left;
 
 // Justify items
-
 const justifyItemsOptions = {
     stretch: 'stretch',
     center: 'center',
@@ -417,7 +413,6 @@ const justifyItemsOptions = {
 const justifyItemsDefault = justifyItemsOptions.center;
 
 // Align items
-
 const alignItemsOptions = {
     flexStart: 'flex-start',
     center: 'center',
@@ -437,6 +432,16 @@ const alignOptions = {
 
 const alignDefault = alignOptions.left;
 
+// Hover directions
+const hoverDirectionOptions = {
+    none: 'none',
+    top: 'top',
+    right: 'right',
+};
+
+const hoverDirectionDefault = hoverDirectionOptions.none;
+
+// Rotate
 const rotateSizeOptions = {
     d0: 'd0',
     d45: 'd45',
@@ -450,6 +455,7 @@ const rotateSizeOptions = {
 
 const rotateSizeDefault = rotateSizeOptions.d0;
 
+// Lang
 const localeOptions = {
     fr: 'fr',
     en: 'en',
@@ -540,6 +546,8 @@ export {
     alignItemsDefault,
     alignOptions,
     alignDefault,
+    hoverDirectionOptions,
+    hoverDirectionDefault,
     rotateSizeOptions,
     rotateSizeDefault,
     localeOptions,

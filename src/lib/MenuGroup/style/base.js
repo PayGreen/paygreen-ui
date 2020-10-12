@@ -1,9 +1,6 @@
 import { css } from 'styled-components';
-import { MenuPrimaryBase } from '../../MenuPrimary/style';
 import { MenuSecondaryBase } from '../../MenuSecondary/style';
-import { MenuBase } from '../../Menu/style';
 import { MenuItemBase } from '../../MenuItem/style';
-import { LinkBase } from '../../Link/style';
 import { DotBase } from '../../Dot/style';
 import { LogoBase } from '../../Logo/style';
 
@@ -44,21 +41,13 @@ const topStyle = css`
         }
     }
 
-    ${MenuPrimaryBase},
-    ${MenuSecondaryBase} {
-        ${MenuBase} {
-            & > ${MenuItemBase},
-            & > a ${MenuItemBase} {
-                &::after {
-                    background-image: none;
-                    background-color: ${props => props.theme.wab.white00};
-                    opacity: 0.5;
-                }
+    ${MenuItemBase} {
+        color: ${props => props.theme.wab.white00};
 
-                ${LinkBase} {
-                    color: ${props => props.theme.wab.white00};
-                }
-            }
+        &::after {
+            background-image: none;
+            background-color: ${props => props.theme.wab.white00};
+            opacity: 0.5;
         }
     }
 
