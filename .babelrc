@@ -1,12 +1,5 @@
 {
-    "presets": [
-        "@babel/preset-react",
-        "@babel/preset-env"
-    ],
-    "ignore": [
-        "node_modules/**"
-    ],
-    "plugins": [
-        "babel-plugin-styled-components"
-    ]
+    "presets": ["@babel/preset-react", "@babel/preset-env"],
+    "ignore": ["node_modules/**"],
+    "plugins": ["babel-plugin-styled-components"]
 }

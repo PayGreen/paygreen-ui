@@ -5,7 +5,6 @@ import {
     folder,
     iconSizeOptions,
     itemHtmlTagOptions,
-    colorThemeOptions,
 } from '../../shared/constants';
 import { ShopIcon, OrganizationIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
@@ -30,12 +29,7 @@ storiesOf(folder.nav + 'MenuSecondary', module)
             </Menu>
 
             <Menu htmlTag={itemHtmlTagOptions.div}>
-                <MenuItem
-                    isClickable={false}
-                    colorTheme={colorThemeOptions.secondary}
-                >
-                    Subscribe
-                </MenuItem>
+                <MenuItem isClickable={false}>Subscribe</MenuItem>
 
                 <MenuList>
                     <a href="#">

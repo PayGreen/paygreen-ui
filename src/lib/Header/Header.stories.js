@@ -13,6 +13,7 @@ import {
     decorationOptions,
     colorTypeOptions,
     fontSizeOptions,
+    hoverDirectionOptions,
 } from '../../shared/constants';
 import { UserIcon } from '../Icon/Icon';
 import Card from '../Card/Card';
@@ -74,7 +75,7 @@ storiesOf(folder.nav + 'Header', module)
                         <a href="#">
                             <Logo
                                 hasBaseline={false}
-                                hasHoverRight={true}
+                                hoverDirection={hoverDirectionOptions.right}
                                 blockWidth={spaceOptions.sm}
                             >
                                 {logo}

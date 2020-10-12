@@ -9,6 +9,7 @@ import {
     spaceOptions,
     iconHtmlTagOptions,
     itemHtmlTagOptions,
+    hoverDirectionOptions,
 } from '../../shared/constants';
 import {
     UserIcon,
@@ -50,7 +51,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                 <a href="#">
                     <Logo
                         hasBaseline={false}
-                        hasHoverRight={true}
+                        hoverDirection={hoverDirectionOptions.right}
                         blockWidth={spaceOptions.sm}
                     >
                         {logo}

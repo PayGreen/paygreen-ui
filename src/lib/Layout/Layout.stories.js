@@ -6,6 +6,7 @@ import {
     colorPalletOptions,
     spaceOptions,
     arrowDirectionOptions,
+    hoverDirectionOptions,
 } from '../../shared/constants';
 import Topbar from '../Topbar/Topbar';
 import Sidebar from '../Sidebar/Sidebar';
@@ -20,7 +21,7 @@ const logoComponent = (
     <a href="#">
         <Logo
             hasBaseline={false}
-            hasHoverRight={true}
+            hoverDirection={hoverDirectionOptions.right}
             blockWidth={spaceOptions.sm}
         >
             {logo}
