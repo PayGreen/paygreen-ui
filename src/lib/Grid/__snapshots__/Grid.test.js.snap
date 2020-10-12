@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdnylx iWcinH"
+  className="style__GridBase-s241op-0 ktcZMe"
 >
   <div>
     Something

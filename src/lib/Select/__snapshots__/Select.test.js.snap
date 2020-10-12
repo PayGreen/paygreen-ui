@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdnylx gxMQdJ"
+  className="style__SelectBase-mz8xml-0 eCarPe"
 >
   <label
     htmlFor="selectId1"

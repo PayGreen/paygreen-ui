@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-dlnjPT bCfFqb"
+  className="style__DropdownBase-ht2epv-0 dYNCxh"
 >
   <span
-    className="sc-eCApGN iyYdIP icon"
+    className="style__IconBase-ak3679-0 cZjoZu icon"
     onClick={[Function]}
   >
     <svg
@@ -17,7 +17,7 @@ exports[`renders without crashing 1`] = `
     </svg>
   </span>
   <div
-    className="sc-gtssRu UMcqx"
+    className="style__PopinBase-sc-1ky0zqo-0 jPbMBY"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </div>

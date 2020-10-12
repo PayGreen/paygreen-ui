@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <footer
-  className="sc-bdnylx lavGZr"
+  className="style__FooterBase-sc-9bvnnd-0 dJMvce"
 >
   <svg
     className="waveTop"

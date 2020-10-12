@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-dlnjPT jkgqZS"
+  className="style__DaTableCellBase-sc-1ed6rma-0 egGSAv"
 >
   <span
     className="cell-content"

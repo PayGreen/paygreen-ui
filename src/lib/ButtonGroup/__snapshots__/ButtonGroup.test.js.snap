@@ -2,25 +2,25 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-gtssRu EkDLQ"
+  className="style__ButtonGroupBase-cn1823-0 cWBQvF"
 >
-  <a
-    href="#"
+  <button
+    type="button"
   >
     <span
-      className="sc-bdnylx eHjxXq"
+      className="style__ButtonBase-pnyves-0 bFLrqx"
     >
       First button
     </span>
-  </a>
-  <a
-    href="#"
+  </button>
+  <button
+    type="button"
   >
     <span
-      className="sc-bdnylx kELcmq"
+      className="style__ButtonBase-pnyves-0 gSfdIB"
     >
       Second button
     </span>
-  </a>
+  </button>
 </div>
 `;

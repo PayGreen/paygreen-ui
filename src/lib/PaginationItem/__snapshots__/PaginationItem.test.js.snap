@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <button
-  className="sc-bdnylx haWOow"
+  className="style__PaginationItemBase-sc-1fr64bb-0 iFEGON"
   type="button"
 >
   1

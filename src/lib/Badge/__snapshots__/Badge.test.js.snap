@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <span
-  className="sc-gtssRu lfVBaY"
+  className="style__BadgeBase-sc-8ea5fe-0 fAUvEJ"
   type={null}
 >
   Test

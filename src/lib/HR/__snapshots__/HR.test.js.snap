@@ -2,6 +2,6 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdnylx kPtBmz"
+  className="style__HRBase-t48nyg-0 dnTRXR"
 />
 `;

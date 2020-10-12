@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <figure
-  className="sc-bdnylx dnUyes"
+  className="style__ImageBase-sc-93y31z-0 dnDUcO"
 >
   <img
     alt="drawing"

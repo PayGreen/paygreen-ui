@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdnylx kAAHQB"
+  className="style__BannerImageBase-sc-47mmou-0 ksxGih"
 >
   <div>
     Something

@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdnylx khNJPT"
+  className="style__CalendarWeekdaysBase-sc-1ai2hag-0 krhkQ"
 >
   <div>
     S

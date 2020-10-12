@@ -33,7 +33,7 @@ exports[`renders without crashing 1`] = `
     </li>
   </ul>
   <div
-    className="style__MenuSecondaryBase-lzoq71-0 ibmKss"
+    className="style__MenuSecondaryBase-lzoq71-0 cUWcte"
   >
     <ul
       className="menu"

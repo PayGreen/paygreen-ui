@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdnylx onbjU"
+  className="style__InternalGridBase-sc-1aqp2sd-0 doqmiC"
 >
   <div>
     Something

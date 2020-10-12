@@ -2,31 +2,31 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="sc-dlnjPT cBXuOr"
+  className="style__ListHorizontalBase-sc-1h2siv9-0 bzEOXA"
 >
   <li>
     <p
-      className="sc-bdnylx egJJsX"
+      className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
     >
       Text 1
     </p>
   </li>
   <li>
     <span
-      className="sc-gtssRu bnSVNh"
+      className="style__DotBase-dbqcuj-0 iNACDc"
     />
     <p
-      className="sc-bdnylx egJJsX"
+      className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
     >
       Text 2
     </p>
   </li>
   <li>
     <span
-      className="sc-gtssRu bnSVNh"
+      className="style__DotBase-dbqcuj-0 iNACDc"
     />
     <p
-      className="sc-bdnylx egJJsX"
+      className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
     >
       Text 3
     </p>

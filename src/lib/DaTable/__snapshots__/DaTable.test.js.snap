@@ -2,19 +2,19 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-eCApGN kgQPki"
+  className="style__DaTableBase-sc-1n0gkx2-0 giwwuR"
 >
   <div
-    className="sc-hKFyIo esPAUF"
+    className="style__DaTableRowBase-cqmn2v-0 gbMGqM"
   >
     <div
-      className="sc-dlnjPT dlPmts cell-checkbox"
+      className="style__DaTableCellBase-sc-1ed6rma-0 bJjLur cell-checkbox"
     >
       <span
         className="cell-content"
       >
         <div
-          className="sc-bdnylx fEqqqr"
+          className="style__CheckboxBase-sc-1wlk4ud-0 jhWHpb"
         >
           <input
             disabled={false}
@@ -431,7 +431,7 @@ exports[`renders without crashing 1`] = `
             htmlFor="select"
           >
             <span
-              className="sc-gtssRu gpLNlF icon"
+              className="style__IconBase-ak3679-0 cZjoZu icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -446,7 +446,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-dlnjPT erjDBd cell-id"
+      className="style__DaTableCellBase-sc-1ed6rma-0 lhZOKQ cell-id"
     >
       <span
         className="cell-content"
@@ -455,7 +455,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-dlnjPT jkgqZS cell-main cell-main-1"
+      className="style__DaTableCellBase-sc-1ed6rma-0 egGSAv cell-main cell-main-1"
     >
       <span
         className="cell-content"
@@ -464,7 +464,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-dlnjPT giFRrA cell-basic cell-basic-1"
+      className="style__DaTableCellBase-sc-1ed6rma-0 dPEhkj cell-basic cell-basic-1"
     >
       <span
         className="cell-content"
@@ -474,16 +474,16 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKFyIo esPAUF"
+    className="style__DaTableRowBase-cqmn2v-0 gbMGqM"
   >
     <div
-      className="sc-dlnjPT dlPmts cell-checkbox"
+      className="style__DaTableCellBase-sc-1ed6rma-0 bJjLur cell-checkbox"
     >
       <span
         className="cell-content"
       >
         <div
-          className="sc-bdnylx fEqqqr"
+          className="style__CheckboxBase-sc-1wlk4ud-0 jhWHpb"
         >
           <input
             disabled={false}
@@ -900,7 +900,7 @@ exports[`renders without crashing 1`] = `
             htmlFor="select"
           >
             <span
-              className="sc-gtssRu gpLNlF icon"
+              className="style__IconBase-ak3679-0 cZjoZu icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -915,7 +915,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-dlnjPT erjDBd cell-id"
+      className="style__DaTableCellBase-sc-1ed6rma-0 lhZOKQ cell-id"
     >
       <span
         className="cell-content"
@@ -924,7 +924,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-dlnjPT jkgqZS cell-main cell-main-1"
+      className="style__DaTableCellBase-sc-1ed6rma-0 egGSAv cell-main cell-main-1"
     >
       <span
         className="cell-content"
@@ -933,7 +933,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-dlnjPT giFRrA cell-basic cell-basic-1"
+      className="style__DaTableCellBase-sc-1ed6rma-0 dPEhkj cell-basic cell-basic-1"
     >
       <span
         className="cell-content"
@@ -943,16 +943,16 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-hKFyIo esPAUF"
+    className="style__DaTableRowBase-cqmn2v-0 gbMGqM"
   >
     <div
-      className="sc-dlnjPT dlPmts cell-checkbox"
+      className="style__DaTableCellBase-sc-1ed6rma-0 bJjLur cell-checkbox"
     >
       <span
         className="cell-content"
       >
         <div
-          className="sc-bdnylx fEqqqr"
+          className="style__CheckboxBase-sc-1wlk4ud-0 jhWHpb"
         >
           <input
             disabled={false}
@@ -1369,7 +1369,7 @@ exports[`renders without crashing 1`] = `
             htmlFor="select"
           >
             <span
-              className="sc-gtssRu gpLNlF icon"
+              className="style__IconBase-ak3679-0 cZjoZu icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -1384,7 +1384,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-dlnjPT erjDBd cell-id"
+      className="style__DaTableCellBase-sc-1ed6rma-0 lhZOKQ cell-id"
     >
       <span
         className="cell-content"
@@ -1393,7 +1393,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-dlnjPT jkgqZS cell-main cell-main-1"
+      className="style__DaTableCellBase-sc-1ed6rma-0 egGSAv cell-main cell-main-1"
     >
       <span
         className="cell-content"
@@ -1402,7 +1402,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="sc-dlnjPT giFRrA cell-basic cell-basic-1"
+      className="style__DaTableCellBase-sc-1ed6rma-0 dPEhkj cell-basic cell-basic-1"
     >
       <span
         className="cell-content"

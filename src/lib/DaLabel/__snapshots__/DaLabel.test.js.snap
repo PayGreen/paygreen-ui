@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <label
-  className="sc-bdnylx gqKkYQ"
+  className="style__DaLabelBase-sc-67p5vh-0 bWImmM"
 >
   Label Description
 </label>

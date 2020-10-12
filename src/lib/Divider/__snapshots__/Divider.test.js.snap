@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdnylx izVYGR"
+  className="style__DividerBase-xf6nyq-0 gpexTW"
 >
   <svg
     className="shape"

@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdnylx gzCyOd"
+  className="style__BannerBase-sc-1ykglc-0 cXTXQZ"
 >
   <svg
     className="waves"

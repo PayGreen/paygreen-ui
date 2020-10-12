@@ -2,14 +2,14 @@
 
 exports[`renders without crashing 1`] = `
 <li
-  className="sc-hKFyIo cvuXns"
+  className="style__SidebarMenuBase-sc-47d16v-0 euiKFv"
 >
   <button
-    className="sc-dlnjPT kYHQAT"
+    className="style__SidebarItemBase-sc-1i0hz0r-0 YpiQP"
     onClick={[Function]}
   >
     <span
-      className="sc-bdnylx jOzeYY icon"
+      className="style__IconBase-ak3679-0 weCXC icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -23,23 +23,23 @@ exports[`renders without crashing 1`] = `
       </svg>
     </span>
     <span
-      className="sc-gtssRu dyJodu"
+      className="style__LinkBase-sc-1gvcrtp-0 fjbDy"
     >
       Payment
     </span>
   </button>
   <ul
-    className="sc-eCApGN gXlNGt"
+    className="style__SidebarListBase-b5r7k8-0 fMmkIZ"
   >
     <li>
       <a
         href="#"
       >
         <div
-          className="sc-dlnjPT dsAVTZ"
+          className="style__SidebarItemBase-sc-1i0hz0r-0 gtPXwB"
         >
           <span
-            className="sc-gtssRu dyJodu"
+            className="style__LinkBase-sc-1gvcrtp-0 fjbDy"
           >
             Tree
           </span>
@@ -51,10 +51,10 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="sc-dlnjPT dsAVTZ"
+          className="style__SidebarItemBase-sc-1i0hz0r-0 gtPXwB"
         >
           <span
-            className="sc-gtssRu dyJodu"
+            className="style__LinkBase-sc-1gvcrtp-0 fjbDy"
           >
             Other
           </span>

@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdnylx dRfEYI"
+  className="style__RadioBase-bg7b95-0 lmpYlp"
 >
   <input
     disabled={false}

@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="style__MenuListBase-sc-144u7yf-0 jsCqiM"
+  className="style__MenuListBase-sc-144u7yf-0 kAyikQ"
 >
   <li>
     <a

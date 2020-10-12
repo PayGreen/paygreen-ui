@@ -2,9 +2,9 @@
 
 exports[`renders without crashing 1`] = `
 <button
-  className="sc-bdnylx jnOwhQ"
+  className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
   onClick={[Function]}
 >
-  5
+  12
 </button>
 `;

@@ -2,14 +2,14 @@
 
 exports[`renders without crashing 1`] = `
 <span
-  className="sc-dlnjPT biImsk"
+  className="style__ListItemBase-sc-176tc5j-0 fBMRKh"
   type={null}
 >
   <span
     className="bullet"
   />
   <p
-    className="sc-bdnylx egJJsX"
+    className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
   >
     Something
   </p>

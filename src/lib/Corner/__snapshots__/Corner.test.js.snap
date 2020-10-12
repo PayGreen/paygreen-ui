@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-gtssRu fAOrtG"
+  className="style__CornerBase-k3mj4j-0 TliWl"
 >
   <div
     className="corner"

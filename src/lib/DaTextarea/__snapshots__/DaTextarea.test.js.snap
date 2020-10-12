@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-bdnylx gzLdbc"
+  className="style__DaTextareaBase-cqgkmw-0 bobOlR"
 >
   <textarea
     disabled={false}

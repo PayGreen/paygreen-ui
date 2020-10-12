@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__MenuSecondaryBase-lzoq71-0 dfDUnO"
+  className="style__MenuSecondaryBase-lzoq71-0 dfZPEU"
 >
   <ul
     className="menu"

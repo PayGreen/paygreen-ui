@@ -2,19 +2,19 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-gKAblj fbNuKA"
+  className="style__DaTableHeadBase-avz0u2-0 bWIUJq"
 >
   <div
-    className="sc-hKFyIo jSpgMe"
+    className="style__InternalGridBase-sc-1aqp2sd-0 fQrfEL"
     onClick={[Function]}
   >
     <span
-      className="sc-eCApGN jyBObb"
+      className="style__TitleBase-td7fx4-0 VDMqd"
     >
       Search and filters
     </span>
     <span
-      className="sc-bdnylx cEuitI icon"
+      className="style__IconBase-ak3679-0 lnQtXA icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -26,7 +26,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="sc-dlnjPT caBLME"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 hKLGay"
   >
     <div
       className="head-child"
@@ -35,7 +35,7 @@ exports[`renders without crashing 1`] = `
         className="hideOnBigScreen"
       >
         <div
-          className="sc-gtssRu llUMBK"
+          className="style__CheckboxBase-sc-1wlk4ud-0 jhWHpb"
         >
           <input
             disabled={false}
@@ -452,7 +452,7 @@ exports[`renders without crashing 1`] = `
             htmlFor="select"
           >
             <span
-              className="sc-bdnylx blorgs icon"
+              className="style__IconBase-ak3679-0 cZjoZu icon"
             >
               <svg
                 viewBox="0 0 143 143"
@@ -470,7 +470,7 @@ exports[`renders without crashing 1`] = `
       className="hideOnSmallScreen"
     >
       <div
-        className="sc-gtssRu llUMBK"
+        className="style__CheckboxBase-sc-1wlk4ud-0 jhWHpb"
       >
         <input
           disabled={false}
@@ -887,7 +887,7 @@ exports[`renders without crashing 1`] = `
           htmlFor="select"
         >
           <span
-            className="sc-bdnylx blorgs icon"
+            className="style__IconBase-ak3679-0 cZjoZu icon"
           >
             <svg
               viewBox="0 0 143 143"
@@ -902,7 +902,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-dlnjPT jwrbSl"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 eLybOD"
   >
     <div
       className="head-child"
@@ -911,7 +911,7 @@ exports[`renders without crashing 1`] = `
         className="icon-child"
       >
         <button
-          className="sc-bdnylx byxMUi icon"
+          className="style__IconBase-ak3679-0 kpIFDm icon"
         >
           <svg
             viewBox="0 0 143 143"
@@ -930,7 +930,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="sc-dlnjPT jwrbSl"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 eLybOD hideOnSmallScreen"
   >
     <div
       className="head-child"

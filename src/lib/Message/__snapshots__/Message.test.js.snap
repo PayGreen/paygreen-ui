@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-gtssRu eQCoCK"
+  className="style__MessageBase-ts6lfl-0 hgewSx"
 >
   <p
-    className="sc-bdnylx egJJsX"
+    className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
   >
     Lorem ipsum dolor sit amet, consectetur non sodales.
   </p>

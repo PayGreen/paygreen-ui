@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-gtssRu jVmTED"
+  className="style__RadioIconBase-sc-1671lpv-0 cwVNuD"
 >
   <input
     id="radioIconTest1"
@@ -419,7 +419,7 @@ exports[`renders without crashing 1`] = `
     htmlFor="radioIconTest1"
   >
     <span
-      className="sc-bdnylx blorgs icon"
+      className="style__IconBase-ak3679-0 cZjoZu icon"
     >
       <svg
         viewBox="0 0 143 143"
@@ -436,7 +436,7 @@ exports[`renders without crashing 1`] = `
       className="checked"
     >
       <span
-        className="sc-bdnylx jQBfln icon"
+        className="style__IconBase-ak3679-0 hMhnWJ icon"
       >
         <svg
           viewBox="0 0 143 143"

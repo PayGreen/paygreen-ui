@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="sc-jSFkmK eAAJBy"
+  className="style__CardBase-f361m8-0 iJWuhS"
 >
   <span
-    className="sc-hKFyIo kSUfrA"
+    className="style__TitleBase-td7fx4-0 hQMgyM"
   >
     Content 
     <strong>
@@ -13,7 +13,7 @@ exports[`renders without crashing 1`] = `
     </strong>
   </span>
   <p
-    className="sc-dlnjPT lHAie"
+    className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     <strong>
@@ -22,17 +22,17 @@ exports[`renders without crashing 1`] = `
     . Donec vehicula in arcu non sodales.
   </p>
   <div
-    className="sc-gtssRu EkDLQ"
+    className="style__ButtonGroupBase-cn1823-0 cWBQvF"
   >
-    <a
-      href="#"
+    <button
+      type="button"
     >
       <span
-        className="sc-bdnylx kELcmq"
+        className="style__ButtonBase-pnyves-0 gSfdIB"
       >
-        Don't click
+        Your button
       </span>
-    </a>
+    </button>
   </div>
 </div>
 `;

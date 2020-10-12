@@ -3,7 +3,7 @@
 exports[`renders without crashing 1`] = `
 Array [
   <p
-    className="sc-bdnylx egJJsX"
+    className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
   >
     Lorem ipsum dolor sit amet, consectetur
      
@@ -18,7 +18,7 @@ Array [
      laoreet sodales.
   </p>,
   <strong
-    className="sc-bdnylx mnfua"
+    className="style__TextBase-sc-11ixwvd-0 jzCiPK"
   >
     Lorem ipsum dolor sit amet, consectetur
   </strong>,
