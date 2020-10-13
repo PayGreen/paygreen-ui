@@ -215,6 +215,7 @@ export const ThemeBase = {
     },
     imageSize: {
         auto: 'auto',
+        tiny: '150px',
         xxs: '150px',
         xs: '240px',
         sm: '400px',
@@ -224,6 +225,7 @@ export const ThemeBase = {
     },
     imageCircleSize: {
         auto: 'auto',
+        tiny: '16px',
         xxs: '38px',
         xs: '60px',
         sm: '80px',

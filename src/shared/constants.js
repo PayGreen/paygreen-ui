@@ -16,6 +16,7 @@ const folder = {
         control: 'Menu controls' + folderSeparator,
         footer: 'Footer' + folderSeparator,
         form: 'Special fields' + folderSeparator,
+        loading: 'Loading' + folderSeparator,
         list: 'Ordinary list' + folderSeparator,
         menu: 'Menu elements' + folderSeparator,
         modal: 'Modal elements' + folderSeparator,
@@ -195,6 +196,22 @@ const arrowDirectionOptions = {
 
 const arrowDirectionDefault = arrowDirectionOptions.left;
 
+// SkeletonItem types
+const skeletonItemTypeOptions = {
+    circle: 'circle',
+    rectangle: 'rectangle',
+    text: 'text',
+};
+
+const skeletonItemTypeDefault = skeletonItemTypeOptions.rectangle;
+
+const skeletonTypeOptions = {
+    imageCard: 'imageCard',
+    textCard: 'textCard',
+};
+
+const skeletonTypeDefault = skeletonTypeOptions.textCard;
+
 /* Sizes */
 
 // Shadow sizes
@@ -270,6 +287,7 @@ const iconSizeDefault = iconSizeOptions.md;
 // Image size
 const imageSizeOptions = {
     auto: 'auto',
+    tiny: 'tiny',
     xxs: 'xxs',
     xs: 'xs',
     sm: 'sm',
@@ -500,6 +518,10 @@ export {
     arrowBlockDefault,
     arrowDirectionOptions,
     arrowDirectionDefault,
+    skeletonItemTypeOptions,
+    skeletonItemTypeDefault,
+    skeletonTypeOptions,
+    skeletonTypeDefault,
     shadowSizeOptions,
     shadowSizeDefault,
     buttonSizeOptions,
