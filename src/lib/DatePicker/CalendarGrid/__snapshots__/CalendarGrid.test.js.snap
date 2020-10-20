@@ -71,7 +71,7 @@ exports[`renders without crashing 1`] = `
     11
   </button>
   <button
-    className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
+    className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
   >
     12
@@ -119,7 +119,7 @@ exports[`renders without crashing 1`] = `
     19
   </button>
   <button
-    className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
+    className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
     onClick={[Function]}
   >
     20
