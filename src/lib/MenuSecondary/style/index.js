@@ -63,6 +63,7 @@ const MenuSecondaryBase = styled.div`
     ${MenuListBase} {
         @media (${props => props.theme.query.min.lg}) {
             width: auto;
+            min-width: 100%;
         }
 
         ${LinkBase} {
