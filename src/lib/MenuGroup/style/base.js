@@ -60,11 +60,6 @@ const topStyle = css`
             }
         }
     }
-
-    & > ${DotBase} {
-        background-color: ${props => props.theme.wab.white00};
-        opacity: 0.5;
-    }
 `;
 
 export { headerStyle, hiddenStyle, topStyle };

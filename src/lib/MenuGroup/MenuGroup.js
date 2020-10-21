@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { colorTypeOptions } from '../../shared/constants';
+import Dot from '../Dot/Dot';
 import MenuPrimary from '../MenuPrimary/MenuPrimary';
 import MenuSecondary from '../MenuSecondary/MenuSecondary';
 import { MenuGroupBase } from './style';
@@ -11,6 +13,7 @@ const MenuGroup = props => {
         if (!child) {
             return null;
         }
+
         if ([MenuPrimary, MenuSecondary].includes(child.type)) {
             if (child.props.isOpen) {
                 hasOpenMenu = true;
@@ -20,7 +23,22 @@ const MenuGroup = props => {
 
     return (
         <MenuGroupBase hasOpenMenu={hasOpenMenu} {...props}>
-            {props.children}
+            {React.Children.map(props.children, (child, index) => {
+                if (!child) {
+                    return null;
+                }
+                
+                if (child.type === Dot) {
+                    return React.cloneElement(child, {
+                        colorType: props.hasTopStyle
+                            ? colorTypeOptions.reverse
+                            : colorTypeOptions.original,
+                        key: index,
+                    });
+                }
+
+                return child;
+            })}
         </MenuGroupBase>
     );
 };
