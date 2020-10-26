@@ -10,7 +10,7 @@ const sortIconActiveLabel = 'Sort icon active';
 const ascSortLabel = 'ASC sort (need ' + sortIconActiveLabel + ')';
 const groupIconActiveLabel = 'Group icon active (only on Desktop)';
 
-storiesOf(folder.tables + folder.sub.daTable + 'DaTableHeadCell', module)
+storiesOf(folder.table + folder.sub.daTable + 'DaTableHeadCell', module)
     .addDecorator(withKnobs)
     .add('DaTableHeadCell', () => (
         <DaTableHeadCell

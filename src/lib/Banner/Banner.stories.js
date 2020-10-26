@@ -17,7 +17,7 @@ import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Banner from './Banner';
 
-storiesOf(folder.main + 'Banner', module)
+storiesOf(folder.block + 'Banner', module)
     .addDecorator(withKnobs)
     .add('Banner', () => (
         <Banner

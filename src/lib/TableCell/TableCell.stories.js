@@ -8,7 +8,7 @@ import Logo from '../Logo/Logo';
 import TableCell from './TableCell';
 import cb from './sample/sample.svg';
 
-storiesOf(folder.tables + folder.sub.table + 'TableCell', module)
+storiesOf(folder.table + folder.sub.table + 'TableCell', module)
     .addDecorator(withKnobs)
     .add('Cell with logo', () => (
         <TableCell>

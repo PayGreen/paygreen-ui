@@ -22,7 +22,7 @@ import DataLegend from './DataLegend';
 
 const { wab, ...barColorPalletOptions } = colorPalletOptions;
 
-storiesOf(folder.main + 'DataLegend', module)
+storiesOf(folder.graph + 'DataLegend', module)
     .addDecorator(withKnobs)
     .add('Data Legend', () => (
         <DataLegend

@@ -21,7 +21,7 @@ import ListItem from './ListItem';
 
 const colorThemeLabel = 'Color theme';
 
-storiesOf(folder.main + folder.sub.list + 'ListItem', module)
+storiesOf(folder.list + 'ListItem', module)
     .addDecorator(withKnobs)
     .add('ListItem with Icon', () => (
         <ListItem

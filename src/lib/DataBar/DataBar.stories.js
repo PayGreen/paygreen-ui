@@ -34,7 +34,7 @@ const colorPalletLabel = 'Color pallet';
 const colorStatusLabel = 'Status color';
 const colorThemeLabel = 'Theme color';
 
-storiesOf(folder.main + 'Databar', module)
+storiesOf(folder.graph + 'Databar', module)
     .addDecorator(withKnobs)
     .add('DataBar', () => (
         <DataBar

@@ -44,7 +44,7 @@ const colorStatusLabel = 'Status color';
 const blockWidthLabel = 'Width';
 const borderRadiusLabel = 'Border radius';
 
-storiesOf(folder.main + 'Card', module)
+storiesOf(folder.block + 'Card', module)
     .addDecorator(withKnobs)
     .add('Default card', () => (
         <Card

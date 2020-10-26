@@ -26,7 +26,7 @@ const content = (
     </>
 );
 
-storiesOf(folder.main + folder.sub.structure + 'InternalGrid', module)
+storiesOf(folder.grid + 'InternalGrid', module)
     .addDecorator(withKnobs)
     .add('Flex', () => (
         <InternalGrid

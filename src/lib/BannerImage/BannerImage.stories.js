@@ -19,7 +19,7 @@ import photoFile from './sample/sample.png';
 
 const colorThemeLabel = 'ColorTheme';
 
-storiesOf(folder.main + 'BannerImage', module)
+storiesOf(folder.block + 'BannerImage', module)
     .addDecorator(withKnobs)
     .add('BannerImage', () => (
         <BannerImage

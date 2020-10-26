@@ -2,12 +2,16 @@
 const folderSeparator = '/';
 
 const folder = {
+    block: 'Blocks & banners' + folderSeparator,
     form: 'Form elements' + folderSeparator,
-    main: 'Basics' + folderSeparator,
-    media: 'Medias' + folderSeparator,
-    nav: 'Navigation' + folderSeparator,
-    popup: 'Popups' + folderSeparator,
-    tables: 'Tables' + folderSeparator,
+    graph: 'Graphs' + folderSeparator,
+    grid: 'Grids & dividers' + folderSeparator,
+    list: 'Lists' + folderSeparator,
+    media: 'Icons & Medias' + folderSeparator,
+    nav: 'Layout' + folderSeparator,
+    popup: 'Popups & messages' + folderSeparator,
+    table: 'Tables' + folderSeparator,
+    text: 'Texts & links' + folderSeparator,
 
     sub: {
         button: 'Buttons' + folderSeparator,
@@ -16,14 +20,11 @@ const folder = {
         control: 'Menu controls' + folderSeparator,
         footer: 'Footer' + folderSeparator,
         form: 'Special fields' + folderSeparator,
-        loading: 'Loading' + folderSeparator,
-        list: 'Ordinary list' + folderSeparator,
         menu: 'Menu elements' + folderSeparator,
         modal: 'Modal elements' + folderSeparator,
         pagination: 'Pagination elements' + folderSeparator,
         radio: 'Radio elements' + folderSeparator,
         sidebarMenu: 'Sidebar elements' + folderSeparator,
-        structure: 'Grids' + folderSeparator,
         table: 'Simple tables' + folderSeparator,
     },
 };

@@ -152,7 +152,7 @@ const sampleRows = [
 
 const isActiveLabel = 'First line active';
 
-storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
+storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
     .addDecorator(withKnobs)
     .add('DaTable', () => (
         <DaTable

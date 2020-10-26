@@ -14,7 +14,7 @@ import IconLabel from './IconLabel';
 
 const colorThemeLabel = 'Color theme';
 
-storiesOf(folder.main + 'IconLabel', module)
+storiesOf(folder.text + 'IconLabel', module)
     .addDecorator(withKnobs)
     .add('IconLabel', () => (
         <IconLabel

@@ -22,7 +22,7 @@ import {
 } from '../../shared/constants';
 import Dot from './Dot';
 
-storiesOf(folder.main + 'Dot', module)
+storiesOf(folder.media + 'Dot', module)
     .addDecorator(withKnobs)
     .add('Dot', () => (
         <Dot

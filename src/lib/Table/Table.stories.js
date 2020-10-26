@@ -11,7 +11,7 @@ import TableCell from '../TableCell/TableCell';
 import TableRow from '../TableRow/TableRow';
 import Table from './Table';
 
-storiesOf(folder.tables + folder.sub.table + 'Table', module)
+storiesOf(folder.table + folder.sub.table + 'Table', module)
     .addDecorator(withKnobs)
     .add('Table', () => (
         <Table

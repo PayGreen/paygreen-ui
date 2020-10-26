@@ -7,7 +7,7 @@ import Checkbox from '../Checkbox/Checkbox';
 import DaTableHeadCell from '../DaTableHeadCell/DaTableHeadCell';
 import DaTableHead from './DaTableHead';
 
-storiesOf(folder.tables + folder.sub.daTable + 'DaTableHead', module)
+storiesOf(folder.table + folder.sub.daTable + 'DaTableHead', module)
     .addDecorator(withKnobs)
     .add('DaTableHead', () => (
         <DaTableHead resultsLabel="45 results">

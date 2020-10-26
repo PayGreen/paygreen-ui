@@ -39,7 +39,7 @@ const sampleTexts = [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum.',
 ];
 
-storiesOf(folder.main + folder.sub.structure + 'Grid', module)
+storiesOf(folder.grid + 'Grid', module)
     .addDecorator(withKnobs)
     .add('Grid', () => (
         <Grid

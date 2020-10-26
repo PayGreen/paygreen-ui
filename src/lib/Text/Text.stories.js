@@ -44,7 +44,7 @@ const lateralMarginLabel = 'Block lateral margins';
 const topMarginLabel = 'Block margin top';
 const bottomMarginLabel = 'Block margin bottom';
 
-storiesOf(folder.main + 'Text', module)
+storiesOf(folder.text + 'Text', module)
     .addDecorator(withKnobs)
     .add('Single paragraph', () => (
         <Text

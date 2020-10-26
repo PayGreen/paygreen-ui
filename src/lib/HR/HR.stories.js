@@ -18,7 +18,7 @@ import {
 } from '../../shared/constants';
 import HR from './HR';
 
-storiesOf(folder.main + 'HR', module)
+storiesOf(folder.grid + 'HR', module)
     .addDecorator(withKnobs)
     .add('HR', () => (
         <HR
