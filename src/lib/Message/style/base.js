@@ -14,6 +14,19 @@ const arrowBase = css`
     }
 `;
 
+const centerStyle = css`
+    &::after {
+        left: 50%;
+        margin-left: -${arrowSize};
+    }
+`;
+
+const rightStyle = css`
+    &::after {
+        right: ${arrowSize};
+    }
+`;
+
 const topStyle = css`
     margin-top: ${arrowSize};
 
@@ -53,25 +66,29 @@ const arrowBlockStyle = {
         ${arrowBase};
         ${topLeftStyle};
     `,
+    topCenter: css`
+        ${arrowBase};
+        ${topStyle};
+        ${centerStyle};
+    `,
     topRight: css`
         ${arrowBase};
         ${topStyle};
-
-        &::after {
-            right: ${arrowSize};
-        }
+        ${rightStyle};
     `,
     bottomLeft: css`
         ${arrowBase};
         ${bottomLeftStyle};
     `,
+    bottomCenter: css`
+        ${arrowBase};
+        ${bottomStyle};
+        ${centerStyle};
+    `,
     bottomRight: css`
         ${arrowBase};
         ${bottomStyle};
-
-        &::after {
-            right: ${arrowSize};
-        }
+        ${rightStyle};
     `,
     left: css`
         ${arrowBase};
