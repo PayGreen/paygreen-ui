@@ -3,17 +3,6 @@ import { css } from 'styled-components';
 const arrowBreakpoint = 'xl';
 const arrowSize = props => props.theme.arrow[props.fieldSize];
 
-const arrowBase = css`
-    &::after {
-        content: '';
-        position: absolute;
-        border: solid ${arrowSize} transparent;
-        border-top-color: ${props =>
-            props.theme.status[props.colorStatus].light};
-        transform-origin: top;
-    }
-`;
-
 const centerStyle = css`
     &::after {
         left: 50%;
@@ -61,38 +50,34 @@ const bottomLeftStyle = css`
 `;
 
 const arrowBlockStyle = {
-    none: css``,
+    none: css`
+        &::after {
+            display: none;
+        }
+    `,
     topLeft: css`
-        ${arrowBase};
         ${topLeftStyle};
     `,
     topCenter: css`
-        ${arrowBase};
         ${topStyle};
         ${centerStyle};
     `,
     topRight: css`
-        ${arrowBase};
         ${topStyle};
         ${rightStyle};
     `,
     bottomLeft: css`
-        ${arrowBase};
         ${bottomLeftStyle};
     `,
     bottomCenter: css`
-        ${arrowBase};
         ${bottomStyle};
         ${centerStyle};
     `,
     bottomRight: css`
-        ${arrowBase};
         ${bottomStyle};
         ${rightStyle};
     `,
     left: css`
-        ${arrowBase};
-
         @media (${props => props.theme.query.max[arrowBreakpoint]}) {
             ${topLeftStyle};
         }
@@ -108,8 +93,6 @@ const arrowBlockStyle = {
         }
     `,
     right: css`
-        ${arrowBase};
-
         @media (${props => props.theme.query.max[arrowBreakpoint]}) {
             ${bottomLeftStyle};
         }
@@ -126,4 +109,4 @@ const arrowBlockStyle = {
     `,
 };
 
-export { arrowBlockStyle, arrowSize };
+export { arrowSize, arrowBlockStyle };
