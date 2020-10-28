@@ -19,24 +19,28 @@ import {
 } from '../../shared/constants';
 import { IconBase } from './style';
 
-const IconWrapper = props => {
-    const maxDisplayed = 99;
+const maxDisplayed = 99;
 
+const IconWrapper = ({ children, className, htmlTag, ...rest }) => {
     return (
-        <IconBase as={props.htmlTag} {...props} className="icon">
-            {React.Children.map(props.children, child => {
+        <IconBase
+            {...rest}
+            as={htmlTag}
+            className={className ? 'icon ' + className : 'icon'}
+        >
+            {React.Children.map(children, child => {
                 if (typeof child == 'object') {
                     return React.cloneElement(child);
                 }
             })}
 
-            {props.number > 0 &&
+            {rest.number > 0 &&
             ![iconSizeOptions.xs, iconSizeOptions.xxs].includes(
-                props.iconSize,
+                rest.iconSize,
             ) ? (
                 <span className="badge-number">
-                    {props.number <= maxDisplayed
-                        ? props.number
+                    {rest.number <= maxDisplayed
+                        ? rest.number
                         : maxDisplayed + '+'}
                 </span>
             ) : null}
