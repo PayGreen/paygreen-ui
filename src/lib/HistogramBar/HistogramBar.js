@@ -11,6 +11,7 @@ import {
     inputWidthOptions,
     buttonSizeOptions,
     alignItemsOptions,
+    textHtmlTagOptions,
 } from '../../shared/constants';
 import Message from '../Message/Message';
 import Text from '../Text/Text';
@@ -48,7 +49,7 @@ const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
             <div className="bar"></div>
 
             <Text
-                htmlTag="span"
+                htmlTag={textHtmlTagOptions.span}
                 textSize={fontSizeOptions.xs}
                 align={alignItemsOptions.center}
             >

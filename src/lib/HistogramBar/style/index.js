@@ -48,6 +48,7 @@ const HistogramBarBase = styled.div`
         z-index: ${props => props.theme.zindex.front};
         position: absolute;
         bottom: ${props => props.heightValue}%;
+        min-width: 80px;
         opacity: 0;
         transition: all ${props => props.theme.transition.xs};
     }
