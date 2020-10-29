@@ -55,9 +55,9 @@ storiesOf(folder.popup + 'ClickableBlock', module)
             paddingTop={select(paddingLabel, spaceOptions, spaceOptions.sm)}
             paddingBottom={select(paddingLabel, spaceOptions, spaceOptions.sm)}
             paddingLateral={select(paddingLabel, spaceOptions, spaceOptions.sm)}
-            marginTop={select(marginLabel, spaceOptions, spaceDefault.xs)}
-            marginBottom={select(marginLabel, spaceOptions, spaceDefault.xs)}
-            marginLateral={select(marginLabel, spaceOptions, spaceDefault.xs)}
+            marginTop={select(marginLabel, spaceOptions, spaceDefault)}
+            marginBottom={select(marginLabel, spaceOptions, spaceDefault)}
+            marginLateral={select(marginLabel, spaceOptions, spaceDefault)}
         >
             <Image
                 imageType={imageTypeOptions.picture}
