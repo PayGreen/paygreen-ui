@@ -35,6 +35,8 @@ import FooterList from './FooterList/FooterList';
 import FormControl from './FormControl/FormControl';
 import Grid from './Grid/Grid';
 import Header from './Header/Header';
+import Histogram from './Histogram/Histogram';
+import HistogramBar from './HistogramBar/HistogramBar';
 import HR from './HR/HR';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
@@ -241,6 +243,8 @@ export {
     FormControl,
     Grid,
     Header,
+    Histogram,
+    HistogramBar,
     HR,
     IconLabel,
     Image,

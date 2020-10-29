@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__HistogramBase-h3wpv-0 gZDYGh"
+>
+  <div
+    className="yaxis"
+  >
+    <div
+      className="HistogramYaxisValue__YaxisValueBase-sc-1m1565e-0 feJFEE"
+    >
+      <span
+        className="style__TextBase-sc-11ixwvd-0 kvEKhL"
+      >
+        0
+      </span>
+    </div>
+    <div
+      className="HistogramYaxisValue__YaxisValueBase-sc-1m1565e-0 hUqkNB"
+    >
+      <span
+        className="style__TextBase-sc-11ixwvd-0 kvEKhL"
+      >
+        110
+      </span>
+    </div>
+  </div>
+  <div
+    className="style__HistogramBarBase-y733il-0 lijqiX"
+  >
+    <div
+      className="bar"
+    />
+    <span
+      className="style__TextBase-sc-11ixwvd-0 ghUJLx"
+    />
+  </div>
+  <div
+    className="style__HistogramBarBase-y733il-0 ktvNGD"
+  >
+    <div
+      className="bar"
+    />
+    <span
+      className="style__TextBase-sc-11ixwvd-0 ghUJLx"
+    />
+  </div>
+  <div
+    className="style__HistogramBarBase-y733il-0 dGpLuT"
+  >
+    <div
+      className="bar"
+    />
+    <span
+      className="style__TextBase-sc-11ixwvd-0 ghUJLx"
+    />
+  </div>
+  <div
+    className="style__HistogramBarBase-y733il-0 eovNOY"
+  >
+    <div
+      className="bar"
+    />
+    <span
+      className="style__TextBase-sc-11ixwvd-0 ghUJLx"
+    />
+  </div>
+</div>
+`;

@@ -30,6 +30,7 @@ const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
         >
             {legend ? (
                 <Message
+                    theme={rest.theme} // not necessary, only needed for tests
                     colorType={colorTypeOptions.reverse}
                     colorPallet={colorPalletDefault}
                     colorTheme={rest.colorTheme}
@@ -38,6 +39,7 @@ const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
                     fieldSize={buttonSizeOptions.sm}
                 >
                     <Text
+                        theme={rest.theme} // not necessary, only needed for tests
                         textSize={fontSizeOptions.xxs}
                         align={alignItemsOptions.center}
                     >
@@ -51,6 +53,7 @@ const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
             <div className="bar"></div>
 
             <Text
+                theme={rest.theme} // not necessary, only needed for tests
                 htmlTag={textHtmlTagOptions.span}
                 textSize={fontSizeOptions.xs}
                 align={alignItemsOptions.center}
