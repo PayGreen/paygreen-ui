@@ -17,15 +17,17 @@ import Message from '../Message/Message';
 import Text from '../Text/Text';
 import { HistogramBarBase } from './style';
 
-const maxValueDefault = 100;
-
 const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
-    const max = maxValue > 0 ? maxValue : maxValueDefault; // avoid error if maxValue = 0
-    let height = (value / max) * 100; // get bar height percent value
-    height = height > max ? max : height;
+    if (maxValue <= 0 || value < 0) return; // avoid errors
+
+    const height = value > maxValue ? 100 : (value / maxValue) * 100;
 
     return (
-        <HistogramBarBase {...rest} heightValue={height}>
+        <HistogramBarBase
+            {...rest}
+            heightValue={height}
+            isDisabled={value === 0}
+        >
             {legend ? (
                 <Message
                     colorType={colorTypeOptions.reverse}
@@ -60,27 +62,26 @@ const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
 };
 
 HistogramBar.propTypes = {
-    blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
-    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
-    paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
-    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    value: PropTypes.number.isRequired,
+    maxValue: PropTypes.number,
     isLabelVisible: PropTypes.bool,
     label: PropTypes.string,
     legend: PropTypes.string,
-    maxValue: PropTypes.number,
-    value: PropTypes.number,
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
+    paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 HistogramBar.defaultProps = {
-    blockHeight: spaceOptions.sm,
-    blockWidth: inputWidthOptions.xs,
-    paddingLateral: spaceOptions.sm,
-    colorTheme: colorThemeDefault,
+    maxValue: 100,
     isLabelVisible: true,
     label: null,
     legend: null,
-    maxValue: maxValueDefault,
-    value: 0,
+    colorTheme: colorThemeDefault,
+    blockHeight: spaceOptions.sm,
+    blockWidth: inputWidthOptions.xs,
+    paddingLateral: spaceOptions.sm,
 };
 
 export default HistogramBar;

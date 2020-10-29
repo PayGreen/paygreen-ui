@@ -20,18 +20,13 @@ storiesOf(folder.graph + 'HistogramBar', module)
     .addDecorator(withKnobs)
     .add('HistogramBar', () => (
         <HistogramBar
-            style={{margin: '0 auto'}} // only for complete display in story
+            style={{ margin: '0 auto' }} // only for complete display in story
             label={text('Label', 'September')}
             isLabelVisible={boolean('Is label visible', true)}
             legend={text('Legend', '{value}% in {label}')}
             value={number('Value', 60, {
                 range: true,
-                max: 75,
-            })}
-            maxValue={number('Max value', 100, {
-                range: true,
-                min: 75,
-                max: 150,
+                max: 100,
             })}
             colorTheme={select(
                 'Color theme',

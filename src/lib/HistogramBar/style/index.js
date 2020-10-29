@@ -13,8 +13,11 @@ const HistogramBarBase = styled.div`
     height: ${props => props.theme.histogram.height[props.blockHeight]};
     width: fit-content;
     padding: 0 ${props => math(props.theme.space[props.paddingLateral] + '/2')};
+    filter: grayscale(${props => props.isDisabled ? 1 : 0});
 
     &:hover {
+        z-index: ${props => props.theme.zindex.content};
+
         .bar {
             opacity: 1;
         }
