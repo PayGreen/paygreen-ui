@@ -1,21 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 import {
     radiusOptions,
     spaceOptions,
-    spaceDefault,
     skeletonItemTypeOptions,
     imageSizeOptions,
 } from '../../../shared/constants';
 import Card from '../../Card/Card';
 import SkeletonItem from '../../SkeletonItem/SkeletonItem';
-
-const WrapperContent = styled.div`
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-`;
+import { AbsoluteContent } from './index';
 
 const SkeletonTypes = {
     textCard: rest => {
@@ -26,6 +18,7 @@ const SkeletonTypes = {
                 shadowSize={rest.shadowSize}
                 radiusSize={rest.radiusSize}
             >
+                {/* this div is necessary to avoid border radius style applied by Card to its children*/}
                 <div>
                     <SkeletonItem
                         theme={rest.theme} // not necessary, only needed for tests
@@ -61,16 +54,17 @@ const SkeletonTypes = {
                 shadowSize={rest.shadowSize}
                 radiusSize={rest.radiusSize}
             >
-                <WrapperContent>
+                <AbsoluteContent
+                    theme={rest.theme}
+                    blockWidth={rest.blockWidth}
+                >
                     <SkeletonItem
                         theme={rest.theme} // not necessary, only needed for tests
-                        blockHeight={spaceOptions.xs}
-                        blockWidth={spaceDefault}
+                        colorWab={rest.colorWab}
                     />
-                </WrapperContent>
+                </AbsoluteContent>
 
-                {/* this div is necessary to avoid border radius style applied by Card to its children*/}
-                <div>
+                <div className="content">
                     <SkeletonItem
                         theme={rest.theme} // not necessary, only needed for tests
                         skeletonItemType={skeletonItemTypeOptions.text}

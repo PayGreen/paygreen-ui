@@ -1,24 +1,30 @@
 import { css, keyframes } from 'styled-components';
 import { transparentize } from 'polished';
-import { skeletonItemTypeOptions } from '../../../shared/constants';
+import {
+    imageSizeOptions,
+    skeletonItemTypeDefault,
+    skeletonItemTypeOptions,
+} from '../../../shared/constants';
 
 const childrenStyle = css`
     max-width: ${props =>
-        props.blockWidth === 'auto'
+        props.blockWidth === imageSizeOptions.auto
             ? 'fit-content'
             : props.theme.imageSize[props.blockWidth]};
 `;
 
 const noChildrenStyle = css`
     max-width: ${props =>
-        props.blockWidth !== 'auto'
-            ? props.theme.imageSize[props.blockWidth]
+        props.blockWidth !== imageSizeOptions.auto
+            ? props.skeletonItemType === skeletonItemTypeOptions.circle
+                ? props.theme.imageCircleSize[props.blockWidth]
+                : props.theme.imageSize[props.blockWidth]
             : props.theme.blockWidth.none};
     height: ${props =>
-        props.blockHeight !== 'auto'
-            ? props.skeletonItemType === skeletonItemTypeOptions.text
-                ? props.theme.imageCircleSize[props.blockHeight]
-                : props.theme.imageSize[props.blockHeight]
+        props.blockHeight !== imageSizeOptions.auto
+            ? props.skeletonItemType === skeletonItemTypeDefault
+                ? props.theme.imageSize[props.blockHeight]
+                : props.theme.imageCircleSize[props.blockHeight]
             : props.theme.blockWidth.none};
 `;
 

@@ -1,8 +1,12 @@
 import { css } from 'styled-components';
+import { spaceDefault } from '../../../shared/constants';
 
 const imageCardStyle = css`
-    & > :last-child {
-        margin-top: ${props => props.theme.imageSize.xs};
+    .content {
+        margin-top: ${props =>
+            props.blockWidth === spaceDefault
+                ? props.theme.blockHeader.xl
+                : props.theme.blockHeader[props.blockWidth]};
     }
 `;
 

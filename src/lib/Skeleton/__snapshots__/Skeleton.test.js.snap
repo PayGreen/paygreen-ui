@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__SkeletonBase-sc-13d7n9i-0 foeTRr"
+  className="style__SkeletonBase-sc-13d7n9i-0 hrRnUv"
 >
   <div
     className="style__CardBase-f361m8-0 dUMUbK"

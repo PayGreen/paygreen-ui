@@ -13,7 +13,7 @@ import { SkeletonItemBase } from './style';
 
 const SkeletonItem = ({ children, margin, ...rest }) => {
     ['Top', 'Bottom', 'Left', 'Right'].forEach(direction => {
-        let marginDirection = 'margin' + direction;
+        const marginDirection = 'margin' + direction;
 
         if (!rest[marginDirection]) {
             rest[marginDirection] = margin;

@@ -32,10 +32,6 @@ const shadowSizeLabel = 'Shadow size';
 const borderRadiusLabel = 'Border radius';
 const responsivePaddingLabel = 'Has responsive padding';
 const paddingLabel = 'Padding';
-const paddingTopLabel = 'Padding top';
-const paddingBottomLabel = 'Padding bottom';
-const paddingLeftLabel = 'Padding left';
-const paddingRightLabel = 'Padding right';
 
 storiesOf(folder.main + folder.sub.loading + 'Skeleton', module)
     .addDecorator(withKnobs)
@@ -58,26 +54,6 @@ storiesOf(folder.main + folder.sub.loading + 'Skeleton', module)
             radiusSize={radios(borderRadiusLabel, radiusOptions, radiusDefault)}
             hasResponsivePadding={boolean(responsivePaddingLabel, false)}
             padding={select(paddingLabel, spaceOptions, spaceOptions.lg)}
-            paddingTop={select(
-                paddingTopLabel,
-                spaceOptionsCustom,
-                spaceOptionsCustom.null,
-            )}
-            paddingRight={select(
-                paddingRightLabel,
-                spaceOptionsCustom,
-                spaceOptionsCustom.null,
-            )}
-            paddingLeft={select(
-                paddingLeftLabel,
-                spaceOptionsCustom,
-                spaceOptionsCustom.null,
-            )}
-            paddingBottom={select(
-                paddingBottomLabel,
-                spaceOptionsCustom,
-                spaceOptionsCustom.null,
-            )}
         />
     ))
     .add('Skeleton Image Card', () => (
@@ -104,25 +80,5 @@ storiesOf(folder.main + folder.sub.loading + 'Skeleton', module)
             lineNumber={number(lineNumberLabel, 3)}
             hasResponsivePadding={boolean(responsivePaddingLabel, false)}
             padding={select(paddingLabel, spaceOptions, spaceOptions.lg)}
-            paddingTop={select(
-                paddingTopLabel,
-                spaceOptionsCustom,
-                spaceOptionsCustom.null,
-            )}
-            paddingRight={select(
-                paddingRightLabel,
-                spaceOptionsCustom,
-                spaceOptionsCustom.null,
-            )}
-            paddingLeft={select(
-                paddingLeftLabel,
-                spaceOptionsCustom,
-                spaceOptionsCustom.null,
-            )}
-            paddingBottom={select(
-                paddingBottomLabel,
-                spaceOptionsCustom,
-                spaceOptionsCustom.null,
-            )}
         />
     ));
