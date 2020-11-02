@@ -14,19 +14,19 @@ import CalendarGridBase from './style';
  * @param {number} month
  */
 const getMonthBoundaries = month => {
-    const startOfMonth = moment()
-        .month(month)
-        .startOf('M');
+    const startOfMonth = moment().month(month).startOf('M');
 
-    const endOfMonth = moment()
-        .month(month)
-        .add(1, 'M')
-        .startOf('M');
+    const endOfMonth = moment().month(month).add(1, 'M').startOf('M');
 
     return [startOfMonth, endOfMonth];
 };
 
-const CalendarGrid = ({ minimumDate, maximumDate, ...rest }) => {
+const CalendarGrid = ({
+    minimumDate,
+    maximumDate,
+    handleOnChange,
+    ...rest
+}) => {
     const [month] = useContext(MonthContext);
     if (month === null) {
         return null;
@@ -50,6 +50,7 @@ const CalendarGrid = ({ minimumDate, maximumDate, ...rest }) => {
             <CalendarCell
                 key={daysCursor.toDate()}
                 date={daysCursor.clone()}
+                handleOnChange={handleOnChange}
                 isDisabled={isDisabled}
                 {...rest}
             />,

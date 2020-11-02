@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__CalendarNavbarBase-sc-9kauge-0 cFouVw"
+  className="style__CalendarNavbarBase-sc-9kauge-0 jrdyoR"
 >
   <button
-    className="style__IconBase-ak3679-0 eiqeDU icon"
+    className="style__IconBase-ak3679-0 jiAsNN icon"
     onClick={[Function]}
   >
     <svg
@@ -16,9 +16,9 @@ exports[`renders without crashing 1`] = `
       />
     </svg>
   </button>
-  October 2020
+  November 2020
   <button
-    className="style__IconBase-ak3679-0 eiqeDU icon"
+    className="style__IconBase-ak3679-0 jiAsNN icon"
     onClick={[Function]}
   >
     <svg

@@ -16,13 +16,16 @@ import { DateContextProvider } from './context/DateContext';
 import Calendar from './Calendar/Calendar';
 import localeConfig from './localeConfig';
 import { DatePickerBase } from './style';
+import { InvisibleCloseButton } from '../Dropdown/style';
 
 const DatePicker = ({
-    value,
+    colorStatus,
     locale,
     minimumDate,
     maximumDate,
-    colorStatus,
+    resetDate,
+    value,
+    onChange,
     ...rest
 }) => {
     // Update moment locale globally
@@ -33,6 +36,9 @@ const DatePicker = ({
     const dateFormat = localeConfig[pgLocale].longDateFormat.L;
     moment.updateLocale(pgLocale, localeConfig[pgLocale]);
 
+    // Define default reset date when no resetDate props and with or without locale props
+    const defaultResetDate = moment().format(dateFormat);
+
     // Save default value of input...
     const [selectedDate, setSelectedDate] = useState(
         moment(value, dateFormat, true).isValid()
@@ -42,21 +48,57 @@ const DatePicker = ({
 
     // And extract input state handling
     const [inputValue, setInputValue] = useState(value);
+
+    // Take control over dropdown display with isActive props
+    const [isActive, setActive] = useState(null);
+
     useEffect(() => {
         if (selectedDate) {
             setInputValue(selectedDate.format(dateFormat));
         }
-    });
+    }, [selectedDate]);
 
-    const handleOnChange = e => {
+    // Handle value change via input
+    const handleInputOnChange = e => {
         if (selectedDate) {
             setSelectedDate(null);
         }
+
+        if (onChange) {
+            onChange(e.target.value);
+        }
+
         setInputValue(e.target.value);
 
         if (moment(e.target.value, dateFormat, true).isValid()) {
             setSelectedDate(moment(e.target.value, dateFormat));
         }
+    };
+
+    // Handle value change via CalendarCell Buttons
+    const handleButtonOnChange = e => {
+        if (onChange) {
+            onChange(moment(e).format(dateFormat));
+        }
+    };
+
+    // Reset wrong date value change via input when clicking outside calendar
+    const resetWrongDate = value => {
+        if (moment(value, dateFormat).isValid() === false) {
+            setSelectedDate(moment(resetDate || defaultResetDate, dateFormat));
+        } else if (
+            (moment(maximumDate, dateFormat, true).isValid() &&
+                moment(value, dateFormat).isAfter(
+                    moment(maximumDate, dateFormat),
+                )) ||
+            (moment(minimumDate, dateFormat, true).isValid() &&
+                moment(value, dateFormat).isBefore(
+                    moment(minimumDate, dateFormat),
+                ))
+        ) {
+            setSelectedDate(moment(resetDate || defaultResetDate, dateFormat));
+        }
+        setActive(false);
     };
 
     const calcMonthIndex = () => {
@@ -73,15 +115,24 @@ const DatePicker = ({
     };
 
     return (
-        <DateContextProvider value={[selectedDate, setSelectedDate]}>
+        <DateContextProvider
+            value={[selectedDate, setSelectedDate, setInputValue]}
+        >
             <DatePickerBase theme={rest.theme}>
-                <DropDown theme={rest.theme}>
+                {isActive ? (
+                    <InvisibleCloseButton
+                        onClick={() => resetWrongDate(value)}
+                    />
+                ) : null}
+
+                <DropDown theme={rest.theme} isActive={isActive}>
                     <DaInput
                         {...rest}
                         mask="99/99/9999"
                         type="text"
                         value={inputValue}
-                        onChange={handleOnChange}
+                        onChange={handleInputOnChange}
+                        onInput={() => setActive(true)}
                     />
 
                     {rest.readOnly || rest.disabled ? null : (
@@ -108,6 +159,7 @@ const DatePicker = ({
                                         : null
                                 }
                                 colorStatus={colorStatus}
+                                handleOnChange={handleButtonOnChange}
                             />
                         </Popin>
                     )}
@@ -136,6 +188,7 @@ DatePicker.propTypes = {
     locale: PropTypes.oneOf(Object.values(localeOptions)), // 2-letters short language code
     minimumDate: PropTypes.string,
     maximumDate: PropTypes.string,
+    resetDate: PropTypes.string,
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
 };
 
@@ -150,6 +203,7 @@ DatePicker.defaultProps = {
     locale: localeDefault,
     minimumDate: null,
     maximumDate: null,
+    resetDate: '',
     colorStatus: formStatusDefault,
 };
 

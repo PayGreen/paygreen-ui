@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DaInput from '../DaInput/DaInput';
 import Popin from '../Popin/Popin';
 import { DropdownBase, InvisibleCloseButton } from './style';
 
 const Dropdown = props => {
-    const [isActive, setActive] = useState(false);
+    const [isActive, setActive] = useState(props.isActive || false);
+
+    useEffect(() => {
+        setActive(props.isActive);
+    }, [props.isActive]);
 
     return (
         <DropdownBase {...props}>
-            {isActive ? (
+            {isActive && !props.isActive ? (
                 <InvisibleCloseButton onClick={() => setActive(!isActive)} />
             ) : null}
 

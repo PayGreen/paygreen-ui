@@ -8,7 +8,7 @@ import config from '../localeConfig';
 import { DateContext } from '../context/DateContext';
 import CalendarCellBase from './style';
 
-const CalendarCell = ({ date, isDisabled, ...rest }) => {
+const CalendarCell = ({ date, isDisabled, handleOnChange, ...rest }) => {
     const [selectedDate, setSelectedDate] = useContext(DateContext);
     const dateFormat = config['pg-en'].longDateFormat.L;
 
@@ -16,6 +16,8 @@ const CalendarCell = ({ date, isDisabled, ...rest }) => {
         e.preventDefault();
         if (!isDisabled) {
             setSelectedDate(date);
+
+            handleOnChange(date);
         }
     };
 
