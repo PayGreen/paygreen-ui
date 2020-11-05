@@ -16,7 +16,6 @@ const CalendarCell = ({ date, isDisabled, handleOnChange, ...rest }) => {
         e.preventDefault();
         if (!isDisabled) {
             setSelectedDate(date);
-
             handleOnChange(date);
         }
     };

@@ -29,13 +29,13 @@ exports[`renders without crashing 1`] = `
     4
   </button>
   <button
-    className="style__CalendarCellBase-sc-17uxo6m-0 bfGwSB"
+    className="style__CalendarCellBase-sc-17uxo6m-0 jMhBbg"
     onClick={[Function]}
   >
     5
   </button>
   <button
-    className="style__CalendarCellBase-sc-17uxo6m-0 jMhBbg"
+    className="style__CalendarCellBase-sc-17uxo6m-0 bfGwSB"
     onClick={[Function]}
   >
     6

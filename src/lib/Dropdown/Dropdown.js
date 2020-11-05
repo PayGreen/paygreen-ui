@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import DaInput from '../DaInput/DaInput';
 import Popin from '../Popin/Popin';
 import { DropdownBase, InvisibleCloseButton } from './style';
@@ -43,6 +44,14 @@ const Dropdown = props => {
             })}
         </DropdownBase>
     );
+};
+
+Dropdown.propTypes = {
+    isActive: PropTypes.bool,
+};
+
+Dropdown.defaultProps = {
+    isActive: false,
 };
 
 export default Dropdown;

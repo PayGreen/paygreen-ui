@@ -15,6 +15,7 @@ import {
     formStatusDefault,
     formStatusOptions,
     localeDefault,
+    localeOptions,
 } from '../../shared/constants';
 import DatePicker from './DatePicker';
 
@@ -22,15 +23,13 @@ storiesOf(folder.form + 'DatePicker', module)
     .addDecorator(withKnobs)
     .add('DatePicker', () =>
         React.createElement(() => {
-            const [date, setDate] = useState(
-                moment().startOf('month').format('DD/MM/YYYY'),
-            );
+            const [date, setDate] = useState(moment().format('DD/MM/YYYY'));
 
             return (
                 <DatePicker
                     disabled={boolean('Disabled', false)}
                     readOnly={boolean('Readonly', false)}
-                    locale={localeDefault}
+                    locale={select('Locale', localeOptions, localeDefault)}
                     fieldSize={radios(
                         'Field size',
                         buttonSizeOptions,

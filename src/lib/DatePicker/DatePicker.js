@@ -36,9 +36,6 @@ const DatePicker = ({
     const dateFormat = localeConfig[pgLocale].longDateFormat.L;
     moment.updateLocale(pgLocale, localeConfig[pgLocale]);
 
-    // Define default reset date when no resetDate props and with or without locale props
-    const defaultResetDate = moment().format(dateFormat);
-
     // Save default value of input...
     const [selectedDate, setSelectedDate] = useState(
         moment(value, dateFormat, true).isValid()
@@ -50,7 +47,7 @@ const DatePicker = ({
     const [inputValue, setInputValue] = useState(value);
 
     // Take control over dropdown display with isActive props
-    const [isActive, setActive] = useState(null);
+    const [isActive, setActive] = useState(false);
 
     useEffect(() => {
         if (selectedDate) {
@@ -64,10 +61,7 @@ const DatePicker = ({
             setSelectedDate(null);
         }
 
-        if (onChange) {
-            onChange(e.target.value);
-        }
-
+        onChange(e.target.value);
         setInputValue(e.target.value);
 
         if (moment(e.target.value, dateFormat, true).isValid()) {
@@ -77,26 +71,27 @@ const DatePicker = ({
 
     // Handle value change via CalendarCell Buttons
     const handleButtonOnChange = e => {
-        if (onChange) {
-            onChange(moment(e).format(dateFormat));
-        }
+        onChange(moment(e).format(dateFormat));
     };
 
     // Reset wrong date value change via input when clicking outside calendar
     const resetWrongDate = value => {
         if (moment(value, dateFormat).isValid() === false) {
-            setSelectedDate(moment(resetDate || defaultResetDate, dateFormat));
+            const defaultDate =
+                resetDate && moment(resetDate, dateFormat, true).isValid()
+                    ? resetDate
+                    : moment().format(dateFormat);
+            setSelectedDate(moment(defaultDate, dateFormat));
         } else if (
-            (moment(maximumDate, dateFormat, true).isValid() &&
-                moment(value, dateFormat).isAfter(
-                    moment(maximumDate, dateFormat),
-                )) ||
-            (moment(minimumDate, dateFormat, true).isValid() &&
-                moment(value, dateFormat).isBefore(
-                    moment(minimumDate, dateFormat),
-                ))
+            moment(maximumDate, dateFormat, true).isValid() &&
+            moment(value, dateFormat).isAfter(moment(maximumDate, dateFormat))
         ) {
-            setSelectedDate(moment(resetDate || defaultResetDate, dateFormat));
+            setSelectedDate(moment(maximumDate, dateFormat));
+        } else if (
+            moment(minimumDate, dateFormat, true).isValid() &&
+            moment(value, dateFormat).isBefore(moment(minimumDate, dateFormat))
+        ) {
+            setSelectedDate(moment(minimumDate, dateFormat));
         }
         setActive(false);
     };
@@ -171,6 +166,7 @@ const DatePicker = ({
 
 DatePicker.propTypes = {
     value: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
 
     // Input props
     placeholder: PropTypes.string,
