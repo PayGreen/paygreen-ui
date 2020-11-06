@@ -68,7 +68,7 @@ storiesOf(folder.graph + 'Histogram', module)
             hasYaxisMin={boolean(displayYaxisLabel, true)}
             hasYaxisMax={boolean(displayYaxisLabel, true)}
             yaxisValues={boolean(displayYaxisLabel, true) ? [30, 60] : []}
-            hasRelativeYaxis={boolean('Has relative Y-axis', false)}
+            isRelativeYaxis={boolean('Has relative Y-axis', false)}
             maxValue={number('Max value', 120, {
                 range: true,
                 max: 150,

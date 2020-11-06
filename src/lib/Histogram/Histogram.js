@@ -11,7 +11,7 @@ const Histogram = ({
     hasYaxisMax,
     yaxisValues,
     yaxisUnit,
-    hasRelativeYaxis,
+    isRelativeYaxis,
     ...rest
 }) => {
     let max = 0;
@@ -27,7 +27,7 @@ const Histogram = ({
     }
 
     let allYaxisValues = yaxisValues.map(value => {
-        if (hasRelativeYaxis) {
+        if (isRelativeYaxis) {
             return value * max / 100;
         } else if (value > max) {
             return max;
@@ -49,7 +49,7 @@ const Histogram = ({
     return (
         <HistogramBase {...rest} hasYaxis={allYaxisValues.length > 0}>
             {allYaxisValues.length ? (
-                <div className="yaxis">
+                <div className="y-axis">
                     {allYaxisValues.map(value => (
                         <HistogramYaxisValue
                             theme={rest.theme} // not necessary, only needed for tests
@@ -78,7 +78,7 @@ const Histogram = ({
 };
 
 Histogram.propTypes = {
-    hasRelativeYaxis: PropTypes.bool,
+    isRelativeYaxis: PropTypes.bool,
     hasYaxisMin: PropTypes.bool,
     hasYaxisMax: PropTypes.bool,
     yaxisValues: PropTypes.arrayOf(PropTypes.number),
@@ -90,7 +90,7 @@ Histogram.propTypes = {
 };
 
 Histogram.defaultProps = {
-    hasRelativeYaxis: false,
+    isRelativeYaxis: false,
     hasYaxisMin: true,
     hasYaxisMax: true,
     yaxisValues: [],
