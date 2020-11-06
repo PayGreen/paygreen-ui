@@ -112,7 +112,7 @@ const responsiveSpaces = (
                           calculateSpace(
                               props[propAttribute + direction],
                               toRemove,
-                              coeff
+                              coeff,
                           ),
                       )
                 : null;
@@ -188,4 +188,49 @@ const responsiveSpaces = (
     `;
 };
 
-export { calculateSpace, blockSpace, responsiveSpaces };
+const responsivePaddingStyle = css`
+    ${props =>
+        props.hasResponsivePadding
+            ? responsiveSpaces('padding', 0, 1, 1, [
+                  'Top',
+                  'Left',
+                  'Right',
+                  'Bottom',
+              ])
+            : css`
+                  padding-top: ${props => props.theme.space[props.paddingTop]};
+                  padding-right: ${props =>
+                      props.theme.space[props.paddingRight]};
+                  padding-left: ${props =>
+                      props.theme.space[props.paddingLeft]};
+                  padding-bottom: ${props =>
+                      props.theme.space[props.paddingBottom]};
+              `};
+`;
+
+const responsiveMarginStyle = css`
+    ${props =>
+        props.hasResponsiveMargin
+            ? responsiveSpaces('margin', 0, 1, 1, [
+                  'Top',
+                  'Left',
+                  'Right',
+                  'Bottom',
+              ])
+            : css`
+                  margin-top: ${props => props.theme.space[props.marginTop]};
+                  margin-right: ${props =>
+                      props.theme.space[props.marginRight]};
+                  margin-left: ${props => props.theme.space[props.marginLeft]};
+                  margin-bottom: ${props =>
+                      props.theme.space[props.marginBottom]};
+              `};
+`;
+
+export {
+    calculateSpace,
+    blockSpace,
+    responsiveSpaces,
+    responsiveMarginStyle,
+    responsivePaddingStyle,
+};

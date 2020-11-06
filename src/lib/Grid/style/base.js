@@ -17,10 +17,10 @@ const gridAlign = {
 
 const childrenMargins = css`
     & > * {
-        margin: ${props => props.theme.space[props.childrenMargin]} auto;
+        margin: ${props => props.theme.space[props.childrenMargin]} auto !important;
 
         @media (${props => props.theme.query.min.md}) {
-            margin: ${props => props.theme.space[props.childrenMarginBig]};
+            margin: ${props => props.theme.space[props.childrenMarginBig]} !important;
         }
     }
 `;

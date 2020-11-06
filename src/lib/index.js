@@ -78,6 +78,8 @@ import SidebarItem from './SidebarItem/SidebarItem';
 import SidebarList from './SidebarList/SidebarList';
 import SidebarMenu from './SidebarMenu/SidebarMenu';
 import SidebarMenuCategory from './SidebarMenuCategory/SidebarMenuCategory';
+import Skeleton from './Skeleton/Skeleton';
+import SkeletonItem from './SkeletonItem/SkeletonItem';
 import Table from './Table/Table';
 import TableCell from './TableCell/TableCell';
 import TableRow from './TableRow/TableRow';
@@ -282,6 +284,8 @@ export {
     SidebarList,
     SidebarMenu,
     SidebarMenuCategory,
+    Skeleton,
+    SkeletonItem,
     Table,
     TableCell,
     TableRow,

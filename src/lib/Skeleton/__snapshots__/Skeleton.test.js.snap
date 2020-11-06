@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__SkeletonBase-sc-13d7n9i-0 hrRnUv"
+>
+  <div
+    className="style__CardBase-f361m8-0 dUMUbK"
+  >
+    <div>
+      <div
+        className="style__SkeletonItemBase-sc-1akijax-0 JQVqt"
+      />
+      <div
+        className="style__SkeletonItemBase-sc-1akijax-0 qZhhf"
+      />
+    </div>
+  </div>
+</div>
+`;

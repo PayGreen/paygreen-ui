@@ -81,11 +81,7 @@ storiesOf(folder.main + folder.sub.structure + 'Grid', module)
                 spaceOptions,
                 spaceOptions.md,
             )}
-            gridGap={select(
-                'Grid gap',
-                spaceOptions,
-                spaceDefault,
-            )}
+            gridGap={select('Grid gap', spaceOptions, spaceDefault)}
             childrenMargin={select(
                 'Children margin (mobile)',
                 spaceOptions,

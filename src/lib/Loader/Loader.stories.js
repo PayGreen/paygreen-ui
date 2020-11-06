@@ -12,7 +12,7 @@ import {
 } from '../../shared/constants';
 import Loader from './Loader';
 
-storiesOf(folder.main + 'Loader', module)
+storiesOf(folder.main + folder.sub.loading + 'Loader', module)
     .addDecorator(withKnobs)
     .add('Loader', () => (
         <Loader
@@ -25,6 +25,10 @@ storiesOf(folder.main + 'Loader', module)
             )}
             paddingTop={select('Padding top', spaceOptions, spaceDefault)}
             paddingBottom={select('Padding bottom', spaceOptions, spaceDefault)}
-            paddingLateral={select('Padding lateral', spaceOptions, spaceDefault)}
+            paddingLateral={select(
+                'Padding lateral',
+                spaceOptions,
+                spaceDefault,
+            )}
         />
     ));
