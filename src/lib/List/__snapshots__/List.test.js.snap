@@ -13,7 +13,7 @@ exports[`renders without crashing 1`] = `
         className="bullet"
       />
       <p
-        className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
+        className="style__TextBase-sc-11ixwvd-0 jjYLjP"
       >
         Something
       </p>
@@ -28,7 +28,7 @@ exports[`renders without crashing 1`] = `
         className="bullet"
       />
       <p
-        className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
+        className="style__TextBase-sc-11ixwvd-0 jjYLjP"
       >
         Something else
       </p>

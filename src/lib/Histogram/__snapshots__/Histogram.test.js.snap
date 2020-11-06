@@ -2,68 +2,68 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__HistogramBase-h3wpv-0 gZDYGh"
+  className="style__HistogramBase-h3wpv-0 efGsWn"
 >
   <div
-    className="yaxis"
+    className="y-axis"
   >
     <div
-      className="HistogramYaxisValue__YaxisValueBase-sc-1m1565e-0 feJFEE"
+      className="HistogramYaxisValue__YaxisValueBase-sc-1m1565e-0 kylFbc"
     >
       <span
-        className="style__TextBase-sc-11ixwvd-0 kvEKhL"
+        className="style__TextBase-sc-11ixwvd-0 fncwKx"
       >
         0
       </span>
     </div>
     <div
-      className="HistogramYaxisValue__YaxisValueBase-sc-1m1565e-0 hUqkNB"
+      className="HistogramYaxisValue__YaxisValueBase-sc-1m1565e-0 jhkxKN"
     >
       <span
-        className="style__TextBase-sc-11ixwvd-0 kvEKhL"
+        className="style__TextBase-sc-11ixwvd-0 fncwKx"
       >
         110
       </span>
     </div>
   </div>
   <div
-    className="style__HistogramBarBase-y733il-0 lijqiX"
+    className="style__HistogramBarBase-y733il-0 fXBDYD"
   >
     <div
       className="bar"
     />
     <span
-      className="style__TextBase-sc-11ixwvd-0 ghUJLx"
+      className="style__TextBase-sc-11ixwvd-0 fsNJsf"
     />
   </div>
   <div
-    className="style__HistogramBarBase-y733il-0 ktvNGD"
+    className="style__HistogramBarBase-y733il-0 krGgBn"
   >
     <div
       className="bar"
     />
     <span
-      className="style__TextBase-sc-11ixwvd-0 ghUJLx"
+      className="style__TextBase-sc-11ixwvd-0 fsNJsf"
     />
   </div>
   <div
-    className="style__HistogramBarBase-y733il-0 dGpLuT"
+    className="style__HistogramBarBase-y733il-0 cmGYRT"
   >
     <div
       className="bar"
     />
     <span
-      className="style__TextBase-sc-11ixwvd-0 ghUJLx"
+      className="style__TextBase-sc-11ixwvd-0 fsNJsf"
     />
   </div>
   <div
-    className="style__HistogramBarBase-y733il-0 eovNOY"
+    className="style__HistogramBarBase-y733il-0 fshDTY"
   >
     <div
       className="bar"
     />
     <span
-      className="style__TextBase-sc-11ixwvd-0 ghUJLx"
+      className="style__TextBase-sc-11ixwvd-0 fsNJsf"
     />
   </div>
 </div>
