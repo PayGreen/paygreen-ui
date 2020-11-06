@@ -33,7 +33,11 @@ storiesOf(folder.graph + 'HistogramBar', module)
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            blockHeight={select('Block height', spaceOptions, spaceOptions.sm)}
+            blockHeight={select(
+                'Block height',
+                inputWidthOptions,
+                inputWidthOptions.sm,
+            )}
             blockWidth={select(
                 'Block width',
                 inputWidthOptions,

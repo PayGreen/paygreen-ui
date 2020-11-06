@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { spaceOptions, spaceDefault } from '../../shared/constants';
+import {
+    spaceOptions,
+    spaceDefault,
+    inputWidthOptions,
+    inputWidthDefault,
+} from '../../shared/constants';
 import { HistogramBase } from './style';
 import HistogramYaxisValue from './HistogramYaxisValue';
 
@@ -28,7 +33,7 @@ const Histogram = ({
 
     let allYaxisValues = yaxisValues.map(value => {
         if (isRelativeYaxis) {
-            return value * max / 100;
+            return (value * max) / 100;
         } else if (value > max) {
             return max;
         } else {
@@ -66,7 +71,7 @@ const Histogram = ({
                 if (!child) {
                     return null;
                 }
-                
+
                 return React.cloneElement(child, {
                     key: index,
                     maxValue: max,
@@ -84,7 +89,7 @@ Histogram.propTypes = {
     yaxisValues: PropTypes.arrayOf(PropTypes.number),
     yaxisUnit: PropTypes.string,
     maxValue: PropTypes.number,
-    blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
+    blockHeight: PropTypes.oneOf(Object.values(inputWidthOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
@@ -96,7 +101,7 @@ Histogram.defaultProps = {
     yaxisValues: [],
     yaxisUnit: null,
     maxValue: 0,
-    blockHeight: spaceOptions.sm,
+    blockHeight: inputWidthDefault,
     marginTop: spaceDefault,
     marginBottom: spaceOptions.md,
 };

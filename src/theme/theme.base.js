@@ -199,12 +199,10 @@ export const ThemeBase = {
             lg: '32px',
         },
         height: {
-            none: 'auto',
             xs: '200px',
             sm: '300px',
             md: '400px',
             lg: '500px',
-            xl: '600px',
         },
     },
     wave: {

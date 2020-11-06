@@ -9,6 +9,7 @@ import {
     arrowBlockOptions,
     fontSizeOptions,
     inputWidthOptions,
+    inputWidthDefault,
     buttonSizeOptions,
     alignItemsOptions,
     textHtmlTagOptions,
@@ -71,7 +72,7 @@ HistogramBar.propTypes = {
     label: PropTypes.string,
     legend: PropTypes.string,
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
+    blockHeight: PropTypes.oneOf(Object.values(inputWidthOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
 };
@@ -82,8 +83,8 @@ HistogramBar.defaultProps = {
     label: null,
     legend: null,
     colorTheme: colorThemeDefault,
-    blockHeight: spaceOptions.sm,
-    blockWidth: inputWidthOptions.xs,
+    blockHeight: inputWidthDefault,
+    blockWidth: inputWidthDefault,
     paddingLateral: spaceOptions.sm,
 };
 

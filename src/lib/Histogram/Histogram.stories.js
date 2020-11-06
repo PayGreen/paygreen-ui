@@ -4,8 +4,8 @@ import { withKnobs, boolean, number, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
-    colorThemeDefault,
     inputWidthOptions,
+    inputWidthDefault,
     spaceOptions,
 } from '../../shared/constants';
 import HistogramBar from '../HistogramBar/HistogramBar';
@@ -73,7 +73,11 @@ storiesOf(folder.graph + 'Histogram', module)
                 range: true,
                 max: 150,
             })}
-            blockHeight={select('Block height', spaceOptions, spaceOptions.sm)}
+            blockHeight={select(
+                'Block height',
+                inputWidthOptions,
+                inputWidthDefault,
+            )}
             marginTop={select('Margin top', spaceOptions, spaceOptions.xl)}
             marginBottom={select(
                 'Margin bottom',
@@ -88,16 +92,8 @@ storiesOf(folder.graph + 'Histogram', module)
                     label={sample.label}
                     legend="{value}€ in {label}"
                     isLabelVisible={false}
-                    colorTheme={
-                        sample.colorTheme
-                            ? sample.colorTheme
-                            : colorThemeDefault
-                    }
-                    blockWidth={
-                        sample.blockWidth
-                            ? sample.blockWidth
-                            : inputWidthOptions.md
-                    }
+                    colorTheme={sample.colorTheme}
+                    blockWidth={sample.blockWidth}
                     paddingLateral={spaceOptions.md}
                 />
             ))}
