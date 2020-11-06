@@ -4,6 +4,8 @@ import { ThemeDefault } from '../../theme';
 import DatePicker from './DatePicker';
 
 it('renders without crashing', () => {
-    const datePicker = TestRenderer.create(<DatePicker theme={ThemeDefault} />);
+    const datePicker = TestRenderer.create(
+        <DatePicker theme={ThemeDefault} onChange={() => {}} />,
+    );
     expect(datePicker.toJSON()).toMatchSnapshot();
 });

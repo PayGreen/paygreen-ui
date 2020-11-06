@@ -58,9 +58,12 @@ const mobileStyle = css`
                 math(
                     props.theme.icon.size.sm +
                         '+' +
-                        props.theme.space.md +
-                        '+ 2*' +
-                        props.theme.space.xs,
+                        props.theme.space.sm +
+                        '+ 2* (' +
+                        props.theme.icon.size.sm +
+                        '/2 - ' +
+                        props.theme.space.xs +
+                        ')',
                 )};
         }
     }

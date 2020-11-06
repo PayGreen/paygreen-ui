@@ -17,7 +17,7 @@ Array [
         />
       </svg>
     </button>
-    October 2020
+    November 2020
     <button
       className="style__IconBase-ak3679-0 eiqeDU icon"
       onClick={[Function]}
@@ -57,7 +57,7 @@ Array [
     </div>
   </div>,
   <div
-    className="style__CalendarGridBase-sc-1qui6a5-0 ehqGoy"
+    className="style__CalendarGridBase-sc-1qui6a5-0 ehqSLp"
   >
     <button
       className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
@@ -90,7 +90,7 @@ Array [
       5
     </button>
     <button
-      className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
+      className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
       onClick={[Function]}
     >
       6
@@ -174,7 +174,7 @@ Array [
       19
     </button>
     <button
-      className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
+      className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
       onClick={[Function]}
     >
       20
@@ -238,12 +238,6 @@ Array [
       onClick={[Function]}
     >
       30
-    </button>
-    <button
-      className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
-      onClick={[Function]}
-    >
-      31
     </button>
   </div>,
 ]

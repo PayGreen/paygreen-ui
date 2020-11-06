@@ -16,6 +16,7 @@ exports[`renders without crashing 1`] = `
         onChange={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onInput={[Function]}
         readOnly={false}
         theme={
           Object {
@@ -445,7 +446,7 @@ exports[`renders without crashing 1`] = `
             />
           </svg>
         </button>
-        octobre 2020
+        novembre 2020
         <button
           className="style__IconBase-ak3679-0 eiqeDU icon"
           onClick={[Function]}
@@ -485,7 +486,7 @@ exports[`renders without crashing 1`] = `
         </div>
       </div>
       <div
-        className="style__CalendarGridBase-sc-1qui6a5-0 ehqGoy"
+        className="style__CalendarGridBase-sc-1qui6a5-0 ehqSLp"
       >
         <button
           className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
@@ -666,12 +667,6 @@ exports[`renders without crashing 1`] = `
           onClick={[Function]}
         >
           30
-        </button>
-        <button
-          className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
-          onClick={[Function]}
-        >
-          31
         </button>
       </div>
     </div>

@@ -185,10 +185,7 @@ storiesOf(folder.tables + folder.sub.daTable + 'DaTable', module)
                     label="Date"
                 />
 
-                <DaTableHeadCell
-                    label="Name"
-                    sortIcon={<ArrowBottomIcon title="Sort DESC on Sample" />}
-                >
+                <DaTableHeadCell label="Name">
                     <DaInput
                         placeholder="Search name"
                         fieldSize="sm"

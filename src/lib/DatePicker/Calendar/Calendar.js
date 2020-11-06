@@ -10,7 +10,13 @@ import CalendarNavbar from '../CalendarNavbar/CalendarNavbar';
 import CalendarWeekdays from '../CalendarWeekdays/CalendarWeekdays';
 import CalendarGrid from '../CalendarGrid/CalendarGrid';
 
-const Calendar = ({ currentMonth, minimumDate, maximumDate, ...rest }) => {
+const Calendar = ({
+    currentMonth,
+    minimumDate,
+    maximumDate,
+    handleOnChange,
+    ...rest
+}) => {
     const [month, setMonth] = useState(currentMonth);
 
     useEffect(() => {
@@ -24,6 +30,7 @@ const Calendar = ({ currentMonth, minimumDate, maximumDate, ...rest }) => {
             <CalendarGrid
                 minimumDate={minimumDate}
                 maximumDate={maximumDate}
+                handleOnChange={handleOnChange}
                 {...rest}
             />
         </MonthContextProvider>
