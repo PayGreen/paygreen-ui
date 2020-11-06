@@ -26,7 +26,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="style__DaTableHeadCellBase-sc-1fpn11j-0 hKLGay"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 gfGZLO"
   >
     <div
       className="head-child"
@@ -902,7 +902,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="style__DaTableHeadCellBase-sc-1fpn11j-0 eLybOD"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 gqCIdn"
   >
     <div
       className="head-child"
@@ -930,7 +930,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="style__DaTableHeadCellBase-sc-1fpn11j-0 eLybOD hideOnSmallScreen"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 gqCIdn"
   >
     <div
       className="head-child"
