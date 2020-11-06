@@ -12,7 +12,7 @@ import {
 } from '../../shared/constants';
 import Loader from './Loader';
 
-storiesOf(folder.media + 'Loader', module)
+storiesOf(folder.loading + 'Loader', module)
     .addDecorator(withKnobs)
     .add('Loader', () => (
         <Loader

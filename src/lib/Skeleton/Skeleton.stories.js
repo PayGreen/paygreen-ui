@@ -19,11 +19,6 @@ import {
 } from '../../shared/constants';
 import Skeleton from './Skeleton';
 
-const spaceOptionsCustom = {
-    null: null,
-    ...spaceOptions,
-};
-
 const colorWabLabel = 'Grey color';
 const backgroundWabColorLabel = 'Background grey color';
 const blockWidthLabel = 'Width';
@@ -33,7 +28,7 @@ const borderRadiusLabel = 'Border radius';
 const responsivePaddingLabel = 'Has responsive padding';
 const paddingLabel = 'Padding';
 
-storiesOf(folder.main + folder.sub.loading + 'Skeleton', module)
+storiesOf(folder.loading + 'Skeleton', module)
     .addDecorator(withKnobs)
     .add('Skeleton Text Card', () => (
         <Skeleton

@@ -6,6 +6,7 @@ const folder = {
     form: 'Form elements' + folderSeparator,
     graph: 'Graphs' + folderSeparator,
     grid: 'Grids & dividers' + folderSeparator,
+    loading: 'Loading' + folderSeparator,
     list: 'Lists' + folderSeparator,
     media: 'Icons & Medias' + folderSeparator,
     nav: 'Layout' + folderSeparator,
