@@ -76,7 +76,7 @@ const DatePicker = ({
 
     // Reset wrong date value change via input when clicking outside calendar
     const resetWrongDate = value => {
-        if (moment(value, dateFormat).isValid() === false) {
+        if (value && moment(value, dateFormat).isValid() === false) {
             const defaultDate =
                 resetDate && moment(resetDate, dateFormat, true).isValid()
                     ? resetDate

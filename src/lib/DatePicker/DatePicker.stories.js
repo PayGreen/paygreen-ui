@@ -23,10 +23,13 @@ storiesOf(folder.form + 'DatePicker', module)
     .addDecorator(withKnobs)
     .add('DatePicker', () =>
         React.createElement(() => {
-            const [date, setDate] = useState(moment().format('DD/MM/YYYY'));
+            const [date, setDate] = useState();
 
             return (
                 <DatePicker
+                    value={date}
+                    onChange={date => setDate(date)}
+                    placeholder={'Ex: ' + moment().format('DD/MM/YYYY')}
                     disabled={boolean('Disabled', false)}
                     readOnly={boolean('Readonly', false)}
                     locale={select('Locale', localeOptions, localeDefault)}
@@ -48,12 +51,10 @@ storiesOf(folder.form + 'DatePicker', module)
                         'Maximum date',
                         moment().add(1, 'M').format('DD/MM/YYYY'),
                     )}
-                    value={date}
                     resetDate={text(
                         'Reset date',
                         moment().format('DD/MM/YYYY'),
                     )}
-                    onChange={date => setDate(date)}
                 />
             );
         }),
