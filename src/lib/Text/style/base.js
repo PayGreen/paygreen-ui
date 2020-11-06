@@ -1,8 +1,7 @@
 import { css } from 'styled-components';
 import { transparentize, math } from 'polished';
-import { colorTypeOptions } from '../../../shared/constants';
 import { responsiveSpaces } from '../../../shared/spaces';
-import { mainColor, backgroundColor, minimizeFont } from './constants';
+import { backgroundColor } from './constants';
 
 const htmlTagStyle = {
     p: css`
@@ -70,20 +69,4 @@ const blockBackground = {
     `,
 };
 
-const defaultStyle = css`
-    ${responsiveSpaces('margin')};
-    color: ${props =>
-        props.colorType === colorTypeOptions.reverse
-            ? props.theme.wab.white00
-            : mainColor[props.colorPallet]};
-    line-height: ${props => props.theme.font.lineHeight.md};
-    text-align: ${props => props.align};
-    font-size: ${props => props.theme.font.size[props.textSize]};
-    
-    @media (${props => props.theme.query.max.md}) {
-        font-size: ${props =>
-            props.theme.font.size[minimizeFont[props.textSize]]};
-    }
-`;
-
-export { uppercaseStyle, blockBackground, htmlTagStyle, defaultStyle };
+export { uppercaseStyle, blockBackground, htmlTagStyle };
