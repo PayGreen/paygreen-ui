@@ -20,7 +20,7 @@ import {
 } from '../../shared/constants';
 import Title from './Title';
 
-storiesOf(folder.main + 'Title', module)
+storiesOf(folder.text + 'Title', module)
     .addDecorator(withKnobs)
     .add('Title', () => (
         <Title

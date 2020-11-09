@@ -40,7 +40,7 @@ exports[`renders without crashing 1`] = `
             Tree
           </span>
           <p
-            className="style__TextBase-sc-11ixwvd-0 dwEpwZ"
+            className="style__TextBase-sc-11ixwvd-0 jjYLjP"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
           </p>

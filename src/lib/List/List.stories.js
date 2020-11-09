@@ -59,7 +59,7 @@ const sampleBasic = [
     'Lorem ipsum dolor sit adipiscing',
 ];
 
-storiesOf(folder.main + folder.sub.list + 'List', module)
+storiesOf(folder.list + 'List', module)
     .addDecorator(withKnobs)
     .add('List with icons', () => (
         <List

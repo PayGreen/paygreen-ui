@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import {
     buttonSizeOptions,
     buttonSizeDefault,
+    colorTypeOptions,
+    colorTypeDefault,
+    colorPalletOptions,
+    colorThemeOptions,
+    colorThemeDefault,
     formStatusOptions,
     formStatusDefault,
     inputWidthOptions,
@@ -19,6 +24,12 @@ const Message = props => {
 };
 
 Message.propTypes = {
+    colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
+    colorPallet: PropTypes.oneOf([
+        colorPalletOptions.theme,
+        colorPalletOptions.status,
+    ]),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
@@ -28,6 +39,9 @@ Message.propTypes = {
 };
 
 Message.defaultProps = {
+    colorType: colorTypeDefault,
+    colorPallet: colorPalletOptions.status,
+    colorTheme: colorThemeDefault,
     colorStatus: formStatusDefault,
     blockWidth: inputWidthDefault,
     fieldSize: buttonSizeDefault,

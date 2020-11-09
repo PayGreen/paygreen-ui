@@ -10,7 +10,7 @@ const spaceOptionsCustom = {
     ...spaceOptions,
 };
 
-storiesOf(folder.main + 'Box', module)
+storiesOf(folder.block + 'Box', module)
     .addDecorator(withKnobs)
     .add('Box', () => (
         <Box

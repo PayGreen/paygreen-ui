@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__HistogramBarBase-y733il-0 bsFJyo"
+>
+  <div
+    className="style__MessageBase-ts6lfl-0 SVZMW"
+  >
+    <p
+      className="style__TextBase-sc-11ixwvd-0 lbrLDF"
+    >
+      60 in label
+    </p>
+  </div>
+  <div
+    className="bar"
+  />
+  <span
+    className="style__TextBase-sc-11ixwvd-0 fsNJsf"
+  >
+    label
+  </span>
+</div>
+`;

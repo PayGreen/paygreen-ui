@@ -245,6 +245,20 @@ exports[`renders without crashing 1`] = `
           "sidebar": "380px",
           "topbar": "45px",
         },
+        "histogram": Object {
+          "height": Object {
+            "lg": "500px",
+            "md": "400px",
+            "sm": "300px",
+            "xs": "200px",
+          },
+          "width": Object {
+            "lg": "32px",
+            "md": "16px",
+            "sm": "10px",
+            "xs": "6px",
+          },
+        },
         "icon": Object {
           "shift": Object {
             "lg": "6px",
@@ -268,6 +282,7 @@ exports[`renders without crashing 1`] = `
           "lg": "120px",
           "md": "100px",
           "sm": "80px",
+          "tiny": "16px",
           "xl": "140px",
           "xs": "60px",
           "xxs": "38px",
@@ -277,6 +292,7 @@ exports[`renders without crashing 1`] = `
           "lg": "640px",
           "md": "560px",
           "sm": "400px",
+          "tiny": "150px",
           "xl": "760px",
           "xs": "240px",
           "xxs": "150px",

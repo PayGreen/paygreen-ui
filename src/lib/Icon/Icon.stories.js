@@ -47,7 +47,7 @@ const marginRightLabel = 'Margin right';
 const centeredLabel = 'Centered';
 const rotateSizeLabel = 'Rotation (sens horaire)';
 
-storiesOf(folder.main + 'Icons', module)
+storiesOf(folder.media + 'Icons', module)
     .addDecorator(withKnobs)
     .add('Some icons', () => (
         <div>

@@ -5,6 +5,11 @@ import {
     folder,
     buttonSizeOptions,
     buttonSizeDefault,
+    colorTypeOptions,
+    colorTypeDefault,
+    colorPalletOptions,
+    colorThemeOptions,
+    colorThemeDefault,
     formStatusOptions,
     formStatusDefault,
     inputWidthOptions,
@@ -25,14 +30,31 @@ const fieldSizeLabel = 'Field size';
 const colorStatusLabel = 'Status color';
 const blockWidthLabel = 'Block width';
 
-storiesOf(folder.main + 'Message', module)
+const { wab, ...buttonColorPalletOptions } = colorPalletOptions;
+
+storiesOf(folder.popup + 'Message', module)
     .addDecorator(withKnobs)
     .add('Message', () => (
         <Message
-            arrowBlock={radios(
+            arrowBlock={select(
                 arrowBlockLabel,
                 arrowBlockOptions,
                 arrowBlockDefault,
+            )}
+            colorType={radios(
+                'Color type',
+                colorTypeOptions,
+                colorTypeDefault,
+            )}
+            colorPallet={radios(
+                'Color pallet',
+                buttonColorPalletOptions,
+                colorPalletOptions.status,
+            )}
+            colorTheme={select(
+                'Color theme',
+                colorThemeOptions,
+                colorThemeDefault,
             )}
             colorStatus={select(
                 colorStatusLabel,

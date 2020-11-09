@@ -11,7 +11,7 @@ import {
 } from '../../shared/constants';
 import Divider from './Divider';
 
-storiesOf(folder.main + 'Divider', module)
+storiesOf(folder.grid + 'Divider', module)
     .addDecorator(withKnobs)
     .add('Divider', () => (
         <Divider

@@ -8,7 +8,7 @@ import {
 } from '../../shared/constants';
 import PaginationItem from './PaginationItem';
 
-storiesOf(folder.tables + folder.sub.pagination + 'PaginationItem', module)
+storiesOf(folder.table + folder.sub.pagination + 'PaginationItem', module)
     .addDecorator(withKnobs)
     .add('PaginationItem', () => (
         <PaginationItem

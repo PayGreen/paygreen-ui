@@ -8,7 +8,7 @@ import DaTableRow from './DaTableRow';
 
 const isActiveLabel = 'Is active';
 
-storiesOf(folder.tables + folder.sub.daTable + 'DaTableRow', module)
+storiesOf(folder.table + folder.sub.daTable + 'DaTableRow', module)
     .addDecorator(withKnobs)
     .add('DaTableRow', () => (
         <DaTableRow isActive={boolean(isActiveLabel, false)}>

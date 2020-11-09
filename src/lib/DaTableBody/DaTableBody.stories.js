@@ -6,7 +6,7 @@ import DaTableCell from '../DaTableCell/DaTableCell';
 import DaTableRow from '../DaTableRow/DaTableRow';
 import DaTableBody from './DaTableBody';
 
-storiesOf(folder.tables + folder.sub.daTable + 'DaTableBody', module)
+storiesOf(folder.table + folder.sub.daTable + 'DaTableBody', module)
     .addDecorator(withKnobs)
     .add('DaTableBody', () => (
         <DaTableBody>

@@ -37,7 +37,7 @@ const colorPalletLabel = 'Color pallet';
 const colorThemeLabel = 'Color theme';
 const colorStatusLabel = 'Status color';
 
-storiesOf(folder.main + 'Corner', module)
+storiesOf(folder.block + 'Corner', module)
     .addDecorator(withKnobs)
     .add('Basic Corner', () => (
         <Corner

@@ -20,7 +20,7 @@ const gradientTypeLabel = 'Gradient type';
 const textSizeLabel = 'Text size';
 const textLabel = 'Text';
 
-storiesOf(folder.main + 'Badge', module)
+storiesOf(folder.text + 'Badge', module)
     .addDecorator(withKnobs)
     .add('Badge', () => (
         <Badge

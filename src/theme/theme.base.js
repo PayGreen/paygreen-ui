@@ -191,6 +191,20 @@ export const ThemeBase = {
         sm: '50vh',
         lg: '100vh',
     },
+    histogram: {
+        width: {
+            xs: '6px',
+            sm: '10px',
+            md: '16px',
+            lg: '32px',
+        },
+        height: {
+            xs: '200px',
+            sm: '300px',
+            md: '400px',
+            lg: '500px',
+        },
+    },
     wave: {
         simple: '8vw',
         double: '11vw',

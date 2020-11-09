@@ -24,6 +24,7 @@ const ClickableBlock = props => {
 
             <ArrowBottomIcon
                 theme={props.theme} // not necessary, only needed for tests
+                className="arrow"
                 rotateSize={
                     props.isActive ? rotateSizeOptions.d180 : rotateSizeDefault
                 }

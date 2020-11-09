@@ -26,7 +26,7 @@ const blockWidthLabel = 'Width';
 const blockHeightLabel = 'Height';
 const skeletonTypeLabel = 'Skeleton type';
 
-storiesOf(folder.main + folder.sub.loading + 'SkeletonItem', module)
+storiesOf(folder.loading + 'SkeletonItem', module)
     .addDecorator(withKnobs)
     .add('SkeletonItem', () => (
         <SkeletonItem

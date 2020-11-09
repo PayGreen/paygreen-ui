@@ -31,7 +31,7 @@ const paddingBottomLabel = 'Padding bottom';
 const paddingLeftLabel = 'Padding left';
 const paddingRightLabel = 'Padding right';
 
-storiesOf(folder.main + 'Link', module)
+storiesOf(folder.text + 'Link', module)
     .addDecorator(withKnobs)
     .add(
         'Link in Text',

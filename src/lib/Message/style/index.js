@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { TextBase } from '../../Text/style';
-import { arrowBlockStyle, arrowSize } from './base';
+import { color } from './constants';
+import { arrowSize, arrowBlockStyle } from './base';
 
 const MessageBase = styled.div`
     position: relative;
@@ -12,21 +13,30 @@ const MessageBase = styled.div`
     display: inline-grid;
     grid-template-rows: auto 1fr;
     grid-template-areas: 'icon text';
-    background-color: ${props =>
-        props.theme.status[props.colorStatus].light};
-    color: ${props => props.theme.status[props.colorStatus].main};
+    background-color: ${props => color.bg[props.colorType][props.colorPallet]};
+    color: ${props => color.content[props.colorType][props.colorPallet]};
+
+    &::after {
+        content: '';
+        position: absolute;
+        border: solid ${arrowSize} transparent;
+        border-top-color: ${props =>
+            color.bg[props.colorType][props.colorPallet]};
+        transform-origin: top;
+    }
 
     & > .icon {
         grid-area: icon;
         margin-right: ${arrowSize};
+        opacity: 0.6;
 
         svg {
-            fill: ${props => props.theme.status[props.colorStatus].main};
+            fill: ${props => color.content[props.colorType][props.colorPallet]};
         }
     }
 
     & > ${TextBase} {
-        color: ${props => props.theme.status[props.colorStatus].main};
+        color: ${props => color.content[props.colorType][props.colorPallet]};
     }
 
     ${props => arrowBlockStyle[props.arrowBlock]};

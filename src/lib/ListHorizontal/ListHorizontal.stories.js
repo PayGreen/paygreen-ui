@@ -32,7 +32,7 @@ const colorStatusLabel = 'Color status';
 const sampleTexts = ['Text one', 'Text two', 'Text three', 'Text four'];
 const sampleLinks = ['Link one', 'Link two', 'Link three', 'Link four'];
 
-storiesOf(folder.main + 'ListHorizontal', module)
+storiesOf(folder.list + 'ListHorizontal', module)
     .addDecorator(withKnobs)
     .add('ListHorizontal of Texts', () => (
         <ListHorizontal

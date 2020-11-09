@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 import { directionalProperty } from 'polished';
 import { borderColor, hoverStyle } from './base';
-import { IconBase } from '../../Icon/style';
-
-const borderNone = 'none';
 
 const ClickableBlockBase = styled.div`
     cursor: pointer;
@@ -11,13 +8,13 @@ const ClickableBlockBase = styled.div`
     display: inline-flex;
     align-items: center;
     ${props => borderColor[props.colorPallet]};
-    border-top: ${props => (props.borderTop ? null : borderNone)};
-    border-right: ${props => (props.borderRight ? null : borderNone)};
-    border-left: ${props => (props.borderLeft ? null : borderNone)};
-    border-bottom: ${props => (props.borderBottom ? null : borderNone)};
+    border-top: ${props => (props.borderTop ? null : 'none')};
+    border-right: ${props => (props.borderRight ? null : 'none')};
+    border-left: ${props => (props.borderLeft ? null : 'none')};
+    border-bottom: ${props => (props.borderBottom ? null : 'none')};
     transition: all ${props => props.theme.transition.xs};
 
-    ${IconBase} {
+    .arrow {
         @media (${props => props.theme.query.max.md}) {
             display: ${props => (props.isHiddenOnMobile ? 'none' : null)};
         }
