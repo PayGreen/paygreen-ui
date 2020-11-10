@@ -1,10 +1,11 @@
 import { css } from 'styled-components';
-import { colorTypeOptions } from '../../../shared/constants';
+import { transparentize } from 'polished';
+import {
+    colorTypeOptions,
+    colorPalletOptions,
+} from '../../../shared/constants';
+import { mainColor } from '../../Text/style/constants';
 import { lineColor, minimizeFont } from './constants';
-
-const strongColor = css`
-    color: ${props => props.theme.color[props.colorTheme].main};
-`;
 
 const smallText = css`
     text-transform: uppercase;
@@ -51,4 +52,21 @@ const underline = css`
     }
 `;
 
-export { strongColor, smallText, bigText, underline };
+const color = {
+    original: css`
+        color: ${props => mainColor[props.colorPallet]};
+
+        strong {
+            color: ${props =>
+                props.colorPallet === colorPalletOptions.wab
+                    ? props.theme.color[props.colorTheme].main
+                    : null};
+        }
+    `,
+    reverse: css`
+        color: ${props => transparentize(0.05, props.theme.wab.white00)};
+        text-shadow: 0 0 ${props => props.theme.space.md} ${mainColor.theme};
+    `,
+};
+
+export { smallText, bigText, underline, color };
