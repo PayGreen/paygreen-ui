@@ -5,7 +5,7 @@ exports[`renders without crashing 1`] = `
   className="style__ModalHeaderBase-e1z6bj-0 clfhBu"
 >
   <span
-    className="style__TitleBase-td7fx4-0 hQMgyM"
+    className="style__TitleBase-td7fx4-0 hLSsJL"
   >
     This is the Title
   </span>

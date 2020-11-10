@@ -458,7 +458,7 @@ exports[`renders without crashing 1`] = `
     className="style__MessageBase-ts6lfl-0 eoaPVg"
   >
     <p
-      className="style__TextBase-sc-11ixwvd-0 jjYLjP"
+      className="style__TextBase-sc-11ixwvd-0 YbuHI"
     >
       Lorem ipsum dolor sit amet, consectetur non sodales.
     </p>
