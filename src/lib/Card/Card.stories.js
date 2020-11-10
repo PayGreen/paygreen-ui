@@ -511,7 +511,6 @@ storiesOf(folder.block + 'Card', module)
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                colorWab={greyOptions.grey60}
                 colorStatus={select(
                     colorStatusLabel,
                     formStatusOptions,

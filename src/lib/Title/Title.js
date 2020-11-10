@@ -9,7 +9,6 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
-    greyDefault,
     formStatusOptions,
     formStatusDefault,
     fontSizeOptions,
@@ -52,7 +51,7 @@ Title.defaultProps = {
     colorType: colorTypeDefault,
     colorPallet: colorPalletOptions.wab,
     colorTheme: colorThemeDefault,
-    colorWab: greyDefault,
+    colorWab: greyOptions.grey60,
     colorStatus: formStatusDefault,
 
     textSize: fontSizeDefault,

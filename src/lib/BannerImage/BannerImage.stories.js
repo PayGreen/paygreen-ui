@@ -7,7 +7,6 @@ import {
     colorThemeDefault,
     decorationOptions,
     decorationDefault,
-    greyOptions,
     fontSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
@@ -42,7 +41,6 @@ storiesOf(folder.block + 'BannerImage', module)
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
-                    colorWab={greyOptions.grey60}
                     textSize={fontSizeOptions.lg}
                     marginLateral={spaceOptions.md}
                     marginTop={spaceOptions.md}

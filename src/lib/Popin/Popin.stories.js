@@ -6,8 +6,6 @@ import {
     shadowSizeOptions,
     radiusOptions,
     radiusDefault,
-    colorPalletOptions,
-    greyOptions,
     spaceOptions,
     spaceDefault,
     blockPositionOptions,
@@ -45,8 +43,6 @@ storiesOf(folder.popup + 'Popin', module)
                 <Title
                     marginTop={spaceOptions.xs}
                     marginLateral={spaceOptions.xs}
-                    colorPallet={colorPalletOptions.wab}
-                    colorWab={greyOptions.grey60}
                     textSize={fontSizeOptions.sm}
                 >
                     Demo

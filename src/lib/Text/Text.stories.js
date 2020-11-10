@@ -16,7 +16,6 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
-    greyDefault,
     formStatusOptions,
     formStatusDefault,
     radiusOptions,
@@ -170,7 +169,7 @@ storiesOf(folder.text + 'Text', module)
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select(colorWabLabel, greyOptions, greyDefault)}
+            colorWab={select(colorWabLabel, greyOptions, greyOptions.grey50)}
             colorStatus={select(
                 colorStatusLabel,
                 formStatusOptions,
