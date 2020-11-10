@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { responsiveSpaces } from '../../../shared/spaces';
-import { smallFontSizes } from './constants';
 import { smallText, bigText, underline, color } from './base';
 
 const TitleBase = styled.span`
@@ -9,7 +8,7 @@ const TitleBase = styled.span`
     font-weight: ${props => props.theme.font.weight.bold};
     font-size: ${props => props.theme.font.size[props.textSize]};
 
-    ${props => (smallFontSizes.includes(props.textSize) ? smallText : bigText)};
+    ${props => (props.isSmallText ? smallText : bigText)};
     ${props => color[props.colorType]};
     ${props => (props.hasUnderline ? underline : null)};
     ${props =>
