@@ -12,14 +12,14 @@ import {
 } from '../../shared/constants';
 import { DataLegendBase } from './style';
 
-const DataLegend = props => {
+const DataLegend = ({value, unit, children, ...rest}) => {
     return (
-        <DataLegendBase {...props}>
-            <span className="value">{props.value}</span>
+        <DataLegendBase {...rest} isDisabled={value === 0}>
+            <span className="value">{value}</span>
 
-            <span className="unit">{props.unit}</span>
+            <span className="unit">{unit}</span>
 
-            {props.children}
+            {children}
         </DataLegendBase>
     );
 };
