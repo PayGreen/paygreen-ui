@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { transparentize, math } from 'polished';
 import { responsiveSpaces } from '../../../shared/spaces';
-import { backgroundColor } from './constants';
+import { mainColor, backgroundColor } from './constants';
 
 const htmlTagStyle = {
     p: css`
@@ -59,6 +59,16 @@ const uppercaseStyle = css`
     letter-spacing: ${props => props.theme.font.spacing};
 `;
 
+const color = {
+    original: css`
+        color: ${props => mainColor[props.colorPallet]};
+    `,
+    reverse: css`
+        color: ${props => props.theme.wab.white00};
+        text-shadow: 0 0 ${props => props.theme.space.sm} ${mainColor.theme};
+    `,
+};
+
 const blockBackground = {
     original: css`
         background-color: ${props => backgroundColor[props.colorPallet]};
@@ -69,4 +79,4 @@ const blockBackground = {
     `,
 };
 
-export { uppercaseStyle, blockBackground, htmlTagStyle };
+export { htmlTagStyle, uppercaseStyle, color, blockBackground };
