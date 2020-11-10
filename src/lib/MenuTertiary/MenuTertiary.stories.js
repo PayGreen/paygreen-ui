@@ -17,6 +17,8 @@ import Title from '../Title/Title';
 import Text from '../Text/Text';
 import MenuTertiary from './MenuTertiary';
 
+const colorThemeLabel = 'Color theme';
+
 const sampleLinks = [
     {
         link: 'lorem',
@@ -48,7 +50,7 @@ storiesOf(folder.nav + 'MenuTertiary', module)
                 isFixed={boolean('Is fixed', true)}
                 isHidden={boolean('Is hidden', false)}
                 colorTheme={radios(
-                    'Color theme',
+                    colorThemeLabel,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
@@ -69,6 +71,11 @@ storiesOf(folder.nav + 'MenuTertiary', module)
                     gradient={
                         index % 2 ? gradientOptions.none : gradientOptions.theme
                     }
+                    colorTheme={radios(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
                 >
                     <Card hasBackground={false}>
                         <Title
@@ -77,6 +84,11 @@ storiesOf(folder.nav + 'MenuTertiary', module)
                                     ? colorTypeOptions.original
                                     : colorTypeOptions.reverse
                             }
+                            colorTheme={radios(
+                                colorThemeLabel,
+                                colorThemeOptions,
+                                colorThemeDefault,
+                            )}
                             textSize={fontSizeOptions.xl}
                             marginLateral={spaceOptions.md}
                             marginTop={spaceOptions.md}
@@ -90,6 +102,11 @@ storiesOf(folder.nav + 'MenuTertiary', module)
                                     ? colorTypeOptions.original
                                     : colorTypeOptions.reverse
                             }
+                            colorTheme={radios(
+                                colorThemeLabel,
+                                colorThemeOptions,
+                                colorThemeDefault,
+                            )}
                             marginLateral={spaceOptions.md}
                             marginTop={spaceOptions.md}
                             marginBottom={spaceOptions.md}
