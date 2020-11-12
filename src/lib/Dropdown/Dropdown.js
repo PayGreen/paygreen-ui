@@ -4,43 +4,43 @@ import DaInput from '../DaInput/DaInput';
 import Popin from '../Popin/Popin';
 import { DropdownBase, InvisibleCloseButton } from './style';
 
-const Dropdown = props => {
-    const [isActive, setActive] = useState(props.isActive || false);
+const Dropdown = ({ isActive, children, ...rest }) => {
+    const [isOpen, setOpen] = useState(isActive);
 
     useEffect(() => {
-        setActive(props.isActive);
-    }, [props.isActive]);
+        setOpen(isActive);
+    }, [isActive]);
 
     return (
-        <DropdownBase {...props}>
-            {isActive && !props.isActive ? (
-                <InvisibleCloseButton onClick={() => setActive(!isActive)} />
+        <DropdownBase {...rest}>
+            {isOpen && !isActive ? (
+                <InvisibleCloseButton onClick={() => setOpen(!isOpen)} />
             ) : null}
 
-            {React.Children.map(props.children, (child, index) => {
-                if (!child) {
-                    return null;
-                }
+            {React.Children.map(children, (child, index) => {
+                switch (child && child.type) {
+                    case null:
+                        return null;
 
-                if (child.type === DaInput) {
-                    return React.cloneElement(child, {
-                        onClick: () => setActive(!isActive),
-                        key: index,
-                    });
-                }
+                    case DaInput:
+                        return React.cloneElement(child, {
+                            onClick: () => setOpen(!isOpen),
+                            key: index,
+                        });
 
-                if (child.type === Popin) {
-                    return React.cloneElement(child, {
-                        isActive: isActive,
-                        key: index,
-                    });
-                }
+                    case Popin:
+                        return React.cloneElement(child, {
+                            isActive: isOpen,
+                            key: index,
+                        });
 
-                return React.cloneElement(child, {
-                    onClick: () => setActive(!isActive),
-                    isActive: isActive,
-                    key: index,
-                });
+                    default:
+                        return React.cloneElement(child, {
+                            onClick: () => setOpen(!isOpen),
+                            isActive: isOpen,
+                            key: index,
+                        });
+                }
             })}
         </DropdownBase>
     );

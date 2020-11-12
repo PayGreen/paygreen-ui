@@ -14,8 +14,8 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    arrowBlockOptions,
-    arrowBlockDefault,
+    blockPositionOptions,
+    blockPositionDefault,
     iconSizeOptions,
     fontSizeOptions,
     spaceOptions,
@@ -38,8 +38,8 @@ storiesOf(folder.popup + 'Message', module)
         <Message
             arrowBlock={select(
                 arrowBlockLabel,
-                arrowBlockOptions,
-                arrowBlockDefault,
+                blockPositionOptions,
+                blockPositionDefault,
             )}
             colorType={radios(
                 'Color type',
@@ -86,8 +86,8 @@ storiesOf(folder.popup + 'Message', module)
         <Message
             arrowBlock={radios(
                 arrowBlockLabel,
-                arrowBlockOptions,
-                arrowBlockDefault,
+                blockPositionOptions,
+                blockPositionDefault,
             )}
             colorStatus={select(
                 colorStatusLabel,
