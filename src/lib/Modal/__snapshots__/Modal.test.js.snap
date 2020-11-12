@@ -14,7 +14,7 @@ exports[`renders without crashing 1`] = `
       className="style__ModalBodyBase-md16g0-0 gOAJTo"
     >
       <p
-        className="style__TextBase-sc-11ixwvd-0 jjYLjP"
+        className="style__TextBase-sc-11ixwvd-0 YbuHI"
       >
         This is the body.
       </p>

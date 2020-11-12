@@ -1,16 +1,11 @@
 import styled from 'styled-components';
-import { colorTypeOptions } from '../../../shared/constants';
 import { responsiveSpaces } from '../../../shared/spaces';
 import { underline } from '../../Title/style/base';
-import { mainColor, minimizeFont } from './constants';
-import { htmlTagStyle, uppercaseStyle, blockBackground } from './base';
+import { minimizeFont } from './constants';
+import { htmlTagStyle, uppercaseStyle, color, blockBackground } from './base';
 
 const TextBase = styled.p`
     ${responsiveSpaces('margin')};
-    color: ${props =>
-        props.colorType === colorTypeOptions.reverse
-            ? props.theme.wab.white00
-            : mainColor[props.colorPallet]};
     line-height: ${props => props.theme.font.lineHeight.md};
     text-align: ${props => props.align};
     font-size: ${props => props.theme.font.size[props.textSize]};
@@ -21,6 +16,7 @@ const TextBase = styled.p`
     }
 
     ${props => htmlTagStyle[props.htmlTag]};
+    ${props => color[props.colorType]};
     ${props => (props.hasBackground ? blockBackground[props.colorType] : null)};
     ${props => (props.hasUppercase ? uppercaseStyle : null)};
     ${props => (props.hasUnderline ? underline : null)};

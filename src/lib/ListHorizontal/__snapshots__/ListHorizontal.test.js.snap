@@ -6,7 +6,7 @@ exports[`renders without crashing 1`] = `
 >
   <li>
     <p
-      className="style__TextBase-sc-11ixwvd-0 jjYLjP"
+      className="style__TextBase-sc-11ixwvd-0 YbuHI"
     >
       Text 1
     </p>
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
       className="style__DotBase-dbqcuj-0 iNACDc"
     />
     <p
-      className="style__TextBase-sc-11ixwvd-0 jjYLjP"
+      className="style__TextBase-sc-11ixwvd-0 YbuHI"
     >
       Text 2
     </p>
@@ -26,7 +26,7 @@ exports[`renders without crashing 1`] = `
       className="style__DotBase-dbqcuj-0 iNACDc"
     />
     <p
-      className="style__TextBase-sc-11ixwvd-0 jjYLjP"
+      className="style__TextBase-sc-11ixwvd-0 YbuHI"
     >
       Text 3
     </p>

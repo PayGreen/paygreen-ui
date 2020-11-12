@@ -8,7 +8,7 @@ const HRBase = styled.div`
     margin-top: ${props => props.theme.space[props.marginTop]};
     margin-bottom: ${props => props.theme.space[props.marginBottom]};
     border: none;
-    background: ${props =>
+    background-color: ${props =>
         props.colorType === colorTypeOptions.reverse
             ? props.theme.wab.white00
             : mainColor[props.colorPallet]};

@@ -9,7 +9,6 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
-    greyDefault,
     formStatusOptions,
     formStatusDefault,
     fontSizeOptions,
@@ -21,9 +20,15 @@ import {
 } from '../../shared/constants';
 import { TitleBase } from './style';
 
+const { base, md, lg, xl, ...smallFontSizes } = fontSizeOptions;
+
 const Title = props => {
     return (
-        <TitleBase as={props.htmlTag} {...props}>
+        <TitleBase
+            as={props.htmlTag}
+            {...props}
+            isSmallText={Object.values(smallFontSizes).includes(props.textSize)}
+        >
             {props.children}
         </TitleBase>
     );
@@ -52,7 +57,7 @@ Title.defaultProps = {
     colorType: colorTypeDefault,
     colorPallet: colorPalletOptions.wab,
     colorTheme: colorThemeDefault,
-    colorWab: greyDefault,
+    colorWab: greyOptions.grey60,
     colorStatus: formStatusDefault,
 
     textSize: fontSizeDefault,

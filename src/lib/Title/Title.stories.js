@@ -9,7 +9,6 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     greyOptions,
-    greyDefault,
     formStatusOptions,
     formStatusDefault,
     fontSizeOptions,
@@ -36,7 +35,7 @@ storiesOf(folder.text + 'Title', module)
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select('Grey color', greyOptions, greyDefault)}
+            colorWab={select('Grey color', greyOptions, greyOptions.grey60)}
             colorStatus={select(
                 'Status color',
                 formStatusOptions,

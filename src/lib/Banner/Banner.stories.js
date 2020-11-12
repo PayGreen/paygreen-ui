@@ -17,6 +17,8 @@ import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Banner from './Banner';
 
+const colorThemeLabel = 'Color theme';
+
 storiesOf(folder.block + 'Banner', module)
     .addDecorator(withKnobs)
     .add('Banner', () => (
@@ -37,13 +39,18 @@ storiesOf(folder.block + 'Banner', module)
                 gradientOptions.theme,
             )}
             colorTheme={select(
-                'Color theme',
+                colorThemeLabel,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
         >
             <Card hasBackground={false}>
                 <Title
+                    colorTheme={select(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
                     colorType={colorTypeOptions.reverse}
                     textSize={fontSizeOptions.xl}
                     marginLateral={spaceOptions.md}
@@ -53,6 +60,11 @@ storiesOf(folder.block + 'Banner', module)
                 </Title>
 
                 <Text
+                    colorTheme={select(
+                        colorThemeLabel,
+                        colorThemeOptions,
+                        colorThemeDefault,
+                    )}
                     colorType={colorTypeOptions.reverse}
                     marginLateral={spaceOptions.md}
                     marginTop={spaceOptions.md}
