@@ -6,7 +6,6 @@ import { activeStyle, hiddenStyle, popinAlign } from './base';
 const PopinBase = styled.div`
     position: absolute;
     z-index: ${props => props.theme.zindex.popin};
-    margin-top: ${props => props.theme.space[props.marginTop]};
     width: ${props =>
         props.blockWidth !== spaceOptions.none
             ? math(props.theme.blockWidth[props.blockWidth] + ' / 2')
@@ -19,7 +18,6 @@ const PopinBase = styled.div`
         transparentize(props.theme.shadow.opacity.sm, props.theme.wab.black00)};
     transition-property: all, transform;
     transition-duration: ${props => props.theme.transition.xs}, 0s;
-    transform-origin: top;
 
     ${props => (props.isActive ? activeStyle : hiddenStyle)};
     ${props => popinAlign[props.align]};

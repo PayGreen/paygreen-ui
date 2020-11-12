@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
-    arrowBlockOptions,
+    blockPositionOptions,
     buttonSizeOptions,
     fontSizeOptions,
     formStatusOptions,
@@ -122,7 +122,7 @@ storiesOf(folder.form + 'FormControl', module)
 
             {boolean('Is DaHelp clicked', true) ? (
                 <Message
-                    arrowBlock={arrowBlockOptions.topRight}
+                    arrowBlock={blockPositionOptions.topRight}
                     blockWidth={inputWidthOptions.sm}
                 >
                     {MessageContent}
@@ -149,7 +149,7 @@ storiesOf(folder.form + 'FormControl', module)
             />
 
             <Message
-                arrowBlock={arrowBlockOptions.topLeft}
+                arrowBlock={blockPositionOptions.topLeft}
                 fieldSize={buttonSizeOptions.sm}
                 blockWidth={inputWidthOptions.xs}
             >

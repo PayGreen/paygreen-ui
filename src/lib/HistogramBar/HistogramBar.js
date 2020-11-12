@@ -6,7 +6,7 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     spaceOptions,
-    arrowBlockOptions,
+    blockPositionOptions,
     fontSizeOptions,
     inputWidthOptions,
     inputWidthDefault,
@@ -35,7 +35,7 @@ const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
                     colorType={colorTypeOptions.reverse}
                     colorPallet={colorPalletDefault}
                     colorTheme={rest.colorTheme}
-                    arrowBlock={arrowBlockOptions.bottomCenter}
+                    arrowBlock={blockPositionOptions.bottomCenter}
                     blockWidth={inputWidthOptions.xs}
                     fieldSize={buttonSizeOptions.sm}
                 >

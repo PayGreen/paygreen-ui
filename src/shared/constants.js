@@ -177,8 +177,8 @@ const cornerPositionOptions = {
 
 const cornerPositionDefault = cornerPositionOptions.left;
 
-// Arrow block position
-const arrowBlockOptions = {
+// Block position
+const blockPositionOptions = {
     none: 'none',
     topLeft: 'topLeft',
     topCenter: 'topCenter',
@@ -188,9 +188,10 @@ const arrowBlockOptions = {
     bottomRight: 'bottomRight',
     left: 'left',
     right: 'right',
+    center: 'center',
 };
 
-const arrowBlockDefault = arrowBlockOptions.none;
+const blockPositionDefault = blockPositionOptions.none;
 
 // Arrow direction
 const arrowDirectionOptions = {
@@ -518,8 +519,8 @@ export {
     imageTypeDefault,
     cornerPositionOptions,
     cornerPositionDefault,
-    arrowBlockOptions,
-    arrowBlockDefault,
+    blockPositionOptions,
+    blockPositionDefault,
     arrowDirectionOptions,
     arrowDirectionDefault,
     skeletonItemTypeOptions,

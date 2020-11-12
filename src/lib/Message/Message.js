@@ -12,15 +12,24 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
-    arrowBlockOptions,
-    arrowBlockDefault,
+    blockPositionOptions,
+    blockPositionDefault,
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
 import { MessageBase } from './style';
 
-const Message = props => {
-    return <MessageBase {...props}>{props.children}</MessageBase>;
+const Message = ({ arrowBlock, children, ...rest }) => {
+    const arrow =
+        arrowBlock === blockPositionOptions.center
+            ? blockPositionOptions.topCenter
+            : arrowBlock;
+
+    return (
+        <MessageBase {...rest} arrowBlock={arrow}>
+            {children}
+        </MessageBase>
+    );
 };
 
 Message.propTypes = {
@@ -33,7 +42,7 @@ Message.propTypes = {
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
-    arrowBlock: PropTypes.oneOf(Object.values(arrowBlockOptions)),
+    arrowBlock: PropTypes.oneOf(Object.values(blockPositionOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
 };
@@ -45,7 +54,7 @@ Message.defaultProps = {
     colorStatus: formStatusDefault,
     blockWidth: inputWidthDefault,
     fieldSize: buttonSizeDefault,
-    arrowBlock: arrowBlockDefault,
+    arrowBlock: blockPositionDefault,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
 };
