@@ -1,11 +1,18 @@
 import { css } from 'styled-components';
 import { MenuSecondaryBase } from '../../MenuSecondary/style';
+import { MenuListBase } from '../../MenuList/style';
 import { MenuItemBase } from '../../MenuItem/style';
 import { DotBase } from '../../Dot/style';
 import { LogoBase } from '../../Logo/style';
 
 const hiddenStyle = css`
     margin-top: -${props => props.theme.grid.header};
+
+    @media (${props => props.theme.query.min.lg}) {
+        ${MenuListBase} {
+            display: none;
+        }
+    }
 `;
 
 const headerStyle = css`
