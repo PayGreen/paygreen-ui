@@ -47,7 +47,7 @@ MenuSecondary.propTypes = {
 };
 
 MenuSecondary.defaultProps = {
-    isOpen: PropTypes.false,
+    isOpen: false,
 };
 
 export default MenuSecondary;
