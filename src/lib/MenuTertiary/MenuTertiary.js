@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
-import { useDebounce } from '../../shared/hook/useDebounce';
-import { useWindowSize } from '../../shared/hook/useWindowSize';
+import { useDebounce, useWindowSize } from '../../shared/hook';
 import {
     debounceTime,
     colorThemeOptions,
@@ -75,7 +74,7 @@ const MenuTertiary = props => {
                     if (!child) {
                         return null;
                     }
-                    
+
                     return React.cloneElement(child, {
                         key: index,
                         className:
