@@ -7,7 +7,10 @@ const MenuPrimary = props => {
     return (
         <MenuPrimaryBase {...props}>
             {props.isOpen ? (
-                <AutoBlockScroll hasScrollOnDesktop={true} />
+                <AutoBlockScroll
+                    theme={props.theme} // not necessary, only needed for tests
+                    hasScrollOnDesktop={true}
+                />
             ) : null}
 
             {props.children}
