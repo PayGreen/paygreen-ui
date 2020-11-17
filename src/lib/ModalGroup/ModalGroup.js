@@ -7,7 +7,11 @@ const ModalGroup = props => {
 
     return (
         <ModalContext.Provider value={{ isOpen, setOpen }}>
-            {isOpen ? <AutoBlockScroll /> : null}
+            {isOpen ? (
+                <AutoBlockScroll
+                    theme={props.theme} // not necessary, only needed for tests
+                />
+            ) : null}
 
             {React.Children.map(props.children, child => {
                 if (!child) {

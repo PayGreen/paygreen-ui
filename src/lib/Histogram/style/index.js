@@ -4,7 +4,10 @@ import { yaxisStyle } from './base';
 const HistogramBase = styled.div`
     position: relative;
     display: flex;
+    box-sizing: content-box;
+    height: ${props => props.theme.histogram.height[props.blockHeight]};
     width: fit-content;
+    min-width: ${props => props.theme.histogram.height.xs};
     padding: ${props => props.theme.space.sm};
     padding-bottom: 0;
     border: solid

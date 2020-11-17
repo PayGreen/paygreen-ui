@@ -19,7 +19,7 @@ import Text from '../Text/Text';
 import { HistogramBarBase } from './style';
 
 const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
-    if (maxValue <= 0 || value < 0) return; // avoid errors
+    if (maxValue <= 0 || value < 0) return null; // avoid errors
 
     const height = value > maxValue ? 100 : (value / maxValue) * 100;
 
