@@ -75,7 +75,7 @@ const hoverStyle = css`
         )};
     background-color: ${props => transparentize(1, props.theme.wab.white10)};
 
-    @media (${props => props.theme.query.max.lg}) {
+    @media ${props => props.theme.screen.max.lg} {
         background-color: ${props => props.theme.wab.white10};
     }
 
@@ -89,7 +89,7 @@ const hoverStyle = css`
             )};
         background-color: ${props => props.theme.wab.white00};
 
-        @media (${props => props.theme.query.max.lg}) {
+        @media ${props => props.theme.screen.max.lg} {
             background-color: ${props => props.theme.wab.white00};
         }
     }
@@ -99,7 +99,7 @@ const activeStyle = css`
     font-weight: ${props => props.theme.font.weight.bold};
     background-color: ${props => props.theme.wab.grey10};
 
-    @media (${props => props.theme.query.max.lg}) {
+    @media ${props => props.theme.screen.max.lg} {
         background-color: ${props => props.theme.wab.grey10};
     }
 `;

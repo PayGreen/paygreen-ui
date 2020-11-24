@@ -8,7 +8,7 @@ const SidebarBase = styled.div`
     width: 100%;
     overflow-y: hidden;
 
-    @media (${props => props.theme.query.max.md}) {
+    @media ${props => props.theme.screen.max.md} {
         display: grid;
         grid-template-rows: auto 1fr;
         grid-template-areas: 'topbar' 'box';
@@ -23,7 +23,7 @@ const SidebarBase = styled.div`
         }
     }
 
-    @media (${props => props.theme.query.min.md}) {
+    @media ${props => props.theme.screen.min.md} {
         width: ${props => props.theme.grid.sidebar};
         overflow-y: auto;
     }

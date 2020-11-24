@@ -8,7 +8,7 @@ const DaTableHeadCellBase = styled.div`
     font-size: ${props => props.theme.font.size.xs};
     font-weight: ${props => props.theme.font.weight.bold};
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         display: table-cell;
         padding: ${props => props.theme.space.sm + ' ' + props.theme.space.md};
         padding-top: 0;

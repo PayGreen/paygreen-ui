@@ -5,11 +5,25 @@ const responsive = {
     xl: 1360,
 };
 
+// Old way (for retro-compatibility)
+
 const query = (value, operator) => {
     if (operator == 'max') {
-        value -= 1;
+        value -= 0.01;
     }
     return operator + '-width: ' + value + 'px';
+};
+
+// New way
+
+const screen = (value, isMax = false) => {
+    const base = '(min-width: ' + value + 'px)';
+
+    if (isMax) {
+        return 'not all and ' + base;
+    } else {
+        return base;
+    }
 };
 
 const pallet = {
@@ -308,6 +322,20 @@ export const ThemeBase = {
             xl: query(responsive.xl, 'max'),
         },
     },
+    screen: {
+        min: {
+            sm: screen(responsive.sm),
+            md: screen(responsive.md),
+            lg: screen(responsive.lg),
+            xl: screen(responsive.xl),
+        },
+        max: {
+            sm: screen(responsive.sm, true),
+            md: screen(responsive.md, true),
+            lg: screen(responsive.lg, true),
+            xl: screen(responsive.xl, true),
+        },
+    }, 
     button: {
         paddingWidth: {
             sm: '22px',

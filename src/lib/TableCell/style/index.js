@@ -10,7 +10,7 @@ const TableCellBase = styled.div`
     padding: ${props => props.theme.space.sm} ${props => props.theme.space.md};
     color: ${props => props.theme.wab.grey60};
 
-    @media (${props => props.theme.query.max.sm}) {
+    @media ${props => props.theme.screen.max.sm} {
         font-size: 0.85em;
     }
 
@@ -23,7 +23,7 @@ const TableCellBase = styled.div`
             margin-right: ${props => props.theme.space.md};
         }
 
-        @media (${props => props.theme.query.max.md}) {
+        @media ${props => props.theme.screen.max.md} {
             display: none;
         }
     }
@@ -37,7 +37,7 @@ const TableCellBase = styled.div`
         font-size: ${props => props.theme.font.size.xs};
         font-style: italic;
 
-        @media (${props => props.theme.query.max.md}) {
+        @media ${props => props.theme.screen.max.md} {
             display: none;
         }
     }

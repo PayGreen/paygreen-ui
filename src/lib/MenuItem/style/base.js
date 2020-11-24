@@ -8,7 +8,7 @@ const noClickableStyle = css`
     border-bottom: solid
         ${props => props.theme.line + ' ' + props.theme.wab.white20};
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         color: ${props => props.theme.wab.grey40};
         border: none;
     }
@@ -19,7 +19,7 @@ const isClickableStyle = css`
     overflow-x: hidden;
     color: ${props => props.theme.color[props.colorTheme].main};
 
-    @media (${props => props.theme.query.max.lg}) {
+    @media ${props => props.theme.screen.max.lg} {
         padding-right: ${props => props.theme.space.md};
 
         &::before {
@@ -48,7 +48,7 @@ const isClickableStyle = css`
         }
     }
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         &::after {
             content: '';
             position: absolute;
@@ -70,7 +70,7 @@ const isClickableStyle = css`
     a:hover &,
     a:active &,
     a:focus & {
-        @media (${props => props.theme.query.max.lg}) {
+        @media ${props => props.theme.screen.max.lg} {
             padding-left: ${props => props.theme.space.md};
             padding-right: ${props => props.theme.space.sm};
 
@@ -79,7 +79,7 @@ const isClickableStyle = css`
             }
         }
 
-        @media (${props => props.theme.query.min.lg}) {
+        @media ${props => props.theme.screen.min.lg} {
             &::after {
                 width: 100%;
             }

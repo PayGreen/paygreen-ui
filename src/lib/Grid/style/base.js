@@ -19,7 +19,7 @@ const childrenMargins = css`
     & > * {
         margin: ${props => props.theme.space[props.childrenMargin]} auto !important;
 
-        @media (${props => props.theme.query.min.md}) {
+        @media ${props => props.theme.screen.min.md} {
             margin: ${props => props.theme.space[props.childrenMarginBig]} !important;
         }
     }
@@ -33,7 +33,7 @@ const gridGap = css`
             'space',
         )};
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         gap: ${props =>
             blockSpace(
                 'md',
@@ -53,19 +53,19 @@ const gridStyles = css`
 
 const gridTemplate = {
     custom: css`
-        @media (${props => props.theme.query.min.md}) {
+        @media ${props => props.theme.screen.min.md} {
             grid-template-columns: ${props => props.gridTemplateColumns};
         }
     `,
     auto: css`
-        @media (${props => props.theme.query.min.md}) {
+        @media ${props => props.theme.screen.min.md} {
             grid-template-columns: repeat(
                 ${props => props.columnNumber - 1},
                 1fr
             );
         }
 
-        @media (${props => props.theme.query.min.lg}) {
+        @media ${props => props.theme.screen.min.lg} {
             grid-template-columns: repeat(${props => props.columnNumber}, 1fr);
         }
     `,
@@ -73,7 +73,7 @@ const gridTemplate = {
 
 const displayStyle = {
     flex: css`
-        @media (${props => props.theme.query.min.md}) {
+        @media ${props => props.theme.screen.min.md} {
             display: flex;
             flex-direction: ${props => props.flexDirection};
             flex-wrap: ${props => props.flexWrap};
@@ -88,7 +88,7 @@ const displayStyle = {
         ${childrenMargins};
     `,
     grid: css`
-        @media (${props => props.theme.query.min.md}) {
+        @media ${props => props.theme.screen.min.md} {
             ${gridStyles};
         }
 
@@ -110,7 +110,7 @@ const displayStyle = {
             }
         }
 
-        @media (${props => props.theme.query.min.md}) {
+        @media ${props => props.theme.screen.min.md} {
             padding-top: ${props => props.theme.space[props.childrenMarginBig]};
             width: fit-content;
             columns: ${props => props.columnNumber - 1};
@@ -127,7 +127,7 @@ const displayStyle = {
             }
         }
 
-        @media (${props => props.theme.query.min.lg}) {
+        @media ${props => props.theme.screen.min.lg} {
             columns: ${props => props.columnNumber};
         }
     `,
@@ -148,7 +148,7 @@ function childrenShift(count, shiftSize, isNegative, isReverse) {
 
     return css`
         & > * {
-            @media (${props => props.theme.query.min.xl}) {
+            @media ${props => props.theme.screen.min.xl} {
                 ${styles};
             }
         }

@@ -10,7 +10,7 @@ const TextBase = styled.p`
     text-align: ${props => props.align};
     font-size: ${props => props.theme.font.size[props.textSize]};
 
-    @media (${props => props.theme.query.max.md}) {
+    @media ${props => props.theme.screen.max.md} {
         font-size: ${props =>
             props.theme.font.size[minimizeFont[props.textSize]]};
     }

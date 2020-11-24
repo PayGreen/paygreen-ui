@@ -148,7 +148,7 @@ const responsiveSpaces = (
             getSpace('sm', 'Left', toRemove, bottomCoeff, topCoeff, directions),
         )};
 
-        @media (${props => props.theme.query.min.md}) {
+        @media ${props => props.theme.screen.min.md} {
             ${directionalProperty(
                 propAttribute,
                 getSpace(

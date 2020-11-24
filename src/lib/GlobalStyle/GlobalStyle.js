@@ -11,7 +11,7 @@ const blockedScroll = {
         overflow-y: scroll !important;
     `,
     mobile: css`
-        @media (${props => props.theme.query.max.lg}) {
+        @media ${props => props.theme.screen.max.lg} {
             ${baseBodyStyle};
             overflow-y: scroll !important;
         }
@@ -23,7 +23,7 @@ const noScroll = {
         ${baseBodyStyle};
     `,
     mobile: css`
-        @media (${props => props.theme.query.max.lg}) {
+        @media ${props => props.theme.screen.max.lg} {
             ${baseBodyStyle};
         }
     `,

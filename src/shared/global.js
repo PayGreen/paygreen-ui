@@ -66,31 +66,31 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .hideOnMobile {
-        @media (${ThemeDefault.query.max.sm}) {
+        @media ${ThemeDefault.screen.max.sm} {
             display: none !important;
         }
     }
 
     .hideOnTablet {
-        @media (${ThemeDefault.query.max.md}) {
+        @media ${ThemeDefault.screen.max.md} {
             display: none !important;
         }
     }
 
     .hideOnDesktop {
-        @media (${ThemeDefault.query.min.md}) {
+        @media ${ThemeDefault.screen.min.md} {
             display: none !important;
         }
     }
 
     .hideOnSmallScreen {
-        @media (${ThemeDefault.query.max.lg}) {
+        @media ${ThemeDefault.screen.max.lg} {
             display: none !important;
         }
     }
 
     .hideOnBigScreen {
-        @media (${ThemeDefault.query.min.lg}) {
+        @media ${ThemeDefault.screen.min.lg} {
             display: none !important;
         }
     }

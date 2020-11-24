@@ -6,12 +6,12 @@ const DaTableCellBase = styled.div`
     font-size: ${props => props.theme.font.size.xs};
     padding: ${props => props.theme.space.xs};
 
-    @media (${props => props.theme.query.max.lg}) {
+    @media ${props => props.theme.screen.max.lg} {
         ${props => (props.isId ? idStyle : null)};
         ${props => (props.isMain ? mainStyle : notMainStyle)};
     }
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         position: relative;
         display: table-cell;
         vertical-align: middle;
@@ -39,7 +39,7 @@ const DaTableCellBase = styled.div`
     }
 
     .cell-label {
-        @media (${props => props.theme.query.min.lg}) {
+        @media ${props => props.theme.screen.min.lg} {
             display: none;
         }
     }
