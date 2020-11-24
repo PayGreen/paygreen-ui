@@ -1,4 +1,4 @@
-const responsive = {
+const breakpoints = {
     sm: 550,
     md: 960,
     lg: 1200,
@@ -8,7 +8,7 @@ const responsive = {
 // Old way (for retro-compatibility)
 
 const query = (value, operator) => {
-    if (operator == 'max') {
+    if (operator === 'max') {
         value -= 0.01;
     }
     return operator + '-width: ' + value + 'px';
@@ -25,6 +25,21 @@ const screen = (value, isMax = false) => {
         return base;
     }
 };
+
+const queries = {
+    min: {},
+    max: {},
+};
+
+const screens = queries;
+
+for (const [size, value] of Object.entries(breakpoints)) {
+    queries.min[size] = query(value, 'min');
+    queries.max[size] = query(value, 'max');
+
+    screens.min[size] = screen(value);
+    screens.max[size] = screen(value, true);
+}
 
 const pallet = {
     green: {
@@ -308,34 +323,9 @@ export const ThemeBase = {
         popin: 115,
         modal: 120,
     },
-    query: {
-        min: {
-            sm: query(responsive.sm, 'min'),
-            md: query(responsive.md, 'min'),
-            lg: query(responsive.lg, 'min'),
-            xl: query(responsive.xl, 'min'),
-        },
-        max: {
-            sm: query(responsive.sm, 'max'),
-            md: query(responsive.md, 'max'),
-            lg: query(responsive.lg, 'max'),
-            xl: query(responsive.xl, 'max'),
-        },
-    },
-    screen: {
-        min: {
-            sm: screen(responsive.sm),
-            md: screen(responsive.md),
-            lg: screen(responsive.lg),
-            xl: screen(responsive.xl),
-        },
-        max: {
-            sm: screen(responsive.sm, true),
-            md: screen(responsive.md, true),
-            lg: screen(responsive.lg, true),
-            xl: screen(responsive.xl, true),
-        },
-    }, 
+    query: queries,
+    screen: screens,
+    breakpoint: breakpoints,
     button: {
         paddingWidth: {
             sm: '22px',
