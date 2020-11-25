@@ -18,12 +18,7 @@ const query = (value, operator) => {
 
 const screen = (value, isMax = false) => {
     const base = '(min-width: ' + value + 'px)';
-
-    if (isMax) {
-        return 'not all and ' + base;
-    } else {
-        return base;
-    }
+    return isMax ? 'not all and ' + base : base;
 };
 
 const queries = {
@@ -31,7 +26,10 @@ const queries = {
     max: {},
 };
 
-const screens = queries;
+const screens = {
+    min: {},
+    max: {},
+};
 
 for (const [size, value] of Object.entries(breakpoints)) {
     queries.min[size] = query(value, 'min');
