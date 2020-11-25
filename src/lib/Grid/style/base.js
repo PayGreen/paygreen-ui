@@ -141,7 +141,7 @@ function childrenShift(count, shiftSize, isNegative, isReverse) {
             &:nth-child(${isReverse ? count - i + 1 : i}) {
                 margin-top: ${math(
                     (isNegative ? '-' : '') + shiftSize + '*' + (i - 1),
-                )};
+                )} !important;
             }
         `;
     }
