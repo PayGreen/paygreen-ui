@@ -78,11 +78,11 @@ const arrowBlockStyle = {
         ${rightStyle};
     `,
     left: css`
-        @media (${props => props.theme.query.max[arrowBreakpoint]}) {
+        @media ${props => props.theme.screen.max[arrowBreakpoint]} {
             ${topLeftStyle};
         }
 
-        @media (${props => props.theme.query.min[arrowBreakpoint]}) {
+        @media ${props => props.theme.screen.min[arrowBreakpoint]} {
             margin-left: ${arrowSize};
 
             &::after {
@@ -93,11 +93,11 @@ const arrowBlockStyle = {
         }
     `,
     right: css`
-        @media (${props => props.theme.query.max[arrowBreakpoint]}) {
+        @media ${props => props.theme.screen.max[arrowBreakpoint]} {
             ${bottomLeftStyle};
         }
 
-        @media (${props => props.theme.query.min[arrowBreakpoint]}) {
+        @media ${props => props.theme.screen.min[arrowBreakpoint]} {
             margin-right: ${arrowSize};
 
             &::after {

@@ -10,7 +10,7 @@ const MenuBase = styled.li`
         display: block;
     }
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         ${MenuListBase} {
             margin-left: 50%;
             transform: translateX(-50%) scale(0);

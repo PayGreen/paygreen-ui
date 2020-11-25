@@ -7,7 +7,7 @@ const menuBlock = css`
     box-sizing: border-box;
     margin: 0;
 
-    @media (${props => props.theme.query.max.lg}) {
+    @media ${props => props.theme.screen.max.lg} {
         position: fixed;
         overflow-y: auto;
         left: 0;
@@ -35,7 +35,7 @@ const menuBlock = css`
         }
     }
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         position: relative;
         display: flex;
         padding: 0;

@@ -12,7 +12,7 @@ const DaTableRowBase = styled.div`
         margin: ${props => props.theme.space.xs} 0;
     }
 
-    @media (${props => props.theme.query.max.lg}) {
+    @media ${props => props.theme.screen.max.lg} {
         margin: ${props => props.theme.space.xs};
         padding: ${props => props.theme.space.xs};
         border-radius: ${props => props.theme.radius.sm};
@@ -32,7 +32,7 @@ const DaTableRowBase = styled.div`
         ${toggableStyle};
     }
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         display: table-row;
 
         .cell-checkbox {

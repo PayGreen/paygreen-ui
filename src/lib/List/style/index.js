@@ -7,13 +7,13 @@ const ListBase = styled.ul`
     padding: .1px 0;
     ${responsiveSpaces('margin')};
 
-    @media (${props => props.theme.query.max.lg}) {
+    @media ${props => props.theme.screen.max.lg} {
         .dashed {
             display: none;
         }
     }
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         ${props => props.hasDashed ? dashedStyle : null};
     }
 `;

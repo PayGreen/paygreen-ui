@@ -10,7 +10,7 @@ const smallText = css`
 `;
 
 const bigText = css`
-    @media (${props => props.theme.query.max.md}) {
+    @media ${props => props.theme.screen.max.md} {
         font-size: ${props =>
             props.theme.font.size[minimizeFont[props.textSize]]};
     }

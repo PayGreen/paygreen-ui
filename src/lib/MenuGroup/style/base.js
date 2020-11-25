@@ -8,7 +8,7 @@ import { LogoBase } from '../../Logo/style';
 const hiddenStyle = css`
     margin-top: -${props => props.theme.grid.header};
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         ${MenuListBase} {
             display: none;
         }

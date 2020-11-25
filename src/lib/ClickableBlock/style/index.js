@@ -15,7 +15,7 @@ const ClickableBlockBase = styled.div`
     transition: all ${props => props.theme.transition.xs};
 
     .arrow {
-        @media (${props => props.theme.query.max.md}) {
+        @media ${props => props.theme.screen.max.md} {
             display: ${props => (props.isHiddenOnMobile ? 'none' : null)};
         }
     }

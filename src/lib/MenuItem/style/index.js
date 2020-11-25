@@ -23,7 +23,7 @@ const MenuItemBase = styled.div`
         }
     }
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         flex-direction: column;
         justify-content: center;
         z-index: ${props => props.theme.zindex.menu};

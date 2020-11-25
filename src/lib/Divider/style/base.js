@@ -10,13 +10,13 @@ const structureBase = css`
 `;
 
 const withText = css`
-    @media (${props => props.theme.query.max.md}) {
+    @media ${props => props.theme.screen.max.md} {
         .shape {
             display: none;
         }
     }
 
-    @media (${props => props.theme.query.min.md}) {
+    @media ${props => props.theme.screen.min.md} {
         ${structureBase};
     }
 `;

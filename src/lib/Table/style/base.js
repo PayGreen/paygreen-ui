@@ -24,11 +24,11 @@ const backgroundStyle = css`
     )};
     padding: ${props => props.theme.space.sm};
 
-    @media (${props => props.theme.query.min.md}) {
+    @media ${props => props.theme.screen.min.md} {
         padding: ${props => props.theme.space.md};
     }
 
-    @media (${props => props.theme.query.min.xl}) {
+    @media ${props => props.theme.screen.min.xl} {
         padding: ${props => props.theme.space.lg};
     }
 `;

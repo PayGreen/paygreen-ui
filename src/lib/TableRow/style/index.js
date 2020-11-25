@@ -9,7 +9,7 @@ const TableRowBase = styled.div`
     &:first-of-type {
         ${TableCellBase} {
             &:not(:first-of-type) {
-                @media (${props => props.theme.query.max.md}) {
+                @media ${props => props.theme.screen.max.md} {
                     vertical-align: bottom;
 
                     .content {

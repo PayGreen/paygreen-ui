@@ -19,7 +19,7 @@ const ModalContentBase = styled.div`
         ' ' +
         transparentize(props.theme.shadow.opacity.md, props.theme.wab.black00)};
 
-    @media (${props => props.theme.query.min.md}) {
+    @media ${props => props.theme.screen.min.md} {
         max-width: ${props => props.theme.blockWidth[props.blockWidth]};
         border-radius: ${props => props.theme.radius.lg};
         position: relative;

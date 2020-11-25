@@ -5,7 +5,7 @@ import { TextBase } from '../../Text/style';
 import { openStyle, closedStyle } from './base';
 
 const DaTableHeadBase = styled.div`
-    @media (${props => props.theme.query.max.lg}) {
+    @media ${props => props.theme.screen.max.lg} {
         margin: ${props => props.theme.space.xs};
         margin-bottom: ${props => props.theme.space.sm};
         padding: ${props => props.theme.space.sm};
@@ -22,7 +22,7 @@ const DaTableHeadBase = styled.div`
         ${props => (props.isHeadOpen ? openStyle : closedStyle)};
     }
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         display: table-header-group;
     }
 
@@ -32,7 +32,7 @@ const DaTableHeadBase = styled.div`
 
     ${InternalGridBase},
     ${TextBase} {
-        @media (${props => props.theme.query.min.lg}) {
+        @media ${props => props.theme.screen.min.lg} {
             display: none;
         }
     }

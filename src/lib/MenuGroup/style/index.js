@@ -12,7 +12,7 @@ const MenuGroupBase = styled.div`
         }
     }
 
-    @media (${props => props.theme.query.max.lg}) {
+    @media ${props => props.theme.screen.max.lg} {
         .main-nav {
             ${headerStyle};
             ${props =>
@@ -24,7 +24,7 @@ const MenuGroupBase = styled.div`
         }
     }
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         ${headerStyle};
         ${props => (props.isHidden ? hiddenStyle : null)};
         ${props => (props.hasTopStyle ? topStyle : null)};

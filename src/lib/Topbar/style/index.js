@@ -7,8 +7,8 @@ const TopbarBase = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid ${props => props.theme.line}
-        ${props => props.theme.wab.grey10};
+    border-bottom: solid
+        ${props => props.theme.line + ' ' + props.theme.wab.grey10};
     background-color: ${props => props.theme.wab.white20};
 `;
 

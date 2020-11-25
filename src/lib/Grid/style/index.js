@@ -10,7 +10,7 @@ const GridBase = styled.div`
         max-width: ${props => props.theme.grid.maxWidth};
     }
 
-    @media (${props => props.theme.query.min.md}) {
+    @media ${props => props.theme.screen.min.md} {
         padding: 0;
         ${props => gridAlign[props.align]};
     }

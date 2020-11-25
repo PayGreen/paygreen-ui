@@ -10,7 +10,7 @@ const FooterListBase = styled.ul`
     line-height: ${props => props.theme.font.lineHeight.md};
 
     & > li {
-        @media (${props => props.theme.query.max.lg}) {
+        @media ${props => props.theme.screen.max.lg} {
             margin-top: ${props => props.theme.space.sm};
             margin-bottom: ${props => props.theme.space.sm};
         }

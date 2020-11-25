@@ -31,7 +31,7 @@ const labelSize = {
     lg: css`
         width: ${props => props.theme.form.radio.md};
 
-        @media (${props => props.theme.query.min.sm}) {
+        @media ${props => props.theme.screen.min.sm} {
             width: ${props => props.theme.form.radio.lg};
         }
 
@@ -44,7 +44,7 @@ const labelSize = {
             height: 100%;
             min-height: ${props => props.theme.form.radio.md};
 
-            @media (${props => props.theme.query.min.sm}) {
+            @media ${props => props.theme.screen.min.sm} {
                 min-height: ${props => props.theme.form.radio.lg};
             }
 

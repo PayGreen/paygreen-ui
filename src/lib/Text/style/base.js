@@ -40,7 +40,7 @@ const htmlTagStyle = {
         font-size: ${props =>
             math(props.theme.font.size[props.textSize] + '* 0.7')};
 
-        @media (${props => props.theme.query.max.md}) {
+        @media ${props => props.theme.screen.max.md} {
             font-size: ${props =>
                 math(props.theme.font.size[props.textSize] + '* 0.6')};
         }

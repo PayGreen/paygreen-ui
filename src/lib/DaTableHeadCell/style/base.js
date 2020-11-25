@@ -3,7 +3,7 @@ import { math } from 'polished';
 import { IconBase } from '../../Icon/style';
 
 const isCheckboxStyle = css`
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         font-size: 0; /* remove cell label when it's only a select/deselect all Checkbox */
     }
 `;
@@ -11,7 +11,7 @@ const isCheckboxStyle = css`
 const calcShift = props => props.theme.icon.shift.sm;
 
 const mobileStyle = css`
-    @media (${props => props.theme.query.max.lg}) {
+    @media ${props => props.theme.screen.max.lg} {
         white-space: nowrap;
 
         .head-child {
@@ -70,7 +70,7 @@ const mobileStyle = css`
 `;
 
 const hideUselessCell = css`
-    @media (${props => props.theme.query.max.lg}) {
+    @media ${props => props.theme.screen.max.lg} {
         display: none;
     }
 `;

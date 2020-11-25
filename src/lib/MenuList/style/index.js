@@ -6,7 +6,7 @@ const MenuListBase = styled.ul`
     margin: 0;
     padding: ${props => props.theme.space.sm} 0;
 
-    @media (${props => props.theme.query.min.lg}) {
+    @media ${props => props.theme.screen.min.lg} {
         position: absolute;
         top: 100%;
         left: 0;

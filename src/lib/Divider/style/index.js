@@ -16,7 +16,7 @@ const DividerBase = styled.div`
         font-weight: ${props => props.theme.font.weight.bold};
         font-size: ${props => props.theme.font.size.md};
 
-        @media (${props => props.theme.query.min.md}) {
+        @media ${props => props.theme.screen.min.md} {
             font-size: ${props => props.theme.font.size.lg};
         }
     }
