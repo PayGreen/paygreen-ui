@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__MenuGroupBase-sc-18ypw1h-0 bDAkfy"
+  className="style__MenuGroupBase-sc-18ypw1h-0 iFiwdc"
 >
   <div
     className="main-nav"
@@ -16,16 +16,16 @@ exports[`renders without crashing 1`] = `
     </button>
   </div>
   <ul
-    className="style__MenuPrimaryBase-sc-4ap9m-0 fvBNOm"
+    className="style__MenuPrimaryBase-sc-4ap9m-0 kGEVJq"
   >
     <li
-      className="style__MenuBase-sc-6r1iet-0 EOKtT"
+      className="style__MenuBase-sc-6r1iet-0 fXoXfv"
     >
       <a
         href="#"
       >
         <div
-          className="style__MenuItemBase-sc-4wfueo-0 kQDKBR"
+          className="style__MenuItemBase-sc-4wfueo-0 hHHNLZ"
         >
           About us
         </div>
@@ -33,7 +33,7 @@ exports[`renders without crashing 1`] = `
     </li>
   </ul>
   <div
-    className="style__MenuSecondaryBase-lzoq71-0 kZXMNO"
+    className="style__MenuSecondaryBase-lzoq71-0 grbavq"
   >
     <ul
       className="menu"
@@ -42,13 +42,13 @@ exports[`renders without crashing 1`] = `
         className="menuElement"
       >
         <div
-          className="style__MenuBase-sc-6r1iet-0 EOKtT"
+          className="style__MenuBase-sc-6r1iet-0 fXoXfv"
         >
           <a
             href="#"
           >
             <div
-              className="style__MenuItemBase-sc-4wfueo-0 kQDKBR"
+              className="style__MenuItemBase-sc-4wfueo-0 hHHNLZ"
             >
               Login
             </div>

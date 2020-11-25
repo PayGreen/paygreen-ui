@@ -5,7 +5,7 @@ exports[`renders without crashing 1`] = `
   type="button"
 >
   <span
-    className="style__ButtonBase-pnyves-0 gSfdIB"
+    className="style__ButtonBase-pnyves-0 cuIwsX"
   >
     CTA button
   </span>

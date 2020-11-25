@@ -5,7 +5,7 @@ exports[`renders without crashing 1`] = `
   className="style__CardBase-f361m8-0 iJWuhS"
 >
   <span
-    className="style__TitleBase-td7fx4-0 hLSsJL"
+    className="style__TitleBase-td7fx4-0 gdGTKk"
   >
     Content 
     <strong>
@@ -13,7 +13,7 @@ exports[`renders without crashing 1`] = `
     </strong>
   </span>
   <p
-    className="style__TextBase-sc-11ixwvd-0 YbuHI"
+    className="style__TextBase-sc-11ixwvd-0 gQgxOT"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     <strong>
@@ -28,7 +28,7 @@ exports[`renders without crashing 1`] = `
       type="button"
     >
       <span
-        className="style__ButtonBase-pnyves-0 gSfdIB"
+        className="style__ButtonBase-pnyves-0 cuIwsX"
       >
         Your button
       </span>

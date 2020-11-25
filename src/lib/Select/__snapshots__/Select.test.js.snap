@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__SelectBase-mz8xml-0 eCarPe"
+  className="style__SelectBase-mz8xml-0 kaGtXK"
 >
   <label
     htmlFor="selectId1"
@@ -54,6 +54,12 @@ exports[`renders without crashing 1`] = `
           "sm": "400px",
           "xl": "800px",
           "xs": "300px",
+        },
+        "breakpoint": Object {
+          "lg": 1200,
+          "md": 960,
+          "sm": 550,
+          "xl": 1360,
         },
         "button": Object {
           "font": Object {
@@ -322,10 +328,10 @@ exports[`renders without crashing 1`] = `
         "pattern": "test-file-stub",
         "query": Object {
           "max": Object {
-            "lg": "max-width: 1199px",
-            "md": "max-width: 959px",
-            "sm": "max-width: 549px",
-            "xl": "max-width: 1359px",
+            "lg": "max-width: 1199.99px",
+            "md": "max-width: 959.99px",
+            "sm": "max-width: 549.99px",
+            "xl": "max-width: 1359.99px",
           },
           "min": Object {
             "lg": "min-width: 1200px",
@@ -349,6 +355,20 @@ exports[`renders without crashing 1`] = `
           "d315": "315deg",
           "d45": "45deg",
           "d90": "90deg",
+        },
+        "screen": Object {
+          "max": Object {
+            "lg": "not all and (min-width: 1200px)",
+            "md": "not all and (min-width: 960px)",
+            "sm": "not all and (min-width: 550px)",
+            "xl": "not all and (min-width: 1360px)",
+          },
+          "min": Object {
+            "lg": "(min-width: 1200px)",
+            "md": "(min-width: 960px)",
+            "sm": "(min-width: 550px)",
+            "xl": "(min-width: 1360px)",
+          },
         },
         "shadow": Object {
           "opacity": Object {

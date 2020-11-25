@@ -11,7 +11,7 @@ exports[`renders without crashing 1`] = `
       className="HistogramYaxisValue__YaxisValueBase-sc-1m1565e-0 kylFbc"
     >
       <span
-        className="style__TextBase-sc-11ixwvd-0 dulfDm"
+        className="style__TextBase-sc-11ixwvd-0 hdGhjN"
       >
         0
       </span>
@@ -20,7 +20,7 @@ exports[`renders without crashing 1`] = `
       className="HistogramYaxisValue__YaxisValueBase-sc-1m1565e-0 jhkxKN"
     >
       <span
-        className="style__TextBase-sc-11ixwvd-0 dulfDm"
+        className="style__TextBase-sc-11ixwvd-0 hdGhjN"
       >
         110
       </span>
@@ -33,7 +33,7 @@ exports[`renders without crashing 1`] = `
       className="bar"
     />
     <span
-      className="style__TextBase-sc-11ixwvd-0 dJSUZe"
+      className="style__TextBase-sc-11ixwvd-0 hNlheR"
     />
   </div>
   <div
@@ -43,7 +43,7 @@ exports[`renders without crashing 1`] = `
       className="bar"
     />
     <span
-      className="style__TextBase-sc-11ixwvd-0 dJSUZe"
+      className="style__TextBase-sc-11ixwvd-0 hNlheR"
     />
   </div>
   <div
@@ -53,7 +53,7 @@ exports[`renders without crashing 1`] = `
       className="bar"
     />
     <span
-      className="style__TextBase-sc-11ixwvd-0 dJSUZe"
+      className="style__TextBase-sc-11ixwvd-0 hNlheR"
     />
   </div>
   <div
@@ -63,7 +63,7 @@ exports[`renders without crashing 1`] = `
       className="bar"
     />
     <span
-      className="style__TextBase-sc-11ixwvd-0 dJSUZe"
+      className="style__TextBase-sc-11ixwvd-0 hNlheR"
     />
   </div>
 </div>

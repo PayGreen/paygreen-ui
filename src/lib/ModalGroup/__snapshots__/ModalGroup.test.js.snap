@@ -9,10 +9,10 @@ exports[`renders without crashing 1`] = `
     onClick={[Function]}
   />
   <div
-    className="style__ModalContentBase-atgy9x-0 gcZVUD"
+    className="style__ModalContentBase-atgy9x-0 bipIQD"
   >
     <div
-      className="style__ModalBodyBase-md16g0-0 gOAJTo"
+      className="style__ModalBodyBase-md16g0-0 lhDNNM"
     >
       This is the text
     </div>

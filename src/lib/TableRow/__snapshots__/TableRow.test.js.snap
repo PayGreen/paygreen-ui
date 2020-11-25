@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__TableRowBase-sc-1nkna8o-0 geKzIR"
+  className="style__TableRowBase-sc-1nkna8o-0 giGOKy"
 >
   <div
-    className="style__TableCellBase-xv8yz4-0 dLLoeY"
+    className="style__TableCellBase-xv8yz4-0 kGtLct"
   >
     <span
       className="content"
@@ -14,7 +14,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="style__TableCellBase-xv8yz4-0 dLLoeY"
+    className="style__TableCellBase-xv8yz4-0 kGtLct"
   >
     <span
       className="content"
@@ -23,7 +23,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="style__TableCellBase-xv8yz4-0 dLLoeY"
+    className="style__TableCellBase-xv8yz4-0 kGtLct"
   >
     <span
       className="content"

@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__ClickableBlockBase-l5esx8-0 hSAyLK"
+  className="style__ClickableBlockBase-l5esx8-0 bZSzZx"
   tabIndex="0"
 >
   Un ClickableBlock

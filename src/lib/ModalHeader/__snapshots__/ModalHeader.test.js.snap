@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__ModalHeaderBase-e1z6bj-0 clfhBu"
+  className="style__ModalHeaderBase-e1z6bj-0 hqembS"
 >
   <span
-    className="style__TitleBase-td7fx4-0 hLSsJL"
+    className="style__TitleBase-td7fx4-0 gdGTKk"
   >
     This is the Title
   </span>

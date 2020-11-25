@@ -8,7 +8,7 @@ exports[`renders without crashing 1`] = `
     className="style__MessageBase-ts6lfl-0 SVZMW"
   >
     <p
-      className="style__TextBase-sc-11ixwvd-0 iKlzdO"
+      className="style__TextBase-sc-11ixwvd-0 ePvKFZ"
     >
       60 in label
     </p>
@@ -17,7 +17,7 @@ exports[`renders without crashing 1`] = `
     className="bar"
   />
   <span
-    className="style__TextBase-sc-11ixwvd-0 dJSUZe"
+    className="style__TextBase-sc-11ixwvd-0 hNlheR"
   >
     label
   </span>

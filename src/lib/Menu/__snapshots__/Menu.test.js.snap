@@ -2,19 +2,19 @@
 
 exports[`renders without crashing 1`] = `
 <li
-  className="style__MenuBase-sc-6r1iet-0 EOKtT"
+  className="style__MenuBase-sc-6r1iet-0 fXoXfv"
 >
   <a
     href="#"
   >
     <div
-      className="style__MenuItemBase-sc-4wfueo-0 liCkWZ"
+      className="style__MenuItemBase-sc-4wfueo-0 eUyyLp"
     >
       Our products
     </div>
   </a>
   <ul
-    className="style__MenuListBase-sc-144u7yf-0 kAyikQ"
+    className="style__MenuListBase-sc-144u7yf-0 iWDTEQ"
   >
     <li>
       <a
@@ -40,7 +40,7 @@ exports[`renders without crashing 1`] = `
             Tree
           </span>
           <p
-            className="style__TextBase-sc-11ixwvd-0 YbuHI"
+            className="style__TextBase-sc-11ixwvd-0 gQgxOT"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
           </p>

@@ -5,7 +5,7 @@ exports[`renders without crashing 1`] = `
   className="style__LayoutBase-lk6ftt-0 hYmKYA"
 >
   <div
-    className="style__SidebarBase-qd29dm-0 uqVyl"
+    className="style__SidebarBase-qd29dm-0 gGRQeG"
   >
     <span
       className="style__IconBase-ak3679-0 cZjoZu icon"
@@ -23,7 +23,7 @@ exports[`renders without crashing 1`] = `
     className="style__MainBase-sc-1032smc-0 jrFLLv"
   >
     <header
-      className="style__TopbarBase-sc-167w4io-0 eRrogU"
+      className="style__TopbarBase-sc-167w4io-0 bgLEjQ"
     >
       <button
         className="style__MenuHamburgerBase-sc-1tooz6t-0 czVrHi"
