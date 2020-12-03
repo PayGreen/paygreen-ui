@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { setSpaces } from '../../shared/spaces';
 import {
     greyOptions,
-    radiusDefault,
     radiusOptions,
+    radiusDefault,
+    shadowSizeOptions,
+    shadowSizeDefault,
     spaceOptions,
     spaceDefault,
     skeletonTypeOptions,
@@ -16,15 +18,25 @@ import Card from '../Card/Card';
 import SkeletonItem from '../SkeletonItem/SkeletonItem';
 import { SkeletonBase, AbsoluteContent } from './style';
 
-const Skeleton = ({ padding, margin, lineNumber, ...rest }) => {
+const Skeleton = ({
+    lineNumber,
+    padding,
+    margin,
+    colorWab,
+    backgroundWabColor,
+    radiusSize,
+    shadowSize,
+    ...rest
+}) => {
     rest = setSpaces(rest, margin, padding);
+    lineNumber = lineNumber < 0 ? 0 : lineNumber;
 
     const image =
         rest.skeletonType === skeletonTypeOptions.imageCard ? (
             <AbsoluteContent theme={rest.theme} blockWidth={rest.blockWidth}>
                 <SkeletonItem
                     theme={rest.theme} // not necessary, only needed for tests
-                    colorWab={rest.colorWab}
+                    colorWab={colorWab}
                 />
             </AbsoluteContent>
         ) : null;
@@ -37,7 +49,7 @@ const Skeleton = ({ padding, margin, lineNumber, ...rest }) => {
                 theme={rest.theme} // not necessary, only needed for tests
                 key={index}
                 skeletonItemType={skeletonItemTypeOptions.text}
-                colorWab={rest.colorWab}
+                colorWab={colorWab}
                 radiusSize={radiusOptions.sm}
                 marginTop={spaceOptions.md}
                 blockHeight={imageSizeOptions.tiny}
@@ -54,9 +66,10 @@ const Skeleton = ({ padding, margin, lineNumber, ...rest }) => {
         <SkeletonBase {...rest}>
             <Card
                 theme={rest.theme} // not necessary, only needed for tests
-                colorWab={rest.backgroundWabColor}
-                shadowSize={rest.shadowSize}
-                radiusSize={rest.radiusSize}
+                blockWidth={rest.blockWidth}
+                colorWab={backgroundWabColor}
+                shadowSize={shadowSize}
+                radiusSize={radiusSize}
             >
                 {image}
 
@@ -64,11 +77,13 @@ const Skeleton = ({ padding, margin, lineNumber, ...rest }) => {
                     <SkeletonItem
                         theme={rest.theme} // not necessary, only needed for tests
                         skeletonItemType={skeletonItemTypeOptions.text}
-                        colorWab={rest.colorWab}
+                        colorWab={colorWab}
                         radiusSize={radiusOptions.sm}
                         blockHeight={imageSizeOptions.xxs}
                         blockWidth={imageSizeOptions.sm}
-                        marginBottom={spaceOptions.lg}
+                        marginBottom={
+                            lineNumber > 0 ? spaceOptions.lg : spaceOptions.none
+                        }
                         marginTop={
                             rest.skeletonType === skeletonTypeOptions.imageCard
                                 ? spaceOptions.lg
@@ -89,7 +104,7 @@ Skeleton.propTypes = {
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     backgroundWabColor: PropTypes.oneOf(Object.values(greyOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
-    blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
+    shadowSize: PropTypes.oneOf(Object.values(shadowSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     hasResponsivePadding: PropTypes.bool,
     padding: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -111,7 +126,7 @@ Skeleton.defaultProps = {
     colorWab: greyOptions.grey20,
     backgroundWabColor: greyOptions.grey10,
     radiusSize: radiusDefault,
-    blockHeight: spaceDefault.sm,
+    shadowSize: shadowSizeDefault,
     blockWidth: spaceDefault.sm,
     hasResponsivePadding: false,
     padding: spaceDefault,

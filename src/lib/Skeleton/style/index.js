@@ -9,16 +9,11 @@ import { CardBase } from '../../Card/style';
 import { SkeletonItemBase } from '../../SkeletonItem/style';
 
 const SkeletonBase = styled.div`
-    position: relative;
-    width: ${props => props.theme.blockWidth[props.blockWidth]};
     ${responsiveMarginStyle};
 
     ${CardBase} {
-        overflow: hidden;
-        max-width: 100%;
-        min-height: 100%;
-        filter: grayscale(1);
         ${responsivePaddingStyle};
+        filter: grayscale(1);
 
         ${props =>
             props.skeletonType === skeletonTypeOptions.imageCard
@@ -29,6 +24,7 @@ const SkeletonBase = styled.div`
 
 const AbsoluteContent = styled.div`
     position: absolute;
+    overflow: hidden;
     left: 0;
     right: 0;
     top: 0;

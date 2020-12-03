@@ -34,12 +34,12 @@ storiesOf(folder.loading + 'Skeleton', module)
         <Skeleton
             skeletonType={skeletonTypeOptions.textCard}
             blockWidth={select(blockWidthLabel, spaceOptions, spaceOptions.sm)}
+            colorWab={select(colorWabLabel, greyOptions, greyOptions.grey20)}
             backgroundWabColor={select(
                 backgroundWabColorLabel,
                 greyOptions,
                 greyOptions.grey10,
             )}
-            colorWab={select(colorWabLabel, greyOptions, greyOptions.grey20)}
             lineNumber={number(lineNumberLabel, 3)}
             shadowSize={radios(
                 shadowSizeLabel,
@@ -54,11 +54,6 @@ storiesOf(folder.loading + 'Skeleton', module)
     .add('Skeleton Image Card', () => (
         <Skeleton
             skeletonType={skeletonTypeOptions.imageCard}
-            backgroundWabColor={select(
-                backgroundWabColorLabel,
-                greyOptions,
-                greyOptions.white00,
-            )}
             blockWidth={select(blockWidthLabel, spaceOptions, spaceOptions.sm)}
             shadowSize={radios(
                 shadowSizeLabel,
