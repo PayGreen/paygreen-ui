@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { setSpaces } from '../../shared/spaces';
 import {
     greyOptions,
     radiusOptions,
@@ -12,13 +13,7 @@ import {
 import { SkeletonItemBase } from './style';
 
 const SkeletonItem = ({ children, isLoading, margin, ...rest }) => {
-    ['Top', 'Bottom', 'Left', 'Right'].forEach(direction => {
-        const marginDirection = 'margin' + direction;
-
-        if (!rest[marginDirection]) {
-            rest[marginDirection] = margin;
-        }
-    });
+    rest = setSpaces(rest, margin);
 
     return isLoading ? (
         <SkeletonItemBase hasChildren={!!children} {...rest}>

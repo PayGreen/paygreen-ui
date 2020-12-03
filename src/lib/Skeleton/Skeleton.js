@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { setSpaces } from '../../shared/spaces';
 import {
     greyOptions,
     radiusDefault,
@@ -13,19 +14,7 @@ import { SkeletonBase } from './style';
 import { SkeletonTypes } from './style/SkeletonTypes';
 
 const Skeleton = ({ padding, margin, ...rest }) => {
-    ['Top', 'Bottom', 'Left', 'Right'].forEach(direction => {
-        const paddingDirection = 'padding' + direction;
-
-        if (!rest[paddingDirection]) {
-            rest[paddingDirection] = padding;
-        }
-
-        const marginDirection = 'margin' + direction;
-
-        if (!rest[marginDirection]) {
-            rest[marginDirection] = margin;
-        }
-    });
+    rest = setSpaces(rest, margin, padding);
 
     /**
      * To recreate dynamically each Skeleton and its name based on type props
@@ -42,12 +31,12 @@ const Skeleton = ({ padding, margin, ...rest }) => {
 
 Skeleton.propTypes = {
     skeletonType: PropTypes.oneOf(Object.values(skeletonTypeOptions)),
-    radiusSize: PropTypes.oneOf(Object.values(radiusOptions)), 
+    lineNumber: PropTypes.number,
+    colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     backgroundWabColor: PropTypes.oneOf(Object.values(greyOptions)),
+    radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
     blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
-    colorWab: PropTypes.oneOf(Object.values(greyOptions)),
-    lineNumber: PropTypes.number,
     hasResponsivePadding: PropTypes.bool,
     padding: PropTypes.oneOf(Object.values(spaceOptions)),
     paddingTop: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -64,12 +53,12 @@ Skeleton.propTypes = {
 
 Skeleton.defaultProps = {
     skeletonType: skeletonTypeDefault,
-    radiusSize: radiusDefault,
+    lineNumber: 1,
+    colorWab: greyOptions.grey20,
     backgroundWabColor: greyOptions.grey10,
+    radiusSize: radiusDefault,
     blockHeight: spaceDefault.sm,
     blockWidth: spaceDefault.sm,
-    colorWab: greyOptions.grey20,
-    lineNumber: 1,
     hasResponsivePadding: false,
     padding: spaceDefault,
     hasResponsiveMargin: false,

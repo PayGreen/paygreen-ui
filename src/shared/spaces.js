@@ -51,6 +51,43 @@ const directionProperty = {
     lateral: 'Lateral',
 };
 
+const allDirectionProperty = {
+    top: directionProperty.top,
+    bottom: directionProperty.bottom,
+    left: 'Left',
+    right: 'Right',
+};
+
+/**
+ * 
+ * @param {Array} rest 
+ * @param {string} margin 
+ * @param {string} padding 
+ * 
+ * @returns {Array}
+ */
+const setSpaces = (rest, margin, padding) => {
+    Object.values(allDirectionProperty).forEach(direction => {
+        if (margin) {
+            const marginDirection = 'margin' + direction;
+            
+            if (!rest[marginDirection]) {
+                rest[marginDirection] = margin;
+            }
+        }
+
+        if (padding) {
+            const paddingDirection = 'padding' + direction;
+            
+            if (!rest[paddingDirection]) {
+                rest[paddingDirection] = padding;
+            }
+        }
+    });
+
+    return rest;
+};
+
 /**
  * Create CSS for responsive space attribute
  *
@@ -90,7 +127,9 @@ const responsiveSpaces = (
         directions,
     ) => {
         if (
-            ['Left', 'Right'].includes(direction) &&
+            [allDirectionProperty.left, allDirectionProperty.right].includes(
+                direction,
+            ) &&
             !directions.includes(direction)
         ) {
             direction = directionProperty.lateral;
@@ -131,7 +170,7 @@ const responsiveSpaces = (
             ),
             getSpace(
                 'sm',
-                'Right',
+                allDirectionProperty.right,
                 toRemove,
                 bottomCoeff,
                 topCoeff,
@@ -145,7 +184,14 @@ const responsiveSpaces = (
                 topCoeff,
                 directions,
             ),
-            getSpace('sm', 'Left', toRemove, bottomCoeff, topCoeff, directions),
+            getSpace(
+                'sm',
+                allDirectionProperty.left,
+                toRemove,
+                bottomCoeff,
+                topCoeff,
+                directions,
+            ),
         )};
 
         @media ${props => props.theme.screen.min.md} {
@@ -161,7 +207,7 @@ const responsiveSpaces = (
                 ),
                 getSpace(
                     'md',
-                    'Right',
+                    allDirectionProperty.right,
                     toRemove,
                     bottomCoeff,
                     topCoeff,
@@ -177,7 +223,7 @@ const responsiveSpaces = (
                 ),
                 getSpace(
                     'md',
-                    'Left',
+                    allDirectionProperty.left,
                     toRemove,
                     bottomCoeff,
                     topCoeff,
@@ -191,12 +237,13 @@ const responsiveSpaces = (
 const responsivePaddingStyle = css`
     ${props =>
         props.hasResponsivePadding
-            ? responsiveSpaces('padding', 0, 1, 1, [
-                  'Top',
-                  'Left',
-                  'Right',
-                  'Bottom',
-              ])
+            ? responsiveSpaces(
+                  'padding',
+                  0,
+                  1,
+                  1,
+                  Object.values(allDirectionProperty),
+              )
             : css`
                   padding-top: ${props => props.theme.space[props.paddingTop]};
                   padding-right: ${props =>
@@ -211,12 +258,13 @@ const responsivePaddingStyle = css`
 const responsiveMarginStyle = css`
     ${props =>
         props.hasResponsiveMargin
-            ? responsiveSpaces('margin', 0, 1, 1, [
-                  'Top',
-                  'Left',
-                  'Right',
-                  'Bottom',
-              ])
+            ? responsiveSpaces(
+                  'margin',
+                  0,
+                  1,
+                  1,
+                  Object.values(allDirectionProperty),
+              )
             : css`
                   margin-top: ${props => props.theme.space[props.marginTop]};
                   margin-right: ${props =>
@@ -230,6 +278,7 @@ const responsiveMarginStyle = css`
 export {
     calculateSpace,
     blockSpace,
+    setSpaces,
     responsiveSpaces,
     responsiveMarginStyle,
     responsivePaddingStyle,
