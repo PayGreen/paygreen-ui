@@ -14,6 +14,7 @@ const BannerImage = props => {
 };
 
 BannerImage.propTypes = {
+    image: PropTypes.string.isRequired,
     gradient: PropTypes.oneOf(Object.values(gradientOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     topStyle: PropTypes.oneOf(Object.values(decorationOptions)),
