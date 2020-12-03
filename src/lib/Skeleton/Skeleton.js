@@ -9,23 +9,77 @@ import {
     spaceDefault,
     skeletonTypeOptions,
     skeletonTypeDefault,
+    skeletonItemTypeOptions,
+    imageSizeOptions,
 } from '../../shared/constants';
-import { SkeletonBase } from './style';
-import { SkeletonTypes } from './style/SkeletonTypes';
+import Card from '../Card/Card';
+import SkeletonItem from '../SkeletonItem/SkeletonItem';
+import { SkeletonBase, AbsoluteContent } from './style';
 
-const Skeleton = ({ padding, margin, ...rest }) => {
+const Skeleton = ({ padding, margin, lineNumber, ...rest }) => {
     rest = setSpaces(rest, margin, padding);
 
-    /**
-     * To recreate dynamically each Skeleton and its name based on type props
-     */
-    const skeletonCustomComponent = props => {
-        const SkeletonComponent = SkeletonTypes[props.skeletonType];
-        return <SkeletonComponent {...props} />;
-    };
+    const image =
+        rest.skeletonType === skeletonTypeOptions.imageCard ? (
+            <AbsoluteContent theme={rest.theme} blockWidth={rest.blockWidth}>
+                <SkeletonItem
+                    theme={rest.theme} // not necessary, only needed for tests
+                    colorWab={rest.colorWab}
+                />
+            </AbsoluteContent>
+        ) : null;
+
+    const texts = [];
+
+    for (let index = 0; index < lineNumber; index++) {
+        texts.push(
+            <SkeletonItem
+                theme={rest.theme} // not necessary, only needed for tests
+                key={index}
+                skeletonItemType={skeletonItemTypeOptions.text}
+                colorWab={rest.colorWab}
+                radiusSize={radiusOptions.sm}
+                marginTop={spaceOptions.md}
+                blockHeight={imageSizeOptions.tiny}
+                blockWidth={
+                    rest.skeletonType === skeletonTypeOptions.textCard
+                        ? imageSizeOptions.auto
+                        : null
+                }
+            />,
+        );
+    }
 
     return (
-        <SkeletonBase {...rest}>{skeletonCustomComponent(rest)}</SkeletonBase>
+        <SkeletonBase {...rest}>
+            <Card
+                theme={rest.theme} // not necessary, only needed for tests
+                colorWab={rest.backgroundWabColor}
+                shadowSize={rest.shadowSize}
+                radiusSize={rest.radiusSize}
+            >
+                {image}
+
+                <div className="content">
+                    <SkeletonItem
+                        theme={rest.theme} // not necessary, only needed for tests
+                        skeletonItemType={skeletonItemTypeOptions.text}
+                        colorWab={rest.colorWab}
+                        radiusSize={radiusOptions.sm}
+                        blockHeight={imageSizeOptions.xxs}
+                        blockWidth={imageSizeOptions.sm}
+                        marginBottom={spaceOptions.lg}
+                        marginTop={
+                            rest.skeletonType === skeletonTypeOptions.imageCard
+                                ? spaceOptions.lg
+                                : null
+                        }
+                    />
+
+                    {texts}
+                </div>
+            </Card>
+        </SkeletonBase>
     );
 };
 
