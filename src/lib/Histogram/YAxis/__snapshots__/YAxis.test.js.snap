@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__YAxisBase-fqe2pn-0 edtRyF"
+>
+  <div
+    className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+  >
+    <span
+      className="style__TextBase-sc-11ixwvd-0 hdGhjN"
+    >
+      123
+    </span>
+  </div>
+  <div
+    className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+  >
+    <span
+      className="style__TextBase-sc-11ixwvd-0 hdGhjN"
+    >
+      107
+    </span>
+  </div>
+  <div
+    className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+  >
+    <span
+      className="style__TextBase-sc-11ixwvd-0 hdGhjN"
+    >
+      64
+    </span>
+  </div>
+  <div
+    className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+  >
+    <span
+      className="style__TextBase-sc-11ixwvd-0 hdGhjN"
+    >
+      35
+    </span>
+  </div>
+  <div
+    className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+  >
+    <span
+      className="style__TextBase-sc-11ixwvd-0 hdGhjN"
+    >
+      0
+    </span>
+  </div>
+</div>
+`;
