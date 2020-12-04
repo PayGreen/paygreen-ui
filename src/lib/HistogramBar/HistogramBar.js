@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    colorTypeOptions,
     colorPalletDefault,
     colorThemeOptions,
     colorThemeDefault,
@@ -28,16 +27,20 @@ const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
             {...rest}
             heightValue={height}
             isDisabled={value === 0}
+            messagePosition={height > 50 ? 'bottom' : 'top'}
         >
             {legend ? (
                 <Message
                     theme={rest.theme} // not necessary, only needed for tests
-                    colorType={colorTypeOptions.reverse}
                     colorPallet={colorPalletDefault}
                     colorTheme={rest.colorTheme}
-                    arrowBlock={blockPositionOptions.bottomCenter}
                     blockWidth={inputWidthOptions.xs}
                     fieldSize={buttonSizeOptions.sm}
+                    arrowBlock={
+                        height > 50
+                            ? blockPositionOptions.topCenter
+                            : blockPositionOptions.bottomCenter
+                    }
                 >
                     <Text
                         theme={rest.theme} // not necessary, only needed for tests
