@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__HistogramBase-h3wpv-0 BFbLB"
+  className="style__HistogramBase-h3wpv-0 exLMOa"
 >
   <div
     className="style__YAxisBase-fqe2pn-0 kimwMk"
@@ -33,7 +33,7 @@ exports[`renders without crashing 1`] = `
       className="bars"
     >
       <div
-        className="style__HistogramBarBase-y733il-0 kRGnKN"
+        className="style__HistogramBarBase-y733il-0 eJsFLX"
       >
         <div
           className="bar"
@@ -43,7 +43,7 @@ exports[`renders without crashing 1`] = `
         />
       </div>
       <div
-        className="style__HistogramBarBase-y733il-0 jRnUod"
+        className="style__HistogramBarBase-y733il-0 iHIPoY"
       >
         <div
           className="bar"
@@ -53,7 +53,7 @@ exports[`renders without crashing 1`] = `
         />
       </div>
       <div
-        className="style__HistogramBarBase-y733il-0 dVLhgZ"
+        className="style__HistogramBarBase-y733il-0 kFfzMD"
       >
         <div
           className="bar"
@@ -63,7 +63,7 @@ exports[`renders without crashing 1`] = `
         />
       </div>
       <div
-        className="style__HistogramBarBase-y733il-0 jCIpqe"
+        className="style__HistogramBarBase-y733il-0 DxtMZ"
       >
         <div
           className="bar"
