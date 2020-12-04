@@ -19,6 +19,11 @@ const HistogramBase = styled.div`
             )};
         position: relative;
         overflow-y: auto;
+        mask-image: linear-gradient(
+            to left,
+            transparent,
+            black ${props => props.theme.space.lg}
+        );
     }
 
     .bars {
