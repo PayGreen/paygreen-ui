@@ -49,6 +49,7 @@ const HistogramBarBase = styled.div`
     ${MessageBase} {
         pointer-events: none;
         z-index: ${props => props.theme.zindex.front};
+        display: block;
         position: absolute;
         bottom: ${props => props.heightValue}%;
         min-width: 9ch;
