@@ -85,7 +85,7 @@ storiesOf(folder.graph + 'Histogram', module)
                 inputWidthOptions,
                 inputWidthDefault,
             )}
-            marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
             marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
         >
             {children.map((sample, index) => (
