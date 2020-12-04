@@ -7,11 +7,10 @@ import {
     inputWidthOptions,
     inputWidthDefault,
     spaceOptions,
+    spaceDefault,
 } from '../../shared/constants';
 import HistogramBar from '../HistogramBar/HistogramBar';
 import Histogram from './Histogram';
-
-const displayYaxisLabel = 'Display Y-axis';
 
 const children = [
     {
@@ -65,10 +64,18 @@ storiesOf(folder.graph + 'Histogram', module)
     .add('Histogram', () => (
         <Histogram
             yaxisUnit="€"
-            hasYaxisMin={boolean(displayYaxisLabel, true)}
-            hasYaxisMax={boolean(displayYaxisLabel, true)}
-            yaxisValues={boolean(displayYaxisLabel, true) ? [30, 60] : []}
-            isRelativeYaxis={boolean('Has relative Y-axis', false)}
+            hasYaxisMin={boolean('Has Y-axis min', true)}
+            hasYaxisMax={boolean('Has Y-axis max', true)}
+            yaxisValues={select(
+                'Y-axis values',
+                {
+                    none: [],
+                    '30 and 60': [30, 60],
+                    '55.4 and 98.7': [55.4, 98.7],
+                },
+                [30, 60],
+            )}
+            isRelativeYaxis={boolean('Is relative Y-axis', false)}
             maxValue={number('Max value', 120, {
                 range: true,
                 max: 150,
@@ -78,12 +85,8 @@ storiesOf(folder.graph + 'Histogram', module)
                 inputWidthOptions,
                 inputWidthDefault,
             )}
-            marginTop={select('Margin top', spaceOptions, spaceOptions.xl)}
-            marginBottom={select(
-                'Margin bottom',
-                spaceOptions,
-                spaceOptions.md,
-            )}
+            marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
         >
             {children.map((sample, index) => (
                 <HistogramBar
