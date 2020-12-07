@@ -13,7 +13,7 @@ const CornerBase = styled.div`
     position: absolute;
     z-index: ${props => props.theme.zindex.corner};
     top: 0;
-    ${props => positionStyle[props.cornerPosition]};
+    ${props => positionStyle[props.position]};
     ${props => (props.hasChildren ? squareStyle : bannerStyle)};
 
     .corner {
@@ -32,10 +32,10 @@ const CornerBase = styled.div`
     ${PopinBase} {
         opacity: 0;
         pointer-events: none;
-        ${props => positionStyle[props.cornerPosition]};
+        ${props => positionStyle[props.position]};
         ${props =>
             props.hasCenteredPopin
-                ? centeredPopinStyle[props.cornerPosition]
+                ? centeredPopinStyle[props.position]
                 : null};
 
         &::before {

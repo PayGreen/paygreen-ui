@@ -75,7 +75,7 @@ storiesOf(folder.block + 'Card', module)
             <Corner
                 label="Since 2016"
                 colorStyle={colorStyleOptions.light}
-                cornerPosition={lateralPositionOptions.right}
+                position={lateralPositionOptions.right}
                 colorTheme={radios(
                     colorThemeLabel,
                     colorThemeOptions,
@@ -459,7 +459,7 @@ storiesOf(folder.block + 'Card', module)
         >
             <Corner
                 label="?"
-                cornerPosition={lateralPositionOptions.right}
+                position={lateralPositionOptions.right}
                 colorPallet={
                     radios(
                         colorPalletLabel,

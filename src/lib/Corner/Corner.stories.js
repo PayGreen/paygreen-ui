@@ -30,7 +30,7 @@ import Corner from './Corner';
 
 const { wab, ...cornerColorPalletOptions } = colorPalletOptions;
 
-const cornerPositionLabel = 'Position';
+const positionLabel = 'Position';
 const colorStyleLabel = 'Color style';
 const radiusSizeLabel = 'Radius size';
 const colorPalletLabel = 'Color pallet';
@@ -42,8 +42,8 @@ storiesOf(folder.block + 'Corner', module)
     .add('Basic Corner', () => (
         <Corner
             label={text('Label', 'Corner')}
-            cornerPosition={radios(
-                cornerPositionLabel,
+            position={radios(
+                positionLabel,
                 lateralPositionOptions,
                 lateralPositionDefault,
             )}
@@ -72,8 +72,8 @@ storiesOf(folder.block + 'Corner', module)
     .add('Corner with Popin', () => (
         <Corner
             label="?"
-            cornerPosition={radios(
-                cornerPositionLabel,
+            position={radios(
+                positionLabel,
                 lateralPositionOptions,
                 lateralPositionDefault,
             )}
