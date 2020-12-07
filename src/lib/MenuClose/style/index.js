@@ -1,21 +1,34 @@
 import styled from 'styled-components';
+import { position } from './base';
 
 const MenuCloseBase = styled.button`
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 190px;
-    max-width: 100%;
+    ${props => position[props.position]};
 
     .icon {
         position: absolute;
     }
 
     .background {
-        width: 100%;
         fill: ${props => props.theme.color[props.colorTheme].light};
+        transition: all ${props => props.theme.transition.sm};
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        .icon {
+            svg {
+                fill: ${props => props.theme.wab.white00};
+            }
+        }
+
+        .background {
+            fill: ${props => props.theme.color[props.colorTheme].main};
+        }
     }
 `;
 
