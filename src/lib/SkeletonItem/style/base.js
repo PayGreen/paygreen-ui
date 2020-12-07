@@ -1,5 +1,4 @@
 import { css, keyframes } from 'styled-components';
-import { transparentize } from 'polished';
 import {
     imageSizeOptions,
     skeletonItemTypeDefault,
@@ -34,30 +33,4 @@ const loading = keyframes`
     }
 `;
 
-const isLoadingStyle = css`
-    background-color: ${props => props.theme.wab[props.colorWab]};
-
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        transform: translateX(-100%);
-        background-image: linear-gradient(
-            -70deg,
-            ${props => transparentize(1, props.theme.wab.white00)} 40%,
-            ${props => transparentize(0.8, props.theme.wab.white00)} 40% 60%,
-            ${props => transparentize(1, props.theme.wab.white00)} 80%
-        );
-        animation: ${loading} ease-in-out 1.5s infinite;
-    }
-
-    & > * {
-        visibility: hidden;
-    }
-`;
-
-export { childrenStyle, noChildrenStyle, isLoadingStyle };
+export { childrenStyle, noChildrenStyle, loading };

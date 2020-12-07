@@ -1,23 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { setSpaces } from '../../shared/spaces';
 import { spaceOptions, spaceDefault } from '../../shared/constants';
 import { BoxBase } from './style';
 
 const Box = ({ children, padding, margin, ...rest }) => {
-    ['Top', 'Bottom', 'Left', 'Right'].forEach(direction => {
-        let paddingDirection = 'padding' + direction;
-
-        if (!rest[paddingDirection]) {
-            rest[paddingDirection] = padding;
-        }
-
-        let marginDirection = 'margin' + direction;
-
-        if (!rest[marginDirection]) {
-            rest[marginDirection] = margin;
-        }
-    });
-
+    rest = setSpaces(rest, margin, padding);
     return <BoxBase {...rest}>{children}</BoxBase>;
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { setSpaces } from '../../shared/spaces';
 import {
     greyOptions,
     radiusOptions,
@@ -11,25 +12,21 @@ import {
 } from '../../shared/constants';
 import { SkeletonItemBase } from './style';
 
-const SkeletonItem = ({ children, margin, ...rest }) => {
-    ['Top', 'Bottom', 'Left', 'Right'].forEach(direction => {
-        const marginDirection = 'margin' + direction;
+const SkeletonItem = ({ children, isLoading, margin, ...rest }) => {
+    rest = setSpaces(rest, margin);
 
-        if (!rest[marginDirection]) {
-            rest[marginDirection] = margin;
-        }
-    });
-
-    return (
+    return isLoading ? (
         <SkeletonItemBase hasChildren={!!children} {...rest}>
             {children}
         </SkeletonItemBase>
+    ) : (
+        children
     );
 };
 
 SkeletonItem.propTypes = {
-    skeletonItemType: PropTypes.oneOf(Object.values(skeletonItemTypeOptions)),
     isLoading: PropTypes.bool,
+    skeletonItemType: PropTypes.oneOf(Object.values(skeletonItemTypeOptions)),
     blockHeight: PropTypes.oneOf(Object.values(imageSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(imageSizeOptions)),
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
@@ -43,8 +40,8 @@ SkeletonItem.propTypes = {
 };
 
 SkeletonItem.defaultProps = {
-    skeletonItemType: skeletonItemTypeDefault,
     isLoading: true,
+    skeletonItemType: skeletonItemTypeDefault,
     blockHeight: spaceDefault.sm,
     blockWidth: spaceDefault.sm,
     colorWab: greyOptions.grey20,
