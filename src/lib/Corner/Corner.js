@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    cornerPositionOptions,
-    cornerPositionDefault,
+    lateralPositionOptions,
+    lateralPositionDefault,
     colorStyleOptions,
     colorStyleDefault,
     radiusOptions,
@@ -43,7 +43,7 @@ const Corner = ({ children, label, ...rest }) => {
 
 Corner.propTypes = {
     label: PropTypes.string.isRequired,
-    cornerPosition: PropTypes.oneOf(Object.values(cornerPositionOptions)),
+    cornerPosition: PropTypes.oneOf(Object.values(lateralPositionOptions)),
     hasCenteredPopin: PropTypes.bool,
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     colorStyle: PropTypes.oneOf(Object.values(colorStyleOptions)),
@@ -56,7 +56,7 @@ Corner.propTypes = {
 };
 
 Corner.defaultProps = {
-    cornerPosition: cornerPositionDefault,
+    cornerPosition: lateralPositionDefault,
     hasCenteredPopin: false,
     radiusSize: radiusDefault,
     colorStyle: colorStyleDefault,

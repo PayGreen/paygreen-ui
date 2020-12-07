@@ -24,7 +24,7 @@ import {
     spaceOptions,
     buttonSizeOptions,
     colorStyleOptions,
-    cornerPositionOptions,
+    lateralPositionOptions,
 } from '../../shared/constants';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
@@ -75,7 +75,7 @@ storiesOf(folder.block + 'Card', module)
             <Corner
                 label="Since 2016"
                 colorStyle={colorStyleOptions.light}
-                cornerPosition={cornerPositionOptions.right}
+                cornerPosition={lateralPositionOptions.right}
                 colorTheme={radios(
                     colorThemeLabel,
                     colorThemeOptions,
@@ -459,7 +459,7 @@ storiesOf(folder.block + 'Card', module)
         >
             <Corner
                 label="?"
-                cornerPosition={cornerPositionOptions.right}
+                cornerPosition={lateralPositionOptions.right}
                 colorPallet={
                     radios(
                         colorPalletLabel,

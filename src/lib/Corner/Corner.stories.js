@@ -9,8 +9,8 @@ import {
 } from '@storybook/addon-knobs';
 import {
     folder,
-    cornerPositionOptions,
-    cornerPositionDefault,
+    lateralPositionOptions,
+    lateralPositionDefault,
     colorStyleOptions,
     colorStyleDefault,
     radiusOptions,
@@ -44,8 +44,8 @@ storiesOf(folder.block + 'Corner', module)
             label={text('Label', 'Corner')}
             cornerPosition={radios(
                 cornerPositionLabel,
-                cornerPositionOptions,
-                cornerPositionDefault,
+                lateralPositionOptions,
+                lateralPositionDefault,
             )}
             colorStyle={radios(
                 colorStyleLabel,
@@ -74,8 +74,8 @@ storiesOf(folder.block + 'Corner', module)
             label="?"
             cornerPosition={radios(
                 cornerPositionLabel,
-                cornerPositionOptions,
-                cornerPositionDefault,
+                lateralPositionOptions,
+                lateralPositionDefault,
             )}
             hasCenteredPopin={boolean('Centered popin', false)}
             radiusSize={select(radiusSizeLabel, radiusOptions, radiusDefault)}
