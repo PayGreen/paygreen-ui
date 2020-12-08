@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import { debounceTime } from '../../shared/constants';
 import MenuGroup from '../MenuGroup/MenuGroup';
 import MenuTertiary from '../MenuTertiary/MenuTertiary';
 import { HeaderBase } from './style';
 
-const Header = props => {
+const Header = ({ hasTopStyle, children, ...rest }) => {
     const direction = {
         top: 'top',
         bottom: 'bottom',
     };
     const [scrollTop, setScrollTop] = useState(0);
     const [scrollDirection, setScrollDirection] = useState(direction.top);
+
+    const topStyle = hasTopStyle && scrollTop <= 0;
 
     useScrollPosition(
         ({ prevPos, currPos }) => {
@@ -28,7 +31,7 @@ const Header = props => {
 
     let hasMenuTertiary = false;
 
-    React.Children.map(props.children, child => {
+    React.Children.map(children, child => {
         if (child && child.type === MenuTertiary) {
             hasMenuTertiary = true;
         }
@@ -37,8 +40,8 @@ const Header = props => {
     const menuTertiaryStartDisplay = 110; // pixels to the top
 
     return (
-        <HeaderBase {...props} hasTopStyle={scrollTop <= 0}>
-            {React.Children.map(props.children, child => {
+        <HeaderBase {...rest} hasTopStyle={topStyle}>
+            {React.Children.map(children, child => {
                 if (!child) {
                     return null;
                 }
@@ -49,7 +52,7 @@ const Header = props => {
                             hasMenuTertiary &&
                             scrollDirection === direction.bottom &&
                             scrollTop > menuTertiaryStartDisplay,
-                        hasTopStyle: scrollTop <= 0,
+                        hasTopStyle: topStyle,
                     });
                 }
 
@@ -63,6 +66,14 @@ const Header = props => {
             })}
         </HeaderBase>
     );
+};
+
+Header.propTypes = {
+    hasTopStyle: PropTypes.bool,
+};
+
+Header.defaultProps = {
+    hasTopStyle: true,
 };
 
 export default Header;
