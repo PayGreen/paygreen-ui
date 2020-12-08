@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__HistogramBarBase-y733il-0 bsFJyo"
+  className="style__HistogramBarBase-y733il-0 bcAXoD"
 >
   <div
-    className="style__MessageBase-ts6lfl-0 SVZMW"
+    className="style__MessageBase-ts6lfl-0 hwMba-d"
   >
     <p
       className="style__TextBase-sc-11ixwvd-0 ePvKFZ"

@@ -1,23 +1,46 @@
 import styled from 'styled-components';
-import { yaxisStyle } from './base';
+import { math } from 'polished';
 
 const HistogramBase = styled.div`
-    position: relative;
     display: flex;
-    box-sizing: content-box;
-    height: ${props => props.theme.histogram.height[props.blockHeight]};
-    width: fit-content;
-    min-width: ${props => props.theme.histogram.height.xs};
-    padding: ${props => props.theme.space.sm};
-    padding-bottom: 0;
-    border: solid
-        ${props => props.theme.line + ' ' + props.theme.wab.grey20};
-    border-top: none;
-    border-right: none;
     margin-top: ${props => props.theme.space[props.marginTop]};
     margin-bottom: ${props => props.theme.space[props.marginBottom]};
+    padding-top: ${props => props.theme.space.sm};
 
-    ${props => props.hasYaxis ? yaxisStyle : null};
+    .container {
+        flex: 1;
+        height: ${props =>
+            math(
+                props.theme.histogram.height[props.blockHeight] +
+                    ' + ' +
+                    props.theme.space.lg +
+                    ' + ' +
+                    props.theme.line,
+            )};
+        position: relative;
+        overflow-y: auto;
+        mask-image: linear-gradient(
+            to left,
+            transparent,
+            black ${props => props.theme.space.lg}
+        );
+    }
+
+    .bars {
+        display: flex;
+        position: absolute;
+        box-sizing: content-box;
+        height: ${props => props.theme.histogram.height[props.blockHeight]};
+        padding: 0 ${props => props.theme.space.lg};
+        min-width: ${props =>
+            math(
+                props.theme.histogram.height.xs +
+                    ' - 2 * ' +
+                    props.theme.space.lg,
+            )};
+        border-bottom: solid
+            ${props => props.theme.line + ' ' + props.theme.wab.grey20};
+    }
 `;
 
 export { HistogramBase };

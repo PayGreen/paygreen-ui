@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { math } from 'polished';
 import { MessageBase } from '../../Message/style';
 import { TextBase } from '../../Text/style';
+import { messageStyle } from './base';
 
 const HistogramBarBase = styled.div`
     cursor: default;
@@ -24,10 +25,8 @@ const HistogramBarBase = styled.div`
 
         ${MessageBase} {
             pointer-events: initial;
+            margin-bottom: ${props => props.theme.space.xs};
             opacity: 1;
-            bottom: calc(
-                ${props => props.heightValue + '% + ' + props.theme.space.sm}
-            );
         }
 
         & > ${TextBase} {
@@ -49,11 +48,13 @@ const HistogramBarBase = styled.div`
     ${MessageBase} {
         pointer-events: none;
         z-index: ${props => props.theme.zindex.front};
+        display: block;
         position: absolute;
-        bottom: ${props => props.heightValue}%;
         min-width: 9ch;
         opacity: 0;
         transition: all ${props => props.theme.transition.xs};
+
+        ${props => messageStyle[props.messagePosition]};
     }
 
     & > ${TextBase} {

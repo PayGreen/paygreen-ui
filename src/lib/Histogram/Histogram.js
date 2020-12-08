@@ -7,7 +7,7 @@ import {
     inputWidthDefault,
 } from '../../shared/constants';
 import { HistogramBase } from './style';
-import HistogramYaxisValue from './HistogramYaxisValue';
+import YAxis from './YAxis/YAxis';
 
 const Histogram = ({
     children,
@@ -31,53 +31,34 @@ const Histogram = ({
         });
     }
 
-    let allYaxisValues = yaxisValues.map(value => {
-        if (isRelativeYaxis) {
-            return (value * max) / 100;
-        } else if (value > max) {
-            return max;
-        } else {
-            return value;
-        }
-    });
-
-    if (hasYaxisMin) {
-        allYaxisValues.push(0);
-    }
-
-    if (hasYaxisMax) {
-        allYaxisValues.push(max);
-    }
-
-    allYaxisValues = Array.from(new Set(allYaxisValues));
-
     return (
-        <HistogramBase {...rest} hasYaxis={allYaxisValues.length > 0}>
-            {allYaxisValues.length ? (
-                <div className="y-axis">
-                    {allYaxisValues.map(value => (
-                        <HistogramYaxisValue
-                            theme={rest.theme} // not necessary, only needed for tests
-                            key={value}
-                            value={value}
-                            maxValue={max}
-                            unit={yaxisUnit}
-                        />
-                    ))}
+        <HistogramBase {...rest}>
+            <YAxis
+                theme={rest.theme} // not necessary, only needed for tests
+                maxValue={max}
+                values={yaxisValues}
+                hasMin={hasYaxisMin}
+                hasMax={hasYaxisMax}
+                isRelative={isRelativeYaxis}
+                unit={yaxisUnit}
+                blockHeight={rest.blockHeight}
+            />
+
+            <div className="container">
+                <div className="bars">
+                    {React.Children.map(children, (child, index) => {
+                        if (!child) {
+                            return null;
+                        }
+
+                        return React.cloneElement(child, {
+                            key: index,
+                            maxValue: max,
+                            blockHeight: rest.blockHeight,
+                        });
+                    })}
                 </div>
-            ) : null}
-
-            {React.Children.map(children, (child, index) => {
-                if (!child) {
-                    return null;
-                }
-
-                return React.cloneElement(child, {
-                    key: index,
-                    maxValue: max,
-                    blockHeight: rest.blockHeight,
-                });
-            })}
+            </div>
         </HistogramBase>
     );
 };
@@ -103,7 +84,7 @@ Histogram.defaultProps = {
     maxValue: 0,
     blockHeight: inputWidthDefault,
     marginTop: spaceDefault,
-    marginBottom: spaceOptions.md,
+    marginBottom: spaceDefault,
 };
 
 export default Histogram;

@@ -2,22 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__HistogramBase-h3wpv-0 ibShpD"
+  className="style__HistogramBase-h3wpv-0 exLMOa"
 >
   <div
-    className="y-axis"
+    className="style__YAxisBase-fqe2pn-0 kimwMk"
   >
     <div
-      className="HistogramYaxisValue__YaxisValueBase-sc-1m1565e-0 kylFbc"
-    >
-      <span
-        className="style__TextBase-sc-11ixwvd-0 hdGhjN"
-      >
-        0
-      </span>
-    </div>
-    <div
-      className="HistogramYaxisValue__YaxisValueBase-sc-1m1565e-0 jhkxKN"
+      className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
     >
       <span
         className="style__TextBase-sc-11ixwvd-0 hdGhjN"
@@ -25,46 +16,63 @@ exports[`renders without crashing 1`] = `
         110
       </span>
     </div>
+    <div
+      className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+    >
+      <span
+        className="style__TextBase-sc-11ixwvd-0 hdGhjN"
+      >
+        0
+      </span>
+    </div>
   </div>
   <div
-    className="style__HistogramBarBase-y733il-0 fXBDYD"
+    className="container"
   >
     <div
-      className="bar"
-    />
-    <span
-      className="style__TextBase-sc-11ixwvd-0 hNlheR"
-    />
-  </div>
-  <div
-    className="style__HistogramBarBase-y733il-0 krGgBn"
-  >
-    <div
-      className="bar"
-    />
-    <span
-      className="style__TextBase-sc-11ixwvd-0 hNlheR"
-    />
-  </div>
-  <div
-    className="style__HistogramBarBase-y733il-0 cmGYRT"
-  >
-    <div
-      className="bar"
-    />
-    <span
-      className="style__TextBase-sc-11ixwvd-0 hNlheR"
-    />
-  </div>
-  <div
-    className="style__HistogramBarBase-y733il-0 fshDTY"
-  >
-    <div
-      className="bar"
-    />
-    <span
-      className="style__TextBase-sc-11ixwvd-0 hNlheR"
-    />
+      className="bars"
+    >
+      <div
+        className="style__HistogramBarBase-y733il-0 eJsFLX"
+      >
+        <div
+          className="bar"
+        />
+        <span
+          className="style__TextBase-sc-11ixwvd-0 hNlheR"
+        />
+      </div>
+      <div
+        className="style__HistogramBarBase-y733il-0 iHIPoY"
+      >
+        <div
+          className="bar"
+        />
+        <span
+          className="style__TextBase-sc-11ixwvd-0 hNlheR"
+        />
+      </div>
+      <div
+        className="style__HistogramBarBase-y733il-0 kFfzMD"
+      >
+        <div
+          className="bar"
+        />
+        <span
+          className="style__TextBase-sc-11ixwvd-0 hNlheR"
+        />
+      </div>
+      <div
+        className="style__HistogramBarBase-y733il-0 DxtMZ"
+      >
+        <div
+          className="bar"
+        />
+        <span
+          className="style__TextBase-sc-11ixwvd-0 hNlheR"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
