@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
       />
     </svg>
   </button>
-  November 2020
+  December 2020
   <button
     className="style__IconBase-ak3679-0 eiqeDU icon"
     onClick={[Function]}
