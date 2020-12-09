@@ -5,6 +5,8 @@ import {
     folder,
     colorThemeOptions,
     colorThemeDefault,
+    positionOptions,
+    positionDefault,
 } from '../../shared/constants';
 import MenuClose from './MenuClose';
 
@@ -12,7 +14,8 @@ storiesOf(folder.nav + folder.sub.control + 'MenuClose', module)
     .addDecorator(withKnobs)
     .add('MenuClose', () => (
         <MenuClose
-            colorTheme={radios('Color', colorThemeOptions, colorThemeDefault)}
             isOpen={boolean('Is open', true)}
+            position={radios('Position', positionOptions, positionDefault)}
+            colorTheme={radios('Color theme', colorThemeOptions, colorThemeDefault)}
         />
     ));

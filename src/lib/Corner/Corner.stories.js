@@ -9,8 +9,8 @@ import {
 } from '@storybook/addon-knobs';
 import {
     folder,
-    cornerPositionOptions,
-    cornerPositionDefault,
+    lateralPositionOptions,
+    lateralPositionDefault,
     colorStyleOptions,
     colorStyleDefault,
     radiusOptions,
@@ -30,7 +30,7 @@ import Corner from './Corner';
 
 const { wab, ...cornerColorPalletOptions } = colorPalletOptions;
 
-const cornerPositionLabel = 'Position';
+const positionLabel = 'Position';
 const colorStyleLabel = 'Color style';
 const radiusSizeLabel = 'Radius size';
 const colorPalletLabel = 'Color pallet';
@@ -42,10 +42,10 @@ storiesOf(folder.block + 'Corner', module)
     .add('Basic Corner', () => (
         <Corner
             label={text('Label', 'Corner')}
-            cornerPosition={radios(
-                cornerPositionLabel,
-                cornerPositionOptions,
-                cornerPositionDefault,
+            position={radios(
+                positionLabel,
+                lateralPositionOptions,
+                lateralPositionDefault,
             )}
             colorStyle={radios(
                 colorStyleLabel,
@@ -72,10 +72,10 @@ storiesOf(folder.block + 'Corner', module)
     .add('Corner with Popin', () => (
         <Corner
             label="?"
-            cornerPosition={radios(
-                cornerPositionLabel,
-                cornerPositionOptions,
-                cornerPositionDefault,
+            position={radios(
+                positionLabel,
+                lateralPositionOptions,
+                lateralPositionDefault,
             )}
             hasCenteredPopin={boolean('Centered popin', false)}
             radiusSize={select(radiusSizeLabel, radiusOptions, radiusDefault)}

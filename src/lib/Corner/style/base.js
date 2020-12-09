@@ -93,7 +93,7 @@ const squareStyle = css`
             min-width: ${props => props.theme.space.lg};
             padding-bottom: ${props => props.theme.space.xs};
 
-            ${props => squarePosition[props.cornerPosition]};
+            ${props => squarePosition[props.position]};
         }
     }
 `;
@@ -116,7 +116,7 @@ const bannerStyle = css`
             letter-spacing: ${props => props.theme.font.spacing};
         }
 
-        ${props => bannerPosition[props.cornerPosition]};
+        ${props => bannerPosition[props.position]};
     }
 `;
 

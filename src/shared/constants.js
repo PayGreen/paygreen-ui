@@ -169,38 +169,6 @@ const imageTypeOptions = {
 
 const imageTypeDefault = imageTypeOptions.normal;
 
-// Corner position
-const cornerPositionOptions = {
-    left: 'left',
-    right: 'right',
-};
-
-const cornerPositionDefault = cornerPositionOptions.left;
-
-// Block position
-const blockPositionOptions = {
-    none: 'none',
-    topLeft: 'topLeft',
-    topCenter: 'topCenter',
-    topRight: 'topRight',
-    bottomLeft: 'bottomLeft',
-    bottomCenter: 'bottomCenter',
-    bottomRight: 'bottomRight',
-    left: 'left',
-    right: 'right',
-    center: 'center',
-};
-
-const blockPositionDefault = blockPositionOptions.none;
-
-// Arrow direction
-const arrowDirectionOptions = {
-    left: 'left',
-    right: 'right',
-};
-
-const arrowDirectionDefault = arrowDirectionOptions.left;
-
 // SkeletonItem types
 const skeletonItemTypeOptions = {
     circle: 'circle',
@@ -388,7 +356,7 @@ const sidebarItemHtmlTagOptions = {
 
 const sidebarItemHtmlTagDefault = sidebarItemHtmlTagOptions.div;
 
-/* Grids and aligns */
+/* Grids, aligns and positions */
 
 // Grids types
 const displayOptions = {
@@ -464,6 +432,38 @@ const hoverDirectionOptions = {
 
 const hoverDirectionDefault = hoverDirectionOptions.none;
 
+// Lateral positions
+const lateralPositionOptions = {
+    left: 'left',
+    right: 'right',
+};
+
+const lateralPositionDefault = lateralPositionOptions.left;
+
+// Positions (basic)
+const positionOptions = {
+    ...lateralPositionOptions,
+    top: 'top',
+    bottom: 'bottom',
+};
+
+const positionDefault = positionOptions.bottom;
+
+// Block position
+const blockPositionOptions = {
+    none: 'none',
+    center: 'center',
+    ...lateralPositionOptions,
+    topCenter: 'topCenter',
+    topLeft: 'topLeft',
+    topRight: 'topRight',
+    bottomCenter: 'bottomCenter',
+    bottomLeft: 'bottomLeft',
+    bottomRight: 'bottomRight',
+};
+
+const blockPositionDefault = blockPositionOptions.none;
+
 // Rotate
 const rotateSizeOptions = {
     d0: 'd0',
@@ -517,12 +517,6 @@ export {
     buttonStyleDefault,
     imageTypeOptions,
     imageTypeDefault,
-    cornerPositionOptions,
-    cornerPositionDefault,
-    blockPositionOptions,
-    blockPositionDefault,
-    arrowDirectionOptions,
-    arrowDirectionDefault,
     skeletonItemTypeOptions,
     skeletonItemTypeDefault,
     skeletonTypeOptions,
@@ -575,6 +569,12 @@ export {
     alignDefault,
     hoverDirectionOptions,
     hoverDirectionDefault,
+    lateralPositionOptions,
+    lateralPositionDefault,
+    positionOptions,
+    positionDefault,
+    blockPositionOptions,
+    blockPositionDefault,
     rotateSizeOptions,
     rotateSizeDefault,
     localeOptions,

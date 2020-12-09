@@ -5,7 +5,7 @@ import {
     folder,
     colorPalletOptions,
     spaceOptions,
-    arrowDirectionOptions,
+    lateralPositionOptions,
     hoverDirectionOptions,
 } from '../../shared/constants';
 import Topbar from '../Topbar/Topbar';
@@ -42,7 +42,7 @@ storiesOf(folder.nav + 'Layout', module)
                     <MenuHamburger
                         isOpen={true}
                         colorPallet={colorPalletOptions.wab}
-                        arrowDirection={arrowDirectionOptions.right}
+                        arrowDirection={lateralPositionOptions.right}
                     />
                 </Topbar>
 
