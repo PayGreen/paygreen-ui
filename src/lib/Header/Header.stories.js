@@ -65,7 +65,7 @@ storiesOf(folder.nav + 'Header', module)
     .addDecorator(withKnobs)
     .add('Header', () => (
         <>
-            <Header>
+            <Header hasTopStyle={boolean('Has top style (desktop only)', true)}>
                 <MenuGroup>
                     <div className="main-nav">
                         <MenuHamburger
