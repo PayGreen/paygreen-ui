@@ -26,7 +26,7 @@ const MenuClose = props => {
             : rotateSizeOptions.d0,
     };
 
-    let arrow = <ArrowBottomIcon {...arrowProps} />;
+    let arrow;
 
     switch (props.position) {
         case positionOptions.top:
@@ -36,9 +36,13 @@ const MenuClose = props => {
         case positionOptions.left:
             arrow = <ArrowLeftIcon {...arrowProps} />;
             break;
+
         case positionOptions.right:
             arrow = <ArrowRightIcon {...arrowProps} />;
             break;
+        
+        default:
+            arrow = <ArrowBottomIcon {...arrowProps} />;
     }
 
     return (
