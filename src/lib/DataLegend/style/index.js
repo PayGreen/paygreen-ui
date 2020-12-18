@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { mainColor } from '../../DataBar/style/constants';
 import { minimizeFont } from '../../Text/style/constants';
+import { TextBase } from '../../Text/style';
 
 const DataLegendBase = styled.div`
     text-align: left;
@@ -22,6 +23,10 @@ const DataLegendBase = styled.div`
 
     .unit {
         margin: 0 0.2em;
+    }
+
+    ${TextBase} {
+        display: inline;
     }
 `;
 
