@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 const color = {
     none: css`
-        background-color: ${props => props.theme.wab.black00};
+        background-color: ${props => props.theme.wab[props.colorWab]};
     `,
     brand: css`
         background-color: ${props => props.theme.color.primary.gradientBase};

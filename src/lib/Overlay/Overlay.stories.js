@@ -7,6 +7,7 @@ import {
     gradientDefault,
     colorThemeOptions,
     colorThemeDefault,
+    greyOptions,
 } from '../../shared/constants';
 import Overlay from './Overlay';
 import Text from '../Text/Text';
@@ -22,6 +23,11 @@ storiesOf(folder.popup + 'Overlay', module)
                     'Color theme',
                     colorThemeOptions,
                     colorThemeDefault,
+                )}
+                colorWab={select(
+                    'Grey color',
+                    greyOptions,
+                    greyOptions.black00,
                 )}
                 zindex={number('Z index', 0)}
                 opacityValue={number('Opacity', 60)}
