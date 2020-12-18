@@ -90,6 +90,7 @@ const greyOptions = {
     grey40: 'grey40',
     grey50: 'grey50',
     grey60: 'grey60',
+    black00: 'black00',
 };
 
 const greyDefault = greyOptions.grey40;
