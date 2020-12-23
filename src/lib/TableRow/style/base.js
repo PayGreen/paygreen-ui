@@ -22,6 +22,10 @@ const mainRow = css`
             color: ${props => props.theme.wab.grey30};
             vertical-align: bottom;
 
+            @media ${props => props.theme.screen.max.md} {
+                font-size: ${props => props.theme.font.size.xs};
+            }
+
             .content {
                 align-items: flex-end;
             }
