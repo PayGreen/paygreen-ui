@@ -25,7 +25,7 @@ const htmlTagStyle = {
         }
     `,
     span: css`
-        display: block;
+        display: inline-block;
     `,
     em: css`
         font-style: italic;
