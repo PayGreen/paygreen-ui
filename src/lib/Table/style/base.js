@@ -5,12 +5,17 @@ import { TableCellBase } from '../../TableCell/style';
 const largeFirstColumnStyle = css`
     ${TableCellBase} {
         &:first-of-type {
-            min-width: 200px;
+            @media ${props => props.theme.screen.min.sm} {
+                min-width: 200px;
+            }
         }
 
         &:not(:first-of-type) {
-            min-width: 120px;
             max-width: 180px;
+
+            @media ${props => props.theme.screen.min.sm} {
+                min-width: 120px;
+            }
         }
     }
 `;
@@ -18,10 +23,10 @@ const largeFirstColumnStyle = css`
 const backgroundStyle = css`
     background-color: ${props => props.theme.wab.white00};
     border-radius: ${props => props.theme.radius.lg};
-    box-shadow: ${props => props.theme.shadow.size.sm + ' ' + transparentize(
-        0.9,
-        props.theme.wab.black00
-    )};
+    box-shadow: ${props =>
+        props.theme.shadow.size.sm +
+        ' ' +
+        transparentize(0.9, props.theme.wab.black00)};
     padding: ${props => props.theme.space.sm};
 
     @media ${props => props.theme.screen.min.md} {
@@ -33,7 +38,4 @@ const backgroundStyle = css`
     }
 `;
 
-export {
-    largeFirstColumnStyle,
-    backgroundStyle
-};
+export { largeFirstColumnStyle, backgroundStyle };
