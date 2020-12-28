@@ -17,7 +17,7 @@ exports[`renders without crashing 1`] = `
     className="bar"
   />
   <span
-    className="style__TextBase-sc-11ixwvd-0 hNlheR"
+    className="style__TextBase-sc-11ixwvd-0 cqyjwh"
   >
     label
   </span>

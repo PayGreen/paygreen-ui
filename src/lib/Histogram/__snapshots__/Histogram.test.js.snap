@@ -11,7 +11,7 @@ exports[`renders without crashing 1`] = `
       className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
     >
       <span
-        className="style__TextBase-sc-11ixwvd-0 hdGhjN"
+        className="style__TextBase-sc-11ixwvd-0 jhNWiV"
       >
         110
       </span>
@@ -20,7 +20,7 @@ exports[`renders without crashing 1`] = `
       className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
     >
       <span
-        className="style__TextBase-sc-11ixwvd-0 hdGhjN"
+        className="style__TextBase-sc-11ixwvd-0 jhNWiV"
       >
         0
       </span>
@@ -39,7 +39,7 @@ exports[`renders without crashing 1`] = `
           className="bar"
         />
         <span
-          className="style__TextBase-sc-11ixwvd-0 hNlheR"
+          className="style__TextBase-sc-11ixwvd-0 cqyjwh"
         />
       </div>
       <div
@@ -49,7 +49,7 @@ exports[`renders without crashing 1`] = `
           className="bar"
         />
         <span
-          className="style__TextBase-sc-11ixwvd-0 hNlheR"
+          className="style__TextBase-sc-11ixwvd-0 cqyjwh"
         />
       </div>
       <div
@@ -59,7 +59,7 @@ exports[`renders without crashing 1`] = `
           className="bar"
         />
         <span
-          className="style__TextBase-sc-11ixwvd-0 hNlheR"
+          className="style__TextBase-sc-11ixwvd-0 cqyjwh"
         />
       </div>
       <div
@@ -69,7 +69,7 @@ exports[`renders without crashing 1`] = `
           className="bar"
         />
         <span
-          className="style__TextBase-sc-11ixwvd-0 hNlheR"
+          className="style__TextBase-sc-11ixwvd-0 cqyjwh"
         />
       </div>
     </div>
