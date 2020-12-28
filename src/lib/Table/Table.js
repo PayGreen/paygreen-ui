@@ -14,12 +14,14 @@ const Table = props => {
 Table.propTypes = {
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     hasLargeFirstColumn: PropTypes.bool,
+    hasOverflowEmphasis: PropTypes.bool,
     hasBackground: PropTypes.bool,
 };
 
 Table.defaultProps = {
     colorTheme: colorThemeDefault,
     hasLargeFirstColumn: true,
+    hasOverflowEmphasis: false,
     hasBackground: false,
 };
 

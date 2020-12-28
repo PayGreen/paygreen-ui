@@ -20,6 +20,24 @@ const largeFirstColumnStyle = css`
     }
 `;
 
+const overflowEmphasisStyle = css`
+    @media ${props => props.theme.screen.max.md} {
+        margin-left: -${props => props.theme.space.md} !important;
+        margin-right: -${props => props.theme.space.md} !important;
+        mask-image: linear-gradient(
+            to left,
+            transparent,
+            black ${props => props.theme.space.md}
+        );
+    }
+
+    .table {
+        @media ${props => props.theme.screen.max.md} {
+            padding: 0 ${props => props.theme.space.md};
+        }
+    }
+`;
+
 const backgroundStyle = css`
     background-color: ${props => props.theme.wab.white00};
     border-radius: ${props => props.theme.radius.lg};
@@ -38,4 +56,4 @@ const backgroundStyle = css`
     }
 `;
 
-export { largeFirstColumnStyle, backgroundStyle };
+export { largeFirstColumnStyle, overflowEmphasisStyle, backgroundStyle };

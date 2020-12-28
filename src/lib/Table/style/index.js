@@ -1,21 +1,17 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import { largeFirstColumnStyle, backgroundStyle } from './base';
 import { TableCellBase } from '../../TableCell/style';
 import { TableRowBase } from '../../TableRow/style';
+import {
+    largeFirstColumnStyle,
+    overflowEmphasisStyle,
+    backgroundStyle,
+} from './base';
 
 const TableBase = styled.div`
     position: relative;
     overflow-x: auto;
     ${props => (props.hasBackground ? backgroundStyle : null)};
-
-    @media ${props => props.theme.screen.max.sm} {
-        mask-image: linear-gradient(
-            to left,
-            transparent,
-            black ${props => props.theme.space.lg}
-        );
-    }
 
     .table {
         display: table;
@@ -39,6 +35,7 @@ const TableBase = styled.div`
     }
 
     ${props => (props.hasLargeFirstColumn ? largeFirstColumnStyle : null)};
+    ${props => (props.hasOverflowEmphasis ? overflowEmphasisStyle : null)};
 `;
 
 export { TableBase };
