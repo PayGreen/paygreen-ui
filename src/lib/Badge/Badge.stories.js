@@ -5,11 +5,13 @@ import {
     folder,
     iconHtmlTagOptions,
     iconHtmlTagDefault,
+    colorTypeOptions,
+    colorTypeDefault,
+    colorStyleOptions,
+    colorStyleDefault,
     colorThemeOptions,
     colorThemeDefault,
     gradientOptions,
-    colorTypeOptions,
-    colorTypeDefault,
     fontSizeOptions,
 } from '../../shared/constants';
 import Badge from './Badge';
@@ -29,6 +31,11 @@ storiesOf(folder.text + 'Badge', module)
                 colorTypeLabel,
                 colorTypeOptions,
                 colorTypeDefault,
+            )}
+            colorStyle={radios(
+                'Color style',
+                colorStyleOptions,
+                colorStyleDefault,
             )}
             colorTheme={select(
                 colorThemeLabel,

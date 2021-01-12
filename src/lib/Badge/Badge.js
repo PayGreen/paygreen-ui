@@ -5,9 +5,11 @@ import {
     iconHtmlTagDefault,
     colorThemeOptions,
     colorThemeDefault,
-    gradientOptions,
+    colorStyleOptions,
+    colorStyleDefault,
     colorTypeOptions,
     colorTypeDefault,
+    gradientOptions,
     fontSizeOptions,
     rotateSizeOptions,
 } from '../../shared/constants';
@@ -45,18 +47,20 @@ Badge.propTypes = {
     htmlTag: PropTypes.oneOf(Object.values(iconHtmlTagOptions)),
     isActive: PropTypes.bool,
     colorType: PropTypes.oneOf(Object.values(colorTypeOptions)),
-    textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
+    colorStyle: PropTypes.oneOf(Object.values(colorStyleOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     gradient: PropTypes.oneOf(Object.values(gradientOptions)),
+    textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
 };
 
 Badge.defaultProps = {
     htmlTag: iconHtmlTagDefault,
     isActive: false,
     colorType: colorTypeDefault,
-    textSize: fontSizeOptions.xxs,
+    colorStyle: colorStyleDefault,
     colorTheme: colorThemeDefault,
     gradient: gradientOptions.theme,
+    textSize: fontSizeOptions.xxs,
 };
 
 export default Badge;
