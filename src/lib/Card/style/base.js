@@ -4,9 +4,12 @@ import {
     gradientOptions,
     spaceOptions,
     shadowSizeOptions,
+    cardHtmlTagOptions,
 } from '../../../shared/constants';
 import { responsiveSpaces } from '../../../shared/spaces';
 import { ImageBase } from '../../Image/style';
+import { TitleBase } from '../../Title/style';
+import { TextBase } from '../../Text/style';
 
 const shadowStyle = css`
     box-shadow: ${props =>
@@ -130,9 +133,38 @@ const backgroundStyle = {
     `,
 };
 
+const dashedBorders = css`
+    border: dashed
+        ${props =>
+            props.theme.line +
+            ' ' +
+            transparentize(0.9, props.theme.wab.black00)};
+`;
+
+const buttonStyle = css`
+    display: block;
+    width: 100%;
+    text-align: left;
+
+    &:hover,
+    &:focus,
+    &:active {
+        border-color: ${props => props.theme.color[props.colorTheme].main};
+        background-color: ${props => props.theme.color[props.colorTheme].light};
+
+        ${TextBase},
+        ${TitleBase} {
+            color: ${props => props.theme.color[props.colorTheme].main};
+        }
+    }
+`;
+
 const containerStyle = css`
     position: relative;
     max-width: ${props => props.theme.blockWidth[props.blockWidth]};
+    ${props => (props.hasDashedBorder ? dashedBorders : null)};
+    ${props =>
+        props.htmlTag === cardHtmlTagOptions.button ? buttonStyle : null};
     ${responsiveSpaces('padding', 0, 1, 1, ['Lateral'])};
     ${props =>
         props.paddingTop !== spaceOptions.none

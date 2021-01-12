@@ -534,4 +534,34 @@ storiesOf(folder.block + 'Card', module)
                 vehicula in arcu non sodales. Fusce et consectetur odio.
             </Text>
         </Card>
+    ))
+    .add('Button card', () => (
+        <Card
+            htmlTag={cardHtmlTagOptions.button}
+            colorTheme={radios(
+                colorThemeLabel,
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+            colorWab={select(colorWabLabel, greyOptions, greyOptions.white20)}
+            hasDashedBorder={boolean('Has dashed borders', true)}
+            blockWidth={spaceOptions.xs}
+            paddingTop={spaceOptions.sm}
+            paddingBottom={spaceOptions.sm}
+            paddingLateral={spaceOptions.sm}
+            shadowSize={shadowSizeOptions.none}
+            radiusSize={radiusOptions.sm}
+        >
+            <Text colorWab={greyOptions.grey30}>
+                <i>New group</i>
+            </Text>
+
+            <Text
+                textSize={fontSizeOptions.sm}
+                marginTop={spaceOptions.xs}
+                colorWab={greyOptions.grey30}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </Text>
+        </Card>
     ));

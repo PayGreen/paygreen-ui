@@ -47,6 +47,7 @@ Card.propTypes = {
     paddingBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     hasTitleOut: PropTypes.bool,
+    hasDashedBorder: PropTypes.bool,
 };
 
 Card.defaultProps = {
@@ -66,6 +67,7 @@ Card.defaultProps = {
     paddingBottom: spaceDefault,
     paddingLateral: spaceDefault,
     hasTitleOut: false,
+    hasDashedBorder: false,
 };
 
 export default Card;

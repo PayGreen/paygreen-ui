@@ -302,6 +302,7 @@ const cardHtmlTagOptions = {
     article: 'article',
     section: 'section',
     aside: 'aside',
+    button: 'button',
 };
 
 const cardHtmlTagDefault = cardHtmlTagOptions.div;
