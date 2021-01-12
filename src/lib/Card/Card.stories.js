@@ -25,6 +25,7 @@ import {
     buttonSizeOptions,
     colorStyleOptions,
     lateralPositionOptions,
+    cornerStyleOptions,
 } from '../../shared/constants';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
@@ -74,6 +75,7 @@ storiesOf(folder.block + 'Card', module)
         >
             <Corner
                 label="Since 2016"
+                cornerStyle={cornerStyleOptions.banner}
                 colorStyle={colorStyleOptions.light}
                 position={lateralPositionOptions.right}
                 colorTheme={radios(
@@ -329,6 +331,7 @@ storiesOf(folder.block + 'Card', module)
     .add('Card with image', () => (
         <Card
             blockWidth={select(blockWidthLabel, spaceOptions, spaceOptions.md)}
+            isShadowWab={true}
         >
             <Image
                 imageType={imageTypeOptions.cover}

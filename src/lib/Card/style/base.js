@@ -1,6 +1,10 @@
 import { css } from 'styled-components';
 import { transparentize } from 'polished';
-import { gradientOptions, spaceOptions } from '../../../shared/constants';
+import {
+    gradientOptions,
+    spaceOptions,
+    shadowSizeOptions,
+} from '../../../shared/constants';
 import { responsiveSpaces } from '../../../shared/spaces';
 import { ImageBase } from '../../Image/style';
 
@@ -21,6 +25,24 @@ const shadowStyle = css`
                 props.theme.shadow.opacity[props.shadowSize] - 0.1,
                 props.theme.color[props.colorTheme].main,
             )};
+    }
+`;
+
+const wabShadowStyle = css`
+    box-shadow: 2px 2px 24px
+        ${props =>
+            transparentize(
+                props.shadowSize === shadowSizeOptions.none ? 1 : 0.91,
+                props.theme.wab.black00,
+            )};
+
+    &:hover {
+        box-shadow: 3px 3px 30px
+            ${props =>
+                transparentize(
+                    props.shadowSize === shadowSizeOptions.none ? 1 : 0.89,
+                    props.theme.wab.black00,
+                )};
     }
 `;
 
@@ -92,7 +114,7 @@ const backgroundColor = {
 const backgroundStyle = {
     original: css`
         ${props => backgroundColor[props.colorPallet]};
-        ${shadowStyle};
+        ${props => (props.isShadowWab ? wabShadowStyle : shadowStyle)};
         ${radius};
         ${props =>
             props.borderTop !== gradientOptions.none ? borderTopElement : null};
