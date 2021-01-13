@@ -10,7 +10,6 @@ import {
 
 const CornerBase = styled.div`
     position: absolute;
-    z-index: ${props => props.theme.zindex.corner};
     top: 0;
     ${props => positionStyle[props.position]};
     ${props => cornerStyle[props.cornerStyle]};
@@ -19,6 +18,8 @@ const CornerBase = styled.div`
         .cornerContent {
             ${backgroundStyle};
             color: ${props => colorStyle[props.colorStyle]};
+            position: relative;
+            z-index: ${props => props.theme.zindex.corner};
             display: flex;
             justify-content: center;
             align-items: center;
