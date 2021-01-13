@@ -10,7 +10,6 @@ import {
 } from '../../shared/constants';
 import InternalGrid from '../InternalGrid/InternalGrid';
 import Title from '../Title/Title';
-import Text from '../Text/Text';
 import { ArrowBottomIcon } from '../Icon/Icon';
 import { DaTableHeadBase } from './style';
 
@@ -44,28 +43,16 @@ const DaTableHead = props => {
             </InternalGrid>
 
             {props.children}
-
-            {props.resultsLabel ? (
-                <Text
-                    theme={props.theme} // not necessary, only needed for tests
-                    textSize={fontSizeOptions.xs}
-                    align={alignItemsOptions.center}
-                >
-                    {props.resultsLabel}
-                </Text>
-            ) : null}
         </DaTableHeadBase>
     );
 };
 
 DaTableHead.propTypes = {
     blockTitle: PropTypes.string,
-    resultsLabel: PropTypes.string,
 };
 
 DaTableHead.defaultProps = {
     blockTitle: 'Search and filters',
-    resultsLabel: null,
 };
 
 export default DaTableHead;

@@ -173,7 +173,7 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
                 spaceOptions.sm,
             )}
         >
-            <DaTableHead resultsLabel="10 results">
+            <DaTableHead>
                 <DaTableHeadCell label="Select/deselect all">
                     <Checkbox id="select" />
                 </DaTableHeadCell>
