@@ -8,6 +8,7 @@ import {
     fontSizeOptions,
     iconSizeOptions,
     spaceOptions,
+    alignOptions,
 } from '../../shared/constants';
 import {
     CheckBoldIcon,
@@ -143,7 +144,7 @@ const sampleRows = [
     },
     {
         date: '18/05/2020',
-        name: 'Pierrick Aimor-Tis',
+        name: 'Pierrick Hochet',
         amount: '71.05',
         type: 'Cash',
         status: 'refused',
@@ -215,45 +216,56 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
             </DaTableHead>
 
             <DaTableBody>
-                {sampleRows.map((sample, index) => (
-                    <DaTableRow
-                        key={index}
-                        isActive={
-                            !index ? boolean(isActiveLabel, false) : false
-                        }
+                {boolean('Width data', true) ? (
+                    sampleRows.map((sample, index) => (
+                        <DaTableRow
+                            key={index}
+                            isActive={
+                                !index ? boolean(isActiveLabel, false) : false
+                            }
+                        >
+                            <DaTableCell>
+                                <Checkbox
+                                    id={'checkbox' + index}
+                                    checked={
+                                        !index
+                                            ? boolean(isActiveLabel, false)
+                                            : false
+                                    }
+                                    readOnly={true}
+                                />
+                            </DaTableCell>
+
+                            <DaTableCell isId={true}>
+                                {3400 + index}
+                            </DaTableCell>
+
+                            <DaTableCell isMain={false} label="Date">
+                                {sample.date}
+                            </DaTableCell>
+
+                            <DaTableCell>{sample.name}</DaTableCell>
+
+                            <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
+
+                            <DaTableCell isMain={false} label="Type">
+                                {sample.type}
+                            </DaTableCell>
+
+                            <DaTableCell isMain={false} label="Status">
+                                {status.icon[sample.status]}
+                                {status.text[sample.status]}
+                            </DaTableCell>
+                        </DaTableRow>
+                    ))
+                ) : (
+                    <Text
+                        textSize={fontSizeOptions.sm}
+                        align={alignOptions.center}
                     >
-                        <DaTableCell>
-                            <Checkbox
-                                id={'checkbox' + index}
-                                checked={
-                                    !index
-                                        ? boolean(isActiveLabel, false)
-                                        : false
-                                }
-                                readOnly={true}
-                            />
-                        </DaTableCell>
-
-                        <DaTableCell isId={true}>{3400 + index}</DaTableCell>
-
-                        <DaTableCell isMain={false} label="Date">
-                            {sample.date}
-                        </DaTableCell>
-
-                        <DaTableCell>{sample.name}</DaTableCell>
-
-                        <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
-
-                        <DaTableCell isMain={false} label="Type">
-                            {sample.type}
-                        </DaTableCell>
-
-                        <DaTableCell isMain={false} label="Status">
-                            {status.icon[sample.status]}
-                            {status.text[sample.status]}
-                        </DaTableCell>
-                    </DaTableRow>
-                ))}
+                        Nothing to show ¯\_(ツ)_/¯
+                    </Text>
+                )}
             </DaTableBody>
         </DaTable>
     ));

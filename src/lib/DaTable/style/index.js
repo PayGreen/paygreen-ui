@@ -10,7 +10,27 @@ const DaTableBase = styled.div`
     }
 
     @media ${props => props.theme.screen.min.lg} {
-        display: table;
+        width: fit-content;
+    }
+
+    .table {
+        @media ${props => props.theme.screen.min.lg} {
+            display: table;
+        }
+    }
+
+    .noRows {
+        background-color: ${props => props.theme.wab.white10};
+
+        @media ${props => props.theme.screen.max.lg} {
+            border-radius: ${props => props.theme.radius.sm};
+            margin: ${props => props.theme.space.xs};
+            padding: ${props => props.theme.space.sm};
+        }
+
+        @media ${props => props.theme.screen.min.lg} {
+            padding: ${props => props.theme.space.md};
+        }
     }
 `;
 
