@@ -331,7 +331,7 @@ storiesOf(folder.block + 'Card', module)
     .add('Card with image', () => (
         <Card
             blockWidth={select(blockWidthLabel, spaceOptions, spaceOptions.md)}
-            isShadowWab={true}
+            isShadowWab={boolean('Is shadow wab', true)}
         >
             <Image
                 imageType={imageTypeOptions.cover}
