@@ -552,11 +552,11 @@ storiesOf(folder.block + 'Card', module)
         <Card
             htmlTag={cardHtmlTagOptions.button}
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select(colorWabLabel, greyOptions, greyOptions.white20)}
+            colorWab={select(labels.colorWab, greyOptions, greyOptions.white20)}
             hasDashedBorder={boolean('Has dashed borders', true)}
             blockWidth={spaceOptions.xs}
             paddingTop={spaceOptions.sm}

@@ -19,7 +19,7 @@ const labels = {
     borderRight: 'Border right',
     borderLeft: 'Border left',
     borderBottom: 'Border Bottom',
-    cornerPosition: 'Corner position',
+    position: 'Position',
     submittedText: 'Submitted text',
     centeredPopin: 'Centered popin',
     hasHelpButton: 'Has help button',

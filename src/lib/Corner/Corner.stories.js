@@ -39,10 +39,10 @@ storiesOf(folder.block + 'Corner', module)
         <Corner
             label={text(labels.label, 'Corner')}
             cornerStyle={cornerStyleOptions.banner}
-            cornerPosition={radios(
-                labels.cornerPosition,
-                cornerPositionOptions,
-                cornerPositionDefault,
+            position={radios(
+                labels.position,
+                lateralPositionOptions,
+                lateralPositionDefault,
             )}
             colorStyle={radios(
                 labels.colorStyle,
@@ -70,7 +70,7 @@ storiesOf(folder.block + 'Corner', module)
         <Corner
             label={<QuestionBoldIcon />}
             position={radios(
-                'Position',
+                labels.position,
                 lateralPositionOptions,
                 lateralPositionDefault,
             )}
