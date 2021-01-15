@@ -25,6 +25,7 @@ import {
     buttonSizeOptions,
     colorStyleOptions,
     lateralPositionOptions,
+    cornerStyleOptions,
 } from '../../shared/constants';
 import Button from '../Button/Button';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
@@ -74,6 +75,7 @@ storiesOf(folder.block + 'Card', module)
         >
             <Corner
                 label="Since 2016"
+                cornerStyle={cornerStyleOptions.banner}
                 colorStyle={colorStyleOptions.light}
                 position={lateralPositionOptions.right}
                 colorTheme={radios(
@@ -329,6 +331,7 @@ storiesOf(folder.block + 'Card', module)
     .add('Card with image', () => (
         <Card
             blockWidth={select(blockWidthLabel, spaceOptions, spaceOptions.md)}
+            isShadowWab={boolean('Is shadow wab', true)}
         >
             <Image
                 imageType={imageTypeOptions.cover}
@@ -529,6 +532,36 @@ storiesOf(folder.block + 'Card', module)
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis{' '}
                 <strong>porttitor velit a ultricies aliquet</strong>. Donec
                 vehicula in arcu non sodales. Fusce et consectetur odio.
+            </Text>
+        </Card>
+    ))
+    .add('Button card', () => (
+        <Card
+            htmlTag={cardHtmlTagOptions.button}
+            colorTheme={radios(
+                colorThemeLabel,
+                colorThemeOptions,
+                colorThemeDefault,
+            )}
+            colorWab={select(colorWabLabel, greyOptions, greyOptions.white20)}
+            hasDashedBorder={boolean('Has dashed borders', true)}
+            blockWidth={spaceOptions.xs}
+            paddingTop={spaceOptions.sm}
+            paddingBottom={spaceOptions.sm}
+            paddingLateral={spaceOptions.sm}
+            shadowSize={shadowSizeOptions.none}
+            radiusSize={radiusOptions.sm}
+        >
+            <Text colorWab={greyOptions.grey30}>
+                <i>New group</i>
+            </Text>
+
+            <Text
+                textSize={fontSizeOptions.sm}
+                marginTop={spaceOptions.xs}
+                colorWab={greyOptions.grey30}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Text>
         </Card>
     ));

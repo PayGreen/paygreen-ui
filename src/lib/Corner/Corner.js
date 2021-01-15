@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+    cornerStyleOptions,
+    cornerStyleDefault,
     lateralPositionOptions,
     lateralPositionDefault,
-    colorStyleOptions,
-    colorStyleDefault,
     radiusOptions,
     radiusDefault,
+    colorStyleOptions,
+    colorStyleDefault,
     colorPalletOptions,
     colorPalletDefault,
     colorThemeOptions,
@@ -19,9 +21,9 @@ import { CornerBase } from './style';
 
 const Corner = ({ children, label, ...rest }) => {
     return (
-        <CornerBase {...rest} hasChildren={children ? true : false}>
+        <CornerBase {...rest}>
             <div className="corner">
-                <span>{label}</span>
+                <span className="cornerContent">{label}</span>
             </div>
 
             {React.Children.map(children, child => {
@@ -42,7 +44,8 @@ const Corner = ({ children, label, ...rest }) => {
 };
 
 Corner.propTypes = {
-    label: PropTypes.string.isRequired,
+    label: PropTypes.any.isRequired,
+    cornerStyle: PropTypes.oneOf(Object.values(cornerStyleOptions)),
     position: PropTypes.oneOf(Object.values(lateralPositionOptions)),
     hasCenteredPopin: PropTypes.bool,
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
@@ -56,6 +59,7 @@ Corner.propTypes = {
 };
 
 Corner.defaultProps = {
+    cornerStyle: cornerStyleDefault,
     position: lateralPositionDefault,
     hasCenteredPopin: false,
     radiusSize: radiusDefault,

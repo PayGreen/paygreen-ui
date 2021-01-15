@@ -29,7 +29,7 @@ const buttonStyle = css`
         ${activeStyle};
     }
 
-    ${props => props.isActive ? activeStyle : null};
+    ${props => (props.isActive ? activeStyle : null)};
 `;
 
 const smallBadge = css`
@@ -99,21 +99,39 @@ const textBackground = {
     `,
 };
 
-const originalStyle = css`
-    color: ${props => props.theme.wab.white00};
-    ${props => textBackground[props.gradient]};
-
-    &::before {
-        opacity: 0.4;
+const originalStyle = {
+    main: css`
+        color: ${props => props.theme.wab.white00};
         ${props => textBackground[props.gradient]};
-    }
 
-    .icon {
-        svg {
-            fill: ${props => props.theme.wab.white00};
+        &::before {
+            opacity: 0.4;
+            ${props => textBackground[props.gradient]};
         }
-    }
-`;
+
+        .icon {
+            svg {
+                fill: ${props => props.theme.wab.white00};
+            }
+        }
+    `,
+    light: css`
+        color: ${props => props.theme.color[props.colorTheme].main};
+        background-color: ${props => props.theme.color[props.colorTheme].light};
+
+        &::before {
+            opacity: 0.4;
+            background-color: ${props =>
+                props.theme.color[props.colorTheme].light};
+        }
+
+        .icon {
+            svg {
+                fill: ${props => props.theme.color[props.colorTheme].main};
+            }
+        }
+    `,
+};
 
 const reverseStyle = css`
     color: ${props => props.theme.color[props.colorTheme].main};

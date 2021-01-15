@@ -161,6 +161,14 @@ const buttonStyleOptions = {
 
 const buttonStyleDefault = buttonStyleOptions.fill;
 
+// Corner styles
+const cornerStyleOptions = {
+    square: 'square',
+    banner: 'banner',
+};
+
+const cornerStyleDefault = cornerStyleOptions.square;
+
 // Image type
 const imageTypeOptions = {
     normal: 'normal',
@@ -294,6 +302,7 @@ const cardHtmlTagOptions = {
     article: 'article',
     section: 'section',
     aside: 'aside',
+    button: 'button',
 };
 
 const cardHtmlTagDefault = cardHtmlTagOptions.div;
@@ -516,6 +525,8 @@ export {
     dotStyleDefault,
     buttonStyleOptions,
     buttonStyleDefault,
+    cornerStyleOptions,
+    cornerStyleDefault,
     imageTypeOptions,
     imageTypeDefault,
     skeletonItemTypeOptions,

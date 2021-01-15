@@ -24,7 +24,7 @@ const BadgeBase = styled.span`
     ${props => badgeSize[props.textSize]};
     ${props =>
         props.colorType === colorTypeOptions.original
-            ? originalStyle
+            ? originalStyle[props.colorStyle]
             : reverseStyle};
 `;
 

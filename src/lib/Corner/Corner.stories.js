@@ -9,12 +9,13 @@ import {
 } from '@storybook/addon-knobs';
 import {
     folder,
+    cornerStyleOptions,
     lateralPositionOptions,
     lateralPositionDefault,
-    colorStyleOptions,
-    colorStyleDefault,
     radiusOptions,
     radiusDefault,
+    colorStyleOptions,
+    colorStyleDefault,
     colorPalletOptions,
     colorPalletDefault,
     colorThemeOptions,
@@ -24,6 +25,7 @@ import {
     spaceOptions,
     fontSizeOptions,
 } from '../../shared/constants';
+import { QuestionBoldIcon } from '../Icon/Icon';
 import Text from '../Text/Text';
 import Popin from '../Popin/Popin';
 import Corner from './Corner';
@@ -39,9 +41,10 @@ const colorStatusLabel = 'Status color';
 
 storiesOf(folder.block + 'Corner', module)
     .addDecorator(withKnobs)
-    .add('Basic Corner', () => (
+    .add('Corner banner', () => (
         <Corner
             label={text('Label', 'Corner')}
+            cornerStyle={cornerStyleOptions.banner}
             position={radios(
                 positionLabel,
                 lateralPositionOptions,
@@ -69,9 +72,9 @@ storiesOf(folder.block + 'Corner', module)
             )}
         />
     ))
-    .add('Corner with Popin', () => (
+    .add('Corner square with Popin', () => (
         <Corner
-            label="?"
+            label={<QuestionBoldIcon />}
             position={radios(
                 positionLabel,
                 lateralPositionOptions,

@@ -14,24 +14,6 @@ const backgroundStyle = css`
         ][props.colorStyle]};
 `;
 
-const colorStyle = {
-    main: css`
-        color: ${props => props.theme.wab.white00};
-    `,
-    light: css`
-        color: ${props =>
-            props.theme[
-                props.colorPallet === colorPalletOptions.theme
-                    ? 'color'
-                    : props.colorPallet
-            ][
-                props.colorPallet === colorPalletOptions.theme
-                    ? props.colorTheme
-                    : props.colorStatus
-            ].main};
-    `,
-};
-
 const positionStyle = {
     left: css`
         left: 0;
@@ -85,46 +67,40 @@ const bannerPosition = {
     `,
 };
 
-const squareStyle = css`
-    .corner {
-        span {
-            box-sizing: border-box;
-            height: ${props => props.theme.space.lg};
-            min-width: ${props => props.theme.space.lg};
-            padding-bottom: ${props => props.theme.space.xs};
+const cornerStyle = {
+    square: css`
+        .corner {
+            .cornerContent {
+                box-sizing: border-box;
+                height: ${props => props.theme.space.lg};
+                min-width: ${props => props.theme.space.lg};
+                padding-bottom: ${props => props.theme.space.xs};
 
-            ${props => squarePosition[props.position]};
+                ${props => squarePosition[props.position]};
+            }
         }
-    }
-`;
+    `,
+    banner: css`
+        pointer-events: none;
 
-const bannerStyle = css`
-    pointer-events: none;
+        .corner {
+            width: 70%;
+            padding-bottom: 100%;
+            overflow: hidden;
 
-    .corner {
-        width: 70%;
-        padding-bottom: 100%;
-        overflow: hidden;
+            .cornerContent {
+                box-sizing: content-box;
+                min-height: ${props => props.theme.space.md};
+                padding: ${props =>
+                    props.theme.space.sm + ' ' + props.theme.space.lg};
+                text-transform: uppercase;
+                font-size: ${props => props.theme.font.size.xxs};
+                letter-spacing: ${props => props.theme.font.spacing};
+            }
 
-        span {
-            box-sizing: content-box;
-            min-height: ${props => props.theme.space.md};
-            padding: ${props =>
-                props.theme.space.sm + ' ' + props.theme.space.lg};
-            text-transform: uppercase;
-            font-size: ${props => props.theme.font.size.xxs};
-            letter-spacing: ${props => props.theme.font.spacing};
+            ${props => bannerPosition[props.position]};
         }
-
-        ${props => bannerPosition[props.position]};
-    }
-`;
-
-export {
-    backgroundStyle,
-    colorStyle,
-    positionStyle,
-    centeredPopinStyle,
-    squareStyle,
-    bannerStyle,
+    `,
 };
+
+export { backgroundStyle, positionStyle, centeredPopinStyle, cornerStyle };

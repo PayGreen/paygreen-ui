@@ -38,6 +38,7 @@ Card.propTypes = {
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
     shadowSize: PropTypes.oneOf(Object.values(shadowSizeOptions)),
+    isShadowWab: PropTypes.bool,
     blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     hasBackground: PropTypes.bool,
@@ -46,6 +47,7 @@ Card.propTypes = {
     paddingBottom: PropTypes.oneOf(Object.values(spaceOptions)),
     paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     hasTitleOut: PropTypes.bool,
+    hasDashedBorder: PropTypes.bool,
 };
 
 Card.defaultProps = {
@@ -56,6 +58,7 @@ Card.defaultProps = {
     colorWab: greyOptions.white00,
     colorStatus: formStatusDefault,
     shadowSize: shadowSizeDefault,
+    isShadowWab: false,
     blockWidth: spaceOptions.md,
     radiusSize: radiusDefault,
     hasBackground: true,
@@ -64,6 +67,7 @@ Card.defaultProps = {
     paddingBottom: spaceDefault,
     paddingLateral: spaceDefault,
     hasTitleOut: false,
+    hasDashedBorder: false,
 };
 
 export default Card;
