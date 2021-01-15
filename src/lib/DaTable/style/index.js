@@ -3,7 +3,6 @@ import { responsiveSpaces } from '../../../shared/spaces';
 
 const DaTableBase = styled.div`
     ${responsiveSpaces('margin')};
-    color: ${props => props.theme.wab.grey60};
 
     @media ${props => props.theme.screen.max.lg} {
         max-width: ${props => props.theme.blockWidth[props.blockWidth]};
@@ -16,11 +15,13 @@ const DaTableBase = styled.div`
     .table {
         @media ${props => props.theme.screen.min.lg} {
             display: table;
+            border-collapse: collapse;
         }
     }
 
-    .noRows {
+    .noRowMessage {
         background-color: ${props => props.theme.wab.white10};
+        color: ${props => props.theme.wab.grey60};
 
         @media ${props => props.theme.screen.max.lg} {
             border-radius: ${props => props.theme.radius.sm};

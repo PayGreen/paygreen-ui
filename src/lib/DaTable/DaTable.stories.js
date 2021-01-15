@@ -151,12 +151,15 @@ const sampleRows = [
     },
 ];
 
+const isLoadingLabel = 'Is loading';
 const isActiveLabel = 'First line active';
 
 storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
     .addDecorator(withKnobs)
     .add('DaTable', () => (
         <DaTable
+            isLoading={boolean(isLoadingLabel, false)}
+            loadingRowNumber={sampleRows.length}
             blockWidth={select(
                 'Width on small screens',
                 spaceOptions,
@@ -216,7 +219,8 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
             </DaTableHead>
 
             <DaTableBody>
-                {boolean('Width data', true) ? (
+                {!boolean(isLoadingLabel, false) &&
+                boolean('With data', true) ? (
                     sampleRows.map((sample, index) => (
                         <DaTableRow
                             key={index}

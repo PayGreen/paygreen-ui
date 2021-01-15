@@ -1,14 +1,10 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
+import { iconSizeOptions } from '../../../shared/constants';
+import { checkboxStyle as cellCheckboxStyle } from '../../DaTableCell/style/base';
 import { IconBase } from '../../Icon/style';
 
-const isCheckboxStyle = css`
-    @media ${props => props.theme.screen.min.lg} {
-        font-size: 0; /* remove cell label when it's only a select/deselect all Checkbox */
-    }
-`;
-
-const calcShift = props => props.theme.icon.shift.sm;
+const iconSize = iconSizeOptions.xs;
 
 const mobileStyle = css`
     @media ${props => props.theme.screen.max.lg} {
@@ -21,19 +17,19 @@ const mobileStyle = css`
 
             .icon-child {
                 ${IconBase} {
-                    width: ${props => props.theme.icon.size.sm};
-                    height: ${props => props.theme.icon.size.sm};
+                    width: ${props => props.theme.icon.size[iconSize]};
+                    height: ${props => props.theme.icon.size[iconSize]};
                     padding: ${props =>
                         math(
-                            props.theme.icon.size.sm +
+                            props.theme.icon.size[iconSize] +
                                 '/2 - ' +
                                 props.theme.space.xs,
                         )};
 
                     &::before {
-                        padding: ${calcShift};
-                        bottom: -${calcShift};
-                        left: -${calcShift};
+                        padding: ${props => props.theme.icon.shift[iconSize]};
+                        bottom: -${props => props.theme.icon.shift[iconSize]};
+                        left: -${props => props.theme.icon.shift[iconSize]};
                     }
                 }
             }
@@ -69,10 +65,18 @@ const mobileStyle = css`
     }
 `;
 
+const checkboxStyle = css`
+    ${cellCheckboxStyle};
+
+    @media ${props => props.theme.screen.min.lg} {
+        font-size: 0; /* remove cell label when it's only a select/deselect all Checkbox */
+    }
+`;
+
 const hideUselessCell = css`
     @media ${props => props.theme.screen.max.lg} {
         display: none;
     }
 `;
 
-export { isCheckboxStyle, mobileStyle, hideUselessCell };
+export { mobileStyle, checkboxStyle, hideUselessCell };

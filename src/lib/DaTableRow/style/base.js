@@ -13,7 +13,9 @@ function mainCellAreas(mainCount, hasCheckbox) {
         `;
     }
 
-    return css`${styles}`;
+    return css`
+        ${styles}
+    `;
 }
 
 function basicCellAreas(notMainCount) {
@@ -27,7 +29,9 @@ function basicCellAreas(notMainCount) {
         `;
     }
 
-    return css`${styles}`;
+    return css`
+        ${styles}
+    `;
 }
 
 const cellsAreas = css`
@@ -73,13 +77,9 @@ const hoverStyle = css`
             props.theme.shadow.opacity.none,
             props.theme.wab.black00,
         )};
-    background-color: ${props => transparentize(1, props.theme.wab.white10)};
-
-    @media ${props => props.theme.screen.max.lg} {
-        background-color: ${props => props.theme.wab.white10};
-    }
 
     &:hover {
+        background-color: ${props => props.theme.wab.white00};
         box-shadow: ${props =>
             props.theme.shadow.size.xs +
             ' ' +
@@ -87,23 +87,21 @@ const hoverStyle = css`
                 props.theme.shadow.opacity.sm,
                 props.theme.wab.black00,
             )};
-        background-color: ${props => props.theme.wab.white00};
-
-        @media ${props => props.theme.screen.max.lg} {
-            background-color: ${props => props.theme.wab.white00};
-        }
     }
 `;
 
 const activeStyle = css`
     font-weight: ${props => props.theme.font.weight.bold};
-    background-color: ${props => props.theme.wab.grey10};
+    background-color: ${props => props.theme.wab.grey10} !important;
+    box-shadow: none !important;
+`;
 
+const loadingStyle = css`
     @media ${props => props.theme.screen.max.lg} {
-        background-color: ${props => props.theme.wab.grey10};
+        .cell-basic {
+            display: none;
+        }
     }
 `;
 
-export {
-    cellsAreas, toggableStyle, activeStyle, hoverStyle
-}
+export { cellsAreas, toggableStyle, hoverStyle, activeStyle, loadingStyle };

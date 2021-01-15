@@ -1,29 +1,60 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { spaceOptions, spaceDefault } from '../../shared/constants';
+import Checkbox from '../Checkbox/Checkbox';
+import DaTableHeadCell from '../DaTableHeadCell/DaTableHeadCell';
+import DaTableHead from '../DaTableHead/DaTableHead';
 import DaTableBody from '../DaTableBody/DaTableBody';
 import DaTableRow from '../DaTableRow/DaTableRow';
 import { DaTableBase } from './style';
 
-const DaTable = ({ children, ...rest }) => {
-    let noRowsMessage = null;
+const DaTable = ({
+    children,
+    isLoading,
+    loadingRowNumber,
+    mainCellNumber,
+    ...rest
+}) => {
+    let columnNumber = 0;
+    const checkboxCellIndex = [];
+    let noRowMessage = null;
     let hasRow = true;
 
-    React.Children.map(children, child => {
-        if (typeof child === 'object' && child.type === DaTableBody) {
-            hasRow = false;
+    if (isLoading) {
+        React.Children.map(children, child => {
+            if (typeof child === 'object' && child.type === DaTableHead) {
+                columnNumber = child.props.children.length;
 
-            React.Children.map(child.props.children, row => {
-                if (typeof row === 'object' && row.type === DaTableRow) {
-                    hasRow = true;
-                }
-            });
-
-            if (!hasRow) {
-                noRowsMessage = child.props.children;
+                React.Children.map(child.props.children, (headCell, index) => {
+                    if (
+                        typeof headCell === 'object' &&
+                        headCell.type === DaTableHeadCell &&
+                        (headCell.props.isCheckbox ||
+                            (headCell.props.children &&
+                                headCell.props.children.type === Checkbox))
+                    ) {
+                        checkboxCellIndex.push(index);
+                    }
+                });
             }
-        }
-    });
+        });
+    } else {
+        React.Children.map(children, child => {
+            if (typeof child === 'object' && child.type === DaTableBody) {
+                hasRow = false;
+
+                React.Children.map(child.props.children, row => {
+                    if (typeof row === 'object' && row.type === DaTableRow) {
+                        hasRow = true;
+                    }
+                });
+
+                if (!hasRow) {
+                    noRowMessage = child.props.children;
+                }
+            }
+        });
+    }
 
     return (
         <DaTableBase {...rest}>
@@ -31,15 +62,24 @@ const DaTable = ({ children, ...rest }) => {
                 {React.Children.map(children, child => {
                     if (!child) {
                         return null;
-                    } else if (hasRow || child.type !== DaTableBody) {
+                    } else if (child.type === DaTableBody) {
+                        return React.cloneElement(child, {
+                            hasRow: hasRow,
+                            isLoading: isLoading,
+                            loadingColumnNumber: columnNumber,
+                            loadingRowNumber: loadingRowNumber,
+                            mainCellNumber: mainCellNumber,
+                            checkboxCellIndex: checkboxCellIndex,
+                        });
+                    } else {
                         return child;
                     }
                 })}
             </div>
 
             {!hasRow ? (
-                <div className="noRows">
-                    {noRowsMessage ? noRowsMessage : 'No data'}
+                <div className="noRowMessage">
+                    {noRowMessage ? noRowMessage : 'No data'}
                 </div>
             ) : null}
         </DaTableBase>
@@ -47,6 +87,9 @@ const DaTable = ({ children, ...rest }) => {
 };
 
 DaTable.propTypes = {
+    isLoading: PropTypes.bool,
+    loadingRowNumber: PropTypes.number,
+    mainCellNumber: PropTypes.number,
     blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -54,6 +97,9 @@ DaTable.propTypes = {
 };
 
 DaTable.defaultProps = {
+    isLoading: false,
+    loadingRowNumber: 10,
+    mainCellNumber: 4,
     blockWidth: spaceOptions.md,
     marginLateral: spaceDefault,
     marginTop: spaceDefault,

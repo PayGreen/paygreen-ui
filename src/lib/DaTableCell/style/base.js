@@ -1,18 +1,40 @@
 import { css } from 'styled-components';
-import { transparentize } from 'polished';
+import { reflection } from '../../SkeletonItem/style/base';
+import { CheckboxBase } from '../../Checkbox/style';
+
+const loadingStyle = css`
+    .cell-content {
+        position: relative;
+        border-radius: ${props => props.theme.radius.sm};
+        background-color: ${props => props.theme.wab.grey10};
+        ${reflection.grey10};
+    }
+`;
 
 const borderRight = css`
-    border-right: solid ${props => props.theme.line};
-    border-right-color: ${props =>
-        transparentize(0.95, props.theme.wab.black00)};
+    &:not(:last-of-type) {
+        @media ${props => props.theme.screen.min.lg} {
+            border-right: solid
+                ${props => props.theme.line + ' ' + props.theme.wab.grey10};
+        }
+    }
+`;
 
-    &:last-of-type {
-        border-right: none;
+const checkboxStyle = css`
+    &:not(:last-of-type) {
+        @media ${props => props.theme.screen.min.lg} {
+            padding-right: 0;
+        }
+    }
+
+    ${CheckboxBase} {
+        margin: 0;
     }
 `;
 
 const idStyle = css`
     .cell-content {
+        min-height: inherit;
         background-color: ${props => props.theme.wab.grey20};
         border-radius: ${props => props.theme.radius.sm};
         font-size: ${props => props.theme.font.size.xxs};
@@ -46,10 +68,18 @@ const notMainStyle = css`
         &::after {
             content: '';
             flex: 1;
-            border-top: dotted ${props => props.theme.line + ' ' + props.theme.wab.grey20};
+            border-top: dotted
+                ${props => props.theme.line + ' ' + props.theme.wab.grey20};
             margin: 0 ${props => props.theme.space.xs};
         }
     }
 `;
 
-export { borderRight, idStyle, mainStyle, notMainStyle };
+export {
+    loadingStyle,
+    borderRight,
+    checkboxStyle,
+    idStyle,
+    mainStyle,
+    notMainStyle,
+};

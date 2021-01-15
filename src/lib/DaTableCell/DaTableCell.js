@@ -1,41 +1,52 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { buttonSizeOptions } from '../../shared/constants';
 import Checkbox from '../Checkbox/Checkbox';
 import { DaTableCellBase } from './style';
 
-const DaTableCell = ({ children, label, field, isCheckbox, ...rest }) => {
-    const labelContent = label && label.length ? (
-        <span className="cell-label">{label}</span>
-    ) : null;
-
-    const content = children ? (
-        <span className="cell-content">{children}</span>
-    ) : (
-        <>&nbsp;</>
-    );
+const DaTableCell = ({ children, label, isCheckbox, ...rest }) => {
+    const labelContent =
+        label && label.length ? (
+            <span className="cell-label">{label}</span>
+        ) : null;
 
     return (
         <DaTableCellBase
             {...rest}
-            isCheckbox={isCheckbox || children && children.type === Checkbox}
+            isCheckbox={isCheckbox || (children && children.type === Checkbox)}
             hasLabel={label && label.length}
         >
-            {labelContent}
-            {content}
-            {field ? field : null}
+            {rest.isLoading ? null : labelContent}
+
+            <span className="cell-content">
+                {React.Children.map(children, child => {
+                    if (!child) {
+                        return null;
+                    }
+
+                    if (child.type === Checkbox) {
+                        return React.cloneElement(child, {
+                            fieldSize: buttonSizeOptions.sm,
+                        });
+                    }
+
+                    return child;
+                })}
+            </span>
         </DaTableCellBase>
     );
 };
 
 DaTableCell.propTypes = {
+    isLoading: PropTypes.bool,
     isCheckbox: PropTypes.bool,
     isMain: PropTypes.bool,
     isId: PropTypes.bool,
     label: PropTypes.string,
-    field: PropTypes.element,
 };
 
 DaTableCell.defaultProps = {
+    isLoading: false,
     isCheckbox: false,
     isMain: true,
     isId: false,

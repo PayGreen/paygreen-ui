@@ -20,8 +20,8 @@ const DaTableRow = props => {
 
                 if (
                     child.props.isCheckbox ||
-                    child.props.children &&
-                    child.props.children.type === Checkbox
+                    (child.props.children &&
+                        child.props.children.type === Checkbox)
                 ) {
                     hasCheckbox = true;
                 }
@@ -48,8 +48,8 @@ const DaTableRow = props => {
                     if (child.props.isMain) {
                         if (
                             child.props.isCheckbox ||
-                            child.props.children &&
-                            child.props.children.type === Checkbox
+                            (child.props.children &&
+                                child.props.children.type === Checkbox)
                         ) {
                             className = 'cell-checkbox';
                         } else if (child.props.isId) {
@@ -65,6 +65,7 @@ const DaTableRow = props => {
 
                     return React.cloneElement(child, {
                         className: className,
+                        isLoading: props.isLoading,
                     });
                 }
             })}
@@ -73,10 +74,12 @@ const DaTableRow = props => {
 };
 
 DaTableRow.propTypes = {
+    isLoading: PropTypes.bool,
     isActive: PropTypes.bool,
 };
 
 DaTableRow.defaultProps = {
+    isLoading: false,
     isActive: false,
 };
 
