@@ -419,6 +419,12 @@ exports[`renders without crashing 1`] = `
                 "main": "#e58a28",
               },
             },
+            "table": Object {
+              "cell": Object {
+                "lg": "21px",
+                "sm": "18px",
+              },
+            },
             "transition": Object {
               "lg": "0.7s",
               "md": "0.5s",
@@ -482,7 +488,7 @@ exports[`renders without crashing 1`] = `
             />
           </svg>
         </button>
-        décembre 2020
+        janvier 2021
         <button
           className="style__IconBase-ak3679-0 eiqeDU icon"
           onClick={[Function]}
@@ -522,7 +528,7 @@ exports[`renders without crashing 1`] = `
         </div>
       </div>
       <div
-        className="style__CalendarGridBase-sc-1qui6a5-0 ehpeHc"
+        className="style__CalendarGridBase-sc-1qui6a5-0 ehrtpv"
       >
         <button
           className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"

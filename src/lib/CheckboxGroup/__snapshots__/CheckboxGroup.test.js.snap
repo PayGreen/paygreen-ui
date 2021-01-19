@@ -418,6 +418,12 @@ exports[`renders without crashing 1`] = `
               "main": "#e58a28",
             },
           },
+          "table": Object {
+            "cell": Object {
+              "lg": "21px",
+              "sm": "18px",
+            },
+          },
           "transition": Object {
             "lg": "0.7s",
             "md": "0.5s",
@@ -886,6 +892,12 @@ exports[`renders without crashing 1`] = `
             "warning": Object {
               "light": "#fbe6ce",
               "main": "#e58a28",
+            },
+          },
+          "table": Object {
+            "cell": Object {
+              "lg": "21px",
+              "sm": "18px",
             },
           },
           "transition": Object {

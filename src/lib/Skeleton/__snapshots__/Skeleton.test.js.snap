@@ -11,10 +11,10 @@ exports[`renders without crashing 1`] = `
       className="content"
     >
       <div
-        className="style__SkeletonItemBase-sc-1akijax-0 ejFkgu"
+        className="style__SkeletonItemBase-sc-1akijax-0 gZubAQ"
       />
       <div
-        className="style__SkeletonItemBase-sc-1akijax-0 ddVEww"
+        className="style__SkeletonItemBase-sc-1akijax-0 bTQriW"
       />
     </div>
   </div>

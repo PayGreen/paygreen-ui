@@ -5,16 +5,16 @@ exports[`renders without crashing 1`] = `
   className="style__DaTableBodyBase-sc-6g57ma-0 lbblkT"
 >
   <div
-    className="style__DaTableRowBase-cqmn2v-0 bomyEm"
+    className="style__DaTableRowBase-cqmn2v-0 gwibND"
   >
     <div
-      className="style__DaTableCellBase-sc-1ed6rma-0 iWyDKt cell-checkbox"
+      className="style__DaTableCellBase-sc-1ed6rma-0 gLhGfU cell-checkbox"
     >
       <span
         className="cell-content"
       >
         <div
-          className="style__CheckboxBase-sc-1wlk4ud-0 jhWHpb"
+          className="style__CheckboxBase-sc-1wlk4ud-0 bdkKKN"
         >
           <input
             disabled={false}
@@ -420,6 +420,12 @@ exports[`renders without crashing 1`] = `
                     "main": "#e58a28",
                   },
                 },
+                "table": Object {
+                  "cell": Object {
+                    "lg": "21px",
+                    "sm": "18px",
+                  },
+                },
                 "transition": Object {
                   "lg": "0.7s",
                   "md": "0.5s",
@@ -482,7 +488,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="style__DaTableCellBase-sc-1ed6rma-0 bPFeyy cell-id"
+      className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
     >
       <span
         className="cell-content"
@@ -491,7 +497,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="style__DaTableCellBase-sc-1ed6rma-0 eQOifB cell-main cell-main-1"
+      className="style__DaTableCellBase-sc-1ed6rma-0 blLFYm cell-main cell-main-1"
     >
       <span
         className="cell-content"
@@ -500,7 +506,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="style__DaTableCellBase-sc-1ed6rma-0 hbGqyJ cell-basic cell-basic-1"
+      className="style__DaTableCellBase-sc-1ed6rma-0 fImtdS cell-basic cell-basic-1"
     >
       <span
         className="cell-content"

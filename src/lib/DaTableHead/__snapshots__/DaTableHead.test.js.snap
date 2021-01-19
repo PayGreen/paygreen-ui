@@ -26,7 +26,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="style__DaTableHeadCellBase-sc-1fpn11j-0 kjWKMM"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 dNVusj"
   >
     <div
       className="head-child"
@@ -35,7 +35,7 @@ exports[`renders without crashing 1`] = `
         className="hideOnBigScreen"
       >
         <div
-          className="style__CheckboxBase-sc-1wlk4ud-0 jhWHpb"
+          className="style__CheckboxBase-sc-1wlk4ud-0 bdkKKN"
         >
           <input
             disabled={false}
@@ -441,6 +441,12 @@ exports[`renders without crashing 1`] = `
                     "main": "#e58a28",
                   },
                 },
+                "table": Object {
+                  "cell": Object {
+                    "lg": "21px",
+                    "sm": "18px",
+                  },
+                },
                 "transition": Object {
                   "lg": "0.7s",
                   "md": "0.5s",
@@ -506,7 +512,7 @@ exports[`renders without crashing 1`] = `
       className="hideOnSmallScreen"
     >
       <div
-        className="style__CheckboxBase-sc-1wlk4ud-0 jhWHpb"
+        className="style__CheckboxBase-sc-1wlk4ud-0 bdkKKN"
       >
         <input
           disabled={false}
@@ -912,6 +918,12 @@ exports[`renders without crashing 1`] = `
                   "main": "#e58a28",
                 },
               },
+              "table": Object {
+                "cell": Object {
+                  "lg": "21px",
+                  "sm": "18px",
+                },
+              },
               "transition": Object {
                 "lg": "0.7s",
                 "md": "0.5s",
@@ -974,7 +986,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="style__DaTableHeadCellBase-sc-1fpn11j-0 eHkPpV"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 bMPZMD"
   >
     <div
       className="head-child"
@@ -1002,7 +1014,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="style__DaTableHeadCellBase-sc-1fpn11j-0 eHkPpV"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 bMPZMD"
   >
     <div
       className="head-child"
