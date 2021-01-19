@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { borderRight } from '../../DaTableCell/style/base';
-import { isCheckboxStyle, mobileStyle, hideUselessCell } from './base';
+import { checkboxStyle, mobileStyle, hideUselessCell } from './base';
 
 const DaTableHeadCellBase = styled.div`
     padding: ${props => props.theme.space.sm} 0;
@@ -10,8 +10,8 @@ const DaTableHeadCellBase = styled.div`
 
     @media ${props => props.theme.screen.min.lg} {
         display: table-cell;
-        padding: ${props => props.theme.space.sm + ' ' + props.theme.space.md};
-        padding-top: 0;
+        padding: 0 ${props => props.theme.space.md};
+        padding-bottom: ${props => props.theme.space.sm};
 
         .cell-child {
             margin-top: ${props => props.theme.space.xs};
@@ -20,11 +20,9 @@ const DaTableHeadCellBase = styled.div`
         .icon-child {
             margin-left: ${props => props.theme.space.xs};
         }
-
-        ${props => (props.isCheckbox ? null : borderRight)};
     }
 
-    ${props => (props.isCheckbox ? isCheckboxStyle : null)};
+    ${props => (props.isCheckbox ? checkboxStyle : borderRight)};
     ${props =>
         props.isCheckbox || props.hasControls || props.children
             ? mobileStyle

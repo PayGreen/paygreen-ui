@@ -1,20 +1,22 @@
 import styled from 'styled-components';
-import { CheckboxBase } from '../../Checkbox/style';
 import { gridTemplate, gridColumns } from './constants';
-import { cellsAreas, toggableStyle, activeStyle, hoverStyle } from './base';
+import {
+    cellsAreas,
+    toggableStyle,
+    hoverStyle,
+    activeStyle,
+    loadingStyle,
+} from './base';
 
 const DaTableRowBase = styled.div`
+    background-color: ${props => props.theme.wab.white10};
     transition: all ${props => props.theme.transition.sm};
-    ${hoverStyle};
+    ${props => (props.isLoading ? loadingStyle : hoverStyle)};
     ${props => (props.isActive ? activeStyle : null)};
-
-    ${CheckboxBase} {
-        margin: ${props => props.theme.space.xs} 0;
-    }
 
     @media ${props => props.theme.screen.max.lg} {
         margin: ${props => props.theme.space.xs};
-        padding: ${props => props.theme.space.xs};
+        padding: ${props => props.theme.space.sm + ' ' + props.theme.space.xs};
         border-radius: ${props => props.theme.radius.sm};
         display: grid;
         grid-template-areas: ${props =>
@@ -26,7 +28,7 @@ const DaTableRowBase = styled.div`
             )};
         grid-template-columns: ${props =>
             gridColumns(props.mainCellCount, props.hasCheckbox, props.hasId)};
-        align-items: center; 
+        align-items: center;
 
         ${cellsAreas};
         ${toggableStyle};
@@ -34,10 +36,11 @@ const DaTableRowBase = styled.div`
 
     @media ${props => props.theme.screen.min.lg} {
         display: table-row;
-
-        .cell-checkbox {
-            padding-right: 0;
-        }
+        background-color: transparent;
+        border: solid
+            ${props => props.theme.line + ' ' + props.theme.wab.white00};
+        border-left: none;
+        border-right: none;
     }
 `;
 

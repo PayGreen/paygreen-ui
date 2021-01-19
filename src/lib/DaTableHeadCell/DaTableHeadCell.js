@@ -5,6 +5,7 @@ import {
     iconSizeOptions,
     colorPalletOptions,
     formStatusDefault,
+    buttonSizeOptions,
 } from '../../shared/constants';
 import Checkbox from '../Checkbox/Checkbox';
 import { DaTableHeadCellBase } from './style';
@@ -28,6 +29,12 @@ const DaTableHeadCell = ({
 
     const cellIsCheckbox =
         isCheckbox || (children && children.type === Checkbox);
+
+    if (children && children.type === Checkbox) {
+        children = React.cloneElement(children, {
+            fieldSize: buttonSizeOptions.sm,
+        });
+    }
 
     return (
         <DaTableHeadCellBase

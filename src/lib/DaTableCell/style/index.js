@@ -1,42 +1,19 @@
 import styled from 'styled-components';
-import { math } from 'polished';
-import { borderRight, idStyle, mainStyle, notMainStyle } from './base';
+import {
+    loadingStyle,
+    borderRight,
+    checkboxStyle,
+    idStyle,
+    mainStyle,
+    notMainStyle,
+} from './base';
 
 const DaTableCellBase = styled.div`
+    color: ${props => props.theme.wab.grey60};
     font-size: ${props => props.theme.font.size.xs};
     padding: ${props => props.theme.space.xs};
-
-    @media ${props => props.theme.screen.max.lg} {
-        ${props => (props.isId ? idStyle : null)};
-        ${props => (props.isMain ? mainStyle : notMainStyle)};
-    }
-
-    @media ${props => props.theme.screen.min.lg} {
-        position: relative;
-        display: table-cell;
-        vertical-align: middle;
-        padding: ${props => props.theme.space.md};
-
-        ${props => (props.isCheckbox ? null : borderRight)};
-
-        &::before,
-        &::after {
-            content: '';
-            position: absolute;
-            height: ${props => math(props.theme.line + '/2')};
-            width: 100%;
-            left: 0;
-            background-color: ${props => props.theme.wab.white00};
-        }
-
-        &::before {
-            top: 0;
-        }
-
-        &::after {
-            bottom: 0;
-        }
-    }
+    ${props => (props.isCheckbox ? checkboxStyle : borderRight)};
+    ${props => (props.isLoading && !props.isCheckbox ? loadingStyle : null)};
 
     .cell-label {
         @media ${props => props.theme.screen.min.lg} {
@@ -45,10 +22,26 @@ const DaTableCellBase = styled.div`
     }
 
     .cell-content {
-        width: fit-content;
         display: flex;
-        justify-content: center;
         align-items: center;
+        min-height: ${props => props.theme.table.cell.sm};
+        min-width: ${props => props.theme.table.cell.sm};
+
+        @media ${props => props.theme.screen.min.lg} {
+            min-height: ${props => props.theme.table.cell.lg};
+            min-width: ${props => props.theme.table.cell.lg};
+        }
+    }
+
+    @media ${props => props.theme.screen.max.lg} {
+        ${props => (props.isId ? idStyle : null)};
+        ${props => (props.isMain ? mainStyle : notMainStyle)};
+    }
+
+    @media ${props => props.theme.screen.min.lg} {
+        display: table-cell;
+        vertical-align: middle;
+        padding: ${props => props.theme.space.md};
     }
 `;
 

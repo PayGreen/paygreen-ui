@@ -443,4 +443,10 @@ export const ThemeBase = {
             xl: '600px',
         },
     },
+    table: {
+        cell: {
+            sm: '18px',
+            lg: '21px',
+        },
+    },
 };

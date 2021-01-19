@@ -8,6 +8,7 @@ import {
     fontSizeOptions,
     iconSizeOptions,
     spaceOptions,
+    alignOptions,
 } from '../../shared/constants';
 import {
     CheckBoldIcon,
@@ -143,19 +144,22 @@ const sampleRows = [
     },
     {
         date: '18/05/2020',
-        name: 'Pierrick Aimor-Tis',
+        name: 'Pierrick Hochet',
         amount: '71.05',
         type: 'Cash',
         status: 'refused',
     },
 ];
 
+const isLoadingLabel = 'Is loading';
 const isActiveLabel = 'First line active';
 
 storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
     .addDecorator(withKnobs)
     .add('DaTable', () => (
         <DaTable
+            isLoading={boolean(isLoadingLabel, false)}
+            loadingRowNumber={sampleRows.length}
             blockWidth={select(
                 'Width on small screens',
                 spaceOptions,
@@ -173,7 +177,7 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
                 spaceOptions.sm,
             )}
         >
-            <DaTableHead resultsLabel="10 results">
+            <DaTableHead>
                 <DaTableHeadCell label="Select/deselect all">
                     <Checkbox id="select" />
                 </DaTableHeadCell>
@@ -215,45 +219,57 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
             </DaTableHead>
 
             <DaTableBody>
-                {sampleRows.map((sample, index) => (
-                    <DaTableRow
-                        key={index}
-                        isActive={
-                            !index ? boolean(isActiveLabel, false) : false
-                        }
+                {!boolean(isLoadingLabel, false) &&
+                boolean('With data', true) ? (
+                    sampleRows.map((sample, index) => (
+                        <DaTableRow
+                            key={index}
+                            isActive={
+                                !index ? boolean(isActiveLabel, false) : false
+                            }
+                        >
+                            <DaTableCell>
+                                <Checkbox
+                                    id={'checkbox' + index}
+                                    checked={
+                                        !index
+                                            ? boolean(isActiveLabel, false)
+                                            : false
+                                    }
+                                    readOnly={true}
+                                />
+                            </DaTableCell>
+
+                            <DaTableCell isId={true}>
+                                {3400 + index}
+                            </DaTableCell>
+
+                            <DaTableCell isMain={false} label="Date">
+                                {sample.date}
+                            </DaTableCell>
+
+                            <DaTableCell>{sample.name}</DaTableCell>
+
+                            <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
+
+                            <DaTableCell isMain={false} label="Type">
+                                {sample.type}
+                            </DaTableCell>
+
+                            <DaTableCell isMain={false} label="Status">
+                                {status.icon[sample.status]}
+                                {status.text[sample.status]}
+                            </DaTableCell>
+                        </DaTableRow>
+                    ))
+                ) : (
+                    <Text
+                        textSize={fontSizeOptions.sm}
+                        align={alignOptions.center}
                     >
-                        <DaTableCell>
-                            <Checkbox
-                                id={'checkbox' + index}
-                                checked={
-                                    !index
-                                        ? boolean(isActiveLabel, false)
-                                        : false
-                                }
-                                readOnly={true}
-                            />
-                        </DaTableCell>
-
-                        <DaTableCell isId={true}>{3400 + index}</DaTableCell>
-
-                        <DaTableCell isMain={false} label="Date">
-                            {sample.date}
-                        </DaTableCell>
-
-                        <DaTableCell>{sample.name}</DaTableCell>
-
-                        <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
-
-                        <DaTableCell isMain={false} label="Type">
-                            {sample.type}
-                        </DaTableCell>
-
-                        <DaTableCell isMain={false} label="Status">
-                            {status.icon[sample.status]}
-                            {status.text[sample.status]}
-                        </DaTableCell>
-                    </DaTableRow>
-                ))}
+                        Nothing to show ¯\_(ツ)_/¯
+                    </Text>
+                )}
             </DaTableBody>
         </DaTable>
     ));

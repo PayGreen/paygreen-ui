@@ -10,7 +10,7 @@ import DaTableHead from './DaTableHead';
 storiesOf(folder.table + folder.sub.daTable + 'DaTableHead', module)
     .addDecorator(withKnobs)
     .add('DaTableHead', () => (
-        <DaTableHead resultsLabel="45 results">
+        <DaTableHead>
             <DaTableHeadCell label="Select/deselect all">
                 <Checkbox id="select"/>
             </DaTableHeadCell>
