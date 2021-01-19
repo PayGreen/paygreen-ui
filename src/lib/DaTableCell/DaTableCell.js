@@ -20,11 +20,7 @@ const DaTableCell = ({ children, label, isCheckbox, ...rest }) => {
 
             <span className="cell-content">
                 {React.Children.map(children, child => {
-                    if (!child) {
-                        return null;
-                    }
-
-                    if (child.type === Checkbox) {
+                    if (child && child.type === Checkbox) {
                         return React.cloneElement(child, {
                             fieldSize: buttonSizeOptions.sm,
                         });

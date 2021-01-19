@@ -12,11 +12,11 @@ const DaTable = ({
     children,
     isLoading,
     loadingRowNumber,
-    mainCellNumber,
+    loadingMainCellNumber,
     ...rest
 }) => {
     let columnNumber = 0;
-    const checkboxCellIndex = [];
+    const loadingCheckboxCellIndex = [];
     let noRowMessage = null;
     let hasRow = true;
 
@@ -33,7 +33,7 @@ const DaTable = ({
                             (headCell.props.children &&
                                 headCell.props.children.type === Checkbox))
                     ) {
-                        checkboxCellIndex.push(index);
+                        loadingCheckboxCellIndex.push(index);
                     }
                 });
             }
@@ -68,8 +68,8 @@ const DaTable = ({
                             isLoading: isLoading,
                             loadingColumnNumber: columnNumber,
                             loadingRowNumber: loadingRowNumber,
-                            mainCellNumber: mainCellNumber,
-                            checkboxCellIndex: checkboxCellIndex,
+                            loadingMainCellNumber: loadingMainCellNumber,
+                            loadingCheckboxCellIndex: loadingCheckboxCellIndex,
                         });
                     } else {
                         return child;
@@ -89,7 +89,7 @@ const DaTable = ({
 DaTable.propTypes = {
     isLoading: PropTypes.bool,
     loadingRowNumber: PropTypes.number,
-    mainCellNumber: PropTypes.number,
+    loadingMainCellNumber: PropTypes.number,
     blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -99,7 +99,7 @@ DaTable.propTypes = {
 DaTable.defaultProps = {
     isLoading: false,
     loadingRowNumber: 10,
-    mainCellNumber: 4,
+    loadingMainCellNumber: 4,
     blockWidth: spaceOptions.md,
     marginLateral: spaceDefault,
     marginTop: spaceDefault,

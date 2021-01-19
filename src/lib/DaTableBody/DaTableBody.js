@@ -10,8 +10,8 @@ const DaTableBody = ({
     hasRow,
     loadingColumnNumber,
     loadingRowNumber,
-    mainCellNumber,
-    checkboxCellIndex,
+    loadingMainCellNumber,
+    loadingCheckboxCellIndex,
     ...rest
 }) => {
     const loadingRows = [];
@@ -22,8 +22,8 @@ const DaTableBody = ({
 
             for (let j = 0; j < loadingColumnNumber; j++) {
                 row.push(
-                    <DaTableCell key={j} isMain={j < mainCellNumber}>
-                        {checkboxCellIndex.includes(j) ? (
+                    <DaTableCell key={j} isMain={j < loadingMainCellNumber}>
+                        {loadingCheckboxCellIndex.includes(j) ? (
                             <Checkbox
                                 id={'loading-table-checkbox-' + i + '-' + j}
                                 disabled
@@ -53,8 +53,8 @@ DaTableBody.propTypes = {
     isLoading: PropTypes.bool,
     loadingColumnNumber: PropTypes.number,
     loadingRowNumber: PropTypes.number,
-    mainCellNumber: PropTypes.number,
-    checkboxCellIndex: PropTypes.array,
+    loadingMainCellNumber: PropTypes.number,
+    loadingCheckboxCellIndex: PropTypes.array,
 };
 
 DaTableBody.defaultProps = {
@@ -62,8 +62,8 @@ DaTableBody.defaultProps = {
     isLoading: false,
     loadingColumnNumber: 0,
     loadingRowNumber: 10,
-    mainCellNumber: 4,
-    checkboxCellIndex: [],
+    loadingMainCellNumber: 4,
+    loadingCheckboxCellIndex: [],
 };
 
 export default DaTableBody;
