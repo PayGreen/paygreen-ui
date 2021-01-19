@@ -40,6 +40,7 @@ const labels = {
     // Booleans
     isActive: 'Is active',
     isRequired: 'Is required',
+    isLoading: 'Is loading',
     isMain: 'Is main',
     isId: 'Is ID',
     withSortIcon: 'With sort icon',

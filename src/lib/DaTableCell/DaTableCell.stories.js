@@ -5,17 +5,15 @@ import { folder } from '../../shared/constants';
 import labels from '../../shared/labels';
 import DaTableCell from './DaTableCell';
 
-const isLoadingLabel = 'Is loading';
-
 storiesOf(folder.table + folder.sub.daTable + 'DaTableCell', module)
     .addDecorator(withKnobs)
     .add('DaTableCell', () => (
         <DaTableCell
-            isLoading={boolean(isLoadingLabel, false)}
+            isLoading={boolean(labels.isLoading, false)}
             isMain={boolean(labels.isMain, true)}
             isId={boolean(labels.isId, false)}
             label={text(labels.label, 'Label')}
         >
-            {boolean(isLoadingLabel, false) ? null : 'Sample'}
+            {boolean(labels.isLoading, false) ? null : 'Sample'}
         </DaTableCell>
     ));

@@ -152,13 +152,11 @@ const sampleRows = [
     },
 ];
 
-const isLoadingLabel = 'Is loading';
-
 storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
     .addDecorator(withKnobs)
     .add('DaTable', () => (
         <DaTable
-            isLoading={boolean(isLoadingLabel, false)}
+            isLoading={boolean(labels.isLoading, false)}
             loadingRowNumber={sampleRows.length}
             blockWidth={select(
                 labels.smallScreenWidth,
@@ -219,7 +217,7 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
             </DaTableHead>
 
             <DaTableBody>
-                {!boolean(isLoadingLabel, false) &&
+                {!boolean(labels.isLoading, false) &&
                 boolean('With data', true) ? (
                     sampleRows.map((sample, index) => (
                         <DaTableRow
