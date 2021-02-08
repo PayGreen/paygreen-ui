@@ -1,13 +1,25 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
 
-const field = css`
-    border: solid ${props => props.theme.line + ' ' + props.theme.wab.grey10};
-    border-radius: ${props =>
-        math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
-    padding: 0
-        ${props =>
+const borderRadius = {
+    normal: css`
+        border-radius: ${props => props.theme.radius.sm};
+        padding: 0 ${props => props.theme.space.sm};
+    `,
+    rounded: css`
+        border-radius: ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
+        padding: 0
+            ${props =>
+                math(
+                    props.theme.daButton.buttonHeight[props.fieldSize] + '/2',
+                )};
+    `,
+};
+
+const field = css`
+    ${props => (props.isRounded ? borderRadius.rounded : borderRadius.normal)};
+    border: solid ${props => props.theme.line + ' ' + props.theme.wab.grey10};
     height: ${props => props.theme.daButton.buttonHeight[props.fieldSize]};
     width: 100%;
     font-size: ${props => props.theme.daButton.font[props.fieldSize]};
@@ -38,7 +50,7 @@ const disabled = css`
 const helpButtonStyle = css`
     input,
     select {
-        border-right: none;
+        border-right-color: transparent;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }

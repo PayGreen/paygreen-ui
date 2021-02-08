@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { math } from 'polished';
 
 const activeStyle = css`
     background-image: linear-gradient(
@@ -16,7 +17,7 @@ const activeStyle = css`
 
 const enabled = css`
     background-color: ${props => props.theme.status.default.light};
-    
+
     &:hover,
     &:active,
     &:focus {
@@ -30,7 +31,6 @@ const enabled = css`
     }
 
     ${props => (props.isActive ? activeStyle : null)};
-}
 `;
 
 const disabled = css`
@@ -40,4 +40,16 @@ const disabled = css`
     filter: grayscale(1);
 `;
 
-export { enabled, disabled };
+const borderRadius = {
+    normal: css`
+        border-radius: ${props => props.theme.radius.sm};
+    `,
+    rounded: css`
+        border-radius: ${props =>
+            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
+        padding-right: ${props =>
+            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/10')};
+    `,
+};
+
+export { enabled, disabled, borderRadius };

@@ -19,6 +19,7 @@ storiesOf(folder.form + 'DaTextarea', module)
             hasCounter={boolean('With counter', true)}
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
+            isRounded={boolean('Is rounded', false)}
             fieldSize={radios(
                 'Field size',
                 buttonSizeOptions,

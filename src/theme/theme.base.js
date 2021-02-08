@@ -162,9 +162,9 @@ export const ThemeBase = {
         lg: '12px',
     },
     arrow: {
-        sm: '8px',
-        md: '12px',
-        lg: '16px',
+        sm: '6px',
+        md: '10px',
+        lg: '14px',
     },
     space: {
         none: '0',

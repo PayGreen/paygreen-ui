@@ -17,6 +17,7 @@ storiesOf(folder.form + 'DaInput', module)
             placeholder="Firstname Lastname"
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
+            isRounded={boolean('Is rounded', false)}
             fieldSize={radios(
                 'Field size',
                 buttonSizeOptions,
@@ -36,6 +37,7 @@ storiesOf(folder.form + 'DaInput', module)
             placeholder="+33 (0)6 11 22 33 44"
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
+            isRounded={boolean('Is rounded', false)}
             fieldSize={radios(
                 'Field size',
                 buttonSizeOptions,
