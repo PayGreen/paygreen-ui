@@ -178,7 +178,7 @@ export const ThemeBase = {
         header: '45px',
         headerBig: '70px',
         topbar: '45px',
-        sidebar: '380px',
+        sidebar: '330px',
         maxWidth: '1400px',
     },
     blockShift: {
