@@ -1,6 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, select, radios } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    text,
+    select,
+    radios,
+    boolean,
+} from '@storybook/addon-knobs';
 import {
     folder,
     displayOptions,
@@ -13,6 +19,8 @@ import {
     alignItemsDefault,
     spaceOptions,
     spaceDefault,
+    alignDefault,
+    alignOptions,
 } from '../../shared/constants';
 import Text from '../Text/Text';
 import InternalGrid from './InternalGrid';
@@ -63,6 +71,8 @@ storiesOf(folder.grid + 'InternalGrid', module)
     ))
     .add('Grid', () => (
         <InternalGrid
+            hasStaticWidth={boolean('Has static width', true)}
+            align={radios('Align', alignOptions, alignDefault)}
             displayType={displayOptions.grid}
             gridTemplateColumns={text('Grid columns', '1fr 1fr 1fr')}
             gridTemplateRows={text('Grid rows', 'repeat(2, 60px)')}

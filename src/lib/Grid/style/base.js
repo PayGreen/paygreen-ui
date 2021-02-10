@@ -3,14 +3,12 @@ import { math } from 'polished';
 import { calculateSpace, blockSpace } from '../../../shared/spaces';
 
 const gridAlign = {
-    left: css`
-        margin: 0;
-    `,
+    left: css``,
     center: css`
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     `,
     right: css`
-        margin: 0;
         margin-left: auto;
     `,
 };

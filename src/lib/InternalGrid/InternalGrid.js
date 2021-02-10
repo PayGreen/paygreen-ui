@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+    alignOptions,
+    alignDefault,
     displayOptions,
     flexWrapOptions,
     flexWrapDefault,
@@ -19,6 +21,8 @@ const InternalGrid = props => {
 };
 
 InternalGrid.propTypes = {
+    hasStaticWidth: PropTypes.bool,
+    align: PropTypes.oneOf(Object.values(alignOptions)),
     displayType: PropTypes.oneOf([displayOptions.flex, displayOptions.grid]),
     gridTemplateColumns: PropTypes.string,
     gridTemplateRows: PropTypes.string,
@@ -35,6 +39,8 @@ InternalGrid.propTypes = {
 };
 
 InternalGrid.defaultProps = {
+    hasStaticWidth: true,
+    align: alignDefault,
     displayType: displayOptions.flex,
     gridTemplateColumns: 'none',
     gridTemplateRows: 'none',
