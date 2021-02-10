@@ -1,20 +1,18 @@
 import styled from 'styled-components';
 import { TextBase } from '../../Text/style';
-import { color } from './constants';
-import { arrowSize, arrowBlockStyle } from './base';
+import { arrowSize, color } from './constants';
+import { arrowBlockStyle, widthStyle } from './base';
 
 const MessageBase = styled.div`
     position: relative;
-    max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
     border-radius: ${props => props.theme.radius[props.fieldSize]};
     padding: ${arrowSize};
     margin-top: ${props => props.theme.space[props.marginTop]};
     margin-bottom: ${props => props.theme.space[props.marginBottom]};
-    display: inline-grid;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: 'icon text';
+    display: inline-flex;
     background-color: ${props => color.bg[props.colorType][props.colorPallet]};
     color: ${props => color.content[props.colorType][props.colorPallet]};
+    ${props => (props.hasStaticWidth ? widthStyle.static : widthStyle.fit)};
 
     &::after {
         content: '';
@@ -26,7 +24,7 @@ const MessageBase = styled.div`
     }
 
     & > .icon {
-        grid-area: icon;
+        flex-shrink: 0;
         margin-right: ${arrowSize};
         opacity: 0.6;
 
@@ -36,6 +34,7 @@ const MessageBase = styled.div`
     }
 
     & > ${TextBase} {
+        flex: 1;
         color: ${props => color.content[props.colorType][props.colorPallet]};
     }
 

@@ -1,7 +1,5 @@
 import { css } from 'styled-components';
-
-const arrowBreakpoint = 'xl';
-const arrowSize = props => props.theme.arrow[props.fieldSize];
+import { arrowBreakpoint, arrowSize } from './constants';
 
 const centerStyle = css`
     &::after {
@@ -109,4 +107,14 @@ const arrowBlockStyle = {
     `,
 };
 
-export { arrowSize, arrowBlockStyle };
+const widthStyle = {
+    fit: css`
+        max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
+    `,
+    static: css`
+        width: ${props => props.theme.form.inputWidth[props.blockWidth]};
+        max-width: 100%;
+    `,
+};
+
+export { arrowBlockStyle, widthStyle };
