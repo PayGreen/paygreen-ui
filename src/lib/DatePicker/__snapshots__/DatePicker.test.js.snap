@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__DatePickerBase-w9sfup-0 jbAxqf"
+  className="style__DatePickerBase-w9sfup-0 fhxaqn"
 >
   <div
     className="style__DropdownBase-ht2epv-0 dYNCxh"
   >
     <div
-      className="style__DaInputBase-sc-13xli4f-0 erYeie"
+      className="style__DaInputBase-sc-13xli4f-0 iDYsmg"
     >
       <input
         disabled={false}
@@ -21,9 +21,9 @@ exports[`renders without crashing 1`] = `
         theme={
           Object {
             "arrow": Object {
-              "lg": "16px",
-              "md": "12px",
-              "sm": "8px",
+              "lg": "14px",
+              "md": "10px",
+              "sm": "6px",
             },
             "bannerHeight": Object {
               "lg": "100vh",
@@ -229,6 +229,7 @@ exports[`renders without crashing 1`] = `
                 "md": "400px",
                 "sm": "330px",
                 "xs": "260px",
+                "xxs": "160px",
               },
               "radio": Object {
                 "lg": "150px",
@@ -251,7 +252,7 @@ exports[`renders without crashing 1`] = `
               "header": "45px",
               "headerBig": "70px",
               "maxWidth": "1400px",
-              "sidebar": "380px",
+              "sidebar": "330px",
               "topbar": "45px",
             },
             "histogram": Object {
@@ -474,7 +475,7 @@ exports[`renders without crashing 1`] = `
       className="style__PopinBase-sc-1ky0zqo-0 kIQbUy"
     >
       <div
-        className="style__CalendarNavbarBase-sc-9kauge-0 cFouVw"
+        className="style__CalendarNavbarBase-sc-9kauge-0 eMrxQk"
       >
         <button
           className="style__IconBase-ak3679-0 eiqeDU icon"
@@ -488,7 +489,7 @@ exports[`renders without crashing 1`] = `
             />
           </svg>
         </button>
-        janvier 2021
+        février 2021
         <button
           className="style__IconBase-ak3679-0 eiqeDU icon"
           onClick={[Function]}
@@ -528,7 +529,7 @@ exports[`renders without crashing 1`] = `
         </div>
       </div>
       <div
-        className="style__CalendarGridBase-sc-1qui6a5-0 ehrtpv"
+        className="style__CalendarGridBase-sc-1qui6a5-0 ehqsmf"
       >
         <button
           className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
@@ -697,24 +698,6 @@ exports[`renders without crashing 1`] = `
           onClick={[Function]}
         >
           28
-        </button>
-        <button
-          className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
-          onClick={[Function]}
-        >
-          29
-        </button>
-        <button
-          className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
-          onClick={[Function]}
-        >
-          30
-        </button>
-        <button
-          className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
-          onClick={[Function]}
-        >
-          31
         </button>
       </div>
     </div>

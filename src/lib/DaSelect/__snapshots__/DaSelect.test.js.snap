@@ -2,16 +2,16 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__DaSelectBase-yl4pzp-0 gXuNeX"
+  className="style__DaSelectBase-yl4pzp-0 itxPgY"
 >
   <select
     disabled={false}
     theme={
       Object {
         "arrow": Object {
-          "lg": "16px",
-          "md": "12px",
-          "sm": "8px",
+          "lg": "14px",
+          "md": "10px",
+          "sm": "6px",
         },
         "bannerHeight": Object {
           "lg": "100vh",
@@ -217,6 +217,7 @@ exports[`renders without crashing 1`] = `
             "md": "400px",
             "sm": "330px",
             "xs": "260px",
+            "xxs": "160px",
           },
           "radio": Object {
             "lg": "150px",
@@ -239,7 +240,7 @@ exports[`renders without crashing 1`] = `
           "header": "45px",
           "headerBig": "70px",
           "maxWidth": "1400px",
-          "sidebar": "380px",
+          "sidebar": "330px",
           "topbar": "45px",
         },
         "histogram": Object {

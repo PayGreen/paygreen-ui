@@ -5,12 +5,12 @@ exports[`renders without crashing 1`] = `
   className="style__FormControlBase-sc-1doj43m-0 eXrPaM"
 >
   <label
-    className="style__DaLabelBase-sc-67p5vh-0 bWImmM"
+    className="style__DaLabelBase-sc-67p5vh-0 ZaevI"
   >
     Label Description
   </label>
   <div
-    className="style__DaTextareaBase-cqgkmw-0 bobOlR"
+    className="style__DaTextareaBase-cqgkmw-0 eFHlRi"
   >
     <textarea
       disabled={false}
@@ -23,9 +23,9 @@ exports[`renders without crashing 1`] = `
       theme={
         Object {
           "arrow": Object {
-            "lg": "16px",
-            "md": "12px",
-            "sm": "8px",
+            "lg": "14px",
+            "md": "10px",
+            "sm": "6px",
           },
           "bannerHeight": Object {
             "lg": "100vh",
@@ -231,6 +231,7 @@ exports[`renders without crashing 1`] = `
               "md": "400px",
               "sm": "330px",
               "xs": "260px",
+              "xxs": "160px",
             },
             "radio": Object {
               "lg": "150px",
@@ -253,7 +254,7 @@ exports[`renders without crashing 1`] = `
             "header": "45px",
             "headerBig": "70px",
             "maxWidth": "1400px",
-            "sidebar": "380px",
+            "sidebar": "330px",
             "topbar": "45px",
           },
           "histogram": Object {
@@ -481,7 +482,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="style__MessageBase-ts6lfl-0 eoaPVg"
+    className="style__MessageBase-ts6lfl-0 dflKhm"
   >
     <p
       className="style__TextBase-sc-11ixwvd-0 gQgxOT"

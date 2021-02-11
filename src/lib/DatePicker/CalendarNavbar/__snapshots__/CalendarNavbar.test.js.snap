@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__CalendarNavbarBase-sc-9kauge-0 cFouVw"
+  className="style__CalendarNavbarBase-sc-9kauge-0 eMrxQk"
 >
   <button
     className="style__IconBase-ak3679-0 eiqeDU icon"
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
       />
     </svg>
   </button>
-  January 2021
+  February 2021
   <button
     className="style__IconBase-ak3679-0 eiqeDU icon"
     onClick={[Function]}
