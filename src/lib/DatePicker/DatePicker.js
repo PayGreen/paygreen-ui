@@ -132,14 +132,7 @@ const DatePicker = ({
                     />
 
                     {rest.readOnly || rest.disabled ? null : (
-                        <Popin
-                            theme={rest.theme}
-                            radiusSize={
-                                rest.isRounded
-                                    ? radiusOptions.lg
-                                    : radiusOptions.sm
-                            }
-                        >
+                        <Popin theme={rest.theme}>
                             <Calendar
                                 theme={rest.theme}
                                 currentMonth={calcMonthIndex()}
