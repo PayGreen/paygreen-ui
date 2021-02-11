@@ -33,6 +33,7 @@ storiesOf(folder.form + 'DatePicker', module)
                     disabled={boolean('Disabled', false)}
                     readOnly={boolean('Readonly', false)}
                     locale={select('Locale', localeOptions, localeDefault)}
+                    isRounded={boolean('Is rounded', false)}
                     fieldSize={radios(
                         'Field size',
                         buttonSizeOptions,

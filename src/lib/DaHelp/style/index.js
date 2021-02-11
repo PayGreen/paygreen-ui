@@ -1,17 +1,13 @@
 import styled from 'styled-components';
-import { math } from 'polished';
-import { enabled, disabled } from './base';
+import { enabled, disabled, borderRadius } from './base';
 
 const DaHelpBase = styled.button`
     box-sizing: border-box;
-    padding: 0;
-    padding-right: ${props =>
-        math(props.theme.daButton.buttonHeight[props.fieldSize] + '/10')};
     width: ${props => props.theme.daButton.buttonHeight[props.fieldSize]};
     height: ${props => props.theme.daButton.buttonHeight[props.fieldSize]};
+    padding: 0;
     border: none;
-    border-radius: ${props =>
-        math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
+    ${props => props.isRounded ? borderRadius.rounded : borderRadius.normal};
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     transition: all ${props => props.theme.transition.xs};

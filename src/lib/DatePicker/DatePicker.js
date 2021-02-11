@@ -6,6 +6,7 @@ import {
     buttonSizeOptions,
     formStatusDefault,
     formStatusOptions,
+    radiusOptions,
     localeOptions,
     localeDefault,
 } from '../../shared/constants';
@@ -172,8 +173,9 @@ DatePicker.propTypes = {
     placeholder: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
+    isRounded: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,

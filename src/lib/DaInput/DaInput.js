@@ -12,6 +12,7 @@ import { DaInputBase } from './style';
 const DaInput = props => {
     const [stateMask, setMask] = useState('');
     const {
+        isRounded,
         fieldSize,
         blockWidth,
         hasHelpButton,
@@ -34,6 +35,7 @@ const DaInput = props => {
             inputType={props.type}
             inputReadOnly={props.readOnly}
             inputDisabled={props.disabled}
+            isRounded={isRounded}
             fieldSize={fieldSize}
             blockWidth={blockWidth}
             hasHelpButton={hasHelpButton}
@@ -48,6 +50,7 @@ DaInput.propTypes = {
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     mask: PropTypes.string,
+    isRounded: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
@@ -61,6 +64,7 @@ DaInput.defaultProps = {
     type: 'text',
     disabled: false,
     readOnly: false,
+    isRounded: false,
     fieldSize: buttonSizeDefault,
     blockWidth: inputWidthDefault,
     hasHelpButton: false,

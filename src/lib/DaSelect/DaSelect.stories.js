@@ -38,6 +38,7 @@ storiesOf(folder.form + 'DaSelect', module)
             options={options}
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
+            isRounded={boolean('Is rounded', false)}
             fieldSize={radios(
                 'Field size',
                 buttonSizeOptions,

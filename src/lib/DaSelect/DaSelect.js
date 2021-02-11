@@ -11,6 +11,7 @@ import { DaSelectBase } from './style';
 const DaSelect = props => {
     const {
         options,
+        isRounded,
         fieldSize,
         blockWidth,
         hasHelpButton,
@@ -25,6 +26,7 @@ const DaSelect = props => {
             theme={props.theme} // not necessary, only needed for tests
             inputReadOnly={readOnly}
             inputDisabled={props.disabled}
+            isRounded={isRounded}
             blockWidth={blockWidth}
             fieldSize={fieldSize}
             hasHelpButton={hasHelpButton}
@@ -58,6 +60,7 @@ DaSelect.propTypes = {
     ).isRequired,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
+    isRounded: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
@@ -70,6 +73,7 @@ DaSelect.propTypes = {
 DaSelect.defaultProps = {
     disabled: false,
     readOnly: false,
+    isRounded: false,
     fieldSize: buttonSizeDefault,
     blockWidth: inputWidthDefault,
     hasHelpButton: false,

@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { math } from 'polished';
 import { disabledField } from '../../Input/style/base';
 
 const canHover = css`
@@ -25,4 +26,17 @@ const disabled = css`
     }
 `;
 
-export { enabled, disabled };
+const borderRadius = {
+    normal: css`
+        border-radius: ${props => props.theme.radius.sm};
+        padding: ${props => props.theme.space.sm};
+    `,
+    rounded: css`
+        border-radius: ${props =>
+            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
+        padding: ${props =>
+            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/3')};
+    `,
+};
+
+export { enabled, disabled, borderRadius };

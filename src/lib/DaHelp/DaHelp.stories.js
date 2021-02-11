@@ -20,6 +20,7 @@ storiesOf(folder.form + folder.sub.button + 'DaHelp', module)
             )}
             disabled={boolean('Disabled', false)}
             isActive={boolean('Is active', false)}
+            isRounded={boolean('Is rounded', false)}
         >
             <QuestionBoldIcon />
         </DaHelp>

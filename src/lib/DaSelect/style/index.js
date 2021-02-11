@@ -17,7 +17,11 @@ const DaSelectBase = styled.div`
         ${field};
         appearance: none;
         padding-right: ${props =>
-            props.theme.daButton.buttonHeight[props.fieldSize]};
+            props.isRounded
+                ? math(
+                      props.theme.daButton.buttonHeight[props.fieldSize] + '/2',
+                  )
+                : props.theme.space.md};
 
         option {
             &:disabled {
@@ -27,7 +31,7 @@ const DaSelectBase = styled.div`
 
         ${props => (props.inputDisabled ? disabled : enabled)};
     }
-    
+
     ${props => (props.hasHelpButton ? helpButtonStyle : null)};
 
     &::after {
@@ -35,15 +39,20 @@ const DaSelectBase = styled.div`
         position: absolute;
         pointer-events: none;
         right: ${props =>
-            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
+            props.isRounded
+                ? math(
+                      props.theme.daButton.buttonHeight[props.fieldSize] + '/2',
+                  )
+                : props.theme.space.md};
+        transform: translateX(50%);
         border-style: solid;
         border-width: 0
             ${props =>
                 math(
-                    props.theme.daButton.buttonHeight[props.fieldSize] + '/6',
+                    props.theme.daButton.buttonHeight[props.fieldSize] + '/7',
                 )};
         border-top-width: ${props =>
-            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/5')};
+            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/6')};
         border-color: transparent;
         border-top-color: ${props =>
             props.inputDisabled

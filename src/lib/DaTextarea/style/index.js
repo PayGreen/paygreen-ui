@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { math } from 'polished';
-import { enabled, disabled } from './base';
+import { enabled, disabled, borderRadius } from './base';
 
 const DaTextareaBase = styled.div`
     position: relative;
@@ -9,6 +9,8 @@ const DaTextareaBase = styled.div`
     ${props => (props.inputDisabled ? disabled : enabled)};
 
     textarea {
+        ${props =>
+            props.isRounded ? borderRadius.rounded : borderRadius.normal};
         width: 100%;
         height: ${props => (props.autoHeight ? props.autoHeight : 'auto')};
         min-height: ${props =>
@@ -16,10 +18,6 @@ const DaTextareaBase = styled.div`
         border-style: solid;
         border-width: ${props => props.theme.line};
         border-color: ${props => props.theme.wab.grey10};
-        border-radius: ${props =>
-            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
-        padding: ${props =>
-            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/3')};
         font-size: ${props => props.theme.daButton.font[props.fieldSize]};
         transition: all ${props => props.theme.transition.sm};
         overflow: hidden;
@@ -36,17 +34,19 @@ const DaTextareaBase = styled.div`
         color: ${props => props.theme.wab.grey60};
         padding: 0
             ${props =>
-                math(
-                    props.theme.daButton.buttonHeight[props.fieldSize] + '/2',
-                )};
+                props.isRounded
+                    ? math(
+                          props.theme.daButton.buttonHeight[props.fieldSize] +
+                              '/2',
+                      )
+                    : 0};
         margin: ${props => props.theme.space.xs} 0;
         font-size: ${props =>
             math(props.theme.daButton.font[props.fieldSize] + '*0.85')};
 
         span {
             font-weight: ${props => props.theme.font.weight.bold};
-            color: ${props =>
-                props.theme.status[props.charactersStatus].main};
+            color: ${props => props.theme.status[props.charactersStatus].main};
         }
     }
 `;

@@ -1,6 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select, text } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    radios,
+    select,
+    text,
+    boolean,
+} from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
@@ -41,11 +47,7 @@ storiesOf(folder.popup + 'Message', module)
                 blockPositionOptions,
                 blockPositionDefault,
             )}
-            colorType={radios(
-                'Color type',
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
+            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
             colorPallet={radios(
                 'Color pallet',
                 buttonColorPalletOptions,
@@ -61,59 +63,33 @@ storiesOf(folder.popup + 'Message', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
+            isRounded={boolean('Is rounded', false)}
             fieldSize={radios(
                 fieldSizeLabel,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
-            blockWidth={radios(
+            blockWidth={select(
                 blockWidthLabel,
                 inputWidthOptions,
                 inputWidthDefault,
             )}
+            hasStaticWidth={boolean('Has static width', false)}
             marginTop={select('Margin top', spaceOptions, spaceDefault)}
             marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
         >
-            <Text textSize={fontSizeOptions.sm}>
-                {text(
-                    'Message content',
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend aliquet libero. Morbi ultrices tristique leo vitae porta.',
-                )}
-            </Text>
-        </Message>
-    ))
-    .add('Message with Icon', () => (
-        <Message
-            arrowBlock={radios(
-                arrowBlockLabel,
-                blockPositionOptions,
-                blockPositionDefault,
+            {boolean('Add icon', false) ? (
+                <CautionIcon
+                    iconSize={iconSizeOptions.md}
+                    colorStatus={select(
+                        colorStatusLabel,
+                        formStatusOptions,
+                        formStatusDefault,
+                    )}
+                />
+            ) : (
+                <></>
             )}
-            colorStatus={select(
-                colorStatusLabel,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            fieldSize={radios(
-                fieldSizeLabel,
-                buttonSizeOptions,
-                buttonSizeDefault,
-            )}
-            blockWidth={radios(
-                blockWidthLabel,
-                inputWidthOptions,
-                inputWidthDefault,
-            )}
-        >
-            <CautionIcon
-                iconSize={iconSizeOptions.md}
-                colorStatus={select(
-                    colorStatusLabel,
-                    formStatusOptions,
-                    formStatusDefault,
-                )}
-            />
-
             <Text textSize={fontSizeOptions.sm}>
                 {text(
                     'Message content',

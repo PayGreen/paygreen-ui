@@ -3,7 +3,7 @@
 exports[`renders without crashing 1`] = `
 Array [
   <div
-    className="style__CalendarNavbarBase-sc-9kauge-0 cFouVw"
+    className="style__CalendarNavbarBase-sc-9kauge-0 eMrxQk"
   >
     <button
       className="style__IconBase-ak3679-0 eiqeDU icon"
@@ -17,7 +17,7 @@ Array [
         />
       </svg>
     </button>
-    January 2021
+    February 2021
     <button
       className="style__IconBase-ak3679-0 eiqeDU icon"
       onClick={[Function]}
@@ -57,7 +57,7 @@ Array [
     </div>
   </div>,
   <div
-    className="style__CalendarGridBase-sc-1qui6a5-0 ehrtpv"
+    className="style__CalendarGridBase-sc-1qui6a5-0 ehqsmf"
   >
     <button
       className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
@@ -120,7 +120,7 @@ Array [
       10
     </button>
     <button
-      className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
+      className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
       onClick={[Function]}
     >
       11
@@ -168,7 +168,7 @@ Array [
       18
     </button>
     <button
-      className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
+      className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
       onClick={[Function]}
     >
       19
@@ -226,24 +226,6 @@ Array [
       onClick={[Function]}
     >
       28
-    </button>
-    <button
-      className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
-      onClick={[Function]}
-    >
-      29
-    </button>
-    <button
-      className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
-      onClick={[Function]}
-    >
-      30
-    </button>
-    <button
-      className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
-      onClick={[Function]}
-    >
-      31
     </button>
   </div>,
 ]

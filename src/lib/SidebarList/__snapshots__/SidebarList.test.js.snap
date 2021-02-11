@@ -9,7 +9,7 @@ exports[`renders without crashing 1`] = `
       href="#"
     >
       <div
-        className="style__SidebarItemBase-sc-1i0hz0r-0 gtPXwB"
+        className="style__SidebarItemBase-sc-1i0hz0r-0 eRkxRZ"
       >
         <span
           className="style__LinkBase-sc-1gvcrtp-0 fjbDy"
@@ -24,7 +24,7 @@ exports[`renders without crashing 1`] = `
       href="#"
     >
       <div
-        className="style__SidebarItemBase-sc-1i0hz0r-0 gtPXwB"
+        className="style__SidebarItemBase-sc-1i0hz0r-0 eRkxRZ"
       >
         <span
           className="style__LinkBase-sc-1gvcrtp-0 fjbDy"

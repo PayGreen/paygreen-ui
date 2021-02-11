@@ -162,9 +162,9 @@ export const ThemeBase = {
         lg: '12px',
     },
     arrow: {
-        sm: '8px',
-        md: '12px',
-        lg: '16px',
+        sm: '6px',
+        md: '10px',
+        lg: '14px',
     },
     space: {
         none: '0',
@@ -178,7 +178,7 @@ export const ThemeBase = {
         header: '45px',
         headerBig: '70px',
         topbar: '45px',
-        sidebar: '380px',
+        sidebar: '330px',
         maxWidth: '1400px',
     },
     blockShift: {
@@ -371,6 +371,7 @@ export const ThemeBase = {
     },
     form: {
         inputWidth: {
+            xxs: '160px',
             xs: '260px',
             sm: '330px',
             md: '400px',

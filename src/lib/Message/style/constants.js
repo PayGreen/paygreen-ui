@@ -1,3 +1,6 @@
+const arrowBreakpoint = 'xl';
+const arrowSize = props => props.theme.arrow[props.fieldSize];
+
 const color = {
     bg: {
         original: {
@@ -21,4 +24,4 @@ const color = {
     },
 };
 
-export { color };
+export { arrowBreakpoint, arrowSize, color };
