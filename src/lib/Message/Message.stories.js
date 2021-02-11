@@ -63,12 +63,13 @@ storiesOf(folder.popup + 'Message', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
+            isRounded={boolean('Is rounded', false)}
             fieldSize={radios(
                 fieldSizeLabel,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
-            blockWidth={radios(
+            blockWidth={select(
                 blockWidthLabel,
                 inputWidthOptions,
                 inputWidthDefault,

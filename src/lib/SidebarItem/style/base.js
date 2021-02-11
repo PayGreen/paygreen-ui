@@ -5,6 +5,10 @@ const activeStyle = css`
     &::before {
         opacity: 1;
     }
+
+    & > .icon:last-of-type:not(first-of-type) {
+        background-color: transparent;
+    }
 `;
 
 const aHoverStyle = css`

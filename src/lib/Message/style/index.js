@@ -5,7 +5,10 @@ import { arrowBlockStyle, widthStyle } from './base';
 
 const MessageBase = styled.div`
     position: relative;
-    border-radius: ${props => props.theme.radius[props.fieldSize]};
+    border-radius: ${props =>
+        props.isRounded
+            ? props.theme.radius[props.fieldSize]
+            : props.theme.radius.sm};
     padding: ${arrowSize};
     margin-top: ${props => props.theme.space[props.marginTop]};
     margin-bottom: ${props => props.theme.space[props.marginBottom]};

@@ -4,8 +4,8 @@ const CalendarNavbarBase = styled.div`
     display: flex;
     justify-content: space-between;
     padding: ${props => props.theme.space.sm} 0;
-    border-top-left-radius: ${props => props.theme.radius.lg};
-    border-top-right-radius: ${props => props.theme.radius.lg};
+    border-top-left-radius: ${props => props.theme.radius.sm};
+    border-top-right-radius: ${props => props.theme.radius.sm};
 
     color: ${props => props.theme.status[props.colorStatus].main};
     background-color: ${props => props.theme.status[props.colorStatus].light};

@@ -112,8 +112,7 @@ const widthStyle = {
         max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
     `,
     static: css`
-        width: ${props => props.theme.form.inputWidth[props.blockWidth]};
-        max-width: 100%;
+        width: 100%;
     `,
 };
 

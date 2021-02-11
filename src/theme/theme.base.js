@@ -371,6 +371,7 @@ export const ThemeBase = {
     },
     form: {
         inputWidth: {
+            xxs: '160px',
             xs: '260px',
             sm: '330px',
             md: '400px',

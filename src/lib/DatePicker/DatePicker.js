@@ -6,6 +6,7 @@ import {
     buttonSizeOptions,
     formStatusDefault,
     formStatusOptions,
+    radiusOptions,
     localeOptions,
     localeDefault,
 } from '../../shared/constants';
@@ -131,7 +132,14 @@ const DatePicker = ({
                     />
 
                     {rest.readOnly || rest.disabled ? null : (
-                        <Popin theme={rest.theme}>
+                        <Popin
+                            theme={rest.theme}
+                            radiusSize={
+                                rest.isRounded
+                                    ? radiusOptions.lg
+                                    : radiusOptions.sm
+                            }
+                        >
                             <Calendar
                                 theme={rest.theme}
                                 currentMonth={calcMonthIndex()}
@@ -172,8 +180,9 @@ DatePicker.propTypes = {
     placeholder: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
+    isRounded: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
+    blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
