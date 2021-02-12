@@ -16,7 +16,6 @@ exports[`renders without crashing 1`] = `
         onChange={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
-        onInput={[Function]}
         readOnly={false}
         theme={
           Object {

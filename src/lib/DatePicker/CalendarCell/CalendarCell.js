@@ -5,9 +5,9 @@ import {
     formStatusDefault,
 } from '../../../shared/constants';
 import config from '../localeConfig';
+import { useDropdown } from '../../Dropdown/context/DropdownContext';
 import { DateContext } from '../context/DateContext';
 import CalendarCellBase from './style';
-import { useDropdown } from '../../Dropdown/DropdownContext';
 
 const CalendarCell = ({ date, isDisabled, handleOnChange, ...rest }) => {
     const { setOpen } = useDropdown();

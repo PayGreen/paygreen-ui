@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDropdown } from './DropdownContext';
+import { useDropdown } from './context/DropdownContext';
 
 const DropdownControl = props => {
     const { isOpen, setOpen } = useDropdown();

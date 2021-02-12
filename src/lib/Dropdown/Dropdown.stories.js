@@ -14,11 +14,11 @@ import Badge from '../Badge/Badge';
 import ButtonGroup from '../ButtonGroup/ButtonGroup';
 import ClickableBlock from '../ClickableBlock/ClickableBlock';
 import DaButton from '../DaButton/DaButton';
-import Dropdown from './Dropdown';
-import DropdownControl from './DropdownControl';
 import Popin from '../Popin/Popin';
 import Text from '../Text/Text';
 import Title from '../Title/Title';
+import Dropdown from './Dropdown';
+import DropdownControl from './DropdownControl';
 
 const popinContent = (
     <>
@@ -62,31 +62,34 @@ storiesOf(folder.popup + 'Dropdown', module)
             <Popin {...popinProps}>{popinContent}</Popin>
         </Dropdown>
     ))
-    .add('Dropdown with ClickableBlock and close button', () => (
-        <Dropdown>
-            <ClickableBlock
-                paddingLateral={spaceOptions.sm}
-                paddingTop={spaceOptions.sm}
-                paddingBottom={spaceOptions.sm}
-            >
-                <Text>Click here</Text>
-            </ClickableBlock>
+    .add(
+        'Dropdown with ClickableBlock, close button and without closing overlay',
+        () => (
+            <Dropdown hasOverlay={false}>
+                <ClickableBlock
+                    paddingLateral={spaceOptions.sm}
+                    paddingTop={spaceOptions.sm}
+                    paddingBottom={spaceOptions.sm}
+                >
+                    <Text>Click here</Text>
+                </ClickableBlock>
 
-            <Popin {...popinProps}>
-                {popinContent}
+                <Popin {...popinProps}>
+                    {popinContent}
 
-                <ButtonGroup marginBottom={spaceOptions.sm}>
-                    <DropdownControl>
-                        <button type="button">
-                            <DaButton buttonSize={buttonSizeOptions.sm}>
-                                Close Me
-                            </DaButton>
-                        </button>
-                    </DropdownControl>
-                </ButtonGroup>
-            </Popin>
-        </Dropdown>
-    ))
+                    <ButtonGroup marginBottom={spaceOptions.sm}>
+                        <DropdownControl>
+                            <button type="button">
+                                <DaButton buttonSize={buttonSizeOptions.sm}>
+                                    Close Me
+                                </DaButton>
+                            </button>
+                        </DropdownControl>
+                    </ButtonGroup>
+                </Popin>
+            </Dropdown>
+        ),
+    )
     .add(
         'Dropdown with Badge',
         () => (

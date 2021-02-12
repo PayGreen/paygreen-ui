@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import DaInput from '../DaInput/DaInput';
 import Popin from '../Popin/Popin';
-import { DropdownContext } from './DropdownContext';
+import { DropdownContext } from './context/DropdownContext';
 import { DropdownBase, InvisibleCloseButton } from './style';
 
-const Dropdown = ({ children, ...rest }) => {
+const Dropdown = ({ children, hasOverlay, ...rest }) => {
     const [isOpen, setOpen] = useState();
 
     return (
         <DropdownContext.Provider value={{ isOpen, setOpen }}>
             <DropdownBase {...rest}>
-                {isOpen ? (
+                {isOpen && hasOverlay ? (
                     <InvisibleCloseButton onClick={() => setOpen(!isOpen)} />
                 ) : null}
 
@@ -42,6 +43,14 @@ const Dropdown = ({ children, ...rest }) => {
             </DropdownBase>
         </DropdownContext.Provider>
     );
+};
+
+Dropdown.propTypes = {
+    hasOverlay: PropTypes.bool,
+};
+
+Dropdown.defaultProps = {
+    hasOverlay: true,
 };
 
 export default Dropdown;

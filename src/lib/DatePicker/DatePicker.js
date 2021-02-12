@@ -6,7 +6,6 @@ import {
     buttonSizeOptions,
     formStatusDefault,
     formStatusOptions,
-    radiusOptions,
     localeOptions,
     localeDefault,
 } from '../../shared/constants';
@@ -52,45 +51,92 @@ const DatePicker = ({
         }
     }, [selectedDate]);
 
-    // Handle value change via input
+    // To set date value via Input change
+    const setInputDate = value => {
+        setSelectedDate(moment(value, dateFormat));
+        onChange(value);
+    };
+
+    /**
+     * @description - to create condition to validate or invalidate date value
+     * @param {string} dateValue - date received, format DD/MM/YYYY
+     * @param {string} dateReference - date reference to decide if dateValue is correct minimumDate | maximumDate, format DD/MM/YYYY
+     * @param {string} position - to determinate which method from Moment to use based on date's position 'isBefore' | 'isAfter'
+     * @returns {boolean}
+     */
+    const isValidDate = (dateValue, dateReference, position) => {
+        return (
+            moment(dateValue, dateFormat, true).isValid() &&
+            dateReference &&
+            moment(dateReference, dateFormat, true).isValid() &&
+            (position === 'isBefore'
+                ? moment(dateValue, dateFormat).isBefore(
+                      moment(dateReference, dateFormat),
+                  )
+                : moment(dateValue, dateFormat).isAfter(
+                      moment(dateReference, dateFormat),
+                  ))
+        );
+    };
+
+    /**
+     * @description - to reset wrong date value via Input based on minimumDate, maximumDate and resetDate provided
+     * @param {string} dateValue - date received, format DD/MM/YYYY
+     */
+    const resetWrongDate = dateValue => {
+        if (isValidDate(dateValue, maximumDate, 'isAfter')) {
+            setInputDate(maximumDate);
+        } else if (isValidDate(dateValue, minimumDate, 'isBefore')) {
+            setInputDate(minimumDate);
+        } else {
+            const defaultDate =
+                resetDate && moment(resetDate, dateFormat, true).isValid()
+                    ? resetDate
+                    : moment().format(dateFormat);
+            setInputDate(defaultDate);
+        }
+    };
+
+    // Handle value change via Input and prevent final selectedDate to be applied if incorrect (in format or in value compared to minimumDate and maximumDate)
     const handleInputOnChange = e => {
         if (selectedDate) {
             setSelectedDate(null);
         }
 
-        onChange(e.target.value);
         setInputValue(e.target.value);
 
-        if (moment(e.target.value, dateFormat, true).isValid()) {
-            setSelectedDate(moment(e.target.value, dateFormat));
+        if (
+            isValidDate(e.target.value, maximumDate, 'isBefore') &&
+            isValidDate(e.target.value, minimumDate, 'isAfter')
+        ) {
+            setInputDate(e.target.value);
+        } else if (
+            !minimumDate &&
+            isValidDate(e.target.value, maximumDate, 'isBefore')
+        ) {
+            setInputDate(e.target.value);
+        } else if (
+            !maximumDate &&
+            isValidDate(e.target.value, minimumDate, 'isAfter')
+        ) {
+            setInputDate(e.target.value);
+        } else if (
+            !minimumDate &&
+            !maximumDate &&
+            moment(e.target.value, dateFormat, true).isValid()
+        ) {
+            setInputDate(e.target.value);
+        } else if (e.target.value.indexOf('_') >= 0) {
+            // we don't do anything if date is not complete and input mask contains '_' characters
+            return;
+        } else {
+            resetWrongDate(e.target.value);
         }
     };
 
     // Handle value change via CalendarCell Buttons
     const handleButtonOnChange = e => {
         onChange(moment(e).format(dateFormat));
-    };
-
-    // Reset wrong date value change via input when clicking outside calendar
-    const resetWrongDate = value => {
-        if (value && moment(value, dateFormat).isValid() === false) {
-            const defaultDate =
-                resetDate && moment(resetDate, dateFormat, true).isValid()
-                    ? resetDate
-                    : moment().format(dateFormat);
-            setSelectedDate(moment(defaultDate, dateFormat));
-        } else if (
-            moment(maximumDate, dateFormat, true).isValid() &&
-            moment(value, dateFormat).isAfter(moment(maximumDate, dateFormat))
-        ) {
-            setSelectedDate(moment(maximumDate, dateFormat));
-        } else if (
-            moment(minimumDate, dateFormat, true).isValid() &&
-            moment(value, dateFormat).isBefore(moment(minimumDate, dateFormat))
-        ) {
-            setSelectedDate(moment(minimumDate, dateFormat));
-        }
-        setActive(false);
     };
 
     const calcMonthIndex = () => {
@@ -118,7 +164,6 @@ const DatePicker = ({
                         type="text"
                         value={inputValue}
                         onChange={handleInputOnChange}
-                        onInput={() => setActive(true)}
                     />
 
                     {rest.readOnly || rest.disabled ? null : (
