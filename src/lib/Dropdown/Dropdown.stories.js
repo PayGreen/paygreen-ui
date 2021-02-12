@@ -4,20 +4,24 @@ import { withKnobs } from '@storybook/addon-knobs';
 import {
     folder,
     spaceOptions,
+    buttonSizeOptions,
     fontSizeOptions,
     iconSizeOptions,
     iconHtmlTagOptions,
 } from '../../shared/constants';
 import { PenIcon, ArrowBottomIcon } from '../Icon/Icon';
 import Badge from '../Badge/Badge';
-import Title from '../Title/Title';
-import Text from '../Text/Text';
-import Popin from '../Popin/Popin';
+import ButtonGroup from '../ButtonGroup/ButtonGroup';
 import ClickableBlock from '../ClickableBlock/ClickableBlock';
+import DaButton from '../DaButton/DaButton';
 import Dropdown from './Dropdown';
+import DropdownControl from './DropdownControl';
+import Popin from '../Popin/Popin';
+import Text from '../Text/Text';
+import Title from '../Title/Title';
 
-const popin = (
-    <Popin marginTop={spaceOptions.sm} blockWidth={spaceOptions.sm}>
+const popinContent = (
+    <>
         <Title
             marginTop={spaceOptions.xs}
             marginLateral={spaceOptions.xs}
@@ -35,8 +39,13 @@ const popin = (
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </Text>
-    </Popin>
+    </>
 );
+
+const popinProps = {
+    marginTop: spaceOptions.sm,
+    blockWidth: spaceOptions.sm,
+};
 
 storiesOf(folder.popup + 'Dropdown', module)
     .addDecorator(withKnobs)
@@ -50,7 +59,32 @@ storiesOf(folder.popup + 'Dropdown', module)
                 <Text>Click here</Text>
             </ClickableBlock>
 
-            {popin}
+            <Popin {...popinProps}>{popinContent}</Popin>
+        </Dropdown>
+    ))
+    .add('Dropdown with ClickableBlock and close button', () => (
+        <Dropdown>
+            <ClickableBlock
+                paddingLateral={spaceOptions.sm}
+                paddingTop={spaceOptions.sm}
+                paddingBottom={spaceOptions.sm}
+            >
+                <Text>Click here</Text>
+            </ClickableBlock>
+
+            <Popin {...popinProps}>
+                {popinContent}
+
+                <ButtonGroup marginBottom={spaceOptions.sm}>
+                    <DropdownControl>
+                        <button type="button">
+                            <DaButton buttonSize={buttonSizeOptions.sm}>
+                                Close Me
+                            </DaButton>
+                        </button>
+                    </DropdownControl>
+                </ButtonGroup>
+            </Popin>
         </Dropdown>
     ))
     .add(
@@ -65,7 +99,7 @@ storiesOf(folder.popup + 'Dropdown', module)
                     <ArrowBottomIcon marginLeft={spaceOptions.xs} />
                 </Badge>
 
-                {popin}
+                <Popin {...popinProps}>{popinContent}</Popin>
             </Dropdown>
         ),
         {},
@@ -81,7 +115,7 @@ storiesOf(folder.popup + 'Dropdown', module)
                     hasHover
                 />
 
-                {popin}
+                <Popin {...popinProps}>{popinContent}</Popin>
             </Dropdown>
         ),
         {},

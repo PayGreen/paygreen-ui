@@ -17,7 +17,6 @@ import { DateContextProvider } from './context/DateContext';
 import Calendar from './Calendar/Calendar';
 import localeConfig from './localeConfig';
 import { DatePickerBase } from './style';
-import { InvisibleCloseButton } from '../Dropdown/style';
 
 const DatePicker = ({
     colorStatus,
@@ -46,9 +45,6 @@ const DatePicker = ({
 
     // And extract input state handling
     const [inputValue, setInputValue] = useState(value);
-
-    // Take control over dropdown display with isActive props
-    const [isActive, setActive] = useState(false);
 
     useEffect(() => {
         if (selectedDate) {
@@ -115,13 +111,7 @@ const DatePicker = ({
             value={[selectedDate, setSelectedDate, setInputValue]}
         >
             <DatePickerBase theme={rest.theme}>
-                {isActive ? (
-                    <InvisibleCloseButton
-                        onClick={() => resetWrongDate(value)}
-                    />
-                ) : null}
-
-                <DropDown theme={rest.theme} isActive={isActive}>
+                <DropDown theme={rest.theme}>
                     <DaInput
                         {...rest}
                         mask="99/99/9999"

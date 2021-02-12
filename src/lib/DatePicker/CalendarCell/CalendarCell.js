@@ -7,8 +7,10 @@ import {
 import config from '../localeConfig';
 import { DateContext } from '../context/DateContext';
 import CalendarCellBase from './style';
+import { useDropdown } from '../../Dropdown/DropdownContext';
 
 const CalendarCell = ({ date, isDisabled, handleOnChange, ...rest }) => {
+    const { setOpen } = useDropdown();
     const [selectedDate, setSelectedDate] = useContext(DateContext);
     const dateFormat = config['pg-en'].longDateFormat.L;
 
@@ -17,6 +19,7 @@ const CalendarCell = ({ date, isDisabled, handleOnChange, ...rest }) => {
         if (!isDisabled) {
             setSelectedDate(date);
             handleOnChange(date);
+            setOpen(false);
         }
     };
 
