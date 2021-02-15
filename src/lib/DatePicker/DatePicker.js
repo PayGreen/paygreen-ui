@@ -126,9 +126,12 @@ const DatePicker = ({
             moment(e.target.value, dateFormat, true).isValid()
         ) {
             setInputDate(e.target.value);
-        } else if (e.target.value.indexOf('_') >= 0) {
+        } else if (e.target.value.indexOf("_") >= 0) {
             // we don't do anything if date is not complete and input mask contains '_' characters
             return;
+        } else if (e.target.value === "" && !rest.required) {
+            // we don't reset input if input is not required and empty
+            setSelectedDate(null);
         } else {
             resetWrongDate(e.target.value);
         }
@@ -208,6 +211,7 @@ DatePicker.propTypes = {
     placeholder: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
+    required: PropTypes.bool,
     isRounded: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
@@ -231,6 +235,7 @@ DatePicker.defaultProps = {
     // Input props
     disabled: false,
     readOnly: false,
+    required: true,
 
     // Calendar props
     locale: localeDefault,
