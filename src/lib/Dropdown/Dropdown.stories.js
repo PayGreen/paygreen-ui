@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     spaceOptions,
@@ -47,10 +47,12 @@ const popinProps = {
     blockWidth: spaceOptions.sm,
 };
 
+const hasOverlayLabel = 'Has overlay';
+
 storiesOf(folder.popup + 'Dropdown', module)
     .addDecorator(withKnobs)
     .add('Dropdown with ClickableBlock', () => (
-        <Dropdown>
+        <Dropdown hasOverlay={boolean(hasOverlayLabel, true)}>
             <ClickableBlock
                 paddingLateral={spaceOptions.sm}
                 paddingTop={spaceOptions.sm}
@@ -59,24 +61,10 @@ storiesOf(folder.popup + 'Dropdown', module)
                 <Text>Click here</Text>
             </ClickableBlock>
 
-            <Popin {...popinProps}>{popinContent}</Popin>
-        </Dropdown>
-    ))
-    .add(
-        'Dropdown with ClickableBlock, close button and without closing overlay',
-        () => (
-            <Dropdown hasOverlay={false}>
-                <ClickableBlock
-                    paddingLateral={spaceOptions.sm}
-                    paddingTop={spaceOptions.sm}
-                    paddingBottom={spaceOptions.sm}
-                >
-                    <Text>Click here</Text>
-                </ClickableBlock>
+            <Popin {...popinProps}>
+                {popinContent}
 
-                <Popin {...popinProps}>
-                    {popinContent}
-
+                {!boolean(hasOverlayLabel, true) ? (
                     <ButtonGroup marginBottom={spaceOptions.sm}>
                         <DropdownControl>
                             <button type="button">
@@ -86,10 +74,10 @@ storiesOf(folder.popup + 'Dropdown', module)
                             </button>
                         </DropdownControl>
                     </ButtonGroup>
-                </Popin>
-            </Dropdown>
-        ),
-    )
+                ) : null}
+            </Popin>
+        </Dropdown>
+    ))
     .add(
         'Dropdown with Badge',
         () => (
