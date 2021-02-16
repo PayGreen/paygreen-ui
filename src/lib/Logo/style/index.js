@@ -9,6 +9,7 @@ import {
 
 const LogoBase = styled.span`
     display: flex;
+    justify-content: center;
     align-items: center;
     transition: all ${props => props.theme.transition.sm};
 
