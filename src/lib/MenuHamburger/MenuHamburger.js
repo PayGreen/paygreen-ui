@@ -17,7 +17,7 @@ import {
 import { MenuHamburgerBase } from './style';
 
 const MenuHamburger = props => (
-    <MenuHamburgerBase {...props}>
+    <MenuHamburgerBase type="button" {...props}>
         <span></span>
         <span></span>
         <span></span>
