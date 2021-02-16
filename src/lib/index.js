@@ -30,6 +30,7 @@ import DaTextarea from './DaTextarea/DaTextarea';
 import Divider from './Divider/Divider';
 import Dot from './Dot/Dot';
 import Dropdown from './Dropdown/Dropdown';
+import DropdownControl from './Dropdown/DropdownControl';
 import Footer from './Footer/Footer';
 import FooterList from './FooterList/FooterList';
 import FormControl from './FormControl/FormControl';
@@ -238,6 +239,7 @@ export {
     Divider,
     Dot,
     Dropdown,
+    DropdownControl,
     Footer,
     FooterList,
     FormControl,

@@ -6,7 +6,6 @@ import {
     buttonSizeOptions,
     formStatusDefault,
     formStatusOptions,
-    radiusOptions,
     localeOptions,
     localeDefault,
 } from '../../shared/constants';
@@ -17,7 +16,6 @@ import { DateContextProvider } from './context/DateContext';
 import Calendar from './Calendar/Calendar';
 import localeConfig from './localeConfig';
 import { DatePickerBase } from './style';
-import { InvisibleCloseButton } from '../Dropdown/style';
 
 const DatePicker = ({
     colorStatus,
@@ -47,54 +45,101 @@ const DatePicker = ({
     // And extract input state handling
     const [inputValue, setInputValue] = useState(value);
 
-    // Take control over dropdown display with isActive props
-    const [isActive, setActive] = useState(false);
-
     useEffect(() => {
         if (selectedDate) {
             setInputValue(selectedDate.format(dateFormat));
         }
     }, [selectedDate]);
 
-    // Handle value change via input
+    // To set date value via Input change
+    const setInputDate = value => {
+        setSelectedDate(moment(value, dateFormat));
+        onChange(value);
+    };
+
+    /**
+     * @description - to create condition to validate or invalidate date value
+     * @param {string} dateValue - date received, format DD/MM/YYYY
+     * @param {string} dateReference - date reference to decide if dateValue is correct minimumDate | maximumDate, format DD/MM/YYYY
+     * @param {string} position - to determinate which method from Moment to use based on date's position 'isBefore' | 'isAfter'
+     * @returns {boolean}
+     */
+    const isValidDate = (dateValue, dateReference, position) => {
+        return (
+            moment(dateValue, dateFormat, true).isValid() &&
+            dateReference &&
+            moment(dateReference, dateFormat, true).isValid() &&
+            (position === 'isBefore'
+                ? moment(dateValue, dateFormat).isBefore(
+                      moment(dateReference, dateFormat),
+                  )
+                : moment(dateValue, dateFormat).isAfter(
+                      moment(dateReference, dateFormat),
+                  ))
+        );
+    };
+
+    /**
+     * @description - to reset wrong date value via Input based on minimumDate, maximumDate and resetDate provided
+     * @param {string} dateValue - date received, format DD/MM/YYYY
+     */
+    const resetWrongDate = dateValue => {
+        if (isValidDate(dateValue, maximumDate, 'isAfter')) {
+            setInputDate(maximumDate);
+        } else if (isValidDate(dateValue, minimumDate, 'isBefore')) {
+            setInputDate(minimumDate);
+        } else {
+            const defaultDate =
+                resetDate && moment(resetDate, dateFormat, true).isValid()
+                    ? resetDate
+                    : moment().format(dateFormat);
+            setInputDate(defaultDate);
+        }
+    };
+
+    // Handle value change via Input and prevent final selectedDate to be applied if incorrect (in format or in value compared to minimumDate and maximumDate)
     const handleInputOnChange = e => {
         if (selectedDate) {
             setSelectedDate(null);
         }
 
-        onChange(e.target.value);
         setInputValue(e.target.value);
 
-        if (moment(e.target.value, dateFormat, true).isValid()) {
-            setSelectedDate(moment(e.target.value, dateFormat));
+        if (
+            isValidDate(e.target.value, maximumDate, 'isBefore') &&
+            isValidDate(e.target.value, minimumDate, 'isAfter')
+        ) {
+            setInputDate(e.target.value);
+        } else if (
+            !minimumDate &&
+            isValidDate(e.target.value, maximumDate, 'isBefore')
+        ) {
+            setInputDate(e.target.value);
+        } else if (
+            !maximumDate &&
+            isValidDate(e.target.value, minimumDate, 'isAfter')
+        ) {
+            setInputDate(e.target.value);
+        } else if (
+            !minimumDate &&
+            !maximumDate &&
+            moment(e.target.value, dateFormat, true).isValid()
+        ) {
+            setInputDate(e.target.value);
+        } else if (e.target.value.indexOf("_") >= 0) {
+            // we don't do anything if date is not complete and input mask contains '_' characters
+            return;
+        } else if (e.target.value === "" && !rest.required) {
+            // we don't reset input if input is not required and empty
+            setSelectedDate(null);
+        } else {
+            resetWrongDate(e.target.value);
         }
     };
 
     // Handle value change via CalendarCell Buttons
     const handleButtonOnChange = e => {
         onChange(moment(e).format(dateFormat));
-    };
-
-    // Reset wrong date value change via input when clicking outside calendar
-    const resetWrongDate = value => {
-        if (value && moment(value, dateFormat).isValid() === false) {
-            const defaultDate =
-                resetDate && moment(resetDate, dateFormat, true).isValid()
-                    ? resetDate
-                    : moment().format(dateFormat);
-            setSelectedDate(moment(defaultDate, dateFormat));
-        } else if (
-            moment(maximumDate, dateFormat, true).isValid() &&
-            moment(value, dateFormat).isAfter(moment(maximumDate, dateFormat))
-        ) {
-            setSelectedDate(moment(maximumDate, dateFormat));
-        } else if (
-            moment(minimumDate, dateFormat, true).isValid() &&
-            moment(value, dateFormat).isBefore(moment(minimumDate, dateFormat))
-        ) {
-            setSelectedDate(moment(minimumDate, dateFormat));
-        }
-        setActive(false);
     };
 
     const calcMonthIndex = () => {
@@ -115,20 +160,13 @@ const DatePicker = ({
             value={[selectedDate, setSelectedDate, setInputValue]}
         >
             <DatePickerBase theme={rest.theme}>
-                {isActive ? (
-                    <InvisibleCloseButton
-                        onClick={() => resetWrongDate(value)}
-                    />
-                ) : null}
-
-                <DropDown theme={rest.theme} isActive={isActive}>
+                <DropDown theme={rest.theme}>
                     <DaInput
                         {...rest}
                         mask="99/99/9999"
                         type="text"
                         value={inputValue}
                         onChange={handleInputOnChange}
-                        onInput={() => setActive(true)}
                     />
 
                     {rest.readOnly || rest.disabled ? null : (
@@ -173,6 +211,7 @@ DatePicker.propTypes = {
     placeholder: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
+    required: PropTypes.bool,
     isRounded: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
@@ -196,6 +235,7 @@ DatePicker.defaultProps = {
     // Input props
     disabled: false,
     readOnly: false,
+    required: true,
 
     // Calendar props
     locale: localeDefault,

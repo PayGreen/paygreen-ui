@@ -5,10 +5,12 @@ import {
     formStatusDefault,
 } from '../../../shared/constants';
 import config from '../localeConfig';
+import { useDropdown } from '../../Dropdown/context/DropdownContext';
 import { DateContext } from '../context/DateContext';
 import CalendarCellBase from './style';
 
 const CalendarCell = ({ date, isDisabled, handleOnChange, ...rest }) => {
+    const { setOpen } = useDropdown();
     const [selectedDate, setSelectedDate] = useContext(DateContext);
     const dateFormat = config['pg-en'].longDateFormat.L;
 
@@ -17,6 +19,7 @@ const CalendarCell = ({ date, isDisabled, handleOnChange, ...rest }) => {
         if (!isDisabled) {
             setSelectedDate(date);
             handleOnChange(date);
+            setOpen(false);
         }
     };
 

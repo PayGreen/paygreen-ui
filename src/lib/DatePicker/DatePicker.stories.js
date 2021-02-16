@@ -19,44 +19,43 @@ import {
 } from '../../shared/constants';
 import DatePicker from './DatePicker';
 
+// This wrapper helps to deal with react hooks without having to use React.createElement() inside stories that would make the story rerender with each prop's change
+const DatePickerWrapper = props => {
+    const [date, setDate] = useState();
+
+    return (
+        <DatePicker {...props} value={date} onChange={date => setDate(date)} />
+    );
+};
+
 storiesOf(folder.form + 'DatePicker', module)
     .addDecorator(withKnobs)
-    .add('DatePicker', () =>
-        React.createElement(() => {
-            const [date, setDate] = useState();
-
-            return (
-                <DatePicker
-                    value={date}
-                    onChange={date => setDate(date)}
-                    placeholder={'Ex: ' + moment().format('DD/MM/YYYY')}
-                    disabled={boolean('Disabled', false)}
-                    readOnly={boolean('Readonly', false)}
-                    locale={select('Locale', localeOptions, localeDefault)}
-                    isRounded={boolean('Is rounded', false)}
-                    fieldSize={radios(
-                        'Field size',
-                        buttonSizeOptions,
-                        buttonSizeDefault,
-                    )}
-                    colorStatus={select(
-                        'Color status',
-                        formStatusOptions,
-                        formStatusDefault,
-                    )}
-                    minimumDate={text(
-                        'Minimum date',
-                        moment().add(-1, 'M').format('DD/MM/YYYY'),
-                    )}
-                    maximumDate={text(
-                        'Maximum date',
-                        moment().add(1, 'M').format('DD/MM/YYYY'),
-                    )}
-                    resetDate={text(
-                        'Reset date',
-                        moment().format('DD/MM/YYYY'),
-                    )}
-                />
-            );
-        }),
-    );
+    .add('DatePicker', () => (
+        <DatePickerWrapper
+            placeholder={'Ex: ' + moment().format('DD/MM/YYYY')}
+            disabled={boolean('Disabled', false)}
+            readOnly={boolean('Readonly', false)}
+            required={boolean('Is required', false)}
+            locale={select('Locale', localeOptions, localeDefault)}
+            isRounded={boolean('Is rounded', false)}
+            fieldSize={radios(
+                'Field size',
+                buttonSizeOptions,
+                buttonSizeDefault,
+            )}
+            colorStatus={select(
+                'Color status',
+                formStatusOptions,
+                formStatusDefault,
+            )}
+            minimumDate={text(
+                'Minimum date',
+                moment().add(-1, 'M').format('DD/MM/YYYY'),
+            )}
+            maximumDate={text(
+                'Maximum date',
+                moment().add(1, 'M').format('DD/MM/YYYY'),
+            )}
+            resetDate={text('Reset date', moment().format('DD/MM/YYYY'))}
+        />
+    ));
