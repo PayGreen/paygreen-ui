@@ -9,6 +9,7 @@ exports[`renders without crashing 1`] = `
   >
     <button
       className="style__MenuHamburgerBase-sc-1tooz6t-0 czVrHi"
+      type="button"
     >
       <span />
       <span />
