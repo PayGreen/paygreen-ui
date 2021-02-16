@@ -17,6 +17,7 @@ exports[`renders without crashing 1`] = `
         onClick={[Function]}
         onFocus={[Function]}
         readOnly={false}
+        required={true}
         theme={
           Object {
             "arrow": Object {
