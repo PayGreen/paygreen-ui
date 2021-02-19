@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    spaceOptions,
     hoverDirectionOptions,
     hoverDirectionDefault,
+    spaceOptions,
+    alignOptions,
 } from '../../shared/constants';
 import { LogoBase } from './style';
 
@@ -24,6 +25,7 @@ Logo.propTypes = {
     hoverDirection: PropTypes.oneOf(Object.values(hoverDirectionOptions)),
     blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     blockHeight: PropTypes.oneOf(Object.values(spaceOptions)),
+    align: PropTypes.oneOf(Object.values(alignOptions)),
     badge: PropTypes.element,
 };
 
@@ -34,6 +36,7 @@ Logo.defaultProps = {
     hoverDirection: hoverDirectionDefault,
     blockWidth: spaceOptions.none,
     blockHeight: spaceOptions.none,
+    align: alignOptions.center,
 };
 
 export default Logo;
