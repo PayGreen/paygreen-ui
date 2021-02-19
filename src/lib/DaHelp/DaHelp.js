@@ -4,7 +4,11 @@ import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { DaHelpBase } from './style';
 
 const DaHelp = props => {
-    return <DaHelpBase {...props}>{props.children}</DaHelpBase>;
+    return (
+        <DaHelpBase type="button" {...props}>
+            {props.children}
+        </DaHelpBase>
+    );
 };
 
 DaHelp.propTypes = {

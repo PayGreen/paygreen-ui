@@ -14,7 +14,13 @@ import { ArrowBottomIcon } from '../Icon/Icon';
 
 const SidebarItem = ({ children, htmlTag, ...rest }) => {
     return (
-        <SidebarItemBase as={htmlTag} {...rest}>
+        <SidebarItemBase
+            as={htmlTag}
+            type={
+                htmlTag === sidebarItemHtmlTagOptions.button ? 'button' : null
+            }
+            {...rest}
+        >
             {children}
 
             {htmlTag === sidebarItemHtmlTagOptions.button ? (

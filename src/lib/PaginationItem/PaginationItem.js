@@ -5,7 +5,7 @@ import { PaginationItemBase } from './style';
 
 const PaginationItem = props => {
     return (
-        <PaginationItemBase {...props} type="button">
+        <PaginationItemBase type="button" {...props}>
             {props.pageValue}
         </PaginationItemBase>
     );
