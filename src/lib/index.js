@@ -65,8 +65,8 @@ import MenuTertiary from './MenuTertiary/MenuTertiary';
 import Modal from './Modal/Modal';
 import ModalBody from './ModalBody/ModalBody';
 import ModalContent from './ModalContent/ModalContent';
-import ModalControl from './ModalGroup/ModalControl';
-import ModalGroup from './ModalGroup/ModalGroup';
+import ModalControl from './ModalProvider/ModalControl';
+import ModalProvider from './ModalProvider/ModalProvider';
 import ModalHeader from './ModalHeader/ModalHeader';
 import Overlay from './Overlay/Overlay';
 import Pagination from './Pagination/Pagination';
@@ -275,7 +275,7 @@ export {
     ModalBody,
     ModalContent,
     ModalControl,
-    ModalGroup,
+    ModalProvider,
     ModalHeader,
     Overlay,
     Pagination,

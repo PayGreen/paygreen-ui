@@ -22,12 +22,15 @@ import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from '../ModalContent/ModalContent';
 import Modal from '../Modal/Modal';
 import ModalControl from './ModalControl';
-import ModalGroup from './ModalGroup';
+import ModalProvider from './ModalProvider';
 
-storiesOf(folder.popup + folder.sub.modal + 'ModalGroup', module)
+storiesOf(
+    folder.popup + folder.sub.modal + 'ModalProvider (entire modal)',
+    module,
+)
     .addDecorator(withKnobs)
-    .add('Modal Group', () => (
-        <ModalGroup>
+    .add('Modal Provider (entire modal)', () => (
+        <ModalProvider>
             <ModalControl>
                 <button type="button">
                     <DaButton
@@ -51,7 +54,7 @@ storiesOf(folder.popup + folder.sub.modal + 'ModalGroup', module)
                             This is the Title
                         </Title>
 
-                        <ModalControl>
+                        <ModalControl hasOnClickControl={true}>
                             <CrossIcon
                                 htmlTag={iconHtmlTagOptions.button}
                                 iconSize={iconSizeOptions.md}
@@ -86,5 +89,5 @@ storiesOf(folder.popup + folder.sub.modal + 'ModalGroup', module)
                     </ModalBody>
                 </ModalContent>
             </Modal>
-        </ModalGroup>
+        </ModalProvider>
     ));

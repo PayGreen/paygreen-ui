@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import AutoBlockScroll from '../GlobalStyle/AutoBlockScroll';
-import { ModalContext } from './ModalContext';
+import { ModalContext } from './context/ModalContext';
 
-const ModalGroup = props => {
+const ModalProvider = props => {
     const [isOpen, setOpen] = useState(false);
 
     return (
@@ -24,4 +24,4 @@ const ModalGroup = props => {
     );
 };
 
-export default ModalGroup;
+export default ModalProvider;
