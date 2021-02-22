@@ -463,6 +463,7 @@ exports[`renders without crashing 1`] = `
   >
     <span
       className="style__IconBase-ak3679-0 cZjoZu icon"
+      type={null}
     >
       <svg
         viewBox="0 0 143 143"
@@ -480,6 +481,7 @@ exports[`renders without crashing 1`] = `
     >
       <span
         className="style__IconBase-ak3679-0 hMhnWJ icon"
+        type={null}
       >
         <svg
           viewBox="0 0 143 143"

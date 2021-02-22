@@ -4,9 +4,11 @@ exports[`renders without crashing 1`] = `
 <button
   className="style__DaHelpBase-sc-448mi1-0 cXyuEf"
   disabled={false}
+  type="button"
 >
   <span
     className="style__IconBase-ak3679-0 cZjoZu icon"
+    type={null}
   >
     <svg
       viewBox="0 0 143 143"

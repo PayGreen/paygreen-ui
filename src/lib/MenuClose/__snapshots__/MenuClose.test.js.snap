@@ -3,6 +3,7 @@
 exports[`renders without crashing 1`] = `
 <button
   className="style__MenuCloseBase-sc-1a52uw3-0 hOzLaq"
+  type="button"
 >
   <svg
     className="background"
@@ -14,6 +15,7 @@ exports[`renders without crashing 1`] = `
   </svg>
   <span
     className="style__IconBase-ak3679-0 evbHgX icon"
+    type={null}
   >
     <svg
       viewBox="0 0 143 143"

@@ -7,168 +7,196 @@ exports[`renders without crashing 1`] = `
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     1
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     2
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     3
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     4
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     5
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     6
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     7
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     8
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     9
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     10
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     11
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     12
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     13
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     14
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     15
   </button>
   <button
-    className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
+    className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     16
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     17
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     18
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     19
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     20
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     21
   </button>
   <button
-    className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
+    className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
     onClick={[Function]}
+    type="button"
   >
     22
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     23
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     24
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     25
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     26
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     27
   </button>
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
+    type="button"
   >
     28
   </button>

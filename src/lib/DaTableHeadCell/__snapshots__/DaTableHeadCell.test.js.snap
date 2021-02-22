@@ -12,6 +12,7 @@ exports[`renders without crashing 1`] = `
     >
       <button
         className="style__IconBase-ak3679-0 kpIFDm icon"
+        type="button"
       >
         <svg
           viewBox="0 0 143 143"

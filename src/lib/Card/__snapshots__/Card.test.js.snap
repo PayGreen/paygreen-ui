@@ -3,6 +3,7 @@
 exports[`renders without crashing 1`] = `
 <div
   className="style__CardBase-f361m8-0 fLbPca"
+  type={null}
 >
   <span
     className="style__TitleBase-td7fx4-0 gdGTKk"

@@ -4,7 +4,8 @@ exports[`renders without crashing 1`] = `
 <button
   className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
   onClick={[Function]}
+  type="button"
 >
-  16
+  22
 </button>
 `;

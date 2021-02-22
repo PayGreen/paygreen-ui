@@ -6,6 +6,7 @@ exports[`renders without crashing 1`] = `
 >
   <div
     className="style__CardBase-f361m8-0 eWgINm"
+    type={null}
   >
     <div
       className="content"
