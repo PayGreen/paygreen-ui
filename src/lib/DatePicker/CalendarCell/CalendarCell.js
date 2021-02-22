@@ -25,6 +25,7 @@ const CalendarCell = ({ date, isDisabled, handleOnChange, ...rest }) => {
 
     return (
         <CalendarCellBase
+            type="button"
             onClick={handleOnClick}
             isSelected={
                 selectedDate

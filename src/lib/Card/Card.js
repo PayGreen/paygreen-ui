@@ -24,7 +24,11 @@ import { CardBase } from './style';
 
 const Card = props => {
     return (
-        <CardBase as={props.htmlTag} {...props}>
+        <CardBase
+            as={props.htmlTag}
+            type={props.htmlTag === cardHtmlTagOptions.button ? 'button' : null}
+            {...props}
+        >
             {props.children}
         </CardBase>
     );

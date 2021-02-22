@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { justifyContentOptions } from '../../../shared/constants';
 import { BadgeBase } from '../../Badge/style';
 import {
     noBaselineStyle,
@@ -9,7 +10,7 @@ import {
 
 const LogoBase = styled.span`
     display: flex;
-    justify-content: center;
+    justify-content: ${props => justifyContentOptions[props.align]};
     align-items: center;
     transition: all ${props => props.theme.transition.sm};
 

@@ -24,8 +24,9 @@ const maxDisplayed = 99;
 const IconWrapper = ({ children, className, htmlTag, ...rest }) => {
     return (
         <IconBase
-            {...rest}
             as={htmlTag}
+            type={htmlTag === iconHtmlTagOptions.button ? 'button' : null}
+            {...rest}
             className={className ? 'icon ' + className : 'icon'}
         >
             {React.Children.map(children, child => {

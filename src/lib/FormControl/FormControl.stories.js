@@ -106,14 +106,12 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusDefault,
             )}
             required={boolean(requiredLabel, false)}
-            hasHelpButton={true}
         >
             <DaLabel>Input label</DaLabel>
 
             <DaInput
                 placeholder="Firstname Lastname"
                 blockWidth={inputWidthOptions.sm}
-                hasHelpButton={true}
             />
 
             <DaHelp>

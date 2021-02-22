@@ -28,7 +28,7 @@ const DatePicker = ({
     ...rest
 }) => {
     // Update moment locale globally
-    // Note : Default locale of moment is 'en', overwrite it with custom config 'pg-fr'
+    // Note: default locale of moment is 'en', overwrite it with custom config 'pg-fr'
     const pgLocale = localeConfig['pg-' + localeOptions[locale]]
         ? 'pg-' + localeOptions[locale]
         : 'pg-' + localeDefault;
@@ -42,7 +42,7 @@ const DatePicker = ({
             : null,
     );
 
-    // And extract input state handling
+    // ...and extract input state handling
     const [inputValue, setInputValue] = useState(value);
 
     useEffect(() => {
@@ -57,46 +57,6 @@ const DatePicker = ({
         onChange(value);
     };
 
-    /**
-     * @description - to create condition to validate or invalidate date value
-     * @param {string} dateValue - date received, format DD/MM/YYYY
-     * @param {string} dateReference - date reference to decide if dateValue is correct minimumDate | maximumDate, format DD/MM/YYYY
-     * @param {string} position - to determinate which method from Moment to use based on date's position 'isBefore' | 'isAfter'
-     * @returns {boolean}
-     */
-    const isValidDate = (dateValue, dateReference, position) => {
-        return (
-            moment(dateValue, dateFormat, true).isValid() &&
-            dateReference &&
-            moment(dateReference, dateFormat, true).isValid() &&
-            (position === 'isBefore'
-                ? moment(dateValue, dateFormat).isBefore(
-                      moment(dateReference, dateFormat),
-                  )
-                : moment(dateValue, dateFormat).isAfter(
-                      moment(dateReference, dateFormat),
-                  ))
-        );
-    };
-
-    /**
-     * @description - to reset wrong date value via Input based on minimumDate, maximumDate and resetDate provided
-     * @param {string} dateValue - date received, format DD/MM/YYYY
-     */
-    const resetWrongDate = dateValue => {
-        if (isValidDate(dateValue, maximumDate, 'isAfter')) {
-            setInputDate(maximumDate);
-        } else if (isValidDate(dateValue, minimumDate, 'isBefore')) {
-            setInputDate(minimumDate);
-        } else {
-            const defaultDate =
-                resetDate && moment(resetDate, dateFormat, true).isValid()
-                    ? resetDate
-                    : moment().format(dateFormat);
-            setInputDate(defaultDate);
-        }
-    };
-
     // Handle value change via Input and prevent final selectedDate to be applied if incorrect (in format or in value compared to minimumDate and maximumDate)
     const handleInputOnChange = e => {
         if (selectedDate) {
@@ -105,35 +65,60 @@ const DatePicker = ({
 
         setInputValue(e.target.value);
 
-        if (
-            isValidDate(e.target.value, maximumDate, 'isBefore') &&
-            isValidDate(e.target.value, minimumDate, 'isAfter')
-        ) {
-            setInputDate(e.target.value);
-        } else if (
-            !minimumDate &&
-            isValidDate(e.target.value, maximumDate, 'isBefore')
-        ) {
-            setInputDate(e.target.value);
-        } else if (
-            !maximumDate &&
-            isValidDate(e.target.value, minimumDate, 'isAfter')
-        ) {
-            setInputDate(e.target.value);
-        } else if (
-            !minimumDate &&
-            !maximumDate &&
-            moment(e.target.value, dateFormat, true).isValid()
-        ) {
-            setInputDate(e.target.value);
-        } else if (e.target.value.indexOf("_") >= 0) {
+        if (e.target.value.indexOf('_') >= 0) {
             // we don't do anything if date is not complete and input mask contains '_' characters
             return;
-        } else if (e.target.value === "" && !rest.required) {
-            // we don't reset input if input is not required and empty
+        } else if (e.target.value === '' && !resetDate) {
+            // we don't reset input if input is empty and there is no resetDate
             setSelectedDate(null);
+        } else if (!moment(e.target.value, dateFormat, true).isValid()) {
+            if (resetDate && moment(resetDate, dateFormat, true).isValid()) {
+                // if invalid date and valid resetDate, we use it
+                setInputDate(resetDate);
+            } else {
+                // if invalid date and there isn't valid resetDate, we empty field
+                setSelectedDate(null);
+                setInputValue('');
+            }
         } else {
-            resetWrongDate(e.target.value);
+            // at this step, date is complete and valid, so we check min and max dates
+
+            // if there is valid minimum date, we check if user date is after it
+            let isAfterMinimumDate = true;
+
+            if (
+                minimumDate &&
+                moment(minimumDate, dateFormat, true).isValid()
+            ) {
+                isAfterMinimumDate = moment(e.target.value, dateFormat).isAfter(
+                    moment(minimumDate, dateFormat),
+                );
+            }
+
+            // if there is valid maximum date, we check if user date is before it
+            let isBeforeMaximumDate = true;
+
+            if (
+                maximumDate &&
+                moment(maximumDate, dateFormat, true).isValid()
+            ) {
+                isBeforeMaximumDate = moment(
+                    e.target.value,
+                    dateFormat,
+                ).isBefore(moment(maximumDate, dateFormat));
+            }
+
+            // we set input on valid date
+            if (!isAfterMinimumDate) {
+                // not okay: user date is before min date, so we fix it
+                setInputDate(minimumDate);
+            } else if (!isBeforeMaximumDate) {
+                // not okay: user date is after max date, so we fix it
+                setInputDate(maximumDate);
+            } else {
+                // all is good, we set input on user date!
+                setInputDate(e.target.value);
+            }
         }
     };
 
@@ -211,7 +196,6 @@ DatePicker.propTypes = {
     placeholder: PropTypes.string,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
-    required: PropTypes.bool,
     isRounded: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
@@ -235,13 +219,12 @@ DatePicker.defaultProps = {
     // Input props
     disabled: false,
     readOnly: false,
-    required: true,
 
     // Calendar props
     locale: localeDefault,
     minimumDate: null,
     maximumDate: null,
-    resetDate: '',
+    resetDate: null,
     colorStatus: formStatusDefault,
 };
 

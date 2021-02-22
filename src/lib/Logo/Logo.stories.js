@@ -3,9 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
-    spaceOptions,
     hoverDirectionOptions,
     hoverDirectionDefault,
+    spaceOptions,
+    alignOptions,
     colorTypeOptions,
 } from '../../shared/constants';
 import Badge from '../Badge/Badge';
@@ -24,6 +25,7 @@ storiesOf(folder.media + 'Logo', module)
                 isWhite={boolean(isWhiteLabel, false)}
                 blockWidth={select('Width', spaceOptions, spaceOptions.md)}
                 blockHeight={select('Height', spaceOptions, spaceOptions.none)}
+                align={radios('Align', alignOptions, alignOptions.center)}
             >
                 {logo}
             </Logo>
@@ -40,6 +42,7 @@ storiesOf(folder.media + 'Logo', module)
                     hoverDirectionDefault,
                 )}
                 blockWidth={spaceOptions.sm}
+                align={radios('Align', alignOptions, alignOptions.center)}
                 badge={
                     <Badge
                         colorType={

@@ -35,7 +35,6 @@ storiesOf(folder.form + 'DatePicker', module)
             placeholder={'Ex: ' + moment().format('DD/MM/YYYY')}
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
-            required={boolean('Is required', false)}
             locale={select('Locale', localeOptions, localeDefault)}
             isRounded={boolean('Is rounded', false)}
             fieldSize={radios(
