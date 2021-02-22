@@ -17,7 +17,7 @@ const FormControl = ({ children, required, colorStatus, ...rest }) => {
     let hasHelpButton = false;
 
     React.Children.map(children, child => {
-        if (typeof child === 'object' && child.type === DaHelp) {
+        if (child && child.type === DaHelp) {
             hasHelpButton = true;
         }
     });

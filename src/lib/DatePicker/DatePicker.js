@@ -86,7 +86,10 @@ const DatePicker = ({
             // if there is valid minimum date, we check if user date is after it
             let isAfterMinimumDate = true;
 
-            if (minimumDate && moment(minimumDate, dateFormat, true).isValid()) {
+            if (
+                minimumDate &&
+                moment(minimumDate, dateFormat, true).isValid()
+            ) {
                 isAfterMinimumDate = moment(e.target.value, dateFormat).isAfter(
                     moment(minimumDate, dateFormat),
                 );
@@ -95,10 +98,14 @@ const DatePicker = ({
             // if there is valid maximum date, we check if user date is before it
             let isBeforeMaximumDate = true;
 
-            if (maximumDate && moment(maximumDate, dateFormat, true).isValid()) {
-                isBeforeMaximumDate = moment(e.target.value, dateFormat).isBefore(
-                    moment(maximumDate, dateFormat),
-                );
+            if (
+                maximumDate &&
+                moment(maximumDate, dateFormat, true).isValid()
+            ) {
+                isBeforeMaximumDate = moment(
+                    e.target.value,
+                    dateFormat,
+                ).isBefore(moment(maximumDate, dateFormat));
             }
 
             // we set input on valid date
