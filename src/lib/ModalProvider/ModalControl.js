@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDropdown } from './context/DropdownContext';
+import Overlay from '../Overlay/Overlay';
+import { useModal } from './context/ModalContext';
 
-const DropdownControl = props => {
-    const { isOpen, setOpen } = useDropdown();
+const ModalControl = props => {
+    const { isOpen, setOpen } = useModal();
 
     return React.Children.map(props.children, (child, index) => {
         if (!child) {
@@ -17,6 +18,7 @@ const DropdownControl = props => {
             switch (child && child.type) {
                 case 'a':
                 case 'button':
+                case Overlay:
                     return React.cloneElement(child, {
                         onClick: () => setOpen(!isOpen),
                         key: index,
@@ -33,12 +35,12 @@ const DropdownControl = props => {
     });
 };
 
-DropdownControl.propTypes = {
+ModalControl.propTypes = {
     hasOnClickControl: PropTypes.bool,
 };
 
-DropdownControl.defaultProps = {
+ModalControl.defaultProps = {
     hasOnClickControl: false,
 };
 
-export default DropdownControl;
+export default ModalControl;

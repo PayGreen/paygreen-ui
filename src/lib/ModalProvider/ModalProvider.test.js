@@ -6,11 +6,11 @@ import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from '../ModalContent/ModalContent';
 import Modal from '../Modal/Modal';
 import ModalControl from './ModalControl';
-import ModalGroup from './ModalGroup';
+import ModalProvider from './ModalProvider';
 
 it('renders without crashing', () => {
-    const modalGroup = TestRenderer.create(
-        <ModalGroup>
+    const modalProvider = TestRenderer.create(
+        <ModalProvider>
             <Modal theme={ThemeDefault}>
                 <ModalControl>
                     <Overlay theme={ThemeDefault} />
@@ -20,7 +20,7 @@ it('renders without crashing', () => {
                     <ModalBody theme={ThemeDefault}>This is the text</ModalBody>
                 </ModalContent>
             </Modal>
-        </ModalGroup>,
+        </ModalProvider>,
     );
-    expect(modalGroup.toJSON()).toMatchSnapshot();
+    expect(modalProvider.toJSON()).toMatchSnapshot();
 });
