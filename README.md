@@ -75,3 +75,9 @@ To develop a new component for the library, create a sub-directory inside `src/l
 ## Deployment
 
 The deployment of PayGreen-UI use the GitHub Actions to work on CI/CD. Each version of the library correspond to a tag pushed on the GitHub repository.
+
+## WebSite Doc
+
+- `cd website`
+- `yarn install`
+- `yarn start`
