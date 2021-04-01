@@ -3,7 +3,7 @@ import { PGThemeProvider, ThemeDefault } from '@paygreen/paygreen-ui';
 import styled from 'styled-components';
 
 const StyleForLib = styled.div`
-    font-size: 62%;
+    font-family: 'Open Sans', sans-serif;
 `;
 
 const WrapperComponent = ({ children }) => {
