@@ -13,7 +13,6 @@ import { YAxisBase, YAxisElementBase } from './style';
 
 const YAxis = ({
     maxValue,
-    maxValueDisplay,
     values,
     hasMin,
     hasMax,
@@ -25,18 +24,17 @@ const YAxis = ({
 
     allValues.push(0);
 
-    // if maxValueDisplay is provided (due to specific conversion) we use it to build yAxis else we use global maxValue
     values.map(value => {
         if (value > 0) {
             if (isRelative && value < 100) {
-                allValues.push((value * (maxValueDisplay || maxValue)) / 100);
-            } else if (value < (maxValueDisplay || maxValue)) {
+                allValues.push((value * maxValue) / 100);
+            } else if (value < maxValue) {
                 allValues.push(value);
             }
         }
     });
 
-    allValues.push(maxValueDisplay || maxValue);
+    allValues.push(maxValue);
 
     allValues = Array.from(new Set(allValues)); // remove duplicated values
     allValues = allValues.sort((a, b) => b - a); // desc sort
@@ -84,7 +82,6 @@ const YAxis = ({
 
 YAxis.propTypes = {
     maxValue: PropTypes.number.isRequired,
-    maxValueDisplay: PropTypes.number,
     values: PropTypes.arrayOf(PropTypes.number),
     isRelative: PropTypes.bool,
     hasMin: PropTypes.bool,
@@ -94,7 +91,6 @@ YAxis.propTypes = {
 };
 
 YAxis.defaultProps = {
-    maxValueDisplay: null,
     values: [],
     isRelative: false,
     hasMin: true,
