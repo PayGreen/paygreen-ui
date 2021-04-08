@@ -7,6 +7,7 @@ import {
     greyOptions,
     textHtmlTagOptions,
 } from '../../../shared/constants';
+import { adjustDecimalNumber } from '../../../shared/tools';
 import Text from '../../Text/Text';
 import { YAxisBase, YAxisElementBase } from './style';
 
@@ -68,8 +69,7 @@ const YAxis = ({
                             textSize={fontSizeOptions.xxs}
                             colorWab={greyOptions.grey40}
                         >
-                            {Math.round(value)}
-                            {unit}
+                            {adjustDecimalNumber(value)}&nbsp;{unit}
                         </Text>
                     </YAxisElementBase>
                 ) : (

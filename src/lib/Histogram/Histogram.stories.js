@@ -93,7 +93,7 @@ storiesOf(folder.graph + 'Histogram', module)
                     key={index}
                     value={sample.value}
                     label={sample.label}
-                    legend="{value}€ in {label}"
+                    legend={sample.value + ' € in ' + sample.label}
                     isLabelVisible={false}
                     colorTheme={sample.colorTheme}
                     blockWidth={sample.blockWidth}

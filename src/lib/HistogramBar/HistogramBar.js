@@ -47,9 +47,7 @@ const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
                         textSize={fontSizeOptions.xxs}
                         align={alignItemsOptions.center}
                     >
-                        {legend
-                            .replace('{value}', value)
-                            .replace('{label}', label)}
+                        {legend}
                     </Text>
                 </Message>
             ) : null}
@@ -73,7 +71,7 @@ HistogramBar.propTypes = {
     maxValue: PropTypes.number,
     isLabelVisible: PropTypes.bool,
     label: PropTypes.string,
-    legend: PropTypes.string,
+    legend: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     blockHeight: PropTypes.oneOf(Object.values(inputWidthOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
