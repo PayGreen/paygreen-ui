@@ -14,7 +14,7 @@ const Histogram = ({
     maxValue,
     hasYaxisMin,
     hasYaxisMax,
-    yaxisMaxValueLabel,
+    yaxisMaxValueDisplay,
     yaxisValues,
     yaxisUnit,
     isRelativeYaxis,
@@ -37,7 +37,7 @@ const Histogram = ({
             <YAxis
                 theme={rest.theme} // not necessary, only needed for tests
                 maxValue={max}
-                maxValueLabel={yaxisMaxValueLabel}
+                maxValueDisplay={yaxisMaxValueDisplay}
                 values={yaxisValues}
                 hasMin={hasYaxisMin}
                 hasMax={hasYaxisMax}
@@ -71,7 +71,7 @@ Histogram.propTypes = {
     hasYaxisMax: PropTypes.bool,
     yaxisValues: PropTypes.arrayOf(PropTypes.number),
     yaxisUnit: PropTypes.string,
-    yaxisMaxValueLabel: PropTypes.number,
+    yaxisMaxValueDisplay: PropTypes.number,
     maxValue: PropTypes.number,
     blockHeight: PropTypes.oneOf(Object.values(inputWidthOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -84,7 +84,7 @@ Histogram.defaultProps = {
     hasYaxisMax: true,
     yaxisValues: [],
     yaxisUnit: null,
-    yaxisMaxValueLabel: null,
+    yaxisMaxValueDisplay: null,
     maxValue: 0,
     blockHeight: inputWidthDefault,
     marginTop: spaceDefault,
