@@ -7,11 +7,13 @@ import {
     greyOptions,
     textHtmlTagOptions,
 } from '../../../shared/constants';
+import { adjustDecimalNumber } from '../../../shared/tools';
 import Text from '../../Text/Text';
 import { YAxisBase, YAxisElementBase } from './style';
 
 const YAxis = ({
     maxValue,
+    maxValueLabel,
     values,
     hasMin,
     hasMax,
@@ -23,17 +25,18 @@ const YAxis = ({
 
     allValues.push(0);
 
+    // if maxValueLabel is provided (due to specific conversion) we use it to build yAxis else we use global maxValue
     values.map(value => {
         if (value > 0) {
             if (isRelative && value < 100) {
-                allValues.push((value * maxValue) / 100);
-            } else if (value < maxValue) {
+                allValues.push((value * (maxValueLabel || maxValue)) / 100);
+            } else if (value < (maxValueLabel || maxValue)) {
                 allValues.push(value);
             }
         }
     });
 
-    allValues.push(maxValue);
+    allValues.push(maxValueLabel || maxValue);
 
     allValues = Array.from(new Set(allValues)); // remove duplicated values
     allValues = allValues.sort((a, b) => b - a); // desc sort
@@ -68,8 +71,7 @@ const YAxis = ({
                             textSize={fontSizeOptions.xxs}
                             colorWab={greyOptions.grey40}
                         >
-                            {Math.round(value)}
-                            {unit}
+                            {adjustDecimalNumber(value)}&nbsp;{unit}
                         </Text>
                     </YAxisElementBase>
                 ) : (
