@@ -10,7 +10,7 @@ exports[`renders without crashing 1`] = `
     <p
       className="style__TextBase-sc-11ixwvd-0 ePvKFZ"
     >
-      60 in label
+      {value} in {label}
     </p>
   </div>
   <div
