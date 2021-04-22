@@ -10,7 +10,7 @@
   "browser": "build/index.js",
   "scripts": {
     "build": "rollup -c",
-    "storybook": "start-storybook",
+    "start": "start-storybook",
     "prepare": "npm run build",
     "test": "jest",
     "test-update": "jest --updateSnapshot",
