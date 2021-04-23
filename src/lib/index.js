@@ -8,6 +8,7 @@ import Breadcrumb from './Breadcrumb/Breadcrumb';
 import Button from './Button/Button';
 import ButtonGroup from './ButtonGroup/ButtonGroup';
 import Card from './Card/Card';
+import Char from './Char/Char';
 import Checkbox from './Checkbox/Checkbox';
 import CheckboxGroup from './CheckboxGroup/CheckboxGroup';
 import ClickableBlock from './ClickableBlock/ClickableBlock';
@@ -217,6 +218,7 @@ export {
     Button,
     ButtonGroup,
     Card,
+    Char,
     Checkbox,
     CheckboxGroup,
     ClickableBlock,
