@@ -69,7 +69,7 @@ Array [
       1
     </button>
     <button
-      className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
+      className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
       onClick={[Function]}
       type="button"
     >
@@ -216,7 +216,7 @@ Array [
       22
     </button>
     <button
-      className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
+      className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
       onClick={[Function]}
       type="button"
     >

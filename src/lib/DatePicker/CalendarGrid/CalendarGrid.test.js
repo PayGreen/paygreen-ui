@@ -9,7 +9,9 @@ import CalendarGrid from './CalendarGrid';
 
 const CalendarGrid_withContext = () => {
     const [isOpen, setOpen] = useState(); // only needed for test
-    const [selectedDate, setSelectedDate] = useState(moment());
+    const [selectedDate, setSelectedDate] = useState(
+        moment('2021-04-23T15:00:00.000'),
+    );
     const [month, setMonth] = useState(selectedDate.month());
 
     return (
