@@ -10,7 +10,7 @@
   "browser": "build/index.js",
   "scripts": {
     "build": "rollup -c",
-    "storybook": "start-storybook",
+    "start": "start-storybook",
     "prepare": "npm run build",
     "test": "jest",
     "test-update": "jest --updateSnapshot",
@@ -57,6 +57,7 @@
   },
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^1.0.47",
+    "caniuse-lite": "^1.0.30001214",
     "core-js": "^3.6.5",
     "moment": "^2.29.0",
     "polished": "^3.6.7",

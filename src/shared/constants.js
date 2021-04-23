@@ -496,6 +496,14 @@ const localeOptions = {
 
 const localeDefault = localeOptions.fr;
 
+// Other
+const charModeOptions = {
+    truncate: 'truncate',
+    hide: 'hide',
+};
+
+const charModeDefault = charModeOptions.truncate;
+
 export {
     folder,
     debounceTime,
@@ -591,4 +599,6 @@ export {
     rotateSizeDefault,
     localeOptions,
     localeDefault,
+    charModeOptions,
+    charModeDefault,
 };
