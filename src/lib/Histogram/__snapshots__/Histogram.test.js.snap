@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__HistogramBase-h3wpv-0 exLMOa"
+  className="style__HistogramBase-h3wpv-0 fhxGrj"
 >
   <div
     className="style__YAxisBase-fqe2pn-0 kimwMk"
@@ -35,43 +35,31 @@ exports[`renders without crashing 1`] = `
       className="bars"
     >
       <div
-        className="style__HistogramBarBase-y733il-0 eJsFLX"
+        className="style__HistogramBarBase-y733il-0 juIWRe"
       >
         <div
           className="bar"
-        />
-        <span
-          className="style__TextBase-sc-11ixwvd-0 cqyjwh"
         />
       </div>
       <div
-        className="style__HistogramBarBase-y733il-0 iHIPoY"
+        className="style__HistogramBarBase-y733il-0 hzbHsN"
       >
         <div
           className="bar"
-        />
-        <span
-          className="style__TextBase-sc-11ixwvd-0 cqyjwh"
         />
       </div>
       <div
-        className="style__HistogramBarBase-y733il-0 kFfzMD"
+        className="style__HistogramBarBase-y733il-0 fMgXxe"
       >
         <div
           className="bar"
-        />
-        <span
-          className="style__TextBase-sc-11ixwvd-0 cqyjwh"
         />
       </div>
       <div
-        className="style__HistogramBarBase-y733il-0 DxtMZ"
+        className="style__HistogramBarBase-y733il-0 crhDOo"
       >
         <div
           className="bar"
-        />
-        <span
-          className="style__TextBase-sc-11ixwvd-0 cqyjwh"
         />
       </div>
     </div>

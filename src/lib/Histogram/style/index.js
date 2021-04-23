@@ -9,14 +9,6 @@ const HistogramBase = styled.div`
 
     .container {
         flex: 1;
-        height: ${props =>
-            math(
-                props.theme.histogram.height[props.blockHeight] +
-                    ' + ' +
-                    props.theme.space.lg +
-                    ' + ' +
-                    props.theme.line,
-            )};
         position: relative;
         overflow-y: auto;
         mask-image: linear-gradient(
@@ -28,9 +20,9 @@ const HistogramBase = styled.div`
 
     .bars {
         display: flex;
-        position: absolute;
         box-sizing: content-box;
         height: ${props => props.theme.histogram.height[props.blockHeight]};
+        width: fit-content;
         padding: 0 ${props => props.theme.space.lg};
         min-width: ${props =>
             math(

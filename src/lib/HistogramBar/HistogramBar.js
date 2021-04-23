@@ -11,13 +11,12 @@ import {
     inputWidthDefault,
     buttonSizeOptions,
     alignItemsOptions,
-    textHtmlTagOptions,
 } from '../../shared/constants';
 import Message from '../Message/Message';
 import Text from '../Text/Text';
 import { HistogramBarBase } from './style';
 
-const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
+const HistogramBar = ({ value, maxValue, legend, ...rest }) => {
     if (maxValue <= 0 || value < 0) return null; // avoid errors
 
     const height = value > maxValue ? 100 : (value / maxValue) * 100;
@@ -53,15 +52,6 @@ const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
             ) : null}
 
             <div className="bar"></div>
-
-            <Text
-                theme={rest.theme} // not necessary, only needed for tests
-                htmlTag={textHtmlTagOptions.span}
-                textSize={fontSizeOptions.xs}
-                align={alignItemsOptions.center}
-            >
-                {label}
-            </Text>
         </HistogramBarBase>
     );
 };
@@ -69,22 +59,16 @@ const HistogramBar = ({ value, maxValue, label, legend, ...rest }) => {
 HistogramBar.propTypes = {
     value: PropTypes.number.isRequired,
     maxValue: PropTypes.number,
-    isLabelVisible: PropTypes.bool,
-    label: PropTypes.string,
     legend: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    blockHeight: PropTypes.oneOf(Object.values(inputWidthOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     paddingLateral: PropTypes.oneOf(Object.values(spaceOptions)),
 };
 
 HistogramBar.defaultProps = {
     maxValue: 100,
-    isLabelVisible: true,
-    label: null,
     legend: null,
     colorTheme: colorThemeDefault,
-    blockHeight: inputWidthDefault,
     blockWidth: inputWidthDefault,
     paddingLateral: spaceOptions.sm,
 };

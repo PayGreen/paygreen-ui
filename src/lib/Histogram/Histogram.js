@@ -55,7 +55,6 @@ const Histogram = ({
                         return React.cloneElement(child, {
                             key: index,
                             maxValue: max,
-                            blockHeight: rest.blockHeight,
                         });
                     })}
                 </div>

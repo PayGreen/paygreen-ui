@@ -92,9 +92,7 @@ storiesOf(folder.graph + 'Histogram', module)
                 <HistogramBar
                     key={index}
                     value={sample.value}
-                    label={sample.label}
                     legend={sample.value + ' € in ' + sample.label}
-                    isLabelVisible={false}
                     colorTheme={sample.colorTheme}
                     blockWidth={sample.blockWidth}
                     paddingLateral={spaceOptions.md}
