@@ -5,7 +5,7 @@ const HistogramBase = styled.div`
     display: flex;
     margin-top: ${props => props.theme.space[props.marginTop]};
     margin-bottom: ${props => props.theme.space[props.marginBottom]};
-    padding-top: ${props => props.theme.space.sm};
+    padding: ${props => props.theme.space.sm} 0;
 
     .container {
         flex: 1;
@@ -21,8 +21,12 @@ const HistogramBase = styled.div`
 
     .bars {
         display: flex;
-        box-sizing: content-box;
-        height: ${props => props.theme.histogram.height[props.blockHeight]};
+        height: ${props =>
+            math(
+                props.theme.histogram.height[props.blockHeight] +
+                    ' + ' +
+                    props.theme.line,
+            )};
         width: fit-content;
         min-width: ${props =>
             math(
