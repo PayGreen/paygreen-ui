@@ -80,6 +80,7 @@ storiesOf(folder.graph + 'Histogram', module)
                 range: true,
                 max: 150,
             })}
+            blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
             blockHeight={select(
                 'Block height',
                 inputWidthOptions,
