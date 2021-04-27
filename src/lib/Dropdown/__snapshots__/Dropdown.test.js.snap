@@ -6,7 +6,7 @@ exports[`renders without crashing 1`] = `
     className="style__DropdownBase-ht2epv-0 dYNCxh"
   >
     <span
-      className="style__IconBase-ak3679-0 cZjoZu icon"
+      className="style__IconBase-ak3679-0 hftxTk icon"
       onClick={[Function]}
       type={null}
     >

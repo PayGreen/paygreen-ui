@@ -471,7 +471,7 @@ exports[`renders without crashing 1`] = `
           htmlFor="select"
         >
           <span
-            className="style__IconBase-ak3679-0 cZjoZu icon"
+            className="style__IconBase-ak3679-0 hftxTk icon"
             type={null}
           >
             <svg

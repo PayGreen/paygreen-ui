@@ -10,7 +10,7 @@ exports[`renders without crashing 1`] = `
     This is the Title
   </span>
   <span
-    className="style__IconBase-ak3679-0 cZjoZu icon"
+    className="style__IconBase-ak3679-0 hftxTk icon"
     type={null}
   >
     <svg

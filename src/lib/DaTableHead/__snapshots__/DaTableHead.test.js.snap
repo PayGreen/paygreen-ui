@@ -14,7 +14,7 @@ exports[`renders without crashing 1`] = `
       Search and filters
     </span>
     <span
-      className="style__IconBase-ak3679-0 lnQtXA icon"
+      className="style__IconBase-ak3679-0 iVbwki icon"
       type={null}
     >
       <svg
@@ -496,7 +496,7 @@ exports[`renders without crashing 1`] = `
             htmlFor="select"
           >
             <span
-              className="style__IconBase-ak3679-0 cZjoZu icon"
+              className="style__IconBase-ak3679-0 hftxTk icon"
               type={null}
             >
               <svg
@@ -975,7 +975,7 @@ exports[`renders without crashing 1`] = `
           htmlFor="select"
         >
           <span
-            className="style__IconBase-ak3679-0 cZjoZu icon"
+            className="style__IconBase-ak3679-0 hftxTk icon"
             type={null}
           >
             <svg
@@ -1000,7 +1000,7 @@ exports[`renders without crashing 1`] = `
         className="icon-child"
       >
         <button
-          className="style__IconBase-ak3679-0 kpIFDm icon"
+          className="style__IconBase-ak3679-0 fWvVjQ icon"
           type="button"
         >
           <svg

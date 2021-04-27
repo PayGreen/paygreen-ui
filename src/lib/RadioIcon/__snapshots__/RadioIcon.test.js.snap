@@ -462,7 +462,7 @@ exports[`renders without crashing 1`] = `
     htmlFor="radioIconTest1"
   >
     <span
-      className="style__IconBase-ak3679-0 cZjoZu icon"
+      className="style__IconBase-ak3679-0 hftxTk icon"
       type={null}
     >
       <svg
@@ -480,7 +480,7 @@ exports[`renders without crashing 1`] = `
       className="checked"
     >
       <span
-        className="style__IconBase-ak3679-0 hMhnWJ icon"
+        className="style__IconBase-ak3679-0 gRWdZX icon"
         type={null}
       >
         <svg
