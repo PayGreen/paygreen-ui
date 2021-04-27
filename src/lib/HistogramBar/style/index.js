@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { math } from 'polished';
 import { MessageBase } from '../../Message/style';
-import { TextBase } from '../../Text/style';
 import { messageStyle } from './base';
 
 const HistogramBarBase = styled.div`
@@ -11,7 +10,6 @@ const HistogramBarBase = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    height: ${props => props.theme.histogram.height[props.blockHeight]};
     width: fit-content;
     padding: 0 ${props => math(props.theme.space[props.paddingLateral] + '/2')};
     filter: grayscale(${props => props.isDisabled ? 1 : 0});
@@ -24,13 +22,9 @@ const HistogramBarBase = styled.div`
         }
 
         ${MessageBase} {
+            opacity: 1;
             pointer-events: initial;
             margin-bottom: ${props => props.theme.space.xs};
-            opacity: 1;
-        }
-
-        & > ${TextBase} {
-            opacity: 1;
         }
     }
 
@@ -55,13 +49,6 @@ const HistogramBarBase = styled.div`
         transition: all ${props => props.theme.transition.xs};
 
         ${props => messageStyle[props.messagePosition]};
-    }
-
-    & > ${TextBase} {
-        position: absolute;
-        top: 100%;
-        opacity: ${props => (props.isLabelVisible ? 1 : 0)};
-        transition: all ${props => props.theme.transition.xs};
     }
 `;
 

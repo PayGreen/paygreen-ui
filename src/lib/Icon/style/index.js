@@ -9,6 +9,7 @@ import {
 } from './base';
 
 const IconBase = styled.span`
+    flex-shrink: 0; // icon must never shrink, even inside flex container
     display: ${props => (props.isCentered ? 'flex' : 'inline-flex')};
     box-sizing: content-box;
     position: relative;

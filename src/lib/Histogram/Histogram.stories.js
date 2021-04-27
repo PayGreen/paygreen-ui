@@ -80,6 +80,7 @@ storiesOf(folder.graph + 'Histogram', module)
                 range: true,
                 max: 150,
             })}
+            blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
             blockHeight={select(
                 'Block height',
                 inputWidthOptions,
@@ -92,9 +93,7 @@ storiesOf(folder.graph + 'Histogram', module)
                 <HistogramBar
                     key={index}
                     value={sample.value}
-                    label={sample.label}
                     legend={sample.value + ' € in ' + sample.label}
-                    isLabelVisible={false}
                     colorTheme={sample.colorTheme}
                     blockWidth={sample.blockWidth}
                     paddingLateral={spaceOptions.md}

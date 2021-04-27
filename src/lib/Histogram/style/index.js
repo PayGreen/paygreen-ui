@@ -5,18 +5,11 @@ const HistogramBase = styled.div`
     display: flex;
     margin-top: ${props => props.theme.space[props.marginTop]};
     margin-bottom: ${props => props.theme.space[props.marginBottom]};
-    padding-top: ${props => props.theme.space.sm};
+    padding: ${props => props.theme.space.sm} 0;
 
     .container {
         flex: 1;
-        height: ${props =>
-            math(
-                props.theme.histogram.height[props.blockHeight] +
-                    ' + ' +
-                    props.theme.space.lg +
-                    ' + ' +
-                    props.theme.line,
-            )};
+        max-width: ${props => props.theme.blockWidth[props.blockWidth]};
         position: relative;
         overflow-y: auto;
         mask-image: linear-gradient(
@@ -28,16 +21,20 @@ const HistogramBase = styled.div`
 
     .bars {
         display: flex;
-        position: absolute;
-        box-sizing: content-box;
-        height: ${props => props.theme.histogram.height[props.blockHeight]};
-        padding: 0 ${props => props.theme.space.lg};
+        height: ${props =>
+            math(
+                props.theme.histogram.height[props.blockHeight] +
+                    ' + ' +
+                    props.theme.line,
+            )};
+        width: fit-content;
         min-width: ${props =>
             math(
                 props.theme.histogram.height.xs +
                     ' - 2 * ' +
                     props.theme.space.lg,
             )};
+        padding: 0 ${props => props.theme.space.lg};
         border-bottom: solid
             ${props => props.theme.line + ' ' + props.theme.wab.grey20};
     }

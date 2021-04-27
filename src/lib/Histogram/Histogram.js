@@ -55,7 +55,6 @@ const Histogram = ({
                         return React.cloneElement(child, {
                             key: index,
                             maxValue: max,
-                            blockHeight: rest.blockHeight,
                         });
                     })}
                 </div>
@@ -72,6 +71,7 @@ Histogram.propTypes = {
     yaxisUnit: PropTypes.string,
     yaxisMaxValue: PropTypes.number,
     maxValue: PropTypes.number,
+    blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
     blockHeight: PropTypes.oneOf(Object.values(inputWidthOptions)),
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -85,6 +85,7 @@ Histogram.defaultProps = {
     yaxisUnit: null,
     yaxisMaxValue: null,
     maxValue: 0,
+    blockWidth: spaceOptions.md,
     blockHeight: inputWidthDefault,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,

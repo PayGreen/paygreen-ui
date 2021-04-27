@@ -2,7 +2,8 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__HistogramBarBase-y733il-0 bcAXoD"
+  className="style__HistogramBarBase-y733il-0 iQeriW"
+  label="label"
 >
   <div
     className="style__MessageBase-ts6lfl-0 jRGXuP"
@@ -16,10 +17,5 @@ exports[`renders without crashing 1`] = `
   <div
     className="bar"
   />
-  <span
-    className="style__TextBase-sc-11ixwvd-0 cqyjwh"
-  >
-    label
-  </span>
 </div>
 `;
