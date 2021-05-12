@@ -94,106 +94,120 @@ import Toggle from './Toggle/Toggle';
 import Topbar from './Topbar/Topbar';
 
 // Icons
-import { ArrowBottomIcon } from './Icon/Icon';
-import { ArrowCircleLeftIcon } from './Icon/Icon';
-import { ArrowCircleLeftBoldIcon } from './Icon/Icon';
-import { ArrowCircleRightBoldIcon } from './Icon/Icon';
-import { ArrowCircleRightIcon } from './Icon/Icon';
-import { ArrowLeftIcon } from './Icon/Icon';
-import { ArrowLongBottomIcon } from './Icon/Icon';
-import { ArrowLongLeftIcon } from './Icon/Icon';
-import { ArrowLongRightIcon } from './Icon/Icon';
-import { ArrowLongTopIcon } from './Icon/Icon';
-import { ArrowRightIcon } from './Icon/Icon';
-import { ArrowRoundBottomLeftIcon } from './Icon/Icon';
-import { ArrowRoundBottomRightIcon } from './Icon/Icon';
-import { ArrowRoundTopLeftIcon } from './Icon/Icon';
-import { ArrowRoundTopRightIcon } from './Icon/Icon';
-import { ArrowTopIcon } from './Icon/Icon';
-import { BalloonBoldIcon } from './Icon/Icon';
-import { BalloonIcon } from './Icon/Icon';
-import { BankIcon } from './Icon/Icon';
-import { BeakerBoldIcon } from './Icon/Icon';
-import { BeakerIcon } from './Icon/Icon';
-import { BellBoldIcon } from './Icon/Icon';
-import { BellIcon } from './Icon/Icon';
-import { BulbBoldIcon } from './Icon/Icon';
-import { BulbIcon } from './Icon/Icon';
-import { CardsBoldIcon } from './Icon/Icon';
-import { CardsIcon } from './Icon/Icon';
-import { CarIcon } from './Icon/Icon';
-import { CartIcon } from './Icon/Icon';
-import { CautionBoldIcon } from './Icon/Icon';
-import { CautionIcon } from './Icon/Icon';
-import { ChangeIcon } from './Icon/Icon';
-import { CheckBoldIcon } from './Icon/Icon';
-import { CheckboxIcon } from './Icon/Icon';
-import { CheckIcon } from './Icon/Icon';
-import { ClockBoldIcon } from './Icon/Icon';
-import { ClockIcon } from './Icon/Icon';
-import { CodeIcon } from './Icon/Icon';
-import { CoinsIcon } from './Icon/Icon';
-import { ContractIcon } from './Icon/Icon';
-import { CrossBoldIcon } from './Icon/Icon';
-import { CrossIcon } from './Icon/Icon';
-import { DownloadIcon } from './Icon/Icon';
-import { EmptyIcon } from './Icon/Icon';
-import { EyeIcon } from './Icon/Icon';
-import { FactoryIcon } from './Icon/Icon';
-import { GlobeIcon } from './Icon/Icon';
-import { HeartIcon } from './Icon/Icon';
-import { HourglassIcon } from './Icon/Icon';
-import { InformationIcon } from './Icon/Icon';
-import { LeafIcon } from './Icon/Icon';
-import { LetterBoldIcon } from './Icon/Icon';
-import { LetterIcon } from './Icon/Icon';
-import { LinkBoldIcon } from './Icon/Icon';
-import { LinkIcon } from './Icon/Icon';
-import { ListIcon } from './Icon/Icon';
-import { LockIcon } from './Icon/Icon';
-import { MarkerIcon } from './Icon/Icon';
-import { MealIcon } from './Icon/Icon';
-import { MegaphoneIcon } from './Icon/Icon';
-import { MenuBoldIcon } from './Icon/Icon';
-import { MenuDotsIcon } from './Icon/Icon';
-import { MenuIcon } from './Icon/Icon';
-import { MeterIcon } from './Icon/Icon';
-import { MinusIcon } from './Icon/Icon';
-import { MoonIcon } from './Icon/Icon';
-import { MooveIcon } from './Icon/Icon';
-import { OrganizationIcon } from './Icon/Icon';
-import { OutIcon } from './Icon/Icon';
-import { PaperclipIcon } from './Icon/Icon';
-import { PenIcon } from './Icon/Icon';
-import { PhoneIcon } from './Icon/Icon';
-import { PictureIcon } from './Icon/Icon';
-import { PlaneIcon } from './Icon/Icon';
-import { PlusIcon } from './Icon/Icon';
-import { PointerIcon } from './Icon/Icon';
-import { PopinIcon } from './Icon/Icon';
-import { QuestionBoldIcon } from './Icon/Icon';
-import { QuestionIcon } from './Icon/Icon';
-import { QuoteLeftIcon } from './Icon/Icon';
-import { QuoteRightIcon } from './Icon/Icon';
-import { RefreshBoldIcon } from './Icon/Icon';
-import { RefreshIcon } from './Icon/Icon';
-import { SatchelIcon } from './Icon/Icon';
-import { ScheduleIcon } from './Icon/Icon';
-import { SearchBoldIcon } from './Icon/Icon';
-import { SearchIcon } from './Icon/Icon';
-import { ShopIcon } from './Icon/Icon';
-import { SunIcon } from './Icon/Icon';
-import { SupportIcon } from './Icon/Icon';
-import { TreesIcon } from './Icon/Icon';
-import { TrophyIcon } from './Icon/Icon';
-import { TruckIcon } from './Icon/Icon';
-import { TvIcon } from './Icon/Icon';
-import { UserBoldIcon } from './Icon/Icon';
-import { UsersIcon } from './Icon/Icon';
-import { UserIcon } from './Icon/Icon';
-import { WalletIcon } from './Icon/Icon';
-import { WeightIcon } from './Icon/Icon';
-import { WheelsIcon } from './Icon/Icon';
+import {
+    ArrowBottomIcon,
+    ArrowCircleLeftIcon,
+    ArrowCircleLeftBoldIcon,
+    ArrowCircleRightBoldIcon,
+    ArrowCircleRightIcon,
+    ArrowLeftIcon,
+    ArrowLongBottomIcon,
+    ArrowLongLeftIcon,
+    ArrowLongRightIcon,
+    ArrowLongTopIcon,
+    ArrowRightIcon,
+    ArrowRoundBottomLeftIcon,
+    ArrowRoundBottomRightIcon,
+    ArrowRoundTopLeftIcon,
+    ArrowRoundTopRightIcon,
+    ArrowTopIcon,
+    BalloonBoldIcon,
+    BalloonIcon,
+    BankIcon,
+    BeakerBoldIcon,
+    BeakerIcon,
+    BedIcon,
+    BellBoldIcon,
+    BellIcon,
+    BrushIcon,
+    BulbBoldIcon,
+    BulbIcon,
+    CameraIcon,
+    CardsBoldIcon,
+    CardsIcon,
+    CarIcon,
+    CartIcon,
+    CautionBoldIcon,
+    CautionIcon,
+    ChangeIcon,
+    CheckBoldIcon,
+    CheckboxIcon,
+    CheckIcon,
+    CircuitIcon,
+    ClockBoldIcon,
+    ClockIcon,
+    CodeIcon,
+    CoinsIcon,
+    ConsoleIcon,
+    ContractIcon,
+    CopyIcon,
+    CrossBoldIcon,
+    CrossIcon,
+    DownloadIcon,
+    EmptyIcon,
+    EyedropperIcon,
+    EyeIcon,
+    FactoryIcon,
+    GlobeIcon,
+    HeartIcon,
+    HourglassIcon,
+    InformationIcon,
+    LeafIcon,
+    LetterBoldIcon,
+    LetterIcon,
+    LinkBoldIcon,
+    LinkIcon,
+    ListIcon,
+    LockIcon,
+    MarkerIcon,
+    MealIcon,
+    MegaphoneIcon,
+    MenuBoldIcon,
+    MenuDotsIcon,
+    MenuIcon,
+    MeterIcon,
+    MinusIcon,
+    MoonIcon,
+    MooveIcon,
+    OrganizationIcon,
+    OutIcon,
+    PaletteIcon,
+    PaperclipIcon,
+    PenIcon,
+    PhoneIcon,
+    PictureIcon,
+    PlaneIcon,
+    PlugIcon,
+    PlusIcon,
+    PointerIcon,
+    PopinIcon,
+    QuestionBoldIcon,
+    QuestionIcon,
+    QuoteLeftIcon,
+    QuoteRightIcon,
+    RefreshBoldIcon,
+    RefreshIcon,
+    SatchelIcon,
+    ScheduleIcon,
+    SearchBoldIcon,
+    SearchIcon,
+    ShopIcon,
+    SunIcon,
+    SupportIcon,
+    TrashIcon,
+    TreesIcon,
+    TrophyIcon,
+    TruckIcon,
+    TvIcon,
+    UploadIcon,
+    UserBoldIcon,
+    UsersIcon,
+    UserIcon,
+    WalletIcon,
+    WeightIcon,
+    WheelsIcon,
+    WidgetIcon,
+} from './Icon/Icon';
 
 // Theme
 import { ThemeDefault, ThemeDark } from '../theme';
@@ -324,10 +338,13 @@ export {
     BankIcon,
     BeakerBoldIcon,
     BeakerIcon,
+    BedIcon,
     BellBoldIcon,
     BellIcon,
+    BrushIcon,
     BulbBoldIcon,
     BulbIcon,
+    CameraIcon,
     CardsBoldIcon,
     CardsIcon,
     CarIcon,
@@ -338,15 +355,19 @@ export {
     CheckBoldIcon,
     CheckboxIcon,
     CheckIcon,
+    CircuitIcon,
     ClockBoldIcon,
     ClockIcon,
     CodeIcon,
     CoinsIcon,
+    ConsoleIcon,
     ContractIcon,
+    CopyIcon,
     CrossBoldIcon,
     CrossIcon,
     DownloadIcon,
     EmptyIcon,
+    EyedropperIcon,
     EyeIcon,
     FactoryIcon,
     GlobeIcon,
@@ -372,11 +393,13 @@ export {
     MooveIcon,
     OrganizationIcon,
     OutIcon,
+    PaletteIcon,
     PaperclipIcon,
     PenIcon,
     PhoneIcon,
     PictureIcon,
     PlaneIcon,
+    PlugIcon,
     PlusIcon,
     PointerIcon,
     PopinIcon,
@@ -393,16 +416,19 @@ export {
     ShopIcon,
     SunIcon,
     SupportIcon,
+    TrashIcon,
     TreesIcon,
     TrophyIcon,
     TruckIcon,
     TvIcon,
+    UploadIcon,
     UserBoldIcon,
     UsersIcon,
     UserIcon,
     WalletIcon,
     WeightIcon,
     WheelsIcon,
+    WidgetIcon,
     // GlobalStyle
     AutoBlockScroll,
     BlockedScrollStyle,
