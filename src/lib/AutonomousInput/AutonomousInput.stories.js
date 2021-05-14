@@ -14,8 +14,8 @@ storiesOf(folder.form + folder.sub.form + 'AutonomousInput', module)
     .add('AutonomousInput', () => (
         <AutonomousInput
             type="email"
-            placeholder={text(labels.placeholder, 'Your email...')}
-            submittedText={text(labels.submittedText, 'Received!')}
+            placeholder="Your email..."
+            submittedText={text('Submitted text', 'Received!')}
             status={radios(labels.status, formStatusOptions, formStatusDefault)}
         >
             <button type="submit">{text(labels.label, 'Send')}</button>

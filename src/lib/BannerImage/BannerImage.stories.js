@@ -27,7 +27,7 @@ storiesOf(folder.block + 'BannerImage', module)
                 colorThemeDefault,
             )}
             topStyle={radios(
-                labels.topWaveDirection,
+                labels.topStyle,
                 decorationOptions,
                 decorationDefault,
             )}

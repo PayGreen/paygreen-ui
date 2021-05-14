@@ -23,12 +23,12 @@ storiesOf(folder.block + 'Banner', module)
     .add('Banner', () => (
         <Banner
             topStyle={radios(
-                labels.topWaveDirection,
+                labels.topStyle,
                 decorationOptions,
                 decorationDefault,
             )}
             bottomStyle={radios(
-                labels.bottomWaveDirection,
+                labels.bottomStyle,
                 decorationOptions,
                 decorationDefault,
             )}

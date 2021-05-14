@@ -20,7 +20,6 @@ const labels = {
     borderLeft: 'Border left',
     borderBottom: 'Border Bottom',
     position: 'Position',
-    submittedText: 'Submitted text',
     centeredPopin: 'Centered popin',
     hasHelpButton: 'Has help button',
     sortIconActive: 'Sort icon is active',
@@ -56,7 +55,6 @@ const labels = {
     textSize: 'Text size',
 
     // Inputs
-    placeholder: 'Placeholder',
     fieldSize: 'Field size',
     status: 'Status',
     unity: 'Unity',
@@ -87,8 +85,9 @@ const labels = {
 
     // Waves
     waveDirection: 'Wave direction',
-    topWaveDirection: 'Top wave direction',
-    bottomWaveDirection: 'Bottom wave direction',
+
+    topStyle: 'Top style',
+    bottomStyle: 'Bottom style',
 };
 
 export default labels;
