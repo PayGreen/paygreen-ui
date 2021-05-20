@@ -53,6 +53,7 @@ DaInput.propTypes = {
     isRounded: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
+    hasStaticWidth: PropTypes.bool,
     hasHelpButton: PropTypes.bool,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
@@ -67,6 +68,7 @@ DaInput.defaultProps = {
     isRounded: false,
     fieldSize: buttonSizeDefault,
     blockWidth: inputWidthDefault,
+    hasStaticWidth: false,
     hasHelpButton: false,
 };
 

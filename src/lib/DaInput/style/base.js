@@ -65,4 +65,16 @@ const helpButtonStyle = css`
         )};
 `;
 
-export { field, disabled, enabled, helpButtonStyle };
+const widthStyle = {
+    fit: css`
+        max-width: ${props =>
+            props.inputType === 'tel'
+                ? props.theme.form.inputWidth.sm
+                : props.theme.form.inputWidth[props.blockWidth]};
+    `,
+    static: css`
+        width: 100%;
+    `,
+};
+
+export { field, disabled, enabled, helpButtonStyle, widthStyle };
