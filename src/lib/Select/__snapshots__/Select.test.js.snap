@@ -467,16 +467,50 @@ exports[`renders without crashing 1`] = `
     >
       Choose your option...
     </option>
-    <option
-      value="first"
+    <optgroup
+      label="First group"
     >
-      First option
-    </option>
-    <option
-      value="second"
+      <option
+        disabled={false}
+        value="first"
+      >
+        First option
+      </option>
+      <option
+        disabled={false}
+        value="second"
+      >
+        Second option
+      </option>
+      <option
+        disabled={false}
+        value="third"
+      >
+        Third option
+      </option>
+    </optgroup>
+    <optgroup
+      label="Second group"
     >
-      Second option
-    </option>
+      <option
+        disabled={false}
+        value="first 2"
+      >
+        First option
+      </option>
+      <option
+        disabled={true}
+        value="second 2"
+      >
+        Second option
+      </option>
+      <option
+        disabled={false}
+        value="third 2"
+      >
+        Third option
+      </option>
+    </optgroup>
   </select>
   <span />
 </div>

@@ -10,13 +10,40 @@ const sampleOptions = [
         disabled: true,
     },
     {
-        value: 'first',
-        text: 'First option',
+        optgroup: 'First group',
+        values: [
+            {
+                value: 'first',
+                text: 'First option',
+            },
+            {
+                value: 'second',
+                text: 'Second option',
+            },
+            {
+                value: 'third',
+                text: 'Third option',
+            },
+        ],
     },
     {
-        value: 'second',
-        text: 'Second option',
-    }
+        optgroup: 'Second group',
+        values: [
+            {
+                value: 'first 2',
+                text: 'First option',
+            },
+            {
+                value: 'second 2',
+                text: 'Second option',
+                disabled: true,
+            },
+            {
+                value: 'third 2',
+                text: 'Third option',
+            },
+        ],
+    },
 ];
 
 it('renders without crashing', () => {
@@ -26,8 +53,7 @@ it('renders without crashing', () => {
             id="selectId1"
             label="Your choice"
             options={sampleOptions}
-            
-        />
+        />,
     );
     expect(selectBlock.toJSON()).toMatchSnapshot();
 });

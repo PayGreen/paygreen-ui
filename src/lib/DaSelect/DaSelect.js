@@ -6,12 +6,12 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
+import Option from '../Select/Option';
 import { DaSelectBase } from './style';
 
 const DaSelect = props => {
     const {
         options,
-        hasOptGroup,
         isRounded,
         fieldSize,
         blockWidth,
@@ -21,37 +21,6 @@ const DaSelect = props => {
         inputRef,
         ...rest
     } = props;
-
-    const OptionFields = ({ item, index }) => {
-        return item.optgroup ? (
-            <optgroup label={item.optgroup} key={index}>
-                {item.values.map((option, index) => (
-                    <option
-                        key={index}
-                        value={option.value}
-                        disabled={
-                            option.disabled ||
-                            (readOnly &&
-                                option.value !== props.defaultValue)
-                        }
-                    >
-                        {option.text}
-                    </option>
-                ))}
-            </optgroup>
-        ) : (
-            <option
-                key={index}
-                value={item.value}
-                disabled={
-                    item.disabled ||
-                    (readOnly && item.value !== props.defaultValue)
-                }
-            >
-                {item.text}
-            </option>
-        );
-    };
 
     return (
         <DaSelectBase
@@ -64,14 +33,27 @@ const DaSelect = props => {
             hasHelpButton={hasHelpButton}
         >
             <select {...rest} ref={inputRef}>
-                {options.map((option, index) => (
-                    <OptionFields
-                        item={option}
-                        index={index}
-                        readOnly={readOnly}
-                        key={index}
-                    />
-                ))}
+                {options.map((option, index) =>
+                    option.optgroup ? (
+                        <optgroup label={option.optgroup} key={index}>
+                            {option.values.map((option, index) => (
+                                <Option
+                                    key={index}
+                                    option={option}
+                                    readOnly={readOnly}
+                                    defaultValue={props.defaultValue}
+                                />
+                            ))}
+                        </optgroup>
+                    ) : (
+                        <Option
+                            readOnly={readOnly}
+                            option={option}
+                            key={index}
+                            defaultValue={props.defaultValue}
+                        />
+                    ),
+                )}
             </select>
         </DaSelectBase>
     );
@@ -79,13 +61,26 @@ const DaSelect = props => {
 
 DaSelect.propTypes = {
     options: PropTypes.arrayOf(
-        PropTypes.shape({
-            value: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-            disabled: PropTypes.bool,
-        }),
+        PropTypes.oneOfType([
+            PropTypes.shape({
+                value: PropTypes.string.isRequired,
+                text: PropTypes.string.isRequired,
+                disabled: PropTypes.bool,
+            }),
+            PropTypes.oneOfType([
+                PropTypes.shape({
+                    optgroup: PropTypes.string.isRequired,
+                }),
+                PropTypes.arrayOf(
+                    PropTypes.shape({
+                        value: PropTypes.string.isRequired,
+                        text: PropTypes.string.isRequired,
+                        disabled: PropTypes.bool,
+                    }),
+                ),
+            ]),
+        ]),
     ).isRequired,
-    hasOptGroup: PropTypes.bool,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     isRounded: PropTypes.bool,
@@ -99,7 +94,6 @@ DaSelect.propTypes = {
 };
 
 DaSelect.defaultProps = {
-    hasOptGroup: false,
     disabled: false,
     readOnly: false,
     isRounded: false,

@@ -8,6 +8,7 @@ import {
     inputWidthDefault,
     spaceOptions,
 } from '../../shared/constants';
+import Option from './Option';
 import { SelectBase } from './style';
 
 const Select = props => {
@@ -57,19 +58,32 @@ const Select = props => {
                         ) : null}
 
                         <select {...rest} ref={inputRef}>
-                            {options.map((option, index) => (
-                                <option
-                                    key={index}
-                                    value={option.value}
-                                    disabled={
-                                        option.disabled ||
-                                        (props.readOnly &&
-                                            option.value !== props.defaultValue)
-                                    }
-                                >
-                                    {option.text}
-                                </option>
-                            ))}
+                            {options.map((option, index) =>
+                                option.optgroup ? (
+                                    <optgroup
+                                        label={option.optgroup}
+                                        key={index}
+                                    >
+                                        {option.values.map((option, index) => (
+                                            <Option
+                                                key={index}
+                                                option={option}
+                                                readOnly={readOnly}
+                                                defaultValue={
+                                                    props.defaultValue
+                                                }
+                                            />
+                                        ))}
+                                    </optgroup>
+                                ) : (
+                                    <Option
+                                        readOnly={readOnly}
+                                        option={option}
+                                        key={index}
+                                        defaultValue={props.defaultValue}
+                                    />
+                                ),
+                            )}
                         </select>
 
                         <span></span>
@@ -84,11 +98,25 @@ Select.propTypes = {
     id: PropTypes.string,
     label: PropTypes.string,
     options: PropTypes.arrayOf(
-        PropTypes.shape({
-            value: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-            disabled: PropTypes.bool,
-        }),
+        PropTypes.oneOfType([
+            PropTypes.shape({
+                value: PropTypes.string.isRequired,
+                text: PropTypes.string.isRequired,
+                disabled: PropTypes.bool,
+            }),
+            PropTypes.oneOfType([
+                PropTypes.shape({
+                    optgroup: PropTypes.string.isRequired,
+                }),
+                PropTypes.arrayOf(
+                    PropTypes.shape({
+                        value: PropTypes.string.isRequired,
+                        text: PropTypes.string.isRequired,
+                        disabled: PropTypes.bool,
+                    }),
+                ),
+            ]),
+        ]),
     ).isRequired,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,

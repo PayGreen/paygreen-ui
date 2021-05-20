@@ -57,15 +57,16 @@ const optionsGroup = [
         optgroup: 'Second group',
         values: [
             {
-                value: 'first',
+                value: 'first 2',
                 text: 'First option',
             },
             {
-                value: 'second',
+                value: 'second 2',
                 text: 'Second option',
+                disabled: true,
             },
             {
-                value: 'third',
+                value: 'third 2',
                 text: 'Third option',
             },
         ],
@@ -77,9 +78,8 @@ storiesOf(folder.form + 'DaSelect', module)
     .add('DaSelect', () => (
         <DaSelect
             defaultValue=""
-            hasOptGroup={boolean('Has options group', true)}
             options={
-                boolean('Has options group', true) ? optionsGroup : options
+                boolean('Has optgroup', true) ? optionsGroup : options
             }
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
