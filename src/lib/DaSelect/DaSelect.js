@@ -11,6 +11,7 @@ import { DaSelectBase } from './style';
 const DaSelect = props => {
     const {
         options,
+        hasOptGroup,
         isRounded,
         fieldSize,
         blockWidth,
@@ -20,6 +21,37 @@ const DaSelect = props => {
         inputRef,
         ...rest
     } = props;
+
+    const OptionFields = ({ item, index }) => {
+        return item.optgroup ? (
+            <optgroup label={item.optgroup} key={index}>
+                {item.values.map((option, index) => (
+                    <option
+                        key={index}
+                        value={option.value}
+                        disabled={
+                            option.disabled ||
+                            (readOnly &&
+                                option.value !== props.defaultValue)
+                        }
+                    >
+                        {option.text}
+                    </option>
+                ))}
+            </optgroup>
+        ) : (
+            <option
+                key={index}
+                value={item.value}
+                disabled={
+                    item.disabled ||
+                    (readOnly && item.value !== props.defaultValue)
+                }
+            >
+                {item.text}
+            </option>
+        );
+    };
 
     return (
         <DaSelectBase
@@ -33,17 +65,12 @@ const DaSelect = props => {
         >
             <select {...rest} ref={inputRef}>
                 {options.map((option, index) => (
-                    <option
+                    <OptionFields
+                        item={option}
+                        index={index}
+                        readOnly={readOnly}
                         key={index}
-                        value={option.value}
-                        disabled={
-                            option.disabled ||
-                            (props.readOnly &&
-                                option.value !== props.defaultValue)
-                        }
-                    >
-                        {option.text}
-                    </option>
+                    />
                 ))}
             </select>
         </DaSelectBase>
@@ -58,6 +85,7 @@ DaSelect.propTypes = {
             disabled: PropTypes.bool,
         }),
     ).isRequired,
+    hasOptGroup: PropTypes.bool,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
     isRounded: PropTypes.bool,
@@ -71,6 +99,7 @@ DaSelect.propTypes = {
 };
 
 DaSelect.defaultProps = {
+    hasOptGroup: false,
     disabled: false,
     readOnly: false,
     isRounded: false,
