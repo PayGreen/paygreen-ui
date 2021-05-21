@@ -30,5 +30,6 @@ storiesOf(folder.form + 'DaTextarea', module)
                 inputWidthOptions,
                 inputWidthDefault,
             )}
+            hasStaticWidth={boolean('Has static width', false)}
         />
     ));

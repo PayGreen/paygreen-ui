@@ -49,6 +49,7 @@ storiesOf(folder.form + 'DaSelect', module)
                 inputWidthOptions,
                 inputWidthDefault,
             )}
+            hasStaticWidth={boolean('Has static width', false)}
             hasHelpButton={boolean('Help button', false)}
         />
     ));

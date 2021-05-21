@@ -14,6 +14,7 @@ const DaSelect = props => {
         isRounded,
         fieldSize,
         blockWidth,
+        hasStaticWidth,
         hasHelpButton,
         // must not be passed with rest because there is no readOnly html attribute for select
         readOnly,
@@ -28,6 +29,7 @@ const DaSelect = props => {
             inputDisabled={props.disabled}
             isRounded={isRounded}
             blockWidth={blockWidth}
+            hasStaticWidth={hasStaticWidth}
             fieldSize={fieldSize}
             hasHelpButton={hasHelpButton}
         >
@@ -63,6 +65,7 @@ DaSelect.propTypes = {
     isRounded: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
+    hasStaticWidth: PropTypes.bool,
     hasHelpButton: PropTypes.bool,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
@@ -76,6 +79,7 @@ DaSelect.defaultProps = {
     isRounded: false,
     fieldSize: buttonSizeDefault,
     blockWidth: inputWidthDefault,
+    hasStaticWidth: false,
     hasHelpButton: false,
 };
 

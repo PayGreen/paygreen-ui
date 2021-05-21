@@ -39,4 +39,13 @@ const borderRadius = {
     `,
 };
 
-export { enabled, disabled, borderRadius };
+const widthStyle = {
+    fit: css`
+        max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
+    `,
+    static: css`
+        width: 100%;
+    `,
+};
+
+export { enabled, disabled, borderRadius, widthStyle };

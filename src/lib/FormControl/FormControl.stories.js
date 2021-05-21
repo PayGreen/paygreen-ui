@@ -156,6 +156,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusDefault,
             )}
             required={boolean(requiredLabel, false)}
+            hasStaticWidth={boolean('Has static width', false)}
         >
             <DaLabel>Textarea description</DaLabel>
 
