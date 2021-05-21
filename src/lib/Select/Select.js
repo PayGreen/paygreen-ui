@@ -8,7 +8,7 @@ import {
     inputWidthDefault,
     spaceOptions,
 } from '../../shared/constants';
-import Option from './Option';
+import Options from './Options';
 import { SelectBase } from './style';
 
 const Select = props => {
@@ -58,32 +58,11 @@ const Select = props => {
                         ) : null}
 
                         <select {...rest} ref={inputRef}>
-                            {options.map((option, index) =>
-                                option.optgroup ? (
-                                    <optgroup
-                                        label={option.optgroup}
-                                        key={index}
-                                    >
-                                        {option.values.map((option, index) => (
-                                            <Option
-                                                key={index}
-                                                option={option}
-                                                readOnly={readOnly}
-                                                defaultValue={
-                                                    props.defaultValue
-                                                }
-                                            />
-                                        ))}
-                                    </optgroup>
-                                ) : (
-                                    <Option
-                                        readOnly={readOnly}
-                                        option={option}
-                                        key={index}
-                                        defaultValue={props.defaultValue}
-                                    />
-                                ),
-                            )}
+                            <Options
+                                options={options}
+                                readOnly={readOnly}
+                                defaultValue={props.defaultValue}
+                            />
                         </select>
 
                         <span></span>

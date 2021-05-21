@@ -6,7 +6,7 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
-import Option from '../Select/Option';
+import Options from '../Select/Options';
 import { DaSelectBase } from './style';
 
 const DaSelect = props => {
@@ -33,27 +33,11 @@ const DaSelect = props => {
             hasHelpButton={hasHelpButton}
         >
             <select {...rest} ref={inputRef}>
-                {options.map((option, index) =>
-                    option.optgroup ? (
-                        <optgroup label={option.optgroup} key={index}>
-                            {option.values.map((option, index) => (
-                                <Option
-                                    key={index}
-                                    option={option}
-                                    readOnly={readOnly}
-                                    defaultValue={props.defaultValue}
-                                />
-                            ))}
-                        </optgroup>
-                    ) : (
-                        <Option
-                            readOnly={readOnly}
-                            option={option}
-                            key={index}
-                            defaultValue={props.defaultValue}
-                        />
-                    ),
-                )}
+                <Options
+                    options={options}
+                    readOnly={readOnly}
+                    defaultValue={props.defaultValue}
+                />
             </select>
         </DaSelectBase>
     );

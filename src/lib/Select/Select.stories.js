@@ -87,9 +87,7 @@ storiesOf(folder.form + 'Select', module)
             id="select1"
             label={text('Label', 'Your choice')}
             defaultValue=""
-            options={
-                boolean('Has optgroup', true) ? optionsGroup : options
-            }
+            options={boolean('Has optgroup', true) ? optionsGroup : options}
             disabled={boolean('Disabled', false)}
             readOnly={boolean('Readonly', false)}
             status={radios('Status', formStatusOptions, formStatusDefault)}
