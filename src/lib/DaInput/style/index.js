@@ -1,5 +1,12 @@
 import styled from 'styled-components';
-import { field, enabled, disabled, helpButtonStyle, widthStyle } from './base';
+import {
+    field,
+    enabled,
+    disabled,
+    helpButtonStyle,
+    widthStyle,
+    iconStyle,
+} from './base';
 
 const DaInputBase = styled.div`
     input {
@@ -16,6 +23,7 @@ const DaInputBase = styled.div`
 
     ${props => (props.hasHelpButton ? helpButtonStyle : null)};
     ${props => (props.hasStaticWidth ? widthStyle.static : widthStyle.fit)};
+    ${props => (props.hasIcon ? iconStyle : null)};
 `;
 
 export { DaInputBase };

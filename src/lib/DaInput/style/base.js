@@ -78,4 +78,34 @@ const widthStyle = {
     `,
 };
 
-export { field, disabled, enabled, helpButtonStyle, widthStyle };
+const iconShift = props =>
+    math(
+        '(' +
+            props.theme.daButton.buttonHeight[props.fieldSize] +
+            ' - ' +
+            props.theme.icon.size[props.fieldSize] +
+            ')/2',
+    );
+
+const iconStyle = css`
+    position: relative;
+
+    .icon {
+        position: absolute;
+        pointer-events: none;
+        top: ${iconShift};
+        left: ${iconShift};
+
+        svg {
+            fill: ${props => props.theme.wab.grey30};
+        }
+    }
+
+    input,
+    select {
+        padding-left: ${props =>
+            props.theme.daButton.buttonHeight[props.fieldSize]};
+    }
+`;
+
+export { field, disabled, enabled, helpButtonStyle, widthStyle, iconStyle };

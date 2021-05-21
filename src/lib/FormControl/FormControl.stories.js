@@ -20,7 +20,7 @@ import DaTextarea from '../DaTextarea/DaTextarea';
 import Message from '../Message/Message';
 import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import Text from '../Text/Text';
-import { QuestionBoldIcon } from '../Icon/Icon';
+import { CardsIcon, QuestionBoldIcon, UsersIcon } from '../Icon/Icon';
 import FormControl from './FormControl';
 
 const colorStatusLabel = 'Status color';
@@ -87,6 +87,7 @@ storiesOf(folder.form + 'FormControl', module)
                 defaultValue=""
                 options={selectOptions}
                 blockWidth={inputWidthOptions.sm}
+                icon={boolean('Has icon', true) ? <UsersIcon /> : null}
             />
         </FormControl>
     ))
@@ -105,6 +106,7 @@ storiesOf(folder.form + 'FormControl', module)
             <DaInput
                 placeholder="Firstname Lastname"
                 blockWidth={inputWidthOptions.sm}
+                icon={boolean('Has icon', true) ? <CardsIcon /> : null}
             />
 
             <DaHelp>

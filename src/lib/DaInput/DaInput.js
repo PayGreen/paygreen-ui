@@ -17,6 +17,7 @@ const DaInput = props => {
         blockWidth,
         hasHelpButton,
         hasStaticWidth,
+        icon,
         // remove mask from rest
         mask,
         ...rest
@@ -41,7 +42,14 @@ const DaInput = props => {
             blockWidth={blockWidth}
             hasHelpButton={hasHelpButton}
             hasStaticWidth={hasStaticWidth}
+            hasIcon={!!icon}
         >
+            {icon
+                ? React.cloneElement(icon, {
+                      iconSize: fieldSize,
+                  })
+                : null}
+
             <InputMask {...rest} mask={stateMask} />
         </DaInputBase>
     );
@@ -57,6 +65,7 @@ DaInput.propTypes = {
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasStaticWidth: PropTypes.bool,
     hasHelpButton: PropTypes.bool,
+    icon: PropTypes.element,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.any }),
@@ -72,6 +81,7 @@ DaInput.defaultProps = {
     blockWidth: inputWidthDefault,
     hasStaticWidth: false,
     hasHelpButton: false,
+    icon: null,
 };
 
 export default DaInput;

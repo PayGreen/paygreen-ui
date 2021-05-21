@@ -6,6 +6,7 @@ import {
     disabled,
     helpButtonStyle,
     widthStyle,
+    iconStyle,
 } from '../../DaInput/style/base';
 
 const DaSelectBase = styled.div`
@@ -34,6 +35,7 @@ const DaSelectBase = styled.div`
 
     ${props => (props.hasHelpButton ? helpButtonStyle : null)};
     ${props => (props.hasStaticWidth ? widthStyle.static : widthStyle.fit)};
+    ${props => (props.hasIcon ? iconStyle : null)};
 
     &::after {
         content: '';

@@ -8,6 +8,7 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
+import { ListIcon } from '../Icon/Icon';
 import DaSelect from './DaSelect';
 
 const options = [
@@ -96,5 +97,6 @@ storiesOf(folder.form + 'DaSelect', module)
             )}
             hasStaticWidth={boolean('Has static width', false)}
             hasHelpButton={boolean('Help button', false)}
+            icon={boolean('Has icon', true) ? <ListIcon /> : null}
         />
     ));
