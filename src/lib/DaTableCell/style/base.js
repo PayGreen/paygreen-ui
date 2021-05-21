@@ -50,10 +50,10 @@ const mainStyle = css`
 `;
 
 const notMainStyle = css`
-    display: flex;
-    justify-content: ${props => (props.hasLabel ? 'space-between' : 'center')};
+    display: grid;
+    grid-template-columns : ${props => (props.hasLabel ? 'minmax(20px, auto) minmax(50px, 100%) minmax(20px, auto)' : '1fr')};
     align-items: center;
-    white-space: nowrap;
+    justify-items: stretch;
 
     .cell-label {
         flex: 1;
@@ -64,6 +64,13 @@ const notMainStyle = css`
         font-size: ${props => props.theme.font.size.tiny};
         font-weight: ${props => props.theme.font.weight.bold};
         letter-spacing: ${props => props.theme.font.spacing};
+    }
+
+    .cell-line {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        color: ${props => props.theme.wab.grey40};
 
         &::after {
             content: '';

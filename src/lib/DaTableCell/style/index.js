@@ -19,6 +19,7 @@ const DaTableCellBase = styled.div`
         @media ${props => props.theme.screen.min.lg} {
             display: none;
         }
+    
     }
 
     .cell-content {

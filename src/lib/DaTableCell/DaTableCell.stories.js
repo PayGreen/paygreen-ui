@@ -13,8 +13,8 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTableCell', module)
             isLoading={boolean(isLoadingLabel, false)}
             isMain={boolean('Is main', true)}
             isId={boolean('Is id', false)}
-            label={text('Label', 'Label')}
+            label={text('Label', 'A very long label with details to explain')}
         >
-            {boolean(isLoadingLabel, false) ? null : 'Sample'}
+            {boolean(isLoadingLabel, false) ? null : 'A very long Sample too'}
         </DaTableCell>
     ));
