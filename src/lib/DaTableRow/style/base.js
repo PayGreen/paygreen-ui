@@ -49,7 +49,7 @@ const cellsAreas = css`
     }
 `;
 
-const toggableStyle = css`
+const closedStyle = css`
     .cell-basic {
         height: 0;
         padding-top: 0;
@@ -58,14 +58,14 @@ const toggableStyle = css`
         overflow: hidden;
         transition: all ${props => props.theme.transition.sm};
     }
+`;
 
-    &:hover {
-        .cell-basic {
-            height: auto;
-            padding-top: ${props => props.theme.space.xs};
-            padding-bottom: ${props => props.theme.space.xs};
-            opacity: 1;
-        }
+const openStyle = css`
+    .cell-basic {
+        height: auto;
+        padding-top: ${props => props.theme.space.xs};
+        padding-bottom: ${props => props.theme.space.xs};
+        opacity: 1;
     }
 `;
 
@@ -104,4 +104,11 @@ const loadingStyle = css`
     }
 `;
 
-export { cellsAreas, toggableStyle, hoverStyle, activeStyle, loadingStyle };
+export {
+    cellsAreas,
+    closedStyle,
+    openStyle,
+    hoverStyle,
+    activeStyle,
+    loadingStyle,
+};

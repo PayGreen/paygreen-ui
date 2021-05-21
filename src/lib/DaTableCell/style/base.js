@@ -53,7 +53,7 @@ const notMainStyle = css`
     display: grid;
     grid-template-columns: ${props =>
         props.hasLabel
-            ? 'minmax(20px, auto) minmax(50px, 1fr) minmax(20px, auto)'
+            ? 'minmax(20px, auto) minmax(40px, 1fr) minmax(20px, auto)'
             : '1fr'};
     align-items: center;
     justify-items: stretch;
@@ -67,6 +67,7 @@ const notMainStyle = css`
         font-size: ${props => props.theme.font.size.tiny};
         font-weight: ${props => props.theme.font.weight.bold};
         letter-spacing: ${props => props.theme.font.spacing};
+        max-width: 150px;
     }
 
     .cell-line {
@@ -74,7 +75,7 @@ const notMainStyle = css`
         display: flex;
         align-items: center;
         color: ${props => props.theme.wab.grey40};
-
+        
         &::after {
             content: '';
             flex: 1;

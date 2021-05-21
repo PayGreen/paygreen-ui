@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { gridTemplate, gridColumns } from './constants';
 import {
     cellsAreas,
-    toggableStyle,
+    closedStyle, openStyle,
     hoverStyle,
     activeStyle,
     loadingStyle,
@@ -31,7 +31,7 @@ const DaTableRowBase = styled.div`
         align-items: center;
 
         ${cellsAreas};
-        ${toggableStyle};
+        ${props => (props.isOpen ? openStyle : closedStyle)};
     }
 
     @media ${props => props.theme.screen.min.lg} {

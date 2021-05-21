@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { useOutsideAlerter } from '../../shared/hook';
 import Checkbox from '../Checkbox/Checkbox';
 import { DaTableRowBase } from './style';
 
 const DaTableRow = props => {
+    const [isOpen, setOpen] = useState(false);
+
     let hasId = false;
     let hasCheckbox = false;
     let mainCellCount = 0;
@@ -35,13 +38,20 @@ const DaTableRow = props => {
     let basicIndex = 0;
     let className = '';
 
+    // We create the reference linked to DaTableRow component and pass it to the hook
+    const daTableRowRef = useRef(null);
+    useOutsideAlerter(daTableRowRef, isOpen, () => setOpen(false));
+
     return (
         <DaTableRowBase
             {...props}
+            ref={daTableRowRef}
             hasId={hasId}
             hasCheckbox={hasCheckbox}
             mainCellCount={mainCellCount}
             notMainCellCount={notMainCellCount}
+            onMouseDown={!isOpen ? () => setOpen(true) : null} // we need to detect mousedown event to open since closing is based on mousedown with useOutsideAlerter
+            isOpen={isOpen}
         >
             {React.Children.map(props.children, child => {
                 if (typeof child === 'object') {
