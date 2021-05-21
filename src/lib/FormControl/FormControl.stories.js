@@ -78,16 +78,8 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusDefault,
             )}
             required={boolean(requiredLabel, false)}
-            marginTop={select(
-                'Margin top',
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginBottom={select(
-                'Margin bottom',
-                spaceOptions,
-                spaceDefault,
-            )}
+            marginTop={select('Margin top', spaceOptions, spaceDefault)}
+            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
         >
             <DaLabel>Select label</DaLabel>
 
@@ -106,6 +98,7 @@ storiesOf(folder.form + 'FormControl', module)
                 formStatusDefault,
             )}
             required={boolean(requiredLabel, false)}
+            hasStaticWidth={boolean('Has static width', false)}
         >
             <DaLabel>Input label</DaLabel>
 

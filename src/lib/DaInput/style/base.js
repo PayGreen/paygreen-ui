@@ -56,6 +56,7 @@ const helpButtonStyle = css`
     }
 
     width: ${props =>
+        !props.hasStaticWidth &&
         math(
             props.theme.form.inputWidth[
                 props.inputType === 'tel' ? 'sm' : props.blockWidth

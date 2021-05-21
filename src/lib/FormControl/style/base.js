@@ -14,8 +14,7 @@ const statusStyle = css`
     ${DaSelectBase} select,
     ${DaInputBase} input,
     ${DaTextareaBase} textarea {
-        border-color: ${props =>
-            props.theme.status[props.colorStatus].main};
+        border-color: ${props => props.theme.status[props.colorStatus].main};
 
         &:hover,
         &:active,
@@ -27,7 +26,7 @@ const statusStyle = css`
 
     ${DaLabelBase} {
         color: ${props => props.theme.status[props.colorStatus].main};
-       
+
         .required {
             color: ${props => props.theme.status[props.colorStatus].main};
         }
@@ -47,8 +46,7 @@ const statusStyle = css`
 
         & > .icon {
             svg {
-                fill: ${props =>
-                    props.theme.status[props.colorStatus].main};
+                fill: ${props => props.theme.status[props.colorStatus].main};
             }
         }
     }
@@ -65,7 +63,7 @@ const statusStyle = css`
             }
         }
     }
-    
+
     ${CheckboxBase} {
         input {
             &:checked {
@@ -85,7 +83,8 @@ const statusStyle = css`
 const gridStyle = css`
     display: grid;
     grid-template-areas: 'label label' 'field help' 'message message';
-    grid-template-columns: auto 1fr;
+    grid-template-columns: ${props =>
+        props.hasStaticWidth ? '1fr auto' : 'auto 1fr'};
 
     ${DaLabelBase} {
         grid-area: label;

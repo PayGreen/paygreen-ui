@@ -16,6 +16,7 @@ const DaInput = props => {
         fieldSize,
         blockWidth,
         hasHelpButton,
+        hasStaticWidth,
         // remove mask from rest
         mask,
         ...rest
@@ -39,6 +40,7 @@ const DaInput = props => {
             fieldSize={fieldSize}
             blockWidth={blockWidth}
             hasHelpButton={hasHelpButton}
+            hasStaticWidth={hasStaticWidth}
         >
             <InputMask {...rest} mask={stateMask} />
         </DaInputBase>
