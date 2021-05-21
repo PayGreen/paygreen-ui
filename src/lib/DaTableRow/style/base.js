@@ -61,7 +61,7 @@ const toggableStyle = css`
 
     &:hover {
         .cell-basic {
-            height: ${props => props.theme.space.lg};
+            height: auto;
             padding-top: ${props => props.theme.space.xs};
             padding-bottom: ${props => props.theme.space.xs};
             opacity: 1;

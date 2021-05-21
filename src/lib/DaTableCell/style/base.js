@@ -51,7 +51,10 @@ const mainStyle = css`
 
 const notMainStyle = css`
     display: grid;
-    grid-template-columns : ${props => (props.hasLabel ? 'minmax(20px, auto) minmax(50px, 100%) minmax(20px, auto)' : '1fr')};
+    grid-template-columns: ${props =>
+        props.hasLabel
+            ? 'minmax(20px, auto) minmax(50px, 1fr) minmax(20px, auto)'
+            : '1fr'};
     align-items: center;
     justify-items: stretch;
 
@@ -79,6 +82,10 @@ const notMainStyle = css`
                 ${props => props.theme.line + ' ' + props.theme.wab.grey20};
             margin: 0 ${props => props.theme.space.xs};
         }
+    }
+
+    .cell-content {
+        text-align: right;
     }
 `;
 
