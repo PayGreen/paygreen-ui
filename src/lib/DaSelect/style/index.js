@@ -12,7 +12,6 @@ const DaSelectBase = styled.div`
     position: relative;
     display: flex;
     align-items: center;
-    ${props => (props.hasStaticWidth ? widthStyle.static : widthStyle.fit)};
 
     select {
         ${field};
@@ -34,6 +33,7 @@ const DaSelectBase = styled.div`
     }
 
     ${props => (props.hasHelpButton ? helpButtonStyle : null)};
+    ${props => (props.hasStaticWidth ? widthStyle.static : widthStyle.fit)};
 
     &::after {
         content: '';
