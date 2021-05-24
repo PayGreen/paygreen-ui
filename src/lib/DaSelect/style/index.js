@@ -8,6 +8,7 @@ import {
     widthStyle,
     iconStyle,
 } from '../../DaInput/style/base';
+import { arrow } from './constants';
 
 const DaSelectBase = styled.div`
     position: relative;
@@ -18,11 +19,7 @@ const DaSelectBase = styled.div`
         ${field};
         appearance: none;
         padding-right: ${props =>
-            props.isRounded
-                ? math(
-                      props.theme.daButton.buttonHeight[props.fieldSize] + '/2',
-                  )
-                : props.theme.space.md};
+            props.isRounded ? arrow.space.rounded : arrow.space.basic};
 
         option {
             &:disabled {
@@ -46,16 +43,10 @@ const DaSelectBase = styled.div`
                 ? math(
                       props.theme.daButton.buttonHeight[props.fieldSize] + '/2',
                   )
-                : props.theme.space.md};
-        transform: translateX(50%);
+                : props.theme.space.sm};
         border-style: solid;
-        border-width: 0
-            ${props =>
-                math(
-                    props.theme.daButton.buttonHeight[props.fieldSize] + '/7',
-                )};
-        border-top-width: ${props =>
-            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/6')};
+        border-width: 0 ${arrow.width};
+        border-top-width: ${arrow.height};
         border-color: transparent;
         border-top-color: ${props =>
             props.inputDisabled
