@@ -59,7 +59,7 @@ const DaSelectBase = styled.div`
         border-color: transparent;
         border-top-color: ${props =>
             props.inputDisabled
-                ? props.theme.wab.grey30
+                ? props.theme.wab.grey20
                 : props.theme.wab.grey60};
     }
 `;

@@ -89,7 +89,7 @@ const iconStyle = css`
         left: ${iconShift};
 
         svg {
-            fill: ${props => props.theme.wab.grey30};
+            fill: ${props => props.theme.wab.grey40};
         }
     }
 
