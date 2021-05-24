@@ -6,7 +6,10 @@ import { MonthContextProvider } from '../context/MonthContext';
 import CalendarNavbar from './CalendarNavbar';
 
 const CalendarNavbar_withContext = () => {
-    const [month, setMonth] = useState(moment().month());
+    const [month, setMonth] = useState(
+        moment('2021-04-23T15:00:00.000').month(),
+    );
+
     return (
         <MonthContextProvider value={[month, setMonth]}>
             <CalendarNavbar theme={ThemeDefault} />

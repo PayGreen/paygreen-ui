@@ -15,7 +15,7 @@ const Calendar_withContext = () => {
     return (
         <DropdownContext.Provider value={[setOpen, isOpen]}>
             <DateContextProvider value={[selectedDate, setSelectedDate]}>
-                <Calendar theme={ThemeDefault} />
+                <Calendar theme={ThemeDefault} currentMonth={selectedDate.month()} />
             </DateContextProvider>
         </DropdownContext.Provider>
     );
