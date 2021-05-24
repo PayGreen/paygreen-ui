@@ -2,8 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <button
-  className="style__DaHelpBase-sc-448mi1-0 cXyuEf"
-  disabled={false}
+  className="style__DaHelpBase-sc-448mi1-0 jGLIKS"
   type="button"
 >
   <span
