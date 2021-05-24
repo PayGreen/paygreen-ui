@@ -60,6 +60,10 @@ export const GlobalStyle = createGlobalStyle`
         outline: none;
     }
 
+    select {
+        opacity: 1;
+    }
+
     [type="checkbox"],
     [type="radio"] {
         box-shadow: none;
