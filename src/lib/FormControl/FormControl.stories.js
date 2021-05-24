@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
@@ -91,40 +91,45 @@ storiesOf(folder.form + 'FormControl', module)
             />
         </FormControl>
     ))
-    .add('FormControl with DaInput, DaHelp and Message', () => (
-        <FormControl
-            colorStatus={select(
-                colorStatusLabel,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            required={boolean(requiredLabel, false)}
-            hasStaticWidth={boolean('Has static width', false)}
-        >
-            <DaLabel>Input label</DaLabel>
+    .add('FormControl with DaInput, DaHelp and Message', () => {
+        const [isOpen, setOpen] = useState(false);
 
-            <DaInput
-                placeholder="Firstname Lastname"
-                blockWidth={inputWidthOptions.sm}
-                icon={boolean('Has icon', true) ? <CardsIcon /> : null}
-            />
+        return (
+            <FormControl
+                colorStatus={select(
+                    colorStatusLabel,
+                    formStatusOptions,
+                    formStatusDefault,
+                )}
+                required={boolean(requiredLabel, false)}
+                hasStaticWidth={boolean('Has static width', false)}
+            >
+                <DaLabel>Input label</DaLabel>
 
-            <DaHelp>
-                <QuestionBoldIcon />
-            </DaHelp>
-
-            {boolean('Is DaHelp clicked', true) ? (
-                <Message
-                    arrowBlock={blockPositionOptions.topRight}
+                <DaInput
+                    placeholder="Firstname Lastname"
                     blockWidth={inputWidthOptions.sm}
-                >
-                    {MessageContent}
-                </Message>
-            ) : (
-                <></> //to replace 'null' value and avoid error from storybook
-            )}
-        </FormControl>
-    ))
+                    icon={boolean('Has icon', true) ? <CardsIcon /> : null}
+                    disabled={boolean('Disabled', false)}
+                />
+
+                <DaHelp onClick={() => setOpen(!isOpen)}>
+                    <QuestionBoldIcon />
+                </DaHelp>
+
+                {isOpen ? (
+                    <Message
+                        arrowBlock={blockPositionOptions.topRight}
+                        blockWidth={inputWidthOptions.sm}
+                    >
+                        {MessageContent}
+                    </Message>
+                ) : (
+                    <></> //to replace 'null' value and avoid error from storybook
+                )}
+            </FormControl>
+        );
+    })
     .add('Form Control with CheckboxGroup and Message', () => (
         <FormControl
             colorStatus={select(

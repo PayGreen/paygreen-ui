@@ -15,41 +15,19 @@ const activeStyle = css`
     }
 `;
 
-const enabled = css`
-    background-color: ${props => props.theme.status.default.light};
-
-    &:hover,
-    &:active,
-    &:focus {
-        ${activeStyle};
-    }
-
-    & > .icon {
-        svg {
-            fill: ${props => props.theme.status.default.main};
-        }
-    }
-
-    ${props => (props.isActive ? activeStyle : null)};
-`;
-
-const disabled = css`
-    ${activeStyle};
-
-    cursor: not-allowed;
-    filter: grayscale(1);
-`;
-
 const borderRadius = {
     normal: css`
-        border-radius: ${props => props.theme.radius.sm};
+        border-top-right-radius: ${props => props.theme.radius.sm};
+        border-bottom-right-radius: ${props => props.theme.radius.sm};
     `,
     rounded: css`
-        border-radius: ${props =>
+        border-top-right-radius: ${props =>
+            math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
+        border-bottom-right-radius: ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '/2')};
         padding-right: ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '/10')};
     `,
 };
 
-export { enabled, disabled, borderRadius };
+export { activeStyle, borderRadius };
