@@ -53,32 +53,28 @@ const notMainStyle = css`
     display: grid;
     grid-template-columns: ${props =>
         props.hasLabel
-            ? 'minmax(20px, auto) minmax(40px, 1fr) minmax(20px, auto)'
+            ? `minmax(${props.theme.table.cell.lg}, auto) minmax(${props.theme.table.cell.xl}, 1fr) minmax(${props.theme.table.cell.lg}, auto)`
             : '1fr'};
     align-items: center;
     justify-items: stretch;
 
     .cell-label {
-        flex: 1;
-        display: flex;
-        align-items: center;
         color: ${props => props.theme.wab.grey40};
         text-transform: uppercase;
         font-size: ${props => props.theme.font.size.tiny};
         font-weight: ${props => props.theme.font.weight.bold};
         letter-spacing: ${props => props.theme.font.spacing};
-        max-width: 150px;
+
+        @media ${props => props.theme.screen.max.sm} {
+            max-width: ${props => props.theme.imageSize.tiny};
+        }
     }
 
     .cell-line {
-        flex: 1;
-        display: flex;
-        align-items: center;
         color: ${props => props.theme.wab.grey40};
-        
+
         &::after {
             content: '';
-            flex: 1;
             border-top: dotted
                 ${props => props.theme.line + ' ' + props.theme.wab.grey20};
             margin: 0 ${props => props.theme.space.xs};
@@ -87,6 +83,10 @@ const notMainStyle = css`
 
     .cell-content {
         text-align: right;
+
+        @media ${props => props.theme.screen.max.sm} {
+            max-width: ${props => props.theme.imageSize.tiny};
+        }
     }
 `;
 

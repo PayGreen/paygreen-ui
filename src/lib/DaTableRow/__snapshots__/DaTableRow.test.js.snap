@@ -2,11 +2,15 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__DaTableRowBase-cqmn2v-0 gwibND"
+  className="style__DaTableRowBase-cqmn2v-0 fwfykB"
+  onMouseDown={[Function]}
 >
   <div
     className="style__DaTableCellBase-sc-1ed6rma-0 gLhGfU cell-checkbox"
   >
+    <span
+      className="cell-line"
+    />
     <span
       className="cell-content"
     >
@@ -422,6 +426,7 @@ exports[`renders without crashing 1`] = `
                 "cell": Object {
                   "lg": "21px",
                   "sm": "18px",
+                  "xl": "40px",
                 },
               },
               "transition": Object {
@@ -490,6 +495,9 @@ exports[`renders without crashing 1`] = `
     className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
   >
     <span
+      className="cell-line"
+    />
+    <span
       className="cell-content"
     >
       4217
@@ -499,14 +507,20 @@ exports[`renders without crashing 1`] = `
     className="style__DaTableCellBase-sc-1ed6rma-0 blLFYm cell-main cell-main-1"
   >
     <span
+      className="cell-line"
+    />
+    <span
       className="cell-content"
     >
       Something
     </span>
   </div>
   <div
-    className="style__DaTableCellBase-sc-1ed6rma-0 fImtdS cell-basic cell-basic-1"
+    className="style__DaTableCellBase-sc-1ed6rma-0 eDa-Dvs cell-basic cell-basic-1"
   >
+    <span
+      className="cell-line"
+    />
     <span
       className="cell-content"
     >

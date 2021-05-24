@@ -448,6 +448,7 @@ export const ThemeBase = {
         cell: {
             sm: '18px',
             lg: '21px',
+            xl: '40px',
         },
     },
 };

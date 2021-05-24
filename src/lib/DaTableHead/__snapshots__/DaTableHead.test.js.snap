@@ -447,6 +447,7 @@ exports[`renders without crashing 1`] = `
                   "cell": Object {
                     "lg": "21px",
                     "sm": "18px",
+                    "xl": "40px",
                   },
                 },
                 "transition": Object {
@@ -926,6 +927,7 @@ exports[`renders without crashing 1`] = `
                 "cell": Object {
                   "lg": "21px",
                   "sm": "18px",
+                  "xl": "40px",
                 },
               },
               "transition": Object {

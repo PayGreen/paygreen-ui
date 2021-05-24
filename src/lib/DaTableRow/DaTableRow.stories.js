@@ -33,5 +33,9 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTableRow', module)
             <DaTableCell isMain={false} label="Type">
                 Cash
             </DaTableCell>
+
+            <DaTableCell isMain={false} label="A very long label">
+                A very long content to display
+            </DaTableCell>
         </DaTableRow>
     ));
