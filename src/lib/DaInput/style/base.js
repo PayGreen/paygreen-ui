@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
+import { iconShift } from './constants';
 
 const borderRadius = {
     normal: css`
@@ -77,15 +78,6 @@ const widthStyle = {
         width: 100%;
     `,
 };
-
-const iconShift = props =>
-    math(
-        '(' +
-            props.theme.daButton.buttonHeight[props.fieldSize] +
-            ' - ' +
-            props.theme.icon.size[props.fieldSize] +
-            ')/2',
-    );
 
 const iconStyle = css`
     position: relative;
