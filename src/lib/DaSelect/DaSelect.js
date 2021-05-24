@@ -6,6 +6,7 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
+import Options from '../Select/Options';
 import { DaSelectBase } from './style';
 
 const DaSelect = props => {
@@ -32,19 +33,11 @@ const DaSelect = props => {
             hasHelpButton={hasHelpButton}
         >
             <select {...rest} ref={inputRef}>
-                {options.map((option, index) => (
-                    <option
-                        key={index}
-                        value={option.value}
-                        disabled={
-                            option.disabled ||
-                            (props.readOnly &&
-                                option.value !== props.defaultValue)
-                        }
-                    >
-                        {option.text}
-                    </option>
-                ))}
+                <Options
+                    options={options}
+                    readOnly={readOnly}
+                    defaultValue={props.defaultValue}
+                />
             </select>
         </DaSelectBase>
     );
@@ -52,11 +45,25 @@ const DaSelect = props => {
 
 DaSelect.propTypes = {
     options: PropTypes.arrayOf(
-        PropTypes.shape({
-            value: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-            disabled: PropTypes.bool,
-        }),
+        PropTypes.oneOfType([
+            PropTypes.shape({
+                value: PropTypes.string.isRequired,
+                text: PropTypes.string.isRequired,
+                disabled: PropTypes.bool,
+            }),
+            PropTypes.oneOfType([
+                PropTypes.shape({
+                    optgroup: PropTypes.string.isRequired,
+                }),
+                PropTypes.arrayOf(
+                    PropTypes.shape({
+                        value: PropTypes.string.isRequired,
+                        text: PropTypes.string.isRequired,
+                        disabled: PropTypes.bool,
+                    }),
+                ),
+            ]),
+        ]),
     ).isRequired,
     disabled: PropTypes.bool,
     readOnly: PropTypes.bool,
