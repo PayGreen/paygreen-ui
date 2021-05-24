@@ -5,11 +5,11 @@ import {
     enabled,
     disabled,
     helpButtonStyle,
+    widthStyle,
 } from '../../DaInput/style/base';
 
 const DaSelectBase = styled.div`
     position: relative;
-    max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
     display: flex;
     align-items: center;
 
@@ -33,6 +33,7 @@ const DaSelectBase = styled.div`
     }
 
     ${props => (props.hasHelpButton ? helpButtonStyle : null)};
+    ${props => (props.hasStaticWidth ? widthStyle.static : widthStyle.fit)};
 
     &::after {
         content: '';

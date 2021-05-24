@@ -16,6 +16,7 @@ const DaInput = props => {
         fieldSize,
         blockWidth,
         hasHelpButton,
+        hasStaticWidth,
         // remove mask from rest
         mask,
         ...rest
@@ -39,6 +40,7 @@ const DaInput = props => {
             fieldSize={fieldSize}
             blockWidth={blockWidth}
             hasHelpButton={hasHelpButton}
+            hasStaticWidth={hasStaticWidth}
         >
             <InputMask {...rest} mask={stateMask} />
         </DaInputBase>
@@ -53,6 +55,7 @@ DaInput.propTypes = {
     isRounded: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
+    hasStaticWidth: PropTypes.bool,
     hasHelpButton: PropTypes.bool,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
@@ -67,6 +70,7 @@ DaInput.defaultProps = {
     isRounded: false,
     fieldSize: buttonSizeDefault,
     blockWidth: inputWidthDefault,
+    hasStaticWidth: false,
     hasHelpButton: false,
 };
 

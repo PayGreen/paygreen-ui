@@ -27,6 +27,7 @@ const DaTextarea = props => {
         isRounded,
         fieldSize,
         blockWidth,
+        hasStaticWidth,
         inputRef,
         ...rest
     } = props;
@@ -62,6 +63,7 @@ const DaTextarea = props => {
             fieldSize={fieldSize}
             isRounded={isRounded}
             blockWidth={blockWidth}
+            hasStaticWidth={hasStaticWidth}
             hasCounter={hasCounter}
             autoHeight={textAreaAutoHeight}
         >
@@ -91,6 +93,7 @@ DaTextarea.propTypes = {
     counterText: PropTypes.string,
     isRounded: PropTypes.bool,
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
+    hasStaticWidth: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
@@ -108,6 +111,7 @@ DaTextarea.defaultProps = {
     counterText: 'characters',
     isRounded: false,
     blockWidth: inputWidthDefault,
+    hasStaticWidth: false,
     fieldSize: buttonSizeDefault,
 };
 

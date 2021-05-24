@@ -1,12 +1,7 @@
 import styled from 'styled-components';
-import { field, enabled, disabled, helpButtonStyle } from './base';
+import { field, enabled, disabled, helpButtonStyle, widthStyle } from './base';
 
 const DaInputBase = styled.div`
-    max-width: ${props =>
-        props.inputType === 'tel'
-            ? props.theme.form.inputWidth.sm
-            : props.theme.form.inputWidth[props.blockWidth]};
-
     input {
         ${field};
         line-height: ${props =>
@@ -20,6 +15,7 @@ const DaInputBase = styled.div`
     }
 
     ${props => (props.hasHelpButton ? helpButtonStyle : null)};
+    ${props => (props.hasStaticWidth ? widthStyle.static : widthStyle.fit)};
 `;
 
 export { DaInputBase };

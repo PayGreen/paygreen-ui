@@ -9,11 +9,18 @@ import {
 import DaHelp from '../DaHelp/DaHelp';
 import DaInput from '../DaInput/DaInput';
 import DaSelect from '../DaSelect/DaSelect';
+import DaTextarea from '../DaTextarea/DaTextarea';
 import DatePicker from '../DatePicker/DatePicker';
 import Message from '../Message/Message';
 import { FormControlBase } from './style';
 
-const FormControl = ({ children, required, colorStatus, ...rest }) => {
+const FormControl = ({
+    children,
+    required,
+    colorStatus,
+    hasStaticWidth,
+    ...rest
+}) => {
     let hasHelpButton = false;
 
     React.Children.map(children, child => {
@@ -27,6 +34,7 @@ const FormControl = ({ children, required, colorStatus, ...rest }) => {
             {...rest}
             colorStatus={colorStatus}
             hasHelpButton={hasHelpButton}
+            hasStaticWidth={hasStaticWidth}
         >
             {React.Children.map(children, child => {
                 switch (child && child.type) {
@@ -37,12 +45,19 @@ const FormControl = ({ children, required, colorStatus, ...rest }) => {
                     case Message:
                         return React.cloneElement(child, {
                             colorStatus: colorStatus,
+                            hasStaticWidth: hasStaticWidth,
                         });
                     case DaInput:
                     case DaSelect:
                     case DatePicker:
                         return React.cloneElement(child, {
                             hasHelpButton: hasHelpButton,
+                            hasStaticWidth: hasStaticWidth,
+                            required: required,
+                        });
+                    case DaTextarea:
+                        return React.cloneElement(child, {
+                            hasStaticWidth: hasStaticWidth,
                             required: required,
                         });
                     default:
@@ -60,6 +75,7 @@ FormControl.propTypes = {
     required: PropTypes.bool,
     marginTop: PropTypes.oneOf(Object.values(spaceOptions)),
     marginBottom: PropTypes.oneOf(Object.values(spaceOptions)),
+    hasStaticWidth: PropTypes.bool,
 };
 
 FormControl.defaultProps = {
@@ -67,6 +83,7 @@ FormControl.defaultProps = {
     required: false,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
+    hasStaticWidth: false,
 };
 
 export default FormControl;

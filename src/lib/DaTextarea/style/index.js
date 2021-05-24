@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 import { math } from 'polished';
-import { enabled, disabled, borderRadius } from './base';
+import { enabled, disabled, borderRadius, widthStyle } from './base';
 
 const DaTextareaBase = styled.div`
     position: relative;
-    max-width: ${props => props.theme.form.inputWidth[props.blockWidth]};
-
+    ${props => (props.hasStaticWidth ? widthStyle.static : widthStyle.fit)};
     ${props => (props.inputDisabled ? disabled : enabled)};
 
     textarea {
