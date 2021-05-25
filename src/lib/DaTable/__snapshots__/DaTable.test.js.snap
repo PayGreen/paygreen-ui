@@ -8,7 +8,8 @@ exports[`renders without crashing 1`] = `
     className="table"
   >
     <div
-      className="style__DaTableRowBase-cqmn2v-0 gwibND"
+      className="style__DaTableRowBase-cqmn2v-0 fwfykB"
+      onMouseDown={[Function]}
     >
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 gLhGfU cell-checkbox"
@@ -428,7 +429,9 @@ exports[`renders without crashing 1`] = `
                     "cell": Object {
                       "lg": "21px",
                       "sm": "18px",
+                      "xl": "40px",
                     },
+                    "labelMaxWidth": "150px",
                   },
                   "transition": Object {
                     "lg": "0.7s",
@@ -511,7 +514,7 @@ exports[`renders without crashing 1`] = `
         </span>
       </div>
       <div
-        className="style__DaTableCellBase-sc-1ed6rma-0 fImtdS cell-basic cell-basic-1"
+        className="style__DaTableCellBase-sc-1ed6rma-0 gQuNuQ cell-basic cell-basic-1"
       >
         <span
           className="cell-content"
@@ -521,7 +524,8 @@ exports[`renders without crashing 1`] = `
       </div>
     </div>
     <div
-      className="style__DaTableRowBase-cqmn2v-0 gwibND"
+      className="style__DaTableRowBase-cqmn2v-0 fwfykB"
+      onMouseDown={[Function]}
     >
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 gLhGfU cell-checkbox"
@@ -941,7 +945,9 @@ exports[`renders without crashing 1`] = `
                     "cell": Object {
                       "lg": "21px",
                       "sm": "18px",
+                      "xl": "40px",
                     },
+                    "labelMaxWidth": "150px",
                   },
                   "transition": Object {
                     "lg": "0.7s",
@@ -1024,7 +1030,7 @@ exports[`renders without crashing 1`] = `
         </span>
       </div>
       <div
-        className="style__DaTableCellBase-sc-1ed6rma-0 fImtdS cell-basic cell-basic-1"
+        className="style__DaTableCellBase-sc-1ed6rma-0 gQuNuQ cell-basic cell-basic-1"
       >
         <span
           className="cell-content"
@@ -1034,7 +1040,8 @@ exports[`renders without crashing 1`] = `
       </div>
     </div>
     <div
-      className="style__DaTableRowBase-cqmn2v-0 gwibND"
+      className="style__DaTableRowBase-cqmn2v-0 fwfykB"
+      onMouseDown={[Function]}
     >
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 gLhGfU cell-checkbox"
@@ -1454,7 +1461,9 @@ exports[`renders without crashing 1`] = `
                     "cell": Object {
                       "lg": "21px",
                       "sm": "18px",
+                      "xl": "40px",
                     },
+                    "labelMaxWidth": "150px",
                   },
                   "transition": Object {
                     "lg": "0.7s",
@@ -1537,7 +1546,7 @@ exports[`renders without crashing 1`] = `
         </span>
       </div>
       <div
-        className="style__DaTableCellBase-sc-1ed6rma-0 fImtdS cell-basic cell-basic-1"
+        className="style__DaTableCellBase-sc-1ed6rma-0 gQuNuQ cell-basic cell-basic-1"
       >
         <span
           className="cell-content"

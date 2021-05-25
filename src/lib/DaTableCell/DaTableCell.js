@@ -18,6 +18,10 @@ const DaTableCell = ({ children, label, isCheckbox, ...rest }) => {
         >
             {rest.isLoading ? null : labelContent}
 
+            {rest.isLoading || !label ? null : (
+                <span className="cell-line"></span>
+            )}
+
             <span className="cell-content">
                 {React.Children.map(children, child => {
                     if (child && child.type === Checkbox) {

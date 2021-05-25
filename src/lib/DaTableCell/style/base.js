@@ -50,27 +50,37 @@ const mainStyle = css`
 `;
 
 const notMainStyle = css`
-    display: flex;
-    justify-content: ${props => (props.hasLabel ? 'space-between' : 'center')};
+    display: grid;
+    grid-template-columns: ${props =>
+        props.hasLabel
+            ? `minmax(${props.theme.table.cell.lg}, auto) minmax(${props.theme.table.cell.xl}, 1fr) minmax(${props.theme.table.cell.lg}, auto)`
+            : '1fr'};
     align-items: center;
-    white-space: nowrap;
+    justify-items: stretch;
 
     .cell-label {
-        flex: 1;
-        display: flex;
-        align-items: center;
         color: ${props => props.theme.wab.grey40};
         text-transform: uppercase;
         font-size: ${props => props.theme.font.size.tiny};
         font-weight: ${props => props.theme.font.weight.bold};
         letter-spacing: ${props => props.theme.font.spacing};
 
-        &::after {
-            content: '';
-            flex: 1;
-            border-top: dotted
-                ${props => props.theme.line + ' ' + props.theme.wab.grey20};
-            margin: 0 ${props => props.theme.space.xs};
+        @media ${props => props.theme.screen.max.sm} {
+            max-width: ${props => props.theme.table.labelMaxWidth};
+        }
+    }
+
+    .cell-line {
+        border-top: dotted
+            ${props => props.theme.line + ' ' + props.theme.wab.grey20};
+        margin: 0 ${props => props.theme.space.xs};
+    }
+
+    .cell-content {
+        text-align: right;
+
+        @media ${props => props.theme.screen.max.sm} {
+            max-width: ${props => props.theme.table.labelMaxWidth};
         }
     }
 `;
