@@ -5,7 +5,7 @@ exports[`renders without crashing 1`] = `
   className="style__DaTableBodyBase-sc-6g57ma-0 lbblkT"
 >
   <div
-    className="style__DaTableRowBase-cqmn2v-0 fwfykB"
+    className="style__DaTableRowBase-cqmn2v-0 eMbuwm"
     onMouseDown={[Function]}
   >
     <div
@@ -511,7 +511,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="style__DaTableCellBase-sc-1ed6rma-0 gQuNuQ cell-basic cell-basic-1"
+      className="style__DaTableCellBase-sc-1ed6rma-0 etkGNS cell-basic cell-basic-1"
     >
       <span
         className="cell-content"
