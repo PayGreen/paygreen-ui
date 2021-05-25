@@ -66,26 +66,21 @@ const notMainStyle = css`
         letter-spacing: ${props => props.theme.font.spacing};
 
         @media ${props => props.theme.screen.max.sm} {
-            max-width: ${props => props.theme.imageSize.tiny};
+            max-width: ${props => props.theme.table.labelMaxWidth};
         }
     }
 
     .cell-line {
-        color: ${props => props.theme.wab.grey40};
-
-        &::after {
-            content: '';
-            border-top: dotted
-                ${props => props.theme.line + ' ' + props.theme.wab.grey20};
-            margin: 0 ${props => props.theme.space.xs};
-        }
+        border-top: dotted
+            ${props => props.theme.line + ' ' + props.theme.wab.grey20};
+        margin: 0 ${props => props.theme.space.xs};
     }
 
     .cell-content {
         text-align: right;
 
         @media ${props => props.theme.screen.max.sm} {
-            max-width: ${props => props.theme.imageSize.tiny};
+            max-width: ${props => props.theme.table.labelMaxWidth};
         }
     }
 `;

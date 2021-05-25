@@ -9,10 +9,8 @@ import { useEffect } from 'react';
 const useOutsideAlerter = (ref, condition, callback) => {
     useEffect(() => {
         const handleClickOutside = e => {
-            if (ref && ref.current && !ref.current.contains(e.target)) {
-                if (condition) {
-                    callback();
-                }
+            if (ref?.current && !ref.current.contains(e.target) && condition) {
+                callback();
             }
         };
 

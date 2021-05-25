@@ -49,24 +49,11 @@ const cellsAreas = css`
     }
 `;
 
-const closedStyle = css`
-    .cell-basic {
-        height: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: all ${props => props.theme.transition.sm};
-    }
-`;
-
 const openStyle = css`
-    .cell-basic {
-        height: auto;
-        padding-top: ${props => props.theme.space.xs};
-        padding-bottom: ${props => props.theme.space.xs};
-        opacity: 1;
-    }
+    height: auto;
+    padding-top: ${props => props.theme.space.xs};
+    padding-bottom: ${props => props.theme.space.xs};
+    opacity: 1;
 `;
 
 const hoverStyle = css`
@@ -104,11 +91,4 @@ const loadingStyle = css`
     }
 `;
 
-export {
-    cellsAreas,
-    closedStyle,
-    openStyle,
-    hoverStyle,
-    activeStyle,
-    loadingStyle,
-};
+export { cellsAreas, openStyle, hoverStyle, activeStyle, loadingStyle };

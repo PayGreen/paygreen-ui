@@ -449,6 +449,7 @@ exports[`renders without crashing 1`] = `
                     "sm": "18px",
                     "xl": "40px",
                   },
+                  "labelMaxWidth": "150px",
                 },
                 "transition": Object {
                   "lg": "0.7s",
@@ -929,6 +930,7 @@ exports[`renders without crashing 1`] = `
                   "sm": "18px",
                   "xl": "40px",
                 },
+                "labelMaxWidth": "150px",
               },
               "transition": Object {
                 "lg": "0.7s",

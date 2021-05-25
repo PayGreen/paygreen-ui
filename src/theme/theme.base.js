@@ -450,5 +450,6 @@ export const ThemeBase = {
             lg: '21px',
             xl: '40px',
         },
+        labelMaxWidth: '150px',
     },
 };
