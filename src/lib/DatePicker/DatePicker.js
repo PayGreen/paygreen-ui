@@ -200,6 +200,7 @@ DatePicker.propTypes = {
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasHelpButton: PropTypes.bool,
+    icon: PropTypes.element,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.any }),

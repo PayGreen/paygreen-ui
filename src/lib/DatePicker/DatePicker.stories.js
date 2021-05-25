@@ -17,6 +17,7 @@ import {
     localeDefault,
     localeOptions,
 } from '../../shared/constants';
+import { ScheduleIcon } from '../Icon/Icon';
 import DatePicker from './DatePicker';
 
 // This wrapper helps to deal with react hooks without having to use React.createElement() inside stories that would make the story rerender with each prop's change
@@ -56,5 +57,6 @@ storiesOf(folder.form + 'DatePicker', module)
                 moment().add(1, 'M').format('DD/MM/YYYY'),
             )}
             resetDate={text('Reset date', moment().format('DD/MM/YYYY'))}
+            icon={boolean('Has icon', true) ? <ScheduleIcon /> : null}
         />
     ));

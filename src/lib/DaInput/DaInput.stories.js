@@ -8,6 +8,7 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
+import { PhoneIcon, SearchIcon } from '../Icon/Icon';
 import DaInput from './DaInput';
 
 storiesOf(folder.form + 'DaInput', module)
@@ -30,6 +31,7 @@ storiesOf(folder.form + 'DaInput', module)
             )}
             hasStaticWidth={boolean('Has static width', false)}
             hasHelpButton={boolean('Help button', false)}
+            icon={boolean('Has icon', true) ? <SearchIcon /> : null}
         />
     ))
     .add('Tel', () => (
@@ -45,5 +47,6 @@ storiesOf(folder.form + 'DaInput', module)
                 buttonSizeDefault,
             )}
             hasHelpButton={boolean('Help button', false)}
+            icon={boolean('Has icon', true) ? <PhoneIcon /> : null}
         />
     ));

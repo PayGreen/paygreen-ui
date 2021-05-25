@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import { math } from 'polished';
+import { iconShift } from './constants';
 
 const borderRadius = {
     normal: css`
@@ -78,4 +79,25 @@ const widthStyle = {
     `,
 };
 
-export { field, disabled, enabled, helpButtonStyle, widthStyle };
+const iconStyle = css`
+    position: relative;
+
+    .icon {
+        position: absolute;
+        pointer-events: none;
+        top: ${iconShift};
+        left: ${iconShift};
+
+        svg {
+            fill: ${props => props.theme.wab.grey40};
+        }
+    }
+
+    input,
+    select {
+        padding-left: ${props =>
+            props.theme.daButton.buttonHeight[props.fieldSize]};
+    }
+`;
+
+export { field, disabled, enabled, helpButtonStyle, widthStyle, iconStyle };

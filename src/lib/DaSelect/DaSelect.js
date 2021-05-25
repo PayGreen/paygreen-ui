@@ -17,6 +17,7 @@ const DaSelect = props => {
         blockWidth,
         hasStaticWidth,
         hasHelpButton,
+        icon,
         // must not be passed with rest because there is no readOnly html attribute for select
         readOnly,
         inputRef,
@@ -33,7 +34,14 @@ const DaSelect = props => {
             hasStaticWidth={hasStaticWidth}
             fieldSize={fieldSize}
             hasHelpButton={hasHelpButton}
+            hasIcon={!!icon}
         >
+            {icon
+                ? React.cloneElement(icon, {
+                      iconSize: fieldSize,
+                  })
+                : null}
+
             <select {...rest} ref={inputRef}>
                 <Options
                     options={options}
@@ -74,6 +82,7 @@ DaSelect.propTypes = {
     blockWidth: PropTypes.oneOf(Object.values(inputWidthOptions)),
     hasStaticWidth: PropTypes.bool,
     hasHelpButton: PropTypes.bool,
+    icon: PropTypes.element,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.any }),
@@ -88,6 +97,7 @@ DaSelect.defaultProps = {
     blockWidth: inputWidthDefault,
     hasStaticWidth: false,
     hasHelpButton: false,
+    icon: null,
 };
 
 export default DaSelect;

@@ -9,7 +9,7 @@ exports[`renders without crashing 1`] = `
       className="style__DropdownBase-ht2epv-0 dYNCxh"
     >
       <div
-        className="style__DaInputBase-sc-13xli4f-0 iDYsmg"
+        className="style__DaInputBase-sc-13xli4f-0 flOZAF"
       >
         <input
           disabled={false}
@@ -468,7 +468,7 @@ exports[`renders without crashing 1`] = `
             }
           }
           type="text"
-          value=""
+          value={"2021-04-23T13:00:00.000Z"}
         />
       </div>
       <div
@@ -688,7 +688,7 @@ exports[`renders without crashing 1`] = `
             22
           </button>
           <button
-            className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
+            className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
             onClick={[Function]}
             type="button"
           >

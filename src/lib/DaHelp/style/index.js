@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { enabled, disabled, borderRadius } from './base';
+import { activeStyle, borderRadius } from './base';
 
 const DaHelpBase = styled.button`
     box-sizing: border-box;
@@ -7,17 +7,26 @@ const DaHelpBase = styled.button`
     height: ${props => props.theme.daButton.buttonHeight[props.fieldSize]};
     padding: 0;
     border: none;
-    ${props => props.isRounded ? borderRadius.rounded : borderRadius.normal};
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    background-color: ${props => props.theme.status.default.light};
     transition: all ${props => props.theme.transition.xs};
+
+    &:hover,
+    &:active,
+    &:focus {
+        ${activeStyle};
+    }
 
     & > .icon {
         width: ${props => props.theme.icon.size[props.fieldSize]};
         height: auto;
+
+        svg {
+            fill: ${props => props.theme.status.default.main};
+        }
     }
 
-    ${props => (props.disabled ? disabled : enabled)};
+    ${props => (props.isRounded ? borderRadius.rounded : borderRadius.normal)};
+    ${props => (props.isActive ? activeStyle : null)};
 `;
 
 export { DaHelpBase };

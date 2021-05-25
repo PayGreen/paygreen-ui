@@ -11,6 +11,15 @@ import { RadioGroupBase } from '../../RadioGroup/style';
 import { RadioBase } from '../../Radio/style';
 
 const statusStyle = css`
+    ${DaSelectBase},
+    ${DaInputBase} {
+        & > .icon {
+            svg {
+                fill: ${props => props.theme.status[props.colorStatus].main};
+            }
+        }
+    }
+
     ${DaSelectBase} select,
     ${DaInputBase} input,
     ${DaTextareaBase} textarea {
