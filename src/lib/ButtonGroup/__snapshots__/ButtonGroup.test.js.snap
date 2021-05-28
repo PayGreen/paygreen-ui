@@ -8,7 +8,7 @@ exports[`renders without crashing 1`] = `
     type="button"
   >
     <span
-      className="style__ButtonBase-pnyves-0 godPhX"
+      className="style__ButtonBase-pnyves-0 bWBOTp"
     >
       First button
     </span>
@@ -17,7 +17,7 @@ exports[`renders without crashing 1`] = `
     type="button"
   >
     <span
-      className="style__ButtonBase-pnyves-0 cuIwsX"
+      className="style__ButtonBase-pnyves-0 Plmbf"
     >
       Second button
     </span>

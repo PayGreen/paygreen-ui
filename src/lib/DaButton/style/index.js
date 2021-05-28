@@ -4,14 +4,13 @@ import {
     buttonStyleOptions,
     colorTypeOptions,
 } from '../../../shared/constants';
+import { backgroundCalc } from './constants';
 import {
-    enabled,
-    disabled,
+    disabledStyle,
     originalStyle,
     reverseStyle,
     iconStyleBase,
 } from './base';
-import { backgroundCalc } from './constants';
 
 const DaButtonBase = styled.span`
     box-sizing: border-box;
@@ -53,11 +52,22 @@ const DaButtonBase = styled.span`
         transition: all ${props => props.theme.transition.sm};
     }
 
+    button:hover &,
+    button:active &,
+    button:focus &,
+    a:hover &,
+    a:active &,
+    a:focus & {
+        &::before {
+            transform: scale(1);
+        }
+    }
+
+    ${props => (props.isDisabled ? disabledStyle : null)};
     ${props =>
         props.colorType === colorTypeOptions.reverse
             ? reverseStyle[props.buttonStyle]
             : originalStyle[props.buttonStyle][props.gradient]};
-    ${props => (props.isDisabled ? disabled : enabled)};
     ${iconStyleBase};
 `;
 

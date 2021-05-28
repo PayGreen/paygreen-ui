@@ -10,51 +10,53 @@ const buttonColors = {
         fill: {
             original: {
                 enabled: colorCollection.white,
-                disabled: colorCollection.lightGrey
+                disabled: colorCollection.lightGrey,
             },
             reverse: {
                 enabled: colorCollection.main,
-                disabled: colorCollection.grey
+                disabled: colorCollection.grey,
             },
         },
         line: {
             original: {
                 enabled: colorCollection.main,
-                disabled: colorCollection.grey
+                disabled: colorCollection.grey,
             },
             reverse: {
                 enabled: colorCollection.white,
-                disabled: colorCollection.grey
+                disabled: colorCollection.grey,
             },
-        }
+        },
     },
     bg: {
         fill: {
             original: {
                 enabled: colorCollection.main,
-                disabled: colorCollection.grey
+                disabled: colorCollection.grey,
             },
             reverse: {
                 enabled: colorCollection.white,
-                disabled: colorCollection.grey
+                disabled: colorCollection.grey,
             },
         },
         line: {
             original: {
                 enabled: colorCollection.main,
-                disabled: colorCollection.grey
+                disabled: colorCollection.grey,
             },
             reverse: {
                 enabled: colorCollection.white,
-                disabled: colorCollection.grey
+                disabled: colorCollection.grey,
             },
-        }
-    }
-}
-
-const enableType = props => props.isDisabled ? 'disabled' : 'enabled';
-
-export {
-    buttonColors,
-    enableType
+        },
+    },
 };
+
+const enableType = props => (props.isDisabled ? 'disabled' : 'enabled');
+
+const opacity = {
+    original: 0.5,
+    reverse: 0.6,
+};
+
+export { buttonColors, enableType, opacity };
