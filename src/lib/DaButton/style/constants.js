@@ -1,5 +1,5 @@
-import { buttonStyleOptions } from '../../../shared/constants';
 import { math } from 'polished';
+import { buttonStyleOptions } from '../../../shared/constants';
 
 const mainColor = {
     theme: props => props.theme.color[props.colorTheme].main,

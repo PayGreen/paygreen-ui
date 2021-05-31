@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 import { math } from 'polished';
-import { colorTypeOptions } from '../../../shared/constants';
-import { enabled, disabled, templateStyle } from './base';
+import { opacity } from './constants';
+import { disabledStyle, templateStyle } from './base';
 
 const ButtonBase = styled.span`
-    ${props => (props.isDisabled ? disabled : enabled)};
-    ${props => templateStyle[props.buttonStyle]};
-
     display: inline-block;
     position: relative;
     z-index: ${props => props.theme.zindex.base};
@@ -37,8 +34,7 @@ const ButtonBase = styled.span`
         height: 100%;
         width: 100%;
         border-radius: ${props => props.theme.radius.sm};
-        opacity: ${props =>
-            props.colorType === colorTypeOptions.reverse ? 0.6 : 0.5};
+        opacity: ${props => opacity[props.colorType]};
         transition: all ${props => props.theme.transition.xs},
             opacity ${props => props.theme.transition.sm} linear
                 ${props => props.theme.transition.xs};
@@ -53,6 +49,31 @@ const ButtonBase = styled.span`
         bottom: -${props => props.theme.button.shift};
         right: -${props => props.theme.button.shift};
     }
+
+    button:hover &,
+    button:active &,
+    button:focus &,
+    a:hover &,
+    a:active &,
+    a:focus & {
+        &::before,
+        &::after {
+            opacity: 1;
+        }
+
+        &::before {
+            top: 0;
+            left: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    ${props => (props.isDisabled ? disabledStyle : null)};
+    ${props => templateStyle[props.buttonStyle]};
 `;
 
 export { ButtonBase };

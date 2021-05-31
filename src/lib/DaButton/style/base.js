@@ -1,27 +1,18 @@
 import { css } from 'styled-components';
 import { mainColor } from './constants';
 
-const enabled = css`
-    button:hover &,
-    button:active &,
-    button:focus &,
-    a:hover &,
-    a:active &,
-    a:focus & {
-        &::before {
-            transform: scale(1);
-        }
-    }
-`;
-
-const disabled = css`
+const disabledStyle = css`
     cursor: not-allowed;
     filter: grayscale(1);
+
+    &::before {
+        display: none;
+    }
 `;
 
 const whiteBase = css`
     color: ${mainColor.white};
-    
+
     .icon svg {
         fill: ${mainColor.white};
     }
@@ -149,4 +140,4 @@ const iconStyleBase = css`
     }
 `;
 
-export { enabled, disabled, originalStyle, reverseStyle, iconStyleBase };
+export { disabledStyle, originalStyle, reverseStyle, iconStyleBase };
