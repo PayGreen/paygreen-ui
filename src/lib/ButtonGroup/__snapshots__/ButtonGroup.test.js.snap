@@ -8,7 +8,7 @@ exports[`renders without crashing 1`] = `
     type="button"
   >
     <span
-      className="style__ButtonBase-pnyves-0 bWBOTp"
+      className="style__ButtonBase-pnyves-0 fwiYPy"
     >
       First button
     </span>

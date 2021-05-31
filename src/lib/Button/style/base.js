@@ -39,11 +39,10 @@ const templateStyle = {
 
         &::before,
         &::after {
-            border: solid
-                ${props =>
-                    props.theme.line +
-                    ' ' +
-                    buttonColors.bg.line[props.colorType][enableType(props)]};
+            border-style: solid;
+            border-width: ${props => props.theme.line};
+            border-color: ${props =>
+                buttonColors.bg.line[props.colorType][enableType(props)]};
         }
     `,
 };
