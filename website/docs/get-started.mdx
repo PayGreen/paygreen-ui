@@ -1,0 +1,36 @@
+---
+id: get-started
+title: 🚀 Commencer
+slug: /
+---
+
+## Installation
+
+```shell
+npm install --save @paygreen/paygreen-ui
+```
+
+```shell
+yarn add @paygreen/paygreen-ui
+```
+
+import { DaButton } from '@paygreen/paygreen-ui';
+import WrapperComponent from '../src/components/WrapperComponent.js';
+
+## Utiliser un composant
+
+```jsx
+<PGThemeProvider theme={ThemeDefault}>
+    <button type="button">
+        <DaButton>My CTA</DaButton>
+    </button>
+</PGThemeProvider>
+```
+
+Ce qui donne&nbsp;:
+
+<WrapperComponent>
+    <button type="button">
+        <DaButton>My CTA</DaButton>
+    </button>
+</WrapperComponent>

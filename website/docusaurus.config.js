@@ -1,14 +1,13 @@
-/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
     title: 'PayGreen UI',
-    tagline: 'Our Design system 🎨',
-    url: 'https://your-docusaurus-test-site.com',
+    tagline: 'Le design system officiel de PayGreen 🎨',
+    url: 'https://paygreen.github.io/paygreen-ui/',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'facebook', // Usually your GitHub org/user name.
-    projectName: 'docusaurus', // Usually your repo name.
+    organizationName: 'PayGreen',
+    projectName: 'paygreen-ui',
     themeConfig: {
         navbar: {
             title: 'PayGreen UI',
@@ -19,67 +18,25 @@ module.exports = {
             items: [
                 {
                     to: 'docs/',
-                    activeBasePath: 'docs',
-                    label: 'Docs',
-                    position: 'left',
+                    label: '📚 La doc',
                 },
-                { to: 'blog', label: 'Blog', position: 'left' },
+                {
+                    href: 'https://paygreen.github.io/paygreen-ui',
+                    label: '🖥️ Démo live',
+                },
                 {
                     href: 'https://github.com/PayGreen/paygreen-ui',
-                    label: 'GitHub',
-                    position: 'right',
+                    label: '📁 Repo GitHub',
                 },
             ],
         },
+        hideableSidebar: true,
         footer: {
             style: 'dark',
-            links: [
-                {
-                    title: 'Docs',
-                    items: [
-                        {
-                            label: 'Style Guide',
-                            to: 'docs/',
-                        },
-                        {
-                            label: 'Second Doc',
-                            to: 'docs/doc2/',
-                        },
-                    ],
-                },
-                {
-                    title: 'Community',
-                    items: [
-                        {
-                            label: 'Stack Overflow',
-                            href:
-                                'https://stackoverflow.com/questions/tagged/docusaurus',
-                        },
-                        {
-                            label: 'Discord',
-                            href: 'https://discordapp.com/invite/docusaurus',
-                        },
-                        {
-                            label: 'Twitter',
-                            href: 'https://twitter.com/docusaurus',
-                        },
-                    ],
-                },
-                {
-                    title: 'More',
-                    items: [
-                        {
-                            label: 'Blog',
-                            to: 'blog',
-                        },
-                        {
-                            label: 'GitHub',
-                            href: 'https://github.com/facebook/docusaurus',
-                        },
-                    ],
-                },
-            ],
-            copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+            copyright: `© 2018 - ${new Date().getFullYear()} PayGreen <br /> <small>Built with Docusaurus</small>`,
+        },
+        colorMode: {
+            respectPrefersColorScheme: true,
         },
     },
     presets: [
@@ -88,15 +45,6 @@ module.exports = {
             {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
-                    // Please change this to your repo.
-                    editUrl:
-                        'https://github.com/facebook/docusaurus/edit/master/website/',
-                },
-                blog: {
-                    showReadingTime: true,
-                    // Please change this to your repo.
-                    editUrl:
-                        'https://github.com/facebook/docusaurus/edit/master/website/blog/',
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),

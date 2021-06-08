@@ -8,32 +8,29 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Easy to Use',
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: 'Un style harmonisé, peu importe le projet',
+    imageUrl: 'img/home/illu1.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        De notre site vitrine <a href="https://www.paygreen.io/" target="_blank">PayGreen IO</a> aux back-offices <a href="https://climatekit.paygreen.fr" target="_blank">ClimateKit</a> et <a href="https://charitykit.paygreen.fr" target="_blank">CharityKit</a> en passant par notre <a href="https://faq.paygreen.io/" target="_blank">FAQ</a>, toutes nos interfaces récentes utilisent la librairie de composants React <strong>PayGreen UI</strong>. 👩‍🎤
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: 'Un large choix de composants',
+    imageUrl: 'img/home/illu2.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Utilisable autant pour des vitrines que pour des back-offices de gestion, <strong>PayGreen UI</strong> décline ses composants en plusieurs versions visuelles&nbsp;: retrouvez notamment le composant <code>Button</code> pour les vitrines, et son homologue <code>DaButton</code> pour les interfaces de type <i><b>DA</b>shboard</i>. 💪
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: 'Dark mode compliant',
+    imageUrl: 'img/home/illu3.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        100% de nos composants sont disponibles à la fois en <code>lightmode</code> et en <code>darkmode</code>. Utilisez le Toggle 🌞🌜 en haut à droite pour vous en rendre compte&nbsp;!
       </>
     ),
   },
@@ -60,7 +57,7 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description={siteConfig.tagline}>
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
@@ -72,7 +69,7 @@ export default function Home() {
                 styles.getStarted,
               )}
               to={useBaseUrl('docs/')}>
-              Get Started
+              Commencer 🚀
             </Link>
           </div>
         </div>
