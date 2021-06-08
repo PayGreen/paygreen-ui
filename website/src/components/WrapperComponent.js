@@ -1,16 +1,18 @@
 import React from 'react';
-import { PGThemeProvider, ThemeDefault } from '@paygreen/paygreen-ui';
-import styled from 'styled-components';
-
-const StyleForLib = styled.div`
-    font-family: 'Open Sans', sans-serif;
-`;
+import useThemeContext from '@theme/hooks/useThemeContext';
+import {
+    PGThemeProvider,
+    ThemeDefault,
+    ThemeDark,
+} from '@paygreen/paygreen-ui';
 
 const WrapperComponent = ({ children }) => {
+    const { isDarkTheme } = useThemeContext();
+
     return (
-        <StyleForLib>
-            <PGThemeProvider theme={ThemeDefault}>{children}</PGThemeProvider>
-        </StyleForLib>
+        <PGThemeProvider theme={isDarkTheme ? ThemeDark : ThemeDefault}>
+            {children}
+        </PGThemeProvider>
     );
 };
 

@@ -69,6 +69,57 @@
     --ifm-tabs-spacing: calc(0.0625rem * 1.62);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+main,
+header,
+footer,
+section,
+article,
+aside,
+div,
+form,
+figure,
+::before,
+::after {
+    display: block;
+    box-sizing: border-box;
+}
+
+a {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    box-shadow: none;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body > * {
     font-size: calc(1rem * 1.62);
 }

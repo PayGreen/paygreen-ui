@@ -6,21 +6,21 @@ title: DataBar
 import { DataBar } from '@paygreen/paygreen-ui';
 import WrapperComponent from '../../../src/components/WrapperComponent.js';
 
-## Le Badge
----------
+## DataBar
+
 <WrapperComponent>
-     <DataBar
-            hasBackground={true}
-            backgroundColor="grey10"
-            textSize="sm"
-            unit="%"
-            maxValue={100}
-            data={[
-                {
-                    value: "12",
-                    legend: ['compensé par ', <strong>vous</strong>],
-                },
-            ]}
-            blockWidth="sm"
-        />
+    <DataBar
+        hasBackground={true}
+        backgroundColor="grey10"
+        textSize="sm"
+        unit="%"
+        maxValue={100}
+        data={[
+            {
+                value: '12',
+                legend: ['compensé par ', <strong>vous</strong>],
+            },
+        ]}
+        blockWidth="sm"
+    />
 </WrapperComponent>
