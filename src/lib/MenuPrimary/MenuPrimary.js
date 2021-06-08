@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AutoBlockScroll from '../GlobalStyle/AutoBlockScroll';
+import  { AutoBlockScroll } from '../GlobalStyle';
 import { MenuPrimaryBase } from './style';
 
 const MenuPrimary = props => {

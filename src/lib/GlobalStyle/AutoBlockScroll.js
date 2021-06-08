@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDebounce, useWindowSize } from '../../shared/hook';
-import { BlockedScrollStyle, NoScrollStyle } from './GlobalStyle';
+import { BlockedScrollStyle, NoScrollStyle } from './';
 
 /**
  * @description It automatically detects if the current page has an active vertical scroll bar and blocks scroll properly.

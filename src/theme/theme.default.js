@@ -2,6 +2,7 @@ import { ThemeBase } from './theme.base';
 import patternLight from './assets/pattern-light.png';
 
 let ThemeDefault = { ...ThemeBase };
+
 ThemeDefault = Object.assign(ThemeDefault, {
     name: 'Default',
     wab: {

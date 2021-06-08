@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AutoBlockScroll from '../GlobalStyle/AutoBlockScroll';
+import { AutoBlockScroll } from '../GlobalStyle';
 import { ModalContext } from './context/ModalContext';
 
 const ModalProvider = props => {

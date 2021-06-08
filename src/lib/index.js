@@ -1,3 +1,16 @@
+// Theme
+import { ThemeProvider as PGThemeProvider } from 'styled-components';
+import { ThemeDefault, ThemeDark } from '../theme';
+
+// GlobalStyle
+import {
+    ResetStyle,
+    CssClasses,
+    BlockedScrollStyle,
+    NoScrollStyle,
+    AutoBlockScroll,
+} from './GlobalStyle';
+
 import AnimPlane from './AnimPlane/AnimPlane';
 import AutonomousInput from './AutonomousInput/AutonomousInput';
 import Badge from './Badge/Badge';
@@ -209,19 +222,18 @@ import {
     WidgetIcon,
 } from './Icon/Icon';
 
-// Theme
-import { ThemeDefault, ThemeDark } from '../theme';
-import { ThemeProvider as PGThemeProvider } from 'styled-components';
-
-// GlobalStyle
-import AutoBlockScroll from './GlobalStyle/AutoBlockScroll';
-import { BlockedScrollStyle } from './GlobalStyle/GlobalStyle';
-import { NoScrollStyle } from './GlobalStyle/GlobalStyle';
-
 export {
+    // Theme
+    PGThemeProvider,
     ThemeDefault,
     ThemeDark,
-    PGThemeProvider,
+    // GlobalStyle
+    ResetStyle,
+    CssClasses,
+    BlockedScrollStyle,
+    NoScrollStyle,
+    AutoBlockScroll,
+    // Components
     AnimPlane,
     AutonomousInput,
     Badge,
@@ -429,8 +441,4 @@ export {
     WeightIcon,
     WheelsIcon,
     WidgetIcon,
-    // GlobalStyle
-    AutoBlockScroll,
-    BlockedScrollStyle,
-    NoScrollStyle,
 };
