@@ -1,6 +1,6 @@
 module.exports = {
     title: 'PayGreen UI',
-    tagline: 'Le design system officiel de PayGreen 🎨',
+    tagline: 'La librairie de composants UI officielle de PayGreen pour React 🎨',
     url: 'https://paygreen.github.io/paygreen-ui/',
     baseUrl: '/',
     onBrokenLinks: 'throw',

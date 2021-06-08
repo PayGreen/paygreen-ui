@@ -4,7 +4,12 @@ title: 🚀 Commencer
 slug: /
 ---
 
-## Installation
+import { Toggle } from '@paygreen/paygreen-ui';
+import WrapperComponent from '../src/components/WrapperComponent.js';
+
+Vous avez fait l'excellent choix de notre librairie pour votre projet React&nbsp;? Excellente nouvelle, y'a plus qu'à&nbsp;!
+
+## Installation de PayGreen UI
 
 ```shell
 npm install --save @paygreen/paygreen-ui
@@ -14,23 +19,77 @@ npm install --save @paygreen/paygreen-ui
 yarn add @paygreen/paygreen-ui
 ```
 
-import { DaButton } from '@paygreen/paygreen-ui';
-import WrapperComponent from '../src/components/WrapperComponent.js';
+## Définir les styles par défaut
 
-## Utiliser un composant
+Pour un rendu CSS optimal des composants et lissé sur tous les navigateurs, nous vous recommandons vivement de créer un **GlobalStyle**&nbsp;:
 
 ```jsx
-<PGThemeProvider theme={ThemeDefault}>
-    <button type="button">
-        <DaButton>My CTA</DaButton>
-    </button>
-</PGThemeProvider>
+import { createGlobalStyle, css } from 'styled-components';
+import { ResetStyle, CssClasses } from '@paygreen/paygreen-ui';
+
+const CustomCss = css``;
+
+const GlobalStyle = createGlobalStyle`
+    ${ResetStyle};
+    ${CssClasses};
+    ${CustomCss};
+`;
+```
+
+-   Le `ResetStyle` comprend notamment le [styled-normalize](https://www.npmjs.com/package/styled-normalize), ainsi que d'autres resets utiles.
+-   Le `CssClasses` contient des classes CSS permettant de masquer des contenus en fonction de la taille de l'écran. Elles sont utilisées dans certains composants.
+-   Le `CustomCss` contient votre CSS personnalisé. Nous vous conseillons par exemple le nôtre&nbsp;:
+
+```css
+html {
+    scroll-behavior: smooth; /* Pour avoir un défilement smooth au clic sur les ancres */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Renseignez votre police */
+    font-size: 1.8rem; /* Choisissez votre taille par défaut : 1.8rem correspond à 18px grâce au ResetStyle */
+}
+```
+
+### Ajouter une police personnalisée
+
+Nous utilisons sur PayGreen UI la police `Open Sans`, mais vous pouvez tout aussi bien utiliser n'importe quelle autre fonte (à condition de la renseigner dans le `font-family` ci-dessus).
+Vous pouvez par exemple créer un fichier `font.css` et y intégrer un import Google Font&nbsp;:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+```
+
+## Utiliser la librairie UI dans mon application React
+
+Vous aurez besoin du `PGThemeProvider`, du `GlobalStyle` et du `font.css` définis précédemment, ce qui donnerait par exemple (ici avec notre composant UI `Toggle`)&nbsp;:
+
+```jsx
+import React from 'react';
+import { PGThemeProvider, ThemeDefault, Toggle } from '@paygreen/paygreen-ui';
+import './style/font.css'; // votre import de font
+import { GlobalStyle } from './style/GlobalStyle'; // le fichier créé précédemment
+
+const App = () => {
+    return (
+        <PGThemeProvider theme={ThemeDefault}>
+            <GlobalStyle />
+
+            <Toggle />
+        </PGThemeProvider>
+    );
+};
+
+export default App;
 ```
 
 Ce qui donne&nbsp;:
 
 <WrapperComponent>
-    <button type="button">
-        <DaButton>My CTA</DaButton>
-    </button>
+    <Toggle />
 </WrapperComponent>
+
+---
+
+Tout fonctionne&nbsp;? *Great*, le plus dur est fait, félicitations&nbsp;! 🎉
+À présent, vous pouvez intégrer les composants de votre choix en vous fiant à leur doc individuelle. Force et honneur&nbsp;! 💪

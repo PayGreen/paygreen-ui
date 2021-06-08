@@ -12,7 +12,7 @@ const features = [
     imageUrl: 'img/home/illu1.svg',
     description: (
       <>
-        De notre site vitrine <a href="https://www.paygreen.io/" target="_blank">PayGreen IO</a> aux back-offices <a href="https://climatekit.paygreen.fr" target="_blank">ClimateKit</a> et <a href="https://charitykit.paygreen.fr" target="_blank">CharityKit</a> en passant par notre <a href="https://faq.paygreen.io/" target="_blank">FAQ</a>, toutes nos interfaces récentes utilisent la librairie de composants React <strong>PayGreen UI</strong>. 👩‍🎤
+        De notre site vitrine <a href="https://www.paygreen.io/" target="_blank">PayGreen IO</a> aux back-offices <a href="https://climatekit.paygreen.fr" target="_blank">ClimateKit</a> et <a href="https://charitykit.paygreen.fr" target="_blank">CharityKit</a> en passant par notre <a href="https://faq.paygreen.io/" target="_blank">FAQ</a>, toutes nos applications React utilisent la librairie de composants <strong>PayGreen UI</strong>. 👩‍🎤
       </>
     ),
   },
