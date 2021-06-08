@@ -1,0 +1,136 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+/* You can override the default Infima variables here. */
+:root {
+    font-size: 62.5%;
+
+    --ifm-color-primary: #33ad73;
+    --ifm-color-primary-dark: rgb(33, 175, 144);
+    --ifm-color-primary-darker: rgb(31, 165, 136);
+    --ifm-color-primary-darkest: rgb(26, 136, 112);
+    --ifm-color-primary-light: #77d1a6;
+    --ifm-color-primary-lighter: #d5f3e5;
+    --ifm-color-primary-lightest: rgb(146, 224, 208);
+
+    --ifm-global-radius: calc(0.4rem * 1.62);
+    --ifm-font-size-base: 2rem;
+    --ifm-global-spacing: calc(1rem * 1.62);
+    --ifm-code-padding-horizontal: calc(0.4rem * 1.62);
+    --ifm-code-padding-vertical: calc(0.2rem * 1.62);
+    --ifm-pre-padding: calc(1rem * 1.62);
+    --ifm-h1-font-size: 4rem;
+    --ifm-h2-font-size: calc(1.5rem * 1.62);
+    --ifm-h3-font-size: calc(1.25rem * 1.62);
+    --ifm-h4-font-size: calc(1rem * 1.62);
+    --ifm-h5-font-size: calc(0.875rem * 1.62);
+    --ifm-h6-font-size: calc(0.85rem * 1.62);
+    --ifm-image-alignment-padding: calc(1.25rem * 1.62);
+    --ifm-leading-desktop: 1.25;
+    --ifm-leading: calc(var(--ifm-leading-desktop) * 2rem);
+    --ifm-list-left-padding: calc(2rem * 1.62);
+    --ifm-list-margin: calc(1rem * 1.62);
+    --ifm-list-item-margin: calc(0.25rem * 1.62);
+    --ifm-list-paragraph-margin: calc(1rem * 1.62);
+    --ifm-table-cell-padding: calc(0.75rem * 1.62);
+    --ifm-blockquote-padding-horizontal: calc(1rem * 1.62);
+    --ifm-blockquote-padding-vertical: calc(1rem * 1.62);
+    --ifm-hr-margin-vertical: calc(1.5rem * 1.62);
+    --ifm-avatar-intro-margin: calc(1rem * 1.62);
+    --ifm-avatar-photo-size-sm: calc(2rem * 1.62);
+    --ifm-avatar-photo-size-md: calc(3rem * 1.62);
+    --ifm-avatar-photo-size-lg: calc(4rem * 1.62);
+    --ifm-avatar-photo-size-xl: calc(6rem * 1.62);
+    --ifm-breadcrumb-border-radius: calc(1.5rem * 1.62);
+    --ifm-breadcrumb-spacing: calc(0.0625rem * 1.62);
+    --ifm-breadcrumb-padding-horizontal: calc(1rem * 1.62);
+    --ifm-breadcrumb-padding-vertical: calc(0.5rem * 1.62);
+    --ifm-breadcrumb-separator-size: calc(0.5rem * 1.62);
+    --ifm-button-padding-horizontal: calc(1.5rem * 1.62);
+    --ifm-button-padding-vertical: calc(0.375rem * 1.62);
+    --ifm-toc-padding-vertical: calc(0.5rem * 1.62);
+    --ifm-toc-padding-horizontal: calc(0.5rem * 1.62);
+    --ifm-footer-link-horizontal-spacing: calc(0.5rem * 1.62);
+    --ifm-menu-link-padding-horizontal: calc(1rem * 1.62);
+    --ifm-menu-link-padding-vertical: calc(0.375rem * 1.62);
+    --ifm-navbar-height: calc(3.75rem * 1.62);
+    --ifm-navbar-item-padding-horizontal: calc(1rem * 1.62);
+    --ifm-navbar-item-padding-vertical: calc(0.25rem * 1.62);
+    --ifm-pagination-font-size: calc(1rem * 1.62);
+    --ifm-pagination-page-spacing: calc(0.0625rem * 1.62);
+    --ifm-pills-spacing: calc(0.0625rem * 1.62);
+    --ifm-tabs-padding-horizontal: calc(1rem * 1.62);
+    --ifm-tabs-padding-vertical: calc(1rem * 1.62);
+    --ifm-tabs-spacing: calc(0.0625rem * 1.62);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+main,
+header,
+footer,
+section,
+article,
+aside,
+div,
+form,
+figure,
+::before,
+::after {
+    display: block;
+    box-sizing: border-box;
+}
+
+a {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    box-sizing: border-box;
+    outline: none;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    box-shadow: none;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body > * {
+    font-size: calc(1rem * 1.62);
+}
+
+.table-of-contents {
+    font-size: calc(0.8rem * 1.62);
+}
+
+.docusaurus-highlight-code-line {
+    background-color: rgb(72, 77, 91);
+    display: block;
+    margin: 0 calc(-1 * var(--ifm-pre-padding));
+    padding: 0 var(--ifm-pre-padding);
+}
