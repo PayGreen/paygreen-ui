@@ -19,7 +19,7 @@ jobs:
             #           key: ${{ secrets.PRIVATE_SSH }}
             #           known_hosts: ${{ secrets.KNOWN_HOSTS }}
             #           name: id_rsa
-            - run: npm run install
+            - run: npm install
               working-directory: ${{env.working-directory}}/website
             - run: npm run build
               working-directory: ${{env.working-directory}}/website
