@@ -20,10 +20,10 @@ jobs:
             #           known_hosts: ${{ secrets.KNOWN_HOSTS }}
             #           name: id_rsa
             - run: yarn install
-                  working-directory: ${{env.working-directory}}/website
+              working-directory: ${{env.working-directory}}/website
             - run: yarn build
-                  working-directory: ${{env.working-directory}}/website
+              working-directory: ${{env.working-directory}}/website
             - run : git config --global user.email "PaygreenBot@paygreen.fr"
             - run : git config --global user.name "PaygreenBot"
             - run : USE_SSH=true yarn deploy
-                  working-directory: ${{env.working-directory}}/website
+              working-directory: ${{env.working-directory}}/website
