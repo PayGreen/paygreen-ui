@@ -25,5 +25,5 @@ jobs:
               working-directory: ${{env.working-directory}} 
             - run: git config --global user.email "PaygreenBot@paygreen.fr"
             - run: git config --global user.name "PaygreenBot"
-            - run: USE_SSH=true npm run deploy
+            - run: GIT_USER=MattMattC USE_SSH=true npm run deploy
               working-directory: ${{env.working-directory}}
