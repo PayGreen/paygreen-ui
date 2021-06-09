@@ -16,9 +16,12 @@ jobs:
                   registry-url: https://registry.npmjs.org/
             - run: cd website
             - run: ls
+              working-directory: ${{env.working-directory}}/website
             - run: yarn install
-              # working-directory: ${{env.working-directory}}/website
+              working-directory: ${{env.working-directory}}/website
             - run: yarn build
+              working-directory: ${{env.working-directory}}/website 
             - run: git config --global user.email "PaygreenBot@paygreen.fr"
             - run: git config --global user.name "PaygreenBot"
             - run: USE_SSH=true npm run deploy
+              working-directory: ${{env.working-directory}}/website
