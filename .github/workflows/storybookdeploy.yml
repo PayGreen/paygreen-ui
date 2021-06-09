@@ -9,7 +9,7 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         env:
-          - working-directory: 'website'
+            working-directory: 'website'
         steps:
             - uses: actions/checkout@v1
             - uses: actions/setup-node@v1
