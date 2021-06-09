@@ -15,10 +15,10 @@ jobs:
                   node-version: 12
                   registry-url: https://registry.npmjs.org/
             - uses: shimataro/ssh-key-action@v2
-                  with:
-                      key: ${{ secrets.PRIVATE_SSH }}
-                      known_hosts: ${{ secrets.KNOWN_HOSTS }}
-                      name: id_rsa
+              with:
+                  key: ${{ secrets.PRIVATE_SSH }}
+                  known_hosts: ${{ secrets.KNOWN_HOSTS }}
+                  name: id_rsa
             - run: cd website
             - run: ls 
             - run: yarn install
