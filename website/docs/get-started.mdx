@@ -11,6 +11,8 @@ Vous avez fait l'excellent choix de notre librairie pour votre projet React&nbsp
 
 ## Installation de PayGreen UI
 
+PayGreen UI est disponible en [npm package](https://www.npmjs.com/package/@paygreen/paygreen-ui)&nbsp;:
+
 ```shell
 npm install --save @paygreen/paygreen-ui
 ```
@@ -19,24 +21,39 @@ npm install --save @paygreen/paygreen-ui
 yarn add @paygreen/paygreen-ui
 ```
 
+## Installer un Normalize
+
+Pour fixer les comportements CSS différents selon les navigateurs (et effectuer certains resets utiles), nous vous conseillons d'installer [styled-normalize](https://www.npmjs.com/package/styled-normalize)&nbsp;:
+
+```shell
+npm install --save styled-normalize
+```
+
+```shell
+yarn add styled-normalize
+```
+
 ## Définir les styles par défaut
 
-Pour un rendu CSS optimal des composants et lissé sur tous les navigateurs, nous vous recommandons vivement de créer un **GlobalStyle**&nbsp;:
+Pour un rendu CSS optimal des composants, nous vous recommandons vivement de créer un **GlobalStyle**&nbsp;:
 
 ```jsx
 import { createGlobalStyle, css } from 'styled-components';
+import { normalize } from 'styled-normalize';
 import { ResetStyle, CssClasses } from '@paygreen/paygreen-ui';
 
 const CustomCss = css``;
 
 const GlobalStyle = createGlobalStyle`
+    ${normalize};
     ${ResetStyle};
     ${CssClasses};
     ${CustomCss};
 `;
 ```
 
--   Le `ResetStyle` comprend notamment le [styled-normalize](https://www.npmjs.com/package/styled-normalize), ainsi que d'autres resets utiles.
+-   Le `normalize` est celui installé dans l'étape précédente.
+-   Le `ResetStyle` comprend des resets utiles pour nos composants (en plus de ceux du Normalize conseillé ci-dessus).
 -   Le `CssClasses` contient des classes CSS permettant de masquer des contenus en fonction de la taille de l'écran. Elles sont utilisées dans certains composants.
 -   Le `CustomCss` contient votre CSS personnalisé. Nous vous conseillons par exemple le nôtre&nbsp;:
 
@@ -62,25 +79,24 @@ Vous pouvez par exemple créer un fichier `font.css` et y intégrer un import Go
 
 ## Utiliser la librairie UI dans mon application React
 
-Vous aurez besoin du `PGThemeProvider`, du `GlobalStyle` et du `font.css` définis précédemment, ce qui donnerait par exemple (ici avec notre composant UI `Toggle`)&nbsp;:
+Vous aurez besoin du `PGThemeProvider` (qui permet de passer le thème à l'ensemble de ses enfants, ce qui est indispensable pour nos composants), du `GlobalStyle` et du `font.css` définis précédemment, ce qui donnerait par exemple (ici avec notre composant UI `Toggle`)&nbsp;:
 
 ```jsx
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { PGThemeProvider, ThemeDefault, Toggle } from '@paygreen/paygreen-ui';
 import './style/font.css'; // votre import de font
 import { GlobalStyle } from './style/GlobalStyle'; // le fichier créé précédemment
 
-const App = () => {
-    return (
-        <PGThemeProvider theme={ThemeDefault}>
-            <GlobalStyle />
+const App = () => (
+    <PGThemeProvider theme={ThemeDefault}>
+        <GlobalStyle />
 
-            <Toggle />
-        </PGThemeProvider>
-    );
-};
+        <Toggle />
+    </PGThemeProvider>
+);
 
-export default App;
+ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
 Ce qui donne&nbsp;:
@@ -91,5 +107,5 @@ Ce qui donne&nbsp;:
 
 ---
 
-Tout fonctionne&nbsp;? *Great*, le plus dur est fait, félicitations&nbsp;! 🎉
+Tout fonctionne&nbsp;? _Great_, le plus dur est fait, félicitations&nbsp;! 🎉
 À présent, vous pouvez intégrer les composants de votre choix en vous fiant à leur doc individuelle. Force et honneur&nbsp;! 💪

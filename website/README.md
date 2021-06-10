@@ -32,7 +32,38 @@ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-## Write doc
+## Create new doc for a component
+
+1. Create a new `mdx` file inside `docs/components/YourCategory`.
+2. Start your file with this:
+
+```markdown
+---
+id: yourComponent
+title: YourComponent
+---
+
+## Your first title
+
+Your doc.
+```
+
+- `id` will be used for url
+- `title` will be used inside `h1` title and inside sidebar
+
+3. Inside `sidebars.js`, add the path to your new doc like this:
+
+```js
+{
+    type: 'category',
+    label: 'Your category',
+    items: [
+        'components/YourCategory/yourComponent',
+    ],
+},
+```
+
+## Write your doc
 
 You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
 

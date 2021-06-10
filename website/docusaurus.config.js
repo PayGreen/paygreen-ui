@@ -28,6 +28,10 @@ module.exports = {
                     href: 'https://github.com/PayGreen/paygreen-ui',
                     label: '📁 Repo GitHub',
                 },
+                {
+                    href: 'https://github.com/PayGreen/paygreen-ui/releases',
+                    label: '👩‍💻 Releases',
+                },
             ],
         },
         hideableSidebar: true,
