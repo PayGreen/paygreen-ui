@@ -1,12 +1,9 @@
-import { normalize } from 'styled-normalize';
 import { css } from 'styled-components';
 
 /**
  * Reset styles for better components
  */
 export const ResetStyle = css`
-    ${normalize};
-
     :root {
         /* Reset basic font size from 16px to 10px, for easier calculation */
         font-size: 62.5%;
