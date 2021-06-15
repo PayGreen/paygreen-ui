@@ -469,7 +469,7 @@ exports[`renders without crashing 1`] = `
           }
         }
         type="text"
-        value={"2021-04-23T13:00:00.000Z"}
+        value="23/04/2021"
       />
     </div>
     <div
