@@ -1,0 +1,186 @@
+---
+id: use
+title: Utiliser une InternalGrid
+sidebar_position: 1
+---
+
+import { InternalGrid, Card, Text } from '@paygreen/paygreen-ui';
+import WrapperComponent from '../../../src/components/WrapperComponent.js';
+
+Vous voulez vraiment utiliser une **InternalGrid**, pas de confusion avec le composant [Grid](/docs/Grids/Grid/use)&nbsp;? Pour vous en assurer, consultez la page [Grid ou InternalGrid](/docs/Grids/chooseComponent). Si vous êtes sûr(e) de vous, c'est parti&nbsp;!
+
+## Le `displayType`
+
+La propriété la plus importante de l'**InternalGrid** est `displayType`&nbsp;: elle permet de définir la propriété CSS `display`.
+
+| Props       | Type ou valeurs autorisées | Valeur par défaut |
+| ----------- | -------------------------- | ----------------- |
+| displayType | `flex`, `grid`             | `flex`            |
+
+La valeur du `displayType` va définir l'application de plusieurs autres props&nbsp;: en mode `flex`, les props liées à `grid` seront ignorées, et inversement.
+
+| Props               | Fonction               | displayType = `flex` | displayType = `grid` |
+| ------------------- | ---------------------- | :------------------: | :------------------: |
+| flexWrap            | Création de la grille  |          ✔️          |          ❌          |
+| childrenFlex        | Taille des enfants     |          ✔️          |          ❌          |
+| gridTemplateColumns | Création de la grille  |          ❌          |          ✔️          |
+| gridTemplateRows    | Création de la grille  |          ❌          |          ✔️          |
+| gridGap             | Création de la grille  |          ❌          |          ✔️          |
+| justifyContent      | Alignement des enfants |          ✔️          |          ❌          |
+| justifyItems        | Alignement des enfants |          ❌          |          ✔️          |
+| alignItems          | Alignement des enfants |          ✔️          |          ✔️          |
+
+En fonction de votre choix entre `flex` et `grid`, vous pourrez donc consulter au choix&nbsp;:
+
+-   [La documentation sur le `displayType="flex"`](/docs/Grids/InternalGrid/displayTypeFlex)
+-   [La documentation sur le `displayType="grid"`](/docs/Grids/InternalGrid/displayTypeGrid)
+
+:::note
+
+Vous avez un doute sur la valeur du `displayType`&nbsp;? Consultez notre aide [CSS : flex ou grid](/docs/Grids/chooseDisplay) pour choisir entre le `flex` et le `grid`.
+
+:::
+
+## Largeur et alignement
+
+Le composant **InternalGrid** dans son ensemble peut être aligné à l'intérieur de son parent, à condition que sa largeur soit inférieur à celle de son parent, grâce aux 2 props ci-dessous&nbsp;:
+
+| Props          | Type ou valeurs autorisées | Valeur par défaut |
+| -------------- | -------------------------- | ----------------- |
+| hasStaticWidth | _booléen_                  | `true`            |
+| align          | `left`, `center`, `right`  | `left`            |
+
+-   La props `hasStaticWidth` permet, si elle est `false`, à l'**InternalGrid** de ne prendre que la largeur dont ses enfants ont besoin, au lieu de prendre toute la largeur de son parent.
+-   La props `align` ne fonctionne donc qu'avec un `hasStaticWidth={false}`.
+
+### Exemple d'InternalGrid centrée
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <InternalGrid
+        hasStaticWidth={false}
+        align="center"
+        displayType="grid"
+        gridTemplateColumns="auto auto auto"
+        gridTemplateRows="auto auto"
+        gridGap="md"
+        justifyItems="stretch"
+    >
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Tyrion
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Cersei
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Jaime
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Jon
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Daenerys
+            <br />
+            Targaryen
+        </Text>
+    </InternalGrid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<InternalGrid
+    hasStaticWidth={false}
+    align="center"
+    displayType="grid"
+    gridTemplateColumns="auto auto auto"
+    gridTemplateRows="auto auto"
+    gridGap="md"
+    justifyItems="stretch"
+>
+    <p>Enfant 1</p>
+    <p>Enfant 2</p>
+    <p>Enfant 3</p>
+</InternalGrid>
+```
+
+## Ajout de marges sur les enfants
+
+L'**InternalGrid** permet d'ajouter des marges unifiées à chacun de ses enfants&nbsp;: si cette fonctionnalité est moins utile avec le `displayType="grid"` qui utilise aussi la props `gridGap`, cela peut être indispensable dans un `displayType="flex"` quand les composants enfants ne gèrent pas leurs propres marges.
+
+| Props                 | Type ou valeurs autorisées           | Valeur par défaut |
+| --------------------- | ------------------------------------ | ----------------- |
+| childrenMarginTop     | `none`, `xs`, `sm`, `md`, `lg`, `xl` | `none`            |
+| childrenMarginBottom  | `none`, `xs`, `sm`, `md`, `lg`, `xl` | `none`            |
+| childrenMarginLateral | `none`, `xs`, `sm`, `md`, `lg`, `xl` | `none`            |
+
+-   La props `childrenMarginTop` permet de remplir la propriété CSS `margin-top` de chaque enfant direct de l'**InternalGrid**.
+-   La props `childrenMarginBottom` permet de remplir la propriété CSS `margin-bottom` de chaque enfant direct de l'**InternalGrid**.
+-   La props `childrenMarginLateral` permet de remplir les propriétés CSS `margin-left` et `margin-right` de chaque enfant direct de l'**InternalGrid**.
+
+:::important
+
+Pour connaître la taille des marges correspondant aux valeurs listées ci-dessus, consultez la doc [🖌️ Constantes du thème](/docs/theme#spaces).
+
+:::
+
+### Ordre des déclarations CSS
+
+Les marges appliquées aux enfants par l'**InternalGrid** peuvent entrer en conflit avec les marges propres des enfants. En effet, les composants qui embarquent leurs propres marges auront un CSS semblable à celui-ci&nbsp;:
+
+```css
+.child-component {
+    margin-top: 22px;
+}
+```
+
+Or, l'**InternalGrid** dispose de ce type de CSS&nbsp;:
+
+```css
+.internal-grid > * { /* Tous les enfants directs de la classe .internal-grid sont ciblés */
+    margin-top: 8px;
+}
+```
+
+Dans ce cas-là, l'instruction CSS de l'**InternalGrid** écrasera celle du composant enfant en raison du poids du sélecteur.
+
+### Utilisation du `none`
+
+Pour ne pas écraser les marges propres des enfants de l'**InternalGrid**, il suffit de renseigner `none` dans les props `childrenMargin*`&nbsp;: dans ce cas, aucune instruction de marge ne sera ajoutée dans le composant **InternalGrid** pour ses enfants.
+
+:::caution
+
+Le `none` ne permet donc pas d'écraser les marges propres des enfants de l'**InternalGrid**&nbsp;: il est donc impossible d'utiliser l'**InternalGrid** pour forcer les marges des enfants à 0.
+
+:::
