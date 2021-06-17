@@ -15,37 +15,9 @@ npm install @paygreen/paygreen-ui
 yarn add @paygreen/paygreen-ui
 ```
 
-## Usage
+## Documentation
 
-```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {
-    PGThemeProvider,
-    ThemeDefault,
-    Card,
-    Text,
-    Title,
-} from '@paygreen/paygreen-ui';
-
-const App = () => (
-    <PGThemeProvider theme={ThemeDefault}>
-        <Card>
-            <Title align="center">
-                Hello <strong>World</strong>!
-            </Title>
-
-            <Text>
-                A simple example of use for the component <strong>Card</strong>.
-            </Text>
-        </Card>
-    </PGThemeProvider>
-);
-
-ReactDOM.render(<App />, document.getElementById('root'));
-```
-
-_NB: don't forget to pass the PGThemeProvider as the highest component of your application. It will spread the Theme through all its children. Without it, PG-UI components cannot be rendered!_
+Please read our docusaurus documentation for all details on install and use of our components.
 
 ## Storybook
 
@@ -76,7 +48,7 @@ To develop a new component for the library, create a sub-directory inside `src/l
 
 The deployment of PayGreen-UI use the GitHub Actions to work on CI/CD. Each version of the library correspond to a tag pushed on the GitHub repository.
 
-## WebSite Doc
+## Website Doc with docusaurus
 
 - `cd website`
 - `yarn install`

@@ -1,0 +1,342 @@
+---
+id: displayTypeFlex
+title: Le displayType "flex"
+sidebar_position: 2
+---
+
+import { InternalGrid, Card, Text } from '@paygreen/paygreen-ui';
+import WrapperComponent from '../../../src/components/WrapperComponent.js';
+
+## Props spécifique au `flex`
+
+Les props propres au `displayType="flex"` sont les suivantes, et sont donc sans effet en `displayType="grid"`&nbsp;:
+
+| Props        | Type ou valeurs autorisées | Valeur par défaut |
+| ------------ | -------------------------- | ----------------- |
+| flexWrap     | `wrap`, `nowrap`           | `wrap`            |
+| childrenFlex | _string OR number_         | `initial`         |
+
+-   La props `flexWrap` permet de remplir la propriété CSS `flex-wrap`&nbsp;: en `wrap`, les enfants reviennent à la ligne s'ils dépassent de l'espace disponible dans leur parent. Cette spécificité est particulièrement utile pour gérer l'affichage sur de petits écrans.
+-   La props `childrenFlex` permet de remplir la propriété CSS `flex` appliquée sur les enfants directs de l'**InternalGrid**&nbsp;: par exemple, un `childrenFlex` à `1` force chacun des enfants à prendre tout l'espace disponible dans la limite de la largeur du conteneur et de l'espace occupé par les autres enfants. [Plus de détails sur la propriété CSS `flex`](https://developer.mozilla.org/fr/docs/Web/CSS/flex).
+
+:::important
+
+À l'heure actuelle, il n'existe pas de props permettant de modifier la propriété CSS `flex-direction`&nbsp;: l'**InternalGrid** en `displayMode="flex"` est toujours en `flex-direction: row;`.
+
+:::
+
+## Alignement des enfants
+
+Si le `flex` ne nécessite pas beaucoup de props, c'est parce que ce sont les alignements horizontal et vertical qui vont déterminer l'architecture du composant. Autant en mode `grid` les enfants sont alignés à l'intérieur de leur cellule, autant en mode `flex` ils sont alignés les uns par rapport aux autres dans leur parent.
+Les enfants peuvent être alignés sur deux dimensions&nbsp;:
+
+-   Sur l'**axe horizontal** (x) avec `justifyContent`, qui permet de remplir la propriété CSS `justify-content`&nbsp;;
+-   Sur l'**axe vertical** (y) avec `alignItems`, qui permet de remplir la propriété CSS `align-items` commune au [`displayType="grid"`](/docs/Grids/InternalGrid/displayTypeGrid).
+
+| Props          | Type ou valeurs autorisées                                | Valeur par défaut |
+| -------------- | --------------------------------------------------------- | ----------------- |
+| justifyContent | `center`, `flex-start`, `flex-end`, `space-between`       | `space-between`   |
+| alignItems     | `stretch`, `center`, `flex-start`, `flex-end`, `baseline` | `flex-start`      |
+
+:::important
+
+En `display: flex;`, la propriété `flex-direction` désigne l'axe principal&nbsp;: le `justify-content` aligne les enfants sur l'axe principal tandis que le `align-items` aligne sur l'axe secondaire. Les indications de cette documentation quant à ces deux propriétés ne valent que pour un `flex-direction: row;`, qui est la seule valeur admise dans le composant **InternalGrid** (cf. le **important** précédent).
+
+:::
+
+### Les valeurs du `justifyContent`
+
+-   Le `center` colle tous les enfants au centre de l'**InternalGrid**.
+-   Le `flex-start` colle tous les enfants à gauche de l'**InternalGrid**.
+-   Le `flex-end` colle tous les enfants à droite de l'**InternalGrid**.
+-   Le `space-between` distribue les enfants sur toute la largeur de l'**InternalGrid**&nbsp;: le premier enfant est collé à gauche, le dernier est collé à droite, et les autres sont espacés à intervalles réguliers en fonction de l'espace disponible.
+
+### Les valeurs du `alignItems`
+
+-   Le `stretch` étire les enfants sur toute la hauteur de l'**InternalGrid**.
+-   Le `center` centre verticalement les enfants dans l'**InternalGrid**.
+-   Le `flex-start` colle tous les enfants en haut de l'**InternalGrid**.
+-   Le `flex-end` colle tous les enfants en bas de l'**InternalGrid**.
+-   Le `baseline` aligne les enfants à partir du texte qu'ils contiennent&nbsp;: avec des textes de différentes tailles, cette propriété est particulièrement utile pour que les différents textes semblent placés sur une même ligne de lecture.
+
+:::caution
+
+Ne pas confondre la props `alignItems` citée ci-dessus (qui contrôle l'alignement des enfants) avec la props `align` tout court (qui contrôle l'alignement de tout le composant **InternalGrid** par rapport à son parent).
+
+:::
+
+## Exemples
+
+### InternalGrid en `justifyContent="space-between"`
+
+Il s'agit de la valeur par défaut du `justifyContent`.
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <InternalGrid>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Tyrion
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Cersei
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Jaime
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Jon
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Daenerys
+            <br />
+            Targaryen
+        </Text>
+    </InternalGrid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<InternalGrid>
+    <p>Tyrion</p>
+    <p>Cersei</p>
+    <p>Jaime</p>
+    <p>Jon</p>
+    <p>Daenerys Targaryen</p>
+</InternalGrid>
+```
+
+### InternalGrid en `justifyContent="center"`
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <InternalGrid justifyContent="center">
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Tyrion
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Cersei
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Jaime
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Jon
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Daenerys
+            <br />
+            Targaryen
+        </Text>
+    </InternalGrid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<InternalGrid justifyContent="center">
+    <p>Tyrion</p>
+    <p>Cersei</p>
+    <p>Jaime</p>
+    <p>Jon</p>
+    <p>Daenerys Targaryen</p>
+</InternalGrid>
+```
+
+### InternalGrid en `alignItems="stretch"`
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <InternalGrid alignItems="stretch">
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Tyrion
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Cersei
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Jaime
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Jon
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Daenerys
+            <br />
+            Targaryen
+        </Text>
+    </InternalGrid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<InternalGrid alignItems="stretch">
+    <p>Tyrion</p>
+    <p>Cersei</p>
+    <p>Jaime</p>
+    <p>Jon</p>
+    <p>Daenerys Targaryen</p>
+</InternalGrid>
+```
+
+### InternalGrid en `alignItems="center"`
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <InternalGrid alignItems="center">
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Tyrion
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Cersei
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Jaime
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Jon
+        </Text>
+        <Text
+            colorPallet="theme"
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground
+        >
+            Daenerys
+            <br />
+            Targaryen
+        </Text>
+    </InternalGrid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<InternalGrid alignItems="center">
+    <p>Tyrion</p>
+    <p>Cersei</p>
+    <p>Jaime</p>
+    <p>Jon</p>
+    <p>Daenerys Targaryen</p>
+</InternalGrid>
+```
