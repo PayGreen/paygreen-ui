@@ -10,23 +10,28 @@ import {
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Loader from './Loader';
 
 storiesOf(folder.loading + 'Loader', module)
     .addDecorator(withKnobs)
     .add('Loader', () => (
         <Loader
-            isActive={boolean('Is active', true)}
+            isActive={boolean(labels.isActive, true)}
             loaderSize={select('Loader size', iconSizeOptions, iconSizeDefault)}
             colorTheme={radios(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            paddingTop={select('Padding top', spaceOptions, spaceDefault)}
-            paddingBottom={select('Padding bottom', spaceOptions, spaceDefault)}
+            paddingTop={select(labels.paddingTop, spaceOptions, spaceDefault)}
+            paddingBottom={select(
+                labels.paddingBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
             paddingLateral={select(
-                'Padding lateral',
+                labels.paddingLateral,
                 spaceOptions,
                 spaceDefault,
             )}

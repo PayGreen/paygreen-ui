@@ -19,7 +19,7 @@ storiesOf(folder.form + 'DaInput', module)
             placeholder="Firstname Lastname"
             disabled={boolean(labels.disabled, false)}
             readOnly={boolean(labels.readOnly, false)}
-            isRounded={boolean('Is rounded', false)}
+            isRounded={boolean(labels.isRounded, false)}
             fieldSize={radios(
                 labels.fieldSize,
                 buttonSizeOptions,
@@ -30,9 +30,9 @@ storiesOf(folder.form + 'DaInput', module)
                 inputWidthOptions,
                 inputWidthDefault,
             )}
-            hasStaticWidth={boolean('Has static width', false)}
+            hasStaticWidth={boolean(labels.hasStaticWidth, false)}
             hasHelpButton={boolean(labels.hasHelpButton, false)}
-            icon={boolean('Has icon', true) ? <SearchIcon /> : null}
+            icon={boolean(labels.icon, true) ? <SearchIcon /> : null}
         />
     ))
     .add('Tel', () => (
@@ -41,13 +41,13 @@ storiesOf(folder.form + 'DaInput', module)
             placeholder="+33 (0)6 11 22 33 44"
             disabled={boolean(labels.disabled, false)}
             readOnly={boolean(labels.readOnly, false)}
-            isRounded={boolean('Is rounded', false)}
+            isRounded={boolean(labels.isRounded, false)}
             fieldSize={radios(
                 labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
             hasHelpButton={boolean(labels.hasHelpButton, false)}
-            icon={boolean('Has icon', true) ? <PhoneIcon /> : null}
+            icon={boolean(labels.icon, true) ? <PhoneIcon /> : null}
         />
     ));

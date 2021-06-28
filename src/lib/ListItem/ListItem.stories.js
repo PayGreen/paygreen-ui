@@ -14,19 +14,18 @@ import {
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { LeafIcon, CheckBoldIcon } from '../Icon/Icon';
 import Text from '../Text/Text';
 import Title from '../Title/Title';
 import ListItem from './ListItem';
-
-const colorThemeLabel = 'Color theme';
 
 storiesOf(folder.list + 'ListItem', module)
     .addDecorator(withKnobs)
     .add('ListItem with Icon', () => (
         <ListItem
             htmlTag={iconHtmlTagOptions.button}
-            isClicked={boolean('Is active', false)}
+            isClicked={boolean(labels.isActive, false)}
             arrowStyle={radios(
                 'Arrow (if active)',
                 decorationOptions,
@@ -34,17 +33,25 @@ storiesOf(folder.list + 'ListItem', module)
             )}
             bulletStyle={listStyleOptions.icon}
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            bulletSize={select('Bullet size', iconSizeOptions, iconSizeDefault)}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            bulletSize={select(
+                labels.bulletSize,
+                iconSizeOptions,
+                iconSizeDefault,
+            )}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
         >
             <LeafIcon
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
@@ -53,7 +60,7 @@ storiesOf(folder.list + 'ListItem', module)
             <Title
                 colorPallet={colorPalletOptions.theme}
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
@@ -69,7 +76,11 @@ storiesOf(folder.list + 'ListItem', module)
     .add('ListItem with check', () => (
         <ListItem
             bulletStyle={listStyleOptions.icon}
-            bulletSize={select('Bullet size', iconSizeOptions, iconSizeDefault)}
+            bulletSize={select(
+                labels.bulletSize,
+                iconSizeOptions,
+                iconSizeDefault,
+            )}
         >
             <CheckBoldIcon />
 
@@ -79,11 +90,15 @@ storiesOf(folder.list + 'ListItem', module)
     .add('ListItem with dash', () => (
         <ListItem
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            bulletSize={select('Bullet size', iconSizeOptions, iconSizeDefault)}
+            bulletSize={select(
+                labels.bulletSize,
+                iconSizeOptions,
+                iconSizeDefault,
+            )}
         >
             <Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -94,11 +109,15 @@ storiesOf(folder.list + 'ListItem', module)
         <ListItem
             bulletStyle={listStyleOptions.number}
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            bulletSize={select('Bullet size', iconSizeOptions, iconSizeDefault)}
+            bulletSize={select(
+                labels.bulletSize,
+                iconSizeOptions,
+                iconSizeDefault,
+            )}
         >
             <Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

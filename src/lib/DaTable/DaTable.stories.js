@@ -159,7 +159,7 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
             isLoading={boolean(labels.isLoading, false)}
             loadingRowNumber={sampleRows.length}
             blockWidth={select(
-                labels.smallScreenWidth,
+                labels.blockWidth,
                 spaceOptions,
                 spaceOptions.md,
             )}

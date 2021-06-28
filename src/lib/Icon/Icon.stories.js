@@ -23,66 +23,56 @@ import {
     rotateSizeOptions,
     rotateSizeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import * as Icon from './Icon';
-
-const colorPalletLabel = 'Color pallet';
-const colorThemeLabel = 'Color theme';
-const colorWabLabel = 'Grey color';
-const colorStatusLabel = 'Status color';
-const iconSizeLabel = 'Icon size';
-const backgroundLabel = 'Has background';
-const hoverLabel = 'Has hover (needs background)';
-const isActiveLabel = 'Is Active (needs background)';
-const marginTopLabel = 'Margin top';
-const marginBottomLabel = 'Margin bottom';
-const marginLeftLabel = 'Margin left';
-const marginRightLabel = 'Margin right';
-const centeredLabel = 'Centered';
-const rotateSizeLabel = 'Rotation (sens horaire)';
 
 storiesOf(folder.media + 'Icons', module)
     .addDecorator(withKnobs)
     .add('All icons', () => {
         const knobs = {
             colorPallet: radios(
-                colorPalletLabel,
+                labels.colorPallet,
                 colorPalletOptions,
                 colorPalletDefault,
             ),
             colorTheme: select(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             ),
-            colorWab: select(colorWabLabel, greyOptions, greyDefault),
+            colorWab: select(labels.colorWab, greyOptions, greyDefault),
             colorStatus: select(
-                colorStatusLabel,
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             ),
             iconSize: select(
-                iconSizeLabel,
+                labels.iconSize,
                 iconSizeOptions,
                 iconSizeOptions.lg,
             ),
-            hasBackground: boolean(backgroundLabel, false),
-            hasHover: boolean(hoverLabel, false),
-            isActive: boolean(isActiveLabel, false),
-            isCentered: boolean(centeredLabel, false),
-            marginTop: select(marginTopLabel, spaceOptions, spaceOptions.sm),
+            hasBackground: boolean(labels.hasBackground, false),
+            hasHover: boolean(labels.hasHover + ' (needs background)', false),
+            isActive: boolean(labels.isActive + ' (needs background)', false),
+            isCentered: boolean('Is centered', false),
+            marginTop: select(labels.marginTop, spaceOptions, spaceOptions.sm),
             marginBottom: select(
-                marginBottomLabel,
+                labels.marginBottom,
                 spaceOptions,
                 spaceOptions.sm,
             ),
-            marginLeft: select(marginLeftLabel, spaceOptions, spaceOptions.sm),
+            marginLeft: select(
+                labels.marginLeft,
+                spaceOptions,
+                spaceOptions.sm,
+            ),
             marginRight: select(
-                marginRightLabel,
+                labels.marginRight,
                 spaceOptions,
                 spaceOptions.sm,
             ),
             rotateSize: select(
-                rotateSizeLabel,
+                'Rotate size',
                 rotateSizeOptions,
                 rotateSizeDefault,
             ),
@@ -208,28 +198,28 @@ storiesOf(folder.media + 'Icons', module)
     .add('Icon with badge number', () => (
         <Icon.BellIcon
             htmlTag={iconHtmlTagOptions.button}
-            number={number('Count value', 3, {
+            number={number('Number', 3, {
                 range: true,
                 max: 110,
             })}
             colorPallet={radios(
-                colorPalletLabel,
+                labels.colorPallet,
                 colorPalletOptions,
                 colorPalletDefault,
             )}
             colorTheme={select(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select(colorWabLabel, greyOptions, greyDefault)}
+            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
             colorStatus={select(
-                colorStatusLabel,
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
             iconSize={select(
-                iconSizeLabel,
+                labels.iconSize,
                 iconSizeOptions,
                 iconSizeOptions.md,
             )}

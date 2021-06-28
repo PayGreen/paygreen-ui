@@ -6,6 +6,7 @@ import {
     colorThemeOptions,
     colorThemeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Link from '../Link/Link';
 import Grid from '../Grid/Grid';
 import TableCell from '../TableCell/TableCell';
@@ -18,13 +19,13 @@ storiesOf(folder.table + folder.sub.table + 'Table', module)
         <Grid childrenFlex={1}>
             <Table
                 colorTheme={radios(
-                    'Color',
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
                 hasLargeFirstColumn={boolean('Large first column', true)}
                 hasOverflowEmphasis={boolean('Has overflow emphasis', false)}
-                hasBackground={boolean('Has background', false)}
+                hasBackground={boolean(labels.hasBackground, false)}
             >
                 <TableRow isMain={true}>
                     <TableCell>Table name</TableCell>

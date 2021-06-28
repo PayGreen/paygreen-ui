@@ -74,9 +74,9 @@ storiesOf(folder.block + 'Corner', module)
                 lateralPositionOptions,
                 lateralPositionDefault,
             )}
-            hasCenteredPopin={boolean(labels.centeredPopin, false)}
+            hasCenteredPopin={boolean('Has centered Popin', false)}
             radiusSize={select(
-                labels.borderRadius,
+                labels.radiusSize,
                 radiusOptions,
                 radiusDefault,
             )}

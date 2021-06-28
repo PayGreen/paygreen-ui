@@ -6,13 +6,14 @@ import {
     charModeOptions,
     charModeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Char from './Char';
 
 storiesOf(folder.text + 'Char', module)
     .addDecorator(withKnobs)
     .add('Char', () => (
         <Char
-            text={text('Text', '0123 4567 89 ABC')}
+            text={text(labels.text, '0123 4567 89 ABC')}
             mode={radios('Mode', charModeOptions, charModeDefault)}
             truncateCharacter={text('Truncate character', '...')}
             hideCharacter={text('Hide character', '*')}

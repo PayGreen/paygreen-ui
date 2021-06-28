@@ -10,6 +10,7 @@ import {
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Link from '../Link/Link';
 import FooterList from './FooterList';
 
@@ -17,38 +18,31 @@ const sampleLinks = [
     'New link',
     'Page with long title',
     'Link 78',
-    'Fourth link'
+    'Fourth link',
 ];
 
 storiesOf(folder.nav + folder.sub.footer + 'FooterList', module)
     .addDecorator(withKnobs)
-    .add(
-        'FooterList',
-        () => (
-            <FooterList
-                textSize={select('Size', fontSizeOptions, fontSizeDefault)}
-                align={radios('Align', alignOptions, alignDefault)}
-                marginLateral={select(
-                    "Lateral margins",
-                    spaceOptions,
-                    spaceDefault,
-                )}
-                marginTop={select(
-                    "Margin top",
-                    spaceOptions,
-                    spaceDefault,
-                )}
-                marginBottom={select(
-                    "Margin bottom",
-                    spaceOptions,
-                    spaceDefault,
-                )}
-            >
-                {sampleLinks.map((link, index) => (
-                    <a href="#" key={index}>
-                        <Link hasUnderline={false}>{link}</Link>
-                    </a>
-                ))}
-            </FooterList>
-        )
-    );
+    .add('FooterList', () => (
+        <FooterList
+            textSize={select(labels.textSize, fontSizeOptions, fontSizeDefault)}
+            align={radios(labels.align, alignOptions, alignDefault)}
+            marginLateral={select(
+                labels.marginLateral,
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
+        >
+            {sampleLinks.map((link, index) => (
+                <a href="#" key={index}>
+                    <Link hasUnderline={false}>{link}</Link>
+                </a>
+            ))}
+        </FooterList>
+    ));

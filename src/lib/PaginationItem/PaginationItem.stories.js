@@ -6,16 +6,17 @@ import {
     colorThemeOptions,
     colorThemeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import PaginationItem from './PaginationItem';
 
 storiesOf(folder.table + folder.sub.pagination + 'PaginationItem', module)
     .addDecorator(withKnobs)
     .add('PaginationItem', () => (
         <PaginationItem
-            isActive={boolean('Is active', false)}
+            isActive={boolean(labels.isActive, false)}
             pageValue={number('Page value', 2)}
             colorTheme={select(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}

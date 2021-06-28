@@ -6,6 +6,7 @@ import {
     iconSizeOptions,
     itemHtmlTagOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { ShopIcon, OrganizationIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import MenuItem from '../MenuItem/MenuItem';
@@ -19,7 +20,7 @@ storiesOf(folder.nav + 'MenuSecondary', module)
     .addDecorator(withKnobs)
     .add('MenuSecondary', () => (
         <MenuSecondary
-            isOpen={boolean('Is open', true)}
+            isOpen={boolean(labels.isOpen, true)}
             closeComponent={<MenuClose />}
         >
             <Menu htmlTag={itemHtmlTagOptions.div}>

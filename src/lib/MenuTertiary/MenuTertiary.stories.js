@@ -11,13 +11,12 @@ import {
     fontSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Banner from '../Banner/Banner';
 import Card from '../Card/Card';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
 import MenuTertiary from './MenuTertiary';
-
-const colorThemeLabel = 'Color theme';
 
 const sampleLinks = [
     {
@@ -48,9 +47,9 @@ storiesOf(folder.nav + 'MenuTertiary', module)
         <>
             <MenuTertiary
                 isFixed={boolean('Is fixed', true)}
-                isHidden={boolean('Is hidden', false)}
+                isHidden={boolean(labels.isHidden, false)}
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
@@ -72,7 +71,7 @@ storiesOf(folder.nav + 'MenuTertiary', module)
                         index % 2 ? gradientOptions.none : gradientOptions.theme
                     }
                     colorTheme={radios(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
@@ -85,7 +84,7 @@ storiesOf(folder.nav + 'MenuTertiary', module)
                                     : colorTypeOptions.reverse
                             }
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
@@ -103,7 +102,7 @@ storiesOf(folder.nav + 'MenuTertiary', module)
                                     : colorTypeOptions.reverse
                             }
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
@@ -115,12 +114,11 @@ storiesOf(folder.nav + 'MenuTertiary', module)
                             elit. Duis porttitor velit a ultricies aliquet.
                             Donec vehicula in arcu non sodales. Fusce et
                             consectetur odio. Ut bibendum ullamcorper turpis vel
-                            imperdiet.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Duis porttitor velit a ultricies aliquet.
-                            Donec vehicula in arcu non sodales. Fusce et
-                            consectetur odio. Ut bibendum ullamcorper turpis vel
-                            imperdiet.
+                            imperdiet. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Duis porttitor velit a ultricies
+                            aliquet. Donec vehicula in arcu non sodales. Fusce
+                            et consectetur odio. Ut bibendum ullamcorper turpis
+                            vel imperdiet.
                         </Text>
                     </Card>
                 </Banner>

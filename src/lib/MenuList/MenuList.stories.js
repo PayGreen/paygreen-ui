@@ -8,6 +8,7 @@ import {
     iconSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import {
     LeafIcon,
     CardsIcon,
@@ -34,7 +35,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
         <div style={{ position: 'relative' }}>
             <MenuList
                 colorTheme={radios(
-                    'Shadow color',
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}

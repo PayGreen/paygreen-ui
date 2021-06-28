@@ -25,7 +25,7 @@ const { wab, ...barColorPalletOptions } = colorPalletOptions;
 
 storiesOf(folder.graph + 'DataLegend', module)
     .addDecorator(withKnobs)
-    .add('Data Legend', () => (
+    .add('DataLegend', () => (
         <DataLegend
             textSize={select(labels.textSize, fontSizeOptions, fontSizeDefault)}
             value={number(labels.value, 25)}

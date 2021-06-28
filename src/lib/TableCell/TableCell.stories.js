@@ -1,15 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
 import { folder, spaceOptions } from '../../shared/constants';
 import { CheckBoldIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import Logo from '../Logo/Logo';
-import TableCell from './TableCell';
 import cb from './sample/sample.svg';
+import TableCell from './TableCell';
 
 storiesOf(folder.table + folder.sub.table + 'TableCell', module)
-    .addDecorator(withKnobs)
     .add('Cell with logo', () => (
         <TableCell>
             <Logo blockHeight={spaceOptions.xs} blockWidth={spaceOptions.sm}>

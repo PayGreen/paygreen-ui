@@ -13,6 +13,7 @@ import {
     formStatusDefault,
     spaceOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Textarea from './Textarea';
 
 storiesOf(folder.form + 'Textarea', module)
@@ -21,16 +22,16 @@ storiesOf(folder.form + 'Textarea', module)
         <Textarea
             id="textarea1"
             placeholder="Your text&hellip;"
-            label={text('Label', 'Your message')}
+            label={text(labels.label, 'Your message')}
             maxLength={50}
-            status={radios('Status', formStatusOptions, formStatusDefault)}
-            hasCounter={boolean('With counter', true)}
-            disabled={boolean('Disabled', false)}
-            readOnly={boolean('Readonly', false)}
-            hasShadow={boolean('With shadow', false)}
-            marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+            status={radios(labels.status, formStatusOptions, formStatusDefault)}
+            hasCounter={boolean(labels.hasCounter, true)}
+            disabled={boolean(labels.disabled, false)}
+            readOnly={boolean(labels.readOnly, false)}
+            hasShadow={boolean(labels.hasShadow, false)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceOptions.md)}
             marginBottom={select(
-                'Margin bottom',
+                labels.marginBottom,
                 spaceOptions,
                 spaceOptions.md,
             )}

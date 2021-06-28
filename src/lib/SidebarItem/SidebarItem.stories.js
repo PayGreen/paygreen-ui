@@ -8,11 +8,10 @@ import {
     iconSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { MeterIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import SidebarItem from './SidebarItem';
-
-const colorThemeLabel = 'Color theme';
 
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
     .addDecorator(withKnobs)
@@ -20,13 +19,13 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
         <a href="#">
             <SidebarItem
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                isActive={boolean('Is Active', false)}
+                isActive={boolean(labels.isActive, false)}
                 paddingLateral={select(
-                    'Padding lateral',
+                    labels.paddingLateral,
                     spaceOptions,
                     spaceOptions.xs,
                 )}
@@ -34,7 +33,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
                 <MeterIcon
                     iconSize={iconSizeOptions.lg}
                     colorTheme={radios(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
@@ -42,7 +41,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
 
                 <Link
                     colorTheme={radios(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}

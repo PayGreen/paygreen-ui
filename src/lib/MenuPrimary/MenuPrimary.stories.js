@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { folder, iconSizeOptions, spaceOptions } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { LeafIcon, CardsIcon, OrganizationIcon, OutIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import IconLabel from '../IconLabel/IconLabel';
@@ -15,7 +16,7 @@ import MenuPrimary from './MenuPrimary';
 storiesOf(folder.nav + 'MenuPrimary', module)
     .addDecorator(withKnobs)
     .add('MenuPrimary', () => (
-        <MenuPrimary isOpen={boolean('Is open', true)}>
+        <MenuPrimary isOpen={boolean(labels.isOpen, true)}>
             <Menu>
                 <a href="#">
                     <MenuItem>About us</MenuItem>

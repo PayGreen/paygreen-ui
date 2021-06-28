@@ -64,7 +64,7 @@ storiesOf(folder.block + 'Card', module)
                 spaceOptions.md,
             )}
             radiusSize={radios(
-                labels.borderRadius,
+                labels.radiusSize,
                 radiusOptions,
                 radiusDefault,
             )}
@@ -189,12 +189,12 @@ storiesOf(folder.block + 'Card', module)
             )}
             blockWidth={spaceOptions.sm}
             radiusSize={radios(
-                labels.borderRadius,
+                labels.radiusSize,
                 radiusOptions,
                 radiusDefault,
             )}
             borderTop={radios(
-                labels.borderTopStyle,
+                'Border top gradient',
                 gradientOptions,
                 gradientOptions.theme,
             )}

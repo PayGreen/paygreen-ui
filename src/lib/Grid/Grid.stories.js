@@ -25,6 +25,7 @@ import {
     spaceDefault,
     alignOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Card from '../Card/Card';
 import Text from '../Text/Text';
 import Grid from './Grid';
@@ -43,52 +44,56 @@ storiesOf(folder.grid + 'Grid', module)
     .addDecorator(withKnobs)
     .add('Grid', () => (
         <Grid
-            align={radios('Align', alignOptions, alignOptions.center)}
-            displayType={radios('Grid type', displayOptions, displayDefault)}
+            align={radios(labels.align, alignOptions, alignOptions.center)}
+            displayType={radios(
+                labels.displayType,
+                displayOptions,
+                displayDefault,
+            )}
             columnNumber={number('Column number', 2)}
-            gridTemplateColumns={text('Grid columns', '')}
+            gridTemplateColumns={text(labels.gridTemplateColumns, '')}
             flexDirection={radios(
                 'Flex direction',
                 flexDirectionOptions,
                 flexDirectionDefault,
             )}
-            flexWrap={radios('Flex wrap', flexWrapOptions, flexWrapDefault)}
+            flexWrap={radios(labels.flexWrap, flexWrapOptions, flexWrapDefault)}
             justifyContent={select(
-                'Justify content',
+                labels.justifyContent,
                 justifyContentOptions,
                 justifyContentOptions.spaceBetween,
             )}
             justifyItems={select(
-                'Justify items',
+                labels.justifyItems,
                 justifyItemsOptions,
                 justifyItemsDefault,
             )}
             alignItems={select(
-                'Align items',
+                labels.alignItems,
                 alignItemsOptions,
                 alignItemsDefault,
             )}
-            childrenFlex={text('Children flex', 'initial')}
+            childrenFlex={text(labels.childrenFlex, 'initial')}
             childrenShiftSize={select(
-                'Children shift',
+                'Children shift size',
                 spaceOptions,
                 spaceDefault,
             )}
-            isNegativeShift={boolean('Negative shift', false)}
-            isReverseShift={boolean('Reverse shift', false)}
+            isNegativeShift={boolean('Is negative shift', false)}
+            isReverseShift={boolean('Is reverse shift', false)}
             blockPadding={select(
                 'Block padding',
                 spaceOptions,
                 spaceOptions.md,
             )}
-            gridGap={select('Grid gap', spaceOptions, spaceDefault)}
+            gridGap={select(labels.gridGap, spaceOptions, spaceDefault)}
             childrenMargin={select(
-                'Children margin (mobile)',
+                'Children margin (on mobile)',
                 spaceOptions,
                 spaceOptions.md,
             )}
             childrenMarginBig={select(
-                'Children margin (laptop)',
+                'Children margin (on big screen)',
                 spaceOptions,
                 spaceOptions.lg,
             )}

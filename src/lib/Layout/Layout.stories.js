@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
     spaceOptions,
     lateralPositionOptions,
-    hoverDirectionOptions,
+    alignDefault,
 } from '../../shared/constants';
 import Topbar from '../Topbar/Topbar';
 import Sidebar from '../Sidebar/Sidebar';
@@ -21,19 +20,18 @@ const logoComponent = (
     <a href="#">
         <Logo
             hasBaseline={false}
-            hoverDirection={hoverDirectionOptions.right}
             blockWidth={spaceOptions.sm}
+            align={alignDefault}
         >
             {logo}
         </Logo>
     </a>
 );
 
-const sidebarIsOpenLabel = 'Open sidebar';
+storiesOf(folder.nav + 'Layout', module).add('Layout', () => {
+    const [isOpen, setOpen] = useState(true);
 
-storiesOf(folder.nav + 'Layout', module)
-    .addDecorator(withKnobs)
-    .add('Layout', () => (
+    return (
         <Layout>
             <Sidebar>
                 <Topbar className="hideOnDesktop">
@@ -57,10 +55,11 @@ storiesOf(folder.nav + 'Layout', module)
                 <Box />
             </Sidebar>
 
-            <Main isOpen={boolean(sidebarIsOpenLabel, true)}>
+            <Main isOpen={isOpen}>
                 <Topbar>
                     <MenuHamburger
-                        isOpen={boolean(sidebarIsOpenLabel, true)}
+                        isOpen={isOpen}
+                        onClick={() => setOpen(!isOpen)}
                         colorPallet={colorPalletOptions.wab}
                     />
                 </Topbar>
@@ -68,4 +67,5 @@ storiesOf(folder.nav + 'Layout', module)
                 <Box />
             </Main>
         </Layout>
-    ));
+    );
+});

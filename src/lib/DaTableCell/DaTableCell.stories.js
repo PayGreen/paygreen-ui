@@ -9,9 +9,9 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTableCell', module)
     .addDecorator(withKnobs)
     .add('DaTableCell', () => (
         <DaTableCell
+            isMain={boolean('Is main', true)}
+            isId={boolean('Is id', false)}
             isLoading={boolean(labels.isLoading, false)}
-            isMain={boolean(labels.isMain, true)}
-            isId={boolean(labels.isId, false)}
             label={text(labels.label, 'Label')}
         >
             {boolean(labels.isLoading, false) ? null : 'Sample'}

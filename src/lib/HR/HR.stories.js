@@ -16,32 +16,45 @@ import {
     formStatusOptions,
     formStatusDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import HR from './HR';
 
 storiesOf(folder.grid + 'HR', module)
     .addDecorator(withKnobs)
     .add('HR', () => (
         <HR
-            colorType={select('Color type', colorTypeOptions, colorTypeDefault)}
+            colorType={select(
+                labels.colorType,
+                colorTypeOptions,
+                colorTypeDefault,
+            )}
             colorPallet={select(
-                'Color pallet',
+                labels.colorPallet,
                 colorPalletOptions,
                 colorPalletDefault,
             )}
             colorTheme={select(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select('Color wab', greyOptions, greyDefault)}
+            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
             colorStatus={select(
-                'Color status',
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
-            marginLateral={select('Margin lateral', spaceOptions, spaceDefault)}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
-            opacityValue={number('Opacity', 100)}
+            marginLateral={select(
+                labels.marginLateral,
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
+            opacityValue={number(labels.opacityValue, 100)}
         />
     ));

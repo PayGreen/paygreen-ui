@@ -9,6 +9,7 @@ import {
     alignOptions,
     colorTypeOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Badge from '../Badge/Badge';
 import Logo from './Logo';
 import { logo } from './sample/logo';
@@ -21,11 +22,19 @@ storiesOf(folder.media + 'Logo', module)
         <a href="#">
             <Logo
                 hasBaseline={boolean('Has baseline', true)}
-                hasHoverColor={boolean('Hover color', false)}
+                hasHoverColor={boolean('Has hover color', false)}
                 isWhite={boolean(isWhiteLabel, false)}
-                blockWidth={select('Width', spaceOptions, spaceOptions.md)}
-                blockHeight={select('Height', spaceOptions, spaceOptions.none)}
-                align={radios('Align', alignOptions, alignOptions.center)}
+                blockWidth={select(
+                    labels.blockWidth,
+                    spaceOptions,
+                    spaceOptions.md,
+                )}
+                blockHeight={select(
+                    labels.blockHeight,
+                    spaceOptions,
+                    spaceOptions.none,
+                )}
+                align={radios(labels.align, alignOptions, alignOptions.center)}
             >
                 {logo}
             </Logo>
@@ -42,7 +51,7 @@ storiesOf(folder.media + 'Logo', module)
                     hoverDirectionDefault,
                 )}
                 blockWidth={spaceOptions.sm}
-                align={radios('Align', alignOptions, alignOptions.center)}
+                align={radios(labels.align, alignOptions, alignOptions.center)}
                 badge={
                     <Badge
                         colorType={

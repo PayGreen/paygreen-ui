@@ -15,6 +15,7 @@ import {
     inputWidthDefault,
     spaceOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Input from './Input';
 
 storiesOf(folder.form + 'Input', module)
@@ -23,15 +24,19 @@ storiesOf(folder.form + 'Input', module)
         <Input
             id="sampleId1"
             placeholder="Firstname Lastname"
-            label={text('Label', 'Your name')}
-            disabled={boolean('Disabled', false)}
-            readOnly={boolean('Readonly', false)}
-            status={radios('Status', formStatusOptions, formStatusDefault)}
-            hasShadow={boolean('With shadow', false)}
-            blockWidth={radios('Width', inputWidthOptions, inputWidthDefault)}
-            marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+            label={text(labels.label, 'Your name')}
+            disabled={boolean(labels.disabled, false)}
+            readOnly={boolean(labels.readOnly, false)}
+            status={radios(labels.status, formStatusOptions, formStatusDefault)}
+            hasShadow={boolean(labels.hasShadow, false)}
+            blockWidth={radios(
+                labels.blockWidth,
+                inputWidthOptions,
+                inputWidthDefault,
+            )}
+            marginTop={select(labels.marginTop, spaceOptions, spaceOptions.md)}
             marginBottom={select(
-                'Margin bottom',
+                labels.marginBottom,
                 spaceOptions,
                 spaceOptions.md,
             )}
@@ -42,14 +47,14 @@ storiesOf(folder.form + 'Input', module)
             type="tel"
             id="sampleId2"
             placeholder="+33 (0)6 11 22 33 44"
-            label={text('Your label', 'Phone number')}
-            disabled={boolean('Disabled', false)}
-            readOnly={boolean('Readonly', false)}
-            status={radios('Status', formStatusOptions, formStatusDefault)}
-            hasShadow={boolean('With shadow', false)}
-            marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+            label={text(labels.label, 'Phone number')}
+            disabled={boolean(labels.disabled, false)}
+            readOnly={boolean(labels.readOnly, false)}
+            status={radios(labels.status, formStatusOptions, formStatusDefault)}
+            hasShadow={boolean(labels.hasShadow, false)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceOptions.md)}
             marginBottom={select(
-                'Margin bottom',
+                labels.marginBottom,
                 spaceOptions,
                 spaceOptions.md,
             )}

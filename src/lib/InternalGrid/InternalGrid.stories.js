@@ -22,6 +22,7 @@ import {
     alignDefault,
     alignOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Text from '../Text/Text';
 import InternalGrid from './InternalGrid';
 
@@ -38,18 +39,18 @@ storiesOf(folder.grid + 'InternalGrid', module)
     .addDecorator(withKnobs)
     .add('Flex', () => (
         <InternalGrid
-            flexWrap={radios('Flex wrap', flexWrapOptions, flexWrapDefault)}
+            flexWrap={radios(labels.flexWrap, flexWrapOptions, flexWrapDefault)}
             justifyContent={select(
-                'Justify content',
+                labels.justifyContent,
                 justifyContentOptions,
                 justifyContentOptions.spaceBetween,
             )}
             alignItems={select(
-                'Align items',
+                labels.alignItems,
                 alignItemsOptions,
                 alignItemsDefault,
             )}
-            childrenFlex={text('Children flex', 'initial')}
+            childrenFlex={text(labels.childrenFlex, 'initial')}
             childrenMarginLateral={select(
                 "Children's lateral margins",
                 spaceOptions,
@@ -71,19 +72,22 @@ storiesOf(folder.grid + 'InternalGrid', module)
     ))
     .add('Grid', () => (
         <InternalGrid
-            hasStaticWidth={boolean('Has static width', true)}
-            align={radios('Align', alignOptions, alignDefault)}
+            hasStaticWidth={boolean(labels.hasStaticWidth, true)}
+            align={radios(labels.align, alignOptions, alignDefault)}
             displayType={displayOptions.grid}
-            gridTemplateColumns={text('Grid columns', '1fr 1fr 1fr')}
-            gridTemplateRows={text('Grid rows', 'repeat(2, 60px)')}
-            gridGap={select('Grid gap', spaceOptions, spaceDefault)}
+            gridTemplateColumns={text(
+                labels.gridTemplateColumns,
+                '1fr 1fr 1fr',
+            )}
+            gridTemplateRows={text(labels.gridTemplateRows, 'repeat(2, 60px)')}
+            gridGap={select(labels.gridGap, spaceOptions, spaceDefault)}
             justifyItems={select(
-                'Justify items',
+                labels.justifyItems,
                 justifyItemsOptions,
                 justifyItemsDefault,
             )}
             alignItems={select(
-                'Align items',
+                labels.alignItems,
                 alignItemsOptions,
                 alignItemsDefault,
             )}

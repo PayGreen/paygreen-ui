@@ -17,10 +17,10 @@ storiesOf(folder.form + 'DaTextarea', module)
         <DaTextarea
             placeholder="Your text&hellip;"
             maxLength={800}
-            hasCounter={boolean(labels.withCounter, true)}
+            hasCounter={boolean(labels.hasCpunter, true)}
             disabled={boolean(labels.disabled, false)}
             readOnly={boolean(labels.readOnly, false)}
-            isRounded={boolean('Is rounded', false)}
+            isRounded={boolean(labels.isRounded, false)}
             fieldSize={radios(
                 labels.fieldSize,
                 buttonSizeOptions,
@@ -31,6 +31,6 @@ storiesOf(folder.form + 'DaTextarea', module)
                 inputWidthOptions,
                 inputWidthDefault,
             )}
-            hasStaticWidth={boolean('Has static width', false)}
+            hasStaticWidth={boolean(labels.hasStaticWidth, false)}
         />
     ));

@@ -9,28 +9,33 @@ import {
     fontSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
-import ModalHeader from './ModalHeader';
+import labels from '../../shared/labels';
 import Title from '../Title/Title';
 import { CrossIcon } from '../Icon/Icon';
+import ModalHeader from './ModalHeader';
 
 storiesOf(folder.popup + folder.sub.modal + 'ModalHeader', module)
     .addDecorator(withKnobs)
     .add('ModalHeader', () => (
         <ModalHeader
             paddingLateral={select(
-                'Lateral padding',
+                labels.paddingLateral,
                 spaceOptions,
                 spaceOptions.sm,
             )}
-            paddingTop={select('Padding top', spaceOptions, spaceOptions.sm)}
+            paddingTop={select(
+                labels.paddingTop,
+                spaceOptions,
+                spaceOptions.sm,
+            )}
             paddingBottom={select(
-                'Padding bottom',
+                labels.paddingBottom,
                 spaceOptions,
                 spaceOptions.sm,
             )}
         >
             <Title textSize={fontSizeOptions.md}>
-                {text('Label', 'This is the Title')}
+                {text('Title', 'This is the Title')}
             </Title>
 
             <CrossIcon

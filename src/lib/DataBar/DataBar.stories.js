@@ -66,10 +66,14 @@ storiesOf(folder.graph + 'Databar', module)
                     ),
                 },
             ]}
-            blockWidth={select(labels.blockWidth, spaceOptions, spaceOptions.md)}
+            blockWidth={select(
+                labels.blockWidth,
+                spaceOptions,
+                spaceOptions.md,
+            )}
         />
     ))
-    .add('DataBar Multi', () => (
+    .add('DataBar multi', () => (
         <DataBar
             hasBackground={boolean(labels.hasBackground, true)}
             colorPallet={radios(
@@ -78,18 +82,36 @@ storiesOf(folder.graph + 'Databar', module)
                 colorPalletDefault,
             )}
             data={[
-                { value: number(labels.value + ' 1', defaultValue, valueOptions) },
                 {
-                    value: number(labels.value + ' 2', defaultValue, valueOptions),
+                    value: number(
+                        labels.value + ' 1',
+                        defaultValue,
+                        valueOptions,
+                    ),
+                },
+                {
+                    value: number(
+                        labels.value + ' 2',
+                        defaultValue,
+                        valueOptions,
+                    ),
                     colorTheme: colorThemeOptions.tertiary,
                     colorStatus: formStatusOptions.warning,
                 },
                 {
-                    value: number(labels.value + ' 3', defaultValue, valueOptions),
+                    value: number(
+                        labels.value + ' 3',
+                        defaultValue,
+                        valueOptions,
+                    ),
                     colorTheme: colorThemeOptions.quaternary,
                     colorStatus: formStatusOptions.danger,
                 },
             ]}
-            blockWidth={select(labels.blockWidth, spaceOptions, spaceOptions.md)}
+            blockWidth={select(
+                labels.blockWidth,
+                spaceOptions,
+                spaceOptions.md,
+            )}
         />
     ));

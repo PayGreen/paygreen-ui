@@ -27,13 +27,21 @@ storiesOf(folder.media + 'Dot', module)
     .addDecorator(withKnobs)
     .add('Dot', () => (
         <Dot
-            dotStyle={radios(labels.dotStyle, dotStyleOptions, dotStyleDefault)}
-            dotSize={select(labels.dotSize, iconSizeOptions, iconSizeDefault)}
+            dotStyle={radios('Dot style', dotStyleOptions, dotStyleDefault)}
+            dotSize={select('Dot size', iconSizeOptions, iconSizeDefault)}
             marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(labels.marginBottom, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
             marginLeft={select(labels.marginLeft, spaceOptions, spaceDefault)}
             marginRight={select(labels.marginRight, spaceOptions, spaceDefault)}
-            colorType={radios(labels.colorType, colorTypeOptions, colorTypeDefault)}
+            colorType={radios(
+                labels.colorType,
+                colorTypeOptions,
+                colorTypeDefault,
+            )}
             colorPallet={radios(
                 labels.colorPallet,
                 colorPalletOptions,

@@ -6,6 +6,7 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Radio from './Radio';
 
 storiesOf(folder.form + folder.sub.radio + 'Radio', module)
@@ -14,9 +15,9 @@ storiesOf(folder.form + folder.sub.radio + 'Radio', module)
         <Radio
             id="first"
             label="First Choice"
-            disabled={boolean('Disabled', false)}
+            disabled={boolean(labels.disabled, false)}
             fieldSize={radios(
-                'Field size',
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}

@@ -19,11 +19,11 @@ storiesOf(folder.form + folder.sub.button + 'ButtonGroup', module)
     .add('ButtonGroup', () => (
         <ButtonGroup
             align={radios(
-                labels.buttonAlign,
+                labels.align,
                 alignOptions,
                 alignOptions.center,
             )}
-            hasResetedMargins={boolean(labels.compensatedButtonMargins, false)}
+            hasResetedMargins={boolean('Has reseted margins', false)}
             marginLateral={select(
                 labels.marginLateral,
                 spaceOptions,

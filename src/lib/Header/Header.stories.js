@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
@@ -15,6 +15,7 @@ import {
     fontSizeOptions,
     hoverDirectionOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { UserIcon } from '../Icon/Icon';
 import Card from '../Card/Card';
 import Title from '../Title/Title';
@@ -59,251 +60,267 @@ const sampleLinks = [
     },
 ];
 
-const isOpenMenuPrimaryLabel = 'Open MenuPrimary';
-
 storiesOf(folder.nav + 'Header', module)
     .addDecorator(withKnobs)
-    .add('Header', () => (
-        <>
-            <Header hasTopStyle={boolean('Has top style (desktop only)', true)}>
-                <MenuGroup>
-                    <div className="main-nav">
-                        <MenuHamburger
-                            isOpen={boolean(isOpenMenuPrimaryLabel, false)}
+    .add('Header', () => {
+        const [isOpenMenuPrimary, setOpenMenuPrimary] = useState(false);
+        const [isOpenMenuSecondary, setOpenMenuSecondary] = useState(false);
+
+        return (
+            <>
+                <Header hasTopStyle={boolean(labels.hasTopStyle, true)}>
+                    <MenuGroup>
+                        <div className="main-nav">
+                            <MenuHamburger
+                                isOpen={isOpenMenuPrimary}
+                                onClick={() =>
+                                    setOpenMenuPrimary(!isOpenMenuPrimary)
+                                }
+                            />
+
+                            <a href="#">
+                                <Logo
+                                    hasBaseline={false}
+                                    hoverDirection={hoverDirectionOptions.right}
+                                    blockWidth={spaceOptions.sm}
+                                >
+                                    {logo}
+                                </Logo>
+                            </a>
+
+                            <UserIcon
+                                onClick={() =>
+                                    setOpenMenuSecondary(!isOpenMenuSecondary)
+                                }
+                                htmlTag={iconHtmlTagOptions.button}
+                                iconSize={iconSizeOptions.xl}
+                            />
+                        </div>
+
+                        <MenuPrimary isOpen={isOpenMenuPrimary}>
+                            <Menu>
+                                <a href="#">
+                                    <MenuItem>About us</MenuItem>
+                                </a>
+                            </Menu>
+
+                            <Menu>
+                                <MenuItem isClickable={false}>
+                                    Other products
+                                </MenuItem>
+
+                                <MenuList>
+                                    <a href="#">
+                                        <MenuListItem>
+                                            <Link>Tree</Link>
+
+                                            <Text>
+                                                Lorem ipsum dolor sit amet,
+                                                consectetur adipiscing elit.
+                                                Maecenas sit amet accumsan
+                                                dolor. Nullam fringilla quam
+                                                leo.
+                                            </Text>
+                                        </MenuListItem>
+                                    </a>
+
+                                    <a href="#">
+                                        <MenuListItem>
+                                            <Link>Payment</Link>
+                                        </MenuListItem>
+                                    </a>
+                                </MenuList>
+                            </Menu>
+
+                            <Menu>
+                                <a href="#">
+                                    <MenuItem>Visit us</MenuItem>
+                                </a>
+                            </Menu>
+                        </MenuPrimary>
+
+                        <Dot
+                            className="hideOnSmallScreen"
+                            colorPallet={colorPalletOptions.wab}
+                            colorWab={greyOptions.grey10}
+                            marginLeft={spaceOptions.lg}
+                            marginRight={spaceOptions.lg}
                         />
 
-                        <a href="#">
-                            <Logo
-                                hasBaseline={false}
-                                hoverDirection={hoverDirectionOptions.right}
-                                blockWidth={spaceOptions.sm}
-                            >
-                                {logo}
-                            </Logo>
-                        </a>
-
-                        <UserIcon
-                            htmlTag={iconHtmlTagOptions.button}
-                            iconSize={iconSizeOptions.xl}
-                        />
-                    </div>
-
-                    <MenuPrimary
-                        isOpen={boolean(isOpenMenuPrimaryLabel, false)}
-                    >
-                        <Menu>
-                            <a href="#">
-                                <MenuItem>About us</MenuItem>
-                            </a>
-                        </Menu>
-
-                        <Menu>
-                            <MenuItem isClickable={false}>
-                                Other products
-                            </MenuItem>
-
-                            <MenuList>
+                        <MenuSecondary
+                            closeComponent={
+                                <MenuClose
+                                    onClick={() => setOpenMenuSecondary(false)}
+                                />
+                            }
+                            isOpen={isOpenMenuSecondary}
+                        >
+                            <Menu htmlTag={itemHtmlTagOptions.div}>
                                 <a href="#">
-                                    <MenuListItem>
-                                        <Link>Tree</Link>
-
-                                        <Text>
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur adipiscing elit.
-                                            Maecenas sit amet accumsan dolor.
-                                            Nullam fringilla quam leo.
-                                        </Text>
-                                    </MenuListItem>
+                                    <MenuItem>Login</MenuItem>
                                 </a>
+                            </Menu>
 
+                            <Menu htmlTag={itemHtmlTagOptions.div}>
                                 <a href="#">
-                                    <MenuListItem>
-                                        <Link>Payment</Link>
-                                    </MenuListItem>
+                                    <MenuItem>Subscribe</MenuItem>
                                 </a>
-                            </MenuList>
-                        </Menu>
+                            </Menu>
+                        </MenuSecondary>
+                    </MenuGroup>
 
-                        <Menu>
-                            <a href="#">
-                                <MenuItem>Visit us</MenuItem>
-                            </a>
-                        </Menu>
-                    </MenuPrimary>
+                    {boolean('With MenuTertiary', true) ? (
+                        <MenuTertiary>
+                            {sampleLinks.map((sample, index) => (
+                                <a href={'#' + sample.link} key={index}>
+                                    {sample.label}
+                                </a>
+                            ))}
+                        </MenuTertiary>
+                    ) : (
+                        <></>
+                    )}
+                </Header>
 
-                    <Dot
-                        className="hideOnSmallScreen"
-                        colorPallet={colorPalletOptions.wab}
-                        colorWab={greyOptions.grey10}
-                        marginLeft={spaceOptions.lg}
-                        marginRight={spaceOptions.lg}
-                    />
+                <Banner topStyle={decorationOptions.none} isFirstContent={true}>
+                    <Card hasBackground={false}>
+                        <Title
+                            colorType={colorTypeOptions.reverse}
+                            textSize={fontSizeOptions.xl}
+                            marginLateral={spaceOptions.md}
+                            marginTop={spaceOptions.md}
+                        >
+                            Your big title
+                        </Title>
 
-                    <MenuSecondary
-                        closeComponent={<MenuClose />}
-                        isOpen={boolean('Open MenuSecondary', false)}
-                    >
-                        <Menu htmlTag={itemHtmlTagOptions.div}>
-                            <a href="#">
-                                <MenuItem>Login</MenuItem>
-                            </a>
-                        </Menu>
+                        <Text
+                            colorType={colorTypeOptions.reverse}
+                            marginLateral={spaceOptions.md}
+                            marginTop={spaceOptions.md}
+                            marginBottom={spaceOptions.md}
+                        >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Duis porttitor velit a ultricies aliquet.
+                            Donec vehicula in arcu non sodales. Fusce et
+                            consectetur odio. Ut bibendum ullamcorper turpis vel
+                            imperdiet.
+                        </Text>
+                    </Card>
+                </Banner>
 
-                        <Menu htmlTag={itemHtmlTagOptions.div}>
-                            <a href="#">
-                                <MenuItem>Subscribe</MenuItem>
-                            </a>
-                        </Menu>
-                    </MenuSecondary>
-                </MenuGroup>
-
-                {boolean('Add MenuTertiary', true) ? (
-                    <MenuTertiary>
-                        {sampleLinks.map((sample, index) => (
-                            <a href={'#' + sample.link} key={index}>
-                                {sample.label}
-                            </a>
-                        ))}
-                    </MenuTertiary>
-                ) : (
-                    <></>
-                )}
-            </Header>
-
-            <Banner topStyle={decorationOptions.none} isFirstContent={true}>
-                <Card hasBackground={false}>
-                    <Title
-                        colorType={colorTypeOptions.reverse}
-                        textSize={fontSizeOptions.xl}
-                        marginLateral={spaceOptions.md}
-                        marginTop={spaceOptions.md}
-                    >
-                        Your big title
-                    </Title>
-
-                    <Text
-                        colorType={colorTypeOptions.reverse}
-                        marginLateral={spaceOptions.md}
-                        marginTop={spaceOptions.md}
-                        marginBottom={spaceOptions.md}
-                    >
+                <Text
+                    marginTop={spaceOptions.xl}
+                    marginBottom={spaceOptions.md}
+                    marginLateral={spaceOptions.xl}
+                    htmlTag={textHtmlTagOptions.div}
+                >
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis porttitor velit a ultricies aliquet. Donec vehicula
-                        in arcu non sodales. Fusce et consectetur odio. Ut
-                        bibendum ullamcorper turpis vel imperdiet.
-                    </Text>
-                </Card>
-            </Banner>
+                        Praesent a leo auctor, convallis diam vel, tincidunt
+                        lacus. Donec eget neque vitae arcu interdum pharetra nec
+                        quis nisl.
+                    </p>
 
-            <Text
-                marginTop={spaceOptions.xl}
-                marginBottom={spaceOptions.md}
-                marginLateral={spaceOptions.xl}
-                htmlTag={textHtmlTagOptions.div}
-            >
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Praesent a leo auctor, convallis diam vel, tincidunt lacus.
-                    Donec eget neque vitae arcu interdum pharetra nec quis nisl.
-                </p>
+                    <p>
+                        Vestibulum sit amet lacus ut ipsum ornare gravida et ac
+                        justo. Fusce in luctus odio. Integer id lorem sit amet
+                        est laoreet egestas. Sed eu nulla hendrerit, aliquet leo
+                        id, sagittis enim.
+                    </p>
 
-                <p>
-                    Vestibulum sit amet lacus ut ipsum ornare gravida et ac
-                    justo. Fusce in luctus odio. Integer id lorem sit amet est
-                    laoreet egestas. Sed eu nulla hendrerit, aliquet leo id,
-                    sagittis enim.
-                </p>
+                    <p>
+                        Duis orci mauris, bibendum sit amet nisl eget, laoreet
+                        lobortis nibh. Pellentesque eu convallis risus. Cras
+                        accumsan odio eu eros vulputate, viverra blandit nisi
+                        fermentum.
+                    </p>
 
-                <p>
-                    Duis orci mauris, bibendum sit amet nisl eget, laoreet
-                    lobortis nibh. Pellentesque eu convallis risus. Cras
-                    accumsan odio eu eros vulputate, viverra blandit nisi
-                    fermentum.
-                </p>
+                    <p>
+                        Quisque dolor urna, porttitor at luctus eu, maximus in
+                        justo. Nunc ultricies id nunc venenatis iaculis.
+                        Phasellus et mollis tellus. Pellentesque nec lacinia
+                        quam. Quisque vel tempus lectus, in dignissim diam.
+                    </p>
 
-                <p>
-                    Quisque dolor urna, porttitor at luctus eu, maximus in
-                    justo. Nunc ultricies id nunc venenatis iaculis. Phasellus
-                    et mollis tellus. Pellentesque nec lacinia quam. Quisque vel
-                    tempus lectus, in dignissim diam.
-                </p>
+                    <p>
+                        Maecenas finibus ultrices nisl id pharetra. Nulla
+                        facilisi. Fusce et viverra neque, vestibulum dignissim
+                        ligula. Nulla ornare est ac porta feugiat.
+                    </p>
 
-                <p>
-                    Maecenas finibus ultrices nisl id pharetra. Nulla facilisi.
-                    Fusce et viverra neque, vestibulum dignissim ligula. Nulla
-                    ornare est ac porta feugiat.
-                </p>
+                    <p>
+                        Maecenas quis turpis ut diam imperdiet bibendum.
+                        Praesent venenatis consectetur metus eu dignissim. Nulla
+                        ac tortor malesuada, auctor ligula in, mattis leo.
+                        Vestibulum ante ipsum primis in faucibus orci luctus et
+                        ultrices posuere cubilia curae.
+                    </p>
 
-                <p>
-                    Maecenas quis turpis ut diam imperdiet bibendum. Praesent
-                    venenatis consectetur metus eu dignissim. Nulla ac tortor
-                    malesuada, auctor ligula in, mattis leo. Vestibulum ante
-                    ipsum primis in faucibus orci luctus et ultrices posuere
-                    cubilia curae.
-                </p>
+                    <p>
+                        Morbi non dui rhoncus, semper lacus et, fermentum eros.
+                        Duis porta quam sit amet cursus accumsan. Aenean at
+                        lacinia massa. Proin mi erat, interdum eu pretium at,
+                        ullamcorper ut tortor.
+                    </p>
 
-                <p>
-                    Morbi non dui rhoncus, semper lacus et, fermentum eros. Duis
-                    porta quam sit amet cursus accumsan. Aenean at lacinia
-                    massa. Proin mi erat, interdum eu pretium at, ullamcorper ut
-                    tortor.
-                </p>
+                    <p>
+                        Sed et justo ut nibh congue consequat egestas eget diam.
+                        Fusce tortor nibh, semper sit amet magna eget, dictum
+                        congue urna. Quisque vestibulum vitae magna at dapibus.
+                        In eget feugiat neque.
+                    </p>
 
-                <p>
-                    Sed et justo ut nibh congue consequat egestas eget diam.
-                    Fusce tortor nibh, semper sit amet magna eget, dictum congue
-                    urna. Quisque vestibulum vitae magna at dapibus. In eget
-                    feugiat neque.
-                </p>
+                    <p>
+                        Aenean vitae facilisis enim, ultricies bibendum ex.
+                        Phasellus sollicitudin purus quis auctor ultricies.
+                    </p>
 
-                <p>
-                    Aenean vitae facilisis enim, ultricies bibendum ex.
-                    Phasellus sollicitudin purus quis auctor ultricies.
-                </p>
+                    <p>
+                        Vivamus nec tempus eros. Vivamus commodo urna purus,
+                        vitae bibendum odio vehicula sit amet. Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit.
+                    </p>
 
-                <p>
-                    Vivamus nec tempus eros. Vivamus commodo urna purus, vitae
-                    bibendum odio vehicula sit amet. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit.
-                </p>
+                    <p>
+                        Praesent a leo auctor, convallis diam vel, tincidunt
+                        lacus. Donec eget neque vitae arcu interdum pharetra nec
+                        quis nisl. Vestibulum sit amet lacus ut ipsum ornare
+                        gravida et ac justo.
+                    </p>
 
-                <p>
-                    Praesent a leo auctor, convallis diam vel, tincidunt lacus.
-                    Donec eget neque vitae arcu interdum pharetra nec quis nisl.
-                    Vestibulum sit amet lacus ut ipsum ornare gravida et ac
-                    justo.
-                </p>
+                    <p>
+                        Fusce in luctus odio. Integer id lorem sit amet est
+                        laoreet egestas. Sed eu nulla hendrerit, aliquet leo id,
+                        sagittis enim. Duis orci mauris, bibendum sit amet nisl
+                        eget, laoreet lobortis nibh.
+                    </p>
 
-                <p>
-                    Fusce in luctus odio. Integer id lorem sit amet est laoreet
-                    egestas. Sed eu nulla hendrerit, aliquet leo id, sagittis
-                    enim. Duis orci mauris, bibendum sit amet nisl eget, laoreet
-                    lobortis nibh.
-                </p>
+                    <p>
+                        Pellentesque eu convallis risus. Cras accumsan odio eu
+                        eros vulputate, viverra blandit nisi fermentum.
+                    </p>
 
-                <p>
-                    Pellentesque eu convallis risus. Cras accumsan odio eu eros
-                    vulputate, viverra blandit nisi fermentum.
-                </p>
+                    <p>
+                        Quisque dolor urna, porttitor at luctus eu, maximus in
+                        justo. Nunc ultricies id nunc venenatis iaculis.
+                        Phasellus et mollis tellus. Pellentesque nec lacinia
+                        quam.
+                    </p>
 
-                <p>
-                    Quisque dolor urna, porttitor at luctus eu, maximus in
-                    justo. Nunc ultricies id nunc venenatis iaculis. Phasellus
-                    et mollis tellus. Pellentesque nec lacinia quam.
-                </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent a leo auctor, convallis diam vel, tincidunt
+                        lacus. Donec eget neque vitae arcu interdum pharetra nec
+                        quis nisl.
+                    </p>
 
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Praesent a leo auctor, convallis diam vel, tincidunt lacus.
-                    Donec eget neque vitae arcu interdum pharetra nec quis nisl.
-                </p>
-
-                <p>
-                    Vestibulum sit amet lacus ut ipsum ornare gravida et ac
-                    justo. Fusce in luctus odio. Integer id lorem sit amet est
-                    laoreet egestas. Sed eu nulla hendrerit, aliquet leo id,
-                    sagittis enim.
-                </p>
-            </Text>
-        </>
-    ));
+                    <p>
+                        Vestibulum sit amet lacus ut ipsum ornare gravida et ac
+                        justo. Fusce in luctus odio. Integer id lorem sit amet
+                        est laoreet egestas. Sed eu nulla hendrerit, aliquet leo
+                        id, sagittis enim.
+                    </p>
+                </Text>
+            </>
+        );
+    });

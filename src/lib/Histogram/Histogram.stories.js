@@ -9,6 +9,7 @@ import {
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import HistogramBar from '../HistogramBar/HistogramBar';
 import Histogram from './Histogram';
 
@@ -76,18 +77,26 @@ storiesOf(folder.graph + 'Histogram', module)
                 [30, 60],
             )}
             isRelativeYaxis={boolean('Is relative Y-axis', false)}
-            maxValue={number('Max value', 120, {
+            maxValue={number(labels.maxValue, 120, {
                 range: true,
                 max: 150,
             })}
-            blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
+            blockWidth={select(
+                labels.blockWidth,
+                spaceOptions,
+                spaceOptions.md,
+            )}
             blockHeight={select(
-                'Block height',
+                labels.blockHeight,
                 inputWidthOptions,
                 inputWidthDefault,
             )}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
         >
             {children.map((sample, index) => (
                 <HistogramBar

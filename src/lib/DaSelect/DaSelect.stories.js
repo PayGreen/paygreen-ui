@@ -80,12 +80,10 @@ storiesOf(folder.form + 'DaSelect', module)
     .add('DaSelect', () => (
         <DaSelect
             defaultValue=""
-            options={
-                boolean('Has optgroup', true) ? optionsGroup : options
-            }
+            options={boolean(labels.optgroup, true) ? optionsGroup : options}
             disabled={boolean(labels.disabled, false)}
             readOnly={boolean(labels.readOnly, false)}
-            isRounded={boolean('Is rounded', false)}
+            isRounded={boolean(labels.isRounded, false)}
             fieldSize={radios(
                 labels.fieldSize,
                 buttonSizeOptions,
@@ -96,8 +94,8 @@ storiesOf(folder.form + 'DaSelect', module)
                 inputWidthOptions,
                 inputWidthDefault,
             )}
-            hasStaticWidth={boolean('Has static width', false)}
+            hasStaticWidth={boolean(labels.hasStaticWidth, false)}
             hasHelpButton={boolean(labels.hasHelpButton, false)}
-            icon={boolean('Has icon', true) ? <ListIcon /> : null}
+            icon={boolean(labels.icon, true) ? <ListIcon /> : null}
         />
     ));

@@ -12,7 +12,7 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTableHead', module)
     .add('DaTableHead', () => (
         <DaTableHead>
             <DaTableHeadCell label="Select/deselect all">
-                <Checkbox id="select"/>
+                <Checkbox id="select" />
             </DaTableHeadCell>
 
             <DaTableHeadCell

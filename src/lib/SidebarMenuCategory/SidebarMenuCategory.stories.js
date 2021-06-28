@@ -17,7 +17,7 @@ import {
     sidebarItemHtmlTagOptions,
     spaceOptions,
 } from '../../shared/constants';
-
+import labels from '../../shared/labels';
 import Link from '../Link/Link';
 import { MeterIcon, LeafIcon } from '../Icon/Icon';
 import SidebarItem from '../SidebarItem/SidebarItem';
@@ -25,23 +25,20 @@ import SidebarList from '../SidebarList/SidebarList';
 import SidebarMenu from '../SidebarMenu/SidebarMenu';
 import SidebarMenuCategory from './SidebarMenuCategory';
 
-const colorThemeLabel = 'Color theme';
-const paddingLateralLabel = 'Padding lateral';
-
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
     .addDecorator(withKnobs)
     .add('SidebarMenuCategory', () => (
         <SidebarMenuCategory
-            categoryTitle={text('Category', 'Catégorie de Pages')}
+            categoryTitle={text('Category title', 'Catégorie de pages')}
             paddingLateral={select(
-                paddingLateralLabel,
+                labels.paddingLateral,
                 spaceOptions,
                 spaceOptions.xs,
             )}
         >
             <SidebarMenu
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
@@ -49,12 +46,12 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                 <SidebarItem
                     htmlTag={sidebarItemHtmlTagOptions.button}
                     colorTheme={radios(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
                     paddingLateral={select(
-                        paddingLateralLabel,
+                        labels.paddingLateral,
                         spaceOptions,
                         spaceOptions.xs,
                     )}
@@ -62,7 +59,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                     <MeterIcon
                         iconSize={iconSizeOptions.lg}
                         colorTheme={radios(
-                            colorThemeLabel,
+                            labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
@@ -70,12 +67,12 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
 
                     <Link
                         colorTheme={radios(
-                            colorThemeLabel,
+                            labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
                     >
-                        Tableau de Bord
+                        Tableau de bord
                     </Link>
                 </SidebarItem>
 
@@ -83,12 +80,12 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                     <a href="#">
                         <SidebarItem
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
                             paddingLateral={select(
-                                paddingLateralLabel,
+                                labels.paddingLateral,
                                 spaceOptions,
                                 spaceOptions.xs,
                             )}
@@ -105,12 +102,12 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                     <a href="#">
                         <SidebarItem
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
                             paddingLateral={select(
-                                paddingLateralLabel,
+                                labels.paddingLateral,
                                 spaceOptions,
                                 spaceOptions.xs,
                             )}
@@ -128,12 +125,12 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
 
             <SidebarMenu
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
                 paddingLateral={select(
-                    paddingLateralLabel,
+                    labels.paddingLateral,
                     spaceOptions,
                     spaceOptions.xs,
                 )}
@@ -141,12 +138,12 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                 <a href="#">
                     <SidebarItem
                         colorTheme={radios(
-                            colorThemeLabel,
+                            labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
                         paddingLateral={select(
-                            paddingLateralLabel,
+                            labels.paddingLateral,
                             spaceOptions,
                             spaceOptions.xs,
                         )}
@@ -155,7 +152,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                         <LeafIcon
                             iconSize={iconSizeOptions.lg}
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
@@ -163,12 +160,12 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
 
                         <Link
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
                         >
-                            Compensations
+                            Contributions
                         </Link>
                     </SidebarItem>
                 </a>

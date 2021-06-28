@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
@@ -27,67 +26,65 @@ import ModalProvider from './ModalProvider';
 storiesOf(
     folder.popup + folder.sub.modal + 'ModalProvider (entire modal)',
     module,
-)
-    .addDecorator(withKnobs)
-    .add('Modal Provider (entire modal)', () => (
-        <ModalProvider>
+).add('Modal Provider (entire modal)', () => (
+    <ModalProvider>
+        <ModalControl>
+            <button type="button">
+                <DaButton
+                    buttonSize={buttonSizeOptions.md}
+                    colorPallet={colorPalletOptions.status}
+                    colorStatus={formStatusOptions.default}
+                >
+                    Open the modal
+                </DaButton>
+            </button>
+        </ModalControl>
+
+        <Modal>
             <ModalControl>
-                <button type="button">
-                    <DaButton
-                        buttonSize={buttonSizeOptions.md}
-                        colorPallet={colorPalletOptions.status}
-                        colorStatus={formStatusOptions.default}
-                    >
-                        Open the modal
-                    </DaButton>
-                </button>
+                <Overlay opacityValue={20} />
             </ModalControl>
 
-            <Modal>
-                <ModalControl>
-                    <Overlay opacityValue={20} />
-                </ModalControl>
+            <ModalContent>
+                <ModalHeader>
+                    <Title textSize={fontSizeOptions.md}>
+                        This is the Title
+                    </Title>
 
-                <ModalContent>
-                    <ModalHeader>
-                        <Title textSize={fontSizeOptions.md}>
-                            This is the Title
-                        </Title>
+                    <ModalControl hasOnClickControl={true}>
+                        <CrossIcon
+                            htmlTag={iconHtmlTagOptions.button}
+                            iconSize={iconSizeOptions.md}
+                            colorPallet={colorPalletOptions.wab}
+                        />
+                    </ModalControl>
+                </ModalHeader>
 
-                        <ModalControl hasOnClickControl={true}>
-                            <CrossIcon
-                                htmlTag={iconHtmlTagOptions.button}
-                                iconSize={iconSizeOptions.md}
-                                colorPallet={colorPalletOptions.wab}
-                            />
+                <ModalBody
+                    paddingLateral={spaceOptions.sm}
+                    paddingTop={spaceOptions.none}
+                    paddingBottom={spaceOptions.sm}
+                >
+                    <Text>
+                        Curabitur congue varius ex et posuere. Maecenas
+                        tincidunt diam ut nisl porttitor scelerisque.
+                    </Text>
+
+                    <ButtonGroup marginTop={spaceOptions.xs}>
+                        <ModalControl>
+                            <button type="button">
+                                <DaButton
+                                    buttonSize={buttonSizeOptions.md}
+                                    colorPallet={colorPalletOptions.status}
+                                    colorStatus={formStatusOptions.danger}
+                                >
+                                    Close the modal
+                                </DaButton>
+                            </button>
                         </ModalControl>
-                    </ModalHeader>
-
-                    <ModalBody
-                        paddingLateral={spaceOptions.sm}
-                        paddingTop={spaceOptions.none}
-                        paddingBottom={spaceOptions.sm}
-                    >
-                        <Text>
-                            Curabitur congue varius ex et posuere. Maecenas
-                            tincidunt diam ut nisl porttitor scelerisque.
-                        </Text>
-
-                        <ButtonGroup marginTop={spaceOptions.xs}>
-                            <ModalControl>
-                                <button type="button">
-                                    <DaButton
-                                        buttonSize={buttonSizeOptions.md}
-                                        colorPallet={colorPalletOptions.status}
-                                        colorStatus={formStatusOptions.danger}
-                                    >
-                                        Close the modal
-                                    </DaButton>
-                                </button>
-                            </ModalControl>
-                        </ButtonGroup>
-                    </ModalBody>
-                </ModalContent>
-            </Modal>
-        </ModalProvider>
-    ));
+                    </ButtonGroup>
+                </ModalBody>
+            </ModalContent>
+        </Modal>
+    </ModalProvider>
+));

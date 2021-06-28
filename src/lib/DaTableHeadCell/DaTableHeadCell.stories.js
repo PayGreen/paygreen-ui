@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { folder, rotateSizeOptions } from '../../shared/constants';
 import labels from '../../shared/labels';
 import { ArrowBottomIcon, ListIcon } from '../Icon/Icon';
@@ -9,58 +9,57 @@ import DaTableHeadCell from './DaTableHeadCell';
 
 storiesOf(folder.table + folder.sub.daTable + 'DaTableHeadCell', module)
     .addDecorator(withKnobs)
-    .add('DaTableHeadCell', () => (
-        <DaTableHeadCell
-            sortIcon={
-                boolean(labels.withSortIcon, false) ? (
-                    <ArrowBottomIcon
-                        isActive={boolean(labels.sortIconActive, false)}
-                        rotateSize={
-                            boolean(labels.ascSort, false) &&
-                            boolean(labels.sortIconActive, false)
-                                ? rotateSizeOptions.d180
-                                : rotateSizeOptions.d0
-                        }
-                        title={
-                            boolean(labels.ascSort, false) &&
-                            boolean(labels.sortIconActive, false)
-                                ? 'Cancel sort on Sample'
-                                : 'Sort ' +
-                                  (boolean(labels.sortIconActive, false)
-                                      ? 'ASC'
-                                      : 'DESC') +
-                                  ' on Sample'
-                        }
-                    />
-                ) : null
-            }
-            groupIcon={
-                boolean(labels.withGroupIcon, false) ? (
-                    <ListIcon
-                        isActive={boolean(labels.groupIconActive, false)}
-                        title={
-                            boolean(labels.groupIconActive, false)
-                                ? 'Cancel group on Sample'
-                                : 'Group on Sample'
-                        }
-                    />
-                ) : null
-            }
-            label="Cell for DaTableHead"
-        ></DaTableHeadCell>
-    ))
-    .add('DaTableHeadCell with children', () => (
-        <DaTableHeadCell
-            sortIcon={
-                boolean(labels.withSortIcon, false) ? <ArrowBottomIcon /> : null
-            }
-            groupIcon={
-                boolean(labels.withGroupIcon, false) ? (
-                    <ListIcon />
-                ) : null
-            }
-            label="Cell for DaTableHead"
-        >
-            <DaInput placeholder="Search" fieldSize="sm" />
-        </DaTableHeadCell>
-    ));
+    .add('DaTableHeadCell', () => {
+        const isSortIconActive = boolean('Is sort icon active', false);
+        const isGroupIconActive = boolean(
+            'Is group icon active (only on big screen)',
+            false,
+        );
+        const isAscSort = boolean(
+            'Is ASC sort (need "Is sort icon active" checked)',
+            false,
+        );
+
+        const sortIcon = (
+            <ArrowBottomIcon
+                isActive={isSortIconActive}
+                rotateSize={
+                    isAscSort && isSortIconActive
+                        ? rotateSizeOptions.d180
+                        : rotateSizeOptions.d0
+                }
+                title={
+                    isAscSort && isSortIconActive
+                        ? 'Cancel sort on Sample'
+                        : 'Sort ' +
+                          (isSortIconActive ? 'ASC' : 'DESC') +
+                          ' on Sample'
+                }
+            />
+        );
+
+        const groupIcon = (
+            <ListIcon
+                isActive={isGroupIconActive}
+                title={
+                    isGroupIconActive
+                        ? 'Cancel group on Sample'
+                        : 'Group on Sample'
+                }
+            />
+        );
+
+        return (
+            <DaTableHeadCell
+                label={text(labels.label, 'Cell for DaTableHead')}
+                sortIcon={sortIcon}
+                groupIcon={groupIcon}
+            >
+                {boolean('With DaInput', true) ? (
+                    <DaInput placeholder="Search..." fieldSize="sm" />
+                ) : (
+                    <></>
+                )}
+            </DaTableHeadCell>
+        );
+    });

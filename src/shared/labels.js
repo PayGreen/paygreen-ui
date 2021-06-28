@@ -1,58 +1,69 @@
-/**
- * MAJ des stories des composants par ordre alphabétique
- * Fait jusqu'au composant Dot inclus
- * Prochain composant : DropDown
- */
-
 const labels = {
     label: 'Label',
     text: 'Text',
-    iconSize: 'Icon size',
-    htmlTag: 'HTML Tags',
-    shadowSize: 'Shadow size',
-    blockWidth: 'Width',
-    smallScreenWidth: 'Width on small screens',
-    borderRadius: 'Border radius',
-    hasBackground: 'Has background',
-    borderTopStyle: 'Border-top style',
-    borderTop: 'Border top',
-    borderRight: 'Border right',
-    borderLeft: 'Border left',
-    borderBottom: 'Border Bottom',
+    htmlTag: 'HTML tag',
+    icon: 'With icon',
+    hasCounter: 'Has counter',
+
+    // Grid, positions and aligns
+    align: 'Align',
     position: 'Position',
-    centeredPopin: 'Centered popin',
-    hasHelpButton: 'Has help button',
-    sortIconActive: 'Sort icon is active',
-    groupIconActive: 'Group icon active (only on Desktop)',
-    ascSort: 'ASC sort (need Sort icon active)',
+    displayType: 'Display type',
+    gridTemplateColumns: 'Grid template columns',
+    flexWrap: 'Flex wrap',
+    justifyContent: 'Justify content',
+    justifyItems: 'Justify items',
+    alignItems: 'Align items',
+    childrenFlex: 'Children flex',
+    gridGap: 'Grid gap',
 
     // Colors
     colorType: 'Color type',
+    colorStyle: 'Color style',
     colorPallet: 'Color pallet',
     colorTheme: 'Color theme',
-    colorStatus: 'Color status',
-    colorStyle: 'Color style',
     colorWab: 'Color wab',
+    colorStatus: 'Color status',
     gradient: 'Gradient',
     backgroundColor: 'Background color',
 
-    // Booleans
-    isActive: 'Is active',
-    isRequired: 'Is required',
-    isLoading: 'Is loading',
-    isMain: 'Is main',
-    isId: 'Is ID',
-    withSortIcon: 'With sort icon',
-    withGroupIcon: 'With group icon (only on Desktop)',
-    withCounter: 'With counter',
-    disabled: 'Disabled',
-    readOnly: 'Readonly',
-    compensatedButtonMargins: 'Compensate buttons margin',
+    // Styles
+    hasBackground: 'Has background',
+    hasShadow: 'Has shadow',
+    isRounded: 'Is rounded',
+    opacityValue: 'Opacity',
+
+    // Sizes
+    iconSize: 'Icon size',
+    shadowSize: 'Shadow size',
+    radiusSize: 'Radius size',
+    bulletSize: 'Bullet size',
+    blockHeight: 'Block height',
+    blockWidth: 'Block width',
+    hasStaticWidth: 'Has static width',
+
+    // Margins
+    margin: 'Margin',
+    marginTop: 'Margin top',
+    marginRight: 'Margin right',
+    marginBottom: 'Margin bottom',
+    marginLeft: 'Margin left',
+    marginLateral: 'Margin lateral',
     hasResponsiveMargin: 'Has responsive margin',
+
+    // Paddings
+    padding: 'Padding',
+    paddingTop: 'Padding top',
+    paddingRight: 'Padding right',
+    paddingBottom: 'Padding bottom',
+    paddingLeft: 'Padding left',
+    paddingLateral: 'Padding lateral',
     hasResponsivePadding: 'Has responsive padding',
 
     // Fonts
     textSize: 'Text size',
+    hasUnderline: 'Has underline',
+    hasUppercase: 'Has uppercase',
 
     // Inputs
     fieldSize: 'Field size',
@@ -60,34 +71,26 @@ const labels = {
     unity: 'Unity',
     value: 'Value',
     maxValue: 'Max value',
+    required: 'Required',
+    disabled: 'Disabled',
+    readOnly: 'Readonly',
+    optgroup: 'With optgroup',
+    hasHelpButton: 'Has help button',
+
+    // Components states
+    isHidden: 'Is hidden',
+    isLoading: 'Is loading',
+    isActive: 'Is active',
+    isOpen: 'Is open',
+
+    // Decorations
+    hasTopStyle: 'Has top style (big screen only)',
+    topStyle: 'Top style',
+    bottomStyle: 'Bottom style',
 
     // Buttons
     buttonStyle: 'Button style',
     buttonSize: 'Button size',
-    buttonAlign: 'Buttons align',
-
-    // Dot
-    dotSize: 'Dot size',
-    dotStyle: 'Dot Style',
-
-    // Spaces
-    margin: 'Margin',
-    marginTop: 'Margin top',
-    marginRight: 'Margin right',
-    marginLeft: 'Margin left',
-    marginBottom: 'Margin bottom',
-    marginLateral: 'Lateral margins',
-    padding: 'Padding',
-    paddingTop: 'Padding top',
-    paddingRight: 'Padding right',
-    paddingLeft: 'Padding left',
-    paddingBottom: 'Padding bottom',
-
-    // Waves
-    waveDirection: 'Wave direction',
-
-    topStyle: 'Top style',
-    bottomStyle: 'Bottom style',
 };
 
 export default labels;

@@ -6,6 +6,7 @@ import {
     colorThemeAllOptions,
     colorThemeAllDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import TableCell from '../TableCell/TableCell';
 import TableRow from './TableRow';
 
@@ -14,7 +15,7 @@ storiesOf(folder.table + folder.sub.table + 'TableRow', module)
     .add('Simple row', () => (
         <TableRow
             colorTheme={select(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeAllOptions,
                 colorThemeAllDefault,
             )}

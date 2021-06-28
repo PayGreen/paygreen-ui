@@ -17,7 +17,7 @@ storiesOf(folder.grid + 'Divider', module)
     .add('Divider', () => (
         <Divider
             waveStyle={radios(
-                labels.waveDirection,
+                'Wave style',
                 decorationOptions,
                 decorationDefault,
             )}

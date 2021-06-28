@@ -8,6 +8,7 @@ import {
     iconSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { LeafIcon, CardsIcon, OrganizationIcon, OutIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import IconLabel from '../IconLabel/IconLabel';
@@ -17,14 +18,12 @@ import MenuList from '../MenuList/MenuList';
 import MenuListItem from '../MenuListItem/MenuListItem';
 import Menu from './Menu';
 
-const colorThemeLabel = 'Color theme';
-
 storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
     .addDecorator(withKnobs)
     .add('Menu', () => (
         <Menu
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
@@ -33,7 +32,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                 <MenuItem
                     isClickable={false}
                     colorTheme={radios(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
@@ -46,7 +45,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                 <a href="#">
                     <MenuListItem
                         colorTheme={radios(
-                            colorThemeLabel,
+                            labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
@@ -54,7 +53,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                         <LeafIcon
                             iconSize={iconSizeOptions.lg}
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
@@ -62,7 +61,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
 
                         <Link
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
@@ -81,7 +80,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                 <a href="#">
                     <MenuListItem
                         colorTheme={radios(
-                            colorThemeLabel,
+                            labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
@@ -89,7 +88,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                         <CardsIcon
                             iconSize={iconSizeOptions.lg}
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
@@ -97,7 +96,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
 
                         <Link
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
@@ -107,7 +106,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
 
                         <IconLabel
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
@@ -116,7 +115,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                                 iconSize={iconSizeOptions.xs}
                                 marginRight={spaceOptions.xs}
                                 colorTheme={radios(
-                                    colorThemeLabel,
+                                    labels.colorTheme,
                                     colorThemeOptions,
                                     colorThemeDefault,
                                 )}
@@ -129,7 +128,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                 <a href="#">
                     <MenuListItem
                         colorTheme={radios(
-                            colorThemeLabel,
+                            labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
@@ -137,7 +136,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                         <OrganizationIcon
                             iconSize={iconSizeOptions.lg}
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
@@ -145,7 +144,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
 
                         <Link
                             colorTheme={radios(
-                                colorThemeLabel,
+                                labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
