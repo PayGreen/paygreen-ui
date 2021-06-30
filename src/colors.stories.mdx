@@ -1,5 +1,5 @@
 import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
-import { ThemeDefault } from './theme/theme.default';
+import { ThemeDefault, ThemeDark } from './theme';
 
 <Meta title="Colors" />
 
@@ -10,10 +10,11 @@ import { ThemeDefault } from './theme/theme.default';
 <ColorPalette>
   <ColorItem
     title="Primary"
-    subtitle="Main | Light | GradientBase | GradientShade"
+    subtitle="Main | Light Default | Light Dark | GradientBase | GradientShade"
     colors={[
       ThemeDefault.color.primary.main,
       ThemeDefault.color.primary.light,
+      ThemeDark.color.primary.light,
       ThemeDefault.color.primary.gradientBase,
       ThemeDefault.color.primary.gradientShade
     ]}
@@ -21,10 +22,11 @@ import { ThemeDefault } from './theme/theme.default';
 
   <ColorItem
     title="Secondary"
-    subtitle="Main | Light | GradientBase | GradientShade"
+    subtitle="Main | Light Default | Light Dark | GradientBase | GradientShade"
     colors={[
       ThemeDefault.color.secondary.main,
       ThemeDefault.color.secondary.light,
+      ThemeDark.color.secondary.light,
       ThemeDefault.color.secondary.gradientBase,
       ThemeDefault.color.secondary.gradientShade
     ]}
@@ -32,10 +34,11 @@ import { ThemeDefault } from './theme/theme.default';
 
   <ColorItem
     title="Tertiary"
-    subtitle="Main | Light | GradientBase | GradientShade"
+    subtitle="Main | Light Default | Light Dark | GradientBase | GradientShade"
     colors={[
       ThemeDefault.color.tertiary.main,
       ThemeDefault.color.tertiary.light,
+      ThemeDark.color.tertiary.light,
       ThemeDefault.color.tertiary.gradientBase,
       ThemeDefault.color.tertiary.gradientShade
     ]}
@@ -43,10 +46,11 @@ import { ThemeDefault } from './theme/theme.default';
 
   <ColorItem
     title="Quaternary"
-    subtitle="Main | Light | GradientBase | GradientShade"
+    subtitle="Main | Light Default | Light Dark | GradientBase | GradientShade"
     colors={[
       ThemeDefault.color.quaternary.main,
       ThemeDefault.color.quaternary.light,
+      ThemeDark.color.quaternary.light,
       ThemeDefault.color.quaternary.gradientBase,
       ThemeDefault.color.quaternary.gradientShade
     ]}
@@ -54,10 +58,11 @@ import { ThemeDefault } from './theme/theme.default';
 
   <ColorItem
     title="Quinary"
-    subtitle="Main | Light | GradientBase | GradientShade"
+    subtitle="Main | Light Default | Light Dark | GradientBase | GradientShade"
     colors={[
       ThemeDefault.color.quinary.main,
       ThemeDefault.color.quinary.light,
+      ThemeDark.color.quinary.light,
       ThemeDefault.color.quinary.gradientBase,
       ThemeDefault.color.quinary.gradientShade
     ]}
@@ -69,37 +74,41 @@ import { ThemeDefault } from './theme/theme.default';
 <ColorPalette>
   <ColorItem
     title="Default"
-    subtitle="Main | Light"
+    subtitle="Main | Light Default | Light Dark"
     colors={[
       ThemeDefault.status.default.main,
-      ThemeDefault.status.default.light
+      ThemeDefault.status.default.light,
+      ThemeDark.status.default.light
     ]}
   />
 
   <ColorItem
     title="Success"
-    subtitle="Main | Light"
+    subtitle="Main | Light Default | Light Dark"
     colors={[
       ThemeDefault.status.success.main,
-      ThemeDefault.status.success.light
+      ThemeDefault.status.success.light,
+      ThemeDark.status.success.light
     ]}
   />
 
   <ColorItem
     title="Warning"
-    subtitle="Main | Light"
+    subtitle="Main | Light Default | Light Dark"
     colors={[
       ThemeDefault.status.warning.main,
-      ThemeDefault.status.warning.light
+      ThemeDefault.status.warning.light,
+      ThemeDark.status.warning.light
     ]}
   />
 
   <ColorItem
     title="Danger"
-    subtitle="Main | Light"
+    subtitle="Main | Light Default | Light Dark"
     colors={[
       ThemeDefault.status.danger.main,
-      ThemeDefault.status.danger.light
+      ThemeDefault.status.danger.light,
+      ThemeDark.status.danger.light
     ]}
   />
 </ColorPalette>
@@ -108,7 +117,7 @@ import { ThemeDefault } from './theme/theme.default';
 
 <ColorPalette>
   <ColorItem
-    title="WaB"
+    title="Default"
     colors={[
       ThemeDefault.wab.white00,
       ThemeDefault.wab.white10,
@@ -120,6 +129,22 @@ import { ThemeDefault } from './theme/theme.default';
       ThemeDefault.wab.grey50,
       ThemeDefault.wab.grey60,
       ThemeDefault.wab.black00
+    ]}
+  />
+
+  <ColorItem
+    title="Dark"
+    colors={[
+      ThemeDark.wab.white00,
+      ThemeDark.wab.white10,
+      ThemeDark.wab.white20,
+      ThemeDark.wab.grey10,
+      ThemeDark.wab.grey20,
+      ThemeDark.wab.grey30,
+      ThemeDark.wab.grey40,
+      ThemeDark.wab.grey50,
+      ThemeDark.wab.grey60,
+      ThemeDark.wab.black00
     ]}
   />
 </ColorPalette>
