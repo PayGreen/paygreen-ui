@@ -39,67 +39,7 @@ for (const [size, value] of Object.entries(breakpoints)) {
     screens.max[size] = screen(value, true);
 }
 
-const pallet = {
-    green: {
-        main: '#33ad73',
-        light: '#d5f3e5',
-    },
-    blue: {
-        main: '#00a99d',
-        light: '#e1f3f2',
-    },
-    orange: {
-        main: '#e58a28',
-        light: '#fbe6ce',
-    },
-};
-
 export const ThemeBase = {
-    name: 'Base',
-    color: {
-        primary: {
-            ...pallet.green,
-            gradientBase: '#77d1a6',
-            gradientShade: '#a4db95',
-        },
-        secondary: {
-            ...pallet.blue,
-            gradientBase: '#51c6be',
-            gradientShade: '#76bbd8',
-        },
-        tertiary: {
-            ...pallet.orange,
-            gradientBase: '#fab56b',
-            gradientShade: '#faa272',
-        },
-        quaternary: {
-            main: '#ec6a6a',
-            light: '#ffe0e1',
-            gradientBase: '#e98e90',
-            gradientShade: '#e98eb9',
-        },
-        quinary: {
-            main: '#a26ae1',
-            light: '#e9d9fb',
-            gradientBase: '#b887ee',
-            gradientShade: '#dd94ef',
-        },
-    },
-    status: {
-        success: {
-            ...pallet.green,
-        },
-        default: {
-            ...pallet.blue,
-        },
-        warning: {
-            ...pallet.orange,
-        },
-        danger: {
-            main: '#b54025',
-            light: '#f7d7d0',
-        },
-    },
     font: {
         size: {
             tiny: '1rem',
