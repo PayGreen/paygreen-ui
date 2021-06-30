@@ -26,7 +26,6 @@ import {
     alignOptions,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
-import Card from '../Card/Card';
 import Text from '../Text/Text';
 import Grid from './Grid';
 
@@ -99,15 +98,15 @@ storiesOf(folder.grid + 'Grid', module)
             )}
         >
             {sampleTexts.map((element, index) => (
-                <Card key={index}>
-                    <Text
-                        marginLateral={spaceOptions.sm}
-                        marginTop={spaceOptions.sm}
-                        marginBottom={spaceOptions.sm}
-                    >
-                        {element}
-                    </Text>
-                </Card>
+                <Text
+                    key={index}
+                    hasBackground={true}
+                    paddingLateral={spaceOptions.sm}
+                    paddingTop={spaceOptions.sm}
+                    paddingBottom={spaceOptions.sm}
+                >
+                    {element}
+                </Text>
             ))}
         </Grid>
     ));

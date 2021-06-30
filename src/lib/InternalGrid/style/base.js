@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { gridGap } from '../../Grid/style/base';
+import { calculateSpace, blockSpace } from '../../../shared/spaces';
 
 const displayStyle = {
     flex: css`
@@ -18,8 +18,21 @@ const displayStyle = {
         grid-template-rows: ${props => props.gridTemplateRows};
         justify-items: ${props => props.justifyItems};
         align-items: ${props => props.alignItems};
+        gap: ${props =>
+            blockSpace(
+                'sm',
+                calculateSpace(props.gridGap, 0, 1, 'space'),
+                'space',
+            )};
 
-        ${gridGap};
+        @media ${props => props.theme.screen.min.lg} {
+            gap: ${props =>
+                blockSpace(
+                    'md',
+                    calculateSpace(props.gridGap, 0, 1, 'space'),
+                    'space',
+                )};
+        }
     `,
 };
 
