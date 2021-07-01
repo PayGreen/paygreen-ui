@@ -9,6 +9,7 @@ import {
     fontSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Title from '../Title/Title';
 import { CrossIcon } from '../Icon/Icon';
 import ModalHeader from '../ModalHeader/ModalHeader';
@@ -16,17 +17,19 @@ import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from './ModalContent';
 import Text from '../Text/Text';
 
-const paddingLateral = 'Lateral padding';
-
 storiesOf(folder.popup + folder.sub.modal + 'ModalContent', module)
     .addDecorator(withKnobs)
     .add('ModalContent', () => (
         <ModalContent
-            blockWidth={select('Block width', spaceOptions, spaceOptions.md)}
+            blockWidth={select(
+                labels.blockWidth,
+                spaceOptions,
+                spaceOptions.md,
+            )}
         >
             <ModalHeader
                 paddingLateral={select(
-                    paddingLateral,
+                    labels.paddingLateral,
                     spaceOptions,
                     spaceOptions.sm,
                 )}
@@ -42,7 +45,7 @@ storiesOf(folder.popup + folder.sub.modal + 'ModalContent', module)
                 )}
             >
                 <Title textSize={fontSizeOptions.md}>
-                    {text('Label', 'This is the Title')}
+                    {text('Title', 'This is the Title')}
                 </Title>
 
                 <CrossIcon
@@ -54,7 +57,7 @@ storiesOf(folder.popup + folder.sub.modal + 'ModalContent', module)
 
             <ModalBody
                 paddingLateral={select(
-                    paddingLateral,
+                    labels.paddingLateral,
                     spaceOptions,
                     spaceOptions.sm,
                 )}

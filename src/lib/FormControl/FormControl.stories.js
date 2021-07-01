@@ -12,6 +12,7 @@ import {
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import DaHelp from '../DaHelp/DaHelp';
 import DaInput from '../DaInput/DaInput';
 import DaLabel from '../DaLabel/DaLabel';
@@ -22,9 +23,6 @@ import CheckboxGroup from '../CheckboxGroup/CheckboxGroup';
 import Text from '../Text/Text';
 import { CardsIcon, QuestionBoldIcon, UsersIcon } from '../Icon/Icon';
 import FormControl from './FormControl';
-
-const colorStatusLabel = 'Status color';
-const requiredLabel = 'Required';
 
 const selectOptions = [
     {
@@ -73,13 +71,17 @@ storiesOf(folder.form + 'FormControl', module)
     .add('FormControl with DaSelect', () => (
         <FormControl
             colorStatus={select(
-                colorStatusLabel,
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
-            required={boolean(requiredLabel, false)}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            required={boolean(labels.required, false)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
         >
             <DaLabel>Select label</DaLabel>
 
@@ -87,7 +89,7 @@ storiesOf(folder.form + 'FormControl', module)
                 defaultValue=""
                 options={selectOptions}
                 blockWidth={inputWidthOptions.sm}
-                icon={boolean('Has icon', true) ? <UsersIcon /> : null}
+                icon={boolean(labels.icon, true) ? <UsersIcon /> : null}
             />
         </FormControl>
     ))
@@ -97,20 +99,20 @@ storiesOf(folder.form + 'FormControl', module)
         return (
             <FormControl
                 colorStatus={select(
-                    colorStatusLabel,
+                    labels.colorStatus,
                     formStatusOptions,
                     formStatusDefault,
                 )}
-                required={boolean(requiredLabel, false)}
-                hasStaticWidth={boolean('Has static width', false)}
+                required={boolean(labels.required, false)}
+                hasStaticWidth={boolean(labels.hasStaticWidth, false)}
             >
                 <DaLabel>Input label</DaLabel>
 
                 <DaInput
                     placeholder="Firstname Lastname"
                     blockWidth={inputWidthOptions.sm}
-                    icon={boolean('Has icon', true) ? <CardsIcon /> : null}
-                    disabled={boolean('Disabled', false)}
+                    icon={boolean(labels.icon, true) ? <CardsIcon /> : null}
+                    disabled={boolean(labels.disabled, false)}
                 />
 
                 <DaHelp onClick={() => setOpen(!isOpen)}>
@@ -133,11 +135,11 @@ storiesOf(folder.form + 'FormControl', module)
     .add('Form Control with CheckboxGroup and Message', () => (
         <FormControl
             colorStatus={select(
-                colorStatusLabel,
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
-            required={boolean(requiredLabel, false)}
+            required={boolean(labels.required, false)}
         >
             <CheckboxGroup
                 name="checkboxes"
@@ -158,12 +160,12 @@ storiesOf(folder.form + 'FormControl', module)
     .add('FormControl with DaTextarea', () => (
         <FormControl
             colorStatus={select(
-                colorStatusLabel,
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
-            required={boolean(requiredLabel, false)}
-            hasStaticWidth={boolean('Has static width', false)}
+            required={boolean(labels.required, false)}
+            hasStaticWidth={boolean(labels.hasStaticWidth, false)}
         >
             <DaLabel>Textarea description</DaLabel>
 

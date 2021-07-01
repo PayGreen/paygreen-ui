@@ -11,6 +11,7 @@ import {
     blockPositionOptions,
     fontSizeOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Popin from './Popin';
@@ -20,22 +21,30 @@ storiesOf(folder.popup + 'Popin', module)
     .add('Popin', () => (
         <div style={{ position: 'relative', marginTop: '100px' }}>
             <Popin
-                isActive={boolean('Is active', true)}
+                isActive={boolean(labels.isActive, true)}
                 align={select(
-                    'Align',
+                    labels.align,
                     blockPositionOptions,
                     blockPositionOptions.left,
                 )}
-                blockWidth={select('Width', spaceOptions, spaceOptions.sm)}
-                radiusSize={select('Radius size', radiusOptions, radiusDefault)}
+                blockWidth={select(
+                    labels.blockWidth,
+                    spaceOptions,
+                    spaceOptions.sm,
+                )}
+                radiusSize={select(
+                    labels.radiusSize,
+                    radiusOptions,
+                    radiusDefault,
+                )}
                 shadowSize={select(
-                    'Shadow size',
+                    labels.shadowSize,
                     shadowSizeOptions,
                     shadowSizeOptions.sm,
                 )}
-                marginTop={select('Margin top', spaceOptions, spaceDefault)}
+                marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
                 marginBottom={select(
-                    'Margin bottom',
+                    labels.marginBottom,
                     spaceOptions,
                     spaceDefault,
                 )}

@@ -20,32 +20,41 @@ import {
     formStatusOptions,
     formStatusDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Dot from './Dot';
 
 storiesOf(folder.media + 'Dot', module)
     .addDecorator(withKnobs)
     .add('Dot', () => (
         <Dot
-            dotStyle={radios('Style', dotStyleOptions, dotStyleDefault)}
-            dotSize={select('Size', iconSizeOptions, iconSizeDefault)}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
-            marginLeft={select('Margin left', spaceOptions, spaceDefault)}
-            marginRight={select('Margin right', spaceOptions, spaceDefault)}
-            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+            dotStyle={radios('Dot style', dotStyleOptions, dotStyleDefault)}
+            dotSize={select('Dot size', iconSizeOptions, iconSizeDefault)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginLeft={select(labels.marginLeft, spaceOptions, spaceDefault)}
+            marginRight={select(labels.marginRight, spaceOptions, spaceDefault)}
+            colorType={radios(
+                labels.colorType,
+                colorTypeOptions,
+                colorTypeDefault,
+            )}
             colorPallet={radios(
-                'Color pallet',
+                labels.colorPallet,
                 colorPalletOptions,
                 colorPalletDefault,
             )}
             colorTheme={select(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select('Grey color', greyOptions, greyDefault)}
+            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
             colorStatus={select(
-                'Status color',
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}

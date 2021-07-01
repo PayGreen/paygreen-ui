@@ -14,45 +14,44 @@ import {
     gradientOptions,
     fontSizeOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Badge from './Badge';
-
-const colorTypeLabel = 'Color type';
-const colorThemeLabel = 'Color theme';
-const gradientTypeLabel = 'Gradient type';
-const textSizeLabel = 'Text size';
-const textLabel = 'Text';
 
 storiesOf(folder.text + 'Badge', module)
     .addDecorator(withKnobs)
     .add('Badge', () => (
         <Badge
-            htmlTag={radios('HTML tag', iconHtmlTagOptions, iconHtmlTagDefault)}
+            htmlTag={radios(
+                labels.htmlTag,
+                iconHtmlTagOptions,
+                iconHtmlTagDefault,
+            )}
             colorType={select(
-                colorTypeLabel,
+                labels.colorType,
                 colorTypeOptions,
                 colorTypeDefault,
             )}
             colorStyle={radios(
-                'Color style',
+                labels.colorStyle,
                 colorStyleOptions,
                 colorStyleDefault,
             )}
             colorTheme={select(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             gradient={radios(
-                gradientTypeLabel,
+                labels.gradient,
                 gradientOptions,
                 gradientOptions.theme,
             )}
             textSize={select(
-                textSizeLabel,
+                labels.textSize,
                 fontSizeOptions,
                 fontSizeOptions.xxs,
             )}
         >
-            {text(textLabel, 'Example')}
+            {text(labels.text, 'Example')}
         </Badge>
     ));

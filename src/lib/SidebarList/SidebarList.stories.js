@@ -6,27 +6,25 @@ import {
     colorPalletOptions,
     colorThemeDefault,
     colorThemeOptions,
-    fontSizeOptions,
     greyOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Link from '../Link/Link';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarList from './SidebarList';
 
-const colorThemeLabel = 'Color theme';
-
 storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
     .addDecorator(withKnobs)
     .add('SidebarList', () => (
-        <SidebarList isOpen={boolean('is Open', true)}>
+        <SidebarList isOpen={boolean(labels.isOpen, true)}>
             <a href="#">
                 <SidebarItem
                     colorTheme={radios(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
-                    isActive={boolean('Is Active', false)}
+                    isActive={boolean(labels.isActive, false)}
                 >
                     <Link
                         colorPallet={colorPalletOptions.wab}
@@ -40,7 +38,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
             <a href="#">
                 <SidebarItem
                     colorTheme={radios(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}

@@ -17,35 +17,52 @@ import {
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Title from './Title';
 
 storiesOf(folder.text + 'Title', module)
     .addDecorator(withKnobs)
     .add('Title', () => (
         <Title
-            hasUnderline={boolean('Underline', true)}
-            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+            hasUnderline={boolean(labels.hasUnderline, true)}
+            colorType={radios(
+                labels.colorType,
+                colorTypeOptions,
+                colorTypeDefault,
+            )}
             colorPallet={radios(
-                'Color pallet',
+                labels.colorPallet,
                 colorPalletOptions,
                 colorPalletOptions.wab,
             )}
             colorTheme={select(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select('Grey color', greyOptions, greyOptions.grey60)}
+            colorWab={select(labels.colorWab, greyOptions, greyOptions.grey60)}
             colorStatus={select(
-                'Status color',
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
-            textSize={select('Size', fontSizeOptions, fontSizeOptions.lg)}
-            align={radios('Align', alignOptions, alignDefault)}
-            marginLateral={select('Lateral margin', spaceOptions, spaceDefault)}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            textSize={select(
+                labels.textSize,
+                fontSizeOptions,
+                fontSizeOptions.lg,
+            )}
+            align={radios(labels.align, alignOptions, alignDefault)}
+            marginLateral={select(
+                labels.marginLateral,
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
         >
             Your title with <strong>an emphasis</strong>
         </Title>

@@ -15,6 +15,7 @@ import {
     inputWidthDefault,
     spaceOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Select from './Select';
 
 const options = [
@@ -85,17 +86,21 @@ storiesOf(folder.form + 'Select', module)
     .add('Select', () => (
         <Select
             id="select1"
-            label={text('Label', 'Your choice')}
+            label={text(labels.label, 'Your choice')}
             defaultValue=""
-            options={boolean('Has optgroup', true) ? optionsGroup : options}
-            disabled={boolean('Disabled', false)}
-            readOnly={boolean('Readonly', false)}
-            status={radios('Status', formStatusOptions, formStatusDefault)}
-            blockWidth={radios('Width', inputWidthOptions, inputWidthDefault)}
-            hasShadow={boolean('With shadow', false)}
-            marginTop={select('Margin top', spaceOptions, spaceOptions.md)}
+            options={boolean(labels.optgroup, true) ? optionsGroup : options}
+            disabled={boolean(labels.disabled, false)}
+            readOnly={boolean(labels.readOnly, false)}
+            status={radios(labels.status, formStatusOptions, formStatusDefault)}
+            blockWidth={radios(
+                labels.blockWidth,
+                inputWidthOptions,
+                inputWidthDefault,
+            )}
+            hasShadow={boolean(labels.hasShadow, false)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceOptions.md)}
             marginBottom={select(
-                'Margin bottom',
+                labels.marginBottom,
                 spaceOptions,
                 spaceOptions.md,
             )}

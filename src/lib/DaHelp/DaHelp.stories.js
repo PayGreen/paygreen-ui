@@ -6,6 +6,7 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import DaHelp from './DaHelp';
 import { QuestionBoldIcon } from '../Icon/Icon';
 
@@ -14,12 +15,12 @@ storiesOf(folder.form + folder.sub.button + 'DaHelp', module)
     .add('DaHelp', () => (
         <DaHelp
             fieldSize={radios(
-                'Field size',
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
-            isActive={boolean('Is active', false)}
-            isRounded={boolean('Is rounded', false)}
+            isActive={boolean(labels.isActive, false)}
+            isRounded={boolean(labels.isRounded, false)}
         >
             <QuestionBoldIcon />
         </DaHelp>

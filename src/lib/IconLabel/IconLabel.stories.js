@@ -9,35 +9,38 @@ import {
     spaceDefault,
     iconSizeOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { OutIcon } from '../Icon/Icon';
 import IconLabel from './IconLabel';
-
-const colorThemeLabel = 'Color theme';
 
 storiesOf(folder.text + 'IconLabel', module)
     .addDecorator(withKnobs)
     .add('IconLabel', () => (
         <IconLabel
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
-            marginLeft={select('Margin left', spaceOptions, spaceDefault)}
-            marginRight={select('Margin right', spaceOptions, spaceDefault)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginLeft={select(labels.marginLeft, spaceOptions, spaceDefault)}
+            marginRight={select(labels.marginRight, spaceOptions, spaceDefault)}
         >
             <OutIcon
                 iconSize={iconSizeOptions.xs}
                 marginRight={spaceOptions.xs}
                 colorTheme={radios(
-                    colorThemeLabel,
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
             />
 
-            {text('Label', 'Sample')}
+            {text(labels.text, 'Sample')}
         </IconLabel>
     ));

@@ -17,6 +17,7 @@ import {
     localeDefault,
     localeOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { ScheduleIcon } from '../Icon/Icon';
 import DatePicker from './DatePicker';
 
@@ -34,17 +35,17 @@ storiesOf(folder.form + 'DatePicker', module)
     .add('DatePicker', () => (
         <DatePickerWrapper
             placeholder={'Ex: ' + moment().format('DD/MM/YYYY')}
-            disabled={boolean('Disabled', false)}
-            readOnly={boolean('Readonly', false)}
+            disabled={boolean(labels.disabled, false)}
+            readOnly={boolean(labels.readOnly, false)}
             locale={select('Locale', localeOptions, localeDefault)}
-            isRounded={boolean('Is rounded', false)}
+            isRounded={boolean(labels.isRounded, false)}
             fieldSize={radios(
-                'Field size',
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
             colorStatus={select(
-                'Color status',
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
@@ -57,6 +58,6 @@ storiesOf(folder.form + 'DatePicker', module)
                 moment().add(1, 'M').format('DD/MM/YYYY'),
             )}
             resetDate={text('Reset date', moment().format('DD/MM/YYYY'))}
-            icon={boolean('Has icon', true) ? <ScheduleIcon /> : null}
+            icon={boolean(labels.icon, true) ? <ScheduleIcon /> : null}
         />
     ));

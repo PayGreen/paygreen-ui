@@ -13,6 +13,7 @@ import {
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text, radios } from '@storybook/addon-knobs';
+import labels from '../../shared/labels';
 
 storiesOf(folder.form + folder.sub.button + 'Button', module)
     .addDecorator(withKnobs)
@@ -20,28 +21,28 @@ storiesOf(folder.form + folder.sub.button + 'Button', module)
         <button type="button">
             <Button
                 buttonStyle={radios(
-                    'Button style',
+                    labels.buttonStyle,
                     buttonStyleOptions,
                     buttonStyleDefault,
                 )}
                 colorType={radios(
-                    'Color type',
+                    labels.colorType,
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
                 colorTheme={radios(
-                    'Color theme',
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
                 buttonSize={radios(
-                    'Button size',
+                    labels.buttonSize,
                     buttonSizeOptions,
                     buttonSizeDefault,
                 )}
-                isDisabled={boolean('Disabled', false)}
+                isDisabled={boolean(labels.disabled, false)}
             >
-                {text('Label', 'CTA button')}
+                {text(labels.label, 'CTA button')}
             </Button>
         </button>
     ));

@@ -2,19 +2,18 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { folder } from '../../shared/constants';
+import labels from '../../shared/labels';
 import DaTableCell from './DaTableCell';
-
-const isLoadingLabel = 'Is loading';
 
 storiesOf(folder.table + folder.sub.daTable + 'DaTableCell', module)
     .addDecorator(withKnobs)
     .add('DaTableCell', () => (
         <DaTableCell
-            isLoading={boolean(isLoadingLabel, false)}
             isMain={boolean('Is main', true)}
             isId={boolean('Is id', false)}
-            label={text('Label', 'Label')}
+            isLoading={boolean(labels.isLoading, false)}
+            label={text(labels.label, 'Label')}
         >
-            {boolean(isLoadingLabel, false) ? null : 'Sample'}
+            {boolean(labels.isLoading, false) ? null : 'Sample'}
         </DaTableCell>
     ));

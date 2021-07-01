@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import { folder, spaceOptions, spaceDefault } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Text from '../Text/Text';
 import Box from './Box';
 
@@ -14,47 +15,47 @@ storiesOf(folder.block + 'Box', module)
     .addDecorator(withKnobs)
     .add('Box', () => (
         <Box
-            hasResponsivePadding={boolean('Has responsive padding', false)}
-            padding={select('Padding', spaceOptions, spaceDefault)}
+            hasResponsivePadding={boolean(labels.hasResponsivePadding, false)}
+            padding={select(labels.padding, spaceOptions, spaceDefault)}
             paddingTop={select(
-                'Padding top',
+                labels.paddingTop,
                 spaceOptionsCustom,
                 spaceOptionsCustom.null,
             )}
             paddingRight={select(
-                'Padding right',
+                labels.paddingRight,
                 spaceOptionsCustom,
                 spaceOptionsCustom.null,
             )}
             paddingLeft={select(
-                'Padding left',
+                labels.paddingLeft,
                 spaceOptionsCustom,
                 spaceOptionsCustom.null,
             )}
             paddingBottom={select(
-                'Padding bottom',
+                labels.paddingBottom,
                 spaceOptionsCustom,
                 spaceOptionsCustom.null,
             )}
-            hasResponsiveMargin={boolean('Has responsive margin', false)}
-            margin={select('Margin', spaceOptions, spaceDefault)}
+            hasResponsiveMargin={boolean(labels.hasResponsiveMargin, false)}
+            margin={select(labels.margin, spaceOptions, spaceDefault)}
             marginTop={select(
-                'Margin top',
+                labels.marginTop,
                 spaceOptionsCustom,
                 spaceOptionsCustom.null,
             )}
             marginRight={select(
-                'Margin right',
+                labels.marginRight,
                 spaceOptionsCustom,
                 spaceOptionsCustom.null,
             )}
             marginLeft={select(
-                'Margin left',
+                labels.marginLeft,
                 spaceOptionsCustom,
                 spaceOptionsCustom.null,
             )}
             marginBottom={select(
-                'Margin bottom',
+                labels.marginBottom,
                 spaceOptionsCustom,
                 spaceOptionsCustom.null,
             )}

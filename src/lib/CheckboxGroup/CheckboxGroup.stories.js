@@ -6,6 +6,7 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import CheckboxGroup from './CheckboxGroup';
 
 const checkboxOptions = [
@@ -28,12 +29,12 @@ storiesOf(folder.form + folder.sub.checkbox + 'CheckboxGroup', module)
     .add('CheckboxGroup', () => (
         <CheckboxGroup
             name="checkboxes"
-            legend={text('Checkboxes Label', 'Checkboxes Label')}
+            legend={text(labels.label, 'Checkboxes Label')}
             value={checkboxOptions[1].value}
             options={checkboxOptions}
-            disabled={boolean('Disabled', false)}
+            disabled={boolean(labels.disabled, false)}
             fieldSize={radios(
-                'Field size',
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}

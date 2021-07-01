@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { folder } from '../../shared/constants';
 import Main from './Main';
 import Topbar from '../Topbar/Topbar';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Box from '../Box/Box';
 
-const mainMenuIsOpenLabel = 'Open sidebar';
+storiesOf(folder.nav + 'Main', module).add('Main', () => {
+    const [isOpen, setOpen] = useState(true);
 
-storiesOf(folder.nav + 'Main', module)
-    .addDecorator(withKnobs)
-    .add('Main', () => (
-        <Main isOpen={boolean(mainMenuIsOpenLabel, true)}>
+    return (
+        <Main isOpen={isOpen}>
             <Topbar>
-                <MenuHamburger isOpen={boolean(mainMenuIsOpenLabel, true)} />
+                <MenuHamburger
+                    isOpen={isOpen}
+                    onClick={() => setOpen(!isOpen)}
+                />
             </Topbar>
 
             <Box />
         </Main>
-    ));
+    );
+});

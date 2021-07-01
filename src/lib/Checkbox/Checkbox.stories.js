@@ -6,6 +6,7 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Checkbox from './Checkbox';
 
 storiesOf(folder.form + folder.sub.checkbox + 'Checkbox', module)
@@ -14,9 +15,9 @@ storiesOf(folder.form + folder.sub.checkbox + 'Checkbox', module)
         <Checkbox
             id="first"
             label="First Choice"
-            disabled={boolean('Disabled', false)}
+            disabled={boolean(labels.disabled, false)}
             fieldSize={radios(
-                'Field size',
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}

@@ -8,6 +8,7 @@ import {
     labelHtmlTagOptions,
     labelHtmlTagDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import DaLabel from './DaLabel';
 
 storiesOf(folder.form + 'DaLabel', module)
@@ -15,16 +16,16 @@ storiesOf(folder.form + 'DaLabel', module)
     .add('DaLabel', () => (
         <DaLabel
             fieldSize={select(
-                'Field Size',
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
             htmlTag={select(
-                'HTML tag',
+                labels.htmlTag,
                 labelHtmlTagOptions,
                 labelHtmlTagDefault,
             )}
-            required={boolean('Is required', false)}
+            required={boolean(labels.required, false)}
         >
             Label Description
         </DaLabel>

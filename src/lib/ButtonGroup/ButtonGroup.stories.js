@@ -10,6 +10,7 @@ import {
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import ButtonGroup from './ButtonGroup';
 import Button from '../Button/Button';
 
@@ -17,17 +18,29 @@ storiesOf(folder.form + folder.sub.button + 'ButtonGroup', module)
     .addDecorator(withKnobs)
     .add('ButtonGroup', () => (
         <ButtonGroup
-            align={radios('Buttons align', alignOptions, alignOptions.center)}
-            hasResetedMargins={boolean('Compensate buttons margin', false)}
-            marginLateral={select('Lateral margin', spaceOptions, spaceDefault)}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            align={radios(
+                labels.align,
+                alignOptions,
+                alignOptions.center,
+            )}
+            hasResetedMargins={boolean('Has reseted margins', false)}
+            marginLateral={select(
+                labels.marginLateral,
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
         >
             <button type="button">
                 <Button
                     buttonStyle={buttonStyleOptions.line}
                     buttonSize={radios(
-                        'Buttons size',
+                        labels.buttonSize,
                         buttonSizeOptions,
                         buttonSizeDefault,
                     )}
@@ -39,7 +52,7 @@ storiesOf(folder.form + folder.sub.button + 'ButtonGroup', module)
             <button type="button">
                 <Button
                     buttonSize={radios(
-                        'Buttons size',
+                        labels.buttonSize,
                         buttonSizeOptions,
                         buttonSizeDefault,
                     )}

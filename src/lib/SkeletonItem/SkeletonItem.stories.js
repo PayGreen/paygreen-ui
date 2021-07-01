@@ -17,63 +17,58 @@ import {
     skeletonItemTypeDefault,
     imageSizeOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Text from '../Text/Text';
 import SkeletonItem from './SkeletonItem';
-
-const colorWabLabel = 'Grey color';
-const borderRadiusLabel = 'Border radius';
-const blockWidthLabel = 'Width';
-const blockHeightLabel = 'Height';
-const skeletonTypeLabel = 'Skeleton type';
 
 storiesOf(folder.loading + 'SkeletonItem', module)
     .addDecorator(withKnobs)
     .add('SkeletonItem', () => (
         <SkeletonItem
             skeletonItemType={radios(
-                skeletonTypeLabel,
+                'Skeleton item type',
                 skeletonItemTypeOptions,
                 skeletonItemTypeDefault,
             )}
             blockWidth={select(
-                blockWidthLabel,
+                labels.blockWidth,
                 imageSizeOptions,
                 imageSizeOptions.sm,
             )}
             blockHeight={select(
-                blockHeightLabel,
+                labels.blockHeight,
                 imageSizeOptions,
                 imageSizeOptions.sm,
             )}
-            colorWab={select(colorWabLabel, greyOptions, greyOptions.grey20)}
+            colorWab={select(labels.colorWab, greyOptions, greyOptions.grey20)}
             radiusSize={radios(
-                borderRadiusLabel,
+                labels.radiusSize,
                 radiusOptions,
                 radiusOptions.none,
             )}
-            hasResponsiveMargin={boolean('Has responsive margin', false)}
-            margin={select('Margin', spaceOptions, spaceDefault)}
+            hasResponsiveMargin={boolean(labels.hasResponsiveMargin, false)}
+            margin={select(labels.margin, spaceOptions, spaceDefault)}
         />
     ))
     .add('SkeletonItem with children', () => (
         <SkeletonItem
             skeletonItemType={skeletonItemTypeOptions.text}
             blockWidth={select(
-                blockWidthLabel,
+                labels.blockWidth,
                 imageSizeOptions,
                 imageSizeOptions.auto,
             )}
-            colorWab={select(colorWabLabel, greyOptions, greyOptions.grey20)}
+            colorWab={select(labels.colorWab, greyOptions, greyOptions.grey20)}
             radiusSize={radios(
-                borderRadiusLabel,
+                labels.radiusSize,
                 radiusOptions,
                 radiusOptions.none,
             )}
-            isLoading={boolean('Is loading', true)}
+            isLoading={boolean(labels.isLoading, true)}
         >
             <Text>
                 {text(
-                    'Text of child',
+                    labels.text,
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua. Ut enim ad minim veniam',
                 )}
             </Text>

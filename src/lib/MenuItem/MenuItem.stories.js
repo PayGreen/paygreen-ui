@@ -7,6 +7,7 @@ import {
     colorThemeDefault,
     iconSizeOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { LinkIcon } from '../Icon/Icon';
 import MenuItem from './MenuItem';
 
@@ -17,7 +18,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuItem', module)
             <MenuItem
                 isClickable={boolean('Is clickable', true)}
                 colorTheme={radios(
-                    'Color theme',
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}

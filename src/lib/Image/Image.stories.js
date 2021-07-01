@@ -18,10 +18,11 @@ import {
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
-import Image from './Image';
+import labels from '../../shared/labels';
 import portraitFile from './sample/portrait.png';
 import photoFile from './sample/sample.png';
 import drawFile from './sample/sample.svg';
+import Image from './Image';
 
 storiesOf(folder.media + 'Image', module)
     .addDecorator(withKnobs)
@@ -30,23 +31,23 @@ storiesOf(folder.media + 'Image', module)
             imageType={imageTypeOptions.cover}
             hasModifiedColor={boolean('Modify color', true)}
             colorTheme={select(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            bottomStyle={radios('Bottom style', maskOptions, maskDefault)}
+            bottomStyle={radios(labels.bottomStyle, maskOptions, maskDefault)}
             blockWidth={select(
-                'Image width',
+                labels.blockWidth,
                 imageSizeOptions,
                 imageSizeOptions.xl,
             )}
             blockHeight={select(
-                'Image height',
+                labels.blockHeight,
                 imageSizeOptions,
                 imageSizeOptions.xs,
             )}
             radiusSize={radios(
-                'Border radius',
+                labels.radiusSize,
                 radiusOptions,
                 radiusOptions.none,
             )}
@@ -57,28 +58,28 @@ storiesOf(folder.media + 'Image', module)
     .add('Normal image', () => (
         <Image
             blockWidth={select(
-                'Image width',
+                labels.blockWidth,
                 imageSizeOptions,
                 imageSizeOptions.xl,
             )}
             blockHeight={select(
-                'Image height',
+                labels.blockHeight,
                 imageSizeOptions,
                 imageSizeOptions.xs,
             )}
-            padding={select('Padding', spaceOptions, spaceOptions.none)}
+            padding={select(labels.padding, spaceOptions, spaceOptions.none)}
             shadowSize={select(
-                'Shadow size',
+                labels.shadowSize,
                 shadowSizeOptions,
                 shadowSizeOptions.none,
             )}
             justifyContent={select(
-                'Justify content',
+                labels.justifyContent,
                 justifyContentOptions,
                 justifyContentOptions.center,
             )}
             alignItems={select(
-                'Align items',
+                labels.alignItems,
                 alignItemsOptions,
                 alignItemsDefault,
             )}
@@ -90,26 +91,26 @@ storiesOf(folder.media + 'Image', module)
         <Image
             imageType={imageTypeOptions.picture}
             blockWidth={select(
-                'Image width',
+                labels.blockWidth,
                 imageSizeOptions,
                 imageSizeOptions.xl,
             )}
             blockHeight={select(
-                'Image height',
+                labels.blockHeight,
                 imageSizeOptions,
                 imageSizeOptions.xs,
             )}
             radiusSize={radios(
-                'Border radius',
+                labels.radiusSize,
                 radiusOptions,
                 radiusOptions.lg,
             )}
             shadowSize={select(
-                'Shadow style',
+                labels.shadowSize,
                 shadowSizeOptions,
                 shadowSizeDefault,
             )}
-            padding={select('Padding', spaceOptions, spaceOptions.none)}
+            padding={select(labels.padding, spaceOptions, spaceOptions.none)}
         >
             <img src={photoFile} alt="picture" />
         </Image>
@@ -118,21 +119,25 @@ storiesOf(folder.media + 'Image', module)
         <Image
             imageType={imageTypeOptions.picture}
             isCircle={true}
-            hasDecoration={boolean('With decorators', true)}
+            hasDecoration={boolean('Has decoration', true)}
             blockWidth={select(
-                'Image width',
+                labels.blockWidth,
                 imageSizeOptions,
                 imageSizeOptions.sm,
             )}
             blockHeight={select(
-                'Image height',
+                labels.blockHeight,
                 imageSizeOptions,
                 imageSizeOptions.auto,
             )}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
-            marginLeft={select('Margin left', spaceOptions, spaceDefault)}
-            marginRight={select('Margin right', spaceOptions, spaceDefault)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
+            marginLeft={select(labels.marginLeft, spaceOptions, spaceDefault)}
+            marginRight={select(labels.marginRight, spaceOptions, spaceDefault)}
         >
             <img src={portraitFile} alt="picture" />
         </Image>

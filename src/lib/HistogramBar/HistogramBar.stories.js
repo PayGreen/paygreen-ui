@@ -8,13 +8,14 @@ import {
     spaceOptions,
     inputWidthOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import HistogramBar from './HistogramBar';
 
 storiesOf(folder.graph + 'HistogramBar', module)
     .addDecorator(withKnobs)
     .add('HistogramBar', () => {
         // Knobs as dynamic variables
-        const dynamicValue = number('Value', 60, {
+        const dynamicValue = number(labels.value, 60, {
             range: true,
             max: 100,
         });
@@ -25,17 +26,17 @@ storiesOf(folder.graph + 'HistogramBar', module)
                 value={dynamicValue}
                 legend={dynamicValue + ' % in september'}
                 colorTheme={select(
-                    'Color theme',
+                    labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
                 blockWidth={select(
-                    'Block width',
+                    labels.blockWidth,
                     inputWidthOptions,
                     inputWidthOptions.xs,
                 )}
                 paddingLateral={select(
-                    'Lateral padding',
+                    labels.paddingLateral,
                     spaceOptions,
                     spaceOptions.sm,
                 )}

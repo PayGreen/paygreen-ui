@@ -6,6 +6,7 @@ import {
     colorThemeOptions,
     colorThemeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Pagination from './Pagination';
 
 storiesOf(folder.table + folder.sub.pagination + 'Pagination', module)
@@ -22,7 +23,7 @@ storiesOf(folder.table + folder.sub.pagination + 'Pagination', module)
                 max: 19,
             })}
             colorTheme={select(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}

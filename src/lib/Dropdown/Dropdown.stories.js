@@ -47,37 +47,39 @@ const popinProps = {
     blockWidth: spaceOptions.sm,
 };
 
-const hasOverlayLabel = 'Has overlay';
-
 storiesOf(folder.popup + 'Dropdown', module)
     .addDecorator(withKnobs)
-    .add('Dropdown with ClickableBlock', () => (
-        <Dropdown hasOverlay={boolean(hasOverlayLabel, true)}>
-            <ClickableBlock
-                paddingLateral={spaceOptions.sm}
-                paddingTop={spaceOptions.sm}
-                paddingBottom={spaceOptions.sm}
-            >
-                <Text>Click here</Text>
-            </ClickableBlock>
+    .add('Dropdown with ClickableBlock', () => {
+        const hasOverlay = boolean('Has overlay', true);
 
-            <Popin {...popinProps}>
-                {popinContent}
+        return (
+            <Dropdown hasOverlay={hasOverlay}>
+                <ClickableBlock
+                    paddingLateral={spaceOptions.sm}
+                    paddingTop={spaceOptions.sm}
+                    paddingBottom={spaceOptions.sm}
+                >
+                    <Text>Click here</Text>
+                </ClickableBlock>
 
-                {!boolean(hasOverlayLabel, true) ? (
-                    <ButtonGroup marginBottom={spaceOptions.sm}>
-                        <DropdownControl>
-                            <button type="button">
-                                <DaButton buttonSize={buttonSizeOptions.sm}>
-                                    Close Me
-                                </DaButton>
-                            </button>
-                        </DropdownControl>
-                    </ButtonGroup>
-                ) : null}
-            </Popin>
-        </Dropdown>
-    ))
+                <Popin {...popinProps}>
+                    {popinContent}
+
+                    {!hasOverlay ? (
+                        <ButtonGroup marginBottom={spaceOptions.sm}>
+                            <DropdownControl>
+                                <button type="button">
+                                    <DaButton buttonSize={buttonSizeOptions.sm}>
+                                        Close Me
+                                    </DaButton>
+                                </button>
+                            </DropdownControl>
+                        </ButtonGroup>
+                    ) : null}
+                </Popin>
+            </Dropdown>
+        );
+    })
     .add(
         'Dropdown with Badge',
         () => (

@@ -10,25 +10,24 @@ import {
     fontSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Card from '../Card/Card';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
 import BannerImage from './BannerImage';
 import photoFile from './sample/sample.png';
 
-const colorThemeLabel = 'ColorTheme';
-
 storiesOf(folder.block + 'BannerImage', module)
     .addDecorator(withKnobs)
     .add('BannerImage', () => (
         <BannerImage
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             topStyle={radios(
-                'Wave top direction',
+                labels.topStyle,
                 decorationOptions,
                 decorationDefault,
             )}
@@ -37,7 +36,7 @@ storiesOf(folder.block + 'BannerImage', module)
             <Card hasBackground={false}>
                 <Title
                     colorTheme={radios(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}

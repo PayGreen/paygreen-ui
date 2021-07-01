@@ -8,6 +8,7 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import { ListIcon } from '../Icon/Icon';
 import DaSelect from './DaSelect';
 
@@ -79,24 +80,22 @@ storiesOf(folder.form + 'DaSelect', module)
     .add('DaSelect', () => (
         <DaSelect
             defaultValue=""
-            options={
-                boolean('Has optgroup', true) ? optionsGroup : options
-            }
-            disabled={boolean('Disabled', false)}
-            readOnly={boolean('Readonly', false)}
-            isRounded={boolean('Is rounded', false)}
+            options={boolean(labels.optgroup, true) ? optionsGroup : options}
+            disabled={boolean(labels.disabled, false)}
+            readOnly={boolean(labels.readOnly, false)}
+            isRounded={boolean(labels.isRounded, false)}
             fieldSize={radios(
-                'Field size',
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
             blockWidth={radios(
-                'Block width',
+                labels.blockWidth,
                 inputWidthOptions,
                 inputWidthDefault,
             )}
-            hasStaticWidth={boolean('Has static width', false)}
-            hasHelpButton={boolean('Help button', false)}
-            icon={boolean('Has icon', true) ? <ListIcon /> : null}
+            hasStaticWidth={boolean(labels.hasStaticWidth, false)}
+            hasHelpButton={boolean(labels.hasHelpButton, false)}
+            icon={boolean(labels.icon, true) ? <ListIcon /> : null}
         />
     ));

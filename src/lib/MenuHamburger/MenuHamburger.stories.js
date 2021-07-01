@@ -14,31 +14,32 @@ import {
     greyOptions,
     greyDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import MenuHamburger from './MenuHamburger';
 
 storiesOf(folder.nav + folder.sub.control + 'MenuHamburger', module)
     .addDecorator(withKnobs)
     .add('MenuHamburger', () => (
         <MenuHamburger
-            isOpen={boolean('Is open', false)}
+            isOpen={boolean(labels.isOpen, false)}
             arrowDirection={radios(
                 'Arrow direction',
                 lateralPositionOptions,
                 lateralPositionDefault,
             )}
             colorPallet={radios(
-                'Color pallet',
+                labels.colorPallet,
                 colorPalletOptions,
                 colorPalletDefault,
             )}
             colorTheme={select(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select('Color wab', greyOptions, greyDefault)}
+            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
             colorStatus={select(
-                'Color status',
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}

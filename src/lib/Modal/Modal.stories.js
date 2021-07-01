@@ -9,33 +9,32 @@ import {
     fontSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
-import Modal from './Modal';
+import labels from '../../shared/labels';
+import { CrossIcon } from '../Icon/Icon';
 import ModalHeader from '../ModalHeader/ModalHeader';
 import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from '../ModalContent/ModalContent';
 import Overlay from '../Overlay/Overlay';
 import Title from '../Title/Title';
-import { CrossIcon } from '../Icon/Icon';
 import Text from '../Text/Text';
-
-const paddingLateral = 'Lateral padding';
+import Modal from './Modal';
 
 storiesOf(folder.popup + folder.sub.modal + 'Modal', module)
     .addDecorator(withKnobs)
     .add('Modal', () => (
-        <Modal isOpen={boolean('Is open', true)}>
+        <Modal isOpen={boolean(labels.isOpen, true)}>
             <Overlay opacityValue={20} />
 
             <ModalContent
                 blockWidth={select(
-                    'Block width',
+                    labels.blockWidth,
                     spaceOptions,
                     spaceOptions.md,
                 )}
             >
                 <ModalHeader
                     paddingLateral={select(
-                        paddingLateral,
+                        labels.paddingLateral,
                         spaceOptions,
                         spaceOptions.sm,
                     )}
@@ -51,7 +50,7 @@ storiesOf(folder.popup + folder.sub.modal + 'Modal', module)
                     )}
                 >
                     <Title textSize={fontSizeOptions.md}>
-                        {text('Label', 'This is the Title')}
+                        {text('Title', 'This is the Title')}
                     </Title>
 
                     <CrossIcon
@@ -63,7 +62,7 @@ storiesOf(folder.popup + folder.sub.modal + 'Modal', module)
 
                 <ModalBody
                     paddingLateral={select(
-                        paddingLateral,
+                        labels.paddingLateral,
                         spaceOptions,
                         spaceOptions.sm,
                     )}

@@ -27,14 +27,10 @@ import {
     spaceOptions,
     spaceDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Text from '../Text/Text';
 import Message from './Message';
 import { CautionIcon } from '../Icon/Icon';
-
-const arrowBlockLabel = 'Arrow block';
-const fieldSizeLabel = 'Field size';
-const colorStatusLabel = 'Status color';
-const blockWidthLabel = 'Block width';
 
 const { wab, ...buttonColorPalletOptions } = colorPalletOptions;
 
@@ -43,46 +39,50 @@ storiesOf(folder.popup + 'Message', module)
     .add('Message', () => (
         <Message
             arrowBlock={select(
-                arrowBlockLabel,
+                'Arrow block',
                 blockPositionOptions,
                 blockPositionDefault,
             )}
-            colorType={radios('Color type', colorTypeOptions, colorTypeDefault)}
+            colorType={radios(
+                labels.colorType,
+                colorTypeOptions,
+                colorTypeDefault,
+            )}
             colorPallet={radios(
-                'Color pallet',
+                labels.colorPallet,
                 buttonColorPalletOptions,
                 colorPalletOptions.status,
             )}
             colorTheme={select(
-                'Color theme',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             colorStatus={select(
-                colorStatusLabel,
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
-            isRounded={boolean('Is rounded', false)}
+            isRounded={boolean(labels.isRounded, false)}
             fieldSize={radios(
-                fieldSizeLabel,
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}
             blockWidth={select(
-                blockWidthLabel,
+                labels.blockWidth,
                 inputWidthOptions,
                 inputWidthDefault,
             )}
-            hasStaticWidth={boolean('Has static width', false)}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            hasStaticWidth={boolean(labels.hasStaticWidth, false)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(labels.marginTop, spaceOptions, spaceDefault)}
         >
-            {boolean('Add icon', false) ? (
+            {boolean(labels.icon, false) ? (
                 <CautionIcon
                     iconSize={iconSizeOptions.md}
                     colorStatus={select(
-                        colorStatusLabel,
+                        labels.colorStatus,
                         formStatusOptions,
                         formStatusDefault,
                     )}
@@ -90,9 +90,10 @@ storiesOf(folder.popup + 'Message', module)
             ) : (
                 <></>
             )}
+
             <Text textSize={fontSizeOptions.sm}>
                 {text(
-                    'Message content',
+                    labels.text,
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend aliquet libero. Morbi ultrices tristique leo vitae porta.',
                 )}
             </Text>

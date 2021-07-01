@@ -6,6 +6,7 @@ import {
     formStatusOptions,
     formStatusDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import AutonomousInput from './AutonomousInput';
 
 storiesOf(folder.form + folder.sub.form + 'AutonomousInput', module)
@@ -13,12 +14,10 @@ storiesOf(folder.form + folder.sub.form + 'AutonomousInput', module)
     .add('AutonomousInput', () => (
         <AutonomousInput
             type="email"
-            placeholder={text('Placeholder', 'Your email...')}
-            submittedText={text('Submitted label', 'Received!')}
-            status={radios('Status', formStatusOptions, formStatusDefault)}
+            placeholder="Your email..."
+            submittedText={text('Submitted text', 'Received!')}
+            status={radios(labels.status, formStatusOptions, formStatusDefault)}
         >
-            <button type="submit">
-                {text('Default button label', 'Send')}
-            </button>
+            <button type="submit">{text(labels.label, 'Send')}</button>
         </AutonomousInput>
     ));

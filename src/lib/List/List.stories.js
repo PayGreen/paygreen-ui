@@ -13,6 +13,7 @@ import {
     iconSizeDefault,
     iconHtmlTagOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import {
     LeafIcon,
     CardsIcon,
@@ -24,9 +25,6 @@ import Text from '../Text/Text';
 import Title from '../Title/Title';
 import ListItem from '../ListItem/ListItem';
 import List from './List';
-
-const colorThemeLabel = 'Color theme';
-const bulletSizeLabel = 'Bullet size';
 
 const sampleWithIcons = [
     {
@@ -66,17 +64,21 @@ storiesOf(folder.list + 'List', module)
             listStyle={listStyleOptions.icon}
             hasDashed={boolean('Dashed lines (on desktop)', false)}
             bulletSize={select(
-                bulletSizeLabel,
+                labels.bulletSize,
                 iconSizeOptions,
                 iconSizeDefault,
             )}
             marginLateral={select(
-                'Lateral margins',
+                labels.marginLateral,
                 spaceOptions,
                 spaceDefault,
             )}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
         >
             {sampleWithIcons.map((element, index) => (
                 <ListItem
@@ -84,7 +86,7 @@ storiesOf(folder.list + 'List', module)
                     htmlTag={iconHtmlTagOptions.button}
                     bulletStyle={listStyleOptions.icon}
                     bulletSize={select(
-                        bulletSizeLabel,
+                        labels.bulletSize,
                         iconSizeOptions,
                         iconSizeDefault,
                     )}
@@ -105,7 +107,7 @@ storiesOf(folder.list + 'List', module)
             listStyle={listStyleOptions.icon}
             hasDashed={boolean('Dashed between li', false)}
             bulletSize={select(
-                bulletSizeLabel,
+                labels.bulletSize,
                 iconSizeOptions,
                 iconSizeDefault,
             )}
@@ -115,7 +117,7 @@ storiesOf(folder.list + 'List', module)
                     key={index}
                     bulletStyle={listStyleOptions.icon}
                     bulletSize={select(
-                        bulletSizeLabel,
+                        labels.bulletSize,
                         iconSizeOptions,
                         iconSizeDefault,
                     )}
@@ -133,12 +135,12 @@ storiesOf(folder.list + 'List', module)
                 <ListItem
                     key={index}
                     bulletSize={select(
-                        bulletSizeLabel,
+                        labels.bulletSize,
                         iconSizeOptions,
                         iconSizeDefault,
                     )}
                     colorTheme={radios(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
@@ -153,12 +155,12 @@ storiesOf(folder.list + 'List', module)
             listStyle={listStyleOptions.number}
             hasDashed={boolean('Dashed between li', false)}
             bulletSize={select(
-                bulletSizeLabel,
+                labels.bulletSize,
                 iconSizeOptions,
                 iconSizeDefault,
             )}
             colorTheme={radios(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
@@ -168,12 +170,12 @@ storiesOf(folder.list + 'List', module)
                     key={index}
                     bulletStyle={listStyleOptions.number}
                     bulletSize={select(
-                        bulletSizeLabel,
+                        labels.bulletSize,
                         iconSizeOptions,
                         iconSizeDefault,
                     )}
                     colorTheme={radios(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}

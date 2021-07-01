@@ -18,29 +18,30 @@ import {
     fontSizeOptions,
     fontSizeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import DataLegend from './DataLegend';
 
 const { wab, ...barColorPalletOptions } = colorPalletOptions;
 
 storiesOf(folder.graph + 'DataLegend', module)
     .addDecorator(withKnobs)
-    .add('Data Legend', () => (
+    .add('DataLegend', () => (
         <DataLegend
-            textSize={select('Text Size', fontSizeOptions, fontSizeDefault)}
-            value={number('Legend value', 25)}
-            unit={text('Legend unit', '%')}
+            textSize={select(labels.textSize, fontSizeOptions, fontSizeDefault)}
+            value={number(labels.value, 25)}
+            unit={text(labels.unity, '%')}
             colorPallet={radios(
-                'Color pallet value',
+                labels.colorPallet,
                 barColorPalletOptions,
                 colorPalletDefault,
             )}
             colorTheme={select(
-                'Color theme value',
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
             colorStatus={select(
-                'Color status value',
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}

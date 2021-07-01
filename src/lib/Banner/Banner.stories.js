@@ -12,34 +12,33 @@ import {
     fontSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Card from '../Card/Card';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
 import Banner from './Banner';
-
-const colorThemeLabel = 'Color theme';
 
 storiesOf(folder.block + 'Banner', module)
     .addDecorator(withKnobs)
     .add('Banner', () => (
         <Banner
             topStyle={radios(
-                'Top wave direction',
+                labels.topStyle,
                 decorationOptions,
                 decorationDefault,
             )}
             bottomStyle={radios(
-                'Bottom wave direction',
+                labels.bottomStyle,
                 decorationOptions,
                 decorationDefault,
             )}
             gradient={radios(
-                'Gradient type',
+                labels.gradient,
                 gradientOptions,
                 gradientOptions.theme,
             )}
             colorTheme={select(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
@@ -47,7 +46,7 @@ storiesOf(folder.block + 'Banner', module)
             <Card hasBackground={false}>
                 <Title
                     colorTheme={select(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
@@ -61,7 +60,7 @@ storiesOf(folder.block + 'Banner', module)
 
                 <Text
                     colorTheme={select(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}

@@ -9,8 +9,9 @@ import {
     fontSizeOptions,
     spaceOptions,
     colorPalletOptions,
-    greyOptions
+    greyOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Grid from '../Grid/Grid';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
@@ -21,85 +22,69 @@ import Footer from './Footer';
 const sampleContents = [
     {
         title: 'Title 1',
-        links: [
-            'Link 1',
-            'Second link',
-            'Other link'
-        ]
+        links: ['Link 1', 'Second link', 'Other link'],
     },
     {
         title: 'Title two',
-        links: [
-            'New link',
-            'Page with long title',
-            'Link 78',
-            'Fourth link'
-        ]
+        links: ['New link', 'Page with long title', 'Link 78', 'Fourth link'],
     },
     {
         title: 'Third title',
-        links: [
-            'Little link',
-            'Link',
-            'Final link'
-        ]
-    }
+        links: ['Little link', 'Link', 'Final link'],
+    },
 ];
 
 storiesOf(folder.nav + folder.sub.footer + 'Footer', module)
     .addDecorator(withKnobs)
-    .add(
-        'Footer',
-        () => (
-            <Footer
-                topStyle={radios(
-                    'Wave top direction',
-                    decorationOptions,
-                    decorationDefault,
-                )}
+    .add('Footer', () => (
+        <Footer
+            topStyle={radios(
+                labels.topStyle,
+                decorationOptions,
+                decorationDefault,
+            )}
+        >
+            <Grid childrenFlex={1}>
+                {sampleContents.map((sample, index) => (
+                    <div key={index}>
+                        <Title
+                            hasUnderline={true}
+                            align={alignOptions.center}
+                            textSize={fontSizeOptions.xs}
+                            colorWab={greyOptions.grey30}
+                            marginBottom={spaceOptions.xs}
+                        >
+                            {sample.title}
+                        </Title>
+
+                        <FooterList
+                            align={alignOptions.center}
+                            textSize={fontSizeOptions.xs}
+                            marginBottom={spaceOptions.md}
+                        >
+                            {sample.links.map((link, index) => (
+                                <a href="#" key={index}>
+                                    <Link
+                                        hasUnderline={false}
+                                        colorPallet={colorPalletOptions.wab}
+                                        colorWab={greyOptions.grey60}
+                                    >
+                                        {link}
+                                    </Link>
+                                </a>
+                            ))}
+                        </FooterList>
+                    </div>
+                ))}
+            </Grid>
+
+            <Text
+                align={alignOptions.center}
+                textSize={fontSizeOptions.xs}
+                colorWab={greyOptions.grey30}
+                marginBottom={spaceOptions.xs}
             >
-                <Grid childrenFlex={1}>
-                    {sampleContents.map((sample, index) => (
-                        <div key={index}>
-                            <Title
-                                hasUnderline={true}
-                                align={alignOptions.center}
-                                textSize={fontSizeOptions.xs}
-                                colorWab={greyOptions.grey30}
-                                marginBottom={spaceOptions.xs}
-                            >
-                                {sample.title}
-                            </Title>
-
-                            <FooterList
-                                align={alignOptions.center}
-                                textSize={fontSizeOptions.xs}
-                                marginBottom={spaceOptions.md}
-                            >
-                                {sample.links.map((link, index) => (
-                                    <a href="#" key={index}>
-                                        <Link
-                                            hasUnderline={false}
-                                            colorPallet={colorPalletOptions.wab}
-                                            colorWab={greyOptions.grey60}
-                                        >
-                                            {link}
-                                        </Link>
-                                    </a>
-                                ))}
-                            </FooterList>
-                        </div>
-                    ))}
-                </Grid>
-
-                <Text
-                    align={alignOptions.center}
-                    textSize={fontSizeOptions.xxs}
-                    colorWab={greyOptions.grey30}
-                    marginBottom={spaceOptions.xs}
-                >
-                    PayGreen UI library – 2019
-                </Text>
-            </Footer>
-        )
-    );
+                PayGreen UI Library – 2019 – {new Date().getFullYear()}
+            </Text>
+        </Footer>
+    ));

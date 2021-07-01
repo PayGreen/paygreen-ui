@@ -6,6 +6,7 @@ import {
     buttonSizeOptions,
     buttonSizeDefault,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import RadioGroup from './RadioGroup';
 
 const radioOptions = [
@@ -28,12 +29,12 @@ storiesOf(folder.form + folder.sub.radio + 'RadioGroup', module)
     .add('RadioGroup', () => (
         <RadioGroup
             name="radios"
-            legend={text('Radios Label', 'Radios Label')}
+            legend={text('Legend', 'Radios Label')}
             value={radioOptions[1].value}
             options={radioOptions}
-            disabled={boolean('Disabled', false)}
+            disabled={boolean(labels.disabled, false)}
             fieldSize={radios(
-                'Field size',
+                labels.fieldSize,
                 buttonSizeOptions,
                 buttonSizeDefault,
             )}

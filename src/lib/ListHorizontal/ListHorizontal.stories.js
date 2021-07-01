@@ -19,15 +19,10 @@ import {
     textHtmlTagOptions,
     fontSizeOptions,
 } from '../../shared/constants';
+import labels from '../../shared/labels';
 import Text from '../Text/Text';
 import Link from '../Link/Link';
 import ListHorizontal from './ListHorizontal';
-
-const colorTypeLabel = 'Color type';
-const colorPalletLabel = 'Color pallet';
-const colorThemeLabel = 'Color theme';
-const colorWabLabel = 'Grey color';
-const colorStatusLabel = 'Color status';
 
 const sampleTexts = ['Text one', 'Text two', 'Text three', 'Text four'];
 const sampleLinks = ['Link one', 'Link two', 'Link three', 'Link four'];
@@ -37,36 +32,40 @@ storiesOf(folder.list + 'ListHorizontal', module)
     .add('ListHorizontal of Texts', () => (
         <ListHorizontal
             colorType={radios(
-                colorTypeLabel,
+                labels.colorType,
                 colorTypeOptions,
                 colorTypeDefault,
             )}
             colorPallet={radios(
-                colorPalletLabel,
+                labels.colorPallet,
                 colorPalletOptions,
                 colorPalletOptions.wab,
             )}
             colorTheme={select(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select(colorWabLabel, greyOptions, greyOptions.grey30)}
+            colorWab={select(labels.colorWab, greyOptions, greyOptions.grey30)}
             colorStatus={select(
-                colorStatusLabel,
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
-            align={select('Elements align', alignOptions, alignDefault)}
-            hasBackground={boolean('Has background', true)}
+            align={select(labels.align, alignOptions, alignDefault)}
+            hasBackground={boolean(labels.hasBackground, true)}
             paddingLateral={select(
-                'Lateral paddings',
+                labels.paddingLateral,
                 spaceOptions,
                 spaceOptions.sm,
             )}
-            paddingTop={select('Padding top', spaceOptions, spaceOptions.sm)}
+            paddingTop={select(
+                labels.paddingTop,
+                spaceOptions,
+                spaceOptions.sm,
+            )}
             paddingBottom={select(
-                'Padding bottom',
+                labels.paddingBottom,
                 spaceOptions,
                 spaceOptions.sm,
             )}
@@ -75,27 +74,27 @@ storiesOf(folder.list + 'ListHorizontal', module)
                 <Text
                     key={index}
                     colorType={radios(
-                        colorTypeLabel,
+                        labels.colorType,
                         colorTypeOptions,
                         colorTypeDefault,
                     )}
                     colorPallet={radios(
-                        colorPalletLabel,
+                        labels.colorPallet,
                         colorPalletOptions,
                         colorPalletOptions.wab,
                     )}
                     colorTheme={select(
-                        colorThemeLabel,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
                     colorWab={select(
-                        colorWabLabel,
+                        labels.colorWab,
                         greyOptions,
                         greyOptions.grey30,
                     )}
                     colorStatus={select(
-                        colorStatusLabel,
+                        labels.colorStatus,
                         formStatusOptions,
                         formStatusDefault,
                     )}
@@ -110,60 +109,64 @@ storiesOf(folder.list + 'ListHorizontal', module)
     .add('ListHorizontal of Links', () => (
         <ListHorizontal
             colorType={radios(
-                colorTypeLabel,
+                labels.colorType,
                 colorTypeOptions,
                 colorTypeDefault,
             )}
             colorPallet={radios(
-                colorPalletLabel,
+                labels.colorPallet,
                 colorPalletOptions,
                 colorPalletDefault,
             )}
             colorTheme={select(
-                colorThemeLabel,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            colorWab={select(colorWabLabel, greyOptions, greyOptions.grey30)}
+            colorWab={select(labels.colorWab, greyOptions, greyOptions.grey30)}
             colorStatus={select(
-                colorStatusLabel,
+                labels.colorStatus,
                 formStatusOptions,
                 formStatusDefault,
             )}
-            align={select('Elements align', alignOptions, alignDefault)}
+            align={select(labels.align, alignOptions, alignDefault)}
             marginLateral={select(
-                'Lateral margins',
+                labels.marginLateral,
                 spaceOptions,
                 spaceDefault,
             )}
-            marginTop={select('Margin top', spaceOptions, spaceDefault)}
-            marginBottom={select('Margin bottom', spaceOptions, spaceDefault)}
+            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
+            marginBottom={select(
+                labels.marginBottom,
+                spaceOptions,
+                spaceDefault,
+            )}
         >
             {sampleLinks.map((element, index) => (
                 <a href="#" key={index}>
                     <Link
                         colorType={radios(
-                            colorTypeLabel,
+                            labels.colorType,
                             colorTypeOptions,
                             colorTypeDefault,
                         )}
                         colorPallet={radios(
-                            colorPalletLabel,
+                            labels.colorPallet,
                             colorPalletOptions,
                             colorPalletDefault,
                         )}
                         colorTheme={select(
-                            colorThemeLabel,
+                            labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
                         )}
                         colorWab={select(
-                            colorWabLabel,
+                            labels.colorWab,
                             greyOptions,
                             greyOptions.grey30,
                         )}
                         colorStatus={select(
-                            colorStatusLabel,
+                            labels.colorStatus,
                             formStatusOptions,
                             formStatusDefault,
                         )}
