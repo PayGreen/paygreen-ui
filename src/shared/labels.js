@@ -50,6 +50,9 @@ const labels = {
     marginLeft: 'Margin left',
     marginLateral: 'Margin lateral',
     hasResponsiveMargin: 'Has responsive margin',
+    childrenMarginTop: 'Children\'s margins top',
+    childrenMarginBottom: 'Children\'s margins bottom',
+    childrenMarginLateral: 'Children\'s margins lateral',
 
     // Paddings
     padding: 'Padding',

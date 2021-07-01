@@ -52,17 +52,17 @@ storiesOf(folder.grid + 'InternalGrid', module)
             )}
             childrenFlex={text(labels.childrenFlex, 'initial')}
             childrenMarginLateral={select(
-                "Children's lateral margins",
+                labels.childrenMarginLateral,
                 spaceOptions,
                 spaceDefault,
             )}
             childrenMarginTop={select(
-                "Children's margin top",
+                labels.childrenMarginTop,
                 spaceOptions,
                 spaceDefault,
             )}
             childrenMarginBottom={select(
-                "Children's margin bottom",
+                labels.childrenMarginBottom,
                 spaceOptions,
                 spaceDefault,
             )}
@@ -92,17 +92,17 @@ storiesOf(folder.grid + 'InternalGrid', module)
                 alignItemsDefault,
             )}
             childrenMarginLateral={select(
-                "Children's lateral margins",
+                labels.childrenMarginLateral,
                 spaceOptions,
                 spaceDefault,
             )}
             childrenMarginTop={select(
-                "Children's margin top",
+                labels.childrenMarginTop,
                 spaceOptions,
                 spaceDefault,
             )}
             childrenMarginBottom={select(
-                "Children's margin bottom",
+                labels.childrenMarginBottom,
                 spaceOptions,
                 spaceDefault,
             )}
