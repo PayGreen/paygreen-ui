@@ -17,7 +17,7 @@ storiesOf(folder.form + 'DaTextarea', module)
         <DaTextarea
             placeholder="Your text&hellip;"
             maxLength={800}
-            hasCounter={boolean(labels.hasCpunter, true)}
+            hasCounter={boolean(labels.hasCounter, true)}
             disabled={boolean(labels.disabled, false)}
             readOnly={boolean(labels.readOnly, false)}
             isRounded={boolean(labels.isRounded, false)}
