@@ -69,6 +69,7 @@ const ThemeDefault = {
         black00: '#000000',
     },
     pattern: patternLight,
+    logoColor: null,
 };
 
 export { ThemeDefault };

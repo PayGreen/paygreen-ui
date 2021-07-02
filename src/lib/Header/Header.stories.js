@@ -80,6 +80,7 @@ storiesOf(folder.nav + 'Header', module)
 
                             <a href="#">
                                 <Logo
+                                    hasThemeColor={true}
                                     hasBaseline={false}
                                     hoverDirection={hoverDirectionOptions.right}
                                     blockWidth={spaceOptions.sm}

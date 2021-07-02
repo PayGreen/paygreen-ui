@@ -21,6 +21,7 @@ const Logo = props => {
 Logo.propTypes = {
     hasBaseline: PropTypes.bool,
     isWhite: PropTypes.bool,
+    hasThemeColor: PropTypes.bool,
     hasHoverColor: PropTypes.bool,
     hoverDirection: PropTypes.oneOf(Object.values(hoverDirectionOptions)),
     blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -32,6 +33,7 @@ Logo.propTypes = {
 Logo.defaultProps = {
     hasBaseline: true,
     isWhite: false,
+    hasThemeColor: false,
     hasHoverColor: false,
     hoverDirection: hoverDirectionDefault,
     blockWidth: spaceOptions.none,

@@ -15,6 +15,7 @@ import Logo from './Logo';
 import { logo } from './sample/logo';
 
 const isWhiteLabel = 'Is white';
+const hasThemeColorLabel = 'Has theme color';
 
 storiesOf(folder.media + 'Logo', module)
     .addDecorator(withKnobs)
@@ -24,6 +25,7 @@ storiesOf(folder.media + 'Logo', module)
                 hasBaseline={boolean('Has baseline', true)}
                 hasHoverColor={boolean('Has hover color', false)}
                 isWhite={boolean(isWhiteLabel, false)}
+                hasThemeColor={boolean(hasThemeColorLabel, false)}
                 blockWidth={select(
                     labels.blockWidth,
                     spaceOptions,
@@ -45,6 +47,7 @@ storiesOf(folder.media + 'Logo', module)
             <Logo
                 hasBaseline={false}
                 isWhite={boolean(isWhiteLabel, false)}
+                hasThemeColor={boolean(hasThemeColorLabel, false)}
                 hoverDirection={radios(
                     'Hover direction',
                     hoverDirectionOptions,

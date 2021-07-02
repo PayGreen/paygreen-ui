@@ -69,6 +69,7 @@ const ThemeDark = {
         black00: '#ffffff',
     },
     pattern: patternDark,
+    logoColor: '#ffffff',
 };
 
 export { ThemeDark };
