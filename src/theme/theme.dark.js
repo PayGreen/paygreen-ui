@@ -1,10 +1,59 @@
+import patternDark from './assets/pattern-dark.png';
+import { mainColors, colors } from './colors';
 import { ThemeBase } from './theme.base';
-import patternLight from './assets/pattern-light.png';
 
-let ThemeDark = { ...ThemeBase };
+const lightColors = {
+    green: '#243c31',
+    blue: '#1a3b39',
+    orange: '#473522',
+    pink: '#492f2f',
+    purple: '#3a2f47',
+    red: '#3e2621',
+};
 
-ThemeDark = Object.assign(ThemeDark, {
+const ThemeDark = {
+    ...ThemeBase,
     name: 'Dark',
+    color: {
+        primary: {
+            ...colors.green,
+            light: lightColors.green,
+        },
+        secondary: {
+            ...colors.blue,
+            light: lightColors.blue,
+        },
+        tertiary: {
+            ...colors.orange,
+            light: lightColors.orange,
+        },
+        quaternary: {
+            ...colors.pink,
+            light: lightColors.pink,
+        },
+        quinary: {
+            ...colors.purple,
+            light: lightColors.purple,
+        },
+    },
+    status: {
+        success: {
+            main: mainColors.green,
+            light: lightColors.green,
+        },
+        default: {
+            main: mainColors.blue,
+            light: lightColors.blue,
+        },
+        warning: {
+            main: mainColors.orange,
+            light: lightColors.orange,
+        },
+        danger: {
+            main: mainColors.red,
+            light: lightColors.red,
+        },
+    },
     wab: {
         white00: '#202020',
         white10: '#2c2c2c',
@@ -19,7 +68,8 @@ ThemeDark = Object.assign(ThemeDark, {
 
         black00: '#ffffff',
     },
-    pattern: patternLight,
-});
+    pattern: patternDark,
+    logoColor: '#ffffff',
+};
 
 export { ThemeDark };

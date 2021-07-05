@@ -12,6 +12,7 @@ import {
     iconHtmlTagOptions,
     sidebarItemHtmlTagOptions,
     hoverDirectionOptions,
+    alignDefault,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
 import { ArrowRightIcon, LeafIcon, MeterIcon } from '../Icon/Icon';
@@ -28,6 +29,8 @@ import Sidebar from './Sidebar';
 
 const logoSidebar = (
     <Logo
+        align={alignDefault}
+        hasThemeColor={true}
         hasBaseline={false}
         hoverDirection={hoverDirectionOptions.right}
         blockWidth={spaceOptions.sm}

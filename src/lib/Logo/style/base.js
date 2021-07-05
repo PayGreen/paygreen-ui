@@ -6,6 +6,12 @@ const whiteStyle = css`
     }
 `;
 
+const themeColorStyle = css`
+    svg {
+        fill: ${props => props.theme.logoColor};
+    }
+`;
+
 const noBaselineStyle = css`
     .baseline {
         display: none;
@@ -48,4 +54,10 @@ const hoverDirectionStyle = {
     `,
 };
 
-export { noBaselineStyle, whiteStyle, hoverColorStyle, hoverDirectionStyle };
+export {
+    noBaselineStyle,
+    whiteStyle,
+    themeColorStyle,
+    hoverColorStyle,
+    hoverDirectionStyle,
+};

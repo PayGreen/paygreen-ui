@@ -4,6 +4,7 @@ import { BadgeBase } from '../../Badge/style';
 import {
     noBaselineStyle,
     whiteStyle,
+    themeColorStyle,
     hoverColorStyle,
     hoverDirectionStyle,
 } from './base';
@@ -40,7 +41,12 @@ const LogoBase = styled.span`
     }
 
     ${props => (props.hasBaseline ? null : noBaselineStyle)};
-    ${props => (props.isWhite ? whiteStyle : null)};
+    ${props =>
+        props.isWhite
+            ? whiteStyle
+            : props.hasThemeColor
+            ? themeColorStyle
+            : null};
     ${props => (props.hasHoverColor ? hoverColorStyle : null)};
     ${props => hoverDirectionStyle[props.hoverDirection]};
 

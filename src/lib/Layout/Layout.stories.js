@@ -19,6 +19,8 @@ import Layout from './Layout';
 const logoComponent = (
     <a href="#">
         <Logo
+            align={alignDefault}
+            hasThemeColor={true}
             hasBaseline={false}
             blockWidth={spaceOptions.sm}
             align={alignDefault}
