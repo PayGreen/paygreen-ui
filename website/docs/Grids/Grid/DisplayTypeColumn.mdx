@@ -1,0 +1,147 @@
+---
+id: displayTypeColumn
+title: Le displayType "column"
+sidebar_position: 4
+---
+
+import { Grid, Text } from '@paygreen/paygreen-ui';
+import WrapperComponent from '../../../src/components/WrapperComponent.js';
+
+## C'est quoi le `column`
+
+Moins connu que le `display: flex;` et le `display: grid;`, il existe le `columns: [value];`. L'important à noter, c'est qu'il ne s'agit pas de ~~`display: columns;`~~, mais afin de simplifier le composant **Grid**, on le traite de la même manière.
+
+Le `column` dispose le contenu à l'intérieur de colonnes comme le ferait un journal&nbsp;: le sens de lecture n'est donc pas horizontal (en Z ou en E), mais suit les colonnes de haut en bas puis de gauche à droite (en V s'il y a 2 colonnes, W s'il y en a 3, et si y'en a 4, il n'existe aucune lettre pour décrire ça donc débrouillez-vous pour imaginer, ou bien [consultez la doc du columns CSS pour visualiser](https://developer.mozilla.org/fr/docs/Web/CSS/columns)).
+
+:::important
+
+Le `displayType="column"` n'est donc pas indiqué pour contenir des blocs qui nécessitent d'être présentés dans un ordre précis (alphabétique, chronologique&hellip;).
+
+:::
+
+## Props liées au `column`
+
+Les props liées au `displayType="column"` sont les suivantes&nbsp;:
+
+| Props        | Type ou valeurs autorisées           | Valeur par défaut |
+| ------------ | ------------------------------------ | ----------------- |
+| columnNumber | _number_                             | 2                 |
+| gridGap      | `none`, `xs`, `sm`, `md`, `lg`, `xl` | `none`            |
+
+-   La props `columnNumber` permet de remplir la propriété CSS `columns` (voir le tableau ci-dessous pour le CSS généré).
+-   La props `gridGap` permet de remplir la propriété CSS `gap`&nbsp;: voir la [doc sur le GridGap](/docs/Grids/GridGap) pour plus de détails.
+
+### CSS généré à partir du `columnNumber`
+
+| Résultat                  | De `theme.screen.min.md` à `theme.screen.min.lg` | À partir de `theme.screen.min.lg` |
+| ------------------------- | ------------------------------------------------ | --------------------------------- |
+| Nombre de colonnes        | `columnNumber` - 1                               | `columnNumber`                    |
+| CSS si `columnNumber={2}` | `columns: 1;`                                    | `columns: 2;`                     |
+| CSS si `columnNumber={3}` | `columns: 2;`                                    | `columns: 3;`                     |
+
+## Exemples
+
+### Grid en `columnNumber={2}`
+
+Il s'agit de la valeur par défaut du `columnNumber`.
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <Grid
+        displayType="column"
+        childrenMargin="none"
+        childrenMarginBig="none"
+        gridGap="sm"
+    >
+        <Text
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground={true}
+        >
+            1 - Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+            porta mollis. Lacus nec ultrices iaculis. Vivamus vitae dui enim.
+        </Text>
+        <Text
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground={true}
+        >
+            2 - Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim.
+        </Text>
+        <Text
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground={true}
+        >
+            3 - Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim. Quisque ac massa mauris.
+        </Text>
+        <Text
+            paddingTop="xs"
+            paddingBottom="xs"
+            paddingLateral="xs"
+            hasBackground={true}
+        >
+            4 - Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim.
+        </Text>
+    </Grid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<Grid
+    displayType="column"
+    gridGap="sm"
+    childrenMargin="none"
+    childrenMarginBig="none"
+>
+    <Text
+        paddingTop="xs"
+        paddingBottom="xs"
+        paddingLateral="xs"
+        hasBackground={true}
+    >
+        1 - Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+        enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit porta
+        mollis. Lacus nec ultrices iaculis. Vivamus vitae dui enim.
+    </Text>
+
+    <Text
+        paddingTop="xs"
+        paddingBottom="xs"
+        paddingLateral="xs"
+        hasBackground={true}
+    >
+        2 - Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+        enim.
+    </Text>
+
+    <Text
+        paddingTop="xs"
+        paddingBottom="xs"
+        paddingLateral="xs"
+        hasBackground={true}
+    >
+        3 - Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+        enim. Quisque ac massa mauris.
+    </Text>
+
+    <Text
+        paddingTop="xs"
+        paddingBottom="xs"
+        paddingLateral="xs"
+        hasBackground={true}
+    >
+        4 - Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+        enim.
+    </Text>
+</Grid>
+```

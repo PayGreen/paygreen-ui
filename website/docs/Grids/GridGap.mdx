@@ -1,0 +1,27 @@
+---
+id: gridGap
+title: GridGap
+sidebar_position: 5
+---
+
+Sur les composants **Grid** et **InternalGrid**, la props `gridGap` permet de remplir la propriété CSS `gap`, qui définit l'espace entre les colonnes et entre les lignes d'une grille.
+
+Cette props est responsive&nbsp;: en fonction de la largeur de l'écran, les colonnes et les lignes seront plus ou moins rapprochés les unes des autres.
+
+| Valeur du `gridGap` | Jusqu'à `theme.screen.min.md` | À partir de `theme.screen.min.md` |
+| ------------------- | ----------------------------- | --------------------------------- |
+| `none`              | 0                             | 0                                 |
+| `xs`                | 4px                           | 4px                               |
+| `sm`                | 4px ⤵️                        | 8px                               |
+| `md`                | 8px ⤵️                        | 16px                              |
+| `lg`                | 8px ⤵️                        | 32px                              |
+| `xl`                | 8px ⤵️                        | 64px                              |
+
+-   Pour les plus petites valeurs de `gap`, la taille de l'écran n'a pas d'impact (elles sont assez petites pour être compatibles mobile).
+-   Pour les plus grandes, un ⤵️ signale une diminution du `gap` sur petit écran.
+
+:::info
+
+Le breakpoint choisi pour accroître la taille du `gap` est `theme.screen.min.lg` (consultez la doc [🖌️ Constantes du thème](/docs/theme#breakpoints-des-media-queries) pour connaître la largeur en pixels).
+
+:::

@@ -4,10 +4,10 @@ title: Le displayType "grid"
 sidebar_position: 3
 ---
 
-import { InternalGrid, Card, Text } from '@paygreen/paygreen-ui';
+import { InternalGrid, Text } from '@paygreen/paygreen-ui';
 import WrapperComponent from '../../../src/components/WrapperComponent.js';
 
-## Props spécifique au `grid`
+## Props spécifiques au `grid`
 
 Les props propres au `displayType="grid"` sont les suivantes, et sont donc sans effet en `displayType="flex"`&nbsp;:
 
@@ -19,23 +19,7 @@ Les props propres au `displayType="grid"` sont les suivantes, et sont donc sans 
 
 -   La props `gridTemplateColumns` permet de remplir la propriété CSS `grid-template-columns`&nbsp;: pour créer une grille de 4 colonnes dont la première doit prendre le plus d'espace possible (sans écraser les 3 autres colonnes), on pourra donc définir `gridTemplateColumns="1fr auto auto auto"`. [Plus de détails sur la propriété CSS `grid-template-columns`](https://developer.mozilla.org/fr/docs/Web/CSS/grid-template-columns).
 -   La props `gridTemplateRows` permet de remplir la propriété CSS `grid-template-rows`&nbsp;: pour créer une grille de 3 lignes dont la dernière doit prendre le plus d'espace possible (sans écraser les 2 autres lignes), on pourra donc définir `gridTemplateRows="auto auto 1fr"`. [Plus de détails sur la propriété CSS `grid-template-rows`](https://developer.mozilla.org/fr/docs/Web/CSS/grid-template-rows).
--   La props `gridGap` permet de remplir la propriété CSS `gap`, qui définit l'espace entre les colonnes et entre les lignes. Cette props est responsive&nbsp;: en fonction de la largeur de l'écran, les colonnes et les lignes seront plus ou moins rapprochés les unes des autres (voir le tableau ci-dessous pour les valeurs appliquées).
-
-### Tailles du `gridGap`
-
-Le breakpoint choisi pour accroître la taille du `gap` est `theme.screen.min.lg`, ce qui équivaut dans le thème à un écran d'au moins `1200px` de large.
-
--   Pour les plus petites valeurs de `gap`, la taille de l'écran n'a pas d'impact (elles sont assez petites pour être compatibles mobile).
--   Pour les plus grandes, un ⤵️ signale une diminution du `gap` sur petit écran.
-
-| Valeur du `gridGap` | Taille du `gridGap` sur petit écran (< 1200px) | Taille du `gridGap` sur grand écran (>= 1200px) |
-| ------------------- | ---------------------------------------------- | ----------------------------------------------- |
-| `none`              | 0                                              | 0                                               |
-| `xs`                | 4px                                            | 4px                                             |
-| `sm`                | 4px ⤵️                                         | 8px                                             |
-| `md`                | 8px ⤵️                                         | 16px                                            |
-| `lg`                | 8px ⤵️                                         | 32px                                            |
-| `xl`                | 8px ⤵️                                         | 64px                                            |
+-   La props `gridGap` permet de remplir la propriété CSS `gap`&nbsp;: voir la [doc sur le GridGap](/docs/Grids/GridGap) pour plus de détails.
 
 ## Alignement des enfants
 

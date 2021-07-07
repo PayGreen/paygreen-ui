@@ -4,7 +4,7 @@ title: Utiliser une InternalGrid
 sidebar_position: 1
 ---
 
-import { InternalGrid, Card, Text } from '@paygreen/paygreen-ui';
+import { InternalGrid, Text } from '@paygreen/paygreen-ui';
 import WrapperComponent from '../../../src/components/WrapperComponent.js';
 
 Vous voulez vraiment utiliser une **InternalGrid**, pas de confusion avec le composant [Grid](/docs/Grids/Grid/use)&nbsp;? Pour vous en assurer, consultez la page [Grid ou InternalGrid](/docs/Grids/chooseComponent). Si vous êtes sûr(e) de vous, c'est parti&nbsp;!
@@ -19,16 +19,16 @@ La propriété la plus importante de l'**InternalGrid** est `displayType`&nbsp;:
 
 La valeur du `displayType` va définir l'application de plusieurs autres props&nbsp;: en mode `flex`, les props liées à `grid` seront ignorées, et inversement.
 
-| Props               | Fonction               | displayType = `flex` | displayType = `grid` |
-| ------------------- | ---------------------- | :------------------: | :------------------: |
-| flexWrap            | Création de la grille  |          ✔️          |          ❌          |
-| childrenFlex        | Taille des enfants     |          ✔️          |          ❌          |
-| gridTemplateColumns | Création de la grille  |          ❌          |          ✔️          |
-| gridTemplateRows    | Création de la grille  |          ❌          |          ✔️          |
-| gridGap             | Création de la grille  |          ❌          |          ✔️          |
-| justifyContent      | Alignement des enfants |          ✔️          |          ❌          |
-| justifyItems        | Alignement des enfants |          ❌          |          ✔️          |
-| alignItems          | Alignement des enfants |          ✔️          |          ✔️          |
+| Props               | Fonction                           | displayType = `flex` | displayType = `grid` |
+| ------------------- | ---------------------------------- | :------------------: | :------------------: |
+| flexWrap            | Création de la grille              |          ✔️          |          ❌          |
+| childrenFlex        | Taille des enfants                 |          ✔️          |          ❌          |
+| gridTemplateColumns | Création de la grille              |          ❌          |          ✔️          |
+| gridTemplateRows    | Création de la grille              |          ❌          |          ✔️          |
+| gridGap             | Espaces à l'intérieur de la grille |          ❌          |          ✔️          |
+| justifyContent      | Alignement des enfants             |          ✔️          |          ❌          |
+| justifyItems        | Alignement des enfants             |          ❌          |          ✔️          |
+| alignItems          | Alignement des enfants             |          ✔️          |          ✔️          |
 
 En fonction de votre choix entre `flex` et `grid`, vous pourrez donc consulter au choix&nbsp;:
 
@@ -43,7 +43,7 @@ Vous avez un doute sur la valeur du `displayType`&nbsp;? Consultez notre aide [C
 
 ## Largeur et alignement
 
-Le composant **InternalGrid** dans son ensemble peut être aligné à l'intérieur de son parent, à condition que sa largeur soit inférieur à celle de son parent, grâce aux 2 props ci-dessous&nbsp;:
+Le composant **InternalGrid** dans son ensemble peut être aligné à l'intérieur de son parent, à condition que sa largeur soit inférieure à celle de son parent, grâce aux 2 props ci-dessous&nbsp;:
 
 | Props          | Type ou valeurs autorisées | Valeur par défaut |
 | -------------- | -------------------------- | ----------------- |
@@ -170,7 +170,8 @@ Les marges appliquées aux enfants par l'**InternalGrid** peuvent entrer en conf
 Or, l'**InternalGrid** dispose de ce type de CSS&nbsp;:
 
 ```css
-.internal-grid > * { /* Tous les enfants directs de la classe .internal-grid sont ciblés */
+.internal-grid > * {
+    /* Tous les enfants directs de la classe .internal-grid sont ciblés */
     margin-top: 8px;
 }
 ```
