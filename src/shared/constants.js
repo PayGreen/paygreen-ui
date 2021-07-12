@@ -366,6 +366,14 @@ const sidebarItemHtmlTagOptions = {
 
 const sidebarItemHtmlTagDefault = sidebarItemHtmlTagOptions.div;
 
+// Inputs HTML tags
+const inputHtmlTagOptions = {
+    radio: 'radio',
+    checkbox: 'checkbox',
+};
+
+const inputHtmlTagDefault = inputHtmlTagOptions.radio;
+
 /* Grids, aligns and positions */
 
 // Grids types
@@ -573,6 +581,8 @@ export {
     labelHtmlTagDefault,
     sidebarItemHtmlTagOptions,
     sidebarItemHtmlTagDefault,
+    inputHtmlTagOptions,
+    inputHtmlTagDefault,
     displayOptions,
     displayDefault,
     flexDirectionOptions,

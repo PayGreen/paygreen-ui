@@ -2,11 +2,11 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__RadioIconBase-sc-1671lpv-0 cwVNuD"
+  className="style__InputCardBase-sc-8iz749-0 cbnWZt"
 >
   <input
-    id="radioIconTest1"
-    name="radioIconTest"
+    id="test1"
+    name="test"
     theme={
       Object {
         "arrow": Object {
@@ -305,6 +305,7 @@ exports[`renders without crashing 1`] = `
           "xs": "50px",
           "xxs": "40px",
         },
+        "logoColor": null,
         "logoHeight": Object {
           "lg": "50px",
           "md": "40px",
@@ -461,7 +462,7 @@ exports[`renders without crashing 1`] = `
     type="radio"
   />
   <label
-    htmlFor="radioIconTest1"
+    htmlFor="test1"
   >
     <span
       className="style__IconBase-ak3679-0 hftxTk icon"

@@ -56,6 +56,7 @@ import HR from './HR/HR';
 import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 import Input from './Input/Input';
+import InputCard from './InputCard/InputCard';
 import InternalGrid from './InternalGrid/InternalGrid';
 import Layout from './Layout/Layout';
 import Link from './Link/Link';
@@ -88,7 +89,6 @@ import PaginationItem from './PaginationItem/PaginationItem';
 import Popin from './Popin/Popin';
 import Radio from './Radio/Radio';
 import RadioGroup from './RadioGroup/RadioGroup';
-import RadioIcon from './RadioIcon/RadioIcon';
 import Select from './Select/Select';
 import Sidebar from './Sidebar/Sidebar';
 import SidebarItem from './SidebarItem/SidebarItem';
@@ -279,6 +279,7 @@ export {
     IconLabel,
     Image,
     Input,
+    InputCard,
     InternalGrid,
     Layout,
     Link,
@@ -311,7 +312,6 @@ export {
     Popin,
     Radio,
     RadioGroup,
-    RadioIcon,
     Select,
     Sidebar,
     SidebarItem,

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+    inputHtmlTagOptions,
+    inputHtmlTagDefault,
     radioSizeOptions,
     radioSizeDefault,
     colorPalletOptions,
@@ -8,17 +10,17 @@ import {
     iconSizeOptions,
 } from '../../shared/constants';
 import { CheckBoldIcon } from '../Icon/Icon';
-import { RadioIconBase } from './style';
+import { InputCardBase } from './style';
 
-const RadioIcon = props => {
-    const { children, text, blockSize, ...rest } = props;
+const InputCard = props => {
+    const { children, htmlTag, text, blockSize, ...rest } = props;
 
     return (
-        <RadioIconBase
+        <InputCardBase
             theme={props.theme} // not necessary, only needed for tests
             blockSize={blockSize}
         >
-            <input type="radio" {...rest} />
+            <input type={htmlTag} {...rest} />
 
             <label htmlFor={props.id}>
                 {children}
@@ -34,19 +36,21 @@ const RadioIcon = props => {
 
                 {text}
             </label>
-        </RadioIconBase>
+        </InputCardBase>
     );
 };
 
-RadioIcon.propTypes = {
+InputCard.propTypes = {
+    htmlTag: PropTypes.oneOf(Object.values(inputHtmlTagOptions)),
     blockSize: PropTypes.oneOf(Object.values(radioSizeOptions)),
     text: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
 };
 
-RadioIcon.defaultProps = {
+InputCard.defaultProps = {
+    htmlTag: inputHtmlTagDefault,
     blockSize: radioSizeDefault,
 };
 
-export default RadioIcon;
+export default InputCard;
