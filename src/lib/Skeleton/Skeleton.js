@@ -23,7 +23,7 @@ const Skeleton = ({
     padding,
     margin,
     colorWab,
-    backgroundWabColor,
+    backgroundColor,
     radiusSize,
     shadowSize,
     ...rest
@@ -67,7 +67,7 @@ const Skeleton = ({
             <Card
                 theme={rest.theme} // not necessary, only needed for tests
                 blockWidth={rest.blockWidth}
-                colorWab={backgroundWabColor}
+                colorWab={backgroundColor}
                 shadowSize={shadowSize}
                 radiusSize={radiusSize}
             >
@@ -102,7 +102,7 @@ Skeleton.propTypes = {
     skeletonType: PropTypes.oneOf(Object.values(skeletonTypeOptions)),
     lineNumber: PropTypes.number,
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
-    backgroundWabColor: PropTypes.oneOf(Object.values(greyOptions)),
+    backgroundColor: PropTypes.oneOf(Object.values(greyOptions)),
     radiusSize: PropTypes.oneOf(Object.values(radiusOptions)),
     shadowSize: PropTypes.oneOf(Object.values(shadowSizeOptions)),
     blockWidth: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -124,7 +124,7 @@ Skeleton.defaultProps = {
     skeletonType: skeletonTypeDefault,
     lineNumber: 1,
     colorWab: greyOptions.grey20,
-    backgroundWabColor: greyOptions.grey10,
+    backgroundColor: greyOptions.grey10,
     radiusSize: radiusDefault,
     shadowSize: shadowSizeDefault,
     blockWidth: spaceDefault.sm,
