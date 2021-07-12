@@ -50,10 +50,10 @@ storiesOf(folder.popup + 'ClickableBlock', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
-            borderTop={boolean('Has border top', false)}
-            borderRight={boolean('Has border right', false)}
-            borderLeft={boolean('Has border left', false)}
-            borderBottom={boolean('Has border bottom', true)}
+            hasBorderTop={boolean('Has border top', false)}
+            hasBorderRight={boolean('Has border right', false)}
+            hasBorderLeft={boolean('Has border left', false)}
+            hasBorderBottom={boolean('Has border bottom', true)}
             paddingTop={select(labels.padding, spaceOptions, spaceOptions.sm)}
             paddingBottom={select(
                 labels.padding,

@@ -8,10 +8,10 @@ const ClickableBlockBase = styled.div`
     display: inline-flex;
     align-items: center;
     ${props => borderColor[props.colorPallet]};
-    border-top: ${props => (props.borderTop ? null : 'none')};
-    border-right: ${props => (props.borderRight ? null : 'none')};
-    border-left: ${props => (props.borderLeft ? null : 'none')};
-    border-bottom: ${props => (props.borderBottom ? null : 'none')};
+    border-top: ${props => (props.hasBorderTop ? null : 'none')};
+    border-right: ${props => (props.hasBorderRight ? null : 'none')};
+    border-left: ${props => (props.hasBorderLeft ? null : 'none')};
+    border-bottom: ${props => (props.hasBorderBottom ? null : 'none')};
     transition: all ${props => props.theme.transition.xs};
 
     .arrow {
