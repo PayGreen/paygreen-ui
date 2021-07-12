@@ -92,7 +92,17 @@ const borderTopGradient = {
 
 const borderTopElement = css`
     &::before {
+        // after is absolute, so we need another pseudo-element to shift content
         content: '';
+        height: ${props => props.theme.radius[props.radiusSize]};
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: ${props => props.theme.radius[props.radiusSize]};
         border-radius: ${props => props.theme.radius[props.radiusSize]}
             ${props => props.theme.radius[props.radiusSize]} 0 0;
