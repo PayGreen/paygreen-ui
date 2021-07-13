@@ -1554,12 +1554,13 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@paygreen/paygreen-ui@^0.8.2":
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/@paygreen/paygreen-ui/-/paygreen-ui-0.8.2.tgz#589b1ac48a3b5e917d5cfc767f9394ccda49d0dd"
-  integrity sha512-CJ7zJgic/DTS5U5zUIJq6YwCA87cYqpc9CLQyINHpcNUp7zgPwVH6eSJkrPPu8fwhZWMaRIEKNhIHN9u4ZZ1aQ==
+"@paygreen/paygreen-ui@^0.8.6":
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/@paygreen/paygreen-ui/-/paygreen-ui-0.8.6.tgz#b186fb364701d283e3af27319dcbfaa3b6efdd9c"
+  integrity sha512-UyBW87OLg7ysdr47v8poJESmOIL4Xtv2YaoQ1aHWLx1V2RNTVSY5Wy5UL6qYP+qF4AQjtglXCrqsGtahRHuOTg==
   dependencies:
     "@n8tb1t/use-scroll-position" "^1.0.47"
+    caniuse-lite "^1.0.30001214"
     core-js "^3.6.5"
     moment "^2.29.0"
     polished "^3.6.7"
@@ -2581,6 +2582,11 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001125, caniuse-lite@^1.0.30001181, can
   version "1.0.30001197"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001197.tgz#47ad15b977d2f32b3ec2fe2b087e0c50443771db"
   integrity sha512-8aE+sqBqtXz4G8g35Eg/XEaFr2N7rd/VQ6eABGBmNtcB8cN6qNJhMi6oSFy4UWWZgqgL3filHT8Nha4meu3tsw==
+
+caniuse-lite@^1.0.30001214:
+  version "1.0.30001243"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001243.tgz#d9250155c91e872186671c523f3ae50cfc94a3aa"
+  integrity sha512-vNxw9mkTBtkmLFnJRv/2rhs1yufpDfCkBZexG3Y0xdOH2Z/eE/85E4Dl5j1YUN34nZVsSp6vVRFQRrez9wJMRA==
 
 caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.30001230:
   version "1.0.30001236"

@@ -35,6 +35,6 @@
     ]
   },
   "devDependencies": {
-    "@paygreen/paygreen-ui": "^0.8.2"
+    "@paygreen/paygreen-ui": "^0.8.6"
   }
 }
