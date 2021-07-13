@@ -225,13 +225,13 @@ const inputWidthOptions = {
 
 const inputWidthDefault = inputWidthOptions.md;
 
-// Radio sizes
-const radioSizeOptions = {
+// InputCard sizes
+const inputCardSizeOptions = {
     md: 'md',
     lg: 'lg',
 };
 
-const radioSizeDefault = radioSizeOptions.lg;
+const inputCardSizeDefault = inputCardSizeOptions.lg;
 
 // Radius sizes
 const radiusOptions = {
@@ -557,8 +557,8 @@ export {
     buttonSizeDefault,
     inputWidthOptions,
     inputWidthDefault,
-    radioSizeOptions,
-    radioSizeDefault,
+    inputCardSizeOptions,
+    inputCardSizeDefault,
     radiusOptions,
     radiusDefault,
     spaceOptions,

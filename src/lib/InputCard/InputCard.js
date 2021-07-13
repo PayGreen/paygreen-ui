@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {
     multipleInputTypeOptions,
     multipleInputTypeDefault,
-    radioSizeOptions,
-    radioSizeDefault,
+    inputCardSizeOptions,
+    inputCardSizeDefault,
     colorPalletOptions,
     formStatusOptions,
     iconSizeOptions,
@@ -42,12 +42,12 @@ InputCard.propTypes = {
     id: PropTypes.string.isRequired,
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     type: PropTypes.oneOf(Object.values(multipleInputTypeOptions)),
-    blockSize: PropTypes.oneOf(Object.values(radioSizeOptions)),
+    blockSize: PropTypes.oneOf(Object.values(inputCardSizeOptions)),
 };
 
 InputCard.defaultProps = {
     type: multipleInputTypeDefault,
-    blockSize: radioSizeDefault,
+    blockSize: inputCardSizeDefault,
 };
 
 export default InputCard;
