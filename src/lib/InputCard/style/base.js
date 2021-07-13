@@ -29,10 +29,10 @@ const labelSize = {
         }
     `,
     lg: css`
-        width: ${props => props.theme.form.radio.md};
+        width: ${props => props.theme.form.inputCard.md};
 
         @media ${props => props.theme.screen.min.sm} {
-            width: ${props => props.theme.form.radio.lg};
+            width: ${props => props.theme.form.inputCard.lg};
         }
 
         label {
@@ -42,10 +42,10 @@ const labelSize = {
             text-align: center;
             padding: ${props => props.theme.space.sm};
             height: 100%;
-            min-height: ${props => props.theme.form.radio.md};
+            min-height: ${props => props.theme.form.inputCard.md};
 
             @media ${props => props.theme.screen.min.sm} {
-                min-height: ${props => props.theme.form.radio.lg};
+                min-height: ${props => props.theme.form.inputCard.lg};
             }
 
             & > .icon {
@@ -54,18 +54,18 @@ const labelSize = {
                 margin: ${props => props.theme.space.md} 0;
             }
         }
-    `
+    `,
 };
 
 const activeStyle = css`
     color: ${props => props.theme.status.success.main};
-    box-shadow: ${props => props.theme.shadow.size.md + ' ' + transparentize(
-        0.7,
-        props.theme.status.success.main
-    )};
+    box-shadow: ${props =>
+        props.theme.shadow.size.md +
+        ' ' +
+        transparentize(0.7, props.theme.status.success.main)};
 
     & > .icon {
-        opacity: .7;
+        opacity: 0.7;
 
         svg {
             fill: ${props => props.theme.status.success.main};
@@ -73,7 +73,4 @@ const activeStyle = css`
     }
 `;
 
-export {
-    labelSize,
-    activeStyle
-};
+export { labelSize, activeStyle };

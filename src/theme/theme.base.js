@@ -318,7 +318,7 @@ export const ThemeBase = {
             lg: '500px',
         },
         textareaHeight: '200px',
-        radio: {
+        inputCard: {
             md: '120px',
             lg: '150px',
         },
