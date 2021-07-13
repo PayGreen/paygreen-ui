@@ -63,11 +63,7 @@ storiesOf(folder.block + 'Card', module)
                 spaceOptions,
                 spaceOptions.md,
             )}
-            radiusSize={radios(
-                labels.radiusSize,
-                radiusOptions,
-                radiusDefault,
-            )}
+            radiusSize={radios(labels.radiusSize, radiusOptions, radiusDefault)}
             htmlTag={select(
                 labels.htmlTag,
                 cardHtmlTagOptions,
@@ -175,7 +171,7 @@ storiesOf(folder.block + 'Card', module)
             </ButtonGroup>
         </Card>
     ))
-    .add('Border-top card', () => (
+    .add('BorderTop card', () => (
         <Card
             colorType={radios(
                 labels.colorType,
@@ -188,16 +184,14 @@ storiesOf(folder.block + 'Card', module)
                 colorThemeDefault,
             )}
             blockWidth={spaceOptions.sm}
-            radiusSize={radios(
-                labels.radiusSize,
-                radiusOptions,
-                radiusDefault,
-            )}
+            radiusSize={radios(labels.radiusSize, radiusOptions, radiusDefault)}
             borderTop={radios(
                 'Border top gradient',
                 gradientOptions,
                 gradientOptions.theme,
             )}
+            paddingTop={spaceOptions.sm}
+            paddingLateral={spaceOptions.sm}
         >
             <Title
                 colorType={radios(
@@ -205,8 +199,6 @@ storiesOf(folder.block + 'Card', module)
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
-                marginLateral={spaceOptions.sm}
-                marginTop={spaceOptions.sm}
                 textSize={fontSizeOptions.md}
             >
                 Title sample
@@ -223,7 +215,6 @@ storiesOf(folder.block + 'Card', module)
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                marginLateral={spaceOptions.sm}
                 marginTop={spaceOptions.xs}
                 textSize={fontSizeOptions.sm}
             >
@@ -236,7 +227,6 @@ storiesOf(folder.block + 'Card', module)
             <ButtonGroup
                 marginTop={spaceOptions.sm}
                 marginBottom={spaceOptions.sm}
-                paddingBlock={spaceOptions.sm}
             >
                 <button type="button">
                     <Button
