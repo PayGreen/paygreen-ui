@@ -6,7 +6,7 @@ import InputCard from './InputCard';
 
 it('renders without crashing', () => {
     const component = TestRenderer.create(
-        <InputCard theme={ThemeDefault} name="test" id="test1" text="label">
+        <InputCard theme={ThemeDefault} id="test1" text="Label">
             <SatchelIcon theme={ThemeDefault} />
         </InputCard>,
     );

@@ -5,8 +5,8 @@ import {
     folder,
     radioSizeOptions,
     radioSizeDefault,
-    inputHtmlTagOptions,
-    inputHtmlTagDefault,
+    multipleInputTypeOptions,
+    multipleInputTypeDefault,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
 import {
@@ -26,10 +26,10 @@ storiesOf(folder.form + folder.sub.form + 'InputCard', module)
     .add('InputCard', () => (
         <InternalGrid>
             <InputCard
-                htmlTag={radios(
-                    labels.htmlTag,
-                    inputHtmlTagOptions,
-                    inputHtmlTagDefault,
+                type={radios(
+                    labels.type,
+                    multipleInputTypeOptions,
+                    multipleInputTypeDefault,
                 )}
                 text="Option A"
                 blockSize={radios(
@@ -44,10 +44,10 @@ storiesOf(folder.form + folder.sub.form + 'InputCard', module)
             </InputCard>
 
             <InputCard
-                htmlTag={radios(
-                    labels.htmlTag,
-                    inputHtmlTagOptions,
-                    inputHtmlTagDefault,
+                type={radios(
+                    labels.type,
+                    multipleInputTypeOptions,
+                    multipleInputTypeDefault,
                 )}
                 text="Option B with more text inside label"
                 blockSize={radios(
@@ -62,10 +62,10 @@ storiesOf(folder.form + folder.sub.form + 'InputCard', module)
             </InputCard>
 
             <InputCard
-                htmlTag={radios(
-                    labels.htmlTag,
-                    inputHtmlTagOptions,
-                    inputHtmlTagDefault,
+                type={radios(
+                    labels.type,
+                    multipleInputTypeOptions,
+                    multipleInputTypeDefault,
                 )}
                 text="Option C"
                 blockSize={radios(
@@ -80,10 +80,10 @@ storiesOf(folder.form + folder.sub.form + 'InputCard', module)
             </InputCard>
 
             <InputCard
-                htmlTag={radios(
-                    labels.htmlTag,
-                    inputHtmlTagOptions,
-                    inputHtmlTagDefault,
+                type={radios(
+                    labels.type,
+                    multipleInputTypeOptions,
+                    multipleInputTypeDefault,
                 )}
                 text="Option D"
                 blockSize={radios(

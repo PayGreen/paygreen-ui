@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    inputHtmlTagOptions,
-    inputHtmlTagDefault,
+    multipleInputTypeOptions,
+    multipleInputTypeDefault,
     radioSizeOptions,
     radioSizeDefault,
     colorPalletOptions,
@@ -12,22 +12,20 @@ import {
 import { CheckBoldIcon } from '../Icon/Icon';
 import { InputCardBase } from './style';
 
-const InputCard = props => {
-    const { children, htmlTag, text, blockSize, ...rest } = props;
-
+const InputCard = ({ children, theme, text, blockSize, ...rest }) => {
     return (
         <InputCardBase
-            theme={props.theme} // not necessary, only needed for tests
+            theme={theme} // not necessary, only needed for tests
             blockSize={blockSize}
         >
-            <input type={htmlTag} {...rest} />
+            <input {...rest} />
 
-            <label htmlFor={props.id}>
+            <label htmlFor={rest.id}>
                 {children}
 
                 <span className="checked">
                     <CheckBoldIcon
-                        theme={props.theme} // not necessary, only needed for tests
+                        theme={theme} // not necessary, only needed for tests
                         colorPallet={colorPalletOptions.status}
                         colorStatus={formStatusOptions.success}
                         iconSize={iconSizeOptions.xs}
@@ -41,15 +39,14 @@ const InputCard = props => {
 };
 
 InputCard.propTypes = {
-    htmlTag: PropTypes.oneOf(Object.values(inputHtmlTagOptions)),
-    blockSize: PropTypes.oneOf(Object.values(radioSizeOptions)),
-    text: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    type: PropTypes.oneOf(Object.values(multipleInputTypeOptions)),
+    blockSize: PropTypes.oneOf(Object.values(radioSizeOptions)),
 };
 
 InputCard.defaultProps = {
-    htmlTag: inputHtmlTagDefault,
+    type: multipleInputTypeDefault,
     blockSize: radioSizeDefault,
 };
 

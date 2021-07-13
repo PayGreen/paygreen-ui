@@ -366,13 +366,15 @@ const sidebarItemHtmlTagOptions = {
 
 const sidebarItemHtmlTagDefault = sidebarItemHtmlTagOptions.div;
 
-// Inputs HTML tags
-const inputHtmlTagOptions = {
+/* Types */
+
+// Input types
+const multipleInputTypeOptions = {
     radio: 'radio',
     checkbox: 'checkbox',
 };
 
-const inputHtmlTagDefault = inputHtmlTagOptions.radio;
+const multipleInputTypeDefault = multipleInputTypeOptions.radio;
 
 /* Grids, aligns and positions */
 
@@ -581,8 +583,8 @@ export {
     labelHtmlTagDefault,
     sidebarItemHtmlTagOptions,
     sidebarItemHtmlTagDefault,
-    inputHtmlTagOptions,
-    inputHtmlTagDefault,
+    multipleInputTypeOptions,
+    multipleInputTypeDefault,
     displayOptions,
     displayDefault,
     flexDirectionOptions,
