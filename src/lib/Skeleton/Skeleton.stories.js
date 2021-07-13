@@ -33,7 +33,7 @@ storiesOf(folder.loading + 'Skeleton', module)
                 spaceOptions.sm,
             )}
             colorWab={select(labels.colorWab, greyOptions, greyOptions.grey20)}
-            backgroundWabColor={select(
+            backgroundColor={select(
                 labels.backgroundColor,
                 greyOptions,
                 greyOptions.grey10,
@@ -64,7 +64,7 @@ storiesOf(folder.loading + 'Skeleton', module)
             )}
             radiusSize={radios(labels.radiusSize, radiusOptions, radiusDefault)}
             colorWab={select(labels.colorWab, greyOptions, greyOptions.grey20)}
-            backgroundWabColor={select(
+            backgroundColor={select(
                 labels.backgroundColor,
                 greyOptions,
                 greyOptions.white00,
