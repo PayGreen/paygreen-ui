@@ -3,17 +3,15 @@ import PropTypes from 'prop-types';
 import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { RadioBase } from './style';
 
-const Radio = props => {
-    const { fieldSize, label, id, inputRef, ...rest } = props;
-
+const Radio = ({ theme, fieldSize, label, inputRef, ...rest }) => {
     return (
         <RadioBase
-            theme={props.theme} // not necessary, only needed for tests
+            theme={theme} // not necessary, only needed for tests
             fieldSize={fieldSize}
-            isDisabled={props.disabled}
+            isDisabled={rest.disabled}
         >
-            <input {...rest} ref={inputRef} id={id} type="radio" />
-            <label htmlFor={id}>{label}</label>
+            <input {...rest} ref={inputRef} type="radio" />
+            <label htmlFor={rest.id}>{label}</label>
         </RadioBase>
     );
 };

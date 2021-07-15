@@ -11,14 +11,13 @@ const DaTextareaBase = styled.div`
         ${props =>
             props.isRounded ? borderRadius.rounded : borderRadius.normal};
         width: 100%;
-        height: ${props => (props.autoHeight ? props.autoHeight : 'auto')};
         min-height: ${props =>
             math(props.theme.daButton.buttonHeight[props.fieldSize] + '*5')};
         border-style: solid;
         border-width: ${props => props.theme.line};
         border-color: ${props => props.theme.wab.grey10};
         font-size: ${props => props.theme.daButton.font[props.fieldSize]};
-        transition: all ${props => props.theme.transition.sm};
+        transition: all ${props => props.theme.transition.sm}, height 0s;
         overflow: hidden;
         resize: none;
 

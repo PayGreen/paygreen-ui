@@ -10,27 +10,26 @@ import {
 } from '../../shared/constants';
 import { DaTextareaBase } from './style';
 
-const DaTextarea = props => {
-    const [stateValue, setValue] = useState(
-        props.value !== undefined ? props.value : '',
-    );
-    const [textAreaAutoHeight, setAutoHeight] = useState('');
+const DaTextarea = ({
+    theme,
+    onChange,
+    value,
+    hasCounter,
+    counterText,
+    marginTop,
+    marginBottom,
+    isRounded,
+    fieldSize,
+    blockWidth,
+    hasStaticWidth,
+    inputRef,
+    ...rest
+}) => {
+    const [stateValue, setValue] = useState(value);
+    const [autoHeight, setAutoHeight] = useState('');
     const [stateCharactersStatus, setCharactersStatus] = useState(
         formStatusDefault,
     );
-
-    const {
-        hasCounter,
-        counterText,
-        marginTop,
-        marginBottom,
-        isRounded,
-        fieldSize,
-        blockWidth,
-        hasStaticWidth,
-        inputRef,
-        ...rest
-    } = props;
 
     const handleChange = e => {
         setValue(e.target.value);
@@ -40,44 +39,44 @@ const DaTextarea = props => {
     const charactersLength = stateValue.length || 0;
 
     useEffect(() => {
-        if (charactersLength > props.maxLength * 0.9) {
+        if (charactersLength > rest.maxLength * 0.9) {
             setCharactersStatus(formStatusOptions.warning);
-        } else if (charactersLength >= props.minLength) {
+        } else if (charactersLength >= rest.minLength) {
             setCharactersStatus(formStatusOptions.success);
         }
     }, [charactersLength]);
 
     const charactersCountBlock = (
         <div>
-            <span>{charactersLength}</span>&nbsp;/&nbsp;{props.maxLength}&nbsp;
+            <span>{charactersLength}</span>&nbsp;/&nbsp;{rest.maxLength}&nbsp;
             {counterText}
         </div>
     );
 
     return (
         <DaTextareaBase
-            theme={props.theme} // not necessary, only needed for tests
+            theme={theme} // not necessary, only needed for tests
             charactersStatus={stateCharactersStatus}
-            inputDisabled={props.disabled}
-            inputReadOnly={props.readOnly}
+            inputDisabled={rest.disabled}
+            inputReadOnly={rest.readOnly}
             fieldSize={fieldSize}
             isRounded={isRounded}
             blockWidth={blockWidth}
             hasStaticWidth={hasStaticWidth}
             hasCounter={hasCounter}
-            autoHeight={textAreaAutoHeight}
         >
             <textarea
                 {...rest}
                 ref={inputRef}
+                style={{height: autoHeight}}
                 value={stateValue}
                 onChange={e => {
                     handleChange(e);
-                    props.onChange ? props.onChange(e) : null;
+                    onChange ? onChange(e) : null;
                 }}
             />
 
-            {hasCounter && !props.disabled && !props.readOnly
+            {hasCounter && !rest.disabled && !rest.readOnly
                 ? charactersCountBlock
                 : null}
         </DaTextareaBase>
@@ -103,6 +102,7 @@ DaTextarea.propTypes = {
 
 DaTextarea.defaultProps = {
     onChange: undefined,
+    value: '',
     disabled: false,
     readOnly: false,
     minLength: 0,

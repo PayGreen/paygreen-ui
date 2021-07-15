@@ -9,26 +9,24 @@ import {
 import Options from '../Select/Options';
 import { DaSelectBase } from './style';
 
-const DaSelect = props => {
-    const {
-        options,
-        isRounded,
-        fieldSize,
-        blockWidth,
-        hasStaticWidth,
-        hasHelpButton,
-        icon,
-        // must not be passed with rest because there is no readOnly html attribute for select
-        readOnly,
-        inputRef,
-        ...rest
-    } = props;
-
+const DaSelect = ({
+    theme,
+    options,
+    isRounded,
+    fieldSize,
+    blockWidth,
+    hasStaticWidth,
+    hasHelpButton,
+    icon,
+    readOnly, // must not be passed with rest because there is no readOnly html attribute for select
+    inputRef,
+    ...rest
+}) => {
     return (
         <DaSelectBase
-            theme={props.theme} // not necessary, only needed for tests
+            theme={theme} // not necessary, only needed for tests
             inputReadOnly={readOnly}
-            inputDisabled={props.disabled}
+            inputDisabled={rest.disabled}
             isRounded={isRounded}
             blockWidth={blockWidth}
             hasStaticWidth={hasStaticWidth}
@@ -46,7 +44,7 @@ const DaSelect = props => {
                 <Options
                     options={options}
                     readOnly={readOnly}
-                    defaultValue={props.defaultValue}
+                    defaultValue={rest.defaultValue}
                 />
             </select>
         </DaSelectBase>

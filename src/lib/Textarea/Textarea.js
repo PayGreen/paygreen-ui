@@ -7,10 +7,21 @@ import {
 } from '../../shared/constants';
 import { TextareaBase } from './style';
 
-const Textarea = props => {
-    const [stateValue, setValue] = useState(
-        props.value !== undefined ? props.value : '',
-    );
+const Textarea = ({
+    theme,
+    onChange,
+    value,
+    status,
+    label,
+    hasCounter,
+    counterText,
+    hasShadow,
+    inputRef,
+    marginTop,
+    marginBottom,
+    ...rest
+}) => {
+    const [stateValue, setValue] = useState(value);
     const [stateCharactersStatus, setCharactersStatus] = useState(
         formStatusDefault,
     );
@@ -19,47 +30,35 @@ const Textarea = props => {
         setValue(e.target.value);
     };
 
-    const {
-        status,
-        label,
-        hasCounter,
-        counterText,
-        hasShadow,
-        inputRef,
-        marginTop,
-        marginBottom,
-        ...rest
-    } = props;
-
     const charactersLength = stateValue.length || 0;
 
     useEffect(() => {
-        if (charactersLength > props.maxLength * 0.9) {
+        if (charactersLength > rest.maxLength * 0.9) {
             setCharactersStatus(formStatusOptions.warning);
-        } else if (charactersLength >= props.minLength) {
+        } else if (charactersLength >= rest.minLength) {
             setCharactersStatus(formStatusOptions.success);
         }
     }, [charactersLength]);
 
     const charactersCountBlock = (
         <div>
-            <span>{charactersLength}</span>&nbsp;/&nbsp;{props.maxLength}{' '}
+            <span>{charactersLength}</span>&nbsp;/&nbsp;{rest.maxLength}{' '}
             {counterText}
         </div>
     );
 
     return (
         <TextareaBase
-            theme={props.theme} // not necessary, only needed for tests
+            theme={theme} // not necessary, only needed for tests
             status={status}
             charactersStatus={stateCharactersStatus}
-            inputDisabled={props.disabled}
-            inputReadOnly={props.readOnly}
+            inputDisabled={rest.disabled}
+            inputReadOnly={rest.readOnly}
             hasShadow={hasShadow}
             marginTop={marginTop}
             marginBottom={marginBottom}
         >
-            {label ? <label htmlFor={props.id}>{label}</label> : null}
+            {label ? <label htmlFor={rest.id}>{label}</label> : null}
 
             <textarea
                 {...rest}
@@ -67,11 +66,11 @@ const Textarea = props => {
                 value={stateValue}
                 onChange={e => {
                     handleChange(e);
-                    props.onChange ? props.onChange(e) : null;
+                    onChange ? onChange(e) : null;
                 }}
             />
 
-            {hasCounter && !props.disabled && !props.readOnly
+            {hasCounter && !rest.disabled && !rest.readOnly
                 ? charactersCountBlock
                 : null}
         </TextareaBase>
@@ -99,6 +98,7 @@ Textarea.propTypes = {
 
 Textarea.defaultProps = {
     onChange: undefined,
+    value: '',
     minLength: 0,
     maxLength: 2000,
     hasCounter: false,

@@ -11,21 +11,19 @@ import {
 import Options from './Options';
 import { SelectBase } from './style';
 
-const Select = props => {
-    const {
-        options,
-        status,
-        label,
-        // must not be passed with rest because there is no readOnly html attribute for select
-        readOnly,
-        hasShadow,
-        blockWidth,
-        marginTop,
-        marginBottom,
-        inputRef,
-        ...rest
-    } = props;
-
+const Select = ({
+    theme,
+    options,
+    status,
+    label,
+    readOnly, // must not be passed with rest because there is no readOnly html attribute for select
+    hasShadow,
+    blockWidth,
+    marginTop,
+    marginBottom,
+    inputRef,
+    ...rest
+}) => {
     const [stateStatus, setStatus] = useState(status);
 
     let animation = false;
@@ -44,24 +42,24 @@ const Select = props => {
                 return (
                     <SelectBase
                         keyframe={keyframe}
-                        theme={props.theme} // not necessary, only needed for tests
+                        theme={theme} // not necessary, only needed for tests
                         status={status}
                         inputReadOnly={readOnly}
-                        inputDisabled={props.disabled}
+                        inputDisabled={rest.disabled}
                         hasShadow={hasShadow}
                         blockWidth={blockWidth}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
                         {label ? (
-                            <label htmlFor={props.id}>{label}</label>
+                            <label htmlFor={rest.id}>{label}</label>
                         ) : null}
 
                         <select {...rest} ref={inputRef}>
                             <Options
                                 options={options}
                                 readOnly={readOnly}
-                                defaultValue={props.defaultValue}
+                                defaultValue={rest.defaultValue}
                             />
                         </select>
 

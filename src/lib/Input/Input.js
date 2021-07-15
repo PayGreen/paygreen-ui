@@ -11,29 +11,27 @@ import {
 } from '../../shared/constants';
 import { InputBase } from './style';
 
-const Input = props => {
-    const {
-        status,
-        label,
-        hasShadow,
-        blockWidth,
-        marginTop,
-        marginBottom,
-        // remove mask from rest
-        mask,
-        ...rest
-    } = props;
-
+const Input = ({
+    theme,
+    status,
+    label,
+    hasShadow,
+    blockWidth,
+    marginTop,
+    marginBottom,
+    mask,
+    ...rest
+}) => {
     const [stateMask, setMask] = useState('');
     const [stateStatus, setStatus] = useState(status);
 
     useEffect(() => {
         if (mask && mask.length) {
             setMask(mask);
-        } else if (props.type === 'tel') {
+        } else if (rest.type === 'tel') {
             setMask('+99 (0)9 99 99 99 99');
         }
-    }, [props.type, mask]);
+    }, [rest.type, mask]);
 
     let animation = false;
     if (status !== stateStatus) {
@@ -51,18 +49,18 @@ const Input = props => {
                 return (
                     <InputBase
                         keyframe={keyframe}
-                        theme={props.theme} // not necessary, only needed for tests
+                        theme={theme} // not necessary, only needed for tests
                         status={status}
-                        inputType={props.type}
-                        inputReadOnly={props.readOnly}
-                        inputDisabled={props.disabled}
+                        inputType={rest.type}
+                        inputReadOnly={rest.readOnly}
+                        inputDisabled={rest.disabled}
                         hasShadow={hasShadow}
                         blockWidth={blockWidth}
                         marginTop={marginTop}
                         marginBottom={marginBottom}
                     >
                         {label ? (
-                            <label htmlFor={props.id}>{label}</label>
+                            <label htmlFor={rest.id}>{label}</label>
                         ) : null}
 
                         <InputMask {...rest} mask={stateMask} />
