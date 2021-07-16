@@ -4,21 +4,19 @@ import { buttonSizeOptions, buttonSizeDefault } from '../../shared/constants';
 import { CheckboxBase } from './style';
 import { CheckBoldIcon } from '../Icon/Icon';
 
-const Checkbox = props => {
-    const { fieldSize, label, id, inputRef, ...rest } = props;
-
+const Checkbox = ({ theme, fieldSize, label, inputRef, ...rest }) => {
     return (
         <CheckboxBase
-            theme={props.theme} // not necessary, only needed for tests
+            theme={theme} // not necessary, only needed for tests
             fieldSize={fieldSize}
-            isDisabled={props.disabled}
+            isDisabled={rest.disabled}
             hasLabel={label && label.length > 0}
         >
-            <input {...rest} ref={inputRef} id={id} type="checkbox" />
+            <input {...rest} ref={inputRef} type="checkbox" />
 
-            <label htmlFor={id}>
+            <label htmlFor={rest.id}>
                 <CheckBoldIcon
-                    theme={props.theme} // not necessary, only needed for tests
+                    theme={theme} // not necessary, only needed for tests
                 />
 
                 {label}

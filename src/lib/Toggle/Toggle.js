@@ -11,7 +11,7 @@ import {
 import { ToggleBase } from './style';
 
 const Toggle = ({
-    id,
+    theme,
     checkedLabel,
     notCheckedLabel,
     children,
@@ -23,7 +23,7 @@ const Toggle = ({
 }) => {
     return (
         <ToggleBase
-            theme={rest.theme} // not necessary, only needed for tests
+            theme={theme} // not necessary, only needed for tests
             colorPallet={colorPallet}
             colorTheme={colorTheme}
             colorWab={colorWab}
@@ -31,8 +31,8 @@ const Toggle = ({
         >
             {children ? <span className="legend">{children}</span> : null}
 
-            <label htmlFor={id}>
-                <input type="checkbox" {...rest} id={id} />
+            <label htmlFor={rest.id}>
+                <input {...rest} type="checkbox" />
 
                 <div className="toggle">
                     <span className="checked-label">

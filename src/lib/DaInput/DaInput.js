@@ -9,34 +9,33 @@ import {
 } from '../../shared/constants';
 import { DaInputBase } from './style';
 
-const DaInput = props => {
+const DaInput = ({
+    theme,
+    isRounded,
+    fieldSize,
+    blockWidth,
+    hasHelpButton,
+    hasStaticWidth,
+    icon,
+    mask,
+    ...rest
+}) => {
     const [stateMask, setMask] = useState('');
-    const {
-        isRounded,
-        fieldSize,
-        blockWidth,
-        hasHelpButton,
-        hasStaticWidth,
-        icon,
-        // remove mask from rest
-        mask,
-        ...rest
-    } = props;
 
     useEffect(() => {
         if (mask && mask.length) {
             setMask(mask);
-        } else if (props.type === 'tel') {
+        } else if (rest.type === 'tel') {
             setMask('+99 (0)9 99 99 99 99');
         }
-    }, [props.type, mask]);
+    }, [rest.type, mask]);
 
     return (
         <DaInputBase
-            theme={props.theme} // not necessary, only needed for tests
-            inputType={props.type}
-            inputReadOnly={props.readOnly}
-            inputDisabled={props.disabled}
+            theme={theme} // not necessary, only needed for tests
+            inputType={rest.type}
+            inputReadOnly={rest.readOnly}
+            inputDisabled={rest.disabled}
             isRounded={isRounded}
             fieldSize={fieldSize}
             blockWidth={blockWidth}
