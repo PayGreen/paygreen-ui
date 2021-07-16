@@ -1,0 +1,148 @@
+---
+id: displayTypeFlex
+title: Le displayType "flex"
+sidebar_position: 2
+---
+
+import { Grid, Card, Text } from '@paygreen/paygreen-ui';
+import WrapperComponent from '../../../src/components/WrapperComponent.js';
+
+## Props liées au `flex`
+
+Les props liées au `displayType="flex"` sont les suivantes&nbsp;:
+
+| Props         | Type ou valeurs autorisées | Valeur par défaut |
+| ------------- | -------------------------- | ----------------- |
+| flexDirection | `row`, `column`            | `row`             |
+| flexWrap      | `wrap`, `nowrap`           | `wrap`            |
+| childrenFlex  | _string OR number_         | `initial`         |
+
+-   La props `flexDirection` permet de remplir la propriété CSS `flex-direction`&nbsp;: en `row`, les enfants sont placés les uns à côté des autres, tandis qu'en column, ils sont les uns en-dessous des autres.
+-   La props `flexWrap` permet de remplir la propriété CSS `flex-wrap`&nbsp;: en `wrap`, les enfants reviennent à la ligne s'ils dépassent de l'espace disponible dans leur parent. Cette spécificité est particulièrement utile pour gérer l'affichage de blocs très larges sur petits écrans.
+-   La props `childrenFlex` permet de remplir la propriété CSS `flex` appliquée sur les enfants directs de la **Grid**&nbsp;: par exemple, un `childrenFlex` à `1` force chacun des enfants à prendre tout l'espace disponible dans la limite de la largeur du conteneur et de l'espace occupé par les autres enfants. [Plus de détails sur la propriété CSS `flex`](https://developer.mozilla.org/fr/docs/Web/CSS/flex).
+
+:::important
+
+Tips CSS&nbsp;: le `flex-direction: column;` inverse les axes du `justify-content` et du `align-items`.
+
+:::
+
+## Alignement des enfants
+
+Si le `flex` ne nécessite pas beaucoup de props, c'est parce que ce sont les alignements horizontal et vertical qui vont déterminer l'architecture du composant. Autant en mode `grid` les enfants sont alignés à l'intérieur de leur cellule, autant en mode `flex` ils sont alignés les uns par rapport aux autres dans leur parent.
+Les enfants peuvent être alignés sur deux dimensions&nbsp;:
+
+-   Sur l'**axe principal** (x en `flex-direction: row;` ou y en `flex-direction: column;`) avec `justifyContent`, qui permet de remplir la propriété CSS `justify-content`&nbsp;;
+-   Sur l'**axe secondaire** (y en `flex-direction: row;` ou x en `flex-direction: column;`) avec `alignItems`, qui permet de remplir la propriété CSS `align-items` commune au [`displayType="grid"`](/docs/Grids/Grid/displayTypeGrid).
+
+| Props          | Type ou valeurs autorisées                                | Valeur par défaut |
+| -------------- | --------------------------------------------------------- | ----------------- |
+| justifyContent | `center`, `flex-start`, `flex-end`, `space-between`       | `space-between`   |
+| alignItems     | `stretch`, `center`, `flex-start`, `flex-end`, `baseline` | `flex-start`      |
+
+### Les valeurs du `justifyContent`
+
+-   Le `center` colle tous les enfants au centre de la **Grid** (verticalement en `flex-direction: column;`).
+-   Le `flex-start` colle tous les enfants à gauche de la **Grid** (ou en haut en `flex-direction: column;`).
+-   Le `flex-end` colle tous les enfants à droite de la **Grid** (ou en bas en `flex-direction: column;`).
+-   Le `space-between` distribue les enfants sur toute la largeur de la **Grid** (ou en hauteur en `flex-direction: column;`)&nbsp;: le premier enfant est collé à gauche (ou en haut en `flex-direction: column;`), le dernier est collé à droite (ou en bas en `flex-direction: column;`), et les autres sont espacés à intervalles réguliers en fonction de l'espace disponible.
+
+### Les valeurs du `alignItems`
+
+-   Le `stretch` étire les enfants sur toute la hauteur de la **Grid** (ou en largeur en `flex-direction: column;`).
+-   Le `center` centre verticalement les enfants dans la **Grid** (ou horizontalement en `flex-direction: column;`).
+-   Le `flex-start` colle tous les enfants en haut de la **Grid** (ou à gauche en `flex-direction: column;`).
+-   Le `flex-end` colle tous les enfants en bas de la **Grid** (ou à droite en `flex-direction: column;`).
+-   Le `baseline` aligne les enfants à partir du texte qu'ils contiennent&nbsp;: avec des textes de différentes tailles, cette propriété est particulièrement utile pour que les différents textes soient placés sur une même ligne de lecture.
+
+:::caution
+
+Ne pas confondre la props `alignItems` citée ci-dessus (qui contrôle l'alignement des enfants) avec la props `align` tout court (qui contrôle l'alignement de tout le composant **Grid** par rapport à son parent).
+
+:::
+
+## Exemples
+
+### Grid par défaut
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <Grid>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+                porta mollis.
+            </Text>
+        </Card>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim.
+            </Text>
+        </Card>
+    </Grid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<Grid>
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+            porta mollis.
+        </Text>
+    </Card>
+
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim.
+        </Text>
+    </Card>
+</Grid>
+```
+
+### Grid en `justifyContent="center"` et `alignItems="stretch"`
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <Grid justifyContent="center" alignItems="stretch">
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+                porta mollis.
+            </Text>
+        </Card>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis.
+            </Text>
+        </Card>
+    </Grid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<Grid justifyContent="center" alignItems="stretch">
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+            porta mollis.
+        </Text>
+    </Card>
+
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis.
+        </Text>
+    </Card>
+</Grid>
+```

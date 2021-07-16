@@ -1,0 +1,189 @@
+---
+id: childrenShift
+title: Enfants en escalier
+sidebar_position: 6
+---
+
+import { Grid, Card, Text } from '@paygreen/paygreen-ui';
+import WrapperComponent from '../../../src/components/WrapperComponent.js';
+
+Le composant **Grid**, en `displayType` `flex` et `grid`, permet de disposer ses enfants "en escalier" pour les écrans très larges supérieurs à `theme.screen.min.xl` (cf. les démos en fin de doc).
+
+## Props liées à l'effet d'escalier
+
+| Props             | Type ou valeurs autorisées           | Valeur par défaut |
+| ----------------- | ------------------------------------ | ----------------- |
+| columnNumber      | _number_                             | 2                 |
+| childrenShiftSize | `none`, `xs`, `sm`, `md`, `lg`, `xl` | `none`            |
+| isNegativeShift   | _booléen_                            | false             |
+| isReverseShift    | _booléen_                            | false             |
+
+### La props `columnNumber`
+
+La props `columnNumber` est normalement utilisé pour le `displayType` `grid` et `column`&nbsp;: il s'agit donc du seul cas où il aura un effet en `displayType="flex"`.
+
+En définissant le nombre de colonnes de la **Grid** (sans effet en `displayType="flex"`), la props `columnNumber` permet de définir le nombre d'enfants par ligne. C'est sur ce nombre d'enfants que l'effet escalier sera appliqué&nbsp;: ainsi, si le `columnNumber` est défini à 3, les 3 premiers enfants de la **Grid** auront un effet d'escalier (et les suivants seront placés normalement).
+
+### La props `childrenShiftSize`
+
+La props `childrenShiftSize` permet de définir la taille du décalage "de base" pour chaque élément de l'escalier&nbsp;:
+
+| Valeur | Taille en pixels         |
+| ------ | ------------------------ |
+| `none` | 0 (pas d'ajout de style) |
+| `xs`   | 64px                     |
+| `sm`   | 128px                    |
+| `md`   | 256px                    |
+| `lg`   | 320px                    |
+| `xl`   | 384px                    |
+
+Ces valeurs servent à remplir la propriété CSS `margin-top` de chaque enfant sur la première ligne (pour rappel, le nombre d'enfants sur la première ligne est connu via la props `columnsNumber`).
+
+| Position de l'enfant dans le composant Grid                           | Taille du `margin-top`         | Commentaire        |
+| --------------------------------------------------------------------- | ------------------------------ | ------------------ |
+| 1er                                                                   | `childrenShiftSize` \* 0       | Ça fait zéro       |
+| 2ème                                                                  | `childrenShiftSize` \* 1       | Décalage "de base" |
+| 3ème                                                                  | `childrenShiftSize` \* 2       | /                  |
+| 4ème                                                                  | `childrenShiftSize` \* 3       | /                  |
+| N (qui correspond au `columnNumber` et pas au nombre total d'enfants) | `childrenShiftSize` \* (N - 1) | /                  |
+
+Le `margin-top` défini par ce biais écrase tout `margin-top` défini directement dans les enfants ou [via les props `childrenMargin` et `childrenMarginBig`](/docs/Grids/Grid/ChildrenMargin).
+
+### La props `isNegativeShift`
+
+Il est possible d'utiliser des `margin-top` négatifs pour créer un escalier qui déborde sur le contenu précédent avec la props `isNegativeShift`&nbsp;: dans ce cas, les tailles définies ci-dessus sont préfixées par un `-`. Le dernier enfant de la première ligne sera donc le plus haut placé.
+
+### La props `isReverseShift`
+
+La props `isReverseShift` permet d'inverser la distribution des `margin-top` aux enfants&nbsp;: le 1er enfant a le décalage le plus important et l'enfant N a un `margin-top` à 0.
+
+| Position de l'enfant dans le composant Grid | Taille du `margin-top`         | Commentaire        |
+| ------------------------------------------- | ------------------------------ | ------------------ |
+| 1er                                         | `childrenShiftSize` \* (N - 1) | Ça fait zéro       |
+| 2ème                                        | `childrenShiftSize` \* (N - 2) | Décalage "de base" |
+| 3ème                                        | `childrenShiftSize` \* (N - 3) | /                  |
+| 4ème                                        | `childrenShiftSize` \* (N - 4) | /                  |
+| N (qui correspond au `columnNumber`)        | `childrenShiftSize` \* 0       | /                  |
+
+## Exemples
+
+### Grid escalier en `flex`
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <Grid childrenShiftSize="md">
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse viverra ut tellus facilisis iaculis. Maecenas eu
+                augue erat. Pellentesque aliquet nulla non lacus vehicula, sit
+                amet ornare sem ullamcorper. Cras hendrerit suscipit risus a
+                cursus. Maecenas ut pulvinar sapien. Aliquam sollicitudin eros
+                at molestie commodo. Morbi gravida mi id tincidunt egestas.
+            </Text>
+        </Card>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Praesent condimentum leo at placerat tincidunt. Praesent ut
+                velit et metus ultrices dignissim eu laoreet purus. Donec rutrum
+                nisi eu massa condimentum, tempus dapibus lectus pellentesque.
+                Nam consectetur tortor in justo posuere fermentum. Sed sit amet
+                mollis quam, quis laoreet metus.
+            </Text>
+        </Card>
+    </Grid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<Grid childrenShiftSize="md">
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            viverra ut tellus facilisis iaculis. Maecenas eu augue erat.
+            Pellentesque aliquet nulla non lacus vehicula, sit amet ornare sem
+            ullamcorper. Cras hendrerit suscipit risus a cursus. Maecenas ut
+            pulvinar sapien. Aliquam sollicitudin eros at molestie commodo.
+            Morbi gravida mi id tincidunt egestas.
+        </Text>
+    </Card>
+
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Praesent condimentum leo at placerat tincidunt. Praesent ut velit et
+            metus ultrices dignissim eu laoreet purus. Donec rutrum nisi eu
+            massa condimentum, tempus dapibus lectus pellentesque. Nam
+            consectetur tortor in justo posuere fermentum. Sed sit amet mollis
+            quam, quis laoreet metus.
+        </Text>
+    </Card>
+</Grid>
+```
+
+### Grid escalier en `isReverseShift={true}`
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <Grid
+        childrenShiftSize="sm"
+        displayType="grid"
+        columnNumber={3}
+        isReverseShift={true}
+    >
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+                porta mollis.
+            </Text>
+        </Card>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim.
+            </Text>
+        </Card>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim. Quisque ac massa mauris.
+            </Text>
+        </Card>
+    </Grid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<Grid
+    childrenShiftSize="sm"
+    displayType="grid"
+    columnNumber={3}
+    isReverseShift={true}
+>
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+            porta mollis.
+        </Text>
+    </Card>
+
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim.
+        </Text>
+    </Card>
+
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim. Quisque ac massa mauris.
+        </Text>
+    </Card>
+</Grid>
+```

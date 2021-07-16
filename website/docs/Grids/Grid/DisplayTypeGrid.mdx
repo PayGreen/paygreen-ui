@@ -1,0 +1,212 @@
+---
+id: displayTypeGrid
+title: Le displayType "grid"
+sidebar_position: 3
+---
+
+import { Grid, Card, Text } from '@paygreen/paygreen-ui';
+import WrapperComponent from '../../../src/components/WrapperComponent.js';
+
+## Props liées au `grid`
+
+Les props liées au `displayType="grid"` sont les suivantes&nbsp;:
+
+| Props               | Type ou valeurs autorisées           | Valeur par défaut |
+| ------------------- | ------------------------------------ | ----------------- |
+| gridTemplateColumns | _string_                             | _null_            |
+| columnNumber        | _number_                             | 2                 |
+| gridGap             | `none`, `xs`, `sm`, `md`, `lg`, `xl` | `none`            |
+
+-   La props `gridTemplateColumns` permet de remplir la propriété CSS `grid-template-columns`&nbsp;: pour créer une grille de 4 colonnes dont la première doit prendre le plus d'espace possible (sans écraser les 3 autres colonnes), on pourra donc définir `gridTemplateColumns="1fr auto auto auto"`. [Plus de détails sur la propriété CSS `grid-template-columns`](https://developer.mozilla.org/fr/docs/Web/CSS/grid-template-columns).
+-   La props `columnNumber` permet de générer la propriété CSS `grid-template-columns` si la props `gridTemplateColumns` est laissée à `null` (voir le tableau ci-dessous pour le CSS généré).
+-   La props `gridGap` permet de remplir la propriété CSS `gap`&nbsp;: voir la [doc sur le GridGap](/docs/Grids/GridGap) pour plus de détails.
+
+### Génération du `grid-template-columns` à partir du `columnNumber`
+
+Le `columnNumber` permet de générer un template de colonnes de même largeur&nbsp;: pour un template plus custom, il faut directement écrire l'instruction CSS dans la props `gridTemplateColumns` (exemple&nbsp;: `2fr auto 1fr`).
+
+| Résultat                  | De `theme.screen.min.md` à `theme.screen.min.lg` | À partir de `theme.screen.min.lg`        |
+| ------------------------- | ------------------------------------------------ | ---------------------------------------- |
+| Nombre de colonnes        | `columnNumber` - 1                               | `columnNumber`                           |
+| CSS si `columnNumber={2}` | `grid-template-columns: repeat(1, 1fr);`         | `grid-template-columns: repeat(2, 1fr);` |
+| CSS si `columnNumber={3}` | `grid-template-columns: repeat(2, 1fr);`         | `grid-template-columns: repeat(3, 1fr);` |
+
+## Alignement des enfants
+
+Une fois votre grille créée, il est indispensable de réfléchir à l'alignements des enfants à l'intérieur de leurs "cellules" respectives.
+Les enfants peuvent être alignés sur deux dimensions&nbsp;:
+
+-   Sur l'**axe horizontal** (x) avec `justifyItems`, qui permet de remplir la propriété CSS `justify-items`&nbsp;;
+-   Sur l'**axe vertical** (y) avec `alignItems`, qui permet de remplir la propriété CSS `align-items` commune au [`displayType="flex"`](/docs/Grids/Grid/displayTypeFlex).
+
+| Props        | Type ou valeurs autorisées                                | Valeur par défaut |
+| ------------ | --------------------------------------------------------- | ----------------- |
+| justifyItems | `stretch`, `center`, `start`, `end`                       | `center`          |
+| alignItems   | `stretch`, `center`, `flex-start`, `flex-end`, `baseline` | `flex-start`      |
+
+### Les valeurs du `justifyItems`
+
+-   Le `stretch` étire l'enfant sur toute la largeur de la cellule.
+-   Le `center` centre horizontalement l'enfant dans la cellule.
+-   Le `start` place l'enfant sur la gauche de la cellule.
+-   Le `end` place l'enfant sur la droite de la cellule.
+
+### Les valeurs du `alignItems`
+
+-   Le `stretch` étire l'enfant sur toute la hauteur de la cellule.
+-   Le `center` centre verticalement l'enfant dans la cellule.
+-   Le `flex-start` place l'enfant en haut de la cellule.
+-   Le `flex-end` place l'enfant en bas de la cellule.
+-   Le `baseline` aligne les enfants à partir du texte qu'ils contiennent&nbsp;: avec des textes de différentes tailles, cette propriété est particulièrement utile pour que les différents textes semblent placés sur une même ligne de lecture.
+
+:::caution
+
+Ne pas confondre la props `alignItems` citée ci-dessus (qui contrôle l'alignement des enfants) avec la props `align` tout court (qui contrôle l'alignement de tout le composant **Grid** par rapport à son parent).
+
+:::
+
+## Exemples
+
+### Grid en `justifyItems="center"`
+
+Il s'agit de la valeur par défaut du `justifyItems`.
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <Grid displayType="grid">
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+                porta mollis.
+            </Text>
+        </Card>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim.
+            </Text>
+        </Card>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+                porta mollis.
+            </Text>
+        </Card>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim.
+            </Text>
+        </Card>
+    </Grid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<Grid displayType="grid">
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+            porta mollis.
+        </Text>
+    </Card>
+
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim.
+        </Text>
+    </Card>
+
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+            porta mollis.
+        </Text>
+    </Card>
+
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim.
+        </Text>
+    </Card>
+</Grid>
+```
+
+### Grid en `alignItems="stretch"`
+
+#### Démo 🎉
+
+<WrapperComponent>
+    <Grid displayType="grid" alignItems="stretch">
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+                porta mollis.
+            </Text>
+        </Card>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim.
+            </Text>
+        </Card>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+                porta mollis.
+            </Text>
+        </Card>
+        <Card blockWidth="xs">
+            <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+                Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+                enim.
+            </Text>
+        </Card>
+    </Grid>
+</WrapperComponent>
+
+#### Code ⌨️
+
+```jsx
+<Grid displayType="grid" alignItems="stretch">
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+            porta mollis.
+        </Text>
+    </Card>
+
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim.
+        </Text>
+    </Card>
+
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim. Quisque ac massa mauris. Maecenas hendrerit augue ac velit
+            porta mollis.
+        </Text>
+    </Card>
+
+    <Card blockWidth="xs">
+        <Text paddingTop="xs" paddingBottom="xs" paddingLateral="xs">
+            Phasellus eleifend lacus nec ultrices iaculis. Vivamus vitae dui
+            enim.
+        </Text>
+    </Card>
+</Grid>
+```

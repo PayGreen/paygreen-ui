@@ -18,18 +18,21 @@ const childrenMargins = css`
         margin: ${props => props.theme.space[props.childrenMargin]} auto !important;
 
         @media ${props => props.theme.screen.min.md} {
-            margin: ${props => props.theme.space[props.childrenMarginBig]} !important;
+            margin: ${props =>
+                props.theme.space[props.childrenMarginBig]} !important;
         }
     }
 `;
 
-const gridGap = css`
-    gap: ${props =>
-        blockSpace(
-            'sm',
-            calculateSpace(props.gridGap, 0, 1, 'space'),
-            'space',
-        )};
+const gapStyle = css`
+    @media ${props => props.theme.screen.min.md} {
+        gap: ${props =>
+            blockSpace(
+                'sm',
+                calculateSpace(props.gridGap, 0, 1, 'space'),
+                'space',
+            )};
+    }
 
     @media ${props => props.theme.screen.min.lg} {
         gap: ${props =>
@@ -39,14 +42,6 @@ const gridGap = css`
                 'space',
             )};
     }
-`;
-
-const gridStyles = css`
-    display: grid;
-    justify-items: ${props => props.justifyItems};
-    align-items: ${props => props.alignItems};
-
-    ${gridGap};
 `;
 
 const gridTemplate = {
@@ -87,8 +82,12 @@ const displayStyle = {
     `,
     grid: css`
         @media ${props => props.theme.screen.min.md} {
-            ${gridStyles};
+            display: grid;
+            justify-items: ${props => props.justifyItems};
+            align-items: ${props => props.alignItems};
         }
+
+        ${gapStyle};
 
         ${props =>
             props.gridTemplateColumns
@@ -109,15 +108,11 @@ const displayStyle = {
         }
 
         @media ${props => props.theme.screen.min.md} {
-            padding-top: ${props => props.theme.space[props.childrenMarginBig]};
             width: fit-content;
             columns: ${props => props.columnNumber - 1};
-            gap: ${props => props.theme.blockSpace[props.gridGap]};
 
             & > * {
                 padding: ${props => props.theme.space[props.childrenMarginBig]};
-                padding-top: 0;
-                padding-bottom: ${props => math(props.theme.space.lg + '*2')};
                 display: inline-block;
                 width: 100%;
                 /* fix for shadow inside columns */
@@ -128,6 +123,8 @@ const displayStyle = {
         @media ${props => props.theme.screen.min.lg} {
             columns: ${props => props.columnNumber};
         }
+
+        ${gapStyle};
     `,
 };
 
@@ -153,4 +150,4 @@ function childrenShift(count, shiftSize, isNegative, isReverse) {
     `;
 }
 
-export { gridGap, gridAlign, displayStyle, childrenShift };
+export { gridAlign, displayStyle, childrenShift };

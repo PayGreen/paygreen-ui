@@ -1,0 +1,49 @@
+---
+id: childrenMargin
+title: Marges des enfants
+sidebar_position: 5
+---
+
+La [props `gridGap`](/docs/Grids/GridGap) permet d'espacer les enfants de la **Grid** en `displayType` `grid` ou `column`&nbsp;: en revanche, en `flex`, cette props ne peut pas s'appliquer car la propriété CSS `gap` est très peu supportée avec un `display: flex;`.
+
+La **Grid** permet donc de définir des marges identiques pour tous ses enfants&nbsp;: ces marges définies dans la **Grid** écrasent les marges éventuelles définies dans les composants enfants.
+
+| Props             | Valeur par défaut | Largeur d'écran                   |
+| ----------------- | ----------------- | --------------------------------- |
+| childrenMargin    | `md`              | Jusqu'à `theme.screen.min.md`     |
+| childrenMarginBig | `lg`              | À partir de `theme.screen.min.md` |
+
+## Valeurs autorisées
+
+Les props `childrenMargin` et `childrenMarginBig` autorisent les mêmes valeurs&nbsp;:
+
+| Valeur | Taille en pixels |
+| ------ | ---------------- |
+| `none` | Aucune\*         |
+| `xs`   | 4px              |
+| `sm`   | 8px              |
+| `md`   | 16px             |
+| `lg`   | 32px             |
+| `xl`   | 64px             |
+
+:::important
+
+\* La valeur `none` ne remplit pas les `margin` avec `0`&nbsp;: aucune instruction CSS n'est écrite lorsque la props envoie `none`, ce qui permet aux marges définies dans chaque enfant de s'appliquer sans être écrasées.
+
+Pour définir des marges distinctes pour chaque enfant d'une **Grid**, il faut donc utiliser `none` dans les props `childrenMargin` et `childrenMarginBig`.
+
+À l'inverse, il est impossible de forcer les marges des enfants à 0 via la valeur `none`.
+
+:::
+
+## La props `childrenMargin`
+
+Cette props s'applique sur les petits écrans inférieurs à `theme.screen.min.md`.
+
+Elle remplit les instructions CSS `margin-top` et `margin-bottom` de chaque enfant (les `margin-left` et `margin-right` sont définies à `auto` pour que les enfants soient centrés).
+
+## La props `childrenMarginBig`
+
+Cette props écrase la props `childrenMargin` sur les grands écrans supérieurs ou égaux à `theme.screen.min.md`.
+
+Elle remplit les instructions CSS `margin-top`, `margin-bottom`, `margin-left` et `margin-right` de chaque enfant.
