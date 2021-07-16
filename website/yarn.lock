@@ -1554,10 +1554,10 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@paygreen/paygreen-ui@^0.8.6":
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/@paygreen/paygreen-ui/-/paygreen-ui-0.8.6.tgz#b186fb364701d283e3af27319dcbfaa3b6efdd9c"
-  integrity sha512-UyBW87OLg7ysdr47v8poJESmOIL4Xtv2YaoQ1aHWLx1V2RNTVSY5Wy5UL6qYP+qF4AQjtglXCrqsGtahRHuOTg==
+"@paygreen/paygreen-ui@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@paygreen/paygreen-ui/-/paygreen-ui-1.0.0.tgz#b48268b26597fc7f1475753f2d869fc8f3b2112e"
+  integrity sha512-w4gZoirBsPejQx7QAw8J8/QVKOy4kMfpSyrgznIUGEQ1z3HtBu50IVeay4vuFnDognLjljCU8b88BbJErzG0VA==
   dependencies:
     "@n8tb1t/use-scroll-position" "^1.0.47"
     caniuse-lite "^1.0.30001214"
