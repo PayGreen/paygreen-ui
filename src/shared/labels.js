@@ -1,6 +1,7 @@
 const labels = {
     label: 'Label',
     text: 'Text',
+    type: 'Type',
     htmlTag: 'HTML tag',
     icon: 'With icon',
     hasCounter: 'Has counter',

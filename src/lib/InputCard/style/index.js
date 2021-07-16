@@ -1,11 +1,8 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
-import {
-    labelSize,
-    activeStyle
-} from './base';
+import { labelSize, activeStyle } from './base';
 
-const RadioIconBase = styled.div`
+const InputCardBase = styled.div`
     ${props => labelSize[props.blockSize]};
     position: relative;
 
@@ -37,14 +34,14 @@ const RadioIconBase = styled.div`
         border-radius: ${props => props.theme.radius.lg};
         color: ${props => props.theme.wab.grey50};
         background-color: ${props => props.theme.wab.white00};
-        box-shadow: ${props => props.theme.shadow.size.sm + ' ' + transparentize(
-            0.9,
-            props.theme.wab.black00
-        )};
+        box-shadow: ${props =>
+            props.theme.shadow.size.sm +
+            ' ' +
+            transparentize(0.9, props.theme.wab.black00)};
         transition: all ${props => props.theme.transition.xs};
 
         & > .icon {
-            opacity: .5;
+            opacity: 0.5;
 
             svg {
                 fill: ${props => props.theme.wab.grey40};
@@ -55,12 +52,14 @@ const RadioIconBase = styled.div`
             position: absolute;
             top: 0;
             right: 0;
-            background-color: ${props => transparentize(0.8, props.theme.status.success.main)};
+            background-color: ${props =>
+                transparentize(0.8, props.theme.status.success.main)};
             width: ${props => props.theme.corner.size.lg};
             height: ${props => props.theme.corner.size.lg};
             border-radius: 0 ${props => props.theme.radius.lg} 0 100%;
             text-align: right;
-            padding: ${props => props.theme.corner.padding.lg} ${props => props.theme.corner.padding.lg} 0 0;
+            padding: ${props => props.theme.corner.padding.lg}
+                ${props => props.theme.corner.padding.lg} 0 0;
             box-sizing: border-box;
             transform-origin: top right;
             transform: scale(0);
@@ -73,4 +72,4 @@ const RadioIconBase = styled.div`
     }
 `;
 
-export { RadioIconBase };
+export { InputCardBase };

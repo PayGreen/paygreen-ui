@@ -225,13 +225,13 @@ const inputWidthOptions = {
 
 const inputWidthDefault = inputWidthOptions.md;
 
-// Radio sizes
-const radioSizeOptions = {
+// InputCard sizes
+const inputCardSizeOptions = {
     md: 'md',
     lg: 'lg',
 };
 
-const radioSizeDefault = radioSizeOptions.lg;
+const inputCardSizeDefault = inputCardSizeOptions.lg;
 
 // Radius sizes
 const radiusOptions = {
@@ -365,6 +365,16 @@ const sidebarItemHtmlTagOptions = {
 };
 
 const sidebarItemHtmlTagDefault = sidebarItemHtmlTagOptions.div;
+
+/* Types */
+
+// Input types
+const multipleInputTypeOptions = {
+    radio: 'radio',
+    checkbox: 'checkbox',
+};
+
+const multipleInputTypeDefault = multipleInputTypeOptions.radio;
 
 /* Grids, aligns and positions */
 
@@ -547,8 +557,8 @@ export {
     buttonSizeDefault,
     inputWidthOptions,
     inputWidthDefault,
-    radioSizeOptions,
-    radioSizeDefault,
+    inputCardSizeOptions,
+    inputCardSizeDefault,
     radiusOptions,
     radiusDefault,
     spaceOptions,
@@ -573,6 +583,8 @@ export {
     labelHtmlTagDefault,
     sidebarItemHtmlTagOptions,
     sidebarItemHtmlTagDefault,
+    multipleInputTypeOptions,
+    multipleInputTypeDefault,
     displayOptions,
     displayDefault,
     flexDirectionOptions,
