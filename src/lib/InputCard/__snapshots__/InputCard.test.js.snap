@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__InputCardBase-sc-8iz749-0 cbnWZt"
+  className="style__InputCardBase-sc-8iz749-0 bKtTdJ"
 >
   <input
     id="test1"
