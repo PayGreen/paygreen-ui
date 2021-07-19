@@ -1,7 +1,8 @@
-**PayGreen-UI**
+# PayGreen-UI
 
 A library of reusable [React](https://reactjs.org/) components powered by [styled-components](https://styled-components.com/).
-Test our components on [our live demo](https://paygreen.github.io/paygreen-ui/).
+
+> Test our components on [our live demo](https://paygreen.github.io/paygreen-ui/) or [read our Docusaurus documentation](https://paygreen.github.io/paygreen-ui-doc).
 
 ## Installation
 
@@ -14,10 +15,6 @@ npm install @paygreen/paygreen-ui
 // with yarn
 yarn add @paygreen/paygreen-ui
 ```
-
-## Documentation
-
-Please read our docusaurus documentation for all details on install and use of our components.
 
 ## Storybook
 
@@ -47,9 +44,3 @@ To develop a new component for the library, create a sub-directory inside `src/l
 ## Deployment
 
 The deployment of PayGreen-UI use the GitHub Actions to work on CI/CD. Each version of the library correspond to a tag pushed on the GitHub repository.
-
-## Website Doc with docusaurus
-
-- `cd website`
-- `yarn install`
-- `yarn start`
