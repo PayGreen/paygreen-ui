@@ -1,29 +1,33 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { bool, string, oneOf } from 'prop-types';
 import {
     gradientOptions,
     colorThemeOptions,
     colorThemeDefault,
-    decorationOptions,
-    decorationDefault,
+    decorationImageOptions,
+    decorationImageDefault,
 } from '../../shared/constants';
 import { BannerImageBase } from './style';
 
-const BannerImage = props => {
-    return <BannerImageBase {...props}>{props.children}</BannerImageBase>;
+const BannerImage = ({children, ...rest }) => {
+    return <BannerImageBase {...rest}>{children}</BannerImageBase>;
 };
 
 BannerImage.propTypes = {
-    image: PropTypes.string.isRequired,
-    gradient: PropTypes.oneOf(Object.values(gradientOptions)),
-    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
-    topStyle: PropTypes.oneOf(Object.values(decorationOptions)),
+    image: string.isRequired,
+    gradient: oneOf(Object.values(gradientOptions)),
+    colorTheme: oneOf(Object.values(colorThemeOptions)),
+    useColorTheme: bool,
+    topStyle: oneOf(Object.values(decorationImageOptions)),
+    bottomStyle: oneOf(Object.values(decorationImageOptions))
 };
 
 BannerImage.defaultProps = {
+    useColorTheme: true,
     gradient: gradientOptions.theme,
     colorTheme: colorThemeDefault,
-    topStyle: decorationDefault,
+    topStyle: decorationImageDefault,
+    bottomStyle: decorationImageDefault
 };
 
 export default BannerImage;

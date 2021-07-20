@@ -133,6 +133,16 @@ const decorationOptions = {
     right: 'right',
 };
 
+// Decoration images styles
+const decorationImageOptions = {
+    none: 'none',
+    left: 'left',
+    right: 'right',
+    gradient: 'gradient'
+}
+
+const decorationImageDefault = decorationOptions.left;
+
 const decorationDefault = decorationOptions.left;
 
 // List styles
@@ -536,6 +546,8 @@ export {
     maskOptions,
     maskDefault,
     decorationOptions,
+    decorationImageOptions,
+    decorationImageDefault,
     decorationDefault,
     listStyleOptions,
     listStyleDefault,

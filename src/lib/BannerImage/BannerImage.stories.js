@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios } from '@storybook/addon-knobs';
+import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
     colorThemeDefault,
-    decorationOptions,
+    decorationImageOptions,
     decorationDefault,
     fontSizeOptions,
     spaceOptions,
@@ -17,39 +17,48 @@ import Text from '../Text/Text';
 import BannerImage from './BannerImage';
 import photoFile from './sample/sample.png';
 
+const { md } = spaceOptions;
+const { colorTheme, topStyle, bottomStyle } = labels;
+
 storiesOf(folder.block + 'BannerImage', module)
     .addDecorator(withKnobs)
     .add('BannerImage', () => (
         <BannerImage
             colorTheme={radios(
-                labels.colorTheme,
+                colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
+            useColorTheme={boolean('useColorTheme', true)}
             topStyle={radios(
-                labels.topStyle,
-                decorationOptions,
+                topStyle,
+                decorationImageOptions,
                 decorationDefault,
+            )}
+            bottomStyle={radios(
+                bottomStyle,
+                decorationImageOptions,
+                decorationDefault
             )}
             image={photoFile}
         >
             <Card hasBackground={false}>
                 <Title
                     colorTheme={radios(
-                        labels.colorTheme,
+                        colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
                     textSize={fontSizeOptions.lg}
-                    marginLateral={spaceOptions.md}
-                    marginTop={spaceOptions.md}
+                    marginLateral={md}
+                    marginTop={md}
                 >
                     Your title with <strong>an emphasis</strong>
                 </Title>
 
                 <Text
-                    marginLateral={spaceOptions.md}
-                    marginTop={spaceOptions.md}
+                    marginLateral={md}
+                    marginTop={md}
                 >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Duis porttitor velit a ultricies aliquet. Donec vehicula in

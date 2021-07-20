@@ -19,6 +19,7 @@ const labels = {
     gridGap: 'Grid gap',
 
     // Colors
+    useColorTheme: 'Use color theme',
     colorType: 'Color type',
     colorStyle: 'Color style',
     colorPallet: 'Color pallet',
