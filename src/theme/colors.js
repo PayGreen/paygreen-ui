@@ -7,32 +7,81 @@ const mainColors = {
     red: '#b54025',
 };
 
-const colors = {
+const baseLight = {
     green: {
         main: mainColors.green,
+        light: '#d5f3e5',
+    },
+    blue: {
+        main: mainColors.blue,
+        light: '#e1f3f2',
+    },
+    orange: {
+        main: mainColors.orange,
+        light: '#fbe6ce',
+    },
+    pink: {
+        main: mainColors.pink,
+        light: '#ffe0e1',
+    },
+    purple: {
+        main: mainColors.purple,
+        light: '#e9d9fb',
+    },
+    red: {
+        main: mainColors.red,
+        light: '#f7d7d0',
+    },
+};
+
+const baseDark = {
+    green: {
+        main: mainColors.green,
+        light: '#243c31',
+    },
+    blue: {
+        main: mainColors.blue,
+        light: '#1a3b39',
+    },
+    orange: {
+        main: mainColors.orange,
+        light: '#473522',
+    },
+    pink: {
+        main: mainColors.pink,
+        light: '#492f2f',
+    },
+    purple: {
+        main: mainColors.purple,
+        light: '#3a2f47',
+    },
+    red: {
+        main: mainColors.red,
+        light: '#3e2621',
+    },
+};
+
+const gradients = {
+    green: {
         gradientBase: '#77d1a6',
         gradientShade: '#a4db95',
     },
     blue: {
-        main: mainColors.blue,
         gradientBase: '#51c6be',
         gradientShade: '#76bbd8',
     },
     orange: {
-        main: mainColors.orange,
         gradientBase: '#fab56b',
         gradientShade: '#faa272',
     },
     pink: {
-        main: mainColors.pink,
         gradientBase: '#e98e90',
         gradientShade: '#e98eb9',
     },
     purple: {
-        main: mainColors.purple,
         gradientBase: '#b887ee',
         gradientShade: '#dd94ef',
     },
 };
 
-export { mainColors, colors };
+export { baseLight, baseDark, gradients };

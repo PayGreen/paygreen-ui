@@ -1,57 +1,44 @@
 import patternDark from './assets/pattern-dark.png';
-import { mainColors, colors } from './colors';
+import { baseDark, gradients } from './colors';
 import { ThemeBase } from './theme.base';
-
-const lightColors = {
-    green: '#243c31',
-    blue: '#1a3b39',
-    orange: '#473522',
-    pink: '#492f2f',
-    purple: '#3a2f47',
-    red: '#3e2621',
-};
 
 const ThemeDark = {
     ...ThemeBase,
     name: 'Dark',
     color: {
         primary: {
-            ...colors.green,
-            light: lightColors.green,
+            ...baseDark.green,
+            ...gradients.green,
         },
         secondary: {
-            ...colors.blue,
-            light: lightColors.blue,
+            ...baseDark.blue,
+            ...gradients.blue,
         },
         tertiary: {
-            ...colors.orange,
-            light: lightColors.orange,
+            ...baseDark.orange,
+            ...gradients.orange,
         },
         quaternary: {
-            ...colors.pink,
-            light: lightColors.pink,
+            ...baseDark.pink,
+            ...gradients.pink,
         },
         quinary: {
-            ...colors.purple,
-            light: lightColors.purple,
+            ...baseDark.purple,
+            ...gradients.purple,
         },
     },
     status: {
         success: {
-            main: mainColors.green,
-            light: lightColors.green,
+            ...baseDark.green,
         },
         default: {
-            main: mainColors.blue,
-            light: lightColors.blue,
+            ...baseDark.blue,
         },
         warning: {
-            main: mainColors.orange,
-            light: lightColors.orange,
+            ...baseDark.orange,
         },
         danger: {
-            main: mainColors.red,
-            light: lightColors.red,
+            ...baseDark.red,
         },
     },
     wab: {

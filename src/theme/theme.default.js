@@ -1,57 +1,44 @@
 import patternLight from './assets/pattern-light.png';
-import { mainColors, colors } from './colors';
+import { baseLight, gradients } from './colors';
 import { ThemeBase } from './theme.base';
-
-const lightColors = {
-    green: '#d5f3e5',
-    blue: '#e1f3f2',
-    orange: '#fbe6ce',
-    pink: '#ffe0e1',
-    purple: '#e9d9fb',
-    red: '#f7d7d0',
-};
 
 const ThemeDefault = {
     ...ThemeBase,
     name: 'Default',
     color: {
         primary: {
-            ...colors.green,
-            light: lightColors.green,
+            ...baseLight.green,
+            ...gradients.green,
         },
         secondary: {
-            ...colors.blue,
-            light: lightColors.blue,
+            ...baseLight.blue,
+            ...gradients.blue,
         },
         tertiary: {
-            ...colors.orange,
-            light: lightColors.orange,
+            ...baseLight.orange,
+            ...gradients.orange,
         },
         quaternary: {
-            ...colors.pink,
-            light: lightColors.pink,
+            ...baseLight.pink,
+            ...gradients.pink,
         },
         quinary: {
-            ...colors.purple,
-            light: lightColors.purple,
+            ...baseLight.purple,
+            ...gradients.purple,
         },
     },
     status: {
         success: {
-            main: mainColors.green,
-            light: lightColors.green,
+            ...baseLight.green,
         },
         default: {
-            main: mainColors.blue,
-            light: lightColors.blue,
+            ...baseLight.blue,
         },
         warning: {
-            main: mainColors.orange,
-            light: lightColors.orange,
+            ...baseLight.orange,
         },
         danger: {
-            main: mainColors.red,
-            light: lightColors.red,
+            ...baseLight.red,
         },
     },
     wab: {
