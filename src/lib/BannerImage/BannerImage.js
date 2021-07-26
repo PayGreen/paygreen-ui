@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, string, oneOf } from 'prop-types';
+import PropTypes from 'prop-types';
 import {
     gradientOptions,
     colorThemeOptions,
@@ -14,16 +14,14 @@ const BannerImage = ({children, ...rest }) => {
 };
 
 BannerImage.propTypes = {
-    image: string.isRequired,
-    gradient: oneOf(Object.values(gradientOptions)),
-    colorTheme: oneOf(Object.values(colorThemeOptions)),
-    useColorTheme: bool,
-    topStyle: oneOf(Object.values(decorationImageOptions)),
-    bottomStyle: oneOf(Object.values(decorationImageOptions))
+    image: PropTypes.string.isRequired,
+    gradient: PropTypes.oneOf(Object.values(gradientOptions)),
+    colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
+    topStyle: PropTypes.oneOf(Object.values(decorationImageOptions)),
 };
 
 BannerImage.defaultProps = {
-    useColorTheme: true,
+    hasModifiedColor: false,
     gradient: gradientOptions.theme,
     colorTheme: colorThemeDefault,
     topStyle: decorationImageDefault,

@@ -133,17 +133,15 @@ const decorationOptions = {
     right: 'right',
 };
 
+const decorationDefault = decorationOptions.left;
+
 // Decoration images styles
 const decorationImageOptions = {
-    none: 'none',
-    left: 'left',
-    right: 'right',
-    gradient: 'gradient'
-}
+    ...decorationOptions,
+    gradient: 'gradient',
+};
 
-const decorationImageDefault = decorationOptions.left;
-
-const decorationDefault = decorationOptions.left;
+const decorationImageDefault = decorationImageOptions.left;
 
 // List styles
 const listStyleOptions = {

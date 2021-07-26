@@ -3,11 +3,12 @@ import maskWaveLeftTop from './maskWaveLeftTop.svg';
 import maskWaveRightTop from './maskWaveRightTop.svg';
 import maskWaveLeftBottom from './maskWaveLeftBottom.svg';
 import maskWaveRightBottom from './maskWaveRightBottom.svg';
+import { decorationOptions } from '../../../shared/constants';
+
 
 const maskImageStyle = css`
     mask-size: 100%;
     mask-repeat: no-repeat;
-    mask-position: top;
 `;
 
 const topStyle = {
@@ -15,14 +16,22 @@ const topStyle = {
     left: css`
         ${maskImageStyle};
         mask-image: url(${maskWaveLeftTop});
+        mask-position: top;
+        padding-top: ${({topStyle, theme}) => topStyle !== decorationOptions.none ? theme.wave.simple : 0};
     `,
     right: css`
         ${maskImageStyle};
+        mask-position: top;
         mask-image: url(${maskWaveRightTop});
+        padding-top: ${({topStyle, theme}) => topStyle !== decorationOptions.none ? theme.wave.simple : 0};
     `,
     gradient: css`
-    mask-image: linear-gradient(to top, transparent, black ${({theme}) =>  theme.bannerHeight.sm});
-    `
+        mask-image: linear-gradient(
+            to top,
+            transparent,
+            black ${({ theme }) => theme.bannerHeight.sm}
+        );
+    `,
 };
 
 const bottomStyle = {
@@ -30,21 +39,22 @@ const bottomStyle = {
     left: css`
         ${maskImageStyle};
         mask-image: url(${maskWaveLeftBottom});
-        mask-position: left bottom;
-   
+        mask-position: bottom;
+        padding-bottom: ${({bottomStyle, theme}) => bottomStyle !== decorationOptions.none ? theme.wave.simple : 0};
     `,
     right: css`
         ${maskImageStyle};
         mask-image: url(${maskWaveRightBottom});
-        mask-position: right bottom;
-     
+        mask-position: bottom;
+        padding-bottom: ${({bottomStyle, theme}) => bottomStyle !== decorationOptions.none ? theme.wave.simple : 0};
     `,
     gradient: css`
-    mask-image: linear-gradient(to top, transparent, black ${({theme}) => theme.bannerHeight.sm});
-   `
-}
-
-export {
-    topStyle,
-    bottomStyle
+        mask-image: linear-gradient(
+            to top,
+            transparent,
+            black ${({ theme }) => theme.bannerHeight.sm}
+        );
+    `,
 };
+
+export { topStyle, bottomStyle };

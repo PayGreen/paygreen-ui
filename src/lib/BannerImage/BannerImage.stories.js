@@ -17,26 +17,23 @@ import Text from '../Text/Text';
 import BannerImage from './BannerImage';
 import photoFile from './sample/sample.png';
 
-const { md } = spaceOptions;
-const { colorTheme, topStyle, bottomStyle } = labels;
-
 storiesOf(folder.block + 'BannerImage', module)
     .addDecorator(withKnobs)
     .add('BannerImage', () => (
         <BannerImage
             colorTheme={radios(
-                colorTheme,
+                labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            useColorTheme={boolean('useColorTheme', true)}
+            hasModifiedColor={boolean('hasModifiedColor', false)}
             topStyle={radios(
-                topStyle,
+                labels.topStyle,
                 decorationImageOptions,
                 decorationDefault,
             )}
             bottomStyle={radios(
-                bottomStyle,
+                labels.bottomStyle,
                 decorationImageOptions,
                 decorationDefault
             )}
@@ -45,20 +42,20 @@ storiesOf(folder.block + 'BannerImage', module)
             <Card hasBackground={false}>
                 <Title
                     colorTheme={radios(
-                        colorTheme,
+                        labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
                     textSize={fontSizeOptions.lg}
-                    marginLateral={md}
-                    marginTop={md}
+                    marginLateral={spaceOptions.md}
+                    marginTop={spaceOptions.md}
                 >
                     Your title with <strong>an emphasis</strong>
                 </Title>
 
                 <Text
-                    marginLateral={md}
-                    marginTop={md}
+                    marginLateral={spaceOptions.md}
+                    marginTop={spaceOptions.md}
                 >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Duis porttitor velit a ultricies aliquet. Donec vehicula in
