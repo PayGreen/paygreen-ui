@@ -80,22 +80,22 @@ storiesOf(folder.media + 'Icons', module)
 
         return (
             <div>
-                <Icon.ArrowBottomIcon {...knobs} />
-                <Icon.ArrowCircleLeftIcon {...knobs} />
                 <Icon.ArrowCircleLeftBoldIcon {...knobs} />
+                <Icon.ArrowCircleLeftIcon {...knobs} />
                 <Icon.ArrowCircleRightBoldIcon {...knobs} />
                 <Icon.ArrowCircleRightIcon {...knobs} />
+                <Icon.ArrowBottomIcon {...knobs} />
                 <Icon.ArrowLeftIcon {...knobs} />
+                <Icon.ArrowRightIcon {...knobs} />
+                <Icon.ArrowTopIcon {...knobs} />
                 <Icon.ArrowLongBottomIcon {...knobs} />
                 <Icon.ArrowLongLeftIcon {...knobs} />
                 <Icon.ArrowLongRightIcon {...knobs} />
                 <Icon.ArrowLongTopIcon {...knobs} />
-                <Icon.ArrowRightIcon {...knobs} />
                 <Icon.ArrowRoundBottomLeftIcon {...knobs} />
                 <Icon.ArrowRoundBottomRightIcon {...knobs} />
                 <Icon.ArrowRoundTopLeftIcon {...knobs} />
                 <Icon.ArrowRoundTopRightIcon {...knobs} />
-                <Icon.ArrowTopIcon {...knobs} />
                 <Icon.BalloonBoldIcon {...knobs} />
                 <Icon.BalloonIcon {...knobs} />
                 <Icon.BankIcon {...knobs} />
@@ -115,8 +115,8 @@ storiesOf(folder.media + 'Icons', module)
                 <Icon.CautionBoldIcon {...knobs} />
                 <Icon.CautionIcon {...knobs} />
                 <Icon.ChangeIcon {...knobs} />
-                <Icon.CheckBoldIcon {...knobs} />
                 <Icon.CheckboxIcon {...knobs} />
+                <Icon.CheckBoldIcon {...knobs} />
                 <Icon.CheckIcon {...knobs} />
                 <Icon.CircuitIcon {...knobs} />
                 <Icon.ClockBoldIcon {...knobs} />
@@ -186,8 +186,8 @@ storiesOf(folder.media + 'Icons', module)
                 <Icon.TvIcon {...knobs} />
                 <Icon.UploadIcon {...knobs} />
                 <Icon.UserBoldIcon {...knobs} />
-                <Icon.UsersIcon {...knobs} />
                 <Icon.UserIcon {...knobs} />
+                <Icon.UsersIcon {...knobs} />
                 <Icon.WalletIcon {...knobs} />
                 <Icon.WeightIcon {...knobs} />
                 <Icon.WheelsIcon {...knobs} />

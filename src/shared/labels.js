@@ -30,6 +30,7 @@ const labels = {
 
     // Styles
     hasBackground: 'Has background',
+    hasHover: 'Has hover',
     hasShadow: 'Has shadow',
     isRounded: 'Is rounded',
     opacityValue: 'Opacity',
