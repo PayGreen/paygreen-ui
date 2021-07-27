@@ -18,6 +18,8 @@ BannerImage.propTypes = {
     gradient: PropTypes.oneOf(Object.values(gradientOptions)),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     topStyle: PropTypes.oneOf(Object.values(decorationImageOptions)),
+    bottomStyle: PropTypes.oneOf(Object.values(decorationImageOptions)),
+    hasModifiedColor: PropTypes.bool
 };
 
 BannerImage.defaultProps = {

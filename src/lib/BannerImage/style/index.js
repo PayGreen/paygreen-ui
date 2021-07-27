@@ -12,29 +12,31 @@ const BannerImageBase = styled.div`
     &::after {
         content: '';
         position: absolute;
-        z-index: ${({ theme }) => theme.zindex.background};
+        z-index: ${props => props.theme.zindex.background};
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        max-height: ${({ theme }) => theme.bannerHeight.lg};
+        max-height: ${props => props.theme.bannerHeight.lg};
         mask-image: linear-gradient(
             to top,
             transparent,
-            black ${({ theme }) => theme.bannerHeight.sm}
+            black ${props => props.theme.bannerHeight.sm}
         );
     }
 
     &::before {
-        background-image: url('${({ image }) => image}');
+        background-image: url('${props => props.image}');
         background-size: cover;
         filter: grayscale(1);
         opacity: 0.5;
     }
 
     &::after {
-        background-color: ${({ hasModifiedColor, theme, colorTheme }) =>
-            hasModifiedColor ? theme.color[colorTheme].light : null};
+        background-color: ${props =>
+            props.hasModifiedColor
+                ? props.theme.color[props.colorTheme].light
+                : null};
         opacity: 0.8;
     }
 `;

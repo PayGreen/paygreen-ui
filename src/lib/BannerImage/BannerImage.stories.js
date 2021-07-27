@@ -26,7 +26,7 @@ storiesOf(folder.block + 'BannerImage', module)
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            hasModifiedColor={boolean('hasModifiedColor', false)}
+            hasModifiedColor={boolean(labels.hasModifiedColor, false)}
             topStyle={radios(
                 labels.topStyle,
                 decorationImageOptions,
@@ -35,7 +35,7 @@ storiesOf(folder.block + 'BannerImage', module)
             bottomStyle={radios(
                 labels.bottomStyle,
                 decorationImageOptions,
-                decorationDefault
+                decorationDefault,
             )}
             image={photoFile}
         >
