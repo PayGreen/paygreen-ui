@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__ToggleBase-gnd37d-0 gFicoD"
+  className="style__ToggleBase-gnd37d-0 kkAFNu"
 >
   <label
     htmlFor="toggle-test"
