@@ -32,7 +32,7 @@ You can access the storybook of the latest version of PG-UI at our [GitHub Pages
 
 Pour développer directement sur la lib, veuillez consulter la documentation ci-dessous.
 
-### Utiliser Storybook
+### Use Storybook
 
 ```sh
 git clone git@github.com:PayGreen/paygreen-ui.git
@@ -58,7 +58,7 @@ Les fichiers de thème sont des fichiers transversaux, utilisés dans tous les c
 
 > N'hésitez pas à consulter ces fichiers avant de faire du CSS&nbsp;: la majorité des valeurs que vous pourriez vouloir renseigner ou ajouter sont déjà présentes dans le thème&nbsp;!
 
-## Shared
+### Shared files
 
 Les fichiers du dossier `shared` sont des utilitaires appelés par les composants ou leurs stories. Il contient également le style global appelé par les stories.
 
@@ -91,11 +91,25 @@ To develop a new component for the library, create a sub-directory inside `src/l
 
 > Don't forget to import and export your new component inside `src/lib/index.js`!
 
-## Créer des tests (et les lancer)
+### Create, update and run tests
 
-Actuellement, les tests, c'est pas trop ça, mais on essaie au moins de créer un test de base pour chaque composant (comprendre&nbsp;: "est-ce que ce composant pète totalement, ou est-ce que ça va)
+Actuellement, les tests, c'est pas trop ça, mais on essaie au moins de créer un test de base pour chaque composant (comprendre&nbsp;: "est-ce que ce composant pète totalement, ou est-ce que ça va").
 
-## Documenter
+Pour lancer les tests sans modifier les snapshots, utiliser la commande suivante&nbsp;:
+
+```sh
+yarn test
+```
+
+Le plus utile actuellement reste tout de même de lancer les tests en leur permettant d'être mis à jour s'il y a eu un changement dans le composant&nbsp;:
+
+```sh
+yarn test-update
+```
+
+Les snapshots modifiés doivent être vérifiés et commités.
+
+### Create and update documentation
 
 Développer un composant, c'est bien, mais le documenter, c'est encore mieux&nbsp;! Pensez donc, pour tout nouveau composant OU pour un composant refondu, à créer la documentation sur le repo [PayGreen/paygreen-ui-doc](https://github.com/PayGreen/paygreen-ui-doc) en suivant les instructions du README.
 
