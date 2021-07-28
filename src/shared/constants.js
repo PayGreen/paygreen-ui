@@ -141,7 +141,7 @@ const decorationImageOptions = {
     gradient: 'gradient',
 };
 
-const decorationImageDefault = decorationImageOptions.left;
+const decorationImageDefault = decorationImageOptions.gradient;
 
 // List styles
 const listStyleOptions = {
@@ -544,9 +544,9 @@ export {
     maskOptions,
     maskDefault,
     decorationOptions,
+    decorationDefault,
     decorationImageOptions,
     decorationImageDefault,
-    decorationDefault,
     listStyleOptions,
     listStyleDefault,
     dotStyleOptions,

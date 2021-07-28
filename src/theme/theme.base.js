@@ -153,11 +153,6 @@ export const ThemeBase = {
         lg: '210px',
         xl: '240px',
     },
-    bannerHeight: {
-        xs: '33vh',
-        sm: '50vh',
-        lg: '100vh',
-    },
     histogram: {
         width: {
             xs: '6px',

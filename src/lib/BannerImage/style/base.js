@@ -4,6 +4,8 @@ import maskWaveRightTop from './maskWaveRightTop.svg';
 import maskWaveLeftBottom from './maskWaveLeftBottom.svg';
 import maskWaveRightBottom from './maskWaveRightBottom.svg';
 
+const gradientMinHeight = '50vh';
+
 const maskImageStyle = css`
     mask-size: 100%;
     mask-repeat: no-repeat;
@@ -13,8 +15,8 @@ const topStyle = {
     none: css``,
     left: css`
         ${maskImageStyle};
-        mask-image: url(${maskWaveLeftTop});
         mask-position: top;
+        mask-image: url(${maskWaveLeftTop});
         padding-top: ${props => props.theme.wave.simple};
     `,
     right: css`
@@ -23,37 +25,42 @@ const topStyle = {
         mask-image: url(${maskWaveRightTop});
         padding-top: ${props => props.theme.wave.simple};
     `,
-    gradient: css`
-        mask-image: linear-gradient(
-            to top,
-            transparent,
-            black ${(props) => props.theme.bannerHeight.sm};
-            padding-top: ${props => props.theme.wave.simple};
-        );
-    `,
 };
 
 const bottomStyle = {
     none: css``,
     left: css`
-        ${maskImageStyle};
-        mask-image: url(${maskWaveLeftBottom});
-        mask-position: bottom;
         padding-bottom: ${props => props.theme.wave.simple};
+
+        &::before,
+        &::after {
+            ${maskImageStyle};
+            mask-position: bottom;
+            mask-image: url(${maskWaveLeftBottom});
+        }
     `,
     right: css`
-        ${maskImageStyle};
-        mask-image: url(${maskWaveRightBottom});
-        mask-position: bottom;
         padding-bottom: ${props => props.theme.wave.simple};
+
+        &::before,
+        &::after {
+            ${maskImageStyle};
+            mask-position: bottom;
+            mask-image: url(${maskWaveRightBottom});
+        }
     `,
     gradient: css`
-        mask-image: linear-gradient(
-            to top,
-            transparent,
-            black ${(props) => props.theme.bannerHeight.sm};
-            padding-bottom: ${props => props.theme.wave.simple};
-        );
+        min-height: ${gradientMinHeight};
+        padding-bottom: ${props => props.theme.blockSpace.md};
+
+        &::before,
+        &::after {
+            mask-image: linear-gradient(
+                to top,
+                transparent,
+                black ${gradientMinHeight}
+            );
+        }
     `,
 };
 

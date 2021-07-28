@@ -1,12 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
+import { withKnobs, radios, select, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
     colorThemeDefault,
-    decorationImageOptions,
+    decorationOptions,
     decorationDefault,
+    decorationImageOptions,
+    decorationImageDefault,
     fontSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
@@ -21,27 +23,27 @@ storiesOf(folder.block + 'BannerImage', module)
     .addDecorator(withKnobs)
     .add('BannerImage', () => (
         <BannerImage
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            hasModifiedColor={boolean(labels.hasModifiedColor, false)}
+            hasModifiedColor={boolean(labels.hasModifiedColor, true)}
             topStyle={radios(
                 labels.topStyle,
-                decorationImageOptions,
+                decorationOptions,
                 decorationDefault,
             )}
             bottomStyle={radios(
                 labels.bottomStyle,
                 decorationImageOptions,
-                decorationDefault,
+                decorationImageDefault,
             )}
             image={photoFile}
         >
             <Card hasBackground={false}>
                 <Title
-                    colorTheme={radios(
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
@@ -56,6 +58,7 @@ storiesOf(folder.block + 'BannerImage', module)
                 <Text
                     marginLateral={spaceOptions.md}
                     marginTop={spaceOptions.md}
+                    marginBottom={spaceOptions.md}
                 >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Duis porttitor velit a ultricies aliquet. Donec vehicula in

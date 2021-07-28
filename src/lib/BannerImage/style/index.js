@@ -3,7 +3,6 @@ import { topStyle, bottomStyle } from './base';
 
 const BannerImageBase = styled.div`
     position: relative;
-    min-height: ${({ theme }) => theme.bannerHeight.sm};
     padding: 0 0.1px;
     ${props => topStyle[props.topStyle]};
     ${props => bottomStyle[props.bottomStyle]};
@@ -17,12 +16,7 @@ const BannerImageBase = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        max-height: ${props => props.theme.bannerHeight.lg};
-        mask-image: linear-gradient(
-            to top,
-            transparent,
-            black ${props => props.theme.bannerHeight.sm}
-        );
+        max-height: 100vh; // avoid background-image to be too big
     }
 
     &::before {
