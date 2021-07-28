@@ -29,7 +29,7 @@ storiesOf(folder.media + 'Image', module)
     .add('Cover image', () => (
         <Image
             imageType={imageTypeOptions.cover}
-            hasModifiedColor={boolean('Modify color', true)}
+            hasModifiedColor={boolean(labels.hasModifiedColor, true)}
             colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,

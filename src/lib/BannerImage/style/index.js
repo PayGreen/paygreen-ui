@@ -1,13 +1,11 @@
 import styled from 'styled-components';
-import { decorationOptions } from '../../../shared/constants';
-import { topStyle } from './base';
+import { topStyle, bottomStyle } from './base';
 
 const BannerImageBase = styled.div`
-    ${props => topStyle[props.topStyle]};
     position: relative;
-    min-height: ${props => props.theme.bannerHeight.sm};
-    padding: 0 .1px ${props => props.theme.blockSpace.md} .1px;
-    padding-top: ${props => props.topStyle !== decorationOptions.none ? props.theme.wave.simple : 0};
+    padding: 0 0.1px;
+    ${props => topStyle[props.topStyle]};
+    ${props => bottomStyle[props.bottomStyle]};
 
     &::before,
     &::after {
@@ -18,20 +16,22 @@ const BannerImageBase = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        max-height: ${props => props.theme.bannerHeight.lg};
-        mask-image: linear-gradient(to top, transparent, black ${props => props.theme.bannerHeight.sm});
+        max-height: 100vh; // avoid background-image to be too big
     }
 
     &::before {
         background-image: url('${props => props.image}');
         background-size: cover;
         filter: grayscale(1);
-        opacity: .5;
+        opacity: 0.5;
     }
 
     &::after {
-        background-color: ${props => props.theme.color[props.colorTheme].light};
-        opacity: .8;
+        background-color: ${props =>
+            props.hasModifiedColor
+                ? props.theme.color[props.colorTheme].light
+                : null};
+        opacity: 0.8;
     }
 `;
 
