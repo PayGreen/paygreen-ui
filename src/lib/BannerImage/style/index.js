@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { topStyle, bottomStyle } from './base';
+import { topStyle, bottomStyle, modifiedColorStyle } from './base';
 
 const BannerImageBase = styled.div`
     position: relative;
     padding: 0 0.1px;
     ${props => topStyle[props.topStyle]};
     ${props => bottomStyle[props.bottomStyle]};
+    ${props => (props.hasModifiedColor ? modifiedColorStyle : null)};
 
     &::before,
     &::after {
@@ -22,16 +23,6 @@ const BannerImageBase = styled.div`
     &::before {
         background-image: url('${props => props.image}');
         background-size: cover;
-        filter: grayscale(1);
-        opacity: 0.5;
-    }
-
-    &::after {
-        background-color: ${props =>
-            props.hasModifiedColor
-                ? props.theme.color[props.colorTheme].light
-                : null};
-        opacity: 0.8;
     }
 `;
 

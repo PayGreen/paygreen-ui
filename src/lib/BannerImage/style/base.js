@@ -64,4 +64,16 @@ const bottomStyle = {
     `,
 };
 
-export { topStyle, bottomStyle };
+const modifiedColorStyle = css`
+    &::before {
+        filter: grayscale(1);
+        opacity: 0.5;
+    }
+
+    &::after {
+        background-color: ${props => props.theme.color[props.colorTheme].light};
+        opacity: 0.8;
+    }
+`;
+
+export { topStyle, bottomStyle, modifiedColorStyle };
