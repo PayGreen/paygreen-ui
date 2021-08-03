@@ -69,6 +69,36 @@ Les fichiers du dossier `shared` sont des utilitaires appelés par les composant
 - `tools.js` contient des outils (actuellement, juste de quoi faire des arrondis sur des nombres avec trop de chiffres dedans).
 - Le dossier `hook` contient, comme son nom l'indique, des hooks utiles dans certains composants (du debounce, de quoi détecter un clic à l'extérieur d'un composant donné, et la détection de la taille de l'écran).
 
+### Add a new icon
+
+Les icons sont des composants particuliers&nbsp;: leur création doit respecter les règles de [Queen](https://gitlab.com/Paygreen-website/queen). 
+
+Avant d'ajouter un nouvel icon à la lib, vérifiez qu'il respecte la charte graphique, les règles de nommage, qu'il a été ajouté au Figma et au Google Drive, et qu'il ne s'agit pas d'un doublon.
+
+Une fois toutes ces vérifications effectuées, vous pouvez ajouter votre icon à la lib en suivant les étapes suivantes (considérons que votre icon s'appelle `horse.svg`)&nbsp;:
+
+1. Dans `lib/Icon/components`, créez un nouveau fichier `Horse.js` (`HorseBold.js` s'il s'agissait d'un icon bold).
+2. Ajoutez vos `<path>` SVG dans la structure ci-dessous&nbsp;:
+
+```javascript
+import React from "react";
+
+const SvgHorse = props => (
+  <svg viewBox="0 0 143 143" {...props}>
+    <path d="your-path" />
+    <path d="your-path-2" />
+  </svg>
+);
+
+export default SvgHorse;
+```
+
+3. Dans `lib/Icon/Icon.js`, importez `Horse` et exportez-le en tant que `HorseIcon` en suivant le modèle des autres icons (dans l'ordre alphabétique pour qu'on s'y retrouve).
+4. Dans `lib/Icon/Icon.stories.js`, ajoutez `HorseIcon` à la première storie en suivant le modèle des autres icons (toujours dans l'ordre alphabétique - ou presque, les flèches ont été regroupées pour plus de facilité - sinon c'est le bazar). Inutile de l'importer&nbsp;: il l'est déjà&nbsp;! Vous pouvez admirer votre icon dans son milieu naturel avec tous ses petits copains.
+5. Dans `lib/index.js`, importez et exportez `HorseIcon` (toujours dans l'ordre alphabétique, sinon vous aurez bien compris qu'on vous arrachera la tête).
+
+Et voilà, votre icon est ajouté et votre tête toujours en place, félicitations&nbsp;!
+
 ### Create a new component
 
 To develop a new component for the library, create a sub-directory inside `src/lib/` with the following structure:

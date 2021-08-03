@@ -93,6 +93,7 @@ import RefreshBold from './components/RefreshBold';
 import Refresh from './components/Refresh';
 import Satchel from './components/Satchel';
 import Schedule from './components/Schedule';
+import Scooter from './components/Scooter';
 import SearchBold from './components/SearchBold';
 import Search from './components/Search';
 import Shop from './components/Shop';
@@ -207,6 +208,7 @@ export const RefreshBoldIcon = (props) => <IconWrapper {...props}><RefreshBold /
 export const RefreshIcon = (props) => <IconWrapper {...props}><Refresh /></IconWrapper>
 export const SatchelIcon = (props) => <IconWrapper {...props}><Satchel /></IconWrapper>
 export const ScheduleIcon = (props) => <IconWrapper {...props}><Schedule /></IconWrapper>
+export const ScooterIcon = (props) => <IconWrapper {...props}><Scooter /></IconWrapper>
 export const SearchBoldIcon = (props) => <IconWrapper {...props}><SearchBold /></IconWrapper>
 export const SearchIcon = (props) => <IconWrapper {...props}><Search /></IconWrapper>
 export const ShopIcon = (props) => <IconWrapper {...props}><Shop /></IconWrapper>
