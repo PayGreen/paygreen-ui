@@ -48,11 +48,11 @@ const ToggleBase = styled.div`
                     }
 
                     .checked-label {
-                        transform: scale(1);
+                        font-size: ${props => props.theme.font.size.sm};
                     }
-
+                    
                     .not-checked-label {
-                        transform: scale(0);
+                        font-size: 0;
                     }
                 }
             }
@@ -93,15 +93,17 @@ const ToggleBase = styled.div`
             .checked-label,
             .not-checked-label {
                 box-sizing: border-box;
+                display: flex;
                 min-width: ${props => props.theme.form.toggle};
             }
-
+            
             .checked-label {
-                transform: scale(0);
+                font-size: 0;
                 padding-left: ${props => props.theme.space.sm};
             }
-
+            
             .not-checked-label {
+                font-size: ${props => props.theme.font.size.sm};
                 padding-right: ${props => props.theme.space.sm};
                 text-align: right;
             }
