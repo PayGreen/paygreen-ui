@@ -147,8 +147,8 @@ storiesOf(folder.media + 'Icons', module)
                 <Icon.MarkerIcon {...knobs} />
                 <Icon.MealIcon {...knobs} />
                 <Icon.MegaphoneIcon {...knobs} />
-                <Icon.MenuBoldIcon {...knobs} />
                 <Icon.MenuDotsIcon {...knobs} />
+                <Icon.MenuBoldIcon {...knobs} />
                 <Icon.MenuIcon {...knobs} />
                 <Icon.MeterIcon {...knobs} />
                 <Icon.MinusIcon {...knobs} />
@@ -174,6 +174,7 @@ storiesOf(folder.media + 'Icons', module)
                 <Icon.RefreshIcon {...knobs} />
                 <Icon.SatchelIcon {...knobs} />
                 <Icon.ScheduleIcon {...knobs} />
+                <Icon.ScooterIcon {...knobs} />
                 <Icon.SearchBoldIcon {...knobs} />
                 <Icon.SearchIcon {...knobs} />
                 <Icon.ShopIcon {...knobs} />
