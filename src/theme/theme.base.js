@@ -5,25 +5,9 @@ const breakpoints = {
     xl: 1360,
 };
 
-// Old way (for retro-compatibility)
-
-const query = (value, operator) => {
-    if (operator === 'max') {
-        value -= 0.01;
-    }
-    return operator + '-width: ' + value + 'px';
-};
-
-// New way
-
 const screen = (value, isMax = false) => {
     const base = '(min-width: ' + value + 'px)';
     return isMax ? 'not all and ' + base : base;
-};
-
-const queries = {
-    min: {},
-    max: {},
 };
 
 const screens = {
@@ -32,9 +16,6 @@ const screens = {
 };
 
 for (const [size, value] of Object.entries(breakpoints)) {
-    queries.min[size] = query(value, 'min');
-    queries.max[size] = query(value, 'max');
-
     screens.min[size] = screen(value);
     screens.max[size] = screen(value, true);
 }
@@ -256,7 +237,6 @@ export const ThemeBase = {
         popin: 115,
         modal: 120,
     },
-    query: queries,
     screen: screens,
     breakpoint: breakpoints,
     button: {
