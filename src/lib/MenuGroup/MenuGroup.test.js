@@ -8,14 +8,15 @@ import MenuPrimary from '../MenuPrimary/MenuPrimary';
 import MenuSecondary from '../MenuSecondary/MenuSecondary';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import MenuClose from '../MenuClose/MenuClose';
+import MenuMobile from '../MenuMobile/MenuMobile';
 import MenuGroup from './MenuGroup';
 
 it('renders without crashing', () => {
     const component = TestRenderer.create(
         <MenuGroup theme={ThemeDefault}>
-            <div className="main-nav">
+            <MenuMobile theme={ThemeDefault}>
                 <MenuHamburger theme={ThemeDefault} />
-            </div>
+            </MenuMobile>
 
             <MenuPrimary theme={ThemeDefault}>
                 <Menu theme={ThemeDefault}>

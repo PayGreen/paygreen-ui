@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__MenuGroupBase-sc-18ypw1h-0 iFiwdc"
+  className="style__MenuGroupBase-sc-18ypw1h-0 kvqMbD"
 >
   <div
-    className="main-nav"
+    className="style__MenuMobileBase-sc-1udpf44-0 eBsVNv"
   >
     <button
       className="style__MenuHamburgerBase-sc-1tooz6t-0 czVrHi"

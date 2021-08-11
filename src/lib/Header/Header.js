@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import { debounceTime } from '../../shared/constants';
 import MenuGroup from '../MenuGroup/MenuGroup';
 import MenuTertiary from '../MenuTertiary/MenuTertiary';
 import { HeaderBase } from './style';
 
-const Header = ({ hasTopStyle, children, ...rest }) => {
+const Header = ({ children, ...rest }) => {
     const direction = {
         top: 'top',
         bottom: 'bottom',
     };
     const [scrollTop, setScrollTop] = useState(0);
     const [scrollDirection, setScrollDirection] = useState(direction.top);
-
-    const topStyle = hasTopStyle && scrollTop <= 0;
 
     useScrollPosition(
         ({ prevPos, currPos }) => {
@@ -40,7 +37,7 @@ const Header = ({ hasTopStyle, children, ...rest }) => {
     const menuTertiaryStartDisplay = 110; // pixels to the top
 
     return (
-        <HeaderBase {...rest} hasTopStyle={topStyle}>
+        <HeaderBase {...rest}>
             {React.Children.map(children, child => {
                 if (!child) {
                     return null;
@@ -52,7 +49,7 @@ const Header = ({ hasTopStyle, children, ...rest }) => {
                             hasMenuTertiary &&
                             scrollDirection === direction.bottom &&
                             scrollTop > menuTertiaryStartDisplay,
-                        hasTopStyle: topStyle,
+                        hasTopStyle: scrollTop <= 0,
                     });
                 }
 
@@ -66,14 +63,6 @@ const Header = ({ hasTopStyle, children, ...rest }) => {
             })}
         </HeaderBase>
     );
-};
-
-Header.propTypes = {
-    hasTopStyle: PropTypes.bool,
-};
-
-Header.defaultProps = {
-    hasTopStyle: true,
 };
 
 export default Header;

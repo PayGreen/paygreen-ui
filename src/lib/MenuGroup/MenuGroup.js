@@ -4,12 +4,13 @@ import { colorTypeOptions } from '../../shared/constants';
 import Dot from '../Dot/Dot';
 import MenuPrimary from '../MenuPrimary/MenuPrimary';
 import MenuSecondary from '../MenuSecondary/MenuSecondary';
+import MenuMobile from '../MenuMobile/MenuMobile';
 import { MenuGroupBase } from './style';
 
-const MenuGroup = props => {
+const MenuGroup = ({ children, ...rest }) => {
     let hasOpenMenu = false;
 
-    React.Children.map(props.children, child => {
+    React.Children.map(children, child => {
         if (!child) {
             return null;
         }
@@ -22,22 +23,30 @@ const MenuGroup = props => {
     });
 
     return (
-        <MenuGroupBase hasOpenMenu={hasOpenMenu} {...props}>
-            {React.Children.map(props.children, (child, index) => {
-                if (!child) {
-                    return null;
-                }
-                
-                if (child.type === Dot) {
-                    return React.cloneElement(child, {
-                        colorType: props.hasTopStyle
-                            ? colorTypeOptions.reverse
-                            : colorTypeOptions.original,
-                        key: index,
-                    });
-                }
+        <MenuGroupBase hasOpenMenu={hasOpenMenu} {...rest}>
+            {React.Children.map(children, (child, index) => {
+                switch (child && child.type) {
+                    case null:
+                        return null;
 
-                return child;
+                    case MenuMobile:
+                        return React.cloneElement(child, {
+                            isHidden: rest.isHidden && !hasOpenMenu,
+                            hasTopStyle: rest.hasTopStyle && !hasOpenMenu,
+                            key: index,
+                        });
+
+                    case Dot:
+                        return React.cloneElement(child, {
+                            colorType: rest.hasTopStyle
+                                ? colorTypeOptions.reverse
+                                : colorTypeOptions.original,
+                            key: index,
+                        });
+
+                    default:
+                        return child;
+                }
             })}
         </MenuGroupBase>
     );

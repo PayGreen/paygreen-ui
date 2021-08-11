@@ -28,10 +28,12 @@ import MenuItem from '../MenuItem/MenuItem';
 import MenuList from '../MenuList/MenuList';
 import MenuListItem from '../MenuListItem/MenuListItem';
 import Menu from '../Menu/Menu';
+import MenuMobile from '../MenuMobile/MenuMobile';
 import MenuPrimary from '../MenuPrimary/MenuPrimary';
 import MenuSecondary from '../MenuSecondary/MenuSecondary';
 import MenuClose from '../MenuClose/MenuClose';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
+import Badge from '../Badge/Badge';
 import Logo from '../Logo/Logo';
 import Dot from '../Dot/Dot';
 import { logo } from '../Logo/sample/logo';
@@ -48,7 +50,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                 isHidden={boolean(labels.isHidden, false)}
                 hasTopStyle={boolean(labels.hasTopStyle, false)}
             >
-                <div className="main-nav">
+                <MenuMobile>
                     <MenuHamburger
                         isOpen={isOpenMenuPrimary}
                         onClick={() => setOpenMenuPrimary(!isOpenMenuPrimary)}
@@ -59,7 +61,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                             hasThemeColor={true}
                             hasBaseline={false}
                             hoverDirection={hoverDirectionOptions.right}
-                            blockWidth={spaceOptions.sm}
+                            badge={<Badge>Tree</Badge>}
                         >
                             {logo}
                         </Logo>
@@ -72,7 +74,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
                         htmlTag={iconHtmlTagOptions.button}
                         iconSize={iconSizeOptions.xl}
                     />
-                </div>
+                </MenuMobile>
 
                 <MenuPrimary isOpen={isOpenMenuPrimary}>
                     <Menu>
