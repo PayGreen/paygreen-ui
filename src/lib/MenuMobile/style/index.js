@@ -15,6 +15,7 @@ const MenuMobileBase = styled.div`
         border-bottom: ${props => props.theme.line} solid transparent;
         box-shadow: ${props => props.theme.shadow.size.lg} transparent;
         transition: all ${props => props.theme.transition.sm};
+
         ${props => (props.hasTopStyle ? null : notTopStyle)};
         ${props => (props.isHidden ? hiddenStyle : null)};
 
