@@ -2,16 +2,16 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__HeaderBase-j6bsys-0 erOiyL"
+  className="style__HeaderBase-j6bsys-0 WkPZs"
 >
   <div
-    className="style__MenuGroupBase-sc-18ypw1h-0 iTKLWd"
+    className="style__MenuGroupBase-sc-18ypw1h-0 xliyA"
   >
     <div
-      className="main-nav"
+      className="style__MenuMobileBase-sc-1udpf44-0 bcfcec"
     >
       <button
-        className="style__MenuHamburgerBase-sc-1tooz6t-0 czVrHi"
+        className="style__MenuHamburgerBase-sc-1tooz6t-0 igNuVH"
         type="button"
       >
         <span />

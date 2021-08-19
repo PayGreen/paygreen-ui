@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { transparentize } from 'polished';
 import { hiddenStyle, fixedStyle } from './base';
 
 const MenuTertiaryBase = styled.div`
@@ -11,6 +12,10 @@ const MenuTertiaryBase = styled.div`
     font-size: ${props => props.theme.font.size.xs};
     background-color: ${props => props.theme.wab.white20};
     border-bottom: solid ${props => props.theme.line + props.theme.wab.grey10};
+    box-shadow: ${props =>
+        props.theme.shadow.size.lg +
+        ' ' +
+        transparentize(props.theme.shadow.opacity.sm, props.theme.wab.black00)};
     transition: all ${props => props.theme.transition.sm};
 
     ${props => (props.isHidden ? hiddenStyle : null)};

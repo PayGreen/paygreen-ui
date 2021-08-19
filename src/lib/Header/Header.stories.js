@@ -26,6 +26,7 @@ import MenuItem from '../MenuItem/MenuItem';
 import MenuList from '../MenuList/MenuList';
 import MenuListItem from '../MenuListItem/MenuListItem';
 import Menu from '../Menu/Menu';
+import MenuMobile from '../MenuMobile/MenuMobile';
 import MenuPrimary from '../MenuPrimary/MenuPrimary';
 import MenuSecondary from '../MenuSecondary/MenuSecondary';
 import MenuTertiary from '../MenuTertiary/MenuTertiary';
@@ -68,9 +69,9 @@ storiesOf(folder.nav + 'Header', module)
 
         return (
             <>
-                <Header hasTopStyle={boolean(labels.hasTopStyle, true)}>
+                <Header>
                     <MenuGroup>
-                        <div className="main-nav">
+                        <MenuMobile>
                             <MenuHamburger
                                 isOpen={isOpenMenuPrimary}
                                 onClick={() =>
@@ -81,9 +82,7 @@ storiesOf(folder.nav + 'Header', module)
                             <a href="#">
                                 <Logo
                                     hasThemeColor={true}
-                                    hasBaseline={false}
                                     hoverDirection={hoverDirectionOptions.right}
-                                    blockWidth={spaceOptions.sm}
                                 >
                                     {logo}
                                 </Logo>
@@ -96,7 +95,7 @@ storiesOf(folder.nav + 'Header', module)
                                 htmlTag={iconHtmlTagOptions.button}
                                 iconSize={iconSizeOptions.xl}
                             />
-                        </div>
+                        </MenuMobile>
 
                         <MenuPrimary isOpen={isOpenMenuPrimary}>
                             <Menu>

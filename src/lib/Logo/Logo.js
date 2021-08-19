@@ -3,17 +3,24 @@ import PropTypes from 'prop-types';
 import {
     hoverDirectionOptions,
     hoverDirectionDefault,
+    colorTypeOptions,
     spaceOptions,
     alignOptions,
 } from '../../shared/constants';
 import { LogoBase } from './style';
 
-const Logo = props => {
+const Logo = ({ children, badge, ...rest }) => {
     return (
-        <LogoBase {...props}>
-            <span className="logo">{props.children}</span>
+        <LogoBase {...rest}>
+            <span className="logo">{children}</span>
 
-            {props.badge ? props.badge : null}
+            {badge
+                ? React.cloneElement(badge, {
+                      colorType: rest.isWhite
+                          ? colorTypeOptions.reverse
+                          : colorTypeOptions.original,
+                  })
+                : null}
         </LogoBase>
     );
 };

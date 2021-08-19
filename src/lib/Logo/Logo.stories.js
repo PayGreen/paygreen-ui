@@ -7,15 +7,11 @@ import {
     hoverDirectionDefault,
     spaceOptions,
     alignOptions,
-    colorTypeOptions,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
 import Badge from '../Badge/Badge';
 import Logo from './Logo';
 import { logo } from './sample/logo';
-
-const isWhiteLabel = 'Is white';
-const hasThemeColorLabel = 'Has theme color';
 
 storiesOf(folder.media + 'Logo', module)
     .addDecorator(withKnobs)
@@ -23,49 +19,26 @@ storiesOf(folder.media + 'Logo', module)
         <a href="#">
             <Logo
                 hasBaseline={boolean('Has baseline', true)}
-                hasHoverColor={boolean('Has hover color', false)}
-                isWhite={boolean(isWhiteLabel, false)}
-                hasThemeColor={boolean(hasThemeColorLabel, false)}
+                badge={boolean('With Badge', false) ? <Badge>Tree</Badge> : null}
+                isWhite={boolean('Is white', false)}
+                hasThemeColor={boolean('Has theme color', false)}
                 blockWidth={select(
                     labels.blockWidth,
                     spaceOptions,
-                    spaceOptions.md,
+                    spaceOptions.sm,
                 )}
                 blockHeight={select(
                     labels.blockHeight,
                     spaceOptions,
                     spaceOptions.none,
                 )}
-                align={radios(labels.align, alignOptions, alignOptions.center)}
-            >
-                {logo}
-            </Logo>
-        </a>
-    ))
-    .add('Logo with badge', () => (
-        <a href="#">
-            <Logo
-                hasBaseline={false}
-                isWhite={boolean(isWhiteLabel, false)}
-                hasThemeColor={boolean(hasThemeColorLabel, false)}
+                align={select(labels.align, alignOptions, alignOptions.center)}
+                hasHoverColor={boolean('Has hover color', false)}
                 hoverDirection={radios(
                     'Hover direction',
                     hoverDirectionOptions,
                     hoverDirectionDefault,
                 )}
-                blockWidth={spaceOptions.sm}
-                align={radios(labels.align, alignOptions, alignOptions.center)}
-                badge={
-                    <Badge
-                        colorType={
-                            boolean(isWhiteLabel, false)
-                                ? colorTypeOptions.reverse
-                                : colorTypeOptions.original
-                        }
-                    >
-                        Tree
-                    </Badge>
-                }
             >
                 {logo}
             </Logo>

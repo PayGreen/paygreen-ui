@@ -90,7 +90,7 @@ const labels = {
     isOpen: 'Is open',
 
     // Decorations
-    hasTopStyle: 'Has top style (big screen only)',
+    hasTopStyle: 'Has top style',
     topStyle: 'Top style',
     bottomStyle: 'Bottom style',
 
