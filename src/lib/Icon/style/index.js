@@ -5,6 +5,7 @@ import {
     baseColor,
     backgroundStyle,
     noBackground,
+    disabledStyle,
     numberStyle,
 } from './base';
 
@@ -37,8 +38,8 @@ const IconBase = styled.span`
         props.hasBackground && props.isActive
             ? activeColor[props.colorPallet]
             : null};
-
-    ${props => (props.number ? numberStyle : null)};
+    ${props => (props.disabled ? disabledStyle : null)};
+    ${props => (props.hasNumber ? numberStyle : null)};
 `;
 
 export { IconBase };

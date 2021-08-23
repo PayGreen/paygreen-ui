@@ -21,11 +21,24 @@ import { IconBase } from './style';
 
 const maxDisplayed = 99;
 
-const IconWrapper = ({ children, className, htmlTag, ...rest }) => {
+const IconWrapper = ({
+    children,
+    className,
+    htmlTag,
+    number,
+    hasHover,
+    ...rest
+}) => {
+    const hasNumber =
+        number > 0 &&
+        ![iconSizeOptions.xs, iconSizeOptions.xxs].includes(rest.iconSize);
+
     return (
         <IconBase
             as={htmlTag}
             type={htmlTag === iconHtmlTagOptions.button ? 'button' : null}
+            hasHover={hasHover && !rest.disabled}
+            hasNumber={hasNumber}
             {...rest}
             className={className ? 'icon ' + className : 'icon'}
         >
@@ -35,14 +48,9 @@ const IconWrapper = ({ children, className, htmlTag, ...rest }) => {
                 }
             })}
 
-            {rest.number > 0 &&
-            ![iconSizeOptions.xs, iconSizeOptions.xxs].includes(
-                rest.iconSize,
-            ) ? (
+            {hasNumber ? (
                 <span className="badge-number">
-                    {rest.number <= maxDisplayed
-                        ? rest.number
-                        : maxDisplayed + '+'}
+                    {number <= maxDisplayed ? number : maxDisplayed + '+'}
                 </span>
             ) : null}
         </IconBase>
