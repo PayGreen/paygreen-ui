@@ -21,7 +21,7 @@ storiesOf(folder.grid + 'Divider', module)
                 decorationOptions,
                 decorationDefault,
             )}
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,

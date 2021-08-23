@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -17,7 +17,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuItem', module)
         <a href="#">
             <MenuItem
                 isClickable={boolean('Is clickable', true)}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,

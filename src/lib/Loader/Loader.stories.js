@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -19,7 +19,7 @@ storiesOf(folder.loading + 'Loader', module)
         <Loader
             isActive={boolean(labels.isActive, true)}
             loaderSize={select('Loader size', iconSizeOptions, iconSizeDefault)}
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,

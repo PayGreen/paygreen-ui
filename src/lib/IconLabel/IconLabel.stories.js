@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -17,7 +17,7 @@ storiesOf(folder.text + 'IconLabel', module)
     .addDecorator(withKnobs)
     .add('IconLabel', () => (
         <IconLabel
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
@@ -34,7 +34,7 @@ storiesOf(folder.text + 'IconLabel', module)
             <OutIcon
                 iconSize={iconSizeOptions.xs}
                 marginRight={spaceOptions.xs}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
