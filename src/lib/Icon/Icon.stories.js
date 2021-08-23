@@ -129,6 +129,7 @@ storiesOf(folder.media + 'Icons', module)
                 <Icon.CrossBoldIcon {...knobs} />
                 <Icon.CrossIcon {...knobs} />
                 <Icon.DownloadIcon {...knobs} />
+                <Icon.EarthIcon {...knobs} />
                 <Icon.EmptyIcon {...knobs} />
                 <Icon.EyedropperIcon {...knobs} />
                 <Icon.EyeIcon {...knobs} />
@@ -163,6 +164,7 @@ storiesOf(folder.media + 'Icons', module)
                 <Icon.PictureIcon {...knobs} />
                 <Icon.PlaneIcon {...knobs} />
                 <Icon.PlugIcon {...knobs} />
+                <Icon.UnplugIcon {...knobs} />
                 <Icon.PlusIcon {...knobs} />
                 <Icon.PointerIcon {...knobs} />
                 <Icon.PopinIcon {...knobs} />
@@ -178,6 +180,7 @@ storiesOf(folder.media + 'Icons', module)
                 <Icon.SearchBoldIcon {...knobs} />
                 <Icon.SearchIcon {...knobs} />
                 <Icon.ShopIcon {...knobs} />
+                <Icon.StartIcon {...knobs} />
                 <Icon.SunIcon {...knobs} />
                 <Icon.SupportIcon {...knobs} />
                 <Icon.TrashIcon {...knobs} />
