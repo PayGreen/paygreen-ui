@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 import { responsiveSpaces } from '../../../shared/spaces';
 import { underline } from '../../Title/style/base';
-import { minimizeFont } from './constants';
-import { htmlTagStyle, uppercaseStyle, color, blockBackground } from './base';
+import {
+    htmlTagStyle,
+    uppercaseStyle,
+    color,
+    blockBackground,
+    minimizeText,
+} from './base';
 
 const TextBase = styled.p`
     ${responsiveSpaces('margin')};
@@ -10,11 +15,7 @@ const TextBase = styled.p`
     text-align: ${props => props.align};
     font-size: ${props => props.theme.font.size[props.textSize]};
 
-    @media ${props => props.theme.screen.max.md} {
-        font-size: ${props =>
-            props.theme.font.size[minimizeFont[props.textSize]]};
-    }
-
+    ${props => (props.isResponsive ? minimizeText : null)};
     ${props => htmlTagStyle[props.htmlTag]};
     ${props => color[props.colorType]};
     ${props => (props.hasBackground ? blockBackground[props.colorType] : null)};

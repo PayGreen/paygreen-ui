@@ -9,7 +9,7 @@ exports[`renders without crashing 1`] = `
     onClick={[Function]}
   >
     <span
-      className="style__TitleBase-td7fx4-0 icBJaJ"
+      className="style__TitleBase-td7fx4-0 knreaw"
     >
       Search and filters
     </span>

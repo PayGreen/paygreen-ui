@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { transparentize, math } from 'polished';
 import { responsiveSpaces } from '../../../shared/spaces';
-import { mainColor, backgroundColor } from './constants';
+import { mainColor, backgroundColor, minimizeFont } from './constants';
 
 const htmlTagStyle = {
     p: css`
@@ -79,4 +79,11 @@ const blockBackground = {
     `,
 };
 
-export { htmlTagStyle, uppercaseStyle, color, blockBackground };
+const minimizeText = css`
+    @media ${props => props.theme.screen.max.md} {
+        font-size: ${props =>
+            props.theme.font.size[minimizeFont[props.textSize]]};
+    }
+`;
+
+export { htmlTagStyle, uppercaseStyle, color, blockBackground, minimizeText };
