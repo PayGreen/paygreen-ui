@@ -134,7 +134,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </a>
   <button
-    className="style__IconBase-ak3679-0 cAEQgg icon"
+    className="style__IconBase-ak3679-0 gMHezo icon"
     type="button"
   >
     <svg

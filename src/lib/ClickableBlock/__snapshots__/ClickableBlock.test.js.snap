@@ -7,7 +7,7 @@ exports[`renders without crashing 1`] = `
 >
   Un ClickableBlock
   <span
-    className="style__IconBase-ak3679-0 dlYaPO icon arrow"
+    className="style__IconBase-ak3679-0 dxTXjC icon arrow"
     type={null}
   >
     <svg

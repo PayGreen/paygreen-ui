@@ -8,7 +8,7 @@ exports[`renders without crashing 1`] = `
     className="style__MenuListItemBase-sc-81dvyg-0 fEBEyG"
   >
     <span
-      className="style__IconBase-ak3679-0 eSMuZc icon"
+      className="style__IconBase-ak3679-0 dyzaaI icon"
       type={null}
     >
       <svg
@@ -34,7 +34,7 @@ exports[`renders without crashing 1`] = `
       className="style__IconLabelBase-sc-113x6jx-0 fZXecA"
     >
       <span
-        className="style__IconBase-ak3679-0 eXHgDo icon"
+        className="style__IconBase-ak3679-0 cYreIg icon"
         type={null}
       >
         <svg

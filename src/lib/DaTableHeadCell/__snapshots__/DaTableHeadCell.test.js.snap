@@ -11,7 +11,7 @@ exports[`renders without crashing 1`] = `
       className="icon-child"
     >
       <button
-        className="style__IconBase-ak3679-0 fWvVjQ icon"
+        className="style__IconBase-ak3679-0 bkaEeI icon"
         type="button"
       >
         <svg
