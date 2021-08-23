@@ -46,7 +46,6 @@ storiesOf(folder.text + 'Title', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
-            isResponsive={boolean(labels.isResponsive, true)}
             textSize={select(
                 labels.textSize,
                 fontSizeOptions,

@@ -43,7 +43,6 @@ Title.propTypes = {
     colorWab: PropTypes.oneOf(Object.values(greyOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
 
-    isResponsive: PropTypes.bool,
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
     align: PropTypes.oneOf(Object.values(alignOptions)),
     marginLateral: PropTypes.oneOf(Object.values(spaceOptions)),
@@ -61,7 +60,6 @@ Title.defaultProps = {
     colorWab: greyOptions.grey60,
     colorStatus: formStatusDefault,
 
-    isResponsive: true,
     textSize: fontSizeDefault,
     align: alignDefault,
     marginLateral: spaceDefault,

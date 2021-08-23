@@ -67,7 +67,6 @@ const labels = {
     hasResponsivePadding: 'Has responsive padding',
 
     // Fonts
-    isResponsive: 'Is responsive',
     textSize: 'Text size',
     hasUnderline: 'Has underline',
     hasUppercase: 'Has uppercase',

@@ -6,7 +6,7 @@ exports[`renders without crashing 1`] = `
   type={null}
 >
   <span
-    className="style__TitleBase-td7fx4-0 WZgoj"
+    className="style__TitleBase-td7fx4-0 gdGTKk"
   >
     Content 
     <strong>
@@ -14,7 +14,7 @@ exports[`renders without crashing 1`] = `
     </strong>
   </span>
   <p
-    className="style__TextBase-sc-11ixwvd-0 hKuksH"
+    className="style__TextBase-sc-11ixwvd-0 gQgxOT"
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
     <strong>

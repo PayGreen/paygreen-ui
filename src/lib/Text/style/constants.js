@@ -1,5 +1,6 @@
 import { transparentize } from 'polished';
 import { fontSizeOptions } from '../../../shared/constants';
+import { minimizeFont as titleMinimizeFont } from '../../Title/style/constants';
 
 const mainColor = {
     theme: props => props.theme.color[props.colorTheme].main,
@@ -20,9 +21,7 @@ const minimizeFont = {
     xs: fontSizeOptions.xxs,
     sm: fontSizeOptions.xs,
     base: fontSizeOptions.sm,
-    md: fontSizeOptions.base,
-    lg: fontSizeOptions.md,
-    xl: fontSizeOptions.lg,
+    ...titleMinimizeFont,
 };
 
 export { mainColor, backgroundColor, minimizeFont };

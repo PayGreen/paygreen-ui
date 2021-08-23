@@ -51,7 +51,7 @@ exports[`renders without crashing 1`] = `
       Dev
     </span>
     <p
-      className="style__TextBase-sc-11ixwvd-0 hKuksH"
+      className="style__TextBase-sc-11ixwvd-0 gQgxOT"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo, id bibendum felis iaculis eu.
     </p>

@@ -1,4 +1,5 @@
 import { transparentize } from 'polished';
+import { fontSizeOptions } from '../../../shared/constants';
 
 const lineColor = {
     theme: props =>
@@ -8,4 +9,10 @@ const lineColor = {
         transparentize(0.5, props.theme.status[props.colorStatus].main),
 };
 
-export { lineColor };
+const minimizeFont = {
+    md: fontSizeOptions.base,
+    lg: fontSizeOptions.md,
+    xl: fontSizeOptions.lg,
+};
+
+export { lineColor, minimizeFont };
