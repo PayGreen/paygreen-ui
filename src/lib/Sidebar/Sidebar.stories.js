@@ -160,7 +160,7 @@ storiesOf(folder.nav + 'Sidebar', module)
                                     colorThemeDefault,
                                 )}
                                 paddingLateral={spaceOptions.md}
-                                isActive={boolean('Is Active', false)}
+                                isActive={boolean(labels.isActive, false)}
                             >
                                 <LeafIcon
                                     iconSize={iconSizeOptions.lg}

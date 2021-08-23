@@ -147,7 +147,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenuCategory', module)
                             spaceOptions,
                             spaceOptions.xs,
                         )}
-                        isActive={boolean('Is Active', false)}
+                        isActive={boolean(labels.isActive, false)}
                     >
                         <LeafIcon
                             iconSize={iconSizeOptions.lg}

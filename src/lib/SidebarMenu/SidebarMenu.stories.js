@@ -64,7 +64,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
             <SidebarList>
                 <a href="#">
                     <SidebarItem
-                        isActive={boolean('Is Active', false)}
+                        isActive={boolean(labels.isActive, false)}
                         colorTheme={radios(
                             labels.colorTheme,
                             colorThemeOptions,
