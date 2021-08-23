@@ -67,6 +67,8 @@ const colorThemeOptions = {
     tertiary: 'tertiary',
     quaternary: 'quaternary',
     quinary: 'quinary',
+    senary: 'senary',
+    septenary: 'septenary',
 };
 
 const colorThemeDefault = colorThemeOptions.primary;
