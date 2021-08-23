@@ -24,6 +24,7 @@ import {
     rotateSizeDefault,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
+import Title from '../Title/Title';
 import * as Icon from './Icon';
 
 storiesOf(folder.media + 'Icons', module)
@@ -79,124 +80,204 @@ storiesOf(folder.media + 'Icons', module)
         };
 
         return (
-            <div>
-                <Icon.ArrowCircleLeftBoldIcon {...knobs} />
-                <Icon.ArrowCircleLeftIcon {...knobs} />
-                <Icon.ArrowCircleRightBoldIcon {...knobs} />
-                <Icon.ArrowCircleRightIcon {...knobs} />
-                <Icon.ArrowBottomIcon {...knobs} />
-                <Icon.ArrowLeftIcon {...knobs} />
-                <Icon.ArrowRightIcon {...knobs} />
-                <Icon.ArrowTopIcon {...knobs} />
-                <Icon.ArrowLongBottomIcon {...knobs} />
-                <Icon.ArrowLongLeftIcon {...knobs} />
-                <Icon.ArrowLongRightIcon {...knobs} />
-                <Icon.ArrowLongTopIcon {...knobs} />
-                <Icon.ArrowRoundBottomLeftIcon {...knobs} />
-                <Icon.ArrowRoundBottomRightIcon {...knobs} />
-                <Icon.ArrowRoundTopLeftIcon {...knobs} />
-                <Icon.ArrowRoundTopRightIcon {...knobs} />
-                <Icon.BalloonBoldIcon {...knobs} />
-                <Icon.BalloonIcon {...knobs} />
-                <Icon.BankIcon {...knobs} />
-                <Icon.BeakerBoldIcon {...knobs} />
-                <Icon.BeakerIcon {...knobs} />
-                <Icon.BedIcon {...knobs} />
-                <Icon.BellBoldIcon {...knobs} />
-                <Icon.BellIcon {...knobs} />
-                <Icon.BrushIcon {...knobs} />
-                <Icon.BulbBoldIcon {...knobs} />
-                <Icon.BulbIcon {...knobs} />
-                <Icon.CameraIcon {...knobs} />
-                <Icon.CardsBoldIcon {...knobs} />
-                <Icon.CardsIcon {...knobs} />
-                <Icon.CarIcon {...knobs} />
-                <Icon.CartIcon {...knobs} />
-                <Icon.CautionBoldIcon {...knobs} />
-                <Icon.CautionIcon {...knobs} />
-                <Icon.ChangeIcon {...knobs} />
-                <Icon.CheckboxIcon {...knobs} />
-                <Icon.CheckBoldIcon {...knobs} />
-                <Icon.CheckIcon {...knobs} />
-                <Icon.CircuitIcon {...knobs} />
-                <Icon.ClockBoldIcon {...knobs} />
-                <Icon.ClockIcon {...knobs} />
-                <Icon.CodeIcon {...knobs} />
-                <Icon.CoinsIcon {...knobs} />
-                <Icon.ConsoleIcon {...knobs} />
-                <Icon.ContractIcon {...knobs} />
-                <Icon.CopyIcon {...knobs} />
-                <Icon.CrossBoldIcon {...knobs} />
-                <Icon.CrossIcon {...knobs} />
-                <Icon.DownloadIcon {...knobs} />
-                <Icon.EarthIcon {...knobs} />
-                <Icon.EmptyIcon {...knobs} />
-                <Icon.EyedropperIcon {...knobs} />
-                <Icon.EyeIcon {...knobs} />
-                <Icon.FactoryIcon {...knobs} />
-                <Icon.GlobeIcon {...knobs} />
-                <Icon.HeartIcon {...knobs} />
-                <Icon.HourglassIcon {...knobs} />
-                <Icon.InformationIcon {...knobs} />
-                <Icon.LeafIcon {...knobs} />
-                <Icon.LetterBoldIcon {...knobs} />
-                <Icon.LetterIcon {...knobs} />
-                <Icon.LinkBoldIcon {...knobs} />
-                <Icon.LinkIcon {...knobs} />
-                <Icon.ListIcon {...knobs} />
-                <Icon.LockIcon {...knobs} />
-                <Icon.MarkerIcon {...knobs} />
-                <Icon.MealIcon {...knobs} />
-                <Icon.MegaphoneIcon {...knobs} />
-                <Icon.MenuDotsIcon {...knobs} />
-                <Icon.MenuBoldIcon {...knobs} />
-                <Icon.MenuIcon {...knobs} />
-                <Icon.MeterIcon {...knobs} />
-                <Icon.MinusIcon {...knobs} />
-                <Icon.MoonIcon {...knobs} />
-                <Icon.MooveIcon {...knobs} />
-                <Icon.OrganizationIcon {...knobs} />
-                <Icon.OutIcon {...knobs} />
-                <Icon.PaletteIcon {...knobs} />
-                <Icon.PaperclipIcon {...knobs} />
-                <Icon.PenIcon {...knobs} />
-                <Icon.PhoneIcon {...knobs} />
-                <Icon.PictureIcon {...knobs} />
-                <Icon.PlaneIcon {...knobs} />
-                <Icon.PlugIcon {...knobs} />
-                <Icon.UnplugIcon {...knobs} />
-                <Icon.PlusIcon {...knobs} />
-                <Icon.PointerIcon {...knobs} />
-                <Icon.PopinIcon {...knobs} />
-                <Icon.QuestionBoldIcon {...knobs} />
-                <Icon.QuestionIcon {...knobs} />
-                <Icon.QuoteLeftIcon {...knobs} />
-                <Icon.QuoteRightIcon {...knobs} />
-                <Icon.RefreshBoldIcon {...knobs} />
-                <Icon.RefreshIcon {...knobs} />
-                <Icon.SatchelIcon {...knobs} />
-                <Icon.ScheduleIcon {...knobs} />
-                <Icon.ScooterIcon {...knobs} />
-                <Icon.SearchBoldIcon {...knobs} />
-                <Icon.SearchIcon {...knobs} />
-                <Icon.ShopIcon {...knobs} />
-                <Icon.StartIcon {...knobs} />
-                <Icon.SunIcon {...knobs} />
-                <Icon.SupportIcon {...knobs} />
-                <Icon.TrashIcon {...knobs} />
-                <Icon.TreesIcon {...knobs} />
-                <Icon.TrophyIcon {...knobs} />
-                <Icon.TruckIcon {...knobs} />
-                <Icon.TvIcon {...knobs} />
-                <Icon.UploadIcon {...knobs} />
-                <Icon.UserBoldIcon {...knobs} />
-                <Icon.UserIcon {...knobs} />
-                <Icon.UsersIcon {...knobs} />
-                <Icon.WalletIcon {...knobs} />
-                <Icon.WeightIcon {...knobs} />
-                <Icon.WheelsIcon {...knobs} />
-                <Icon.WidgetIcon {...knobs} />
-            </div>
+            <>
+                <Title
+                    marginTop={spaceOptions.xs}
+                    marginBottom={spaceOptions.xs}
+                >
+                    Arrows
+                </Title>
+                <div>
+                    <Icon.ArrowCircleLeftBoldIcon
+                        title="ArrowCircleLeftBoldIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowCircleLeftIcon
+                        title="ArrowCircleLeftIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowCircleRightBoldIcon
+                        title="ArrowCircleRightBoldIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowCircleRightIcon
+                        title="ArrowCircleRightIcon"
+                        {...knobs}
+                    />
+                </div>
+
+                <div>
+                    <Icon.ArrowLeftIcon title="ArrowLeftIcon" {...knobs} />
+                    <Icon.ArrowRightIcon title="ArrowRightIcon" {...knobs} />
+                    <Icon.ArrowTopIcon title="ArrowTopIcon" {...knobs} />
+                    <Icon.ArrowBottomIcon title="ArrowBottomIcon" {...knobs} />
+                </div>
+
+                <div>
+                    <Icon.ArrowLongLeftIcon
+                        title="ArrowLongLeftIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowLongRightIcon
+                        title="ArrowLongRightIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowLongTopIcon
+                        title="ArrowLongTopIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowLongBottomIcon
+                        title="ArrowLongBottomIcon"
+                        {...knobs}
+                    />
+                </div>
+
+                <div>
+                    <Icon.ArrowRoundTopLeftIcon
+                        title="ArrowRoundTopLeftIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowRoundTopRightIcon
+                        title="ArrowRoundTopRightIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowRoundBottomLeftIcon
+                        title="ArrowRoundBottomLeftIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowRoundBottomRightIcon
+                        title="ArrowRoundBottomRightIcon"
+                        {...knobs}
+                    />
+                </div>
+
+                <Title
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.xs}
+                >
+                    Symbols
+                </Title>
+                <div>
+                    <Icon.CautionBoldIcon title="CautionBoldIcon" {...knobs} />
+                    <Icon.CautionIcon title="CautionIcon" {...knobs} />
+                    <Icon.ChangeIcon title="ChangeIcon" {...knobs} />
+                    <Icon.CheckBoldIcon title="CheckBoldIcon" {...knobs} />
+                    <Icon.CheckIcon title="CheckIcon" {...knobs} />
+                    <Icon.MenuBoldIcon title="MenuBoldIcon" {...knobs} />
+                    <Icon.MenuIcon title="MenuIcon" {...knobs} />
+                    <Icon.MenuDotsIcon title="MenuDotsIcon" {...knobs} />
+                    <Icon.MooveIcon title="MooveIcon" {...knobs} />
+                    <Icon.OutIcon title="OutIcon" {...knobs} />
+
+                    <Icon.QuestionBoldIcon
+                        title="QuestionBoldIcon"
+                        {...knobs}
+                    />
+                    <Icon.QuestionIcon title="QuestionIcon" {...knobs} />
+                    <Icon.QuoteLeftIcon title="QuoteLeftIcon" {...knobs} />
+                    <Icon.QuoteRightIcon title="QuoteRightIcon" {...knobs} />
+
+                    <Icon.RefreshBoldIcon title="RefreshBoldIcon" {...knobs} />
+                    <Icon.RefreshIcon title="RefreshIcon" {...knobs} />
+                    <Icon.DownloadIcon title="DownloadIcon" {...knobs} />
+                    <Icon.UploadIcon title="UploadIcon" {...knobs} />
+
+                    <Icon.EmptyIcon title="EmptyIcon" {...knobs} />
+                    <Icon.PlusIcon title="PlusIcon" {...knobs} />
+                    <Icon.MinusIcon title="MinusIcon" {...knobs} />
+                </div>
+
+                <Title
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.xs}
+                >
+                    Objects
+                </Title>
+                <div>
+                    <Icon.BalloonBoldIcon title="BalloonBoldIcon" {...knobs} />
+                    <Icon.BalloonIcon title="BalloonIcon" {...knobs} />
+                    <Icon.BankIcon title="BankIcon" {...knobs} />
+                    <Icon.BeakerBoldIcon title="BeakerBoldIcon" {...knobs} />
+                    <Icon.BeakerIcon title="BeakerIcon" {...knobs} />
+                    <Icon.BedIcon title="BedIcon" {...knobs} />
+                    <Icon.BellBoldIcon title="BellBoldIcon" {...knobs} />
+                    <Icon.BellIcon title="BellIcon" {...knobs} />
+                    <Icon.BrushIcon title="BrushIcon" {...knobs} />
+                    <Icon.BulbBoldIcon title="BulbBoldIcon" {...knobs} />
+                    <Icon.BulbIcon title="BulbIcon" {...knobs} />
+                    <Icon.CameraIcon title="CameraIcon" {...knobs} />
+                    <Icon.CardsBoldIcon title="CardsBoldIcon" {...knobs} />
+                    <Icon.CardsIcon title="CardsIcon" {...knobs} />
+                    <Icon.CarIcon title="CarIcon" {...knobs} />
+                    <Icon.CartIcon title="CartIcon" {...knobs} />
+                    <Icon.CheckboxIcon title="CheckboxIcon" {...knobs} />
+                    <Icon.CircuitIcon title="CircuitIcon" {...knobs} />
+                    <Icon.ClockBoldIcon title="ClockBoldIcon" {...knobs} />
+                    <Icon.ClockIcon title="ClockIcon" {...knobs} />
+                    <Icon.CodeIcon title="CodeIcon" {...knobs} />
+                    <Icon.CoinsIcon title="CoinsIcon" {...knobs} />
+                    <Icon.ConsoleIcon title="ConsoleIcon" {...knobs} />
+                    <Icon.ContractIcon title="ContractIcon" {...knobs} />
+                    <Icon.CopyIcon title="CopyIcon" {...knobs} />
+                    <Icon.CrossBoldIcon title="CrossBoldIcon" {...knobs} />
+                    <Icon.CrossIcon title="CrossIcon" {...knobs} />
+                    <Icon.EarthIcon title="EarthIcon" {...knobs} />
+                    <Icon.EyedropperIcon title="EyedropperIcon" {...knobs} />
+                    <Icon.EyeIcon title="EyeIcon" {...knobs} />
+                    <Icon.FactoryIcon title="FactoryIcon" {...knobs} />
+                    <Icon.GlobeIcon title="GlobeIcon" {...knobs} />
+                    <Icon.HeartIcon title="HeartIcon" {...knobs} />
+                    <Icon.HourglassIcon title="HourglassIcon" {...knobs} />
+                    <Icon.InformationIcon title="InformationIcon" {...knobs} />
+                    <Icon.LeafIcon title="LeafIcon" {...knobs} />
+                    <Icon.LetterBoldIcon title="LetterBoldIcon" {...knobs} />
+                    <Icon.LetterIcon title="LetterIcon" {...knobs} />
+                    <Icon.LinkBoldIcon title="LinkBoldIcon" {...knobs} />
+                    <Icon.LinkIcon title="LinkIcon" {...knobs} />
+                    <Icon.ListIcon title="ListIcon" {...knobs} />
+                    <Icon.LockIcon title="LockIcon" {...knobs} />
+                    <Icon.MarkerIcon title="MarkerIcon" {...knobs} />
+                    <Icon.MealIcon title="MealIcon" {...knobs} />
+                    <Icon.MegaphoneIcon title="MegaphoneIcon" {...knobs} />
+                    <Icon.MeterIcon title="MeterIcon" {...knobs} />
+                    <Icon.MoonIcon title="MoonIcon" {...knobs} />
+                    <Icon.OrganizationIcon
+                        title="OrganizationIcon"
+                        {...knobs}
+                    />
+                    <Icon.PaletteIcon title="PaletteIcon" {...knobs} />
+                    <Icon.PaperclipIcon title="PaperclipIcon" {...knobs} />
+                    <Icon.PenIcon title="PenIcon" {...knobs} />
+                    <Icon.PhoneIcon title="PhoneIcon" {...knobs} />
+                    <Icon.PictureIcon title="PictureIcon" {...knobs} />
+                    <Icon.PlaneIcon title="PlaneIcon" {...knobs} />
+                    <Icon.PlugIcon title="PlugIcon" {...knobs} />
+                    <Icon.UnplugIcon title="UnplugIcon" {...knobs} />
+                    <Icon.PointerIcon title="PointerIcon" {...knobs} />
+                    <Icon.PopinIcon title="PopinIcon" {...knobs} />
+                    <Icon.SatchelIcon title="SatchelIcon" {...knobs} />
+                    <Icon.ScheduleIcon title="ScheduleIcon" {...knobs} />
+                    <Icon.ScooterIcon title="ScooterIcon" {...knobs} />
+                    <Icon.SearchBoldIcon title="SearchBoldIcon" {...knobs} />
+                    <Icon.SearchIcon title="SearchIcon" {...knobs} />
+                    <Icon.ShopIcon title="ShopIcon" {...knobs} />
+                    <Icon.StartIcon title="StartIcon" {...knobs} />
+                    <Icon.SunIcon title="SunIcon" {...knobs} />
+                    <Icon.SupportIcon title="SupportIcon" {...knobs} />
+                    <Icon.TrashIcon title="TrashIcon" {...knobs} />
+                    <Icon.TreesIcon title="TreesIcon" {...knobs} />
+                    <Icon.TrophyIcon title="TrophyIcon" {...knobs} />
+                    <Icon.TruckIcon title="TruckIcon" {...knobs} />
+                    <Icon.TvIcon title="TvIcon" {...knobs} />
+                    <Icon.UserBoldIcon title="UserBoldIcon" {...knobs} />
+                    <Icon.UserIcon title="UserIcon" {...knobs} />
+                    <Icon.UsersIcon title="UsersIcon" {...knobs} />
+                    <Icon.WalletIcon title="WalletIcon" {...knobs} />
+                    <Icon.WeightIcon title="WeightIcon" {...knobs} />
+                    <Icon.WheelsIcon title="WheelsIcon" {...knobs} />
+                    <Icon.WidgetIcon title="WidgetIcon" {...knobs} />
+                </div>
+            </>
         );
     })
     .add('Icon with badge number', () => (
