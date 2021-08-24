@@ -8,19 +8,21 @@ import {
 import { SidebarMenuCategoryBase } from './style';
 import Title from '../Title/Title';
 
-const SidebarMenuCategory = props => {
+const SidebarMenuCategory = ({ children, categoryTitle, ...rest }) => {
     return (
-        <SidebarMenuCategoryBase {...props}>
-            {props.categoryTitle ? (
+        <SidebarMenuCategoryBase {...rest}>
+            {categoryTitle ? (
                 <Title
-                    {...props}
+                    theme={rest.theme} // not necessary, only needed for tests
                     colorWab={greyOptions.grey30}
                     textSize={fontSizeOptions.xxs}
+                    isResponsive={false}
                 >
-                    {props.categoryTitle}
+                    {categoryTitle}
                 </Title>
             ) : null}
-            {props.children}
+
+            {children}
         </SidebarMenuCategoryBase>
     );
 };

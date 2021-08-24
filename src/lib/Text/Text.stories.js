@@ -58,6 +58,7 @@ storiesOf(folder.text + 'Text', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
+            isResponsive={boolean(labels.isResponsive, true)}
             textSize={select(labels.textSize, fontSizeOptions, fontSizeDefault)}
             align={radios(labels.align, alignOptions, alignDefault)}
             hasUppercase={boolean(labels.hasUppercase, false)}
@@ -102,6 +103,7 @@ storiesOf(folder.text + 'Text', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
+            isResponsive={boolean(labels.isResponsive, true)}
             textSize={select(labels.textSize, fontSizeOptions, fontSizeDefault)}
             align={radios(labels.align, alignOptions, alignDefault)}
             marginLateral={select(
@@ -267,6 +269,7 @@ storiesOf(folder.text + 'Text', module)
                     formStatusDefault,
                 )}
                 marginLateral={spaceOptions.sm}
+                isResponsive={boolean(labels.isResponsive, true)}
                 textSize={select(
                     labels.textSize,
                     fontSizeOptions,

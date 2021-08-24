@@ -2,18 +2,11 @@ import { css } from 'styled-components';
 import { transparentize } from 'polished';
 import { colorPalletOptions } from '../../../shared/constants';
 import { mainColor } from '../../Text/style/constants';
-import { lineColor, minimizeFont } from './constants';
+import { lineColor } from './constants';
 
 const smallText = css`
     text-transform: uppercase;
     letter-spacing: ${props => props.theme.font.spacing};
-`;
-
-const bigText = css`
-    @media ${props => props.theme.screen.max.md} {
-        font-size: ${props =>
-            props.theme.font.size[minimizeFont[props.textSize]]};
-    }
 `;
 
 const underlineAlign = {
@@ -71,4 +64,4 @@ const color = {
     `,
 };
 
-export { smallText, bigText, underline, color };
+export { smallText, underline, color };
