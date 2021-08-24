@@ -54,6 +54,7 @@ storiesOf(folder.media + 'Icons', module)
             hasBackground: boolean(labels.hasBackground, false),
             hasHover: boolean(labels.hasHover + ' (needs background)', false),
             isActive: boolean(labels.isActive + ' (needs background)', false),
+            disabled: boolean(labels.disabled, false),
             isCentered: boolean('Is centered', false),
             marginTop: select(labels.marginTop, spaceOptions, spaceOptions.sm),
             marginBottom: select(
@@ -219,6 +220,7 @@ storiesOf(folder.media + 'Icons', module)
                 formStatusOptions,
                 formStatusDefault,
             )}
+            disabled={boolean(labels.disabled, false)}
             iconSize={select(
                 labels.iconSize,
                 iconSizeOptions,

@@ -28,7 +28,7 @@ exports[`renders without crashing 1`] = `
         className="style__CalendarNavbarBase-sc-9kauge-0 eMrxQk"
       >
         <button
-          className="style__IconBase-ak3679-0 eokbtW icon"
+          className="style__IconBase-ak3679-0 KOHwy icon"
           onClick={[Function]}
           type="button"
         >
@@ -42,7 +42,7 @@ exports[`renders without crashing 1`] = `
         </button>
         avril 2021
         <button
-          className="style__IconBase-ak3679-0 eokbtW icon"
+          className="style__IconBase-ak3679-0 KOHwy icon"
           onClick={[Function]}
           type="button"
         >

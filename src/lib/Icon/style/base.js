@@ -135,6 +135,11 @@ const noBackground = css`
     }
 `;
 
+const disabledStyle = css`
+    cursor: not-allowed;
+    filter: grayscale(1);
+`;
+
 const numberStyle = css`
     .badge-number {
         box-sizing: border-box;
@@ -156,7 +161,7 @@ export {
     activeColor,
     baseColor,
     backgroundStyle,
-    hasHoverColor,
     noBackground,
+    disabledStyle,
     numberStyle,
 };
