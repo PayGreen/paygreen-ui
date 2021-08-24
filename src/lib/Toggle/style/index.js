@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { math } from 'polished';
 import { color } from './constants';
+import { disabledStyle } from './base';
 
 const ToggleBase = styled.div`
     display: flex;
@@ -21,6 +22,8 @@ const ToggleBase = styled.div`
         align-items: flex-end;
         height: ${props => props.theme.form.toggle};
         margin-bottom: ${props => props.theme.space.sm};
+
+        ${props => props.isDisabled ? disabledStyle : null};
 
         input {
             position: absolute;

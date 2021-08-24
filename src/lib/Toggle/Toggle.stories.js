@@ -1,6 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, radios, select } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    text,
+    radios,
+    select,
+    boolean,
+} from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -19,6 +25,7 @@ storiesOf(folder.form + folder.sub.form + 'Toggle', module)
     .add('Toggle simple', () => (
         <Toggle
             id="toggle1"
+            disabled={boolean(labels.disabled, false)}
             colorPallet={radios(
                 labels.colorPallet,
                 colorPalletOptions,
@@ -42,6 +49,7 @@ storiesOf(folder.form + folder.sub.form + 'Toggle', module)
             id="toggle2"
             checkedLabel={<BulbIcon />}
             notCheckedLabel={<BeakerIcon />}
+            disabled={boolean(labels.disabled, false)}
             colorPallet={radios(
                 labels.colorPallet,
                 colorPalletOptions,
@@ -63,6 +71,7 @@ storiesOf(folder.form + folder.sub.form + 'Toggle', module)
     .add('Toggle with texts', () => (
         <Toggle
             id="toggle3"
+            disabled={boolean(labels.disabled, false)}
             checkedLabel={text('Checked label', 'Yes')}
             notCheckedLabel={text('Not checked label', 'No')}
             colorPallet={radios(

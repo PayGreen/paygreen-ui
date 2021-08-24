@@ -28,6 +28,7 @@ const Toggle = ({
             colorTheme={colorTheme}
             colorWab={colorWab}
             colorStatus={colorStatus}
+            isDisabled={rest.disabled}
         >
             {children ? <span className="legend">{children}</span> : null}
 
@@ -50,6 +51,7 @@ const Toggle = ({
 
 Toggle.propTypes = {
     id: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
     checkedLabel:  PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.element,
@@ -65,6 +67,7 @@ Toggle.propTypes = {
 };
 
 Toggle.defaultProps = {
+    disabled: false,
     colorPallet: colorPalletOptions.status,
     colorTheme: colorThemeDefault,
     colorWab: greyDefault,
