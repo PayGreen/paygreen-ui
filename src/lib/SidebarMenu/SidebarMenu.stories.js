@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
+import { withKnobs, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -22,7 +22,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
     .addDecorator(withKnobs)
     .add('SidebarMenu', () => (
         <SidebarMenu
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
@@ -30,7 +30,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
         >
             <SidebarItem
                 htmlTag={sidebarItemHtmlTagOptions.button}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
@@ -43,7 +43,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
             >
                 <MeterIcon
                     iconSize={iconSizeOptions.lg}
-                    colorTheme={radios(
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
@@ -51,21 +51,21 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
                 />
 
                 <Link
-                    colorTheme={radios(
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
                 >
-                    Tableau de Bord
+                    Tableau de bord
                 </Link>
             </SidebarItem>
 
             <SidebarList>
                 <a href="#">
                     <SidebarItem
-                        isActive={boolean(labels.isActive, false)}
-                        colorTheme={radios(
+                        isActive={true}
+                        colorTheme={select(
                             labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
@@ -87,7 +87,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarMenu', module)
 
                 <a href="#">
                     <SidebarItem
-                        colorTheme={radios(
+                        colorTheme={select(
                             labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,

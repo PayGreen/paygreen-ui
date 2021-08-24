@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -19,12 +19,12 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
         <SidebarList isOpen={boolean(labels.isOpen, true)}>
             <a href="#">
                 <SidebarItem
-                    colorTheme={radios(
+                    isActive={boolean(labels.isActive, false)}
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
-                    isActive={boolean(labels.isActive, false)}
                 >
                     <Link
                         colorPallet={colorPalletOptions.wab}
@@ -37,7 +37,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
 
             <a href="#">
                 <SidebarItem
-                    colorTheme={radios(
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,

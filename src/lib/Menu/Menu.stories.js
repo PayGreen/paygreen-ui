@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios } from '@storybook/addon-knobs';
+import { withKnobs, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -22,7 +22,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
     .addDecorator(withKnobs)
     .add('Menu', () => (
         <Menu
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
@@ -31,7 +31,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
             <a href="#">
                 <MenuItem
                     isClickable={false}
-                    colorTheme={radios(
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
@@ -44,7 +44,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
             <MenuList>
                 <a href="#">
                     <MenuListItem
-                        colorTheme={radios(
+                        colorTheme={select(
                             labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
@@ -52,7 +52,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                     >
                         <LeafIcon
                             iconSize={iconSizeOptions.lg}
-                            colorTheme={radios(
+                            colorTheme={select(
                                 labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
@@ -60,7 +60,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                         />
 
                         <Link
-                            colorTheme={radios(
+                            colorTheme={select(
                                 labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
@@ -79,7 +79,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
 
                 <a href="#">
                     <MenuListItem
-                        colorTheme={radios(
+                        colorTheme={select(
                             labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
@@ -87,7 +87,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                     >
                         <CardsIcon
                             iconSize={iconSizeOptions.lg}
-                            colorTheme={radios(
+                            colorTheme={select(
                                 labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
@@ -95,7 +95,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                         />
 
                         <Link
-                            colorTheme={radios(
+                            colorTheme={select(
                                 labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
@@ -105,7 +105,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                         </Link>
 
                         <IconLabel
-                            colorTheme={radios(
+                            colorTheme={select(
                                 labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
@@ -114,7 +114,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                             <OutIcon
                                 iconSize={iconSizeOptions.xs}
                                 marginRight={spaceOptions.xs}
-                                colorTheme={radios(
+                                colorTheme={select(
                                     labels.colorTheme,
                                     colorThemeOptions,
                                     colorThemeDefault,
@@ -127,7 +127,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
 
                 <a href="#">
                     <MenuListItem
-                        colorTheme={radios(
+                        colorTheme={select(
                             labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
@@ -135,7 +135,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                     >
                         <OrganizationIcon
                             iconSize={iconSizeOptions.lg}
-                            colorTheme={radios(
+                            colorTheme={select(
                                 labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
@@ -143,7 +143,7 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                         />
 
                         <Link
-                            colorTheme={radios(
+                            colorTheme={select(
                                 labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
