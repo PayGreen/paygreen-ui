@@ -48,6 +48,7 @@ import Copy from './components/Copy';
 import CrossBold from './components/CrossBold';
 import Cross from './components/Cross';
 import Download from './components/Download';
+import Earth from './components/Earth';
 import Empty from './components/Empty';
 import Eyedropper from './components/Eyedropper';
 import Eye from './components/Eye';
@@ -97,6 +98,7 @@ import Scooter from './components/Scooter';
 import SearchBold from './components/SearchBold';
 import Search from './components/Search';
 import Shop from './components/Shop';
+import Start from './components/Start';
 import Sun from './components/Sun';
 import Support from './components/Support';
 import Trash from './components/Trash';
@@ -104,6 +106,7 @@ import Trees from './components/Trees';
 import Trophy from './components/Trophy';
 import Truck from './components/Truck';
 import Tv from './components/Tv';
+import Unplug from './components/Unplug';
 import Upload from './components/Upload';
 import UserBold from './components/UserBold';
 import Users from './components/Users';
@@ -163,6 +166,7 @@ export const CopyIcon = (props) => <IconWrapper {...props}><Copy /></IconWrapper
 export const CrossBoldIcon = (props) => <IconWrapper {...props}><CrossBold /></IconWrapper>
 export const CrossIcon = (props) => <IconWrapper {...props}><Cross /></IconWrapper>
 export const DownloadIcon = (props) => <IconWrapper {...props}><Download /></IconWrapper>
+export const EarthIcon = (props) => <IconWrapper {...props}><Earth /></IconWrapper>
 export const EmptyIcon = (props) => <IconWrapper {...props}><Empty /></IconWrapper>
 export const EyedropperIcon = (props) => <IconWrapper {...props}><Eyedropper /></IconWrapper>
 export const EyeIcon = (props) => <IconWrapper {...props}><Eye /></IconWrapper>
@@ -212,6 +216,7 @@ export const ScooterIcon = (props) => <IconWrapper {...props}><Scooter /></IconW
 export const SearchBoldIcon = (props) => <IconWrapper {...props}><SearchBold /></IconWrapper>
 export const SearchIcon = (props) => <IconWrapper {...props}><Search /></IconWrapper>
 export const ShopIcon = (props) => <IconWrapper {...props}><Shop /></IconWrapper>
+export const StartIcon = (props) => <IconWrapper {...props}><Start /></IconWrapper>
 export const SunIcon = (props) => <IconWrapper {...props}><Sun /></IconWrapper>
 export const SupportIcon = (props) => <IconWrapper {...props}><Support /></IconWrapper>
 export const TrashIcon = (props) => <IconWrapper {...props}><Trash /></IconWrapper>
@@ -219,6 +224,7 @@ export const TreesIcon = (props) => <IconWrapper {...props}><Trees /></IconWrapp
 export const TrophyIcon = (props) => <IconWrapper {...props}><Trophy /></IconWrapper>
 export const TruckIcon = (props) => <IconWrapper {...props}><Truck /></IconWrapper>
 export const TvIcon = (props) => <IconWrapper {...props}><Tv /></IconWrapper>
+export const UnplugIcon = (props) => <IconWrapper {...props}><Unplug /></IconWrapper>
 export const UploadIcon = (props) => <IconWrapper {...props}><Upload /></IconWrapper>
 export const UserBoldIcon = (props) => <IconWrapper {...props}><UserBold /></IconWrapper>
 export const UsersIcon = (props) => <IconWrapper {...props}><Users /></IconWrapper>
