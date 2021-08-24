@@ -87,6 +87,7 @@ storiesOf(folder.media + 'Icons', module)
                 >
                     Arrows
                 </Title>
+
                 <div>
                     <Icon.ArrowCircleLeftBoldIcon
                         title="ArrowCircleLeftBoldIcon"
@@ -157,6 +158,7 @@ storiesOf(folder.media + 'Icons', module)
                 >
                     Symbols
                 </Title>
+
                 <div>
                     <Icon.CautionBoldIcon title="CautionBoldIcon" {...knobs} />
                     <Icon.CautionIcon title="CautionIcon" {...knobs} />
@@ -168,7 +170,23 @@ storiesOf(folder.media + 'Icons', module)
                     <Icon.MenuDotsIcon title="MenuDotsIcon" {...knobs} />
                     <Icon.MooveIcon title="MooveIcon" {...knobs} />
                     <Icon.OutIcon title="OutIcon" {...knobs} />
+                    <Icon.RefreshBoldIcon title="RefreshBoldIcon" {...knobs} />
+                    <Icon.RefreshIcon title="RefreshIcon" {...knobs} />
+                    <Icon.UploadIcon title="UploadIcon" {...knobs} />
+                    <Icon.DownloadIcon title="DownloadIcon" {...knobs} />
+                </div>
 
+                <Title
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.xs}
+                >
+                    Math and punctuation
+                </Title>
+
+                <div>
+                    <Icon.EmptyIcon title="EmptyIcon" {...knobs} />
+                    <Icon.MinusIcon title="MinusIcon" {...knobs} />
+                    <Icon.PlusIcon title="PlusIcon" {...knobs} />
                     <Icon.QuestionBoldIcon
                         title="QuestionBoldIcon"
                         {...knobs}
@@ -176,15 +194,6 @@ storiesOf(folder.media + 'Icons', module)
                     <Icon.QuestionIcon title="QuestionIcon" {...knobs} />
                     <Icon.QuoteLeftIcon title="QuoteLeftIcon" {...knobs} />
                     <Icon.QuoteRightIcon title="QuoteRightIcon" {...knobs} />
-
-                    <Icon.RefreshBoldIcon title="RefreshBoldIcon" {...knobs} />
-                    <Icon.RefreshIcon title="RefreshIcon" {...knobs} />
-                    <Icon.DownloadIcon title="DownloadIcon" {...knobs} />
-                    <Icon.UploadIcon title="UploadIcon" {...knobs} />
-
-                    <Icon.EmptyIcon title="EmptyIcon" {...knobs} />
-                    <Icon.PlusIcon title="PlusIcon" {...knobs} />
-                    <Icon.MinusIcon title="MinusIcon" {...knobs} />
                 </div>
 
                 <Title
@@ -193,6 +202,7 @@ storiesOf(folder.media + 'Icons', module)
                 >
                     Objects
                 </Title>
+
                 <div>
                     <Icon.BalloonBoldIcon title="BalloonBoldIcon" {...knobs} />
                     <Icon.BalloonIcon title="BalloonIcon" {...knobs} />
