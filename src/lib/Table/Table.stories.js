@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -18,7 +18,7 @@ storiesOf(folder.table + folder.sub.table + 'Table', module)
     .add('Table', () => (
         <Grid childrenFlex={1}>
             <Table
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,

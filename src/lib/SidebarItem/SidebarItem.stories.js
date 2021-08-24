@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, boolean, select } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -18,12 +18,12 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
     .add('SidebarItem', () => (
         <a href="#">
             <SidebarItem
-                colorTheme={radios(
+                isActive={boolean(labels.isActive, false)}
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
                 )}
-                isActive={boolean(labels.isActive, false)}
                 paddingLateral={select(
                     labels.paddingLateral,
                     spaceOptions,
@@ -32,7 +32,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
             >
                 <MeterIcon
                     iconSize={iconSizeOptions.lg}
-                    colorTheme={radios(
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
@@ -40,13 +40,13 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
                 />
 
                 <Link
-                    colorTheme={radios(
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
                 >
-                    Tableau de Bord
+                    Tableau de bord
                 </Link>
             </SidebarItem>
         </a>

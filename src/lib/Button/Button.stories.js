@@ -12,7 +12,13 @@ import {
     colorTypeDefault,
 } from '../../shared/constants';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text, radios } from '@storybook/addon-knobs';
+import {
+    withKnobs,
+    boolean,
+    text,
+    radios,
+    select,
+} from '@storybook/addon-knobs';
 import labels from '../../shared/labels';
 
 storiesOf(folder.form + folder.sub.button + 'Button', module)
@@ -30,7 +36,7 @@ storiesOf(folder.form + folder.sub.button + 'Button', module)
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,

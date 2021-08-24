@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios } from '@storybook/addon-knobs';
+import { withKnobs, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeDefault,
@@ -34,7 +34,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
     .add('MenuList', () => (
         <div style={{ position: 'relative' }}>
             <MenuList
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,

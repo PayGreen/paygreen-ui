@@ -26,7 +26,7 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="style__MenuItemBase-sc-4wfueo-0 hHHNLZ"
+          className="style__MenuItemBase-sc-4wfueo-0 cxMVrk"
         >
           About us
         </div>
@@ -49,7 +49,7 @@ exports[`renders without crashing 1`] = `
             href="#"
           >
             <div
-              className="style__MenuItemBase-sc-4wfueo-0 hHHNLZ"
+              className="style__MenuItemBase-sc-4wfueo-0 cxMVrk"
             >
               Login
             </div>

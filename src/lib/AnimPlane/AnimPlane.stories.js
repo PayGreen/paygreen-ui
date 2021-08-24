@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, boolean } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -13,11 +13,11 @@ storiesOf(folder.media + 'AnimPlane', module)
     .addDecorator(withKnobs)
     .add('AnimPlane', () => (
         <AnimPlane
-            colorTheme={radios(
+            isActive={boolean(labels.isActive, false)}
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
             )}
-            isActive={boolean(labels.isActive, false)}
         />
     ));

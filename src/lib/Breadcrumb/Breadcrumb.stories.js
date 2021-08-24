@@ -42,7 +42,7 @@ storiesOf(folder.text + 'Breadcrumb', module)
                 colorTypeOptions,
                 colorTypeDefault,
             )}
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,

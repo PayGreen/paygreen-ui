@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -48,7 +48,7 @@ storiesOf(folder.nav + 'MenuTertiary', module)
             <MenuTertiary
                 isFixed={boolean('Is fixed', true)}
                 isHidden={boolean(labels.isHidden, false)}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
@@ -70,7 +70,7 @@ storiesOf(folder.nav + 'MenuTertiary', module)
                     gradient={
                         index % 2 ? gradientOptions.none : gradientOptions.theme
                     }
-                    colorTheme={radios(
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
@@ -83,7 +83,7 @@ storiesOf(folder.nav + 'MenuTertiary', module)
                                     ? colorTypeOptions.original
                                     : colorTypeOptions.reverse
                             }
-                            colorTheme={radios(
+                            colorTheme={select(
                                 labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
@@ -101,7 +101,7 @@ storiesOf(folder.nav + 'MenuTertiary', module)
                                     ? colorTypeOptions.original
                                     : colorTypeOptions.reverse
                             }
-                            colorTheme={radios(
+                            colorTheme={select(
                                 labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,

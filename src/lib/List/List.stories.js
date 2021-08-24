@@ -139,7 +139,7 @@ storiesOf(folder.list + 'List', module)
                         iconSizeOptions,
                         iconSizeDefault,
                     )}
-                    colorTheme={radios(
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
@@ -159,7 +159,7 @@ storiesOf(folder.list + 'List', module)
                 iconSizeOptions,
                 iconSizeDefault,
             )}
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
@@ -174,7 +174,7 @@ storiesOf(folder.list + 'List', module)
                         iconSizeOptions,
                         iconSizeDefault,
                     )}
-                    colorTheme={radios(
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,

@@ -32,7 +32,7 @@ storiesOf(folder.list + 'ListItem', module)
                 decorationOptions.right,
             )}
             bulletStyle={listStyleOptions.icon}
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
@@ -50,7 +50,7 @@ storiesOf(folder.list + 'ListItem', module)
             )}
         >
             <LeafIcon
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
@@ -59,7 +59,7 @@ storiesOf(folder.list + 'ListItem', module)
 
             <Title
                 colorPallet={colorPalletOptions.theme}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
@@ -89,7 +89,7 @@ storiesOf(folder.list + 'ListItem', module)
     ))
     .add('ListItem with dash', () => (
         <ListItem
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
@@ -108,7 +108,7 @@ storiesOf(folder.list + 'ListItem', module)
     .add('ListItem with number', () => (
         <ListItem
             bulletStyle={listStyleOptions.number}
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,

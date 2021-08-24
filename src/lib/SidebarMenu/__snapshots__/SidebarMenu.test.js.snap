@@ -5,7 +5,7 @@ exports[`renders without crashing 1`] = `
   className="style__SidebarMenuBase-sc-47d16v-0 euiKFv"
 >
   <button
-    className="style__SidebarItemBase-sc-1i0hz0r-0 kfMztb"
+    className="style__SidebarItemBase-sc-1i0hz0r-0 duRirB"
     onClick={[Function]}
     type={null}
   >
@@ -38,7 +38,7 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="style__SidebarItemBase-sc-1i0hz0r-0 eRkxRZ"
+          className="style__SidebarItemBase-sc-1i0hz0r-0 jJGZXz"
           type={null}
         >
           <span
@@ -54,7 +54,7 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="style__SidebarItemBase-sc-1i0hz0r-0 eRkxRZ"
+          className="style__SidebarItemBase-sc-1i0hz0r-0 jJGZXz"
           type={null}
         >
           <span

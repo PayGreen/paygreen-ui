@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, radios, withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -69,7 +69,7 @@ storiesOf(folder.nav + 'Sidebar', module)
                     paddingLateral={spaceOptions.md}
                 >
                     <SidebarMenu
-                        colorTheme={radios(
+                        colorTheme={select(
                             labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
@@ -78,7 +78,7 @@ storiesOf(folder.nav + 'Sidebar', module)
                     >
                         <SidebarItem
                             htmlTag={sidebarItemHtmlTagOptions.button}
-                            colorTheme={radios(
+                            colorTheme={select(
                                 labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
@@ -87,7 +87,7 @@ storiesOf(folder.nav + 'Sidebar', module)
                         >
                             <MeterIcon
                                 iconSize={iconSizeOptions.lg}
-                                colorTheme={radios(
+                                colorTheme={select(
                                     labels.colorTheme,
                                     colorThemeOptions,
                                     colorThemeDefault,
@@ -95,7 +95,7 @@ storiesOf(folder.nav + 'Sidebar', module)
                             />
 
                             <Link
-                                colorTheme={radios(
+                                colorTheme={select(
                                     labels.colorTheme,
                                     colorThemeOptions,
                                     colorThemeDefault,
@@ -108,7 +108,7 @@ storiesOf(folder.nav + 'Sidebar', module)
                         <SidebarList>
                             <a href="#">
                                 <SidebarItem
-                                    colorTheme={radios(
+                                    colorTheme={select(
                                         labels.colorTheme,
                                         colorThemeOptions,
                                         colorThemeDefault,
@@ -126,7 +126,7 @@ storiesOf(folder.nav + 'Sidebar', module)
 
                             <a href="#">
                                 <SidebarItem
-                                    colorTheme={radios(
+                                    colorTheme={select(
                                         labels.colorTheme,
                                         colorThemeOptions,
                                         colorThemeDefault,
@@ -145,7 +145,7 @@ storiesOf(folder.nav + 'Sidebar', module)
                     </SidebarMenu>
 
                     <SidebarMenu
-                        colorTheme={radios(
+                        colorTheme={select(
                             labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
@@ -154,17 +154,17 @@ storiesOf(folder.nav + 'Sidebar', module)
                     >
                         <a href="#">
                             <SidebarItem
-                                colorTheme={radios(
+                                colorTheme={select(
                                     labels.colorTheme,
                                     colorThemeOptions,
                                     colorThemeDefault,
                                 )}
                                 paddingLateral={spaceOptions.md}
-                                isActive={boolean('Is Active', false)}
+                                isActive={boolean(labels.isActive, false)}
                             >
                                 <LeafIcon
                                     iconSize={iconSizeOptions.lg}
-                                    colorTheme={radios(
+                                    colorTheme={select(
                                         labels.colorTheme,
                                         colorThemeOptions,
                                         colorThemeDefault,
@@ -172,7 +172,7 @@ storiesOf(folder.nav + 'Sidebar', module)
                                 />
 
                                 <Link
-                                    colorTheme={radios(
+                                    colorTheme={select(
                                         labels.colorTheme,
                                         colorThemeOptions,
                                         colorThemeDefault,

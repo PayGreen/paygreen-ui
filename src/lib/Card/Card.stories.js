@@ -47,7 +47,7 @@ storiesOf(folder.block + 'Card', module)
                 colorTypeOptions,
                 colorTypeDefault,
             )}
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
@@ -75,7 +75,7 @@ storiesOf(folder.block + 'Card', module)
                 cornerStyle={cornerStyleOptions.banner}
                 colorStyle={colorStyleOptions.light}
                 position={lateralPositionOptions.right}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
@@ -88,7 +88,7 @@ storiesOf(folder.block + 'Card', module)
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
@@ -115,7 +115,7 @@ storiesOf(folder.block + 'Card', module)
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
@@ -159,7 +159,7 @@ storiesOf(folder.block + 'Card', module)
                             colorTypeOptions,
                             colorTypeDefault,
                         )}
-                        colorTheme={radios(
+                        colorTheme={select(
                             labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
@@ -178,7 +178,7 @@ storiesOf(folder.block + 'Card', module)
                 colorTypeOptions,
                 colorTypeDefault,
             )}
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
@@ -210,7 +210,7 @@ storiesOf(folder.block + 'Card', module)
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
@@ -235,7 +235,7 @@ storiesOf(folder.block + 'Card', module)
                             colorTypeOptions,
                             colorTypeDefault,
                         )}
-                        colorTheme={radios(
+                        colorTheme={select(
                             labels.colorTheme,
                             colorThemeOptions,
                             colorThemeDefault,
@@ -255,7 +255,7 @@ storiesOf(folder.block + 'Card', module)
                 colorTypeOptions,
                 colorTypeOptions.reverse,
             )}
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
@@ -264,7 +264,7 @@ storiesOf(folder.block + 'Card', module)
             hasTitleOut={true}
         >
             <Title
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
@@ -282,7 +282,7 @@ storiesOf(folder.block + 'Card', module)
                         colorTypeOptions,
                         colorTypeDefault,
                     )}
-                    colorTheme={radios(
+                    colorTheme={select(
                         labels.colorTheme,
                         colorThemeOptions,
                         colorThemeDefault,
@@ -309,7 +309,7 @@ storiesOf(folder.block + 'Card', module)
                                 colorTypeOptions,
                                 colorTypeDefault,
                             )}
-                            colorTheme={radios(
+                            colorTheme={select(
                                 labels.colorTheme,
                                 colorThemeOptions,
                                 colorThemeDefault,
@@ -394,7 +394,7 @@ storiesOf(folder.block + 'Card', module)
                 colorTypeOptions,
                 colorTypeDefault,
             )}
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,
@@ -412,7 +412,7 @@ storiesOf(folder.block + 'Card', module)
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
@@ -429,7 +429,7 @@ storiesOf(folder.block + 'Card', module)
                     colorTypeOptions,
                     colorTypeDefault,
                 )}
-                colorTheme={radios(
+                colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,
                     colorThemeDefault,
@@ -541,7 +541,7 @@ storiesOf(folder.block + 'Card', module)
     .add('Button card', () => (
         <Card
             htmlTag={cardHtmlTagOptions.button}
-            colorTheme={radios(
+            colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
                 colorThemeDefault,

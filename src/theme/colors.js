@@ -5,6 +5,8 @@ const mainColors = {
     pink: '#ec6a6a',
     purple: '#a26ae1',
     red: '#b54025',
+    gold: '#b99f47',
+    jean: '#8d95bf',
 };
 
 const baseLight = {
@@ -31,6 +33,14 @@ const baseLight = {
     red: {
         main: mainColors.red,
         light: '#f7d7d0',
+    },
+    gold: {
+        main: mainColors.gold,
+        light: '#f3edd9',
+    },
+    jean: {
+        main: mainColors.jean,
+        light: '#e3e4ef',
     },
 };
 
@@ -59,12 +69,20 @@ const baseDark = {
         main: mainColors.red,
         light: '#3e2621',
     },
+    gold: {
+        main: mainColors.gold,
+        light: '#4e462c',
+    },
+    jean: {
+        main: mainColors.jean,
+        light: '#373a46',
+    },
 };
 
 const gradients = {
     green: {
         gradientBase: '#77d1a6',
-        gradientShade: '#a4db95',
+        gradientShade: '#9cd48d',
     },
     blue: {
         gradientBase: '#51c6be',
@@ -81,6 +99,14 @@ const gradients = {
     purple: {
         gradientBase: '#b887ee',
         gradientShade: '#dd94ef',
+    },
+    gold: {
+        gradientBase: '#e8cd6d',
+        gradientShade: '#ccb04f',
+    },
+    jean: {
+        gradientBase: '#b8bbd9',
+        gradientShade: '#839cc1',
     },
 };
 

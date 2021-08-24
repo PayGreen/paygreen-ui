@@ -26,6 +26,14 @@ const ThemeDark = {
             ...baseDark.purple,
             ...gradients.purple,
         },
+        senary: {
+            ...baseDark.gold,
+            ...gradients.gold,
+        },
+        septenary: {
+            ...baseDark.jean,
+            ...gradients.jean,
+        },
     },
     status: {
         success: {
