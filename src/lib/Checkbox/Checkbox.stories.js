@@ -15,7 +15,6 @@ storiesOf(folder.form + folder.sub.checkbox + 'Checkbox', module)
         <Checkbox
             id="first"
             label="First Choice"
-            value="first"
             disabled={boolean(labels.disabled, false)}
             fieldSize={radios(
                 labels.fieldSize,
