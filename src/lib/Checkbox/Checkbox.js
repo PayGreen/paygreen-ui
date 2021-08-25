@@ -28,6 +28,7 @@ const Checkbox = ({ theme, fieldSize, label, inputRef, ...rest }) => {
 Checkbox.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string,
+    value: PropTypes.any,
     disabled: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     inputRef: PropTypes.oneOfType([

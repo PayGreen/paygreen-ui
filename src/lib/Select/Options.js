@@ -41,7 +41,7 @@ Options.propTypes = {
     options: PropTypes.arrayOf(
         PropTypes.oneOfType([
             PropTypes.shape({
-                value: PropTypes.string.isRequired,
+                value: PropTypes.any.isRequired,
                 text: PropTypes.string.isRequired,
                 disabled: PropTypes.bool,
             }),
@@ -51,7 +51,7 @@ Options.propTypes = {
                 }),
                 PropTypes.arrayOf(
                     PropTypes.shape({
-                        value: PropTypes.string.isRequired,
+                        value: PropTypes.any.isRequired,
                         text: PropTypes.string.isRequired,
                         disabled: PropTypes.bool,
                     }),
@@ -60,7 +60,7 @@ Options.propTypes = {
         ]),
     ).isRequired,
     readOnly: PropTypes.bool,
-    defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    defaultValue: PropTypes.any,
 };
 
 Options.defaultProps = {

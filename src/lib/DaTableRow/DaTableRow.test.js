@@ -9,7 +9,7 @@ it('renders without crashing', () => {
     const component = TestRenderer.create(
         <DaTableRow theme={ThemeDefault}>
             <DaTableCell theme={ThemeDefault}>
-                <Checkbox theme={ThemeDefault} id="select"/>
+                <Checkbox theme={ThemeDefault} id="select" />
             </DaTableCell>
 
             <DaTableCell theme={ThemeDefault} isId={true}>

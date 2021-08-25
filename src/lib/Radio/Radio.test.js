@@ -5,7 +5,12 @@ import Radio from './Radio';
 
 it('renders without crashing', () => {
     const radio = TestRenderer.create(
-        <Radio theme={ThemeDefault} id="first" label="First Choice" />,
+        <Radio
+            theme={ThemeDefault}
+            id="first"
+            label="First Choice"
+            value="first"
+        />,
     );
     expect(radio.toJSON()).toMatchSnapshot();
 });

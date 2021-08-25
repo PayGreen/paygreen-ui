@@ -17,10 +17,11 @@ const Radio = ({ theme, fieldSize, label, inputRef, ...rest }) => {
 };
 
 Radio.propTypes = {
-    fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
-    disabled: PropTypes.bool,
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
+    value: PropTypes.any.isRequired,
+    disabled: PropTypes.bool,
+    fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.any }),
@@ -28,8 +29,8 @@ Radio.propTypes = {
 };
 
 Radio.defaultProps = {
-    fieldSize: buttonSizeDefault,
     disabled: false,
+    fieldSize: buttonSizeDefault,
 };
 
 export default Radio;

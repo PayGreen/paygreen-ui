@@ -45,12 +45,12 @@ CheckboxGroup.propTypes = {
     options: PropTypes.arrayOf(
         PropTypes.shape({
             label: PropTypes.string.isRequired,
-            value: PropTypes.string.isRequired,
+            value: PropTypes.any.isRequired,
         }),
     ).isRequired,
     name: PropTypes.string.isRequired,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
-    legend: PropTypes.string,
+    legend: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     disabled: PropTypes.bool,
     required: PropTypes.bool,
 };
