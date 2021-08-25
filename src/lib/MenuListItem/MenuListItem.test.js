@@ -16,12 +16,10 @@ it('renders without crashing', () => {
 
                 <Link theme={ThemeDefault}>Payment</Link>
 
-                <IconLabel theme={ThemeDefault}>
-                    <OutIcon
-                        theme={ThemeDefault}
-                        iconSize={iconSizeOptions.xs}
-                        marginRight={spaceOptions.xs}
-                    />
+                <IconLabel
+                    theme={ThemeDefault}
+                    icon={<OutIcon theme={ThemeDefault} />}
+                >
                     Dev
                 </IconLabel>
 
