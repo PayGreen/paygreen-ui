@@ -108,11 +108,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
 
                                     <Link>Payment</Link>
 
-                                    <IconLabel>
-                                        <OutIcon
-                                            iconSize={iconSizeOptions.xs}
-                                            marginRight={spaceOptions.xs}
-                                        />
+                                    <IconLabel icon={<OutIcon />}>
                                         Dev
                                     </IconLabel>
                                 </MenuListItem>
@@ -155,11 +151,7 @@ storiesOf(folder.nav + 'MenuGroup', module)
 
                                     <Link>Payment</Link>
 
-                                    <IconLabel>
-                                        <OutIcon
-                                            iconSize={iconSizeOptions.xs}
-                                            marginRight={spaceOptions.xs}
-                                        />
+                                    <IconLabel icon={<OutIcon />}>
                                         Dev
                                     </IconLabel>
                                 </MenuListItem>
