@@ -77,7 +77,7 @@ Select.propTypes = {
     options: PropTypes.arrayOf(
         PropTypes.oneOfType([
             PropTypes.shape({
-                value: PropTypes.string.isRequired,
+                value: PropTypes.any.isRequired,
                 text: PropTypes.string.isRequired,
                 disabled: PropTypes.bool,
             }),
@@ -87,7 +87,7 @@ Select.propTypes = {
                 }),
                 PropTypes.arrayOf(
                     PropTypes.shape({
-                        value: PropTypes.string.isRequired,
+                        value: PropTypes.any.isRequired,
                         text: PropTypes.string.isRequired,
                         disabled: PropTypes.bool,
                     }),

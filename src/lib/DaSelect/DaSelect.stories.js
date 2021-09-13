@@ -23,7 +23,7 @@ const options = [
         text: 'First option',
     },
     {
-        value: 'second',
+        value: 2,
         text: 'Second option',
     },
     {
@@ -46,7 +46,7 @@ const optionsGroup = [
                 text: 'First option',
             },
             {
-                value: 'second',
+                value: 2,
                 text: 'Second option',
             },
             {

@@ -5,11 +5,7 @@ import Checkbox from './Checkbox';
 
 it('renders without crashing', () => {
     const checkbox = TestRenderer.create(
-        <Checkbox
-            theme={ThemeDefault}
-            id="first"
-            label="First Choice"
-        />,
+        <Checkbox theme={ThemeDefault} id="first" label="First Choice" />,
     );
     expect(checkbox.toJSON()).toMatchSnapshot();
 });

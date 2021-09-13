@@ -15,6 +15,7 @@ storiesOf(folder.form + folder.sub.radio + 'Radio', module)
         <Radio
             id="first"
             label="First Choice"
+            value="first"
             disabled={boolean(labels.disabled, false)}
             fieldSize={radios(
                 labels.fieldSize,
