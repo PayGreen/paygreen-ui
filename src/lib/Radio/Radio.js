@@ -19,7 +19,7 @@ const Radio = ({ theme, fieldSize, label, inputRef, ...rest }) => {
 Radio.propTypes = {
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    value: PropTypes.any.isRequired,
+    value: PropTypes.any,
     disabled: PropTypes.bool,
     fieldSize: PropTypes.oneOf(Object.values(buttonSizeOptions)),
     inputRef: PropTypes.oneOfType([
