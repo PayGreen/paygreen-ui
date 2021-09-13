@@ -2,12 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__ToggleBase-gnd37d-0 kkAFNu"
+  className="style__ToggleBase-gnd37d-0 kGpEaJ"
 >
   <label
     htmlFor="toggle-test"
   >
     <input
+      disabled={false}
       id="toggle-test"
       type="checkbox"
     />
