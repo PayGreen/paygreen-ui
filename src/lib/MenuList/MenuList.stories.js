@@ -6,7 +6,6 @@ import {
     colorThemeDefault,
     colorThemeOptions,
     iconSizeOptions,
-    spaceOptions,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
 import {
@@ -63,12 +62,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
 
                         <Link colorTheme={color[1]}>Payment</Link>
 
-                        <IconLabel colorTheme={color[1]}>
-                            <OutIcon
-                                iconSize={iconSizeOptions.xs}
-                                marginRight={spaceOptions.xs}
-                                colorTheme={color[1]}
-                            />
+                        <IconLabel colorTheme={color[1]} icon={<OutIcon />}>
                             Dev
                         </IconLabel>
                     </MenuListItem>
@@ -83,12 +77,7 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
 
                         <Link colorTheme={color[2]}>Lunchkit</Link>
 
-                        <IconLabel colorTheme={color[2]}>
-                            <OutIcon
-                                iconSize={iconSizeOptions.xs}
-                                marginRight={spaceOptions.xs}
-                                colorTheme={color[2]}
-                            />
+                        <IconLabel colorTheme={color[2]} icon={<OutIcon />}>
                             Dev
                         </IconLabel>
 

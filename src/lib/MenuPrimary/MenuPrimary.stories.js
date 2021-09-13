@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
-import { folder, iconSizeOptions, spaceOptions } from '../../shared/constants';
+import { folder, iconSizeOptions } from '../../shared/constants';
 import labels from '../../shared/labels';
 import { LeafIcon, CardsIcon, OrganizationIcon, OutIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
@@ -47,13 +47,7 @@ storiesOf(folder.nav + 'MenuPrimary', module)
 
                             <Link>Payment</Link>
 
-                            <IconLabel>
-                                <OutIcon
-                                    iconSize={iconSizeOptions.xs}
-                                    marginRight={spaceOptions.xs}
-                                />
-                                Dev
-                            </IconLabel>
+                            <IconLabel icon={<OutIcon />}>Dev</IconLabel>
                         </MenuListItem>
                     </a>
 
@@ -91,13 +85,7 @@ storiesOf(folder.nav + 'MenuPrimary', module)
 
                             <Link>Payment</Link>
 
-                            <IconLabel>
-                                <OutIcon
-                                    iconSize={iconSizeOptions.xs}
-                                    marginRight={spaceOptions.xs}
-                                />
-                                Dev
-                            </IconLabel>
+                            <IconLabel icon={<OutIcon />}>Dev</IconLabel>
                         </MenuListItem>
                     </a>
 

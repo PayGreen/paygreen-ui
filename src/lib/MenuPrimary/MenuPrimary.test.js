@@ -1,7 +1,7 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import { iconSizeOptions, spaceOptions } from '../../shared/constants';
+import { iconSizeOptions } from '../../shared/constants';
 import { LeafIcon, CardsIcon, OutIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import IconLabel from '../IconLabel/IconLabel';
@@ -53,12 +53,10 @@ it('renders without crashing', () => {
 
                             <Link theme={ThemeDefault}>Payment</Link>
 
-                            <IconLabel theme={ThemeDefault}>
-                                <OutIcon
-                                    iconSize={iconSizeOptions.xs}
-                                    marginRight={spaceOptions.xs}
-                                    theme={ThemeDefault}
-                                />
+                            <IconLabel
+                                theme={ThemeDefault}
+                                icon={<OutIcon theme={ThemeDefault} />}
+                            >
                                 Dev
                             </IconLabel>
                         </MenuListItem>

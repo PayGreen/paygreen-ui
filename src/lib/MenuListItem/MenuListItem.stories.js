@@ -7,7 +7,6 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     iconSizeOptions,
-    spaceOptions,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
 import { CardsIcon, OutIcon } from '../Icon/Icon';
@@ -52,16 +51,8 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuListItem', module)
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
+                    icon={<OutIcon />}
                 >
-                    <OutIcon
-                        iconSize={iconSizeOptions.xs}
-                        marginRight={spaceOptions.xs}
-                        colorTheme={select(
-                            labels.colorTheme,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
-                    />
                     Dev
                 </IconLabel>
 
@@ -95,16 +86,8 @@ storiesOf(folder.nav + folder.sub.menu + 'MenuListItem', module)
                         colorThemeOptions,
                         colorThemeDefault,
                     )}
+                    icon={<OutIcon />}
                 >
-                    <OutIcon
-                        iconSize={iconSizeOptions.xs}
-                        marginRight={spaceOptions.xs}
-                        colorTheme={select(
-                            labels.colorTheme,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
-                    />
                     Dev
                 </IconLabel>
 

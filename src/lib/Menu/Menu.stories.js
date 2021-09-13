@@ -6,7 +6,6 @@ import {
     colorThemeOptions,
     colorThemeDefault,
     iconSizeOptions,
-    spaceOptions,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
 import { LeafIcon, CardsIcon, OrganizationIcon, OutIcon } from '../Icon/Icon';
@@ -110,16 +109,8 @@ storiesOf(folder.nav + folder.sub.menu + 'Menu', module)
                                 colorThemeOptions,
                                 colorThemeDefault,
                             )}
+                            icon={<OutIcon />}
                         >
-                            <OutIcon
-                                iconSize={iconSizeOptions.xs}
-                                marginRight={spaceOptions.xs}
-                                colorTheme={select(
-                                    labels.colorTheme,
-                                    colorThemeOptions,
-                                    colorThemeDefault,
-                                )}
-                            />
                             Dev
                         </IconLabel>
                     </MenuListItem>
