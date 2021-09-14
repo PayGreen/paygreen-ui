@@ -14,6 +14,7 @@ const DaTextarea = ({
     theme,
     onChange,
     value,
+    defaultValue,
     hasCounter,
     counterText,
     marginTop,
@@ -25,7 +26,7 @@ const DaTextarea = ({
     inputRef,
     ...rest
 }) => {
-    const [stateValue, setValue] = useState(value);
+    const [stateValue, setValue] = useState(defaultValue || value);
     const [autoHeight, setAutoHeight] = useState('');
     const [stateCharactersStatus, setCharactersStatus] = useState(
         formStatusDefault,

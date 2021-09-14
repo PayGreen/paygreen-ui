@@ -11,6 +11,7 @@ const Textarea = ({
     theme,
     onChange,
     value,
+    defaultValue,
     status,
     label,
     hasCounter,
@@ -21,7 +22,7 @@ const Textarea = ({
     marginBottom,
     ...rest
 }) => {
-    const [stateValue, setValue] = useState(value);
+    const [stateValue, setValue] = useState(defaultValue || value);
     const [stateCharactersStatus, setCharactersStatus] = useState(
         formStatusDefault,
     );
