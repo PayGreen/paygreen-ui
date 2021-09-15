@@ -26,6 +26,7 @@ const folder = {
         pagination: 'Pagination' + folderSeparator,
         radio: 'Radio' + folderSeparator,
         sidebarMenu: 'Sidebar' + folderSeparator,
+        stepNavbar: 'StepNavbar' + folderSeparator,
         table: 'Simple table' + folderSeparator,
     },
 };

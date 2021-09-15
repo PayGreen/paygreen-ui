@@ -76,6 +76,7 @@ export const ThemeBase = {
     },
     line: '2px',
     dash: '3px',
+    navbar: '4px',
     radius: {
         none: '0',
         sm: '4px',
