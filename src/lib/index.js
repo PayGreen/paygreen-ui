@@ -97,6 +97,7 @@ import SidebarMenu from './SidebarMenu/SidebarMenu';
 import SidebarMenuCategory from './SidebarMenuCategory/SidebarMenuCategory';
 import Skeleton from './Skeleton/Skeleton';
 import SkeletonItem from './SkeletonItem/SkeletonItem';
+import StepNavbar from './StepNavbar/StepNavbar';
 import StepNavbarItem from './StepNavbarItem/StepNavbarItem';
 import Table from './Table/Table';
 import TableCell from './TableCell/TableCell';
@@ -325,6 +326,7 @@ export {
     SidebarMenuCategory,
     Skeleton,
     SkeletonItem,
+    StepNavbar,
     StepNavbarItem,
     Table,
     TableCell,
