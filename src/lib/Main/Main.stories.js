@@ -6,7 +6,7 @@ import Topbar from '../Topbar/Topbar';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Box from '../Box/Box';
 
-storiesOf(folder.nav + 'Main', module).add('Main', () => {
+storiesOf(folder.layout + 'Main', module).add('Main', () => {
     const [isOpen, setOpen] = useState(true);
 
     return (

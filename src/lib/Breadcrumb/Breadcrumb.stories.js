@@ -32,7 +32,7 @@ const sampleLinks = [
     },
 ];
 
-storiesOf(folder.text + 'Breadcrumb', module)
+storiesOf(folder.nav + 'Breadcrumb', module)
     .addDecorator(withKnobs)
     .add('Breadcrumb', () => (
         <Breadcrumb

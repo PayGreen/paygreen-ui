@@ -13,7 +13,7 @@ import Logo from '../Logo/Logo';
 import { logo } from '../Logo/sample/logo';
 import MenuMobile from './MenuMobile';
 
-storiesOf(folder.nav + 'MenuMobile', module)
+storiesOf(folder.layout + 'MenuMobile', module)
     .addDecorator(withKnobs)
     .add('MenuMobile', () => (
         <MenuMobile

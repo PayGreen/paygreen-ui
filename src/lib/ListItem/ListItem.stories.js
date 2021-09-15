@@ -20,7 +20,7 @@ import Text from '../Text/Text';
 import Title from '../Title/Title';
 import ListItem from './ListItem';
 
-storiesOf(folder.list + 'ListItem', module)
+storiesOf(folder.list + folder.sub.list + 'ListItem', module)
     .addDecorator(withKnobs)
     .add('ListItem with Icon', () => (
         <ListItem

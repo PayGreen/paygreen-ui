@@ -21,7 +21,7 @@ import {
 } from '@storybook/addon-knobs';
 import labels from '../../shared/labels';
 
-storiesOf(folder.form + folder.sub.button + 'Button', module)
+storiesOf(folder.button + 'Button', module)
     .addDecorator(withKnobs)
     .add('Button', () => (
         <button type="button">

@@ -34,7 +34,7 @@ const sampleContents = [
     },
 ];
 
-storiesOf(folder.nav + folder.sub.footer + 'Footer', module)
+storiesOf(folder.layout + folder.sub.footer + 'Footer', module)
     .addDecorator(withKnobs)
     .add('Footer', () => (
         <Footer

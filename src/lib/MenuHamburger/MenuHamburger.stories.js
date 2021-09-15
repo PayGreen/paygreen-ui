@@ -17,7 +17,7 @@ import {
 import labels from '../../shared/labels';
 import MenuHamburger from './MenuHamburger';
 
-storiesOf(folder.nav + folder.sub.control + 'MenuHamburger', module)
+storiesOf(folder.layout + 'MenuHamburger', module)
     .addDecorator(withKnobs)
     .add('MenuHamburger', () => (
         <MenuHamburger

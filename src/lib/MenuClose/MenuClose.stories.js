@@ -11,7 +11,7 @@ import {
 import labels from '../../shared/labels';
 import MenuClose from './MenuClose';
 
-storiesOf(folder.nav + folder.sub.control + 'MenuClose', module)
+storiesOf(folder.nav + folder.sub.menu + 'MenuClose', module)
     .addDecorator(withKnobs)
     .add('MenuClose', () => (
         <MenuClose

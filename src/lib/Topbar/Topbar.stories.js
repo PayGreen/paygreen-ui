@@ -6,7 +6,7 @@ import labels from '../../shared/labels';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Topbar from './Topbar';
 
-storiesOf(folder.nav + 'Topbar', module)
+storiesOf(folder.layout + 'Topbar', module)
     .addDecorator(withKnobs)
     .add('Topbar', () => (
         <Topbar>
