@@ -9,7 +9,6 @@ const StepNavbarBase = styled.div`
     & > :first-child {
         &,
         ${StepNavbarItemBase} {
-
             &::before,
             &::after {
                 border-radius: ${props => props.theme.navbar};
