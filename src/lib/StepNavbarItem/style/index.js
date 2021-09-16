@@ -26,7 +26,7 @@ const StepNavbarItemBase = styled.div`
     span {
         display: flex;
         align-items: center;
-        color: ${props => props.theme.wab.grey60};
+        color: ${props => props.theme.wab.grey40};
         font-size: ${props => props.theme.font.size.xs};
         opacity: 0;
         transition: all ${props => props.theme.transition.xs} linear;

@@ -37,6 +37,6 @@ storiesOf(folder.nav + folder.sub.stepNavbar + 'StepNavbar', module)
                 2 – Step two
             </StepNavbarItem>
 
-            <StepNavbarItem>3 – Step two</StepNavbarItem>
+            <StepNavbarItem>3 – Step three</StepNavbarItem>
         </StepNavbar>
     ));

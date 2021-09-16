@@ -8,7 +8,7 @@ exports[`renders without crashing 1`] = `
     href="#"
   >
     <div
-      className="style__StepNavbarItemBase-sc-13afoye-0 jUMMmD"
+      className="style__StepNavbarItemBase-sc-13afoye-0 ccKfGx"
     >
       <span>
         1 – Step one
@@ -28,7 +28,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </a>
   <div
-    className="style__StepNavbarItemBase-sc-13afoye-0 fUuHTK"
+    className="style__StepNavbarItemBase-sc-13afoye-0 IzBmG"
   >
     <span>
       2 – Step two
@@ -47,7 +47,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="style__StepNavbarItemBase-sc-13afoye-0 jUMMmD"
+    className="style__StepNavbarItemBase-sc-13afoye-0 ccKfGx"
   >
     <span>
       3 – Step two

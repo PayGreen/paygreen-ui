@@ -3,6 +3,10 @@ import { css } from 'styled-components';
 const doingStyle = css`
     cursor: default;
 
+    span {
+        color: ${props => props.theme.wab.grey60};
+    }
+
     &::after {
         width: 50%;
         background-color: ${props => props.theme.color[props.colorTheme].main};
