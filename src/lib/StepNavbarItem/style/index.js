@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { doingStyle } from './base';
+import { doingStyle, doneStyle } from './base';
 
 const StepNavbarItemBase = styled.div`
     position: relative;
+    cursor: not-allowed;
     display: flex;
     align-items: center;
     padding: ${props => props.theme.space.xs + ' ' + props.theme.space.sm};
@@ -11,8 +12,12 @@ const StepNavbarItemBase = styled.div`
         height: ${props => props.theme.space.md};
     }
 
+    button &,
+    a & {
+        cursor: pointer;
+    }
+
     .icon {
-        &.active,
         &.done {
             display: none;
         }
@@ -21,7 +26,7 @@ const StepNavbarItemBase = styled.div`
     span {
         display: flex;
         align-items: center;
-        color: ${props => props.theme.wab.grey40};
+        color: ${props => props.theme.wab.grey60};
         font-size: ${props => props.theme.font.size.xs};
         opacity: 0;
         transition: all ${props => props.theme.transition.xs} linear;
@@ -45,25 +50,8 @@ const StepNavbarItemBase = styled.div`
         width: 100%;
         background-color: ${props => props.theme.wab.grey20};
     }
-
-    // done style (only done steps can be clicked)
-    button &,
-    a & {
-        .icon {
-            &.done {
-                display: block;
-            }
-        }
-
-        span {
-            color: ${props => props.theme.wab.white00};
-        }
-
-        &::before {
-            background-color: ${props =>
-                props.theme.color[props.colorTheme].main};
-        }
-    }
+    
+    ${props => props.isDoing ? doingStyle : doneStyle}; // all not doing items are not done, but only not doing items inside <a> and <button> get doneStyle CSS
 
     &:hover,
     button:active &,
@@ -82,8 +70,6 @@ const StepNavbarItemBase = styled.div`
             }
         }
     }
-
-    ${props => props.isDoing ? doingStyle : null};
 `;
 
 export { StepNavbarItemBase };

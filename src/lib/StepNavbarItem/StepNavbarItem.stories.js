@@ -13,7 +13,7 @@ storiesOf(folder.nav + folder.sub.stepNavbar + 'StepNavbarItem', module)
     .addDecorator(withKnobs)
     .add('StepNavbarItem', () => (
         <StepNavbarItem
-            isDoing={boolean('Is doing', false)}
+            isDoing={boolean(labels.isDoing, false)}
             colorTheme={select(
                 labels.colorTheme,
                 colorThemeOptions,
@@ -26,6 +26,7 @@ storiesOf(folder.nav + folder.sub.stepNavbar + 'StepNavbarItem', module)
     .add('StepNavbarItem inside <a>', () => (
         <a href="#">
             <StepNavbarItem
+                isDoing={boolean(labels.isDoing, false)}
                 colorTheme={select(
                     labels.colorTheme,
                     colorThemeOptions,

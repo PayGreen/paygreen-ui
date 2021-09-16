@@ -24,17 +24,15 @@ const StepNavbarItem = props => {
             <span>
                 {props.children}
 
-                <PenIcon
-                    {...iconProps}
-                    colorWab={greyOptions.grey40}
-                    className="active"
-                />
-
-                <CheckIcon
-                    {...iconProps}
-                    colorWab={greyOptions.white00}
-                    className="done"
-                />
+                {props.isDoing ? (
+                    <PenIcon {...iconProps} colorWab={greyOptions.grey60} />
+                ) : (
+                    <CheckIcon
+                        {...iconProps}
+                        colorWab={greyOptions.white00}
+                        className="done"
+                    />
+                )}
             </span>
         </StepNavbarItemBase>
     );
