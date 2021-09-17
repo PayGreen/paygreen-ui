@@ -60,7 +60,7 @@ const children = [
     },
 ];
 
-storiesOf(folder.graph + 'Histogram', module)
+storiesOf(folder.graph + folder.sub.histogram + 'Histogram', module)
     .addDecorator(withKnobs)
     .add('Histogram', () => (
         <Histogram

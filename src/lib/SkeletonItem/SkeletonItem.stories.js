@@ -21,7 +21,7 @@ import labels from '../../shared/labels';
 import Text from '../Text/Text';
 import SkeletonItem from './SkeletonItem';
 
-storiesOf(folder.loading + 'SkeletonItem', module)
+storiesOf(folder.loading + folder.sub.skeleton + 'SkeletonItem', module)
     .addDecorator(withKnobs)
     .add('SkeletonItem', () => (
         <SkeletonItem

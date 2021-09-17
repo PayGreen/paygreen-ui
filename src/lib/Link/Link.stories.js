@@ -25,7 +25,7 @@ import labels from '../../shared/labels';
 import Text from '../Text/Text';
 import Link from './Link';
 
-storiesOf(folder.text + 'Link', module)
+storiesOf(folder.button + 'Link', module)
     .addDecorator(withKnobs)
     .add('Link in Text', () => (
         <Text

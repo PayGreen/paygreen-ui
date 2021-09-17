@@ -10,7 +10,7 @@ import labels from '../../shared/labels';
 import DaHelp from './DaHelp';
 import { QuestionBoldIcon } from '../Icon/Icon';
 
-storiesOf(folder.form + folder.sub.button + 'DaHelp', module)
+storiesOf(folder.form + 'DaHelp', module)
     .addDecorator(withKnobs)
     .add('DaHelp', () => (
         <DaHelp

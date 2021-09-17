@@ -61,7 +61,7 @@ const sampleLinks = [
     },
 ];
 
-storiesOf(folder.nav + 'Header', module)
+storiesOf(folder.layout + 'Header', module)
     .addDecorator(withKnobs)
     .add('Header', () => {
         const [isOpenMenuPrimary, setOpenMenuPrimary] = useState(false);

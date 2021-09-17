@@ -20,7 +20,7 @@ import labels from '../../shared/labels';
 import { BulbIcon, BeakerIcon } from '../Icon/Icon';
 import Toggle from './Toggle';
 
-storiesOf(folder.form + folder.sub.form + 'Toggle', module)
+storiesOf(folder.form + 'Toggle', module)
     .addDecorator(withKnobs)
     .add('Toggle simple', () => (
         <Toggle

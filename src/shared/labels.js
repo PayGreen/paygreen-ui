@@ -89,6 +89,7 @@ const labels = {
     isLoading: 'Is loading',
     isActive: 'Is active',
     isOpen: 'Is open',
+    isDoing: 'Is doing',
 
     // Decorations
     hasTopStyle: 'Has top style',

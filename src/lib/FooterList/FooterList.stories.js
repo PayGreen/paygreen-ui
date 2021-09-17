@@ -21,7 +21,7 @@ const sampleLinks = [
     'Fourth link',
 ];
 
-storiesOf(folder.nav + folder.sub.footer + 'FooterList', module)
+storiesOf(folder.layout + folder.sub.footer + 'FooterList', module)
     .addDecorator(withKnobs)
     .add('FooterList', () => (
         <FooterList

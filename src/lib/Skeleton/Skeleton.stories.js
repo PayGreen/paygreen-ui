@@ -22,7 +22,7 @@ import Skeleton from './Skeleton';
 
 const lineNumberLabel = 'Number of lines';
 
-storiesOf(folder.loading + 'Skeleton', module)
+storiesOf(folder.loading + folder.sub.skeleton + 'Skeleton', module)
     .addDecorator(withKnobs)
     .add('Skeleton Text Card', () => (
         <Skeleton

@@ -21,7 +21,7 @@ import InputCard from './InputCard';
 const sizeLabel = 'Size';
 const inputName = 'choice';
 
-storiesOf(folder.form + folder.sub.form + 'InputCard', module)
+storiesOf(folder.form + 'InputCard', module)
     .addDecorator(withKnobs)
     .add('InputCard', () => (
         <InternalGrid>

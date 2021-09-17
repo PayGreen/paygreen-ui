@@ -30,7 +30,7 @@ const logoComponent = (
     </a>
 );
 
-storiesOf(folder.nav + 'Layout', module).add('Layout', () => {
+storiesOf(folder.layout + 'Layout', module).add('Layout', () => {
     const [isOpen, setOpen] = useState(true);
 
     return (

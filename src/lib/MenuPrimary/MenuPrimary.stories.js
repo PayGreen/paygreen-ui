@@ -13,7 +13,7 @@ import MenuListItem from '../MenuListItem/MenuListItem';
 import Menu from '../Menu/Menu';
 import MenuPrimary from './MenuPrimary';
 
-storiesOf(folder.nav + 'MenuPrimary', module)
+storiesOf(folder.nav + folder.sub.menu + 'MenuPrimary', module)
     .addDecorator(withKnobs)
     .add('MenuPrimary', () => (
         <MenuPrimary isOpen={boolean(labels.isOpen, true)}>

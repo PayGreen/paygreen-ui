@@ -9,7 +9,7 @@ import {
 import labels from '../../shared/labels';
 import AutonomousInput from './AutonomousInput';
 
-storiesOf(folder.form + folder.sub.form + 'AutonomousInput', module)
+storiesOf(folder.form + 'AutonomousInput', module)
     .addDecorator(withKnobs)
     .add('AutonomousInput', () => (
         <AutonomousInput

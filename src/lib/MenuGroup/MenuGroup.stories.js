@@ -39,7 +39,7 @@ import Dot from '../Dot/Dot';
 import { logo } from '../Logo/sample/logo';
 import MenuGroup from './MenuGroup';
 
-storiesOf(folder.nav + 'MenuGroup', module)
+storiesOf(folder.layout + 'MenuGroup', module)
     .addDecorator(withKnobs)
     .add('MenuGroup', () => {
         const [isOpenMenuPrimary, setOpenMenuPrimary] = useState(false);

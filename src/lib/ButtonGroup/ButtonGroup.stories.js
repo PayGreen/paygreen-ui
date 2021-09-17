@@ -14,7 +14,7 @@ import labels from '../../shared/labels';
 import ButtonGroup from './ButtonGroup';
 import Button from '../Button/Button';
 
-storiesOf(folder.form + folder.sub.button + 'ButtonGroup', module)
+storiesOf(folder.button + 'ButtonGroup', module)
     .addDecorator(withKnobs)
     .add('ButtonGroup', () => (
         <ButtonGroup

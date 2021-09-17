@@ -11,7 +11,7 @@ import {
 import labels from '../../shared/labels';
 import HistogramBar from './HistogramBar';
 
-storiesOf(folder.graph + 'HistogramBar', module)
+storiesOf(folder.graph + folder.sub.histogram + 'HistogramBar', module)
     .addDecorator(withKnobs)
     .add('HistogramBar', () => {
         // Knobs as dynamic variables

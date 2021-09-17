@@ -30,7 +30,7 @@ import { CoinsIcon } from '../Icon/Icon';
 
 const { wab, ...buttonColorPalletOptions } = colorPalletOptions;
 
-storiesOf(folder.form + folder.sub.button + 'DaButton', module)
+storiesOf(folder.button + 'DaButton', module)
     .addDecorator(withKnobs)
     .add('DaButton', () => (
         <button type="button">

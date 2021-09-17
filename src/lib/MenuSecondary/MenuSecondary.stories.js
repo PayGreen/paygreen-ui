@@ -16,7 +16,7 @@ import Menu from '../Menu/Menu';
 import MenuClose from '../MenuClose/MenuClose';
 import MenuSecondary from './MenuSecondary';
 
-storiesOf(folder.nav + 'MenuSecondary', module)
+storiesOf(folder.nav + folder.sub.menu + 'MenuSecondary', module)
     .addDecorator(withKnobs)
     .add('MenuSecondary', () => (
         <MenuSecondary
