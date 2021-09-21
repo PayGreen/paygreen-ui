@@ -22,10 +22,11 @@ import Toggle from './Toggle';
 
 storiesOf(folder.form + 'Toggle', module)
     .addDecorator(withKnobs)
-    .add('Toggle simple', () => (
+    .add('Toggle', () => (
         <Toggle
-            id="toggle1"
             disabled={boolean(labels.disabled, false)}
+            checkedLabel={text('Checked label', 'Yes')}
+            notCheckedLabel={text('Not checked label', 'No')}
             colorPallet={radios(
                 labels.colorPallet,
                 colorPalletOptions,
@@ -46,51 +47,56 @@ storiesOf(folder.form + 'Toggle', module)
     ))
     .add('Toggle with icons', () => (
         <Toggle
-            id="toggle2"
+            disabled={boolean(labels.disabled, false)}
             checkedLabel={<BulbIcon />}
             notCheckedLabel={<BeakerIcon />}
-            disabled={boolean(labels.disabled, false)}
-            colorPallet={radios(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletOptions.status,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusOptions.success,
-            )}
+            colorPallet={{
+                checked: select(
+                    labels.colorPallet + ' checked',
+                    colorPalletOptions,
+                    colorPalletOptions.status,
+                ),
+                notChecked: select(
+                    labels.colorPallet + ' not checked',
+                    colorPalletOptions,
+                    colorPalletOptions.wab,
+                ),
+            }}
+            colorTheme={{
+                checked: select(
+                    labels.colorTheme + ' checked',
+                    colorThemeOptions,
+                    colorThemeDefault,
+                ),
+                notChecked: select(
+                    labels.colorTheme + ' not checked',
+                    colorThemeOptions,
+                    colorThemeDefault,
+                ),
+            }}
+            colorWab={{
+                checked: select(
+                    labels.colorWab + ' checked',
+                    greyOptions,
+                    greyDefault,
+                ),
+                notChecked: select(
+                    labels.colorWab + ' not checked',
+                    greyOptions,
+                    greyDefault,
+                ),
+            }}
+            colorStatus={{
+                checked: select(
+                    labels.colorStatus + ' checked',
+                    formStatusOptions,
+                    formStatusOptions.success,
+                ),
+                notChecked: select(
+                    labels.colorStatus + ' not checked',
+                    formStatusOptions,
+                    formStatusOptions.danger,
+                ),
+            }}
         />
-    ))
-    .add('Toggle with texts', () => (
-        <Toggle
-            id="toggle3"
-            disabled={boolean(labels.disabled, false)}
-            checkedLabel={text('Checked label', 'Yes')}
-            notCheckedLabel={text('Not checked label', 'No')}
-            colorPallet={radios(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletOptions.status,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusOptions.success,
-            )}
-        >
-            Label text
-        </Toggle>
     ));
