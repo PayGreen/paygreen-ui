@@ -4,17 +4,22 @@ import { color } from './constants';
 import { disabledStyle } from './base';
 
 const ToggleLabelBase = styled.div`
+    flex: 1;
     display: flex;
     align-items: center;
     gap: ${props => props.theme.space.xs};
-    font-size: ${props => props.theme.font.size.sm};
+
+    &:last-of-type {
+        justify-content: flex-end;
+    }
 `;
 
 const ToggleElement = styled.div`
     position: relative;
-    height: ${props => props.theme.form.toggle};
-    min-width: ${props => math(props.theme.form.toggle + '*2')};
-    border-radius: ${props => math(props.theme.form.toggle + '/2')};
+    height: ${props => props.theme.form.toggle[props.fieldSize]};
+    min-width: ${props => math(props.theme.form.toggle[props.fieldSize] + '*2')};
+    border-radius: ${props => math(props.theme.form.toggle[props.fieldSize] + '/2')};
+    font-size: ${props => props.theme.daButton.font[props.fieldSize]};
     display: flex;
     align-items: center;
     transition: background-color ${props => props.theme.transition.xs};
@@ -24,9 +29,9 @@ const ToggleElement = styled.div`
         position: absolute;
         top: 0;
         height: 100%;
-        width: ${props => math(props.theme.form.toggle)};
+        width: ${props => props.theme.form.toggle[props.fieldSize]};
         border-radius: 50%;
-        border: 3px solid;
+        border: ${props => props.theme.line} solid;
         transition: all ${props => props.theme.transition.xs};
     }
 `;
@@ -48,7 +53,7 @@ const ToggleBase = styled.label`
         &:checked {
             & + ${ToggleElement} {
                 padding-left: ${props => props.theme.space.sm};
-                padding-right: ${props => props.theme.form.toggle};
+                padding-right: ${props => props.theme.form.toggle[props.fieldSize]};
                 color: ${props =>
                     color.checked.main[props.checkedColor.colorPallet]};
                 background-color: ${props =>
@@ -73,7 +78,7 @@ const ToggleBase = styled.label`
 
         &:not(:checked) {
             & + ${ToggleElement} {
-                padding-left: ${props => props.theme.form.toggle};
+                padding-left: ${props => props.theme.form.toggle[props.fieldSize]};
                 padding-right: ${props => props.theme.space.sm};
                 color: ${props =>
                     color.notChecked.main[props.notCheckedColor.colorPallet]};

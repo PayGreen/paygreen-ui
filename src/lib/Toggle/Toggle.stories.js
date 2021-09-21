@@ -9,6 +9,8 @@ import {
 } from '@storybook/addon-knobs';
 import {
     folder,
+    buttonSizeOptions,
+    buttonSizeDefault,
     colorPalletOptions,
     colorThemeOptions,
     colorThemeDefault,
@@ -27,6 +29,11 @@ storiesOf(folder.form + 'Toggle', module)
             disabled={boolean(labels.disabled, false)}
             checkedLabel={text('Checked label', 'Yes')}
             notCheckedLabel={text('Not checked label', 'No')}
+            fieldSize={select(
+                labels.fieldSize,
+                buttonSizeOptions,
+                buttonSizeDefault,
+            )}
             colorPallet={radios(
                 labels.colorPallet,
                 colorPalletOptions,

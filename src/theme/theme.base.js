@@ -313,7 +313,11 @@ export const ThemeBase = {
             md: '10px',
             lg: '10px',
         },
-        toggle: '30px',
+        toggle: {
+            sm: '24px',
+            md: '28px',
+            lg: '32px',
+        },
     },
     corner: {
         size: {
