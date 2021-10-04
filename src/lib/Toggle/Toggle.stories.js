@@ -24,7 +24,7 @@ import Toggle from './Toggle';
 
 storiesOf(folder.form + 'Toggle', module)
     .addDecorator(withKnobs)
-    .add('Toggle', () => (
+    .add('Toggle with auto colors', () => (
         <Toggle
             disabled={boolean(labels.disabled, false)}
             checkedLabel={text('Checked label', 'Yes')}
@@ -52,7 +52,7 @@ storiesOf(folder.form + 'Toggle', module)
             )}
         />
     ))
-    .add('Toggle with icons', () => (
+    .add('Toggle with custom colors', () => (
         <Toggle
             disabled={boolean(labels.disabled, false)}
             checkedLabel={<BulbIcon />}
