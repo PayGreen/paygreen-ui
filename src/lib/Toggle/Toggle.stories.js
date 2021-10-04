@@ -9,6 +9,8 @@ import {
 } from '@storybook/addon-knobs';
 import {
     folder,
+    buttonSizeOptions,
+    buttonSizeDefault,
     colorPalletOptions,
     colorThemeOptions,
     colorThemeDefault,
@@ -22,58 +24,16 @@ import Toggle from './Toggle';
 
 storiesOf(folder.form + 'Toggle', module)
     .addDecorator(withKnobs)
-    .add('Toggle simple', () => (
+    .add('Toggle with auto colors', () => (
         <Toggle
-            id="toggle1"
-            disabled={boolean(labels.disabled, false)}
-            colorPallet={radios(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletOptions.status,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusOptions.success,
-            )}
-        />
-    ))
-    .add('Toggle with icons', () => (
-        <Toggle
-            id="toggle2"
-            checkedLabel={<BulbIcon />}
-            notCheckedLabel={<BeakerIcon />}
-            disabled={boolean(labels.disabled, false)}
-            colorPallet={radios(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletOptions.status,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusOptions.success,
-            )}
-        />
-    ))
-    .add('Toggle with texts', () => (
-        <Toggle
-            id="toggle3"
             disabled={boolean(labels.disabled, false)}
             checkedLabel={text('Checked label', 'Yes')}
             notCheckedLabel={text('Not checked label', 'No')}
+            fieldSize={select(
+                labels.fieldSize,
+                buttonSizeOptions,
+                buttonSizeDefault,
+            )}
             colorPallet={radios(
                 labels.colorPallet,
                 colorPalletOptions,
@@ -90,7 +50,60 @@ storiesOf(folder.form + 'Toggle', module)
                 formStatusOptions,
                 formStatusOptions.success,
             )}
-        >
-            Label text
-        </Toggle>
+        />
+    ))
+    .add('Toggle with custom colors', () => (
+        <Toggle
+            disabled={boolean(labels.disabled, false)}
+            checkedLabel={<BulbIcon />}
+            notCheckedLabel={<BeakerIcon />}
+            colorPallet={{
+                checked: select(
+                    labels.colorPallet + ' checked',
+                    colorPalletOptions,
+                    colorPalletOptions.status,
+                ),
+                notChecked: select(
+                    labels.colorPallet + ' not checked',
+                    colorPalletOptions,
+                    colorPalletOptions.wab,
+                ),
+            }}
+            colorTheme={{
+                checked: select(
+                    labels.colorTheme + ' checked',
+                    colorThemeOptions,
+                    colorThemeDefault,
+                ),
+                notChecked: select(
+                    labels.colorTheme + ' not checked',
+                    colorThemeOptions,
+                    colorThemeDefault,
+                ),
+            }}
+            colorWab={{
+                checked: select(
+                    labels.colorWab + ' checked',
+                    greyOptions,
+                    greyDefault,
+                ),
+                notChecked: select(
+                    labels.colorWab + ' not checked',
+                    greyOptions,
+                    greyDefault,
+                ),
+            }}
+            colorStatus={{
+                checked: select(
+                    labels.colorStatus + ' checked',
+                    formStatusOptions,
+                    formStatusOptions.success,
+                ),
+                notChecked: select(
+                    labels.colorStatus + ' not checked',
+                    formStatusOptions,
+                    formStatusOptions.danger,
+                ),
+            }}
+        />
     ));

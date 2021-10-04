@@ -3,115 +3,105 @@ import { math } from 'polished';
 import { color } from './constants';
 import { disabledStyle } from './base';
 
-const ToggleBase = styled.div`
+const ToggleLabelBase = styled.div`
+    flex: 1;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
 
-    .legend {
-        margin-right: ${props => props.theme.space.sm};
-        margin-bottom: ${props => props.theme.space.sm};
-        color: ${props => props.theme.wab[props.colorWab]};
+    &:last-of-type {
+        justify-content: flex-end;
     }
+`;
 
-    label {
-        position: relative;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        height: ${props => props.theme.form.toggle};
-        margin-bottom: ${props => props.theme.space.sm};
+const ToggleElement = styled.div`
+    position: relative;
+    height: ${props => props.theme.form.toggle[props.fieldSize]};
+    min-width: ${props => math(props.theme.form.toggle[props.fieldSize] + '*2')};
+    border-radius: ${props => math(props.theme.form.toggle[props.fieldSize] + '/2')};
+    font-size: ${props => props.theme.daButton.font[props.fieldSize]};
+    display: flex;
+    align-items: center;
+    transition: background-color ${props => props.theme.transition.xs};
 
-        ${props => props.isDisabled ? disabledStyle : null};
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: ${props => props.theme.form.toggle[props.fieldSize]};
+        border-radius: 50%;
+        border: ${props => props.theme.line} solid;
+        transition: all ${props => props.theme.transition.xs};
+    }
+`;
 
-        input {
-            position: absolute;
+const ToggleBase = styled.label`
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 
-            &:checked {
-                & + .toggle {
-                    color: ${props => color.main.checked[props.colorPallet]};
+    ${props => (props.isDisabled ? disabledStyle : null)};
+
+    input {
+        position: absolute;
+
+        &:checked {
+            & + ${ToggleElement} {
+                padding-left: ${props => props.theme.space.sm};
+                padding-right: ${props => props.theme.form.toggle[props.fieldSize]};
+                color: ${props =>
+                    color.checked.main[props.checkedColor.colorPallet]};
+                background-color: ${props =>
+                    color.checked.bg[props.checkedColor.colorPallet]};
+
+                &::after {
+                    left: 100%;
+                    transform: translateX(-100%);
+                    border-color: ${props =>
+                        color.checked.bg[props.checkedColor.colorPallet]};
                     background-color: ${props =>
-                        color.bg.checked[props.colorPallet]};
+                        color.checked.main[props.checkedColor.colorPallet]};
+                }
 
-                    .icon {
-                        svg {
-                            fill: ${props =>
-                                color.main.checked[props.colorPallet]};
-                        }
-                    }
-
-                    &::before {
-                        left: 100%;
-                        transform: translateX(-100%);
-                        border-color: ${props =>
-                            color.bg.checked[props.colorPallet]};
-                        background-color: ${props =>
-                            color.main.checked[props.colorPallet]};
-                    }
-
-                    .checked-label {
-                        font-size: ${props => props.theme.font.size.sm};
-                    }
-                    
-                    .not-checked-label {
-                        font-size: 0;
+                ${ToggleLabelBase} {
+                    &:last-of-type {
+                        display: none;
                     }
                 }
             }
         }
 
-        .toggle {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-            border-radius: ${props => math(props.theme.form.toggle + '/2')};
-            transition: all ${props => props.theme.transition.xs};
-            color: ${props => color.main.base[props.colorPallet]};
-            background-color: ${props => color.bg.base[props.colorPallet]};
-
-            .icon {
-                svg {
-                    fill: ${props => color.main.base[props.colorPallet]};
-                }
-            }
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: ${props => props.theme.form.toggle};
-                border-radius: 50%;
-                border: solid 3px ${props => color.bg.base[props.colorPallet]};
-                background-color: ${props =>
-                    color.main.base[props.colorPallet]};
-                transition: all ${props => props.theme.transition.xs};
-            }
-
-            .checked-label,
-            .not-checked-label {
-                box-sizing: border-box;
-                display: flex;
-                min-width: ${props => props.theme.form.toggle};
-            }
-            
-            .checked-label {
-                font-size: 0;
-                padding-left: ${props => props.theme.space.sm};
-            }
-            
-            .not-checked-label {
-                font-size: ${props => props.theme.font.size.sm};
+        &:not(:checked) {
+            & + ${ToggleElement} {
+                padding-left: ${props => props.theme.form.toggle[props.fieldSize]};
                 padding-right: ${props => props.theme.space.sm};
-                text-align: right;
+                color: ${props =>
+                    color.notChecked.main[props.notCheckedColor.colorPallet]};
+                background-color: ${props =>
+                    color.notChecked.bg[props.notCheckedColor.colorPallet]};
+
+                &::after {
+                    left: 0;
+                    border-color: ${props =>
+                        color.notChecked.bg[props.notCheckedColor.colorPallet]};
+                    background-color: ${props =>
+                        color.notChecked.main[
+                            props.notCheckedColor.colorPallet
+                        ]};
+                }
+
+                ${ToggleLabelBase} {
+                    &:first-of-type {
+                        display: none;
+                    }
+                }
             }
         }
     }
 `;
 
-export { ToggleBase };
+export { ToggleLabelBase, ToggleElement, ToggleBase };

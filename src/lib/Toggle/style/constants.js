@@ -1,26 +1,34 @@
 const color = {
-    main: {
-        base: {
-            theme: props => props.theme.wab[props.colorWab],
-            wab: props => props.theme.wab[props.colorWab],
-            status: props => props.theme.status.danger.main,
+    checked: {
+        main: {
+            theme: props =>
+                props.theme.color[props.checkedColor.colorTheme].main,
+            wab: props => props.theme.wab[props.checkedColor.colorWab],
+            status: props =>
+                props.theme.status[props.checkedColor.colorStatus].main,
         },
-        checked: {
-            theme: props => props.theme.color[props.colorTheme].main,
-            wab: props => props.theme.status[props.colorStatus].main,
-            status: props => props.theme.status[props.colorStatus].main,
+        bg: {
+            theme: props =>
+                props.theme.color[props.checkedColor.colorTheme].light,
+            wab: props => props.theme.wab.grey10,
+            status: props =>
+                props.theme.status[props.checkedColor.colorStatus].light,
         },
     },
-    bg: {
-        base: {
-            theme: props => props.theme.wab.grey10,
-            wab: props => props.theme.wab.grey10,
-            status: props => props.theme.status.danger.light,
+    notChecked: {
+        main: {
+            theme: props =>
+                props.theme.color[props.notCheckedColor.colorTheme].main,
+            wab: props => props.theme.wab[props.notCheckedColor.colorWab],
+            status: props =>
+                props.theme.status[props.notCheckedColor.colorStatus].main,
         },
-        checked: {
-            theme: props => props.theme.color[props.colorTheme].light,
-            wab: props => props.theme.status[props.colorStatus].light,
-            status: props => props.theme.status[props.colorStatus].light,
+        bg: {
+            theme: props =>
+                props.theme.color[props.notCheckedColor.colorTheme].light,
+            wab: props => props.theme.wab.grey10,
+            status: props =>
+                props.theme.status[props.notCheckedColor.colorStatus].light,
         },
     },
 };

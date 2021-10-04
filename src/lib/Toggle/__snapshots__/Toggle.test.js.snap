@@ -1,27 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<div
-  className="style__ToggleBase-gnd37d-0 kGpEaJ"
+<label
+  className="style__ToggleBase-gnd37d-2 yLNSl"
 >
-  <label
-    htmlFor="toggle-test"
+  <input
+    disabled={false}
+    type="checkbox"
+  />
+  <div
+    className="style__ToggleElement-gnd37d-1 dbJCDi"
   >
-    <input
-      disabled={false}
-      id="toggle-test"
-      type="checkbox"
+    <div
+      className="style__ToggleLabelBase-gnd37d-0 kLVWfn"
     />
     <div
-      className="toggle"
-    >
-      <span
-        className="checked-label"
-      />
-      <span
-        className="not-checked-label"
-      />
-    </div>
-  </label>
-</div>
+      className="style__ToggleLabelBase-gnd37d-0 kLVWfn"
+    />
+  </div>
+</label>
 `;
