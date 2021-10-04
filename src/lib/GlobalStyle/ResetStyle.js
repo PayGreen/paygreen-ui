@@ -9,6 +9,11 @@ export const ResetStyle = css`
         font-size: 62.5%;
     }
 
+    body {
+        word-break: break-word; // deprecated but usefull CSS property (replaced by less usefull overflow-wrap property)
+        overflow-wrap: break-word;
+    }
+
     body,
     main,
     header,
