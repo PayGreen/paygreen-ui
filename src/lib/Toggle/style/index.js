@@ -7,7 +7,6 @@ const ToggleLabelBase = styled.div`
     flex: 1;
     display: flex;
     align-items: center;
-    gap: ${props => props.theme.space.xs};
 
     &:last-of-type {
         justify-content: flex-end;

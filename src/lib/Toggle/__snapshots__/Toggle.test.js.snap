@@ -12,10 +12,10 @@ exports[`renders without crashing 1`] = `
     className="style__ToggleElement-gnd37d-1 dbJCDi"
   >
     <div
-      className="style__ToggleLabelBase-gnd37d-0 jfGDSz"
+      className="style__ToggleLabelBase-gnd37d-0 kLVWfn"
     />
     <div
-      className="style__ToggleLabelBase-gnd37d-0 jfGDSz"
+      className="style__ToggleLabelBase-gnd37d-0 kLVWfn"
     />
   </div>
 </label>
