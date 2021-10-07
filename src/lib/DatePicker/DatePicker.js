@@ -57,6 +57,75 @@ const DatePicker = ({
         onChange(value);
     };
 
+    /**
+     * @description method to reset invalid date depending on resetDate
+     */
+    const resetInvalidDate = () => {
+        if (resetDate && moment(resetDate, dateFormat, true).isValid()) {
+            // if invalid date and valid resetDate, we use it
+            setInputDate(resetDate);
+        } else {
+            // if invalid date and there isn't valid resetDate, we empty field
+            setSelectedDate(null);
+            setInputValue('');
+        }
+    };
+
+    /**
+     * @description method to use when date value passed or typed is complete and valid, so we check min and max dates before updating final value
+     * @param {string} minimumDate
+     * @param {string} maximumDate
+     * @param {string} value
+     */
+    const checkMinMaxDates = (minimumDate, maximumDate, value) => {
+        // if there is valid minimum date, we check if user date is after it
+        let isAfterMinimumDate = true;
+
+        if (minimumDate && moment(minimumDate, dateFormat, true).isValid()) {
+            isAfterMinimumDate = moment(value, dateFormat).isAfter(
+                moment(minimumDate, dateFormat),
+            );
+        }
+
+        // if there is valid maximum date, we check if user date is before it
+        let isBeforeMaximumDate = true;
+
+        if (maximumDate && moment(maximumDate, dateFormat, true).isValid()) {
+            isBeforeMaximumDate = moment(value, dateFormat).isBefore(
+                moment(maximumDate, dateFormat),
+            );
+        }
+
+        // we set input on valid date
+        if (!isAfterMinimumDate) {
+            // not okay: user date is before min date, so we fix it
+            setInputDate(minimumDate);
+        } else if (!isBeforeMaximumDate) {
+            // not okay: user date is after max date, so we fix it
+            setInputDate(maximumDate);
+        } else {
+            // all is good, we set input on user date!
+            setInputDate(value);
+        }
+    };
+
+    /**
+     * @description method to use when date value passed or typed to verify its validity and check with minimum and maximum dates
+     * @param {string} minimumDate
+     * @param {string} maximumDate
+     * @param {string} value
+     */
+    const verifyAndChangeDateValue = (minimumDate, maximumDate, value) => {
+        if (value === '' && !resetDate) {
+            // we don't reset input if input is empty and there is no resetDate
+            setSelectedDate(null);
+        } else if (!moment(value, dateFormat, true).isValid()) {
+            resetInvalidDate();
+        } else {
+            checkMinMaxDates(minimumDate, maximumDate, value);
+        }
+    };
+
     // Handle value change via Input and prevent final selectedDate to be applied if incorrect (in format or in value compared to minimumDate and maximumDate)
     const handleInputOnChange = e => {
         if (selectedDate) {
@@ -68,59 +137,17 @@ const DatePicker = ({
         if (e.target.value.indexOf('_') >= 0) {
             // we don't do anything if date is not complete and input mask contains '_' characters
             return;
-        } else if (e.target.value === '' && !resetDate) {
-            // we don't reset input if input is empty and there is no resetDate
-            setSelectedDate(null);
-        } else if (!moment(e.target.value, dateFormat, true).isValid()) {
-            if (resetDate && moment(resetDate, dateFormat, true).isValid()) {
-                // if invalid date and valid resetDate, we use it
-                setInputDate(resetDate);
-            } else {
-                // if invalid date and there isn't valid resetDate, we empty field
-                setSelectedDate(null);
-                setInputValue('');
-            }
         } else {
-            // at this step, date is complete and valid, so we check min and max dates
-
-            // if there is valid minimum date, we check if user date is after it
-            let isAfterMinimumDate = true;
-
-            if (
-                minimumDate &&
-                moment(minimumDate, dateFormat, true).isValid()
-            ) {
-                isAfterMinimumDate = moment(e.target.value, dateFormat).isAfter(
-                    moment(minimumDate, dateFormat),
-                );
-            }
-
-            // if there is valid maximum date, we check if user date is before it
-            let isBeforeMaximumDate = true;
-
-            if (
-                maximumDate &&
-                moment(maximumDate, dateFormat, true).isValid()
-            ) {
-                isBeforeMaximumDate = moment(
-                    e.target.value,
-                    dateFormat,
-                ).isBefore(moment(maximumDate, dateFormat));
-            }
-
-            // we set input on valid date
-            if (!isAfterMinimumDate) {
-                // not okay: user date is before min date, so we fix it
-                setInputDate(minimumDate);
-            } else if (!isBeforeMaximumDate) {
-                // not okay: user date is after max date, so we fix it
-                setInputDate(maximumDate);
-            } else {
-                // all is good, we set input on user date!
-                setInputDate(e.target.value);
-            }
+            verifyAndChangeDateValue(minimumDate, maximumDate, e.target.value);
         }
     };
+
+    // To update value dynamically if value is changed externally
+    useEffect(() => {
+        if (value) {
+            verifyAndChangeDateValue(minimumDate, maximumDate, value);
+        }
+    }, [value]);
 
     // Handle value change via CalendarCell Buttons
     const handleButtonOnChange = e => {
