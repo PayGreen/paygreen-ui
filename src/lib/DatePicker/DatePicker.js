@@ -73,11 +73,9 @@ const DatePicker = ({
 
     /**
      * @description method to use when date value passed or typed is complete and valid, so we check min and max dates before updating final value
-     * @param {string} minimumDate
-     * @param {string} maximumDate
      * @param {string} value
      */
-    const checkMinMaxDates = (minimumDate, maximumDate, value) => {
+    const checkMinMaxDates = (value) => {
         // if there is valid minimum date, we check if user date is after it
         let isAfterMinimumDate = true;
 
@@ -111,18 +109,16 @@ const DatePicker = ({
 
     /**
      * @description method to use when date value passed or typed to verify its validity and check with minimum and maximum dates
-     * @param {string} minimumDate
-     * @param {string} maximumDate
      * @param {string} value
      */
-    const verifyAndChangeDateValue = (minimumDate, maximumDate, value) => {
+    const verifyAndChangeDateValue = (value) => {
         if (value === '' && !resetDate) {
             // we don't reset input if input is empty and there is no resetDate
             setSelectedDate(null);
         } else if (!moment(value, dateFormat, true).isValid()) {
             resetInvalidDate();
         } else {
-            checkMinMaxDates(minimumDate, maximumDate, value);
+            checkMinMaxDates(value);
         }
     };
 
@@ -138,14 +134,14 @@ const DatePicker = ({
             // we don't do anything if date is not complete and input mask contains '_' characters
             return;
         } else {
-            verifyAndChangeDateValue(minimumDate, maximumDate, e.target.value);
+            verifyAndChangeDateValue(e.target.value);
         }
     };
 
     // To update value dynamically if value is changed externally
     useEffect(() => {
         if (value) {
-            verifyAndChangeDateValue(minimumDate, maximumDate, value);
+            verifyAndChangeDateValue(value);
         }
     }, [value]);
 

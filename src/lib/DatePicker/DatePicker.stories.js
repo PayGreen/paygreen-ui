@@ -23,8 +23,8 @@ import DaButton from '../DaButton/DaButton';
 import DatePicker from './DatePicker';
 
 // This wrapper helps to deal with react hooks without having to use React.createElement() inside stories that would make the story rerender with each prop's change and add button to change date dynamically
-const DatePickerWrapper = ({ hasButton, ...rest }) => {
-    const [date, setDate] = useState();
+const DatePickerWrapper = ({ hasButton, defaultValue, ...rest }) => {
+    const [date, setDate] = useState(defaultValue || '');
 
     return (
         <>
@@ -81,10 +81,6 @@ storiesOf(folder.form + 'DatePicker', module)
         <DatePickerWrapper
             hasButton={true}
             placeholder={'Ex: ' + moment().format('DD/MM/YYYY')}
-            locale={localeDefault}
-            isRounded={false}
-            fieldSize={buttonSizeDefault}
-            colorStatus={formStatusDefault}
             minimumDate={text(
                 'Minimum date',
                 moment().add(-1, 'M').format('DD/MM/YYYY'),
@@ -93,7 +89,8 @@ storiesOf(folder.form + 'DatePicker', module)
                 'Maximum date',
                 moment().add(1, 'M').format('DD/MM/YYYY'),
             )}
-            resetDate={text('Reset date', moment().format('DD/MM/YYYY'))}
+            resetDate={moment().subtract(1, 'days').format('DD/MM/YYYY')}
             icon={<ScheduleIcon />}
+            defaultValue={moment().subtract(1, 'days').format('DD/MM/YYYY')}
         />
     ));
