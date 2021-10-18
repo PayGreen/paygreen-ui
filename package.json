@@ -59,7 +59,7 @@
     "@n8tb1t/use-scroll-position": "^1.0.47",
     "caniuse-lite": "^1.0.30001214",
     "core-js": "^3.6.5",
-    "moment": "^2.29.0",
+    "dayjs": "^1.10.7",
     "polished": "^3.6.7",
     "react-indiana-drag-scroll": "^1.7.0",
     "react-input-mask": "^2.0.4",

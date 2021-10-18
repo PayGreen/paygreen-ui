@@ -4,20 +4,21 @@ import {
     formStatusOptions,
     formStatusDefault,
 } from '../../../shared/constants';
-import config from '../localeConfig';
 import { useDropdown } from '../../Dropdown/context/DropdownContext';
 import { DateContext } from '../context/DateContext';
+import dayjs from '../dayjsHelper';
+import config from '../dayLocaleConfig';
 import CalendarCellBase from './style';
 
 const CalendarCell = ({ date, isDisabled, handleOnChange, ...rest }) => {
     const { setOpen } = useDropdown();
     const [selectedDate, setSelectedDate] = useContext(DateContext);
-    const dateFormat = config['pg-en'].longDateFormat.L;
+    const dateFormat = config[dayjs.locale()].formats.L;
 
     const handleOnClick = e => {
         e.preventDefault();
         if (!isDisabled) {
-            setSelectedDate(date);
+            setSelectedDate(dayjs(date).format(dateFormat));
             handleOnChange(date);
             setOpen(false);
         }
@@ -29,8 +30,8 @@ const CalendarCell = ({ date, isDisabled, handleOnChange, ...rest }) => {
             onClick={handleOnClick}
             isSelected={
                 selectedDate
-                    ? date.format(dateFormat) ===
-                      selectedDate.format(dateFormat)
+                    ? dayjs(date).format(dateFormat) ===
+                      dayjs(selectedDate).format(dateFormat)
                     : false
             }
             isDisabled={isDisabled}

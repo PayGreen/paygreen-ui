@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import {
     colorPalletOptions,
     formStatusOptions,
@@ -10,6 +9,7 @@ import {
 } from '../../../shared/constants';
 import { ArrowLeftIcon, ArrowRightIcon } from '../../Icon/Icon';
 import { MonthContext } from '../context/MonthContext';
+import dayjs from '../dayjsHelper';
 import CalendarNavbarBase from './style';
 
 const arrowProps = {
@@ -51,8 +51,8 @@ const CalendarNavbar = ({ colorStatus, ...rest }) => {
                 theme={rest.theme} // not necessary, only needed for tests
                 {...arrowProps}
             />
-            
-            {moment().month(month).format('MMMM YYYY')}
+
+            {dayjs().month(month).format('MMMM YYYY')}
 
             <ArrowRightIcon
                 onClick={nextMonth}
