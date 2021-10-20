@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import {
     formStatusOptions,
     formStatusDefault,
 } from '../../../shared/constants';
+import dayjs from '../dayjsHelper';
 import { MonthContextProvider } from '../context/MonthContext';
 import CalendarNavbar from '../CalendarNavbar/CalendarNavbar';
 import CalendarWeekdays from '../CalendarWeekdays/CalendarWeekdays';
@@ -45,7 +45,7 @@ Calendar.propTypes = {
 };
 
 Calendar.defaultProps = {
-    currentMonth: moment().month(),
+    currentMonth: dayjs().month(),
     minimumDate: null,
     maximumDate: null,
     colorStatus: formStatusDefault,

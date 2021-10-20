@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import {
     inputWidthOptions,
     buttonSizeOptions,
@@ -9,12 +8,13 @@ import {
     localeOptions,
     localeDefault,
 } from '../../shared/constants';
-import DropDown from '../Dropdown/Dropdown';
+import Dropdown from '../Dropdown/Dropdown';
 import DaInput from '../DaInput/DaInput';
 import Popin from '../Popin/Popin';
-import { DateContextProvider } from './context/DateContext';
 import Calendar from './Calendar/Calendar';
-import localeConfig from './localeConfig';
+import { DateContextProvider } from './context/DateContext';
+import dayjs from './dayjsHelper';
+import config from './dayLocaleConfig';
 import { DatePickerBase } from './style';
 
 const DatePicker = ({
@@ -27,18 +27,16 @@ const DatePicker = ({
     onChange,
     ...rest
 }) => {
-    // Update moment locale globally
-    // Note: default locale of moment is 'en', overwrite it with custom config 'pg-fr'
-    const pgLocale = localeConfig['pg-' + localeOptions[locale]]
-        ? 'pg-' + localeOptions[locale]
-        : 'pg-' + localeDefault;
-    const dateFormat = localeConfig[pgLocale].longDateFormat.L;
-    moment.updateLocale(pgLocale, localeConfig[pgLocale]);
+    // Update dayjs locale globally
+    const pgLocale = locale || localeDefault;
+
+    dayjs.locale(pgLocale, config[pgLocale]);
+    const dateFormat = config[pgLocale].formats.L;
 
     // Save default value of input...
     const [selectedDate, setSelectedDate] = useState(
-        moment(value, dateFormat, true).isValid()
-            ? moment(value, dateFormat)
+        dayjs(value, dateFormat, true).isValid()
+            ? dayjs(value, dateFormat)
             : null,
     );
 
@@ -47,13 +45,13 @@ const DatePicker = ({
 
     useEffect(() => {
         if (selectedDate) {
-            setInputValue(selectedDate.format(dateFormat));
+            setInputValue(dayjs(selectedDate).format(dateFormat));
         }
     }, [selectedDate]);
 
     // To set date value via Input change
     const setInputDate = value => {
-        setSelectedDate(moment(value, dateFormat));
+        setSelectedDate(dayjs(value, dateFormat));
         onChange(value);
     };
 
@@ -61,7 +59,7 @@ const DatePicker = ({
      * @description method to reset invalid date depending on resetDate
      */
     const resetInvalidDate = () => {
-        if (resetDate && moment(resetDate, dateFormat, true).isValid()) {
+        if (resetDate && dayjs(resetDate, dateFormat, true).isValid()) {
             // if invalid date and valid resetDate, we use it
             setInputDate(resetDate);
         } else {
@@ -75,22 +73,22 @@ const DatePicker = ({
      * @description method to use when date value passed or typed is complete and valid, so we check min and max dates before updating final value
      * @param {string} value
      */
-    const checkMinMaxDates = (value) => {
+    const checkMinMaxDates = value => {
         // if there is valid minimum date, we check if user date is after it
         let isAfterMinimumDate = true;
 
-        if (minimumDate && moment(minimumDate, dateFormat, true).isValid()) {
-            isAfterMinimumDate = moment(value, dateFormat).isAfter(
-                moment(minimumDate, dateFormat),
+        if (minimumDate && dayjs(minimumDate, dateFormat, true).isValid()) {
+            isAfterMinimumDate = dayjs(value, dateFormat).isAfter(
+                dayjs(minimumDate, dateFormat),
             );
         }
 
         // if there is valid maximum date, we check if user date is before it
         let isBeforeMaximumDate = true;
 
-        if (maximumDate && moment(maximumDate, dateFormat, true).isValid()) {
-            isBeforeMaximumDate = moment(value, dateFormat).isBefore(
-                moment(maximumDate, dateFormat),
+        if (maximumDate && dayjs(maximumDate, dateFormat, true).isValid()) {
+            isBeforeMaximumDate = dayjs(value, dateFormat).isBefore(
+                dayjs(maximumDate, dateFormat),
             );
         }
 
@@ -111,11 +109,11 @@ const DatePicker = ({
      * @description method to use when date value passed or typed to verify its validity and check with minimum and maximum dates
      * @param {string} value
      */
-    const verifyAndChangeDateValue = (value) => {
+    const verifyAndChangeDateValue = value => {
         if (value === '' && !resetDate) {
             // we don't reset input if input is empty and there is no resetDate
             setSelectedDate(null);
-        } else if (!moment(value, dateFormat, true).isValid()) {
+        } else if (!dayjs(value, dateFormat, true).isValid()) {
             resetInvalidDate();
         } else {
             checkMinMaxDates(value);
@@ -147,20 +145,21 @@ const DatePicker = ({
 
     // Handle value change via CalendarCell Buttons
     const handleButtonOnChange = e => {
-        onChange(moment(e).format(dateFormat));
+        onChange(dayjs(e).format(dateFormat));
     };
 
     const calcMonthIndex = () => {
-        if (!selectedDate || selectedDate === moment().startOf('d')) {
-            return moment().month();
+        if (!selectedDate || selectedDate === dayjs().startOf('d')) {
+            return dayjs().month();
         }
 
-        const yearDiff = selectedDate.format('YYYY') - moment().format('YYYY');
-        const monthDiff = selectedDate.format('M') - moment().format('M');
+        const yearDiff =
+            dayjs(selectedDate).format('YYYY') - dayjs().format('YYYY');
+        const monthDiff = dayjs(selectedDate).format('M') - dayjs().format('M');
 
         return yearDiff !== 0
-            ? moment().month() + yearDiff * 12 + monthDiff
-            : moment().month() + monthDiff;
+            ? dayjs().month() + yearDiff * 12 + monthDiff
+            : dayjs().month() + monthDiff;
     };
 
     return (
@@ -168,7 +167,7 @@ const DatePicker = ({
             value={[selectedDate, setSelectedDate, setInputValue]}
         >
             <DatePickerBase theme={rest.theme}>
-                <DropDown theme={rest.theme}>
+                <Dropdown theme={rest.theme} hasOverlay={false}>
                     <DaInput
                         {...rest}
                         mask="99/99/9999"
@@ -183,21 +182,21 @@ const DatePicker = ({
                                 theme={rest.theme}
                                 currentMonth={calcMonthIndex()}
                                 minimumDate={
-                                    moment(
+                                    dayjs(
                                         minimumDate,
                                         dateFormat,
                                         true,
                                     ).isValid()
-                                        ? moment(minimumDate, dateFormat)
+                                        ? dayjs(minimumDate, dateFormat)
                                         : null
                                 }
                                 maximumDate={
-                                    moment(
+                                    dayjs(
                                         maximumDate,
                                         dateFormat,
                                         true,
                                     ).isValid()
-                                        ? moment(maximumDate, dateFormat)
+                                        ? dayjs(maximumDate, dateFormat)
                                         : null
                                 }
                                 colorStatus={colorStatus}
@@ -205,7 +204,7 @@ const DatePicker = ({
                             />
                         </Popin>
                     )}
-                </DropDown>
+                </Dropdown>
             </DatePickerBase>
         </DateContextProvider>
     );

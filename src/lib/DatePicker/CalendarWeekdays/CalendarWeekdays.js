@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import {
     formStatusOptions,
     formStatusDefault,
 } from '../../../shared/constants';
+import dayjs from '../dayjsHelper';
+import config from '../dayLocaleConfig';
 import CalendarWeekdaysBase from './style';
 
 const CalendarWeekdays = props => {
-    const days = moment.weekdays(true);
+    const days = config[dayjs.locale()].weekdays;
 
     return (
         <CalendarWeekdaysBase {...props}>

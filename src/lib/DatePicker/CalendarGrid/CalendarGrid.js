@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import {
     formStatusOptions,
     formStatusDefault,
 } from '../../../shared/constants';
 import { MonthContext } from '../context/MonthContext';
+import dayjs from '../dayjsHelper';
 import CalendarCell from '../CalendarCell/CalendarCell';
 import CalendarGridBase from './style';
 
@@ -14,9 +14,8 @@ import CalendarGridBase from './style';
  * @param {number} month
  */
 const getMonthBoundaries = month => {
-    const startOfMonth = moment().month(month).startOf('M');
-
-    const endOfMonth = moment().month(month).add(1, 'M').startOf('M');
+    const startOfMonth = dayjs().month(month).startOf('M');
+    const endOfMonth = dayjs().month(month).add(1, 'M').startOf('M');
 
     return [startOfMonth, endOfMonth];
 };
@@ -28,17 +27,19 @@ const CalendarGrid = ({
     ...rest
 }) => {
     const [month] = useContext(MonthContext);
+
     if (month === null) {
         return null;
     }
 
     const [startOfMonth, endOfMonth] = getMonthBoundaries(month);
 
+    let daysCursor = startOfMonth;
     const daysOfMonth = [];
-    let daysCursor = moment(startOfMonth);
 
     do {
         let isDisabled = false;
+
         if (
             (minimumDate && daysCursor < minimumDate) ||
             (maximumDate && daysCursor > maximumDate)
@@ -55,7 +56,9 @@ const CalendarGrid = ({
                 {...rest}
             />,
         );
-    } while (daysCursor.add(1, 'days').diff(endOfMonth) < 0);
+
+        daysCursor = daysCursor.add(1, 'day');
+    } while (daysCursor.isBefore(endOfMonth));
 
     return (
         <CalendarGridBase dayOffset={startOfMonth.isoWeekday()} {...rest}>
