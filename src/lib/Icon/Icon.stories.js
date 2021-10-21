@@ -90,25 +90,6 @@ storiesOf(folder.media + 'Icons', module)
                 </Title>
 
                 <div>
-                    <Icon.ArrowCircleLeftBoldIcon
-                        title="ArrowCircleLeftBoldIcon"
-                        {...knobs}
-                    />
-                    <Icon.ArrowCircleLeftIcon
-                        title="ArrowCircleLeftIcon"
-                        {...knobs}
-                    />
-                    <Icon.ArrowCircleRightBoldIcon
-                        title="ArrowCircleRightBoldIcon"
-                        {...knobs}
-                    />
-                    <Icon.ArrowCircleRightIcon
-                        title="ArrowCircleRightIcon"
-                        {...knobs}
-                    />
-                </div>
-
-                <div>
                     <Icon.ArrowLeftIcon title="ArrowLeftIcon" {...knobs} />
                     <Icon.ArrowRightIcon title="ArrowRightIcon" {...knobs} />
                     <Icon.ArrowTopIcon title="ArrowTopIcon" {...knobs} />
@@ -153,6 +134,30 @@ storiesOf(folder.media + 'Icons', module)
                     />
                 </div>
 
+                <div>
+                    <Icon.ArrowCircleLeftBoldIcon
+                        title="ArrowCircleLeftBoldIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowCircleLeftIcon
+                        title="ArrowCircleLeftIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowCircleRightBoldIcon
+                        title="ArrowCircleRightBoldIcon"
+                        {...knobs}
+                    />
+                    <Icon.ArrowCircleRightIcon
+                        title="ArrowCircleRightIcon"
+                        {...knobs}
+                    />
+                </div>
+
+                <div>
+                    <Icon.RefreshBoldIcon title="RefreshBoldIcon" {...knobs} />
+                    <Icon.RefreshIcon title="RefreshIcon" {...knobs} />
+                </div>
+
                 <Title
                     marginTop={spaceOptions.sm}
                     marginBottom={spaceOptions.xs}
@@ -163,16 +168,39 @@ storiesOf(folder.media + 'Icons', module)
                 <div>
                     <Icon.CautionBoldIcon title="CautionBoldIcon" {...knobs} />
                     <Icon.CautionIcon title="CautionIcon" {...knobs} />
-                    <Icon.ChangeIcon title="ChangeIcon" {...knobs} />
                     <Icon.CheckBoldIcon title="CheckBoldIcon" {...knobs} />
                     <Icon.CheckIcon title="CheckIcon" {...knobs} />
+                    <Icon.CrossBoldIcon title="CrossBoldIcon" {...knobs} />
+                    <Icon.CrossIcon title="CrossIcon" {...knobs} />
+                </div>
+
+                <Title
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.xs}
+                >
+                    Web and dev
+                </Title>
+
+                <div>
+                    <Icon.ChangeIcon title="ChangeIcon" {...knobs} />
+                    <Icon.CheckboxIcon title="CheckboxIcon" {...knobs} />
+                    <Icon.CodeIcon title="CodeIcon" {...knobs} />
+                    <Icon.ConsoleIcon title="ConsoleIcon" {...knobs} />
+                    <Icon.CopyIcon title="CopyIcon" {...knobs} />
+                    <Icon.InformationIcon title="InformationIcon" {...knobs} />
+                    <Icon.LinkBoldIcon title="LinkBoldIcon" {...knobs} />
+                    <Icon.LinkIcon title="LinkIcon" {...knobs} />
+                    <Icon.ListIcon title="ListIcon" {...knobs} />
+                    <Icon.MarkerIcon title="MarkerIcon" {...knobs} />
                     <Icon.MenuBoldIcon title="MenuBoldIcon" {...knobs} />
                     <Icon.MenuIcon title="MenuIcon" {...knobs} />
                     <Icon.MenuDotsIcon title="MenuDotsIcon" {...knobs} />
                     <Icon.MooveIcon title="MooveIcon" {...knobs} />
                     <Icon.OutIcon title="OutIcon" {...knobs} />
-                    <Icon.RefreshBoldIcon title="RefreshBoldIcon" {...knobs} />
-                    <Icon.RefreshIcon title="RefreshIcon" {...knobs} />
+                    <Icon.PointerIcon title="PointerIcon" {...knobs} />
+                    <Icon.PopinIcon title="PopinIcon" {...knobs} />
+                    <Icon.SearchBoldIcon title="SearchBoldIcon" {...knobs} />
+                    <Icon.SearchIcon title="SearchIcon" {...knobs} />
                     <Icon.UploadIcon title="UploadIcon" {...knobs} />
                     <Icon.DownloadIcon title="DownloadIcon" {...knobs} />
                 </div>
@@ -201,6 +229,34 @@ storiesOf(folder.media + 'Icons', module)
                     marginTop={spaceOptions.sm}
                     marginBottom={spaceOptions.xs}
                 >
+                    Transport
+                </Title>
+
+                <div>
+                    <Icon.CarIcon title="CarIcon" {...knobs} />
+                    <Icon.PlaneIcon title="PlaneIcon" {...knobs} />
+                    <Icon.ScooterIcon title="ScooterIcon" {...knobs} />
+                    <Icon.TruckIcon title="TruckIcon" {...knobs} />
+                </div>
+
+                <Title
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.xs}
+                >
+                    Devices
+                </Title>
+
+                <div>
+                    <Icon.DesktopIcon title="DesktopIcon" {...knobs} />
+                    <Icon.MobileIcon title="MobileIcon" {...knobs} />
+                    <Icon.TabletIcon title="TabletIcon" {...knobs} />
+                    <Icon.TvIcon title="TvIcon" {...knobs} />
+                </div>
+
+                <Title
+                    marginTop={spaceOptions.sm}
+                    marginBottom={spaceOptions.xs}
+                >
                     Objects
                 </Title>
 
@@ -219,19 +275,12 @@ storiesOf(folder.media + 'Icons', module)
                     <Icon.CameraIcon title="CameraIcon" {...knobs} />
                     <Icon.CardsBoldIcon title="CardsBoldIcon" {...knobs} />
                     <Icon.CardsIcon title="CardsIcon" {...knobs} />
-                    <Icon.CarIcon title="CarIcon" {...knobs} />
                     <Icon.CartIcon title="CartIcon" {...knobs} />
-                    <Icon.CheckboxIcon title="CheckboxIcon" {...knobs} />
                     <Icon.CircuitIcon title="CircuitIcon" {...knobs} />
                     <Icon.ClockBoldIcon title="ClockBoldIcon" {...knobs} />
                     <Icon.ClockIcon title="ClockIcon" {...knobs} />
-                    <Icon.CodeIcon title="CodeIcon" {...knobs} />
                     <Icon.CoinsIcon title="CoinsIcon" {...knobs} />
-                    <Icon.ConsoleIcon title="ConsoleIcon" {...knobs} />
                     <Icon.ContractIcon title="ContractIcon" {...knobs} />
-                    <Icon.CopyIcon title="CopyIcon" {...knobs} />
-                    <Icon.CrossBoldIcon title="CrossBoldIcon" {...knobs} />
-                    <Icon.CrossIcon title="CrossIcon" {...knobs} />
                     <Icon.EarthIcon title="EarthIcon" {...knobs} />
                     <Icon.EyedropperIcon title="EyedropperIcon" {...knobs} />
                     <Icon.EyeIcon title="EyeIcon" {...knobs} />
@@ -239,15 +288,10 @@ storiesOf(folder.media + 'Icons', module)
                     <Icon.GlobeIcon title="GlobeIcon" {...knobs} />
                     <Icon.HeartIcon title="HeartIcon" {...knobs} />
                     <Icon.HourglassIcon title="HourglassIcon" {...knobs} />
-                    <Icon.InformationIcon title="InformationIcon" {...knobs} />
                     <Icon.LeafIcon title="LeafIcon" {...knobs} />
                     <Icon.LetterBoldIcon title="LetterBoldIcon" {...knobs} />
                     <Icon.LetterIcon title="LetterIcon" {...knobs} />
-                    <Icon.LinkBoldIcon title="LinkBoldIcon" {...knobs} />
-                    <Icon.LinkIcon title="LinkIcon" {...knobs} />
-                    <Icon.ListIcon title="ListIcon" {...knobs} />
                     <Icon.LockIcon title="LockIcon" {...knobs} />
-                    <Icon.MarkerIcon title="MarkerIcon" {...knobs} />
                     <Icon.MealIcon title="MealIcon" {...knobs} />
                     <Icon.MegaphoneIcon title="MegaphoneIcon" {...knobs} />
                     <Icon.MeterIcon title="MeterIcon" {...knobs} />
@@ -261,16 +305,10 @@ storiesOf(folder.media + 'Icons', module)
                     <Icon.PenIcon title="PenIcon" {...knobs} />
                     <Icon.PhoneIcon title="PhoneIcon" {...knobs} />
                     <Icon.PictureIcon title="PictureIcon" {...knobs} />
-                    <Icon.PlaneIcon title="PlaneIcon" {...knobs} />
                     <Icon.PlugIcon title="PlugIcon" {...knobs} />
                     <Icon.UnplugIcon title="UnplugIcon" {...knobs} />
-                    <Icon.PointerIcon title="PointerIcon" {...knobs} />
-                    <Icon.PopinIcon title="PopinIcon" {...knobs} />
                     <Icon.SatchelIcon title="SatchelIcon" {...knobs} />
                     <Icon.ScheduleIcon title="ScheduleIcon" {...knobs} />
-                    <Icon.ScooterIcon title="ScooterIcon" {...knobs} />
-                    <Icon.SearchBoldIcon title="SearchBoldIcon" {...knobs} />
-                    <Icon.SearchIcon title="SearchIcon" {...knobs} />
                     <Icon.ShopIcon title="ShopIcon" {...knobs} />
                     <Icon.StartIcon title="StartIcon" {...knobs} />
                     <Icon.SunIcon title="SunIcon" {...knobs} />
@@ -278,8 +316,6 @@ storiesOf(folder.media + 'Icons', module)
                     <Icon.TrashIcon title="TrashIcon" {...knobs} />
                     <Icon.TreesIcon title="TreesIcon" {...knobs} />
                     <Icon.TrophyIcon title="TrophyIcon" {...knobs} />
-                    <Icon.TruckIcon title="TruckIcon" {...knobs} />
-                    <Icon.TvIcon title="TvIcon" {...knobs} />
                     <Icon.UserBoldIcon title="UserBoldIcon" {...knobs} />
                     <Icon.UserIcon title="UserIcon" {...knobs} />
                     <Icon.UsersIcon title="UsersIcon" {...knobs} />
