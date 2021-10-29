@@ -47,6 +47,7 @@ import Contract from './components/Contract';
 import Copy from './components/Copy';
 import CrossBold from './components/CrossBold';
 import Cross from './components/Cross';
+import Desktop from './components/Desktop';
 import Download from './components/Download';
 import Earth from './components/Earth';
 import Empty from './components/Empty';
@@ -72,6 +73,7 @@ import MenuDots from './components/MenuDots';
 import Menu from './components/Menu';
 import Meter from './components/Meter';
 import Minus from './components/Minus';
+import Mobile from './components/Mobile';
 import Moon from './components/Moon';
 import Moove from './components/Moove';
 import Organization from './components/Organization';
@@ -101,6 +103,7 @@ import Shop from './components/Shop';
 import Start from './components/Start';
 import Sun from './components/Sun';
 import Support from './components/Support';
+import Tablet from './components/Tablet';
 import Trash from './components/Trash';
 import Trees from './components/Trees';
 import Trophy from './components/Trophy';
@@ -165,6 +168,7 @@ export const ContractIcon = (props) => <IconWrapper {...props}><Contract /></Ico
 export const CopyIcon = (props) => <IconWrapper {...props}><Copy /></IconWrapper>
 export const CrossBoldIcon = (props) => <IconWrapper {...props}><CrossBold /></IconWrapper>
 export const CrossIcon = (props) => <IconWrapper {...props}><Cross /></IconWrapper>
+export const DesktopIcon = (props) => <IconWrapper {...props}><Desktop /></IconWrapper>
 export const DownloadIcon = (props) => <IconWrapper {...props}><Download /></IconWrapper>
 export const EarthIcon = (props) => <IconWrapper {...props}><Earth /></IconWrapper>
 export const EmptyIcon = (props) => <IconWrapper {...props}><Empty /></IconWrapper>
@@ -190,6 +194,7 @@ export const MenuDotsIcon = (props) => <IconWrapper {...props}><MenuDots /></Ico
 export const MenuIcon = (props) => <IconWrapper {...props}><Menu /></IconWrapper>
 export const MeterIcon = (props) => <IconWrapper {...props}><Meter /></IconWrapper>
 export const MinusIcon = (props) => <IconWrapper {...props}><Minus /></IconWrapper>
+export const MobileIcon = (props) => <IconWrapper {...props}><Mobile /></IconWrapper>
 export const MoonIcon = (props) => <IconWrapper {...props}><Moon /></IconWrapper>
 export const MooveIcon = (props) => <IconWrapper {...props}><Moove /></IconWrapper>
 export const OrganizationIcon = (props) => <IconWrapper {...props}><Organization /></IconWrapper>
@@ -219,6 +224,7 @@ export const ShopIcon = (props) => <IconWrapper {...props}><Shop /></IconWrapper
 export const StartIcon = (props) => <IconWrapper {...props}><Start /></IconWrapper>
 export const SunIcon = (props) => <IconWrapper {...props}><Sun /></IconWrapper>
 export const SupportIcon = (props) => <IconWrapper {...props}><Support /></IconWrapper>
+export const TabletIcon = (props) => <IconWrapper {...props}><Tablet /></IconWrapper>
 export const TrashIcon = (props) => <IconWrapper {...props}><Trash /></IconWrapper>
 export const TreesIcon = (props) => <IconWrapper {...props}><Trees /></IconWrapper>
 export const TrophyIcon = (props) => <IconWrapper {...props}><Trophy /></IconWrapper>
