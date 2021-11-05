@@ -50,17 +50,19 @@ const DaTableRow = props => {
             hasCheckbox={hasCheckbox}
             mainCellCount={mainCellCount}
             notMainCellCount={notMainCellCount}
-            onMouseDown={!isOpen ? () => setOpen(true) : null} // we need to detect mousedown event to open since closing is based on mousedown with useOutsideAlerter
             isOpen={isOpen}
         >
             {React.Children.map(props.children, child => {
+                let isCheckbox = false;
+
                 if (typeof child === 'object') {
                     if (child.props.isMain) {
-                        if (
+                        isCheckbox =
                             child.props.isCheckbox ||
                             (child.props.children &&
-                                child.props.children.type === Checkbox)
-                        ) {
+                                child.props.children.type === Checkbox);
+
+                        if (isCheckbox) {
                             className = 'cell-checkbox';
                         } else if (child.props.isId) {
                             className = 'cell-id';
@@ -76,6 +78,8 @@ const DaTableRow = props => {
                     return React.cloneElement(child, {
                         className: className,
                         isLoading: props.isLoading,
+                        onMouseDown:
+                            !isCheckbox && !isOpen ? () => setOpen(true) : null, // we need to detect mousedown event to open since closing is based on mousedown with useOutsideAlerter
                     });
                 }
             })}
