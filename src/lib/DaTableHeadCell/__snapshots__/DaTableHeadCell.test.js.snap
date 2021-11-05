@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__DaTableHeadCellBase-sc-1fpn11j-0 bMPZMD"
+  className="style__DaTableHeadCellBase-sc-1fpn11j-0 iMdqdb"
 >
   <div
     className="head-child"
