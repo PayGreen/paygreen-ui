@@ -10,6 +10,7 @@ const DaTableHeadCellBase = styled.div`
 
     @media ${props => props.theme.screen.min.lg} {
         display: table-cell;
+        vertical-align: top;
         padding: 0 ${props => props.theme.space.md};
         padding-bottom: ${props => props.theme.space.sm};
 
