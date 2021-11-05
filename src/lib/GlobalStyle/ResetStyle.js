@@ -54,6 +54,7 @@ export const ResetStyle = css`
 
     select {
         opacity: 1;
+        line-height: normal;
     }
 
     [type="checkbox"],
