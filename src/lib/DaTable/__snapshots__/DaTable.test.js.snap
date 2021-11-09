@@ -9,10 +9,10 @@ exports[`renders without crashing 1`] = `
   >
     <div
       className="style__DaTableRowBase-cqmn2v-0 cNBYyF"
-      onMouseDown={[Function]}
     >
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
+        onMouseDown={[Function]}
       >
         <span
           className="cell-content"
@@ -22,6 +22,7 @@ exports[`renders without crashing 1`] = `
       </div>
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 blLFYm cell-main cell-main-1"
+        onMouseDown={[Function]}
       >
         <span
           className="cell-content"
@@ -31,6 +32,7 @@ exports[`renders without crashing 1`] = `
       </div>
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 etkGNS cell-basic cell-basic-1"
+        onMouseDown={[Function]}
       >
         <span
           className="cell-content"
@@ -41,10 +43,10 @@ exports[`renders without crashing 1`] = `
     </div>
     <div
       className="style__DaTableRowBase-cqmn2v-0 cNBYyF"
-      onMouseDown={[Function]}
     >
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
+        onMouseDown={[Function]}
       >
         <span
           className="cell-content"
@@ -54,6 +56,7 @@ exports[`renders without crashing 1`] = `
       </div>
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 blLFYm cell-main cell-main-1"
+        onMouseDown={[Function]}
       >
         <span
           className="cell-content"
@@ -63,6 +66,7 @@ exports[`renders without crashing 1`] = `
       </div>
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 etkGNS cell-basic cell-basic-1"
+        onMouseDown={[Function]}
       >
         <span
           className="cell-content"
@@ -73,10 +77,10 @@ exports[`renders without crashing 1`] = `
     </div>
     <div
       className="style__DaTableRowBase-cqmn2v-0 cNBYyF"
-      onMouseDown={[Function]}
     >
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
+        onMouseDown={[Function]}
       >
         <span
           className="cell-content"
@@ -86,6 +90,7 @@ exports[`renders without crashing 1`] = `
       </div>
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 blLFYm cell-main cell-main-1"
+        onMouseDown={[Function]}
       >
         <span
           className="cell-content"
@@ -95,6 +100,7 @@ exports[`renders without crashing 1`] = `
       </div>
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 etkGNS cell-basic cell-basic-1"
+        onMouseDown={[Function]}
       >
         <span
           className="cell-content"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
@@ -219,47 +219,44 @@ storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
             <DaTableBody>
                 {!boolean(labels.isLoading, false) &&
                 boolean('With data', true) ? (
-                    sampleRows.map((sample, index) => (
-                        <DaTableRow
-                            key={index}
-                            isActive={
-                                !index ? boolean(labels.isActive, false) : false
-                            }
-                        >
-                            <DaTableCell>
-                                <Checkbox
-                                    id={'checkbox' + index}
-                                    checked={
-                                        !index
-                                            ? boolean(labels.isActive, false)
-                                            : false
-                                    }
-                                    readOnly={true}
-                                />
-                            </DaTableCell>
+                    sampleRows.map((sample, index) => {
+                        const [isActive, setActive] = useState(false);
 
-                            <DaTableCell isId={true}>
-                                {3400 + index}
-                            </DaTableCell>
+                        return (
+                            <DaTableRow key={index} isActive={isActive}>
+                                <DaTableCell>
+                                    <Checkbox
+                                        id={'checkbox' + index}
+                                        onChange={() => setActive(!isActive)}
+                                        checked={isActive}
+                                    />
+                                </DaTableCell>
 
-                            <DaTableCell isMain={false} label="Date">
-                                {sample.date}
-                            </DaTableCell>
+                                <DaTableCell isId={true}>
+                                    {3400 + index}
+                                </DaTableCell>
 
-                            <DaTableCell>{sample.name}</DaTableCell>
+                                <DaTableCell isMain={false} label="Date">
+                                    {sample.date}
+                                </DaTableCell>
 
-                            <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
+                                <DaTableCell>{sample.name}</DaTableCell>
 
-                            <DaTableCell isMain={false} label="Type">
-                                {sample.type}
-                            </DaTableCell>
+                                <DaTableCell>
+                                    {sample.amount}&nbsp;€
+                                </DaTableCell>
 
-                            <DaTableCell isMain={false} label="Status">
-                                {status.icon[sample.status]}
-                                {status.text[sample.status]}
-                            </DaTableCell>
-                        </DaTableRow>
-                    ))
+                                <DaTableCell isMain={false} label="Type">
+                                    {sample.type}
+                                </DaTableCell>
+
+                                <DaTableCell isMain={false} label="Status">
+                                    {status.icon[sample.status]}
+                                    {status.text[sample.status]}
+                                </DaTableCell>
+                            </DaTableRow>
+                        );
+                    })
                 ) : (
                     <Text
                         textSize={fontSizeOptions.sm}

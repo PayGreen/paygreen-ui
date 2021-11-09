@@ -62,17 +62,11 @@ const DaTableHeadCell = ({
                     </span>
                 ) : null}
 
-                {children && cellIsCheckbox ? (
-                    <span className="hideOnBigScreen">{children}</span>
-                ) : null}
+                {children && cellIsCheckbox ? children : null}
             </div>
 
             {children && !cellIsCheckbox ? (
                 <div className="cell-child">{children}</div>
-            ) : null}
-
-            {children && cellIsCheckbox ? (
-                <div className="hideOnSmallScreen">{children}</div>
             ) : null}
         </DaTableHeadCellBase>
     );

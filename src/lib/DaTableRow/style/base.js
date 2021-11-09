@@ -78,7 +78,6 @@ const hoverStyle = css`
 `;
 
 const activeStyle = css`
-    font-weight: ${props => props.theme.font.weight.bold};
     background-color: ${props => props.theme.wab.grey10} !important;
     box-shadow: none !important;
 `;

@@ -12,7 +12,7 @@ import {
 } from '../../shared/constants';
 import { DataLegendBase } from './style';
 
-const DataLegend = ({value, unit, children, ...rest}) => {
+const DataLegend = ({ value, unit, children, ...rest }) => {
     return (
         <DataLegendBase {...rest} isDisabled={value === 0}>
             <span className="value">{value}</span>
@@ -31,7 +31,7 @@ DataLegend.propTypes = {
     ]),
     colorTheme: PropTypes.oneOf(Object.values(colorThemeOptions)),
     colorStatus: PropTypes.oneOf(Object.values(formStatusOptions)),
-    value: PropTypes.number,
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     unit: PropTypes.string,
     textSize: PropTypes.oneOf(Object.values(fontSizeOptions)),
 };

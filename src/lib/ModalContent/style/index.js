@@ -4,7 +4,7 @@ import { transparentize } from 'polished';
 const ModalContentBase = styled.div`
     position: fixed;
     bottom: 0;
-    max-height: 80vh;
+    max-height: 90vh;
     width: 100%;
 
     display: grid;
