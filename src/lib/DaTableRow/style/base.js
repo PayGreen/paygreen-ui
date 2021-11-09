@@ -80,14 +80,6 @@ const hoverStyle = css`
 const activeStyle = css`
     background-color: ${props => props.theme.wab.grey10} !important;
     box-shadow: none !important;
-    
-    .cell-content {
-        font-weight: ${props => props.theme.font.weight.bold};
-
-        * {
-            font-weight: initial;
-        }
-    }
 `;
 
 const loadingStyle = css`
