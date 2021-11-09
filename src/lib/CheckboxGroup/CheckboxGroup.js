@@ -34,7 +34,7 @@ const CheckboxGroup = props => {
                     id={props.name + index}
                     value={option.value}
                     label={option.label}
-                    defaultChecked={option.value === value}
+                    defaultChecked={value.includes(option.value)}
                 />
             ))}
         </CheckboxGroupBase>
@@ -42,6 +42,7 @@ const CheckboxGroup = props => {
 };
 
 CheckboxGroup.propTypes = {
+    value: PropTypes.array,
     options: PropTypes.arrayOf(
         PropTypes.shape({
             label: PropTypes.string.isRequired,
@@ -56,6 +57,7 @@ CheckboxGroup.propTypes = {
 };
 
 CheckboxGroup.defaultProps = {
+    value: [],
     fieldSize: buttonSizeDefault,
     disabled: false,
     required: false,

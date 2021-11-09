@@ -30,7 +30,7 @@ storiesOf(folder.form + folder.sub.checkbox + 'CheckboxGroup', module)
         <CheckboxGroup
             name="checkboxes"
             legend={text(labels.label, 'Checkboxes Label')}
-            value={checkboxOptions[1].value}
+            value={[checkboxOptions[1].value, checkboxOptions[2].value]}
             options={checkboxOptions}
             disabled={boolean(labels.disabled, false)}
             fieldSize={radios(
