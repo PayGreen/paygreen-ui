@@ -10,7 +10,7 @@ import {
 
 const DaTableRowBase = styled.div`
     background-color: ${props => props.theme.wab.white10};
-    transition: all ${props => props.theme.transition.sm};
+    transition: all ${props => props.theme.transition.xxs};
     ${props => (props.isLoading ? loadingStyle : hoverStyle)};
     ${props => (props.isActive ? activeStyle : null)};
 

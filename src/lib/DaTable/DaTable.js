@@ -22,13 +22,18 @@ const DaTable = ({
 
     if (isLoading) {
         React.Children.map(children, child => {
-            if (typeof child === 'object' && child.type === DaTableHead) {
+            if (
+                typeof child === 'object' &&
+                (child.type === DaTableHead ||
+                    child.props.className === 'DaTableHead')
+            ) {
                 columnNumber = child.props.children.length;
 
                 React.Children.map(child.props.children, (headCell, index) => {
                     if (
                         typeof headCell === 'object' &&
-                        headCell.type === DaTableHeadCell &&
+                        (headCell.type === DaTableHeadCell ||
+                            headCell.props.className === 'DaTableHeadCell') &&
                         (headCell.props.isCheckbox ||
                             (headCell.props.children &&
                                 headCell.props.children.type === Checkbox))
@@ -40,11 +45,19 @@ const DaTable = ({
         });
     } else {
         React.Children.map(children, child => {
-            if (typeof child === 'object' && child.type === DaTableBody) {
+            if (
+                typeof child === 'object' &&
+                (child.type === DaTableBody ||
+                    child.props.className === 'DaTableBody')
+            ) {
                 hasRow = false;
 
                 React.Children.map(child.props.children, row => {
-                    if (typeof row === 'object' && row.type === DaTableRow) {
+                    if (
+                        typeof row === 'object' &&
+                        (row.type === DaTableRow ||
+                            row.props.className === 'DaTableRow')
+                    ) {
                         hasRow = true;
                     }
                 });
@@ -62,7 +75,10 @@ const DaTable = ({
                 {React.Children.map(children, child => {
                     if (!child) {
                         return null;
-                    } else if (child.type === DaTableBody) {
+                    } else if (
+                        child.type === DaTableBody ||
+                        child.props.className === 'DaTableBody'
+                    ) {
                         return React.cloneElement(child, {
                             hasRow: hasRow,
                             isLoading: isLoading,
