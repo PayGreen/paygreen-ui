@@ -8,7 +8,7 @@ exports[`renders without crashing 1`] = `
     className="table"
   >
     <div
-      className="style__DaTableRowBase-cqmn2v-0 cNBYyF"
+      className="style__DaTableRowBase-cqmn2v-0 cOsXFb"
     >
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
@@ -42,7 +42,7 @@ exports[`renders without crashing 1`] = `
       </div>
     </div>
     <div
-      className="style__DaTableRowBase-cqmn2v-0 cNBYyF"
+      className="style__DaTableRowBase-cqmn2v-0 cOsXFb"
     >
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
@@ -76,7 +76,7 @@ exports[`renders without crashing 1`] = `
       </div>
     </div>
     <div
-      className="style__DaTableRowBase-cqmn2v-0 cNBYyF"
+      className="style__DaTableRowBase-cqmn2v-0 cOsXFb"
     >
       <div
         className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
