@@ -13,7 +13,10 @@ const DaTableRow = props => {
     let notMainCellCount = 0;
 
     React.Children.map(props.children, child => {
-        if (typeof child === 'object') {
+        if (
+            typeof child === 'object' ||
+            child.props.className === 'DaTableCell'
+        ) {
             if (child.props.isMain) {
                 mainCellCount++;
 
