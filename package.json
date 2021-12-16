@@ -61,7 +61,7 @@
     "core-js": "^3.6.5",
     "dayjs": "^1.10.7",
     "polished": "^3.6.7",
-    "react-indiana-drag-scroll": "^1.7.0",
+    "react-indiana-drag-scroll": "^2.1.0",
     "react-input-mask": "^2.0.4",
     "react-transition-group": "^4.4.1",
     "styled-normalize": "^8.0.7"
