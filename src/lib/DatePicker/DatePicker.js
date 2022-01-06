@@ -110,9 +110,9 @@ const DatePicker = ({
      * @param {string} value
      */
     const verifyAndChangeDateValue = value => {
-        if (value === '' && !resetDate) {
-            // we don't reset input if input is empty and there is no resetDate
+        if (!value) {
             setSelectedDate(null);
+            setInputValue('');
         } else if (!dayjs(value, dateFormat, true).isValid()) {
             resetInvalidDate();
         } else {
@@ -138,9 +138,7 @@ const DatePicker = ({
 
     // To update value dynamically if value is changed externally
     useEffect(() => {
-        if (value) {
-            verifyAndChangeDateValue(value);
-        }
+        verifyAndChangeDateValue(value);
     }, [value]);
 
     // Handle value change via CalendarCell Buttons

@@ -19,6 +19,7 @@ import {
 import labels from '../../shared/labels';
 import { ScheduleIcon } from '../Icon/Icon';
 import DaButton from '../DaButton/DaButton';
+import ButtonGroup from '../ButtonGroup/ButtonGroup';
 import DatePicker from './DatePicker';
 import dayjs from './dayjsHelper';
 
@@ -35,12 +36,20 @@ const DatePickerWrapper = ({ hasButton, defaultValue, ...rest }) => {
             />
 
             {hasButton && (
-                <button
-                    type="button"
-                    onClick={() => setDate(dayjs().format('DD/MM/YYYY'))}
-                >
-                    <DaButton>Reset to today</DaButton>
-                </button>
+                <ButtonGroup align="left" marginTop="sm">
+                    <button type="button" onClick={() => setDate('')}>
+                        <DaButton colorTheme="tertiary" buttonSize="sm">
+                            Empty date
+                        </DaButton>
+                    </button>
+
+                    <button
+                        type="button"
+                        onClick={() => setDate(dayjs().format('DD/MM/YYYY'))}
+                    >
+                        <DaButton buttonSize="sm">Reset to today</DaButton>
+                    </button>
+                </ButtonGroup>
             )}
         </>
     );
