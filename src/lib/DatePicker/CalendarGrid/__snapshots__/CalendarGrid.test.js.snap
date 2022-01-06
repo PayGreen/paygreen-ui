@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__CalendarGridBase-sc-1qui6a5-0 ehqGoy"
+  className="style__CalendarGridBase-sc-1qui6a5-0 ehrtpv"
 >
   <button
     className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
@@ -159,7 +159,7 @@ exports[`renders without crashing 1`] = `
     22
   </button>
   <button
-    className="style__CalendarCellBase-sc-17uxo6m-0 kqyGos"
+    className="style__CalendarCellBase-sc-17uxo6m-0 cEItIt"
     onClick={[Function]}
     type="button"
   >
