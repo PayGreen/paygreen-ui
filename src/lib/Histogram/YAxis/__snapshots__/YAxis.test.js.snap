@@ -8,7 +8,7 @@ exports[`renders without crashing 1`] = `
     className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
   >
     <span
-      className="style__TextBase-sc-11ixwvd-0 bhESGB"
+      className="style__TextBase-sc-11ixwvd-0 fKOBXW"
     >
       123
        
@@ -19,7 +19,7 @@ exports[`renders without crashing 1`] = `
     className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
   >
     <span
-      className="style__TextBase-sc-11ixwvd-0 bhESGB"
+      className="style__TextBase-sc-11ixwvd-0 fKOBXW"
     >
       107
        
@@ -30,7 +30,7 @@ exports[`renders without crashing 1`] = `
     className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
   >
     <span
-      className="style__TextBase-sc-11ixwvd-0 bhESGB"
+      className="style__TextBase-sc-11ixwvd-0 fKOBXW"
     >
       64
        
@@ -41,7 +41,7 @@ exports[`renders without crashing 1`] = `
     className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
   >
     <span
-      className="style__TextBase-sc-11ixwvd-0 bhESGB"
+      className="style__TextBase-sc-11ixwvd-0 fKOBXW"
     >
       34.5
        
@@ -52,7 +52,7 @@ exports[`renders without crashing 1`] = `
     className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
   >
     <span
-      className="style__TextBase-sc-11ixwvd-0 bhESGB"
+      className="style__TextBase-sc-11ixwvd-0 fKOBXW"
     >
       0
        
