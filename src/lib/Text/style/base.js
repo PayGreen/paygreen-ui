@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 import { transparentize, math } from 'polished';
 import { responsiveSpaces } from '../../../shared/spaces';
+import { lineColor } from '../../Title/style/constants';
 import { mainColor, backgroundColor, minimizeFont } from './constants';
 
 const htmlTagStyle = {
@@ -62,10 +63,19 @@ const uppercaseStyle = css`
 const color = {
     original: css`
         color: ${props => mainColor[props.colorPallet]};
+
+        &::after {
+            background-color: ${props => lineColor[props.colorPallet]};
+        }
     `,
     reverse: css`
         color: ${props => props.theme.wab.white00};
         text-shadow: 0 0 ${props => props.theme.space.sm} ${mainColor.theme};
+
+        &::after {
+            background-color: ${props =>
+                transparentize(0.6, props.theme.wab.white00)};
+        }
     `,
 };
 

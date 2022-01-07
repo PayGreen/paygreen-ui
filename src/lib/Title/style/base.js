@@ -25,7 +25,7 @@ const underlineAlign = {
 const underline = css`
     position: relative;
     padding-bottom: ${props =>
-        props.theme.font.underline.space[props.textSize]};
+        props.theme.font.underline.space[props.textSize]} !important; 
     margin-bottom: ${props => props.theme.font.underline.space[props.textSize]};
 
     &::after {
