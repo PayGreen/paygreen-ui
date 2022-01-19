@@ -16,11 +16,11 @@ const TextBase = styled.p`
     font-size: ${props => props.theme.font.size[props.textSize]};
 
     ${props => (props.isResponsive ? minimizeText : null)};
-    ${props => (props.hasBackground ? blockBackground[props.colorType] : null)};
     ${props => htmlTagStyle[props.htmlTag]};
-    ${props => (props.hasUnderline ? underline : null)};
     ${props => color[props.colorType]};
+    ${props => (props.hasBackground ? blockBackground[props.colorType] : null)};
     ${props => (props.hasUppercase ? uppercaseStyle : null)};
+    ${props => (props.hasUnderline ? underline : null)};
 `;
 
 export { TextBase };

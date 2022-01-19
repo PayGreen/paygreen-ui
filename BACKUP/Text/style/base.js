@@ -65,8 +65,8 @@ const color = {
         color: ${props => mainColor[props.colorPallet]};
 
         &::after {
-            background-color: ${props =>
-                props.hasUnderline ? lineColor[props.colorPallet] : null};
+            background-color: ${props => lineColor[props.colorPallet]};
+        }
     `,
     reverse: css`
         color: ${props => props.theme.wab.white00};
@@ -74,9 +74,7 @@ const color = {
 
         &::after {
             background-color: ${props =>
-                props.hasUnderline
-                    ? transparentize(0.6, props.theme.wab.white00)
-                    : null};
+                transparentize(0.6, props.theme.wab.white00)};
         }
     `,
 };
