@@ -27,7 +27,6 @@ const { div, p, span, ...inlineHtmlTagOptions } = textHtmlTagOptions;
 
 export default {
     title: folder.text + 'Text',
-    component: Text,
     argTypes: {
         colorType: {
             name: labels.colorType,

@@ -20,7 +20,6 @@ import TitleComponent from './Title';
 
 export default {
     title: folder.text + 'Title',
-    component: Title,
     argTypes: {
         hasUnderline: {
             name: labels.hasUnderline,

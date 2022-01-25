@@ -13,7 +13,6 @@ import OverlayComponent from './Overlay';
 
 export default {
     title: folder.popup + 'Overlay',
-    component: Overlay,
     argTypes: {
         gradient: {
             name: labels.gradient,

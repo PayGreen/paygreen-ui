@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__CardBase-sc-f361m8-0 bpvaVB"
+  type={null}
+>
+  <span
+    className="style__TitleBase-sc-td7fx4-0 dNqcNs"
+  >
+    Content 
+    <strong>
+      sample
+    </strong>
+  </span>
+  <p
+    className="style__TextBase-sc-11ixwvd-0 bheFHj"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    <strong>
+      Duis porttitor velit a ultricies aliquet
+    </strong>
+    . Donec vehicula in arcu non sodales.
+  </p>
+  <div
+    className="style__ButtonGroupBase-sc-cn1823-0 dAlrZq"
+  >
+    <button
+      type="button"
+    >
+      <span
+        className="style__ButtonBase-sc-pnyves-0 dXupHc"
+      >
+        Your button
+      </span>
+    </button>
+  </div>
+</div>
+`;

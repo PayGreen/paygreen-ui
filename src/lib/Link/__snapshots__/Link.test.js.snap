@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<a
+  href="#"
+>
+  <span
+    className="style__LinkBase-sc-1gvcrtp-0 jhcqww"
+  >
+    Link text
+  </span>
+</a>
+`;

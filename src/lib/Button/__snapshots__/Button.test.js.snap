@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<button
+  type="button"
+>
+  <span
+    className="style__ButtonBase-sc-pnyves-0 dXupHc"
+  >
+    CTA button
+  </span>
+</button>
+`;
