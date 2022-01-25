@@ -20,7 +20,6 @@ import HRComponent from './HR';
 
 export default {
     title: folder.grid + 'HR',
-    component: HR,
     argTypes: {
         colorType: {
             name: labels.colorType,

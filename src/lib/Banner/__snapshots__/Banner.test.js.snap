@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__BannerBase-sc-1ykglc-0 eupYVD"
+>
+  <svg
+    className="waves"
+    viewBox="0 0 932 94"
+  >
+    <path
+      className="light"
+      d="M0,0V94S194,47,467,47C745.33,64,932,16,932,16V0Z"
+    />
+    <path
+      d="M0,0V75S194.5,30.43,467,47C740,47,932,0,932,0Z"
+    />
+  </svg>
+  <div>
+    Something
+  </div>
+  <svg
+    className="waves"
+    viewBox="0 0 932 94"
+  >
+    <path
+      className="light"
+      d="M0,0V94S194,47,467,47C745.33,64,932,16,932,16V0Z"
+    />
+    <path
+      d="M0,0V75S194.5,30.43,467,47C740,47,932,0,932,0Z"
+    />
+  </svg>
+</div>
+`;
