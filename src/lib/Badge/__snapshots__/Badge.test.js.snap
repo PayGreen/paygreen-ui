@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<span
+  className="style__BadgeBase-sc-8ea5fe-0 cRvNgd"
+  type={null}
+>
+  Test
+</span>
+`;
