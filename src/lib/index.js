@@ -53,7 +53,7 @@ import Dot from './Dot/Dot';
 // import Histogram from './Histogram/Histogram';
 // import HistogramBar from './HistogramBar/HistogramBar';
 import HR from './HR/HR';
-// import IconLabel from './IconLabel/IconLabel';
+import IconLabel from './IconLabel/IconLabel';
 import Image from './Image/Image';
 // import Input from './Input/Input';
 // import InputCard from './InputCard/InputCard';
@@ -71,9 +71,9 @@ import Link from './Link/Link';
 // import MenuClose from './MenuClose/MenuClose';
 // import MenuGroup from './MenuGroup/MenuGroup';
 // import MenuHamburger from './MenuHamburger/MenuHamburger';
-// import MenuItem from './MenuItem/MenuItem';
+import MenuItem from './MenuItem/MenuItem';
 // import MenuList from './MenuList/MenuList';
-// import MenuListItem from './MenuListItem/MenuListItem';
+import MenuListItem from './MenuListItem/MenuListItem';
 // import MenuPrimary from './MenuPrimary/MenuPrimary';
 // import MenuSecondary from './MenuSecondary/MenuSecondary';
 import MenuTertiary from './MenuTertiary/MenuTertiary';
@@ -285,7 +285,7 @@ export {
     // Histogram,
     // HistogramBar,
     HR,
-    // IconLabel,
+    IconLabel,
     Image,
     // Input,
     // InputCard,
@@ -303,9 +303,9 @@ export {
     // MenuClose,
     // MenuGroup,
     // MenuHamburger,
-    // MenuItem,
+    MenuItem,
     // MenuList,
-    // MenuListItem,
+    MenuListItem,
     // MenuPrimary,
     // MenuSecondary,
     MenuTertiary,

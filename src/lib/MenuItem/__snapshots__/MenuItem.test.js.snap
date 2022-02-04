@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<a
+  href="#"
+>
+  <div
+    className="style__MenuItemBase-sc-4wfueo-0 kPIopa"
+  >
+    Payment
+  </div>
+</a>
+`;
