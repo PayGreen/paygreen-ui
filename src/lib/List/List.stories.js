@@ -60,11 +60,6 @@ export default {
 };
 
 const defaultArgsType = {
-    listStyle: {
-        name: labels.listStyle,
-        options: Object.values(listStyleOptions),
-        control: 'select',
-    },
     hasDashed: {
         name: 'Dashed lines (on desktop)',
         control: 'boolean',
@@ -120,6 +115,8 @@ ListIcons.args = {
     marginLateral: spaceDefault,
     marginTop: spaceDefault,
     marginBottom: spaceDefault,
+    hasDashed: false,
+    listStyle: 'icon',
 };
 ListIcons.argTypes = {
     ...defaultArgsType,
@@ -153,7 +150,7 @@ ListCheck.argTypes = {
 };
 
 export const ListDash = args => (
-    <List hasDashed>
+    <List {...args}>
         {sampleBasic.map((element, index) => (
             <ListItem
                 key={index}
@@ -167,6 +164,7 @@ export const ListDash = args => (
 );
 
 ListDash.args = {
+    hasDashed: false,
     bulletSize: iconSizeDefault,
     colorTheme: colorThemeDefault,
 };
@@ -177,6 +175,10 @@ ListDash.argTypes = {
         options: Object.values(colorThemeOptions),
         default: colorThemeDefault,
         control: 'select',
+    },
+    hasDashed: {
+        name: 'Dashed between li',
+        control: 'boolean',
     },
 };
 
@@ -213,41 +215,3 @@ ListNumbers.argTypes = {
         control: 'select',
     },
 };
-// storiesOf(folder.list + folder.sub.list + 'List', module)
-//     .addDecorator(withKnobs)
-
-//     .add('List with numbers', () => (
-//         <List
-//             listStyle={listStyleOptions.number}
-//             hasDashed={boolean('Dashed between li', false)}
-//             bulletSize={select(
-//                 labels.bulletSize,
-//                 iconSizeOptions,
-//                 iconSizeDefault,
-//             )}
-//             colorTheme={select(
-//                 labels.colorTheme,
-//                 colorThemeOptions,
-//                 colorThemeDefault,
-//             )}
-//         >
-//             {sampleBasic.map((element, index) => (
-//                 <ListItem
-//                     key={index}
-//                     bulletStyle={listStyleOptions.number}
-//                     bulletSize={select(
-//                         labels.bulletSize,
-//                         iconSizeOptions,
-//                         iconSizeDefault,
-//                     )}
-//                     colorTheme={select(
-//                         labels.colorTheme,
-//                         colorThemeOptions,
-//                         colorThemeDefault,
-//                     )}
-//                 >
-//                     <Text>{element}</Text>
-//                 </ListItem>
-//             ))}
-//         </List>
-//     ));

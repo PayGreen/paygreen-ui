@@ -11,9 +11,9 @@ import {
     AutoBlockScroll,
 } from './GlobalStyle';
 
-// import AnimPlane from './AnimPlane/AnimPlane';
-// import AutonomousInput from './AutonomousInput/AutonomousInput';
-// import Badge from './Badge/Badge';
+import AnimPlane from './AnimPlane/AnimPlane';
+import AutonomousInput from './AutonomousInput/AutonomousInput';
+import Badge from './Badge/Badge';
 // import Banner from './Banner/Banner';
 // import BannerImage from './BannerImage/BannerImage';
 // import Box from './Box/Box';
@@ -243,9 +243,9 @@ export {
     NoScrollStyle,
     AutoBlockScroll,
     // Components
-    // AnimPlane,
-    // AutonomousInput,
-    // Badge,
+    AnimPlane,
+    AutonomousInput,
+    Badge,
     // Banner,
     // BannerImage,
     // Box,
