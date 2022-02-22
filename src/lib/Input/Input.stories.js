@@ -5,6 +5,7 @@ import {
     formStatusDefault,
     inputWidthOptions,
     inputWidthDefault,
+    buttonSizeDefault,
     spaceOptions,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
