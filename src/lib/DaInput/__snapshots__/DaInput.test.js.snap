@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__DaInputBase-sc-13xli4f-0 flOZAF"
+>
+  <input
+    disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    placeholder="Firstname Lastname"
+    readOnly={false}
+    type="text"
+  />
+</div>
+`;
