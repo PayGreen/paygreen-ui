@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__DaSelectBase-yl4pzp-0 iqigut"
+>
+  <select
+    disabled={false}
+  >
+    <option
+      disabled={true}
+      value=""
+    >
+      Choose your option...
+    </option>
+    <option
+      disabled={false}
+      value="first"
+    >
+      First option
+    </option>
+    <option
+      disabled={false}
+      value="second"
+    >
+      Second option
+    </option>
+  </select>
+</div>
+`;

@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__SelectBase-mz8xml-0 kaGtXK"
+>
+  <label
+    htmlFor="selectId1"
+  >
+    Your choice
+  </label>
+  <select
+    id="selectId1"
+  >
+    <option
+      disabled={true}
+      value=""
+    >
+      Choose your option...
+    </option>
+    <optgroup
+      label="First group"
+    >
+      <option
+        disabled={false}
+        value="first"
+      >
+        First option
+      </option>
+      <option
+        disabled={false}
+        value="second"
+      >
+        Second option
+      </option>
+      <option
+        disabled={false}
+        value="third"
+      >
+        Third option
+      </option>
+    </optgroup>
+    <optgroup
+      label="Second group"
+    >
+      <option
+        disabled={false}
+        value="first 2"
+      >
+        First option
+      </option>
+      <option
+        disabled={true}
+        value="second 2"
+      >
+        Second option
+      </option>
+      <option
+        disabled={false}
+        value="third 2"
+      >
+        Third option
+      </option>
+    </optgroup>
+  </select>
+  <span />
+</div>
+`;
