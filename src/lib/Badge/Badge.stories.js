@@ -38,12 +38,12 @@ export default {
         gradient: {
             name: labels.gradient,
             control: 'radio',
-            options: gradientOptions,
+            options: Object.values(gradientOptions),
         },
         textSize: {
             name: labels.textSize,
             control: 'select',
-            options: fontSizeOptions,
+            options: Object.values(fontSizeOptions),
         },
         text: {
             name: labels.text,

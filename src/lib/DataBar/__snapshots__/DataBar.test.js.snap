@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div>
+  <div
+    className="style__Bar-dshsa7-0 kLEuRA"
+  >
+    <div
+      className="style__BarSection-dshsa7-1 gDygew"
+    />
+  </div>
+</div>
+`;
