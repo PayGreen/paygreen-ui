@@ -95,8 +95,8 @@ import Popin from './Popin/Popin';
 // import SidebarList from './SidebarList/SidebarList';
 // import SidebarMenu from './SidebarMenu/SidebarMenu';
 // import SidebarMenuCategory from './SidebarMenuCategory/SidebarMenuCategory';
-// import Skeleton from './Skeleton/Skeleton';
-// import SkeletonItem from './SkeletonItem/SkeletonItem';
+import Skeleton from './Skeleton/Skeleton';
+import SkeletonItem from './SkeletonItem/SkeletonItem';
 // import StepNavbar from './StepNavbar/StepNavbar';
 // import StepNavbarItem from './StepNavbarItem/StepNavbarItem';
 // import Table from './Table/Table';
@@ -327,8 +327,8 @@ export {
     // SidebarList,
     // SidebarMenu,
     // SidebarMenuCategory,
-    // Skeleton,
-    // SkeletonItem,
+    Skeleton,
+    SkeletonItem,
     // StepNavbar,
     // StepNavbarItem,
     // Table,
