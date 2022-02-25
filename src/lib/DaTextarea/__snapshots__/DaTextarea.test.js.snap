@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__DaTextareaBase-cqgkmw-0 bCAikL"
+>
+  <textarea
+    disabled={false}
+    maxLength={2000}
+    minLength={0}
+    onChange={[Function]}
+    placeholder="Your text…"
+    readOnly={false}
+    style={
+      Object {
+        "height": "",
+      }
+    }
+    value=""
+  />
+  <div>
+    <span>
+      0
+    </span>
+     / 
+    2000
+     
+    characters
+  </div>
+</div>
+`;
