@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__GridBase-s241op-0 haxnDJ"
+>
+  <div>
+    Something
+  </div>
+  <div>
+    Something
+  </div>
+  <div>
+    Something
+  </div>
+</div>
+`;

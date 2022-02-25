@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__DaTableRowBase-cqmn2v-0 jdUUFA"
+>
+  <div
+    className="style__DaTableCellBase-sc-1ed6rma-0 gLhGfU cell-checkbox"
+    onMouseDown={null}
+  >
+    <span
+      className="cell-content"
+    >
+      <div
+        className="style__CheckboxBase-sc-1wlk4ud-0 bdkKKN"
+      >
+        <input
+          disabled={false}
+          id="select"
+          type="checkbox"
+        />
+        <label
+          htmlFor="select"
+        >
+          <span
+            className="style__IconBase-ak3679-0 xhyCY icon"
+            type={null}
+          >
+            <svg
+              viewBox="0 0 143 143"
+            >
+              <path
+                d="M67.1 123c-1.8 0-3.5-.7-4.8-1.9l-48.6-45c-2.8-2.6-3-7.1-.4-9.9 2.6-2.8 7.1-3 9.9-.4l42.6 39.4 52.8-78.5c2.2-3.2 6.5-4.1 9.7-1.9s4.1 6.5 1.9 9.7l-57.4 85.2c-1.1 1.7-3 2.8-5 3-.1.3-.4.3-.7.3z"
+              />
+            </svg>
+          </span>
+        </label>
+      </div>
+    </span>
+  </div>
+  <div
+    className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
+    onMouseDown={[Function]}
+  >
+    <span
+      className="cell-content"
+    >
+      4217
+    </span>
+  </div>
+  <div
+    className="style__DaTableCellBase-sc-1ed6rma-0 blLFYm cell-main cell-main-1"
+    onMouseDown={[Function]}
+  >
+    <span
+      className="cell-content"
+    >
+      Something
+    </span>
+  </div>
+  <div
+    className="style__DaTableCellBase-sc-1ed6rma-0 etkGNS cell-basic cell-basic-1"
+    onMouseDown={[Function]}
+  >
+    <span
+      className="cell-content"
+    >
+      Something else
+    </span>
+  </div>
+</div>
+`;

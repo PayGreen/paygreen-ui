@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__DaTableBase-sc-1n0gkx2-0 itjXCs"
+>
+  <div
+    className="table"
+  >
+    <div
+      className="style__DaTableRowBase-cqmn2v-0 cOsXFb"
+    >
+      <div
+        className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="cell-content"
+        >
+          4217
+        </span>
+      </div>
+      <div
+        className="style__DaTableCellBase-sc-1ed6rma-0 blLFYm cell-main cell-main-1"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="cell-content"
+        >
+          Something
+        </span>
+      </div>
+      <div
+        className="style__DaTableCellBase-sc-1ed6rma-0 etkGNS cell-basic cell-basic-1"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="cell-content"
+        >
+          Something else
+        </span>
+      </div>
+    </div>
+    <div
+      className="style__DaTableRowBase-cqmn2v-0 cOsXFb"
+    >
+      <div
+        className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="cell-content"
+        >
+          4217
+        </span>
+      </div>
+      <div
+        className="style__DaTableCellBase-sc-1ed6rma-0 blLFYm cell-main cell-main-1"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="cell-content"
+        >
+          Something
+        </span>
+      </div>
+      <div
+        className="style__DaTableCellBase-sc-1ed6rma-0 etkGNS cell-basic cell-basic-1"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="cell-content"
+        >
+          Something else
+        </span>
+      </div>
+    </div>
+    <div
+      className="style__DaTableRowBase-cqmn2v-0 cOsXFb"
+    >
+      <div
+        className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="cell-content"
+        >
+          4217
+        </span>
+      </div>
+      <div
+        className="style__DaTableCellBase-sc-1ed6rma-0 blLFYm cell-main cell-main-1"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="cell-content"
+        >
+          Something
+        </span>
+      </div>
+      <div
+        className="style__DaTableCellBase-sc-1ed6rma-0 etkGNS cell-basic cell-basic-1"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="cell-content"
+        >
+          Something else
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
