@@ -1,9 +1,13 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { ThemeDefault } from '../../theme';
-import Dot from './Dot';
+import Footer from './Footer';
 
 it('renders without crashing', () => {
-    const component = TestRenderer.create(<Dot theme={ThemeDefault} />);
+    const component = TestRenderer.create(
+        <Footer theme={ThemeDefault}>
+            Something
+        </Footer>
+    );
     expect(component.toJSON()).toMatchSnapshot();
 });
