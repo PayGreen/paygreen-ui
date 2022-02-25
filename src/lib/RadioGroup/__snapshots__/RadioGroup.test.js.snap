@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<fieldset
+  className="style__RadioGroupBase-sc-1x8euva-0 kCKhdr"
+>
+  <legend
+    className="style__DaLabelBase-sc-67p5vh-0 ZaevI"
+  >
+    Radio Label
+  </legend>
+  <div
+    className="style__RadioBase-bg7b95-0 lmpYlp"
+  >
+    <input
+      defaultChecked={false}
+      disabled={false}
+      id="test0"
+      name="test"
+      required={false}
+      type="radio"
+      value="first"
+    />
+    <label
+      htmlFor="test0"
+    >
+      First Choice
+    </label>
+  </div>
+  <div
+    className="style__RadioBase-bg7b95-0 lmpYlp"
+  >
+    <input
+      defaultChecked={false}
+      disabled={false}
+      id="test1"
+      name="test"
+      required={false}
+      type="radio"
+      value="second"
+    />
+    <label
+      htmlFor="test1"
+    >
+      Second Choice
+    </label>
+  </div>
+</fieldset>
+`;

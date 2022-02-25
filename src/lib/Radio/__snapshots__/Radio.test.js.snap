@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__RadioBase-bg7b95-0 lmpYlp"
+>
+  <input
+    disabled={false}
+    id="first"
+    type="radio"
+  />
+  <label
+    htmlFor="first"
+  >
+    First Choice
+  </label>
+</div>
+`;
