@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`renders without crashing 1`] = `
-<div
-  className="style__PopinBase-sc-1ky0zqo-0 kIQbUy"
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</div>
-`;
