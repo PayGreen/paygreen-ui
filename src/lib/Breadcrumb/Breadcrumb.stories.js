@@ -28,7 +28,7 @@ const sampleLinks = [
 ];
 
 export default {
-    title: folder.block + 'Breadcrumb',
+    title: folder.nav + 'Breadcrumb',
     argTypes: {
         colorType: {
             name: labels.colorType,

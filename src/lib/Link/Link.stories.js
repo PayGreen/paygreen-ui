@@ -87,23 +87,23 @@ LinkInText.args = {
 export const ListOfLinks = args => (
     <>
         <a href="#">
-            <Link
+            <LinkComponent
                 colorTheme={colorThemeOptions.secondary}
                 hasUnderline={false}
                 {...args}
             >
                 First link
-            </Link>
+            </LinkComponent>
         </a>
 
         <a href="#">
-            <Link
+            <LinkComponent
                 colorTheme={colorThemeOptions.tertiary}
                 hasUnderline={false}
                 {...args}
             >
                 Second link
-            </Link>
+            </LinkComponent>
         </a>
     </>
 );

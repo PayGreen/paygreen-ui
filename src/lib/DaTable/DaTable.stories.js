@@ -151,7 +151,7 @@ const sampleRows = [
 ];
 
 export default {
-    title: folder.button + 'Button',
+    title: folder.table + folder.sub.daTable + 'DaTable',
     argTypes: {
         blockWidth: {
             name: labels.blockWidth,
