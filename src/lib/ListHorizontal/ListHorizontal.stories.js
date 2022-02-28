@@ -44,7 +44,7 @@ export default {
             name: labels.colorPallet,
             options: Object.values(colorPalletOptions),
             control: 'radio',
-            defaultValue: colorThemeDefault,
+            defaultValue: colorPalletDefault,
         },
         colorWab: {
             name: labels.colorWab,
