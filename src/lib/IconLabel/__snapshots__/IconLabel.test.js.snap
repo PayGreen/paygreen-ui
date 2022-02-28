@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <span
-  className="style__IconLabelBase-sc-113x6jx-0 Vhqks"
+  className="style__IconLabelBase-sc-113x6jx-0 coEcVS"
 >
   <span
-    className="style__IconBase-ak3679-0 cYreIg icon"
+    className="style__IconBase-sc-ak3679-0 hgCMcP icon"
     type={null}
   >
     <svg

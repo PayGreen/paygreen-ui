@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -13,27 +11,47 @@ import {
 import labels from '../../shared/labels';
 import Loader from './Loader';
 
-storiesOf(folder.loading + 'Loader', module)
-    .addDecorator(withKnobs)
-    .add('Loader', () => (
-        <Loader
-            isActive={boolean(labels.isActive, true)}
-            loaderSize={select('Loader size', iconSizeOptions, iconSizeDefault)}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            paddingTop={select(labels.paddingTop, spaceOptions, spaceDefault)}
-            paddingBottom={select(
-                labels.paddingBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-            paddingLateral={select(
-                labels.paddingLateral,
-                spaceOptions,
-                spaceDefault,
-            )}
-        />
-    ));
+export default {
+    title: folder.loading + 'Loader',
+    argTypes: {
+        isActive: {
+            name: labels.isActive,
+            control: 'boolean',
+            defaultValue: true,
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+            defaultValue: colorThemeDefault,
+        },
+        loaderSize: {
+            name: 'Loader size',
+            options: Object.values(iconSizeOptions),
+            control: 'select',
+            defaultValue: iconSizeDefault,
+        },
+        paddingTop: {
+            name: labels.paddingTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceDefault,
+        },
+        paddingBottom: {
+            name: labels.paddingBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceDefault,
+        },
+        paddingLateral: {
+            name: labels.paddingLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceDefault,
+        },
+    },
+};
+
+export const SimpleLoader = ({ ...args }) => {
+    return <Loader {...args} />;
+};

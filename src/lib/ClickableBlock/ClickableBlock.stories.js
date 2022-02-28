@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     imageTypeOptions,
@@ -23,65 +21,121 @@ import Image from '../Image/Image';
 import portraitFile from '../Image/sample/portrait.png';
 import ClickableBlock from './ClickableBlock';
 
-storiesOf(folder.popup + 'ClickableBlock', module)
-    .addDecorator(withKnobs)
-    .add('ClickableBlock', () => (
-        <ClickableBlock
-            isHiddenOnMobile={true}
-            isActive={boolean(labels.isActive, false)}
-            iconSize={select(
-                labels.iconSize,
-                iconSizeOptions,
-                iconSizeOptions.lg,
-            )}
-            colorPallet={select(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletOptions.wab,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            hasBorderTop={boolean('Has border top', false)}
-            hasBorderRight={boolean('Has border right', false)}
-            hasBorderLeft={boolean('Has border left', false)}
-            hasBorderBottom={boolean('Has border bottom', true)}
-            paddingTop={select(labels.padding, spaceOptions, spaceOptions.sm)}
-            paddingBottom={select(
-                labels.padding,
-                spaceOptions,
-                spaceOptions.sm,
-            )}
-            paddingLateral={select(
-                labels.padding,
-                spaceOptions,
-                spaceOptions.sm,
-            )}
-            marginTop={select(labels.margin, spaceOptions, spaceDefault.xs)}
-            marginBottom={select(labels.margin, spaceOptions, spaceDefault.xs)}
-            marginLateral={select(labels.margin, spaceOptions, spaceDefault.xs)}
+export default {
+    title: folder.popup + 'ClickableBlock',
+    argTypes: {
+        isActive: {
+            name: labels.isActive,
+            control: 'boolean',
+        },
+        iconSize: {
+            name: labels.iconSize,
+            options: Object.values(iconSizeOptions),
+            control: 'select',
+        },
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(colorPalletOptions),
+            control: 'select',
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        colorWab: {
+            name: labels.colorWab,
+            options: Object.values(greyOptions),
+            control: 'select',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+        hasBorderTop: {
+            name: 'Has border top',
+            control: 'boolean',
+        },
+        hasBorderRight: {
+            name: 'Has border right',
+            control: 'boolean',
+        },
+        hasBorderLeft: {
+            name: 'Has border left',
+            control: 'boolean',
+        },
+        hasBorderBottom: {
+            name: 'Has border bottom',
+            control: 'boolean',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+        paddingBottom: {
+            name: labels.paddingBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        paddingLateral: {
+            name: labels.paddingLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginLateral: {
+            name: labels.marginLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const ClickableBlockStory = ({ ...args }) => (
+    <ClickableBlock isHiddenOnMobile={true} {...args}>
+        <Image
+            imageType={imageTypeOptions.picture}
+            isCircle={true}
+            blockWidth={imageSizeOptions.xs}
+            marginRight={spaceOptions.md}
         >
-            <Image
-                imageType={imageTypeOptions.picture}
-                isCircle={true}
-                blockWidth={imageSizeOptions.xs}
-                marginRight={spaceOptions.md}
-            >
-                <img src={portraitFile} alt="picture" />
-            </Image>
+            <img src={portraitFile} alt="picture" />
+        </Image>
 
-            <div>
-                <Title>Jane Dae</Title>
+        <div>
+            <Title>Jane Dae</Title>
 
-                <Text>Lorem Ipsum Store</Text>
-            </div>
-        </ClickableBlock>
-    ));
+            <Text>Lorem Ipsum Store</Text>
+        </div>
+    </ClickableBlock>
+);
+
+ClickableBlockStory.args = {
+    isActive: false,
+    iconSize: iconSizeOptions.lg,
+    colorPallet: colorPalletOptions.wab,
+    colorTheme: colorThemeDefault,
+    colorWab: greyDefault,
+    colorStatus: formStatusDefault,
+    hasBorderTop: false,
+    hasBorderRight: false,
+    hasBorderLeft: false,
+    hasBorderBottom: true,
+    paddingTop: spaceOptions.sm,
+    paddingBottom: spaceOptions.sm,
+    paddingLateral: spaceOptions.sm,
+    marginTop: spaceDefault.xs,
+    marginBottom: spaceDefault.xs,
+    marginLateral: spaceDefault.xs,
+};

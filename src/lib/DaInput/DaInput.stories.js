@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
 import {
     folder,
     inputWidthOptions,
@@ -12,42 +10,81 @@ import labels from '../../shared/labels';
 import { PhoneIcon, SearchIcon } from '../Icon/Icon';
 import DaInput from './DaInput';
 
-storiesOf(folder.form + 'DaInput', module)
-    .addDecorator(withKnobs)
-    .add('Text', () => (
-        <DaInput
-            placeholder="Firstname Lastname"
-            disabled={boolean(labels.disabled, false)}
-            readOnly={boolean(labels.readOnly, false)}
-            isRounded={boolean(labels.isRounded, false)}
-            fieldSize={radios(
-                labels.fieldSize,
-                buttonSizeOptions,
-                buttonSizeDefault,
-            )}
-            blockWidth={radios(
-                labels.blockWidth,
-                inputWidthOptions,
-                inputWidthDefault,
-            )}
-            hasStaticWidth={boolean(labels.hasStaticWidth, false)}
-            hasHelpButton={boolean(labels.hasHelpButton, false)}
-            icon={boolean(labels.icon, true) ? <SearchIcon /> : null}
-        />
-    ))
-    .add('Tel', () => (
-        <DaInput
-            type="tel"
-            placeholder="+33 (0)6 11 22 33 44"
-            disabled={boolean(labels.disabled, false)}
-            readOnly={boolean(labels.readOnly, false)}
-            isRounded={boolean(labels.isRounded, false)}
-            fieldSize={radios(
-                labels.fieldSize,
-                buttonSizeOptions,
-                buttonSizeDefault,
-            )}
-            hasHelpButton={boolean(labels.hasHelpButton, false)}
-            icon={boolean(labels.icon, true) ? <PhoneIcon /> : null}
-        />
-    ));
+export default {
+    title: folder.form + 'DaInput',
+    argTypes: {
+        disabled: {
+            name: labels.disabled,
+            control: 'boolean',
+        },
+        readOnly: {
+            name: labels.readOnly,
+            control: 'boolean',
+        },
+        isRounded: {
+            name: labels.isRounded,
+            control: 'boolean',
+        },
+        fieldSize: {
+            name: labels.fieldSize,
+            options: Object.values(buttonSizeOptions),
+            control: 'radio',
+        },
+        blockWidth: {
+            name: labels.blockWidth,
+            options: Object.values(inputWidthOptions),
+            control: 'radio',
+        },
+        hasStaticWidth: {
+            name: labels.hasStaticWidth,
+            control: 'boolean',
+        },
+        hasHelpButton: {
+            name: labels.hasHelpButton,
+            control: 'boolean',
+        },
+        icon: {
+            name: labels.icon,
+            control: 'boolean',
+        },
+    },
+};
+
+export const Text = ({ icon, ...args }) => (
+    <DaInput
+        placeholder="Firstname Lastname"
+        icon={icon ? <SearchIcon /> : null}
+        {...args}
+    />
+);
+
+export const Tel = ({ icon, ...args }) => (
+    <DaInput
+        type="tel"
+        placeholder="+33 (0)6 11 22 33 44"
+        icon={icon ? <PhoneIcon /> : null}
+        {...args}
+    />
+);
+
+Text.args = {
+    disabled: false,
+    readOnly: false,
+    isRounded: false,
+    fieldSize: buttonSizeDefault,
+    blockWidth: inputWidthDefault,
+    hasStaticWidth: false,
+    hasHelpButton: false,
+    icon: true,
+};
+
+Tel.args = {
+    disabled: false,
+    readOnly: false,
+    isRounded: false,
+    fieldSize: buttonSizeDefault,
+    blockWidth: inputWidthDefault,
+    hasStaticWidth: false,
+    hasHelpButton: false,
+    icon: true,
+};

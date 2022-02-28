@@ -1,12 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    text,
-    select,
-    radios,
-    boolean,
-} from '@storybook/addon-knobs';
 import {
     folder,
     displayOptions,
@@ -35,78 +27,108 @@ const content = (
     </>
 );
 
-storiesOf(folder.grid + 'InternalGrid', module)
-    .addDecorator(withKnobs)
-    .add('Flex', () => (
-        <InternalGrid
-            flexWrap={radios(labels.flexWrap, flexWrapOptions, flexWrapDefault)}
-            justifyContent={select(
-                labels.justifyContent,
-                justifyContentOptions,
-                justifyContentOptions.spaceBetween,
-            )}
-            alignItems={select(
-                labels.alignItems,
-                alignItemsOptions,
-                alignItemsDefault,
-            )}
-            childrenFlex={text(labels.childrenFlex, 'initial')}
-            childrenMarginLateral={select(
-                labels.childrenMarginLateral,
-                spaceOptions,
-                spaceDefault,
-            )}
-            childrenMarginTop={select(
-                labels.childrenMarginTop,
-                spaceOptions,
-                spaceDefault,
-            )}
-            childrenMarginBottom={select(
-                labels.childrenMarginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-        >
-            {content}
-        </InternalGrid>
-    ))
-    .add('Grid', () => (
-        <InternalGrid
-            hasStaticWidth={boolean(labels.hasStaticWidth, true)}
-            align={radios(labels.align, alignOptions, alignDefault)}
-            displayType={displayOptions.grid}
-            gridTemplateColumns={text(
-                labels.gridTemplateColumns,
-                '1fr 1fr 1fr',
-            )}
-            gridTemplateRows={text(labels.gridTemplateRows, 'repeat(2, 60px)')}
-            gridGap={select(labels.gridGap, spaceOptions, spaceDefault)}
-            justifyItems={select(
-                labels.justifyItems,
-                justifyItemsOptions,
-                justifyItemsDefault,
-            )}
-            alignItems={select(
-                labels.alignItems,
-                alignItemsOptions,
-                alignItemsDefault,
-            )}
-            childrenMarginLateral={select(
-                labels.childrenMarginLateral,
-                spaceOptions,
-                spaceDefault,
-            )}
-            childrenMarginTop={select(
-                labels.childrenMarginTop,
-                spaceOptions,
-                spaceDefault,
-            )}
-            childrenMarginBottom={select(
-                labels.childrenMarginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-        >
-            {content}
-        </InternalGrid>
-    ));
+export default {
+    title: folder.grid + 'InternalGrid',
+    argTypes: {
+        flexWrap: {
+            name: labels.flexWrap,
+            options: Object.values(flexWrapOptions),
+            control: 'radio',
+        },
+        justifyContent: {
+            name: labels.alignItems,
+            options: Object.values(alignItemsOptions),
+            control: 'select',
+        },
+        alignItems: {
+            name: labels.justifyContent,
+            options: Object.values(justifyContentOptions),
+            control: 'select',
+        },
+        childrenFlex: {
+            name: labels.childrenFlex,
+            control: 'text',
+        },
+        childrenMarginLateral: {
+            name: labels.childrenMarginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        childrenMarginTop: {
+            name: labels.childrenMarginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        childrenMarginBottom: {
+            name: labels.childrenMarginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        hasStaticWidth: {
+            name: labels.hasStaticWidth,
+            control: 'boolean',
+        },
+        align: {
+            name: labels.align,
+            options: Object.values(alignOptions),
+            control: 'radio',
+        },
+        gridTemplateColumns: {
+            name: labels.gridTemplateColumns,
+            control: 'text',
+        },
+        gridTemplateRows: {
+            name: labels.gridTemplateRows,
+            control: 'text',
+        },
+        gridGap: {
+            name: labels.gridGap,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        justifyItems: {
+            name: labels.justifyItems,
+            options: Object.values(justifyItemsOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const Flex = ({
+    hasStaticWidth,
+    justifyItems,
+    gridGap,
+    gridTemplateRows,
+    gridTemplateColumns,
+    align,
+    ...args
+}) => <InternalGrid {...args}>{content}</InternalGrid>;
+
+export const Grid = ({ flexWrap, justifyContent, childrenFlex, ...args }) => (
+    <InternalGrid {...args} displayType={displayOptions.grid}>
+        {content}
+    </InternalGrid>
+);
+
+Flex.args = {
+    flexWrap: flexWrapDefault,
+    justifyContent: justifyContentOptions.spaceBetween,
+    alignItems: alignItemsDefault,
+    childrenFlex: 'initial',
+    childrenMarginBottom: spaceDefault,
+    childrenMarginLateral: spaceDefault,
+    childrenMarginTop: spaceDefault,
+};
+
+Grid.args = {
+    alignItems: alignItemsDefault,
+    childrenMarginBottom: spaceDefault,
+    childrenMarginLateral: spaceDefault,
+    childrenMarginTop: spaceDefault,
+    hasStaticWidth: true,
+    justifyItems: justifyItemsDefault,
+    gridGap: spaceDefault,
+    gridTemplateRows: 'repeat(2, 60px)',
+    gridTemplateColumns: '1fr 1fr 1fr',
+    align: alignDefault,
+};

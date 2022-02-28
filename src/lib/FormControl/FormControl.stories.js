@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     blockPositionOptions,
@@ -65,114 +63,174 @@ const MessageContent = (
         erat, porttitor vel.
     </Text>
 );
+export default {
+    title: folder.form + 'FormControl',
+    argTypes: {
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+        required: {
+            name: labels.required,
+            control: 'boolean',
+        },
+        disabled: {
+            name: labels.disabled,
+            control: 'boolean',
+        },
+        icon: {
+            name: labels.icon,
+            control: 'boolean',
+        },
+        hasStaticWidth: {
+            name: labels.hasStaticWidth,
+            control: 'boolean',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+    },
+};
 
-storiesOf(folder.form + 'FormControl', module)
-    .addDecorator(withKnobs)
-    .add('FormControl with DaSelect', () => (
+export const FormControlWithDaSelect = ({
+    colorStatus,
+    required,
+    marginTop,
+    marginBottom,
+    icon,
+}) => (
+    <FormControl
+        colorStatus={colorStatus}
+        required={required}
+        marginTop={marginTop}
+        marginBottom={marginBottom}
+    >
+        <DaLabel>Select label</DaLabel>
+
+        <DaSelect
+            defaultValue=""
+            options={selectOptions}
+            blockWidth={inputWidthOptions.sm}
+            icon={icon ? <UsersIcon /> : null}
+        />
+    </FormControl>
+);
+
+FormControlWithDaSelect.args = {
+    colorStatus: formStatusDefault,
+    required: false,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    icon: true,
+};
+
+export const FormControlWithDaSelectHelpMessage = ({
+    colorStatus,
+    required,
+    icon,
+    hasStaticWidth,
+    disabled,
+}) => {
+    const [isOpen, setOpen] = useState(false);
+
+    return (
         <FormControl
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            required={boolean(labels.required, false)}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
+            colorStatus={colorStatus}
+            required={required}
+            hasStaticWidth={hasStaticWidth}
         >
-            <DaLabel>Select label</DaLabel>
+            <DaLabel>Input label</DaLabel>
 
-            <DaSelect
-                defaultValue=""
-                options={selectOptions}
+            <DaInput
+                placeholder="Firstname Lastname"
                 blockWidth={inputWidthOptions.sm}
-                icon={boolean(labels.icon, true) ? <UsersIcon /> : null}
+                icon={icon ? <CardsIcon /> : null}
+                disabled={disabled}
             />
-        </FormControl>
-    ))
-    .add('FormControl with DaInput, DaHelp and Message', () => {
-        const [isOpen, setOpen] = useState(false);
 
-        return (
-            <FormControl
-                colorStatus={select(
-                    labels.colorStatus,
-                    formStatusOptions,
-                    formStatusDefault,
-                )}
-                required={boolean(labels.required, false)}
-                hasStaticWidth={boolean(labels.hasStaticWidth, false)}
-            >
-                <DaLabel>Input label</DaLabel>
+            <DaHelp onClick={() => setOpen(!isOpen)}>
+                <QuestionBoldIcon />
+            </DaHelp>
 
-                <DaInput
-                    placeholder="Firstname Lastname"
+            {isOpen ? (
+                <Message
+                    arrowBlock={blockPositionOptions.topRight}
                     blockWidth={inputWidthOptions.sm}
-                    icon={boolean(labels.icon, true) ? <CardsIcon /> : null}
-                    disabled={boolean(labels.disabled, false)}
-                />
-
-                <DaHelp onClick={() => setOpen(!isOpen)}>
-                    <QuestionBoldIcon />
-                </DaHelp>
-
-                {isOpen ? (
-                    <Message
-                        arrowBlock={blockPositionOptions.topRight}
-                        blockWidth={inputWidthOptions.sm}
-                    >
-                        {MessageContent}
-                    </Message>
-                ) : (
-                    <></> //to replace 'null' value and avoid error from storybook
-                )}
-            </FormControl>
-        );
-    })
-    .add('Form Control with CheckboxGroup and Message', () => (
-        <FormControl
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
+                >
+                    {MessageContent}
+                </Message>
+            ) : (
+                <></> //to replace 'null' value and avoid error from storybook
             )}
-            required={boolean(labels.required, false)}
-        >
-            <CheckboxGroup
-                name="checkboxes"
-                legend={'Checkboxes Label'}
-                value={checkboxOptions[1].value}
-                options={checkboxOptions}
-            />
-
-            <Message
-                arrowBlock={blockPositionOptions.topLeft}
-                fieldSize={buttonSizeOptions.sm}
-                blockWidth={inputWidthOptions.xs}
-            >
-                {MessageContent}
-            </Message>
         </FormControl>
-    ))
-    .add('FormControl with DaTextarea', () => (
-        <FormControl
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            required={boolean(labels.required, false)}
-            hasStaticWidth={boolean(labels.hasStaticWidth, false)}
-        >
-            <DaLabel>Textarea description</DaLabel>
+    );
+};
 
-            <DaTextarea
-                placeholder="Your text&hellip;"
-                maxLength={800}
-                hasCounter={true}
-            />
-        </FormControl>
-    ));
+FormControlWithDaSelectHelpMessage.args = {
+    colorStatus: formStatusDefault,
+    required: false,
+    hasStaticWidth: false,
+    disabled: false,
+    icon: true,
+};
+
+export const FormControlWithCheckboxGroupMessage = ({
+    colorStatus,
+    required,
+}) => (
+    <FormControl colorStatus={colorStatus} required={required}>
+        <CheckboxGroup
+            name="checkboxes"
+            legend={'Checkboxes Label'}
+            value={checkboxOptions[1].value}
+            options={checkboxOptions}
+        />
+
+        <Message
+            arrowBlock={blockPositionOptions.topLeft}
+            fieldSize={buttonSizeOptions.sm}
+            blockWidth={inputWidthOptions.xs}
+        >
+            {MessageContent}
+        </Message>
+    </FormControl>
+);
+
+FormControlWithCheckboxGroupMessage.args = {
+    colorStatus: formStatusDefault,
+    required: false,
+};
+
+export const FormControlWithDaTextarea = ({
+    colorStatus,
+    required,
+    hasStaticWidth,
+}) => (
+    <FormControl
+        colorStatus={colorStatus}
+        required={required}
+        hasStaticWidth={hasStaticWidth}
+    >
+        <DaLabel>Textarea description</DaLabel>
+
+        <DaTextarea
+            placeholder="Your text&hellip;"
+            maxLength={800}
+            hasCounter={true}
+        />
+    </FormControl>
+);
+
+FormControlWithCheckboxGroupMessage.args = {
+    colorStatus: formStatusDefault,
+    required: false,
+    hasStaticWidth: false,
+};

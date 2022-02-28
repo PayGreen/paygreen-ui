@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
@@ -10,18 +8,33 @@ import labels from '../../shared/labels';
 import DaHelp from './DaHelp';
 import { QuestionBoldIcon } from '../Icon/Icon';
 
-storiesOf(folder.form + 'DaHelp', module)
-    .addDecorator(withKnobs)
-    .add('DaHelp', () => (
-        <DaHelp
-            fieldSize={radios(
-                labels.fieldSize,
-                buttonSizeOptions,
-                buttonSizeDefault,
-            )}
-            isActive={boolean(labels.isActive, false)}
-            isRounded={boolean(labels.isRounded, false)}
-        >
-            <QuestionBoldIcon />
-        </DaHelp>
-    ));
+export default {
+    title: folder.form + 'DaHelp',
+    argTypes: {
+        fieldSize: {
+            name: labels.fieldSize,
+            options: Object.values(buttonSizeOptions),
+            control: 'radio',
+        },
+        isActive: {
+            name: labels.isActive,
+            control: 'boolean',
+        },
+        isRounded: {
+            name: labels.isRounded,
+            control: 'boolean',
+        },
+    },
+};
+
+export const Help = ({ ...args }) => (
+    <DaHelp {...args}>
+        <QuestionBoldIcon />
+    </DaHelp>
+);
+
+Help.args = {
+    fieldSize: buttonSizeDefault,
+    isActive: false,
+    isRounded: false,
+};

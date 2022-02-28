@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, text } from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
@@ -24,19 +22,36 @@ const radioOptions = [
     },
 ];
 
-storiesOf(folder.form + folder.sub.radio + 'RadioGroup', module)
-    .addDecorator(withKnobs)
-    .add('RadioGroup', () => (
-        <RadioGroup
-            name="radios"
-            legend={text('Legend', 'Radios Label')}
-            value={radioOptions[1].value}
-            options={radioOptions}
-            disabled={boolean(labels.disabled, false)}
-            fieldSize={radios(
-                labels.fieldSize,
-                buttonSizeOptions,
-                buttonSizeDefault,
-            )}
-        />
-    ));
+export default {
+    title: folder.form + folder.sub.radio + 'RadioGroup',
+    argTypes: {
+        fieldSize: {
+            name: labels.fieldSize,
+            options: Object.values(buttonSizeOptions),
+            control: 'radio',
+        },
+        disabled: {
+            name: labels.disabled,
+            control: 'boolean',
+        },
+        legend: {
+            name: 'Legend',
+            control: 'text',
+        },
+    },
+};
+
+export const SimpleRadioGroup = ({ ...args }) => (
+    <RadioGroup
+        name="radios"
+        value={radioOptions[1].value}
+        options={radioOptions}
+        {...args}
+    />
+);
+
+SimpleRadioGroup.args = {
+    fieldSize: buttonSizeDefault,
+    disabled: false,
+    legend: 'Radios Label',
+};

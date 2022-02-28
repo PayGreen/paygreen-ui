@@ -1,5 +1,7 @@
 import { css } from 'styled-components';
 import { math, transparentize } from 'polished';
+import exponentialSymbols from 'polished/lib/math/presets/exponentialSymbols';
+
 import { colorTypeOptions } from '../../../shared/constants';
 import { color } from './constants';
 
@@ -41,6 +43,7 @@ const dotStyle = {
                     '^2) + ' +
                     props.theme.line +
                     '*2',
+                exponentialSymbols,
             )};
 
         &::before,

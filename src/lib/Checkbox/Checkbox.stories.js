@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
@@ -9,17 +7,26 @@ import {
 import labels from '../../shared/labels';
 import Checkbox from './Checkbox';
 
-storiesOf(folder.form + folder.sub.checkbox + 'Checkbox', module)
-    .addDecorator(withKnobs)
-    .add('Checkbox', () => (
-        <Checkbox
-            id="first"
-            label="First Choice"
-            disabled={boolean(labels.disabled, false)}
-            fieldSize={radios(
-                labels.fieldSize,
-                buttonSizeOptions,
-                buttonSizeDefault,
-            )}
-        />
-    ));
+export default {
+    title: folder.form + folder.sub.checkbox + 'Checkbox',
+    argTypes: {
+        disabled: {
+            name: labels.disabled,
+            control: 'boolean',
+        },
+        fieldSize: {
+            name: labels.fieldSize,
+            options: Object.values(buttonSizeOptions),
+            control: 'radio',
+        },
+    },
+};
+
+export const CheckboxStory = ({ ...args }) => (
+    <Checkbox id="first" label="First Choice" {...args} />
+);
+
+CheckboxStory.args = {
+    fieldSize: buttonSizeDefault,
+    disabled: false,
+};

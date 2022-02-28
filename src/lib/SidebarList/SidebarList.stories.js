@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -13,19 +11,33 @@ import Link from '../Link/Link';
 import SidebarItem from '../SidebarItem/SidebarItem';
 import SidebarList from './SidebarList';
 
-storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
-    .addDecorator(withKnobs)
-    .add('SidebarList', () => (
-        <SidebarList isOpen={boolean(labels.isOpen, true)}>
+export default {
+    title: folder.nav + folder.sub.sidebarMenu + 'SidebarList',
+    argTypes: {
+        isOpen: {
+            name: labels.isOpen,
+            control: 'boolean',
+            defaultValue: true,
+        },
+        isActive: {
+            name: labels.isActive,
+            control: 'boolean',
+            defaultValue: false,
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+            defaultValue: colorThemeDefault,
+        },
+    },
+};
+
+export const SidebarListStory = ({ isActive, isOpen, colorTheme }) => {
+    return (
+        <SidebarList isOpen={isOpen}>
             <a href="#">
-                <SidebarItem
-                    isActive={boolean(labels.isActive, false)}
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                >
+                <SidebarItem isActive={isActive} colorTheme={colorTheme}>
                     <Link
                         colorPallet={colorPalletOptions.wab}
                         colorWab={greyOptions.grey60}
@@ -36,13 +48,7 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
             </a>
 
             <a href="#">
-                <SidebarItem
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                >
+                <SidebarItem colorTheme={colorTheme}>
                     <Link
                         colorPallet={colorPalletOptions.wab}
                         colorWab={greyOptions.grey60}
@@ -52,4 +58,5 @@ storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarList', module)
                 </SidebarItem>
             </a>
         </SidebarList>
-    ));
+    );
+};

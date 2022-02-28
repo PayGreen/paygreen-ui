@@ -1,12 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    text,
-    select,
-    radios,
-    boolean,
-} from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeDefault,
@@ -55,51 +47,94 @@ const DatePickerWrapper = ({ hasButton, defaultValue, ...rest }) => {
     );
 };
 
-storiesOf(folder.form + 'DatePicker', module)
-    .addDecorator(withKnobs)
-    .add('DatePicker', () => (
-        <DatePickerWrapper
-            placeholder={'Ex: ' + dayjs().format('DD/MM/YYYY')}
-            disabled={boolean(labels.disabled, false)}
-            readOnly={boolean(labels.readOnly, false)}
-            locale={select('Locale', localeOptions, localeDefault)}
-            isRounded={boolean(labels.isRounded, false)}
-            fieldSize={radios(
-                labels.fieldSize,
-                buttonSizeOptions,
-                buttonSizeDefault,
-            )}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            minimumDate={text(
-                'Minimum date',
-                dayjs().add(-1, 'M').format('DD/MM/YYYY'),
-            )}
-            maximumDate={text(
-                'Maximum date',
-                dayjs().add(1, 'M').format('DD/MM/YYYY'),
-            )}
-            resetDate={text('Reset date', dayjs().format('DD/MM/YYYY'))}
-            icon={boolean(labels.icon, true) ? <ScheduleIcon /> : null}
-        />
-    ))
-    .add('DatePicker with reset to today', () => (
-        <DatePickerWrapper
-            hasButton={true}
-            placeholder={'Ex: ' + dayjs().format('DD/MM/YYYY')}
-            minimumDate={text(
-                'Minimum date',
-                dayjs().add(-1, 'M').format('DD/MM/YYYY'),
-            )}
-            maximumDate={text(
-                'Maximum date',
-                dayjs().add(1, 'M').format('DD/MM/YYYY'),
-            )}
-            resetDate={dayjs().subtract(1, 'days').format('DD/MM/YYYY')}
-            icon={<ScheduleIcon />}
-            defaultValue={dayjs().subtract(1, 'days').format('DD/MM/YYYY')}
-        />
-    ));
+export default {
+    title: folder.form + 'DatePicker',
+    argTypes: {
+        locale: {
+            name: 'Locale',
+            options: Object.values(localeOptions),
+            control: 'select',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+        fieldSize: {
+            name: labels.fieldSize,
+            options: Object.values(buttonSizeOptions),
+            control: 'radio',
+        },
+        disabled: {
+            name: labels.disabled,
+            control: 'boolean',
+        },
+        readOnly: {
+            name: labels.readOnly,
+            control: 'boolean',
+        },
+        isRounded: {
+            name: labels.isRounded,
+            control: 'boolean',
+        },
+        icon: {
+            name: labels.icon,
+            control: 'boolean',
+        },
+        minimumDate: {
+            name: 'Minimum date',
+            control: 'text',
+        },
+        maximumDate: {
+            name: 'Maximum date',
+            control: 'text',
+        },
+        resetDate: {
+            name: 'Reset date',
+            control: 'text',
+        },
+    },
+};
+
+export const DatePickerStory = ({ icon, ...args }) => (
+    <DatePickerWrapper
+        placeholder={'Ex: ' + dayjs().format('DD/MM/YYYY')}
+        icon={icon ? <ScheduleIcon /> : null}
+        {...args}
+    />
+);
+export const DatePickerStoryWithReset = ({ icon, ...args }) => (
+    <DatePickerWrapper
+        hasButton={true}
+        placeholder={'Ex: ' + dayjs().format('DD/MM/YYYY')}
+        icon={<ScheduleIcon />}
+        defaultValue={dayjs().subtract(1, 'days').format('DD/MM/YYYY')}
+        {...args}
+    />
+);
+
+DatePickerStory.args = {
+    disabled: false,
+    readOnly: false,
+    isRounded: false,
+    locale: localeDefault,
+    fieldSize: buttonSizeDefault,
+    colorStatus: formStatusDefault,
+    minimumDate: dayjs().add(-1, 'M').format('DD/MM/YYYY'),
+    maximumDate: dayjs().add(1, 'M').format('DD/MM/YYYY'),
+    resetDate: dayjs().format('DD/MM/YYYY'),
+    icon: true,
+};
+
+DatePickerStoryWithReset.args = {
+    disabled: false,
+    readOnly: false,
+    isRounded: false,
+    locale: localeDefault,
+    fieldSize: buttonSizeDefault,
+    colorStatus: formStatusDefault,
+    minimumDate: dayjs().add(-1, 'M').format('DD/MM/YYYY'),
+    maximumDate: dayjs().add(1, 'M').format('DD/MM/YYYY'),
+    resetDate: dayjs().subtract(1, 'days').format('DD/MM/YYYY'),
+    icon: true,
+};

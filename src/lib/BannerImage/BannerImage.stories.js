@@ -1,14 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
-    colorThemeDefault,
     decorationOptions,
-    decorationDefault,
     decorationImageOptions,
-    decorationImageDefault,
     fontSizeOptions,
     spaceOptions,
 } from '../../shared/constants';
@@ -19,51 +14,82 @@ import Text from '../Text/Text';
 import BannerImage from './BannerImage';
 import photoFile from './sample/sample.png';
 
-storiesOf(folder.block + 'BannerImage', module)
-    .addDecorator(withKnobs)
-    .add('BannerImage', () => (
-        <BannerImage
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            hasModifiedColor={boolean(labels.hasModifiedColor, true)}
-            topStyle={radios(
-                labels.topStyle,
-                decorationOptions,
-                decorationDefault,
-            )}
-            bottomStyle={radios(
-                labels.bottomStyle,
-                decorationImageOptions,
-                decorationImageDefault,
-            )}
-            image={photoFile}
-        >
-            <Card hasBackground={false}>
-                <Title
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    textSize={fontSizeOptions.lg}
-                    marginLateral={spaceOptions.md}
-                    marginTop={spaceOptions.md}
-                >
-                    Your title with <strong>an emphasis</strong>
-                </Title>
+export default {
+    title: folder.block + 'Banner Image',
+    argTypes: {
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        hasModifiedColor: {
+            name: labels.hasModifiedColor,
+            control: 'boolean',
+        },
+        topStyle: {
+            name: labels.topStyle,
+            options: Object.values(decorationOptions),
+            control: 'radio',
+        },
+        bottomStyle: {
+            name: labels.bottomStyle,
+            options: Object.values(decorationImageOptions),
+            control: 'radio',
+        },
+        image: {
+            control: 'file',
+            default: photoFile,
+        },
+        textSize: {
+            name: labels.textSize,
+            options: Object.values(fontSizeOptions),
+            control: 'select',
+        },
+        marginLateral: {
+            name: labels.marginLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+    },
+};
 
-                <Text
-                    marginLateral={spaceOptions.md}
-                    marginTop={spaceOptions.md}
-                    marginBottom={spaceOptions.md}
-                >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Duis porttitor velit a ultricies aliquet. Donec vehicula in
-                    arcu non sodales.
-                </Text>
-            </Card>
-        </BannerImage>
-    ));
+export const BannerImageStory = args => (
+    <BannerImage
+        colorTheme={args?.colorTheme}
+        hasModifiedColor={args?.hasModifiedColor}
+        topStyle={args?.topStyle}
+        bottomStyle={args?.bottomStyle}
+        image={args?.image}
+    >
+        <Card hasBackground={false}>
+            <Title
+                colorTheme={args?.colorTheme}
+                textSize={args?.textSize}
+                marginLateral={args?.marginLateral}
+                marginTop={args?.marginTop}
+            >
+                Your title with <strong>an emphasis</strong>
+            </Title>
+
+            <Text
+                marginLateral={args?.marginLateral}
+                marginTop={args?.marginTop}
+                marginBottom={args?.marginBottom}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                porttitor velit a ultricies aliquet. Donec vehicula in arcu non
+                sodales.
+            </Text>
+        </Card>
+    </BannerImage>
+);

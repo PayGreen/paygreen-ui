@@ -1,12 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    boolean,
-    radios,
-    select,
-    text,
-} from '@storybook/addon-knobs';
 import {
     folder,
     formStatusOptions,
@@ -16,24 +8,62 @@ import {
 import labels from '../../shared/labels';
 import Textarea from './Textarea';
 
-storiesOf(folder.form + 'Textarea', module)
-    .addDecorator(withKnobs)
-    .add('Textarea', () => (
+export default {
+    title: folder.form + 'Textarea',
+    argTypes: {
+        label: {
+            name: labels.label,
+            control: 'text',
+            defaultValue: 'Your message',
+        },
+        status: {
+            name: labels.status,
+            options: Object.values(formStatusOptions),
+            control: 'radio',
+            defaultValue: formStatusDefault,
+        },
+        hasCounter: {
+            name: labels.hasCounter,
+            control: 'boolean',
+            defaultValue: true,
+        },
+        disabled: {
+            name: labels.disabled,
+            control: 'boolean',
+            defaultValue: false,
+        },
+        readOnly: {
+            name: labels.readOnly,
+            control: 'boolean',
+            defaultValue: false,
+        },
+        hasShadow: {
+            name: labels.hasShadow,
+            control: 'boolean',
+            defaultValue: false,
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.md,
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.md,
+        },
+    },
+};
+
+export const SimpleTextArea = ({ range, ...args }) => {
+    return (
         <Textarea
             id="textarea1"
             placeholder="Your text&hellip;"
-            label={text(labels.label, 'Your message')}
             maxLength={50}
-            status={radios(labels.status, formStatusOptions, formStatusDefault)}
-            hasCounter={boolean(labels.hasCounter, true)}
-            disabled={boolean(labels.disabled, false)}
-            readOnly={boolean(labels.readOnly, false)}
-            hasShadow={boolean(labels.hasShadow, false)}
-            marginTop={select(labels.marginTop, spaceOptions, spaceOptions.md)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceOptions.md,
-            )}
+            {...args}
         />
-    ));
+    );
+};

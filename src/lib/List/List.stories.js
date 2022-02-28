@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     listStyleOptions,
@@ -57,131 +55,163 @@ const sampleBasic = [
     'Lorem ipsum dolor sit adipiscing',
 ];
 
-storiesOf(folder.list + folder.sub.list + 'List', module)
-    .addDecorator(withKnobs)
-    .add('List with icons', () => (
-        <List
-            listStyle={listStyleOptions.icon}
-            hasDashed={boolean('Dashed lines (on desktop)', false)}
-            bulletSize={select(
-                labels.bulletSize,
-                iconSizeOptions,
-                iconSizeDefault,
-            )}
-            marginLateral={select(
-                labels.marginLateral,
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-        >
-            {sampleWithIcons.map((element, index) => (
-                <ListItem
-                    key={index}
-                    htmlTag={iconHtmlTagOptions.button}
-                    bulletStyle={listStyleOptions.icon}
-                    bulletSize={select(
-                        labels.bulletSize,
-                        iconSizeOptions,
-                        iconSizeDefault,
-                    )}
-                >
-                    {element.icon}
+export default {
+    title: folder.list + 'List',
+};
 
-                    <Title colorPallet={colorPalletOptions.theme}>
-                        {element.main}
-                    </Title>
+const defaultArgsType = {
+    hasDashed: {
+        name: 'Dashed lines (on desktop)',
+        control: 'boolean',
+    },
+    bulletSize: {
+        name: labels.bulletSize,
+        options: Object.values(iconSizeOptions),
+        default: iconSizeDefault,
+        control: 'select',
+    },
+    marginLateral: {
+        name: labels.marginLateral,
+        options: Object.values(spaceOptions),
+        default: spaceDefault,
+        control: 'select',
+    },
+    marginTop: {
+        name: labels.marginTop,
+        options: Object.values(spaceOptions),
+        default: spaceDefault,
+        control: 'select',
+    },
+    marginBottom: {
+        name: labels.marginBottom,
+        options: Object.values(spaceOptions),
+        default: spaceDefault,
+        control: 'select',
+    },
+};
 
-                    <Text>{element.details}</Text>
-                </ListItem>
-            ))}
-        </List>
-    ))
-    .add('List with check', () => (
-        <List
-            listStyle={listStyleOptions.icon}
-            hasDashed={boolean('Dashed between li', false)}
-            bulletSize={select(
-                labels.bulletSize,
-                iconSizeOptions,
-                iconSizeDefault,
-            )}
-        >
-            {sampleBasic.map((element, index) => (
-                <ListItem
-                    key={index}
-                    bulletStyle={listStyleOptions.icon}
-                    bulletSize={select(
-                        labels.bulletSize,
-                        iconSizeOptions,
-                        iconSizeDefault,
-                    )}
-                >
-                    <CheckBoldIcon />
+export const ListIcons = args => (
+    <List {...args}>
+        {sampleWithIcons.map((element, index) => (
+            <ListItem
+                key={index}
+                htmlTag={iconHtmlTagOptions.button}
+                bulletStyle={listStyleOptions.icon}
+                bulletSize={args.bulletSize}
+            >
+                {element.icon}
 
-                    <Text>{element}</Text>
-                </ListItem>
-            ))}
-        </List>
-    ))
-    .add('List with dash', () => (
-        <List>
-            {sampleBasic.map((element, index) => (
-                <ListItem
-                    key={index}
-                    bulletSize={select(
-                        labels.bulletSize,
-                        iconSizeOptions,
-                        iconSizeDefault,
-                    )}
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                >
-                    <Text>{element}</Text>
-                </ListItem>
-            ))}
-        </List>
-    ))
-    .add('List with numbers', () => (
-        <List
-            listStyle={listStyleOptions.number}
-            hasDashed={boolean('Dashed between li', false)}
-            bulletSize={select(
-                labels.bulletSize,
-                iconSizeOptions,
-                iconSizeDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-        >
-            {sampleBasic.map((element, index) => (
-                <ListItem
-                    key={index}
-                    bulletStyle={listStyleOptions.number}
-                    bulletSize={select(
-                        labels.bulletSize,
-                        iconSizeOptions,
-                        iconSizeDefault,
-                    )}
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                >
-                    <Text>{element}</Text>
-                </ListItem>
-            ))}
-        </List>
-    ));
+                <Title colorPallet={colorPalletOptions.theme}>
+                    {element.main}
+                </Title>
+
+                <Text>{element.details}</Text>
+            </ListItem>
+        ))}
+    </List>
+);
+ListIcons.args = {
+    bulletSize: iconSizeDefault,
+    marginLateral: spaceDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    hasDashed: false,
+    listStyle: 'icon',
+};
+ListIcons.argTypes = {
+    ...defaultArgsType,
+};
+
+export const ListCheck = args => (
+    <List {...args} listStyle={listStyleOptions.icon}>
+        {sampleBasic.map((element, index) => (
+            <ListItem
+                key={index}
+                bulletStyle={listStyleOptions.icon}
+                bulletSize={args.bulletSize}
+            >
+                <CheckBoldIcon />
+
+                <Text>{element}</Text>
+            </ListItem>
+        ))}
+    </List>
+);
+ListCheck.args = {
+    hasDashed: false,
+    bulletSize: iconSizeDefault,
+};
+ListCheck.argTypes = {
+    bulletSize: defaultArgsType.bulletSize,
+    hasDashed: {
+        name: 'Dashed between li',
+        control: 'boolean',
+    },
+};
+
+export const ListDash = args => (
+    <List {...args}>
+        {sampleBasic.map((element, index) => (
+            <ListItem
+                key={index}
+                bulletSize={args.bulletSize}
+                colorTheme={args.colorTheme}
+            >
+                <Text>{element}</Text>
+            </ListItem>
+        ))}
+    </List>
+);
+
+ListDash.args = {
+    hasDashed: false,
+    bulletSize: iconSizeDefault,
+    colorTheme: colorThemeDefault,
+};
+ListDash.argTypes = {
+    bulletSize: defaultArgsType.bulletSize,
+    colorTheme: {
+        name: labels.colorTheme,
+        options: Object.values(colorThemeOptions),
+        default: colorThemeDefault,
+        control: 'select',
+    },
+    hasDashed: {
+        name: 'Dashed between li',
+        control: 'boolean',
+    },
+};
+
+export const ListNumbers = args => (
+    <List {...args} listStyle={listStyleOptions.number}>
+        {sampleBasic.map((element, index) => (
+            <ListItem
+                key={index}
+                bulletStyle={listStyleOptions.number}
+                bulletSize={args.bulletSize}
+                colorTheme={args.colorTheme}
+            >
+                <Text>{element}</Text>
+            </ListItem>
+        ))}
+    </List>
+);
+
+ListNumbers.args = {
+    hasDashed: false,
+    bulletSize: iconSizeDefault,
+    colorTheme: colorThemeDefault,
+};
+ListNumbers.argTypes = {
+    hasDashed: {
+        name: 'Dashed between li',
+        control: 'boolean',
+    },
+    bulletSize: defaultArgsType.bulletSize,
+    colorTheme: {
+        name: labels.colorTheme,
+        options: Object.values(colorThemeOptions),
+        default: colorThemeDefault,
+        control: 'select',
+    },
+};

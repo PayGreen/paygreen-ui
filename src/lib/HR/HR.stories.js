@@ -1,6 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select, number } from '@storybook/addon-knobs';
+// import { withKnobs, select, number } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -17,44 +16,68 @@ import {
     formStatusDefault,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
-import HR from './HR';
+import HRComponent from './HR';
 
-storiesOf(folder.grid + 'HR', module)
-    .addDecorator(withKnobs)
-    .add('HR', () => (
-        <HR
-            colorType={select(
-                labels.colorType,
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
-            colorPallet={select(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            marginLateral={select(
-                labels.marginLateral,
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-            opacityValue={number(labels.opacityValue, 100)}
-        />
-    ));
+export default {
+    title: folder.grid + 'HR',
+    argTypes: {
+        colorType: {
+            name: labels.colorType,
+            options: Object.values(colorTypeOptions),
+            control: 'radio',
+        },
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(colorPalletOptions),
+            control: 'radio',
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        colorWab: {
+            name: labels.colorWab,
+            options: Object.values(greyOptions),
+            control: 'select',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+        marginLateral: {
+            name: labels.marginLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        opacityValue: {
+            name: labels.opacityValue,
+            control: 'number',
+        },
+    },
+};
+
+export const HR = args => <HRComponent {...args} />;
+
+HR.args = {
+    colorType: colorTypeDefault,
+    colorPallet: colorPalletDefault,
+    colorTheme: colorThemeDefault,
+    colorWab: greyDefault,
+    colorStatus: formStatusDefault,
+    marginLateral: spaceDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    opacityValue: 60,
+};

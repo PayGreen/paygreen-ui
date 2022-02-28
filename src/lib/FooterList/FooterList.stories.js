@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
     fontSizeOptions,
@@ -21,28 +19,51 @@ const sampleLinks = [
     'Fourth link',
 ];
 
-storiesOf(folder.layout + folder.sub.footer + 'FooterList', module)
-    .addDecorator(withKnobs)
-    .add('FooterList', () => (
-        <FooterList
-            textSize={select(labels.textSize, fontSizeOptions, fontSizeDefault)}
-            align={radios(labels.align, alignOptions, alignDefault)}
-            marginLateral={select(
-                labels.marginLateral,
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-        >
-            {sampleLinks.map((link, index) => (
-                <a href="#" key={index}>
-                    <Link hasUnderline={false}>{link}</Link>
-                </a>
-            ))}
-        </FooterList>
-    ));
+export default {
+    title: folder.layout + folder.sub.footer + 'FooterList',
+    argTypes: {
+        textSize: {
+            name: labels.textSize,
+            options: Object.values(fontSizeOptions),
+            control: 'select',
+        },
+        align: {
+            name: labels.align,
+            options: Object.values(alignOptions),
+            control: 'radio',
+        },
+        marginLateral: {
+            name: labels.marginLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const SimpleFooterList = args => (
+    <FooterList {...args}>
+        {sampleLinks.map((link, index) => (
+            <a href="#" key={index}>
+                <Link hasUnderline={false}>{link}</Link>
+            </a>
+        ))}
+    </FooterList>
+);
+
+SimpleFooterList.args = {
+    textSize: fontSizeDefault,
+    align: alignDefault,
+    marginBottom: spaceDefault,
+    marginLateral: spaceDefault,
+    marginTop: spaceDefault,
+};

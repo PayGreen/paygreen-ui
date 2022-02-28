@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     listStyleOptions,
@@ -20,107 +18,112 @@ import Text from '../Text/Text';
 import Title from '../Title/Title';
 import ListItem from './ListItem';
 
-storiesOf(folder.list + folder.sub.list + 'ListItem', module)
-    .addDecorator(withKnobs)
-    .add('ListItem with Icon', () => (
-        <ListItem
-            htmlTag={iconHtmlTagOptions.button}
-            isClicked={boolean(labels.isActive, false)}
-            arrowStyle={radios(
-                'Arrow (if active)',
-                decorationOptions,
-                decorationOptions.right,
-            )}
-            bulletStyle={listStyleOptions.icon}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            bulletSize={select(
-                labels.bulletSize,
-                iconSizeOptions,
-                iconSizeDefault,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-        >
-            <LeafIcon
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-            />
+export default {
+    title: folder.list + 'ListItem',
+};
 
-            <Title
-                colorPallet={colorPalletOptions.theme}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-            >
-                First content
-            </Title>
+const defaultArgsType = {
+    bulletSize: {
+        name: labels.bulletSize,
+        options: Object.values(iconSizeOptions),
+        control: 'select',
+    },
+    arrowStyle: {
+        name: 'Arrow (if active)',
+        options: Object.values(decorationOptions),
+        default: decorationOptions.right,
+        control: 'radio',
+    },
+    isClicked: {
+        name: labels.isActive,
+        control: 'boolean',
+    },
+    colorTheme: {
+        name: labels.colorTheme,
+        options: Object.values(colorThemeOptions),
+        default: colorThemeDefault,
+        control: 'select',
+    },
+    marginTop: {
+        name: labels.marginTop,
+        options: Object.values(spaceOptions),
+        default: spaceDefault,
+        control: 'select',
+    },
+    marginBottom: {
+        name: labels.marginBottom,
+        options: Object.values(spaceOptions),
+        default: spaceDefault,
+        control: 'select',
+    },
+};
 
-            <Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Text>
-        </ListItem>
-    ))
-    .add('ListItem with check', () => (
-        <ListItem
-            bulletStyle={listStyleOptions.icon}
-            bulletSize={select(
-                labels.bulletSize,
-                iconSizeOptions,
-                iconSizeDefault,
-            )}
-        >
-            <CheckBoldIcon />
+export const ListItemIcons = args => (
+    <ListItem
+        {...args}
+        colorPallet={colorPalletOptions.theme}
+        htmlTag={iconHtmlTagOptions.button}
+        bulletStyle={listStyleOptions.icon}
+    >
+        <LeafIcon colorTheme={args.colorTheme} />
 
-            <Text>First content</Text>
-        </ListItem>
-    ))
-    .add('ListItem with dash', () => (
-        <ListItem
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            bulletSize={select(
-                labels.bulletSize,
-                iconSizeOptions,
-                iconSizeDefault,
-            )}
-        >
-            <Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Text>
-        </ListItem>
-    ))
-    .add('ListItem with number', () => (
-        <ListItem
-            bulletStyle={listStyleOptions.number}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            bulletSize={select(
-                labels.bulletSize,
-                iconSizeOptions,
-                iconSizeDefault,
-            )}
-        >
-            <Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Text>
-        </ListItem>
-    ));
+        <Title colorPallet={args.colorPallet} colorTheme={args.colorTheme}>
+            First content
+        </Title>
+
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+    </ListItem>
+);
+
+ListItemIcons.args = {
+    arrowStyle: decorationOptions.right,
+    colorTheme: colorThemeDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    isClicked: false,
+};
+ListItemIcons.argTypes = {
+    ...defaultArgsType,
+};
+
+export const ListItemCheck = args => (
+    <ListItem {...args} bulletStyle={listStyleOptions.icon}>
+        <CheckBoldIcon />
+
+        <Text>First content</Text>
+    </ListItem>
+);
+ListItemCheck.args = {
+    bulletSize: iconSizeDefault,
+};
+ListItemCheck.argTypes = {
+    bulletSize: defaultArgsType.bulletSize,
+};
+
+export const ListItemDash = args => (
+    <ListItem {...args}>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+    </ListItem>
+);
+ListItemDash.args = {
+    colorTheme: colorThemeDefault,
+    bulletSize: iconSizeDefault,
+};
+ListItemDash.argTypes = {
+    colorTheme: defaultArgsType.colorTheme,
+    bulletSize: defaultArgsType.bulletSize,
+};
+
+export const ListItemNumber = args => (
+    <ListItem {...args} bulletStyle={listStyleOptions.number}>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+    </ListItem>
+);
+ListItemNumber.args = {
+    colorTheme: colorThemeDefault,
+    bulletSize: iconSizeDefault,
+};
+ListItemNumber.argTypes = {
+    colorTheme: defaultArgsType.colorTheme,
+    bulletSize: defaultArgsType.bulletSize,
+};

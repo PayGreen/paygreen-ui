@@ -1,12 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    boolean,
-    radios,
-    select,
-    text,
-} from '@storybook/addon-knobs';
 import {
     folder,
     formStatusOptions,
@@ -81,28 +73,74 @@ const optionsGroup = [
     },
 ];
 
-storiesOf(folder.form + 'Select', module)
-    .addDecorator(withKnobs)
-    .add('Select', () => (
-        <Select
-            id="select1"
-            label={text(labels.label, 'Your choice')}
-            defaultValue=""
-            options={boolean(labels.optgroup, true) ? optionsGroup : options}
-            disabled={boolean(labels.disabled, false)}
-            readOnly={boolean(labels.readOnly, false)}
-            status={radios(labels.status, formStatusOptions, formStatusDefault)}
-            blockWidth={radios(
-                labels.blockWidth,
-                inputWidthOptions,
-                inputWidthDefault,
-            )}
-            hasShadow={boolean(labels.hasShadow, false)}
-            marginTop={select(labels.marginTop, spaceOptions, spaceOptions.md)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceOptions.md,
-            )}
-        />
-    ));
+export default {
+    title: folder.form + 'Select',
+    argTypes: {
+        label: {
+            name: labels.label,
+            control: 'text',
+        },
+        optgroup: {
+            name: labels.optgroup,
+            control: 'boolean',
+        },
+        status: {
+            name: labels.status,
+            options: Object.values(formStatusOptions),
+            control: 'radio',
+        },
+        disabled: {
+            name: labels.disabled,
+            control: 'boolean',
+        },
+        readOnly: {
+            name: labels.readOnly,
+            control: 'boolean',
+        },
+        isRounded: {
+            name: labels.isRounded,
+            control: 'boolean',
+        },
+        blockWidth: {
+            name: labels.blockWidth,
+            options: Object.values(inputWidthOptions),
+            control: 'radio',
+        },
+        hasShadow: {
+            name: labels.hasShadow,
+            control: 'boolean',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const SimpleSelect = ({ optgroup, ...args }) => (
+    <Select
+        id="select1"
+        defaultValue=""
+        options={optgroup ? optionsGroup : options}
+        {...args}
+    />
+);
+
+SimpleSelect.args = {
+    label: 'Your choice',
+    optgroup: true,
+    disabled: false,
+    readOnly: false,
+    isRounded: false,
+    status: formStatusDefault,
+    blockWidth: inputWidthDefault,
+    hasShadow: false,
+    marginTop: spaceOptions.md,
+    marginBottom: spaceOptions.md,
+};

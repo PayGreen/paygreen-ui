@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     shadowSizeOptions,
@@ -14,59 +12,78 @@ import {
 import labels from '../../shared/labels';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
-import Popin from './Popin';
+import PopinComponent from './Popin';
 
-storiesOf(folder.popup + 'Popin', module)
-    .addDecorator(withKnobs)
-    .add('Popin', () => (
-        <div style={{ position: 'relative', marginTop: '100px' }}>
-            <Popin
-                isActive={boolean(labels.isActive, true)}
-                align={select(
-                    labels.align,
-                    blockPositionOptions,
-                    blockPositionOptions.left,
-                )}
-                blockWidth={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.sm,
-                )}
-                radiusSize={select(
-                    labels.radiusSize,
-                    radiusOptions,
-                    radiusDefault,
-                )}
-                shadowSize={select(
-                    labels.shadowSize,
-                    shadowSizeOptions,
-                    shadowSizeOptions.sm,
-                )}
-                marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-                marginBottom={select(
-                    labels.marginBottom,
-                    spaceOptions,
-                    spaceDefault,
-                )}
+export default {
+    title: folder.popup + 'Popin',
+    argTypes: {
+        isActive: {
+            name: labels.isActive,
+            control: 'boolean',
+        },
+        align: {
+            name: labels.align,
+            options: Object.values(blockPositionOptions),
+            control: 'select',
+        },
+        blockWidth: {
+            name: labels.blockWidth,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        radiusSize: {
+            name: labels.radiusSize,
+            options: Object.values(radiusOptions),
+            control: 'select',
+        },
+        shadowSize: {
+            name: labels.shadowSize,
+            options: Object.values(shadowSizeOptions),
+            control: 'select',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const Popin = args => (
+    <div style={{ position: 'relative', marginTop: '100px' }}>
+        <PopinComponent {...args}>
+            <Title
+                marginTop={spaceOptions.xs}
+                marginLateral={spaceOptions.xs}
+                textSize={fontSizeOptions.sm}
             >
-                <Title
-                    marginTop={spaceOptions.xs}
-                    marginLateral={spaceOptions.xs}
-                    textSize={fontSizeOptions.sm}
-                >
-                    Demo
-                </Title>
+                Demo
+            </Title>
 
-                <Text
-                    marginTop={spaceOptions.sm}
-                    marginLateral={spaceOptions.xs}
-                    marginBottom={spaceOptions.xs}
-                    textSize={fontSizeOptions.sm}
-                >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                </Text>
-            </Popin>
-        </div>
-    ));
+            <Text
+                marginTop={spaceOptions.sm}
+                marginLateral={spaceOptions.xs}
+                marginBottom={spaceOptions.xs}
+                textSize={fontSizeOptions.sm}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Text>
+        </PopinComponent>
+    </div>
+);
+
+Popin.args = {
+    isActive: true,
+    align: blockPositionOptions.left,
+    blockWidth: spaceOptions.sm,
+    radiusSize: radiusDefault,
+    shadowSize: shadowSizeOptions.sm,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+};

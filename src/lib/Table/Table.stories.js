@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -13,20 +11,37 @@ import TableCell from '../TableCell/TableCell';
 import TableRow from '../TableRow/TableRow';
 import Table from './Table';
 
-storiesOf(folder.table + folder.sub.table + 'Table', module)
-    .addDecorator(withKnobs)
-    .add('Table', () => (
+export default {
+    title: folder.table + folder.sub.table + 'Table',
+    argTypes: {
+        hasLargeFirstColumn: {
+            name: 'Large first column',
+            control: 'boolean',
+            defaultValue: true,
+        },
+        hasOverflowEmphasis: {
+            name: 'Has overflow emphasis',
+            control: 'boolean',
+            defaultValue: false,
+        },
+        hasBackground: {
+            name: labels.hasBackground,
+            control: 'boolean',
+            defaultValue: false,
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+            defaultValue: colorThemeDefault,
+        },
+    },
+};
+
+export const SimpleTable = args => {
+    return (
         <Grid childrenFlex={1}>
-            <Table
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                hasLargeFirstColumn={boolean('Large first column', true)}
-                hasOverflowEmphasis={boolean('Has overflow emphasis', false)}
-                hasBackground={boolean(labels.hasBackground, false)}
-            >
+            <Table {...args}>
                 <TableRow isMain={true}>
                     <TableCell>Table name</TableCell>
 
@@ -77,4 +92,5 @@ storiesOf(folder.table + folder.sub.table + 'Table', module)
                 </TableRow>
             </Table>
         </Grid>
-    ));
+    );
+};

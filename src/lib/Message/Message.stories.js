@@ -1,20 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    radios,
-    select,
-    text,
-    boolean,
-} from '@storybook/addon-knobs';
+
 import {
     folder,
     buttonSizeOptions,
     buttonSizeDefault,
-    colorTypeOptions,
     colorTypeDefault,
     colorPalletOptions,
-    colorThemeOptions,
     colorThemeDefault,
     formStatusOptions,
     formStatusDefault,
@@ -34,68 +25,95 @@ import { CautionIcon } from '../Icon/Icon';
 
 const { wab, ...buttonColorPalletOptions } = colorPalletOptions;
 
-storiesOf(folder.popup + 'Message', module)
-    .addDecorator(withKnobs)
-    .add('Message', () => (
-        <Message
-            arrowBlock={select(
-                'Arrow block',
-                blockPositionOptions,
-                blockPositionDefault,
-            )}
-            colorType={radios(
-                labels.colorType,
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
-            colorPallet={radios(
-                labels.colorPallet,
-                buttonColorPalletOptions,
-                colorPalletOptions.status,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            isRounded={boolean(labels.isRounded, false)}
-            fieldSize={radios(
-                labels.fieldSize,
-                buttonSizeOptions,
-                buttonSizeDefault,
-            )}
-            blockWidth={select(
-                labels.blockWidth,
-                inputWidthOptions,
-                inputWidthDefault,
-            )}
-            hasStaticWidth={boolean(labels.hasStaticWidth, false)}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(labels.marginTop, spaceOptions, spaceDefault)}
-        >
-            {boolean(labels.icon, false) ? (
-                <CautionIcon
-                    iconSize={iconSizeOptions.md}
-                    colorStatus={select(
-                        labels.colorStatus,
-                        formStatusOptions,
-                        formStatusDefault,
-                    )}
-                />
-            ) : (
-                <></>
-            )}
+export default {
+    title: folder.popup + 'Message',
+    argTypes: {
+        arrowBlock: {
+            name: 'Arrow block',
+            options: Object.values(blockPositionOptions),
+            control: 'select',
+        },
+        colorType: {
+            name: labels.colorType,
+            options: Object.values(buttonColorPalletOptions),
+            control: 'radio',
+        },
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(colorPalletOptions),
+            control: 'radio',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+        isRounded: {
+            name: labels.isRounded,
+            control: 'boolean',
+        },
+        fieldSize: {
+            name: labels.fieldSize,
+            options: Object.values(buttonSizeOptions),
+            control: 'radio',
+        },
+        blockWidth: {
+            name: labels.blockWidth,
+            options: Object.values(inputWidthOptions),
+            control: 'select',
+        },
+        hasStaticWidth: {
+            name: labels.hasStaticWidth,
+            control: 'boolean',
+        },
+        icon: {
+            name: labels.icon,
+            control: 'boolean',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        text: {
+            name: labels.label,
+            control: 'text',
+        },
+    },
+};
 
-            <Text textSize={fontSizeOptions.sm}>
-                {text(
-                    labels.text,
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend aliquet libero. Morbi ultrices tristique leo vitae porta.',
-                )}
-            </Text>
-        </Message>
-    ));
+export const SimpleMessage = ({ text, icon, ...args }) => (
+    <Message {...args}>
+        {icon ? (
+            <CautionIcon
+                iconSize={iconSizeOptions.md}
+                colorStatus={args.colorStatus}
+            />
+        ) : (
+            <></>
+        )}
+
+        <Text textSize={fontSizeOptions.sm}>{text}</Text>
+    </Message>
+);
+
+SimpleMessage.args = {
+    arrowBlock: blockPositionDefault,
+    colorType: colorTypeDefault,
+    colorPallet: colorPalletOptions.status,
+    colorTheme: colorThemeDefault,
+    colorStatus: formStatusDefault,
+    isRounded: false,
+    fieldSize: buttonSizeDefault,
+    hasStaticWidth: false,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    blockWidth: inputWidthDefault,
+    icon: false,
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend aliquet libero. Morbi ultrices tristique leo vitae porta.',
+};

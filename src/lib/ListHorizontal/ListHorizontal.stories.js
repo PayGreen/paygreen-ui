@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorTypeOptions,
@@ -27,77 +25,122 @@ import ListHorizontal from './ListHorizontal';
 const sampleTexts = ['Text one', 'Text two', 'Text three', 'Text four'];
 const sampleLinks = ['Link one', 'Link two', 'Link three', 'Link four'];
 
-storiesOf(folder.list + 'ListHorizontal', module)
-    .addDecorator(withKnobs)
-    .add('ListHorizontal of Texts', () => (
+export default {
+    title: folder.list + 'ListHorizontal',
+    argTypes: {
+        colorType: {
+            name: labels.colorType,
+            control: 'select',
+            options: Object.values(colorTypeOptions),
+            defaultValue: colorTypeDefault,
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+            defaultValue: colorThemeDefault,
+        },
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(colorPalletOptions),
+            control: 'radio',
+            defaultValue: colorPalletDefault,
+        },
+        colorWab: {
+            name: labels.colorWab,
+            options: Object.values(greyOptions),
+            control: 'select',
+            defaultValue: greyOptions.grey30,
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+            defaultValue: formStatusDefault,
+        },
+        align: {
+            name: labels.align,
+            options: Object.values(alignOptions),
+            control: 'radio',
+            defaultValue: alignDefault,
+        },
+        hasBackground: {
+            name: labels.hasBackground,
+            control: 'boolean',
+            defaultValue: true,
+        },
+        paddingBottom: {
+            name: labels.paddingBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.sm,
+        },
+        paddingLateral: {
+            name: labels.paddingLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.sm,
+        },
+        paddingTop: {
+            name: labels.paddingTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.sm,
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceDefault,
+        },
+        marginLateral: {
+            name: labels.marginLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceDefault,
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceDefault,
+        },
+    },
+};
+
+export const WithTexts = ({
+    colorType,
+    colorPallet,
+    colorTheme,
+    colorWab,
+    colorStatus,
+    align,
+    hasBackground,
+    paddingBottom,
+    paddingLateral,
+    paddingTop,
+}) => {
+    return (
         <ListHorizontal
-            colorType={radios(
-                labels.colorType,
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
-            colorPallet={radios(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletOptions.wab,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyOptions.grey30)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            align={select(labels.align, alignOptions, alignDefault)}
-            hasBackground={boolean(labels.hasBackground, true)}
-            paddingLateral={select(
-                labels.paddingLateral,
-                spaceOptions,
-                spaceOptions.sm,
-            )}
-            paddingTop={select(
-                labels.paddingTop,
-                spaceOptions,
-                spaceOptions.sm,
-            )}
-            paddingBottom={select(
-                labels.paddingBottom,
-                spaceOptions,
-                spaceOptions.sm,
-            )}
+            colorType={colorType}
+            colorPallet={colorPallet}
+            colorTheme={colorTheme}
+            colorWab={colorWab}
+            colorStatus={colorStatus}
+            align={align}
+            hasBackground={hasBackground}
+            paddingLateral={paddingLateral}
+            paddingTop={paddingTop}
+            paddingBottom={paddingBottom}
         >
             {sampleTexts.map((element, index) => (
                 <Text
                     key={index}
-                    colorType={radios(
-                        labels.colorType,
-                        colorTypeOptions,
-                        colorTypeDefault,
-                    )}
-                    colorPallet={radios(
-                        labels.colorPallet,
-                        colorPalletOptions,
-                        colorPalletOptions.wab,
-                    )}
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    colorWab={select(
-                        labels.colorWab,
-                        greyOptions,
-                        greyOptions.grey30,
-                    )}
-                    colorStatus={select(
-                        labels.colorStatus,
-                        formStatusOptions,
-                        formStatusDefault,
-                    )}
+                    colorType={colorType}
+                    colorPallet={colorPallet}
+                    colorTheme={colorTheme}
+                    colorWab={colorWab}
+                    colorStatus={colorStatus}
                     htmlTag={textHtmlTagOptions.span}
                     textSize={fontSizeOptions.xs}
                 >
@@ -105,71 +148,39 @@ storiesOf(folder.list + 'ListHorizontal', module)
                 </Text>
             ))}
         </ListHorizontal>
-    ))
-    .add('ListHorizontal of Links', () => (
+    );
+};
+export const WithLinks = ({
+    colorType,
+    colorPallet,
+    colorTheme,
+    colorWab,
+    colorStatus,
+    align,
+    marginLateral,
+    marginTop,
+    marginBottom,
+}) => {
+    return (
         <ListHorizontal
-            colorType={radios(
-                labels.colorType,
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
-            colorPallet={radios(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyOptions.grey30)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            align={select(labels.align, alignOptions, alignDefault)}
-            marginLateral={select(
-                labels.marginLateral,
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
+            colorType={colorType}
+            colorPallet={colorPallet}
+            colorTheme={colorTheme}
+            colorWab={colorWab}
+            colorStatus={colorStatus}
+            align={align}
+            marginLateral={marginLateral}
+            marginTop={marginTop}
+            marginBottom={marginBottom}
         >
             {sampleLinks.map((element, index) => (
                 <a href="#" key={index}>
                     <Link
-                        colorType={radios(
-                            labels.colorType,
-                            colorTypeOptions,
-                            colorTypeDefault,
-                        )}
-                        colorPallet={radios(
-                            labels.colorPallet,
-                            colorPalletOptions,
-                            colorPalletDefault,
-                        )}
-                        colorTheme={select(
-                            labels.colorTheme,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
-                        colorWab={select(
-                            labels.colorWab,
-                            greyOptions,
-                            greyOptions.grey30,
-                        )}
-                        colorStatus={select(
-                            labels.colorStatus,
-                            formStatusOptions,
-                            formStatusDefault,
-                        )}
+                        colorType={colorType}
+                        colorPallet={colorPallet}
+                        colorTheme={colorTheme}
+                        colorWab={colorWab}
+                        colorStatus={colorStatus}
                         hasUppercase={true}
                         hasUnderline={false}
                     >
@@ -178,4 +189,5 @@ storiesOf(folder.list + 'ListHorizontal', module)
                 </a>
             ))}
         </ListHorizontal>
-    ));
+    );
+};

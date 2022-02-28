@@ -1,12 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    radios,
-    select,
-    number,
-    text,
-} from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -23,29 +15,52 @@ import DataLegend from './DataLegend';
 
 const { wab, ...barColorPalletOptions } = colorPalletOptions;
 
-storiesOf(folder.graph + 'DataLegend', module)
-    .addDecorator(withKnobs)
-    .add('DataLegend', () => (
-        <DataLegend
-            textSize={select(labels.textSize, fontSizeOptions, fontSizeDefault)}
-            value={number(labels.value, 25)}
-            unit={text(labels.unity, '%')}
-            colorPallet={radios(
-                labels.colorPallet,
-                barColorPalletOptions,
-                colorPalletDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-        >
-            du <strong>CO2 compensé</strong>
-        </DataLegend>
-    ));
+export default {
+    title: folder.graph + 'DataLegend',
+    argTypes: {
+        textSize: {
+            name: labels.textSize,
+            control: 'select',
+            options: Object.values(fontSizeOptions),
+        },
+        unit: {
+            name: labels.unity,
+            control: 'text',
+        },
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(barColorPalletOptions),
+            control: 'radio',
+        },
+        value: {
+            name: labels.value,
+            control: 'number',
+            max: 100,
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const DataLegendeStory = ({ ...args }) => (
+    <DataLegend {...args}>
+        du <strong>CO2 compensé</strong>
+    </DataLegend>
+);
+
+DataLegendeStory.args = {
+    textSize: fontSizeDefault,
+    value: 25,
+    unit: '%',
+    colorPallet: colorPalletDefault,
+    colorTheme: colorThemeDefault,
+    colorStatus: formStatusDefault,
+};

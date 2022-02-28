@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -13,41 +11,46 @@ import { MeterIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import SidebarItem from './SidebarItem';
 
-storiesOf(folder.nav + folder.sub.sidebarMenu + 'SidebarItem', module)
-    .addDecorator(withKnobs)
-    .add('SidebarItem', () => (
+export default {
+    title: folder.nav + folder.sub.sidebarMenu + 'SidebarItem',
+    argTypes: {
+        isActive: {
+            name: labels.isActive,
+            control: 'boolean',
+            defaultValue: false,
+        },
+
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+            defaultValue: colorThemeDefault,
+        },
+
+        paddingLateral: {
+            name: labels.paddingLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.sm,
+        },
+    },
+};
+
+export const SidebarItemStory = ({ isActive, colorTheme, paddingLateral }) => {
+    return (
         <a href="#">
             <SidebarItem
-                isActive={boolean(labels.isActive, false)}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                paddingLateral={select(
-                    labels.paddingLateral,
-                    spaceOptions,
-                    spaceOptions.xs,
-                )}
+                isActive={isActive}
+                colorTheme={colorTheme}
+                paddingLateral={paddingLateral}
             >
                 <MeterIcon
                     iconSize={iconSizeOptions.lg}
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
+                    colorTheme={colorTheme}
                 />
 
-                <Link
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                >
-                    Tableau de bord
-                </Link>
+                <Link colorTheme={colorTheme}>Tableau de bord</Link>
             </SidebarItem>
         </a>
-    ));
+    );
+};

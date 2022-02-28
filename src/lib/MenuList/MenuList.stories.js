@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeDefault,
@@ -19,7 +17,7 @@ import Link from '../Link/Link';
 import IconLabel from '../IconLabel/IconLabel';
 import Text from '../Text/Text';
 import MenuListItem from '../MenuListItem/MenuListItem';
-import MenuList from './MenuList';
+import MenuListComponent from './MenuList';
 
 const color = [
     colorThemeOptions.primary,
@@ -28,76 +26,83 @@ const color = [
     colorThemeOptions.quaternary,
 ];
 
-storiesOf(folder.nav + folder.sub.menu + 'MenuList', module)
-    .addDecorator(withKnobs)
-    .add('MenuList', () => (
-        <div style={{ position: 'relative' }}>
-            <MenuList
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-            >
-                <a href="#">
-                    <MenuListItem>
-                        <LeafIcon iconSize={iconSizeOptions.lg} />
+export default {
+    title: folder.nav + folder.sub.menu + 'MenuList',
+    argTypes: {
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+    },
+};
 
-                        <Link>Tree</Link>
+export const MenuList = args => (
+    <div style={{ position: 'relative' }}>
+        <MenuListComponent {...args}>
+            <a href="#">
+                <MenuListItem>
+                    <LeafIcon iconSize={iconSizeOptions.lg} />
 
-                        <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Maecenas sit amet accumsan dolor. Nullam
-                            fringilla quam leo.
-                        </Text>
-                    </MenuListItem>
-                </a>
+                    <Link>Tree</Link>
 
-                <a href="#">
-                    <MenuListItem colorTheme={color[1]}>
-                        <CardsIcon
-                            iconSize={iconSizeOptions.lg}
-                            colorTheme={color[1]}
-                        />
+                    <Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Maecenas sit amet accumsan dolor. Nullam fringilla quam
+                        leo.
+                    </Text>
+                </MenuListItem>
+            </a>
 
-                        <Link colorTheme={color[1]}>Payment</Link>
+            <a href="#">
+                <MenuListItem colorTheme={color[1]}>
+                    <CardsIcon
+                        iconSize={iconSizeOptions.lg}
+                        colorTheme={color[1]}
+                    />
 
-                        <IconLabel colorTheme={color[1]} icon={<OutIcon />}>
-                            Dev
-                        </IconLabel>
-                    </MenuListItem>
-                </a>
+                    <Link colorTheme={color[1]}>Payment</Link>
 
-                <a href="#">
-                    <MenuListItem colorTheme={color[2]}>
-                        <MealIcon
-                            iconSize={iconSizeOptions.lg}
-                            colorTheme={color[2]}
-                        />
+                    <IconLabel colorTheme={color[1]} icon={<OutIcon />}>
+                        Dev
+                    </IconLabel>
+                </MenuListItem>
+            </a>
 
-                        <Link colorTheme={color[2]}>Lunchkit</Link>
+            <a href="#">
+                <MenuListItem colorTheme={color[2]}>
+                    <MealIcon
+                        iconSize={iconSizeOptions.lg}
+                        colorTheme={color[2]}
+                    />
 
-                        <IconLabel colorTheme={color[2]} icon={<OutIcon />}>
-                            Dev
-                        </IconLabel>
+                    <Link colorTheme={color[2]}>Lunchkit</Link>
 
-                        <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Maecenas sit amet accumsan dolor.
-                        </Text>
-                    </MenuListItem>
-                </a>
+                    <IconLabel colorTheme={color[2]} icon={<OutIcon />}>
+                        Dev
+                    </IconLabel>
 
-                <a href="#">
-                    <MenuListItem colorTheme={color[3]}>
-                        <OrganizationIcon
-                            iconSize={iconSizeOptions.lg}
-                            colorTheme={color[3]}
-                        />
+                    <Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Maecenas sit amet accumsan dolor.
+                    </Text>
+                </MenuListItem>
+            </a>
 
-                        <Link colorTheme={color[3]}>Rounding</Link>
-                    </MenuListItem>
-                </a>
-            </MenuList>
-        </div>
-    ));
+            <a href="#">
+                <MenuListItem colorTheme={color[3]}>
+                    <OrganizationIcon
+                        iconSize={iconSizeOptions.lg}
+                        colorTheme={color[3]}
+                    />
+
+                    <Link colorTheme={color[3]}>Rounding</Link>
+                </MenuListItem>
+            </a>
+        </MenuListComponent>
+    </div>
+);
+
+MenuList.args = {
+    colorTheme: colorThemeDefault,
+};

@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorTypeOptions,
@@ -18,53 +16,89 @@ import {
     spaceDefault,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
-import Title from './Title';
+import TitleComponent from './Title';
 
-storiesOf(folder.text + 'Title', module)
-    .addDecorator(withKnobs)
-    .add('Title', () => (
-        <Title
-            hasUnderline={boolean(labels.hasUnderline, true)}
-            colorType={radios(
-                labels.colorType,
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
-            colorPallet={radios(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletOptions.wab,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyOptions.grey60)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            isResponsive={boolean(labels.isResponsive, true)}
-            textSize={select(
-                labels.textSize,
-                fontSizeOptions,
-                fontSizeOptions.lg,
-            )}
-            align={radios(labels.align, alignOptions, alignDefault)}
-            marginLateral={select(
-                labels.marginLateral,
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-        >
-            Your title with <strong>an emphasis</strong>
-        </Title>
-    ));
+export default {
+    title: folder.text + 'Title',
+    argTypes: {
+        hasUnderline: {
+            name: labels.hasUnderline,
+            control: 'boolean',
+        },
+        colorType: {
+            name: labels.colorType,
+            options: Object.values(colorTypeOptions),
+            control: 'radio',
+        },
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(colorPalletOptions),
+            control: 'radio',
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        colorWab: {
+            name: labels.colorWab,
+            options: Object.values(greyOptions),
+            control: 'select',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+        isResponsive: {
+            name: labels.isResponsive,
+            control: 'boolean',
+        },
+        textSize: {
+            name: labels.textSize,
+            options: Object.values(fontSizeOptions),
+            control: 'select',
+        },
+        align: {
+            name: labels.align,
+            options: Object.values(alignOptions),
+            control: 'radio',
+        },
+        marginLateral: {
+            name: labels.marginLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const Title = args => (
+    <TitleComponent {...args}>
+        Your title with <strong>an emphasis</strong>
+    </TitleComponent>
+);
+
+Title.args = {
+    hasUnderline: true,
+    colorType: colorTypeDefault,
+    colorPallet: colorPalletOptions.wab,
+    colorTheme: colorThemeDefault,
+    colorWab: greyOptions.grey60,
+    colorStatus: formStatusDefault,
+    isResponsive: true,
+    textSize: fontSizeOptions.lg,
+    align: alignDefault,
+    marginLateral: spaceDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+};

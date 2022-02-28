@@ -1,6 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, number, select } from '@storybook/addon-knobs';
+
 import {
     folder,
     colorThemeOptions,
@@ -60,44 +59,70 @@ const children = [
     },
 ];
 
-storiesOf(folder.graph + folder.sub.histogram + 'Histogram', module)
-    .addDecorator(withKnobs)
-    .add('Histogram', () => (
-        <Histogram
-            yaxisUnit="€"
-            hasYaxisMin={boolean('Has Y-axis min', true)}
-            hasYaxisMax={boolean('Has Y-axis max', true)}
-            yaxisValues={select(
-                'Y-axis values',
-                {
-                    none: [],
-                    '30 and 60': [30, 60],
-                    '55.4 and 98.7': [55.4, 98.7],
-                },
-                [30, 60],
-            )}
-            isRelativeYaxis={boolean('Is relative Y-axis', false)}
-            maxValue={number(labels.maxValue, 120, {
-                range: true,
-                max: 150,
-            })}
-            blockWidth={select(
-                labels.blockWidth,
-                spaceOptions,
-                spaceOptions.md,
-            )}
-            blockHeight={select(
-                labels.blockHeight,
-                inputWidthOptions,
-                inputWidthDefault,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-        >
+export default {
+    title: folder.graph + folder.sub.histogram + 'Histogram',
+    argTypes: {
+        blockWidth: {
+            name: labels.blockWidth,
+            options: Object.values(inputWidthOptions),
+            control: 'select',
+            defaultValue: inputWidthOptions.md,
+        },
+        hasYaxisMin: {
+            name: 'Has Y-axis min',
+            control: 'boolean',
+            defaultValue: true,
+        },
+        hasYaxisMax: {
+            name: 'Has Y-axis max',
+            control: 'boolean',
+            defaultValue: true,
+        },
+        yaxisValues: {
+            name: 'Y-axis values',
+            options: {
+                none: [],
+                '30 and 60': [30, 60],
+                '55.4 and 98.7': [55.4, 98.7],
+            },
+            control: 'select',
+            defaultValue: [30, 60],
+        },
+        isRelativeYaxis: {
+            name: 'Is relative Y-axis',
+            control: 'boolean',
+            defaultValue: false,
+        },
+        maxValue: {
+            name: labels.maxValue,
+            options: { max: 150 },
+            control: 'range',
+            defaultValue: 150,
+        },
+        blockHeight: {
+            name: labels.blockHeight,
+            options: Object.values(inputWidthOptions),
+            control: 'select',
+            defaultValue: inputWidthDefault,
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceDefault,
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceDefault,
+        },
+    },
+};
+
+export const SimpleHistogram = args => {
+    return (
+        <Histogram yaxisUnit="€" {...args}>
             {children.map((sample, index) => (
                 <HistogramBar
                     key={index}
@@ -109,4 +134,5 @@ storiesOf(folder.graph + folder.sub.histogram + 'Histogram', module)
                 />
             ))}
         </Histogram>
-    ));
+    );
+};

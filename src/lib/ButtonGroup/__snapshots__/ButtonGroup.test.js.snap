@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__ButtonGroupBase-cn1823-0 cWBQvF"
+  className="style__ButtonGroupBase-sc-cn1823-0 dAlrZq"
 >
   <button
     type="button"
   >
     <span
-      className="style__ButtonBase-pnyves-0 fwiYPy"
+      className="style__ButtonBase-sc-pnyves-0 fYOpAB"
     >
       First button
     </span>
@@ -17,7 +17,7 @@ exports[`renders without crashing 1`] = `
     type="button"
   >
     <span
-      className="style__ButtonBase-pnyves-0 Plmbf"
+      className="style__ButtonBase-sc-pnyves-0 dXupHc"
     >
       Second button
     </span>

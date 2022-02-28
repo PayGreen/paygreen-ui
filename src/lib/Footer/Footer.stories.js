@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, radios } from '@storybook/addon-knobs';
 import {
     folder,
     decorationOptions,
@@ -34,57 +32,64 @@ const sampleContents = [
     },
 ];
 
-storiesOf(folder.layout + folder.sub.footer + 'Footer', module)
-    .addDecorator(withKnobs)
-    .add('Footer', () => (
-        <Footer
-            topStyle={radios(
-                labels.topStyle,
-                decorationOptions,
-                decorationDefault,
-            )}
+export default {
+    title: folder.layout + folder.sub.footer + 'Footer',
+    argTypes: {
+        topStyle: {
+            name: labels.topStyle,
+            options: Object.values(decorationOptions),
+            control: 'radio',
+        },
+    },
+};
+
+export const SimpleFooter = ({ topStyle }) => (
+    <Footer topStyle={topStyle}>
+        <Grid childrenFlex={1}>
+            {sampleContents.map((sample, index) => (
+                <div key={index}>
+                    <Title
+                        hasUnderline={true}
+                        align={alignOptions.center}
+                        textSize={fontSizeOptions.xs}
+                        colorWab={greyOptions.grey30}
+                        marginBottom={spaceOptions.xs}
+                    >
+                        {sample.title}
+                    </Title>
+
+                    <FooterList
+                        align={alignOptions.center}
+                        textSize={fontSizeOptions.xs}
+                        marginBottom={spaceOptions.md}
+                    >
+                        {sample.links.map((link, index) => (
+                            <a href="#" key={index}>
+                                <Link
+                                    hasUnderline={false}
+                                    colorPallet={colorPalletOptions.wab}
+                                    colorWab={greyOptions.grey60}
+                                >
+                                    {link}
+                                </Link>
+                            </a>
+                        ))}
+                    </FooterList>
+                </div>
+            ))}
+        </Grid>
+
+        <Text
+            align={alignOptions.center}
+            textSize={fontSizeOptions.xs}
+            colorWab={greyOptions.grey30}
+            marginBottom={spaceOptions.xs}
         >
-            <Grid childrenFlex={1}>
-                {sampleContents.map((sample, index) => (
-                    <div key={index}>
-                        <Title
-                            hasUnderline={true}
-                            align={alignOptions.center}
-                            textSize={fontSizeOptions.xs}
-                            colorWab={greyOptions.grey30}
-                            marginBottom={spaceOptions.xs}
-                        >
-                            {sample.title}
-                        </Title>
+            PayGreen UI Library – 2019 – {new Date().getFullYear()}
+        </Text>
+    </Footer>
+);
 
-                        <FooterList
-                            align={alignOptions.center}
-                            textSize={fontSizeOptions.xs}
-                            marginBottom={spaceOptions.md}
-                        >
-                            {sample.links.map((link, index) => (
-                                <a href="#" key={index}>
-                                    <Link
-                                        hasUnderline={false}
-                                        colorPallet={colorPalletOptions.wab}
-                                        colorWab={greyOptions.grey60}
-                                    >
-                                        {link}
-                                    </Link>
-                                </a>
-                            ))}
-                        </FooterList>
-                    </div>
-                ))}
-            </Grid>
-
-            <Text
-                align={alignOptions.center}
-                textSize={fontSizeOptions.xs}
-                colorWab={greyOptions.grey30}
-                marginBottom={spaceOptions.xs}
-            >
-                PayGreen UI Library – 2019 – {new Date().getFullYear()}
-            </Text>
-        </Footer>
-    ));
+SimpleFooter.args = {
+    topStyle: decorationDefault,
+};

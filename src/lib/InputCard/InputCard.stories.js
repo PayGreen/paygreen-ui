@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, radios } from '@storybook/addon-knobs';
 import {
     folder,
     inputCardSizeOptions,
@@ -21,22 +19,31 @@ import InputCard from './InputCard';
 const sizeLabel = 'Size';
 const inputName = 'choice';
 
-storiesOf(folder.form + 'InputCard', module)
-    .addDecorator(withKnobs)
-    .add('InputCard', () => (
+export default {
+    title: folder.form + 'InputCard',
+    argTypes: {
+        type: {
+            name: labels.type,
+            options: Object.values(multipleInputTypeOptions),
+            control: 'radio',
+            defaultValue: multipleInputTypeDefault,
+        },
+        blockSize: {
+            name: sizeLabel,
+            options: Object.values(inputCardSizeOptions),
+            control: 'radio',
+            defaultValue: inputCardSizeDefault,
+        },
+    },
+};
+
+export const InputCardStory = ({ type, blockSize, ...args }) => {
+    return (
         <InternalGrid>
             <InputCard
-                type={radios(
-                    labels.type,
-                    multipleInputTypeOptions,
-                    multipleInputTypeDefault,
-                )}
+                type={type}
                 text="Option A"
-                blockSize={radios(
-                    sizeLabel,
-                    inputCardSizeOptions,
-                    inputCardSizeDefault,
-                )}
+                blockSize={blockSize}
                 id={inputName + 1}
                 name={inputName}
             >
@@ -44,17 +51,9 @@ storiesOf(folder.form + 'InputCard', module)
             </InputCard>
 
             <InputCard
-                type={radios(
-                    labels.type,
-                    multipleInputTypeOptions,
-                    multipleInputTypeDefault,
-                )}
+                type={type}
                 text="Option B with more text inside label"
-                blockSize={radios(
-                    sizeLabel,
-                    inputCardSizeOptions,
-                    inputCardSizeDefault,
-                )}
+                blockSize={blockSize}
                 id={inputName + 2}
                 name={inputName}
             >
@@ -62,17 +61,9 @@ storiesOf(folder.form + 'InputCard', module)
             </InputCard>
 
             <InputCard
-                type={radios(
-                    labels.type,
-                    multipleInputTypeOptions,
-                    multipleInputTypeDefault,
-                )}
+                type={type}
                 text="Option C"
-                blockSize={radios(
-                    sizeLabel,
-                    inputCardSizeOptions,
-                    inputCardSizeDefault,
-                )}
+                blockSize={blockSize}
                 id={inputName + 3}
                 name={inputName}
             >
@@ -80,21 +71,14 @@ storiesOf(folder.form + 'InputCard', module)
             </InputCard>
 
             <InputCard
-                type={radios(
-                    labels.type,
-                    multipleInputTypeOptions,
-                    multipleInputTypeDefault,
-                )}
+                type={type}
                 text="Option D"
-                blockSize={radios(
-                    sizeLabel,
-                    inputCardSizeOptions,
-                    inputCardSizeDefault,
-                )}
+                blockSize={blockSize}
                 id={inputName + 4}
                 name={inputName}
             >
                 <SupportIcon />
             </InputCard>
         </InternalGrid>
-    ));
+    );
+};

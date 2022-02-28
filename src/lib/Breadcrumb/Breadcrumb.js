@@ -47,9 +47,7 @@ const Breadcrumb = props => {
 
                     <a
                         href={element.url}
-                        tabIndex={
-                            index + 1 === props.elements.length ? -1 : 0
-                        }
+                        tabIndex={index + 1 === props.elements.length ? -1 : 0}
                         onClick={preventCurrentPageClick}
                     >
                         {element.label}

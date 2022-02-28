@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -16,7 +14,7 @@ import Banner from '../Banner/Banner';
 import Card from '../Card/Card';
 import Title from '../Title/Title';
 import Text from '../Text/Text';
-import MenuTertiary from './MenuTertiary';
+import MenuTertiaryComponent from './MenuTertiary';
 
 const sampleLinks = [
     {
@@ -41,87 +39,89 @@ const sampleLinks = [
     },
 ];
 
-storiesOf(folder.nav + 'MenuTertiary', module)
-    .addDecorator(withKnobs)
-    .add('MenuTertiary', () => (
-        <>
-            <MenuTertiary
-                isFixed={boolean('Is fixed', true)}
-                isHidden={boolean(labels.isHidden, false)}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-            >
-                {sampleLinks.map((sample, index) => (
-                    <a href={'#' + sample.link} key={index}>
-                        {sample.label}
-                    </a>
-                ))}
-            </MenuTertiary>
+export default {
+    title: folder.nav + 'MenuTertiary',
+    argTypes: {
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        isFixed: {
+            name: 'Is fixed',
+            control: 'boolean',
+        },
+        isHidden: {
+            name: labels.isHidden,
+            control: 'boolean',
+        },
+    },
+};
 
+export const MenuTertiary = args => (
+    <>
+        <MenuTertiaryComponent {...args}>
             {sampleLinks.map((sample, index) => (
-                <Banner
-                    key={index}
-                    id={sample.link}
-                    topStyle={decorationOptions.none}
-                    bottomStyle={decorationOptions.none}
-                    gradient={
-                        index % 2 ? gradientOptions.none : gradientOptions.theme
-                    }
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                >
-                    <Card hasBackground={false}>
-                        <Title
-                            colorType={
-                                index % 2
-                                    ? colorTypeOptions.original
-                                    : colorTypeOptions.reverse
-                            }
-                            colorTheme={select(
-                                labels.colorTheme,
-                                colorThemeOptions,
-                                colorThemeDefault,
-                            )}
-                            textSize={fontSizeOptions.xl}
-                            marginLateral={spaceOptions.md}
-                            marginTop={spaceOptions.md}
-                        >
-                            {sample.label}
-                        </Title>
-
-                        <Text
-                            colorType={
-                                index % 2
-                                    ? colorTypeOptions.original
-                                    : colorTypeOptions.reverse
-                            }
-                            colorTheme={select(
-                                labels.colorTheme,
-                                colorThemeOptions,
-                                colorThemeDefault,
-                            )}
-                            marginLateral={spaceOptions.md}
-                            marginTop={spaceOptions.md}
-                            marginBottom={spaceOptions.md}
-                        >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Duis porttitor velit a ultricies aliquet.
-                            Donec vehicula in arcu non sodales. Fusce et
-                            consectetur odio. Ut bibendum ullamcorper turpis vel
-                            imperdiet. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Duis porttitor velit a ultricies
-                            aliquet. Donec vehicula in arcu non sodales. Fusce
-                            et consectetur odio. Ut bibendum ullamcorper turpis
-                            vel imperdiet.
-                        </Text>
-                    </Card>
-                </Banner>
+                <a href={'#' + sample.link} key={index}>
+                    {sample.label}
+                </a>
             ))}
-        </>
-    ));
+        </MenuTertiaryComponent>
+
+        {sampleLinks.map((sample, index) => (
+            <Banner
+                key={index}
+                id={sample.link}
+                topStyle={decorationOptions.none}
+                bottomStyle={decorationOptions.none}
+                gradient={
+                    index % 2 ? gradientOptions.none : gradientOptions.theme
+                }
+                colorTheme={args.colorTheme}
+            >
+                <Card hasBackground={false}>
+                    <Title
+                        colorType={
+                            index % 2
+                                ? colorTypeOptions.original
+                                : colorTypeOptions.reverse
+                        }
+                        colorTheme={args.colorTheme}
+                        textSize={fontSizeOptions.xl}
+                        marginLateral={spaceOptions.md}
+                        marginTop={spaceOptions.md}
+                    >
+                        {sample.label}
+                    </Title>
+
+                    <Text
+                        colorType={
+                            index % 2
+                                ? colorTypeOptions.original
+                                : colorTypeOptions.reverse
+                        }
+                        colorTheme={args.colorTheme}
+                        marginLateral={spaceOptions.md}
+                        marginTop={spaceOptions.md}
+                        marginBottom={spaceOptions.md}
+                    >
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Duis porttitor velit a ultricies aliquet. Donec vehicula
+                        in arcu non sodales. Fusce et consectetur odio. Ut
+                        bibendum ullamcorper turpis vel imperdiet. Lorem ipsum
+                        dolor sit amet, consectetur adipiscing elit. Duis
+                        porttitor velit a ultricies aliquet. Donec vehicula in
+                        arcu non sodales. Fusce et consectetur odio. Ut bibendum
+                        ullamcorper turpis vel imperdiet.
+                    </Text>
+                </Card>
+            </Banner>
+        ))}
+    </>
+);
+
+MenuTertiary.args = {
+    colorTheme: colorThemeDefault,
+    isFixed: true,
+    isHidden: false,
+};

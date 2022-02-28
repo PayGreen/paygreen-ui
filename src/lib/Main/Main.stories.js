@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { folder } from '../../shared/constants';
 import Main from './Main';
 import Topbar from '../Topbar/Topbar';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Box from '../Box/Box';
 
-storiesOf(folder.layout + 'Main', module).add('Main', () => {
+export default {
+    title: folder.layout + 'Main',
+};
+
+export const MainStory = () => {
     const [isOpen, setOpen] = useState(true);
 
     return (
@@ -21,4 +24,4 @@ storiesOf(folder.layout + 'Main', module).add('Main', () => {
             <Box />
         </Main>
     );
-});
+};

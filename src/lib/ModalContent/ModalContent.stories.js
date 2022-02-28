@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select, text } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -17,36 +15,56 @@ import ModalBody from '../ModalBody/ModalBody';
 import ModalContent from './ModalContent';
 import Text from '../Text/Text';
 
-storiesOf(folder.popup + folder.sub.modal + 'ModalContent', module)
-    .addDecorator(withKnobs)
-    .add('ModalContent', () => (
-        <ModalContent
-            blockWidth={select(
-                labels.blockWidth,
-                spaceOptions,
-                spaceOptions.md,
-            )}
-        >
+export default {
+    title: folder.popup + folder.sub.modal + 'ModalContent',
+    argTypes: {
+        title: {
+            name: 'Title',
+            control: 'text',
+            defaultValue: 'This is the Title',
+        },
+        blockWidth: {
+            name: labels.blockWidth,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.xs,
+        },
+        paddingBottom: {
+            name: labels.paddingBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.sm,
+        },
+        paddingLateral: {
+            name: labels.paddingLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.sm,
+        },
+        paddingTop: {
+            name: labels.paddingTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.sm,
+        },
+    },
+};
+
+export const SimpleModalContent = ({
+    blockWidth,
+    paddingLateral,
+    paddingTop,
+    paddingBottom,
+    title,
+}) => {
+    return (
+        <ModalContent blockWidth={blockWidth}>
             <ModalHeader
-                paddingLateral={select(
-                    labels.paddingLateral,
-                    spaceOptions,
-                    spaceOptions.sm,
-                )}
-                paddingTop={select(
-                    "ModalHeader's padding top",
-                    spaceOptions,
-                    spaceOptions.sm,
-                )}
-                paddingBottom={select(
-                    "ModalHeader's padding bottom",
-                    spaceOptions,
-                    spaceOptions.sm,
-                )}
+                paddingLateral={paddingLateral}
+                paddingTop={paddingTop}
+                paddingBottom={paddingBottom}
             >
-                <Title textSize={fontSizeOptions.md}>
-                    {text('Title', 'This is the Title')}
-                </Title>
+                <Title textSize={fontSizeOptions.md}>{title}</Title>
 
                 <CrossIcon
                     htmlTag={iconHtmlTagOptions.button}
@@ -56,21 +74,9 @@ storiesOf(folder.popup + folder.sub.modal + 'ModalContent', module)
             </ModalHeader>
 
             <ModalBody
-                paddingLateral={select(
-                    labels.paddingLateral,
-                    spaceOptions,
-                    spaceOptions.sm,
-                )}
-                paddingTop={select(
-                    "ModalBody's padding top",
-                    spaceOptions,
-                    spaceOptions.none,
-                )}
-                paddingBottom={select(
-                    "ModalBody's padding bottom",
-                    spaceOptions,
-                    spaceOptions.sm,
-                )}
+                paddingLateral={paddingLateral}
+                paddingTop={paddingTop}
+                paddingBottom={paddingBottom}
             >
                 <Text>
                     Curabitur congue varius ex et posuere. Maecenas tincidunt
@@ -78,4 +84,5 @@ storiesOf(folder.popup + folder.sub.modal + 'ModalContent', module)
                 </Text>
             </ModalBody>
         </ModalContent>
-    ));
+    );
+};

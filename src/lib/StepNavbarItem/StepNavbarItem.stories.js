@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -9,31 +7,42 @@ import {
 import labels from '../../shared/labels';
 import StepNavbarItem from './StepNavbarItem';
 
-storiesOf(folder.nav + folder.sub.stepNavbar + 'StepNavbarItem', module)
-    .addDecorator(withKnobs)
-    .add('StepNavbarItem', () => (
-        <StepNavbarItem
-            isDoing={boolean(labels.isDoing, false)}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-        >
-            {text(labels.text, '1 – Step one')}
+export default {
+    title: folder.nav + folder.sub.stepNavbar + 'StepNavbarItem',
+    argTypes: {
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+            defaultValue: colorThemeDefault,
+        },
+
+        isDoing: {
+            name: labels.isDoing,
+            control: 'boolean',
+            defaultValue: false,
+        },
+        text: {
+            name: labels.text,
+            control: 'text',
+            defaultValue: '1 – Step one',
+        },
+    },
+};
+
+export const SimpleNavBarItem = ({ isDoing, colorTheme, text }) => {
+    return (
+        <StepNavbarItem isDoing={isDoing} colorTheme={colorTheme}>
+            {text}
         </StepNavbarItem>
-    ))
-    .add('StepNavbarItem inside <a>', () => (
+    );
+};
+export const LinkNavBarItem = ({ isDoing, colorTheme, text }) => {
+    return (
         <a href="#">
-            <StepNavbarItem
-                isDoing={boolean(labels.isDoing, false)}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-            >
-                {text(labels.text, '1 – Step one')}
+            <StepNavbarItem isDoing={isDoing} colorTheme={colorTheme}>
+                {text}
             </StepNavbarItem>
         </a>
-    ));
+    );
+};

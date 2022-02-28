@@ -1,12 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    text,
-    radios,
-    select,
-    boolean,
-} from '@storybook/addon-knobs';
+
 import {
     folder,
     buttonSizeOptions,
@@ -22,88 +15,146 @@ import labels from '../../shared/labels';
 import { BulbIcon, BeakerIcon } from '../Icon/Icon';
 import Toggle from './Toggle';
 
-storiesOf(folder.form + 'Toggle', module)
-    .addDecorator(withKnobs)
-    .add('Toggle with auto colors', () => (
+export default {
+    title: folder.form + 'Toggle',
+    argTypes: {
+        disabled: {
+            name: labels.disabled,
+            control: 'boolean',
+            defaultValue: false,
+        },
+        checkedLabel: {
+            name: 'Checked label',
+            control: 'text',
+            defaultValue: 'Yes',
+        },
+        notCheckedLabel: {
+            name: 'Not checked label',
+            control: 'text',
+            defaultValue: 'No',
+        },
+        fieldSize: {
+            name: labels.fieldSize,
+            options: Object.values(buttonSizeOptions),
+            control: 'select',
+            defaultValue: buttonSizeDefault,
+        },
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(colorPalletOptions),
+            control: 'radio',
+            defaultValue: colorPalletOptions.status,
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+            defaultValue: colorThemeDefault,
+        },
+        colorWab: {
+            name: labels.colorWab,
+            options: Object.values(greyOptions),
+            control: 'select',
+            defaultValue: greyDefault,
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+            defaultValue: formStatusOptions.success,
+        },
+    },
+};
+
+export const ToggleAutoColors = ({ ...args }) => {
+    return <Toggle {...args} />;
+};
+
+ToggleAutoColors.argTypes = {};
+
+export const ToggleCustomColors = ({
+    colorPalletSelected,
+    colorPalletNotSelected,
+    colorThemeSelected,
+    colorThemeNotSelected,
+    colorWabSelected,
+    colorWabNotSelected,
+    colorStatusSelected,
+    colorStatusNotSelected,
+    ...args
+}) => {
+    return (
         <Toggle
-            disabled={boolean(labels.disabled, false)}
-            checkedLabel={text('Checked label', 'Yes')}
-            notCheckedLabel={text('Not checked label', 'No')}
-            fieldSize={select(
-                labels.fieldSize,
-                buttonSizeOptions,
-                buttonSizeDefault,
-            )}
-            colorPallet={radios(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletOptions.status,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusOptions.success,
-            )}
-        />
-    ))
-    .add('Toggle with custom colors', () => (
-        <Toggle
-            disabled={boolean(labels.disabled, false)}
+            {...args}
             checkedLabel={<BulbIcon />}
             notCheckedLabel={<BeakerIcon />}
             colorPallet={{
-                checked: select(
-                    labels.colorPallet + ' checked',
-                    colorPalletOptions,
-                    colorPalletOptions.status,
-                ),
-                notChecked: select(
-                    labels.colorPallet + ' not checked',
-                    colorPalletOptions,
-                    colorPalletOptions.wab,
-                ),
+                checked: colorPalletSelected,
+                notChecked: colorPalletNotSelected,
             }}
             colorTheme={{
-                checked: select(
-                    labels.colorTheme + ' checked',
-                    colorThemeOptions,
-                    colorThemeDefault,
-                ),
-                notChecked: select(
-                    labels.colorTheme + ' not checked',
-                    colorThemeOptions,
-                    colorThemeDefault,
-                ),
+                checked: colorThemeSelected,
+                notChecked: colorThemeNotSelected,
             }}
             colorWab={{
-                checked: select(
-                    labels.colorWab + ' checked',
-                    greyOptions,
-                    greyDefault,
-                ),
-                notChecked: select(
-                    labels.colorWab + ' not checked',
-                    greyOptions,
-                    greyDefault,
-                ),
+                checked: colorWabSelected,
+                notChecked: colorWabNotSelected,
             }}
             colorStatus={{
-                checked: select(
-                    labels.colorStatus + ' checked',
-                    formStatusOptions,
-                    formStatusOptions.success,
-                ),
-                notChecked: select(
-                    labels.colorStatus + ' not checked',
-                    formStatusOptions,
-                    formStatusOptions.danger,
-                ),
+                checked: colorStatusSelected,
+                notChecked: colorStatusNotSelected,
             }}
         />
-    ));
+    );
+};
+
+ToggleCustomColors.argTypes = {
+    colorPalletSelected: {
+        name: labels.colorPallet + ' checked',
+        options: Object.values(colorPalletOptions),
+        control: 'radio',
+        defaultValue: colorPalletOptions.status,
+    },
+    colorPalletNotSelected: {
+        name: labels.colorPallet + ' not checked',
+        options: Object.values(colorPalletOptions),
+        control: 'radio',
+        defaultValue: colorPalletOptions.wab,
+    },
+    colorThemeSelected: {
+        name: labels.colorTheme + ' checked',
+        options: Object.values(colorThemeOptions),
+        control: 'select',
+        defaultValue: colorThemeDefault,
+    },
+    colorThemeNotSelected: {
+        name: labels.colorTheme + ' not checked',
+        options: Object.values(colorThemeOptions),
+        control: 'select',
+        defaultValue: colorThemeDefault,
+    },
+    colorWabSelected: {
+        name: labels.colorWab + ' checked',
+        options: Object.values(greyOptions),
+        control: 'select',
+        defaultValue: greyDefault,
+    },
+    colorWabNotSelected: {
+        name: labels.colorWab + ' not checked',
+        options: Object.values(greyOptions),
+        control: 'select',
+        defaultValue: greyDefault,
+    },
+    colorStatusSelected: {
+        name: labels.colorStatus + ' checked',
+        options: Object.values(formStatusOptions),
+        control: 'select',
+        defaultValue: formStatusOptions.success,
+    },
+    colorStatusNotSelected: {
+        name: labels.colorStatus + ' not checked',
+        options: Object.values(formStatusOptions),
+        control: 'select',
+        defaultValue: formStatusOptions.danger,
+    },
+};

@@ -1,45 +1,45 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
 import { folder } from '../../shared/constants';
 import DaTableCell from '../DaTableCell/DaTableCell';
 import DaTableRow from '../DaTableRow/DaTableRow';
 import DaTableBody from './DaTableBody';
 
-storiesOf(folder.table + folder.sub.daTable + 'DaTableBody', module)
-    .addDecorator(withKnobs)
-    .add('DaTableBody', () => (
-        <DaTableBody>
-            <DaTableRow>
-                <DaTableCell isId={true}>3456</DaTableCell>
+export default {
+    title: folder.table + folder.sub.daTable + 'DaTableBody',
+};
 
-                <DaTableCell isMain={false} label="Date">
-                    27/05/2020
-                </DaTableCell>
+export const TableBody = () => (
+    <DaTableBody>
+        <DaTableRow>
+            <DaTableCell isId={true}>3456</DaTableCell>
 
-                <DaTableCell>Marie Perez</DaTableCell>
+            <DaTableCell isMain={false} label="Date">
+                27/05/2020
+            </DaTableCell>
 
-                <DaTableCell>34.56&nbsp;€</DaTableCell>
+            <DaTableCell>Marie Perez</DaTableCell>
 
-                <DaTableCell isMain={false} label="Type">
-                    Cash
-                </DaTableCell>
-            </DaTableRow>
+            <DaTableCell>34.56&nbsp;€</DaTableCell>
 
-            <DaTableRow>
-                <DaTableCell isId={true}>3457</DaTableCell>
+            <DaTableCell isMain={false} label="Type">
+                Cash
+            </DaTableCell>
+        </DaTableRow>
 
-                <DaTableCell isMain={false} label="Date">
-                    29/05/2020
-                </DaTableCell>
+        <DaTableRow>
+            <DaTableCell isId={true}>3457</DaTableCell>
 
-                <DaTableCell>Jean Bond</DaTableCell>
+            <DaTableCell isMain={false} label="Date">
+                29/05/2020
+            </DaTableCell>
 
-                <DaTableCell>15.07&nbsp;€</DaTableCell>
+            <DaTableCell>Jean Bond</DaTableCell>
 
-                <DaTableCell isMain={false} label="Type">
-                    Recurring
-                </DaTableCell>
-            </DaTableRow>
-        </DaTableBody>
-    ));
+            <DaTableCell>15.07&nbsp;€</DaTableCell>
+
+            <DaTableCell isMain={false} label="Type">
+                Recurring
+            </DaTableCell>
+        </DaTableRow>
+    </DaTableBody>
+);

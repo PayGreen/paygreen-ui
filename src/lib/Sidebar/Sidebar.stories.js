@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -39,9 +37,26 @@ const logoSidebar = (
     </Logo>
 );
 
-storiesOf(folder.nav + 'Sidebar', module)
-    .addDecorator(withKnobs)
-    .add('Sidebar', () => (
+export default {
+    title: folder.nav + 'Sidebar',
+    argTypes: {
+        isActive: {
+            name: labels.isActive,
+            control: 'boolean',
+            defaultValue: false,
+        },
+
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+            defaultValue: colorThemeDefault,
+        },
+    },
+};
+
+export const SidebarStory = ({ isActive, colorTheme }) => {
+    return (
         <Sidebar>
             <Topbar className="hideOnDesktop">
                 <a href="#">{logoSidebar}</a>
@@ -69,50 +84,26 @@ storiesOf(folder.nav + 'Sidebar', module)
                     paddingLateral={spaceOptions.md}
                 >
                     <SidebarMenu
-                        colorTheme={select(
-                            labels.colorTheme,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
+                        colorTheme={colorTheme}
                         paddingLateral={spaceOptions.md}
                     >
                         <SidebarItem
                             htmlTag={sidebarItemHtmlTagOptions.button}
-                            colorTheme={select(
-                                labels.colorTheme,
-                                colorThemeOptions,
-                                colorThemeDefault,
-                            )}
+                            colorTheme={colorTheme}
                             paddingLateral={spaceOptions.md}
                         >
                             <MeterIcon
                                 iconSize={iconSizeOptions.lg}
-                                colorTheme={select(
-                                    labels.colorTheme,
-                                    colorThemeOptions,
-                                    colorThemeDefault,
-                                )}
+                                colorTheme={colorTheme}
                             />
 
-                            <Link
-                                colorTheme={select(
-                                    labels.colorTheme,
-                                    colorThemeOptions,
-                                    colorThemeDefault,
-                                )}
-                            >
-                                Tableau de Bord
-                            </Link>
+                            <Link colorTheme={colorTheme}>Tableau de Bord</Link>
                         </SidebarItem>
 
                         <SidebarList>
                             <a href="#">
                                 <SidebarItem
-                                    colorTheme={select(
-                                        labels.colorTheme,
-                                        colorThemeOptions,
-                                        colorThemeDefault,
-                                    )}
+                                    colorTheme={colorTheme}
                                     paddingLateral={spaceOptions.md}
                                 >
                                     <Link
@@ -126,11 +117,7 @@ storiesOf(folder.nav + 'Sidebar', module)
 
                             <a href="#">
                                 <SidebarItem
-                                    colorTheme={select(
-                                        labels.colorTheme,
-                                        colorThemeOptions,
-                                        colorThemeDefault,
-                                    )}
+                                    colorTheme={colorTheme}
                                     paddingLateral={spaceOptions.md}
                                 >
                                     <Link
@@ -145,39 +132,21 @@ storiesOf(folder.nav + 'Sidebar', module)
                     </SidebarMenu>
 
                     <SidebarMenu
-                        colorTheme={select(
-                            labels.colorTheme,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
+                        colorTheme={colorTheme}
                         paddingLateral={spaceOptions.md}
                     >
                         <a href="#">
                             <SidebarItem
-                                colorTheme={select(
-                                    labels.colorTheme,
-                                    colorThemeOptions,
-                                    colorThemeDefault,
-                                )}
+                                colorTheme={colorTheme}
                                 paddingLateral={spaceOptions.md}
-                                isActive={boolean(labels.isActive, false)}
+                                isActive={isActive}
                             >
                                 <LeafIcon
                                     iconSize={iconSizeOptions.lg}
-                                    colorTheme={select(
-                                        labels.colorTheme,
-                                        colorThemeOptions,
-                                        colorThemeDefault,
-                                    )}
+                                    colorTheme={colorTheme}
                                 />
 
-                                <Link
-                                    colorTheme={select(
-                                        labels.colorTheme,
-                                        colorThemeOptions,
-                                        colorThemeDefault,
-                                    )}
-                                >
+                                <Link colorTheme={colorTheme}>
                                     Compensations
                                 </Link>
                             </SidebarItem>
@@ -186,4 +155,5 @@ storiesOf(folder.nav + 'Sidebar', module)
                 </SidebarMenuCategory>
             </Box>
         </Sidebar>
-    ));
+    );
+};

@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeAllOptions,
@@ -10,16 +8,21 @@ import labels from '../../shared/labels';
 import TableCell from '../TableCell/TableCell';
 import TableRow from './TableRow';
 
-storiesOf(folder.table + folder.sub.table + 'TableRow', module)
-    .addDecorator(withKnobs)
-    .add('Simple row', () => (
-        <TableRow
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeAllOptions,
-                colorThemeAllDefault,
-            )}
-        >
+export default {
+    title: folder.table + folder.sub.table + 'TableRow',
+    argTypes: {
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeAllOptions),
+            control: 'select',
+            defaultValue: colorThemeAllDefault,
+        },
+    },
+};
+
+export const SimpleRow = args => {
+    return (
+        <TableRow {...args}>
             <TableCell>
                 <span>
                     Sample text <i>(with more text)</i>
@@ -34,8 +37,10 @@ storiesOf(folder.table + folder.sub.table + 'TableRow', module)
                 9,90&nbsp;€<strong>*</strong>
             </TableCell>
         </TableRow>
-    ))
-    .add('Main row', () => (
+    );
+};
+export const MainRow = args => {
+    return (
         <TableRow isMain={true}>
             <TableCell>Table name</TableCell>
 
@@ -54,4 +59,5 @@ storiesOf(folder.table + folder.sub.table + 'TableRow', module)
                 <i>Another short description.</i>
             </TableCell>
         </TableRow>
-    ));
+    );
+};

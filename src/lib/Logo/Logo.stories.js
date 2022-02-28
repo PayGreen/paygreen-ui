@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
     hoverDirectionOptions,
@@ -13,34 +11,69 @@ import Badge from '../Badge/Badge';
 import Logo from './Logo';
 import { logo } from './sample/logo';
 
-storiesOf(folder.media + 'Logo', module)
-    .addDecorator(withKnobs)
-    .add('Logo', () => (
-        <a href="#">
-            <Logo
-                hasBaseline={boolean('Has baseline', true)}
-                badge={boolean('With Badge', false) ? <Badge>Tree</Badge> : null}
-                isWhite={boolean('Is white', false)}
-                hasThemeColor={boolean('Has theme color', false)}
-                blockWidth={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.sm,
-                )}
-                blockHeight={select(
-                    labels.blockHeight,
-                    spaceOptions,
-                    spaceOptions.none,
-                )}
-                align={select(labels.align, alignOptions, alignOptions.center)}
-                hasHoverColor={boolean('Has hover color', false)}
-                hoverDirection={radios(
-                    'Hover direction',
-                    hoverDirectionOptions,
-                    hoverDirectionDefault,
-                )}
-            >
-                {logo}
-            </Logo>
-        </a>
-    ));
+export default {
+    title: folder.media + 'Logo',
+    argTypes: {
+        hasBaseline: {
+            name: 'Has baseline',
+            control: 'boolean',
+        },
+        badge: {
+            name: 'With badge',
+            control: 'boolean',
+        },
+        isWhite: {
+            name: 'Is White',
+            control: 'boolean',
+        },
+        hasThemeColor: {
+            name: 'Has theme color',
+            control: 'boolean',
+        },
+        blockWidth: {
+            name: labels.blockWidth,
+            options: Object.values(spaceOptions),
+            defaultValue: spaceOptions.sm,
+            control: 'select',
+        },
+        blockHeight: {
+            name: labels.blockHeight,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        align: {
+            name: labels.align,
+            options: Object.values(alignOptions),
+            control: 'select',
+        },
+        hasHoverColor: {
+            name: 'Has hover color',
+            control: 'boolean',
+        },
+        hoverDirection: {
+            name: 'Hover direction',
+            options: Object.values(hoverDirectionOptions),
+            control: 'radio',
+        },
+    },
+};
+
+export const SimpleLogo = ({ badge, ...args }) => (
+    <a href="#">
+        <Logo badge={badge ? <Badge>Tree</Badge> : null} {...args}>
+            {logo}
+        </Logo>
+    </a>
+);
+
+SimpleLogo.args = {
+    hasBaseline: true,
+    badge: false,
+    isWhite: false,
+    hasThemeColor: false,
+    blockWidth: spaceOptions.sm,
+    blockHeight: spaceOptions.none,
+    align: alignOptions.center,
+    hasHoverColor: false,
+    hoverDirection: hoverDirectionDefault,
+};

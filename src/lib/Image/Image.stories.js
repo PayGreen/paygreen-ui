@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -24,121 +22,166 @@ import photoFile from './sample/sample.png';
 import drawFile from './sample/sample.svg';
 import Image from './Image';
 
-storiesOf(folder.media + 'Image', module)
-    .addDecorator(withKnobs)
-    .add('Cover image', () => (
-        <Image
-            imageType={imageTypeOptions.cover}
-            hasModifiedColor={boolean(labels.hasModifiedColor, true)}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            bottomStyle={radios(labels.bottomStyle, maskOptions, maskDefault)}
-            blockWidth={select(
-                labels.blockWidth,
-                imageSizeOptions,
-                imageSizeOptions.xl,
-            )}
-            blockHeight={select(
-                labels.blockHeight,
-                imageSizeOptions,
-                imageSizeOptions.xs,
-            )}
-            radiusSize={radios(
-                labels.radiusSize,
-                radiusOptions,
-                radiusOptions.none,
-            )}
-        >
-            <img src={photoFile} alt="picture" />
-        </Image>
-    ))
-    .add('Normal image', () => (
-        <Image
-            blockWidth={select(
-                labels.blockWidth,
-                imageSizeOptions,
-                imageSizeOptions.xl,
-            )}
-            blockHeight={select(
-                labels.blockHeight,
-                imageSizeOptions,
-                imageSizeOptions.xs,
-            )}
-            padding={select(labels.padding, spaceOptions, spaceOptions.none)}
-            shadowSize={select(
-                labels.shadowSize,
-                shadowSizeOptions,
-                shadowSizeOptions.none,
-            )}
-            justifyContent={select(
-                labels.justifyContent,
-                justifyContentOptions,
-                justifyContentOptions.center,
-            )}
-            alignItems={select(
-                labels.alignItems,
-                alignItemsOptions,
-                alignItemsDefault,
-            )}
-        >
-            <img src={drawFile} alt="drawing" />
-        </Image>
-    ))
-    .add('Picture image', () => (
-        <Image
-            imageType={imageTypeOptions.picture}
-            blockWidth={select(
-                labels.blockWidth,
-                imageSizeOptions,
-                imageSizeOptions.xl,
-            )}
-            blockHeight={select(
-                labels.blockHeight,
-                imageSizeOptions,
-                imageSizeOptions.xs,
-            )}
-            radiusSize={radios(
-                labels.radiusSize,
-                radiusOptions,
-                radiusOptions.lg,
-            )}
-            shadowSize={select(
-                labels.shadowSize,
-                shadowSizeOptions,
-                shadowSizeDefault,
-            )}
-            padding={select(labels.padding, spaceOptions, spaceOptions.none)}
-        >
-            <img src={photoFile} alt="picture" />
-        </Image>
-    ))
-    .add('Image in circle', () => (
-        <Image
-            imageType={imageTypeOptions.picture}
-            isCircle={true}
-            hasDecoration={boolean('Has decoration', true)}
-            blockWidth={select(
-                labels.blockWidth,
-                imageSizeOptions,
-                imageSizeOptions.sm,
-            )}
-            blockHeight={select(
-                labels.blockHeight,
-                imageSizeOptions,
-                imageSizeOptions.auto,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginLeft={select(labels.marginLeft, spaceOptions, spaceDefault)}
-            marginRight={select(labels.marginRight, spaceOptions, spaceDefault)}
-        >
-            <img src={portraitFile} alt="picture" />
-        </Image>
-    ));
+export default {
+    title: folder.media + 'Image',
+    argTypes: {
+        blockWidth: {
+            name: labels.blockWidth,
+            options: Object.values(imageSizeOptions),
+            control: 'select',
+        },
+        blockHeight: {
+            name: labels.blockHeight,
+            options: Object.values(imageSizeOptions),
+            control: 'select',
+        },
+    },
+    args: {
+        blockWidth: imageSizeOptions.xl,
+        blockHeight: imageSizeOptions.xs,
+    },
+};
+
+export const CoverImage = args => (
+    <Image {...args} imageType={imageTypeOptions.cover}>
+        <img src={photoFile} alt="picture" />
+    </Image>
+);
+
+CoverImage.argTypes = {
+    hasModifiedColor: {
+        name: labels.hasModifiedColor,
+        control: 'boolean',
+    },
+    colorTheme: {
+        name: labels.colorTheme,
+        options: Object.values(colorThemeOptions),
+        control: 'select',
+    },
+    bottomStyle: {
+        name: labels.bottomStyle,
+        options: Object.values(maskOptions),
+        control: 'radio',
+    },
+    radiusSize: {
+        name: labels.radiusSize,
+        options: Object.values(radiusOptions),
+        control: 'radio',
+    },
+};
+
+CoverImage.args = {
+    hasModifiedColor: true,
+    colorTheme: colorThemeDefault,
+    bottomStyle: maskDefault,
+    radiusSize: radiusOptions.none,
+};
+
+export const NormalImage = args => (
+    <Image {...args}>
+        <img src={drawFile} alt="drawing" />
+    </Image>
+);
+
+NormalImage.argTypes = {
+    padding: {
+        name: labels.padding,
+        options: Object.values(spaceOptions),
+        control: 'select',
+    },
+    shadowSize: {
+        name: labels.shadowSize,
+        options: Object.values(shadowSizeOptions),
+        control: 'select',
+    },
+    justifyContent: {
+        name: labels.justifyContent,
+        options: Object.values(justifyContentOptions),
+        control: 'select',
+    },
+    alignItems: {
+        name: labels.alignItems,
+        options: Object.values(alignItemsOptions),
+        control: 'select',
+    },
+};
+
+NormalImage.args = {
+    padding: spaceOptions.none,
+    shadowSize: shadowSizeOptions.none,
+    justifyContent: justifyContentOptions.center,
+    alignItems: alignItemsDefault,
+};
+
+export const PictureImage = args => (
+    <Image {...args} imageType={imageTypeOptions.picture}>
+        <img src={photoFile} alt="picture" />
+    </Image>
+);
+
+PictureImage.argTypes = {
+    radiusSize: {
+        name: labels.radiusSize,
+        options: Object.values(radiusOptions),
+        control: 'radio',
+    },
+    shadowSize: {
+        name: labels.shadowSize,
+        options: Object.values(shadowSizeOptions),
+        control: 'select',
+    },
+    padding: {
+        name: labels.padding,
+        options: Object.values(spaceOptions),
+        control: 'select',
+    },
+};
+
+PictureImage.args = {
+    radiusSize: radiusOptions.lg,
+    shadowSize: shadowSizeDefault,
+    padding: spaceOptions.none,
+};
+
+export const ImageInCircle = args => (
+    <Image {...args} imageType={imageTypeOptions.picture} isCircle={true}>
+        <img src={portraitFile} alt="picture" />
+    </Image>
+);
+
+ImageInCircle.argTypes = {
+    hasDecoration: {
+        name: 'Has decoration',
+        control: 'boolean',
+    },
+    marginTop: {
+        name: labels.marginTop,
+        options: Object.values(spaceOptions),
+        control: 'select',
+    },
+    marginBottom: {
+        name: labels.marginBottom,
+        options: Object.values(spaceOptions),
+        control: 'select',
+    },
+    marginLeft: {
+        name: labels.marginLeft,
+        options: Object.values(spaceOptions),
+        control: 'select',
+    },
+    marginRight: {
+        name: labels.marginRight,
+        options: Object.values(spaceOptions),
+        control: 'select',
+    },
+};
+
+ImageInCircle.args = {
+    hasDecoration: true,
+    blockWidth: imageSizeOptions.sm,
+    blockHeight: imageSizeOptions.auto,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    marginLeft: spaceDefault,
+    marginRight: spaceDefault,
+};

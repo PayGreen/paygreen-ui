@@ -5,7 +5,7 @@ exports[`renders without crashing 1`] = `
   type="button"
 >
   <span
-    className="style__DaButtonBase-v4y7q-0 fTjmLr"
+    className="style__DaButtonBase-sc-v4y7q-0 fXUsnM"
   >
      
     CTA button

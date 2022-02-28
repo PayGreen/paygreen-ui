@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
@@ -11,22 +9,32 @@ import {
 import labels from '../../shared/labels';
 import DaLabel from './DaLabel';
 
-storiesOf(folder.form + 'DaLabel', module)
-    .addDecorator(withKnobs)
-    .add('DaLabel', () => (
-        <DaLabel
-            fieldSize={select(
-                labels.fieldSize,
-                buttonSizeOptions,
-                buttonSizeDefault,
-            )}
-            htmlTag={select(
-                labels.htmlTag,
-                labelHtmlTagOptions,
-                labelHtmlTagDefault,
-            )}
-            required={boolean(labels.required, false)}
-        >
-            Label Description
-        </DaLabel>
-    ));
+export default {
+    title: folder.form + 'DaLabel',
+    argTypes: {
+        htmlTag: {
+            name: labels.htmlTag,
+            options: Object.values(labelHtmlTagOptions),
+            control: 'radio',
+        },
+        fieldSize: {
+            name: labels.fieldSize,
+            options: Object.values(buttonSizeOptions),
+            control: 'radio',
+        },
+        required: {
+            name: labels.required,
+            control: 'boolean',
+        },
+    },
+};
+
+export const CheckboxGroupStory = ({ ...args }) => (
+    <DaLabel {...args}>Label Description</DaLabel>
+);
+
+CheckboxGroupStory.args = {
+    htmlTag: labelHtmlTagDefault,
+    required: false,
+    fieldSize: buttonSizeDefault,
+};

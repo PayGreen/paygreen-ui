@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
     cardHtmlTagOptions,
@@ -38,184 +36,187 @@ import Corner from '../Corner/Corner';
 import Card from './Card';
 import imageFile from './sample/sample.png';
 
-storiesOf(folder.block + 'Card', module)
-    .addDecorator(withKnobs)
-    .add('Default card', () => (
-        <Card
-            colorType={radios(
-                labels.colorType,
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            shadowSize={radios(
-                labels.shadowSize,
-                shadowSizeOptions,
-                shadowSizeDefault,
-            )}
-            hasBackground={boolean(labels.hasBackground, true)}
-            blockWidth={select(
-                labels.blockWidth,
-                spaceOptions,
-                spaceOptions.md,
-            )}
-            radiusSize={radios(labels.radiusSize, radiusOptions, radiusDefault)}
-            htmlTag={select(
-                labels.htmlTag,
-                cardHtmlTagOptions,
-                cardHtmlTagDefault,
-            )}
+export default {
+    title: folder.block + 'Card',
+    argTypes: {
+        colorType: {
+            name: labels.colorType,
+            options: Object.values(colorTypeOptions),
+            control: 'radio',
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+    },
+    args: {
+        colorType: colorTypeDefault,
+        colorTheme: colorThemeDefault,
+    },
+};
+
+export const DefaultCard = args => (
+    <Card {...args}>
+        <Corner
+            label="Since 2016"
+            cornerStyle={cornerStyleOptions.banner}
+            colorStyle={colorStyleOptions.light}
+            position={lateralPositionOptions.right}
+            colorTheme={args.colorTheme}
+        />
+
+        <Title
+            hasUnderline={true}
+            textSize={fontSizeOptions.lg}
+            marginTop={args.blockWidth}
+            marginLateral={args.blockWidth}
+            colorType={args.colorType}
+            colorTheme={args.colorTheme}
         >
-            <Corner
-                label="Since 2016"
-                cornerStyle={cornerStyleOptions.banner}
-                colorStyle={colorStyleOptions.light}
-                position={lateralPositionOptions.right}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-            />
+            Title <strong>sample</strong>
+        </Title>
 
-            <Title
-                colorType={radios(
-                    labels.colorType,
-                    colorTypeOptions,
-                    colorTypeDefault,
-                )}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                marginLateral={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-                marginTop={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-                hasUnderline={true}
-                textSize={fontSizeOptions.lg}
-            >
-                Title <strong>sample</strong>
-            </Title>
-
-            <Text
-                colorType={radios(
-                    labels.colorType,
-                    colorTypeOptions,
-                    colorTypeDefault,
-                )}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                marginLateral={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
-                <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec
-                vehicula in arcu non sodales. Fusce et consectetur odio. Ut
-                bibendum ullamcorper turpis vel imperdiet. Curabitur bibendum
-                risus gravida tellus condimentum tristique. Sed ut elit
-                efficitur, sagittis urna sed, scelerisque eros.
-            </Text>
-
-            <ButtonGroup
-                marginTop={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-                marginBottom={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-                paddingBlock={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-                hasResetedMargins={false}
-            >
-                <button type="button">
-                    <Button
-                        colorType={radios(
-                            labels.colorType,
-                            colorTypeOptions,
-                            colorTypeDefault,
-                        )}
-                        colorTheme={select(
-                            labels.colorTheme,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
-                    >
-                        Your button
-                    </Button>
-                </button>
-            </ButtonGroup>
-        </Card>
-    ))
-    .add('BorderTop card', () => (
-        <Card
-            colorType={radios(
-                labels.colorType,
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            blockWidth={spaceOptions.sm}
-            radiusSize={radios(labels.radiusSize, radiusOptions, radiusDefault)}
-            borderTop={radios(
-                'Border top gradient',
-                gradientOptions,
-                gradientOptions.theme,
-            )}
-            paddingTop={spaceOptions.sm}
-            paddingLateral={spaceOptions.sm}
+        <Text
+            marginLateral={args.blockWidth}
+            colorType={args.colorType}
+            colorTheme={args.colorTheme}
         >
-            <Title
-                colorType={radios(
-                    labels.colorType,
-                    colorTypeOptions,
-                    colorTypeDefault,
-                )}
-                textSize={fontSizeOptions.md}
-            >
-                Title sample
-            </Title>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
+            <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec
+            vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum
+            ullamcorper turpis vel imperdiet. Curabitur bibendum risus gravida
+            tellus condimentum tristique. Sed ut elit efficitur, sagittis urna
+            sed, scelerisque eros.
+        </Text>
 
+        <ButtonGroup
+            marginTop={args.blockWidth}
+            marginBottom={args.blockWidth}
+            paddingBlock={args.blockWidth}
+            hasResetedMargins={false}
+        >
+            <button type="button">
+                <Button colorType={args.colorType} colorTheme={args.colorTheme}>
+                    Your button
+                </Button>
+            </button>
+        </ButtonGroup>
+    </Card>
+);
+
+DefaultCard.argTypes = {
+    shadowSize: {
+        name: labels.shadowSize,
+        options: Object.values(shadowSizeOptions),
+        control: 'radio',
+    },
+    hasBackground: {
+        name: labels.hasBackground,
+        control: 'boolean',
+    },
+    blockWidth: {
+        name: labels.blockWidth,
+        options: Object.values(spaceOptions),
+        control: 'select',
+    },
+    radiusSize: {
+        name: labels.radiusSize,
+        options: Object.values(radiusOptions),
+        control: 'radio',
+    },
+    htmlTag: {
+        name: labels.htmlTag,
+        options: Object.values(cardHtmlTagOptions),
+        control: 'select',
+    },
+};
+
+DefaultCard.args = {
+    shadowSize: shadowSizeDefault,
+    hasBackground: true,
+    blockWidth: spaceOptions.md,
+    radiusSize: radiusDefault,
+    htmlTag: cardHtmlTagDefault,
+};
+
+export const BorderTopCard = args => (
+    <Card
+        {...args}
+        blockWidth={spaceOptions.sm}
+        paddingTop={spaceOptions.sm}
+        paddingLateral={spaceOptions.sm}
+    >
+        <Title colorType={args.colorType} textSize={fontSizeOptions.md}>
+            Title sample
+        </Title>
+
+        <Text
+            colorType={args.colorType}
+            colorTheme={args.colorTheme}
+            marginTop={spaceOptions.xs}
+            textSize={fontSizeOptions.sm}
+        >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
+            <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec
+            vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum
+            ullamcorper turpis vel imperdiet.
+        </Text>
+
+        <ButtonGroup marginTop={spaceOptions.sm} marginBottom={spaceOptions.sm}>
+            <button type="button">
+                <Button
+                    colorType={args.colorType}
+                    colorTheme={args.colorTheme}
+                    buttonSize={buttonSizeOptions.sm}
+                >
+                    Your button
+                </Button>
+            </button>
+        </ButtonGroup>
+    </Card>
+);
+
+BorderTopCard.argTypes = {
+    radiusSize: {
+        name: labels.radiusSize,
+        options: Object.values(radiusOptions),
+        control: 'radio',
+    },
+    borderTop: {
+        name: 'Border top gradient',
+        options: Object.values(gradientOptions),
+        control: 'radio',
+    },
+};
+
+BorderTopCard.args = {
+    radiusSize: radiusDefault,
+    borderTop: gradientOptions.theme,
+};
+
+export const CardWithTitleOut = args => (
+    <Card
+        {...args}
+        blockWidth={spaceOptions.sm}
+        hasTitleOut={true}
+        colorType={args.colorType}
+        colorTheme={args.colorTheme}
+    >
+        <Title
+            colorTheme={args.colorTheme}
+            marginLateral={spaceOptions.sm}
+            textSize={fontSizeOptions.lg}
+        >
+            Sample
+        </Title>
+
+        <div>
             <Text
-                colorType={radios(
-                    labels.colorType,
-                    colorTypeOptions,
-                    colorTypeDefault,
-                )}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                marginTop={spaceOptions.xs}
+                colorType={args.colorType}
+                colorTheme={args.colorTheme}
+                marginTop={spaceOptions.sm}
+                marginLateral={spaceOptions.sm}
                 textSize={fontSizeOptions.sm}
             >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
@@ -227,344 +228,243 @@ storiesOf(folder.block + 'Card', module)
             <ButtonGroup
                 marginTop={spaceOptions.sm}
                 marginBottom={spaceOptions.sm}
+                paddingBlock={spaceOptions.sm}
             >
                 <button type="button">
                     <Button
-                        colorType={radios(
-                            labels.colorType,
-                            colorTypeOptions,
-                            colorTypeDefault,
-                        )}
-                        colorTheme={select(
-                            labels.colorTheme,
-                            colorThemeOptions,
-                            colorThemeDefault,
-                        )}
+                        colorType={args.colorType}
+                        colorTheme={args.colorTheme}
                         buttonSize={buttonSizeOptions.sm}
                     >
                         Your button
                     </Button>
                 </button>
             </ButtonGroup>
-        </Card>
-    ))
-    .add('Card with title out', () => (
-        <Card
-            colorType={radios(
-                labels.colorType,
-                colorTypeOptions,
-                colorTypeOptions.reverse,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            blockWidth={spaceOptions.sm}
-            hasTitleOut={true}
-        >
-            <Title
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                marginLateral={spaceOptions.sm}
-                textSize={fontSizeOptions.lg}
-            >
-                Sample
-            </Title>
+        </div>
+    </Card>
+);
 
-            <div>
+CardWithTitleOut.args = {
+    colorType: colorTypeOptions.reverse,
+};
+
+export const CardWithImage = args => (
+    <Card blockWidth={args.blockWidth} isShadowWab={args.isShadowWab}>
+        <Image
+            imageType={imageTypeOptions.cover}
+            bottomStyle={maskOptions.waveLeft}
+        >
+            <img src={imageFile} alt="picture" />
+        </Image>
+
+        <Title
+            marginLateral={args.blockWidth}
+            marginTop={spaceOptions.sm}
+            textSize={fontSizeOptions.md}
+        >
+            Title sample
+        </Title>
+
+        <Text
+            marginLateral={args.blockWidth}
+            marginTop={spaceOptions.xs}
+            textSize={fontSizeOptions.sm}
+        >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
+            <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec
+            vehicula in arcu non sodales. Fusce et consectetur odio. Ut bibendum
+            ullamcorper turpis vel imperdiet.
+        </Text>
+
+        <ButtonGroup
+            marginTop={spaceOptions.sm}
+            marginBottom={args.blockWidth}
+            paddingBlock={args.blockWidth}
+        >
+            <button type="button">
+                <Button buttonSize={buttonSizeOptions.sm}>Don't click</Button>
+            </button>
+        </ButtonGroup>
+    </Card>
+);
+
+CardWithImage.parameters = {
+    controls: { exclude: [labels.colorType, labels.colorTheme] },
+};
+CardWithImage.argTypes = {
+    blockWidth: {
+        name: labels.blockWidth,
+        options: Object.values(spaceOptions),
+        control: 'select',
+    },
+    isShadowWab: {
+        name: 'Is shadow wab',
+        control: 'boolean',
+    },
+};
+
+CardWithImage.args = {
+    blockWidth: spaceOptions.md,
+    isShadowWab: true,
+};
+
+export const CardWithoutBackground = args => (
+    <Card {...args} hasBackground={false}>
+        <Title
+            hasUnderline={true}
+            textSize={fontSizeOptions.xl}
+            colorType={args.colorType}
+            colorTheme={args.colorTheme}
+        >
+            Title <strong>sample</strong>
+        </Title>
+
+        <Text
+            textSize={fontSizeOptions.md}
+            colorType={args.colorType}
+            colorTheme={args.colorTheme}
+        >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
+            <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec
+            vehicula in arcu non sodales. Fusce et consectetur odio.
+        </Text>
+    </Card>
+);
+
+CardWithoutBackground.argTypes = {
+    blockWidth: {
+        name: labels.blockWidth,
+        options: Object.values(spaceOptions),
+        control: 'select',
+    },
+};
+
+CardWithoutBackground.args = {
+    blockWidth: spaceOptions.md,
+};
+
+export const CardWithColoredBackground = args => (
+    <Card
+        {...args}
+        shadowSize={shadowSizeOptions.none}
+        blockWidth={spaceOptions.sm}
+    >
+        <Corner
+            label="?"
+            position={lateralPositionOptions.right}
+            colorPallet={
+                args.colorPallet === colorPalletOptions.wab
+                    ? colorPalletOptions.theme
+                    : args.colorPallet
+            }
+            colorTheme={args.colorTheme}
+            colorStatus={args.colorStatus}
+        >
+            <Popin>
                 <Text
-                    colorType={radios(
-                        labels.colorType,
-                        colorTypeOptions,
-                        colorTypeDefault,
-                    )}
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    marginLateral={spaceOptions.sm}
-                    marginTop={spaceOptions.sm}
-                    textSize={fontSizeOptions.sm}
+                    marginTop={spaceOptions.xs}
+                    marginLateral={spaceOptions.xs}
+                    marginBottom={spaceOptions.xs}
+                    textSize={fontSizeOptions.xs}
                 >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
-                    <strong>Duis porttitor velit a ultricies aliquet</strong>.
-                    Donec vehicula in arcu non sodales. Fusce et consectetur
-                    odio. Ut bibendum ullamcorper turpis vel imperdiet.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
                 </Text>
+            </Popin>
+        </Corner>
 
-                <ButtonGroup
-                    marginTop={spaceOptions.sm}
-                    marginBottom={spaceOptions.sm}
-                    paddingBlock={spaceOptions.sm}
-                >
-                    <button type="button">
-                        <Button
-                            colorType={radios(
-                                labels.colorType,
-                                colorTypeOptions,
-                                colorTypeDefault,
-                            )}
-                            colorTheme={select(
-                                labels.colorTheme,
-                                colorThemeOptions,
-                                colorThemeDefault,
-                            )}
-                            buttonSize={buttonSizeOptions.sm}
-                        >
-                            Your button
-                        </Button>
-                    </button>
-                </ButtonGroup>
-            </div>
-        </Card>
-    ))
-    .add('Card with image', () => (
-        <Card
-            blockWidth={select(
-                labels.blockWidth,
-                spaceOptions,
-                spaceOptions.md,
-            )}
-            isShadowWab={boolean('Is shadow wab', true)}
+        <Title
+            marginTop={spaceOptions.sm}
+            marginLateral={spaceOptions.sm}
+            colorPallet={args.colorPallet}
+            colorTheme={args.colorTheme}
+            colorStatus={args.colorStatus}
         >
-            <Image
-                imageType={imageTypeOptions.cover}
-                bottomStyle={maskOptions.waveLeft}
-            >
-                <img src={imageFile} alt="picture" />
-            </Image>
+            Title <strong>colored</strong>
+        </Title>
 
-            <Title
-                marginLateral={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-                marginTop={spaceOptions.sm}
-                textSize={fontSizeOptions.md}
-            >
-                Title sample
-            </Title>
-
-            <Text
-                marginLateral={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-                marginTop={spaceOptions.xs}
-                textSize={fontSizeOptions.sm}
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
-                <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec
-                vehicula in arcu non sodales. Fusce et consectetur odio. Ut
-                bibendum ullamcorper turpis vel imperdiet.
-            </Text>
-
-            <ButtonGroup
-                marginTop={spaceOptions.sm}
-                marginBottom={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-                paddingBlock={select(
-                    labels.blockWidth,
-                    spaceOptions,
-                    spaceOptions.md,
-                )}
-            >
-                <button type="button">
-                    <Button buttonSize={buttonSizeOptions.sm}>
-                        Don't click
-                    </Button>
-                </button>
-            </ButtonGroup>
-        </Card>
-    ))
-    .add('Card without background', () => (
-        <Card
-            colorType={radios(
-                labels.colorType,
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            hasBackground={false}
-            blockWidth={select(
-                labels.blockWidth,
-                spaceOptions,
-                spaceOptions.md,
-            )}
+        <Text
+            textSize={fontSizeOptions.sm}
+            marginTop={spaceOptions.xs}
+            marginLateral={spaceOptions.sm}
+            marginBottom={spaceOptions.sm}
         >
-            <Title
-                colorType={radios(
-                    labels.colorType,
-                    colorTypeOptions,
-                    colorTypeDefault,
-                )}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                hasUnderline={true}
-                textSize={fontSizeOptions.xl}
-            >
-                Title <strong>sample</strong>
-            </Title>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis{' '}
+            <strong>porttitor velit a ultricies aliquet</strong>. Donec vehicula
+            in arcu non sodales. Fusce et consectetur odio.
+        </Text>
+    </Card>
+);
 
-            <Text
-                colorType={radios(
-                    labels.colorType,
-                    colorTypeOptions,
-                    colorTypeDefault,
-                )}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                textSize={fontSizeOptions.md}
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.{' '}
-                <strong>Duis porttitor velit a ultricies aliquet</strong>. Donec
-                vehicula in arcu non sodales. Fusce et consectetur odio.
-            </Text>
-        </Card>
-    ))
-    .add('Card with colored background', () => (
-        <Card
-            colorPallet={radios(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletOptions.wab,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyOptions.white20)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            shadowSize={shadowSizeOptions.none}
-            blockWidth={spaceOptions.sm}
+CardWithColoredBackground.argTypes = {
+    colorPallet: {
+        name: labels.colorPallet,
+        options: Object.values(colorPalletOptions),
+        control: 'radio',
+    },
+    colorWab: {
+        name: labels.colorWab,
+        options: Object.values(greyOptions),
+        control: 'select',
+    },
+    colorStatus: {
+        name: labels.colorStatus,
+        options: Object.values(formStatusOptions),
+        control: 'select',
+    },
+};
+CardWithColoredBackground.parameters = {
+    controls: { exclude: [labels.colorType] },
+};
+
+CardWithColoredBackground.args = {
+    colorPallet: colorPalletOptions.wab,
+    colorWab: greyOptions.white20,
+    colorStatus: formStatusDefault,
+};
+
+export const ButtonCard = args => (
+    <Card
+        {...args}
+        htmlTag={cardHtmlTagOptions.button}
+        blockWidth={spaceOptions.xs}
+        paddingTop={spaceOptions.sm}
+        paddingBottom={spaceOptions.sm}
+        paddingLateral={spaceOptions.sm}
+        shadowSize={shadowSizeOptions.none}
+        radiusSize={radiusOptions.sm}
+    >
+        <Text colorWab={greyOptions.grey30}>
+            <i>New group</i>
+        </Text>
+
+        <Text
+            textSize={fontSizeOptions.sm}
+            marginTop={spaceOptions.xs}
+            colorWab={greyOptions.grey30}
         >
-            <Corner
-                label="?"
-                position={lateralPositionOptions.right}
-                colorPallet={
-                    radios(
-                        labels.colorPallet,
-                        colorPalletOptions,
-                        colorPalletOptions.wab,
-                    ) === colorPalletOptions.wab
-                        ? colorPalletOptions.theme
-                        : radios(
-                              labels.colorPallet,
-                              colorPalletOptions,
-                              colorPalletOptions.wab,
-                          )
-                }
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                colorStatus={select(
-                    labels.colorStatus,
-                    formStatusOptions,
-                    formStatusDefault,
-                )}
-            >
-                <Popin>
-                    <Text
-                        marginTop={spaceOptions.xs}
-                        marginLateral={spaceOptions.xs}
-                        marginBottom={spaceOptions.xs}
-                        textSize={fontSizeOptions.xs}
-                    >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.
-                    </Text>
-                </Popin>
-            </Corner>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </Text>
+    </Card>
+);
 
-            <Title
-                marginTop={spaceOptions.sm}
-                marginLateral={spaceOptions.sm}
-                colorPallet={radios(
-                    labels.colorPallet,
-                    colorPalletOptions,
-                    colorPalletOptions.wab,
-                )}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-                colorStatus={select(
-                    labels.colorStatus,
-                    formStatusOptions,
-                    formStatusDefault,
-                )}
-            >
-                Title <strong>colored</strong>
-            </Title>
+ButtonCard.argTypes = {
+    colorWab: {
+        name: labels.colorWab,
+        options: Object.values(greyOptions),
+        control: 'select',
+    },
+    hasDashedBorder: {
+        name: 'Has dashed borders',
+        control: 'boolean',
+    },
+};
+ButtonCard.parameters = {
+    controls: { exclude: [labels.colorType] },
+};
 
-            <Text
-                textSize={fontSizeOptions.sm}
-                marginTop={spaceOptions.xs}
-                marginLateral={spaceOptions.sm}
-                marginBottom={spaceOptions.sm}
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis{' '}
-                <strong>porttitor velit a ultricies aliquet</strong>. Donec
-                vehicula in arcu non sodales. Fusce et consectetur odio.
-            </Text>
-        </Card>
-    ))
-    .add('Button card', () => (
-        <Card
-            htmlTag={cardHtmlTagOptions.button}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyOptions.white20)}
-            hasDashedBorder={boolean('Has dashed borders', true)}
-            blockWidth={spaceOptions.xs}
-            paddingTop={spaceOptions.sm}
-            paddingBottom={spaceOptions.sm}
-            paddingLateral={spaceOptions.sm}
-            shadowSize={shadowSizeOptions.none}
-            radiusSize={radiusOptions.sm}
-        >
-            <Text colorWab={greyOptions.grey30}>
-                <i>New group</i>
-            </Text>
-
-            <Text
-                textSize={fontSizeOptions.sm}
-                marginTop={spaceOptions.xs}
-                colorWab={greyOptions.grey30}
-            >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </Text>
-        </Card>
-    ));
+ButtonCard.args = {
+    colorWab: greyOptions.white20,
+    hasDashedBorder: true,
+};

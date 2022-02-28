@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__PopinBase-sc-1ky0zqo-0 kIQbUy"
+  className="style__PopinBase-sc-1ky0zqo-0 dOYsKs"
 >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>

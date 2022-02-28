@@ -1,15 +1,24 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { folder } from '../../shared/constants';
 import labels from '../../shared/labels';
 import MenuHamburger from '../MenuHamburger/MenuHamburger';
 import Topbar from './Topbar';
 
-storiesOf(folder.layout + 'Topbar', module)
-    .addDecorator(withKnobs)
-    .add('Topbar', () => (
+export default {
+    title: folder.layout + 'Topbar',
+    argTypes: {
+        isOpen: {
+            name: labels.isOpen,
+            control: 'boolean',
+            defaultValue: true,
+        },
+    },
+};
+
+export const TopBarStory = ({ isOpen }) => {
+    return (
         <Topbar>
-            <MenuHamburger isOpen={boolean(labels.isOpen, true)} />
+            <MenuHamburger isOpen={isOpen} />
         </Topbar>
-    ));
+    );
+};

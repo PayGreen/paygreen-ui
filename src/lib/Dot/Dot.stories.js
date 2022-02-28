@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
     dotStyleOptions,
@@ -21,42 +19,81 @@ import {
     formStatusDefault,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
-import Dot from './Dot';
+import DotComponent from './Dot';
 
-storiesOf(folder.media + 'Dot', module)
-    .addDecorator(withKnobs)
-    .add('Dot', () => (
-        <Dot
-            dotStyle={radios('Dot style', dotStyleOptions, dotStyleDefault)}
-            dotSize={select('Dot size', iconSizeOptions, iconSizeDefault)}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginLeft={select(labels.marginLeft, spaceOptions, spaceDefault)}
-            marginRight={select(labels.marginRight, spaceOptions, spaceDefault)}
-            colorType={radios(
-                labels.colorType,
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
-            colorPallet={radios(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-        />
-    ));
+export default {
+    title: folder.media + 'Dot',
+    argTypes: {
+        dotStyle: {
+            name: 'Dot style',
+            options: Object.values(dotStyleOptions),
+            control: 'radio',
+        },
+        dotSize: {
+            name: 'Dot size',
+            options: Object.values(iconSizeOptions),
+            control: 'select',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginLeft: {
+            name: labels.marginLeft,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginRight: {
+            name: labels.marginRight,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        colorType: {
+            name: labels.colorType,
+            options: Object.values(colorTypeOptions),
+            control: 'radio',
+        },
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(colorPalletOptions),
+            control: 'radio',
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+        colorWab: {
+            name: labels.colorWab,
+            options: Object.values(greyOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const Dot = args => <DotComponent {...args} />;
+
+Dot.args = {
+    dotStyle: dotStyleDefault,
+    dotSize: iconSizeDefault,
+    colorType: colorTypeDefault,
+    colorPallet: colorPalletDefault,
+    colorTheme: colorThemeDefault,
+    colorWab: greyDefault,
+    colorStatus: formStatusDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    marginLeft: spaceDefault,
+    marginRight: spaceDefault,
+};

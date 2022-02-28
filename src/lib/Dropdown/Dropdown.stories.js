@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     spaceOptions,
@@ -47,69 +45,65 @@ const popinProps = {
     blockWidth: spaceOptions.sm,
 };
 
-storiesOf(folder.popup + 'Dropdown', module)
-    .addDecorator(withKnobs)
-    .add('Dropdown with ClickableBlock', () => {
-        const hasOverlay = boolean('Has overlay', true);
+export default {
+    title: folder.popup + 'Dropdown',
+};
 
-        return (
-            <Dropdown hasOverlay={hasOverlay}>
-                <ClickableBlock
-                    paddingLateral={spaceOptions.sm}
-                    paddingTop={spaceOptions.sm}
-                    paddingBottom={spaceOptions.sm}
-                >
-                    <Text>Click here</Text>
-                </ClickableBlock>
+export const DropdownClickableBlock = ({ hasOverlay }) => {
+    return (
+        <Dropdown hasOverlay={hasOverlay}>
+            <ClickableBlock
+                paddingLateral={spaceOptions.sm}
+                paddingTop={spaceOptions.sm}
+                paddingBottom={spaceOptions.sm}
+            >
+                <Text>Click here</Text>
+            </ClickableBlock>
 
-                <Popin {...popinProps}>
-                    {popinContent}
+            <Popin {...popinProps}>
+                {popinContent}
 
-                    {!hasOverlay ? (
-                        <ButtonGroup marginBottom={spaceOptions.sm}>
-                            <DropdownControl>
-                                <button type="button">
-                                    <DaButton buttonSize={buttonSizeOptions.sm}>
-                                        Close Me
-                                    </DaButton>
-                                </button>
-                            </DropdownControl>
-                        </ButtonGroup>
-                    ) : null}
-                </Popin>
-            </Dropdown>
-        );
-    })
-    .add(
-        'Dropdown with Badge',
-        () => (
-            <Dropdown>
-                <Badge
-                    textSize={fontSizeOptions.xs}
-                    htmlTag={iconHtmlTagOptions.button}
-                >
-                    Badge
-                    <ArrowBottomIcon marginLeft={spaceOptions.xs} />
-                </Badge>
-
-                <Popin {...popinProps}>{popinContent}</Popin>
-            </Dropdown>
-        ),
-        {},
-    )
-    .add(
-        'Dropdown with Icon',
-        () => (
-            <Dropdown>
-                <PenIcon
-                    htmlTag={iconHtmlTagOptions.button}
-                    iconSize={iconSizeOptions.lg}
-                    hasBackground
-                    hasHover
-                />
-
-                <Popin {...popinProps}>{popinContent}</Popin>
-            </Dropdown>
-        ),
-        {},
+                {!hasOverlay ? (
+                    <ButtonGroup marginBottom={spaceOptions.sm}>
+                        <DropdownControl>
+                            <button type="button">
+                                <DaButton buttonSize={buttonSizeOptions.sm}>
+                                    Close Me
+                                </DaButton>
+                            </button>
+                        </DropdownControl>
+                    </ButtonGroup>
+                ) : null}
+            </Popin>
+        </Dropdown>
     );
+};
+export const DropdownWithBadge = () => (
+    <Dropdown>
+        <Badge
+            textSize={fontSizeOptions.xs}
+            htmlTag={iconHtmlTagOptions.button}
+        >
+            Badge
+            <ArrowBottomIcon marginLeft={spaceOptions.xs} />
+        </Badge>
+
+        <Popin {...popinProps}>{popinContent}</Popin>
+    </Dropdown>
+);
+export const DropdownWithIcon = () => (
+    <Dropdown>
+        <PenIcon
+            htmlTag={iconHtmlTagOptions.button}
+            iconSize={iconSizeOptions.lg}
+            hasBackground
+            hasHover
+        />
+
+        <Popin {...popinProps}>{popinContent}</Popin>
+    </Dropdown>
+);
+
+DropdownClickableBlock.args = {
+    hasOverlay: true,
+};

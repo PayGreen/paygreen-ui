@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
     buttonSizeOptions,
@@ -11,54 +9,66 @@ import {
     spaceDefault,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
-import ButtonGroup from './ButtonGroup';
 import Button from '../Button/Button';
+import ButtonGroupComponent from './ButtonGroup';
 
-storiesOf(folder.button + 'ButtonGroup', module)
-    .addDecorator(withKnobs)
-    .add('ButtonGroup', () => (
-        <ButtonGroup
-            align={radios(
-                labels.align,
-                alignOptions,
-                alignOptions.center,
-            )}
-            hasResetedMargins={boolean('Has reseted margins', false)}
-            marginLateral={select(
-                labels.marginLateral,
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-        >
-            <button type="button">
-                <Button
-                    buttonStyle={buttonStyleOptions.line}
-                    buttonSize={radios(
-                        labels.buttonSize,
-                        buttonSizeOptions,
-                        buttonSizeDefault,
-                    )}
-                >
-                    First button
-                </Button>
-            </button>
+export default {
+    title: folder.button + 'ButtonGroup',
+    argTypes: {
+        align: {
+            name: labels.align,
+            options: Object.values(alignOptions),
+            control: 'radio',
+        },
+        hasResetedMargins: {
+            name: 'Has reseted margins',
+            control: 'boolean',
+        },
+        marginLateral: {
+            name: labels.marginLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        buttonSize: {
+            name: labels.buttonSize,
+            options: Object.values(buttonSizeOptions),
+            control: 'radio',
+        },
+    },
+};
 
-            <button type="button">
-                <Button
-                    buttonSize={radios(
-                        labels.buttonSize,
-                        buttonSizeOptions,
-                        buttonSizeDefault,
-                    )}
-                >
-                    Second button
-                </Button>
-            </button>
-        </ButtonGroup>
-    ));
+export const ButtonGroup = ({ buttonSize, ...args }) => (
+    <ButtonGroupComponent {...args}>
+        <button type="button">
+            <Button
+                buttonStyle={buttonStyleOptions.line}
+                buttonSize={buttonSize}
+            >
+                First button
+            </Button>
+        </button>
+
+        <button type="button">
+            <Button buttonSize={buttonSize}>Second button</Button>
+        </button>
+    </ButtonGroupComponent>
+);
+
+ButtonGroup.args = {
+    align: alignOptions.center,
+    hasResetedMargins: false,
+    marginLateral: spaceDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    buttonSize: buttonSizeDefault,
+};

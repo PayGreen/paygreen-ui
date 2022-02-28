@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
@@ -10,33 +8,32 @@ import labels from '../../shared/labels';
 import StepNavbarItem from '../StepNavbarItem/StepNavbarItem';
 import StepNavbar from './StepNavbar';
 
-storiesOf(folder.nav + folder.sub.stepNavbar + 'StepNavbar', module)
-    .addDecorator(withKnobs)
-    .add('StepNavbar', () => (
+export default {
+    title: folder.nav + folder.sub.stepNavbar + 'StepNavbar',
+    argTypes: {
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+            defaultValue: colorThemeDefault,
+        },
+    },
+};
+
+export const SimpleNavBar = ({ colorTheme }) => {
+    return (
         <StepNavbar>
             <a href="#">
-                <StepNavbarItem
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                >
+                <StepNavbarItem colorTheme={colorTheme}>
                     1 – Step one
                 </StepNavbarItem>
             </a>
 
-            <StepNavbarItem
-                isDoing={true}
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-            >
+            <StepNavbarItem isDoing={true} colorTheme={colorTheme}>
                 2 – Step two
             </StepNavbarItem>
 
             <StepNavbarItem>3 – Step three</StepNavbarItem>
         </StepNavbar>
-    ));
+    );
+};

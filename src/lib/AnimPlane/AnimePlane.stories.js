@@ -5,30 +5,26 @@ import {
     colorThemeDefault,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
-import PaginationItem from './PaginationItem';
+import AnimPlaneComponent from './AnimPlane';
 
 export default {
-    title: folder.table + folder.sub.pagination + 'PaginationItem',
+    title: folder.media + 'AnimPlane',
     argTypes: {
         isActive: {
             name: labels.isActive,
             control: 'boolean',
-            defaultValue: false,
-        },
-        pageValue: {
-            name: 'Page value',
-            control: 'number',
-            defaultValue: 2,
         },
         colorTheme: {
             name: labels.colorTheme,
             options: Object.values(colorThemeOptions),
             control: 'select',
-            defaultValue: colorThemeDefault,
         },
     },
 };
 
-export const SimplePaginationItem = ({ ...args }) => {
-    return <PaginationItem {...args} />;
+export const AnimPlane = args => <AnimPlaneComponent {...args} />;
+
+AnimPlane.args = {
+    isActive: false,
+    colorTheme: colorThemeDefault,
 };

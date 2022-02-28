@@ -1,13 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    select,
-    boolean,
-    number,
-    text,
-    radios,
-} from '@storybook/addon-knobs';
 import {
     folder,
     displayOptions,
@@ -39,74 +30,117 @@ const sampleTexts = [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis consequat placerat. Donec ullamcorper quis sem eget vestibulum.',
 ];
 
-storiesOf(folder.grid + 'Grid', module)
-    .addDecorator(withKnobs)
-    .add('Grid', () => (
-        <Grid
-            align={radios(labels.align, alignOptions, alignOptions.center)}
-            displayType={radios(
-                labels.displayType,
-                displayOptions,
-                displayDefault,
-            )}
-            columnNumber={number('Column number', 2)}
-            gridTemplateColumns={text(labels.gridTemplateColumns, '')}
-            flexDirection={radios(
-                'Flex direction',
-                flexDirectionOptions,
-                flexDirectionDefault,
-            )}
-            flexWrap={radios(labels.flexWrap, flexWrapOptions, flexWrapDefault)}
-            justifyContent={select(
-                labels.justifyContent,
-                justifyContentOptions,
-                justifyContentOptions.spaceBetween,
-            )}
-            justifyItems={select(
-                labels.justifyItems,
-                justifyItemsOptions,
-                justifyItemsDefault,
-            )}
-            alignItems={select(
-                labels.alignItems,
-                alignItemsOptions,
-                alignItemsDefault,
-            )}
-            childrenFlex={text(labels.childrenFlex, 'initial')}
-            childrenShiftSize={select(
-                'Children shift size',
-                spaceOptions,
-                spaceDefault,
-            )}
-            isNegativeShift={boolean('Is negative shift', false)}
-            isReverseShift={boolean('Is reverse shift', false)}
-            blockPadding={select(
-                'Block padding',
-                spaceOptions,
-                spaceOptions.md,
-            )}
-            gridGap={select(labels.gridGap, spaceOptions, spaceDefault)}
-            childrenMargin={select(
-                'Children margin (on mobile)',
-                spaceOptions,
-                spaceOptions.md,
-            )}
-            childrenMarginBig={select(
-                'Children margin (on big screen)',
-                spaceOptions,
-                spaceOptions.lg,
-            )}
-        >
-            {sampleTexts.map((element, index) => (
-                <Text
-                    key={index}
-                    hasBackground={true}
-                    paddingLateral={spaceOptions.sm}
-                    paddingTop={spaceOptions.sm}
-                    paddingBottom={spaceOptions.sm}
-                >
-                    {element}
-                </Text>
-            ))}
-        </Grid>
-    ));
+export default {
+    title: folder.grid + 'Grid',
+    argTypes: {
+        flexWrap: {
+            name: labels.flexWrap,
+            options: Object.values(flexWrapOptions),
+            control: 'radio',
+        },
+        justifyContent: {
+            name: labels.alignItems,
+            options: Object.values(alignItemsOptions),
+            control: 'select',
+        },
+        alignItems: {
+            name: labels.justifyContent,
+            options: Object.values(justifyContentOptions),
+            control: 'select',
+        },
+        childrenFlex: {
+            name: labels.childrenFlex,
+            control: 'text',
+        },
+        align: {
+            name: labels.align,
+            options: Object.values(alignOptions),
+            control: 'radio',
+        },
+        gridTemplateColumns: {
+            name: labels.gridTemplateColumns,
+
+            control: 'text',
+        },
+        gridGap: {
+            name: labels.gridGap,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        justifyItems: {
+            name: labels.justifyItems,
+            options: Object.values(justifyItemsOptions),
+            control: 'select',
+        },
+        displayType: {
+            name: labels.displayType,
+            options: Object.values(displayOptions),
+            control: 'radio',
+        },
+        columnNumber: { name: 'Column number', control: 'number' },
+        flexDirection: {
+            name: 'Flex direction',
+            options: Object.values(flexDirectionOptions),
+            control: 'radio',
+        },
+        childrenShiftSize: {
+            name: 'Children shift size',
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        isNegativeShift: { name: 'Is negative shift', control: 'boolean' },
+        isReverseShift: { name: 'Is reverse shift', control: 'boolean' },
+        blockPadding: {
+            name: 'Block padding',
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        childrenMargin: {
+            name: 'Children margin (on mobile)',
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        childrenMarginBig: {
+            name: 'Children margin (on big screen)',
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const GridStory = ({ ...args }) => (
+    <Grid {...args}>
+        {sampleTexts.map((element, index) => (
+            <Text
+                key={index}
+                hasBackground={true}
+                paddingLateral={spaceOptions.sm}
+                paddingTop={spaceOptions.sm}
+                paddingBottom={spaceOptions.sm}
+            >
+                {element}
+            </Text>
+        ))}
+    </Grid>
+);
+
+GridStory.args = {
+    flexWrap: flexWrapDefault,
+    justifyContent: justifyContentOptions.spaceBetween,
+    alignItems: alignItemsDefault,
+    childrenFlex: 'initial',
+    alignItems: alignItemsDefault,
+    justifyItems: justifyItemsDefault,
+    gridGap: spaceDefault,
+    gridTemplateColumns: '1fr 1fr 1fr',
+    align: alignOptions.center,
+    flexDirection: flexDirectionDefault,
+    childrenShiftSize: spaceDefault,
+    isNegativeShift: false,
+    isReverseShift: false,
+    blockPadding: spaceOptions.md,
+    childrenMargin: spaceOptions.md,
+    childrenMarginBig: spaceOptions.lg,
+    displayType: displayDefault,
+    columnNumber: 2,
+};

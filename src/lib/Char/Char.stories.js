@@ -1,24 +1,53 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text, radios, number } from '@storybook/addon-knobs';
-import {
-    folder,
-    charModeOptions,
-    charModeDefault,
-} from '../../shared/constants';
+import { folder, charModeOptions } from '../../shared/constants';
 import labels from '../../shared/labels';
 import Char from './Char';
 
-storiesOf(folder.text + 'Char', module)
-    .addDecorator(withKnobs)
-    .add('Char', () => (
-        <Char
-            text={text(labels.text, '0123 4567 89 ABC')}
-            mode={radios('Mode', charModeOptions, charModeDefault)}
-            truncateCharacter={text('Truncate character', '...')}
-            hideCharacter={text('Hide character', '*')}
-            hideExclusions={[text('Hide exclusion (only one here)', ' ')]}
-            startLength={number('Start length', 3)}
-            endLength={number('End length', 3)}
-        />
-    ));
+export default {
+    title: folder.text + 'Char',
+    argTypes: {
+        text: {
+            name: labels.text,
+            control: 'text',
+        },
+        hideCharacter: {
+            name: 'Hide character',
+            control: 'text',
+        },
+        truncateCharacter: {
+            name: 'Truncate character',
+            control: 'text',
+        },
+        hideExclusions: {
+            name: 'Hide exclusion (only one here)',
+            control: 'text',
+            value: ' ',
+        },
+        mode: {
+            name: 'Mode',
+            options: Object.values(charModeOptions),
+            control: 'radio',
+        },
+        startLength: {
+            name: 'Start length',
+            control: 'number',
+            value: 3,
+        },
+        endLength: {
+            name: 'End length',
+            control: 'number',
+            value: 3,
+        },
+    },
+};
+
+export const CharStory = ({ ...args }) => <Char {...args} />;
+
+CharStory.args = {
+    text: '0123 4567 89 ABC',
+    hideCharacter: '*',
+    truncateCharacter: '...',
+    hideExclusions: ' ',
+    startLength: 3,
+    endLength: 3,
+};

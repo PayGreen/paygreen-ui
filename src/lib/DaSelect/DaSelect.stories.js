@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, radios } from '@storybook/addon-knobs';
 import {
     folder,
     inputWidthOptions,
@@ -75,27 +73,67 @@ const optionsGroup = [
     },
 ];
 
-storiesOf(folder.form + 'DaSelect', module)
-    .addDecorator(withKnobs)
-    .add('DaSelect', () => (
-        <DaSelect
-            defaultValue=""
-            options={boolean(labels.optgroup, true) ? optionsGroup : options}
-            disabled={boolean(labels.disabled, false)}
-            readOnly={boolean(labels.readOnly, false)}
-            isRounded={boolean(labels.isRounded, false)}
-            fieldSize={radios(
-                labels.fieldSize,
-                buttonSizeOptions,
-                buttonSizeDefault,
-            )}
-            blockWidth={radios(
-                labels.blockWidth,
-                inputWidthOptions,
-                inputWidthDefault,
-            )}
-            hasStaticWidth={boolean(labels.hasStaticWidth, false)}
-            hasHelpButton={boolean(labels.hasHelpButton, false)}
-            icon={boolean(labels.icon, true) ? <ListIcon /> : null}
-        />
-    ));
+export default {
+    title: folder.form + 'DaSelect',
+    argTypes: {
+        optgroup: {
+            name: labels.optgroup,
+            control: 'boolean',
+        },
+        disabled: {
+            name: labels.disabled,
+            control: 'boolean',
+        },
+        readOnly: {
+            name: labels.readOnly,
+            control: 'boolean',
+        },
+        isRounded: {
+            name: labels.isRounded,
+            control: 'boolean',
+        },
+        fieldSize: {
+            name: labels.fieldSize,
+            options: Object.values(buttonSizeOptions),
+            control: 'radio',
+        },
+        blockWidth: {
+            name: labels.blockWidth,
+            options: Object.values(inputWidthOptions),
+            control: 'radio',
+        },
+        hasStaticWidth: {
+            name: labels.hasStaticWidth,
+            control: 'boolean',
+        },
+        hasHelpButton: {
+            name: labels.hasHelpButton,
+            control: 'boolean',
+        },
+        icon: {
+            name: labels.icon,
+            control: 'boolean',
+        },
+    },
+};
+
+export const Select = ({ ...args }) => (
+    <DaSelect
+        {...args}
+        defaultValue=""
+        options={args.optgroup ? optionsGroup : options}
+        icon={args.icon ? <ListIcon /> : null}
+    />
+);
+
+Select.args = {
+    optgroup: true,
+    disabled: false,
+    readOnly: false,
+    isRounded: false,
+    fieldSize: buttonSizeDefault,
+    blockWidth: inputWidthDefault,
+    hasStaticWidth: false,
+    hasHelpButton: false,
+    icon: true,
+};

@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -14,29 +12,39 @@ import Title from '../Title/Title';
 import { CrossIcon } from '../Icon/Icon';
 import ModalHeader from './ModalHeader';
 
-storiesOf(folder.popup + folder.sub.modal + 'ModalHeader', module)
-    .addDecorator(withKnobs)
-    .add('ModalHeader', () => (
-        <ModalHeader
-            paddingLateral={select(
-                labels.paddingLateral,
-                spaceOptions,
-                spaceOptions.sm,
-            )}
-            paddingTop={select(
-                labels.paddingTop,
-                spaceOptions,
-                spaceOptions.sm,
-            )}
-            paddingBottom={select(
-                labels.paddingBottom,
-                spaceOptions,
-                spaceOptions.sm,
-            )}
-        >
-            <Title textSize={fontSizeOptions.md}>
-                {text('Title', 'This is the Title')}
-            </Title>
+export default {
+    title: folder.popup + folder.sub.modal + 'ModalHeader',
+    argTypes: {
+        title: {
+            name: 'Title',
+            control: 'text',
+            defaultValue: 'This is the Title',
+        },
+        paddingBottom: {
+            name: labels.paddingBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.sm,
+        },
+        paddingLateral: {
+            name: labels.paddingLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.sm,
+        },
+        paddingTop: {
+            name: labels.paddingTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+            defaultValue: spaceOptions.sm,
+        },
+    },
+};
+
+export const SimpleModalHeader = ({ title, ...args }) => {
+    return (
+        <ModalHeader {...args}>
+            <Title textSize={fontSizeOptions.md}>{title}</Title>
 
             <CrossIcon
                 htmlTag={iconHtmlTagOptions.button}
@@ -44,4 +52,5 @@ storiesOf(folder.popup + folder.sub.modal + 'ModalHeader', module)
                 colorPallet={colorPalletOptions.wab}
             />
         </ModalHeader>
-    ));
+    );
+};

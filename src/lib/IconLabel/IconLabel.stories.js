@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, text, select, radios } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -11,43 +9,71 @@ import {
     formStatusDefault,
     spaceOptions,
     spaceDefault,
-    iconSizeOptions,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
 import { OutIcon } from '../Icon/Icon';
-import IconLabel from './IconLabel';
+import IconLabelComponent from './IconLabel';
 
 const { wab, ...buttonColorPalletOptions } = colorPalletOptions;
 
-storiesOf(folder.text + 'IconLabel', module)
-    .addDecorator(withKnobs)
-    .add('IconLabel', () => (
-        <IconLabel
-            colorPallet={radios(
-                labels.colorPallet,
-                buttonColorPalletOptions,
-                colorPalletDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceDefault)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginLeft={select(labels.marginLeft, spaceOptions, spaceDefault)}
-            marginRight={select(labels.marginRight, spaceOptions, spaceDefault)}
-            icon={<OutIcon />}
-        >
-            {text(labels.text, 'Sample')}
-        </IconLabel>
-    ));
+export default {
+    title: folder.text + 'IconLabel',
+    argTypes: {
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(buttonColorPalletOptions),
+            control: 'radio',
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginLeft: {
+            name: labels.marginLeft,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginRight: {
+            name: labels.marginRight,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        text: {
+            name: labels.text,
+            control: 'text',
+        },
+    },
+};
+
+export const IconLabel = args => (
+    <IconLabelComponent icon={<OutIcon />} {...args}>
+        {args.text}
+    </IconLabelComponent>
+);
+
+IconLabel.args = {
+    colorPallet: colorPalletDefault,
+    colorTheme: colorThemeDefault,
+    colorStatus: formStatusDefault,
+    marginTop: spaceDefault,
+    marginBottom: spaceDefault,
+    marginLeft: spaceDefault,
+    marginRight: spaceDefault,
+    text: 'Sample',
+};

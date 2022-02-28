@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorPalletOptions,
@@ -13,89 +11,62 @@ import { CardsIcon, OutIcon } from '../Icon/Icon';
 import Link from '../Link/Link';
 import IconLabel from '../IconLabel/IconLabel';
 import Text from '../Text/Text';
-import MenuListItem from './MenuListItem';
+import MenuListItemComponent from './MenuListItem';
 
-storiesOf(folder.nav + folder.sub.menu + 'MenuListItem', module)
-    .addDecorator(withKnobs)
-    .add('MenuListItem', () => (
-        <a href="#">
-            <MenuListItem
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-            >
-                <CardsIcon
-                    iconSize={iconSizeOptions.lg}
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                />
+export default {
+    title: folder.nav + folder.sub.menu + 'MenuListItem',
+    argTypes: {
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+    },
+    args: { colorTheme: colorThemeDefault },
+};
 
-                <Link
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                >
-                    Payment
-                </Link>
+export const MenuListItem = args => (
+    <a href="#">
+        <MenuListItemComponent colorTheme={args.colorTheme}>
+            <CardsIcon
+                iconSize={iconSizeOptions.lg}
+                colorTheme={args.colorTheme}
+            />
 
-                <IconLabel
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    icon={<OutIcon />}
-                >
-                    Dev
-                </IconLabel>
+            <Link colorTheme={args.colorTheme}>Payment</Link>
 
-                <Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas sit amet accumsan dolor. Nullam fringilla quam leo,
-                    id bibendum felis iaculis eu.
-                </Text>
-            </MenuListItem>
-        </a>
-    ))
-    .add('MenuListItem grey', () => (
-        <a href="#">
-            <MenuListItem
-                colorTheme={select(
-                    labels.colorTheme,
-                    colorThemeOptions,
-                    colorThemeDefault,
-                )}
-            >
-                <CardsIcon
-                    iconSize={iconSizeOptions.lg}
-                    colorPallet={colorPalletOptions.wab}
-                />
+            <IconLabel colorTheme={args.colorTheme} icon={<OutIcon />}>
+                Dev
+            </IconLabel>
 
-                <Link colorPallet={colorPalletOptions.wab}>Payment</Link>
+            <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas sit amet accumsan dolor. Nullam fringilla quam leo, id
+                bibendum felis iaculis eu.
+            </Text>
+        </MenuListItemComponent>
+    </a>
+);
 
-                <IconLabel
-                    colorTheme={select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    )}
-                    icon={<OutIcon />}
-                >
-                    Dev
-                </IconLabel>
+export const MenuListItemGrey = args => (
+    <a href="#">
+        <MenuListItemComponent colorTheme={args.colorTheme}>
+            <CardsIcon
+                colorPallet={colorPalletOptions.wab}
+                iconSize={iconSizeOptions.lg}
+            />
 
-                <Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas sit amet accumsan dolor. Nullam fringilla quam leo,
-                    id bibendum felis iaculis eu.
-                </Text>
-            </MenuListItem>
-        </a>
-    ));
+            <Link colorPallet={colorPalletOptions.wab}>Payment</Link>
+
+            <IconLabel colorTheme={args.colorTheme} icon={<OutIcon />}>
+                Dev
+            </IconLabel>
+
+            <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas sit amet accumsan dolor. Nullam fringilla quam leo, id
+                bibendum felis iaculis eu.
+            </Text>
+        </MenuListItemComponent>
+    </a>
+);

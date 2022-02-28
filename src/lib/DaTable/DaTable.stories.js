@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     formStatusOptions,
@@ -152,119 +150,135 @@ const sampleRows = [
     },
 ];
 
-storiesOf(folder.table + folder.sub.daTable + 'DaTable', module)
-    .addDecorator(withKnobs)
-    .add('DaTable', () => (
-        <DaTable
-            isLoading={boolean(labels.isLoading, false)}
-            loadingRowNumber={sampleRows.length}
-            blockWidth={select(
-                labels.blockWidth,
-                spaceOptions,
-                spaceOptions.md,
-            )}
-            marginLateral={select(
-                labels.marginLateral,
-                spaceOptions,
-                spaceOptions.sm,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceOptions.sm)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceOptions.sm,
-            )}
-        >
-            <DaTableHead>
-                <DaTableHeadCell label="Select/deselect all">
-                    <Checkbox id="select" />
-                </DaTableHeadCell>
+export default {
+    title: folder.table + folder.sub.daTable + 'DaTable',
+    argTypes: {
+        blockWidth: {
+            name: labels.blockWidth,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginLateral: {
+            name: labels.marginLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        isLoading: {
+            name: labels.isLoading,
+            control: 'boolean',
+        },
+        withData: {
+            name: 'With data',
+            control: 'boolean',
+        },
+    },
+};
 
-                <DaTableHeadCell label="ID" />
+export const Table = ({ withData, ...args }) => (
+    <DaTable loadingRowNumber={sampleRows.length} {...args}>
+        <DaTableHead>
+            <DaTableHeadCell label="Select/deselect all">
+                <Checkbox id="select" />
+            </DaTableHeadCell>
 
-                <DaTableHeadCell
-                    sortIcon={<ArrowBottomIcon title="Sort DESC on Date" />}
-                    label="Date"
+            <DaTableHeadCell label="ID" />
+
+            <DaTableHeadCell
+                sortIcon={<ArrowBottomIcon title="Sort DESC on Date" />}
+                label="Date"
+            />
+
+            <DaTableHeadCell label="Name">
+                <DaInput
+                    placeholder="Search name"
+                    fieldSize="sm"
+                    blockWidth="sm"
                 />
+            </DaTableHeadCell>
 
-                <DaTableHeadCell label="Name">
-                    <DaInput
-                        placeholder="Search name"
-                        fieldSize="sm"
-                        blockWidth="sm"
+            <DaTableHeadCell
+                sortIcon={
+                    <ArrowBottomIcon
+                        isActive={true}
+                        title="Sort ASC on Amount"
                     />
-                </DaTableHeadCell>
+                }
+                label="Amount"
+            />
 
-                <DaTableHeadCell
-                    sortIcon={
-                        <ArrowBottomIcon
-                            isActive={true}
-                            title="Sort ASC on Amount"
-                        />
-                    }
-                    label="Amount"
-                />
+            <DaTableHeadCell
+                groupIcon={<ListIcon title="Group by Type" />}
+                label="Type"
+            />
 
-                <DaTableHeadCell
-                    groupIcon={<ListIcon title="Group by Type" />}
-                    label="Type"
-                />
+            <DaTableHeadCell
+                groupIcon={<ListIcon title="Group by Status" />}
+                label="Status"
+            />
+        </DaTableHead>
 
-                <DaTableHeadCell
-                    groupIcon={<ListIcon title="Group by Status" />}
-                    label="Status"
-                />
-            </DaTableHead>
+        <DaTableBody>
+            {!args?.isLoading && withData ? (
+                sampleRows.map((sample, index) => {
+                    const [isActive, setActive] = useState(false);
 
-            <DaTableBody>
-                {!boolean(labels.isLoading, false) &&
-                boolean('With data', true) ? (
-                    sampleRows.map((sample, index) => {
-                        const [isActive, setActive] = useState(false);
+                    return (
+                        <DaTableRow key={index} isActive={isActive}>
+                            <DaTableCell>
+                                <Checkbox
+                                    id={'checkbox' + index}
+                                    onChange={() => setActive(!isActive)}
+                                    checked={isActive}
+                                />
+                            </DaTableCell>
 
-                        return (
-                            <DaTableRow key={index} isActive={isActive}>
-                                <DaTableCell>
-                                    <Checkbox
-                                        id={'checkbox' + index}
-                                        onChange={() => setActive(!isActive)}
-                                        checked={isActive}
-                                    />
-                                </DaTableCell>
+                            <DaTableCell isId={true}>
+                                {3400 + index}
+                            </DaTableCell>
 
-                                <DaTableCell isId={true}>
-                                    {3400 + index}
-                                </DaTableCell>
+                            <DaTableCell isMain={false} label="Date">
+                                {sample.date}
+                            </DaTableCell>
 
-                                <DaTableCell isMain={false} label="Date">
-                                    {sample.date}
-                                </DaTableCell>
+                            <DaTableCell>{sample.name}</DaTableCell>
 
-                                <DaTableCell>{sample.name}</DaTableCell>
+                            <DaTableCell>{sample.amount}&nbsp;€</DaTableCell>
 
-                                <DaTableCell>
-                                    {sample.amount}&nbsp;€
-                                </DaTableCell>
+                            <DaTableCell isMain={false} label="Type">
+                                {sample.type}
+                            </DaTableCell>
 
-                                <DaTableCell isMain={false} label="Type">
-                                    {sample.type}
-                                </DaTableCell>
+                            <DaTableCell isMain={false} label="Status">
+                                {status.icon[sample.status]}
+                                {status.text[sample.status]}
+                            </DaTableCell>
+                        </DaTableRow>
+                    );
+                })
+            ) : (
+                <Text textSize={fontSizeOptions.sm} align={alignOptions.center}>
+                    Nothing to show ¯\_(ツ)_/¯
+                </Text>
+            )}
+        </DaTableBody>
+    </DaTable>
+);
 
-                                <DaTableCell isMain={false} label="Status">
-                                    {status.icon[sample.status]}
-                                    {status.text[sample.status]}
-                                </DaTableCell>
-                            </DaTableRow>
-                        );
-                    })
-                ) : (
-                    <Text
-                        textSize={fontSizeOptions.sm}
-                        align={alignOptions.center}
-                    >
-                        Nothing to show ¯\_(ツ)_/¯
-                    </Text>
-                )}
-            </DaTableBody>
-        </DaTable>
-    ));
+Table.args = {
+    isLoading: false,
+    blockWidth: spaceOptions.md,
+    marginLateral: spaceOptions.sm,
+    marginTop: spaceOptions.sm,
+    marginBottom: spaceOptions.sm,
+    withData: true,
+};

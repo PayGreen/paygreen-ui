@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
 import {
     folder,
     iconSizeOptions,
@@ -13,22 +11,36 @@ import Logo from '../Logo/Logo';
 import { logo } from '../Logo/sample/logo';
 import MenuMobile from './MenuMobile';
 
-storiesOf(folder.layout + 'MenuMobile', module)
-    .addDecorator(withKnobs)
-    .add('MenuMobile', () => (
-        <MenuMobile
-            isHidden={boolean(labels.isHidden, false)}
-            hasTopStyle={boolean(labels.hasTopStyle, false)}
-        >
-            <MenuHamburger />
+export default {
+    title: folder.layout + 'MenuMobile',
+    argTypes: {
+        isHidden: {
+            name: labels.isHidden,
+            control: 'boolean',
+        },
+        hasTopStyle: {
+            name: labels.hasTopStyle,
+            control: 'boolean',
+        },
+    },
+};
 
-            <a href="#">
-                <Logo hasThemeColor={true}>{logo}</Logo>
-            </a>
+export const SimpleMenuPrimary = ({ isHidden, hasTopStyle }) => (
+    <MenuMobile isHidden={isHidden} hasTopStyle={hasTopStyle}>
+        <MenuHamburger />
 
-            <UserIcon
-                htmlTag={iconHtmlTagOptions.button}
-                iconSize={iconSizeOptions.xl}
-            />
-        </MenuMobile>
-    ));
+        <a href="#">
+            <Logo hasThemeColor={true}>{logo}</Logo>
+        </a>
+
+        <UserIcon
+            htmlTag={iconHtmlTagOptions.button}
+            iconSize={iconSizeOptions.xl}
+        />
+    </MenuMobile>
+);
+
+SimpleMenuPrimary.args = {
+    isHidden: false,
+    hasTopStyle: false,
+};

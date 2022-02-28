@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import {
     folder,
     colorPalletOptions,
@@ -30,7 +29,11 @@ const logoComponent = (
     </a>
 );
 
-storiesOf(folder.layout + 'Layout', module).add('Layout', () => {
+export default {
+    title: folder.layout + 'Layout',
+};
+
+export const LayoutStory = ({ type, blockSize, ...args }) => {
     const [isOpen, setOpen] = useState(true);
 
     return (
@@ -70,4 +73,4 @@ storiesOf(folder.layout + 'Layout', module).add('Layout', () => {
             </Main>
         </Layout>
     );
-});
+};

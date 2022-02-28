@@ -1,12 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    text,
-    radios,
-    select,
-    boolean,
-} from '@storybook/addon-knobs';
 import {
     folder,
     cornerStyleOptions,
@@ -33,85 +25,88 @@ import Corner from './Corner';
 
 const { wab, ...cornerColorPalletOptions } = colorPalletOptions;
 
-storiesOf(folder.block + 'Corner', module)
-    .addDecorator(withKnobs)
-    .add('Corner banner', () => (
-        <Corner
-            label={text(labels.label, 'Corner')}
-            cornerStyle={cornerStyleOptions.banner}
-            position={radios(
-                labels.position,
-                lateralPositionOptions,
-                lateralPositionDefault,
-            )}
-            colorStyle={radios(
-                labels.colorStyle,
-                colorStyleOptions,
-                colorStyleDefault,
-            )}
-            colorPallet={radios(
-                labels.colorPallet,
-                cornerColorPalletOptions,
-                colorPalletDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-        />
-    ))
-    .add('Corner square with Popin', () => (
-        <Corner
-            label={<QuestionBoldIcon />}
-            position={radios(
-                labels.position,
-                lateralPositionOptions,
-                lateralPositionDefault,
-            )}
-            hasCenteredPopin={boolean('Has centered Popin', false)}
-            radiusSize={select(
-                labels.radiusSize,
-                radiusOptions,
-                radiusDefault,
-            )}
-            colorStyle={radios(
-                labels.colorStyle,
-                colorStyleOptions,
-                colorStyleDefault,
-            )}
-            colorPallet={radios(
-                labels.colorPallet,
-                cornerColorPalletOptions,
-                colorPalletDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-        >
-            <Popin>
-                <Text
-                    marginTop={spaceOptions.xs}
-                    marginLateral={spaceOptions.xs}
-                    marginBottom={spaceOptions.xs}
-                    textSize={fontSizeOptions.xs}
-                >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                </Text>
-            </Popin>
-        </Corner>
-    ));
+export default {
+    title: folder.block + 'Corner',
+    argTypes: {
+        position: {
+            name: labels.position,
+            options: Object.values(lateralPositionOptions),
+            control: 'radio',
+        },
+        colorStyle: {
+            name: labels.colorStyle,
+            options: Object.values(colorStyleOptions),
+            control: 'radio',
+        },
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(cornerColorPalletOptions),
+            control: 'radio',
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+    },
+    args: {
+        position: lateralPositionDefault,
+        colorStyle: colorStyleDefault,
+        colorPallet: colorPalletDefault,
+        colorTheme: colorThemeDefault,
+        colorStatus: formStatusDefault,
+    },
+};
+
+export const CornerBanner = args => (
+    <Corner {...args} cornerStyle={cornerStyleOptions.banner} />
+);
+
+CornerBanner.argTypes = {
+    label: {
+        name: labels.label,
+        control: 'text',
+    },
+};
+
+CornerBanner.args = {
+    label: 'Corner',
+};
+
+export const CornerSquareWithPopin = args => (
+    <Corner {...args} label={<QuestionBoldIcon />}>
+        <Popin>
+            <Text
+                marginTop={spaceOptions.xs}
+                marginLateral={spaceOptions.xs}
+                marginBottom={spaceOptions.xs}
+                textSize={fontSizeOptions.xs}
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Text>
+        </Popin>
+    </Corner>
+);
+
+CornerSquareWithPopin.argTypes = {
+    hasCenteredPopin: {
+        name: 'Has centered Popin',
+        control: 'boolean',
+    },
+    radiusSize: {
+        name: labels.radiusSize,
+        options: Object.values(radiusOptions),
+        control: 'select',
+    },
+};
+
+CornerSquareWithPopin.args = {
+    hasCenteredPopin: false,
+    radiusSize: radiusDefault,
+};

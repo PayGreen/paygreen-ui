@@ -1,19 +1,37 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { folder } from '../../shared/constants';
 import labels from '../../shared/labels';
 import DaTableCell from './DaTableCell';
 
-storiesOf(folder.table + folder.sub.daTable + 'DaTableCell', module)
-    .addDecorator(withKnobs)
-    .add('DaTableCell', () => (
-        <DaTableCell
-            isMain={boolean('Is main', true)}
-            isId={boolean('Is id', false)}
-            isLoading={boolean(labels.isLoading, false)}
-            label={text(labels.label, 'Label')}
-        >
-            {boolean(labels.isLoading, false) ? null : 'Sample'}
-        </DaTableCell>
-    ));
+export default {
+    title: folder.table + folder.sub.daTable + 'DaTableCell',
+    argTypes: {
+        isMain: {
+            name: 'Is main',
+            control: 'boolean',
+        },
+        isId: {
+            name: 'Is id',
+            control: 'boolean',
+        },
+        isLoading: {
+            name: labels.isLoading,
+            control: 'boolean',
+        },
+        label: {
+            name: labels.label,
+            control: 'text',
+        },
+    },
+};
+
+export const TableCell = ({ text, ...args }) => (
+    <DaTableCell {...args}>{args?.isLoading ? null : 'Sample'}</DaTableCell>
+);
+
+TableCell.args = {
+    isMain: true,
+    isId: false,
+    isLoading: false,
+    Label: 'Label',
+};

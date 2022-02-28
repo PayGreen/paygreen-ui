@@ -1,13 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import {
-    withKnobs,
-    boolean,
-    radios,
-    number,
-    text,
-    select,
-} from '@storybook/addon-knobs';
+
 import {
     folder,
     spaceOptions,
@@ -32,86 +24,118 @@ const valueOptions = {
 
 const { wab, ...barColorPalletOptions } = colorPalletOptions;
 
-storiesOf(folder.graph + 'Databar', module)
-    .addDecorator(withKnobs)
-    .add('DataBar', () => (
-        <DataBar
-            hasBackground={boolean(labels.hasBackground, true)}
-            backgroundColor={select(
-                labels.backgroundColor,
-                greyOptions,
-                greyOptions.grey10,
-            )}
-            textSize={select(labels.textSize, fontSizeOptions, fontSizeDefault)}
-            unit={text(labels.unity, '%')}
-            colorPallet={radios(
-                labels.colorPallet,
-                barColorPalletOptions,
-                colorPalletDefault,
-            )}
-            maxValue={number(labels.maxValue, 100)}
-            data={[
-                {
-                    value: number(labels.value, defaultValue, valueOptions),
-                    legend: ['compensé par ', <strong>vous</strong>],
-                    colorTheme: select(
-                        labels.colorTheme,
-                        colorThemeOptions,
-                        colorThemeDefault,
-                    ),
-                    colorStatus: select(
-                        labels.colorStatus,
-                        formStatusOptions,
-                        formStatusDefault,
-                    ),
-                },
-            ]}
-            blockWidth={select(
-                labels.blockWidth,
-                spaceOptions,
-                spaceOptions.md,
-            )}
-        />
-    ))
-    .add('DataBar multi', () => (
-        <DataBar
-            hasBackground={boolean(labels.hasBackground, true)}
-            colorPallet={radios(
-                labels.colorPallet,
-                barColorPalletOptions,
-                colorPalletDefault,
-            )}
-            data={[
-                {
-                    value: number(
-                        labels.value + ' 1',
-                        defaultValue,
-                        valueOptions,
-                    ),
-                },
-                {
-                    value: number(
-                        labels.value + ' 2',
-                        defaultValue,
-                        valueOptions,
-                    ),
-                    colorTheme: colorThemeOptions.tertiary,
-                    colorStatus: formStatusOptions.warning,
-                },
-                {
-                    value: number(
-                        labels.value + ' 3',
-                        defaultValue,
-                        valueOptions,
-                    ),
-                    colorTheme: colorThemeOptions.quaternary,
-                    colorStatus: formStatusOptions.danger,
-                },
-            ]}
-            blockWidth={select(
-                labels.blockWidth,
-                spaceOptions,
-                spaceOptions.md,
-            )}
-        />
-    ));
+export default {
+    title: folder.graph + 'Databar',
+    argTypes: {
+        hasBackground: {
+            name: labels.hasBackground,
+            control: 'boolean',
+        },
+        backgroundColor: {
+            name: labels.backgroundColor,
+            options: Object.values(greyOptions),
+            control: 'select',
+        },
+        textSize: {
+            name: labels.textSize,
+            control: 'select',
+            options: Object.values(fontSizeOptions),
+        },
+        unit: {
+            name: labels.unity,
+            control: 'text',
+        },
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(colorPalletOptions),
+            control: 'radio',
+        },
+        maxValue: {
+            name: labels.maxValue,
+            control: 'number',
+        },
+        value: {
+            name: labels.value,
+            control: 'range',
+        },
+        value2: {
+            name: labels.value + '2',
+            control: 'range',
+        },
+        value3: {
+            name: labels.value + '3',
+            control: 'range',
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+        blockWidth: {
+            name: labels.blockWidth,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const DataBarClassic = ({ value, colorTheme, colorStatus, ...args }) => (
+    <DataBar
+        {...args}
+        data={[
+            {
+                value: value,
+                colorTheme: colorTheme,
+                colorStatus: colorStatus,
+            },
+        ]}
+    />
+);
+
+export const DataBarMulti = ({ value, value2, value3, ...args }) => (
+    <DataBar
+        {...args}
+        data={[
+            {
+                value: value,
+            },
+            {
+                value: value2,
+                colorTheme: colorThemeOptions.tertiary,
+                colorStatus: formStatusOptions.warning,
+            },
+            {
+                value: value3,
+                colorTheme: colorThemeOptions.quaternary,
+                colorStatus: formStatusOptions.danger,
+            },
+        ]}
+    />
+);
+
+DataBarClassic.args = {
+    hasBackground: true,
+    backgroundColor: greyOptions.grey10,
+    textSize: fontSizeDefault,
+    unit: '%',
+    colorPallet: colorPalletDefault,
+    maxValue: 100,
+    value: defaultValue,
+    colorTheme: colorThemeDefault,
+    colorStatus: formStatusDefault,
+    blockWidth: spaceOptions.md,
+};
+
+DataBarMulti.args = {
+    hasBackground: true,
+    colorPallet: colorPalletDefault,
+    blockWidth: spaceOptions.md,
+    value: defaultValue,
+    value2: defaultValue,
+    value3: defaultValue,
+};

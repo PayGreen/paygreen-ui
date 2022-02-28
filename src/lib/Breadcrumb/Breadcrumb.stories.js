@@ -1,14 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, select } from '@storybook/addon-knobs';
 import {
     folder,
     colorThemeOptions,
-    colorThemeDefault,
     colorTypeOptions,
-    colorTypeDefault,
     spaceOptions,
-    spaceDefault,
 } from '../../shared/constants';
 import labels from '../../shared/labels';
 import Breadcrumb from './Breadcrumb';
@@ -32,31 +27,37 @@ const sampleLinks = [
     },
 ];
 
-storiesOf(folder.nav + 'Breadcrumb', module)
-    .addDecorator(withKnobs)
-    .add('Breadcrumb', () => (
-        <Breadcrumb
-            elements={sampleLinks}
-            colorType={radios(
-                labels.colorType,
-                colorTypeOptions,
-                colorTypeDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            marginLateral={select(
-                labels.marginLateral,
-                spaceOptions,
-                spaceDefault,
-            )}
-            marginTop={select(labels.marginTop, spaceOptions, spaceOptions.xs)}
-            marginBottom={select(
-                labels.marginBottom,
-                spaceOptions,
-                spaceOptions.xs,
-            )}
-        />
-    ));
+export default {
+    title: folder.nav + 'Breadcrumb',
+    argTypes: {
+        colorType: {
+            name: labels.colorType,
+            control: 'select',
+            options: Object.values(colorTypeOptions),
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        marginLateral: {
+            name: labels.marginLateral,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginTop: {
+            name: labels.marginTop,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+        marginBottom: {
+            name: labels.marginBottom,
+            options: Object.values(spaceOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const BreadcrumbStory = ({ ...args }) => (
+    <Breadcrumb elements={sampleLinks} {...args} />
+);

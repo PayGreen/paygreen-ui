@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withKnobs, radios, boolean, select } from '@storybook/addon-knobs';
 import {
     folder,
     lateralPositionOptions,
@@ -17,31 +15,48 @@ import {
 import labels from '../../shared/labels';
 import MenuHamburger from './MenuHamburger';
 
-storiesOf(folder.layout + 'MenuHamburger', module)
-    .addDecorator(withKnobs)
-    .add('MenuHamburger', () => (
-        <MenuHamburger
-            isOpen={boolean(labels.isOpen, false)}
-            arrowDirection={radios(
-                'Arrow direction',
-                lateralPositionOptions,
-                lateralPositionDefault,
-            )}
-            colorPallet={radios(
-                labels.colorPallet,
-                colorPalletOptions,
-                colorPalletDefault,
-            )}
-            colorTheme={select(
-                labels.colorTheme,
-                colorThemeOptions,
-                colorThemeDefault,
-            )}
-            colorWab={select(labels.colorWab, greyOptions, greyDefault)}
-            colorStatus={select(
-                labels.colorStatus,
-                formStatusOptions,
-                formStatusDefault,
-            )}
-        />
-    ));
+export default {
+    title: folder.layout + 'MenuHamburger',
+    argTypes: {
+        arrowDirection: {
+            name: 'Arrow direction',
+            options: Object.values(lateralPositionOptions),
+            control: 'radio',
+        },
+        colorPallet: {
+            name: labels.colorPallet,
+            options: Object.values(colorPalletOptions),
+            control: 'radio',
+        },
+        colorTheme: {
+            name: labels.colorTheme,
+            options: Object.values(colorThemeOptions),
+            control: 'select',
+        },
+        isOpen: {
+            name: labels.isOpen,
+            control: 'boolean',
+        },
+        colorWab: {
+            name: labels.colorWab,
+            options: Object.values(greyOptions),
+            control: 'select',
+        },
+        colorStatus: {
+            name: labels.colorStatus,
+            options: Object.values(formStatusOptions),
+            control: 'select',
+        },
+    },
+};
+
+export const BurgerMenu = args => <MenuHamburger {...args} />;
+
+BurgerMenu.args = {
+    isOpen: false,
+    arrowDirection: lateralPositionDefault,
+    colorPallet: colorPalletDefault,
+    colorTheme: colorThemeDefault,
+    colorWab: greyDefault,
+    colorStatus: formStatusDefault,
+};
