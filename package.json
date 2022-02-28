@@ -11,6 +11,7 @@
   "scripts": {
     "build": "rollup -c",
     "start": "start-storybook",
+    "prepare": "npm run build",
     "test": "jest",
     "test-update": "jest --updateSnapshot",
     "build-storybook": "build-storybook -c .storybook -o docs",
