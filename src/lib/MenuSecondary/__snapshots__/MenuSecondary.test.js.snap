@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__MenuSecondaryBase-lzoq71-0 fdUHpM"
+  className="style__MenuSecondaryBase-sc-lzoq71-0 cmMilH"
 >
   <ul
     className="menu"
@@ -11,16 +11,16 @@ exports[`renders without crashing 1`] = `
       className="menuElement"
     >
       <div
-        className="style__MenuBase-sc-6r1iet-0 fXoXfv"
+        className="style__MenuBase-sc-6r1iet-0 jHFvhV"
       >
         <a
           href="#"
         >
           <div
-            className="style__MenuItemBase-sc-4wfueo-0 cxMVrk"
+            className="style__MenuItemBase-sc-4wfueo-0 kPIopa"
           >
             <span
-              className="style__IconBase-ak3679-0 dyzaaI icon"
+              className="style__IconBase-sc-ak3679-0 hcnkNX icon"
               type={null}
             >
               <svg

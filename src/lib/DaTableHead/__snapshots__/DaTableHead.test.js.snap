@@ -2,19 +2,19 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__DaTableHeadBase-avz0u2-0 iDHPuo"
+  className="style__DaTableHeadBase-sc-avz0u2-0 jrnRKr"
 >
   <div
-    className="style__InternalGridBase-sc-1aqp2sd-0 hBAUFX"
+    className="style__InternalGridBase-sc-1aqp2sd-0 jOUibR"
     onClick={[Function]}
   >
     <span
-      className="style__TitleBase-td7fx4-0 knreaw"
+      className="style__TitleBase-sc-td7fx4-0 eVJEcb"
     >
       Search and filters
     </span>
     <span
-      className="style__IconBase-ak3679-0 dZVoe icon"
+      className="style__IconBase-sc-ak3679-0 hQnrjp icon"
       type={null}
     >
       <svg
@@ -27,13 +27,13 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="style__DaTableHeadCellBase-sc-1fpn11j-0 fcGdZD"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 bdhFUo"
   >
     <div
       className="head-child"
     >
       <div
-        className="style__CheckboxBase-sc-1wlk4ud-0 bdkKKN"
+        className="style__CheckboxBase-sc-1wlk4ud-0 dKIeZz"
       >
         <input
           disabled={false}
@@ -44,7 +44,7 @@ exports[`renders without crashing 1`] = `
           htmlFor="select"
         >
           <span
-            className="style__IconBase-ak3679-0 xhyCY icon"
+            className="style__IconBase-sc-ak3679-0 gLGzxb icon"
             type={null}
           >
             <svg
@@ -60,7 +60,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="style__DaTableHeadCellBase-sc-1fpn11j-0 iMdqdb"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 fvhdNg"
   >
     <div
       className="head-child"
@@ -69,7 +69,7 @@ exports[`renders without crashing 1`] = `
         className="icon-child"
       >
         <button
-          className="style__IconBase-ak3679-0 bkaEeI icon"
+          className="style__IconBase-sc-ak3679-0 vNeBr icon"
           type="button"
         >
           <svg
@@ -89,7 +89,7 @@ exports[`renders without crashing 1`] = `
     </div>
   </div>
   <div
-    className="style__DaTableHeadCellBase-sc-1fpn11j-0 iMdqdb"
+    className="style__DaTableHeadCellBase-sc-1fpn11j-0 fvhdNg"
   >
     <div
       className="head-child"

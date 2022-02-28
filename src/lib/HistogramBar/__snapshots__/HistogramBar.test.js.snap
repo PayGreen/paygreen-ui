@@ -2,14 +2,14 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__HistogramBarBase-y733il-0 iQeriW"
+  className="style__HistogramBarBase-sc-y733il-0 eyMQht"
   label="label"
 >
   <div
-    className="style__MessageBase-ts6lfl-0 jRGXuP"
+    className="style__MessageBase-sc-ts6lfl-0 cfXcWw"
   >
     <p
-      className="style__TextBase-sc-11ixwvd-0 kpKdJy"
+      className="style__TextBase-sc-11ixwvd-0 lyIHB"
     >
       60 in label
     </p>

@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__YAxisBase-fqe2pn-0 edtRyF"
+  className="style__YAxisBase-sc-fqe2pn-0 nQhmq"
 >
   <div
-    className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+    className="style__YAxisElementBase-sc-fqe2pn-1 eBTHGw"
   >
     <span
-      className="style__TextBase-sc-11ixwvd-0 fKOBXW"
+      className="style__TextBase-sc-11ixwvd-0 ilsyUh"
     >
       123
        
@@ -16,10 +16,10 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+    className="style__YAxisElementBase-sc-fqe2pn-1 eBTHGw"
   >
     <span
-      className="style__TextBase-sc-11ixwvd-0 fKOBXW"
+      className="style__TextBase-sc-11ixwvd-0 ilsyUh"
     >
       107
        
@@ -27,10 +27,10 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+    className="style__YAxisElementBase-sc-fqe2pn-1 eBTHGw"
   >
     <span
-      className="style__TextBase-sc-11ixwvd-0 fKOBXW"
+      className="style__TextBase-sc-11ixwvd-0 ilsyUh"
     >
       64
        
@@ -38,10 +38,10 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+    className="style__YAxisElementBase-sc-fqe2pn-1 eBTHGw"
   >
     <span
-      className="style__TextBase-sc-11ixwvd-0 fKOBXW"
+      className="style__TextBase-sc-11ixwvd-0 ilsyUh"
     >
       34.5
        
@@ -49,10 +49,10 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+    className="style__YAxisElementBase-sc-fqe2pn-1 eBTHGw"
   >
     <span
-      className="style__TextBase-sc-11ixwvd-0 fKOBXW"
+      className="style__TextBase-sc-11ixwvd-0 ilsyUh"
     >
       0
        

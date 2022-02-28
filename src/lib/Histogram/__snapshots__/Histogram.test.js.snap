@@ -2,26 +2,26 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__HistogramBase-h3wpv-0 gGIlYt"
+  className="style__HistogramBase-sc-h3wpv-0 gWwVZO"
 >
   <div
-    className="style__YAxisBase-fqe2pn-0 kimwMk"
+    className="style__YAxisBase-sc-fqe2pn-0 hKTTGT"
   >
     <div
-      className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+      className="style__YAxisElementBase-sc-fqe2pn-1 eBTHGw"
     >
       <span
-        className="style__TextBase-sc-11ixwvd-0 fKOBXW"
+        className="style__TextBase-sc-11ixwvd-0 ilsyUh"
       >
         110
          
       </span>
     </div>
     <div
-      className="style__YAxisElementBase-fqe2pn-1 bUfzZn"
+      className="style__YAxisElementBase-sc-fqe2pn-1 eBTHGw"
     >
       <span
-        className="style__TextBase-sc-11ixwvd-0 fKOBXW"
+        className="style__TextBase-sc-11ixwvd-0 ilsyUh"
       >
         0
          
@@ -35,28 +35,28 @@ exports[`renders without crashing 1`] = `
       className="bars"
     >
       <div
-        className="style__HistogramBarBase-y733il-0 juIWRe"
+        className="style__HistogramBarBase-sc-y733il-0 fBCCzR"
       >
         <div
           className="bar"
         />
       </div>
       <div
-        className="style__HistogramBarBase-y733il-0 hzbHsN"
+        className="style__HistogramBarBase-sc-y733il-0 bQVBXC"
       >
         <div
           className="bar"
         />
       </div>
       <div
-        className="style__HistogramBarBase-y733il-0 fMgXxe"
+        className="style__HistogramBarBase-sc-y733il-0 kScAx"
       >
         <div
           className="bar"
         />
       </div>
       <div
-        className="style__HistogramBarBase-y733il-0 crhDOo"
+        className="style__HistogramBarBase-sc-y733il-0 dRXjEz"
       >
         <div
           className="bar"

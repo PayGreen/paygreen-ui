@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__DaSelectBase-yl4pzp-0 iqigut"
+  className="style__DaSelectBase-sc-yl4pzp-0 ggQwku"
 >
   <select
     disabled={false}

@@ -2,18 +2,18 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__StepNavbarBase-q9k2ht-0 jcdoDQ"
+  className="style__StepNavbarBase-sc-q9k2ht-0 jqlVmr"
 >
   <a
     href="#"
   >
     <div
-      className="style__StepNavbarItemBase-sc-13afoye-0 ccKfGx"
+      className="style__StepNavbarItemBase-sc-13afoye-0 RIvFj"
     >
       <span>
         1 – Step one
         <span
-          className="style__IconBase-ak3679-0 bqeCwO icon done"
+          className="style__IconBase-sc-ak3679-0 iIEyRJ icon done"
           type={null}
         >
           <svg
@@ -28,12 +28,12 @@ exports[`renders without crashing 1`] = `
     </div>
   </a>
   <div
-    className="style__StepNavbarItemBase-sc-13afoye-0 IzBmG"
+    className="style__StepNavbarItemBase-sc-13afoye-0 kuwpWs"
   >
     <span>
       2 – Step two
       <span
-        className="style__IconBase-ak3679-0 fHLZTS icon"
+        className="style__IconBase-sc-ak3679-0 jgWwrR icon"
         type={null}
       >
         <svg
@@ -47,12 +47,12 @@ exports[`renders without crashing 1`] = `
     </span>
   </div>
   <div
-    className="style__StepNavbarItemBase-sc-13afoye-0 ccKfGx"
+    className="style__StepNavbarItemBase-sc-13afoye-0 RIvFj"
   >
     <span>
       3 – Step two
       <span
-        className="style__IconBase-ak3679-0 bqeCwO icon done"
+        className="style__IconBase-sc-ak3679-0 iIEyRJ icon done"
         type={null}
       >
         <svg

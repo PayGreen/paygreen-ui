@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <button
-  className="style__MenuCloseBase-sc-1a52uw3-0 hOzLaq"
+  className="style__MenuCloseBase-sc-1a52uw3-0 elyLuc"
   type="button"
 >
   <svg
@@ -14,7 +14,7 @@ exports[`renders without crashing 1`] = `
     />
   </svg>
   <span
-    className="style__IconBase-ak3679-0 cINikJ icon"
+    className="style__IconBase-sc-ak3679-0 celaYm icon"
     type={null}
   >
     <svg

@@ -2,10 +2,10 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__MenuMobileBase-sc-1udpf44-0 eBsVNv"
+  className="style__MenuMobileBase-sc-1udpf44-0 kEqTgg"
 >
   <button
-    className="style__MenuHamburgerBase-sc-1tooz6t-0 czVrHi"
+    className="style__MenuHamburgerBase-sc-1tooz6t-0 kXnkxc"
     type="button"
   >
     <span />
@@ -16,7 +16,7 @@ exports[`renders without crashing 1`] = `
     href="#"
   >
     <span
-      className="style__LogoBase-i5ejip-0 bjMlEg"
+      className="style__LogoBase-sc-i5ejip-0 iTNznD"
     >
       <span
         className="logo"
@@ -134,7 +134,7 @@ exports[`renders without crashing 1`] = `
     </span>
   </a>
   <button
-    className="style__IconBase-ak3679-0 gMHezo icon"
+    className="style__IconBase-sc-ak3679-0 bnqGbj icon"
     type="button"
   >
     <svg

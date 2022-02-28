@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__TextareaBase-sc-2rc58k-0 TQeqa"
+  className="style__TextareaBase-sc-2rc58k-0 eWqIQA"
 >
   <label
     htmlFor="textareaTest1"

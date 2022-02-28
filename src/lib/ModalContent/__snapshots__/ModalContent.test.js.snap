@@ -2,22 +2,22 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__ModalContentBase-atgy9x-0 lgAvQS"
+  className="style__ModalContentBase-sc-atgy9x-0 eRdVJp"
 >
   <div
-    className="style__ModalHeaderBase-e1z6bj-0 hqembS"
+    className="style__ModalHeaderBase-sc-e1z6bj-0 eTAPap"
   >
     <span
-      className="style__TitleBase-td7fx4-0 WZgoj"
+      className="style__TitleBase-sc-td7fx4-0 dNqcNs"
     >
       This is the Title
     </span>
   </div>
   <div
-    className="style__ModalBodyBase-md16g0-0 lhDNNM"
+    className="style__ModalBodyBase-sc-md16g0-0 biassv"
   >
     <p
-      className="style__TextBase-sc-11ixwvd-0 kSVwMo"
+      className="style__TextBase-sc-11ixwvd-0 bheFHj"
     >
       Curabitur congue varius ex et posuere. Maecenas tincidunt diam ut nisl porttitor scelerisque.Curabitur congue varius ex et posuere. Maecenas tincidunt diam ut nisl porttitor scelerisque.Curabitur congue varius ex et posuere. Maecenas tincidunt diam ut nisl porttitor scelerisque.
     </p>

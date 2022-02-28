@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__MainBase-sc-1032smc-0 jrFLLv"
+  className="style__MainBase-sc-1032smc-0 ljNhbh"
 >
   <header
-    className="style__TopbarBase-sc-167w4io-0 bgLEjQ"
+    className="style__TopbarBase-sc-167w4io-0 kgFkdG"
   >
     <button
-      className="style__MenuHamburgerBase-sc-1tooz6t-0 czVrHi"
+      className="style__MenuHamburgerBase-sc-1tooz6t-0 kXnkxc"
       type="button"
     >
       <span />
@@ -17,7 +17,7 @@ exports[`renders without crashing 1`] = `
     </button>
   </header>
   <div
-    className="style__BoxBase-sc-3504r6-0 enLnhx"
+    className="style__BoxBase-sc-3504r6-0 eQiTbn"
   />
 </div>
 `;

@@ -2,16 +2,16 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__TableBase-zyowmo-0 ezzDLP"
+  className="style__TableBase-sc-zyowmo-0 dZFIgk"
 >
   <div
     className="table"
   >
     <div
-      className="style__TableRowBase-sc-1nkna8o-0 bWcxXj"
+      className="style__TableRowBase-sc-1nkna8o-0 jgiXgk"
     >
       <div
-        className="style__TableCellBase-xv8yz4-0 gFlvRu"
+        className="style__TableCellBase-sc-xv8yz4-0 gDpjzE"
       >
         <span
           className="content"
@@ -20,7 +20,7 @@ exports[`renders without crashing 1`] = `
         </span>
       </div>
       <div
-        className="style__TableCellBase-xv8yz4-0 gFlvRu"
+        className="style__TableCellBase-sc-xv8yz4-0 gDpjzE"
       >
         <span
           className="content"
@@ -29,7 +29,7 @@ exports[`renders without crashing 1`] = `
         </span>
       </div>
       <div
-        className="style__TableCellBase-xv8yz4-0 gFlvRu"
+        className="style__TableCellBase-sc-xv8yz4-0 gDpjzE"
       >
         <span
           className="content"
@@ -39,10 +39,10 @@ exports[`renders without crashing 1`] = `
       </div>
     </div>
     <div
-      className="style__TableRowBase-sc-1nkna8o-0 bWcxXj"
+      className="style__TableRowBase-sc-1nkna8o-0 jgiXgk"
     >
       <div
-        className="style__TableCellBase-xv8yz4-0 gFlvRu"
+        className="style__TableCellBase-sc-xv8yz4-0 gDpjzE"
       >
         <span
           className="content"
@@ -51,7 +51,7 @@ exports[`renders without crashing 1`] = `
         </span>
       </div>
       <div
-        className="style__TableCellBase-xv8yz4-0 gFlvRu"
+        className="style__TableCellBase-sc-xv8yz4-0 gDpjzE"
       >
         <span
           className="content"
@@ -60,7 +60,7 @@ exports[`renders without crashing 1`] = `
         </span>
       </div>
       <div
-        className="style__TableCellBase-xv8yz4-0 gFlvRu"
+        className="style__TableCellBase-sc-xv8yz4-0 gDpjzE"
       >
         <span
           className="content"

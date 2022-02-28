@@ -2,13 +2,13 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__MenuGroupBase-sc-18ypw1h-0 kvqMbD"
+  className="style__MenuGroupBase-sc-18ypw1h-0 fwNgXF"
 >
   <div
-    className="style__MenuMobileBase-sc-1udpf44-0 eBsVNv"
+    className="style__MenuMobileBase-sc-1udpf44-0 kEqTgg"
   >
     <button
-      className="style__MenuHamburgerBase-sc-1tooz6t-0 czVrHi"
+      className="style__MenuHamburgerBase-sc-1tooz6t-0 kXnkxc"
       type="button"
     >
       <span />
@@ -17,16 +17,16 @@ exports[`renders without crashing 1`] = `
     </button>
   </div>
   <ul
-    className="style__MenuPrimaryBase-sc-4ap9m-0 kGEVJq"
+    className="style__MenuPrimaryBase-sc-4ap9m-0 jyYrk"
   >
     <li
-      className="style__MenuBase-sc-6r1iet-0 fXoXfv"
+      className="style__MenuBase-sc-6r1iet-0 jHFvhV"
     >
       <a
         href="#"
       >
         <div
-          className="style__MenuItemBase-sc-4wfueo-0 cxMVrk"
+          className="style__MenuItemBase-sc-4wfueo-0 kPIopa"
         >
           About us
         </div>
@@ -34,7 +34,7 @@ exports[`renders without crashing 1`] = `
     </li>
   </ul>
   <div
-    className="style__MenuSecondaryBase-lzoq71-0 grbavq"
+    className="style__MenuSecondaryBase-sc-lzoq71-0 fapJF"
   >
     <ul
       className="menu"
@@ -43,13 +43,13 @@ exports[`renders without crashing 1`] = `
         className="menuElement"
       >
         <div
-          className="style__MenuBase-sc-6r1iet-0 fXoXfv"
+          className="style__MenuBase-sc-6r1iet-0 jHFvhV"
         >
           <a
             href="#"
           >
             <div
-              className="style__MenuItemBase-sc-4wfueo-0 cxMVrk"
+              className="style__MenuItemBase-sc-4wfueo-0 kPIopa"
             >
               Login
             </div>
@@ -58,7 +58,7 @@ exports[`renders without crashing 1`] = `
       </li>
     </ul>
     <button
-      className="style__MenuCloseBase-sc-1a52uw3-0 hOzLaq"
+      className="style__MenuCloseBase-sc-1a52uw3-0 elyLuc"
       type="button"
     >
       <svg
@@ -70,7 +70,7 @@ exports[`renders without crashing 1`] = `
         />
       </svg>
       <span
-        className="style__IconBase-ak3679-0 cINikJ icon"
+        className="style__IconBase-sc-ak3679-0 celaYm icon"
         type={null}
       >
         <svg

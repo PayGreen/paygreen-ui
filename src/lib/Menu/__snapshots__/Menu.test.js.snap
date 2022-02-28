@@ -2,29 +2,29 @@
 
 exports[`renders without crashing 1`] = `
 <li
-  className="style__MenuBase-sc-6r1iet-0 fXoXfv"
+  className="style__MenuBase-sc-6r1iet-0 jHFvhV"
 >
   <a
     href="#"
   >
     <div
-      className="style__MenuItemBase-sc-4wfueo-0 eUyyLp"
+      className="style__MenuItemBase-sc-4wfueo-0 eonmHD"
     >
       Our products
     </div>
   </a>
   <ul
-    className="style__MenuListBase-sc-144u7yf-0 iWDTEQ"
+    className="style__MenuListBase-sc-144u7yf-0 VWlpu"
   >
     <li>
       <a
         href="#"
       >
         <div
-          className="style__MenuListItemBase-sc-81dvyg-0 fEBEyG"
+          className="style__MenuListItemBase-sc-81dvyg-0 cVZJKI"
         >
           <span
-            className="style__IconBase-ak3679-0 dyzaaI icon"
+            className="style__IconBase-sc-ak3679-0 hcnkNX icon"
             type={null}
           >
             <svg
@@ -36,12 +36,12 @@ exports[`renders without crashing 1`] = `
             </svg>
           </span>
           <span
-            className="style__LinkBase-sc-1gvcrtp-0 fjbDy"
+            className="style__LinkBase-sc-1gvcrtp-0 jhcqww"
           >
             Tree
           </span>
           <p
-            className="style__TextBase-sc-11ixwvd-0 kSVwMo"
+            className="style__TextBase-sc-11ixwvd-0 bheFHj"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet accumsan dolor. Nullam fringilla quam leo.
           </p>
@@ -53,10 +53,10 @@ exports[`renders without crashing 1`] = `
         href="#"
       >
         <div
-          className="style__MenuListItemBase-sc-81dvyg-0 fEBEyG"
+          className="style__MenuListItemBase-sc-81dvyg-0 cVZJKI"
         >
           <span
-            className="style__IconBase-ak3679-0 dyzaaI icon"
+            className="style__IconBase-sc-ak3679-0 hcnkNX icon"
             type={null}
           >
             <svg
@@ -71,7 +71,7 @@ exports[`renders without crashing 1`] = `
             </svg>
           </span>
           <span
-            className="style__LinkBase-sc-1gvcrtp-0 fjbDy"
+            className="style__LinkBase-sc-1gvcrtp-0 jhcqww"
           >
             Rounding
           </span>

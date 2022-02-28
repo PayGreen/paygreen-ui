@@ -2,16 +2,16 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__HeaderBase-j6bsys-0 WkPZs"
+  className="style__HeaderBase-sc-j6bsys-0 fBTGer"
 >
   <div
-    className="style__MenuGroupBase-sc-18ypw1h-0 xliyA"
+    className="style__MenuGroupBase-sc-18ypw1h-0 gtxZoW"
   >
     <div
-      className="style__MenuMobileBase-sc-1udpf44-0 bcfcec"
+      className="style__MenuMobileBase-sc-1udpf44-0 jeFqLP"
     >
       <button
-        className="style__MenuHamburgerBase-sc-1tooz6t-0 igNuVH"
+        className="style__MenuHamburgerBase-sc-1tooz6t-0 dNOLRJ"
         type="button"
       >
         <span />
@@ -20,16 +20,16 @@ exports[`renders without crashing 1`] = `
       </button>
     </div>
     <ul
-      className="style__MenuPrimaryBase-sc-4ap9m-0 kGEVJq"
+      className="style__MenuPrimaryBase-sc-4ap9m-0 jyYrk"
     >
       <li
-        className="style__MenuBase-sc-6r1iet-0 fXoXfv"
+        className="style__MenuBase-sc-6r1iet-0 jHFvhV"
       >
         <a
           href="#"
         >
           <div
-            className="style__MenuItemBase-sc-4wfueo-0 cxMVrk"
+            className="style__MenuItemBase-sc-4wfueo-0 kPIopa"
           >
             About us
           </div>

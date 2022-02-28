@@ -2,18 +2,18 @@
 
 exports[`renders without crashing 1`] = `
 <ul
-  className="style__SidebarListBase-b5r7k8-0 fMmkIZ"
+  className="style__SidebarListBase-sc-b5r7k8-0 VMgvG"
 >
   <li>
     <a
       href="#"
     >
       <div
-        className="style__SidebarItemBase-sc-1i0hz0r-0 jJGZXz"
+        className="style__SidebarItemBase-sc-1i0hz0r-0 hvRPPB"
         type={null}
       >
         <span
-          className="style__LinkBase-sc-1gvcrtp-0 fjbDy"
+          className="style__LinkBase-sc-1gvcrtp-0 jhcqww"
         >
           Tree
         </span>
@@ -25,11 +25,11 @@ exports[`renders without crashing 1`] = `
       href="#"
     >
       <div
-        className="style__SidebarItemBase-sc-1i0hz0r-0 jJGZXz"
+        className="style__SidebarItemBase-sc-1i0hz0r-0 hvRPPB"
         type={null}
       >
         <span
-          className="style__LinkBase-sc-1gvcrtp-0 fjbDy"
+          className="style__LinkBase-sc-1gvcrtp-0 jhcqww"
         >
           Other
         </span>

@@ -2,15 +2,15 @@
 
 exports[`renders without crashing 1`] = `
 <fieldset
-  className="style__RadioGroupBase-sc-1x8euva-0 kCKhdr"
+  className="style__RadioGroupBase-sc-1x8euva-0 gQjrFd"
 >
   <legend
-    className="style__DaLabelBase-sc-67p5vh-0 ZaevI"
+    className="style__DaLabelBase-sc-67p5vh-0 eoMVsm"
   >
     Radio Label
   </legend>
   <div
-    className="style__RadioBase-bg7b95-0 lmpYlp"
+    className="style__RadioBase-sc-bg7b95-0 hCgydy"
   >
     <input
       defaultChecked={false}
@@ -28,7 +28,7 @@ exports[`renders without crashing 1`] = `
     </label>
   </div>
   <div
-    className="style__RadioBase-bg7b95-0 lmpYlp"
+    className="style__RadioBase-sc-bg7b95-0 hCgydy"
   >
     <input
       defaultChecked={false}

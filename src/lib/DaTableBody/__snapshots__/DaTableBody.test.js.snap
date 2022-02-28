@@ -2,20 +2,20 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__DaTableBodyBase-sc-6g57ma-0 lbblkT"
+  className="style__DaTableBodyBase-sc-6g57ma-0 bDwjXJ"
 >
   <div
-    className="style__DaTableRowBase-cqmn2v-0 jdUUFA"
+    className="style__DaTableRowBase-sc-cqmn2v-0 cWxsob"
   >
     <div
-      className="style__DaTableCellBase-sc-1ed6rma-0 gLhGfU cell-checkbox"
+      className="style__DaTableCellBase-sc-1ed6rma-0 cqfKEy cell-checkbox"
       onMouseDown={null}
     >
       <span
         className="cell-content"
       >
         <div
-          className="style__CheckboxBase-sc-1wlk4ud-0 bdkKKN"
+          className="style__CheckboxBase-sc-1wlk4ud-0 dKIeZz"
         >
           <input
             disabled={false}
@@ -26,7 +26,7 @@ exports[`renders without crashing 1`] = `
             htmlFor="select"
           >
             <span
-              className="style__IconBase-ak3679-0 xhyCY icon"
+              className="style__IconBase-sc-ak3679-0 gLGzxb icon"
               type={null}
             >
               <svg
@@ -42,7 +42,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="style__DaTableCellBase-sc-1ed6rma-0 crwTBZ cell-id"
+      className="style__DaTableCellBase-sc-1ed6rma-0 jMTnlX cell-id"
       onMouseDown={[Function]}
     >
       <span
@@ -52,7 +52,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="style__DaTableCellBase-sc-1ed6rma-0 blLFYm cell-main cell-main-1"
+      className="style__DaTableCellBase-sc-1ed6rma-0 iHJhuM cell-main cell-main-1"
       onMouseDown={[Function]}
     >
       <span
@@ -62,7 +62,7 @@ exports[`renders without crashing 1`] = `
       </span>
     </div>
     <div
-      className="style__DaTableCellBase-sc-1ed6rma-0 etkGNS cell-basic cell-basic-1"
+      className="style__DaTableCellBase-sc-1ed6rma-0 ckbfqk cell-basic cell-basic-1"
       onMouseDown={[Function]}
     >
       <span

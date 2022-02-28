@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__DaTableHeadCellBase-sc-1fpn11j-0 iMdqdb"
+  className="style__DaTableHeadCellBase-sc-1fpn11j-0 fvhdNg"
 >
   <div
     className="head-child"
@@ -11,7 +11,7 @@ exports[`renders without crashing 1`] = `
       className="icon-child"
     >
       <button
-        className="style__IconBase-ak3679-0 bkaEeI icon"
+        className="style__IconBase-sc-ak3679-0 vNeBr icon"
         type="button"
       >
         <svg

@@ -2,20 +2,20 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__SkeletonBase-sc-13d7n9i-0 cfWeLG"
+  className="style__SkeletonBase-sc-13d7n9i-0 csktEZ"
 >
   <div
-    className="style__CardBase-f361m8-0 eWgINm"
+    className="style__CardBase-sc-f361m8-0 dhLaMp"
     type={null}
   >
     <div
       className="content"
     >
       <div
-        className="style__SkeletonItemBase-sc-1akijax-0 gZubAQ"
+        className="style__SkeletonItemBase-sc-1akijax-0 kdRaxu"
       />
       <div
-        className="style__SkeletonItemBase-sc-1akijax-0 bTQriW"
+        className="style__SkeletonItemBase-sc-1akijax-0 aetPE"
       />
     </div>
   </div>

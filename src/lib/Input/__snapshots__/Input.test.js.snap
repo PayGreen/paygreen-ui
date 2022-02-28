@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__InputBase-kps9m4-0 gyOHbQ"
+  className="style__InputBase-sc-kps9m4-0 fGqoNf"
 >
   <label
     htmlFor="testId1"

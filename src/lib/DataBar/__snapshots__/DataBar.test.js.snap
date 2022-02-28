@@ -3,10 +3,10 @@
 exports[`renders without crashing 1`] = `
 <div>
   <div
-    className="style__Bar-dshsa7-0 kLEuRA"
+    className="style__Bar-sc-dshsa7-0 bjXNNn"
   >
     <div
-      className="style__BarSection-dshsa7-1 gDygew"
+      className="style__BarSection-sc-dshsa7-1 kTXvkb"
     />
   </div>
 </div>

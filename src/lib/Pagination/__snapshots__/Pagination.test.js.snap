@@ -2,31 +2,31 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__PaginationBase-qrycdw-0 lkOGdb"
+  className="style__PaginationBase-sc-qrycdw-0 heRXKc"
 >
   <button
-    className="style__PaginationItemBase-sc-1fr64bb-0 kDUWqo"
+    className="style__PaginationItemBase-sc-1fr64bb-0 derpem"
     onClick={[Function]}
     type="button"
   >
     1
   </button>
   <button
-    className="style__PaginationItemBase-sc-1fr64bb-0 kDUWqo"
+    className="style__PaginationItemBase-sc-1fr64bb-0 derpem"
     onClick={[Function]}
     type="button"
   >
     2
   </button>
   <button
-    className="style__PaginationItemBase-sc-1fr64bb-0 bqBDWp"
+    className="style__PaginationItemBase-sc-1fr64bb-0 bdXYTz"
     onClick={[Function]}
     type="button"
   >
     3
   </button>
   <button
-    className="style__PaginationItemBase-sc-1fr64bb-0 kDUWqo"
+    className="style__PaginationItemBase-sc-1fr64bb-0 derpem"
     onClick={[Function]}
     type="button"
   >
@@ -34,7 +34,7 @@ exports[`renders without crashing 1`] = `
   </button>
   ...
   <button
-    className="style__PaginationItemBase-sc-1fr64bb-0 kDUWqo"
+    className="style__PaginationItemBase-sc-1fr64bb-0 derpem"
     onClick={[Function]}
     type="button"
   >

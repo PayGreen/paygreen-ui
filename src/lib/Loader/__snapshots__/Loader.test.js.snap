@@ -2,7 +2,7 @@
 
 exports[`renders without crashing 1`] = `
 <div
-  className="style__LoaderBase-u2upz2-0 uIdYJ"
+  className="style__LoaderBase-sc-u2upz2-0 bFuQie"
 >
   <span />
 </div>

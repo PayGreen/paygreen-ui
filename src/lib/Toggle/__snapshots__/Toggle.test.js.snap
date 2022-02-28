@@ -2,20 +2,20 @@
 
 exports[`renders without crashing 1`] = `
 <label
-  className="style__ToggleBase-gnd37d-2 yLNSl"
+  className="style__ToggleBase-sc-gnd37d-2 jvrmhO"
 >
   <input
     disabled={false}
     type="checkbox"
   />
   <div
-    className="style__ToggleElement-gnd37d-1 dbJCDi"
+    className="style__ToggleElement-sc-gnd37d-1 eeGtvF"
   >
     <div
-      className="style__ToggleLabelBase-gnd37d-0 kLVWfn"
+      className="style__ToggleLabelBase-sc-gnd37d-0 iGbLKU"
     />
     <div
-      className="style__ToggleLabelBase-gnd37d-0 kLVWfn"
+      className="style__ToggleLabelBase-sc-gnd37d-0 iGbLKU"
     />
   </div>
 </label>
