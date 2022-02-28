@@ -37,7 +37,7 @@ export default {
     },
 };
 
-export const Bar = ({ type, blockSize, ...args }) => {
+export const InputCardStory = ({ type, blockSize, ...args }) => {
     return (
         <InternalGrid>
             <InputCard
