@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<div
+  className="style__ModalBase-sc-1m48d6z-0 iVrOsZ"
+>
+  <div
+    className="style__OverlayBase-sc-1jvobgw-0 lnmscb"
+  />
+  <div
+    className="style__ModalContentBase-atgy9x-0 lgAvQS"
+  >
+    <div
+      className="style__ModalBodyBase-md16g0-0 lhDNNM"
+    >
+      <p
+        className="style__TextBase-sc-11ixwvd-0 kSVwMo"
+      >
+        This is the body.
+      </p>
+    </div>
+  </div>
+</div>
+`;
