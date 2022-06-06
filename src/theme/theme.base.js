@@ -23,14 +23,14 @@ for (const [size, value] of Object.entries(breakpoints)) {
 export const ThemeBase = {
     font: {
         size: {
-            tiny: '1rem',
-            xxs: '1.2rem',
-            xs: '1.4rem',
-            sm: '1.6rem',
-            base: '1.8rem',
-            md: '2.1rem',
-            lg: '3rem',
-            xl: '4rem',
+            tiny: '0.625rem',
+            xxs: '0.75rem',
+            xs: '0.875rem',
+            sm: '1rem',
+            base: '1.125rem',
+            md: '1,3125rem',
+            lg: '1.875rem',
+            xl: '2.5rem',
         },
         weight: {
             normal: 400,

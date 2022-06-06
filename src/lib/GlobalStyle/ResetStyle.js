@@ -5,8 +5,6 @@ import { css } from 'styled-components';
  */
 export const ResetStyle = css`
     :root {
-        /* Reset basic font size from 16px to 10px, for easier calculation */
-        font-size: 62.5%;
     }
 
     body {
@@ -57,8 +55,8 @@ export const ResetStyle = css`
         line-height: normal;
     }
 
-    [type="checkbox"],
-    [type="radio"] {
+    [type='checkbox'],
+    [type='radio'] {
         box-shadow: none;
     }
 `;
