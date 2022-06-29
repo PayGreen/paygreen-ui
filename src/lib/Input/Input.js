@@ -29,7 +29,7 @@ const Input = ({
         if (mask && mask.length) {
             setMask(mask);
         } else if (rest.type === 'tel') {
-            setMask('+99 (0)9 99 99 99 99');
+            setMask('+99t (0)9 99 99 99 99');
         }
     }, [rest.type, mask]);
 
