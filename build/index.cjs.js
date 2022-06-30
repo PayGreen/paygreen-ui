@@ -3543,7 +3543,7 @@ var SvgWidget = function SvgWidget(props) {
 };
 
 function _extends$2() {
-  _extends$2 = Object.assign || function (target) {
+  _extends$2 = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
 
@@ -3556,7 +3556,6 @@ function _extends$2() {
 
     return target;
   };
-
   return _extends$2.apply(this, arguments);
 }
 
@@ -3569,11 +3568,10 @@ function _assertThisInitialized$2(self) {
 }
 
 function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
     o.__proto__ = p;
     return o;
   };
-
   return _setPrototypeOf(o, p);
 }
 
@@ -3584,7 +3582,7 @@ function _inheritsLoose$2(subClass, superClass) {
 }
 
 function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
     return o.__proto__ || Object.getPrototypeOf(o);
   };
   return _getPrototypeOf(o);
@@ -3609,7 +3607,7 @@ function _isNativeReflectConstruct() {
 
 function _construct(Parent, args, Class) {
   if (_isNativeReflectConstruct()) {
-    _construct = Reflect.construct;
+    _construct = Reflect.construct.bind();
   } else {
     _construct = function _construct(Parent, args, Class) {
       var a = [null];
@@ -4429,10 +4427,10 @@ var hexRegex = /^#[a-fA-F0-9]{6}$/;
 var hexRgbaRegex = /^#[a-fA-F0-9]{8}$/;
 var reducedHexRegex = /^#[a-fA-F0-9]{3}$/;
 var reducedRgbaHexRegex = /^#[a-fA-F0-9]{4}$/;
-var rgbRegex = /^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/i;
-var rgbaRegex = /^rgba\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*([-+]?[0-9]*[.]?[0-9]+)\s*\)$/i;
-var hslRegex = /^hsl\(\s*(\d{0,3}[.]?[0-9]+)\s*,\s*(\d{1,3}[.]?[0-9]?)%\s*,\s*(\d{1,3}[.]?[0-9]?)%\s*\)$/i;
-var hslaRegex = /^hsla\(\s*(\d{0,3}[.]?[0-9]+)\s*,\s*(\d{1,3}[.]?[0-9]?)%\s*,\s*(\d{1,3}[.]?[0-9]?)%\s*,\s*([-+]?[0-9]*[.]?[0-9]+)\s*\)$/i;
+var rgbRegex = /^rgb\(\s*(\d{1,3})\s*(?:,)?\s*(\d{1,3})\s*(?:,)?\s*(\d{1,3})\s*\)$/i;
+var rgbaRegex = /^rgb(?:a)?\(\s*(\d{1,3})\s*(?:,)?\s*(\d{1,3})\s*(?:,)?\s*(\d{1,3})\s*(?:,|\/)\s*([-+]?\d*[.]?\d+[%]?)\s*\)$/i;
+var hslRegex = /^hsl\(\s*(\d{0,3}[.]?[0-9]+(?:deg)?)\s*(?:,)?\s*(\d{1,3}[.]?[0-9]?)%\s*(?:,)?\s*(\d{1,3}[.]?[0-9]?)%\s*\)$/i;
+var hslaRegex = /^hsl(?:a)?\(\s*(\d{0,3}[.]?[0-9]+(?:deg)?)\s*(?:,)?\s*(\d{1,3}[.]?[0-9]?)%\s*(?:,)?\s*(\d{1,3}[.]?[0-9]?)%\s*(?:,|\/)\s*([-+]?\d*[.]?\d+[%]?)\s*\)$/i;
 /**
  * Returns an RgbColor or RgbaColor object. This utility function is only useful
  * if want to extract a color component. With the color util `toColorString` you
@@ -4506,7 +4504,7 @@ function parseToRgb(color) {
       red: parseInt("" + rgbaMatched[1], 10),
       green: parseInt("" + rgbaMatched[2], 10),
       blue: parseInt("" + rgbaMatched[3], 10),
-      alpha: parseFloat("" + rgbaMatched[4])
+      alpha: parseFloat("" + rgbaMatched[4]) > 1 ? parseFloat("" + rgbaMatched[4]) / 100 : parseFloat("" + rgbaMatched[4])
     };
   }
 
@@ -4551,7 +4549,7 @@ function parseToRgb(color) {
       red: parseInt("" + _hslRgbMatched[1], 10),
       green: parseInt("" + _hslRgbMatched[2], 10),
       blue: parseInt("" + _hslRgbMatched[3], 10),
-      alpha: parseFloat("" + hslaMatched[4])
+      alpha: parseFloat("" + hslaMatched[4]) > 1 ? parseFloat("" + hslaMatched[4]) / 100 : parseFloat("" + hslaMatched[4])
     };
   }
 
@@ -4686,7 +4684,7 @@ function guard(lowerBoundary, upperBoundary, value) {
  * @example
  * // Styles as object usage
  * const styles = {
- *   background: transparentize(0.1, '#fff');
+ *   background: transparentize(0.1, '#fff'),
  *   background: transparentize(0.2, 'hsl(0, 0%, 100%)'),
  *   background: transparentize('0.5', 'rgba(255, 0, 0, 0.8)'),
  * }
@@ -4694,8 +4692,8 @@ function guard(lowerBoundary, upperBoundary, value) {
  * // styled-components usage
  * const div = styled.div`
  *   background: ${transparentize(0.1, '#fff')};
- *   background: ${transparentize(0.2, 'hsl(0, 0%, 100%)')},
- *   background: ${transparentize('0.5', 'rgba(255, 0, 0, 0.8)')},
+ *   background: ${transparentize(0.2, 'hsl(0, 0%, 100%)')};
+ *   background: ${transparentize('0.5', 'rgba(255, 0, 0, 0.8)')};
  * `
  *
  * // CSS in JS Output
